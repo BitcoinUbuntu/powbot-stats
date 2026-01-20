@@ -502,7 +502,7 @@
 
                 <!-- Daily Chart -->
                 <div class="chart-container">
-                    <h2>Daily Payments to Projects and Merchants</h2>
+                    <h2>Daily Activity</h2>
                     <div class="chart-wrapper">
                         <canvas id="dailyChart"></canvas>
                     </div>
@@ -547,7 +547,7 @@
             const ctx = document.getElementById('dailyChart').getContext('2d');
 
             // Filter to only show days with activity for cleaner chart
-            const activeData = daily.filter(d => d.project_count > 0 || d.merchant_count > 0);
+            const activeData = daily.filter(d => d.project_count > 0 || d.merchant_count > 0 || d.reviewer_count > 0);
             const displayData = activeData.length > 0 ? activeData : daily.slice(-7);
 
             new Chart(ctx, {
@@ -569,6 +569,14 @@
                         borderColor: '#26c6da',
                         borderWidth: 1,
                         hoverBackgroundColor: 'rgba(38, 198, 218, 0.9)',
+                        barPercentage: 0.6
+                    }, {
+                        label: 'Reviewers',
+                        data: displayData.map(d => d.reviewer_count),
+                        backgroundColor: 'rgba(163, 113, 247, 0.75)',
+                        borderColor: '#a371f7',
+                        borderWidth: 1,
+                        hoverBackgroundColor: 'rgba(163, 113, 247, 0.9)',
                         barPercentage: 0.6
                     }]
                 },
