@@ -592,8 +592,8 @@
             `;
 
             // Render leaderboards
-            renderLeaderboard('top-projects', stats.top_projects);
-            renderLeaderboard('top-merchants', stats.top_merchants);
+            renderLeaderboard('top-projects', stats.top_projects, 'project');
+            renderLeaderboard('top-merchants', stats.top_merchants, 'merchant');
 
             // Render chart
             renderChart(stats.daily);
@@ -606,7 +606,7 @@
             return { name: 'Nostr', icon: '🟣' };
         }
 
-        function renderLeaderboard(elementId, items) {
+        function renderLeaderboard(elementId, items, type) {
             const container = document.getElementById(elementId);
             container.innerHTML = items.map((item, index) => {
                 const posts = item.posts || [];
@@ -625,11 +625,12 @@
                     <div class="leaderboard-posts">
                         ${posts.map(post => {
                             const platform = getPlatform(post.url);
+                            const postLabel = type === 'project' ? (post.merchant || item.name) : item.name;
                             return `
                             <a href="${post.url}" target="_blank" rel="noopener" class="post-link">
                                 <span class="post-info">
                                     <span class="post-platform">${platform.icon} ${platform.name}</span>
-                                    <span class="post-name">${item.name}</span>
+                                    <span class="post-name">${postLabel}</span>
                                 </span>
                                 <span class="post-date">${formatDate(post.date)}</span>
                             </a>
