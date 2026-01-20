@@ -652,15 +652,15 @@
                     <span class="today-label">Today <span class="today-time">(updated ${new Date(stats.generated_at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'UTC' })} UTC)</span></span>
                     <div class="today-stats">
                         <div class="today-stat">
-                            <span class="today-value merchant">${formatNumber(stats.today.by_type.merchant?.count || 0)}</span>
-                            <span class="today-unit">merchant payments</span>
+                            <span class="today-value" style="color: var(--accent-orange);">${formatNumber(stats.today.by_type.reviewer?.count || 0)}</span>
+                            <span class="today-unit">${(stats.today.by_type.reviewer?.count || 0) === 1 ? 'video' : 'videos'}</span>
                         </div>
                         <div class="today-stat">
-                            <span class="today-value project">${formatNumber(stats.today.by_type.project?.count || 0)}</span>
-                            <span class="today-unit">project payments</span>
+                            <span class="today-value" style="color: var(--text-primary);">${formatNumber(stats.today.payments || 0)}</span>
+                            <span class="today-unit">${(stats.today.payments || 0) === 1 ? 'payment' : 'payments'}</span>
                         </div>
                         <div class="today-stat">
-                            <span class="today-value" style="color: var(--accent-purple);">${formatNumber(stats.today.by_type.reviewer?.count || 0)}</span>
+                            <span class="today-value" style="color: var(--accent-purple);">${formatNumber(stats.today.approved || 0)}/${formatNumber(stats.today.rejected || 0)}</span>
                             <span class="today-unit">reviews</span>
                         </div>
                     </div>
