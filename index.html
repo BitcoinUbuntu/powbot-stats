@@ -446,9 +446,9 @@
 
         .pie-chart-wrapper {
             position: relative;
-            height: 200px;
-            max-width: 200px;
-            margin: 0 auto;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 10px auto;
         }
 
         .countries-list {
@@ -905,7 +905,11 @@
             if (!providers.length) return;
 
             const ctx = document.getElementById('lightningChart').getContext('2d');
-            const colors = ['#f7931a', '#3fb950', '#58a6ff', '#a371f7', '#f85149', '#8b949e'];
+            const colorMap = {
+                'blink.sv': '#f7931a',
+                '8333.mobi': '#fdd023'
+            };
+            const defaultColors = ['#3fb950', '#58a6ff', '#a371f7', '#f85149', '#8b949e'];
 
             new Chart(ctx, {
                 type: 'doughnut',
@@ -913,7 +917,7 @@
                     labels: providers.map(p => p.domain),
                     datasets: [{
                         data: providers.map(p => p.count),
-                        backgroundColor: providers.map((_, i) => colors[i % colors.length]),
+                        backgroundColor: providers.map((p, i) => colorMap[p.domain] || defaultColors[i % defaultColors.length]),
                         borderColor: '#21262d',
                         borderWidth: 2
                     }]
