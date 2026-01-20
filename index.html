@@ -431,6 +431,71 @@
             text-decoration: none;
         }
 
+        .insights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .insights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pie-chart-wrapper {
+            position: relative;
+            height: 200px;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        .countries-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .country-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--bg-secondary);
+            padding: 6px 10px;
+            border-radius: 16px;
+            font-size: 0.85rem;
+        }
+
+        .country-flag {
+            font-size: 1.1rem;
+        }
+
+        .country-name {
+            color: var(--text-primary);
+        }
+
+        .country-count {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+        }
+
+        .insight-card {
+            text-align: center;
+        }
+
+        .insight-card h2 {
+            text-align: center;
+        }
+
+        .insight-total {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin-bottom: 15px;
+        }
+
         .loading {
             text-align: center;
             padding: 40px;
@@ -609,6 +674,37 @@
                     </div>
                 </div>
 
+                <!-- Insights Section -->
+                <div class="insights-grid">
+                    <div class="card insight-card">
+                        <h2>Lightning Providers</h2>
+                        <div class="pie-chart-wrapper">
+                            <canvas id="lightningChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="card insight-card">
+                        <h2>Countries</h2>
+                        <div class="insight-total">${stats.countries?.length || 0} active</div>
+                        <div class="countries-list" id="countries-list">
+                            ${(stats.countries || []).map(c => `
+                                <span class="country-tag">
+                                    <span class="country-flag">${c.flag}</span>
+                                    <span class="country-name">${c.country}</span>
+                                    ${c.count > 1 ? `<span class="country-count">(${c.count})</span>` : ''}
+                                </span>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <div class="card insight-card">
+                        <h2>Platforms</h2>
+                        <div class="pie-chart-wrapper">
+                            <canvas id="platformChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Leaderboards -->
                 <div class="leaderboard-grid">
                     <div class="card">
@@ -627,8 +723,10 @@
             renderLeaderboard('top-projects', stats.top_projects, 'project');
             renderLeaderboard('top-merchants', stats.top_merchants, 'merchant');
 
-            // Render chart
+            // Render charts
             renderChart(stats.daily);
+            renderLightningChart(stats.lightning_providers || []);
+            renderPlatformChart(stats.platforms || []);
         }
 
         function getPlatform(url) {
@@ -795,6 +893,109 @@
                             callbacks: {
                                 label: function(context) {
                                     return context.dataset.label + ': ' + context.parsed.y + ' payments';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderLightningChart(providers) {
+            if (!providers.length) return;
+
+            const ctx = document.getElementById('lightningChart').getContext('2d');
+            const colors = ['#f7931a', '#3fb950', '#58a6ff', '#a371f7', '#f85149', '#8b949e'];
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: providers.map(p => p.domain),
+                    datasets: [{
+                        data: providers.map(p => p.count),
+                        backgroundColor: providers.map((_, i) => colors[i % colors.length]),
+                        borderColor: '#21262d',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                color: '#f0f6fc',
+                                padding: 10,
+                                font: { size: 11 }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#21262d',
+                            titleColor: '#f0f6fc',
+                            bodyColor: '#f0f6fc',
+                            borderColor: '#30363d',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const pct = Math.round((context.raw / total) * 100);
+                                    return `${context.label}: ${context.raw} (${pct}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderPlatformChart(platforms) {
+            if (!platforms.length) return;
+
+            const ctx = document.getElementById('platformChart').getContext('2d');
+            const colorMap = {
+                'X': '#000000',
+                'Nostr': '#8b5cf6'
+            };
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: platforms.map(p => p.platform),
+                    datasets: [{
+                        data: platforms.map(p => p.count),
+                        backgroundColor: platforms.map(p => colorMap[p.platform] || '#8b949e'),
+                        borderColor: '#21262d',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                color: '#f0f6fc',
+                                padding: 10,
+                                font: { size: 11 }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#21262d',
+                            titleColor: '#f0f6fc',
+                            bodyColor: '#f0f6fc',
+                            borderColor: '#30363d',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const pct = Math.round((context.raw / total) * 100);
+                                    return `${context.label}: ${context.raw} (${pct}%)`;
                                 }
                             }
                         }

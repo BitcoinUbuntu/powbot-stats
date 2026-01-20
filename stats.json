@@ -1,30 +1,30 @@
 {
   "totals": {
-    "all_payments": 536,
+    "all_payments": 539,
     "by_type": {
       "merchant": {
-        "count": 174
+        "count": 175
       },
       "project": {
-        "count": 174
+        "count": 175
       },
       "reviewer": {
-        "count": 188
+        "count": 189
       }
     }
   },
   "today": {
     "date": "2026-01-20",
-    "payments": 80,
+    "payments": 83,
     "by_type": {
       "merchant": {
-        "count": 26
+        "count": 27
       },
       "project": {
-        "count": 26
+        "count": 27
       },
       "reviewer": {
-        "count": 28
+        "count": 29
       }
     }
   },
@@ -205,14 +205,14 @@
     },
     {
       "date": "2026-01-20",
-      "project_count": 26,
-      "merchant_count": 26,
-      "reviewer_count": 28
+      "project_count": 27,
+      "merchant_count": 27,
+      "reviewer_count": 29
     }
   ],
   "reviewer": {
-    "total_reviewed": 188,
-    "approved": 174,
+    "total_reviewed": 189,
+    "approved": 175,
     "rejected": 14
   },
   "top_projects": [
@@ -500,8 +500,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 21,
+      "count": 22,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2013631580233662762",
+          "date": "2026-01-20",
+          "merchant": "Kwallos Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsdk73p2q9rlp3yyhxh5umfc8fcnul8dp6rd2wcvxnqcx6ekrm9tssc9uq3v",
           "date": "2026-01-20",
@@ -1341,6 +1346,37 @@
       ]
     },
     {
+      "name": "Kwallos Shop",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2013631580233662762",
+          "date": "2026-01-20",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsymva55zjjzen8yd7ptsm5rew2nenfuwuuk0vqunlvp8g5qfnm7sgf8p5r4",
+          "date": "2026-01-18",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2012823272635654568",
+          "date": "2026-01-18",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszjwlvj4ed6q3jnn4np22zgcwmerllvuf86dv752vrwx0j8uyr25slvu8fu",
+          "date": "2026-01-17",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2012166533632368677",
+          "date": "2026-01-16",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Kwa Innocent",
       "count": 5,
       "posts": [
@@ -1503,32 +1539,6 @@
           "url": "https://njump.to/nevent1qqsrt0h9wegnjuw83tmrfgtf42t7nwt3y8evunt8rnat4sc748dc8hspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqglunrrh",
           "date": "2026-01-16",
           "project": "Afribit Kibera 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Kwallos Shop",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsymva55zjjzen8yd7ptsm5rew2nenfuwuuk0vqunlvp8g5qfnm7sgf8p5r4",
-          "date": "2026-01-18",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2012823272635654568",
-          "date": "2026-01-18",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszjwlvj4ed6q3jnn4np22zgcwmerllvuf86dv752vrwx0j8uyr25slvu8fu",
-          "date": "2026-01-17",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2012166533632368677",
-          "date": "2026-01-16",
-          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
@@ -2544,12 +2554,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 7,
-    "daily_average_payments": 76
+    "daily_average_payments": 77
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 521
+      "count": 524
     },
     {
       "domain": "8333.mobi",
@@ -2586,13 +2596,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 323
+      "count": 326
     },
     {
       "platform": "Nostr",
       "count": 213
     }
   ],
-  "generated_at": "2026-01-20T15:22:39.822110+00:00",
+  "generated_at": "2026-01-20T15:35:09.473561+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
