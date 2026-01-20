@@ -352,11 +352,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 8px 12px;
+            padding: 10px 12px;
             margin-top: 8px;
             background: var(--bg-primary);
             border-radius: 6px;
-            color: var(--accent-blue);
             text-decoration: none;
             font-size: 0.85rem;
             transition: background 0.2s ease;
@@ -366,9 +365,26 @@
             background: var(--bg-card);
         }
 
+        .post-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .post-platform {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .post-name {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
         .post-date {
             color: var(--text-secondary);
             font-size: 0.8rem;
+            flex-shrink: 0;
         }
 
         footer {
@@ -583,6 +599,19 @@
             renderChart(stats.daily);
         }
 
+        function getPlatform(url) {
+            if (!url) return { name: 'Link', icon: '🔗' };
+            const lower = url.toLowerCase();
+            if (lower.includes('t.me') || lower.includes('telegram')) return { name: 'Telegram', icon: '📱' };
+            if (lower.includes('twitter.com') || lower.includes('x.com')) return { name: 'X', icon: '𝕏' };
+            if (lower.includes('instagram.com')) return { name: 'Instagram', icon: '📷' };
+            if (lower.includes('facebook.com') || lower.includes('fb.com')) return { name: 'Facebook', icon: '📘' };
+            if (lower.includes('youtube.com') || lower.includes('youtu.be')) return { name: 'YouTube', icon: '▶️' };
+            if (lower.includes('tiktok.com')) return { name: 'TikTok', icon: '🎵' };
+            if (lower.includes('linkedin.com')) return { name: 'LinkedIn', icon: '💼' };
+            return { name: 'Link', icon: '🔗' };
+        }
+
         function renderLeaderboard(elementId, items) {
             const container = document.getElementById(elementId);
             container.innerHTML = items.map((item, index) => {
@@ -600,12 +629,17 @@
                     </div>
                     ${hasPosts ? `
                     <div class="leaderboard-posts">
-                        ${posts.map(post => `
+                        ${posts.map(post => {
+                            const platform = getPlatform(post.url);
+                            return `
                             <a href="${post.url}" target="_blank" rel="noopener" class="post-link">
-                                <span>View Post</span>
+                                <span class="post-info">
+                                    <span class="post-platform">${platform.icon} ${platform.name}</span>
+                                    <span class="post-name">${item.name}</span>
+                                </span>
                                 <span class="post-date">${formatDate(post.date)}</span>
                             </a>
-                        `).join('')}
+                        `}).join('')}
                     </div>
                     ` : ''}
                 </div>
