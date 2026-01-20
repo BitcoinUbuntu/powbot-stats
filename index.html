@@ -270,12 +270,22 @@
         }
 
         .leaderboard-item {
-            display: flex;
-            align-items: center;
-            padding: 12px;
             background: var(--bg-secondary);
             border-radius: 8px;
             margin-bottom: 8px;
+            overflow: hidden;
+        }
+
+        .leaderboard-header {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .leaderboard-header:hover {
+            background: var(--bg-card);
         }
 
         .leaderboard-rank {
@@ -310,12 +320,55 @@
             color: var(--text-secondary);
         }
 
-        .leaderboard-sats {
+        .leaderboard-payments {
             font-weight: 700;
             color: var(--accent-orange);
             margin-left: 10px;
             flex-shrink: 0;
             white-space: nowrap;
+        }
+
+        .leaderboard-expand {
+            margin-left: 8px;
+            color: var(--text-secondary);
+            transition: transform 0.2s ease;
+        }
+
+        .leaderboard-item.expanded .leaderboard-expand {
+            transform: rotate(180deg);
+        }
+
+        .leaderboard-posts {
+            display: none;
+            padding: 0 12px 12px 52px;
+            border-top: 1px solid var(--border);
+        }
+
+        .leaderboard-item.expanded .leaderboard-posts {
+            display: block;
+        }
+
+        .post-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 12px;
+            margin-top: 8px;
+            background: var(--bg-primary);
+            border-radius: 6px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.2s ease;
+        }
+
+        .post-link:hover {
+            background: var(--bg-card);
+        }
+
+        .post-date {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
         }
 
         footer {
@@ -532,15 +585,39 @@
 
         function renderLeaderboard(elementId, items) {
             const container = document.getElementById(elementId);
-            container.innerHTML = items.map((item, index) => `
-                <div class="leaderboard-item">
-                    <div class="leaderboard-rank">${index + 1}</div>
-                    <div class="leaderboard-info">
-                        <div class="leaderboard-name">${item.name}</div>
+            container.innerHTML = items.map((item, index) => {
+                const posts = item.posts || [];
+                const hasPosts = posts.length > 0;
+                return `
+                <div class="leaderboard-item" data-index="${index}">
+                    <div class="leaderboard-header" onclick="toggleLeaderboard(this)">
+                        <div class="leaderboard-rank">${index + 1}</div>
+                        <div class="leaderboard-info">
+                            <div class="leaderboard-name">${item.name}</div>
+                        </div>
+                        <div class="leaderboard-payments">${item.count} payments</div>
+                        ${hasPosts ? '<span class="leaderboard-expand">▼</span>' : ''}
                     </div>
-                    <div class="leaderboard-sats">${item.count} payments</div>
+                    ${hasPosts ? `
+                    <div class="leaderboard-posts">
+                        ${posts.map(post => `
+                            <a href="${post.url}" target="_blank" rel="noopener" class="post-link">
+                                <span>View Post</span>
+                                <span class="post-date">${formatDate(post.date)}</span>
+                            </a>
+                        `).join('')}
+                    </div>
+                    ` : ''}
                 </div>
-            `).join('');
+            `}).join('');
+        }
+
+        function toggleLeaderboard(header) {
+            const item = header.closest('.leaderboard-item');
+            const posts = item.querySelector('.leaderboard-posts');
+            if (posts) {
+                item.classList.toggle('expanded');
+            }
         }
 
         function renderChart(daily) {
