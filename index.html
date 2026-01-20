@@ -282,9 +282,19 @@
             padding: 12px;
             cursor: pointer;
             transition: background 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
         }
 
         .leaderboard-header:hover {
+            background: var(--bg-card);
+        }
+
+        .leaderboard-header:focus {
+            outline: none;
+        }
+
+        .leaderboard-header:active {
             background: var(--bg-card);
         }
 
