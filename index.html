@@ -405,22 +405,16 @@
             color: var(--accent-blue);
             font-size: 0.9rem;
             cursor: pointer;
-            transition: background 0.2s ease, border-color 0.2s ease;
             outline: none;
             -webkit-tap-highlight-color: transparent;
+            user-select: none;
         }
 
-        .leaderboard-more:hover {
-            background: var(--bg-card);
-            border-color: var(--accent-blue);
-        }
-
-        .leaderboard-more:focus {
-            outline: none;
-        }
-
-        .leaderboard-more:active {
-            background: var(--bg-card);
+        @media (hover: hover) {
+            .leaderboard-more:hover {
+                background: var(--bg-card);
+                border-color: var(--accent-blue);
+            }
         }
 
         footer {
