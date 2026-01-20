@@ -555,12 +555,12 @@
                 data: {
                     labels: displayData.map(d => formatDate(d.date)),
                     datasets: [{
-                        label: 'Projects',
-                        data: displayData.map(d => d.project_count),
-                        backgroundColor: 'rgba(66, 165, 245, 0.75)',
-                        borderColor: '#42a5f5',
+                        label: 'Reviewers',
+                        data: displayData.map(d => d.reviewer_count),
+                        backgroundColor: 'rgba(163, 113, 247, 0.75)',
+                        borderColor: '#a371f7',
                         borderWidth: 1,
-                        hoverBackgroundColor: 'rgba(66, 165, 245, 0.9)',
+                        hoverBackgroundColor: 'rgba(163, 113, 247, 0.9)',
                         barPercentage: 0.6
                     }, {
                         label: 'Merchants',
@@ -571,12 +571,12 @@
                         hoverBackgroundColor: 'rgba(38, 198, 218, 0.9)',
                         barPercentage: 0.6
                     }, {
-                        label: 'Reviewers',
-                        data: displayData.map(d => d.reviewer_count),
-                        backgroundColor: 'rgba(163, 113, 247, 0.75)',
-                        borderColor: '#a371f7',
+                        label: 'Projects',
+                        data: displayData.map(d => d.project_count),
+                        backgroundColor: 'rgba(66, 165, 245, 0.75)',
+                        borderColor: '#42a5f5',
                         borderWidth: 1,
-                        hoverBackgroundColor: 'rgba(163, 113, 247, 0.9)',
+                        hoverBackgroundColor: 'rgba(66, 165, 245, 0.9)',
                         barPercentage: 0.6
                     }]
                 },
