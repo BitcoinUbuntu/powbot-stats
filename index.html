@@ -625,7 +625,7 @@
                     <div class="leaderboard-posts">
                         ${posts.map(post => {
                             const platform = getPlatform(post.url);
-                            const postLabel = type === 'project' ? (post.merchant || item.name) : item.name;
+                            const postLabel = type === 'project' ? (post.merchant || item.name) : (post.project || item.name);
                             return `
                             <a href="${post.url}" target="_blank" rel="noopener" class="post-link">
                                 <span class="post-info">
