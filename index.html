@@ -668,19 +668,31 @@
 
             if (hasMore) {
                 container.innerHTML += `
-                    <button class="leaderboard-more" onclick="showAllLeaderboard(this, '${elementId}')">
-                        More... (${items.length - initialCount} more)
+                    <button class="leaderboard-more" data-count="${items.length - initialCount}" onclick="toggleShowMore(this, '${elementId}')">
+                        Show ${items.length - initialCount} more
                     </button>
                 `;
             }
         }
 
-        function showAllLeaderboard(button, elementId) {
+        function toggleShowMore(button, elementId) {
             const container = document.getElementById(elementId);
-            container.querySelectorAll('.leaderboard-hidden').forEach(el => {
-                el.classList.remove('leaderboard-hidden');
-            });
-            button.remove();
+            const isExpanded = button.classList.contains('expanded');
+            const count = button.dataset.count;
+
+            if (isExpanded) {
+                container.querySelectorAll('.leaderboard-item').forEach((el, index) => {
+                    if (index >= 10) el.classList.add('leaderboard-hidden');
+                });
+                button.textContent = `Show ${count} more`;
+                button.classList.remove('expanded');
+            } else {
+                container.querySelectorAll('.leaderboard-hidden').forEach(el => {
+                    el.classList.remove('leaderboard-hidden');
+                });
+                button.textContent = 'Show less';
+                button.classList.add('expanded');
+            }
         }
 
         function toggleLeaderboard(header) {
