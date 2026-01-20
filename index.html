@@ -600,16 +600,10 @@
         }
 
         function getPlatform(url) {
-            if (!url) return { name: 'Link', icon: '🔗' };
+            if (!url) return { name: 'Nostr', icon: '🟣' };
             const lower = url.toLowerCase();
-            if (lower.includes('t.me') || lower.includes('telegram')) return { name: 'Telegram', icon: '📱' };
             if (lower.includes('twitter.com') || lower.includes('x.com')) return { name: 'X', icon: '𝕏' };
-            if (lower.includes('instagram.com')) return { name: 'Instagram', icon: '📷' };
-            if (lower.includes('facebook.com') || lower.includes('fb.com')) return { name: 'Facebook', icon: '📘' };
-            if (lower.includes('youtube.com') || lower.includes('youtu.be')) return { name: 'YouTube', icon: '▶️' };
-            if (lower.includes('tiktok.com')) return { name: 'TikTok', icon: '🎵' };
-            if (lower.includes('linkedin.com')) return { name: 'LinkedIn', icon: '💼' };
-            return { name: 'Link', icon: '🔗' };
+            return { name: 'Nostr', icon: '🟣' };
         }
 
         function renderLeaderboard(elementId, items) {
