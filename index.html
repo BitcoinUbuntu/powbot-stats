@@ -656,12 +656,16 @@
                             <span class="today-unit">${(stats.today.by_type.reviewer?.count || 0) === 1 ? 'video' : 'videos'}</span>
                         </div>
                         <div class="today-stat">
-                            <span class="today-value" style="color: var(--text-primary);">${formatNumber(stats.today.payments || 0)}</span>
-                            <span class="today-unit">${(stats.today.payments || 0) === 1 ? 'payment' : 'payments'}</span>
+                            <span class="today-value" style="color: var(--accent-green);">${formatNumber(stats.today.approved || 0)}</span>
+                            <span class="today-unit">${(stats.today.approved || 0) === 1 ? 'approval' : 'approvals'}</span>
                         </div>
                         <div class="today-stat">
-                            <span class="today-value"><span style="color: var(--accent-green);">${formatNumber(stats.today.approved || 0)}</span>/<span style="color: #f85149;">${formatNumber(stats.today.rejected || 0)}</span></span>
-                            <span class="today-unit">reviews</span>
+                            <span class="today-value" style="color: #f85149;">${formatNumber(stats.today.rejected || 0)}</span>
+                            <span class="today-unit">${(stats.today.rejected || 0) === 1 ? 'rejection' : 'rejections'}</span>
+                        </div>
+                        <div class="today-stat">
+                            <span class="today-value" style="color: var(--text-primary);">${formatNumber(stats.today.payments || 0)}</span>
+                            <span class="today-unit">${(stats.today.payments || 0) === 1 ? 'payment' : 'payments'}</span>
                         </div>
                     </div>
                 </div>
