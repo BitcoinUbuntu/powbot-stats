@@ -186,26 +186,30 @@
         .top-performers-list {
             display: flex;
             flex-direction: column;
-            gap: 8px;
             margin-top: auto;
         }
 
         .top-performer-item {
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .top-performer-item:last-child {
+            border-bottom: none;
         }
 
         .top-performer-rank {
-            font-size: 1.1rem;
+            font-size: 1rem;
             width: 24px;
             flex-shrink: 0;
         }
 
         .top-performer-name {
             flex: 1;
-            font-size: 0.9rem;
-            color: var(--text-primary);
+            color: var(--text-secondary);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -214,18 +218,18 @@
         .top-performer-count {
             font-weight: 600;
             color: var(--accent-purple);
-            font-size: 0.9rem;
         }
 
         .top-performer-label {
-            font-size: 0.8rem;
             color: var(--text-secondary);
+            margin-left: 4px;
         }
 
         .no-performers {
             color: var(--text-secondary);
             font-style: italic;
             margin-top: auto;
+            padding: 8px 0;
         }
 
         .stats-grid {
@@ -1014,12 +1018,12 @@
                 projectCounts[project] = (projectCounts[project] || 0) + 1;
             });
 
-            // Sort by count and get top 5
+            // Sort by count and get top 3
             const sorted = Object.entries(projectCounts)
                 .sort((a, b) => b[1] - a[1])
-                .slice(0, 5);
+                .slice(0, 3);
 
-            const rankEmojis = ['🥇', '🥈', '🥉', '4️⃣', '5️⃣'];
+            const rankEmojis = ['🥇', '🥈', '🥉'];
 
             container.innerHTML = sorted.map(([project, count], index) => `
                 <div class="top-performer-item">
