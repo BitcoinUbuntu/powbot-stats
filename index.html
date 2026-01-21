@@ -1014,12 +1014,12 @@
                 projectCounts[project] = (projectCounts[project] || 0) + 1;
             });
 
-            // Sort by count and get top 3
+            // Sort by count and get top 5
             const sorted = Object.entries(projectCounts)
                 .sort((a, b) => b[1] - a[1])
-                .slice(0, 3);
+                .slice(0, 5);
 
-            const rankEmojis = ['🥇', '🥈', '🥉'];
+            const rankEmojis = ['🥇', '🥈', '🥉', '4️⃣', '5️⃣'];
 
             container.innerHTML = sorted.map(([project, count], index) => `
                 <div class="top-performer-item">
