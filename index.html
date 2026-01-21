@@ -172,6 +172,86 @@
             }
         }
 
+        .top-performers-banner {
+            background: linear-gradient(135deg, rgba(163, 113, 247, 0.15), rgba(163, 113, 247, 0.05));
+            border: 1px solid var(--accent-purple);
+            border-radius: 12px;
+            padding: 16px 24px;
+            margin-bottom: 20px;
+        }
+
+        .top-performers-banner .banner-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .top-performers-banner .banner-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--accent-purple);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .top-performers-banner .banner-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .top-performers-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .top-performer-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .top-performer-rank {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-purple);
+            width: 28px;
+            text-align: center;
+        }
+
+        .top-performer-rank.gold { color: #ffd700; }
+        .top-performer-rank.silver { color: #c0c0c0; }
+        .top-performer-rank.bronze { color: #cd7f32; }
+
+        .top-performer-name {
+            flex: 1;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .top-performer-count {
+            font-weight: 700;
+            color: var(--accent-purple);
+        }
+
+        .top-performer-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-left: 4px;
+        }
+
+        .no-performers {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .top-performers-banner {
+                padding: 14px 18px;
+            }
+        }
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -665,22 +745,12 @@
                         </div>
                     </div>
 
-                    <div class="card">
-                        <h2>Today's Activity</h2>
-                        <div class="big-number">${formatNumber(stats.today.payments || 0)}</div>
-                        <div style="margin-top: 15px;">
-                            <div class="stat-row">
-                                <span class="stat-label">Merchants</span>
-                                <span class="stat-value merchant">${formatNumber(stats.today.by_type.merchant?.count || 0)}</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="stat-label">Projects</span>
-                                <span class="stat-value project">${formatNumber(stats.today.by_type.project?.count || 0)}</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="stat-label">Reviews</span>
-                                <span class="stat-value" style="color: var(--accent-purple);">${formatNumber(stats.today.by_type.reviewer?.count || 0)}</span>
-                            </div>
+                    <div class="top-performers-banner">
+                        <div class="banner-header">
+                            <span class="banner-title">Top Performers Today</span>
+                        </div>
+                        <div class="top-performers-list" id="top-performers-list">
+                            <!-- Populated by JavaScript -->
                         </div>
                     </div>
 
@@ -805,6 +875,9 @@
                 renderTodayVideos('today-x', xVideos, '𝕏');
                 renderTodayVideos('today-nostr', nostrVideos, '🟣');
             }
+
+            // Render top performers
+            renderTopPerformers(stats.today.videos || []);
 
             // Render charts
             renderChart(stats.daily);
@@ -946,6 +1019,40 @@
                 button.textContent = 'Show less';
                 button.classList.add('expanded');
             }
+        }
+
+        function renderTopPerformers(videos) {
+            const container = document.getElementById('top-performers-list');
+            if (!container) return;
+
+            if (videos.length === 0) {
+                container.innerHTML = '<div class="no-performers">No videos approved yet today</div>';
+                return;
+            }
+
+            // Count approvals per project
+            const projectCounts = {};
+            videos.forEach(video => {
+                const project = video.project || 'Unknown';
+                projectCounts[project] = (projectCounts[project] || 0) + 1;
+            });
+
+            // Sort by count and get top 3
+            const sorted = Object.entries(projectCounts)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 3);
+
+            const rankClasses = ['gold', 'silver', 'bronze'];
+            const rankEmojis = ['🥇', '🥈', '🥉'];
+
+            container.innerHTML = sorted.map(([project, count], index) => `
+                <div class="top-performer-item">
+                    <span class="top-performer-rank ${rankClasses[index]}">${rankEmojis[index]}</span>
+                    <span class="top-performer-name">${project}</span>
+                    <span class="top-performer-count">${count}</span>
+                    <span class="top-performer-label">${count === 1 ? 'video' : 'videos'}</span>
+                </div>
+            `).join('');
         }
 
         function renderChart(daily) {
