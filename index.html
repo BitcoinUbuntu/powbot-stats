@@ -172,84 +172,60 @@
             }
         }
 
-        .top-performers-banner {
+        .card.top-performers {
             background: linear-gradient(135deg, rgba(163, 113, 247, 0.15), rgba(163, 113, 247, 0.05));
-            border: 1px solid var(--accent-purple);
-            border-radius: 12px;
-            padding: 16px 24px;
-            margin-bottom: 20px;
-        }
-
-        .top-performers-banner .banner-header {
+            border-color: var(--accent-purple);
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 16px;
+            flex-direction: column;
         }
 
-        .top-performers-banner .banner-title {
-            font-size: 0.85rem;
-            text-transform: uppercase;
+        .card.top-performers h2 {
             color: var(--accent-purple);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .top-performers-banner .banner-subtitle {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
         }
 
         .top-performers-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 8px;
+            margin-top: auto;
         }
 
         .top-performer-item {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
         }
 
         .top-performer-rank {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent-purple);
-            width: 28px;
-            text-align: center;
+            font-size: 1.1rem;
+            width: 24px;
+            flex-shrink: 0;
         }
-
-        .top-performer-rank.gold { color: #ffd700; }
-        .top-performer-rank.silver { color: #c0c0c0; }
-        .top-performer-rank.bronze { color: #cd7f32; }
 
         .top-performer-name {
             flex: 1;
-            font-weight: 500;
+            font-size: 0.9rem;
             color: var(--text-primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .top-performer-count {
-            font-weight: 700;
+            font-weight: 600;
             color: var(--accent-purple);
+            font-size: 0.9rem;
         }
 
         .top-performer-label {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
-            margin-left: 4px;
         }
 
         .no-performers {
             color: var(--text-secondary);
             font-style: italic;
-        }
-
-        @media (max-width: 600px) {
-            .top-performers-banner {
-                padding: 14px 18px;
-            }
+            margin-top: auto;
         }
 
         .stats-grid {
@@ -745,10 +721,8 @@
                         </div>
                     </div>
 
-                    <div class="top-performers-banner">
-                        <div class="banner-header">
-                            <span class="banner-title">Top Performers Today</span>
-                        </div>
+                    <div class="card top-performers">
+                        <h2>Top Performers Today</h2>
                         <div class="top-performers-list" id="top-performers-list">
                             <!-- Populated by JavaScript -->
                         </div>
@@ -1030,6 +1004,9 @@
                 return;
             }
 
+            // Strip flag emojis from name
+            const stripFlags = (name) => name.replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
+
             // Count approvals per project
             const projectCounts = {};
             videos.forEach(video => {
@@ -1042,13 +1019,12 @@
                 .sort((a, b) => b[1] - a[1])
                 .slice(0, 3);
 
-            const rankClasses = ['gold', 'silver', 'bronze'];
             const rankEmojis = ['🥇', '🥈', '🥉'];
 
             container.innerHTML = sorted.map(([project, count], index) => `
                 <div class="top-performer-item">
-                    <span class="top-performer-rank ${rankClasses[index]}">${rankEmojis[index]}</span>
-                    <span class="top-performer-name">${project}</span>
+                    <span class="top-performer-rank">${rankEmojis[index]}</span>
+                    <span class="top-performer-name">${stripFlags(project)}</span>
                     <span class="top-performer-count">${count}</span>
                     <span class="top-performer-label">${count === 1 ? 'video' : 'videos'}</span>
                 </div>
