@@ -686,6 +686,14 @@
             content.innerHTML = `
                 <!-- Summary Cards -->
                 <div class="stats-grid">
+                    <div class="card top-performers">
+                        <h2>Top Performers Today</h2>
+                        <div class="big-number">🏆</div>
+                        <div class="top-performers-list" id="top-performers-list">
+                            <!-- Populated by JavaScript -->
+                        </div>
+                    </div>
+
                     <div class="card">
                         <h2>Total Payments</h2>
                         <div class="big-number">${formatNumber(stats.totals.all_payments)}</div>
@@ -721,14 +729,6 @@
                                 <span class="stat-label">Total reviewed</span>
                                 <span class="stat-value">${formatNumber(stats.reviewer?.total_reviewed || 0)}</span>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="card top-performers">
-                        <h2>Top Performers Today</h2>
-                        <div class="big-number">🏆</div>
-                        <div class="top-performers-list" id="top-performers-list">
-                            <!-- Populated by JavaScript -->
                         </div>
                     </div>
 
