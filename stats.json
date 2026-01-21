@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 769,
+    "all_payments": 772,
     "by_type": {
       "merchant": {
-        "count": 250
+        "count": 251
       },
       "project": {
-        "count": 250
+        "count": 251
       },
       "reviewer": {
-        "count": 269
+        "count": 270
       }
     }
   },
   "today": {
     "date": "2026-01-21",
-    "payments": 172,
+    "payments": 175,
     "by_type": {
       "merchant": {
-        "count": 56
+        "count": 57
       },
       "project": {
-        "count": 56
+        "count": 57
       },
       "reviewer": {
-        "count": 60
+        "count": 61
       }
     },
-    "approved": 55,
-    "rejected": 5,
+    "approved": 57,
+    "rejected": 4,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2014039134105465037",
+        "project": "BitKwa 🇳🇬",
+        "merchant": "Lawee Business Concept",
+        "platform": "X",
+        "time": "18:26"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsx4tpx8drhlk95mnd6ryak9cdgx87vyl8kvdwkmpwh7vlrad79keckkkkna",
         "project": "Bitcoin Ekiti 🇳🇬",
@@ -413,6 +420,13 @@
         "project": "BitKwa 🇳🇬",
         "merchant": "Dolphins Swimming Pool",
         "platform": "X",
+        "time": "05:08"
+      },
+      {
+        "url": "https://x.com/i/status/2013728477766144369",
+        "project": "BitKwa 🇳🇬",
+        "merchant": "Space Cutz",
+        "platform": "X",
         "time": "05:07"
       }
     ]
@@ -594,15 +608,15 @@
     },
     {
       "date": "2026-01-21",
-      "project_count": 56,
-      "merchant_count": 56,
-      "reviewer_count": 60
+      "project_count": 57,
+      "merchant_count": 57,
+      "reviewer_count": 61
     }
   ],
   "reviewer": {
-    "total_reviewed": 269,
-    "approved": 249,
-    "rejected": 20
+    "total_reviewed": 270,
+    "approved": 251,
+    "rejected": 19
   },
   "top_projects": [
     {
@@ -1590,8 +1604,13 @@
     },
     {
       "name": "BitKwa 🇳🇬",
-      "count": 10,
+      "count": 11,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2014039134105465037",
+          "date": "2026-01-21",
+          "merchant": "Lawee Business Concept"
+        },
         {
           "url": "https://x.com/i/status/2013922234994159744",
           "date": "2026-01-21",
@@ -2459,6 +2478,37 @@
       ]
     },
     {
+      "name": "Lawee Business Concept",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014039134105465037",
+          "date": "2026-01-21",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013918079038742578",
+          "date": "2026-01-21",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013701698426941628",
+          "date": "2026-01-20",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013677983899291674",
+          "date": "2026-01-20",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013355432471871689",
+          "date": "2026-01-20",
+          "project": "BitKwa 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Grandsmatt",
       "count": 5,
       "posts": [
@@ -2719,32 +2769,6 @@
           "url": "https://njump.to/nevent1qqsrt0h9wegnjuw83tmrfgtf42t7nwt3y8evunt8rnat4sc748dc8hspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqglunrrh",
           "date": "2026-01-16",
           "project": "Afribit Kibera 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Lawee Business Concept",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2013918079038742578",
-          "date": "2026-01-21",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013701698426941628",
-          "date": "2026-01-20",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013677983899291674",
-          "date": "2026-01-20",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013355432471871689",
-          "date": "2026-01-20",
-          "project": "BitKwa 🇳🇬"
         }
       ]
     },
@@ -3782,7 +3806,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 750
+      "count": 753
     },
     {
       "domain": "8333.mobi",
@@ -3824,13 +3848,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 458
+      "count": 461
     },
     {
       "platform": "Nostr",
       "count": 311
     }
   ],
-  "generated_at": "2026-01-21T18:22:39.787357+00:00",
+  "generated_at": "2026-01-21T19:05:46.152363+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
