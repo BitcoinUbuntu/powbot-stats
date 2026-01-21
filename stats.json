@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 700,
+    "all_payments": 703,
     "by_type": {
       "merchant": {
-        "count": 228
+        "count": 229
       },
       "project": {
-        "count": 228
+        "count": 229
       },
       "reviewer": {
-        "count": 244
+        "count": 245
       }
     }
   },
   "today": {
     "date": "2026-01-21",
-    "payments": 103,
+    "payments": 106,
     "by_type": {
       "merchant": {
-        "count": 34
+        "count": 35
       },
       "project": {
-        "count": 34
+        "count": 35
       },
       "reviewer": {
-        "count": 35
+        "count": 36
       }
     },
-    "approved": 33,
+    "approved": 34,
     "rejected": 2,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsq3lznwxdddffvyluwprmcltldz2wjrl5rrsx7w5cpu54zj0v2jesmn3nre",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Chips point",
+        "platform": "Nostr",
+        "time": "09:13"
+      },
       {
         "url": "https://x.com/i/status/2013897056268558717",
         "project": "Bitcoin Ikorodu 🇳🇬",
@@ -440,21 +447,26 @@
     },
     {
       "date": "2026-01-21",
-      "project_count": 34,
-      "merchant_count": 34,
-      "reviewer_count": 35
+      "project_count": 35,
+      "merchant_count": 35,
+      "reviewer_count": 36
     }
   ],
   "reviewer": {
-    "total_reviewed": 244,
-    "approved": 227,
+    "total_reviewed": 245,
+    "approved": 228,
     "rejected": 17
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 35,
+      "count": 36,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsq3lznwxdddffvyluwprmcltldz2wjrl5rrsx7w5cpu54zj0v2jesmn3nre",
+          "date": "2026-01-21",
+          "merchant": "Chips point"
+        },
         {
           "url": "https://x.com/i/status/2013880471747281172",
           "date": "2026-01-21",
@@ -2134,6 +2146,37 @@
       ]
     },
     {
+      "name": "Chips point",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsq3lznwxdddffvyluwprmcltldz2wjrl5rrsx7w5cpu54zj0v2jesmn3nre",
+          "date": "2026-01-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013880471747281172",
+          "date": "2026-01-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfqxftehfs934xp43s339e98cutl7cfhycn9c72nwx576httl9lrq2r6kz8",
+          "date": "2026-01-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxh5pl6kxfv3ld0jt8wg6hp44zs3lqct3tn38he0adzvgnl5kh47sl2awgm",
+          "date": "2026-01-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012117853063770299",
+          "date": "2026-01-16",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Black and White Fries Corner",
       "count": 5,
       "posts": [
@@ -2343,32 +2386,6 @@
           "url": "https://x.com/i/status/2011075769582211081",
           "date": "2026-01-14",
           "project": "Bitcoin Babies 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Chips point",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2013880471747281172",
-          "date": "2026-01-21",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfqxftehfs934xp43s339e98cutl7cfhycn9c72nwx576httl9lrq2r6kz8",
-          "date": "2026-01-17",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxh5pl6kxfv3ld0jt8wg6hp44zs3lqct3tn38he0adzvgnl5kh47sl2awgm",
-          "date": "2026-01-17",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012117853063770299",
-          "date": "2026-01-16",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -3396,7 +3413,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 681
+      "count": 684
     },
     {
       "domain": "8333.mobi",
@@ -3442,9 +3459,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 280
+      "count": 283
     }
   ],
-  "generated_at": "2026-01-21T09:12:51.635413+00:00",
+  "generated_at": "2026-01-21T09:22:39.789972+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
