@@ -468,6 +468,13 @@
             text-overflow: ellipsis;
         }
 
+        .today-video-time {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -908,6 +915,7 @@
                         <span class="today-video-project">${video.project}</span>
                         <span class="today-video-merchant">${video.merchant}</span>
                     </span>
+                    <span class="today-video-time">${video.time || ''}</span>
                 </a>
             `}).join('');
 
