@@ -1,35 +1,41 @@
 {
   "totals": {
-    "all_payments": 651,
+    "all_payments": 654,
     "by_type": {
       "merchant": {
-        "count": 212
+        "count": 213
       },
       "project": {
-        "count": 212
+        "count": 213
       },
       "reviewer": {
-        "count": 227
+        "count": 228
       }
     }
   },
   "today": {
     "date": "2026-01-21",
-    "payments": 54,
+    "payments": 57,
     "by_type": {
       "merchant": {
-        "count": 18
+        "count": 19
       },
       "project": {
-        "count": 18
+        "count": 19
       },
       "reviewer": {
-        "count": 18
+        "count": 19
       }
     },
-    "approved": 17,
+    "approved": 18,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2013874375162835214",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Sokoni Mboga",
+        "platform": "X"
+      },
       {
         "url": "https://x.com/i/status/2013872452674232786",
         "project": "BitKwa 🇳🇬",
@@ -317,14 +323,14 @@
     },
     {
       "date": "2026-01-21",
-      "project_count": 18,
-      "merchant_count": 18,
-      "reviewer_count": 18
+      "project_count": 19,
+      "merchant_count": 19,
+      "reviewer_count": 19
     }
   ],
   "reviewer": {
-    "total_reviewed": 227,
-    "approved": 211,
+    "total_reviewed": 228,
+    "approved": 212,
     "rejected": 16
   },
   "top_projects": [
@@ -884,8 +890,13 @@
     },
     {
       "name": "Afribit Kibera 🇰🇪",
-      "count": 20,
+      "count": 21,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2013874375162835214",
+          "date": "2026-01-21",
+          "merchant": "Sokoni Mboga"
+        },
         {
           "url": "https://x.com/i/status/2013871367783907504",
           "date": "2026-01-21",
@@ -2155,6 +2166,27 @@
       ]
     },
     {
+      "name": "Sokoni Mboga",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2013874375162835214",
+          "date": "2026-01-21",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013869404895793585",
+          "date": "2026-01-21",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012526035837886538",
+          "date": "2026-01-17",
+          "project": "Afribit Kibera 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Niel's Nails and Perfume Refill",
       "count": 3,
       "posts": [
@@ -2405,22 +2437,6 @@
           "url": "https://x.com/i/status/2012915256062812383",
           "date": "2026-01-18",
           "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Sokoni Mboga",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2013869404895793585",
-          "date": "2026-01-21",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012526035837886538",
-          "date": "2026-01-17",
-          "project": "Afribit Kibera 🇰🇪"
         }
       ]
     },
@@ -3101,7 +3117,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 632
+      "count": 635
     },
     {
       "domain": "8333.mobi",
@@ -3143,13 +3159,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 402
+      "count": 405
     },
     {
       "platform": "Nostr",
       "count": 249
     }
   ],
-  "generated_at": "2026-01-21T07:30:17.509371+00:00",
+  "generated_at": "2026-01-21T07:34:25.464183+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
