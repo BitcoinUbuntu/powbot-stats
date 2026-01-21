@@ -687,7 +687,7 @@
                 <!-- Summary Cards -->
                 <div class="stats-grid">
                     <div class="card top-performers">
-                        <h2>Top Performers Today</h2>
+                        <h2>Top Performers (24h)</h2>
                         <div class="big-number">🏆</div>
                         <div class="top-performers-list" id="top-performers-list">
                             <!-- Populated by JavaScript -->
@@ -854,8 +854,8 @@
                 renderTodayVideos('today-nostr', nostrVideos, '🟣');
             }
 
-            // Render top performers
-            renderTopPerformers(stats.today.videos || []);
+            // Render top performers (last 24 hours)
+            renderTopPerformers(stats.last_24h?.videos || []);
 
             // Render charts
             renderChart(stats.daily);
@@ -1004,7 +1004,7 @@
             if (!container) return;
 
             if (videos.length === 0) {
-                container.innerHTML = '<div class="no-performers">No videos approved yet today</div>';
+                container.innerHTML = '<div class="no-performers">No videos approved in the last 24 hours</div>';
                 return;
             }
 
