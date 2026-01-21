@@ -421,6 +421,53 @@
             }
         }
 
+        .today-video-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            margin-bottom: 8px;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+
+        @media (hover: hover) {
+            .today-video-item:hover {
+                background: var(--bg-card);
+            }
+        }
+
+        .today-video-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .today-video-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            min-width: 0;
+        }
+
+        .today-video-project {
+            color: var(--text-primary);
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .today-video-merchant {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -723,11 +770,34 @@
                         <div id="top-merchants"></div>
                     </div>
                 </div>
+
+                <!-- Today's Videos by Platform -->
+                ${(stats.today.videos && stats.today.videos.length > 0) ? `
+                <div class="leaderboard-grid">
+                    <div class="card">
+                        <h2>Today on X</h2>
+                        <div id="today-x"></div>
+                    </div>
+
+                    <div class="card">
+                        <h2>Today on Nostr</h2>
+                        <div id="today-nostr"></div>
+                    </div>
+                </div>
+                ` : ''}
             `;
 
             // Render leaderboards
             renderLeaderboard('top-projects', stats.top_projects, 'project');
             renderLeaderboard('top-merchants', stats.top_merchants, 'merchant');
+
+            // Render today's videos if any
+            if (stats.today.videos && stats.today.videos.length > 0) {
+                const xVideos = stats.today.videos.filter(v => v.platform === 'X');
+                const nostrVideos = stats.today.videos.filter(v => v.platform === 'Nostr');
+                renderTodayVideos('today-x', xVideos, '𝕏');
+                renderTodayVideos('today-nostr', nostrVideos, '🟣');
+            }
 
             // Render charts
             renderChart(stats.daily);
@@ -814,6 +884,59 @@
             const posts = item.querySelector('.leaderboard-posts');
             if (posts) {
                 item.classList.toggle('expanded');
+            }
+        }
+
+        function renderTodayVideos(elementId, videos, icon) {
+            const container = document.getElementById(elementId);
+            if (!container) return;
+
+            if (videos.length === 0) {
+                container.innerHTML = '<div style="color: var(--text-secondary); padding: 12px;">No videos yet</div>';
+                return;
+            }
+
+            const initialCount = 5;
+            const hasMore = videos.length > initialCount;
+
+            container.innerHTML = videos.map((video, index) => {
+                const isHidden = index >= initialCount;
+                return `
+                <a href="${video.url}" target="_blank" rel="noopener" class="today-video-item ${isHidden ? 'leaderboard-hidden' : ''}" data-index="${index}">
+                    <span class="today-video-icon">${icon}</span>
+                    <span class="today-video-info">
+                        <span class="today-video-project">${video.project}</span>
+                        <span class="today-video-merchant">${video.merchant}</span>
+                    </span>
+                </a>
+            `}).join('');
+
+            if (hasMore) {
+                container.innerHTML += `
+                    <button class="leaderboard-more" data-count="${videos.length - initialCount}" onclick="toggleTodayVideos(this, '${elementId}')">
+                        Show ${videos.length - initialCount} more
+                    </button>
+                `;
+            }
+        }
+
+        function toggleTodayVideos(button, elementId) {
+            const container = document.getElementById(elementId);
+            const isExpanded = button.classList.contains('expanded');
+            const count = button.dataset.count;
+
+            if (isExpanded) {
+                container.querySelectorAll('.today-video-item').forEach((el, index) => {
+                    if (index >= 5) el.classList.add('leaderboard-hidden');
+                });
+                button.textContent = `Show ${count} more`;
+                button.classList.remove('expanded');
+            } else {
+                container.querySelectorAll('.leaderboard-hidden').forEach(el => {
+                    el.classList.remove('leaderboard-hidden');
+                });
+                button.textContent = 'Show less';
+                button.classList.add('expanded');
             }
         }
 
