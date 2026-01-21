@@ -726,6 +726,21 @@
                     </div>
                 </div>
 
+                <!-- Today's Videos by Platform -->
+                ${(stats.today.videos && stats.today.videos.length > 0) ? `
+                <div class="leaderboard-grid">
+                    <div class="card">
+                        <h2>Today on X</h2>
+                        <div id="today-x"></div>
+                    </div>
+
+                    <div class="card">
+                        <h2>Today on Nostr</h2>
+                        <div id="today-nostr"></div>
+                    </div>
+                </div>
+                ` : ''}
+
                 <!-- Daily Chart -->
                 <div class="chart-container">
                     <h2>Daily Activity</h2>
@@ -777,21 +792,6 @@
                         <div id="top-merchants"></div>
                     </div>
                 </div>
-
-                <!-- Today's Videos by Platform -->
-                ${(stats.today.videos && stats.today.videos.length > 0) ? `
-                <div class="leaderboard-grid">
-                    <div class="card">
-                        <h2>Today on X</h2>
-                        <div id="today-x"></div>
-                    </div>
-
-                    <div class="card">
-                        <h2>Today on Nostr</h2>
-                        <div id="today-nostr"></div>
-                    </div>
-                </div>
-                ` : ''}
             `;
 
             // Render leaderboards
