@@ -162,6 +162,61 @@
         .today-banner .today-value.merchant { color: var(--accent-green); }
         .today-banner .today-value.project { color: var(--accent-blue); }
 
+        .week-banner {
+            background: linear-gradient(135deg, rgba(163, 113, 247, 0.15), rgba(163, 113, 247, 0.05));
+            border: 1px solid var(--accent-purple);
+            border-radius: 12px;
+            padding: 16px 24px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .week-banner .week-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--accent-purple);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .week-banner .week-stats {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .week-banner .week-stat {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .week-banner .week-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .week-banner .week-unit {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 600px) {
+            .week-banner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .week-banner .week-stats {
+                gap: 16px;
+            }
+        }
+
         @media (max-width: 600px) {
             .today-banner {
                 flex-direction: column;
@@ -943,6 +998,37 @@
                     </div>
                 </div>
                 ` : ''}
+
+                <!-- Last 7 Days Banner -->
+                ${(() => {
+                    const last7Days = (stats.daily || []).slice(-7);
+                    const weekPosts = last7Days.reduce((sum, d) => sum + (d.reviewer_count || 0), 0);
+                    const weekApproved = last7Days.reduce((sum, d) => sum + (d.project_count || 0), 0);
+                    const weekRejected = weekPosts - weekApproved;
+                    const weekPayments = last7Days.reduce((sum, d) => sum + (d.project_count || 0) + (d.merchant_count || 0) + (d.reviewer_count || 0), 0);
+                    return `
+                <div class="week-banner">
+                    <span class="week-label">Last 7 Days</span>
+                    <div class="week-stats">
+                        <div class="week-stat">
+                            <span class="week-value" style="color: var(--accent-purple);">${formatNumber(weekPosts)}</span>
+                            <span class="week-unit">${weekPosts === 1 ? 'post' : 'posts'}</span>
+                        </div>
+                        <div class="week-stat">
+                            <span class="week-value" style="color: var(--accent-green);">${formatNumber(weekApproved)}</span>
+                            <span class="week-unit">${weekApproved === 1 ? 'approval' : 'approvals'}</span>
+                        </div>
+                        <div class="week-stat">
+                            <span class="week-value" style="color: #f85149;">${formatNumber(weekRejected)}</span>
+                            <span class="week-unit">${weekRejected === 1 ? 'rejection' : 'rejections'}</span>
+                        </div>
+                        <div class="week-stat">
+                            <span class="week-value" style="color: var(--text-primary);">${formatNumber(weekPayments)}</span>
+                            <span class="week-unit">${weekPayments === 1 ? 'payment' : 'payments'}</span>
+                        </div>
+                    </div>
+                </div>`;
+                })()}
 
                 <!-- Daily Chart -->
                 <div class="chart-container">
