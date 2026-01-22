@@ -666,6 +666,7 @@
 
         .countdown-blocks .big-number {
             color: var(--accent-green);
+            animation: subtlePulse 3s ease-in-out infinite;
         }
 
         .countdown-progress {
@@ -682,6 +683,42 @@
             background: var(--accent-green);
             border-radius: 4px;
             transition: width 0.5s ease;
+            animation: subtlePulse 3s ease-in-out infinite;
+        }
+
+        /* Subtle ambient pulse */
+        @keyframes subtlePulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* New block event flash */
+        .countdown-blocks.new-block .big-number {
+            animation: blockFlash 0.6s ease-out;
+        }
+
+        .countdown-progress-bar.new-block {
+            animation: barFlash 0.6s ease-out;
+        }
+
+        @keyframes blockFlash {
+            0% {
+                text-shadow: 0 0 20px var(--accent-green), 0 0 40px var(--accent-green);
+                transform: scale(1.05);
+            }
+            100% {
+                text-shadow: none;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes barFlash {
+            0% {
+                box-shadow: 0 0 15px var(--accent-green), 0 0 30px var(--accent-green);
+            }
+            100% {
+                box-shadow: none;
+            }
         }
 
         .countdown-stats {
@@ -1442,6 +1479,20 @@
             }
         }
 
+        function triggerNewBlockFlash() {
+            const blocksEl = document.querySelector('.countdown-blocks');
+            const barEl = document.querySelector('.countdown-progress-bar');
+
+            if (blocksEl) {
+                blocksEl.classList.add('new-block');
+                setTimeout(() => blocksEl.classList.remove('new-block'), 600);
+            }
+            if (barEl) {
+                barEl.classList.add('new-block');
+                setTimeout(() => barEl.classList.remove('new-block'), 600);
+            }
+        }
+
         function connectBlockWebSocket() {
             if (countdownWebSocket) {
                 countdownWebSocket.close();
@@ -1459,6 +1510,7 @@
                 if (data.block && data.block.height) {
                     currentBlockHeight = data.block.height;
                     renderCountdown();
+                    triggerNewBlockFlash();
                 }
             };
 
