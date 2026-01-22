@@ -1537,7 +1537,7 @@
             const countryCount = stats.countries?.length || 0;
             if (countryCount > 0) {
                 highlights.push({
-                    label: 'Countries active',
+                    label: '🌍 Countries active',
                     value: countryCount
                 });
             }
@@ -1547,7 +1547,7 @@
                 const newCountries = stats.countries.filter(c => c.count === 1);
                 newCountries.forEach(c => {
                     highlights.push({
-                        label: `First from ${c.country}`,
+                        label: `🎉 First from ${c.country}`,
                         value: c.flag
                     });
                 });
@@ -1559,7 +1559,7 @@
                     (day.reviewer_count > (max?.reviewer_count || 0)) ? day : max, null);
                 if (busiestDay && busiestDay.reviewer_count > 0) {
                     highlights.push({
-                        label: `Record day (${formatDate(busiestDay.date)})`,
+                        label: `📈 Record day (${formatDate(busiestDay.date)})`,
                         value: `${busiestDay.reviewer_count} posts`
                     });
                 }
@@ -1569,7 +1569,7 @@
             if (stats.top_projects && stats.top_projects.length > 0) {
                 const top = stats.top_projects[0];
                 highlights.push({
-                    label: 'Top project',
+                    label: '🏆 Top project',
                     value: stripFlags(top.name)
                 });
             }
@@ -1594,7 +1594,7 @@
 
                 if (newestProject && newestProject !== stats.top_projects[0]) {
                     highlights.push({
-                        label: 'Newest project',
+                        label: '✨ Newest project',
                         value: stripFlags(newestProject.name)
                     });
                 }
@@ -1604,7 +1604,7 @@
             const projectCount = stats.top_projects?.length || 0;
             if (projectCount > 0) {
                 highlights.push({
-                    label: 'Active projects',
+                    label: '📊 Active projects',
                     value: projectCount
                 });
             }
@@ -1615,7 +1615,7 @@
                 : 0;
             if (approvalRate >= 90) {
                 highlights.push({
-                    label: 'Approval rate',
+                    label: '✅ Approval rate',
                     value: `${approvalRate}%`
                 });
             }
@@ -1623,7 +1623,7 @@
             // Days since launch
             if (stats.launch?.days_active > 0) {
                 highlights.push({
-                    label: 'Days active',
+                    label: '📅 Days active',
                     value: stats.launch.days_active
                 });
             }
