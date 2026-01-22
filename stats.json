@@ -1,28 +1,109 @@
 {
   "totals": {
-    "all_payments": 787,
+    "all_payments": 808,
     "by_type": {
       "merchant": {
-        "count": 256
+        "count": 263
       },
       "project": {
-        "count": 256
+        "count": 263
       },
       "reviewer": {
-        "count": 275
+        "count": 282
       }
     }
   },
   "today": {
     "date": "2026-01-22",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 21,
+    "by_type": {
+      "merchant": {
+        "count": 7
+      },
+      "project": {
+        "count": 7
+      },
+      "reviewer": {
+        "count": 7
+      }
+    },
+    "approved": 7,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2014203724088868974",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Mama Nonny Shop",
+        "platform": "X",
+        "time": "05:12"
+      },
+      {
+        "url": "https://x.com/i/status/2014202403558511007",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Bridgeway Shop",
+        "platform": "X",
+        "time": "05:07"
+      },
+      {
+        "url": "https://x.com/i/status/2014201355120910382",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Mama Clear",
+        "platform": "X",
+        "time": "05:04"
+      },
+      {
+        "url": "https://x.com/i/status/2014199534843252853",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Niel's Nails and Perfume Refill",
+        "platform": "X",
+        "time": "05:04"
+      },
+      {
+        "url": "https://x.com/i/status/2014057912096768468",
+        "project": "BitJR Academy 🇿🇲",
+        "merchant": "Mundayam Restaurant",
+        "platform": "X",
+        "time": "05:03"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs2kg4uwhsa9y5sepueum9upnk3692258spa3xfspz37439zpcxtasherk67",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Milofa Skate Shop",
+        "platform": "Nostr",
+        "time": "05:03"
+      },
+      {
+        "url": "https://x.com/i/status/2014111372129247329",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Milofa Skate Shop",
+        "platform": "X",
+        "time": "05:03"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Afribit Kibera 🇰🇪"
+      },
+      {
+        "project": "Afribit Kibera 🇰🇪"
+      },
+      {
+        "project": "Afribit Kibera 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "BitJR Academy 🇿🇲"
+      },
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
       {
         "project": "Bitcoin Sisonke 🇿🇦"
       },
@@ -190,24 +271,6 @@
       },
       {
         "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Ekiti 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Ekiti 🇳🇬"
-      },
-      {
-        "project": "BitKwa 🇳🇬"
-      },
-      {
-        "project": "BitKwa 🇳🇬"
-      },
-      {
-        "project": "BitKwa 🇳🇬"
       }
     ]
   },
@@ -388,14 +451,14 @@
     },
     {
       "date": "2026-01-22",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 7,
+      "merchant_count": 7,
+      "reviewer_count": 7
     }
   ],
   "reviewer": {
-    "total_reviewed": 275,
-    "approved": 256,
+    "total_reviewed": 282,
+    "approved": 263,
     "rejected": 19
   },
   "top_projects": [
@@ -591,9 +654,185 @@
       ]
     },
     {
-      "name": "Bitcoin Githurai 🇰🇪",
-      "count": 31,
+      "name": "Afribit Kibera 🇰🇪",
+      "count": 33,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2014203724088868974",
+          "date": "2026-01-22",
+          "merchant": "Mama Nonny Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2014202403558511007",
+          "date": "2026-01-22",
+          "merchant": "Bridgeway Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2014201355120910382",
+          "date": "2026-01-22",
+          "merchant": "Mama Clear"
+        },
+        {
+          "url": "https://njump.to/nevent1qqspcy6qtmlpwmlnm4xjr3f27f5h53ncef7sr3dqqed9qhztszxwhpspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqga8sp4g",
+          "date": "2026-01-21",
+          "merchant": "Ruth Shop"
+        },
+        {
+          "url": "https://njump.to/nevent1qqstnrwgv5mk7dv5a092020e7lea2stmg8efskk3n3es6h6g9u8nypqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg2d5g9y",
+          "date": "2026-01-21",
+          "merchant": "Nifah"
+        },
+        {
+          "url": "https://njump.to/nevent1qqs9ax5pfdlp4pts4cu6x70jdjemjspxjxdzrjhatkfyd4gjpr0hr6qpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgjxdqh6",
+          "date": "2026-01-21",
+          "merchant": "Night Salon"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsyqe7smkg9ugvhyvsm23tlu8qpwjer6438qgaz6re4uwf6s920gjqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgsn6jxm",
+          "date": "2026-01-21",
+          "merchant": "Sokoni Mboga"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsxpektnkcuq7lv4q5uvzuxe9zcj5nwcrju5a0z60ra2v8zlw9vheqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkcynew",
+          "date": "2026-01-21",
+          "merchant": "3 West Butchery"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsv6jqzvh985uth7humyvy50779ptvjtnua8kfxx54rxwtslzy0xygpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg0c2shn",
+          "date": "2026-01-21",
+          "merchant": "Bridgeway Shop"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsphct20pkm7kzppwvs0yuda6lxgrk78u0lx5ynayd95tw8jpg2r6gpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgerxty6",
+          "date": "2026-01-21",
+          "merchant": "Sokoni Mboga"
+        },
+        {
+          "url": "https://njump.to/nevent1qqs8qx27mn58sedfzt8ncd03gv6ude3xuent0yv2jxm6nd3me7v6rtcpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkm9r07",
+          "date": "2026-01-21",
+          "merchant": "3 West Hotel"
+        },
+        {
+          "url": "https://x.com/i/status/2013875968708899062",
+          "date": "2026-01-21",
+          "merchant": "3 West Hotel"
+        },
+        {
+          "url": "https://x.com/i/status/2013874375162835214",
+          "date": "2026-01-21",
+          "merchant": "Sokoni Mboga"
+        },
+        {
+          "url": "https://x.com/i/status/2013871367783907504",
+          "date": "2026-01-21",
+          "merchant": "3 West Butchery"
+        },
+        {
+          "url": "https://x.com/i/status/2013869404895793585",
+          "date": "2026-01-21",
+          "merchant": "Sokoni Mboga"
+        },
+        {
+          "url": "https://x.com/i/status/2013867286868975836",
+          "date": "2026-01-21",
+          "merchant": "Night Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2013865719193129343",
+          "date": "2026-01-21",
+          "merchant": "Nifah"
+        },
+        {
+          "url": "https://x.com/i/status/2013863453522599953",
+          "date": "2026-01-21",
+          "merchant": "Ruth Shop"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsrqeexyjyx4mea5rq2afp9c68uzkwkvsp26sweefp5t07ju2d8emqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgaylkky",
+          "date": "2026-01-17",
+          "merchant": "3 West Butchery"
+        },
+        {
+          "url": "https://x.com/i/status/2012531957205192889",
+          "date": "2026-01-17",
+          "merchant": "Black and White Fries Corner"
+        },
+        {
+          "url": "https://x.com/i/status/2012526035837886538",
+          "date": "2026-01-17",
+          "merchant": "Sokoni Mboga"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsf0hah64uqv2r8gm6n3q0avjqk9v6qwdylwptvxz58kca3j2qca0spzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkx7r0m",
+          "date": "2026-01-16",
+          "merchant": "Mama Nonny Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2012066020920304115",
+          "date": "2026-01-16",
+          "merchant": "Mama Nonny Shop"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsz5ywmkct7xd3d8unezkdsvphw9ag5j5wqj74awx30zmldm0tgq6cpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkd6jd2",
+          "date": "2026-01-16",
+          "merchant": "Mama Nonny Shop"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsrt0h9wegnjuw83tmrfgtf42t7nwt3y8evunt8rnat4sc748dc8hspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqglunrrh",
+          "date": "2026-01-16",
+          "merchant": "Mama Nonny Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2012060655793402340",
+          "date": "2026-01-16",
+          "merchant": "Black and White Fries Corner"
+        },
+        {
+          "url": "https://x.com/i/status/2012059242388156665",
+          "date": "2026-01-16",
+          "merchant": "Abebo Vegez"
+        },
+        {
+          "url": "https://x.com/i/status/2012057376447213930",
+          "date": "2026-01-16",
+          "merchant": "Black and White Fries Corner"
+        },
+        {
+          "url": "https://x.com/i/status/2011675285272285614",
+          "date": "2026-01-15",
+          "merchant": "3 West Collection"
+        },
+        {
+          "url": "https://x.com/i/status/2011496186327548133",
+          "date": "2026-01-15",
+          "merchant": "Black and White Fries Corner"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsyzxs9u3q6fyhw0nufhhpnpu8gxdlfdgzz4fnp0x95vh5cnus599spzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgle0mym",
+          "date": "2026-01-14",
+          "merchant": "Black and White Fries Corner"
+        },
+        {
+          "url": "https://x.com/i/status/2011157477048598801",
+          "date": "2026-01-13",
+          "merchant": "Yummy Tummy"
+        },
+        {
+          "url": "https://x.com/i/status/2011082702875992366",
+          "date": "2026-01-13",
+          "merchant": "3 West Butchery"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Githurai 🇰🇪",
+      "count": 32,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014199534843252853",
+          "date": "2026-01-22",
+          "merchant": "Niel's Nails and Perfume Refill"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsfmtd4dmdyq3z0kfknjzjmj46fnhkmdt9vfp49cmw920c7c9ncqxcndysxx",
           "date": "2026-01-21",
@@ -909,162 +1148,6 @@
           "url": "https://primal.net/e/nevent1qqsgzaqpspa7w7mr67c8205656llvk49lx5j7kpnlfugcfnmh5tqj8qx8dmfz",
           "date": "2026-01-13",
           "merchant": "Ebenezer Shop"
-        }
-      ]
-    },
-    {
-      "name": "Afribit Kibera 🇰🇪",
-      "count": 30,
-      "posts": [
-        {
-          "url": "https://njump.to/nevent1qqspcy6qtmlpwmlnm4xjr3f27f5h53ncef7sr3dqqed9qhztszxwhpspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqga8sp4g",
-          "date": "2026-01-21",
-          "merchant": "Ruth Shop"
-        },
-        {
-          "url": "https://njump.to/nevent1qqstnrwgv5mk7dv5a092020e7lea2stmg8efskk3n3es6h6g9u8nypqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg2d5g9y",
-          "date": "2026-01-21",
-          "merchant": "Nifah"
-        },
-        {
-          "url": "https://njump.to/nevent1qqs9ax5pfdlp4pts4cu6x70jdjemjspxjxdzrjhatkfyd4gjpr0hr6qpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgjxdqh6",
-          "date": "2026-01-21",
-          "merchant": "Night Salon"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsyqe7smkg9ugvhyvsm23tlu8qpwjer6438qgaz6re4uwf6s920gjqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgsn6jxm",
-          "date": "2026-01-21",
-          "merchant": "Sokoni Mboga"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsxpektnkcuq7lv4q5uvzuxe9zcj5nwcrju5a0z60ra2v8zlw9vheqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkcynew",
-          "date": "2026-01-21",
-          "merchant": "3 West Butchery"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsv6jqzvh985uth7humyvy50779ptvjtnua8kfxx54rxwtslzy0xygpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg0c2shn",
-          "date": "2026-01-21",
-          "merchant": "Bridgeway Shop"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsphct20pkm7kzppwvs0yuda6lxgrk78u0lx5ynayd95tw8jpg2r6gpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgerxty6",
-          "date": "2026-01-21",
-          "merchant": "Sokoni Mboga"
-        },
-        {
-          "url": "https://njump.to/nevent1qqs8qx27mn58sedfzt8ncd03gv6ude3xuent0yv2jxm6nd3me7v6rtcpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkm9r07",
-          "date": "2026-01-21",
-          "merchant": "3 West Hotel"
-        },
-        {
-          "url": "https://x.com/i/status/2013875968708899062",
-          "date": "2026-01-21",
-          "merchant": "3 West Hotel"
-        },
-        {
-          "url": "https://x.com/i/status/2013874375162835214",
-          "date": "2026-01-21",
-          "merchant": "Sokoni Mboga"
-        },
-        {
-          "url": "https://x.com/i/status/2013871367783907504",
-          "date": "2026-01-21",
-          "merchant": "3 West Butchery"
-        },
-        {
-          "url": "https://x.com/i/status/2013869404895793585",
-          "date": "2026-01-21",
-          "merchant": "Sokoni Mboga"
-        },
-        {
-          "url": "https://x.com/i/status/2013867286868975836",
-          "date": "2026-01-21",
-          "merchant": "Night Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2013865719193129343",
-          "date": "2026-01-21",
-          "merchant": "Nifah"
-        },
-        {
-          "url": "https://x.com/i/status/2013863453522599953",
-          "date": "2026-01-21",
-          "merchant": "Ruth Shop"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsrqeexyjyx4mea5rq2afp9c68uzkwkvsp26sweefp5t07ju2d8emqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgaylkky",
-          "date": "2026-01-17",
-          "merchant": "3 West Butchery"
-        },
-        {
-          "url": "https://x.com/i/status/2012531957205192889",
-          "date": "2026-01-17",
-          "merchant": "Black and White Fries Corner"
-        },
-        {
-          "url": "https://x.com/i/status/2012526035837886538",
-          "date": "2026-01-17",
-          "merchant": "Sokoni Mboga"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsf0hah64uqv2r8gm6n3q0avjqk9v6qwdylwptvxz58kca3j2qca0spzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkx7r0m",
-          "date": "2026-01-16",
-          "merchant": "Mama Nonny Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2012066020920304115",
-          "date": "2026-01-16",
-          "merchant": "Mama Nonny Shop"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsz5ywmkct7xd3d8unezkdsvphw9ag5j5wqj74awx30zmldm0tgq6cpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkd6jd2",
-          "date": "2026-01-16",
-          "merchant": "Mama Nonny Shop"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsrt0h9wegnjuw83tmrfgtf42t7nwt3y8evunt8rnat4sc748dc8hspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqglunrrh",
-          "date": "2026-01-16",
-          "merchant": "Mama Nonny Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2012060655793402340",
-          "date": "2026-01-16",
-          "merchant": "Black and White Fries Corner"
-        },
-        {
-          "url": "https://x.com/i/status/2012059242388156665",
-          "date": "2026-01-16",
-          "merchant": "Abebo Vegez"
-        },
-        {
-          "url": "https://x.com/i/status/2012057376447213930",
-          "date": "2026-01-16",
-          "merchant": "Black and White Fries Corner"
-        },
-        {
-          "url": "https://x.com/i/status/2011675285272285614",
-          "date": "2026-01-15",
-          "merchant": "3 West Collection"
-        },
-        {
-          "url": "https://x.com/i/status/2011496186327548133",
-          "date": "2026-01-15",
-          "merchant": "Black and White Fries Corner"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsyzxs9u3q6fyhw0nufhhpnpu8gxdlfdgzz4fnp0x95vh5cnus599spzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgle0mym",
-          "date": "2026-01-14",
-          "merchant": "Black and White Fries Corner"
-        },
-        {
-          "url": "https://x.com/i/status/2011157477048598801",
-          "date": "2026-01-13",
-          "merchant": "Yummy Tummy"
-        },
-        {
-          "url": "https://x.com/i/status/2011082702875992366",
-          "date": "2026-01-13",
-          "merchant": "3 West Butchery"
         }
       ]
     },
@@ -1449,6 +1532,67 @@
       ]
     },
     {
+      "name": "BitJR Academy 🇿🇲",
+      "count": 11,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014057912096768468",
+          "date": "2026-01-22",
+          "merchant": "Mundayam Restaurant"
+        },
+        {
+          "url": "https://x.com/i/status/2013959769015587298",
+          "date": "2026-01-21",
+          "merchant": "Obrien Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2013861618321608917",
+          "date": "2026-01-21",
+          "merchant": "Mundayam Restaurant"
+        },
+        {
+          "url": "https://x.com/i/status/2013769781346812165",
+          "date": "2026-01-21",
+          "merchant": "Sweet & Salty Cafe"
+        },
+        {
+          "url": "https://x.com/i/status/2013511813305114698",
+          "date": "2026-01-20",
+          "merchant": "Mundayam Restaurant"
+        },
+        {
+          "url": "https://x.com/i/status/2013414324069450099",
+          "date": "2026-01-20",
+          "merchant": "Piotech Centre"
+        },
+        {
+          "url": "https://x.com/i/status/2013314307472134361",
+          "date": "2026-01-19",
+          "merchant": "Sweet & Salty Cafe"
+        },
+        {
+          "url": "https://x.com/i/status/2013165603364725020",
+          "date": "2026-01-19",
+          "merchant": "Kashi Creations Closet & Hair Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2011570303479210146",
+          "date": "2026-01-15",
+          "merchant": "Mundayam Restaurant"
+        },
+        {
+          "url": "https://x.com/i/status/2011332455996014831",
+          "date": "2026-01-14",
+          "merchant": "Cyber Tech General Dealer"
+        },
+        {
+          "url": "https://x.com/i/status/2011152743441056158",
+          "date": "2026-01-13",
+          "merchant": "Obrien Shop"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Sisonke 🇿🇦",
       "count": 10,
       "posts": [
@@ -1501,62 +1645,6 @@
           "url": "https://x.com/i/status/2012036619172565248",
           "date": "2026-01-16",
           "merchant": "Mkambi"
-        }
-      ]
-    },
-    {
-      "name": "BitJR Academy 🇿🇲",
-      "count": 10,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2013959769015587298",
-          "date": "2026-01-21",
-          "merchant": "Obrien Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2013861618321608917",
-          "date": "2026-01-21",
-          "merchant": "Mundayam Restaurant"
-        },
-        {
-          "url": "https://x.com/i/status/2013769781346812165",
-          "date": "2026-01-21",
-          "merchant": "Sweet & Salty Cafe"
-        },
-        {
-          "url": "https://x.com/i/status/2013511813305114698",
-          "date": "2026-01-20",
-          "merchant": "Mundayam Restaurant"
-        },
-        {
-          "url": "https://x.com/i/status/2013414324069450099",
-          "date": "2026-01-20",
-          "merchant": "Piotech Centre"
-        },
-        {
-          "url": "https://x.com/i/status/2013314307472134361",
-          "date": "2026-01-19",
-          "merchant": "Sweet & Salty Cafe"
-        },
-        {
-          "url": "https://x.com/i/status/2013165603364725020",
-          "date": "2026-01-19",
-          "merchant": "Kashi Creations Closet & Hair Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2011570303479210146",
-          "date": "2026-01-15",
-          "merchant": "Mundayam Restaurant"
-        },
-        {
-          "url": "https://x.com/i/status/2011332455996014831",
-          "date": "2026-01-14",
-          "merchant": "Cyber Tech General Dealer"
-        },
-        {
-          "url": "https://x.com/i/status/2011152743441056158",
-          "date": "2026-01-13",
-          "merchant": "Obrien Shop"
         }
       ]
     },
@@ -1779,6 +1867,22 @@
           "url": "https://primal.net/e/nevent1qqszzpr3wuh45pkqncw3syu6py6xrcxd05pu5trhek5au9af9vlqkvqwe4daq",
           "date": "2026-01-15",
           "merchant": "Richards Bakers"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Famba 🇲🇿",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs2kg4uwhsa9y5sepueum9upnk3692258spa3xfspz37439zpcxtasherk67",
+          "date": "2026-01-22",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2014111372129247329",
+          "date": "2026-01-22",
+          "merchant": "Milofa Skate Shop"
         }
       ]
     },
@@ -2324,6 +2428,37 @@
       ]
     },
     {
+      "name": "Mama Nonny Shop",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014203724088868974",
+          "date": "2026-01-22",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsf0hah64uqv2r8gm6n3q0avjqk9v6qwdylwptvxz58kca3j2qca0spzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkx7r0m",
+          "date": "2026-01-16",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012066020920304115",
+          "date": "2026-01-16",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsz5ywmkct7xd3d8unezkdsvphw9ag5j5wqj74awx30zmldm0tgq6cpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkd6jd2",
+          "date": "2026-01-16",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsrt0h9wegnjuw83tmrfgtf42t7nwt3y8evunt8rnat4sc748dc8hspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqglunrrh",
+          "date": "2026-01-16",
+          "project": "Afribit Kibera 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Lawee Business Concept",
       "count": 5,
       "posts": [
@@ -2510,6 +2645,58 @@
       ]
     },
     {
+      "name": "Niel's Nails and Perfume Refill",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014199534843252853",
+          "date": "2026-01-22",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy98fhyum0gklvnelas3kk8gepa6sd7n9f6dcz2dq96a4df5aklpg3zzzha",
+          "date": "2026-01-19",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013189635912958379",
+          "date": "2026-01-19",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012051216831037867",
+          "date": "2026-01-16",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Mundayam Restaurant",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014057912096768468",
+          "date": "2026-01-22",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2013861618321608917",
+          "date": "2026-01-21",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2013511813305114698",
+          "date": "2026-01-20",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2011570303479210146",
+          "date": "2026-01-15",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Mkambi",
       "count": 4,
       "posts": [
@@ -2558,32 +2745,6 @@
           "url": "https://x.com/i/status/2013201890222207414",
           "date": "2026-01-19",
           "project": "Bitcoin Chama 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Mama Nonny Shop",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://njump.to/nevent1qqsf0hah64uqv2r8gm6n3q0avjqk9v6qwdylwptvxz58kca3j2qca0spzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkx7r0m",
-          "date": "2026-01-16",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012066020920304115",
-          "date": "2026-01-16",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsz5ywmkct7xd3d8unezkdsvphw9ag5j5wqj74awx30zmldm0tgq6cpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkd6jd2",
-          "date": "2026-01-16",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsrt0h9wegnjuw83tmrfgtf42t7nwt3y8evunt8rnat4sc748dc8hspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqglunrrh",
-          "date": "2026-01-16",
-          "project": "Afribit Kibera 🇰🇪"
         }
       ]
     },
@@ -2688,48 +2849,6 @@
           "url": "https://x.com/i/status/2011082702875992366",
           "date": "2026-01-13",
           "project": "Afribit Kibera 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Niel's Nails and Perfume Refill",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsy98fhyum0gklvnelas3kk8gepa6sd7n9f6dcz2dq96a4df5aklpg3zzzha",
-          "date": "2026-01-19",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013189635912958379",
-          "date": "2026-01-19",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012051216831037867",
-          "date": "2026-01-16",
-          "project": "Bitcoin Githurai 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Mundayam Restaurant",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2013861618321608917",
-          "date": "2026-01-21",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2013511813305114698",
-          "date": "2026-01-20",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2011570303479210146",
-          "date": "2026-01-15",
-          "project": "BitJR Academy 🇿🇲"
         }
       ]
     },
@@ -3032,6 +3151,22 @@
       ]
     },
     {
+      "name": "Milofa Skate Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs2kg4uwhsa9y5sepueum9upnk3692258spa3xfspz37439zpcxtasherk67",
+          "date": "2026-01-22",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2014111372129247329",
+          "date": "2026-01-22",
+          "project": "Bitcoin Famba 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Mega Standard",
       "count": 2,
       "posts": [
@@ -3236,6 +3371,22 @@
           "url": "https://x.com/i/status/2013626651737755806",
           "date": "2026-01-20",
           "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Bridgeway Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014202403558511007",
+          "date": "2026-01-22",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsv6jqzvh985uth7humyvy50779ptvjtnua8kfxx54rxwtslzy0xygpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg0c2shn",
+          "date": "2026-01-21",
+          "project": "Afribit Kibera 🇰🇪"
         }
       ]
     },
@@ -3469,6 +3620,17 @@
       ]
     },
     {
+      "name": "Mama Clear",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014201355120910382",
+          "date": "2026-01-22",
+          "project": "Afribit Kibera 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "MadiTech",
       "count": 1,
       "posts": [
@@ -3590,17 +3752,6 @@
       ]
     },
     {
-      "name": "Bridgeway Shop",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://njump.to/nevent1qqsv6jqzvh985uth7humyvy50779ptvjtnua8kfxx54rxwtslzy0xygpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg0c2shn",
-          "date": "2026-01-21",
-          "project": "Afribit Kibera 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Astridah's grocery",
       "count": 1,
       "posts": [
@@ -3637,12 +3788,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 9,
-    "daily_average_payments": 87
+    "daily_average_payments": 89
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 768
+      "count": 789
     },
     {
       "domain": "8333.mobi",
@@ -3679,18 +3830,23 @@
       "flag": "🇧🇮",
       "country": "Burundi",
       "count": 1
+    },
+    {
+      "flag": "🇲🇿",
+      "country": "Mozambique",
+      "count": 1
     }
   ],
   "platforms": [
     {
       "platform": "X",
-      "count": 464
+      "count": 482
     },
     {
       "platform": "Nostr",
-      "count": 323
+      "count": 326
     }
   ],
-  "generated_at": "2026-01-22T04:22:39.928493+00:00",
+  "generated_at": "2026-01-22T05:22:39.782784+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
