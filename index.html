@@ -1609,6 +1609,15 @@
                 });
             }
 
+            // Merchants count
+            const merchantCount = stats.top_merchants?.length || 0;
+            if (merchantCount > 0) {
+                highlights.push({
+                    label: '🏪 Merchants active',
+                    value: merchantCount
+                });
+            }
+
             // Approval rate highlight if good
             const approvalRate = stats.reviewer?.total_reviewed > 0
                 ? Math.round((stats.reviewer.approved / stats.reviewer.total_reviewed) * 100)
