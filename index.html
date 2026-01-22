@@ -911,7 +911,7 @@
                     <div class="today-stats">
                         <div class="today-stat">
                             <span class="today-value" style="color: var(--accent-orange);">${formatNumber(stats.today.by_type.reviewer?.count || 0)}</span>
-                            <span class="today-unit">${(stats.today.by_type.reviewer?.count || 0) === 1 ? 'video' : 'videos'}</span>
+                            <span class="today-unit">${(stats.today.by_type.reviewer?.count || 0) === 1 ? 'post' : 'posts'}</span>
                         </div>
                         <div class="today-stat">
                             <span class="today-value" style="color: var(--accent-green);">${formatNumber(stats.today.approved || 0)}</span>
@@ -1044,7 +1044,7 @@
                         <div class="leaderboard-info">
                             <div class="leaderboard-name">${item.name}</div>
                         </div>
-                        <div class="leaderboard-payments">${item.count} ${item.count === 1 ? 'video' : 'videos'}</div>
+                        <div class="leaderboard-payments">${item.count} ${item.count === 1 ? 'post' : 'posts'}</div>
                         ${hasPosts ? '<span class="leaderboard-expand">▼</span>' : ''}
                     </div>
                     ${hasPosts ? `
@@ -1108,7 +1108,7 @@
             if (!container) return;
 
             if (videos.length === 0) {
-                container.innerHTML = '<div style="color: var(--text-secondary); padding: 12px;">No videos yet</div>';
+                container.innerHTML = '<div style="color: var(--text-secondary); padding: 12px;">No posts yet</div>';
                 return;
             }
 
@@ -1162,7 +1162,7 @@
             if (!container) return;
 
             if (videos.length === 0) {
-                container.innerHTML = '<div class="no-performers">No videos approved in the last 24 hours</div>';
+                container.innerHTML = '<div class="no-performers">No posts approved in the last 24 hours</div>';
                 return;
             }
 
@@ -1188,7 +1188,7 @@
                     <span class="top-performer-rank">${rankEmojis[index]}</span>
                     <span class="top-performer-name">${stripFlags(project)}</span>
                     <span class="top-performer-count">${count}</span>
-                    <span class="top-performer-label">${count === 1 ? 'video' : 'videos'}</span>
+                    <span class="top-performer-label">${count === 1 ? 'post' : 'posts'}</span>
                 </div>
             `).join('');
         }
@@ -1560,7 +1560,7 @@
                 if (busiestDay && busiestDay.reviewer_count > 0) {
                     highlights.push({
                         label: `Record day (${formatDate(busiestDay.date)})`,
-                        value: `${busiestDay.reviewer_count} videos`
+                        value: `${busiestDay.reviewer_count} posts`
                     });
                 }
             }
