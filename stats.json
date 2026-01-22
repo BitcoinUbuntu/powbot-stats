@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 880,
+    "all_payments": 889,
     "by_type": {
       "merchant": {
-        "count": 287
+        "count": 290
       },
       "project": {
-        "count": 287
+        "count": 290
       },
       "reviewer": {
-        "count": 306
+        "count": 309
       }
     }
   },
   "today": {
     "date": "2026-01-22",
-    "payments": 93,
+    "payments": 102,
     "by_type": {
       "merchant": {
-        "count": 31
+        "count": 34
       },
       "project": {
-        "count": 31
+        "count": 34
       },
       "reviewer": {
-        "count": 31
+        "count": 34
       }
     },
-    "approved": 31,
+    "approved": 34,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsrslzupqr9cl3snc8kp3rww2n7g07g52dxeav957ev4p89g9a3v9qw3dhqg",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Chips point",
+        "platform": "Nostr",
+        "time": "13:35"
+      },
+      {
+        "url": "https://x.com/i/status/2014329692258545701",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Chips point",
+        "platform": "X",
+        "time": "13:34"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsrz9dpjasjukvjs57wtwaku6g6z3zjkcptv9fpj7f4we4qhya0lnql5exee",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "T-S food stuff",
+        "platform": "Nostr",
+        "time": "13:32"
+      },
       {
         "url": "https://x.com/i/status/2014321670933123515",
         "project": "Bitcoin Githurai 🇰🇪",
@@ -251,6 +272,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
       {
         "project": "Bitcoin Githurai 🇰🇪"
       },
@@ -604,21 +634,31 @@
     },
     {
       "date": "2026-01-22",
-      "project_count": 31,
-      "merchant_count": 31,
-      "reviewer_count": 31
+      "project_count": 34,
+      "merchant_count": 34,
+      "reviewer_count": 34
     }
   ],
   "reviewer": {
-    "total_reviewed": 306,
-    "approved": 287,
+    "total_reviewed": 309,
+    "approved": 290,
     "rejected": 19
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 41,
+      "count": 43,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrslzupqr9cl3snc8kp3rww2n7g07g52dxeav957ev4p89g9a3v9qw3dhqg",
+          "date": "2026-01-22",
+          "merchant": "Chips point"
+        },
+        {
+          "url": "https://x.com/i/status/2014329692258545701",
+          "date": "2026-01-22",
+          "merchant": "Chips point"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsvxfn8ccnny8cl2p7e7snlvqz6reqyq8c20euw93qa4fqr5my0tcglqqdxm",
           "date": "2026-01-22",
@@ -1487,8 +1527,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 17,
+      "count": 18,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrz9dpjasjukvjs57wtwaku6g6z3zjkcptv9fpj7f4we4qhya0lnql5exee",
+          "date": "2026-01-22",
+          "merchant": "T-S food stuff"
+        },
         {
           "url": "https://x.com/i/status/2014320359806226623",
           "date": "2026-01-22",
@@ -2535,6 +2580,47 @@
       ]
     },
     {
+      "name": "Chips point",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrslzupqr9cl3snc8kp3rww2n7g07g52dxeav957ev4p89g9a3v9qw3dhqg",
+          "date": "2026-01-22",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014329692258545701",
+          "date": "2026-01-22",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq3lznwxdddffvyluwprmcltldz2wjrl5rrsx7w5cpu54zj0v2jesmn3nre",
+          "date": "2026-01-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013880471747281172",
+          "date": "2026-01-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfqxftehfs934xp43s339e98cutl7cfhycn9c72nwx576httl9lrq2r6kz8",
+          "date": "2026-01-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxh5pl6kxfv3ld0jt8wg6hp44zs3lqct3tn38he0adzvgnl5kh47sl2awgm",
+          "date": "2026-01-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012117853063770299",
+          "date": "2026-01-16",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "SMG Electronics Store",
       "count": 6,
       "posts": [
@@ -2906,37 +2992,6 @@
       ]
     },
     {
-      "name": "Chips point",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsq3lznwxdddffvyluwprmcltldz2wjrl5rrsx7w5cpu54zj0v2jesmn3nre",
-          "date": "2026-01-21",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013880471747281172",
-          "date": "2026-01-21",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfqxftehfs934xp43s339e98cutl7cfhycn9c72nwx576httl9lrq2r6kz8",
-          "date": "2026-01-17",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxh5pl6kxfv3ld0jt8wg6hp44zs3lqct3tn38he0adzvgnl5kh47sl2awgm",
-          "date": "2026-01-17",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012117853063770299",
-          "date": "2026-01-16",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Bliss beauty Salon",
       "count": 5,
       "posts": [
@@ -3233,6 +3288,27 @@
       ]
     },
     {
+      "name": "T-S food stuff",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrz9dpjasjukvjs57wtwaku6g6z3zjkcptv9fpj7f4we4qhya0lnql5exee",
+          "date": "2026-01-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014320359806226623",
+          "date": "2026-01-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2011710081914847569",
+          "date": "2026-01-15",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Space Cutz",
       "count": 3,
       "posts": [
@@ -3398,22 +3474,6 @@
           "url": "https://x.com/i/status/2012131664319897762",
           "date": "2026-01-16",
           "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "T-S food stuff",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2014320359806226623",
-          "date": "2026-01-22",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2011710081914847569",
-          "date": "2026-01-15",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -4199,12 +4259,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 9,
-    "daily_average_payments": 97
+    "daily_average_payments": 98
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 861
+      "count": 870
     },
     {
       "domain": "8333.mobi",
@@ -4251,13 +4311,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 527
+      "count": 530
     },
     {
       "platform": "Nostr",
-      "count": 353
+      "count": 359
     }
   ],
-  "generated_at": "2026-01-22T13:22:39.796839+00:00",
+  "generated_at": "2026-01-22T13:56:17.909430+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
