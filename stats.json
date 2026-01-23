@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 1012,
+    "all_payments": 1018,
     "by_type": {
       "merchant": {
-        "count": 331
+        "count": 333
       },
       "project": {
-        "count": 331
+        "count": 333
       },
       "reviewer": {
-        "count": 350
+        "count": 352
       }
     }
   },
   "today": {
     "date": "2026-01-23",
-    "payments": 30,
+    "payments": 36,
     "by_type": {
       "merchant": {
-        "count": 10
+        "count": 12
       },
       "project": {
-        "count": 10
+        "count": 12
       },
       "reviewer": {
-        "count": 10
+        "count": 12
       }
     },
-    "approved": 10,
+    "approved": 12,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2014558332854431923",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Mercy Groceries",
+        "platform": "X",
+        "time": "05:04"
+      },
+      {
+        "url": "https://x.com/i/status/2014516757482901938",
+        "project": "BitJR Academy 🇿🇲",
+        "merchant": "Cafe Au Lait",
+        "platform": "X",
+        "time": "05:04"
+      },
       {
         "url": "https://x.com/i/status/2014394903430598788",
         "project": "Afribit Kibera 🇰🇪",
@@ -104,6 +118,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "BitJR Academy 🇿🇲"
+      },
       {
         "project": "Afribit Kibera 🇰🇪"
       },
@@ -307,27 +327,6 @@
       },
       {
         "project": "Afribit Kibera 🇰🇪"
-      },
-      {
-        "project": "Afribit Kibera 🇰🇪"
-      },
-      {
-        "project": "Afribit Kibera 🇰🇪"
-      },
-      {
-        "project": "Afribit Kibera 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "BitJR Academy 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Famba 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Famba 🇲🇿"
       }
     ]
   },
@@ -508,14 +507,14 @@
     },
     {
       "date": "2026-01-23",
-      "project_count": 10,
-      "merchant_count": 10,
-      "reviewer_count": 10
+      "project_count": 12,
+      "merchant_count": 12,
+      "reviewer_count": 12
     }
   ],
   "reviewer": {
-    "total_reviewed": 350,
-    "approved": 331,
+    "total_reviewed": 352,
+    "approved": 333,
     "rejected": 19
   },
   "top_projects": [
@@ -1249,8 +1248,13 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 37,
+      "count": 38,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2014558332854431923",
+          "date": "2026-01-23",
+          "merchant": "Mercy Groceries"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsvltlzuuemtywhg9kcqv940ep846wsm2hkrmcxhagyvka6ul4yxys344v4l",
           "date": "2026-01-22",
@@ -1890,8 +1894,13 @@
     },
     {
       "name": "BitJR Academy 🇿🇲",
-      "count": 11,
+      "count": 12,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2014516757482901938",
+          "date": "2026-01-23",
+          "merchant": "Cafe Au Lait"
+        },
         {
           "url": "https://x.com/i/status/2014057912096768468",
           "date": "2026-01-22",
@@ -4006,6 +4015,22 @@
       ]
     },
     {
+      "name": "Mercy Groceries",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014558332854431923",
+          "date": "2026-01-23",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2011847141027651669",
+          "date": "2026-01-15",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Mega Standard",
       "count": 2,
       "posts": [
@@ -4400,17 +4425,6 @@
       ]
     },
     {
-      "name": "Mercy Groceries",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2011847141027651669",
-          "date": "2026-01-15",
-          "project": "Bitcoin Githurai 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "MadiTech",
       "count": 1,
       "posts": [
@@ -4543,6 +4557,17 @@
       ]
     },
     {
+      "name": "Cafe Au Lait",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014516757482901938",
+          "date": "2026-01-23",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Astridah's grocery",
       "count": 1,
       "posts": [
@@ -4584,7 +4609,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 993
+      "count": 999
     },
     {
       "domain": "8333.mobi",
@@ -4631,13 +4656,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 587
+      "count": 593
     },
     {
       "platform": "Nostr",
       "count": 425
     }
   ],
-  "generated_at": "2026-01-23T04:22:39.890290+00:00",
+  "generated_at": "2026-01-23T05:22:39.821656+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
