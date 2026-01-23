@@ -1640,14 +1640,14 @@
                 });
             }
 
-            // Busiest day (record)
+            // Approval record
             if (stats.daily && stats.daily.length > 0) {
-                const busiestDay = stats.daily.reduce((max, day) =>
-                    (day.reviewer_count > (max?.reviewer_count || 0)) ? day : max, null);
-                if (busiestDay && busiestDay.reviewer_count > 0) {
+                const recordDay = stats.daily.reduce((max, day) =>
+                    (day.project_count > (max?.project_count || 0)) ? day : max, null);
+                if (recordDay && recordDay.project_count > 0) {
                     highlights.push({
-                        label: `📈 Record day (${formatDate(busiestDay.date)})`,
-                        value: `${busiestDay.reviewer_count} posts`
+                        label: `📈 Approval record (${formatDate(recordDay.date)})`,
+                        value: `${recordDay.project_count} posts`
                     });
                 }
             }
