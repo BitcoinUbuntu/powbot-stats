@@ -1,35 +1,70 @@
 {
   "totals": {
-    "all_payments": 1117,
+    "all_payments": 1132,
     "by_type": {
       "merchant": {
-        "count": 366
+        "count": 371
       },
       "project": {
-        "count": 366
+        "count": 371
       },
       "reviewer": {
-        "count": 385
+        "count": 390
       }
     }
   },
   "today": {
     "date": "2026-01-23",
-    "payments": 135,
+    "payments": 150,
     "by_type": {
       "merchant": {
-        "count": 45
+        "count": 50
       },
       "project": {
-        "count": 45
+        "count": 50
       },
       "reviewer": {
-        "count": 45
+        "count": 50
       }
     },
-    "approved": 45,
+    "approved": 50,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqstxp08hxd6k346n88wd8j7mnzn97a9s6g79z6xecp58eg0vyzgw7g47ypa3",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Exotic Cyber 2",
+        "platform": "Nostr",
+        "time": "19:43"
+      },
+      {
+        "url": "https://x.com/i/status/2014782853343555988",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Stay Safe Restaurante & Lounge",
+        "platform": "X",
+        "time": "19:41"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs86g04qn7wawphaa8lz4svsjd8ahm4sd2ns3tnef89mhekjatjrcsstymrh",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Diamond Barbing Saloon",
+        "platform": "Nostr",
+        "time": "19:40"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsttcl0meyt52r42chnmka0dchmnctujr0ux74z3wzuldr2hmkuq0cck4yec",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Bella Entertainment",
+        "platform": "Nostr",
+        "time": "19:37"
+      },
+      {
+        "url": "https://x.com/i/status/2014766047425896697",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Diamond Barbing Saloon",
+        "platform": "X",
+        "time": "19:37"
+      },
       {
         "url": "https://x.com/i/status/2014760691526185108",
         "project": "Afribit Kibera 🇰🇪",
@@ -350,6 +385,21 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
         "project": "Afribit Kibera 🇰🇪"
       },
       {
@@ -480,12 +530,6 @@
       },
       {
         "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Afribit Kibera 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Dombo 🇲🇿"
       },
       {
         "project": "Afribit Kibera 🇰🇪"
@@ -669,14 +713,14 @@
     },
     {
       "date": "2026-01-23",
-      "project_count": 45,
-      "merchant_count": 45,
-      "reviewer_count": 45
+      "project_count": 50,
+      "merchant_count": 50,
+      "reviewer_count": 50
     }
   ],
   "reviewer": {
-    "total_reviewed": 385,
-    "approved": 366,
+    "total_reviewed": 390,
+    "approved": 371,
     "rejected": 19
   },
   "top_projects": [
@@ -1485,8 +1529,18 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 40,
+      "count": 42,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstxp08hxd6k346n88wd8j7mnzn97a9s6g79z6xecp58eg0vyzgw7g47ypa3",
+          "date": "2026-01-23",
+          "merchant": "Exotic Cyber 2"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsttcl0meyt52r42chnmka0dchmnctujr0ux74z3wzuldr2hmkuq0cck4yec",
+          "date": "2026-01-23",
+          "merchant": "Bella Entertainment"
+        },
         {
           "url": "https://x.com/i/status/2014669441720778782",
           "date": "2026-01-23",
@@ -1691,8 +1745,18 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 26,
+      "count": 28,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs86g04qn7wawphaa8lz4svsjd8ahm4sd2ns3tnef89mhekjatjrcsstymrh",
+          "date": "2026-01-23",
+          "merchant": "Diamond Barbing Saloon"
+        },
+        {
+          "url": "https://x.com/i/status/2014766047425896697",
+          "date": "2026-01-23",
+          "merchant": "Diamond Barbing Saloon"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsxpdgal9aqlgkf7rh6p2m40zuwfrh78azc2wey8n8yserz9uw27lqj6watz",
           "date": "2026-01-23",
@@ -2481,8 +2545,13 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 6,
+      "count": 7,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2014782853343555988",
+          "date": "2026-01-23",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
         {
           "url": "https://njump.to/nevent1qqst53fh2hda20p9w2ztrl6cx2q4p5f5vp3nzqkkmw7ghdgh6sl9gjspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczyqqqf7hhcrve9s4fp8s0gvjy7352qsz6acsst6x9c3hca7j5j0aluqcyqqqqqqgqq2k7g",
           "date": "2026-01-23",
@@ -4101,6 +4170,58 @@
       ]
     },
     {
+      "name": "Diamond Barbing Saloon",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs86g04qn7wawphaa8lz4svsjd8ahm4sd2ns3tnef89mhekjatjrcsstymrh",
+          "date": "2026-01-23",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014766047425896697",
+          "date": "2026-01-23",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2a5m8nnuy0s9j3uhpxe7y7nsh3kv8qw9ymtk6jmtx40hjz4fzuacenr6uw",
+          "date": "2026-01-18",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxs4qnfh3q3ktnjwxpvsxmhlez77l7c2u3vzc3y863r8nu2wepyuc226zmp",
+          "date": "2026-01-14",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
+      "name": "Bella Entertainment",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsttcl0meyt52r42chnmka0dchmnctujr0ux74z3wzuldr2hmkuq0cck4yec",
+          "date": "2026-01-23",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014276857978585459",
+          "date": "2026-01-22",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd4m8dh9sll7v3djlvxewr8g30xp8tdwj62adrrvfemyfyr9ygtvq022r07",
+          "date": "2026-01-16",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012135225506304479",
+          "date": "2026-01-16",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Beauty Secrets - Salon & Kinyozi",
       "count": 4,
       "posts": [
@@ -4153,6 +4274,27 @@
       ]
     },
     {
+      "name": "Stay Safe Restaurante & Lounge",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014782853343555988",
+          "date": "2026-01-23",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsz0khdmr4hy344z0nht5ru9svexngxmh3tl4k8d88r9acpedkjr7sksmxkx",
+          "date": "2026-01-23",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2014424213285749067",
+          "date": "2026-01-22",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Ebenezer Shop",
       "count": 3,
       "posts": [
@@ -4191,27 +4333,6 @@
           "url": "https://x.com/i/status/2013734781402407292",
           "date": "2026-01-21",
           "project": "BitKwa 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Bella Entertainment",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2014276857978585459",
-          "date": "2026-01-22",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd4m8dh9sll7v3djlvxewr8g30xp8tdwj62adrrvfemyfyr9ygtvq022r07",
-          "date": "2026-01-16",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012135225506304479",
-          "date": "2026-01-16",
-          "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
     },
@@ -4308,22 +4429,6 @@
           "url": "https://x.com/i/status/2013314307472134361",
           "date": "2026-01-19",
           "project": "BitJR Academy 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Stay Safe Restaurante & Lounge",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsz0khdmr4hy344z0nht5ru9svexngxmh3tl4k8d88r9acpedkjr7sksmxkx",
-          "date": "2026-01-23",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2014424213285749067",
-          "date": "2026-01-22",
-          "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
     },
@@ -4632,6 +4737,22 @@
       ]
     },
     {
+      "name": "Exotic Cyber 2",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstxp08hxd6k346n88wd8j7mnzn97a9s6g79z6xecp58eg0vyzgw7g47ypa3",
+          "date": "2026-01-23",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014321670933123515",
+          "date": "2026-01-22",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Dona Marta Stand Shop",
       "count": 2,
       "posts": [
@@ -4644,22 +4765,6 @@
           "url": "https://x.com/i/status/2014732313846743424",
           "date": "2026-01-23",
           "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Diamond Barbing Saloon",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs2a5m8nnuy0s9j3uhpxe7y7nsh3kv8qw9ymtk6jmtx40hjz4fzuacenr6uw",
-          "date": "2026-01-18",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxs4qnfh3q3ktnjwxpvsxmhlez77l7c2u3vzc3y863r8nu2wepyuc226zmp",
-          "date": "2026-01-14",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -4985,17 +5090,6 @@
       ]
     },
     {
-      "name": "Exotic Cyber 2",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2014321670933123515",
-          "date": "2026-01-22",
-          "project": "Bitcoin Githurai 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Ebonydud",
       "count": 1,
       "posts": [
@@ -5120,12 +5214,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 11,
-    "daily_average_payments": 101
+    "daily_average_payments": 102
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1098
+      "count": 1113
     },
     {
       "domain": "8333.mobi",
@@ -5172,13 +5266,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 659
+      "count": 665
     },
     {
       "platform": "Nostr",
-      "count": 458
+      "count": 467
     }
   ],
-  "generated_at": "2026-01-23T19:22:39.814185+00:00",
+  "generated_at": "2026-01-23T20:22:39.799594+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
