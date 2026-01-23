@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1024,
+    "all_payments": 1027,
     "by_type": {
       "merchant": {
-        "count": 335
+        "count": 336
       },
       "project": {
-        "count": 335
+        "count": 336
       },
       "reviewer": {
-        "count": 354
+        "count": 355
       }
     }
   },
   "today": {
     "date": "2026-01-23",
-    "payments": 42,
+    "payments": 45,
     "by_type": {
       "merchant": {
-        "count": 14
+        "count": 15
       },
       "project": {
-        "count": 14
+        "count": 15
       },
       "reviewer": {
-        "count": 14
+        "count": 15
       }
     },
-    "approved": 14,
+    "approved": 15,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2014585990753534260",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Jiyeve",
+        "platform": "X",
+        "time": "08:01"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsrf82yrvg8znnnpu8gncvdajc5y9g06lup77ud2e4yk66n4d86yvq2u5u6z",
         "project": "Bitcoin Ikorodu 🇳🇬",
@@ -132,6 +139,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -314,18 +324,6 @@
       },
       {
         "project": "Bitcoin Ekasi 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Ekasi 🇿🇦"
-      },
-      {
-        "project": "BitKwa 🇳🇬"
-      },
-      {
-        "project": "BTC Shule 🇧🇮"
-      },
-      {
-        "project": "BitKwa 🇳🇬"
       }
     ]
   },
@@ -506,14 +504,14 @@
     },
     {
       "date": "2026-01-23",
-      "project_count": 14,
-      "merchant_count": 14,
-      "reviewer_count": 14
+      "project_count": 15,
+      "merchant_count": 15,
+      "reviewer_count": 15
     }
   ],
   "reviewer": {
-    "total_reviewed": 354,
-    "approved": 335,
+    "total_reviewed": 355,
+    "approved": 336,
     "rejected": 19
   },
   "top_projects": [
@@ -2137,8 +2135,13 @@
     },
     {
       "name": "BTC Shule 🇧🇮",
-      "count": 7,
+      "count": 8,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2014585990753534260",
+          "date": "2026-01-23",
+          "merchant": "Kwa Jiyeve"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9pg97r7f28xds0txu73ty55002ze5390hzch2vl5tzd5w5gcj73s63npne",
           "date": "2026-01-22",
@@ -4082,6 +4085,22 @@
       ]
     },
     {
+      "name": "Kwa Jiyeve",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014585990753534260",
+          "date": "2026-01-23",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9pg97r7f28xds0txu73ty55002ze5390hzch2vl5tzd5w5gcj73s63npne",
+          "date": "2026-01-22",
+          "project": "BTC Shule 🇧🇮"
+        }
+      ]
+    },
+    {
       "name": "Kelokitso Community Farm",
       "count": 2,
       "posts": [
@@ -4466,17 +4485,6 @@
       ]
     },
     {
-      "name": "Kwa Jiyeve",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs9pg97r7f28xds0txu73ty55002ze5390hzch2vl5tzd5w5gcj73s63npne",
-          "date": "2026-01-22",
-          "project": "BTC Shule 🇧🇮"
-        }
-      ]
-    },
-    {
       "name": "Kashi Creations Closet & Hair Salon",
       "count": 1,
       "posts": [
@@ -4628,7 +4636,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1005
+      "count": 1008
     },
     {
       "domain": "8333.mobi",
@@ -4675,13 +4683,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 596
+      "count": 599
     },
     {
       "platform": "Nostr",
       "count": 428
     }
   ],
-  "generated_at": "2026-01-23T07:22:39.985687+00:00",
+  "generated_at": "2026-01-23T08:22:39.803576+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
