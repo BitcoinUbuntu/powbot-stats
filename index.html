@@ -1478,7 +1478,7 @@
         }
 
         // Block countdown configuration
-        const DIFFICULTY_ADJUSTMENT_BLOCK = 933639;
+        const DIFFICULTY_ADJUSTMENT_BLOCK = 934647; // 1008 blocks from first adjustment (half of Bitcoin's 2016)
 
         // Block countdown state
         let currentBlockHeight = null;
@@ -1505,7 +1505,7 @@
             }
 
             // Calculate progress and time
-            const startBlock = 933369; // When announcement was made
+            const startBlock = 933639; // First difficulty adjustment (start of epoch 2)
             const totalBlocks = DIFFICULTY_ADJUSTMENT_BLOCK - startBlock;
             const blocksPassed = currentBlockHeight - startBlock;
             const progressPercent = Math.min(100, Math.max(0, (blocksPassed / totalBlocks) * 100));
