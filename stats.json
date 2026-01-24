@@ -1,35 +1,63 @@
 {
   "totals": {
-    "all_payments": 1233,
+    "all_payments": 1245,
     "by_type": {
       "merchant": {
-        "count": 404
+        "count": 408
       },
       "project": {
-        "count": 404
+        "count": 408
       },
       "reviewer": {
-        "count": 425
+        "count": 429
       }
     }
   },
   "today": {
     "date": "2026-01-24",
-    "payments": 101,
+    "payments": 113,
     "by_type": {
       "merchant": {
-        "count": 33
+        "count": 37
       },
       "project": {
-        "count": 33
+        "count": 37
       },
       "reviewer": {
-        "count": 35
+        "count": 39
       }
     },
-    "approved": 33,
+    "approved": 37,
     "rejected": 2,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2014986533070070161",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Caleb Cafe",
+        "platform": "X",
+        "time": "10:19"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs037lzrnzv279fk9hwukj4t9dah564ly55ek90dwm53v0e9f0lr7cgpmuv6",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "Nostr",
+        "time": "10:19"
+      },
+      {
+        "url": "https://x.com/i/status/2014992061636792569",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "X",
+        "time": "10:19"
+      },
+      {
+        "url": "https://x.com/i/status/2014992281015591009",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "X",
+        "time": "10:18"
+      },
       {
         "url": "https://primal.net/e/nevent1qqszpuycnkqgr65vz65k9wkjvuqqn7vu5923cenmt9ez8x0pae2wftsd98cm0",
         "project": "Bitcoin Ekiti 🇳🇬",
@@ -266,6 +294,18 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
         "project": "Bitcoin Ekiti 🇳🇬"
       },
       {
@@ -453,12 +493,6 @@
       },
       {
         "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
       }
     ]
   },
@@ -639,14 +673,14 @@
     },
     {
       "date": "2026-01-24",
-      "project_count": 33,
-      "merchant_count": 33,
-      "reviewer_count": 35
+      "project_count": 37,
+      "merchant_count": 37,
+      "reviewer_count": 39
     }
   ],
   "reviewer": {
-    "total_reviewed": 425,
-    "approved": 404,
+    "total_reviewed": 429,
+    "approved": 408,
     "rejected": 21
   },
   "top_projects": [
@@ -1018,8 +1052,18 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 61,
+      "count": 63,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs037lzrnzv279fk9hwukj4t9dah564ly55ek90dwm53v0e9f0lr7cgpmuv6",
+          "date": "2026-01-24",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2014992281015591009",
+          "date": "2026-01-24",
+          "merchant": "Bliss beauty Salon"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsy5m9yqvva5tmgl4e454g8ch09u97lfjq4h7x0u9c69vzgkltf84qduusyv",
           "date": "2026-01-24",
@@ -1329,8 +1373,13 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 44,
+      "count": 45,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2014986533070070161",
+          "date": "2026-01-24",
+          "merchant": "Caleb Cafe"
+        },
         {
           "url": "https://x.com/i/status/2014926992513098095",
           "date": "2026-01-24",
@@ -2765,6 +2814,22 @@
       ]
     },
     {
+      "name": "Bitcoin NextGen 🇳🇬",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014992061636792569",
+          "date": "2026-01-24",
+          "merchant": "Emmy Store"
+        },
+        {
+          "url": "https://x.com/i/status/2014795007786451454",
+          "date": "2026-01-24",
+          "merchant": "Emmy Store"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Famba 🇲🇿",
       "count": 2,
       "posts": [
@@ -2777,17 +2842,6 @@
           "url": "https://x.com/i/status/2014111372129247329",
           "date": "2026-01-22",
           "merchant": "Milofa Skate Shop"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin NextGen 🇳🇬",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2014795007786451454",
-          "date": "2026-01-24",
-          "merchant": "Emmy Store"
         }
       ]
     },
@@ -3409,6 +3463,57 @@
       ]
     },
     {
+      "name": "Caleb Cafe",
+      "count": 9,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014986533070070161",
+          "date": "2026-01-24",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014926992513098095",
+          "date": "2026-01-24",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvltlzuuemtywhg9kcqv940ep846wsm2hkrmcxhagyvka6ul4yxys344v4l",
+          "date": "2026-01-22",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfmtd4dmdyq3z0kfknjzjmj46fnhkmdt9vfp49cmw920c7c9ncqxcndysxx",
+          "date": "2026-01-21",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014012347644338292",
+          "date": "2026-01-21",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013645736773145068",
+          "date": "2026-01-20",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxqj0ef6zfthuuqglm7ncu3p6895zla2gewz259v9p4necfa4jy2ghpuj5h",
+          "date": "2026-01-18",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012752787361136837",
+          "date": "2026-01-18",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2011409765415760132",
+          "date": "2026-01-14",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Bridgeway Shop",
       "count": 9,
       "posts": [
@@ -3598,52 +3703,6 @@
       ]
     },
     {
-      "name": "Caleb Cafe",
-      "count": 8,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2014926992513098095",
-          "date": "2026-01-24",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvltlzuuemtywhg9kcqv940ep846wsm2hkrmcxhagyvka6ul4yxys344v4l",
-          "date": "2026-01-22",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfmtd4dmdyq3z0kfknjzjmj46fnhkmdt9vfp49cmw920c7c9ncqxcndysxx",
-          "date": "2026-01-21",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014012347644338292",
-          "date": "2026-01-21",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013645736773145068",
-          "date": "2026-01-20",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxqj0ef6zfthuuqglm7ncu3p6895zla2gewz259v9p4necfa4jy2ghpuj5h",
-          "date": "2026-01-18",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012752787361136837",
-          "date": "2026-01-18",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2011409765415760132",
-          "date": "2026-01-14",
-          "project": "Bitcoin Githurai 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Sokoni Mboga",
       "count": 7,
       "posts": [
@@ -3761,6 +3820,47 @@
         },
         {
           "url": "https://x.com/i/status/2011768962011578835",
+          "date": "2026-01-15",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Bliss beauty Salon",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs037lzrnzv279fk9hwukj4t9dah564ly55ek90dwm53v0e9f0lr7cgpmuv6",
+          "date": "2026-01-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014992281015591009",
+          "date": "2026-01-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp5j637wzgsu9uceqvg0pr629xx0nsemeu0aherjxd9carlyq64lcfzmllu",
+          "date": "2026-01-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxptmrhut2e259g2cqg8dq6wczwqkanmrhh9duetn0d6xyaraklpscrlm9e",
+          "date": "2026-01-18",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012179890393481234",
+          "date": "2026-01-16",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012158765189960189",
+          "date": "2026-01-16",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2011463808259145756",
           "date": "2026-01-15",
           "project": "Bitbiashara 🇰🇪"
         }
@@ -4232,37 +4332,6 @@
           "url": "https://x.com/i/status/2011297375294537757",
           "date": "2026-01-14",
           "project": "Bitcoin Githurai 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Bliss beauty Salon",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsp5j637wzgsu9uceqvg0pr629xx0nsemeu0aherjxd9carlyq64lcfzmllu",
-          "date": "2026-01-21",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxptmrhut2e259g2cqg8dq6wczwqkanmrhh9duetn0d6xyaraklpscrlm9e",
-          "date": "2026-01-18",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012179890393481234",
-          "date": "2026-01-16",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012158765189960189",
-          "date": "2026-01-16",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2011463808259145756",
-          "date": "2026-01-15",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -5032,6 +5101,22 @@
       ]
     },
     {
+      "name": "Emmy Store",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014992061636792569",
+          "date": "2026-01-24",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014795007786451454",
+          "date": "2026-01-24",
+          "project": "Bitcoin NextGen 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Dona Marta Stand Shop",
       "count": 2,
       "posts": [
@@ -5358,17 +5443,6 @@
       ]
     },
     {
-      "name": "Emmy Store",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2014795007786451454",
-          "date": "2026-01-24",
-          "project": "Bitcoin NextGen 🇳🇬"
-        }
-      ]
-    },
-    {
       "name": "Doris Mweetwa's Grocery",
       "count": 1,
       "posts": [
@@ -5482,16 +5556,16 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 11,
-    "daily_average_payments": 112
+    "daily_average_payments": 113
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1213
+      "count": 1224
     },
     {
       "domain": "8333.mobi",
-      "count": 20
+      "count": 21
     }
   ],
   "countries": [
@@ -5534,13 +5608,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 726
+      "count": 735
     },
     {
       "platform": "Nostr",
-      "count": 507
+      "count": 510
     }
   ],
-  "generated_at": "2026-01-24T09:22:39.993426+00:00",
+  "generated_at": "2026-01-24T10:22:39.920281+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
