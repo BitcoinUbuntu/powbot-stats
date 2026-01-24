@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 1344,
+    "all_payments": 1350,
     "by_type": {
       "merchant": {
-        "count": 441
+        "count": 443
       },
       "project": {
-        "count": 441
+        "count": 443
       },
       "reviewer": {
-        "count": 462
+        "count": 464
       }
     }
   },
   "today": {
     "date": "2026-01-24",
-    "payments": 212,
+    "payments": 218,
     "by_type": {
       "merchant": {
-        "count": 70
+        "count": 72
       },
       "project": {
-        "count": 70
+        "count": 72
       },
       "reviewer": {
-        "count": 72
+        "count": 74
       }
     },
-    "approved": 70,
+    "approved": 72,
     "rejected": 2,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2015165532098498660",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "SMG Electronics Store",
+        "platform": "X",
+        "time": "21:03"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsdfv3t6vpvf3ela92yrrsugez20hcay366nx3yc0hn9v5h96je5msq9pajd",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Mundayam Restaurant",
+        "platform": "Nostr",
+        "time": "20:40"
+      },
       {
         "url": "https://njump.to/nevent1qqsd49a3975lusw4n6rnl7jjyndd9hkw5pn4hw0r4dwzkk43mhxk5lqprpmhxue69uhk66tnwd4k27fww3skketgdyh8gme0qgsxetyf346j86t4st0vrp9ekq8vwzxc4u7hepnpn3zuafr83wctctqrqsqqqqqpal8cvr",
         "project": "Afribit Kibera 🇰🇪",
@@ -525,6 +539,12 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
+      {
         "project": "Afribit Kibera 🇰🇪"
       },
       {
@@ -913,14 +933,14 @@
     },
     {
       "date": "2026-01-24",
-      "project_count": 70,
-      "merchant_count": 70,
-      "reviewer_count": 72
+      "project_count": 72,
+      "merchant_count": 72,
+      "reviewer_count": 74
     }
   ],
   "reviewer": {
-    "total_reviewed": 462,
-    "approved": 441,
+    "total_reviewed": 464,
+    "approved": 443,
     "rejected": 21
   },
   "top_projects": [
@@ -2618,8 +2638,13 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 16,
+      "count": 17,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2015165532098498660",
+          "date": "2026-01-24",
+          "merchant": "SMG Electronics Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrf82yrvg8znnnpu8gncvdajc5y9g06lup77ud2e4yk66n4d86yvq2u5u6z",
           "date": "2026-01-23",
@@ -2784,6 +2809,72 @@
       ]
     },
     {
+      "name": "Bitcoin Victoria Falls 🇿🇲",
+      "count": 12,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdfv3t6vpvf3ela92yrrsugez20hcay366nx3yc0hn9v5h96je5msq9pajd",
+          "date": "2026-01-24",
+          "merchant": "Mundayam Restaurant"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsz8pskxxe7m7ayjlnyezppxnc6ywatdcyzn8rqlups323dafsctdq7ynnza",
+          "date": "2026-01-23",
+          "merchant": "Astridah's grocery"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsruaf38rnhp6j3p2uqmkhkzy8qv57wc6yunesh00wew857ul39pvc4grss4",
+          "date": "2026-01-23",
+          "merchant": "Mundayam Restaurant"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstepdy3j7xmtsshqgz535v06g28u2mwtah3ual5g6q7elwtngw9xs0tfhca",
+          "date": "2026-01-21",
+          "merchant": "Chile's Restaurant"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsva0n6c0993z9kaayzytnk3uvae6mwlf49jrxyk8s7y2qrprrcf6cs992sd",
+          "date": "2026-01-21",
+          "merchant": "Astridah's grocery"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9ddfjnj39vhdvnf4ygt2fsy68jzn5ryatvtz6nm2ytrads8rmhqsym3dcp",
+          "date": "2026-01-19",
+          "merchant": "Watson Fruits"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs06kf3v6wkeymx93yyryscwt60rdfaz364w3wfx02nagm87rpwk6sfgs2ew",
+          "date": "2026-01-19",
+          "merchant": "Dajaso - icstech"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs034kdjzpyk4cwjkwe6pjjkslll9uus6dxy6dhca6lr7pt8ctlalqx683ak",
+          "date": "2026-01-18",
+          "merchant": "Throne Restraunt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs890tfuv4yf3w5wu56qhx8pq4vxn5xuymqsy2q3732ymek3tv8w5g6ex6dz",
+          "date": "2026-01-18",
+          "merchant": "Mwaka Mo Cosmetics"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrn8g4mhn0lfna0zupddw7v7afeqwy3dws3jt2p4kukkjmhlwcsrg7tedft",
+          "date": "2026-01-16",
+          "merchant": "Chile's Restaurant"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrlnwgcrh3gtr2rq59j5jhurkhkdgg6xkveg89zynxzh4rqdvfnlg4xmta3",
+          "date": "2026-01-15",
+          "merchant": "MadiTech"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2rf54j8uv4aps7wqm6yl0mj732dxnscs0jnrrfff5dv94vxzjmyq3kqur9",
+          "date": "2026-01-13",
+          "merchant": "Doris Mweetwa's Grocery"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Babies 🇰🇪",
       "count": 12,
       "posts": [
@@ -2846,67 +2937,6 @@
           "url": "https://x.com/i/status/2010970066163011954",
           "date": "2026-01-14",
           "merchant": "Waruchu Millers"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 11,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsz8pskxxe7m7ayjlnyezppxnc6ywatdcyzn8rqlups323dafsctdq7ynnza",
-          "date": "2026-01-23",
-          "merchant": "Astridah's grocery"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsruaf38rnhp6j3p2uqmkhkzy8qv57wc6yunesh00wew857ul39pvc4grss4",
-          "date": "2026-01-23",
-          "merchant": "Mundayam Restaurant"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstepdy3j7xmtsshqgz535v06g28u2mwtah3ual5g6q7elwtngw9xs0tfhca",
-          "date": "2026-01-21",
-          "merchant": "Chile's Restaurant"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsva0n6c0993z9kaayzytnk3uvae6mwlf49jrxyk8s7y2qrprrcf6cs992sd",
-          "date": "2026-01-21",
-          "merchant": "Astridah's grocery"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9ddfjnj39vhdvnf4ygt2fsy68jzn5ryatvtz6nm2ytrads8rmhqsym3dcp",
-          "date": "2026-01-19",
-          "merchant": "Watson Fruits"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs06kf3v6wkeymx93yyryscwt60rdfaz364w3wfx02nagm87rpwk6sfgs2ew",
-          "date": "2026-01-19",
-          "merchant": "Dajaso - icstech"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs034kdjzpyk4cwjkwe6pjjkslll9uus6dxy6dhca6lr7pt8ctlalqx683ak",
-          "date": "2026-01-18",
-          "merchant": "Throne Restraunt"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs890tfuv4yf3w5wu56qhx8pq4vxn5xuymqsy2q3732ymek3tv8w5g6ex6dz",
-          "date": "2026-01-18",
-          "merchant": "Mwaka Mo Cosmetics"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrn8g4mhn0lfna0zupddw7v7afeqwy3dws3jt2p4kukkjmhlwcsrg7tedft",
-          "date": "2026-01-16",
-          "merchant": "Chile's Restaurant"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrlnwgcrh3gtr2rq59j5jhurkhkdgg6xkveg89zynxzh4rqdvfnlg4xmta3",
-          "date": "2026-01-15",
-          "merchant": "MadiTech"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2rf54j8uv4aps7wqm6yl0mj732dxnscs0jnrrfff5dv94vxzjmyq3kqur9",
-          "date": "2026-01-13",
-          "merchant": "Doris Mweetwa's Grocery"
         }
       ]
     },
@@ -4356,6 +4386,47 @@
       ]
     },
     {
+      "name": "SMG Electronics Store",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2015165532098498660",
+          "date": "2026-01-24",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrkwpzss92fxtfxaj5u2l653lw75rn7ggwly54wrdgn73zkgc96ysecpww4",
+          "date": "2026-01-21",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013897056268558717",
+          "date": "2026-01-21",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspzvpp9xax00mgwzdmhzh2d6fat4h6ywskcm6ecudcpctytlq253sahf6l2",
+          "date": "2026-01-17",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2012134721304887312",
+          "date": "2026-01-16",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqg7u444442lyax50jykd4zqm6x9p2qg7xzwunk6hsu93d2k7kw6cw0qmar",
+          "date": "2026-01-14",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2011345002967056817",
+          "date": "2026-01-14",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Manu Groceries",
       "count": 7,
       "posts": [
@@ -4438,42 +4509,6 @@
       ]
     },
     {
-      "name": "SMG Electronics Store",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsrkwpzss92fxtfxaj5u2l653lw75rn7ggwly54wrdgn73zkgc96ysecpww4",
-          "date": "2026-01-21",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013897056268558717",
-          "date": "2026-01-21",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspzvpp9xax00mgwzdmhzh2d6fat4h6ywskcm6ecudcpctytlq253sahf6l2",
-          "date": "2026-01-17",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2012134721304887312",
-          "date": "2026-01-16",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqg7u444442lyax50jykd4zqm6x9p2qg7xzwunk6hsu93d2k7kw6cw0qmar",
-          "date": "2026-01-14",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2011345002967056817",
-          "date": "2026-01-14",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
-    },
-    {
       "name": "Njema Dairy",
       "count": 6,
       "posts": [
@@ -4542,6 +4577,42 @@
           "url": "https://x.com/i/status/2013865719193129343",
           "date": "2026-01-21",
           "project": "Afribit Kibera 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Mundayam Restaurant",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdfv3t6vpvf3ela92yrrsugez20hcay366nx3yc0hn9v5h96je5msq9pajd",
+          "date": "2026-01-24",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsruaf38rnhp6j3p2uqmkhkzy8qv57wc6yunesh00wew857ul39pvc4grss4",
+          "date": "2026-01-23",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2014057912096768468",
+          "date": "2026-01-22",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2013861618321608917",
+          "date": "2026-01-21",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2013511813305114698",
+          "date": "2026-01-20",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2011570303479210146",
+          "date": "2026-01-15",
+          "project": "BitJR Academy 🇿🇲"
         }
       ]
     },
@@ -4779,37 +4850,6 @@
           "url": "https://x.com/i/status/2012051216831037867",
           "date": "2026-01-16",
           "project": "Bitcoin Githurai 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Mundayam Restaurant",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsruaf38rnhp6j3p2uqmkhkzy8qv57wc6yunesh00wew857ul39pvc4grss4",
-          "date": "2026-01-23",
-          "project": "Bitcoin Victoria Falls 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2014057912096768468",
-          "date": "2026-01-22",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2013861618321608917",
-          "date": "2026-01-21",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2013511813305114698",
-          "date": "2026-01-20",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2011570303479210146",
-          "date": "2026-01-15",
-          "project": "BitJR Academy 🇿🇲"
         }
       ]
     },
@@ -6143,7 +6183,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1323
+      "count": 1329
     },
     {
       "domain": "8333.mobi",
@@ -6190,13 +6230,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 783
+      "count": 786
     },
     {
       "platform": "Nostr",
-      "count": 561
+      "count": 564
     }
   ],
-  "generated_at": "2026-01-24T20:22:39.835742+00:00",
+  "generated_at": "2026-01-24T21:22:39.825428+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
