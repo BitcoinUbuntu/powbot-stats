@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 1278,
+    "all_payments": 1284,
     "by_type": {
       "merchant": {
-        "count": 419
+        "count": 421
       },
       "project": {
-        "count": 419
+        "count": 421
       },
       "reviewer": {
-        "count": 440
+        "count": 442
       }
     }
   },
   "today": {
     "date": "2026-01-24",
-    "payments": 146,
+    "payments": 152,
     "by_type": {
       "merchant": {
-        "count": 48
+        "count": 50
       },
       "project": {
-        "count": 48
+        "count": 50
       },
       "reviewer": {
-        "count": 50
+        "count": 52
       }
     },
-    "approved": 48,
+    "approved": 50,
     "rejected": 2,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqswmm0hkzjny9dlhetsgns4crcwxxlk7dgvy9653xckrlcfchytjuqa4ycnf",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "Wa Ngala Hardware",
+        "platform": "Nostr",
+        "time": "17:22"
+      },
+      {
+        "url": "https://x.com/i/status/2015077127675142240",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Niel's Nails and Perfume Refill",
+        "platform": "X",
+        "time": "16:55"
+      },
       {
         "url": "https://x.com/i/status/2015066772869685725",
         "project": "Soweto BTC 🇿🇦",
@@ -371,6 +385,12 @@
   "last_24h": {
     "videos": [
       {
+        "project": "EcoBitz 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
         "project": "Soweto BTC 🇿🇦"
       },
       {
@@ -537,15 +557,6 @@
       },
       {
         "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Dombo 🇲🇿"
       }
     ]
   },
@@ -726,14 +737,14 @@
     },
     {
       "date": "2026-01-24",
-      "project_count": 48,
-      "merchant_count": 48,
-      "reviewer_count": 50
+      "project_count": 50,
+      "merchant_count": 50,
+      "reviewer_count": 52
     }
   ],
   "reviewer": {
-    "total_reviewed": 440,
-    "approved": 419,
+    "total_reviewed": 442,
+    "approved": 421,
     "rejected": 21
   },
   "top_projects": [
@@ -1476,8 +1487,13 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 45,
+      "count": 46,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2015077127675142240",
+          "date": "2026-01-24",
+          "merchant": "Niel's Nails and Perfume Refill"
+        },
         {
           "url": "https://x.com/i/status/2014986533070070161",
           "date": "2026-01-24",
@@ -2907,8 +2923,13 @@
     },
     {
       "name": "EcoBitz 🇰🇪",
-      "count": 2,
+      "count": 3,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswmm0hkzjny9dlhetsgns4crcwxxlk7dgvy9653xckrlcfchytjuqa4ycnf",
+          "date": "2026-01-24",
+          "merchant": "Wa Ngala Hardware"
+        },
         {
           "url": "https://primal.net/e/nevent1qqswlmg24cycx84ed85dvrthm5tzx8tgjhnmgsnpshpuqge5tqv5a5qq7faze",
           "date": "2026-01-20",
@@ -4360,6 +4381,37 @@
       ]
     },
     {
+      "name": "Niel's Nails and Perfume Refill",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2015077127675142240",
+          "date": "2026-01-24",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014199534843252853",
+          "date": "2026-01-22",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy98fhyum0gklvnelas3kk8gepa6sd7n9f6dcz2dq96a4df5aklpg3zzzha",
+          "date": "2026-01-19",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013189635912958379",
+          "date": "2026-01-19",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012051216831037867",
+          "date": "2026-01-16",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Mundayam Restaurant",
       "count": 5,
       "posts": [
@@ -4563,32 +4615,6 @@
           "url": "https://x.com/i/status/2013863453522599953",
           "date": "2026-01-21",
           "project": "Afribit Kibera 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Niel's Nails and Perfume Refill",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2014199534843252853",
-          "date": "2026-01-22",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy98fhyum0gklvnelas3kk8gepa6sd7n9f6dcz2dq96a4df5aklpg3zzzha",
-          "date": "2026-01-19",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013189635912958379",
-          "date": "2026-01-19",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012051216831037867",
-          "date": "2026-01-16",
-          "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
     },
@@ -5458,6 +5484,17 @@
       ]
     },
     {
+      "name": "Wa Ngala Hardware",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswmm0hkzjny9dlhetsgns4crcwxxlk7dgvy9653xckrlcfchytjuqa4ycnf",
+          "date": "2026-01-24",
+          "project": "EcoBitz 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Trenches by Burger Chicken",
       "count": 1,
       "posts": [
@@ -5725,12 +5762,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 12,
-    "daily_average_payments": 106
+    "daily_average_payments": 107
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1257
+      "count": 1263
     },
     {
       "domain": "8333.mobi",
@@ -5777,13 +5814,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 753
+      "count": 756
     },
     {
       "platform": "Nostr",
-      "count": 525
+      "count": 528
     }
   ],
-  "generated_at": "2026-01-24T16:22:39.904586+00:00",
+  "generated_at": "2026-01-24T17:22:39.993752+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
