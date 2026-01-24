@@ -1083,6 +1083,14 @@
                         <div id="top-merchants"></div>
                     </div>
                 </div>
+
+                <!-- Eras Chart -->
+                <div class="chart-container">
+                    <h2>Total Posts Over All Time</h2>
+                    <div class="chart-wrapper">
+                        <canvas id="erasChart"></canvas>
+                    </div>
+                </div>
             `;
 
             // Render leaderboards
@@ -1104,6 +1112,7 @@
             renderChart(stats.daily);
             renderLightningChart(stats.lightning_providers || []);
             renderPlatformChart(stats.platforms || []);
+            renderErasChart(stats.reviewer?.approved || 0);
 
             // Render live sections
             initBlockCountdown();
@@ -1473,6 +1482,111 @@
                                     const total = context.dataset.data.reduce((a, b) => a + b, 0);
                                     const pct = Math.round((context.raw / total) * 100);
                                     return `${context.label}: ${context.raw} (${pct}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderErasChart(era4Live) {
+            const ctx = document.getElementById('erasChart').getContext('2d');
+
+            // Historical era data (hardcoded)
+            const era1 = 67;
+            const era2 = 284;
+            const era3 = 568;
+            const era4Testing = 210;
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Proof of Work'],
+                    datasets: [
+                        {
+                            label: 'Era 1 (May 25)',
+                            data: [era1],
+                            backgroundColor: '#a371f7',
+                            borderColor: '#a371f7',
+                            borderWidth: 0
+                        },
+                        {
+                            label: 'Era 2 (Aug 25)',
+                            data: [era2],
+                            backgroundColor: '#26c6da',
+                            borderColor: '#26c6da',
+                            borderWidth: 0
+                        },
+                        {
+                            label: 'Era 3 (Nov 25)',
+                            data: [era3],
+                            backgroundColor: '#42a5f5',
+                            borderColor: '#42a5f5',
+                            borderWidth: 0
+                        },
+                        {
+                            label: 'Era 4 Testing',
+                            data: [era4Testing],
+                            backgroundColor: '#c9820a',
+                            borderColor: '#c9820a',
+                            borderWidth: 0
+                        },
+                        {
+                            label: 'Era 4 Live',
+                            data: [era4Live],
+                            backgroundColor: '#f7931a',
+                            borderColor: '#f7931a',
+                            borderWidth: 0
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    barPercentage: 1,
+                    categoryPercentage: 1,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            display: false
+                        },
+                        y: {
+                            stacked: true,
+                            grid: {
+                                color: 'rgba(48, 54, 61, 0.5)'
+                            },
+                            ticks: {
+                                color: '#8b949e'
+                            },
+                            title: {
+                                display: true,
+                                text: 'Posts',
+                                color: '#f0f6fc'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                color: '#f0f6fc',
+                                padding: 10,
+                                font: { size: 11 }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#21262d',
+                            titleColor: '#f0f6fc',
+                            bodyColor: '#f0f6fc',
+                            borderColor: '#30363d',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    const total = context.chart.data.datasets.reduce((sum, ds) => sum + ds.data[0], 0);
+                                    const pct = Math.round((context.raw / total) * 100);
+                                    return `${context.dataset.label}: ${context.raw} posts (${pct}%)`;
                                 }
                             }
                         }
