@@ -1,35 +1,63 @@
 {
   "totals": {
-    "all_payments": 1204,
+    "all_payments": 1216,
     "by_type": {
       "merchant": {
-        "count": 395
+        "count": 399
       },
       "project": {
-        "count": 395
+        "count": 399
       },
       "reviewer": {
-        "count": 414
+        "count": 418
       }
     }
   },
   "today": {
     "date": "2026-01-24",
-    "payments": 72,
+    "payments": 84,
     "by_type": {
       "merchant": {
-        "count": 24
+        "count": 28
       },
       "project": {
-        "count": 24
+        "count": 28
       },
       "reviewer": {
-        "count": 24
+        "count": 28
       }
     },
-    "approved": 24,
+    "approved": 28,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2014926992513098095",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Caleb Cafe",
+        "platform": "X",
+        "time": "05:13"
+      },
+      {
+        "url": "https://njump.to/nevent1qqsvjt3sed8tlpc49la7fnmmfv2pyk4rxnfunwjj56nzjdls2mft9fspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgwyxp9n",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Black and White Fries Corner",
+        "platform": "Nostr",
+        "time": "05:11"
+      },
+      {
+        "url": "https://njump.to/nevent1qqsqvxf09cpx0rcsnqsu5y0qvmueqm7w73rz8r8262u6wctuhmq7hzgpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkleg44",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Black and White Fries Corner",
+        "platform": "Nostr",
+        "time": "05:11"
+      },
+      {
+        "url": "https://njump.to/nevent1qqszyzf5t3q7pfzya5gx4h9980r6cn7709t7p03yrshwe65qd0pjmpqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgmatrqh",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Black and White Fries Corner",
+        "platform": "Nostr",
+        "time": "04:32"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsfsqd5dh89jyhm8w4eeml8d5fcwsu5mxygv3qgxmv2g4uk0ndedjq30nn0u",
         "project": "Bitcoin Githurai 🇰🇪",
@@ -202,6 +230,18 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Afribit Kibera 🇰🇪"
+      },
+      {
+        "project": "Afribit Kibera 🇰🇪"
+      },
+      {
+        "project": "Afribit Kibera 🇰🇪"
+      },
       {
         "project": "Bitcoin Githurai 🇰🇪"
       },
@@ -387,12 +427,6 @@
       },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "BitJR Academy 🇿🇲"
       }
     ]
   },
@@ -573,21 +607,36 @@
     },
     {
       "date": "2026-01-24",
-      "project_count": 24,
-      "merchant_count": 24,
-      "reviewer_count": 24
+      "project_count": 28,
+      "merchant_count": 28,
+      "reviewer_count": 28
     }
   ],
   "reviewer": {
-    "total_reviewed": 414,
-    "approved": 395,
+    "total_reviewed": 418,
+    "approved": 399,
     "rejected": 19
   },
   "top_projects": [
     {
       "name": "Afribit Kibera 🇰🇪",
-      "count": 69,
+      "count": 72,
       "posts": [
+        {
+          "url": "https://njump.to/nevent1qqsvjt3sed8tlpc49la7fnmmfv2pyk4rxnfunwjj56nzjdls2mft9fspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgwyxp9n",
+          "date": "2026-01-24",
+          "merchant": "Black and White Fries Corner"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsqvxf09cpx0rcsnqsu5y0qvmueqm7w73rz8r8262u6wctuhmq7hzgpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkleg44",
+          "date": "2026-01-24",
+          "merchant": "Black and White Fries Corner"
+        },
+        {
+          "url": "https://njump.to/nevent1qqszyzf5t3q7pfzya5gx4h9980r6cn7709t7p03yrshwe65qd0pjmpqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgmatrqh",
+          "date": "2026-01-24",
+          "merchant": "Black and White Fries Corner"
+        },
         {
           "url": "https://njump.to/nevent1qqsrwu8uvpvcnc43mhm23scrkhqnq97xk7c5uvqx2w3gz22ma8unxmspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg8zhhqp",
           "date": "2026-01-24",
@@ -1248,8 +1297,13 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 43,
+      "count": 44,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2014926992513098095",
+          "date": "2026-01-24",
+          "merchant": "Caleb Cafe"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsfsqd5dh89jyhm8w4eeml8d5fcwsu5mxygv3qgxmv2g4uk0ndedjq30nn0u",
           "date": "2026-01-24",
@@ -2694,6 +2748,97 @@
   ],
   "top_merchants": [
     {
+      "name": "Black and White Fries Corner",
+      "count": 17,
+      "posts": [
+        {
+          "url": "https://njump.to/nevent1qqsvjt3sed8tlpc49la7fnmmfv2pyk4rxnfunwjj56nzjdls2mft9fspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgwyxp9n",
+          "date": "2026-01-24",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsqvxf09cpx0rcsnqsu5y0qvmueqm7w73rz8r8262u6wctuhmq7hzgpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkleg44",
+          "date": "2026-01-24",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqszyzf5t3q7pfzya5gx4h9980r6cn7709t7p03yrshwe65qd0pjmpqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgmatrqh",
+          "date": "2026-01-24",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsrwu8uvpvcnc43mhm23scrkhqnq97xk7c5uvqx2w3gz22ma8unxmspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg8zhhqp",
+          "date": "2026-01-24",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014757725729693733",
+          "date": "2026-01-24",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014901024012525953",
+          "date": "2026-01-24",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014901692630700175",
+          "date": "2026-01-24",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014902800858177643",
+          "date": "2026-01-24",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014903606487416986",
+          "date": "2026-01-24",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsy9u0xekpr8seqjq88stmnv2xeal8dvjrfhradtkgg5a8gckyzvcqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg0uxawf",
+          "date": "2026-01-24",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014790326305571223",
+          "date": "2026-01-24",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014760691526185108",
+          "date": "2026-01-23",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012531957205192889",
+          "date": "2026-01-17",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012060655793402340",
+          "date": "2026-01-16",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012057376447213930",
+          "date": "2026-01-16",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2011496186327548133",
+          "date": "2026-01-15",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsyzxs9u3q6fyhw0nufhhpnpu8gxdlfdgzz4fnp0x95vh5cnus599spzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgle0mym",
+          "date": "2026-01-14",
+          "project": "Afribit Kibera 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Orero shop",
       "count": 16,
       "posts": [
@@ -2776,82 +2921,6 @@
           "url": "https://x.com/i/status/2011301909865644051",
           "date": "2026-01-14",
           "project": "Bitcoin Chama 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Black and White Fries Corner",
-      "count": 14,
-      "posts": [
-        {
-          "url": "https://njump.to/nevent1qqsrwu8uvpvcnc43mhm23scrkhqnq97xk7c5uvqx2w3gz22ma8unxmspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg8zhhqp",
-          "date": "2026-01-24",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014757725729693733",
-          "date": "2026-01-24",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014901024012525953",
-          "date": "2026-01-24",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014901692630700175",
-          "date": "2026-01-24",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014902800858177643",
-          "date": "2026-01-24",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014903606487416986",
-          "date": "2026-01-24",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsy9u0xekpr8seqjq88stmnv2xeal8dvjrfhradtkgg5a8gckyzvcqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg0uxawf",
-          "date": "2026-01-24",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014790326305571223",
-          "date": "2026-01-24",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014760691526185108",
-          "date": "2026-01-23",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012531957205192889",
-          "date": "2026-01-17",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012060655793402340",
-          "date": "2026-01-16",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012057376447213930",
-          "date": "2026-01-16",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2011496186327548133",
-          "date": "2026-01-15",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsyzxs9u3q6fyhw0nufhhpnpu8gxdlfdgzz4fnp0x95vh5cnus599spzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgle0mym",
-          "date": "2026-01-14",
-          "project": "Afribit Kibera 🇰🇪"
         }
       ]
     },
@@ -3426,6 +3495,52 @@
       ]
     },
     {
+      "name": "Caleb Cafe",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2014926992513098095",
+          "date": "2026-01-24",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvltlzuuemtywhg9kcqv940ep846wsm2hkrmcxhagyvka6ul4yxys344v4l",
+          "date": "2026-01-22",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfmtd4dmdyq3z0kfknjzjmj46fnhkmdt9vfp49cmw920c7c9ncqxcndysxx",
+          "date": "2026-01-21",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014012347644338292",
+          "date": "2026-01-21",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013645736773145068",
+          "date": "2026-01-20",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxqj0ef6zfthuuqglm7ncu3p6895zla2gewz259v9p4necfa4jy2ghpuj5h",
+          "date": "2026-01-18",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012752787361136837",
+          "date": "2026-01-18",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2011409765415760132",
+          "date": "2026-01-14",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "T-S food stuff",
       "count": 7,
       "posts": [
@@ -3586,47 +3701,6 @@
           "url": "https://x.com/i/status/2011768962011578835",
           "date": "2026-01-15",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Caleb Cafe",
-      "count": 7,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsvltlzuuemtywhg9kcqv940ep846wsm2hkrmcxhagyvka6ul4yxys344v4l",
-          "date": "2026-01-22",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfmtd4dmdyq3z0kfknjzjmj46fnhkmdt9vfp49cmw920c7c9ncqxcndysxx",
-          "date": "2026-01-21",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014012347644338292",
-          "date": "2026-01-21",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013645736773145068",
-          "date": "2026-01-20",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxqj0ef6zfthuuqglm7ncu3p6895zla2gewz259v9p4necfa4jy2ghpuj5h",
-          "date": "2026-01-18",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012752787361136837",
-          "date": "2026-01-18",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2011409765415760132",
-          "date": "2026-01-14",
-          "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
     },
@@ -5326,12 +5400,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 11,
-    "daily_average_payments": 109
+    "daily_average_payments": 110
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1184
+      "count": 1196
     },
     {
       "domain": "8333.mobi",
@@ -5378,13 +5452,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 713
+      "count": 716
     },
     {
       "platform": "Nostr",
-      "count": 491
+      "count": 500
     }
   ],
-  "generated_at": "2026-01-24T04:32:06.693121+00:00",
+  "generated_at": "2026-01-24T05:22:39.947192+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
