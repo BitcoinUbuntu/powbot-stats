@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1400,
+    "all_payments": 1403,
     "by_type": {
       "merchant": {
-        "count": 459
+        "count": 460
       },
       "project": {
-        "count": 459
+        "count": 460
       },
       "reviewer": {
-        "count": 482
+        "count": 483
       }
     }
   },
   "today": {
     "date": "2026-01-25",
-    "payments": 50,
+    "payments": 53,
     "by_type": {
       "merchant": {
-        "count": 16
+        "count": 17
       },
       "project": {
-        "count": 16
+        "count": 17
       },
       "reviewer": {
-        "count": 18
+        "count": 19
       }
     },
-    "approved": 16,
+    "approved": 17,
     "rejected": 2,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2015456218672714099",
+        "project": "BitJR Academy 🇿🇲",
+        "merchant": "Obrien Shop",
+        "platform": "X",
+        "time": "16:13"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsqd50jpglpm7ynmdcm889hnekyre0sqz437vjs9qcwttat63gnqpsa0kzel",
         "project": "Soweto BTC 🇿🇦",
@@ -146,6 +153,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "BitJR Academy 🇿🇲"
+      },
       {
         "project": "Soweto BTC 🇿🇦"
       },
@@ -445,14 +455,14 @@
     },
     {
       "date": "2026-01-25",
-      "project_count": 16,
-      "merchant_count": 16,
-      "reviewer_count": 18
+      "project_count": 17,
+      "merchant_count": 17,
+      "reviewer_count": 19
     }
   ],
   "reviewer": {
-    "total_reviewed": 482,
-    "approved": 459,
+    "total_reviewed": 483,
+    "approved": 460,
     "rejected": 23
   },
   "top_projects": [
@@ -2271,8 +2281,13 @@
     },
     {
       "name": "BitJR Academy 🇿🇲",
-      "count": 15,
+      "count": 16,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2015456218672714099",
+          "date": "2026-01-25",
+          "merchant": "Obrien Shop"
+        },
         {
           "url": "https://x.com/i/status/2014827424077254658",
           "date": "2026-01-24",
@@ -4891,6 +4906,27 @@
       ]
     },
     {
+      "name": "Obrien Shop",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2015456218672714099",
+          "date": "2026-01-25",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2013959769015587298",
+          "date": "2026-01-21",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2011152743441056158",
+          "date": "2026-01-13",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Mega Standard",
       "count": 3,
       "posts": [
@@ -5195,22 +5231,6 @@
           "url": "https://x.com/i/status/2011387941344714955",
           "date": "2026-01-14",
           "project": "College BTC 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Obrien Shop",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2013959769015587298",
-          "date": "2026-01-21",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2011152743441056158",
-          "date": "2026-01-13",
-          "project": "BitJR Academy 🇿🇲"
         }
       ]
     },
@@ -5867,13 +5887,13 @@
   ],
   "launch": {
     "date": "2026-01-13",
-    "days_active": 12,
-    "daily_average_payments": 116
+    "days_active": 13,
+    "daily_average_payments": 107
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1374
+      "count": 1377
     },
     {
       "domain": "8333.mobi",
@@ -5920,13 +5940,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 810
+      "count": 813
     },
     {
       "platform": "Nostr",
       "count": 590
     }
   ],
-  "generated_at": "2026-01-25T15:22:39.880279+00:00",
+  "generated_at": "2026-01-25T16:22:39.798809+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
