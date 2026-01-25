@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1391,
+    "all_payments": 1394,
     "by_type": {
       "merchant": {
-        "count": 456
+        "count": 457
       },
       "project": {
-        "count": 456
+        "count": 457
       },
       "reviewer": {
-        "count": 479
+        "count": 480
       }
     }
   },
   "today": {
     "date": "2026-01-25",
-    "payments": 41,
+    "payments": 44,
     "by_type": {
       "merchant": {
-        "count": 13
+        "count": 14
       },
       "project": {
-        "count": 13
+        "count": 14
       },
       "reviewer": {
-        "count": 15
+        "count": 16
       }
     },
-    "approved": 13,
+    "approved": 14,
     "rejected": 2,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2015380755543707868",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Mercy Groceries",
+        "platform": "X",
+        "time": "11:16"
+      },
       {
         "url": "https://x.com/i/status/2015348926656704705",
         "project": "Bitcoin Githurai 🇰🇪",
@@ -125,6 +132,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
       {
         "project": "Bitcoin Githurai 🇰🇪"
       },
@@ -238,18 +248,6 @@
       },
       {
         "project": "Soweto BTC 🇿🇦"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
       },
       {
         "project": "Bitbiashara 🇰🇪"
@@ -448,14 +446,14 @@
     },
     {
       "date": "2026-01-25",
-      "project_count": 13,
-      "merchant_count": 13,
-      "reviewer_count": 15
+      "project_count": 14,
+      "merchant_count": 14,
+      "reviewer_count": 16
     }
   ],
   "reviewer": {
-    "total_reviewed": 479,
-    "approved": 456,
+    "total_reviewed": 480,
+    "approved": 457,
     "rejected": 23
   },
   "top_projects": [
@@ -1303,8 +1301,13 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 48,
+      "count": 49,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2015380755543707868",
+          "date": "2026-01-25",
+          "merchant": "Mercy Groceries"
+        },
         {
           "url": "https://x.com/i/status/2015348926656704705",
           "date": "2026-01-25",
@@ -4702,6 +4705,32 @@
       ]
     },
     {
+      "name": "Mercy Groceries",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2015380755543707868",
+          "date": "2026-01-25",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg6a3vstzx5qjsuyq0r4vqkxw6r59q2qsuyv5vnamhwpklshtvemg9g2gmd",
+          "date": "2026-01-24",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014558332854431923",
+          "date": "2026-01-23",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2011847141027651669",
+          "date": "2026-01-15",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Mary Shop",
       "count": 4,
       "posts": [
@@ -4828,27 +4857,6 @@
           "url": "https://x.com/i/status/2013215833351152083",
           "date": "2026-01-19",
           "project": "Bitcoin Babies 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Mercy Groceries",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsg6a3vstzx5qjsuyq0r4vqkxw6r59q2qsuyv5vnamhwpklshtvemg9g2gmd",
-          "date": "2026-01-24",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014558332854431923",
-          "date": "2026-01-23",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2011847141027651669",
-          "date": "2026-01-15",
-          "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
     },
@@ -5835,12 +5843,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 12,
-    "daily_average_payments": 115
+    "daily_average_payments": 116
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1365
+      "count": 1368
     },
     {
       "domain": "8333.mobi",
@@ -5887,13 +5895,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 804
+      "count": 807
     },
     {
       "platform": "Nostr",
       "count": 587
     }
   ],
-  "generated_at": "2026-01-25T10:22:39.837300+00:00",
+  "generated_at": "2026-01-25T11:22:39.815721+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
