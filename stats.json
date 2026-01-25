@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1412,
+    "all_payments": 1415,
     "by_type": {
       "merchant": {
-        "count": 463
+        "count": 464
       },
       "project": {
-        "count": 463
+        "count": 464
       },
       "reviewer": {
-        "count": 486
+        "count": 487
       }
     }
   },
   "today": {
     "date": "2026-01-25",
-    "payments": 62,
+    "payments": 65,
     "by_type": {
       "merchant": {
-        "count": 20
+        "count": 21
       },
       "project": {
-        "count": 20
+        "count": 21
       },
       "reviewer": {
-        "count": 22
+        "count": 23
       }
     },
-    "approved": 20,
+    "approved": 21,
     "rejected": 2,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsvegk9v2zetmlhcje2t32pxmlkyuy0thp8vggm5jeyhr9eqltx7vg2myfjn",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "T and N Gas Station",
+        "platform": "Nostr",
+        "time": "19:23"
+      },
       {
         "url": "https://x.com/i/status/2015499789966647744",
         "project": "Bitcoin Ekiti 🇳🇬",
@@ -181,6 +188,9 @@
         "project": "Bitcoin Ekiti 🇳🇬"
       },
       {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
         "project": "Bitcoin NextGen 🇳🇬"
       },
       {
@@ -239,36 +249,6 @@
       },
       {
         "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Afribit Kibera 🇰🇪"
-      },
-      {
-        "project": "Afribit Kibera 🇰🇪"
-      },
-      {
-        "project": "Afribit Kibera 🇰🇪"
-      },
-      {
-        "project": "Afribit Kibera 🇰🇪"
-      },
-      {
-        "project": "Afribit Kibera 🇰🇪"
-      },
-      {
-        "project": "Afribit Kibera 🇰🇪"
-      },
-      {
-        "project": "Afribit Kibera 🇰🇪"
-      },
-      {
-        "project": "Afribit Kibera 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
       }
     ]
   },
@@ -449,14 +429,14 @@
     },
     {
       "date": "2026-01-25",
-      "project_count": 20,
-      "merchant_count": 20,
-      "reviewer_count": 22
+      "project_count": 21,
+      "merchant_count": 21,
+      "reviewer_count": 23
     }
   ],
   "reviewer": {
-    "total_reviewed": 486,
-    "approved": 463,
+    "total_reviewed": 487,
+    "approved": 464,
     "rejected": 23
   },
   "top_projects": [
@@ -1781,8 +1761,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 35,
+      "count": 36,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsvegk9v2zetmlhcje2t32pxmlkyuy0thp8vggm5jeyhr9eqltx7vg2myfjn",
+          "date": "2026-01-25",
+          "merchant": "T and N Gas Station"
+        },
         {
           "url": "https://x.com/i/status/2015499789966647744",
           "date": "2026-01-25",
@@ -4925,6 +4910,27 @@
       ]
     },
     {
+      "name": "T and N Gas Station",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsvegk9v2zetmlhcje2t32pxmlkyuy0thp8vggm5jeyhr9eqltx7vg2myfjn",
+          "date": "2026-01-25",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2015499789966647744",
+          "date": "2026-01-25",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013745841610059791",
+          "date": "2026-01-21",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Obrien Shop",
       "count": 3,
       "posts": [
@@ -5106,22 +5112,6 @@
           "url": "https://x.com/i/status/2013833115219759335",
           "date": "2026-01-21",
           "project": "Bitcoin Sisonke 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "T and N Gas Station",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2015499789966647744",
-          "date": "2026-01-25",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013745841610059791",
-          "date": "2026-01-21",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -5917,7 +5907,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1385
+      "count": 1388
     },
     {
       "domain": "8333.mobi",
@@ -5968,9 +5958,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 593
+      "count": 596
     }
   ],
-  "generated_at": "2026-01-25T19:22:40.012788+00:00",
+  "generated_at": "2026-01-25T20:22:39.887698+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
