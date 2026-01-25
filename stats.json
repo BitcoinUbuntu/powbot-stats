@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 1382,
+    "all_payments": 1391,
     "by_type": {
       "merchant": {
-        "count": 453
+        "count": 456
       },
       "project": {
-        "count": 453
+        "count": 456
       },
       "reviewer": {
-        "count": 476
+        "count": 479
       }
     }
   },
   "today": {
     "date": "2026-01-25",
-    "payments": 32,
+    "payments": 41,
     "by_type": {
       "merchant": {
-        "count": 10
+        "count": 13
       },
       "project": {
-        "count": 10
+        "count": 13
       },
       "reviewer": {
-        "count": 12
+        "count": 15
       }
     },
-    "approved": 10,
+    "approved": 13,
     "rejected": 2,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2015348926656704705",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Grace Store",
+        "platform": "X",
+        "time": "09:13"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs0gy5smavrvr53svgst4wsj0j29s4yrjava4gdlzjn9zevmlc9zwg8z570j",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "Nostr",
+        "time": "08:43"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsvq47f2u60tuahwcxdds3stukzqdd3ezwm9r3rpqsl9t7wfp4rz3g7gxffr",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "Nostr",
+        "time": "08:22"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsrqlr3xcx4geawrf5324g3lsru73l07qnyqx3gjahmj0up2359mjquqp2m3",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -104,6 +125,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -430,14 +460,14 @@
     },
     {
       "date": "2026-01-25",
-      "project_count": 10,
-      "merchant_count": 10,
-      "reviewer_count": 12
+      "project_count": 13,
+      "merchant_count": 13,
+      "reviewer_count": 15
     }
   ],
   "reviewer": {
-    "total_reviewed": 476,
-    "approved": 453,
+    "total_reviewed": 479,
+    "approved": 456,
     "rejected": 23
   },
   "top_projects": [
@@ -1285,8 +1315,13 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 47,
+      "count": 48,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2015348926656704705",
+          "date": "2026-01-25",
+          "merchant": "Grace Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsg6a3vstzx5qjsuyq0r4vqkxw6r59q2qsuyv5vnamhwpklshtvemg9g2gmd",
           "date": "2026-01-24",
@@ -2677,6 +2712,47 @@
       ]
     },
     {
+      "name": "Bitcoin NextGen 🇳🇬",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0gy5smavrvr53svgst4wsj0j29s4yrjava4gdlzjn9zevmlc9zwg8z570j",
+          "date": "2026-01-25",
+          "merchant": "Emmy Store"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvq47f2u60tuahwcxdds3stukzqdd3ezwm9r3rpqsl9t7wfp4rz3g7gxffr",
+          "date": "2026-01-25",
+          "merchant": "Emmy Store"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9gz7s73vvt30n7nmk5tdvm0nlj3ds6wkqlzq0mqg4uqvuwy5qz4gvn8k9m",
+          "date": "2026-01-25",
+          "merchant": "Emmy Store"
+        },
+        {
+          "url": "https://x.com/i/status/2015325418568441959",
+          "date": "2026-01-25",
+          "merchant": "Emmy Store"
+        },
+        {
+          "url": "https://x.com/i/status/2015310861473071159",
+          "date": "2026-01-25",
+          "merchant": "Emmy Store"
+        },
+        {
+          "url": "https://x.com/i/status/2014992061636792569",
+          "date": "2026-01-24",
+          "merchant": "Emmy Store"
+        },
+        {
+          "url": "https://x.com/i/status/2014795007786451454",
+          "date": "2026-01-24",
+          "merchant": "Emmy Store"
+        }
+      ]
+    },
+    {
       "name": "College BTC 🇬🇭",
       "count": 5,
       "posts": [
@@ -2704,37 +2780,6 @@
           "url": "https://x.com/i/status/2011387941344714955",
           "date": "2026-01-14",
           "merchant": "Orzzy Ventures"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin NextGen 🇳🇬",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs9gz7s73vvt30n7nmk5tdvm0nlj3ds6wkqlzq0mqg4uqvuwy5qz4gvn8k9m",
-          "date": "2026-01-25",
-          "merchant": "Emmy Store"
-        },
-        {
-          "url": "https://x.com/i/status/2015325418568441959",
-          "date": "2026-01-25",
-          "merchant": "Emmy Store"
-        },
-        {
-          "url": "https://x.com/i/status/2015310861473071159",
-          "date": "2026-01-25",
-          "merchant": "Emmy Store"
-        },
-        {
-          "url": "https://x.com/i/status/2014992061636792569",
-          "date": "2026-01-24",
-          "merchant": "Emmy Store"
-        },
-        {
-          "url": "https://x.com/i/status/2014795007786451454",
-          "date": "2026-01-24",
-          "merchant": "Emmy Store"
         }
       ]
     },
@@ -4030,6 +4075,47 @@
       ]
     },
     {
+      "name": "Emmy Store",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0gy5smavrvr53svgst4wsj0j29s4yrjava4gdlzjn9zevmlc9zwg8z570j",
+          "date": "2026-01-25",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvq47f2u60tuahwcxdds3stukzqdd3ezwm9r3rpqsl9t7wfp4rz3g7gxffr",
+          "date": "2026-01-25",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9gz7s73vvt30n7nmk5tdvm0nlj3ds6wkqlzq0mqg4uqvuwy5qz4gvn8k9m",
+          "date": "2026-01-25",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2015325418568441959",
+          "date": "2026-01-25",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2015310861473071159",
+          "date": "2026-01-25",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014992061636792569",
+          "date": "2026-01-24",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014795007786451454",
+          "date": "2026-01-24",
+          "project": "Bitcoin NextGen 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Bliss beauty Salon",
       "count": 7,
       "posts": [
@@ -4251,6 +4337,42 @@
       ]
     },
     {
+      "name": "Grace Store",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2015348926656704705",
+          "date": "2026-01-25",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswhdk5xrtszky8kxu2zsxzp6360tje3h6wlyjnm0ncpcd35y3802caue34y",
+          "date": "2026-01-21",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013478273120932212",
+          "date": "2026-01-20",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0qc67sgyte0xaycfm25e7pz63m6y2ldc5rvumgfpp4n9j6q37ncqkkg8qf",
+          "date": "2026-01-19",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd6gax6s820evvqsa0zk3mpvuvy9rd5xjql845ks837za3j0mu9tc93cxsr",
+          "date": "2026-01-18",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012391747674845331",
+          "date": "2026-01-17",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Diamond Barbing Saloon",
       "count": 6,
       "posts": [
@@ -4443,68 +4565,6 @@
           "url": "https://x.com/i/status/2012051216831037867",
           "date": "2026-01-16",
           "project": "Bitcoin Githurai 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Grace Store",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqswhdk5xrtszky8kxu2zsxzp6360tje3h6wlyjnm0ncpcd35y3802caue34y",
-          "date": "2026-01-21",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013478273120932212",
-          "date": "2026-01-20",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0qc67sgyte0xaycfm25e7pz63m6y2ldc5rvumgfpp4n9j6q37ncqkkg8qf",
-          "date": "2026-01-19",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd6gax6s820evvqsa0zk3mpvuvy9rd5xjql845ks837za3j0mu9tc93cxsr",
-          "date": "2026-01-18",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012391747674845331",
-          "date": "2026-01-17",
-          "project": "Bitcoin Githurai 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Emmy Store",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs9gz7s73vvt30n7nmk5tdvm0nlj3ds6wkqlzq0mqg4uqvuwy5qz4gvn8k9m",
-          "date": "2026-01-25",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2015325418568441959",
-          "date": "2026-01-25",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2015310861473071159",
-          "date": "2026-01-25",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2014992061636792569",
-          "date": "2026-01-24",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2014795007786451454",
-          "date": "2026-01-24",
-          "project": "Bitcoin NextGen 🇳🇬"
         }
       ]
     },
@@ -5792,11 +5852,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1358
+      "count": 1365
     },
     {
       "domain": "8333.mobi",
-      "count": 24
+      "count": 26
     }
   ],
   "countries": [
@@ -5839,13 +5899,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 801
+      "count": 804
     },
     {
       "platform": "Nostr",
-      "count": 581
+      "count": 587
     }
   ],
-  "generated_at": "2026-01-25T08:22:39.945083+00:00",
+  "generated_at": "2026-01-25T09:22:39.794965+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
