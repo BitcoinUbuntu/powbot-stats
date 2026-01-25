@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1394,
+    "all_payments": 1397,
     "by_type": {
       "merchant": {
-        "count": 457
+        "count": 458
       },
       "project": {
-        "count": 457
+        "count": 458
       },
       "reviewer": {
-        "count": 480
+        "count": 481
       }
     }
   },
   "today": {
     "date": "2026-01-25",
-    "payments": 44,
+    "payments": 47,
     "by_type": {
       "merchant": {
-        "count": 14
+        "count": 15
       },
       "project": {
-        "count": 14
+        "count": 15
       },
       "reviewer": {
-        "count": 16
+        "count": 17
       }
     },
-    "approved": 14,
+    "approved": 15,
     "rejected": 2,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2015416579664552419",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Jovi Water Refilling",
+        "platform": "X",
+        "time": "13:32"
+      },
       {
         "url": "https://x.com/i/status/2015380755543707868",
         "project": "Bitcoin Githurai 🇰🇪",
@@ -132,6 +139,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
       {
         "project": "Bitcoin Githurai 🇰🇪"
       },
@@ -428,14 +438,14 @@
     },
     {
       "date": "2026-01-25",
-      "project_count": 14,
-      "merchant_count": 14,
-      "reviewer_count": 16
+      "project_count": 15,
+      "merchant_count": 15,
+      "reviewer_count": 17
     }
   ],
   "reviewer": {
-    "total_reviewed": 480,
-    "approved": 457,
+    "total_reviewed": 481,
+    "approved": 458,
     "rejected": 23
   },
   "top_projects": [
@@ -1283,8 +1293,13 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 49,
+      "count": 50,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2015416579664552419",
+          "date": "2026-01-25",
+          "merchant": "Jovi Water Refilling"
+        },
         {
           "url": "https://x.com/i/status/2015380755543707868",
           "date": "2026-01-25",
@@ -5690,6 +5705,17 @@
       ]
     },
     {
+      "name": "Jovi Water Refilling",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2015416579664552419",
+          "date": "2026-01-25",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "JM General Dealers",
       "count": 1,
       "posts": [
@@ -5830,7 +5856,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1368
+      "count": 1371
     },
     {
       "domain": "8333.mobi",
@@ -5877,13 +5903,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 807
+      "count": 810
     },
     {
       "platform": "Nostr",
       "count": 587
     }
   ],
-  "generated_at": "2026-01-25T13:22:39.803088+00:00",
+  "generated_at": "2026-01-25T14:22:39.796132+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
