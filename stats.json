@@ -1,35 +1,63 @@
 {
   "totals": {
-    "all_payments": 1598,
+    "all_payments": 1610,
     "by_type": {
       "merchant": {
-        "count": 525
+        "count": 529
       },
       "project": {
-        "count": 525
+        "count": 529
       },
       "reviewer": {
-        "count": 548
+        "count": 552
       }
     }
   },
   "today": {
     "date": "2026-01-26",
-    "payments": 168,
+    "payments": 180,
     "by_type": {
       "merchant": {
-        "count": 56
+        "count": 60
       },
       "project": {
-        "count": 56
+        "count": 60
       },
       "reviewer": {
-        "count": 56
+        "count": 60
       }
     },
-    "approved": 56,
+    "approved": 60,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsfj63g08ppku9c5q3sgth5a52ayg05t2f2c6ev4z2e68dl2uxz8cg65v9lc",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Ellygant Unisex Salon",
+        "platform": "Nostr",
+        "time": "21:46"
+      },
+      {
+        "url": "https://x.com/i/status/2015900992391242052",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Ellygant Unisex Salon",
+        "platform": "X",
+        "time": "21:45"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsw3an7aedz49z8mpyxnx730ufdn3kpggwyjmzawt8rudyvyfa0q7gcjc00u",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Lwandi Surf",
+        "platform": "Nostr",
+        "time": "21:25"
+      },
+      {
+        "url": "https://x.com/i/status/2015882298411938110",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Lwandi Surf",
+        "platform": "X",
+        "time": "21:22"
+      },
       {
         "url": "https://x.com/i/status/2015859869018947870",
         "project": "Bitcoin Dua 🇬🇭",
@@ -427,6 +455,18 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
         "project": "Bitcoin Dua 🇬🇭"
       },
       {
@@ -593,9 +633,6 @@
       },
       {
         "project": "BitJR Academy 🇿🇲"
-      },
-      {
-        "project": "Bitcoin NextGen 🇳🇬"
       }
     ]
   },
@@ -776,14 +813,14 @@
     },
     {
       "date": "2026-01-26",
-      "project_count": 56,
-      "merchant_count": 56,
-      "reviewer_count": 56
+      "project_count": 60,
+      "merchant_count": 60,
+      "reviewer_count": 60
     }
   ],
   "reviewer": {
-    "total_reviewed": 548,
-    "approved": 525,
+    "total_reviewed": 552,
+    "approved": 529,
     "rejected": 23
   },
   "top_projects": [
@@ -2731,8 +2768,18 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 18,
+      "count": 20,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfj63g08ppku9c5q3sgth5a52ayg05t2f2c6ev4z2e68dl2uxz8cg65v9lc",
+          "date": "2026-01-26",
+          "merchant": "Ellygant Unisex Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2015900992391242052",
+          "date": "2026-01-26",
+          "merchant": "Ellygant Unisex Salon"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsr8a5d9w77jesp55plwy2pdx658224pqm0r5w5mdngwdctclganpcz8envh",
           "date": "2026-01-25",
@@ -3482,6 +3529,32 @@
       ]
     },
     {
+      "name": "Bitcoin Famba 🇲🇿",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsw3an7aedz49z8mpyxnx730ufdn3kpggwyjmzawt8rudyvyfa0q7gcjc00u",
+          "date": "2026-01-26",
+          "merchant": "Lwandi Surf"
+        },
+        {
+          "url": "https://x.com/i/status/2015882298411938110",
+          "date": "2026-01-26",
+          "merchant": "Lwandi Surf"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2kg4uwhsa9y5sepueum9upnk3692258spa3xfspz37439zpcxtasherk67",
+          "date": "2026-01-22",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2014111372129247329",
+          "date": "2026-01-22",
+          "merchant": "Milofa Skate Shop"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Aves 🇬🇭",
       "count": 4,
       "posts": [
@@ -3504,22 +3577,6 @@
           "url": "https://x.com/i/status/2012067029893660731",
           "date": "2026-01-16",
           "merchant": "Selack Pharmacy"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Famba 🇲🇿",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs2kg4uwhsa9y5sepueum9upnk3692258spa3xfspz37439zpcxtasherk67",
-          "date": "2026-01-22",
-          "merchant": "Milofa Skate Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2014111372129247329",
-          "date": "2026-01-22",
-          "merchant": "Milofa Skate Shop"
         }
       ]
     },
@@ -4397,6 +4454,67 @@
       ]
     },
     {
+      "name": "Ellygant Unisex Salon",
+      "count": 11,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfj63g08ppku9c5q3sgth5a52ayg05t2f2c6ev4z2e68dl2uxz8cg65v9lc",
+          "date": "2026-01-26",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2015900992391242052",
+          "date": "2026-01-26",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsr8a5d9w77jesp55plwy2pdx658224pqm0r5w5mdngwdctclganpcz8envh",
+          "date": "2026-01-25",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrf82yrvg8znnnpu8gncvdajc5y9g06lup77ud2e4yk66n4d86yvq2u5u6z",
+          "date": "2026-01-23",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014579875802206612",
+          "date": "2026-01-23",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqqjwfkk06x592pfug9q88me80k4dt8jt278ss3nl8hlcj72a2necs4q2u7",
+          "date": "2026-01-20",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013636943066562636",
+          "date": "2026-01-20",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs87msxre98lj9ypa552fuqg86775tj0qfw9q79r63w69aqtc69p5q3ppkaa",
+          "date": "2026-01-19",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013148841655066719",
+          "date": "2026-01-19",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxuyvljcew0f95ws5sxkujghcx3kjfkmdhuc6at4rtwn9kff8433svxsjky",
+          "date": "2026-01-16",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2011687430005604476",
+          "date": "2026-01-15",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Bridgeway Shop",
       "count": 11,
       "posts": [
@@ -4719,57 +4837,6 @@
           "url": "https://primal.net/e/nevent1qqsx30lahmmkwletfl8lyclcfdd8lkyrwf0v8h56s9mvc96xdn5nqpckqm438",
           "date": "2026-01-17",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Ellygant Unisex Salon",
-      "count": 9,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsr8a5d9w77jesp55plwy2pdx658224pqm0r5w5mdngwdctclganpcz8envh",
-          "date": "2026-01-25",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrf82yrvg8znnnpu8gncvdajc5y9g06lup77ud2e4yk66n4d86yvq2u5u6z",
-          "date": "2026-01-23",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2014579875802206612",
-          "date": "2026-01-23",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqqjwfkk06x592pfug9q88me80k4dt8jt278ss3nl8hlcj72a2necs4q2u7",
-          "date": "2026-01-20",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013636943066562636",
-          "date": "2026-01-20",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs87msxre98lj9ypa552fuqg86775tj0qfw9q79r63w69aqtc69p5q3ppkaa",
-          "date": "2026-01-19",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013148841655066719",
-          "date": "2026-01-19",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxuyvljcew0f95ws5sxkujghcx3kjfkmdhuc6at4rtwn9kff8433svxsjky",
-          "date": "2026-01-16",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2011687430005604476",
-          "date": "2026-01-15",
-          "project": "Bitcoin Ikorodu 🇳🇬"
         }
       ]
     },
@@ -5747,6 +5814,32 @@
       ]
     },
     {
+      "name": "Lwandi Surf",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsw3an7aedz49z8mpyxnx730ufdn3kpggwyjmzawt8rudyvyfa0q7gcjc00u",
+          "date": "2026-01-26",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2015882298411938110",
+          "date": "2026-01-26",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrqlr3xcx4geawrf5324g3lsru73l07qnyqx3gjahmj0up2359mjquqp2m3",
+          "date": "2026-01-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2015161586302800304",
+          "date": "2026-01-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Good Morning Shop",
       "count": 4,
       "posts": [
@@ -6333,22 +6426,6 @@
       ]
     },
     {
-      "name": "Lwandi Surf",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsrqlr3xcx4geawrf5324g3lsru73l07qnyqx3gjahmj0up2359mjquqp2m3",
-          "date": "2026-01-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2015161586302800304",
-          "date": "2026-01-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
       "name": "Kings & Queens Barber & Beauty Spa",
       "count": 2,
       "posts": [
@@ -6895,12 +6972,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 14,
-    "daily_average_payments": 114
+    "daily_average_payments": 115
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1565
+      "count": 1577
     },
     {
       "domain": "8333.mobi",
@@ -6947,13 +7024,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 906
+      "count": 912
     },
     {
       "platform": "Nostr",
-      "count": 692
+      "count": 698
     }
   ],
-  "generated_at": "2026-01-26T21:22:39.979849+00:00",
+  "generated_at": "2026-01-26T22:22:39.793047+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
