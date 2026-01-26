@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1499,
+    "all_payments": 1502,
     "by_type": {
       "merchant": {
-        "count": 492
+        "count": 493
       },
       "project": {
-        "count": 492
+        "count": 493
       },
       "reviewer": {
-        "count": 515
+        "count": 516
       }
     }
   },
   "today": {
     "date": "2026-01-26",
-    "payments": 69,
+    "payments": 72,
     "by_type": {
       "merchant": {
-        "count": 23
+        "count": 24
       },
       "project": {
-        "count": 23
+        "count": 24
       },
       "reviewer": {
-        "count": 23
+        "count": 24
       }
     },
-    "approved": 23,
+    "approved": 24,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsd6rnwy6cuwhlmeu4egydh49svm6sd4jevfj22zk47pwu6hasmnkgvsk3es",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Shotrite Enterprises",
+        "platform": "Nostr",
+        "time": "13:23"
+      },
       {
         "url": "https://x.com/i/status/2015775037446332792",
         "project": "Bitcoin Ekasi 🇿🇦",
@@ -211,6 +218,9 @@
         "project": "Bitcoin Ekasi 🇿🇦"
       },
       {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
         "project": "Bitbiashara 🇰🇪"
       },
       {
@@ -296,9 +306,6 @@
       },
       {
         "project": "Soweto BTC 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
       }
     ]
   },
@@ -479,14 +486,14 @@
     },
     {
       "date": "2026-01-26",
-      "project_count": 23,
-      "merchant_count": 23,
-      "reviewer_count": 23
+      "project_count": 24,
+      "merchant_count": 24,
+      "reviewer_count": 24
     }
   ],
   "reviewer": {
-    "total_reviewed": 515,
-    "approved": 492,
+    "total_reviewed": 516,
+    "approved": 493,
     "rejected": 23
   },
   "top_projects": [
@@ -1374,8 +1381,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 52,
+      "count": 53,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsd6rnwy6cuwhlmeu4egydh49svm6sd4jevfj22zk47pwu6hasmnkgvsk3es",
+          "date": "2026-01-26",
+          "merchant": "Shotrite Enterprises"
+        },
         {
           "url": "https://x.com/i/status/2015775037446332792",
           "date": "2026-01-26",
@@ -5533,6 +5545,22 @@
       ]
     },
     {
+      "name": "Shotrite Enterprises",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsd6rnwy6cuwhlmeu4egydh49svm6sd4jevfj22zk47pwu6hasmnkgvsk3es",
+          "date": "2026-01-26",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2015775037446332792",
+          "date": "2026-01-26",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Sabtenga General Trading",
       "count": 2,
       "posts": [
@@ -5983,17 +6011,6 @@
       ]
     },
     {
-      "name": "Shotrite Enterprises",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2015775037446332792",
-          "date": "2026-01-26",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
       "name": "Selack Pharmacy",
       "count": 1,
       "posts": [
@@ -6255,7 +6272,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1468
+      "count": 1471
     },
     {
       "domain": "8333.mobi",
@@ -6306,9 +6323,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 641
+      "count": 644
     }
   ],
-  "generated_at": "2026-01-26T13:22:39.807051+00:00",
+  "generated_at": "2026-01-26T14:22:39.887234+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
