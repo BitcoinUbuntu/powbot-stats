@@ -1,28 +1,49 @@
 {
   "totals": {
-    "all_payments": 1430,
+    "all_payments": 1433,
     "by_type": {
       "merchant": {
-        "count": 469
+        "count": 470
       },
       "project": {
-        "count": 469
+        "count": 470
       },
       "reviewer": {
-        "count": 492
+        "count": 493
       }
     }
   },
   "today": {
     "date": "2026-01-26",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 3,
+    "by_type": {
+      "merchant": {
+        "count": 1
+      },
+      "project": {
+        "count": 1
+      },
+      "reviewer": {
+        "count": 1
+      }
+    },
+    "approved": 1,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs8e05naruuu0jp946mvrrqthkak2h5a2vcstukgqe2sp6fkx6dyssqvcmuu",
+        "project": "BitJR Academy 🇿🇲",
+        "merchant": "Day Tech Business Solutions",
+        "platform": "Nostr",
+        "time": "02:24"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "BitJR Academy 🇿🇲"
+      },
       {
         "project": "Bitcoin NextGen 🇳🇬"
       },
@@ -97,9 +118,6 @@
       },
       {
         "project": "Bitcoin NextGen 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
       }
     ]
   },
@@ -280,14 +298,14 @@
     },
     {
       "date": "2026-01-26",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 1,
+      "merchant_count": 1,
+      "reviewer_count": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 492,
-    "approved": 469,
+    "total_reviewed": 493,
+    "approved": 470,
     "rejected": 23
   },
   "top_projects": [
@@ -2121,8 +2139,13 @@
     },
     {
       "name": "BitJR Academy 🇿🇲",
-      "count": 16,
+      "count": 17,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8e05naruuu0jp946mvrrqthkak2h5a2vcstukgqe2sp6fkx6dyssqvcmuu",
+          "date": "2026-01-26",
+          "merchant": "Day Tech Business Solutions"
+        },
         {
           "url": "https://x.com/i/status/2015456218672714099",
           "date": "2026-01-25",
@@ -5385,6 +5408,22 @@
       ]
     },
     {
+      "name": "Day Tech Business Solutions",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8e05naruuu0jp946mvrrqthkak2h5a2vcstukgqe2sp6fkx6dyssqvcmuu",
+          "date": "2026-01-26",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2014696110057504988",
+          "date": "2026-01-23",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Chile's Restaurant",
       "count": 2,
       "posts": [
@@ -5712,17 +5751,6 @@
       ]
     },
     {
-      "name": "Day Tech Business Solutions",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2014696110057504988",
-          "date": "2026-01-23",
-          "project": "BitJR Academy 🇿🇲"
-        }
-      ]
-    },
-    {
       "name": "Dajaso - icstech",
       "count": 1,
       "posts": [
@@ -5808,7 +5836,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1401
+      "count": 1404
     },
     {
       "domain": "8333.mobi",
@@ -5859,9 +5887,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 602
+      "count": 605
     }
   ],
-  "generated_at": "2026-01-26T02:22:39.875980+00:00",
+  "generated_at": "2026-01-26T03:22:39.880872+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
