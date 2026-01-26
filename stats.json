@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 1433,
+    "all_payments": 1439,
     "by_type": {
       "merchant": {
-        "count": 470
+        "count": 472
       },
       "project": {
-        "count": 470
+        "count": 472
       },
       "reviewer": {
-        "count": 493
+        "count": 495
       }
     }
   },
   "today": {
     "date": "2026-01-26",
-    "payments": 3,
+    "payments": 9,
     "by_type": {
       "merchant": {
-        "count": 1
+        "count": 3
       },
       "project": {
-        "count": 1
+        "count": 3
       },
       "reviewer": {
-        "count": 1
+        "count": 3
       }
     },
-    "approved": 1,
+    "approved": 3,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs9t6mewdvvzw2pnvu5u83eymtmac3qx00kkhtpmxqplkqkmks387s5vmqe2",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "Nostr",
+        "time": "06:03"
+      },
+      {
+        "url": "https://x.com/i/status/2015500715205046554",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "X",
+        "time": "06:02"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs8e05naruuu0jp946mvrrqthkak2h5a2vcstukgqe2sp6fkx6dyssqvcmuu",
         "project": "BitJR Academy 🇿🇲",
@@ -41,6 +55,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "BitJR Academy 🇿🇲"
       },
@@ -298,14 +318,14 @@
     },
     {
       "date": "2026-01-26",
-      "project_count": 1,
-      "merchant_count": 1,
-      "reviewer_count": 1
+      "project_count": 3,
+      "merchant_count": 3,
+      "reviewer_count": 3
     }
   ],
   "reviewer": {
-    "total_reviewed": 493,
-    "approved": 470,
+    "total_reviewed": 495,
+    "approved": 472,
     "rejected": 23
   },
   "top_projects": [
@@ -752,8 +772,18 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 79,
+      "count": 81,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs9t6mewdvvzw2pnvu5u83eymtmac3qx00kkhtpmxqplkqkmks387s5vmqe2",
+          "date": "2026-01-26",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2015500715205046554",
+          "date": "2026-01-26",
+          "merchant": "Haven food court"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsg0v86u0x2elup2gg0eqck4h82ldgdls6r8larrcwc9hfjkwn65gcctu6cy",
           "date": "2026-01-25",
@@ -2961,8 +2991,18 @@
     },
     {
       "name": "Haven food court",
-      "count": 19,
+      "count": 21,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs9t6mewdvvzw2pnvu5u83eymtmac3qx00kkhtpmxqplkqkmks387s5vmqe2",
+          "date": "2026-01-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015500715205046554",
+          "date": "2026-01-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsg0v86u0x2elup2gg0eqck4h82ldgdls6r8larrcwc9hfjkwn65gcctu6cy",
           "date": "2026-01-25",
@@ -5836,7 +5876,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1404
+      "count": 1410
     },
     {
       "domain": "8333.mobi",
@@ -5883,13 +5923,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 828
+      "count": 831
     },
     {
       "platform": "Nostr",
-      "count": 605
+      "count": 608
     }
   ],
-  "generated_at": "2026-01-26T05:22:39.860197+00:00",
+  "generated_at": "2026-01-26T06:22:39.843032+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
