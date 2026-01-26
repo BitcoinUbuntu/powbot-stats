@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1520,
+    "all_payments": 1523,
     "by_type": {
       "merchant": {
-        "count": 499
+        "count": 500
       },
       "project": {
-        "count": 499
+        "count": 500
       },
       "reviewer": {
-        "count": 522
+        "count": 523
       }
     }
   },
   "today": {
     "date": "2026-01-26",
-    "payments": 90,
+    "payments": 93,
     "by_type": {
       "merchant": {
-        "count": 30
+        "count": 31
       },
       "project": {
-        "count": 30
+        "count": 31
       },
       "reviewer": {
-        "count": 30
+        "count": 31
       }
     },
-    "approved": 30,
+    "approved": 31,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2015825347472712017",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Ueica Car Wash",
+        "platform": "X",
+        "time": "16:44"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs24rknxyw93r4zkjefwspc0se2x4hgr9mqj5h8jjwqwl7txgym5hstky74p",
         "project": "Bitbiashara 🇰🇪",
@@ -245,6 +252,9 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
         "project": "Bitbiashara 🇰🇪"
       },
       {
@@ -357,9 +367,6 @@
       },
       {
         "project": "Bitcoin Ekiti 🇳🇬"
-      },
-      {
-        "project": "Bitcoin NextGen 🇳🇬"
       }
     ]
   },
@@ -540,14 +547,14 @@
     },
     {
       "date": "2026-01-26",
-      "project_count": 30,
-      "merchant_count": 30,
-      "reviewer_count": 30
+      "project_count": 31,
+      "merchant_count": 31,
+      "reviewer_count": 31
     }
   ],
   "reviewer": {
-    "total_reviewed": 522,
-    "approved": 499,
+    "total_reviewed": 523,
+    "approved": 500,
     "rejected": 23
   },
   "top_projects": [
@@ -2582,8 +2589,13 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 15,
+      "count": 16,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2015825347472712017",
+          "date": "2026-01-26",
+          "merchant": "Ueica Car Wash"
+        },
         {
           "url": "https://x.com/i/status/2015812145460506770",
           "date": "2026-01-26",
@@ -5384,6 +5396,27 @@
       ]
     },
     {
+      "name": "Ueica Car Wash",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2015825347472712017",
+          "date": "2026-01-26",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgrrvyrrgu5x5rjtqwny8693wlzlg7vrj39pq0ztkpqcxxszg2v9q3pd2q3",
+          "date": "2026-01-23",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2014357030836883586",
+          "date": "2026-01-22",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "T and N Gas Station",
       "count": 3,
       "posts": [
@@ -5559,22 +5592,6 @@
           "url": "https://x.com/i/status/2013298948207755670",
           "date": "2026-01-19",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Ueica Car Wash",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsgrrvyrrgu5x5rjtqwny8693wlzlg7vrj39pq0ztkpqcxxszg2v9q3pd2q3",
-          "date": "2026-01-23",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2014357030836883586",
-          "date": "2026-01-22",
-          "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
     },
@@ -6386,7 +6403,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1489
+      "count": 1492
     },
     {
       "domain": "8333.mobi",
@@ -6433,13 +6450,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 867
+      "count": 870
     },
     {
       "platform": "Nostr",
       "count": 653
     }
   ],
-  "generated_at": "2026-01-26T16:22:39.804113+00:00",
+  "generated_at": "2026-01-26T17:22:39.801647+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
