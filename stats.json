@@ -1,35 +1,70 @@
 {
   "totals": {
-    "all_payments": 1670,
+    "all_payments": 1685,
     "by_type": {
       "merchant": {
-        "count": 549
+        "count": 554
       },
       "project": {
-        "count": 549
+        "count": 554
       },
       "reviewer": {
-        "count": 572
+        "count": 577
       }
     }
   },
   "today": {
     "date": "2026-01-27",
-    "payments": 60,
+    "payments": 75,
     "by_type": {
       "merchant": {
-        "count": 20
+        "count": 25
       },
       "project": {
-        "count": 20
+        "count": 25
       },
       "reviewer": {
-        "count": 20
+        "count": 25
       }
     },
-    "approved": 20,
+    "approved": 25,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2016118188216397958",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "T and N Gas Station",
+        "platform": "X",
+        "time": "12:20"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs23aqm92xg0l3hvkll9j3shezdalcunup64de42dv66v5g7fvvjqgf74f8k",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Tena cyberpalace",
+        "platform": "Nostr",
+        "time": "12:18"
+      },
+      {
+        "url": "https://x.com/i/status/2015998199895359700",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Grace Store",
+        "platform": "X",
+        "time": "12:12"
+      },
+      {
+        "url": "https://x.com/i/status/2016110438384091375",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Tena cyberpalace",
+        "platform": "X",
+        "time": "12:12"
+      },
+      {
+        "url": "https://x.com/i/status/2016094077566013667",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "X",
+        "time": "12:00"
+      },
       {
         "url": "https://x.com/i/status/2016035946572157108",
         "project": "BitJR Academy 🇿🇲",
@@ -174,6 +209,21 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "BitJR Academy 🇿🇲"
       },
@@ -368,12 +418,6 @@
       },
       {
         "project": "Bitcoin Dombo 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Dombo 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Ekasi 🇿🇦"
       }
     ]
   },
@@ -554,14 +598,14 @@
     },
     {
       "date": "2026-01-27",
-      "project_count": 20,
-      "merchant_count": 20,
-      "reviewer_count": 20
+      "project_count": 25,
+      "merchant_count": 25,
+      "reviewer_count": 25
     }
   ],
   "reviewer": {
-    "total_reviewed": 572,
-    "approved": 549,
+    "total_reviewed": 577,
+    "approved": 554,
     "rejected": 23
   },
   "top_projects": [
@@ -1108,8 +1152,23 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 93,
+      "count": 96,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs23aqm92xg0l3hvkll9j3shezdalcunup64de42dv66v5g7fvvjqgf74f8k",
+          "date": "2026-01-27",
+          "merchant": "Tena cyberpalace"
+        },
+        {
+          "url": "https://x.com/i/status/2016110438384091375",
+          "date": "2026-01-27",
+          "merchant": "Tena cyberpalace"
+        },
+        {
+          "url": "https://x.com/i/status/2016094077566013667",
+          "date": "2026-01-27",
+          "merchant": "Haven food court"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsyd7ryftzr88k2k8ympkgntty9fxj8fryjaryjedf3en0a8795uccmh24n2",
           "date": "2026-01-27",
@@ -1850,8 +1909,13 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 50,
+      "count": 51,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2015998199895359700",
+          "date": "2026-01-27",
+          "merchant": "Grace Store"
+        },
         {
           "url": "https://x.com/i/status/2015416579664552419",
           "date": "2026-01-25",
@@ -2106,8 +2170,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 38,
+      "count": 39,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2016118188216397958",
+          "date": "2026-01-27",
+          "merchant": "T and N Gas Station"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsy8sk23744wd3ujqtvn53mz6d09e2ru9au30hklpjgyed97zpszfgtmpln0",
           "date": "2026-01-27",
@@ -3779,8 +3848,13 @@
     },
     {
       "name": "Haven food court",
-      "count": 21,
+      "count": 22,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2016094077566013667",
+          "date": "2026-01-27",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9t6mewdvvzw2pnvu5u83eymtmac3qx00kkhtpmxqplkqkmks387s5vmqe2",
           "date": "2026-01-26",
@@ -4635,6 +4709,57 @@
       ]
     },
     {
+      "name": "Tena cyberpalace",
+      "count": 9,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs23aqm92xg0l3hvkll9j3shezdalcunup64de42dv66v5g7fvvjqgf74f8k",
+          "date": "2026-01-27",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016110438384091375",
+          "date": "2026-01-27",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgrme7wunzw0z9nxg55gyywl9fm5cv224fjyfxykhr25rnyk6tqkqtlp6a5",
+          "date": "2026-01-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015022094287818803",
+          "date": "2026-01-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsz6fa3h8y9fqfjyq66gmepcwd79p6pfg5tfh093rgfva9ldgzdu2cw8z26z",
+          "date": "2026-01-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013641904961826879",
+          "date": "2026-01-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsphwrwxmkymqxdaz79sjduxaz5dhuy978gzpnev9fjr9p4cvksmugtj0ejs",
+          "date": "2026-01-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012054246720749816",
+          "date": "2026-01-16",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2011802450169065542",
+          "date": "2026-01-15",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Sokoni Mboga",
       "count": 9,
       "posts": [
@@ -4982,47 +5107,6 @@
       ]
     },
     {
-      "name": "Tena cyberpalace",
-      "count": 7,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsgrme7wunzw0z9nxg55gyywl9fm5cv224fjyfxykhr25rnyk6tqkqtlp6a5",
-          "date": "2026-01-24",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2015022094287818803",
-          "date": "2026-01-24",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsz6fa3h8y9fqfjyq66gmepcwd79p6pfg5tfh093rgfva9ldgzdu2cw8z26z",
-          "date": "2026-01-20",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013641904961826879",
-          "date": "2026-01-20",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsphwrwxmkymqxdaz79sjduxaz5dhuy978gzpnev9fjr9p4cvksmugtj0ejs",
-          "date": "2026-01-17",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012054246720749816",
-          "date": "2026-01-16",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2011802450169065542",
-          "date": "2026-01-15",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "SMG Electronics Store",
       "count": 7,
       "posts": [
@@ -5060,6 +5144,47 @@
           "url": "https://x.com/i/status/2011345002967056817",
           "date": "2026-01-14",
           "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
+      "name": "Grace Store",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2015998199895359700",
+          "date": "2026-01-27",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015348926656704705",
+          "date": "2026-01-25",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswhdk5xrtszky8kxu2zsxzp6360tje3h6wlyjnm0ncpcd35y3802caue34y",
+          "date": "2026-01-21",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013478273120932212",
+          "date": "2026-01-20",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0qc67sgyte0xaycfm25e7pz63m6y2ldc5rvumgfpp4n9j6q37ncqkkg8qf",
+          "date": "2026-01-19",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd6gax6s820evvqsa0zk3mpvuvy9rd5xjql845ks837za3j0mu9tc93cxsr",
+          "date": "2026-01-18",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012391747674845331",
+          "date": "2026-01-17",
+          "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
     },
@@ -5204,42 +5329,6 @@
           "url": "https://primal.net/e/nevent1qqsva9sqr96uwgn2pw0m85748ssj7k9r6x3nevdspmfqck4h70pch5syaruz8",
           "date": "2026-01-17",
           "project": "BTC Shule 🇧🇮"
-        }
-      ]
-    },
-    {
-      "name": "Grace Store",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2015348926656704705",
-          "date": "2026-01-25",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswhdk5xrtszky8kxu2zsxzp6360tje3h6wlyjnm0ncpcd35y3802caue34y",
-          "date": "2026-01-21",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013478273120932212",
-          "date": "2026-01-20",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0qc67sgyte0xaycfm25e7pz63m6y2ldc5rvumgfpp4n9j6q37ncqkkg8qf",
-          "date": "2026-01-19",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd6gax6s820evvqsa0zk3mpvuvy9rd5xjql845ks837za3j0mu9tc93cxsr",
-          "date": "2026-01-18",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012391747674845331",
-          "date": "2026-01-17",
-          "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
     },
@@ -5590,6 +5679,32 @@
       ]
     },
     {
+      "name": "T and N Gas Station",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2016118188216397958",
+          "date": "2026-01-27",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvegk9v2zetmlhcje2t32pxmlkyuy0thp8vggm5jeyhr9eqltx7vg2myfjn",
+          "date": "2026-01-25",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2015499789966647744",
+          "date": "2026-01-25",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013745841610059791",
+          "date": "2026-01-21",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Ruth Shop",
       "count": 4,
       "posts": [
@@ -5919,27 +6034,6 @@
           "url": "https://primal.net/e/nevent1qqs8g2qzg57mtjust2xca8v2u4y29k3gwc8gp6d6galhctu08kwg4yclp9lz0",
           "date": "2026-01-14",
           "project": "Soweto BTC 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "T and N Gas Station",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsvegk9v2zetmlhcje2t32pxmlkyuy0thp8vggm5jeyhr9eqltx7vg2myfjn",
-          "date": "2026-01-25",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2015499789966647744",
-          "date": "2026-01-25",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013745841610059791",
-          "date": "2026-01-21",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -6919,12 +7013,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 14,
-    "daily_average_payments": 119
+    "daily_average_payments": 120
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1628
+      "count": 1643
     },
     {
       "domain": "8333.mobi",
@@ -6971,13 +7065,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 942
+      "count": 954
     },
     {
       "platform": "Nostr",
-      "count": 728
+      "count": 731
     }
   ],
-  "generated_at": "2026-01-27T11:22:39.812295+00:00",
+  "generated_at": "2026-01-27T12:22:39.882056+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
