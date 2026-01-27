@@ -1,28 +1,79 @@
 {
   "totals": {
-    "all_payments": 1610,
+    "all_payments": 1622,
     "by_type": {
       "merchant": {
-        "count": 529
+        "count": 533
       },
       "project": {
-        "count": 529
+        "count": 533
       },
       "reviewer": {
-        "count": 552
+        "count": 556
       }
     }
   },
   "today": {
     "date": "2026-01-27",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 12,
+    "by_type": {
+      "merchant": {
+        "count": 4
+      },
+      "project": {
+        "count": 4
+      },
+      "reviewer": {
+        "count": 4
+      }
+    },
+    "approved": 4,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqswau92eddtytjp5lrgytv7sjxqpsjwkchsgtxupcztxvh3pad34qs4jwpyz",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Brasukas - Bar & Surf",
+        "platform": "Nostr",
+        "time": "03:34"
+      },
+      {
+        "url": "https://x.com/i/status/2015922925753205051",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Brasukas - Bar & Surf",
+        "platform": "X",
+        "time": "03:34"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsy8sk23744wd3ujqtvn53mz6d09e2ru9au30hklpjgyed97zpszfgtmpln0",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "KJ Mulitipurpose Store",
+        "platform": "Nostr",
+        "time": "03:33"
+      },
+      {
+        "url": "https://x.com/i/status/2015908705057775921",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "KJ Mulitipurpose Store",
+        "platform": "X",
+        "time": "03:33"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -379,14 +430,14 @@
     },
     {
       "date": "2026-01-27",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4
     }
   ],
   "reviewer": {
-    "total_reviewed": 552,
-    "approved": 529,
+    "total_reviewed": 556,
+    "approved": 533,
     "rejected": 23
   },
   "top_projects": [
@@ -1921,8 +1972,18 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 36,
+      "count": 38,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsy8sk23744wd3ujqtvn53mz6d09e2ru9au30hklpjgyed97zpszfgtmpln0",
+          "date": "2026-01-27",
+          "merchant": "KJ Mulitipurpose Store"
+        },
+        {
+          "url": "https://x.com/i/status/2015908705057775921",
+          "date": "2026-01-27",
+          "merchant": "KJ Mulitipurpose Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsvegk9v2zetmlhcje2t32pxmlkyuy0thp8vggm5jeyhr9eqltx7vg2myfjn",
           "date": "2026-01-25",
@@ -3007,6 +3068,42 @@
       ]
     },
     {
+      "name": "Bitcoin Famba 🇲🇿",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswau92eddtytjp5lrgytv7sjxqpsjwkchsgtxupcztxvh3pad34qs4jwpyz",
+          "date": "2026-01-27",
+          "merchant": "Brasukas - Bar & Surf"
+        },
+        {
+          "url": "https://x.com/i/status/2015922925753205051",
+          "date": "2026-01-27",
+          "merchant": "Brasukas - Bar & Surf"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw3an7aedz49z8mpyxnx730ufdn3kpggwyjmzawt8rudyvyfa0q7gcjc00u",
+          "date": "2026-01-26",
+          "merchant": "Lwandi Surf"
+        },
+        {
+          "url": "https://x.com/i/status/2015882298411938110",
+          "date": "2026-01-26",
+          "merchant": "Lwandi Surf"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2kg4uwhsa9y5sepueum9upnk3692258spa3xfspz37439zpcxtasherk67",
+          "date": "2026-01-22",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2014111372129247329",
+          "date": "2026-01-22",
+          "merchant": "Milofa Skate Shop"
+        }
+      ]
+    },
+    {
       "name": "Soweto BTC 🇿🇦",
       "count": 5,
       "posts": [
@@ -3091,32 +3188,6 @@
           "url": "https://primal.net/e/nevent1qqszzpr3wuh45pkqncw3syu6py6xrcxd05pu5trhek5au9af9vlqkvqwe4daq",
           "date": "2026-01-15",
           "merchant": "Richards Bakers"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Famba 🇲🇿",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsw3an7aedz49z8mpyxnx730ufdn3kpggwyjmzawt8rudyvyfa0q7gcjc00u",
-          "date": "2026-01-26",
-          "merchant": "Lwandi Surf"
-        },
-        {
-          "url": "https://x.com/i/status/2015882298411938110",
-          "date": "2026-01-26",
-          "merchant": "Lwandi Surf"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2kg4uwhsa9y5sepueum9upnk3692258spa3xfspz37439zpcxtasherk67",
-          "date": "2026-01-22",
-          "merchant": "Milofa Skate Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2014111372129247329",
-          "date": "2026-01-22",
-          "merchant": "Milofa Skate Shop"
         }
       ]
     },
@@ -4407,6 +4478,57 @@
       ]
     },
     {
+      "name": "KJ Mulitipurpose Store",
+      "count": 9,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsy8sk23744wd3ujqtvn53mz6d09e2ru9au30hklpjgyed97zpszfgtmpln0",
+          "date": "2026-01-27",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2015908705057775921",
+          "date": "2026-01-27",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2015490038851567704",
+          "date": "2026-01-25",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0mvdyjwh2l98aptacqgqfmm2gwh9v58kqs59f32pzcn22gf4u2usk5kyfq",
+          "date": "2026-01-23",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014622625557848457",
+          "date": "2026-01-23",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdflzjr90hdj8lnt2slp3jg4gzjndhpzdt8ynxj842swu2g26ct6qqxxh38",
+          "date": "2026-01-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014267997108535539",
+          "date": "2026-01-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsx4tpx8drhlk95mnd6ryak9cdgx87vyl8kvdwkmpwh7vlrad79keckkkkna",
+          "date": "2026-01-21",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013976630943691253",
+          "date": "2026-01-21",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Caleb Cafe",
       "count": 9,
       "posts": [
@@ -4679,47 +4801,6 @@
           "url": "https://x.com/i/status/2011345002967056817",
           "date": "2026-01-14",
           "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "KJ Mulitipurpose Store",
-      "count": 7,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2015490038851567704",
-          "date": "2026-01-25",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0mvdyjwh2l98aptacqgqfmm2gwh9v58kqs59f32pzcn22gf4u2usk5kyfq",
-          "date": "2026-01-23",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2014622625557848457",
-          "date": "2026-01-23",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdflzjr90hdj8lnt2slp3jg4gzjndhpzdt8ynxj842swu2g26ct6qqxxh38",
-          "date": "2026-01-22",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2014267997108535539",
-          "date": "2026-01-22",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsx4tpx8drhlk95mnd6ryak9cdgx87vyl8kvdwkmpwh7vlrad79keckkkkna",
-          "date": "2026-01-21",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013976630943691253",
-          "date": "2026-01-21",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -6152,6 +6233,22 @@
       ]
     },
     {
+      "name": "Brasukas - Bar & Surf",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswau92eddtytjp5lrgytv7sjxqpsjwkchsgtxupcztxvh3pad34qs4jwpyz",
+          "date": "2026-01-27",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2015922925753205051",
+          "date": "2026-01-27",
+          "project": "Bitcoin Famba 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Astridah's grocery",
       "count": 2,
       "posts": [
@@ -6543,7 +6640,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1577
+      "count": 1589
     },
     {
       "domain": "8333.mobi",
@@ -6590,13 +6687,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 912
+      "count": 918
     },
     {
       "platform": "Nostr",
-      "count": 698
+      "count": 704
     }
   ],
-  "generated_at": "2026-01-27T03:22:39.795706+00:00",
+  "generated_at": "2026-01-27T04:22:39.800988+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
