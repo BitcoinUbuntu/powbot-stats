@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1667,
+    "all_payments": 1670,
     "by_type": {
       "merchant": {
-        "count": 548
+        "count": 549
       },
       "project": {
-        "count": 548
+        "count": 549
       },
       "reviewer": {
-        "count": 571
+        "count": 572
       }
     }
   },
   "today": {
     "date": "2026-01-27",
-    "payments": 57,
+    "payments": 60,
     "by_type": {
       "merchant": {
-        "count": 19
+        "count": 20
       },
       "project": {
-        "count": 19
+        "count": 20
       },
       "reviewer": {
-        "count": 19
+        "count": 20
       }
     },
-    "approved": 19,
+    "approved": 20,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2016035946572157108",
+        "project": "BitJR Academy 🇿🇲",
+        "merchant": "Phillard Shop",
+        "platform": "X",
+        "time": "10:03"
+      },
       {
         "url": "https://primal.net/e/nevent1qqswqcs9x0ydsaq9ys4cwsa4970nt6eve4hwv9e8hhj842lmeew80lc0hhcwj",
         "project": "Bitcoin Aves 🇬🇭",
@@ -167,6 +174,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "BitJR Academy 🇿🇲"
+      },
       {
         "project": "Bitcoin Aves 🇬🇭"
       },
@@ -379,12 +389,6 @@
       },
       {
         "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
       }
     ]
   },
@@ -565,14 +569,14 @@
     },
     {
       "date": "2026-01-27",
-      "project_count": 19,
-      "merchant_count": 19,
-      "reviewer_count": 19
+      "project_count": 20,
+      "merchant_count": 20,
+      "reviewer_count": 20
     }
   ],
   "reviewer": {
-    "total_reviewed": 571,
-    "approved": 548,
+    "total_reviewed": 572,
+    "approved": 549,
     "rejected": 23
   },
   "top_projects": [
@@ -2691,8 +2695,13 @@
     },
     {
       "name": "BitJR Academy 🇿🇲",
-      "count": 18,
+      "count": 19,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2016035946572157108",
+          "date": "2026-01-27",
+          "merchant": "Phillard Shop"
+        },
         {
           "url": "https://x.com/i/status/2015952997583347829",
           "date": "2026-01-27",
@@ -5971,6 +5980,27 @@
       ]
     },
     {
+      "name": "Phillard Shop",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2016035946572157108",
+          "date": "2026-01-27",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2014827424077254658",
+          "date": "2026-01-24",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2014593946312454397",
+          "date": "2026-01-23",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Obrien Shop",
       "count": 3,
       "posts": [
@@ -6237,22 +6267,6 @@
           "url": "https://primal.net/e/nevent1qqsqvcpu3x5keeppys0tmk8wzur6yg8pq0jae9n9fpe0p0chcxq9mygln025t",
           "date": "2026-01-26",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Phillard Shop",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2014827424077254658",
-          "date": "2026-01-24",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2014593946312454397",
-          "date": "2026-01-23",
-          "project": "BitJR Academy 🇿🇲"
         }
       ]
     },
@@ -6925,7 +6939,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1625
+      "count": 1628
     },
     {
       "domain": "8333.mobi",
@@ -6972,13 +6986,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 939
+      "count": 942
     },
     {
       "platform": "Nostr",
       "count": 728
     }
   ],
-  "generated_at": "2026-01-27T09:22:39.989168+00:00",
+  "generated_at": "2026-01-27T10:22:39.845462+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
