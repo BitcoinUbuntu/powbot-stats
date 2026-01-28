@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 1952,
+    "all_payments": 1958,
     "by_type": {
       "merchant": {
-        "count": 642
+        "count": 644
       },
       "project": {
-        "count": 642
+        "count": 644
       },
       "reviewer": {
-        "count": 668
+        "count": 670
       }
     }
   },
   "today": {
     "date": "2026-01-28",
-    "payments": 113,
+    "payments": 119,
     "by_type": {
       "merchant": {
-        "count": 37
+        "count": 39
       },
       "project": {
-        "count": 37
+        "count": 39
       },
       "reviewer": {
-        "count": 39
+        "count": 41
       }
     },
-    "approved": 37,
+    "approved": 39,
     "rejected": 2,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2016477277320630449",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "X",
+        "time": "12:23"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsrnwadj7e84wla7hau3rt4j29u7kv4a48yh26efnc0lk50r6a89zgadqeg8",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "Rehoboth freshmilk diary",
+        "platform": "Nostr",
+        "time": "12:22"
+      },
       {
         "url": "https://x.com/i/status/2016436092648452323",
         "project": "Bitcoin Githurai 🇰🇪",
@@ -294,6 +308,12 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "EcoBitz 🇰🇪"
+      },
+      {
         "project": "Bitcoin Githurai 🇰🇪"
       },
       {
@@ -553,9 +573,6 @@
       },
       {
         "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
       }
     ]
   },
@@ -736,14 +753,14 @@
     },
     {
       "date": "2026-01-28",
-      "project_count": 37,
-      "merchant_count": 37,
-      "reviewer_count": 39
+      "project_count": 39,
+      "merchant_count": 39,
+      "reviewer_count": 41
     }
   ],
   "reviewer": {
-    "total_reviewed": 668,
-    "approved": 642,
+    "total_reviewed": 670,
+    "approved": 644,
     "rejected": 26
   },
   "top_projects": [
@@ -1320,8 +1337,13 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 108,
+      "count": 109,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2016477277320630449",
+          "date": "2026-01-28",
+          "merchant": "Grandsmatt"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsfes2xaj32p5qaek6cx9rmzw4cfnapdynrh7arpreh3l0fjdnpu7sqglesu",
           "date": "2026-01-28",
@@ -3981,6 +4003,37 @@
       ]
     },
     {
+      "name": "EcoBitz 🇰🇪",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrnwadj7e84wla7hau3rt4j29u7kv4a48yh26efnc0lk50r6a89zgadqeg8",
+          "date": "2026-01-28",
+          "merchant": "Rehoboth freshmilk diary"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspv9479rudy5cspwd0j0j0lemuukeqwsfpd342nwnv27umnsn3sscy6yfc6",
+          "date": "2026-01-26",
+          "merchant": "Demimah Dishes"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswmm0hkzjny9dlhetsgns4crcwxxlk7dgvy9653xckrlcfchytjuqa4ycnf",
+          "date": "2026-01-24",
+          "merchant": "Wa Ngala Hardware"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswlmg24cycx84ed85dvrthm5tzx8tgjhnmgsnpshpuqge5tqv5a5qq7faze",
+          "date": "2026-01-20",
+          "merchant": "Rehoboth freshmilk diary"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszzpr3wuh45pkqncw3syu6py6xrcxd05pu5trhek5au9af9vlqkvqwe4daq",
+          "date": "2026-01-15",
+          "merchant": "Richards Bakers"
+        }
+      ]
+    },
+    {
       "name": "College BTC 🇬🇭",
       "count": 5,
       "posts": [
@@ -4039,32 +4092,6 @@
           "url": "https://x.com/i/status/2012067029893660731",
           "date": "2026-01-16",
           "merchant": "Selack Pharmacy"
-        }
-      ]
-    },
-    {
-      "name": "EcoBitz 🇰🇪",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqspv9479rudy5cspwd0j0j0lemuukeqwsfpd342nwnv27umnsn3sscy6yfc6",
-          "date": "2026-01-26",
-          "merchant": "Demimah Dishes"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswmm0hkzjny9dlhetsgns4crcwxxlk7dgvy9653xckrlcfchytjuqa4ycnf",
-          "date": "2026-01-24",
-          "merchant": "Wa Ngala Hardware"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswlmg24cycx84ed85dvrthm5tzx8tgjhnmgsnpshpuqge5tqv5a5qq7faze",
-          "date": "2026-01-20",
-          "merchant": "Rehoboth freshmilk diary"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszzpr3wuh45pkqncw3syu6py6xrcxd05pu5trhek5au9af9vlqkvqwe4daq",
-          "date": "2026-01-15",
-          "merchant": "Richards Bakers"
         }
       ]
     },
@@ -4521,8 +4548,13 @@
     },
     {
       "name": "Grandsmatt",
-      "count": 23,
+      "count": 24,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2016477277320630449",
+          "date": "2026-01-28",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs97aheykw50fevlzl2jm5g47d6dz0304xekfcqq0ud6x5hc9w3xkqeuay9f",
           "date": "2026-01-27",
@@ -7320,6 +7352,22 @@
       ]
     },
     {
+      "name": "Rehoboth freshmilk diary",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrnwadj7e84wla7hau3rt4j29u7kv4a48yh26efnc0lk50r6a89zgadqeg8",
+          "date": "2026-01-28",
+          "project": "EcoBitz 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswlmg24cycx84ed85dvrthm5tzx8tgjhnmgsnpshpuqge5tqv5a5qq7faze",
+          "date": "2026-01-20",
+          "project": "EcoBitz 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Preso's Food and Drinks",
       "count": 2,
       "posts": [
@@ -7862,17 +7910,6 @@
       ]
     },
     {
-      "name": "Rehoboth freshmilk diary",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqswlmg24cycx84ed85dvrthm5tzx8tgjhnmgsnpshpuqge5tqv5a5qq7faze",
-          "date": "2026-01-20",
-          "project": "EcoBitz 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Piotech Centre",
       "count": 1,
       "posts": [
@@ -8090,7 +8127,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1883
+      "count": 1889
     },
     {
       "domain": "8333.mobi",
@@ -8137,13 +8174,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1099
+      "count": 1102
     },
     {
       "platform": "Nostr",
-      "count": 853
+      "count": 856
     }
   ],
-  "generated_at": "2026-01-28T12:22:39.818757+00:00",
+  "generated_at": "2026-01-28T13:22:39.801558+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
