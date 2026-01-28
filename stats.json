@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 1981,
+    "all_payments": 1989,
     "by_type": {
       "merchant": {
-        "count": 651
+        "count": 653
       },
       "project": {
-        "count": 651
+        "count": 653
       },
       "reviewer": {
-        "count": 679
+        "count": 683
       }
     }
   },
   "today": {
     "date": "2026-01-28",
-    "payments": 142,
+    "payments": 150,
     "by_type": {
       "merchant": {
-        "count": 46
+        "count": 48
       },
       "project": {
-        "count": 46
+        "count": 48
       },
       "reviewer": {
-        "count": 50
+        "count": 54
       }
     },
-    "approved": 46,
-    "rejected": 4,
+    "approved": 48,
+    "rejected": 6,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsf9q75asp395k4ndp8fv7qk9y2laqa3q59tcdz6peymt7a3fejr0gpjw42c",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "Nostr",
+        "time": "19:12"
+      },
+      {
+        "url": "https://x.com/i/status/2016539663888982360",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "X",
+        "time": "19:12"
+      },
       {
         "url": "https://x.com/i/status/2016513782625755626",
         "project": "Bitbiashara 🇰🇪",
@@ -357,6 +371,12 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
         "project": "Bitbiashara 🇰🇪"
       },
       {
@@ -538,15 +558,6 @@
       },
       {
         "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Ekasi 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Ekasi 🇿🇦"
       }
     ]
   },
@@ -727,15 +738,15 @@
     },
     {
       "date": "2026-01-28",
-      "project_count": 46,
-      "merchant_count": 46,
-      "reviewer_count": 50
+      "project_count": 48,
+      "merchant_count": 48,
+      "reviewer_count": 54
     }
   ],
   "reviewer": {
-    "total_reviewed": 679,
-    "approved": 651,
-    "rejected": 28
+    "total_reviewed": 683,
+    "approved": 653,
+    "rejected": 30
   },
   "top_projects": [
     {
@@ -3238,8 +3249,18 @@
     },
     {
       "name": "Bitcoin NextGen 🇳🇬",
-      "count": 22,
+      "count": 24,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsf9q75asp395k4ndp8fv7qk9y2laqa3q59tcdz6peymt7a3fejr0gpjw42c",
+          "date": "2026-01-28",
+          "merchant": "Emmy Store"
+        },
+        {
+          "url": "https://x.com/i/status/2016539663888982360",
+          "date": "2026-01-28",
+          "merchant": "Emmy Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9lq79h6n4p4xewh4us7e8tpc9mklaue0psyha3c7ffm3wn2hqwpcw9gp75",
           "date": "2026-01-28",
@@ -4824,8 +4845,18 @@
     },
     {
       "name": "Emmy Store",
-      "count": 22,
+      "count": 24,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsf9q75asp395k4ndp8fv7qk9y2laqa3q59tcdz6peymt7a3fejr0gpjw42c",
+          "date": "2026-01-28",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2016539663888982360",
+          "date": "2026-01-28",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9lq79h6n4p4xewh4us7e8tpc9mklaue0psyha3c7ffm3wn2hqwpcw9gp75",
           "date": "2026-01-28",
@@ -8166,16 +8197,16 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 16,
-    "daily_average_payments": 123
+    "daily_average_payments": 124
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1912
+      "count": 1918
     },
     {
       "domain": "8333.mobi",
-      "count": 69
+      "count": 71
     }
   ],
   "countries": [
@@ -8218,13 +8249,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1117
+      "count": 1122
     },
     {
       "platform": "Nostr",
-      "count": 864
+      "count": 867
     }
   ],
-  "generated_at": "2026-01-28T18:22:39.801725+00:00",
+  "generated_at": "2026-01-28T19:22:39.824061+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
