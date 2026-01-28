@@ -1,6 +1,6 @@
 {
   "totals": {
-    "all_payments": 1839,
+    "all_payments": 1841,
     "by_type": {
       "merchant": {
         "count": 605
@@ -9,16 +9,20 @@
         "count": 605
       },
       "reviewer": {
-        "count": 629
+        "count": 631
       }
     }
   },
   "today": {
     "date": "2026-01-28",
-    "payments": 0,
-    "by_type": {},
+    "payments": 2,
+    "by_type": {
+      "reviewer": {
+        "count": 2
+      }
+    },
     "approved": 0,
-    "rejected": 0,
+    "rejected": 2,
     "videos": []
   },
   "last_24h": {
@@ -420,13 +424,13 @@
       "date": "2026-01-28",
       "project_count": 0,
       "merchant_count": 0,
-      "reviewer_count": 0
+      "reviewer_count": 2
     }
   ],
   "reviewer": {
-    "total_reviewed": 629,
+    "total_reviewed": 631,
     "approved": 605,
-    "rejected": 24
+    "rejected": 26
   },
   "top_projects": [
     {
@@ -7396,7 +7400,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1783
+      "count": 1785
     },
     {
       "domain": "8333.mobi",
@@ -7443,13 +7447,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1041
+      "count": 1042
     },
     {
       "platform": "Nostr",
-      "count": 798
+      "count": 799
     }
   ],
-  "generated_at": "2026-01-28T04:22:39.810193+00:00",
+  "generated_at": "2026-01-28T05:22:39.815277+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
