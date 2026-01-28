@@ -1,32 +1,129 @@
 {
   "totals": {
-    "all_payments": 1841,
+    "all_payments": 1870,
     "by_type": {
       "merchant": {
-        "count": 605
+        "count": 614
       },
       "project": {
-        "count": 605
+        "count": 614
       },
       "reviewer": {
-        "count": 631
+        "count": 642
       }
     }
   },
   "today": {
     "date": "2026-01-28",
-    "payments": 2,
+    "payments": 31,
     "by_type": {
+      "merchant": {
+        "count": 9
+      },
+      "project": {
+        "count": 9
+      },
       "reviewer": {
-        "count": 2
+        "count": 13
       }
     },
-    "approved": 0,
-    "rejected": 2,
-    "videos": []
+    "approved": 9,
+    "rejected": 4,
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2016409582520737950",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "P.S Takeaways",
+        "platform": "X",
+        "time": "07:18"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsp4g069vln2w25g73ednhmlnlqf5c5rz2d4g83yj60ktvfd3mhzlq90hvas",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "P.S Takeaways",
+        "platform": "Nostr",
+        "time": "07:17"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqszqzkzfg3ezmh9w24nyy536tjx3n56mgrj8ktwx6m38pcf977tksg2ngn4m",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Jennifer Musya",
+        "platform": "Nostr",
+        "time": "06:51"
+      },
+      {
+        "url": "https://x.com/i/status/2016379559709462755",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Jennifer Musya",
+        "platform": "X",
+        "time": "06:49"
+      },
+      {
+        "url": "https://x.com/i/status/2016360584640659659",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Njema Dairy",
+        "platform": "X",
+        "time": "06:49"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs86xavyf86k9fz49kaa3wxd9kn9frhd0atlecstxxgxckw5psec9sr7gtux",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Sonnie Grafiks Advertising",
+        "platform": "Nostr",
+        "time": "06:48"
+      },
+      {
+        "url": "https://x.com/i/status/2016293364530835932",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Stay Safe Restaurante & Lounge",
+        "platform": "X",
+        "time": "06:47"
+      },
+      {
+        "url": "https://x.com/i/status/2016290386398847363",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Sonnie Grafiks Advertising",
+        "platform": "X",
+        "time": "06:45"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs2tydmqqwcag6gwe4rdj38elexc895cjma7mrxv0n8f63mvsw488szy6juc",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Stay Safe Restaurante & Lounge",
+        "platform": "Nostr",
+        "time": "06:43"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -200,48 +297,6 @@
       },
       {
         "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Sisonke 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Sisonke 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "BitJR Academy 🇿🇲"
       }
     ]
   },
@@ -422,15 +477,15 @@
     },
     {
       "date": "2026-01-28",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 2
+      "project_count": 9,
+      "merchant_count": 9,
+      "reviewer_count": 13
     }
   ],
   "reviewer": {
-    "total_reviewed": 631,
-    "approved": 605,
-    "rejected": 26
+    "total_reviewed": 642,
+    "approved": 614,
+    "rejected": 28
   },
   "top_projects": [
     {
@@ -976,8 +1031,18 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 102,
+      "count": 104,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszqzkzfg3ezmh9w24nyy536tjx3n56mgrj8ktwx6m38pcf977tksg2ngn4m",
+          "date": "2026-01-28",
+          "merchant": "Jennifer Musya"
+        },
+        {
+          "url": "https://x.com/i/status/2016379559709462755",
+          "date": "2026-01-28",
+          "merchant": "Jennifer Musya"
+        },
         {
           "url": "https://x.com/i/status/2016180027268727240",
           "date": "2026-01-27",
@@ -1803,8 +1868,13 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 53,
+      "count": 54,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2016360584640659659",
+          "date": "2026-01-28",
+          "merchant": "Njema Dairy"
+        },
         {
           "url": "https://x.com/i/status/2016164303129452887",
           "date": "2026-01-27",
@@ -2637,8 +2707,18 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 23,
+      "count": 25,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2016293364530835932",
+          "date": "2026-01-28",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2tydmqqwcag6gwe4rdj38elexc895cjma7mrxv0n8f63mvsw488szy6juc",
+          "date": "2026-01-28",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs2q48kqsyesa9fxx9vn8xralg4x82yrevjh2rry4nfre06n9q4yjccetmg7",
           "date": "2026-01-27",
@@ -2758,8 +2838,18 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 20,
+      "count": 22,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs86xavyf86k9fz49kaa3wxd9kn9frhd0atlecstxxgxckw5psec9sr7gtux",
+          "date": "2026-01-28",
+          "merchant": "Sonnie Grafiks Advertising"
+        },
+        {
+          "url": "https://x.com/i/status/2016290386398847363",
+          "date": "2026-01-28",
+          "merchant": "Sonnie Grafiks Advertising"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsfj63g08ppku9c5q3sgth5a52ayg05t2f2c6ev4z2e68dl2uxz8cg65v9lc",
           "date": "2026-01-26",
@@ -3157,8 +3247,18 @@
     },
     {
       "name": "Bitcoin Sisonke 🇿🇦",
-      "count": 14,
+      "count": 16,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2016409582520737950",
+          "date": "2026-01-28",
+          "merchant": "P.S Takeaways"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp4g069vln2w25g73ednhmlnlqf5c5rz2d4g83yj60ktvfd3mhzlq90hvas",
+          "date": "2026-01-28",
+          "merchant": "P.S Takeaways"
+        },
         {
           "url": "https://x.com/i/status/2016000431957098905",
           "date": "2026-01-27",
@@ -4491,6 +4591,77 @@
       ]
     },
     {
+      "name": "Jennifer Musya",
+      "count": 13,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszqzkzfg3ezmh9w24nyy536tjx3n56mgrj8ktwx6m38pcf977tksg2ngn4m",
+          "date": "2026-01-28",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016379559709462755",
+          "date": "2026-01-28",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqjs5683fmhedewpk7s4cqx6d4d6a2wdggwnqw8wd547arfxjls2cx86syq",
+          "date": "2026-01-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015741069976072238",
+          "date": "2026-01-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgw4wjdw7wphtweawf7eg75ssugnvyu9sw6emxg62ueg25lqj72jsjasggz",
+          "date": "2026-01-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015136721839558853",
+          "date": "2026-01-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy5m9yqvva5tmgl4e454g8ch09u97lfjq4h7x0u9c69vzgkltf84qduusyv",
+          "date": "2026-01-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014902678615183779",
+          "date": "2026-01-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqgusesqmrds29gus9ununey4v7wktjf4qux2kyam2vm8ka5cfrec3djue3",
+          "date": "2026-01-22",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014202526896214055",
+          "date": "2026-01-22",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgdp82z8vaap8yspgn5dvyl29nkxfjnlnwl3ytkm2eefmy9wt4ykq3jjfny",
+          "date": "2026-01-18",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012463466326499677",
+          "date": "2026-01-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2011768962011578835",
+          "date": "2026-01-15",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Chips point",
       "count": 13,
       "posts": [
@@ -4628,63 +4799,63 @@
       ]
     },
     {
-      "name": "Jennifer Musya",
+      "name": "Stay Safe Restaurante & Lounge",
       "count": 11,
       "posts": [
         {
-          "url": "https://primal.net/e/nevent1qqsqjs5683fmhedewpk7s4cqx6d4d6a2wdggwnqw8wd547arfxjls2cx86syq",
-          "date": "2026-01-26",
-          "project": "Bitbiashara 🇰🇪"
+          "url": "https://x.com/i/status/2016293364530835932",
+          "date": "2026-01-28",
+          "project": "Bitcoin Dombo 🇲🇿"
         },
         {
-          "url": "https://x.com/i/status/2015741069976072238",
-          "date": "2026-01-26",
-          "project": "Bitbiashara 🇰🇪"
+          "url": "https://primal.net/e/nevent1qqs2tydmqqwcag6gwe4rdj38elexc895cjma7mrxv0n8f63mvsw488szy6juc",
+          "date": "2026-01-28",
+          "project": "Bitcoin Dombo 🇲🇿"
         },
         {
-          "url": "https://primal.net/e/nevent1qqsgw4wjdw7wphtweawf7eg75ssugnvyu9sw6emxg62ueg25lqj72jsjasggz",
+          "url": "https://primal.net/e/nevent1qqs2q48kqsyesa9fxx9vn8xralg4x82yrevjh2rry4nfre06n9q4yjccetmg7",
+          "date": "2026-01-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2016251300002800009",
+          "date": "2026-01-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2016175256981934476",
+          "date": "2026-01-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdqhh2zn7x0hc52j2c68sll6mxujksmkh2vc5z607g4du0a43t2rqszdjas",
+          "date": "2026-01-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2015314707427549529",
+          "date": "2026-01-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsxf2m088vyclfe0qh0r2w2dwynhlsstf6yr6klyn5ff7vm89j8qpqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczyqqqf7hhcrve9s4fp8s0gvjy7352qsz6acsst6x9c3hca7j5j0aluqcyqqqqqqg44rcnt",
           "date": "2026-01-24",
-          "project": "Bitbiashara 🇰🇪"
+          "project": "Bitcoin Dombo 🇲🇿"
         },
         {
-          "url": "https://x.com/i/status/2015136721839558853",
-          "date": "2026-01-24",
-          "project": "Bitbiashara 🇰🇪"
+          "url": "https://x.com/i/status/2014782853343555988",
+          "date": "2026-01-23",
+          "project": "Bitcoin Dombo 🇲🇿"
         },
         {
-          "url": "https://primal.net/e/nevent1qqsy5m9yqvva5tmgl4e454g8ch09u97lfjq4h7x0u9c69vzgkltf84qduusyv",
-          "date": "2026-01-24",
-          "project": "Bitbiashara 🇰🇪"
+          "url": "https://primal.net/e/nevent1qqsz0khdmr4hy344z0nht5ru9svexngxmh3tl4k8d88r9acpedkjr7sksmxkx",
+          "date": "2026-01-23",
+          "project": "Bitcoin Dombo 🇲🇿"
         },
         {
-          "url": "https://x.com/i/status/2014902678615183779",
-          "date": "2026-01-24",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqgusesqmrds29gus9ununey4v7wktjf4qux2kyam2vm8ka5cfrec3djue3",
+          "url": "https://x.com/i/status/2014424213285749067",
           "date": "2026-01-22",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014202526896214055",
-          "date": "2026-01-22",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgdp82z8vaap8yspgn5dvyl29nkxfjnlnwl3ytkm2eefmy9wt4ykq3jjfny",
-          "date": "2026-01-18",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012463466326499677",
-          "date": "2026-01-17",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2011768962011578835",
-          "date": "2026-01-15",
-          "project": "Bitbiashara 🇰🇪"
+          "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
     },
@@ -5025,57 +5196,6 @@
       ]
     },
     {
-      "name": "Stay Safe Restaurante & Lounge",
-      "count": 9,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs2q48kqsyesa9fxx9vn8xralg4x82yrevjh2rry4nfre06n9q4yjccetmg7",
-          "date": "2026-01-27",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2016251300002800009",
-          "date": "2026-01-27",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2016175256981934476",
-          "date": "2026-01-27",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdqhh2zn7x0hc52j2c68sll6mxujksmkh2vc5z607g4du0a43t2rqszdjas",
-          "date": "2026-01-27",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2015314707427549529",
-          "date": "2026-01-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsxf2m088vyclfe0qh0r2w2dwynhlsstf6yr6klyn5ff7vm89j8qpqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczyqqqf7hhcrve9s4fp8s0gvjy7352qsz6acsst6x9c3hca7j5j0aluqcyqqqqqqg44rcnt",
-          "date": "2026-01-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2014782853343555988",
-          "date": "2026-01-23",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsz0khdmr4hy344z0nht5ru9svexngxmh3tl4k8d88r9acpedkjr7sksmxkx",
-          "date": "2026-01-23",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2014424213285749067",
-          "date": "2026-01-22",
-          "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
       "name": "Sokoni Mboga",
       "count": 9,
       "posts": [
@@ -5377,6 +5497,52 @@
       ]
     },
     {
+      "name": "Njema Dairy",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2016360584640659659",
+          "date": "2026-01-28",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016118993959190686",
+          "date": "2026-01-27",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw2zrhfr60u0zr3pzyjuge9ea3zxktuer9qdcg0pt4m9xkcwat2mqtltpcp",
+          "date": "2026-01-21",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszcj4e0pajyvr7m0f3wqd6afxfref6eql8phtr40xpxme3m4v0xdsss3fce",
+          "date": "2026-01-20",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013290899740963151",
+          "date": "2026-01-19",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013220941313065447",
+          "date": "2026-01-19",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2011487692534473184",
+          "date": "2026-01-14",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2011116329793724561",
+          "date": "2026-01-13",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "SMG Electronics Store",
       "count": 7,
       "posts": [
@@ -5418,47 +5584,6 @@
       ]
     },
     {
-      "name": "Njema Dairy",
-      "count": 7,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2016118993959190686",
-          "date": "2026-01-27",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsw2zrhfr60u0zr3pzyjuge9ea3zxktuer9qdcg0pt4m9xkcwat2mqtltpcp",
-          "date": "2026-01-21",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszcj4e0pajyvr7m0f3wqd6afxfref6eql8phtr40xpxme3m4v0xdsss3fce",
-          "date": "2026-01-20",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013290899740963151",
-          "date": "2026-01-19",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013220941313065447",
-          "date": "2026-01-19",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2011487692534473184",
-          "date": "2026-01-14",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2011116329793724561",
-          "date": "2026-01-13",
-          "project": "Bitcoin Githurai 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Grace Store",
       "count": 7,
       "posts": [
@@ -5496,6 +5621,42 @@
           "url": "https://x.com/i/status/2012391747674845331",
           "date": "2026-01-17",
           "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "P.S Takeaways",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2016409582520737950",
+          "date": "2026-01-28",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp4g069vln2w25g73ednhmlnlqf5c5rz2d4g83yj60ktvfd3mhzlq90hvas",
+          "date": "2026-01-28",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2015510420887339216",
+          "date": "2026-01-25",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8m46ry5rx5mtsf7unqhwa3znag33qgee0qn9reucxv6yzyn9pwpq9mfhpd",
+          "date": "2026-01-25",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2014068175705432190",
+          "date": "2026-01-21",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw6q5f9q3pju0jyyy93845vdl5dnshhpjm4cc4c8tu348yfz0cscq6epfts",
+          "date": "2026-01-21",
+          "project": "Bitcoin Sisonke 🇿🇦"
         }
       ]
     },
@@ -5954,6 +6115,32 @@
       ]
     },
     {
+      "name": "Sonnie Grafiks Advertising",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs86xavyf86k9fz49kaa3wxd9kn9frhd0atlecstxxgxckw5psec9sr7gtux",
+          "date": "2026-01-28",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2016290386398847363",
+          "date": "2026-01-28",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspwmcaa4dqkxrqnam6l0kvxptklkw6xl8vh2q75krdxj8veduf8jg7652a3",
+          "date": "2026-01-18",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2012915256062812383",
+          "date": "2026-01-18",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Ruth Shop",
       "count": 4,
       "posts": [
@@ -6002,32 +6189,6 @@
           "url": "https://x.com/i/status/2014391248929345933",
           "date": "2026-01-22",
           "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "P.S Takeaways",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2015510420887339216",
-          "date": "2026-01-25",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8m46ry5rx5mtsf7unqhwa3znag33qgee0qn9reucxv6yzyn9pwpq9mfhpd",
-          "date": "2026-01-25",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2014068175705432190",
-          "date": "2026-01-21",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsw6q5f9q3pju0jyyy93845vdl5dnshhpjm4cc4c8tu348yfz0cscq6epfts",
-          "date": "2026-01-21",
-          "project": "Bitcoin Sisonke 🇿🇦"
         }
       ]
     },
@@ -6572,22 +6733,6 @@
           "url": "https://x.com/i/status/2012131664319897762",
           "date": "2026-01-16",
           "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Sonnie Grafiks Advertising",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqspwmcaa4dqkxrqnam6l0kvxptklkw6xl8vh2q75krdxj8veduf8jg7652a3",
-          "date": "2026-01-18",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2012915256062812383",
-          "date": "2026-01-18",
-          "project": "Bitcoin Ikorodu 🇳🇬"
         }
       ]
     },
@@ -7395,12 +7540,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 15,
-    "daily_average_payments": 122
+    "daily_average_payments": 124
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1785
+      "count": 1814
     },
     {
       "domain": "8333.mobi",
@@ -7447,13 +7592,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1042
+      "count": 1058
     },
     {
       "platform": "Nostr",
-      "count": 799
+      "count": 812
     }
   ],
-  "generated_at": "2026-01-28T06:22:39.810112+00:00",
+  "generated_at": "2026-01-28T07:22:39.810375+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
