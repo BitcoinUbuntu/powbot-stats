@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 2212,
+    "all_payments": 2215,
     "by_type": {
       "merchant": {
-        "count": 726
+        "count": 727
       },
       "project": {
-        "count": 726
+        "count": 727
       },
       "reviewer": {
-        "count": 760
+        "count": 761
       }
     }
   },
   "today": {
     "date": "2026-01-29",
-    "payments": 216,
+    "payments": 219,
     "by_type": {
       "merchant": {
-        "count": 71
+        "count": 72
       },
       "project": {
-        "count": 71
+        "count": 72
       },
       "reviewer": {
-        "count": 74
+        "count": 75
       }
     },
-    "approved": 71,
+    "approved": 72,
     "rejected": 3,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2016745622536409127",
+        "project": "BitJR Academy 🇿🇲",
+        "merchant": "Day Tech Business Solutions",
+        "platform": "X",
+        "time": "21:44"
+      },
       {
         "url": "https://x.com/i/status/2016789794622263393",
         "project": "Bitcoin Chama 🇰🇪",
@@ -532,6 +539,9 @@
   "last_24h": {
     "videos": [
       {
+        "project": "BitJR Academy 🇿🇲"
+      },
+      {
         "project": "Bitcoin Chama 🇰🇪"
       },
       {
@@ -923,14 +933,14 @@
     },
     {
       "date": "2026-01-29",
-      "project_count": 71,
-      "merchant_count": 71,
-      "reviewer_count": 74
+      "project_count": 72,
+      "merchant_count": 72,
+      "reviewer_count": 75
     }
   ],
   "reviewer": {
-    "total_reviewed": 760,
-    "approved": 726,
+    "total_reviewed": 761,
+    "approved": 727,
     "rejected": 34
   },
   "top_projects": [
@@ -3875,8 +3885,13 @@
     },
     {
       "name": "BitJR Academy 🇿🇲",
-      "count": 24,
+      "count": 25,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2016745622536409127",
+          "date": "2026-01-29",
+          "merchant": "Day Tech Business Solutions"
+        },
         {
           "url": "https://x.com/i/status/2016868934465581548",
           "date": "2026-01-29",
@@ -8228,6 +8243,27 @@
       ]
     },
     {
+      "name": "Day Tech Business Solutions",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2016745622536409127",
+          "date": "2026-01-29",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8e05naruuu0jp946mvrrqthkak2h5a2vcstukgqe2sp6fkx6dyssqvcmuu",
+          "date": "2026-01-26",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2014696110057504988",
+          "date": "2026-01-23",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Cafe Au Lait",
       "count": 3,
       "posts": [
@@ -8666,22 +8702,6 @@
           "url": "https://x.com/i/status/2013924788574507507",
           "date": "2026-01-21",
           "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Day Tech Business Solutions",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs8e05naruuu0jp946mvrrqthkak2h5a2vcstukgqe2sp6fkx6dyssqvcmuu",
-          "date": "2026-01-26",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2014696110057504988",
-          "date": "2026-01-23",
-          "project": "BitJR Academy 🇿🇲"
         }
       ]
     },
@@ -9147,7 +9167,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2121
+      "count": 2124
     },
     {
       "domain": "8333.mobi",
@@ -9194,13 +9214,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1239
+      "count": 1242
     },
     {
       "platform": "Nostr",
       "count": 973
     }
   ],
-  "generated_at": "2026-01-29T21:22:39.819052+00:00",
+  "generated_at": "2026-01-29T22:22:39.974977+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
