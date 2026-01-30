@@ -1,35 +1,70 @@
 {
   "totals": {
-    "all_payments": 2221,
+    "all_payments": 2236,
     "by_type": {
       "merchant": {
-        "count": 729
+        "count": 734
       },
       "project": {
-        "count": 729
+        "count": 734
       },
       "reviewer": {
-        "count": 763
+        "count": 768
       }
     }
   },
   "today": {
     "date": "2026-01-30",
-    "payments": 6,
+    "payments": 21,
     "by_type": {
       "merchant": {
-        "count": 2
+        "count": 7
       },
       "project": {
-        "count": 2
+        "count": 7
       },
       "reviewer": {
-        "count": 2
+        "count": 7
       }
     },
-    "approved": 2,
+    "approved": 7,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs03c00dypaka0s5jg4jnf0uxq8eduk2dejslvrqm4e7sae4l6htsqd7dux7",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "Nostr",
+        "time": "09:37"
+      },
+      {
+        "url": "https://x.com/i/status/2017108641891918117",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "X",
+        "time": "09:35"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs8gxrq3g2y7gcnzywlnt2vhc0axhj44ujxvkxfqsvw98daj296f0csh30t5",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Asha Botanical Garden",
+        "platform": "Nostr",
+        "time": "09:35"
+      },
+      {
+        "url": "https://x.com/i/status/2017161217442259427",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Asha Botanical Garden",
+        "platform": "X",
+        "time": "09:34"
+      },
+      {
+        "url": "https://x.com/i/status/2016821409746498039",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Kidstar furniture",
+        "platform": "X",
+        "time": "09:34"
+      },
       {
         "url": "https://x.com/i/status/2017029603068416146",
         "project": "BitJR Academy 🇿🇲",
@@ -48,6 +83,21 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "BitJR Academy 🇿🇲"
       },
@@ -194,9 +244,6 @@
       },
       {
         "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Ekiti 🇳🇬"
       }
     ]
   },
@@ -377,21 +424,31 @@
     },
     {
       "date": "2026-01-30",
-      "project_count": 2,
-      "merchant_count": 2,
-      "reviewer_count": 2
+      "project_count": 7,
+      "merchant_count": 7,
+      "reviewer_count": 7
     }
   ],
   "reviewer": {
-    "total_reviewed": 763,
-    "approved": 729,
+    "total_reviewed": 768,
+    "approved": 734,
     "rejected": 34
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 129,
+      "count": 131,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs03c00dypaka0s5jg4jnf0uxq8eduk2dejslvrqm4e7sae4l6htsqd7dux7",
+          "date": "2026-01-30",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2017108641891918117",
+          "date": "2026-01-30",
+          "merchant": "Haven food court"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs8gxzw6xwclrzqru0ej3dv4lws3cns986dp7em35zjw95f7tnff9gp59prr",
           "date": "2026-01-29",
@@ -1692,8 +1749,13 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 73,
+      "count": 74,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2016821409746498039",
+          "date": "2026-01-30",
+          "merchant": "Kidstar furniture"
+        },
         {
           "url": "https://x.com/i/status/2016789794622263393",
           "date": "2026-01-29",
@@ -2660,8 +2722,18 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 45,
+      "count": 47,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8gxrq3g2y7gcnzywlnt2vhc0axhj44ujxvkxfqsvw98daj296f0csh30t5",
+          "date": "2026-01-30",
+          "merchant": "Asha Botanical Garden"
+        },
+        {
+          "url": "https://x.com/i/status/2017161217442259427",
+          "date": "2026-01-30",
+          "merchant": "Asha Botanical Garden"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9kkq2dzgnvsnhcx0lnelewzjhyhst2jq2wxanclfzj2juz7nup4qrfjrt9",
           "date": "2026-01-29",
@@ -4844,8 +4916,18 @@
     },
     {
       "name": "Haven food court",
-      "count": 26,
+      "count": 28,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs03c00dypaka0s5jg4jnf0uxq8eduk2dejslvrqm4e7sae4l6htsqd7dux7",
+          "date": "2026-01-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2017108641891918117",
+          "date": "2026-01-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs0mrudfp7acv8l4q96pyzxmalp0v9zlv9vlrxm4auz9zj3ztxdr0clw6jxk",
           "date": "2026-01-29",
@@ -6896,6 +6978,42 @@
       ]
     },
     {
+      "name": "Asha Botanical Garden",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8gxrq3g2y7gcnzywlnt2vhc0axhj44ujxvkxfqsvw98daj296f0csh30t5",
+          "date": "2026-01-30",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2017161217442259427",
+          "date": "2026-01-30",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgqy8xqgpzqfyrmj3vlhk3mn6wxx52cefql9klpql2xxxgad03j5gu6zk9q",
+          "date": "2026-01-27",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2016260179705086199",
+          "date": "2026-01-27",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013751874604663096",
+          "date": "2026-01-21",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf92kjk4m7uu7ttexe4qdpzkfxqhtfjqavlk8pqgqhsqq87hlaq8czw7jlk",
+          "date": "2026-01-20",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "3 West Butchery",
       "count": 6,
       "posts": [
@@ -7550,32 +7668,6 @@
       ]
     },
     {
-      "name": "Asha Botanical Garden",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsgqy8xqgpzqfyrmj3vlhk3mn6wxx52cefql9klpql2xxxgad03j5gu6zk9q",
-          "date": "2026-01-27",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2016260179705086199",
-          "date": "2026-01-27",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013751874604663096",
-          "date": "2026-01-21",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf92kjk4m7uu7ttexe4qdpzkfxqhtfjqavlk8pqgqhsqq87hlaq8czw7jlk",
-          "date": "2026-01-20",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        }
-      ]
-    },
-    {
       "name": "Zwakala Cafe",
       "count": 3,
       "posts": [
@@ -7635,6 +7727,27 @@
           "url": "https://primal.net/e/nevent1qqs9pg97r7f28xds0txu73ty55002ze5390hzch2vl5tzd5w5gcj73s63npne",
           "date": "2026-01-22",
           "project": "BTC Shule 🇧🇮"
+        }
+      ]
+    },
+    {
+      "name": "Kidstar furniture",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2016821409746498039",
+          "date": "2026-01-30",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016892513978659068",
+          "date": "2026-01-29",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs259ky06h9ctl5wec2wqa473gqm8y0pj437546ztl5a5v3vny9cyc63yzhh",
+          "date": "2026-01-29",
+          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -8001,22 +8114,6 @@
           "url": "https://x.com/i/status/2015026685964341303",
           "date": "2026-01-24",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Kidstar furniture",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2016892513978659068",
-          "date": "2026-01-29",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs259ky06h9ctl5wec2wqa473gqm8y0pj437546ztl5a5v3vny9cyc63yzhh",
-          "date": "2026-01-29",
-          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -8626,16 +8723,16 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 17,
-    "daily_average_payments": 130
+    "daily_average_payments": 131
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2130
+      "count": 2144
     },
     {
       "domain": "8333.mobi",
-      "count": 91
+      "count": 92
     }
   ],
   "countries": [
@@ -8678,13 +8775,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1248
+      "count": 1257
     },
     {
       "platform": "Nostr",
-      "count": 973
+      "count": 979
     }
   ],
-  "generated_at": "2026-01-30T09:22:39.827167+00:00",
+  "generated_at": "2026-01-30T09:37:54.584983+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
