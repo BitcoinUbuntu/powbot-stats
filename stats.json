@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 2299,
+    "all_payments": 2302,
     "by_type": {
       "merchant": {
-        "count": 754
+        "count": 755
       },
       "project": {
-        "count": 754
+        "count": 755
       },
       "reviewer": {
-        "count": 791
+        "count": 792
       }
     }
   },
   "today": {
     "date": "2026-01-30",
-    "payments": 84,
+    "payments": 87,
     "by_type": {
       "merchant": {
-        "count": 27
+        "count": 28
       },
       "project": {
-        "count": 27
+        "count": 28
       },
       "reviewer": {
-        "count": 30
+        "count": 31
       }
     },
-    "approved": 27,
+    "approved": 28,
     "rejected": 3,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2017225605050249584",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Chips point",
+        "platform": "X",
+        "time": "13:31"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsf6249rn7tscf8rpqhtnlmf2uwml0fruus64ctr6hk4yrpxaey5wcq2pync",
         "project": "Bitbiashara 🇰🇪",
@@ -223,6 +230,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -606,21 +616,26 @@
     },
     {
       "date": "2026-01-30",
-      "project_count": 27,
-      "merchant_count": 27,
-      "reviewer_count": 30
+      "project_count": 28,
+      "merchant_count": 28,
+      "reviewer_count": 31
     }
   ],
   "reviewer": {
-    "total_reviewed": 791,
-    "approved": 754,
+    "total_reviewed": 792,
+    "approved": 755,
     "rejected": 37
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 148,
+      "count": 149,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2017225605050249584",
+          "date": "2026-01-30",
+          "merchant": "Chips point"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsf6249rn7tscf8rpqhtnlmf2uwml0fruus64ctr6hk4yrpxaey5wcq2pync",
           "date": "2026-01-30",
@@ -5530,8 +5545,13 @@
     },
     {
       "name": "Chips point",
-      "count": 22,
+      "count": 23,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2017225605050249584",
+          "date": "2026-01-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsf6249rn7tscf8rpqhtnlmf2uwml0fruus64ctr6hk4yrpxaey5wcq2pync",
           "date": "2026-01-30",
@@ -9110,7 +9130,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2207
+      "count": 2210
     },
     {
       "domain": "8333.mobi",
@@ -9157,13 +9177,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1289
+      "count": 1292
     },
     {
       "platform": "Nostr",
       "count": 1010
     }
   ],
-  "generated_at": "2026-01-30T13:22:39.805219+00:00",
+  "generated_at": "2026-01-30T14:22:39.799765+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
