@@ -1,35 +1,84 @@
 {
   "totals": {
-    "all_payments": 2236,
+    "all_payments": 2257,
     "by_type": {
       "merchant": {
-        "count": 734
+        "count": 741
       },
       "project": {
-        "count": 734
+        "count": 741
       },
       "reviewer": {
-        "count": 768
+        "count": 775
       }
     }
   },
   "today": {
     "date": "2026-01-30",
-    "payments": 21,
+    "payments": 42,
     "by_type": {
       "merchant": {
-        "count": 7
+        "count": 14
       },
       "project": {
-        "count": 7
+        "count": 14
       },
       "reviewer": {
-        "count": 7
+        "count": 14
       }
     },
-    "approved": 7,
+    "approved": 14,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2017163374711210130",
+        "project": "BitJR Academy 🇿🇲",
+        "merchant": "Sweet & Salty Cafe",
+        "platform": "X",
+        "time": "09:54"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsyhesxz4utlcp6aljjmq3mqsadaqps3ak25nqspfla8exvmv366gch3yh7k",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "Nostr",
+        "time": "09:52"
+      },
+      {
+        "url": "https://x.com/i/status/2017167026557444315",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "X",
+        "time": "09:50"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsyuzl6z9yn67p7dq9cux7fwmkhshyp7rhcpl3p7yeh20z6s45crdcaylyxa",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "Nostr",
+        "time": "09:49"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqstcskdjjxmr3a890vhz58ju59lg7jxl8e23r6hg3d97vl62ya2x3qhpcjpx",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "Nostr",
+        "time": "09:49"
+      },
+      {
+        "url": "https://x.com/i/status/2017136112553037837",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "X",
+        "time": "09:41"
+      },
+      {
+        "url": "https://x.com/i/status/2017129594810228890",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "X",
+        "time": "09:40"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs03c00dypaka0s5jg4jnf0uxq8eduk2dejslvrqm4e7sae4l6htsqd7dux7",
         "project": "Bitbiashara 🇰🇪",
@@ -83,6 +132,27 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "BitJR Academy 🇿🇲"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -424,21 +494,51 @@
     },
     {
       "date": "2026-01-30",
-      "project_count": 7,
-      "merchant_count": 7,
-      "reviewer_count": 7
+      "project_count": 14,
+      "merchant_count": 14,
+      "reviewer_count": 14
     }
   ],
   "reviewer": {
-    "total_reviewed": 768,
-    "approved": 734,
+    "total_reviewed": 775,
+    "approved": 741,
     "rejected": 34
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 131,
+      "count": 137,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyhesxz4utlcp6aljjmq3mqsadaqps3ak25nqspfla8exvmv366gch3yh7k",
+          "date": "2026-01-30",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2017167026557444315",
+          "date": "2026-01-30",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyuzl6z9yn67p7dq9cux7fwmkhshyp7rhcpl3p7yeh20z6s45crdcaylyxa",
+          "date": "2026-01-30",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstcskdjjxmr3a890vhz58ju59lg7jxl8e23r6hg3d97vl62ya2x3qhpcjpx",
+          "date": "2026-01-30",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2017136112553037837",
+          "date": "2026-01-30",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2017129594810228890",
+          "date": "2026-01-30",
+          "merchant": "Grandsmatt"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs03c00dypaka0s5jg4jnf0uxq8eduk2dejslvrqm4e7sae4l6htsqd7dux7",
           "date": "2026-01-30",
@@ -3123,6 +3223,152 @@
       ]
     },
     {
+      "name": "BitJR Academy 🇿🇲",
+      "count": 28,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2017163374711210130",
+          "date": "2026-01-30",
+          "merchant": "Sweet & Salty Cafe"
+        },
+        {
+          "url": "https://x.com/i/status/2017029603068416146",
+          "date": "2026-01-30",
+          "merchant": "Cyber Tech General Dealer"
+        },
+        {
+          "url": "https://x.com/i/status/2016957017433501949",
+          "date": "2026-01-30",
+          "merchant": "Mundayam Restaurant"
+        },
+        {
+          "url": "https://x.com/i/status/2016745622536409127",
+          "date": "2026-01-29",
+          "merchant": "Day Tech Business Solutions"
+        },
+        {
+          "url": "https://x.com/i/status/2016868934465581548",
+          "date": "2026-01-29",
+          "merchant": "Cafe Au Lait"
+        },
+        {
+          "url": "https://x.com/i/status/2016646389132878097",
+          "date": "2026-01-29",
+          "merchant": "Liberty trading point"
+        },
+        {
+          "url": "https://x.com/i/status/2016498997557645672",
+          "date": "2026-01-28",
+          "merchant": "Sweet & Salty Cafe"
+        },
+        {
+          "url": "https://x.com/i/status/2016383234788229563",
+          "date": "2026-01-28",
+          "merchant": "Phillard Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2016136609138176025",
+          "date": "2026-01-27",
+          "merchant": "Cafe Au Lait"
+        },
+        {
+          "url": "https://x.com/i/status/2016035946572157108",
+          "date": "2026-01-27",
+          "merchant": "Phillard Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2015952997583347829",
+          "date": "2026-01-27",
+          "merchant": "Sweet & Salty Cafe"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8e05naruuu0jp946mvrrqthkak2h5a2vcstukgqe2sp6fkx6dyssqvcmuu",
+          "date": "2026-01-26",
+          "merchant": "Day Tech Business Solutions"
+        },
+        {
+          "url": "https://x.com/i/status/2015456218672714099",
+          "date": "2026-01-25",
+          "merchant": "Obrien Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2014827424077254658",
+          "date": "2026-01-24",
+          "merchant": "Phillard Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2014696110057504988",
+          "date": "2026-01-23",
+          "merchant": "Day Tech Business Solutions"
+        },
+        {
+          "url": "https://x.com/i/status/2014593946312454397",
+          "date": "2026-01-23",
+          "merchant": "Phillard Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2014516757482901938",
+          "date": "2026-01-23",
+          "merchant": "Cafe Au Lait"
+        },
+        {
+          "url": "https://x.com/i/status/2014057912096768468",
+          "date": "2026-01-22",
+          "merchant": "Mundayam Restaurant"
+        },
+        {
+          "url": "https://x.com/i/status/2013959769015587298",
+          "date": "2026-01-21",
+          "merchant": "Obrien Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2013861618321608917",
+          "date": "2026-01-21",
+          "merchant": "Mundayam Restaurant"
+        },
+        {
+          "url": "https://x.com/i/status/2013769781346812165",
+          "date": "2026-01-21",
+          "merchant": "Sweet & Salty Cafe"
+        },
+        {
+          "url": "https://x.com/i/status/2013511813305114698",
+          "date": "2026-01-20",
+          "merchant": "Mundayam Restaurant"
+        },
+        {
+          "url": "https://x.com/i/status/2013414324069450099",
+          "date": "2026-01-20",
+          "merchant": "Piotech Centre"
+        },
+        {
+          "url": "https://x.com/i/status/2013314307472134361",
+          "date": "2026-01-19",
+          "merchant": "Sweet & Salty Cafe"
+        },
+        {
+          "url": "https://x.com/i/status/2013165603364725020",
+          "date": "2026-01-19",
+          "merchant": "Kashi Creations Closet & Hair Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2011570303479210146",
+          "date": "2026-01-15",
+          "merchant": "Mundayam Restaurant"
+        },
+        {
+          "url": "https://x.com/i/status/2011332455996014831",
+          "date": "2026-01-14",
+          "merchant": "Cyber Tech General Dealer"
+        },
+        {
+          "url": "https://x.com/i/status/2011152743441056158",
+          "date": "2026-01-13",
+          "merchant": "Obrien Shop"
+        }
+      ]
+    },
+    {
       "name": "BitKwa 🇳🇬",
       "count": 27,
       "posts": [
@@ -3260,147 +3506,6 @@
           "url": "https://x.com/i/status/2013355432471871689",
           "date": "2026-01-20",
           "merchant": "Lawee Business Concept"
-        }
-      ]
-    },
-    {
-      "name": "BitJR Academy 🇿🇲",
-      "count": 27,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2017029603068416146",
-          "date": "2026-01-30",
-          "merchant": "Cyber Tech General Dealer"
-        },
-        {
-          "url": "https://x.com/i/status/2016957017433501949",
-          "date": "2026-01-30",
-          "merchant": "Mundayam Restaurant"
-        },
-        {
-          "url": "https://x.com/i/status/2016745622536409127",
-          "date": "2026-01-29",
-          "merchant": "Day Tech Business Solutions"
-        },
-        {
-          "url": "https://x.com/i/status/2016868934465581548",
-          "date": "2026-01-29",
-          "merchant": "Cafe Au Lait"
-        },
-        {
-          "url": "https://x.com/i/status/2016646389132878097",
-          "date": "2026-01-29",
-          "merchant": "Liberty trading point"
-        },
-        {
-          "url": "https://x.com/i/status/2016498997557645672",
-          "date": "2026-01-28",
-          "merchant": "Sweet & Salty Cafe"
-        },
-        {
-          "url": "https://x.com/i/status/2016383234788229563",
-          "date": "2026-01-28",
-          "merchant": "Phillard Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2016136609138176025",
-          "date": "2026-01-27",
-          "merchant": "Cafe Au Lait"
-        },
-        {
-          "url": "https://x.com/i/status/2016035946572157108",
-          "date": "2026-01-27",
-          "merchant": "Phillard Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2015952997583347829",
-          "date": "2026-01-27",
-          "merchant": "Sweet & Salty Cafe"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8e05naruuu0jp946mvrrqthkak2h5a2vcstukgqe2sp6fkx6dyssqvcmuu",
-          "date": "2026-01-26",
-          "merchant": "Day Tech Business Solutions"
-        },
-        {
-          "url": "https://x.com/i/status/2015456218672714099",
-          "date": "2026-01-25",
-          "merchant": "Obrien Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2014827424077254658",
-          "date": "2026-01-24",
-          "merchant": "Phillard Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2014696110057504988",
-          "date": "2026-01-23",
-          "merchant": "Day Tech Business Solutions"
-        },
-        {
-          "url": "https://x.com/i/status/2014593946312454397",
-          "date": "2026-01-23",
-          "merchant": "Phillard Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2014516757482901938",
-          "date": "2026-01-23",
-          "merchant": "Cafe Au Lait"
-        },
-        {
-          "url": "https://x.com/i/status/2014057912096768468",
-          "date": "2026-01-22",
-          "merchant": "Mundayam Restaurant"
-        },
-        {
-          "url": "https://x.com/i/status/2013959769015587298",
-          "date": "2026-01-21",
-          "merchant": "Obrien Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2013861618321608917",
-          "date": "2026-01-21",
-          "merchant": "Mundayam Restaurant"
-        },
-        {
-          "url": "https://x.com/i/status/2013769781346812165",
-          "date": "2026-01-21",
-          "merchant": "Sweet & Salty Cafe"
-        },
-        {
-          "url": "https://x.com/i/status/2013511813305114698",
-          "date": "2026-01-20",
-          "merchant": "Mundayam Restaurant"
-        },
-        {
-          "url": "https://x.com/i/status/2013414324069450099",
-          "date": "2026-01-20",
-          "merchant": "Piotech Centre"
-        },
-        {
-          "url": "https://x.com/i/status/2013314307472134361",
-          "date": "2026-01-19",
-          "merchant": "Sweet & Salty Cafe"
-        },
-        {
-          "url": "https://x.com/i/status/2013165603364725020",
-          "date": "2026-01-19",
-          "merchant": "Kashi Creations Closet & Hair Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2011570303479210146",
-          "date": "2026-01-15",
-          "merchant": "Mundayam Restaurant"
-        },
-        {
-          "url": "https://x.com/i/status/2011332455996014831",
-          "date": "2026-01-14",
-          "merchant": "Cyber Tech General Dealer"
-        },
-        {
-          "url": "https://x.com/i/status/2011152743441056158",
-          "date": "2026-01-13",
-          "merchant": "Obrien Shop"
         }
       ]
     },
@@ -4750,8 +4855,18 @@
     },
     {
       "name": "Grandsmatt",
-      "count": 32,
+      "count": 34,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstcskdjjxmr3a890vhz58ju59lg7jxl8e23r6hg3d97vl62ya2x3qhpcjpx",
+          "date": "2026-01-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2017129594810228890",
+          "date": "2026-01-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsfznqjwtx6xk2u6taxht4033k6lvtw20kfrnkf0h2r7wm6fuhrmacq57utg",
           "date": "2026-01-29",
@@ -4916,8 +5031,18 @@
     },
     {
       "name": "Haven food court",
-      "count": 28,
+      "count": 30,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyuzl6z9yn67p7dq9cux7fwmkhshyp7rhcpl3p7yeh20z6s45crdcaylyxa",
+          "date": "2026-01-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2017136112553037837",
+          "date": "2026-01-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs03c00dypaka0s5jg4jnf0uxq8eduk2dejslvrqm4e7sae4l6htsqd7dux7",
           "date": "2026-01-30",
@@ -5763,6 +5888,87 @@
       ]
     },
     {
+      "name": "Bliss beauty Salon",
+      "count": 15,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyhesxz4utlcp6aljjmq3mqsadaqps3ak25nqspfla8exvmv366gch3yh7k",
+          "date": "2026-01-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2017167026557444315",
+          "date": "2026-01-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8gxzw6xwclrzqru0ej3dv4lws3cns986dp7em35zjw95f7tnff9gp59prr",
+          "date": "2026-01-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016892893466685864",
+          "date": "2026-01-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs86nl5c5srr4gcp7xan2qw6u3s0xwz6sxpfcrehrl9c9056zvlzvqzmlmu4",
+          "date": "2026-01-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016746238922707184",
+          "date": "2026-01-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsphks0qk3j8r542rq2690v3k2tddvchmgpdj42rgem72suc4cet5st36sme",
+          "date": "2026-01-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015716092283388026",
+          "date": "2026-01-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs037lzrnzv279fk9hwukj4t9dah564ly55ek90dwm53v0e9f0lr7cgpmuv6",
+          "date": "2026-01-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014992281015591009",
+          "date": "2026-01-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp5j637wzgsu9uceqvg0pr629xx0nsemeu0aherjxd9carlyq64lcfzmllu",
+          "date": "2026-01-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxptmrhut2e259g2cqg8dq6wczwqkanmrhh9duetn0d6xyaraklpscrlm9e",
+          "date": "2026-01-18",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012179890393481234",
+          "date": "2026-01-16",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012158765189960189",
+          "date": "2026-01-16",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2011463808259145756",
+          "date": "2026-01-15",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "The Sario Eventers",
       "count": 13,
       "posts": [
@@ -5899,77 +6105,6 @@
         },
         {
           "url": "https://x.com/i/status/2011768962011578835",
-          "date": "2026-01-15",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Bliss beauty Salon",
-      "count": 13,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs8gxzw6xwclrzqru0ej3dv4lws3cns986dp7em35zjw95f7tnff9gp59prr",
-          "date": "2026-01-29",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2016892893466685864",
-          "date": "2026-01-29",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs86nl5c5srr4gcp7xan2qw6u3s0xwz6sxpfcrehrl9c9056zvlzvqzmlmu4",
-          "date": "2026-01-29",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2016746238922707184",
-          "date": "2026-01-29",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsphks0qk3j8r542rq2690v3k2tddvchmgpdj42rgem72suc4cet5st36sme",
-          "date": "2026-01-26",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2015716092283388026",
-          "date": "2026-01-26",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs037lzrnzv279fk9hwukj4t9dah564ly55ek90dwm53v0e9f0lr7cgpmuv6",
-          "date": "2026-01-24",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014992281015591009",
-          "date": "2026-01-24",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp5j637wzgsu9uceqvg0pr629xx0nsemeu0aherjxd9carlyq64lcfzmllu",
-          "date": "2026-01-21",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxptmrhut2e259g2cqg8dq6wczwqkanmrhh9duetn0d6xyaraklpscrlm9e",
-          "date": "2026-01-18",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012179890393481234",
-          "date": "2026-01-16",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012158765189960189",
-          "date": "2026-01-16",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2011463808259145756",
           "date": "2026-01-15",
           "project": "Bitbiashara 🇰🇪"
         }
@@ -7081,6 +7216,37 @@
       ]
     },
     {
+      "name": "Sweet & Salty Cafe",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2017163374711210130",
+          "date": "2026-01-30",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2016498997557645672",
+          "date": "2026-01-28",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2015952997583347829",
+          "date": "2026-01-27",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2013769781346812165",
+          "date": "2026-01-21",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2013314307472134361",
+          "date": "2026-01-19",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Space Cutz",
       "count": 5,
       "posts": [
@@ -7248,32 +7414,6 @@
           "url": "https://x.com/i/status/2013745841610059791",
           "date": "2026-01-21",
           "project": "Bitcoin Ekiti 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Sweet & Salty Cafe",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2016498997557645672",
-          "date": "2026-01-28",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2015952997583347829",
-          "date": "2026-01-27",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2013769781346812165",
-          "date": "2026-01-21",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2013314307472134361",
-          "date": "2026-01-19",
-          "project": "BitJR Academy 🇿🇲"
         }
       ]
     },
@@ -8723,12 +8863,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 17,
-    "daily_average_payments": 131
+    "daily_average_payments": 132
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2144
+      "count": 2165
     },
     {
       "domain": "8333.mobi",
@@ -8775,13 +8915,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1257
+      "count": 1269
     },
     {
       "platform": "Nostr",
-      "count": 979
+      "count": 988
     }
   ],
-  "generated_at": "2026-01-30T09:37:54.584983+00:00",
+  "generated_at": "2026-01-30T10:22:39.958563+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
