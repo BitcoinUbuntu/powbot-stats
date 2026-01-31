@@ -1,29 +1,90 @@
 {
   "totals": {
-    "all_payments": 2308,
+    "all_payments": 2325,
     "by_type": {
       "merchant": {
-        "count": 757
+        "count": 762
       },
       "project": {
-        "count": 757
+        "count": 762
       },
       "reviewer": {
-        "count": 794
+        "count": 801
       }
     }
   },
   "today": {
     "date": "2026-01-31",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
-    "rejected": 0,
-    "videos": []
+    "payments": 17,
+    "by_type": {
+      "merchant": {
+        "count": 5
+      },
+      "project": {
+        "count": 5
+      },
+      "reviewer": {
+        "count": 7
+      }
+    },
+    "approved": 5,
+    "rejected": 2,
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2017490653937057909",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "X",
+        "time": "10:06"
+      },
+      {
+        "url": "https://x.com/i/status/2017325539061608630",
+        "project": "BitKwa 🇳🇬",
+        "merchant": "Space Cutz",
+        "platform": "X",
+        "time": "10:05"
+      },
+      {
+        "url": "https://x.com/i/status/2017228807992680749",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Pretty Beauty Salon",
+        "platform": "X",
+        "time": "10:05"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsxempgxastahpz8l2jqhteth35adr4rkupk6jqhhrcmwl72u8604g0z0v4h",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "Nostr",
+        "time": "10:05"
+      },
+      {
+        "url": "https://x.com/i/status/2017277028311920670",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "X",
+        "time": "09:35"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "BitKwa 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
         "project": "Bitcoin NextGen 🇳🇬"
       },
       {
@@ -70,42 +131,6 @@
       },
       {
         "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "BitJR Academy 🇿🇲"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Ekiti 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Ekiti 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
       }
     ]
   },
@@ -286,21 +311,26 @@
     },
     {
       "date": "2026-01-31",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 5,
+      "merchant_count": 5,
+      "reviewer_count": 7
     }
   ],
   "reviewer": {
-    "total_reviewed": 794,
-    "approved": 757,
-    "rejected": 37
+    "total_reviewed": 801,
+    "approved": 762,
+    "rejected": 39
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 149,
+      "count": 150,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2017490653937057909",
+          "date": "2026-01-31",
+          "merchant": "Grandsmatt"
+        },
         {
           "url": "https://x.com/i/status/2017225605050249584",
           "date": "2026-01-30",
@@ -3076,8 +3106,18 @@
     },
     {
       "name": "Bitcoin NextGen 🇳🇬",
-      "count": 28,
+      "count": 30,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxempgxastahpz8l2jqhteth35adr4rkupk6jqhhrcmwl72u8604g0z0v4h",
+          "date": "2026-01-31",
+          "merchant": "Emmy Store"
+        },
+        {
+          "url": "https://x.com/i/status/2017277028311920670",
+          "date": "2026-01-31",
+          "merchant": "Emmy Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsv4l6r39vnegjdrgvfkp8z4qwe2y5sf364tcp4tra0dwtmvzy2t0qntamh8",
           "date": "2026-01-30",
@@ -3217,6 +3257,152 @@
           "url": "https://x.com/i/status/2014795007786451454",
           "date": "2026-01-24",
           "merchant": "Emmy Store"
+        }
+      ]
+    },
+    {
+      "name": "BitKwa 🇳🇬",
+      "count": 28,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2017325539061608630",
+          "date": "2026-01-31",
+          "merchant": "Space Cutz"
+        },
+        {
+          "url": "https://x.com/i/status/2016189350518599966",
+          "date": "2026-01-27",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2016184020501991707",
+          "date": "2026-01-27",
+          "merchant": "Mega Standard"
+        },
+        {
+          "url": "https://x.com/i/status/2016179840353775651",
+          "date": "2026-01-27",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2016173252557619435",
+          "date": "2026-01-27",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2016169718407725557",
+          "date": "2026-01-27",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2016164827727609881",
+          "date": "2026-01-27",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2014827909169447015",
+          "date": "2026-01-24",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2014823253211070469",
+          "date": "2026-01-24",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2014814547262033968",
+          "date": "2026-01-24",
+          "merchant": "Space Cutz"
+        },
+        {
+          "url": "https://x.com/i/status/2014809720226296238",
+          "date": "2026-01-24",
+          "merchant": "Mega Standard"
+        },
+        {
+          "url": "https://x.com/i/status/2014732001429844181",
+          "date": "2026-01-23",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2014726768171581590",
+          "date": "2026-01-23",
+          "merchant": "Space Cutz"
+        },
+        {
+          "url": "https://x.com/i/status/2014723618010189965",
+          "date": "2026-01-23",
+          "merchant": "Dolphins Swimming Pool"
+        },
+        {
+          "url": "https://x.com/i/status/2014254448592249273",
+          "date": "2026-01-22",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2014249217309471169",
+          "date": "2026-01-22",
+          "merchant": "Space Cutz"
+        },
+        {
+          "url": "https://x.com/i/status/2014237310913569266",
+          "date": "2026-01-22",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2014039134105465037",
+          "date": "2026-01-21",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2013922234994159744",
+          "date": "2026-01-21",
+          "merchant": "Dolphins Swimming Pool"
+        },
+        {
+          "url": "https://x.com/i/status/2013918079038742578",
+          "date": "2026-01-21",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2013872452674232786",
+          "date": "2026-01-21",
+          "merchant": "Mega Standard"
+        },
+        {
+          "url": "https://x.com/i/status/2013739622686150876",
+          "date": "2026-01-21",
+          "merchant": "Mega Standard"
+        },
+        {
+          "url": "https://x.com/i/status/2013734781402407292",
+          "date": "2026-01-21",
+          "merchant": "Dolphins Swimming Pool"
+        },
+        {
+          "url": "https://x.com/i/status/2013728477766144369",
+          "date": "2026-01-21",
+          "merchant": "Space Cutz"
+        },
+        {
+          "url": "https://x.com/i/status/2013712462651027771",
+          "date": "2026-01-20",
+          "merchant": "Space Cutz"
+        },
+        {
+          "url": "https://x.com/i/status/2013701698426941628",
+          "date": "2026-01-20",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2013677983899291674",
+          "date": "2026-01-20",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2013355432471871689",
+          "date": "2026-01-20",
+          "merchant": "Lawee Business Concept"
         }
       ]
     },
@@ -3367,147 +3553,6 @@
       ]
     },
     {
-      "name": "BitKwa 🇳🇬",
-      "count": 27,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2016189350518599966",
-          "date": "2026-01-27",
-          "merchant": "Lawee Business Concept"
-        },
-        {
-          "url": "https://x.com/i/status/2016184020501991707",
-          "date": "2026-01-27",
-          "merchant": "Mega Standard"
-        },
-        {
-          "url": "https://x.com/i/status/2016179840353775651",
-          "date": "2026-01-27",
-          "merchant": "Lawee Business Concept"
-        },
-        {
-          "url": "https://x.com/i/status/2016173252557619435",
-          "date": "2026-01-27",
-          "merchant": "Lawee Business Concept"
-        },
-        {
-          "url": "https://x.com/i/status/2016169718407725557",
-          "date": "2026-01-27",
-          "merchant": "Lawee Business Concept"
-        },
-        {
-          "url": "https://x.com/i/status/2016164827727609881",
-          "date": "2026-01-27",
-          "merchant": "Lawee Business Concept"
-        },
-        {
-          "url": "https://x.com/i/status/2014827909169447015",
-          "date": "2026-01-24",
-          "merchant": "Lawee Business Concept"
-        },
-        {
-          "url": "https://x.com/i/status/2014823253211070469",
-          "date": "2026-01-24",
-          "merchant": "Lawee Business Concept"
-        },
-        {
-          "url": "https://x.com/i/status/2014814547262033968",
-          "date": "2026-01-24",
-          "merchant": "Space Cutz"
-        },
-        {
-          "url": "https://x.com/i/status/2014809720226296238",
-          "date": "2026-01-24",
-          "merchant": "Mega Standard"
-        },
-        {
-          "url": "https://x.com/i/status/2014732001429844181",
-          "date": "2026-01-23",
-          "merchant": "Lawee Business Concept"
-        },
-        {
-          "url": "https://x.com/i/status/2014726768171581590",
-          "date": "2026-01-23",
-          "merchant": "Space Cutz"
-        },
-        {
-          "url": "https://x.com/i/status/2014723618010189965",
-          "date": "2026-01-23",
-          "merchant": "Dolphins Swimming Pool"
-        },
-        {
-          "url": "https://x.com/i/status/2014254448592249273",
-          "date": "2026-01-22",
-          "merchant": "Lawee Business Concept"
-        },
-        {
-          "url": "https://x.com/i/status/2014249217309471169",
-          "date": "2026-01-22",
-          "merchant": "Space Cutz"
-        },
-        {
-          "url": "https://x.com/i/status/2014237310913569266",
-          "date": "2026-01-22",
-          "merchant": "Lawee Business Concept"
-        },
-        {
-          "url": "https://x.com/i/status/2014039134105465037",
-          "date": "2026-01-21",
-          "merchant": "Lawee Business Concept"
-        },
-        {
-          "url": "https://x.com/i/status/2013922234994159744",
-          "date": "2026-01-21",
-          "merchant": "Dolphins Swimming Pool"
-        },
-        {
-          "url": "https://x.com/i/status/2013918079038742578",
-          "date": "2026-01-21",
-          "merchant": "Lawee Business Concept"
-        },
-        {
-          "url": "https://x.com/i/status/2013872452674232786",
-          "date": "2026-01-21",
-          "merchant": "Mega Standard"
-        },
-        {
-          "url": "https://x.com/i/status/2013739622686150876",
-          "date": "2026-01-21",
-          "merchant": "Mega Standard"
-        },
-        {
-          "url": "https://x.com/i/status/2013734781402407292",
-          "date": "2026-01-21",
-          "merchant": "Dolphins Swimming Pool"
-        },
-        {
-          "url": "https://x.com/i/status/2013728477766144369",
-          "date": "2026-01-21",
-          "merchant": "Space Cutz"
-        },
-        {
-          "url": "https://x.com/i/status/2013712462651027771",
-          "date": "2026-01-20",
-          "merchant": "Space Cutz"
-        },
-        {
-          "url": "https://x.com/i/status/2013701698426941628",
-          "date": "2026-01-20",
-          "merchant": "Lawee Business Concept"
-        },
-        {
-          "url": "https://x.com/i/status/2013677983899291674",
-          "date": "2026-01-20",
-          "merchant": "Lawee Business Concept"
-        },
-        {
-          "url": "https://x.com/i/status/2013355432471871689",
-          "date": "2026-01-20",
-          "merchant": "Lawee Business Concept"
-        }
-      ]
-    },
-    {
       "name": "Bitcoin Ikorodu 🇳🇬",
       "count": 24,
       "posts": [
@@ -3635,8 +3680,13 @@
     },
     {
       "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 18,
+      "count": 19,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2017228807992680749",
+          "date": "2026-01-31",
+          "merchant": "Pretty Beauty Salon"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsq55uxag34y07dvyk9grhqmkke5naqj6x76znj6fuedf6re3wqaqs2ycvtn",
           "date": "2026-01-29",
@@ -4521,8 +4571,13 @@
     },
     {
       "name": "Grandsmatt",
-      "count": 40,
+      "count": 41,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2017490653937057909",
+          "date": "2026-01-31",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrpl8gq9l44umtffhzgndy8p6cgn9v0e7drp6skq6mc2xl6mf4hgqexm63f",
           "date": "2026-01-30",
@@ -5089,8 +5144,18 @@
     },
     {
       "name": "Emmy Store",
-      "count": 28,
+      "count": 30,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxempgxastahpz8l2jqhteth35adr4rkupk6jqhhrcmwl72u8604g0z0v4h",
+          "date": "2026-01-31",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2017277028311920670",
+          "date": "2026-01-31",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsv4l6r39vnegjdrgvfkp8z4qwe2y5sf364tcp4tra0dwtmvzy2t0qntamh8",
           "date": "2026-01-30",
@@ -6777,6 +6842,42 @@
       ]
     },
     {
+      "name": "Space Cutz",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2017325539061608630",
+          "date": "2026-01-31",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014814547262033968",
+          "date": "2026-01-24",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014726768171581590",
+          "date": "2026-01-23",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014249217309471169",
+          "date": "2026-01-22",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013728477766144369",
+          "date": "2026-01-21",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013712462651027771",
+          "date": "2026-01-20",
+          "project": "BitKwa 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "P.S Takeaways",
       "count": 6,
       "posts": [
@@ -7195,37 +7296,6 @@
           "url": "https://x.com/i/status/2013314307472134361",
           "date": "2026-01-19",
           "project": "BitJR Academy 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Space Cutz",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2014814547262033968",
-          "date": "2026-01-24",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2014726768171581590",
-          "date": "2026-01-23",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2014249217309471169",
-          "date": "2026-01-22",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013728477766144369",
-          "date": "2026-01-21",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013712462651027771",
-          "date": "2026-01-20",
-          "project": "BitKwa 🇳🇬"
         }
       ]
     },
@@ -8592,6 +8662,17 @@
       ]
     },
     {
+      "name": "Pretty Beauty Salon",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2017228807992680749",
+          "date": "2026-01-31",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Piotech Centre",
       "count": 1,
       "posts": [
@@ -8815,16 +8896,16 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 18,
-    "daily_average_payments": 128
+    "daily_average_payments": 129
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2214
+      "count": 2229
     },
     {
       "domain": "8333.mobi",
-      "count": 94
+      "count": 96
     }
   ],
   "countries": [
@@ -8867,13 +8948,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1295
+      "count": 1308
     },
     {
       "platform": "Nostr",
-      "count": 1013
+      "count": 1017
     }
   ],
-  "generated_at": "2026-01-31T09:22:39.976747+00:00",
+  "generated_at": "2026-01-31T10:07:56.385038+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
