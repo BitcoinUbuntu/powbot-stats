@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 2444,
+    "all_payments": 2453,
     "by_type": {
       "merchant": {
-        "count": 801
+        "count": 804
       },
       "project": {
-        "count": 801
+        "count": 804
       },
       "reviewer": {
-        "count": 842
+        "count": 845
       }
     }
   },
   "today": {
     "date": "2026-02-01",
-    "payments": 30,
+    "payments": 39,
     "by_type": {
       "merchant": {
-        "count": 10
+        "count": 13
       },
       "project": {
-        "count": 10
+        "count": 13
       },
       "reviewer": {
-        "count": 10
+        "count": 13
       }
     },
-    "approved": 10,
+    "approved": 13,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsyeugvx5lgs9njesu7mrv49g2yr3yz8jwllfuq8zlswd7jwzux5uclxatxa",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "Nostr",
+        "time": "09:00"
+      },
+      {
+        "url": "https://x.com/i/status/2017624234860671352",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "08:59"
+      },
+      {
+        "url": "https://x.com/i/status/2017623435279515974",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "08:52"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsg354umdcqjqtk7lremkjr9dtspy8ghr44857cpjcnnln80j9tm7q30twz0",
         "project": "Bitcoin Chama 🇰🇪",
@@ -104,6 +125,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -415,14 +445,14 @@
     },
     {
       "date": "2026-02-01",
-      "project_count": 10,
-      "merchant_count": 10,
-      "reviewer_count": 10
+      "project_count": 13,
+      "merchant_count": 13,
+      "reviewer_count": 13
     }
   ],
   "reviewer": {
-    "total_reviewed": 842,
-    "approved": 801,
+    "total_reviewed": 845,
+    "approved": 804,
     "rejected": 41
   },
   "top_projects": [
@@ -1890,8 +1920,23 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 90,
+      "count": 93,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyeugvx5lgs9njesu7mrv49g2yr3yz8jwllfuq8zlswd7jwzux5uclxatxa",
+          "date": "2026-02-01",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2017624234860671352",
+          "date": "2026-02-01",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2017623435279515974",
+          "date": "2026-02-01",
+          "merchant": "Orero shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsg354umdcqjqtk7lremkjr9dtspy8ghr44857cpjcnnln80j9tm7q30twz0",
           "date": "2026-02-01",
@@ -4579,8 +4624,23 @@
   "top_merchants": [
     {
       "name": "Orero shop",
-      "count": 73,
+      "count": 76,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyeugvx5lgs9njesu7mrv49g2yr3yz8jwllfuq8zlswd7jwzux5uclxatxa",
+          "date": "2026-02-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2017624234860671352",
+          "date": "2026-02-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2017623435279515974",
+          "date": "2026-02-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsg354umdcqjqtk7lremkjr9dtspy8ghr44857cpjcnnln80j9tm7q30twz0",
           "date": "2026-02-01",
@@ -9402,16 +9462,16 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 19,
-    "daily_average_payments": 128
+    "daily_average_payments": 129
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2332
+      "count": 2338
     },
     {
       "domain": "8333.mobi",
-      "count": 112
+      "count": 115
     }
   ],
   "countries": [
@@ -9454,13 +9514,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1363
+      "count": 1369
     },
     {
       "platform": "Nostr",
-      "count": 1081
+      "count": 1084
     }
   ],
-  "generated_at": "2026-02-01T08:22:39.809624+00:00",
+  "generated_at": "2026-02-01T09:22:39.964166+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
