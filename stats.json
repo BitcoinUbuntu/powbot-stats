@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 2594,
+    "all_payments": 2600,
     "by_type": {
       "merchant": {
-        "count": 851
+        "count": 853
       },
       "project": {
-        "count": 851
+        "count": 853
       },
       "reviewer": {
-        "count": 892
+        "count": 894
       }
     }
   },
   "today": {
     "date": "2026-02-01",
-    "payments": 180,
+    "payments": 186,
     "by_type": {
       "merchant": {
-        "count": 60
+        "count": 62
       },
       "project": {
-        "count": 60
+        "count": 62
       },
       "reviewer": {
-        "count": 60
+        "count": 62
       }
     },
-    "approved": 60,
+    "approved": 62,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsfjczd84awlrxp7cqad7sz4jcxkxtx6x72vpuf223zs4t29w3dedcnyqxpt",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Sarah Nutritives Eastlands",
+        "platform": "Nostr",
+        "time": "17:14"
+      },
+      {
+        "url": "https://x.com/i/status/2018003646416335098",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Sarah Nutritives Eastlands",
+        "platform": "X",
+        "time": "16:59"
+      },
       {
         "url": "https://primal.net/e/nevent1qqszwxqp60cp4t5w8vyezwt26lrjalfmcqgptxv0k4h6klxnfdmaqdscyh7sg",
         "project": "Bitcoin Aves 🇬🇭",
@@ -455,6 +469,12 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
         "project": "Bitcoin Aves 🇬🇭"
       },
       {
@@ -876,21 +896,31 @@
     },
     {
       "date": "2026-02-01",
-      "project_count": 60,
-      "merchant_count": 60,
-      "reviewer_count": 60
+      "project_count": 62,
+      "merchant_count": 62,
+      "reviewer_count": 62
     }
   ],
   "reviewer": {
-    "total_reviewed": 892,
-    "approved": 851,
+    "total_reviewed": 894,
+    "approved": 853,
     "rejected": 41
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 161,
+      "count": 163,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfjczd84awlrxp7cqad7sz4jcxkxtx6x72vpuf223zs4t29w3dedcnyqxpt",
+          "date": "2026-02-01",
+          "merchant": "Sarah Nutritives Eastlands"
+        },
+        {
+          "url": "https://x.com/i/status/2018003646416335098",
+          "date": "2026-02-01",
+          "merchant": "Sarah Nutritives Eastlands"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsyqqx5u0xekv9kmud4sj2lffyhpwp4c5xxpg4nd7pva4z8jcfag5gafg7px",
           "date": "2026-01-31",
@@ -9619,6 +9649,22 @@
       ]
     },
     {
+      "name": "Sarah Nutritives Eastlands",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfjczd84awlrxp7cqad7sz4jcxkxtx6x72vpuf223zs4t29w3dedcnyqxpt",
+          "date": "2026-02-01",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2018003646416335098",
+          "date": "2026-02-01",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Sabtenga General Trading",
       "count": 2,
       "posts": [
@@ -10369,12 +10415,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 20,
-    "daily_average_payments": 129
+    "daily_average_payments": 130
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2462
+      "count": 2468
     },
     {
       "domain": "8333.mobi",
@@ -10421,13 +10467,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1438
+      "count": 1441
     },
     {
       "platform": "Nostr",
-      "count": 1156
+      "count": 1159
     }
   ],
-  "generated_at": "2026-02-01T16:22:39.857144+00:00",
+  "generated_at": "2026-02-01T17:22:39.816775+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
