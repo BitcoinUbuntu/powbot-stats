@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 2700,
+    "all_payments": 2703,
     "by_type": {
       "merchant": {
-        "count": 886
+        "count": 887
       },
       "project": {
-        "count": 886
+        "count": 887
       },
       "reviewer": {
-        "count": 928
+        "count": 929
       }
     }
   },
   "today": {
     "date": "2026-02-02",
-    "payments": 100,
+    "payments": 103,
     "by_type": {
       "merchant": {
-        "count": 33
+        "count": 34
       },
       "project": {
-        "count": 33
+        "count": 34
       },
       "reviewer": {
-        "count": 34
+        "count": 35
       }
     },
-    "approved": 33,
+    "approved": 34,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsz37wr8muvnglz0g5w7sqwuxfxs0xv7hgxk7sg34nnyywfmylsdkcstlgcz",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "Nostr",
+        "time": "19:38"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsg4cyhd6z0txgeydp886s7fsppsgwmxk4sav5d2myn28jad6t0dzqffhlxl",
         "project": "Bitcoin NextGen 🇳🇬",
@@ -265,6 +272,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
       {
         "project": "Bitcoin NextGen 🇳🇬"
       },
@@ -543,14 +553,14 @@
     },
     {
       "date": "2026-02-02",
-      "project_count": 33,
-      "merchant_count": 33,
-      "reviewer_count": 34
+      "project_count": 34,
+      "merchant_count": 34,
+      "reviewer_count": 35
     }
   ],
   "reviewer": {
-    "total_reviewed": 928,
-    "approved": 886,
+    "total_reviewed": 929,
+    "approved": 887,
     "rejected": 42
   },
   "top_projects": [
@@ -3642,8 +3652,13 @@
     },
     {
       "name": "Bitcoin NextGen 🇳🇬",
-      "count": 37,
+      "count": 38,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsz37wr8muvnglz0g5w7sqwuxfxs0xv7hgxk7sg34nnyywfmylsdkcstlgcz",
+          "date": "2026-02-02",
+          "merchant": "Emmy Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsg4cyhd6z0txgeydp886s7fsppsgwmxk4sav5d2myn28jad6t0dzqffhlxl",
           "date": "2026-02-02",
@@ -6136,8 +6151,13 @@
     },
     {
       "name": "Emmy Store",
-      "count": 37,
+      "count": 38,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsz37wr8muvnglz0g5w7sqwuxfxs0xv7hgxk7sg34nnyywfmylsdkcstlgcz",
+          "date": "2026-02-02",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsg4cyhd6z0txgeydp886s7fsppsgwmxk4sav5d2myn28jad6t0dzqffhlxl",
           "date": "2026-02-02",
@@ -10415,11 +10435,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2565
+      "count": 2567
     },
     {
       "domain": "8333.mobi",
-      "count": 135
+      "count": 136
     }
   ],
   "countries": [
@@ -10466,9 +10486,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1199
+      "count": 1202
     }
   ],
-  "generated_at": "2026-02-02T19:22:40.080764+00:00",
+  "generated_at": "2026-02-02T20:22:39.844109+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
