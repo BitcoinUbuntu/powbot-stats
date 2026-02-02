@@ -1,35 +1,70 @@
 {
   "totals": {
-    "all_payments": 2627,
+    "all_payments": 2642,
     "by_type": {
       "merchant": {
-        "count": 862
+        "count": 867
       },
       "project": {
-        "count": 862
+        "count": 867
       },
       "reviewer": {
-        "count": 903
+        "count": 908
       }
     }
   },
   "today": {
     "date": "2026-02-02",
-    "payments": 27,
+    "payments": 42,
     "by_type": {
       "merchant": {
-        "count": 9
+        "count": 14
       },
       "project": {
-        "count": 9
+        "count": 14
       },
       "reviewer": {
-        "count": 9
+        "count": 14
       }
     },
-    "approved": 9,
+    "approved": 14,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2018232377756074105",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "SMG Electronics Store",
+        "platform": "X",
+        "time": "09:35"
+      },
+      {
+        "url": "https://x.com/i/status/2018214474734240002",
+        "project": "Bitcoin Loxion 🇿🇦",
+        "merchant": "Siki's Kofee Kafe",
+        "platform": "X",
+        "time": "09:35"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsxwkaxhhxwhjrtcf3hxvj2nxuz430n2av06tqzy0ggsyz76rx235ga2dyf0",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "Nostr",
+        "time": "09:35"
+      },
+      {
+        "url": "https://x.com/i/status/2018213221585313901",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "X",
+        "time": "09:34"
+      },
+      {
+        "url": "https://x.com/i/status/2018213168737091726",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "KJ Mulitipurpose Store",
+        "platform": "X",
+        "time": "09:32"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsqhdx4mwr4g5ay736nh6rlsunql8le9w0ucq8dykhrj9cgvq90xsc5v2klt",
         "project": "Bitcoin Ekiti 🇳🇬",
@@ -97,6 +132,21 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Loxion 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
       {
         "project": "Bitcoin Ekiti 🇳🇬"
       },
@@ -225,33 +275,6 @@
       },
       {
         "project": "Afribit Kibera 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin NextGen 🇳🇬"
-      },
-      {
-        "project": "Bitcoin NextGen 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
       },
       {
         "project": "Bitcoin Chama 🇰🇪"
@@ -450,14 +473,14 @@
     },
     {
       "date": "2026-02-02",
-      "project_count": 9,
-      "merchant_count": 9,
-      "reviewer_count": 9
+      "project_count": 14,
+      "merchant_count": 14,
+      "reviewer_count": 14
     }
   ],
   "reviewer": {
-    "total_reviewed": 903,
-    "approved": 862,
+    "total_reviewed": 908,
+    "approved": 867,
     "rejected": 41
   },
   "top_projects": [
@@ -2075,8 +2098,18 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 106,
+      "count": 108,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxwkaxhhxwhjrtcf3hxvj2nxuz430n2av06tqzy0ggsyz76rx235ga2dyf0",
+          "date": "2026-02-02",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2018213221585313901",
+          "date": "2026-02-02",
+          "merchant": "Mary Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9mcf9zgm2zt2hsqg4uhrt8g7hze4esc5mh9q9ux7zvrszxn37eyglcwrwc",
           "date": "2026-02-01",
@@ -3208,8 +3241,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 51,
+      "count": 52,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2018213168737091726",
+          "date": "2026-02-02",
+          "merchant": "KJ Mulitipurpose Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsqhdx4mwr4g5ay736nh6rlsunql8le9w0ucq8dykhrj9cgvq90xsc5v2klt",
           "date": "2026-02-02",
@@ -4113,8 +4151,13 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 26,
+      "count": 27,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2018232377756074105",
+          "date": "2026-02-02",
+          "merchant": "SMG Electronics Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs07k0gej0kcu2rrd35jd6ua7723fcj77tcudyrgf7xph24ck9j9qgnnanq6",
           "date": "2026-01-31",
@@ -4879,6 +4922,27 @@
       ]
     },
     {
+      "name": "Bitcoin Loxion 🇿🇦",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2018214474734240002",
+          "date": "2026-02-02",
+          "merchant": "Siki's Kofee Kafe"
+        },
+        {
+          "url": "https://x.com/i/status/2018207740498165893",
+          "date": "2026-02-02",
+          "merchant": "Siki's Kofee Kafe"
+        },
+        {
+          "url": "https://x.com/i/status/2016809407464484930",
+          "date": "2026-01-29",
+          "merchant": "Kareem"
+        }
+      ]
+    },
+    {
       "name": "Calabar Bitcoin Club 🇳🇬",
       "count": 2,
       "posts": [
@@ -4891,22 +4955,6 @@
           "url": "https://yakihonne.com/note/nevent1qqs2cm9dhz260mqv2wlz4endpvu97p26jc0hs057lh00v2ktrlrhwhspr3mhxue69uhkummnw3ez6vp39eukz6mfdphkumn99e3k7mgpz3mhxue69uhhyetvv9ujuerpd46hxtnfdupzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyzkh00k",
           "date": "2026-02-02",
           "merchant": "V Brown Barbing Clinic"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Loxion 🇿🇦",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2018207740498165893",
-          "date": "2026-02-02",
-          "merchant": "Siki's Kofee Kafe"
-        },
-        {
-          "url": "https://x.com/i/status/2016809407464484930",
-          "date": "2026-01-29",
-          "merchant": "Kareem"
         }
       ]
     },
@@ -7337,6 +7385,62 @@
       ]
     },
     {
+      "name": "SMG Electronics Store",
+      "count": 10,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2018232377756074105",
+          "date": "2026-02-02",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs07k0gej0kcu2rrd35jd6ua7723fcj77tcudyrgf7xph24ck9j9qgnnanq6",
+          "date": "2026-01-31",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2017575998963732532",
+          "date": "2026-01-31",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2015165532098498660",
+          "date": "2026-01-24",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrkwpzss92fxtfxaj5u2l653lw75rn7ggwly54wrdgn73zkgc96ysecpww4",
+          "date": "2026-01-21",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013897056268558717",
+          "date": "2026-01-21",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspzvpp9xax00mgwzdmhzh2d6fat4h6ywskcm6ecudcpctytlq253sahf6l2",
+          "date": "2026-01-17",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2012134721304887312",
+          "date": "2026-01-16",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqg7u444442lyax50jykd4zqm6x9p2qg7xzwunk6hsu93d2k7kw6cw0qmar",
+          "date": "2026-01-14",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2011345002967056817",
+          "date": "2026-01-14",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Nifah",
       "count": 10,
       "posts": [
@@ -7445,6 +7549,62 @@
           "url": "https://x.com/i/status/2015837508039229766",
           "date": "2026-01-26",
           "project": "Afribit Kibera 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "KJ Mulitipurpose Store",
+      "count": 10,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2018213168737091726",
+          "date": "2026-02-02",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy8sk23744wd3ujqtvn53mz6d09e2ru9au30hklpjgyed97zpszfgtmpln0",
+          "date": "2026-01-27",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2015908705057775921",
+          "date": "2026-01-27",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2015490038851567704",
+          "date": "2026-01-25",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0mvdyjwh2l98aptacqgqfmm2gwh9v58kqs59f32pzcn22gf4u2usk5kyfq",
+          "date": "2026-01-23",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014622625557848457",
+          "date": "2026-01-23",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdflzjr90hdj8lnt2slp3jg4gzjndhpzdt8ynxj842swu2g26ct6qqxxh38",
+          "date": "2026-01-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014267997108535539",
+          "date": "2026-01-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsx4tpx8drhlk95mnd6ryak9cdgx87vyl8kvdwkmpwh7vlrad79keckkkkna",
+          "date": "2026-01-21",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013976630943691253",
+          "date": "2026-01-21",
+          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -7608,108 +7768,6 @@
           "url": "https://x.com/i/status/2011802450169065542",
           "date": "2026-01-15",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "SMG Electronics Store",
-      "count": 9,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs07k0gej0kcu2rrd35jd6ua7723fcj77tcudyrgf7xph24ck9j9qgnnanq6",
-          "date": "2026-01-31",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2017575998963732532",
-          "date": "2026-01-31",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2015165532098498660",
-          "date": "2026-01-24",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrkwpzss92fxtfxaj5u2l653lw75rn7ggwly54wrdgn73zkgc96ysecpww4",
-          "date": "2026-01-21",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013897056268558717",
-          "date": "2026-01-21",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspzvpp9xax00mgwzdmhzh2d6fat4h6ywskcm6ecudcpctytlq253sahf6l2",
-          "date": "2026-01-17",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2012134721304887312",
-          "date": "2026-01-16",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqg7u444442lyax50jykd4zqm6x9p2qg7xzwunk6hsu93d2k7kw6cw0qmar",
-          "date": "2026-01-14",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2011345002967056817",
-          "date": "2026-01-14",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "KJ Mulitipurpose Store",
-      "count": 9,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsy8sk23744wd3ujqtvn53mz6d09e2ru9au30hklpjgyed97zpszfgtmpln0",
-          "date": "2026-01-27",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2015908705057775921",
-          "date": "2026-01-27",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2015490038851567704",
-          "date": "2026-01-25",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0mvdyjwh2l98aptacqgqfmm2gwh9v58kqs59f32pzcn22gf4u2usk5kyfq",
-          "date": "2026-01-23",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2014622625557848457",
-          "date": "2026-01-23",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdflzjr90hdj8lnt2slp3jg4gzjndhpzdt8ynxj842swu2g26ct6qqxxh38",
-          "date": "2026-01-22",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2014267997108535539",
-          "date": "2026-01-22",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsx4tpx8drhlk95mnd6ryak9cdgx87vyl8kvdwkmpwh7vlrad79keckkkkna",
-          "date": "2026-01-21",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013976630943691253",
-          "date": "2026-01-21",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -7949,6 +8007,52 @@
       ]
     },
     {
+      "name": "Mary Shop",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxwkaxhhxwhjrtcf3hxvj2nxuz430n2av06tqzy0ggsyz76rx235ga2dyf0",
+          "date": "2026-02-02",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2018213221585313901",
+          "date": "2026-02-02",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrgunp84zvym7dx79qj5ukfvd7gkzu7w6zdvnc8wzlwlrzmpdpags0eye38",
+          "date": "2026-01-29",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016790812114260464",
+          "date": "2026-01-29",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013612550680699224",
+          "date": "2026-01-20",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspsdmlzpye969lufrd4lrfrssmdrete0sadhwstnvd5n55kuhx7jqt9x598",
+          "date": "2026-01-20",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqper7menvynej28973eatu8g9z33xgwxsgl5axhqvz9vhmdlascg64sxm0",
+          "date": "2026-01-19",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013201890222207414",
+          "date": "2026-01-19",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Grace Store",
       "count": 8,
       "posts": [
@@ -8140,42 +8244,6 @@
           "url": "https://x.com/i/status/2015752893106659767",
           "date": "2026-01-26",
           "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Mary Shop",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsrgunp84zvym7dx79qj5ukfvd7gkzu7w6zdvnc8wzlwlrzmpdpags0eye38",
-          "date": "2026-01-29",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2016790812114260464",
-          "date": "2026-01-29",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013612550680699224",
-          "date": "2026-01-20",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspsdmlzpye969lufrd4lrfrssmdrete0sadhwstnvd5n55kuhx7jqt9x598",
-          "date": "2026-01-20",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqper7menvynej28973eatu8g9z33xgwxsgl5axhqvz9vhmdlascg64sxm0",
-          "date": "2026-01-19",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013201890222207414",
-          "date": "2026-01-19",
-          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -9279,6 +9347,22 @@
       ]
     },
     {
+      "name": "Siki's Kofee Kafe",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2018214474734240002",
+          "date": "2026-02-02",
+          "project": "Bitcoin Loxion 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2018207740498165893",
+          "date": "2026-02-02",
+          "project": "Bitcoin Loxion 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Shotrite Enterprises",
       "count": 2,
       "posts": [
@@ -9799,17 +9883,6 @@
       ]
     },
     {
-      "name": "Siki's Kofee Kafe",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2018207740498165893",
-          "date": "2026-02-02",
-          "project": "Bitcoin Loxion 🇿🇦"
-        }
-      ]
-    },
-    {
       "name": "Selack Pharmacy",
       "count": 1,
       "posts": [
@@ -10077,12 +10150,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 20,
-    "daily_average_payments": 131
+    "daily_average_payments": 132
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2495
+      "count": 2510
     },
     {
       "domain": "8333.mobi",
@@ -10129,13 +10202,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1459
+      "count": 1471
     },
     {
       "platform": "Nostr",
-      "count": 1168
+      "count": 1171
     }
   ],
-  "generated_at": "2026-02-02T09:22:39.817195+00:00",
+  "generated_at": "2026-02-02T10:22:39.976210+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
