@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 2673,
+    "all_payments": 2676,
     "by_type": {
       "merchant": {
-        "count": 877
+        "count": 878
       },
       "project": {
-        "count": 877
+        "count": 878
       },
       "reviewer": {
-        "count": 919
+        "count": 920
       }
     }
   },
   "today": {
     "date": "2026-02-02",
-    "payments": 73,
+    "payments": 76,
     "by_type": {
       "merchant": {
-        "count": 24
+        "count": 25
       },
       "project": {
-        "count": 24
+        "count": 25
       },
       "reviewer": {
-        "count": 25
+        "count": 26
       }
     },
-    "approved": 24,
+    "approved": 25,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsfc9kf8dkzwu03zzvnj5fwakyenc3jh6eqwc7gk2q7mudqjvv7pzcd6hrxs",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Viwa Accessories",
+        "platform": "Nostr",
+        "time": "16:55"
+      },
       {
         "url": "https://x.com/i/status/2018303574631948311",
         "project": "Bitbiashara 🇰🇪",
@@ -212,6 +219,9 @@
         "project": "Bitbiashara 🇰🇪"
       },
       {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
       {
@@ -273,12 +283,6 @@
       },
       {
         "project": "Calabar Bitcoin Club 🇳🇬"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
       }
     ]
   },
@@ -459,21 +463,26 @@
     },
     {
       "date": "2026-02-02",
-      "project_count": 24,
-      "merchant_count": 24,
-      "reviewer_count": 25
+      "project_count": 25,
+      "merchant_count": 25,
+      "reviewer_count": 26
     }
   ],
   "reviewer": {
-    "total_reviewed": 919,
-    "approved": 877,
+    "total_reviewed": 920,
+    "approved": 878,
     "rejected": 42
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 174,
+      "count": 175,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfc9kf8dkzwu03zzvnj5fwakyenc3jh6eqwc7gk2q7mudqjvv7pzcd6hrxs",
+          "date": "2026-02-02",
+          "merchant": "Viwa Accessories"
+        },
         {
           "url": "https://x.com/i/status/2018303574631948311",
           "date": "2026-02-02",
@@ -8623,6 +8632,32 @@
       ]
     },
     {
+      "name": "Viwa Accessories",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfc9kf8dkzwu03zzvnj5fwakyenc3jh6eqwc7gk2q7mudqjvv7pzcd6hrxs",
+          "date": "2026-02-02",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2018303574631948311",
+          "date": "2026-02-02",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2umj6s5gaul0tx8d37ut7jknnvck2xcf283yqgexzmmckhppkw6cqjsv2t",
+          "date": "2026-01-19",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013298948207755670",
+          "date": "2026-01-19",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Ueica Car Wash",
       "count": 4,
       "posts": [
@@ -9160,27 +9195,6 @@
           "url": "https://primal.net/e/nevent1qqs8g2qzg57mtjust2xca8v2u4y29k3gwc8gp6d6galhctu08kwg4yclp9lz0",
           "date": "2026-01-14",
           "project": "Soweto BTC 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Viwa Accessories",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2018303574631948311",
-          "date": "2026-02-02",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2umj6s5gaul0tx8d37ut7jknnvck2xcf283yqgexzmmckhppkw6cqjsv2t",
-          "date": "2026-01-19",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013298948207755670",
-          "date": "2026-01-19",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -10241,7 +10255,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2541
+      "count": 2544
     },
     {
       "domain": "8333.mobi",
@@ -10292,9 +10306,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1187
+      "count": 1190
     }
   ],
-  "generated_at": "2026-02-02T16:22:39.838474+00:00",
+  "generated_at": "2026-02-02T17:22:39.875991+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
