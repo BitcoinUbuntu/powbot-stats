@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 2624,
+    "all_payments": 2627,
     "by_type": {
       "merchant": {
-        "count": 861
+        "count": 862
       },
       "project": {
-        "count": 861
+        "count": 862
       },
       "reviewer": {
-        "count": 902
+        "count": 903
       }
     }
   },
   "today": {
     "date": "2026-02-02",
-    "payments": 24,
+    "payments": 27,
     "by_type": {
       "merchant": {
-        "count": 8
+        "count": 9
       },
       "project": {
-        "count": 8
+        "count": 9
       },
       "reviewer": {
-        "count": 8
+        "count": 9
       }
     },
-    "approved": 8,
+    "approved": 9,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsqhdx4mwr4g5ay736nh6rlsunql8le9w0ucq8dykhrj9cgvq90xsc5v2klt",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "T-S food stuff",
+        "platform": "Nostr",
+        "time": "08:39"
+      },
       {
         "url": "https://x.com/i/status/2018209961587683652",
         "project": "Bitcoin Ekiti 🇳🇬",
@@ -90,6 +97,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
       {
         "project": "Bitcoin Ekiti 🇳🇬"
       },
@@ -239,15 +249,6 @@
       },
       {
         "project": "Bitcoin NextGen 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
       },
       {
         "project": "Bitcoin Chama 🇰🇪"
@@ -449,14 +450,14 @@
     },
     {
       "date": "2026-02-02",
-      "project_count": 8,
-      "merchant_count": 8,
-      "reviewer_count": 8
+      "project_count": 9,
+      "merchant_count": 9,
+      "reviewer_count": 9
     }
   ],
   "reviewer": {
-    "total_reviewed": 902,
-    "approved": 861,
+    "total_reviewed": 903,
+    "approved": 862,
     "rejected": 41
   },
   "top_projects": [
@@ -3207,8 +3208,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 50,
+      "count": 51,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsqhdx4mwr4g5ay736nh6rlsunql8le9w0ucq8dykhrj9cgvq90xsc5v2klt",
+          "date": "2026-02-02",
+          "merchant": "T-S food stuff"
+        },
         {
           "url": "https://x.com/i/status/2018209961587683652",
           "date": "2026-02-02",
@@ -7144,8 +7150,13 @@
     },
     {
       "name": "T-S food stuff",
-      "count": 11,
+      "count": 12,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsqhdx4mwr4g5ay736nh6rlsunql8le9w0ucq8dykhrj9cgvq90xsc5v2klt",
+          "date": "2026-02-02",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
         {
           "url": "https://x.com/i/status/2018209961587683652",
           "date": "2026-02-02",
@@ -10071,7 +10082,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2492
+      "count": 2495
     },
     {
       "domain": "8333.mobi",
@@ -10122,9 +10133,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1165
+      "count": 1168
     }
   ],
-  "generated_at": "2026-02-02T08:22:39.948052+00:00",
+  "generated_at": "2026-02-02T09:22:39.817195+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
