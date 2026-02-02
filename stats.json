@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 2651,
+    "all_payments": 2657,
     "by_type": {
       "merchant": {
-        "count": 870
+        "count": 872
       },
       "project": {
-        "count": 870
+        "count": 872
       },
       "reviewer": {
-        "count": 911
+        "count": 913
       }
     }
   },
   "today": {
     "date": "2026-02-02",
-    "payments": 51,
+    "payments": 57,
     "by_type": {
       "merchant": {
-        "count": 17
+        "count": 19
       },
       "project": {
-        "count": 17
+        "count": 19
       },
       "reviewer": {
-        "count": 17
+        "count": 19
       }
     },
-    "approved": 17,
+    "approved": 19,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2018254894751211774",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "X",
+        "time": "14:46"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswdw360vx0rnne4d2p7ntw0d3uvqr0qmgum5qsgw208qjggxs9v3sewk77t",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "Nostr",
+        "time": "14:46"
+      },
       {
         "url": "https://x.com/i/status/2018247003654832259",
         "project": "Bitbiashara 🇰🇪",
@@ -153,6 +167,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -395,21 +415,31 @@
     },
     {
       "date": "2026-02-02",
-      "project_count": 17,
-      "merchant_count": 17,
-      "reviewer_count": 17
+      "project_count": 19,
+      "merchant_count": 19,
+      "reviewer_count": 19
     }
   ],
   "reviewer": {
-    "total_reviewed": 911,
-    "approved": 870,
+    "total_reviewed": 913,
+    "approved": 872,
     "rejected": 41
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 168,
+      "count": 170,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2018254894751211774",
+          "date": "2026-02-02",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswdw360vx0rnne4d2p7ntw0d3uvqr0qmgum5qsgw208qjggxs9v3sewk77t",
+          "date": "2026-02-02",
+          "merchant": "Grandsmatt"
+        },
         {
           "url": "https://x.com/i/status/2018247003654832259",
           "date": "2026-02-02",
@@ -5642,8 +5672,18 @@
     },
     {
       "name": "Grandsmatt",
-      "count": 47,
+      "count": 49,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2018254894751211774",
+          "date": "2026-02-02",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswdw360vx0rnne4d2p7ntw0d3uvqr0qmgum5qsgw208qjggxs9v3sewk77t",
+          "date": "2026-02-02",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2018247003654832259",
           "date": "2026-02-02",
@@ -10107,7 +10147,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2519
+      "count": 2525
     },
     {
       "domain": "8333.mobi",
@@ -10154,13 +10194,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1477
+      "count": 1480
     },
     {
       "platform": "Nostr",
-      "count": 1174
+      "count": 1177
     }
   ],
-  "generated_at": "2026-02-02T14:22:39.905123+00:00",
+  "generated_at": "2026-02-02T15:22:39.876695+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
