@@ -1,28 +1,99 @@
 {
   "totals": {
-    "all_payments": 2600,
+    "all_payments": 2618,
     "by_type": {
       "merchant": {
-        "count": 853
+        "count": 859
       },
       "project": {
-        "count": 853
+        "count": 859
       },
       "reviewer": {
-        "count": 894
+        "count": 900
       }
     }
   },
   "today": {
     "date": "2026-02-02",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 18,
+    "by_type": {
+      "merchant": {
+        "count": 6
+      },
+      "project": {
+        "count": 6
+      },
+      "reviewer": {
+        "count": 6
+      }
+    },
+    "approved": 6,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2018044304938438712",
+        "project": "BitJR Academy 🇿🇲",
+        "merchant": "Liberty trading point",
+        "platform": "X",
+        "time": "05:59"
+      },
+      {
+        "url": "https://x.com/i/status/2018046751718953203",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "X",
+        "time": "05:53"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsyxse3qgl45f4avx82vx5gr95pkpntu8ahuv2ayaf8kknllk00qqssgz4zh",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "Nostr",
+        "time": "05:53"
+      },
+      {
+        "url": "https://x.com/i/status/2018042300484538470",
+        "project": "Calabar Bitcoin Club 🇳🇬",
+        "merchant": "V Brown Barbing Clinic",
+        "platform": "X",
+        "time": "05:52"
+      },
+      {
+        "url": "https://x.com/i/status/2018035804380029425",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "X",
+        "time": "05:52"
+      },
+      {
+        "url": "https://yakihonne.com/note/nevent1qqs2cm9dhz260mqv2wlz4endpvu97p26jc0hs057lh00v2ktrlrhwhspr3mhxue69uhkummnw3ez6vp39eukz6mfdphkumn99e3k7mgpz3mhxue69uhhyetvv9ujuerpd46hxtnfdupzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyzkh00k",
+        "project": "Calabar Bitcoin Club 🇳🇬",
+        "merchant": "V Brown Barbing Clinic",
+        "platform": "Nostr",
+        "time": "05:52"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "BitJR Academy 🇿🇲"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Calabar Bitcoin Club 🇳🇬"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Calabar Bitcoin Club 🇳🇬"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -370,21 +441,36 @@
     },
     {
       "date": "2026-02-02",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 6
     }
   ],
   "reviewer": {
-    "total_reviewed": 894,
-    "approved": 853,
+    "total_reviewed": 900,
+    "approved": 859,
     "rejected": 41
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 163,
+      "count": 166,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2018046751718953203",
+          "date": "2026-02-02",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyxse3qgl45f4avx82vx5gr95pkpntu8ahuv2ayaf8kknllk00qqssgz4zh",
+          "date": "2026-02-02",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2018035804380029425",
+          "date": "2026-02-02",
+          "merchant": "Haven food court"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsfjczd84awlrxp7cqad7sz4jcxkxtx6x72vpuf223zs4t29w3dedcnyqxpt",
           "date": "2026-02-01",
@@ -3701,8 +3787,13 @@
     },
     {
       "name": "BitJR Academy 🇿🇲",
-      "count": 30,
+      "count": 31,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2018044304938438712",
+          "date": "2026-02-02",
+          "merchant": "Liberty trading point"
+        },
         {
           "url": "https://x.com/i/status/2017933156679131540",
           "date": "2026-02-01",
@@ -4769,6 +4860,22 @@
       ]
     },
     {
+      "name": "Calabar Bitcoin Club 🇳🇬",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2018042300484538470",
+          "date": "2026-02-02",
+          "merchant": "V Brown Barbing Clinic"
+        },
+        {
+          "url": "https://yakihonne.com/note/nevent1qqs2cm9dhz260mqv2wlz4endpvu97p26jc0hs057lh00v2ktrlrhwhspr3mhxue69uhkummnw3ez6vp39eukz6mfdphkumn99e3k7mgpz3mhxue69uhhyetvv9ujuerpd46hxtnfdupzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyzkh00k",
+          "date": "2026-02-02",
+          "merchant": "V Brown Barbing Clinic"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Loxion 🇿🇦",
       "count": 1,
       "posts": [
@@ -5762,8 +5869,18 @@
     },
     {
       "name": "Haven food court",
-      "count": 34,
+      "count": 36,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyxse3qgl45f4avx82vx5gr95pkpntu8ahuv2ayaf8kknllk00qqssgz4zh",
+          "date": "2026-02-02",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2018035804380029425",
+          "date": "2026-02-02",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs895malqmcl2nrtevzn3fvdp38wyu80vsr8vrem5n9w9wsulgvcvsxakzcl",
           "date": "2026-01-31",
@@ -6436,6 +6553,102 @@
       ]
     },
     {
+      "name": "Bliss beauty Salon",
+      "count": 18,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2018046751718953203",
+          "date": "2026-02-02",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfyz07dtxf675s3mnsnqtx8jnjplsyvkpg7gvewchhhgn5a0wm0dgplqssq",
+          "date": "2026-01-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2017195753353937050",
+          "date": "2026-01-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyhesxz4utlcp6aljjmq3mqsadaqps3ak25nqspfla8exvmv366gch3yh7k",
+          "date": "2026-01-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2017167026557444315",
+          "date": "2026-01-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8gxzw6xwclrzqru0ej3dv4lws3cns986dp7em35zjw95f7tnff9gp59prr",
+          "date": "2026-01-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016892893466685864",
+          "date": "2026-01-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs86nl5c5srr4gcp7xan2qw6u3s0xwz6sxpfcrehrl9c9056zvlzvqzmlmu4",
+          "date": "2026-01-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016746238922707184",
+          "date": "2026-01-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsphks0qk3j8r542rq2690v3k2tddvchmgpdj42rgem72suc4cet5st36sme",
+          "date": "2026-01-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015716092283388026",
+          "date": "2026-01-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs037lzrnzv279fk9hwukj4t9dah564ly55ek90dwm53v0e9f0lr7cgpmuv6",
+          "date": "2026-01-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014992281015591009",
+          "date": "2026-01-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp5j637wzgsu9uceqvg0pr629xx0nsemeu0aherjxd9carlyq64lcfzmllu",
+          "date": "2026-01-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxptmrhut2e259g2cqg8dq6wczwqkanmrhh9duetn0d6xyaraklpscrlm9e",
+          "date": "2026-01-18",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012179890393481234",
+          "date": "2026-01-16",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012158765189960189",
+          "date": "2026-01-16",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2011463808259145756",
+          "date": "2026-01-15",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Sokoni Mboga",
       "count": 17,
       "posts": [
@@ -6523,97 +6736,6 @@
           "url": "https://x.com/i/status/2012526035837886538",
           "date": "2026-01-17",
           "project": "Afribit Kibera 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Bliss beauty Salon",
-      "count": 17,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsfyz07dtxf675s3mnsnqtx8jnjplsyvkpg7gvewchhhgn5a0wm0dgplqssq",
-          "date": "2026-01-30",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2017195753353937050",
-          "date": "2026-01-30",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyhesxz4utlcp6aljjmq3mqsadaqps3ak25nqspfla8exvmv366gch3yh7k",
-          "date": "2026-01-30",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2017167026557444315",
-          "date": "2026-01-30",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8gxzw6xwclrzqru0ej3dv4lws3cns986dp7em35zjw95f7tnff9gp59prr",
-          "date": "2026-01-29",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2016892893466685864",
-          "date": "2026-01-29",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs86nl5c5srr4gcp7xan2qw6u3s0xwz6sxpfcrehrl9c9056zvlzvqzmlmu4",
-          "date": "2026-01-29",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2016746238922707184",
-          "date": "2026-01-29",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsphks0qk3j8r542rq2690v3k2tddvchmgpdj42rgem72suc4cet5st36sme",
-          "date": "2026-01-26",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2015716092283388026",
-          "date": "2026-01-26",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs037lzrnzv279fk9hwukj4t9dah564ly55ek90dwm53v0e9f0lr7cgpmuv6",
-          "date": "2026-01-24",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014992281015591009",
-          "date": "2026-01-24",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp5j637wzgsu9uceqvg0pr629xx0nsemeu0aherjxd9carlyq64lcfzmllu",
-          "date": "2026-01-21",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxptmrhut2e259g2cqg8dq6wczwqkanmrhh9duetn0d6xyaraklpscrlm9e",
-          "date": "2026-01-18",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012179890393481234",
-          "date": "2026-01-16",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012158765189960189",
-          "date": "2026-01-16",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2011463808259145756",
-          "date": "2026-01-15",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -9043,6 +9165,22 @@
       ]
     },
     {
+      "name": "V Brown Barbing Clinic",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2018042300484538470",
+          "date": "2026-02-02",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://yakihonne.com/note/nevent1qqs2cm9dhz260mqv2wlz4endpvu97p26jc0hs057lh00v2ktrlrhwhspr3mhxue69uhkummnw3ez6vp39eukz6mfdphkumn99e3k7mgpz3mhxue69uhhyetvv9ujuerpd46hxtnfdupzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyzkh00k",
+          "date": "2026-02-02",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Uaieca Car Wash",
       "count": 2,
       "posts": [
@@ -9247,6 +9385,22 @@
           "url": "https://x.com/i/status/2012211357051945061",
           "date": "2026-01-17",
           "project": "Bitcoin Babies 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Liberty trading point",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2018044304938438712",
+          "date": "2026-02-02",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2016646389132878097",
+          "date": "2026-01-29",
+          "project": "BitJR Academy 🇿🇲"
         }
       ]
     },
@@ -9688,17 +9842,6 @@
       ]
     },
     {
-      "name": "Liberty trading point",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2016646389132878097",
-          "date": "2026-01-29",
-          "project": "BitJR Academy 🇿🇲"
-        }
-      ]
-    },
-    {
       "name": "Levin Groceries",
       "count": 1,
       "posts": [
@@ -9894,7 +10037,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2468
+      "count": 2486
     },
     {
       "domain": "8333.mobi",
@@ -9910,7 +10053,7 @@
     {
       "flag": "🇳🇬",
       "country": "Nigeria",
-      "count": 5
+      "count": 6
     },
     {
       "flag": "🇿🇦",
@@ -9941,13 +10084,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1441
+      "count": 1453
     },
     {
       "platform": "Nostr",
-      "count": 1159
+      "count": 1165
     }
   ],
-  "generated_at": "2026-02-02T05:22:39.805373+00:00",
+  "generated_at": "2026-02-02T06:22:39.798303+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
