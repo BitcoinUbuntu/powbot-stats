@@ -1,28 +1,109 @@
 {
   "totals": {
-    "all_payments": 2703,
+    "all_payments": 2724,
     "by_type": {
       "merchant": {
-        "count": 887
+        "count": 894
       },
       "project": {
-        "count": 887
+        "count": 894
       },
       "reviewer": {
-        "count": 929
+        "count": 936
       }
     }
   },
   "today": {
     "date": "2026-02-03",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 21,
+    "by_type": {
+      "merchant": {
+        "count": 7
+      },
+      "project": {
+        "count": 7
+      },
+      "reviewer": {
+        "count": 7
+      }
+    },
+    "approved": 7,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2018315969287070109",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Alice Luzendos Greens",
+        "platform": "X",
+        "time": "05:12"
+      },
+      {
+        "url": "https://x.com/i/status/2018410038809755650",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Ruth Shop",
+        "platform": "X",
+        "time": "05:12"
+      },
+      {
+        "url": "https://x.com/i/status/2018410149375836556",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Ruth Shop",
+        "platform": "X",
+        "time": "05:12"
+      },
+      {
+        "url": "https://x.com/i/status/2018410441555210476",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Ruth Shop",
+        "platform": "X",
+        "time": "05:12"
+      },
+      {
+        "url": "https://x.com/i/status/2018410702650708177",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Ruth Shop",
+        "platform": "X",
+        "time": "05:11"
+      },
+      {
+        "url": "https://x.com/i/status/2018410985195766220",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Ruth Shop",
+        "platform": "X",
+        "time": "05:11"
+      },
+      {
+        "url": "https://x.com/i/status/2018411272765571205",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Ruth Shop",
+        "platform": "X",
+        "time": "05:11"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
+      {
+        "project": "Afribit Kibera 🇰🇪"
+      },
+      {
+        "project": "Afribit Kibera 🇰🇪"
+      },
+      {
+        "project": "Afribit Kibera 🇰🇪"
+      },
+      {
+        "project": "Afribit Kibera 🇰🇪"
+      },
+      {
+        "project": "Afribit Kibera 🇰🇪"
+      },
+      {
+        "project": "Afribit Kibera 🇰🇪"
+      },
       {
         "project": "Bitcoin NextGen 🇳🇬"
       },
@@ -304,14 +385,14 @@
     },
     {
       "date": "2026-02-03",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 7,
+      "merchant_count": 7,
+      "reviewer_count": 7
     }
   ],
   "reviewer": {
-    "total_reviewed": 929,
-    "approved": 887,
+    "total_reviewed": 936,
+    "approved": 894,
     "rejected": 42
   },
   "top_projects": [
@@ -1218,8 +1299,38 @@
     },
     {
       "name": "Afribit Kibera 🇰🇪",
-      "count": 154,
+      "count": 160,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2018410038809755650",
+          "date": "2026-02-03",
+          "merchant": "Ruth Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2018410149375836556",
+          "date": "2026-02-03",
+          "merchant": "Ruth Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2018410441555210476",
+          "date": "2026-02-03",
+          "merchant": "Ruth Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2018410702650708177",
+          "date": "2026-02-03",
+          "merchant": "Ruth Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2018410985195766220",
+          "date": "2026-02-03",
+          "merchant": "Ruth Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2018411272765571205",
+          "date": "2026-02-03",
+          "merchant": "Ruth Shop"
+        },
         {
           "url": "https://njump.to/nevent1qqstzu9eg9whhdc5jsqsr25fc5kwgychyfkumhuuvq6qrp8pp642zwgpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgfthkd6",
           "date": "2026-02-01",
@@ -4223,8 +4334,13 @@
     },
     {
       "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 21,
+      "count": 22,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2018315969287070109",
+          "date": "2026-02-03",
+          "merchant": "Alice Luzendos Greens"
+        },
         {
           "url": "https://x.com/i/status/2017963334834725159",
           "date": "2026-02-01",
@@ -7051,6 +7167,82 @@
       ]
     },
     {
+      "name": "Ruth Shop",
+      "count": 14,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2018410038809755650",
+          "date": "2026-02-03",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2018410149375836556",
+          "date": "2026-02-03",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2018410441555210476",
+          "date": "2026-02-03",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2018410702650708177",
+          "date": "2026-02-03",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2018410985195766220",
+          "date": "2026-02-03",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2018411272765571205",
+          "date": "2026-02-03",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqs2wmpdyz6euy24d3acjfenylql43nzecx4nhx0gtlxejhupvxa92cpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg99wmss",
+          "date": "2026-02-01",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsy8skj74kn6s9ep0uuvgk57mt5vuwntrnxmg3hn85t0r3epexkmkspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgdx4gud",
+          "date": "2026-02-01",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2017910919536468413",
+          "date": "2026-02-01",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2017907162396143887",
+          "date": "2026-02-01",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqspwn8ngdw9g6xdegz7z8r3ehrfa4s7wqkm590ckc709mhpagw8feqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg3vyu2x",
+          "date": "2026-01-23",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014389220052254748",
+          "date": "2026-01-22",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqspcy6qtmlpwmlnm4xjr3f27f5h53ncef7sr3dqqed9qhztszxwhpspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqga8sp4g",
+          "date": "2026-01-21",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013863453522599953",
+          "date": "2026-01-21",
+          "project": "Afribit Kibera 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "The Sario Eventers",
       "count": 13,
       "posts": [
@@ -7820,52 +8012,6 @@
           "url": "https://x.com/i/status/2011409765415760132",
           "date": "2026-01-14",
           "project": "Bitcoin Githurai 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Ruth Shop",
-      "count": 8,
-      "posts": [
-        {
-          "url": "https://njump.to/nevent1qqs2wmpdyz6euy24d3acjfenylql43nzecx4nhx0gtlxejhupvxa92cpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg99wmss",
-          "date": "2026-02-01",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsy8skj74kn6s9ep0uuvgk57mt5vuwntrnxmg3hn85t0r3epexkmkspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgdx4gud",
-          "date": "2026-02-01",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2017910919536468413",
-          "date": "2026-02-01",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2017907162396143887",
-          "date": "2026-02-01",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://njump.to/nevent1qqspwn8ngdw9g6xdegz7z8r3ehrfa4s7wqkm590ckc709mhpagw8feqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg3vyu2x",
-          "date": "2026-01-23",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014389220052254748",
-          "date": "2026-01-22",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://njump.to/nevent1qqspcy6qtmlpwmlnm4xjr3f27f5h53ncef7sr3dqqed9qhztszxwhpspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqga8sp4g",
-          "date": "2026-01-21",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013863453522599953",
-          "date": "2026-01-21",
-          "project": "Afribit Kibera 🇰🇪"
         }
       ]
     },
@@ -10167,6 +10313,17 @@
       ]
     },
     {
+      "name": "Alice Luzendos Greens",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2018315969287070109",
+          "date": "2026-02-03",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Abebo Vegez",
       "count": 1,
       "posts": [
@@ -10181,12 +10338,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 21,
-    "daily_average_payments": 128
+    "daily_average_payments": 129
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2567
+      "count": 2588
     },
     {
       "domain": "8333.mobi",
@@ -10233,13 +10390,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1501
+      "count": 1522
     },
     {
       "platform": "Nostr",
       "count": 1202
     }
   ],
-  "generated_at": "2026-02-03T04:22:39.779569+00:00",
+  "generated_at": "2026-02-03T05:22:39.777950+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
