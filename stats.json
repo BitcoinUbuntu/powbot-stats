@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 2922,
+    "all_payments": 2925,
     "by_type": {
       "merchant": {
-        "count": 960
+        "count": 961
       },
       "project": {
-        "count": 960
+        "count": 961
       },
       "reviewer": {
-        "count": 1002
+        "count": 1003
       }
     }
   },
   "today": {
     "date": "2026-02-04",
-    "payments": 72,
+    "payments": 75,
     "by_type": {
       "merchant": {
-        "count": 24
+        "count": 25
       },
       "project": {
-        "count": 24
+        "count": 25
       },
       "reviewer": {
-        "count": 24
+        "count": 25
       }
     },
-    "approved": 24,
+    "approved": 25,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2018992785374736682",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Marvelous Barbershop",
+        "platform": "X",
+        "time": "11:04"
+      },
       {
         "url": "https://x.com/i/status/2018694080826388945",
         "project": "Bitbiashara 🇰🇪",
@@ -202,6 +209,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -531,14 +541,14 @@
     },
     {
       "date": "2026-02-04",
-      "project_count": 24,
-      "merchant_count": 24,
-      "reviewer_count": 24
+      "project_count": 25,
+      "merchant_count": 25,
+      "reviewer_count": 25
     }
   ],
   "reviewer": {
-    "total_reviewed": 1002,
-    "approved": 960,
+    "total_reviewed": 1003,
+    "approved": 961,
     "rejected": 42
   },
   "top_projects": [
@@ -2957,8 +2967,13 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 70,
+      "count": 71,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2018992785374736682",
+          "date": "2026-02-04",
+          "merchant": "Marvelous Barbershop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrfxtaqtpr958gzn87vprlvvs55j6p4wln2reecee7c7nugg4375qwel22l",
           "date": "2026-02-04",
@@ -10928,6 +10943,17 @@
       ]
     },
     {
+      "name": "Marvelous Barbershop",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2018992785374736682",
+          "date": "2026-02-04",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "MadiTech",
       "count": 1,
       "posts": [
@@ -11167,7 +11193,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2780
+      "count": 2783
     },
     {
       "domain": "8333.mobi",
@@ -11214,13 +11240,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1597
+      "count": 1600
     },
     {
       "platform": "Nostr",
       "count": 1325
     }
   ],
-  "generated_at": "2026-02-04T10:22:39.796668+00:00",
+  "generated_at": "2026-02-04T11:22:39.943755+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
