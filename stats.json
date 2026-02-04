@@ -1,35 +1,70 @@
 {
   "totals": {
-    "all_payments": 2856,
+    "all_payments": 2871,
     "by_type": {
       "merchant": {
-        "count": 938
+        "count": 943
       },
       "project": {
-        "count": 938
+        "count": 943
       },
       "reviewer": {
-        "count": 980
+        "count": 985
       }
     }
   },
   "today": {
     "date": "2026-02-04",
-    "payments": 6,
+    "payments": 21,
     "by_type": {
       "merchant": {
-        "count": 2
+        "count": 7
       },
       "project": {
-        "count": 2
+        "count": 7
       },
       "reviewer": {
-        "count": 2
+        "count": 7
       }
     },
-    "approved": 2,
+    "approved": 7,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2018940100592226599",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Bella Entertainment",
+        "platform": "X",
+        "time": "07:01"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs226l0kpf5m2e0d9azjza6ruualr68hqeqhujpyssy4kplfhyy96cnyz8zv",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "Nostr",
+        "time": "07:01"
+      },
+      {
+        "url": "https://x.com/i/status/2018917395906109791",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "X",
+        "time": "07:00"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs02c8kwnw8gsyann2tpmxfwxmzlvmmkm0k9wtmjgf8k3ak7e9xu6cj8jy9v",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Ellygant Unisex Salon",
+        "platform": "Nostr",
+        "time": "06:54"
+      },
+      {
+        "url": "https://x.com/i/status/2018924878426955808",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Ellygant Unisex Salon",
+        "platform": "X",
+        "time": "06:54"
+      },
       {
         "url": "https://primal.net/e/nevent1qqszc3tjma97zsvl2yvplynth33kt2eq566jgg7h3tqtgf87hmxnu8s80x8ds",
         "project": "Bitcoin NextGen 🇳🇬",
@@ -48,6 +83,21 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
       {
         "project": "Bitcoin NextGen 🇳🇬"
       },
@@ -359,14 +409,14 @@
     },
     {
       "date": "2026-02-04",
-      "project_count": 2,
-      "merchant_count": 2,
-      "reviewer_count": 2
+      "project_count": 7,
+      "merchant_count": 7,
+      "reviewer_count": 7
     }
   ],
   "reviewer": {
-    "total_reviewed": 980,
-    "approved": 938,
+    "total_reviewed": 985,
+    "approved": 943,
     "rejected": 42
   },
   "top_projects": [
@@ -2730,8 +2780,13 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 66,
+      "count": 67,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2018940100592226599",
+          "date": "2026-02-04",
+          "merchant": "Bella Entertainment"
+        },
         {
           "url": "https://primal.net/e/nevent1qqswqanj06kd7382ga6tzzyqsqahnupqwzrwmy9fmxmwsawdzd29lzsj5q9rn",
           "date": "2026-02-03",
@@ -3663,8 +3718,18 @@
     },
     {
       "name": "Bitcoin NextGen 🇳🇬",
-      "count": 42,
+      "count": 44,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs226l0kpf5m2e0d9azjza6ruualr68hqeqhujpyssy4kplfhyy96cnyz8zv",
+          "date": "2026-02-04",
+          "merchant": "Emmy Store"
+        },
+        {
+          "url": "https://x.com/i/status/2018917395906109791",
+          "date": "2026-02-04",
+          "merchant": "Emmy Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqszc3tjma97zsvl2yvplynth33kt2eq566jgg7h3tqtgf87hmxnu8s80x8ds",
           "date": "2026-02-04",
@@ -4211,8 +4276,18 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 28,
+      "count": 30,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs02c8kwnw8gsyann2tpmxfwxmzlvmmkm0k9wtmjgf8k3ak7e9xu6cj8jy9v",
+          "date": "2026-02-04",
+          "merchant": "Ellygant Unisex Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2018924878426955808",
+          "date": "2026-02-04",
+          "merchant": "Ellygant Unisex Salon"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsp3a2tj82kpxdpm8s64xdxmzx7wp0jn7h9lrfneghsajvdelfel8q3v2kjh",
           "date": "2026-02-02",
@@ -6217,8 +6292,18 @@
     },
     {
       "name": "Emmy Store",
-      "count": 42,
+      "count": 44,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs226l0kpf5m2e0d9azjza6ruualr68hqeqhujpyssy4kplfhyy96cnyz8zv",
+          "date": "2026-02-04",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2018917395906109791",
+          "date": "2026-02-04",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
         {
           "url": "https://primal.net/e/nevent1qqszc3tjma97zsvl2yvplynth33kt2eq566jgg7h3tqtgf87hmxnu8s80x8ds",
           "date": "2026-02-04",
@@ -7542,6 +7627,87 @@
       ]
     },
     {
+      "name": "Ellygant Unisex Salon",
+      "count": 15,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs02c8kwnw8gsyann2tpmxfwxmzlvmmkm0k9wtmjgf8k3ak7e9xu6cj8jy9v",
+          "date": "2026-02-04",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2018924878426955808",
+          "date": "2026-02-04",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfd4fkxkg90qwxh73dksp6m3hem7tmk82vkzgrhzutgp38kmqywustl2658",
+          "date": "2026-01-30",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2017216904599855319",
+          "date": "2026-01-30",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfj63g08ppku9c5q3sgth5a52ayg05t2f2c6ev4z2e68dl2uxz8cg65v9lc",
+          "date": "2026-01-26",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2015900992391242052",
+          "date": "2026-01-26",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsr8a5d9w77jesp55plwy2pdx658224pqm0r5w5mdngwdctclganpcz8envh",
+          "date": "2026-01-25",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrf82yrvg8znnnpu8gncvdajc5y9g06lup77ud2e4yk66n4d86yvq2u5u6z",
+          "date": "2026-01-23",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014579875802206612",
+          "date": "2026-01-23",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqqjwfkk06x592pfug9q88me80k4dt8jt278ss3nl8hlcj72a2necs4q2u7",
+          "date": "2026-01-20",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013636943066562636",
+          "date": "2026-01-20",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs87msxre98lj9ypa552fuqg86775tj0qfw9q79r63w69aqtc69p5q3ppkaa",
+          "date": "2026-01-19",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013148841655066719",
+          "date": "2026-01-19",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxuyvljcew0f95ws5sxkujghcx3kjfkmdhuc6at4rtwn9kff8433svxsjky",
+          "date": "2026-01-16",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2011687430005604476",
+          "date": "2026-01-15",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Bridgeway Shop",
       "count": 15,
       "posts": [
@@ -7690,77 +7856,6 @@
           "url": "https://primal.net/e/nevent1qqsx30lahmmkwletfl8lyclcfdd8lkyrwf0v8h56s9mvc96xdn5nqpckqm438",
           "date": "2026-01-17",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Ellygant Unisex Salon",
-      "count": 13,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsfd4fkxkg90qwxh73dksp6m3hem7tmk82vkzgrhzutgp38kmqywustl2658",
-          "date": "2026-01-30",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2017216904599855319",
-          "date": "2026-01-30",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfj63g08ppku9c5q3sgth5a52ayg05t2f2c6ev4z2e68dl2uxz8cg65v9lc",
-          "date": "2026-01-26",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2015900992391242052",
-          "date": "2026-01-26",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsr8a5d9w77jesp55plwy2pdx658224pqm0r5w5mdngwdctclganpcz8envh",
-          "date": "2026-01-25",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrf82yrvg8znnnpu8gncvdajc5y9g06lup77ud2e4yk66n4d86yvq2u5u6z",
-          "date": "2026-01-23",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2014579875802206612",
-          "date": "2026-01-23",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqqjwfkk06x592pfug9q88me80k4dt8jt278ss3nl8hlcj72a2necs4q2u7",
-          "date": "2026-01-20",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013636943066562636",
-          "date": "2026-01-20",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs87msxre98lj9ypa552fuqg86775tj0qfw9q79r63w69aqtc69p5q3ppkaa",
-          "date": "2026-01-19",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013148841655066719",
-          "date": "2026-01-19",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxuyvljcew0f95ws5sxkujghcx3kjfkmdhuc6at4rtwn9kff8433svxsjky",
-          "date": "2026-01-16",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2011687430005604476",
-          "date": "2026-01-15",
-          "project": "Bitcoin Ikorodu 🇳🇬"
         }
       ]
     },
@@ -9171,6 +9266,37 @@
       ]
     },
     {
+      "name": "Bella Entertainment",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2018940100592226599",
+          "date": "2026-02-04",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsttcl0meyt52r42chnmka0dchmnctujr0ux74z3wzuldr2hmkuq0cck4yec",
+          "date": "2026-01-23",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014276857978585459",
+          "date": "2026-01-22",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd4m8dh9sll7v3djlvxewr8g30xp8tdwj62adrrvfemyfyr9ygtvq022r07",
+          "date": "2026-01-16",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012135225506304479",
+          "date": "2026-01-16",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Ayoola Minimart",
       "count": 5,
       "posts": [
@@ -9614,32 +9740,6 @@
           "url": "https://x.com/i/status/2014516757482901938",
           "date": "2026-01-23",
           "project": "BitJR Academy 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Bella Entertainment",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsttcl0meyt52r42chnmka0dchmnctujr0ux74z3wzuldr2hmkuq0cck4yec",
-          "date": "2026-01-23",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014276857978585459",
-          "date": "2026-01-22",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd4m8dh9sll7v3djlvxewr8g30xp8tdwj62adrrvfemyfyr9ygtvq022r07",
-          "date": "2026-01-16",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012135225506304479",
-          "date": "2026-01-16",
-          "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
     },
@@ -10764,16 +10864,16 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 22,
-    "daily_average_payments": 129
+    "daily_average_payments": 130
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2716
+      "count": 2729
     },
     {
       "domain": "8333.mobi",
-      "count": 140
+      "count": 142
     }
   ],
   "countries": [
@@ -10816,13 +10916,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1561
+      "count": 1570
     },
     {
       "platform": "Nostr",
-      "count": 1295
+      "count": 1301
     }
   ],
-  "generated_at": "2026-02-04T06:28:05.546297+00:00",
+  "generated_at": "2026-02-04T07:22:39.901058+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
