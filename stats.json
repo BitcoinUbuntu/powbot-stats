@@ -1,28 +1,59 @@
 {
   "totals": {
-    "all_payments": 3161,
+    "all_payments": 3167,
     "by_type": {
       "merchant": {
-        "count": 1038
+        "count": 1040
       },
       "project": {
-        "count": 1038
+        "count": 1040
       },
       "reviewer": {
-        "count": 1085
+        "count": 1087
       }
     }
   },
   "today": {
     "date": "2026-02-06",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 6,
+    "by_type": {
+      "merchant": {
+        "count": 2
+      },
+      "project": {
+        "count": 2
+      },
+      "reviewer": {
+        "count": 2
+      }
+    },
+    "approved": 2,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2019641536137265501",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Mercy Groceries",
+        "platform": "X",
+        "time": "05:56"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswjv3f0gkxhf6qyez800ql5fgm3q6t0n2xtpy59z425wljn58ut0cezedd0",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Evans Tailoring Shop",
+        "platform": "Nostr",
+        "time": "05:56"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
       {
         "project": "Bitcoin Ekiti 🇳🇬"
       },
@@ -160,27 +191,6 @@
       },
       {
         "project": "Bitcoin NextGen 🇳🇬"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "BitJR Academy 🇿🇲"
       }
     ]
   },
@@ -361,14 +371,14 @@
     },
     {
       "date": "2026-02-06",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 2,
+      "merchant_count": 2,
+      "reviewer_count": 2
     }
   ],
   "reviewer": {
-    "total_reviewed": 1085,
-    "approved": 1037,
+    "total_reviewed": 1087,
+    "approved": 1039,
     "rejected": 48
   },
   "top_projects": [
@@ -2937,8 +2947,18 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 80,
+      "count": 82,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2019641536137265501",
+          "date": "2026-02-06",
+          "merchant": "Mercy Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswjv3f0gkxhf6qyez800ql5fgm3q6t0n2xtpy59z425wljn58ut0cezedd0",
+          "date": "2026-02-06",
+          "merchant": "Evans Tailoring Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs83pavg3a80enujet3lzue92aacyvs77vka3qyxe9fxzfeda4wyxsck8lvh",
           "date": "2026-02-05",
@@ -9887,6 +9907,42 @@
       ]
     },
     {
+      "name": "Mercy Groceries",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2019641536137265501",
+          "date": "2026-02-06",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrhggthm0g07zyfp2ufq4wave0vp2hpv8w95qn0ce9ry4ppurdjzccgpf0c",
+          "date": "2026-02-03",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015380755543707868",
+          "date": "2026-01-25",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg6a3vstzx5qjsuyq0r4vqkxw6r59q2qsuyv5vnamhwpklshtvemg9g2gmd",
+          "date": "2026-01-24",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014558332854431923",
+          "date": "2026-01-23",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2011847141027651669",
+          "date": "2026-01-15",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Kwa Innocent",
       "count": 6,
       "posts": [
@@ -10125,37 +10181,6 @@
           "url": "https://x.com/i/status/2011152743441056158",
           "date": "2026-01-13",
           "project": "BitJR Academy 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Mercy Groceries",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsrhggthm0g07zyfp2ufq4wave0vp2hpv8w95qn0ce9ry4ppurdjzccgpf0c",
-          "date": "2026-02-03",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2015380755543707868",
-          "date": "2026-01-25",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg6a3vstzx5qjsuyq0r4vqkxw6r59q2qsuyv5vnamhwpklshtvemg9g2gmd",
-          "date": "2026-01-24",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014558332854431923",
-          "date": "2026-01-23",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2011847141027651669",
-          "date": "2026-01-15",
-          "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
     },
@@ -11221,6 +11246,22 @@
       ]
     },
     {
+      "name": "Evans Tailoring Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswjv3f0gkxhf6qyez800ql5fgm3q6t0n2xtpy59z425wljn58ut0cezedd0",
+          "date": "2026-02-06",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2019073819239919845",
+          "date": "2026-02-05",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Dora's Joint",
       "count": 2,
       "posts": [
@@ -11662,17 +11703,6 @@
       ]
     },
     {
-      "name": "Evans Tailoring Shop",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2019073819239919845",
-          "date": "2026-02-05",
-          "project": "Bitcoin Githurai 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Doris Mweetwa's Grocery",
       "count": 1,
       "posts": [
@@ -11813,7 +11843,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3007
+      "count": 3013
     },
     {
       "domain": "8333.mobi",
@@ -11860,13 +11890,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1731
+      "count": 1734
     },
     {
       "platform": "Nostr",
-      "count": 1430
+      "count": 1433
     }
   ],
-  "generated_at": "2026-02-06T05:22:39.811071+00:00",
+  "generated_at": "2026-02-06T06:22:39.813737+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
