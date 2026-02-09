@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 3441,
+    "all_payments": 3444,
     "by_type": {
       "merchant": {
-        "count": 1131
+        "count": 1132
       },
       "project": {
-        "count": 1131
+        "count": 1132
       },
       "reviewer": {
-        "count": 1179
+        "count": 1180
       }
     }
   },
   "today": {
     "date": "2026-02-09",
-    "payments": 114,
+    "payments": 117,
     "by_type": {
       "merchant": {
-        "count": 38
+        "count": 39
       },
       "project": {
-        "count": 38
+        "count": 39
       },
       "reviewer": {
-        "count": 38
+        "count": 39
       }
     },
-    "approved": 38,
+    "approved": 39,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsx7ldaak57ntqqmf2mfrvh94uxw7mqvnnupnh73dlyslc67c03n5cy2jxhz",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "New Vessel Technologies",
+        "platform": "Nostr",
+        "time": "18:48"
+      },
       {
         "url": "https://x.com/i/status/2020920925886218332",
         "project": "BitKwa 🇳🇬",
@@ -300,6 +307,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
       {
         "project": "BitKwa 🇳🇬"
       },
@@ -593,14 +603,14 @@
     },
     {
       "date": "2026-02-09",
-      "project_count": 38,
-      "merchant_count": 38,
-      "reviewer_count": 38
+      "project_count": 39,
+      "merchant_count": 39,
+      "reviewer_count": 39
     }
   ],
   "reviewer": {
-    "total_reviewed": 1179,
-    "approved": 1130,
+    "total_reviewed": 1180,
+    "approved": 1131,
     "rejected": 49
   },
   "top_projects": [
@@ -5577,8 +5587,13 @@
     },
     {
       "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 25,
+      "count": 26,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsx7ldaak57ntqqmf2mfrvh94uxw7mqvnnupnh73dlyslc67c03n5cy2jxhz",
+          "date": "2026-02-09",
+          "merchant": "New Vessel Technologies"
+        },
         {
           "url": "https://x.com/i/status/2019403261548327068",
           "date": "2026-02-05",
@@ -12711,6 +12726,17 @@
       ]
     },
     {
+      "name": "New Vessel Technologies",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsx7ldaak57ntqqmf2mfrvh94uxw7mqvnnupnh73dlyslc67c03n5cy2jxhz",
+          "date": "2026-02-09",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Mwaka Mo Cosmetics",
       "count": 1,
       "posts": [
@@ -13000,12 +13026,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 28,
-    "daily_average_payments": 122
+    "daily_average_payments": 123
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3275
+      "count": 3278
     },
     {
       "domain": "8333.mobi",
@@ -13056,9 +13082,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1572
+      "count": 1575
     }
   ],
-  "generated_at": "2026-02-09T18:22:39.969244+00:00",
+  "generated_at": "2026-02-09T19:22:39.829832+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
