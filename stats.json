@@ -1,35 +1,84 @@
 {
   "totals": {
-    "all_payments": 3390,
+    "all_payments": 3411,
     "by_type": {
       "merchant": {
-        "count": 1114
+        "count": 1121
       },
       "project": {
-        "count": 1114
+        "count": 1121
       },
       "reviewer": {
-        "count": 1162
+        "count": 1169
       }
     }
   },
   "today": {
     "date": "2026-02-09",
-    "payments": 63,
+    "payments": 84,
     "by_type": {
       "merchant": {
-        "count": 21
+        "count": 28
       },
       "project": {
-        "count": 21
+        "count": 28
       },
       "reviewer": {
-        "count": 21
+        "count": 28
       }
     },
-    "approved": 21,
+    "approved": 28,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2020870242130395242",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Kwallos Shop",
+        "platform": "X",
+        "time": "14:47"
+      },
+      {
+        "url": "https://x.com/i/status/2020864463189012950",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Chicken farm",
+        "platform": "X",
+        "time": "14:41"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsz74vs38zje5xyhzlgygt2w6ss5r7jh68e8l6syq97f05wwq44s4sz342gh",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Chicken farm",
+        "platform": "Nostr",
+        "time": "14:40"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs8555w5u0j8kpk6h3ee3unj5clvcktxlu59czkrja7pf4qaqfm40s4qayzs",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Chicken farm",
+        "platform": "Nostr",
+        "time": "14:40"
+      },
+      {
+        "url": "https://x.com/i/status/2020863174564561006",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Chicken farm",
+        "platform": "X",
+        "time": "14:39"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsz997m4t8ncudd98gcge8f9qmy4gtzd80ztqg4x988qctkjqj98tcyqz46e",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Jabulani Shop 3",
+        "platform": "Nostr",
+        "time": "14:24"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsr0eh869jvvuqhu4x6e0lt79r5gmhzgnmrmduzat3tnq5pzfnufjc8epu6j",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Ellygant Unisex Salon",
+        "platform": "Nostr",
+        "time": "14:23"
+      },
       {
         "url": "https://x.com/i/status/2020855714395062519",
         "project": "Bitcoin Ekasi 🇿🇦",
@@ -181,6 +230,27 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
       {
         "project": "Bitcoin Ekasi 🇿🇦"
       },
@@ -423,14 +493,14 @@
     },
     {
       "date": "2026-02-09",
-      "project_count": 21,
-      "merchant_count": 21,
-      "reviewer_count": 21
+      "project_count": 28,
+      "merchant_count": 28,
+      "reviewer_count": 28
     }
   ],
   "reviewer": {
-    "total_reviewed": 1162,
-    "approved": 1113,
+    "total_reviewed": 1169,
+    "approved": 1120,
     "rejected": 49
   },
   "top_projects": [
@@ -2628,8 +2698,28 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 108,
+      "count": 112,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2020864463189012950",
+          "date": "2026-02-09",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsz74vs38zje5xyhzlgygt2w6ss5r7jh68e8l6syq97f05wwq44s4sz342gh",
+          "date": "2026-02-09",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8555w5u0j8kpk6h3ee3unj5clvcktxlu59czkrja7pf4qaqfm40s4qayzs",
+          "date": "2026-02-09",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://x.com/i/status/2020863174564561006",
+          "date": "2026-02-09",
+          "merchant": "Chicken farm"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsxwkaxhhxwhjrtcf3hxvj2nxuz430n2av06tqzy0ggsyz76rx235ga2dyf0",
           "date": "2026-02-02",
@@ -3600,8 +3690,18 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 80,
+      "count": 82,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2020870242130395242",
+          "date": "2026-02-09",
+          "merchant": "Kwallos Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsz997m4t8ncudd98gcge8f9qmy4gtzd80ztqg4x988qctkjqj98tcyqz46e",
+          "date": "2026-02-09",
+          "merchant": "Jabulani Shop 3"
+        },
         {
           "url": "https://x.com/i/status/2020855714395062519",
           "date": "2026-02-09",
@@ -5005,8 +5105,13 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 34,
+      "count": 35,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsr0eh869jvvuqhu4x6e0lt79r5gmhzgnmrmduzat3tnq5pzfnufjc8epu6j",
+          "date": "2026-02-09",
+          "merchant": "Ellygant Unisex Salon"
+        },
         {
           "url": "https://x.com/i/status/2020824312492741091",
           "date": "2026-02-09",
@@ -8050,8 +8155,13 @@
     },
     {
       "name": "Kwallos Shop",
-      "count": 32,
+      "count": 33,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2020870242130395242",
+          "date": "2026-02-09",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsd7qwtwjav6mt23wm86j3zg6wzk0agdrkqdp20kwqny264lzr9gagen322p",
           "date": "2026-02-06",
@@ -8891,100 +9001,14 @@
       ]
     },
     {
-      "name": "Sokoni Mboga",
-      "count": 17,
-      "posts": [
-        {
-          "url": "https://njump.to/nevent1qqsygrzq44slxg3w2qydswtm9alccgcvd8fyyflnktxftv4jr4rsxacpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg67p892",
-          "date": "2026-01-29",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsvmrv5j0v87n7rqktpxdpcs9xnr44nv80x7nr4mwuc40jnqyqe3ecpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgpsw0w0",
-          "date": "2026-01-29",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2016629347084284019",
-          "date": "2026-01-29",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2016629330466439453",
-          "date": "2026-01-29",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://njump.to/nevent1qqswptqa9st785hzhuhzmvjqq3l0r39qhetw3n9n5exguqqxgzhewqqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg8rgzzs",
-          "date": "2026-01-28",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://njump.to/nevent1qqstsazw8ed79tq0z5xpmarls8m95sa38824p99pxgkf6g8ry5yx5wspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgvt95m9",
-          "date": "2026-01-28",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2016432150304682199",
-          "date": "2026-01-28",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2016431374538871042",
-          "date": "2026-01-28",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://njump.to/nevent1qqswgrh73dg9pcc99kcq5sv7lsl8k6drc7u0049y4rk70mr5teakk6cpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkv896m",
-          "date": "2026-01-26",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2015845486914101593",
-          "date": "2026-01-26",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsvzrvw4z3pfextv6hrch5wjcfyhyexem9r3j22dslnyptpzejpulgpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg3ll5nh",
-          "date": "2026-01-22",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014393375537946787",
-          "date": "2026-01-22",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsyqe7smkg9ugvhyvsm23tlu8qpwjer6438qgaz6re4uwf6s920gjqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgsn6jxm",
-          "date": "2026-01-21",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://njump.to/nevent1qqsphct20pkm7kzppwvs0yuda6lxgrk78u0lx5ynayd95tw8jpg2r6gpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgerxty6",
-          "date": "2026-01-21",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013874375162835214",
-          "date": "2026-01-21",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013869404895793585",
-          "date": "2026-01-21",
-          "project": "Afribit Kibera 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012526035837886538",
-          "date": "2026-01-17",
-          "project": "Afribit Kibera 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Jabulani Shop 3",
-      "count": 17,
+      "count": 18,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsz997m4t8ncudd98gcge8f9qmy4gtzd80ztqg4x988qctkjqj98tcyqz46e",
+          "date": "2026-02-09",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
         {
           "url": "https://x.com/i/status/2020855714395062519",
           "date": "2026-02-09",
@@ -9074,8 +9098,13 @@
     },
     {
       "name": "Ellygant Unisex Salon",
-      "count": 17,
+      "count": 18,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsr0eh869jvvuqhu4x6e0lt79r5gmhzgnmrmduzat3tnq5pzfnufjc8epu6j",
+          "date": "2026-02-09",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
         {
           "url": "https://x.com/i/status/2020824312492741091",
           "date": "2026-02-09",
@@ -9160,6 +9189,97 @@
           "url": "https://x.com/i/status/2011687430005604476",
           "date": "2026-01-15",
           "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
+      "name": "Sokoni Mboga",
+      "count": 17,
+      "posts": [
+        {
+          "url": "https://njump.to/nevent1qqsygrzq44slxg3w2qydswtm9alccgcvd8fyyflnktxftv4jr4rsxacpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg67p892",
+          "date": "2026-01-29",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsvmrv5j0v87n7rqktpxdpcs9xnr44nv80x7nr4mwuc40jnqyqe3ecpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgpsw0w0",
+          "date": "2026-01-29",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016629347084284019",
+          "date": "2026-01-29",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016629330466439453",
+          "date": "2026-01-29",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqswptqa9st785hzhuhzmvjqq3l0r39qhetw3n9n5exguqqxgzhewqqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg8rgzzs",
+          "date": "2026-01-28",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqstsazw8ed79tq0z5xpmarls8m95sa38824p99pxgkf6g8ry5yx5wspzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgvt95m9",
+          "date": "2026-01-28",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016432150304682199",
+          "date": "2026-01-28",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016431374538871042",
+          "date": "2026-01-28",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqswgrh73dg9pcc99kcq5sv7lsl8k6drc7u0049y4rk70mr5teakk6cpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgkv896m",
+          "date": "2026-01-26",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015845486914101593",
+          "date": "2026-01-26",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsvzrvw4z3pfextv6hrch5wjcfyhyexem9r3j22dslnyptpzejpulgpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqg3ll5nh",
+          "date": "2026-01-22",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014393375537946787",
+          "date": "2026-01-22",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsyqe7smkg9ugvhyvsm23tlu8qpwjer6438qgaz6re4uwf6s920gjqpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgsn6jxm",
+          "date": "2026-01-21",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://njump.to/nevent1qqsphct20pkm7kzppwvs0yuda6lxgrk78u0lx5ynayd95tw8jpg2r6gpzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgerxty6",
+          "date": "2026-01-21",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013874375162835214",
+          "date": "2026-01-21",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013869404895793585",
+          "date": "2026-01-21",
+          "project": "Afribit Kibera 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012526035837886538",
+          "date": "2026-01-17",
+          "project": "Afribit Kibera 🇰🇪"
         }
       ]
     },
@@ -10405,6 +10525,52 @@
       ]
     },
     {
+      "name": "Chicken farm",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2020864463189012950",
+          "date": "2026-02-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsz74vs38zje5xyhzlgygt2w6ss5r7jh68e8l6syq97f05wwq44s4sz342gh",
+          "date": "2026-02-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8555w5u0j8kpk6h3ee3unj5clvcktxlu59czkrja7pf4qaqfm40s4qayzs",
+          "date": "2026-02-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2020863174564561006",
+          "date": "2026-02-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2017880583406338071",
+          "date": "2026-02-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0xhpmahaud0vm0kk6fh55xyajju44vgd0jvhhhjfemenzly7s29ga854pg",
+          "date": "2026-02-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszvznmgw7yxlv7jxyt4kntfa8upl7dzmen4ncyqarqg7hvc3rnhyg3ehg5s",
+          "date": "2026-01-20",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013626651737755806",
+          "date": "2026-01-20",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Bella Entertainment",
       "count": 8,
       "posts": [
@@ -11428,32 +11594,6 @@
           "url": "https://x.com/i/status/2014696110057504988",
           "date": "2026-01-23",
           "project": "BitJR Academy 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Chicken farm",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2017880583406338071",
-          "date": "2026-02-01",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0xhpmahaud0vm0kk6fh55xyajju44vgd0jvhhhjfemenzly7s29ga854pg",
-          "date": "2026-02-01",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszvznmgw7yxlv7jxyt4kntfa8upl7dzmen4ncyqarqg7hvc3rnhyg3ehg5s",
-          "date": "2026-01-20",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013626651737755806",
-          "date": "2026-01-20",
-          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -12660,16 +12800,16 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 27,
-    "daily_average_payments": 125
+    "daily_average_payments": 126
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3232
+      "count": 3249
     },
     {
       "domain": "8333.mobi",
-      "count": 158
+      "count": 162
     }
   ],
   "countries": [
@@ -12712,13 +12852,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1842
+      "count": 1851
     },
     {
       "platform": "Nostr",
-      "count": 1548
+      "count": 1560
     }
   ],
-  "generated_at": "2026-02-09T14:22:39.835940+00:00",
+  "generated_at": "2026-02-09T15:22:39.972734+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
