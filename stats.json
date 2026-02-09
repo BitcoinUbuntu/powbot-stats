@@ -1,28 +1,99 @@
 {
   "totals": {
-    "all_payments": 3327,
+    "all_payments": 3345,
     "by_type": {
       "merchant": {
-        "count": 1093
+        "count": 1099
       },
       "project": {
-        "count": 1093
+        "count": 1099
       },
       "reviewer": {
-        "count": 1141
+        "count": 1147
       }
     }
   },
   "today": {
     "date": "2026-02-09",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 18,
+    "by_type": {
+      "merchant": {
+        "count": 6
+      },
+      "project": {
+        "count": 6
+      },
+      "reviewer": {
+        "count": 6
+      }
+    },
+    "approved": 6,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2020575873573724303",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "X",
+        "time": "06:46"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswazgus6kayc3exmq2jcf2q2jqfp8778hemt42u3anrr32vvyvk6csta3ty",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "Nostr",
+        "time": "06:45"
+      },
+      {
+        "url": "https://x.com/i/status/2020573776199504260",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "X",
+        "time": "06:45"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsfj02g2jaydgenjqlq4slq3njssvtxxj9hhkm9jgm5wcdajxa5m3qjv47yr",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Ayoola Minimart",
+        "platform": "Nostr",
+        "time": "06:44"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsqyvyemtuzq5zpf4urxersq4p5nsax8wh8nz7k9lvgas790glrnds73av8s",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "Nostr",
+        "time": "06:41"
+      },
+      {
+        "url": "https://x.com/i/status/2020568336363311315",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "X",
+        "time": "06:41"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -223,21 +294,46 @@
     },
     {
       "date": "2026-02-09",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 6
     }
   ],
   "reviewer": {
-    "total_reviewed": 1141,
-    "approved": 1092,
+    "total_reviewed": 1147,
+    "approved": 1098,
     "rejected": 49
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 258,
+      "count": 263,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2020575873573724303",
+          "date": "2026-02-09",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswazgus6kayc3exmq2jcf2q2jqfp8778hemt42u3anrr32vvyvk6csta3ty",
+          "date": "2026-02-09",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2020573776199504260",
+          "date": "2026-02-09",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqyvyemtuzq5zpf4urxersq4p5nsax8wh8nz7k9lvgas790glrnds73av8s",
+          "date": "2026-02-09",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2020568336363311315",
+          "date": "2026-02-09",
+          "merchant": "Haven food court"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsdzjz5632x7whr499a6cm2qetu6nksjxyzhetwyvzysl3pw9xjmscnesg9d",
           "date": "2026-02-08",
@@ -3741,8 +3837,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 61,
+      "count": 62,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfj02g2jaydgenjqlq4slq3njssvtxxj9hhkm9jgm5wcdajxa5m3qjv47yr",
+          "date": "2026-02-09",
+          "merchant": "Ayoola Minimart"
+        },
         {
           "url": "https://x.com/i/status/2019877965903909089",
           "date": "2026-02-07",
@@ -7267,8 +7368,33 @@
     },
     {
       "name": "Haven food court",
-      "count": 44,
+      "count": 49,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2020575873573724303",
+          "date": "2026-02-09",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswazgus6kayc3exmq2jcf2q2jqfp8778hemt42u3anrr32vvyvk6csta3ty",
+          "date": "2026-02-09",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2020573776199504260",
+          "date": "2026-02-09",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqyvyemtuzq5zpf4urxersq4p5nsax8wh8nz7k9lvgas790glrnds73av8s",
+          "date": "2026-02-09",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2020568336363311315",
+          "date": "2026-02-09",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2020206573482832211",
           "date": "2026-02-08",
@@ -10466,6 +10592,42 @@
       ]
     },
     {
+      "name": "Ayoola Minimart",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfj02g2jaydgenjqlq4slq3njssvtxxj9hhkm9jgm5wcdajxa5m3qjv47yr",
+          "date": "2026-02-09",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsve8y98d35637zyhw5me7xpxny2q9tzqwylr6sh3ye83hygect28qa60cjz",
+          "date": "2026-01-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswzxr5k99gzmds73fe7lneyhu8p75akx9g3l7rufrajnwrz3trlxgttxx3y",
+          "date": "2026-01-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014293427505025200",
+          "date": "2026-01-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014285219935748399",
+          "date": "2026-01-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014279988594303370",
+          "date": "2026-01-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Asha Botanical Garden",
       "count": 6,
       "posts": [
@@ -10658,37 +10820,6 @@
           "url": "https://x.com/i/status/2014516757482901938",
           "date": "2026-01-23",
           "project": "BitJR Academy 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Ayoola Minimart",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsve8y98d35637zyhw5me7xpxny2q9tzqwylr6sh3ye83hygect28qa60cjz",
-          "date": "2026-01-22",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswzxr5k99gzmds73fe7lneyhu8p75akx9g3l7rufrajnwrz3trlxgttxx3y",
-          "date": "2026-01-22",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2014293427505025200",
-          "date": "2026-01-22",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2014285219935748399",
-          "date": "2026-01-22",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2014279988594303370",
-          "date": "2026-01-22",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -12237,7 +12368,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3169
+      "count": 3187
     },
     {
       "domain": "8333.mobi",
@@ -12284,13 +12415,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1812
+      "count": 1821
     },
     {
       "platform": "Nostr",
-      "count": 1515
+      "count": 1524
     }
   ],
-  "generated_at": "2026-02-09T06:22:39.993179+00:00",
+  "generated_at": "2026-02-09T07:22:39.823065+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
