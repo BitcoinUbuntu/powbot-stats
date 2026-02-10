@@ -1,28 +1,109 @@
 {
   "totals": {
-    "all_payments": 3450,
+    "all_payments": 3471,
     "by_type": {
       "merchant": {
-        "count": 1134
+        "count": 1141
       },
       "project": {
-        "count": 1134
+        "count": 1141
       },
       "reviewer": {
-        "count": 1182
+        "count": 1189
       }
     }
   },
   "today": {
     "date": "2026-02-10",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 21,
+    "by_type": {
+      "merchant": {
+        "count": 7
+      },
+      "project": {
+        "count": 7
+      },
+      "reviewer": {
+        "count": 7
+      }
+    },
+    "approved": 7,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsvf65ylc09ygjhm4cyrg0w398549plra35tdqs4em2vzj7z7d4dcqwcny8u",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Bella Entertainment",
+        "platform": "Nostr",
+        "time": "07:19"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqspnp0zv7qh0c0qzkum8hzwuz3mzfa8zfktqyknep3nx060yawqdwqgy3q0v",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Bella Entertainment",
+        "platform": "Nostr",
+        "time": "07:15"
+      },
+      {
+        "url": "https://x.com/i/status/2020862780497179041",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "07:11"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsx2vwu9dmqt4yk3rgy6sldejdtgata86lr6qq0lcdyne2n50247yqk0v2tc",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "Nostr",
+        "time": "07:03"
+      },
+      {
+        "url": "https://x.com/i/status/2020862905344811471",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "07:03"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsyq2m6umdnn9du0vt633v7ra3xj5dxrfn8dzd8yufjxgjkkslt2agz5c8qx",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "Nostr",
+        "time": "06:59"
+      },
+      {
+        "url": "https://x.com/i/status/2020862873820336215",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "06:59"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "BitKwa 🇳🇬"
       },
@@ -124,24 +205,6 @@
       },
       {
         "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Ekiti 🇳🇬"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
       },
       {
         "project": "Bitbiashara 🇰🇪"
@@ -325,14 +388,14 @@
     },
     {
       "date": "2026-02-10",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 7,
+      "merchant_count": 7,
+      "reviewer_count": 7
     }
   ],
   "reviewer": {
-    "total_reviewed": 1182,
-    "approved": 1133,
+    "total_reviewed": 1189,
+    "approved": 1140,
     "rejected": 49
   },
   "top_projects": [
@@ -2530,8 +2593,33 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 116,
+      "count": 121,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2020862780497179041",
+          "date": "2026-02-10",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsx2vwu9dmqt4yk3rgy6sldejdtgata86lr6qq0lcdyne2n50247yqk0v2tc",
+          "date": "2026-02-10",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2020862905344811471",
+          "date": "2026-02-10",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyq2m6umdnn9du0vt633v7ra3xj5dxrfn8dzd8yufjxgjkkslt2agz5c8qx",
+          "date": "2026-02-10",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2020862873820336215",
+          "date": "2026-02-10",
+          "merchant": "Orero shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqswwvfu8m0tfuq4e3evl9fy9xdee4x8ssq7xht9x6mgex3x589n6tgrccq7z",
           "date": "2026-02-09",
@@ -3116,8 +3204,18 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 84,
+      "count": 86,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsvf65ylc09ygjhm4cyrg0w398549plra35tdqs4em2vzj7z7d4dcqwcny8u",
+          "date": "2026-02-10",
+          "merchant": "Bella Entertainment"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspnp0zv7qh0c0qzkum8hzwuz3mzfa8zfktqyknep3nx060yawqdwqgy3q0v",
+          "date": "2026-02-10",
+          "merchant": "Bella Entertainment"
+        },
         {
           "url": "https://primal.net/e/nevent1qqspvnunsa5pas0pezuuxdsxwwqp6g2kwdmte7yv65jhm3j3zj09h6qxrvkza",
           "date": "2026-02-06",
@@ -6166,8 +6264,33 @@
   "top_merchants": [
     {
       "name": "Orero shop",
-      "count": 91,
+      "count": 96,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2020862780497179041",
+          "date": "2026-02-10",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsx2vwu9dmqt4yk3rgy6sldejdtgata86lr6qq0lcdyne2n50247yqk0v2tc",
+          "date": "2026-02-10",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2020862905344811471",
+          "date": "2026-02-10",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyq2m6umdnn9du0vt633v7ra3xj5dxrfn8dzd8yufjxgjkkslt2agz5c8qx",
+          "date": "2026-02-10",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2020862873820336215",
+          "date": "2026-02-10",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqswwvfu8m0tfuq4e3evl9fy9xdee4x8ssq7xht9x6mgex3x589n6tgrccq7z",
           "date": "2026-02-09",
@@ -10196,6 +10319,62 @@
       ]
     },
     {
+      "name": "Bella Entertainment",
+      "count": 10,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsvf65ylc09ygjhm4cyrg0w398549plra35tdqs4em2vzj7z7d4dcqwcny8u",
+          "date": "2026-02-10",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspnp0zv7qh0c0qzkum8hzwuz3mzfa8zfktqyknep3nx060yawqdwqgy3q0v",
+          "date": "2026-02-10",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs83pavg3a80enujet3lzue92aacyvs77vka3qyxe9fxzfeda4wyxsck8lvh",
+          "date": "2026-02-05",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2019355382985191732",
+          "date": "2026-02-05",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2019304993678062031",
+          "date": "2026-02-05",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2018940100592226599",
+          "date": "2026-02-04",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsttcl0meyt52r42chnmka0dchmnctujr0ux74z3wzuldr2hmkuq0cck4yec",
+          "date": "2026-01-23",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014276857978585459",
+          "date": "2026-01-22",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd4m8dh9sll7v3djlvxewr8g30xp8tdwj62adrrvfemyfyr9ygtvq022r07",
+          "date": "2026-01-16",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012135225506304479",
+          "date": "2026-01-16",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Nelton Services Shop",
       "count": 9,
       "posts": [
@@ -10519,52 +10698,6 @@
           "url": "https://x.com/i/status/2013626651737755806",
           "date": "2026-01-20",
           "project": "Bitcoin Chama 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Bella Entertainment",
-      "count": 8,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs83pavg3a80enujet3lzue92aacyvs77vka3qyxe9fxzfeda4wyxsck8lvh",
-          "date": "2026-02-05",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2019355382985191732",
-          "date": "2026-02-05",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2019304993678062031",
-          "date": "2026-02-05",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2018940100592226599",
-          "date": "2026-02-04",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsttcl0meyt52r42chnmka0dchmnctujr0ux74z3wzuldr2hmkuq0cck4yec",
-          "date": "2026-01-23",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014276857978585459",
-          "date": "2026-01-22",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd4m8dh9sll7v3djlvxewr8g30xp8tdwj62adrrvfemyfyr9ygtvq022r07",
-          "date": "2026-01-16",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012135225506304479",
-          "date": "2026-01-16",
-          "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
     },
@@ -12773,11 +12906,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3284
+      "count": 3300
     },
     {
       "domain": "8333.mobi",
-      "count": 166
+      "count": 171
     }
   ],
   "countries": [
@@ -12820,13 +12953,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1875
+      "count": 1884
     },
     {
       "platform": "Nostr",
-      "count": 1575
+      "count": 1587
     }
   ],
-  "generated_at": "2026-02-10T06:22:39.818064+00:00",
+  "generated_at": "2026-02-10T07:22:39.819566+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
