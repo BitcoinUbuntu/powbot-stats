@@ -1,35 +1,105 @@
 {
   "totals": {
-    "all_payments": 3529,
+    "all_payments": 3560,
     "by_type": {
       "merchant": {
-        "count": 1160
+        "count": 1170
       },
       "project": {
-        "count": 1160
+        "count": 1170
       },
       "reviewer": {
-        "count": 1209
+        "count": 1220
       }
     }
   },
   "today": {
     "date": "2026-02-10",
-    "payments": 79,
+    "payments": 110,
     "by_type": {
       "merchant": {
-        "count": 26
+        "count": 36
       },
       "project": {
-        "count": 26
+        "count": 36
       },
       "reviewer": {
-        "count": 27
+        "count": 38
       }
     },
-    "approved": 26,
-    "rejected": 1,
+    "approved": 36,
+    "rejected": 2,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsr2dyj90rlq4cezchwjxgqs4ycv8ruymud635wmlqxm5sn5ceslsqj9nv42",
+        "project": "Bitcoin Anambra 🇳🇬",
+        "merchant": "Nelly's Blend",
+        "platform": "Nostr",
+        "time": "19:20"
+      },
+      {
+        "url": "https://x.com/i/status/2021284436122202313",
+        "project": "Bitcoin Anambra 🇳🇬",
+        "merchant": "Nelly's Blend",
+        "platform": "X",
+        "time": "19:20"
+      },
+      {
+        "url": "https://x.com/i/status/2021278752357908586",
+        "project": "BitKwa 🇳🇬",
+        "merchant": "Mega Standard",
+        "platform": "X",
+        "time": "19:19"
+      },
+      {
+        "url": "https://yakihonne.com/note/nevent1qqsypevz33v4jds9tvurkd0y3422s7veq5emk7q94kz6kjn0hsa2ajcpz3mhxue69uhhyetvv9ujuerpd46hxtnfduq3camnwvaz7tmwdaehgu3dxqcju7tpdd5ksmmwdejjucm0d5pzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyhzy0ws",
+        "project": "Calabar Bitcoin Club 🇳🇬",
+        "merchant": "Chef Green Signature Local Cusine Hub",
+        "platform": "Nostr",
+        "time": "19:19"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswshnlv9dsajg4zc7tqqhrczk099faam8kq2lp5lrvha6gzgv5seq4p5xav",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Caleb Cafe",
+        "platform": "Nostr",
+        "time": "19:18"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsgprwu6uzyn43xh4heh9ejahwh843qlmvsp8pg08u4c2k83ljlgrsr99t6l",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Watson Fruits",
+        "platform": "Nostr",
+        "time": "19:18"
+      },
+      {
+        "url": "https://x.com/i/status/2021247335192223853",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "X",
+        "time": "19:18"
+      },
+      {
+        "url": "https://x.com/i/status/2021239679295635780",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "X",
+        "time": "19:17"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsdcveyxexqlevtdc7mcckthxn3qy0swud7q2hxtv0r84l34z3nkdg6q7hna",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Alpha Pharm Kwanonqaba Pharmacy",
+        "platform": "Nostr",
+        "time": "19:17"
+      },
+      {
+        "url": "https://x.com/i/status/2021238071421763982",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Alpha Pharm Kwanonqaba Pharmacy",
+        "platform": "X",
+        "time": "19:17"
+      },
       {
         "url": "https://x.com/i/status/2021111533896454503",
         "project": "Calabar Bitcoin Club 🇳🇬",
@@ -217,6 +287,36 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin Anambra 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Anambra 🇳🇬"
+      },
+      {
+        "project": "BitKwa 🇳🇬"
+      },
+      {
+        "project": "Calabar Bitcoin Club 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
         "project": "Calabar Bitcoin Club 🇳🇬"
       },
       {
@@ -299,9 +399,6 @@
       },
       {
         "project": "BitKwa 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
       }
     ]
   },
@@ -482,15 +579,15 @@
     },
     {
       "date": "2026-02-10",
-      "project_count": 26,
-      "merchant_count": 26,
-      "reviewer_count": 27
+      "project_count": 36,
+      "merchant_count": 36,
+      "reviewer_count": 38
     }
   ],
   "reviewer": {
-    "total_reviewed": 1209,
-    "approved": 1159,
-    "rejected": 50
+    "total_reviewed": 1220,
+    "approved": 1169,
+    "rejected": 51
   },
   "top_projects": [
     {
@@ -3303,8 +3400,13 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 90,
+      "count": 91,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswshnlv9dsajg4zc7tqqhrczk099faam8kq2lp5lrvha6gzgv5seq4p5xav",
+          "date": "2026-02-10",
+          "merchant": "Caleb Cafe"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsfgrmqsptum94hl9q7adxgmqfznkl5cluqffq6gjja6ll6hjzeg0s9das26",
           "date": "2026-02-10",
@@ -3759,8 +3861,18 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 85,
+      "count": 87,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdcveyxexqlevtdc7mcckthxn3qy0swud7q2hxtv0r84l34z3nkdg6q7hna",
+          "date": "2026-02-10",
+          "merchant": "Alpha Pharm Kwanonqaba Pharmacy"
+        },
+        {
+          "url": "https://x.com/i/status/2021238071421763982",
+          "date": "2026-02-10",
+          "merchant": "Alpha Pharm Kwanonqaba Pharmacy"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs8emmc2ey058xz8uhkt7zrz6st87k5ut6mdl4ut8qyj0sps77axmgkem54t",
           "date": "2026-02-10",
@@ -4511,8 +4623,18 @@
     },
     {
       "name": "Bitcoin NextGen 🇳🇬",
-      "count": 60,
+      "count": 62,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2021247335192223853",
+          "date": "2026-02-10",
+          "merchant": "Emmy Store"
+        },
+        {
+          "url": "https://x.com/i/status/2021239679295635780",
+          "date": "2026-02-10",
+          "merchant": "Emmy Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqspjn26a5ksnw44tekxcjx6gs6h9qsj8v093k5ehh7zpu644jpmeyczgf292",
           "date": "2026-02-06",
@@ -4817,8 +4939,13 @@
     },
     {
       "name": "BitKwa 🇳🇬",
-      "count": 41,
+      "count": 42,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2021278752357908586",
+          "date": "2026-02-10",
+          "merchant": "Mega Standard"
+        },
         {
           "url": "https://x.com/i/status/2021229598881526237",
           "date": "2026-02-10",
@@ -5581,8 +5708,13 @@
     },
     {
       "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 26,
+      "count": 27,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgprwu6uzyn43xh4heh9ejahwh843qlmvsp8pg08u4c2k83ljlgrsr99t6l",
+          "date": "2026-02-10",
+          "merchant": "Watson Fruits"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsx7ldaak57ntqqmf2mfrvh94uxw7mqvnnupnh73dlyslc67c03n5cy2jxhz",
           "date": "2026-02-09",
@@ -5717,8 +5849,18 @@
     },
     {
       "name": "Bitcoin Anambra 🇳🇬",
-      "count": 22,
+      "count": 24,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsr2dyj90rlq4cezchwjxgqs4ycv8ruymud635wmlqxm5sn5ceslsqj9nv42",
+          "date": "2026-02-10",
+          "merchant": "Nelly's Blend"
+        },
+        {
+          "url": "https://x.com/i/status/2021284436122202313",
+          "date": "2026-02-10",
+          "merchant": "Nelly's Blend"
+        },
         {
           "url": "https://primal.net/e/nevent1qqst3jze0fvxtvsvk7azy0zm83s5vwettvqt3433fulw9jnu0k36h9sr6dxfz",
           "date": "2026-02-10",
@@ -6146,6 +6288,57 @@
       ]
     },
     {
+      "name": "Calabar Bitcoin Club 🇳🇬",
+      "count": 9,
+      "posts": [
+        {
+          "url": "https://yakihonne.com/note/nevent1qqsypevz33v4jds9tvurkd0y3422s7veq5emk7q94kz6kjn0hsa2ajcpz3mhxue69uhhyetvv9ujuerpd46hxtnfduq3camnwvaz7tmwdaehgu3dxqcju7tpdd5ksmmwdejjucm0d5pzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyhzy0ws",
+          "date": "2026-02-10",
+          "merchant": "Chef Green Signature Local Cusine Hub"
+        },
+        {
+          "url": "https://x.com/i/status/2021111533896454503",
+          "date": "2026-02-10",
+          "merchant": "Chef Green Signature Local Cusine Hub"
+        },
+        {
+          "url": "https://yakihonne.com/note/nevent1qqsrq75ecwvjzgtd3heqdtulc4m8gvd3yjenj4ptv226zr6708uy0rspz3mhxue69uhhyetvv9ujuerpd46hxtnfduq3camnwvaz7tmwdaehgu3dxqcju7tpdd5ksmmwdejjucm0d5pzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyuk7maj",
+          "date": "2026-02-07",
+          "merchant": "Chef Green Signature Local Cusine Hub"
+        },
+        {
+          "url": "https://yakihonne.com/note/nevent1qqsyll6a4svg5g88lkh8ph7wqhplycvmd0n2jm0qvg9qdg0z0pgx8jcpz3mhxue69uhhyetvv9ujuerpd46hxtnfduq3camnwvaz7tmwdaehgu3dxqcju7tpdd5ksmmwdejjucm0d5pzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyd93wkq",
+          "date": "2026-02-07",
+          "merchant": "Chef Green Signature Local Cusine Hub"
+        },
+        {
+          "url": "https://x.com/i/status/2020023082266599792",
+          "date": "2026-02-07",
+          "merchant": "Chef Green Signature Local Cusine Hub"
+        },
+        {
+          "url": "https://yakihonne.com/note/nevent1qqsfsvm3u4jfpq0km6cecdfayklsguy9c7u97fsj9wtq8zttcpjjxwspz3mhxue69uhhyetvv9ujuerpd46hxtnfduq3camnwvaz7tmwdaehgu3dxqcju7tpdd5ksmmwdejjucm0d5pzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyv9mlz5",
+          "date": "2026-02-06",
+          "merchant": "Chef Green Signature Local Cusine Hub"
+        },
+        {
+          "url": "https://x.com/i/status/2019797451520024640",
+          "date": "2026-02-06",
+          "merchant": "Chef Green Signature Local Cusine Hub"
+        },
+        {
+          "url": "https://x.com/i/status/2018042300484538470",
+          "date": "2026-02-02",
+          "merchant": "V Brown Barbing Clinic"
+        },
+        {
+          "url": "https://yakihonne.com/note/nevent1qqs2cm9dhz260mqv2wlz4endpvu97p26jc0hs057lh00v2ktrlrhwhspr3mhxue69uhkummnw3ez6vp39eukz6mfdphkumn99e3k7mgpz3mhxue69uhhyetvv9ujuerpd46hxtnfdupzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyzkh00k",
+          "date": "2026-02-02",
+          "merchant": "V Brown Barbing Clinic"
+        }
+      ]
+    },
+    {
       "name": "BTC Shule 🇧🇮",
       "count": 9,
       "posts": [
@@ -6193,52 +6386,6 @@
           "url": "https://primal.net/e/nevent1qqsva9sqr96uwgn2pw0m85748ssj7k9r6x3nevdspmfqck4h70pch5syaruz8",
           "date": "2026-01-17",
           "merchant": "Kwa Innocent"
-        }
-      ]
-    },
-    {
-      "name": "Calabar Bitcoin Club 🇳🇬",
-      "count": 8,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2021111533896454503",
-          "date": "2026-02-10",
-          "merchant": "Chef Green Signature Local Cusine Hub"
-        },
-        {
-          "url": "https://yakihonne.com/note/nevent1qqsrq75ecwvjzgtd3heqdtulc4m8gvd3yjenj4ptv226zr6708uy0rspz3mhxue69uhhyetvv9ujuerpd46hxtnfduq3camnwvaz7tmwdaehgu3dxqcju7tpdd5ksmmwdejjucm0d5pzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyuk7maj",
-          "date": "2026-02-07",
-          "merchant": "Chef Green Signature Local Cusine Hub"
-        },
-        {
-          "url": "https://yakihonne.com/note/nevent1qqsyll6a4svg5g88lkh8ph7wqhplycvmd0n2jm0qvg9qdg0z0pgx8jcpz3mhxue69uhhyetvv9ujuerpd46hxtnfduq3camnwvaz7tmwdaehgu3dxqcju7tpdd5ksmmwdejjucm0d5pzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyd93wkq",
-          "date": "2026-02-07",
-          "merchant": "Chef Green Signature Local Cusine Hub"
-        },
-        {
-          "url": "https://x.com/i/status/2020023082266599792",
-          "date": "2026-02-07",
-          "merchant": "Chef Green Signature Local Cusine Hub"
-        },
-        {
-          "url": "https://yakihonne.com/note/nevent1qqsfsvm3u4jfpq0km6cecdfayklsguy9c7u97fsj9wtq8zttcpjjxwspz3mhxue69uhhyetvv9ujuerpd46hxtnfduq3camnwvaz7tmwdaehgu3dxqcju7tpdd5ksmmwdejjucm0d5pzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyv9mlz5",
-          "date": "2026-02-06",
-          "merchant": "Chef Green Signature Local Cusine Hub"
-        },
-        {
-          "url": "https://x.com/i/status/2019797451520024640",
-          "date": "2026-02-06",
-          "merchant": "Chef Green Signature Local Cusine Hub"
-        },
-        {
-          "url": "https://x.com/i/status/2018042300484538470",
-          "date": "2026-02-02",
-          "merchant": "V Brown Barbing Clinic"
-        },
-        {
-          "url": "https://yakihonne.com/note/nevent1qqs2cm9dhz260mqv2wlz4endpvu97p26jc0hs057lh00v2ktrlrhwhspr3mhxue69uhkummnw3ez6vp39eukz6mfdphkumn99e3k7mgpz3mhxue69uhhyetvv9ujuerpd46hxtnfdupzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyzkh00k",
-          "date": "2026-02-02",
-          "merchant": "V Brown Barbing Clinic"
         }
       ]
     },
@@ -7340,8 +7487,18 @@
     },
     {
       "name": "Emmy Store",
-      "count": 60,
+      "count": 62,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2021247335192223853",
+          "date": "2026-02-10",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2021239679295635780",
+          "date": "2026-02-10",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
         {
           "url": "https://primal.net/e/nevent1qqspjn26a5ksnw44tekxcjx6gs6h9qsj8v093k5ehh7zpu644jpmeyczgf292",
           "date": "2026-02-06",
@@ -9959,8 +10116,13 @@
     },
     {
       "name": "Caleb Cafe",
-      "count": 12,
+      "count": 13,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswshnlv9dsajg4zc7tqqhrczk099faam8kq2lp5lrvha6gzgv5seq4p5xav",
+          "date": "2026-02-10",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2021144600841245080",
           "date": "2026-02-10",
@@ -11059,6 +11221,47 @@
       ]
     },
     {
+      "name": "Chef Green Signature Local Cusine Hub",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://yakihonne.com/note/nevent1qqsypevz33v4jds9tvurkd0y3422s7veq5emk7q94kz6kjn0hsa2ajcpz3mhxue69uhhyetvv9ujuerpd46hxtnfduq3camnwvaz7tmwdaehgu3dxqcju7tpdd5ksmmwdejjucm0d5pzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyhzy0ws",
+          "date": "2026-02-10",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2021111533896454503",
+          "date": "2026-02-10",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://yakihonne.com/note/nevent1qqsrq75ecwvjzgtd3heqdtulc4m8gvd3yjenj4ptv226zr6708uy0rspz3mhxue69uhhyetvv9ujuerpd46hxtnfduq3camnwvaz7tmwdaehgu3dxqcju7tpdd5ksmmwdejjucm0d5pzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyuk7maj",
+          "date": "2026-02-07",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://yakihonne.com/note/nevent1qqsyll6a4svg5g88lkh8ph7wqhplycvmd0n2jm0qvg9qdg0z0pgx8jcpz3mhxue69uhhyetvv9ujuerpd46hxtnfduq3camnwvaz7tmwdaehgu3dxqcju7tpdd5ksmmwdejjucm0d5pzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyd93wkq",
+          "date": "2026-02-07",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2020023082266599792",
+          "date": "2026-02-07",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://yakihonne.com/note/nevent1qqsfsvm3u4jfpq0km6cecdfayklsguy9c7u97fsj9wtq8zttcpjjxwspz3mhxue69uhhyetvv9ujuerpd46hxtnfduq3camnwvaz7tmwdaehgu3dxqcju7tpdd5ksmmwdejjucm0d5pzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyv9mlz5",
+          "date": "2026-02-06",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2019797451520024640",
+          "date": "2026-02-06",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Ayoola Minimart",
       "count": 7,
       "posts": [
@@ -11244,6 +11447,42 @@
       ]
     },
     {
+      "name": "Mega Standard",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2021278752357908586",
+          "date": "2026-02-10",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2021146174590185699",
+          "date": "2026-02-10",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2016184020501991707",
+          "date": "2026-01-27",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014809720226296238",
+          "date": "2026-01-24",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013872452674232786",
+          "date": "2026-01-21",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013739622686150876",
+          "date": "2026-01-21",
+          "project": "BitKwa 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Kwa Innocent",
       "count": 6,
       "posts": [
@@ -11388,42 +11627,6 @@
       ]
     },
     {
-      "name": "Chef Green Signature Local Cusine Hub",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2021111533896454503",
-          "date": "2026-02-10",
-          "project": "Calabar Bitcoin Club 🇳🇬"
-        },
-        {
-          "url": "https://yakihonne.com/note/nevent1qqsrq75ecwvjzgtd3heqdtulc4m8gvd3yjenj4ptv226zr6708uy0rspz3mhxue69uhhyetvv9ujuerpd46hxtnfduq3camnwvaz7tmwdaehgu3dxqcju7tpdd5ksmmwdejjucm0d5pzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyuk7maj",
-          "date": "2026-02-07",
-          "project": "Calabar Bitcoin Club 🇳🇬"
-        },
-        {
-          "url": "https://yakihonne.com/note/nevent1qqsyll6a4svg5g88lkh8ph7wqhplycvmd0n2jm0qvg9qdg0z0pgx8jcpz3mhxue69uhhyetvv9ujuerpd46hxtnfduq3camnwvaz7tmwdaehgu3dxqcju7tpdd5ksmmwdejjucm0d5pzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyd93wkq",
-          "date": "2026-02-07",
-          "project": "Calabar Bitcoin Club 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2020023082266599792",
-          "date": "2026-02-07",
-          "project": "Calabar Bitcoin Club 🇳🇬"
-        },
-        {
-          "url": "https://yakihonne.com/note/nevent1qqsfsvm3u4jfpq0km6cecdfayklsguy9c7u97fsj9wtq8zttcpjjxwspz3mhxue69uhhyetvv9ujuerpd46hxtnfduq3camnwvaz7tmwdaehgu3dxqcju7tpdd5ksmmwdejjucm0d5pzqxd55zzywyrdslg9erq04t0edar2u0wsh25cpq8hfjyy7hqd69s6qvzqqqqqqyv9mlz5",
-          "date": "2026-02-06",
-          "project": "Calabar Bitcoin Club 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2019797451520024640",
-          "date": "2026-02-06",
-          "project": "Calabar Bitcoin Club 🇳🇬"
-        }
-      ]
-    },
-    {
       "name": "Asha Botanical Garden",
       "count": 6,
       "posts": [
@@ -11554,37 +11757,6 @@
           "url": "https://x.com/i/status/2011152743441056158",
           "date": "2026-01-13",
           "project": "BitJR Academy 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Mega Standard",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2021146174590185699",
-          "date": "2026-02-10",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2016184020501991707",
-          "date": "2026-01-27",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2014809720226296238",
-          "date": "2026-01-24",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013872452674232786",
-          "date": "2026-01-21",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013739622686150876",
-          "date": "2026-01-21",
-          "project": "BitKwa 🇳🇬"
         }
       ]
     },
@@ -11746,6 +11918,32 @@
           "url": "https://x.com/i/status/2014391248929345933",
           "date": "2026-01-22",
           "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
+      "name": "Nelly's Blend",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsr2dyj90rlq4cezchwjxgqs4ycv8ruymud635wmlqxm5sn5ceslsqj9nv42",
+          "date": "2026-02-10",
+          "project": "Bitcoin Anambra 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2021284436122202313",
+          "date": "2026-02-10",
+          "project": "Bitcoin Anambra 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst3jze0fvxtvsvk7azy0zm83s5vwettvqt3433fulw9jnu0k36h9sr6dxfz",
+          "date": "2026-02-10",
+          "project": "Bitcoin Anambra 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2020918731434578104",
+          "date": "2026-02-10",
+          "project": "Bitcoin Anambra 🇳🇬"
         }
       ]
     },
@@ -12168,6 +12366,22 @@
       ]
     },
     {
+      "name": "Watson Fruits",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgprwu6uzyn43xh4heh9ejahwh843qlmvsp8pg08u4c2k83ljlgrsr99t6l",
+          "date": "2026-02-10",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9ddfjnj39vhdvnf4ygt2fsy68jzn5ryatvtz6nm2ytrads8rmhqsym3dcp",
+          "date": "2026-01-19",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "V Brown Barbing Clinic",
       "count": 2,
       "posts": [
@@ -12356,22 +12570,6 @@
           "url": "https://x.com/i/status/2013867286868975836",
           "date": "2026-01-21",
           "project": "Afribit Kibera 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Nelly's Blend",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqst3jze0fvxtvsvk7azy0zm83s5vwettvqt3433fulw9jnu0k36h9sr6dxfz",
-          "date": "2026-02-10",
-          "project": "Bitcoin Anambra 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2020918731434578104",
-          "date": "2026-02-10",
-          "project": "Bitcoin Anambra 🇳🇬"
         }
       ]
     },
@@ -12744,6 +12942,22 @@
       ]
     },
     {
+      "name": "Alpha Pharm Kwanonqaba Pharmacy",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdcveyxexqlevtdc7mcckthxn3qy0swud7q2hxtv0r84l34z3nkdg6q7hna",
+          "date": "2026-02-10",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2021238071421763982",
+          "date": "2026-02-10",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Albaytalabiid",
       "count": 2,
       "posts": [
@@ -12783,17 +12997,6 @@
           "url": "https://x.com/i/status/2011157477048598801",
           "date": "2026-01-13",
           "project": "Afribit Kibera 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Watson Fruits",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs9ddfjnj39vhdvnf4ygt2fsy68jzn5ryatvtz6nm2ytrads8rmhqsym3dcp",
-          "date": "2026-01-19",
-          "project": "Bitcoin Victoria Falls 🇿🇲"
         }
       ]
     },
@@ -13197,16 +13400,16 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 29,
-    "daily_average_payments": 121
+    "daily_average_payments": 122
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3357
+      "count": 3385
     },
     {
       "domain": "8333.mobi",
-      "count": 172
+      "count": 175
     }
   ],
   "countries": [
@@ -13249,13 +13452,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1926
+      "count": 1942
     },
     {
       "platform": "Nostr",
-      "count": 1603
+      "count": 1618
     }
   ],
-  "generated_at": "2026-02-10T18:22:39.822962+00:00",
+  "generated_at": "2026-02-10T19:22:39.826489+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
