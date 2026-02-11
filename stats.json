@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 3608,
+    "all_payments": 3619,
     "by_type": {
       "merchant": {
-        "count": 1186
+        "count": 1189
       },
       "project": {
-        "count": 1186
+        "count": 1189
       },
       "reviewer": {
-        "count": 1236
+        "count": 1241
       }
     }
   },
   "today": {
     "date": "2026-02-11",
-    "payments": 36,
+    "payments": 47,
     "by_type": {
       "merchant": {
-        "count": 12
+        "count": 15
       },
       "project": {
-        "count": 12
+        "count": 15
       },
       "reviewer": {
-        "count": 12
+        "count": 17
       }
     },
-    "approved": 12,
-    "rejected": 0,
+    "approved": 15,
+    "rejected": 2,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2021503222339469777",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Tena cyberpalace",
+        "platform": "X",
+        "time": "12:14"
+      },
+      {
+        "url": "https://x.com/i/status/2021336691785568690",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nubelle",
+        "platform": "X",
+        "time": "12:10"
+      },
+      {
+        "url": "https://x.com/i/status/2021520445464318219",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "X",
+        "time": "12:10"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs2whg2ldkv9a2e2n58gafn3t5dxg7ufhsknxr5pka5acztd4szr9gn3p8jn",
         "project": "Bitcoin Ikorodu 🇳🇬",
@@ -118,6 +139,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -219,24 +249,6 @@
       },
       {
         "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "BitKwa 🇳🇬"
-      },
-      {
-        "project": "BitKwa 🇳🇬"
-      },
-      {
-        "project": "BitKwa 🇳🇬"
-      },
-      {
-        "project": "BitKwa 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "BitKwa 🇳🇬"
       }
     ]
   },
@@ -417,21 +429,26 @@
     },
     {
       "date": "2026-02-11",
-      "project_count": 12,
-      "merchant_count": 12,
-      "reviewer_count": 12
+      "project_count": 15,
+      "merchant_count": 15,
+      "reviewer_count": 17
     }
   ],
   "reviewer": {
-    "total_reviewed": 1236,
-    "approved": 1185,
-    "rejected": 51
+    "total_reviewed": 1241,
+    "approved": 1188,
+    "rejected": 53
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 276,
+      "count": 277,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2021503222339469777",
+          "date": "2026-02-11",
+          "merchant": "Tena cyberpalace"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsflevw9c5whd4ac2tjraztdr699cja8ah375r8zyy005cvju9mhkgue5qwk",
           "date": "2026-02-11",
@@ -5048,8 +5065,13 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 38,
+      "count": 39,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2021336691785568690",
+          "date": "2026-02-11",
+          "merchant": "Nubelle"
+        },
         {
           "url": "https://primal.net/e/nevent1qqswmx8xh0jfm2wgzt4clwsfd9cru39k7mrmqn008hc5gqhx9neth2cc0pxje",
           "date": "2026-02-11",
@@ -6150,6 +6172,62 @@
       ]
     },
     {
+      "name": "BTC Shule 🇧🇮",
+      "count": 10,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2021520445464318219",
+          "date": "2026-02-11",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2015517389937385953",
+          "date": "2026-01-25",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://x.com/i/status/2014585990753534260",
+          "date": "2026-01-23",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9pg97r7f28xds0txu73ty55002ze5390hzch2vl5tzd5w5gcj73s63npne",
+          "date": "2026-01-22",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://x.com/i/status/2013873253408723440",
+          "date": "2026-01-21",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg7qqwapvx794flmf0z2pveeege9hvcnc5fxcvu8ryfumy04xvqnc3udwu3",
+          "date": "2026-01-20",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2013341063784636748",
+          "date": "2026-01-19",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst089v884qy9yzk9pn7nmf4e34n7y0wd3xd5u9rc7aqtvp0mxc20qjf5n82",
+          "date": "2026-01-18",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2012602496733069352",
+          "date": "2026-01-17",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsva9sqr96uwgn2pw0m85748ssj7k9r6x3nevdspmfqck4h70pch5syaruz8",
+          "date": "2026-01-17",
+          "merchant": "Kwa Innocent"
+        }
+      ]
+    },
+    {
       "name": "EcoBitz 🇰🇪",
       "count": 9,
       "posts": [
@@ -6299,57 +6377,6 @@
           "url": "https://x.com/i/status/2012067029893660731",
           "date": "2026-01-16",
           "merchant": "Selack Pharmacy"
-        }
-      ]
-    },
-    {
-      "name": "BTC Shule 🇧🇮",
-      "count": 9,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2015517389937385953",
-          "date": "2026-01-25",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://x.com/i/status/2014585990753534260",
-          "date": "2026-01-23",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9pg97r7f28xds0txu73ty55002ze5390hzch2vl5tzd5w5gcj73s63npne",
-          "date": "2026-01-22",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://x.com/i/status/2013873253408723440",
-          "date": "2026-01-21",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg7qqwapvx794flmf0z2pveeege9hvcnc5fxcvu8ryfumy04xvqnc3udwu3",
-          "date": "2026-01-20",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://x.com/i/status/2013341063784636748",
-          "date": "2026-01-19",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst089v884qy9yzk9pn7nmf4e34n7y0wd3xd5u9rc7aqtvp0mxc20qjf5n82",
-          "date": "2026-01-18",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://x.com/i/status/2012602496733069352",
-          "date": "2026-01-17",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsva9sqr96uwgn2pw0m85748ssj7k9r6x3nevdspmfqck4h70pch5syaruz8",
-          "date": "2026-01-17",
-          "merchant": "Kwa Innocent"
         }
       ]
     },
@@ -10155,8 +10182,13 @@
     },
     {
       "name": "Tena cyberpalace",
-      "count": 11,
+      "count": 12,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2021503222339469777",
+          "date": "2026-02-11",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsqktstkxn23g493xf2rfv9904yhjpqd6zs2scfrl08eaxlkkssyeckmsgc3",
           "date": "2026-02-04",
@@ -11168,6 +11200,47 @@
       ]
     },
     {
+      "name": "Kwa Innocent",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2021520445464318219",
+          "date": "2026-02-11",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2013873253408723440",
+          "date": "2026-01-21",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg7qqwapvx794flmf0z2pveeege9hvcnc5fxcvu8ryfumy04xvqnc3udwu3",
+          "date": "2026-01-20",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2013341063784636748",
+          "date": "2026-01-19",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst089v884qy9yzk9pn7nmf4e34n7y0wd3xd5u9rc7aqtvp0mxc20qjf5n82",
+          "date": "2026-01-18",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2012602496733069352",
+          "date": "2026-01-17",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsva9sqr96uwgn2pw0m85748ssj7k9r6x3nevdspmfqck4h70pch5syaruz8",
+          "date": "2026-01-17",
+          "project": "BTC Shule 🇧🇮"
+        }
+      ]
+    },
+    {
       "name": "Ebonydud",
       "count": 7,
       "posts": [
@@ -11467,42 +11540,6 @@
           "url": "https://x.com/i/status/2013739622686150876",
           "date": "2026-01-21",
           "project": "BitKwa 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Kwa Innocent",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2013873253408723440",
-          "date": "2026-01-21",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg7qqwapvx794flmf0z2pveeege9hvcnc5fxcvu8ryfumy04xvqnc3udwu3",
-          "date": "2026-01-20",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2013341063784636748",
-          "date": "2026-01-19",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst089v884qy9yzk9pn7nmf4e34n7y0wd3xd5u9rc7aqtvp0mxc20qjf5n82",
-          "date": "2026-01-18",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2012602496733069352",
-          "date": "2026-01-17",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsva9sqr96uwgn2pw0m85748ssj7k9r6x3nevdspmfqck4h70pch5syaruz8",
-          "date": "2026-01-17",
-          "project": "BTC Shule 🇧🇮"
         }
       ]
     },
@@ -13115,6 +13152,17 @@
       ]
     },
     {
+      "name": "Nubelle",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2021336691785568690",
+          "date": "2026-02-11",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Nouvelle Saison",
       "count": 1,
       "posts": [
@@ -13409,7 +13457,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3431
+      "count": 3442
     },
     {
       "domain": "8333.mobi",
@@ -13456,13 +13504,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1975
+      "count": 1984
     },
     {
       "platform": "Nostr",
-      "count": 1633
+      "count": 1635
     }
   ],
-  "generated_at": "2026-02-11T11:22:39.784200+00:00",
+  "generated_at": "2026-02-11T12:22:39.781440+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
