@@ -1,12 +1,12 @@
 {
   "totals": {
-    "all_payments": 3619,
+    "all_payments": 3621,
     "by_type": {
       "merchant": {
-        "count": 1189
+        "count": 1190
       },
       "project": {
-        "count": 1189
+        "count": 1190
       },
       "reviewer": {
         "count": 1241
@@ -15,26 +15,33 @@
   },
   "today": {
     "date": "2026-02-11",
-    "payments": 47,
+    "payments": 49,
     "by_type": {
       "merchant": {
-        "count": 15
+        "count": 16
       },
       "project": {
-        "count": 15
+        "count": 16
       },
       "reviewer": {
         "count": 17
       }
     },
-    "approved": 15,
-    "rejected": 2,
+    "approved": 16,
+    "rejected": 1,
     "videos": [
       {
         "url": "https://x.com/i/status/2021503222339469777",
         "project": "Bitbiashara 🇰🇪",
         "merchant": "Tena cyberpalace",
         "platform": "X",
+        "time": "12:14"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqstgruu0u700yenljmc39ue8e5a0xe9ndkkx2wc40pnrd98s9a6tpq8rpmnh",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nubelle",
+        "platform": "Nostr",
         "time": "12:14"
       },
       {
@@ -141,6 +148,9 @@
     "videos": [
       {
         "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
       },
       {
         "project": "Bitcoin Dombo 🇲🇿"
@@ -429,15 +439,15 @@
     },
     {
       "date": "2026-02-11",
-      "project_count": 15,
-      "merchant_count": 15,
+      "project_count": 16,
+      "merchant_count": 16,
       "reviewer_count": 17
     }
   ],
   "reviewer": {
     "total_reviewed": 1241,
-    "approved": 1188,
-    "rejected": 53
+    "approved": 1189,
+    "rejected": 52
   },
   "top_projects": [
     {
@@ -5065,8 +5075,13 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 39,
+      "count": 40,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstgruu0u700yenljmc39ue8e5a0xe9ndkkx2wc40pnrd98s9a6tpq8rpmnh",
+          "date": "2026-02-11",
+          "merchant": "Nubelle"
+        },
         {
           "url": "https://x.com/i/status/2021336691785568690",
           "date": "2026-02-11",
@@ -12588,6 +12603,22 @@
       ]
     },
     {
+      "name": "Nubelle",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstgruu0u700yenljmc39ue8e5a0xe9ndkkx2wc40pnrd98s9a6tpq8rpmnh",
+          "date": "2026-02-11",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2021336691785568690",
+          "date": "2026-02-11",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Night Salon",
       "count": 2,
       "posts": [
@@ -13152,17 +13183,6 @@
       ]
     },
     {
-      "name": "Nubelle",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2021336691785568690",
-          "date": "2026-02-11",
-          "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
       "name": "Nouvelle Saison",
       "count": 1,
       "posts": [
@@ -13457,7 +13477,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3442
+      "count": 3444
     },
     {
       "domain": "8333.mobi",
@@ -13508,9 +13528,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1635
+      "count": 1637
     }
   ],
-  "generated_at": "2026-02-11T13:22:39.318332+00:00",
+  "generated_at": "2026-02-11T14:22:39.797699+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
