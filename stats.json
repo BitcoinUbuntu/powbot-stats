@@ -1,28 +1,109 @@
 {
   "totals": {
-    "all_payments": 3675,
+    "all_payments": 3696,
     "by_type": {
       "merchant": {
-        "count": 1208
+        "count": 1215
       },
       "project": {
-        "count": 1208
+        "count": 1215
       },
       "reviewer": {
-        "count": 1259
+        "count": 1266
       }
     }
   },
   "today": {
     "date": "2026-02-12",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 21,
+    "by_type": {
+      "merchant": {
+        "count": 7
+      },
+      "project": {
+        "count": 7
+      },
+      "reviewer": {
+        "count": 7
+      }
+    },
+    "approved": 7,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2021687067101569036",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Preso's Food and Drinks",
+        "platform": "X",
+        "time": "03:52"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsymclxskv28dsurknjkteq4x4da88uj6c5ejm9uj45tvjuyccaecst7z07v",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Preso's Food and Drinks",
+        "platform": "Nostr",
+        "time": "03:52"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsrc9kg5p8wh5v3yh38qqhhetwmr2d46xjpsxf2kaha4u7ddqcwursgtw350",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "Nostr",
+        "time": "03:51"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsdyjapeq2qz5vs0vpy3ll3edlc70a99rd4pe0gzv8ts7vfmxwacuqdd7356",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "Nostr",
+        "time": "03:51"
+      },
+      {
+        "url": "https://x.com/i/status/2021680553737527598",
+        "project": "BitKwa 🇳🇬",
+        "merchant": "Mega Standard",
+        "platform": "X",
+        "time": "03:50"
+      },
+      {
+        "url": "https://x.com/i/status/2021676400353083598",
+        "project": "BitKwa 🇳🇬",
+        "merchant": "Lawee Business Concept",
+        "platform": "X",
+        "time": "03:50"
+      },
+      {
+        "url": "https://x.com/i/status/2021672006777802959",
+        "project": "BitKwa 🇳🇬",
+        "merchant": "Lawee Business Concept",
+        "platform": "X",
+        "time": "03:50"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "BitKwa 🇳🇬"
+      },
+      {
+        "project": "BitKwa 🇳🇬"
+      },
+      {
+        "project": "BitKwa 🇳🇬"
+      },
       {
         "project": "Bitcoin Ekasi 🇿🇦"
       },
@@ -304,14 +385,14 @@
     },
     {
       "date": "2026-02-12",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 7,
+      "merchant_count": 7,
+      "reviewer_count": 7
     }
   ],
   "reviewer": {
-    "total_reviewed": 1259,
-    "approved": 1207,
+    "total_reviewed": 1266,
+    "approved": 1214,
     "rejected": 52
   },
   "top_projects": [
@@ -4137,8 +4218,18 @@
     },
     {
       "name": "Bitcoin NextGen 🇳🇬",
-      "count": 66,
+      "count": 68,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrc9kg5p8wh5v3yh38qqhhetwmr2d46xjpsxf2kaha4u7ddqcwursgtw350",
+          "date": "2026-02-12",
+          "merchant": "Emmy Store"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdyjapeq2qz5vs0vpy3ll3edlc70a99rd4pe0gzv8ts7vfmxwacuqdd7356",
+          "date": "2026-02-12",
+          "merchant": "Emmy Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs8jkry2qzkfjhg76uzxwem286ctn93uvkjw4a4dz2v8w789x362ughe7qwj",
           "date": "2026-02-11",
@@ -4794,8 +4885,23 @@
     },
     {
       "name": "BitKwa 🇳🇬",
-      "count": 45,
+      "count": 48,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2021680553737527598",
+          "date": "2026-02-12",
+          "merchant": "Mega Standard"
+        },
+        {
+          "url": "https://x.com/i/status/2021676400353083598",
+          "date": "2026-02-12",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2021672006777802959",
+          "date": "2026-02-12",
+          "merchant": "Lawee Business Concept"
+        },
         {
           "url": "https://x.com/i/status/2021325593225158842",
           "date": "2026-02-11",
@@ -5880,8 +5986,18 @@
     },
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 19,
+      "count": 21,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2021687067101569036",
+          "date": "2026-02-12",
+          "merchant": "Preso's Food and Drinks"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsymclxskv28dsurknjkteq4x4da88uj6c5ejm9uj45tvjuyccaecst7z07v",
+          "date": "2026-02-12",
+          "merchant": "Preso's Food and Drinks"
+        },
         {
           "url": "https://x.com/i/status/2021121950521704909",
           "date": "2026-02-10",
@@ -7412,8 +7528,18 @@
     },
     {
       "name": "Emmy Store",
-      "count": 66,
+      "count": 68,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrc9kg5p8wh5v3yh38qqhhetwmr2d46xjpsxf2kaha4u7ddqcwursgtw350",
+          "date": "2026-02-12",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdyjapeq2qz5vs0vpy3ll3edlc70a99rd4pe0gzv8ts7vfmxwacuqdd7356",
+          "date": "2026-02-12",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs8jkry2qzkfjhg76uzxwem286ctn93uvkjw4a4dz2v8w789x362ughe7qwj",
           "date": "2026-02-11",
@@ -8697,8 +8823,18 @@
     },
     {
       "name": "Lawee Business Concept",
-      "count": 28,
+      "count": 30,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2021676400353083598",
+          "date": "2026-02-12",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2021672006777802959",
+          "date": "2026-02-12",
+          "project": "BitKwa 🇳🇬"
+        },
         {
           "url": "https://x.com/i/status/2021325593225158842",
           "date": "2026-02-11",
@@ -10130,6 +10266,77 @@
       ]
     },
     {
+      "name": "Preso's Food and Drinks",
+      "count": 13,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2021687067101569036",
+          "date": "2026-02-12",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsymclxskv28dsurknjkteq4x4da88uj6c5ejm9uj45tvjuyccaecst7z07v",
+          "date": "2026-02-12",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2021121950521704909",
+          "date": "2026-02-10",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2019894070026416152",
+          "date": "2026-02-07",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv737g86a0fleuyhz4cu2dfpjn298qmakwq3jk9aejl7heuasql8gxpygtr",
+          "date": "2026-02-07",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst6gyx9y2fyaqwtcamwlztylnnhywqkt0dpz3vpcty77arvac0hzq6r339t",
+          "date": "2026-02-01",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2017714105348411717",
+          "date": "2026-02-01",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy62npfrcmp6lp0wtl99f9c4shzy658aq0cde4ryesku03quln8xg0mwj6m",
+          "date": "2026-02-01",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2017712047908172013",
+          "date": "2026-02-01",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2016610534926250426",
+          "date": "2026-01-29",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszxgldm547ckseqxkvrha90gz5c2mqq5wyuvq90wp34qvhxmjxg0quttlcj",
+          "date": "2026-01-29",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2015859869018947870",
+          "date": "2026-01-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqvcpu3x5keeppys0tmk8wzur6yg8pq0jae9n9fpe0p0chcxq9mygln025t",
+          "date": "2026-01-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Caleb Cafe",
       "count": 13,
       "posts": [
@@ -10329,67 +10536,6 @@
           "url": "https://x.com/i/status/2018003646416335098",
           "date": "2026-02-01",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Preso's Food and Drinks",
-      "count": 11,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2021121950521704909",
-          "date": "2026-02-10",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2019894070026416152",
-          "date": "2026-02-07",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv737g86a0fleuyhz4cu2dfpjn298qmakwq3jk9aejl7heuasql8gxpygtr",
-          "date": "2026-02-07",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst6gyx9y2fyaqwtcamwlztylnnhywqkt0dpz3vpcty77arvac0hzq6r339t",
-          "date": "2026-02-01",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2017714105348411717",
-          "date": "2026-02-01",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy62npfrcmp6lp0wtl99f9c4shzy658aq0cde4ryesku03quln8xg0mwj6m",
-          "date": "2026-02-01",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2017712047908172013",
-          "date": "2026-02-01",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2016610534926250426",
-          "date": "2026-01-29",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszxgldm547ckseqxkvrha90gz5c2mqq5wyuvq90wp34qvhxmjxg0quttlcj",
-          "date": "2026-01-29",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2015859869018947870",
-          "date": "2026-01-26",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqvcpu3x5keeppys0tmk8wzur6yg8pq0jae9n9fpe0p0chcxq9mygln025t",
-          "date": "2026-01-26",
-          "project": "Bitcoin Dua 🇬🇭"
         }
       ]
     },
@@ -11230,6 +11376,47 @@
       ]
     },
     {
+      "name": "Mega Standard",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2021680553737527598",
+          "date": "2026-02-12",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2021278752357908586",
+          "date": "2026-02-10",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2021146174590185699",
+          "date": "2026-02-10",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2016184020501991707",
+          "date": "2026-01-27",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2014809720226296238",
+          "date": "2026-01-24",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013872452674232786",
+          "date": "2026-01-21",
+          "project": "BitKwa 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2013739622686150876",
+          "date": "2026-01-21",
+          "project": "BitKwa 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Kwa Innocent",
       "count": 7,
       "posts": [
@@ -11534,42 +11721,6 @@
           "url": "https://primal.net/e/nevent1qqs2vwvt2fmnqm9l5zdu0dp5n9xz30vmkl35v6wqqk9tlzwgwlcfm7gw60kfu",
           "date": "2026-02-03",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Mega Standard",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2021278752357908586",
-          "date": "2026-02-10",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2021146174590185699",
-          "date": "2026-02-10",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2016184020501991707",
-          "date": "2026-01-27",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2014809720226296238",
-          "date": "2026-01-24",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013872452674232786",
-          "date": "2026-01-21",
-          "project": "BitKwa 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2013739622686150876",
-          "date": "2026-01-21",
-          "project": "BitKwa 🇳🇬"
         }
       ]
     },
@@ -13517,16 +13668,16 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 30,
-    "daily_average_payments": 122
+    "daily_average_payments": 123
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3496
+      "count": 3515
     },
     {
       "domain": "8333.mobi",
-      "count": 179
+      "count": 181
     }
   ],
   "countries": [
@@ -13569,13 +13720,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2008
+      "count": 2020
     },
     {
       "platform": "Nostr",
-      "count": 1667
+      "count": 1676
     }
   ],
-  "generated_at": "2026-02-12T03:22:39.792665+00:00",
+  "generated_at": "2026-02-12T04:22:39.786632+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
