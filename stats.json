@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 3786,
+    "all_payments": 3792,
     "by_type": {
       "merchant": {
-        "count": 1245
+        "count": 1247
       },
       "project": {
-        "count": 1245
+        "count": 1247
       },
       "reviewer": {
-        "count": 1296
+        "count": 1298
       }
     }
   },
   "today": {
     "date": "2026-02-12",
-    "payments": 111,
+    "payments": 117,
     "by_type": {
       "merchant": {
-        "count": 37
+        "count": 39
       },
       "project": {
-        "count": 37
+        "count": 39
       },
       "reviewer": {
-        "count": 37
+        "count": 39
       }
     },
-    "approved": 37,
+    "approved": 39,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2021937565058642043",
+        "project": "Bitcoin Babies 🇰🇪",
+        "merchant": "G-max Supermarket",
+        "platform": "X",
+        "time": "13:46"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsyhktmxhdmymdr27fsrq9atax8mgd9uhj2daqcteuly7tw6dek82gp7ghcr",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Exotic Cyber 1",
+        "platform": "Nostr",
+        "time": "13:45"
+      },
       {
         "url": "https://x.com/i/status/2021932027159675133",
         "project": "Bitcoin Githurai 🇰🇪",
@@ -293,6 +307,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Babies 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
       {
         "project": "Bitcoin Githurai 🇰🇪"
       },
@@ -637,14 +657,14 @@
     },
     {
       "date": "2026-02-12",
-      "project_count": 37,
-      "merchant_count": 37,
-      "reviewer_count": 37
+      "project_count": 39,
+      "merchant_count": 39,
+      "reviewer_count": 39
     }
   ],
   "reviewer": {
-    "total_reviewed": 1296,
-    "approved": 1244,
+    "total_reviewed": 1298,
+    "approved": 1246,
     "rejected": 52
   },
   "top_projects": [
@@ -3613,8 +3633,13 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 95,
+      "count": 96,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyhktmxhdmymdr27fsrq9atax8mgd9uhj2daqcteuly7tw6dek82gp7ghcr",
+          "date": "2026-02-12",
+          "merchant": "Exotic Cyber 1"
+        },
         {
           "url": "https://x.com/i/status/2021932027159675133",
           "date": "2026-02-12",
@@ -6590,8 +6615,13 @@
     },
     {
       "name": "Bitcoin Babies 🇰🇪",
-      "count": 12,
+      "count": 13,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2021937565058642043",
+          "date": "2026-02-12",
+          "merchant": "G-max Supermarket"
+        },
         {
           "url": "https://x.com/i/status/2013607178255335665",
           "date": "2026-01-20",
@@ -12597,6 +12627,37 @@
       ]
     },
     {
+      "name": "G-max Supermarket",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2021937565058642043",
+          "date": "2026-02-12",
+          "project": "Bitcoin Babies 🇰🇪"
+        },
+        {
+          "url": "Verdict switch https://x.com/i/status/2011353463289233825",
+          "date": "2026-01-15",
+          "project": "Bitcoin Babies 🇰🇪"
+        },
+        {
+          "url": "Verdict switch https://x.com/i/status/2010773774635770288",
+          "date": "2026-01-15",
+          "project": "Bitcoin Babies 🇰🇪"
+        },
+        {
+          "url": "Verdict switch https://x.com/i/status/2010924954204721311",
+          "date": "2026-01-15",
+          "project": "Bitcoin Babies 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2011075769582211081",
+          "date": "2026-01-14",
+          "project": "Bitcoin Babies 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Ebenezer Shop",
       "count": 5,
       "posts": [
@@ -12894,32 +12955,6 @@
           "url": "https://x.com/i/status/2015161586302800304",
           "date": "2026-01-25",
           "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "G-max Supermarket",
-      "count": 4,
-      "posts": [
-        {
-          "url": "Verdict switch https://x.com/i/status/2011353463289233825",
-          "date": "2026-01-15",
-          "project": "Bitcoin Babies 🇰🇪"
-        },
-        {
-          "url": "Verdict switch https://x.com/i/status/2010773774635770288",
-          "date": "2026-01-15",
-          "project": "Bitcoin Babies 🇰🇪"
-        },
-        {
-          "url": "Verdict switch https://x.com/i/status/2010924954204721311",
-          "date": "2026-01-15",
-          "project": "Bitcoin Babies 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2011075769582211081",
-          "date": "2026-01-14",
-          "project": "Bitcoin Babies 🇰🇪"
         }
       ]
     },
@@ -13576,6 +13611,22 @@
       ]
     },
     {
+      "name": "Exotic Cyber 1",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyhktmxhdmymdr27fsrq9atax8mgd9uhj2daqcteuly7tw6dek82gp7ghcr",
+          "date": "2026-02-12",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd5erq4wknkvdyasnykytvp0ezq9l607jzmks2w932rrfewm836mq8ap94z",
+          "date": "2026-02-04",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Evans Tailoring Shop",
       "count": 2,
       "posts": [
@@ -14075,17 +14126,6 @@
       ]
     },
     {
-      "name": "Exotic Cyber 1",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsd5erq4wknkvdyasnykytvp0ezq9l607jzmks2w932rrfewm836mq8ap94z",
-          "date": "2026-02-04",
-          "project": "Bitcoin Githurai 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Estética Gisa",
       "count": 1,
       "posts": [
@@ -14237,7 +14277,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3603
+      "count": 3609
     },
     {
       "domain": "8333.mobi",
@@ -14284,13 +14324,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2071
+      "count": 2074
     },
     {
       "platform": "Nostr",
-      "count": 1715
+      "count": 1718
     }
   ],
-  "generated_at": "2026-02-12T13:22:39.328658+00:00",
+  "generated_at": "2026-02-12T14:22:39.786792+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
