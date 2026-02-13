@@ -1,38 +1,45 @@
 {
   "totals": {
-    "all_payments": 3869,
+    "all_payments": 3873,
     "by_type": {
       "merchant": {
-        "count": 1273
+        "count": 1274
       },
       "project": {
-        "count": 1272
+        "count": 1274
       },
       "reviewer": {
-        "count": 1324
+        "count": 1325
       }
     }
   },
   "today": {
     "date": "2026-02-13",
-    "payments": 59,
+    "payments": 63,
     "by_type": {
       "merchant": {
-        "count": 20
+        "count": 21
       },
       "project": {
-        "count": 19
+        "count": 21
       },
       "reviewer": {
-        "count": 20
+        "count": 21
       }
     },
-    "approved": 20,
+    "approved": 21,
     "rejected": 0,
     "videos": [
       {
+        "url": "https://x.com/i/status/2022085516204945436",
+        "project": "BitKwa 🇳🇬",
+        "merchant": "Lawee Business Concept",
+        "platform": "X",
+        "time": "06:22"
+      },
+      {
         "url": "https://x.com/i/status/2022083241981939914",
-        "project": "Unknown",
+        "project": "BitKwa 🇳🇬",
         "merchant": "Lawee Business Concept",
         "platform": "X",
         "time": "06:22"
@@ -175,7 +182,10 @@
   "last_24h": {
     "videos": [
       {
-        "project": "Unknown"
+        "project": "BitKwa 🇳🇬"
+      },
+      {
+        "project": "BitKwa 🇳🇬"
       },
       {
         "project": "BitKwa 🇳🇬"
@@ -527,14 +537,14 @@
     },
     {
       "date": "2026-02-13",
-      "project_count": 19,
-      "merchant_count": 20,
-      "reviewer_count": 20
+      "project_count": 21,
+      "merchant_count": 21,
+      "reviewer_count": 21
     }
   ],
   "reviewer": {
-    "total_reviewed": 1324,
-    "approved": 1272,
+    "total_reviewed": 1325,
+    "approved": 1273,
     "rejected": 52
   },
   "top_projects": [
@@ -5227,8 +5237,18 @@
     },
     {
       "name": "BitKwa 🇳🇬",
-      "count": 49,
+      "count": 51,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2022085516204945436",
+          "date": "2026-02-13",
+          "merchant": "Lawee Business Concept"
+        },
+        {
+          "url": "https://x.com/i/status/2022083241981939914",
+          "date": "2026-02-13",
+          "merchant": "Lawee Business Concept"
+        },
         {
           "url": "https://x.com/i/status/2022078922679365887",
           "date": "2026-02-13",
@@ -9325,12 +9345,17 @@
     },
     {
       "name": "Lawee Business Concept",
-      "count": 32,
+      "count": 33,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2022085516204945436",
+          "date": "2026-02-13",
+          "project": "BitKwa 🇳🇬"
+        },
         {
           "url": "https://x.com/i/status/2022083241981939914",
           "date": "2026-02-13",
-          "project": "Unknown"
+          "project": "BitKwa 🇳🇬"
         },
         {
           "url": "https://x.com/i/status/2022078922679365887",
@@ -14420,7 +14445,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3685
+      "count": 3689
     },
     {
       "domain": "8333.mobi",
@@ -14467,13 +14492,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2118
+      "count": 2122
     },
     {
       "platform": "Nostr",
       "count": 1751
     }
   ],
-  "generated_at": "2026-02-13T06:22:39.796963+00:00",
+  "generated_at": "2026-02-13T07:22:39.785692+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
