@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 4166,
+    "all_payments": 4169,
     "by_type": {
       "merchant": {
-        "count": 1371
+        "count": 1372
       },
       "project": {
-        "count": 1371
+        "count": 1372
       },
       "reviewer": {
-        "count": 1424
+        "count": 1425
       }
     }
   },
   "today": {
     "date": "2026-02-16",
-    "payments": 96,
+    "payments": 99,
     "by_type": {
       "merchant": {
-        "count": 32
+        "count": 33
       },
       "project": {
-        "count": 32
+        "count": 33
       },
       "reviewer": {
-        "count": 32
+        "count": 33
       }
     },
-    "approved": 32,
+    "approved": 33,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsxmp274c8xtsy0676g6m3f9kw5n6w2dzzu26jkyr7mtghqpzxcnjstpt9wc",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Evinat Greens",
+        "platform": "Nostr",
+        "time": "20:15"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs90ueerxkj9tyftjnagehsytc0t6s865t54gnj20mupltztulggrqa87rtl",
         "project": "Bitcoin Dua 🇬🇭",
@@ -258,6 +265,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -533,14 +543,14 @@
     },
     {
       "date": "2026-02-16",
-      "project_count": 32,
-      "merchant_count": 32,
-      "reviewer_count": 32
+      "project_count": 33,
+      "merchant_count": 33,
+      "reviewer_count": 33
     }
   ],
   "reviewer": {
-    "total_reviewed": 1424,
-    "approved": 1370,
+    "total_reviewed": 1425,
+    "approved": 1371,
     "rejected": 54
   },
   "top_projects": [
@@ -6633,8 +6643,13 @@
     },
     {
       "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 29,
+      "count": 30,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxmp274c8xtsy0676g6m3f9kw5n6w2dzzu26jkyr7mtghqpzxcnjstpt9wc",
+          "date": "2026-02-16",
+          "merchant": "Evinat Greens"
+        },
         {
           "url": "https://primal.net/e/nevent1qqstpfa60rklf80s9muqx5vsv9cdrk4jdk2r5t8yrx3nvyleumm64zq9q8z4j",
           "date": "2026-02-14",
@@ -15288,6 +15303,17 @@
       ]
     },
     {
+      "name": "Evinat Greens",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxmp274c8xtsy0676g6m3f9kw5n6w2dzzu26jkyr7mtghqpzxcnjstpt9wc",
+          "date": "2026-02-16",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Estética Gisa",
       "count": 1,
       "posts": [
@@ -15417,7 +15443,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3982
+      "count": 3985
     },
     {
       "domain": "8333.mobi",
@@ -15468,9 +15494,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1842
+      "count": 1845
     }
   ],
-  "generated_at": "2026-02-16T19:22:39.799335+00:00",
+  "generated_at": "2026-02-16T20:22:39.811367+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
