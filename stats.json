@@ -1,35 +1,63 @@
 {
   "totals": {
-    "all_payments": 4238,
+    "all_payments": 4252,
     "by_type": {
       "merchant": {
-        "count": 1395
+        "count": 1399
       },
       "project": {
-        "count": 1395
+        "count": 1399
       },
       "reviewer": {
-        "count": 1448
+        "count": 1454
       }
     }
   },
   "today": {
     "date": "2026-02-17",
-    "payments": 69,
+    "payments": 83,
     "by_type": {
       "merchant": {
-        "count": 23
+        "count": 27
       },
       "project": {
-        "count": 23
+        "count": 27
       },
       "reviewer": {
-        "count": 23
+        "count": 29
       }
     },
-    "approved": 23,
-    "rejected": 0,
+    "approved": 27,
+    "rejected": 2,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqszkpcml6q07wda6luz9gz3fwex59knrrqxwqaj974ez4l3vrtmhlqu6nyu6",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "Nostr",
+        "time": "17:54"
+      },
+      {
+        "url": "https://x.com/i/status/2023671306584014896",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "X",
+        "time": "17:53"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswr6c4l3gv707mu4heee0fdqw6l74825gsethw3txqtg5l5qapplqav9xgw",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "Nostr",
+        "time": "17:53"
+      },
+      {
+        "url": "https://x.com/i/status/2023665339330937135",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "X",
+        "time": "17:53"
+      },
       {
         "url": "https://x.com/i/status/2023783268798370087",
         "project": "Bitcoin Ekasi 🇿🇦",
@@ -195,6 +223,18 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Ekasi 🇿🇦"
       },
@@ -467,21 +507,41 @@
     },
     {
       "date": "2026-02-17",
-      "project_count": 23,
-      "merchant_count": 23,
-      "reviewer_count": 23
+      "project_count": 27,
+      "merchant_count": 27,
+      "reviewer_count": 29
     }
   ],
   "reviewer": {
-    "total_reviewed": 1448,
-    "approved": 1394,
-    "rejected": 54
+    "total_reviewed": 1454,
+    "approved": 1398,
+    "rejected": 56
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 338,
+      "count": 342,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszkpcml6q07wda6luz9gz3fwex59knrrqxwqaj974ez4l3vrtmhlqu6nyu6",
+          "date": "2026-02-17",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2023671306584014896",
+          "date": "2026-02-17",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswr6c4l3gv707mu4heee0fdqw6l74825gsethw3txqtg5l5qapplqav9xgw",
+          "date": "2026-02-17",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2023665339330937135",
+          "date": "2026-02-17",
+          "merchant": "Grandsmatt"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsp7jnr3v47t84ydqh0rm5npkl69c3q4dkuqs4q7u3qk6tj72ndkpq6vfwca",
           "date": "2026-02-17",
@@ -8104,8 +8164,18 @@
     },
     {
       "name": "Grandsmatt",
-      "count": 92,
+      "count": 94,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswr6c4l3gv707mu4heee0fdqw6l74825gsethw3txqtg5l5qapplqav9xgw",
+          "date": "2026-02-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2023665339330937135",
+          "date": "2026-02-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsdtsqyvdyvvt23c9qvu9hkqhjhgyjv94sklwatsjkh8jts6aldn2sdqeynx",
           "date": "2026-02-17",
@@ -10719,8 +10789,18 @@
     },
     {
       "name": "Manu Groceries",
-      "count": 26,
+      "count": 28,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszkpcml6q07wda6luz9gz3fwex59knrrqxwqaj974ez4l3vrtmhlqu6nyu6",
+          "date": "2026-02-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2023671306584014896",
+          "date": "2026-02-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9h4ylk8pvy39rq2dlhrf9k2mgfysfu2wwe5pady9dw6vaxendzps4xxylu",
           "date": "2026-02-17",
@@ -15598,12 +15678,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 36,
-    "daily_average_payments": 117
+    "daily_average_payments": 118
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4054
+      "count": 4068
     },
     {
       "domain": "8333.mobi",
@@ -15650,13 +15730,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2351
+      "count": 2358
     },
     {
       "platform": "Nostr",
-      "count": 1887
+      "count": 1894
     }
   ],
-  "generated_at": "2026-02-17T17:22:39.794584+00:00",
+  "generated_at": "2026-02-17T18:22:39.801686+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
