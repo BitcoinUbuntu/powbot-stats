@@ -1599,7 +1599,7 @@
         }
 
         // Block countdown configuration
-        const DIFFICULTY_ADJUSTMENT_BLOCK = 936663; // Fourth difficulty adjustment (1008 blocks per epoch)
+        const DIFFICULTY_ADJUSTMENT_BLOCK = 937671; // Fifth difficulty adjustment (1008 blocks per epoch)
 
         // Block countdown state
         let currentBlockHeight = null;
@@ -1626,7 +1626,7 @@
             }
 
             // Calculate progress and time
-            const startBlock = 935655; // Third difficulty adjustment (start of epoch 4)
+            const startBlock = 936663; // Fourth difficulty adjustment (start of epoch 5)
             const totalBlocks = DIFFICULTY_ADJUSTMENT_BLOCK - startBlock;
             const blocksPassed = currentBlockHeight - startBlock;
             const progressPercent = Math.min(100, Math.max(0, (blocksPassed / totalBlocks) * 100));
