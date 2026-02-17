@@ -1,28 +1,149 @@
 {
   "totals": {
-    "all_payments": 4169,
+    "all_payments": 4202,
     "by_type": {
       "merchant": {
-        "count": 1372
+        "count": 1383
       },
       "project": {
-        "count": 1372
+        "count": 1383
       },
       "reviewer": {
-        "count": 1425
+        "count": 1436
       }
     }
   },
   "today": {
     "date": "2026-02-17",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 33,
+    "by_type": {
+      "merchant": {
+        "count": 11
+      },
+      "project": {
+        "count": 11
+      },
+      "reviewer": {
+        "count": 11
+      }
+    },
+    "approved": 11,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs8upjxjrjwmm6mmjma3ehqdnmgfg2f6q3e6cdugww853p2dad2tmsu2hkln",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "Blessed Fish Point",
+        "platform": "Nostr",
+        "time": "07:45"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsp7jnr3v47t84ydqh0rm5npkl69c3q4dkuqs4q7u3qk6tj72ndkpq6vfwca",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "Nostr",
+        "time": "07:45"
+      },
+      {
+        "url": "https://x.com/i/status/2023480152903348657",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "X",
+        "time": "07:44"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsp97u7qkhle9yskjxk84evhv5fgagry9f0dzn5rw4saz9vky0073sn9tzdv",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Kings & Queens Barber & Beauty Spa",
+        "platform": "Nostr",
+        "time": "07:44"
+      },
+      {
+        "url": "https://x.com/i/status/2023468991478722741",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Kings & Queens Barber & Beauty Spa",
+        "platform": "X",
+        "time": "07:44"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsdtsqyvdyvvt23c9qvu9hkqhjhgyjv94sklwatsjkh8jts6aldn2sdqeynx",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "Nostr",
+        "time": "07:43"
+      },
+      {
+        "url": "https://x.com/i/status/2023480604374036552",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "X",
+        "time": "07:43"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs9h4ylk8pvy39rq2dlhrf9k2mgfysfu2wwe5pady9dw6vaxendzps4xxylu",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "Nostr",
+        "time": "07:43"
+      },
+      {
+        "url": "https://x.com/i/status/2023465070748172598",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "X",
+        "time": "07:43"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsyx397yh59fryt0qytelpqcmqc4w6hhkgl89scyp5zk04ww2v7a2c6grhcu",
+        "project": "TofoBTC 🇲🇿",
+        "merchant": "Boa Gente Lda",
+        "platform": "Nostr",
+        "time": "07:42"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs9ehn5jpnxwyn23l6px9gekauxv80z82jeympqrepa8kq2juq6chqm7hmcd",
+        "project": "TofoBTC 🇲🇿",
+        "merchant": "Boa Gente Lda",
+        "platform": "Nostr",
+        "time": "07:42"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "EcoBitz 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "TofoBTC 🇲🇿"
+      },
+      {
+        "project": "TofoBTC 🇲🇿"
+      },
       {
         "project": "Bitcoin Victoria Falls 🇿🇲"
       },
@@ -271,21 +392,61 @@
     },
     {
       "date": "2026-02-17",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 11,
+      "merchant_count": 11,
+      "reviewer_count": 11
     }
   ],
   "reviewer": {
-    "total_reviewed": 1425,
-    "approved": 1371,
+    "total_reviewed": 1436,
+    "approved": 1382,
     "rejected": 54
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 330,
+      "count": 338,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp7jnr3v47t84ydqh0rm5npkl69c3q4dkuqs4q7u3qk6tj72ndkpq6vfwca",
+          "date": "2026-02-17",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2023480152903348657",
+          "date": "2026-02-17",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp97u7qkhle9yskjxk84evhv5fgagry9f0dzn5rw4saz9vky0073sn9tzdv",
+          "date": "2026-02-17",
+          "merchant": "Kings & Queens Barber & Beauty Spa"
+        },
+        {
+          "url": "https://x.com/i/status/2023468991478722741",
+          "date": "2026-02-17",
+          "merchant": "Kings & Queens Barber & Beauty Spa"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdtsqyvdyvvt23c9qvu9hkqhjhgyjv94sklwatsjkh8jts6aldn2sdqeynx",
+          "date": "2026-02-17",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2023480604374036552",
+          "date": "2026-02-17",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9h4ylk8pvy39rq2dlhrf9k2mgfysfu2wwe5pady9dw6vaxendzps4xxylu",
+          "date": "2026-02-17",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2023465070748172598",
+          "date": "2026-02-17",
+          "merchant": "Manu Groceries"
+        },
         {
           "url": "https://primal.net/e/nevent1qqstda9pylprdcccp00d5tmjyxp60rxfvj2t3at0glkw8czqgr0x0usymn7t7",
           "date": "2026-02-16",
@@ -7027,8 +7188,13 @@
     },
     {
       "name": "EcoBitz 🇰🇪",
-      "count": 10,
+      "count": 11,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8upjxjrjwmm6mmjma3ehqdnmgfg2f6q3e6cdugww853p2dad2tmsu2hkln",
+          "date": "2026-02-17",
+          "merchant": "Blessed Fish Point"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsxzn3upjjz745h9nkd0j0dnunslzjwyuzhvngsc3lpva2u6ngz7zq2xf4km",
           "date": "2026-02-12",
@@ -7278,8 +7444,18 @@
     },
     {
       "name": "TofoBTC 🇲🇿",
-      "count": 1,
+      "count": 3,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyx397yh59fryt0qytelpqcmqc4w6hhkgl89scyp5zk04ww2v7a2c6grhcu",
+          "date": "2026-02-17",
+          "merchant": "Boa Gente Lda"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9ehn5jpnxwyn23l6px9gekauxv80z82jeympqrepa8kq2juq6chqm7hmcd",
+          "date": "2026-02-17",
+          "merchant": "Boa Gente Lda"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsdxk5erklnem9q0alvtrke2ncdsqag7ckm62hwqd29wukkq38cmwsl3up5l",
           "date": "2026-02-09",
@@ -7793,8 +7969,18 @@
     },
     {
       "name": "Grandsmatt",
-      "count": 90,
+      "count": 92,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdtsqyvdyvvt23c9qvu9hkqhjhgyjv94sklwatsjkh8jts6aldn2sdqeynx",
+          "date": "2026-02-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2023480604374036552",
+          "date": "2026-02-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrzsjls295zczsyznax099vsknkjaltugtpv4w84yq7dlg34uh23cjammly",
           "date": "2026-02-16",
@@ -9699,8 +9885,18 @@
     },
     {
       "name": "Bliss beauty Salon",
-      "count": 35,
+      "count": 37,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp7jnr3v47t84ydqh0rm5npkl69c3q4dkuqs4q7u3qk6tj72ndkpq6vfwca",
+          "date": "2026-02-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2023480152903348657",
+          "date": "2026-02-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrxvy05jjjees05wxwnk3tc7mznkkkv08su4x577r6zc780s00npg4krgsa",
           "date": "2026-02-16",
@@ -10378,8 +10574,18 @@
     },
     {
       "name": "Manu Groceries",
-      "count": 24,
+      "count": 26,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs9h4ylk8pvy39rq2dlhrf9k2mgfysfu2wwe5pady9dw6vaxendzps4xxylu",
+          "date": "2026-02-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2023465070748172598",
+          "date": "2026-02-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsz88s8zdefraeshej7cmncs9n5ye666qejhhxckusfrwjzt6alscgvhj6kw",
           "date": "2026-02-12",
@@ -13807,6 +14013,32 @@
       ]
     },
     {
+      "name": "Kings & Queens Barber & Beauty Spa",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp97u7qkhle9yskjxk84evhv5fgagry9f0dzn5rw4saz9vky0073sn9tzdv",
+          "date": "2026-02-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2023468991478722741",
+          "date": "2026-02-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8kxvtcy6fnsc0hm27vp7xsm0dlz4hl562wywheylmwgn389qtszgkj2wq9",
+          "date": "2026-01-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015026685964341303",
+          "date": "2026-01-24",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Food and Wine Shop",
       "count": 4,
       "posts": [
@@ -14049,6 +14281,27 @@
           "url": "https://primal.net/e/nevent1qqsyk3u20s6hvp94qlf20m7479m5f8h4ajsexxqdnq65mvzv7xa4uvss0x5uk",
           "date": "2026-02-09",
           "project": "EcoBitz 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Boa Gente Lda",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyx397yh59fryt0qytelpqcmqc4w6hhkgl89scyp5zk04ww2v7a2c6grhcu",
+          "date": "2026-02-17",
+          "project": "TofoBTC 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9ehn5jpnxwyn23l6px9gekauxv80z82jeympqrepa8kq2juq6chqm7hmcd",
+          "date": "2026-02-17",
+          "project": "TofoBTC 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdxk5erklnem9q0alvtrke2ncdsqag7ckm62hwqd29wukkq38cmwsl3up5l",
+          "date": "2026-02-09",
+          "project": "TofoBTC 🇲🇿"
         }
       ]
     },
@@ -14331,22 +14584,6 @@
           "url": "https://x.com/i/status/2012211357051945061",
           "date": "2026-01-17",
           "project": "Bitcoin Babies 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Kings & Queens Barber & Beauty Spa",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs8kxvtcy6fnsc0hm27vp7xsm0dlz4hl562wywheylmwgn389qtszgkj2wq9",
-          "date": "2026-01-24",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2015026685964341303",
-          "date": "2026-01-24",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -15119,13 +15356,13 @@
       ]
     },
     {
-      "name": "Boa Gente Lda",
+      "name": "Blessed Fish Point",
       "count": 1,
       "posts": [
         {
-          "url": "https://primal.net/e/nevent1qqsdxk5erklnem9q0alvtrke2ncdsqag7ckm62hwqd29wukkq38cmwsl3up5l",
-          "date": "2026-02-09",
-          "project": "TofoBTC 🇲🇿"
+          "url": "https://primal.net/e/nevent1qqs8upjxjrjwmm6mmjma3ehqdnmgfg2f6q3e6cdugww853p2dad2tmsu2hkln",
+          "date": "2026-02-17",
+          "project": "EcoBitz 🇰🇪"
         }
       ]
     },
@@ -15166,12 +15403,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 35,
-    "daily_average_payments": 119
+    "daily_average_payments": 120
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3985
+      "count": 4018
     },
     {
       "domain": "8333.mobi",
@@ -15218,13 +15455,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2324
+      "count": 2336
     },
     {
       "platform": "Nostr",
-      "count": 1845
+      "count": 1866
     }
   ],
-  "generated_at": "2026-02-17T07:22:39.795255+00:00",
+  "generated_at": "2026-02-17T08:07:50.772731+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
