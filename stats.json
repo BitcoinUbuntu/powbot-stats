@@ -1,28 +1,49 @@
 {
   "totals": {
-    "all_payments": 4252,
+    "all_payments": 4255,
     "by_type": {
       "merchant": {
-        "count": 1399
+        "count": 1400
       },
       "project": {
-        "count": 1399
+        "count": 1400
       },
       "reviewer": {
-        "count": 1454
+        "count": 1455
       }
     }
   },
   "today": {
     "date": "2026-02-18",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 3,
+    "by_type": {
+      "merchant": {
+        "count": 1
+      },
+      "project": {
+        "count": 1
+      },
+      "reviewer": {
+        "count": 1
+      }
+    },
+    "approved": 1,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqswpvx0t86afs83tfngxwtsxf4z0703kvfrt3yc6eusaddw8qc5sgq24cef2",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Sombo Groceries",
+        "platform": "Nostr",
+        "time": "05:16"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -283,14 +304,14 @@
     },
     {
       "date": "2026-02-18",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 1,
+      "merchant_count": 1,
+      "reviewer_count": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 1454,
-    "approved": 1398,
+    "total_reviewed": 1455,
+    "approved": 1399,
     "rejected": 56
   },
   "top_projects": [
@@ -6493,8 +6514,13 @@
     },
     {
       "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 30,
+      "count": 31,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswpvx0t86afs83tfngxwtsxf4z0703kvfrt3yc6eusaddw8qc5sgq24cef2",
+          "date": "2026-02-18",
+          "merchant": "Sombo Groceries"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsxmp274c8xtsy0676g6m3f9kw5n6w2dzzu26jkyr7mtghqpzxcnjstpt9wc",
           "date": "2026-02-16",
@@ -15143,6 +15169,17 @@
       ]
     },
     {
+      "name": "Sombo Groceries",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswpvx0t86afs83tfngxwtsxf4z0703kvfrt3yc6eusaddw8qc5sgq24cef2",
+          "date": "2026-02-18",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Selack Pharmacy",
       "count": 1,
       "posts": [
@@ -15459,7 +15496,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4068
+      "count": 4071
     },
     {
       "domain": "8333.mobi",
@@ -15510,9 +15547,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1894
+      "count": 1897
     }
   ],
-  "generated_at": "2026-02-18T04:22:39.784581+00:00",
+  "generated_at": "2026-02-18T05:22:39.803787+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
