@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 4397,
+    "all_payments": 4400,
     "by_type": {
       "merchant": {
-        "count": 1447
+        "count": 1448
       },
       "project": {
-        "count": 1447
+        "count": 1448
       },
       "reviewer": {
-        "count": 1503
+        "count": 1504
       }
     }
   },
   "today": {
     "date": "2026-02-19",
-    "payments": 69,
+    "payments": 72,
     "by_type": {
       "merchant": {
-        "count": 23
+        "count": 24
       },
       "project": {
-        "count": 23
+        "count": 24
       },
       "reviewer": {
-        "count": 23
+        "count": 24
       }
     },
-    "approved": 23,
+    "approved": 24,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqswnlalujgscz03hhatr9caaun7q353xfzq2mlct2z4x6yz82cm6rcy2ekwl",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Shotrite Enterprises",
+        "platform": "Nostr",
+        "time": "15:45"
+      },
       {
         "url": "https://x.com/i/status/2024423718056055008",
         "project": "Bitcoin Githurai 🇰🇪",
@@ -196,6 +203,9 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
         "project": "Bitcoin Githurai 🇰🇪"
       },
       {
@@ -323,12 +333,6 @@
       },
       {
         "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
       }
     ]
   },
@@ -509,14 +513,14 @@
     },
     {
       "date": "2026-02-19",
-      "project_count": 23,
-      "merchant_count": 23,
-      "reviewer_count": 23
+      "project_count": 24,
+      "merchant_count": 24,
+      "reviewer_count": 24
     }
   ],
   "reviewer": {
-    "total_reviewed": 1503,
-    "approved": 1446,
+    "total_reviewed": 1504,
+    "approved": 1447,
     "rejected": 57
   },
   "top_projects": [
@@ -4431,8 +4435,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 102,
+      "count": 103,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswnlalujgscz03hhatr9caaun7q353xfzq2mlct2z4x6yz82cm6rcy2ekwl",
+          "date": "2026-02-19",
+          "merchant": "Shotrite Enterprises"
+        },
         {
           "url": "https://x.com/i/status/2024123047389659260",
           "date": "2026-02-18",
@@ -15001,6 +15010,27 @@
       ]
     },
     {
+      "name": "Shotrite Enterprises",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswnlalujgscz03hhatr9caaun7q353xfzq2mlct2z4x6yz82cm6rcy2ekwl",
+          "date": "2026-02-19",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd6rnwy6cuwhlmeu4egydh49svm6sd4jevfj22zk47pwu6hasmnkgvsk3es",
+          "date": "2026-01-26",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2015775037446332792",
+          "date": "2026-01-26",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Rehoboth freshmilk diary",
       "count": 3,
       "posts": [
@@ -15224,22 +15254,6 @@
           "url": "https://x.com/i/status/2018207740498165893",
           "date": "2026-02-02",
           "project": "Bitcoin Loxion 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Shotrite Enterprises",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsd6rnwy6cuwhlmeu4egydh49svm6sd4jevfj22zk47pwu6hasmnkgvsk3es",
-          "date": "2026-01-26",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2015775037446332792",
-          "date": "2026-01-26",
-          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
@@ -16165,13 +16179,13 @@
   ],
   "launch": {
     "date": "2026-01-13",
-    "days_active": 37,
-    "daily_average_payments": 118
+    "days_active": 38,
+    "daily_average_payments": 115
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4213
+      "count": 4216
     },
     {
       "domain": "8333.mobi",
@@ -16222,9 +16236,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1966
+      "count": 1969
     }
   ],
-  "generated_at": "2026-02-19T15:22:39.801964+00:00",
+  "generated_at": "2026-02-19T16:22:39.818115+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
