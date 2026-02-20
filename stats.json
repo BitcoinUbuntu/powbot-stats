@@ -1,28 +1,59 @@
 {
   "totals": {
-    "all_payments": 4412,
+    "all_payments": 4418,
     "by_type": {
       "merchant": {
-        "count": 1452
+        "count": 1454
       },
       "project": {
-        "count": 1452
+        "count": 1454
       },
       "reviewer": {
-        "count": 1508
+        "count": 1510
       }
     }
   },
   "today": {
     "date": "2026-02-20",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 6,
+    "by_type": {
+      "merchant": {
+        "count": 2
+      },
+      "project": {
+        "count": 2
+      },
+      "reviewer": {
+        "count": 2
+      }
+    },
+    "approved": 2,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2024774672408101258",
+        "project": "Soweto BTC 🇿🇦",
+        "merchant": "Kelokitso Community Farm",
+        "platform": "X",
+        "time": "09:43"
+      },
+      {
+        "url": "https://x.com/i/status/2024767516589920689",
+        "project": "BitJR Academy 🇿🇲",
+        "merchant": "Phillard Shop",
+        "platform": "X",
+        "time": "09:39"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Soweto BTC 🇿🇦"
+      },
+      {
+        "project": "BitJR Academy 🇿🇲"
+      },
       {
         "project": "Bitcoin Sisonke 🇿🇦"
       },
@@ -232,14 +263,14 @@
     },
     {
       "date": "2026-02-20",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 2,
+      "merchant_count": 2,
+      "reviewer_count": 2
     }
   ],
   "reviewer": {
-    "total_reviewed": 1508,
-    "approved": 1451,
+    "total_reviewed": 1510,
+    "approved": 1453,
     "rejected": 57
   },
   "top_projects": [
@@ -6506,8 +6537,13 @@
     },
     {
       "name": "BitJR Academy 🇿🇲",
-      "count": 36,
+      "count": 37,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2024767516589920689",
+          "date": "2026-02-20",
+          "merchant": "Phillard Shop"
+        },
         {
           "url": "https://x.com/i/status/2019216955119677831",
           "date": "2026-02-05",
@@ -7535,6 +7571,42 @@
       ]
     },
     {
+      "name": "Soweto BTC 🇿🇦",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2024774672408101258",
+          "date": "2026-02-20",
+          "merchant": "Kelokitso Community Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqd50jpglpm7ynmdcm889hnekyre0sqz437vjs9qcwttat63gnqpsa0kzel",
+          "date": "2026-01-25",
+          "merchant": "Zwakala Cafe"
+        },
+        {
+          "url": "https://x.com/i/status/2015066772869685725",
+          "date": "2026-01-24",
+          "merchant": "Zwakala Cafe"
+        },
+        {
+          "url": "https://x.com/i/status/2012584600967553482",
+          "date": "2026-01-17",
+          "merchant": "Kelokitso Community Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsr76ejk3rsenqw68g4t3zrlzlp6mecngd49vwvlevn7j4kqcu9npqkun7fj",
+          "date": "2026-01-17",
+          "merchant": "Kelokitso Community Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8g2qzg57mtjust2xca8v2u4y29k3gwc8gp6d6galhctu08kwg4yclp9lz0",
+          "date": "2026-01-14",
+          "merchant": "Zwakala Cafe"
+        }
+      ]
+    },
+    {
       "name": "College BTC 🇬🇭",
       "count": 6,
       "posts": [
@@ -7567,37 +7639,6 @@
           "url": "https://x.com/i/status/2011387941344714955",
           "date": "2026-01-14",
           "merchant": "Orzzy Ventures"
-        }
-      ]
-    },
-    {
-      "name": "Soweto BTC 🇿🇦",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsqd50jpglpm7ynmdcm889hnekyre0sqz437vjs9qcwttat63gnqpsa0kzel",
-          "date": "2026-01-25",
-          "merchant": "Zwakala Cafe"
-        },
-        {
-          "url": "https://x.com/i/status/2015066772869685725",
-          "date": "2026-01-24",
-          "merchant": "Zwakala Cafe"
-        },
-        {
-          "url": "https://x.com/i/status/2012584600967553482",
-          "date": "2026-01-17",
-          "merchant": "Kelokitso Community Farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsr76ejk3rsenqw68g4t3zrlzlp6mecngd49vwvlevn7j4kqcu9npqkun7fj",
-          "date": "2026-01-17",
-          "merchant": "Kelokitso Community Farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8g2qzg57mtjust2xca8v2u4y29k3gwc8gp6d6galhctu08kwg4yclp9lz0",
-          "date": "2026-01-14",
-          "merchant": "Zwakala Cafe"
         }
       ]
     },
@@ -14177,6 +14218,37 @@
       ]
     },
     {
+      "name": "Phillard Shop",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2024767516589920689",
+          "date": "2026-02-20",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2016383234788229563",
+          "date": "2026-01-28",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2016035946572157108",
+          "date": "2026-01-27",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2014827424077254658",
+          "date": "2026-01-24",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2014593946312454397",
+          "date": "2026-01-23",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Pacific Hairdresser",
       "count": 5,
       "posts": [
@@ -14453,32 +14525,6 @@
           "url": "https://x.com/i/status/2015775037446332792",
           "date": "2026-01-26",
           "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Phillard Shop",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2016383234788229563",
-          "date": "2026-01-28",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2016035946572157108",
-          "date": "2026-01-27",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2014827424077254658",
-          "date": "2026-01-24",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2014593946312454397",
-          "date": "2026-01-23",
-          "project": "BitJR Academy 🇿🇲"
         }
       ]
     },
@@ -14874,6 +14920,27 @@
       ]
     },
     {
+      "name": "Kelokitso Community Farm",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2024774672408101258",
+          "date": "2026-02-20",
+          "project": "Soweto BTC 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2012584600967553482",
+          "date": "2026-01-17",
+          "project": "Soweto BTC 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsr76ejk3rsenqw68g4t3zrlzlp6mecngd49vwvlevn7j4kqcu9npqkun7fj",
+          "date": "2026-01-17",
+          "project": "Soweto BTC 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Fresh water Reffilers",
       "count": 3,
       "posts": [
@@ -15125,22 +15192,6 @@
           "url": "https://x.com/i/status/2012211357051945061",
           "date": "2026-01-17",
           "project": "Bitcoin Babies 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Kelokitso Community Farm",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2012584600967553482",
-          "date": "2026-01-17",
-          "project": "Soweto BTC 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsr76ejk3rsenqw68g4t3zrlzlp6mecngd49vwvlevn7j4kqcu9npqkun7fj",
-          "date": "2026-01-17",
-          "project": "Soweto BTC 🇿🇦"
         }
       ]
     },
@@ -15944,7 +15995,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4228
+      "count": 4234
     },
     {
       "domain": "8333.mobi",
@@ -15991,13 +16042,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2437
+      "count": 2443
     },
     {
       "platform": "Nostr",
       "count": 1975
     }
   ],
-  "generated_at": "2026-02-20T09:22:39.908913+00:00",
+  "generated_at": "2026-02-20T10:22:39.829898+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
