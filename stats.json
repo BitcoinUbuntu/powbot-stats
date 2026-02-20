@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 4439,
+    "all_payments": 4442,
     "by_type": {
       "merchant": {
-        "count": 1461
+        "count": 1462
       },
       "project": {
-        "count": 1461
+        "count": 1462
       },
       "reviewer": {
-        "count": 1517
+        "count": 1518
       }
     }
   },
   "today": {
     "date": "2026-02-20",
-    "payments": 27,
+    "payments": 30,
     "by_type": {
       "merchant": {
-        "count": 9
+        "count": 10
       },
       "project": {
-        "count": 9
+        "count": 10
       },
       "reviewer": {
-        "count": 9
+        "count": 10
       }
     },
-    "approved": 9,
+    "approved": 10,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqstzh9thz6e9tld4ag4gut599528x9kmkkwzten98echy2ca50r2rquc3gxq",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Everestus tuck Shop",
+        "platform": "Nostr",
+        "time": "16:27"
+      },
       {
         "url": "https://x.com/i/status/2024879947781668987",
         "project": "Bitcoin Ekasi 🇿🇦",
@@ -101,6 +108,9 @@
         "project": "Bitcoin Ekasi 🇿🇦"
       },
       {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
         "project": "Bitcoin Aves 🇬🇭"
       },
       {
@@ -123,18 +133,6 @@
       },
       {
         "project": "BitJR Academy 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Sisonke 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Sisonke 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Ekasi 🇿🇦"
       }
     ]
   },
@@ -315,14 +313,14 @@
     },
     {
       "date": "2026-02-20",
-      "project_count": 9,
-      "merchant_count": 9,
-      "reviewer_count": 9
+      "project_count": 10,
+      "merchant_count": 10,
+      "reviewer_count": 10
     }
   ],
   "reviewer": {
-    "total_reviewed": 1517,
-    "approved": 1460,
+    "total_reviewed": 1518,
+    "approved": 1461,
     "rejected": 57
   },
   "top_projects": [
@@ -4242,8 +4240,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 107,
+      "count": 108,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstzh9thz6e9tld4ag4gut599528x9kmkkwzten98echy2ca50r2rquc3gxq",
+          "date": "2026-02-20",
+          "merchant": "Everestus tuck Shop"
+        },
         {
           "url": "https://x.com/i/status/2024879947781668987",
           "date": "2026-02-20",
@@ -15468,6 +15471,22 @@
       ]
     },
     {
+      "name": "Everestus tuck Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstzh9thz6e9tld4ag4gut599528x9kmkkwzten98echy2ca50r2rquc3gxq",
+          "date": "2026-02-20",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2024879947781668987",
+          "date": "2026-02-20",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Embo Foods",
       "count": 2,
       "posts": [
@@ -15983,17 +16002,6 @@
       ]
     },
     {
-      "name": "Everestus tuck Shop",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2024879947781668987",
-          "date": "2026-02-20",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
       "name": "Estética Gisa",
       "count": 1,
       "posts": [
@@ -16123,7 +16131,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4255
+      "count": 4258
     },
     {
       "domain": "8333.mobi",
@@ -16174,9 +16182,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1984
+      "count": 1987
     }
   ],
-  "generated_at": "2026-02-20T16:22:39.933073+00:00",
+  "generated_at": "2026-02-20T17:22:39.802699+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
