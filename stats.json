@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 4544,
+    "all_payments": 4550,
     "by_type": {
       "merchant": {
-        "count": 1496
+        "count": 1498
       },
       "project": {
-        "count": 1496
+        "count": 1498
       },
       "reviewer": {
-        "count": 1552
+        "count": 1554
       }
     }
   },
   "today": {
     "date": "2026-02-21",
-    "payments": 102,
+    "payments": 108,
     "by_type": {
       "merchant": {
-        "count": 34
+        "count": 36
       },
       "project": {
-        "count": 34
+        "count": 36
       },
       "reviewer": {
-        "count": 34
+        "count": 36
       }
     },
-    "approved": 34,
+    "approved": 36,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2025230350666912164",
+        "project": "College BTC 🇬🇭",
+        "merchant": "Orzzy Ventures",
+        "platform": "X",
+        "time": "18:17"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqstpssu0jpckdz3dd2xykcf0nkrf4aywdmqma30qrg480e3zkzk75cf5vtae",
+        "project": "Bitcoin Anambra 🇳🇬",
+        "merchant": "The Sario Eventers",
+        "platform": "Nostr",
+        "time": "18:17"
+      },
       {
         "url": "https://x.com/i/status/2025193789405450295",
         "project": "Bitcoin Githurai 🇰🇪",
@@ -272,6 +286,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "College BTC 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Anambra 🇳🇬"
+      },
       {
         "project": "Bitcoin Githurai 🇰🇪"
       },
@@ -553,14 +573,14 @@
     },
     {
       "date": "2026-02-21",
-      "project_count": 34,
-      "merchant_count": 34,
-      "reviewer_count": 34
+      "project_count": 36,
+      "merchant_count": 36,
+      "reviewer_count": 36
     }
   ],
   "reviewer": {
-    "total_reviewed": 1552,
-    "approved": 1495,
+    "total_reviewed": 1554,
+    "approved": 1497,
     "rejected": 57
   },
   "top_projects": [
@@ -7319,8 +7339,13 @@
     },
     {
       "name": "Bitcoin Anambra 🇳🇬",
-      "count": 29,
+      "count": 30,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstpssu0jpckdz3dd2xykcf0nkrf4aywdmqma30qrg480e3zkzk75cf5vtae",
+          "date": "2026-02-21",
+          "merchant": "The Sario Eventers"
+        },
         {
           "url": "https://x.com/i/status/2025216942249013409",
           "date": "2026-02-21",
@@ -8103,8 +8128,13 @@
     },
     {
       "name": "College BTC 🇬🇭",
-      "count": 6,
+      "count": 7,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2025230350666912164",
+          "date": "2026-02-21",
+          "merchant": "Orzzy Ventures"
+        },
         {
           "url": "https://x.com/i/status/2021204869844173188",
           "date": "2026-02-10",
@@ -11822,8 +11852,13 @@
     },
     {
       "name": "The Sario Eventers",
-      "count": 22,
+      "count": 23,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstpssu0jpckdz3dd2xykcf0nkrf4aywdmqma30qrg480e3zkzk75cf5vtae",
+          "date": "2026-02-21",
+          "project": "Bitcoin Anambra 🇳🇬"
+        },
         {
           "url": "https://x.com/i/status/2025216942249013409",
           "date": "2026-02-21",
@@ -15616,6 +15651,27 @@
       ]
     },
     {
+      "name": "Orzzy Ventures",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2025230350666912164",
+          "date": "2026-02-21",
+          "project": "College BTC 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2013603683137675556",
+          "date": "2026-01-20",
+          "project": "College BTC 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2011387941344714955",
+          "date": "2026-01-14",
+          "project": "College BTC 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Liberty trading point",
       "count": 3,
       "posts": [
@@ -15829,22 +15885,6 @@
           "url": "https://primal.net/e/nevent1qqsd80c87wg3gu53pjtlvesjglrpl9apfta829vfzd62tq2l7vyhrkcw49rgq",
           "date": "2026-01-27",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Orzzy Ventures",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2013603683137675556",
-          "date": "2026-01-20",
-          "project": "College BTC 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2011387941344714955",
-          "date": "2026-01-14",
-          "project": "College BTC 🇬🇭"
         }
       ]
     },
@@ -16717,7 +16757,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4360
+      "count": 4366
     },
     {
       "domain": "8333.mobi",
@@ -16764,13 +16804,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2515
+      "count": 2518
     },
     {
       "platform": "Nostr",
-      "count": 2029
+      "count": 2032
     }
   ],
-  "generated_at": "2026-02-21T17:22:39.976174+00:00",
+  "generated_at": "2026-02-21T18:22:39.853848+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
