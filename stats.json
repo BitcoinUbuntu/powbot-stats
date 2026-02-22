@@ -1,28 +1,89 @@
 {
   "totals": {
-    "all_payments": 4550,
+    "all_payments": 4565,
     "by_type": {
       "merchant": {
-        "count": 1498
+        "count": 1503
       },
       "project": {
-        "count": 1498
+        "count": 1503
       },
       "reviewer": {
-        "count": 1554
+        "count": 1559
       }
     }
   },
   "today": {
     "date": "2026-02-22",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 15,
+    "by_type": {
+      "merchant": {
+        "count": 5
+      },
+      "project": {
+        "count": 5
+      },
+      "reviewer": {
+        "count": 5
+      }
+    },
+    "approved": 5,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2025284388423184732",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Grace Store",
+        "platform": "X",
+        "time": "07:41"
+      },
+      {
+        "url": "https://x.com/i/status/2025239093278286186",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Mercy Groceries",
+        "platform": "X",
+        "time": "07:41"
+      },
+      {
+        "url": "https://x.com/i/status/2025368001696948536",
+        "project": "College BTC 🇬🇭",
+        "merchant": "Firdaus Cosmetics",
+        "platform": "X",
+        "time": "07:41"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsyg8q0em9uaf93gsqw5trmng0lp6ykesq74f02kmp8tx9x0dc0nkqlq5z2p",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "P.S Takeaways",
+        "platform": "Nostr",
+        "time": "07:40"
+      },
+      {
+        "url": "https://x.com/i/status/2025361745062023250",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "P.S Takeaways",
+        "platform": "X",
+        "time": "07:40"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "College BTC 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
       {
         "project": "College BTC 🇬🇭"
       },
@@ -310,14 +371,14 @@
     },
     {
       "date": "2026-02-22",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 5,
+      "merchant_count": 5,
+      "reviewer_count": 5
     }
   ],
   "reviewer": {
-    "total_reviewed": 1554,
-    "approved": 1497,
+    "total_reviewed": 1559,
+    "approved": 1502,
     "rejected": 57
   },
   "top_projects": [
@@ -3075,8 +3136,18 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 125,
+      "count": 127,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2025284388423184732",
+          "date": "2026-02-22",
+          "merchant": "Grace Store"
+        },
+        {
+          "url": "https://x.com/i/status/2025239093278286186",
+          "date": "2026-02-22",
+          "merchant": "Mercy Groceries"
+        },
         {
           "url": "https://x.com/i/status/2025193789405450295",
           "date": "2026-02-21",
@@ -7232,8 +7303,18 @@
     },
     {
       "name": "Bitcoin Sisonke 🇿🇦",
-      "count": 24,
+      "count": 26,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyg8q0em9uaf93gsqw5trmng0lp6ykesq74f02kmp8tx9x0dc0nkqlq5z2p",
+          "date": "2026-02-22",
+          "merchant": "P.S Takeaways"
+        },
+        {
+          "url": "https://x.com/i/status/2025361745062023250",
+          "date": "2026-02-22",
+          "merchant": "P.S Takeaways"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsr5q6hmjynv0vc2a2dm3q2sn6grdmk3v5q476hhtr7p4tlun7ss0q6w5k9e",
           "date": "2026-02-19",
@@ -7777,6 +7858,52 @@
       ]
     },
     {
+      "name": "College BTC 🇬🇭",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2025368001696948536",
+          "date": "2026-02-22",
+          "merchant": "Firdaus Cosmetics"
+        },
+        {
+          "url": "https://x.com/i/status/2025230350666912164",
+          "date": "2026-02-21",
+          "merchant": "Orzzy Ventures"
+        },
+        {
+          "url": "https://x.com/i/status/2021204869844173188",
+          "date": "2026-02-10",
+          "merchant": "Crave Xpress"
+        },
+        {
+          "url": "https://x.com/i/status/2014663913661423695",
+          "date": "2026-01-23",
+          "merchant": "Crave Xpress"
+        },
+        {
+          "url": "https://x.com/i/status/2013603683137675556",
+          "date": "2026-01-20",
+          "merchant": "Orzzy Ventures"
+        },
+        {
+          "url": "https://x.com/i/status/2013273168530550980",
+          "date": "2026-01-19",
+          "merchant": "Firdaus Cosmetics"
+        },
+        {
+          "url": "https://x.com/i/status/2011819753153675638",
+          "date": "2026-01-15",
+          "merchant": "Firdaus Cosmetics"
+        },
+        {
+          "url": "https://x.com/i/status/2011387941344714955",
+          "date": "2026-01-14",
+          "merchant": "Orzzy Ventures"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Famba 🇲🇿",
       "count": 8,
       "posts": [
@@ -7860,47 +7987,6 @@
           "url": "https://primal.net/e/nevent1qqs8g2qzg57mtjust2xca8v2u4y29k3gwc8gp6d6galhctu08kwg4yclp9lz0",
           "date": "2026-01-14",
           "merchant": "Zwakala Cafe"
-        }
-      ]
-    },
-    {
-      "name": "College BTC 🇬🇭",
-      "count": 7,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2025230350666912164",
-          "date": "2026-02-21",
-          "merchant": "Orzzy Ventures"
-        },
-        {
-          "url": "https://x.com/i/status/2021204869844173188",
-          "date": "2026-02-10",
-          "merchant": "Crave Xpress"
-        },
-        {
-          "url": "https://x.com/i/status/2014663913661423695",
-          "date": "2026-01-23",
-          "merchant": "Crave Xpress"
-        },
-        {
-          "url": "https://x.com/i/status/2013603683137675556",
-          "date": "2026-01-20",
-          "merchant": "Orzzy Ventures"
-        },
-        {
-          "url": "https://x.com/i/status/2013273168530550980",
-          "date": "2026-01-19",
-          "merchant": "Firdaus Cosmetics"
-        },
-        {
-          "url": "https://x.com/i/status/2011819753153675638",
-          "date": "2026-01-15",
-          "merchant": "Firdaus Cosmetics"
-        },
-        {
-          "url": "https://x.com/i/status/2011387941344714955",
-          "date": "2026-01-14",
-          "merchant": "Orzzy Ventures"
         }
       ]
     },
@@ -12442,6 +12528,87 @@
       ]
     },
     {
+      "name": "Grace Store",
+      "count": 15,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2025284388423184732",
+          "date": "2026-02-22",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2025100106748321853",
+          "date": "2026-02-21",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs97dnzm8xgn6h8v4p7gny6elwgm3s2w9pggu6trk74d6rs88akekqk7mk5e",
+          "date": "2026-02-18",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2024040675797336259",
+          "date": "2026-02-18",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs90prr2e09aa2p949yxue2cy3lm48mfsgae7f98ayfl00p02x4zqql4c4p5",
+          "date": "2026-02-03",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfrqzgcdgefempd43fkd8gte4l43fyp3yv9ad3mp42f2w4m6nc2sqa598h5",
+          "date": "2026-02-03",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvxalxz4q3xckzq6an8pu733yrhlgxtjkt2lg0r4pp0r5wgwx5zpqkv4qzk",
+          "date": "2026-02-03",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016073697489265085",
+          "date": "2026-01-29",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015998199895359700",
+          "date": "2026-01-27",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015348926656704705",
+          "date": "2026-01-25",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswhdk5xrtszky8kxu2zsxzp6360tje3h6wlyjnm0ncpcd35y3802caue34y",
+          "date": "2026-01-21",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013478273120932212",
+          "date": "2026-01-20",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0qc67sgyte0xaycfm25e7pz63m6y2ldc5rvumgfpp4n9j6q37ncqkkg8qf",
+          "date": "2026-01-19",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd6gax6s820evvqsa0zk3mpvuvy9rd5xjql845ks837za3j0mu9tc93cxsr",
+          "date": "2026-01-18",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012391747674845331",
+          "date": "2026-01-17",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Bridgeway Shop",
       "count": 15,
       "posts": [
@@ -12675,6 +12842,82 @@
       ]
     },
     {
+      "name": "P.S Takeaways",
+      "count": 14,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyg8q0em9uaf93gsqw5trmng0lp6ykesq74f02kmp8tx9x0dc0nkqlq5z2p",
+          "date": "2026-02-22",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2025361745062023250",
+          "date": "2026-02-22",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsr5q6hmjynv0vc2a2dm3q2sn6grdmk3v5q476hhtr7p4tlun7ss0q6w5k9e",
+          "date": "2026-02-19",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2024531128527241390",
+          "date": "2026-02-19",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrg3meacfcwvq9ea93pu7q6ehxj2xayqkh0t9nfttp3mvl0qgfjwggzy0a3",
+          "date": "2026-02-14",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2022375728969396258",
+          "date": "2026-02-14",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqzsy02h83mluf0p982anx0pse4nrgwc4yg42lux6ucdcsdv0gmess4fzvl",
+          "date": "2026-02-01",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2017932644839788947",
+          "date": "2026-02-01",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2016409582520737950",
+          "date": "2026-01-28",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp4g069vln2w25g73ednhmlnlqf5c5rz2d4g83yj60ktvfd3mhzlq90hvas",
+          "date": "2026-01-28",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2015510420887339216",
+          "date": "2026-01-25",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8m46ry5rx5mtsf7unqhwa3znag33qgee0qn9reucxv6yzyn9pwpq9mfhpd",
+          "date": "2026-01-25",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2014068175705432190",
+          "date": "2026-01-21",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw6q5f9q3pju0jyyy93845vdl5dnshhpjm4cc4c8tu348yfz0cscq6epfts",
+          "date": "2026-01-21",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Njema Dairy",
       "count": 14,
       "posts": [
@@ -12746,82 +12989,6 @@
         {
           "url": "https://x.com/i/status/2011116329793724561",
           "date": "2026-01-13",
-          "project": "Bitcoin Githurai 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Grace Store",
-      "count": 14,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2025100106748321853",
-          "date": "2026-02-21",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs97dnzm8xgn6h8v4p7gny6elwgm3s2w9pggu6trk74d6rs88akekqk7mk5e",
-          "date": "2026-02-18",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2024040675797336259",
-          "date": "2026-02-18",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs90prr2e09aa2p949yxue2cy3lm48mfsgae7f98ayfl00p02x4zqql4c4p5",
-          "date": "2026-02-03",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfrqzgcdgefempd43fkd8gte4l43fyp3yv9ad3mp42f2w4m6nc2sqa598h5",
-          "date": "2026-02-03",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvxalxz4q3xckzq6an8pu733yrhlgxtjkt2lg0r4pp0r5wgwx5zpqkv4qzk",
-          "date": "2026-02-03",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2016073697489265085",
-          "date": "2026-01-29",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2015998199895359700",
-          "date": "2026-01-27",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2015348926656704705",
-          "date": "2026-01-25",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswhdk5xrtszky8kxu2zsxzp6360tje3h6wlyjnm0ncpcd35y3802caue34y",
-          "date": "2026-01-21",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013478273120932212",
-          "date": "2026-01-20",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0qc67sgyte0xaycfm25e7pz63m6y2ldc5rvumgfpp4n9j6q37ncqkkg8qf",
-          "date": "2026-01-19",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd6gax6s820evvqsa0zk3mpvuvy9rd5xjql845ks837za3j0mu9tc93cxsr",
-          "date": "2026-01-18",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012391747674845331",
-          "date": "2026-01-17",
           "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
@@ -13035,72 +13202,6 @@
       ]
     },
     {
-      "name": "P.S Takeaways",
-      "count": 12,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsr5q6hmjynv0vc2a2dm3q2sn6grdmk3v5q476hhtr7p4tlun7ss0q6w5k9e",
-          "date": "2026-02-19",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2024531128527241390",
-          "date": "2026-02-19",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrg3meacfcwvq9ea93pu7q6ehxj2xayqkh0t9nfttp3mvl0qgfjwggzy0a3",
-          "date": "2026-02-14",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2022375728969396258",
-          "date": "2026-02-14",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqzsy02h83mluf0p982anx0pse4nrgwc4yg42lux6ucdcsdv0gmess4fzvl",
-          "date": "2026-02-01",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2017932644839788947",
-          "date": "2026-02-01",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2016409582520737950",
-          "date": "2026-01-28",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp4g069vln2w25g73ednhmlnlqf5c5rz2d4g83yj60ktvfd3mhzlq90hvas",
-          "date": "2026-01-28",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2015510420887339216",
-          "date": "2026-01-25",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8m46ry5rx5mtsf7unqhwa3znag33qgee0qn9reucxv6yzyn9pwpq9mfhpd",
-          "date": "2026-01-25",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2014068175705432190",
-          "date": "2026-01-21",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsw6q5f9q3pju0jyyy93845vdl5dnshhpjm4cc4c8tu348yfz0cscq6epfts",
-          "date": "2026-01-21",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        }
-      ]
-    },
-    {
       "name": "Niel's Nails and Perfume Refill",
       "count": 11,
       "posts": [
@@ -13223,6 +13324,67 @@
       ]
     },
     {
+      "name": "Mercy Groceries",
+      "count": 11,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2025239093278286186",
+          "date": "2026-02-22",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2025133393654988844",
+          "date": "2026-02-21",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswyphfxquqkhlknpsd55m5pravl7ppevysztns40zx7mtgp7w3n0sdnee2z",
+          "date": "2026-02-18",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2023701518948474910",
+          "date": "2026-02-17",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfgrmqsptum94hl9q7adxgmqfznkl5cluqffq6gjja6ll6hjzeg0s9das26",
+          "date": "2026-02-10",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2019641536137265501",
+          "date": "2026-02-06",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrhggthm0g07zyfp2ufq4wave0vp2hpv8w95qn0ce9ry4ppurdjzccgpf0c",
+          "date": "2026-02-03",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015380755543707868",
+          "date": "2026-01-25",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg6a3vstzx5qjsuyq0r4vqkxw6r59q2qsuyv5vnamhwpklshtvemg9g2gmd",
+          "date": "2026-01-24",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2014558332854431923",
+          "date": "2026-01-23",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2011847141027651669",
+          "date": "2026-01-15",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Viwa Accessories",
       "count": 10,
       "posts": [
@@ -13331,62 +13493,6 @@
           "url": "https://x.com/i/status/2013865719193129343",
           "date": "2026-01-21",
           "project": "Afribit Kibera 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Mercy Groceries",
-      "count": 10,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2025133393654988844",
-          "date": "2026-02-21",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswyphfxquqkhlknpsd55m5pravl7ppevysztns40zx7mtgp7w3n0sdnee2z",
-          "date": "2026-02-18",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2023701518948474910",
-          "date": "2026-02-17",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfgrmqsptum94hl9q7adxgmqfznkl5cluqffq6gjja6ll6hjzeg0s9das26",
-          "date": "2026-02-10",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2019641536137265501",
-          "date": "2026-02-06",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrhggthm0g07zyfp2ufq4wave0vp2hpv8w95qn0ce9ry4ppurdjzccgpf0c",
-          "date": "2026-02-03",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2015380755543707868",
-          "date": "2026-01-25",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg6a3vstzx5qjsuyq0r4vqkxw6r59q2qsuyv5vnamhwpklshtvemg9g2gmd",
-          "date": "2026-01-24",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2014558332854431923",
-          "date": "2026-01-23",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2011847141027651669",
-          "date": "2026-01-15",
-          "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
     },
@@ -15493,6 +15599,27 @@
       ]
     },
     {
+      "name": "Firdaus Cosmetics",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2025368001696948536",
+          "date": "2026-02-22",
+          "project": "College BTC 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2013273168530550980",
+          "date": "2026-01-19",
+          "project": "College BTC 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2011819753153675638",
+          "date": "2026-01-15",
+          "project": "College BTC 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "3 West Collection",
       "count": 3,
       "posts": [
@@ -15766,22 +15893,6 @@
           "url": "https://x.com/i/status/2016419330817188026",
           "date": "2026-01-28",
           "project": "Bitcoin Chama 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Firdaus Cosmetics",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2013273168530550980",
-          "date": "2026-01-19",
-          "project": "College BTC 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2011819753153675638",
-          "date": "2026-01-15",
-          "project": "College BTC 🇬🇭"
         }
       ]
     },
@@ -16489,12 +16600,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 40,
-    "daily_average_payments": 113
+    "daily_average_payments": 114
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4366
+      "count": 4381
     },
     {
       "domain": "8333.mobi",
@@ -16541,13 +16652,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2518
+      "count": 2530
     },
     {
       "platform": "Nostr",
-      "count": 2032
+      "count": 2035
     }
   ],
-  "generated_at": "2026-02-22T07:22:39.848850+00:00",
+  "generated_at": "2026-02-22T08:22:39.812088+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
