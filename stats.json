@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 4764,
+    "all_payments": 4767,
     "by_type": {
       "merchant": {
-        "count": 1569
+        "count": 1570
       },
       "project": {
-        "count": 1569
+        "count": 1570
       },
       "reviewer": {
-        "count": 1626
+        "count": 1627
       }
     }
   },
   "today": {
     "date": "2026-02-24",
-    "payments": 111,
+    "payments": 114,
     "by_type": {
       "merchant": {
-        "count": 37
+        "count": 38
       },
       "project": {
-        "count": 37
+        "count": 38
       },
       "reviewer": {
-        "count": 37
+        "count": 38
       }
     },
-    "approved": 37,
+    "approved": 38,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2026280856172515605",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Preso's Food and Drinks",
+        "platform": "X",
+        "time": "20:09"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs9wrjlfxfxj2n3ee5e8uxvhnt92h78vvpd34xh8gu985flqpy0f3qg0d26g",
         "project": "Bitcoin Victoria Falls 🇿🇲",
@@ -293,6 +300,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
       {
         "project": "Bitcoin Victoria Falls 🇿🇲"
       },
@@ -583,14 +593,14 @@
     },
     {
       "date": "2026-02-24",
-      "project_count": 37,
-      "merchant_count": 37,
-      "reviewer_count": 37
+      "project_count": 38,
+      "merchant_count": 38,
+      "reviewer_count": 38
     }
   ],
   "reviewer": {
-    "total_reviewed": 1626,
-    "approved": 1568,
+    "total_reviewed": 1627,
+    "approved": 1569,
     "rejected": 58
   },
   "top_projects": [
@@ -6454,8 +6464,13 @@
     },
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 67,
+      "count": 68,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2026280856172515605",
+          "date": "2026-02-24",
+          "merchant": "Preso's Food and Drinks"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsvp6e5zp5hplxcrwc2djt8e2w3atwrlgcnupkjruykndy8nlp2vkcheyvs8",
           "date": "2026-02-24",
@@ -10709,8 +10724,13 @@
     },
     {
       "name": "Preso's Food and Drinks",
-      "count": 55,
+      "count": 56,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2026280856172515605",
+          "date": "2026-02-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsvp6e5zp5hplxcrwc2djt8e2w3atwrlgcnupkjruykndy8nlp2vkcheyvs8",
           "date": "2026-02-24",
@@ -17483,7 +17503,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4580
+      "count": 4583
     },
     {
       "domain": "8333.mobi",
@@ -17530,13 +17550,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2629
+      "count": 2632
     },
     {
       "platform": "Nostr",
       "count": 2135
     }
   ],
-  "generated_at": "2026-02-24T19:22:39.816230+00:00",
+  "generated_at": "2026-02-24T20:22:39.806557+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
