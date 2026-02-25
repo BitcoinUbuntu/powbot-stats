@@ -1,28 +1,79 @@
 {
   "totals": {
-    "all_payments": 4767,
+    "all_payments": 4779,
     "by_type": {
       "merchant": {
-        "count": 1570
+        "count": 1574
       },
       "project": {
-        "count": 1570
+        "count": 1574
       },
       "reviewer": {
-        "count": 1627
+        "count": 1631
       }
     }
   },
   "today": {
     "date": "2026-02-25",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 12,
+    "by_type": {
+      "merchant": {
+        "count": 4
+      },
+      "project": {
+        "count": 4
+      },
+      "reviewer": {
+        "count": 4
+      }
+    },
+    "approved": 4,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqspadnf5c2zwuatqezusjm9z4leutgqlhm08p75yrnr2yxqxk8ycvcgkpphp",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Jovi Water Refilling",
+        "platform": "Nostr",
+        "time": "07:39"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqszcmpw6snmwktvp2zyrt8sflzu0dyq9ajp22m2gdpznlpgn4awprgcxays2",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Jovi Water Refilling",
+        "platform": "Nostr",
+        "time": "07:32"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsghc346tc834lqzq5ewdm7puwdmyydk65dczpztrv0nk34nh9s9xc83sdrx",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Grace Store",
+        "platform": "Nostr",
+        "time": "07:30"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqstugezfc53emclcpvz82pduneqfg03wwpm8k9ax3vggtl6wxrdw9c8svywz",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Preso's Food and Drinks",
+        "platform": "Nostr",
+        "time": "07:29"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -316,14 +367,14 @@
     },
     {
       "date": "2026-02-25",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4
     }
   ],
   "reviewer": {
-    "total_reviewed": 1627,
-    "approved": 1569,
+    "total_reviewed": 1631,
+    "approved": 1573,
     "rejected": 58
   },
   "top_projects": [
@@ -3171,8 +3222,23 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 139,
+      "count": 142,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspadnf5c2zwuatqezusjm9z4leutgqlhm08p75yrnr2yxqxk8ycvcgkpphp",
+          "date": "2026-02-25",
+          "merchant": "Jovi Water Refilling"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszcmpw6snmwktvp2zyrt8sflzu0dyq9ajp22m2gdpznlpgn4awprgcxays2",
+          "date": "2026-02-25",
+          "merchant": "Jovi Water Refilling"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsghc346tc834lqzq5ewdm7puwdmyydk65dczpztrv0nk34nh9s9xc83sdrx",
+          "date": "2026-02-25",
+          "merchant": "Grace Store"
+        },
         {
           "url": "https://x.com/i/status/2026204904650350708",
           "date": "2026-02-24",
@@ -6187,8 +6253,13 @@
     },
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 68,
+      "count": 69,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstugezfc53emclcpvz82pduneqfg03wwpm8k9ax3vggtl6wxrdw9c8svywz",
+          "date": "2026-02-25",
+          "merchant": "Preso's Food and Drinks"
+        },
         {
           "url": "https://x.com/i/status/2026280856172515605",
           "date": "2026-02-24",
@@ -10155,6 +10226,297 @@
       ]
     },
     {
+      "name": "Preso's Food and Drinks",
+      "count": 57,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstugezfc53emclcpvz82pduneqfg03wwpm8k9ax3vggtl6wxrdw9c8svywz",
+          "date": "2026-02-25",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2026280856172515605",
+          "date": "2026-02-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvp6e5zp5hplxcrwc2djt8e2w3atwrlgcnupkjruykndy8nlp2vkcheyvs8",
+          "date": "2026-02-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2026121699461124600",
+          "date": "2026-02-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszn3jfjz0glp0tv2jg7026lguqtaeqh0za6zmqfhhrjtt0z6quedsecc4yv",
+          "date": "2026-02-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2026119812452151722",
+          "date": "2026-02-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqylck9z5p4efq7ucl3r3gnyd3r8wzse47489rullms2tp6mq7ezgflpayl",
+          "date": "2026-02-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2026117690851520745",
+          "date": "2026-02-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsr6v6q8te7mr82queesdf9mcly2jf75wvfz45j2xpvt48w08qhamcwhl88j",
+          "date": "2026-02-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2026115858909602111",
+          "date": "2026-02-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsz9p63jkrrwr0h4hlcydpzcmqelranmncwfg00v0ekvml2pnh0nhcnf3876",
+          "date": "2026-02-23",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2025862578988056720",
+          "date": "2026-02-23",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2025846919054909567",
+          "date": "2026-02-23",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2025845465980526702",
+          "date": "2026-02-23",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstp4ngr02qsxw0earjy20q89eu7skjz55tj86nsnmh5wexkz9209seelspe",
+          "date": "2026-02-23",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszsf5su97degf47z25jhrhq74ed5kmg0xuqsc6627tlwva9eghagq3gjc5x",
+          "date": "2026-02-23",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2025842501320679681",
+          "date": "2026-02-23",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0qlpfacq6utfl3prtdmks60ef96n5f7q70kvpjvmhcx9r9xke9zq2g8pjq",
+          "date": "2026-02-23",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2ucygqmrrv4mxdk2e262qklvlywxdxrtqpn7n590npg6w0j09vjswl2r79",
+          "date": "2026-02-21",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2025106261738488298",
+          "date": "2026-02-21",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2wtxgnpx8f0jgv7t4unuasd2wqts6guwa6jgy7q4sfhlyn99mn8ck7hrn4",
+          "date": "2026-02-21",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2025102185566982447",
+          "date": "2026-02-21",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqyyltzajgw2znc449s2j4w9uaxnudll7p77dn74tekx7ehf9e3xgv9x627",
+          "date": "2026-02-19",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2024417242201395705",
+          "date": "2026-02-19",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp57xdnqy2f8267gjw5gxs2vjvryf9ld7j7jg08ekqwp05z2rzqvqlcwgn8",
+          "date": "2026-02-19",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2024415485027041376",
+          "date": "2026-02-19",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxu938d6w7hzd7v6arsk4w8yvp8ee22etdhe0u87kamxh6j3d9xdqxhwa64",
+          "date": "2026-02-17",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2023731565512073586",
+          "date": "2026-02-17",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs90ueerxkj9tyftjnagehsytc0t6s865t54gnj20mupltztulggrqa87rtl",
+          "date": "2026-02-16",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2023455003667558905",
+          "date": "2026-02-16",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2023411737362628857",
+          "date": "2026-02-16",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszy7ugz0m0l040s6u7sckm3fce6yznv6x3hzqmq3stpu6fn8s6yggq76ce9",
+          "date": "2026-02-16",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswkw7fqq58ygwcjwlnaf3z2guwkmvrpk20494ngx8qmyv29aj0juqsf2kcu",
+          "date": "2026-02-16",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2023359451278024796",
+          "date": "2026-02-16",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvydt40mm9kgk4scjqny03pl3x6r84qj3kwkxdn9l48xuj6llnk5qr6kej5",
+          "date": "2026-02-16",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2023356860586156360",
+          "date": "2026-02-16",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2023354776113529026",
+          "date": "2026-02-16",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0y0nmld8sqf6dkwlpftstf260r3lewc4khmm2m64th76c0l8c8ycl2pj6n",
+          "date": "2026-02-16",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2022287147345002726",
+          "date": "2026-02-14",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9zrss4wpfezk0tdw7t2staanqy9nsty5ngnn32plrfmdee9us7ucj3x2kk",
+          "date": "2026-02-14",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2021698584526143963",
+          "date": "2026-02-12",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgxxvz30c9ss05xpprlg022725hgr8vjg202hdgs6ecex9ag4xa7gjunld9",
+          "date": "2026-02-12",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2021695300163768557",
+          "date": "2026-02-12",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8vt84lmnfj4yq3s827vw3eg66v5q8zkqld2jgg4s9ykk5lafchrsry6rdc",
+          "date": "2026-02-12",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2021687067101569036",
+          "date": "2026-02-12",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsymclxskv28dsurknjkteq4x4da88uj6c5ejm9uj45tvjuyccaecst7z07v",
+          "date": "2026-02-12",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2021121950521704909",
+          "date": "2026-02-10",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2019894070026416152",
+          "date": "2026-02-07",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv737g86a0fleuyhz4cu2dfpjn298qmakwq3jk9aejl7heuasql8gxpygtr",
+          "date": "2026-02-07",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst6gyx9y2fyaqwtcamwlztylnnhywqkt0dpz3vpcty77arvac0hzq6r339t",
+          "date": "2026-02-01",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2017714105348411717",
+          "date": "2026-02-01",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy62npfrcmp6lp0wtl99f9c4shzy658aq0cde4ryesku03quln8xg0mwj6m",
+          "date": "2026-02-01",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2017712047908172013",
+          "date": "2026-02-01",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2016610534926250426",
+          "date": "2026-01-29",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszxgldm547ckseqxkvrha90gz5c2mqq5wyuvq90wp34qvhxmjxg0quttlcj",
+          "date": "2026-01-29",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2015859869018947870",
+          "date": "2026-01-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqvcpu3x5keeppys0tmk8wzur6yg8pq0jae9n9fpe0p0chcxq9mygln025t",
+          "date": "2026-01-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Black and White Fries Corner",
       "count": 57,
       "posts": [
@@ -10442,292 +10804,6 @@
           "url": "https://njump.to/nevent1qqsyzxs9u3q6fyhw0nufhhpnpu8gxdlfdgzz4fnp0x95vh5cnus599spzamhxue69uhhyetvv9ujuurjd9kkzmpwdejhgtczypk2ezvdw537javzmmqcfwdspmrs3k90847gvcvugh82geutkz7zcqcyqqqqqqgle0mym",
           "date": "2026-01-14",
           "project": "Afribit Kibera 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Preso's Food and Drinks",
-      "count": 56,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2026280856172515605",
-          "date": "2026-02-24",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvp6e5zp5hplxcrwc2djt8e2w3atwrlgcnupkjruykndy8nlp2vkcheyvs8",
-          "date": "2026-02-24",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2026121699461124600",
-          "date": "2026-02-24",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszn3jfjz0glp0tv2jg7026lguqtaeqh0za6zmqfhhrjtt0z6quedsecc4yv",
-          "date": "2026-02-24",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2026119812452151722",
-          "date": "2026-02-24",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqylck9z5p4efq7ucl3r3gnyd3r8wzse47489rullms2tp6mq7ezgflpayl",
-          "date": "2026-02-24",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2026117690851520745",
-          "date": "2026-02-24",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsr6v6q8te7mr82queesdf9mcly2jf75wvfz45j2xpvt48w08qhamcwhl88j",
-          "date": "2026-02-24",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2026115858909602111",
-          "date": "2026-02-24",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsz9p63jkrrwr0h4hlcydpzcmqelranmncwfg00v0ekvml2pnh0nhcnf3876",
-          "date": "2026-02-23",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2025862578988056720",
-          "date": "2026-02-23",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2025846919054909567",
-          "date": "2026-02-23",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2025845465980526702",
-          "date": "2026-02-23",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstp4ngr02qsxw0earjy20q89eu7skjz55tj86nsnmh5wexkz9209seelspe",
-          "date": "2026-02-23",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszsf5su97degf47z25jhrhq74ed5kmg0xuqsc6627tlwva9eghagq3gjc5x",
-          "date": "2026-02-23",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2025842501320679681",
-          "date": "2026-02-23",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0qlpfacq6utfl3prtdmks60ef96n5f7q70kvpjvmhcx9r9xke9zq2g8pjq",
-          "date": "2026-02-23",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2ucygqmrrv4mxdk2e262qklvlywxdxrtqpn7n590npg6w0j09vjswl2r79",
-          "date": "2026-02-21",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2025106261738488298",
-          "date": "2026-02-21",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2wtxgnpx8f0jgv7t4unuasd2wqts6guwa6jgy7q4sfhlyn99mn8ck7hrn4",
-          "date": "2026-02-21",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2025102185566982447",
-          "date": "2026-02-21",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqyyltzajgw2znc449s2j4w9uaxnudll7p77dn74tekx7ehf9e3xgv9x627",
-          "date": "2026-02-19",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2024417242201395705",
-          "date": "2026-02-19",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp57xdnqy2f8267gjw5gxs2vjvryf9ld7j7jg08ekqwp05z2rzqvqlcwgn8",
-          "date": "2026-02-19",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2024415485027041376",
-          "date": "2026-02-19",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxu938d6w7hzd7v6arsk4w8yvp8ee22etdhe0u87kamxh6j3d9xdqxhwa64",
-          "date": "2026-02-17",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2023731565512073586",
-          "date": "2026-02-17",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs90ueerxkj9tyftjnagehsytc0t6s865t54gnj20mupltztulggrqa87rtl",
-          "date": "2026-02-16",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2023455003667558905",
-          "date": "2026-02-16",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2023411737362628857",
-          "date": "2026-02-16",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszy7ugz0m0l040s6u7sckm3fce6yznv6x3hzqmq3stpu6fn8s6yggq76ce9",
-          "date": "2026-02-16",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswkw7fqq58ygwcjwlnaf3z2guwkmvrpk20494ngx8qmyv29aj0juqsf2kcu",
-          "date": "2026-02-16",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2023359451278024796",
-          "date": "2026-02-16",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvydt40mm9kgk4scjqny03pl3x6r84qj3kwkxdn9l48xuj6llnk5qr6kej5",
-          "date": "2026-02-16",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2023356860586156360",
-          "date": "2026-02-16",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2023354776113529026",
-          "date": "2026-02-16",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0y0nmld8sqf6dkwlpftstf260r3lewc4khmm2m64th76c0l8c8ycl2pj6n",
-          "date": "2026-02-16",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2022287147345002726",
-          "date": "2026-02-14",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9zrss4wpfezk0tdw7t2staanqy9nsty5ngnn32plrfmdee9us7ucj3x2kk",
-          "date": "2026-02-14",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2021698584526143963",
-          "date": "2026-02-12",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgxxvz30c9ss05xpprlg022725hgr8vjg202hdgs6ecex9ag4xa7gjunld9",
-          "date": "2026-02-12",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2021695300163768557",
-          "date": "2026-02-12",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8vt84lmnfj4yq3s827vw3eg66v5q8zkqld2jgg4s9ykk5lafchrsry6rdc",
-          "date": "2026-02-12",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2021687067101569036",
-          "date": "2026-02-12",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsymclxskv28dsurknjkteq4x4da88uj6c5ejm9uj45tvjuyccaecst7z07v",
-          "date": "2026-02-12",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2021121950521704909",
-          "date": "2026-02-10",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2019894070026416152",
-          "date": "2026-02-07",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv737g86a0fleuyhz4cu2dfpjn298qmakwq3jk9aejl7heuasql8gxpygtr",
-          "date": "2026-02-07",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst6gyx9y2fyaqwtcamwlztylnnhywqkt0dpz3vpcty77arvac0hzq6r339t",
-          "date": "2026-02-01",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2017714105348411717",
-          "date": "2026-02-01",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy62npfrcmp6lp0wtl99f9c4shzy658aq0cde4ryesku03quln8xg0mwj6m",
-          "date": "2026-02-01",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2017712047908172013",
-          "date": "2026-02-01",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2016610534926250426",
-          "date": "2026-01-29",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszxgldm547ckseqxkvrha90gz5c2mqq5wyuvq90wp34qvhxmjxg0quttlcj",
-          "date": "2026-01-29",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2015859869018947870",
-          "date": "2026-01-26",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqvcpu3x5keeppys0tmk8wzur6yg8pq0jae9n9fpe0p0chcxq9mygln025t",
-          "date": "2026-01-26",
-          "project": "Bitcoin Dua 🇬🇭"
         }
       ]
     },
@@ -12740,6 +12816,102 @@
       ]
     },
     {
+      "name": "Grace Store",
+      "count": 18,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsghc346tc834lqzq5ewdm7puwdmyydk65dczpztrv0nk34nh9s9xc83sdrx",
+          "date": "2026-02-25",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2026193217977295233",
+          "date": "2026-02-24",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqv9v097qr3wdrglx7elhgay0ctx9wd6xax3009fhvy8c8su2rsfc8z2545",
+          "date": "2026-02-23",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2025284388423184732",
+          "date": "2026-02-22",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2025100106748321853",
+          "date": "2026-02-21",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs97dnzm8xgn6h8v4p7gny6elwgm3s2w9pggu6trk74d6rs88akekqk7mk5e",
+          "date": "2026-02-18",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2024040675797336259",
+          "date": "2026-02-18",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs90prr2e09aa2p949yxue2cy3lm48mfsgae7f98ayfl00p02x4zqql4c4p5",
+          "date": "2026-02-03",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfrqzgcdgefempd43fkd8gte4l43fyp3yv9ad3mp42f2w4m6nc2sqa598h5",
+          "date": "2026-02-03",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvxalxz4q3xckzq6an8pu733yrhlgxtjkt2lg0r4pp0r5wgwx5zpqkv4qzk",
+          "date": "2026-02-03",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016073697489265085",
+          "date": "2026-01-29",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015998199895359700",
+          "date": "2026-01-27",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015348926656704705",
+          "date": "2026-01-25",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswhdk5xrtszky8kxu2zsxzp6360tje3h6wlyjnm0ncpcd35y3802caue34y",
+          "date": "2026-01-21",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2013478273120932212",
+          "date": "2026-01-20",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0qc67sgyte0xaycfm25e7pz63m6y2ldc5rvumgfpp4n9j6q37ncqkkg8qf",
+          "date": "2026-01-19",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd6gax6s820evvqsa0zk3mpvuvy9rd5xjql845ks837za3j0mu9tc93cxsr",
+          "date": "2026-01-18",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2012391747674845331",
+          "date": "2026-01-17",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Sokoni Mboga",
       "count": 17,
       "posts": [
@@ -12827,97 +12999,6 @@
           "url": "https://x.com/i/status/2012526035837886538",
           "date": "2026-01-17",
           "project": "Afribit Kibera 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Grace Store",
-      "count": 17,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2026193217977295233",
-          "date": "2026-02-24",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqv9v097qr3wdrglx7elhgay0ctx9wd6xax3009fhvy8c8su2rsfc8z2545",
-          "date": "2026-02-23",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2025284388423184732",
-          "date": "2026-02-22",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2025100106748321853",
-          "date": "2026-02-21",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs97dnzm8xgn6h8v4p7gny6elwgm3s2w9pggu6trk74d6rs88akekqk7mk5e",
-          "date": "2026-02-18",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2024040675797336259",
-          "date": "2026-02-18",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs90prr2e09aa2p949yxue2cy3lm48mfsgae7f98ayfl00p02x4zqql4c4p5",
-          "date": "2026-02-03",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfrqzgcdgefempd43fkd8gte4l43fyp3yv9ad3mp42f2w4m6nc2sqa598h5",
-          "date": "2026-02-03",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvxalxz4q3xckzq6an8pu733yrhlgxtjkt2lg0r4pp0r5wgwx5zpqkv4qzk",
-          "date": "2026-02-03",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2016073697489265085",
-          "date": "2026-01-29",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2015998199895359700",
-          "date": "2026-01-27",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2015348926656704705",
-          "date": "2026-01-25",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswhdk5xrtszky8kxu2zsxzp6360tje3h6wlyjnm0ncpcd35y3802caue34y",
-          "date": "2026-01-21",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2013478273120932212",
-          "date": "2026-01-20",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0qc67sgyte0xaycfm25e7pz63m6y2ldc5rvumgfpp4n9j6q37ncqkkg8qf",
-          "date": "2026-01-19",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd6gax6s820evvqsa0zk3mpvuvy9rd5xjql845ks837za3j0mu9tc93cxsr",
-          "date": "2026-01-18",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2012391747674845331",
-          "date": "2026-01-17",
-          "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
     },
@@ -13910,6 +13991,72 @@
       ]
     },
     {
+      "name": "Jovi Water Refilling",
+      "count": 12,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspadnf5c2zwuatqezusjm9z4leutgqlhm08p75yrnr2yxqxk8ycvcgkpphp",
+          "date": "2026-02-25",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszcmpw6snmwktvp2zyrt8sflzu0dyq9ajp22m2gdpznlpgn4awprgcxays2",
+          "date": "2026-02-25",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2026203854723838050",
+          "date": "2026-02-24",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2026196986345431351",
+          "date": "2026-02-24",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs277dv5mcnesyxmx9zw0vck2q8ty3530cfj922uj4m2em8k4zhjaqzfzwc2",
+          "date": "2026-02-18",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2024007798070116723",
+          "date": "2026-02-18",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspvnunsa5pas0pezuuxdsxwwqp6g2kwdmte7yv65jhm3j3zj09h6qxrvkza",
+          "date": "2026-02-06",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszeaphx34dfy3hvsmehdyusphc48hwj2fx28hm3c843zxffw4p83syxsmda",
+          "date": "2026-02-05",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2019271506728218763",
+          "date": "2026-02-05",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvv90azexttcwqz3hk59fcumjdqvp2m85rtx3phll2j3jvumvm2psfxn9dt",
+          "date": "2026-02-03",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2016436092648452323",
+          "date": "2026-01-28",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2015416579664552419",
+          "date": "2026-01-25",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Nelton Services Shop",
       "count": 11,
       "posts": [
@@ -14196,62 +14343,6 @@
           "url": "https://x.com/i/status/2015837508039229766",
           "date": "2026-01-26",
           "project": "Afribit Kibera 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Jovi Water Refilling",
-      "count": 10,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2026203854723838050",
-          "date": "2026-02-24",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2026196986345431351",
-          "date": "2026-02-24",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs277dv5mcnesyxmx9zw0vck2q8ty3530cfj922uj4m2em8k4zhjaqzfzwc2",
-          "date": "2026-02-18",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2024007798070116723",
-          "date": "2026-02-18",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspvnunsa5pas0pezuuxdsxwwqp6g2kwdmte7yv65jhm3j3zj09h6qxrvkza",
-          "date": "2026-02-06",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszeaphx34dfy3hvsmehdyusphc48hwj2fx28hm3c843zxffw4p83syxsmda",
-          "date": "2026-02-05",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2019271506728218763",
-          "date": "2026-02-05",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvv90azexttcwqz3hk59fcumjdqvp2m85rtx3phll2j3jvumvm2psfxn9dt",
-          "date": "2026-02-03",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2016436092648452323",
-          "date": "2026-01-28",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2015416579664552419",
-          "date": "2026-01-25",
-          "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
     },
@@ -17221,12 +17312,12 @@
   "launch": {
     "date": "2026-01-13",
     "days_active": 43,
-    "daily_average_payments": 110
+    "daily_average_payments": 111
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4583
+      "count": 4595
     },
     {
       "domain": "8333.mobi",
@@ -17277,9 +17368,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 2135
+      "count": 2147
     }
   ],
-  "generated_at": "2026-02-25T07:22:39.919298+00:00",
+  "generated_at": "2026-02-25T08:22:39.995616+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
