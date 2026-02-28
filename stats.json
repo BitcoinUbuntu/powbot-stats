@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 5086,
+    "all_payments": 5089,
     "by_type": {
       "merchant": {
-        "count": 1676
+        "count": 1677
       },
       "project": {
-        "count": 1676
+        "count": 1677
       },
       "reviewer": {
-        "count": 1734
+        "count": 1735
       }
     }
   },
   "today": {
     "date": "2026-02-28",
-    "payments": 48,
+    "payments": 51,
     "by_type": {
       "merchant": {
-        "count": 16
+        "count": 17
       },
       "project": {
-        "count": 16
+        "count": 17
       },
       "reviewer": {
-        "count": 16
+        "count": 17
       }
     },
-    "approved": 16,
+    "approved": 17,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2027612406491341287",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Preso's Food and Drinks",
+        "platform": "X",
+        "time": "08:15"
+      },
       {
         "url": "https://primal.net/e/nevent1qqszm7wnne4dh7y2skspkne59gkn2zlcm302jjd3yn0kkhulxmp259chvclcr",
         "project": "Bitcoin Dua 🇬🇭",
@@ -168,6 +175,9 @@
         "project": "Bitcoin Dua 🇬🇭"
       },
       {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
         "project": "Bitcoin Dombo 🇲🇿"
       },
       {
@@ -202,24 +212,6 @@
       },
       {
         "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "College BTC 🇬🇭"
-      },
-      {
-        "project": "College BTC 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
       }
     ]
   },
@@ -400,14 +392,14 @@
     },
     {
       "date": "2026-02-28",
-      "project_count": 16,
-      "merchant_count": 16,
-      "reviewer_count": 16
+      "project_count": 17,
+      "merchant_count": 17,
+      "reviewer_count": 17
     }
   ],
   "reviewer": {
-    "total_reviewed": 1734,
-    "approved": 1675,
+    "total_reviewed": 1735,
+    "approved": 1676,
     "rejected": 59
   },
   "top_projects": [
@@ -5348,8 +5340,13 @@
     },
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 113,
+      "count": 114,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2027612406491341287",
+          "date": "2026-02-28",
+          "merchant": "Preso's Food and Drinks"
+        },
         {
           "url": "https://primal.net/e/nevent1qqszm7wnne4dh7y2skspkne59gkn2zlcm302jjd3yn0kkhulxmp259chvclcr",
           "date": "2026-02-28",
@@ -9487,8 +9484,13 @@
     },
     {
       "name": "Preso's Food and Drinks",
-      "count": 101,
+      "count": 102,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2027612406491341287",
+          "date": "2026-02-28",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
         {
           "url": "https://primal.net/e/nevent1qqszm7wnne4dh7y2skspkne59gkn2zlcm302jjd3yn0kkhulxmp259chvclcr",
           "date": "2026-02-28",
@@ -18394,7 +18396,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4902
+      "count": 4905
     },
     {
       "domain": "8333.mobi",
@@ -18441,13 +18443,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2777
+      "count": 2780
     },
     {
       "platform": "Nostr",
       "count": 2309
     }
   ],
-  "generated_at": "2026-02-28T07:22:39.808829+00:00",
+  "generated_at": "2026-02-28T08:22:39.803907+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
