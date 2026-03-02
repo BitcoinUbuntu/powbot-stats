@@ -1,28 +1,59 @@
 {
   "totals": {
-    "all_payments": 5143,
+    "all_payments": 5153,
     "by_type": {
       "merchant": {
-        "count": 1695
+        "count": 1697
       },
       "project": {
-        "count": 1695
+        "count": 1697
       },
       "reviewer": {
-        "count": 1753
+        "count": 1759
       }
     }
   },
   "today": {
     "date": "2026-03-02",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
-    "rejected": 0,
-    "videos": []
+    "payments": 10,
+    "by_type": {
+      "merchant": {
+        "count": 2
+      },
+      "project": {
+        "count": 2
+      },
+      "reviewer": {
+        "count": 6
+      }
+    },
+    "approved": 2,
+    "rejected": 4,
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqszslpe4r2unpy02c6jd85p6z5nln7gxjgdkwm35v5ds6uza9nrr3sharwws",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Milofa Skate Shop",
+        "platform": "Nostr",
+        "time": "05:31"
+      },
+      {
+        "url": "https://x.com/i/status/2028221123511406875",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Milofa Skate Shop",
+        "platform": "X",
+        "time": "05:31"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
       {
         "project": "Bitcoin Loxion 🇿🇦"
       },
@@ -226,15 +257,15 @@
     },
     {
       "date": "2026-03-02",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 2,
+      "merchant_count": 2,
+      "reviewer_count": 6
     }
   ],
   "reviewer": {
-    "total_reviewed": 1753,
-    "approved": 1694,
-    "rejected": 59
+    "total_reviewed": 1759,
+    "approved": 1696,
+    "rejected": 63
   },
   "top_projects": [
     {
@@ -8694,6 +8725,62 @@
       ]
     },
     {
+      "name": "Bitcoin Famba 🇲🇿",
+      "count": 10,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszslpe4r2unpy02c6jd85p6z5nln7gxjgdkwm35v5ds6uza9nrr3sharwws",
+          "date": "2026-03-02",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2028221123511406875",
+          "date": "2026-03-02",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs22h06fvdljkeu2vpym7cxa247vavm4rpq7c8fqtr77astr7eqz0c6732zt",
+          "date": "2026-01-27",
+          "merchant": "Connectix Lda - Informatica e Tecnologias"
+        },
+        {
+          "url": "https://x.com/i/status/2016245905960157412",
+          "date": "2026-01-27",
+          "merchant": "Connectix Lda - Informatica e Tecnologias"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswau92eddtytjp5lrgytv7sjxqpsjwkchsgtxupcztxvh3pad34qs4jwpyz",
+          "date": "2026-01-27",
+          "merchant": "Brasukas - Bar & Surf"
+        },
+        {
+          "url": "https://x.com/i/status/2015922925753205051",
+          "date": "2026-01-27",
+          "merchant": "Brasukas - Bar & Surf"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw3an7aedz49z8mpyxnx730ufdn3kpggwyjmzawt8rudyvyfa0q7gcjc00u",
+          "date": "2026-01-26",
+          "merchant": "Lwandi Surf"
+        },
+        {
+          "url": "https://x.com/i/status/2015882298411938110",
+          "date": "2026-01-26",
+          "merchant": "Lwandi Surf"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2kg4uwhsa9y5sepueum9upnk3692258spa3xfspz37439zpcxtasherk67",
+          "date": "2026-01-22",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2014111372129247329",
+          "date": "2026-01-22",
+          "merchant": "Milofa Skate Shop"
+        }
+      ]
+    },
+    {
       "name": "TofoBTC 🇲🇿",
       "count": 8,
       "posts": [
@@ -8736,52 +8823,6 @@
           "url": "https://primal.net/e/nevent1qqsdxk5erklnem9q0alvtrke2ncdsqag7ckm62hwqd29wukkq38cmwsl3up5l",
           "date": "2026-02-09",
           "merchant": "Boa Gente Lda"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Famba 🇲🇿",
-      "count": 8,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs22h06fvdljkeu2vpym7cxa247vavm4rpq7c8fqtr77astr7eqz0c6732zt",
-          "date": "2026-01-27",
-          "merchant": "Connectix Lda - Informatica e Tecnologias"
-        },
-        {
-          "url": "https://x.com/i/status/2016245905960157412",
-          "date": "2026-01-27",
-          "merchant": "Connectix Lda - Informatica e Tecnologias"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswau92eddtytjp5lrgytv7sjxqpsjwkchsgtxupcztxvh3pad34qs4jwpyz",
-          "date": "2026-01-27",
-          "merchant": "Brasukas - Bar & Surf"
-        },
-        {
-          "url": "https://x.com/i/status/2015922925753205051",
-          "date": "2026-01-27",
-          "merchant": "Brasukas - Bar & Surf"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsw3an7aedz49z8mpyxnx730ufdn3kpggwyjmzawt8rudyvyfa0q7gcjc00u",
-          "date": "2026-01-26",
-          "merchant": "Lwandi Surf"
-        },
-        {
-          "url": "https://x.com/i/status/2015882298411938110",
-          "date": "2026-01-26",
-          "merchant": "Lwandi Surf"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2kg4uwhsa9y5sepueum9upnk3692258spa3xfspz37439zpcxtasherk67",
-          "date": "2026-01-22",
-          "merchant": "Milofa Skate Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2014111372129247329",
-          "date": "2026-01-22",
-          "merchant": "Milofa Skate Shop"
         }
       ]
     },
@@ -16993,6 +17034,32 @@
       ]
     },
     {
+      "name": "Milofa Skate Shop",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszslpe4r2unpy02c6jd85p6z5nln7gxjgdkwm35v5ds6uza9nrr3sharwws",
+          "date": "2026-03-02",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2028221123511406875",
+          "date": "2026-03-02",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2kg4uwhsa9y5sepueum9upnk3692258spa3xfspz37439zpcxtasherk67",
+          "date": "2026-01-22",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2014111372129247329",
+          "date": "2026-01-22",
+          "project": "Bitcoin Famba 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Mama Clear",
       "count": 4,
       "posts": [
@@ -17624,22 +17691,6 @@
           "url": "https://primal.net/e/nevent1qqs890tfuv4yf3w5wu56qhx8pq4vxn5xuymqsy2q3732ymek3tv8w5g6ex6dz",
           "date": "2026-01-18",
           "project": "Bitcoin Victoria Falls 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Milofa Skate Shop",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs2kg4uwhsa9y5sepueum9upnk3692258spa3xfspz37439zpcxtasherk67",
-          "date": "2026-01-22",
-          "project": "Bitcoin Famba 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2014111372129247329",
-          "date": "2026-01-22",
-          "project": "Bitcoin Famba 🇲🇿"
         }
       ]
     },
@@ -18416,7 +18467,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4959
+      "count": 4969
     },
     {
       "domain": "8333.mobi",
@@ -18463,13 +18514,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2810
+      "count": 2815
     },
     {
       "platform": "Nostr",
-      "count": 2333
+      "count": 2338
     }
   ],
-  "generated_at": "2026-03-02T05:22:39.922105+00:00",
+  "generated_at": "2026-03-02T06:22:39.796864+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
