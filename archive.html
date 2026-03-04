@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PoWBoT Stats</title>
+    <title>PoWBoT Stats - Epoch 4 Archive</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
 
     <!-- Open Graph / Social Preview -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bitcoinubuntu.github.io/powbot-stats/">
-    <meta property="og:title" content="PoWBoT Stats">
-    <meta property="og:description" content="Real-time activity stats for PoW rewards to merchants and projects across Africa.">
+    <meta property="og:url" content="https://bitcoinubuntu.github.io/powbot-stats/archive.html">
+    <meta property="og:title" content="PoWBoT Stats - Epoch 4 Archive">
+    <meta property="og:description" content="Historical stats archive for Epoch 4 of the PoWBoT rewards program.">
     <meta property="og:image" content="https://bitcoinubuntu.github.io/powbot-stats/images/PoWBoT_preview.jpg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://bitcoinubuntu.github.io/powbot-stats/">
-    <meta name="twitter:title" content="PoWBoT Stats">
-    <meta name="twitter:description" content="Real-time activity stats for PoW rewards to merchants and projects across Africa.">
+    <meta name="twitter:url" content="https://bitcoinubuntu.github.io/powbot-stats/archive.html">
+    <meta name="twitter:title" content="PoWBoT Stats - Epoch 4 Archive">
+    <meta name="twitter:description" content="Historical stats archive for Epoch 4 of the PoWBoT rewards program.">
     <meta name="twitter:image" content="https://bitcoinubuntu.github.io/powbot-stats/images/PoWBoT_preview.jpg">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -108,26 +108,42 @@
             }
         }
 
-        .launch-banner {
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(16, 185, 129, 0.05));
-            border: 2px solid var(--accent-green);
+        /* Archive Banner */
+        .archive-banner {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.05));
+            border: 2px solid var(--accent-purple);
             border-radius: 12px;
             padding: 20px 24px;
             margin-bottom: 20px;
             text-align: center;
         }
 
-        .launch-banner h2 {
+        .archive-banner h2 {
             font-size: 1.3rem;
-            color: var(--accent-green);
+            color: var(--accent-purple);
             margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .launch-banner p {
+        .archive-banner p {
             color: var(--text-secondary);
-            margin-bottom: 0;
+            margin-bottom: 12px;
+        }
+
+        .archive-banner a {
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--accent-purple);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s ease;
+        }
+
+        .archive-banner a:hover {
+            background: #b491f9;
         }
 
         .today-banner {
@@ -316,16 +332,16 @@
             margin-bottom: 20px;
         }
 
-        .stats-grid .card:nth-child(3):last-child {
+        .stats-grid .card:nth-child(3) {
             grid-column: span 2;
         }
 
         @media (min-width: 1000px) {
             .stats-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-template-columns: repeat(3, 1fr);
             }
 
-            .stats-grid .card:nth-child(3):last-child {
+            .stats-grid .card:nth-child(3) {
                 grid-column: span 1;
             }
         }
@@ -335,7 +351,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .stats-grid .card:nth-child(3):last-child {
+            .stats-grid .card:nth-child(3) {
                 grid-column: span 1;
             }
         }
@@ -875,16 +891,17 @@
                     >
                 </a>
                 <div class="header-text">
-                    <h1>PoWBoT Stats</h1>
-                    <p class="tagline" id="tagline">Stay humble, stack stats 📊</p>
+                    <h1>PoWBoT Stats Archive</h1>
+                    <p class="tagline">Epoch 4 Historical Data</p>
                 </div>
             </div>
         </header>
 
-        <!-- Launch Announcement Banner -->
-        <div class="launch-banner">
-            <h2>🚀 Epoch 5 Launching Soon</h2>
-            <p>The new epoch will begin in the next few days. Stay tuned for updates!</p>
+        <!-- Archive Notice Banner -->
+        <div class="archive-banner">
+            <h2>📚 Historical Archive – Epoch 4</h2>
+            <p>This page contains archived data from Epoch 4. For current stats, visit the main dashboard.</p>
+            <a href="index.html">View Current Stats →</a>
         </div>
 
         <div id="content">
@@ -892,7 +909,7 @@
         </div>
 
         <footer>
-            <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | Data updated: <span id="updated">--</span> CAT | <a href="about.html">About</a> | <a href="archive.html">Archive</a></p>
+            <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | Data updated: <span id="updated">--</span> CAT | <a href="about.html">About</a> | <a href="index.html">Current Stats</a></p>
         </footer>
     </div>
 
@@ -915,22 +932,24 @@
         // Render the dashboard
         function renderDashboard(stats) {
             const content = document.getElementById('content');
-            document.getElementById('tagline').textContent = stats.tagline;
             document.getElementById('updated').textContent = new Date(stats.generated_at).toLocaleString();
 
             content.innerHTML = `
+                <!-- Leaderboards -->
+                <div class="leaderboard-grid">
+                    <div class="card">
+                        <h2>Project Leaderboard</h2>
+                        <div id="top-projects"></div>
+                    </div>
+
+                    <div class="card">
+                        <h2>Merchant Leaderboard</h2>
+                        <div id="top-merchants"></div>
+                    </div>
+                </div>
+
                 <!-- Summary Cards -->
                 <div class="stats-grid">
-                    ${(stats.last_24h?.videos && stats.last_24h.videos.length > 0) ? `
-                    <div class="card top-performers">
-                        <h2>Top Performers (24h)</h2>
-                        <div class="big-number">🏆</div>
-                        <div class="top-performers-list" id="top-performers-list">
-                            <!-- Populated by JavaScript -->
-                        </div>
-                    </div>
-                    ` : ''}
-
                     <div class="card">
                         <h2>Total Payments</h2>
                         <div class="big-number">${formatNumber(stats.totals.all_payments)}</div>
@@ -970,7 +989,7 @@
                     </div>
 
                     <div class="card">
-                        <h2>Since Launch${stats.launch.days_active > 0 ? ` (${stats.launch.date})` : ''}</h2>
+                        <h2>Epoch 4 Duration</h2>
                         <div class="big-number">${stats.launch.days_active} <span class="unit">days</span></div>
                         <div style="margin-top: 15px;">
                             <div class="stat-row">
@@ -978,7 +997,7 @@
                             </div>
                             <div class="stat-row">
                                 <span class="stat-label">Posts approved</span>
-                                <span class="stat-value" style="color: var(--accent-orange);">${stats.launch.days_active > 0 ? Math.round((stats.totals.by_type.project?.count || 0) / stats.launch.days_active) : 0}</span>
+                                <span class="stat-value" style="color: var(--accent-orange);">${Math.round((stats.totals.by_type.project?.count || 0) / stats.launch.days_active)}</span>
                             </div>
                             <div class="stat-row">
                                 <span class="stat-label">Total payments</span>
@@ -987,97 +1006,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Live Block Countdown & Highlights -->
-                <div class="live-grid">
-                    <div class="card countdown">
-                        <h2>PoWBoT Difficulty Adjustment</h2>
-                        <div id="countdown-content">
-                            <div class="loading">Connecting to mempool...</div>
-                        </div>
-                    </div>
-
-                    <div class="card highlights">
-                        <h2>Highlights</h2>
-                        <div class="highlights-list" id="highlights-list">
-                            <!-- Populated by JavaScript -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Today's Activity Banner -->
-                ${stats.today.payments > 0 ? `
-                <div class="today-banner">
-                    <span class="today-label">Today <span class="today-time">(updated ${new Date(stats.generated_at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'UTC' })} UTC)</span></span>
-                    <div class="today-stats">
-                        <div class="today-stat">
-                            <span class="today-value" style="color: var(--accent-orange);">${formatNumber(stats.today.by_type.reviewer?.count || 0)}</span>
-                            <span class="today-unit">${(stats.today.by_type.reviewer?.count || 0) === 1 ? 'post' : 'posts'}</span>
-                        </div>
-                        <div class="today-stat">
-                            <span class="today-value" style="color: var(--accent-green);">${formatNumber(stats.today.approved || 0)}</span>
-                            <span class="today-unit">${(stats.today.approved || 0) === 1 ? 'approval' : 'approvals'}</span>
-                        </div>
-                        <div class="today-stat">
-                            <span class="today-value" style="color: #f85149;">${formatNumber(stats.today.rejected || 0)}</span>
-                            <span class="today-unit">${(stats.today.rejected || 0) === 1 ? 'rejection' : 'rejections'}</span>
-                        </div>
-                        <div class="today-stat">
-                            <span class="today-value" style="color: var(--text-primary);">${formatNumber(stats.today.payments || 0)}</span>
-                            <span class="today-unit">${(stats.today.payments || 0) === 1 ? 'payment' : 'payments'}</span>
-                        </div>
-                    </div>
-                </div>
-                ` : ''}
-
-                <!-- Today's Videos by Platform -->
-                ${(stats.today.videos && stats.today.videos.length > 0) ? `
-                <div class="leaderboard-grid">
-                    <div class="card">
-                        <h2>Today on X</h2>
-                        <div id="today-x"></div>
-                    </div>
-
-                    <div class="card">
-                        <h2>Today on Nostr</h2>
-                        <div id="today-nostr"></div>
-                    </div>
-                </div>
-                ` : ''}
-
-                <!-- Last 7 Days Banner -->
-                ${(() => {
-                    const last7Days = (stats.daily || []).slice(-7);
-                    const weekPosts = last7Days.reduce((sum, d) => sum + (d.reviewer_count || 0), 0);
-                    const weekApproved = last7Days.reduce((sum, d) => sum + (d.project_count || 0), 0);
-                    const weekRejected = weekPosts - weekApproved;
-                    const weekPayments = last7Days.reduce((sum, d) => sum + (d.project_count || 0) + (d.merchant_count || 0) + (d.reviewer_count || 0), 0);
-
-                    if (weekPayments === 0) return '';
-
-                    return `
-                <div class="week-banner">
-                    <span class="week-label">Last 7 Days</span>
-                    <div class="week-stats">
-                        <div class="week-stat">
-                            <span class="week-value" style="color: var(--accent-purple);">${formatNumber(weekPosts)}</span>
-                            <span class="week-unit">${weekPosts === 1 ? 'post' : 'posts'}</span>
-                        </div>
-                        <div class="week-stat">
-                            <span class="week-value" style="color: var(--accent-green);">${formatNumber(weekApproved)}</span>
-                            <span class="week-unit">${weekApproved === 1 ? 'approval' : 'approvals'}</span>
-                        </div>
-                        <div class="week-stat">
-                            <span class="week-value" style="color: #f85149;">${formatNumber(weekRejected)}</span>
-                            <span class="week-unit">${weekRejected === 1 ? 'rejection' : 'rejections'}</span>
-                        </div>
-                        <div class="week-stat">
-                            <span class="week-value" style="color: var(--text-primary);">${formatNumber(weekPayments)}</span>
-                            <span class="week-unit">${weekPayments === 1 ? 'payment' : 'payments'}</span>
-                        </div>
-                    </div>
-                </div>`;
-                })()}
 
                 <!-- Daily Chart -->
                 <div class="chart-container">
@@ -1088,18 +1016,14 @@
                 </div>
 
                 <!-- Insights Section -->
-                ${((stats.lightning_providers?.length || 0) > 0 || (stats.countries?.length || 0) > 0 || (stats.platforms?.length || 0) > 0) ? `
                 <div class="insights-grid">
-                    ${(stats.lightning_providers?.length || 0) > 0 ? `
                     <div class="card insight-card">
                         <h2>Lightning Providers</h2>
                         <div class="pie-chart-wrapper">
                             <canvas id="lightningChart"></canvas>
                         </div>
                     </div>
-                    ` : ''}
 
-                    ${(stats.countries?.length || 0) > 0 ? `
                     <div class="card insight-card">
                         <h2>Countries</h2>
                         <div class="insight-total">${stats.countries?.length || 0} active</div>
@@ -1113,81 +1037,24 @@
                             `).join('')}
                         </div>
                     </div>
-                    ` : ''}
 
-                    ${(stats.platforms?.length || 0) > 0 ? `
                     <div class="card insight-card">
                         <h2>Platforms</h2>
                         <div class="pie-chart-wrapper">
                             <canvas id="platformChart"></canvas>
                         </div>
                     </div>
-                    ` : ''}
-                </div>
-                ` : ''}
-
-                <!-- Leaderboards -->
-                ${((stats.top_projects?.length || 0) > 0 || (stats.top_merchants?.length || 0) > 0) ? `
-                <div class="leaderboard-grid">
-                    ${(stats.top_projects?.length || 0) > 0 ? `
-                    <div class="card">
-                        <h2>Project Leaderboard</h2>
-                        <div id="top-projects"></div>
-                    </div>
-                    ` : ''}
-
-                    ${(stats.top_merchants?.length || 0) > 0 ? `
-                    <div class="card">
-                        <h2>Merchant Leaderboard</h2>
-                        <div id="top-merchants"></div>
-                    </div>
-                    ` : ''}
-                </div>
-                ` : ''}
-
-                <!-- Epochs Chart -->
-                <div class="chart-container">
-                    <h2>Total Posts Over All Time: ${formatNumber(2826 + (stats.reviewer?.approved || 0))}</h2>
-                    <div class="chart-wrapper">
-                        <canvas id="epochsChart"></canvas>
-                    </div>
                 </div>
             `;
 
-            // Render leaderboards (only if they exist)
-            if ((stats.top_projects?.length || 0) > 0) {
-                renderLeaderboard('top-projects', stats.top_projects, 'project');
-            }
-            if ((stats.top_merchants?.length || 0) > 0) {
-                renderLeaderboard('top-merchants', stats.top_merchants, 'merchant');
-            }
-
-            // Render today's videos if any
-            if (stats.today.videos && stats.today.videos.length > 0) {
-                const xVideos = stats.today.videos.filter(v => v.platform === 'X');
-                const nostrVideos = stats.today.videos.filter(v => v.platform === 'Nostr');
-                renderTodayVideos('today-x', xVideos, '𝕏');
-                renderTodayVideos('today-nostr', nostrVideos, '🟣');
-            }
-
-            // Render top performers (only if data exists)
-            if (stats.last_24h?.videos && stats.last_24h.videos.length > 0) {
-                renderTopPerformers(stats.last_24h.videos);
-            }
+            // Render leaderboards
+            renderLeaderboard('top-projects', stats.top_projects, 'project');
+            renderLeaderboard('top-merchants', stats.top_merchants, 'merchant');
 
             // Render charts
             renderChart(stats.daily);
-            if ((stats.lightning_providers?.length || 0) > 0) {
-                renderLightningChart(stats.lightning_providers);
-            }
-            if ((stats.platforms?.length || 0) > 0) {
-                renderPlatformChart(stats.platforms);
-            }
-            renderEpochsChart(stats.reviewer?.approved || 0);
-
-            // Render live sections
-            initBlockCountdown();
-            renderHighlights(stats);
+            renderLightningChart(stats.lightning_providers || []);
+            renderPlatformChart(stats.platforms || []);
         }
 
         function getPlatform(url) {
@@ -1563,7 +1430,7 @@
             });
         }
 
-        function renderEpochsChart(epoch5Live) {
+        function renderEpochsChart(epoch4Live) {
             const ctx = document.getElementById('epochsChart').getContext('2d');
 
             // Historical epoch data (hardcoded)
@@ -1571,7 +1438,6 @@
             const epoch2 = 284;
             const epoch3 = 568;
             const epoch4Testing = 210;
-            const epoch4Live = 1697;
 
             new Chart(ctx, {
                 type: 'bar',
@@ -1611,13 +1477,6 @@
                             data: [epoch4Live],
                             backgroundColor: '#f7931a',
                             borderColor: '#f7931a',
-                            borderWidth: 0
-                        },
-                        {
-                            label: 'Epoch 5 Live',
-                            data: [epoch5Live],
-                            backgroundColor: '#10b981',
-                            borderColor: '#10b981',
                             borderWidth: 0
                         }
                     ]
@@ -1697,7 +1556,7 @@
                     <div class="countdown-content">
                         <div class="countdown-complete">
                             <div class="checkmark">✓</div>
-                            <div class="message">New rates now active!</div>
+                            <div class="message">Epoch 4 Complete!</div>
                         </div>
                     </div>
                 `;
@@ -1976,7 +1835,7 @@
         // Load and render stats
         async function loadStats() {
             try {
-                const response = await fetch('stats.json?t=' + Date.now());
+                const response = await fetch('stats-epoch4.json?t=' + Date.now());
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}`);
                 }
