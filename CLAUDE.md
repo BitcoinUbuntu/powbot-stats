@@ -18,7 +18,9 @@ Public statistics dashboard for PoWBoT (Proof-of-Work Bot), a reward system for 
 ```
 powbot-stats/
 ├── index.html          # Main dashboard (HTML + CSS + JS all-in-one)
+├── archive.html        # Epoch 4 historical archive
 ├── stats.json          # Generated stats data (DO NOT edit manually)
+├── stats-epoch4.json   # Frozen Epoch 4 snapshot for archive page
 ├── export_stats.py     # Script to generate stats.json from database
 ├── about.html          # About page
 └── CLAUDE.md           # This file
@@ -28,7 +30,10 @@ Related project:
 ```
 ../telegram-bot/
 ├── payment_ledger.db   # SQLite database (source of truth)
-└── bot.py              # Telegram bot code
+│   ├── payments        # Current epoch data (Epoch 5)
+│   └── payments_epoch4 # Archived Epoch 4 data (5,156 payments)
+├── bot.py              # Telegram bot code
+└── archive_epoch4.py   # Script to archive epochs (one-time use)
 ```
 
 ---
@@ -140,6 +145,56 @@ Key accents:
 3. **Timezone** - All timestamps are UTC
 4. **Platform detection** - URLs containing 'twitter.com' or 'x.com' = X, otherwise = Nostr
 5. **Mobile hover states** - Use `@media (hover: hover)` to prevent sticky states
+
+---
+
+## Epochs
+
+PoWBoT operates in epochs (formerly called "eras"). Each epoch represents a period of activity with its own data set.
+
+### Historical Epochs (Hardcoded)
+- **Epoch 1** (May 25): 81 approved posts
+- **Epoch 2** (Aug 25): 298 approved posts
+- **Epoch 3** (Nov 25): 604 approved posts
+- **Epoch 4 Testing**: 187 approved posts (excludes 22 rejected + 1 duplicate merchant)
+- **Epoch 4 Live**: 1,697 approved posts (Jan 13 - Mar 4, 2026)
+
+**Total historical:** 2,867 approved posts
+
+Note: Epoch 1-3 counts updated from CSV files (March 2026) - actual counts higher than originally documented.
+
+### Current Epoch
+- **Epoch 5** (Mar 26): Active (launching in next few days)
+
+### Epoch Archiving Process
+
+When transitioning to a new epoch:
+
+1. **Archive database table:**
+   ```bash
+   cd telegram-bot
+   python archive_epoch4.py  # One-time script
+   ```
+   - Renames `payments` → `payments_epoch4`
+   - Creates fresh empty `payments` table
+   - Preserves all other bot data intact
+
+2. **Snapshot stats:**
+   ```bash
+   cd powbot-stats
+   cp stats.json stats-epoch4.json  # Manual snapshot
+   ```
+
+3. **Update chart totals:**
+   - Add completed epoch to hardcoded values in `renderEpochsChart()`
+   - Update baseline total (currently 2,826)
+
+### Archive Page
+
+`archive.html` provides historical view of completed epochs:
+- Loads from frozen `stats-epoch4.json` snapshot
+- Simplified layout (no time-sensitive sections)
+- Focus on leaderboards and historical insights
 
 ---
 

@@ -1147,7 +1147,7 @@
 
                 <!-- Epochs Chart -->
                 <div class="chart-container">
-                    <h2>Total Posts Over All Time: ${formatNumber(2826 + (stats.reviewer?.approved || 0))}</h2>
+                    <h2>Total Posts Over All Time: ${formatNumber(2867 + (stats.reviewer?.approved || 0))}</h2>
                     <div class="chart-wrapper">
                         <canvas id="epochsChart"></canvas>
                     </div>
@@ -1567,10 +1567,10 @@
             const ctx = document.getElementById('epochsChart').getContext('2d');
 
             // Historical epoch data (hardcoded)
-            const epoch1 = 67;
-            const epoch2 = 284;
-            const epoch3 = 568;
-            const epoch4Testing = 210;
+            const epoch1 = 81;
+            const epoch2 = 298;
+            const epoch3 = 604;
+            const epoch4Testing = 187;
             const epoch4Live = 1697;
 
             new Chart(ctx, {

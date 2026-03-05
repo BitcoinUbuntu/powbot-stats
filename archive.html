@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PoWBoT Stats - Epoch 4 Archive</title>
+    <title>PoWBoT Stats - Historical Archive</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
@@ -11,17 +11,16 @@
     <!-- Open Graph / Social Preview -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bitcoinubuntu.github.io/powbot-stats/archive.html">
-    <meta property="og:title" content="PoWBoT Stats - Epoch 4 Archive">
-    <meta property="og:description" content="Historical stats archive for Epoch 4 of the PoWBoT rewards program.">
+    <meta property="og:title" content="PoWBoT Stats - Historical Archive">
+    <meta property="og:description" content="Complete historical stats archive for all PoWBoT epochs.">
     <meta property="og:image" content="https://bitcoinubuntu.github.io/powbot-stats/images/PoWBoT_preview.jpg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://bitcoinubuntu.github.io/powbot-stats/archive.html">
-    <meta name="twitter:title" content="PoWBoT Stats - Epoch 4 Archive">
-    <meta name="twitter:description" content="Historical stats archive for Epoch 4 of the PoWBoT rewards program.">
+    <meta name="twitter:title" content="PoWBoT Stats - Historical Archive">
+    <meta name="twitter:description" content="Complete historical stats archive for all PoWBoT epochs.">
     <meta name="twitter:image" content="https://bitcoinubuntu.github.io/powbot-stats/images/PoWBoT_preview.jpg">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
             --bg-primary: #0d1117;
@@ -33,6 +32,7 @@
             --accent-green: #3fb950;
             --accent-blue: #58a6ff;
             --accent-purple: #a371f7;
+            --accent-amber: #f59e0b;
             --border: #30363d;
         }
 
@@ -76,8 +76,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 16px;               /* space between mascot and title */
-            flex-wrap: wrap;         /* safe for very small screens */
+            gap: 16px;
+            flex-wrap: wrap;
         }
 
         .header-text {
@@ -85,20 +85,20 @@
         }
 
         .mascot-icon {
-            height: 86px;            /* matches title + tagline height */
+            height: 86px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 4px 8px rgba(247, 147, 26, 0.3));  /* subtle orange glow */
+            filter: drop-shadow(0 4px 8px rgba(247, 147, 26, 0.3));
             transition: transform 0.25s ease;
         }
 
         .mascot-icon:hover {
-            transform: scale(1.08);  /* gentle friendly pop on hover */
+            transform: scale(1.08);
         }
 
         @media (max-width: 500px) {
             .mascot-icon {
-                height: 67px;        /* scales down nicely on phones */
+                height: 67px;
             }
             .header-content {
                 gap: 12px;
@@ -146,214 +146,47 @@
             background: #b491f9;
         }
 
-        .today-banner {
+        /* Epoch Section Banners */
+        .epoch-section {
+            margin-bottom: 40px;
+        }
+
+        .epoch-banner {
+            border-radius: 12px;
+            padding: 16px 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .epoch-banner.epoch4-live {
             background: linear-gradient(135deg, rgba(247, 147, 26, 0.15), rgba(247, 147, 26, 0.05));
             border: 1px solid var(--accent-orange);
-            border-radius: 12px;
-            padding: 16px 24px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
         }
 
-        .today-banner .today-label {
-            font-size: 0.85rem;
+        .epoch-banner.epoch4-testing {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(245, 158, 11, 0.05));
+            border: 1px solid var(--accent-amber);
+        }
+
+        .epoch-banner.epochs-early {
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.15), rgba(88, 166, 255, 0.05));
+            border: 1px solid var(--accent-blue);
+        }
+
+        .epoch-banner h2 {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
             text-transform: uppercase;
-            color: var(--accent-orange);
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
-        .today-banner .today-time {
-            text-transform: none;
-            font-weight: 400;
+        .epoch-banner.epoch4-live h2 { color: var(--accent-orange); }
+        .epoch-banner.epoch4-testing h2 { color: var(--accent-amber); }
+        .epoch-banner.epochs-early h2 { color: var(--accent-blue); }
+
+        .epoch-banner p {
             color: var(--text-secondary);
-        }
-
-        .today-banner .today-stats {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .today-banner .today-stat {
-            display: flex;
-            align-items: baseline;
-            gap: 6px;
-        }
-
-        .today-banner .today-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .today-banner .today-unit {
             font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .today-banner .today-value.merchant { color: var(--accent-green); }
-        .today-banner .today-value.project { color: var(--accent-blue); }
-
-        .week-banner {
-            background: linear-gradient(135deg, rgba(163, 113, 247, 0.15), rgba(163, 113, 247, 0.05));
-            border: 1px solid var(--accent-purple);
-            border-radius: 12px;
-            padding: 16px 24px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .week-banner .week-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            color: var(--accent-purple);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .week-banner .week-stats {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .week-banner .week-stat {
-            display: flex;
-            align-items: baseline;
-            gap: 6px;
-        }
-
-        .week-banner .week-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .week-banner .week-unit {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        @media (max-width: 600px) {
-            .week-banner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .week-banner .week-stats {
-                gap: 16px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .today-banner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .today-banner .today-stats {
-                gap: 16px;
-            }
-        }
-
-        .card.top-performers {
-            background: linear-gradient(135deg, rgba(163, 113, 247, 0.15), rgba(163, 113, 247, 0.05));
-            border-color: var(--accent-purple);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card.top-performers h2 {
-            color: var(--accent-purple);
-        }
-
-        .top-performers-list {
-            display: flex;
-            flex-direction: column;
-            margin-top: auto;
-        }
-
-        .top-performer-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .top-performer-item:last-child {
-            border-bottom: none;
-        }
-
-        .top-performer-rank {
-            font-size: 1rem;
-            width: 24px;
-            flex-shrink: 0;
-        }
-
-        .top-performer-name {
-            flex: 1;
-            color: var(--text-secondary);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .top-performer-count {
-            font-weight: 600;
-            color: var(--accent-purple);
-        }
-
-        .top-performer-label {
-            color: var(--text-secondary);
-            margin-left: 4px;
-        }
-
-        .no-performers {
-            color: var(--text-secondary);
-            font-style: italic;
-            margin-top: auto;
-            padding: 8px 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .stats-grid .card:nth-child(3) {
-            grid-column: span 2;
-        }
-
-        @media (min-width: 1000px) {
-            .stats-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .stats-grid .card:nth-child(3) {
-                grid-column: span 1;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid .card:nth-child(3) {
-                grid-column: span 1;
-            }
         }
 
         .card {
@@ -371,60 +204,6 @@
             color: var(--text-secondary);
             margin-bottom: 15px;
             letter-spacing: 0.5px;
-        }
-
-        .big-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent-orange);
-        }
-
-        .big-number .unit {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
-
-        .stat-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .stat-row:last-child {
-            border-bottom: none;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-        }
-
-        .stat-value {
-            font-weight: 600;
-        }
-
-        .stat-value.merchant { color: var(--accent-green); }
-        .stat-value.project { color: var(--accent-blue); }
-
-        .chart-container {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .chart-container h2 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 15px;
-        }
-
-        .chart-wrapper {
-            position: relative;
-            height: 300px;
         }
 
         .leaderboard-grid {
@@ -586,58 +365,16 @@
             }
         }
 
-        .today-video-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px;
-            margin-bottom: 8px;
-            background: var(--bg-secondary);
-            border-radius: 8px;
-            text-decoration: none;
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
-        }
-
-        @media (hover: hover) {
-            .today-video-item:hover {
-                background: var(--bg-card);
-            }
-        }
-
-        .today-video-icon {
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .today-video-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            min-width: 0;
-        }
-
-        .today-video-project {
-            color: var(--text-primary);
-            font-weight: 600;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .today-video-merchant {
+        .loading {
+            text-align: center;
+            padding: 40px;
             color: var(--text-secondary);
-            font-size: 0.85rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
-        .today-video-time {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            margin-left: auto;
-            flex-shrink: 0;
+        .error {
+            text-align: center;
+            padding: 40px;
+            color: #f85149;
         }
 
         footer {
@@ -652,229 +389,9 @@
             text-decoration: none;
         }
 
-        .insights-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 900px) {
-            .insights-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .pie-chart-wrapper {
-            position: relative;
-            width: 216px;
-            height: 216px;
-            margin: 0 auto;
-        }
-
-        .countries-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-        }
-
-        .country-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            background: var(--bg-secondary);
-            padding: 6px 10px;
-            border-radius: 16px;
-            font-size: 0.85rem;
-        }
-
-        .country-flag {
-            font-size: 1.1rem;
-        }
-
-        .country-name {
-            color: var(--text-primary);
-        }
-
-        .country-count {
-            color: var(--text-secondary);
-            font-size: 0.75rem;
-        }
-
-        .insight-card {
-            text-align: center;
-        }
-
-        .insight-card h2 {
-            text-align: center;
-        }
-
-        .insight-total {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-orange);
-            margin-bottom: 15px;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-secondary);
-        }
-
-        .error {
-            text-align: center;
-            padding: 40px;
-            color: #f85149;
-        }
-
-        /* Countdown & Highlights Section */
-        .live-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .live-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .card.countdown {
-            background: linear-gradient(135deg, rgba(63, 185, 80, 0.15), rgba(63, 185, 80, 0.05));
-            border-color: var(--accent-green);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card.countdown h2 {
-            color: var(--accent-green);
-        }
-
-        #countdown-content {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .countdown-content {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .countdown-blocks {
-            margin-bottom: 15px;
-        }
-
-        .countdown-blocks .big-number {
-            color: var(--accent-green);
-            animation: subtlePulse 3s ease-in-out infinite;
-        }
-
-        .countdown-progress {
-            width: 100%;
-            height: 8px;
-            background: var(--bg-primary);
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 15px;
-        }
-
-        .countdown-progress-bar {
-            height: 100%;
-            background: var(--accent-green);
-            border-radius: 4px;
-            transition: width 0.5s ease;
-            animation: subtlePulse 3s ease-in-out infinite;
-        }
-
-        /* Subtle ambient pulse */
-        @keyframes subtlePulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        /* New block event flash */
-        .countdown-blocks.new-block .big-number {
-            animation: blockFlash 0.6s ease-out;
-        }
-
-        .countdown-progress-bar.new-block {
-            animation: barFlash 0.6s ease-out;
-        }
-
-        @keyframes blockFlash {
-            0% {
-                text-shadow: 0 0 20px var(--accent-green), 0 0 40px var(--accent-green);
-                transform: scale(1.05);
-            }
-            100% {
-                text-shadow: none;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes barFlash {
-            0% {
-                box-shadow: 0 0 15px var(--accent-green), 0 0 30px var(--accent-green);
-            }
-            100% {
-                box-shadow: none;
-            }
-        }
-
-        .countdown-stats {
-            margin-top: auto;
-        }
-
-        .countdown-complete {
-            text-align: center;
-            padding: 20px 0;
-            margin-top: auto;
-        }
-
-        .countdown-complete .checkmark {
-            font-size: 2.5rem;
-            margin-bottom: 8px;
-        }
-
-        .countdown-complete .message {
-            color: var(--accent-green);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        .card.highlights {
-            background: linear-gradient(135deg, rgba(88, 166, 255, 0.15), rgba(88, 166, 255, 0.05));
-            border-color: var(--accent-blue);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card.highlights h2 {
-            color: var(--accent-blue);
-        }
-
-        #highlights-list {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
-
         @media (max-width: 600px) {
             header h1 {
                 font-size: 1.8rem;
-            }
-            .big-number {
-                font-size: 2rem;
-            }
-            .leaderboard-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -891,25 +408,25 @@
                     >
                 </a>
                 <div class="header-text">
-                    <h1>PoWBoT Stats Archive</h1>
-                    <p class="tagline">Epoch 4 Historical Data</p>
+                    <h1>PoWBoT Historical Archive</h1>
+                    <p class="tagline">Complete Epoch History</p>
                 </div>
             </div>
         </header>
 
         <!-- Archive Notice Banner -->
         <div class="archive-banner">
-            <h2>📚 Historical Archive – Epoch 4</h2>
-            <p>This page contains archived data from Epoch 4. For current stats, visit the main dashboard.</p>
+            <h2>📚 Historical Archive</h2>
+            <p>This page contains archived data from all completed PoWBoT epochs. For current stats, visit the main dashboard.</p>
             <a href="index.html">View Current Stats →</a>
         </div>
 
         <div id="content">
-            <div class="loading">Loading stats...</div>
+            <div class="loading">Loading historical data...</div>
         </div>
 
         <footer>
-            <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | Data updated: <span id="updated">--</span> CAT | <a href="about.html">About</a> | <a href="index.html">Current Stats</a></p>
+            <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | <a href="about.html">About</a> | <a href="index.html">Current Stats</a></p>
         </footer>
     </div>
 
@@ -921,140 +438,12 @@
 
         // Format date for display
         function formatDate(dateStr) {
+            if (!dateStr) return '';
             const date = new Date(dateStr);
             return date.toLocaleDateString('en-US', {
                 month: 'short',
                 day: 'numeric'
             });
-        }
-
-
-        // Render the dashboard
-        function renderDashboard(stats) {
-            const content = document.getElementById('content');
-            document.getElementById('updated').textContent = new Date(stats.generated_at).toLocaleString();
-
-            content.innerHTML = `
-                <!-- Leaderboards -->
-                <div class="leaderboard-grid">
-                    <div class="card">
-                        <h2>Project Leaderboard</h2>
-                        <div id="top-projects"></div>
-                    </div>
-
-                    <div class="card">
-                        <h2>Merchant Leaderboard</h2>
-                        <div id="top-merchants"></div>
-                    </div>
-                </div>
-
-                <!-- Summary Cards -->
-                <div class="stats-grid">
-                    <div class="card">
-                        <h2>Total Payments</h2>
-                        <div class="big-number">${formatNumber(stats.totals.all_payments)}</div>
-                        <div style="margin-top: 15px;">
-                            <div class="stat-row">
-                                <span class="stat-label">Merchants</span>
-                                <span class="stat-value merchant">${formatNumber(stats.totals.by_type.merchant?.count || 0)}</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="stat-label">Projects</span>
-                                <span class="stat-value project">${formatNumber(stats.totals.by_type.project?.count || 0)}</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="stat-label">Reviewer</span>
-                                <span class="stat-value" style="color: var(--accent-purple);">${formatNumber(stats.totals.by_type.reviewer?.count || 0)}</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <h2>Approval Rate</h2>
-                        <div class="big-number">${stats.reviewer?.total_reviewed > 0 ? Math.round((stats.reviewer.approved / stats.reviewer.total_reviewed) * 100) : 0}<span class="unit">%</span></div>
-                        <div style="margin-top: 15px;">
-                            <div class="stat-row">
-                                <span class="stat-label">Approved</span>
-                                <span class="stat-value" style="color: var(--accent-green);">${formatNumber(stats.reviewer?.approved || 0)}</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="stat-label">Rejected</span>
-                                <span class="stat-value" style="color: #f85149;">${formatNumber(stats.reviewer?.rejected || 0)}</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="stat-label">Total reviewed</span>
-                                <span class="stat-value">${formatNumber(stats.reviewer?.total_reviewed || 0)}</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <h2>Epoch 4 Duration</h2>
-                        <div class="big-number">${stats.launch.days_active} <span class="unit">days</span></div>
-                        <div style="margin-top: 15px;">
-                            <div class="stat-row">
-                                <span class="stat-label" style="font-weight: 600;">Daily Averages</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="stat-label">Posts approved</span>
-                                <span class="stat-value" style="color: var(--accent-orange);">${Math.round((stats.totals.by_type.project?.count || 0) / stats.launch.days_active)}</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="stat-label">Total payments</span>
-                                <span class="stat-value" style="color: var(--accent-orange);">${formatNumber(stats.launch.daily_average_payments || 0)}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Daily Chart -->
-                <div class="chart-container">
-                    <h2>Daily Activity</h2>
-                    <div class="chart-wrapper">
-                        <canvas id="dailyChart"></canvas>
-                    </div>
-                </div>
-
-                <!-- Insights Section -->
-                <div class="insights-grid">
-                    <div class="card insight-card">
-                        <h2>Lightning Providers</h2>
-                        <div class="pie-chart-wrapper">
-                            <canvas id="lightningChart"></canvas>
-                        </div>
-                    </div>
-
-                    <div class="card insight-card">
-                        <h2>Countries</h2>
-                        <div class="insight-total">${stats.countries?.length || 0} active</div>
-                        <div class="countries-list" id="countries-list">
-                            ${(stats.countries || []).map(c => `
-                                <span class="country-tag">
-                                    <span class="country-flag">${c.flag}</span>
-                                    <span class="country-name">${c.country}</span>
-                                    ${c.count > 1 ? `<span class="country-count">(${c.count})</span>` : ''}
-                                </span>
-                            `).join('')}
-                        </div>
-                    </div>
-
-                    <div class="card insight-card">
-                        <h2>Platforms</h2>
-                        <div class="pie-chart-wrapper">
-                            <canvas id="platformChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            `;
-
-            // Render leaderboards
-            renderLeaderboard('top-projects', stats.top_projects, 'project');
-            renderLeaderboard('top-merchants', stats.top_merchants, 'merchant');
-
-            // Render charts
-            renderChart(stats.daily);
-            renderLightningChart(stats.lightning_providers || []);
-            renderPlatformChart(stats.platforms || []);
         }
 
         function getPlatform(url) {
@@ -1064,9 +453,10 @@
             return { name: 'Nostr', icon: '🟣' };
         }
 
-        function renderLeaderboard(elementId, items, type) {
+        function renderLeaderboard(elementId, items, type, showMerchant = true, initialCount = 10) {
             const container = document.getElementById(elementId);
-            const initialCount = 10;
+            if (!container) return;
+
             const hasMore = items.length > initialCount;
 
             container.innerHTML = items.map((item, index) => {
@@ -1087,14 +477,19 @@
                     <div class="leaderboard-posts">
                         ${posts.map(post => {
                             const platform = getPlatform(post.url);
-                            const postLabel = type === 'project' ? (post.merchant || item.name) : (post.project || item.name);
+                            let postLabel = '';
+                            if (type === 'project' && showMerchant && post.merchant) {
+                                postLabel = post.merchant;
+                            } else if (type === 'merchant' && post.project) {
+                                postLabel = post.project;
+                            }
                             return `
                             <a href="${post.url}" target="_blank" rel="noopener" class="post-link">
                                 <span class="post-info">
                                     <span class="post-platform">${platform.name}</span>
-                                    <span class="post-name">${postLabel}</span>
+                                    ${postLabel ? `<span class="post-name">${postLabel}</span>` : ''}
                                 </span>
-                                <span class="post-date">${formatDate(post.date)}</span>
+                                ${post.date ? `<span class="post-date">${formatDate(post.date)}</span>` : ''}
                             </a>
                         `}).join('')}
                     </div>
@@ -1104,7 +499,7 @@
 
             if (hasMore) {
                 container.innerHTML += `
-                    <button class="leaderboard-more" data-count="${items.length - initialCount}" onclick="toggleShowMore(this, '${elementId}')">
+                    <button class="leaderboard-more" data-count="${items.length - initialCount}" data-initial="${initialCount}" onclick="toggleShowMore(this, '${elementId}')">
                         Show ${items.length - initialCount} more
                     </button>
                 `;
@@ -1115,10 +510,11 @@
             const container = document.getElementById(elementId);
             const isExpanded = button.classList.contains('expanded');
             const count = button.dataset.count;
+            const initialCount = parseInt(button.dataset.initial || '10');
 
             if (isExpanded) {
                 container.querySelectorAll('.leaderboard-item').forEach((el, index) => {
-                    if (index >= 10) el.classList.add('leaderboard-hidden');
+                    if (index >= initialCount) el.classList.add('leaderboard-hidden');
                 });
                 button.textContent = `Show ${count} more`;
                 button.classList.remove('expanded');
@@ -1139,713 +535,100 @@
             }
         }
 
-        function renderTodayVideos(elementId, videos, icon) {
-            const container = document.getElementById(elementId);
-            if (!container) return;
+        // Load and render all data
+        async function loadArchive() {
+            try {
+                // Load both data sources
+                const [epoch4Live, historical] = await Promise.all([
+                    fetch('stats-epoch4.json?t=' + Date.now()).then(r => r.json()),
+                    fetch('stats-historical.json?t=' + Date.now()).then(r => r.json())
+                ]);
 
-            if (videos.length === 0) {
-                container.innerHTML = '<div style="color: var(--text-secondary); padding: 12px;">No posts yet</div>';
-                return;
-            }
+                const content = document.getElementById('content');
+                content.innerHTML = `
+                    <!-- Epoch 4 Live -->
+                    <div class="epoch-section">
+                        <div class="epoch-banner epoch4-live">
+                            <h2>Epoch 4 Live</h2>
+                            <p>January 13 – March 4, 2026 • ${formatNumber(epoch4Live.totals.by_type.project?.count || 0)} approved posts</p>
+                        </div>
+                        <div class="leaderboard-grid">
+                            <div class="card">
+                                <h2>Project Leaderboard</h2>
+                                <div id="epoch4-live-projects"></div>
+                            </div>
+                            <div class="card">
+                                <h2>Merchant Leaderboard</h2>
+                                <div id="epoch4-live-merchants"></div>
+                            </div>
+                        </div>
+                    </div>
 
-            const initialCount = 5;
-            const hasMore = videos.length > initialCount;
+                    <!-- Epoch 4 Testing -->
+                    <div class="epoch-section">
+                        <div class="epoch-banner epoch4-testing">
+                            <h2>Epoch 4 Testing Period</h2>
+                            <p>December 2025 • ${formatNumber(historical.epochs.epoch4_testing.total_posts)} approved posts</p>
+                        </div>
+                        <div class="leaderboard-grid">
+                            <div class="card">
+                                <h2>Project Leaderboard</h2>
+                                <div id="epoch4-testing-projects"></div>
+                            </div>
+                            <div class="card">
+                                <h2>Merchant Leaderboard</h2>
+                                <div id="epoch4-testing-merchants"></div>
+                            </div>
+                        </div>
+                    </div>
 
-            container.innerHTML = videos.map((video, index) => {
-                const isHidden = index >= initialCount;
-                return `
-                <a href="${video.url}" target="_blank" rel="noopener" class="today-video-item ${isHidden ? 'leaderboard-hidden' : ''}" data-index="${index}">
-                    <span class="today-video-icon">${icon}</span>
-                    <span class="today-video-info">
-                        <span class="today-video-project">${video.project}</span>
-                        <span class="today-video-merchant">${video.merchant}</span>
-                    </span>
-                    <span class="today-video-time">${video.time || ''}</span>
-                </a>
-            `}).join('');
+                    <!-- Early Epochs 1-3 -->
+                    <div class="epoch-section">
+                        <div class="epoch-banner epochs-early">
+                            <h2>Early Epochs (May – November 2025)</h2>
+                            <p>Epochs 1-3 • ${formatNumber(historical.epochs.epoch1.total_posts + historical.epochs.epoch2.total_posts + historical.epochs.epoch3.total_posts)} total posts</p>
+                        </div>
 
-            if (hasMore) {
-                container.innerHTML += `
-                    <button class="leaderboard-more" data-count="${videos.length - initialCount}" onclick="toggleTodayVideos(this, '${elementId}')">
-                        Show ${videos.length - initialCount} more
-                    </button>
-                `;
-            }
-        }
+                        <!-- Epoch 3 -->
+                        <div class="leaderboard-grid">
+                            <div class="card">
+                                <h2>Epoch 3 – November 2025 (${formatNumber(historical.epochs.epoch3.total_posts)} posts)</h2>
+                                <div id="epoch3-projects"></div>
+                            </div>
+                        </div>
 
-        function toggleTodayVideos(button, elementId) {
-            const container = document.getElementById(elementId);
-            const isExpanded = button.classList.contains('expanded');
-            const count = button.dataset.count;
+                        <!-- Epoch 2 -->
+                        <div class="leaderboard-grid">
+                            <div class="card">
+                                <h2>Epoch 2 – August 2025 (${formatNumber(historical.epochs.epoch2.total_posts)} posts)</h2>
+                                <div id="epoch2-projects"></div>
+                            </div>
+                        </div>
 
-            if (isExpanded) {
-                container.querySelectorAll('.today-video-item').forEach((el, index) => {
-                    if (index >= 5) el.classList.add('leaderboard-hidden');
-                });
-                button.textContent = `Show ${count} more`;
-                button.classList.remove('expanded');
-            } else {
-                container.querySelectorAll('.leaderboard-hidden').forEach(el => {
-                    el.classList.remove('leaderboard-hidden');
-                });
-                button.textContent = 'Show less';
-                button.classList.add('expanded');
-            }
-        }
-
-        function renderTopPerformers(videos) {
-            const container = document.getElementById('top-performers-list');
-            if (!container) return;
-
-            if (videos.length === 0) {
-                container.innerHTML = '<div class="no-performers">No posts approved in the last 24 hours</div>';
-                return;
-            }
-
-            // Strip flag emojis from name
-            const stripFlags = (name) => name.replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
-
-            // Count approvals per project
-            const projectCounts = {};
-            videos.forEach(video => {
-                const project = video.project || 'Unknown';
-                projectCounts[project] = (projectCounts[project] || 0) + 1;
-            });
-
-            // Sort by count and get top 3
-            const sorted = Object.entries(projectCounts)
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 3);
-
-            const rankEmojis = ['🥇', '🥈', '🥉'];
-
-            container.innerHTML = sorted.map(([project, count], index) => `
-                <div class="top-performer-item">
-                    <span class="top-performer-rank">${rankEmojis[index]}</span>
-                    <span class="top-performer-name">${stripFlags(project)}</span>
-                    <span class="top-performer-count">${count}</span>
-                    <span class="top-performer-label">${count === 1 ? 'post' : 'posts'}</span>
-                </div>
-            `).join('');
-        }
-
-        function renderChart(daily) {
-            const ctx = document.getElementById('dailyChart').getContext('2d');
-
-            // Filter to only show days with activity for cleaner chart
-            const activeData = daily.filter(d => d.project_count > 0 || d.merchant_count > 0 || d.reviewer_count > 0);
-            const displayData = activeData.length > 0 ? activeData : daily.slice(-7);
-
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: displayData.map(d => formatDate(d.date)),
-                    datasets: [{
-                        label: 'Reviewers',
-                        data: displayData.map(d => d.reviewer_count),
-                        backgroundColor: 'rgba(163, 113, 247, 0.75)',
-                        borderColor: '#a371f7',
-                        borderWidth: 1,
-                        hoverBackgroundColor: 'rgba(163, 113, 247, 0.9)',
-                        barPercentage: 0.6
-                    }, {
-                        label: 'Merchants',
-                        data: displayData.map(d => d.merchant_count),
-                        backgroundColor: 'rgba(38, 198, 218, 0.75)',
-                        borderColor: '#26c6da',
-                        borderWidth: 1,
-                        hoverBackgroundColor: 'rgba(38, 198, 218, 0.9)',
-                        barPercentage: 0.6
-                    }, {
-                        label: 'Projects',
-                        data: displayData.map(d => d.project_count),
-                        backgroundColor: 'rgba(66, 165, 245, 0.75)',
-                        borderColor: '#42a5f5',
-                        borderWidth: 1,
-                        hoverBackgroundColor: 'rgba(66, 165, 245, 0.9)',
-                        barPercentage: 0.6
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        x: {
-                            stacked: true,
-                            grid: {
-                                color: 'rgba(48, 54, 61, 0.5)'
-                            },
-                            ticks: {
-                                color: '#8b949e'
-                            }
-                        },
-                        y: {
-                            stacked: true,
-                            grid: {
-                                color: 'rgba(48, 54, 61, 0.5)'
-                            },
-                            ticks: {
-                                color: '#f0f6fc',
-                                stepSize: 1
-                            },
-                            title: {
-                                display: true,
-                                text: 'Payments',
-                                color: '#f0f6fc'
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: true,
-                            labels: {
-                                color: '#f0f6fc',
-                                font: { size: 11 },
-                                boxWidth: 10
-                            }
-                        },
-                        tooltip: {
-                            backgroundColor: '#21262d',
-                            titleColor: '#f0f6fc',
-                            bodyColor: '#f0f6fc',
-                            borderColor: '#30363d',
-                            borderWidth: 1,
-                            callbacks: {
-                                label: function(context) {
-                                    return context.dataset.label + ': ' + context.parsed.y + ' payments';
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-        function renderLightningChart(providers) {
-            if (!providers.length) return;
-
-            const ctx = document.getElementById('lightningChart').getContext('2d');
-            const colorMap = {
-                'blink.sv': '#000000',
-                '8333.mobi': '#fdd023'
-            };
-            const defaultColors = ['#3fb950', '#58a6ff', '#a371f7', '#f85149', '#8b949e'];
-
-            new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: providers.map(p => p.domain),
-                    datasets: [{
-                        data: providers.map(p => p.count),
-                        backgroundColor: providers.map((p, i) => colorMap[p.domain] || defaultColors[i % defaultColors.length]),
-                        borderColor: '#21262d',
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    cutout: '60%',
-                    plugins: {
-                        legend: {
-                            display: true,
-                            position: 'bottom',
-                            labels: {
-                                color: '#f0f6fc',
-                                padding: 6,
-                                font: { size: 11 },
-                                boxWidth: 10
-                            }
-                        },
-                        tooltip: {
-                            backgroundColor: '#21262d',
-                            titleColor: '#f0f6fc',
-                            bodyColor: '#f0f6fc',
-                            borderColor: '#30363d',
-                            borderWidth: 1,
-                            callbacks: {
-                                label: function(context) {
-                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                                    const pct = Math.round((context.raw / total) * 100);
-                                    return `${context.label}: ${context.raw} (${pct}%)`;
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-        function renderPlatformChart(platforms) {
-            if (!platforms.length) return;
-
-            const ctx = document.getElementById('platformChart').getContext('2d');
-            const colorMap = {
-                'X': '#000000',
-                'Nostr': '#8b5cf6'
-            };
-
-            new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: platforms.map(p => p.platform),
-                    datasets: [{
-                        data: platforms.map(p => p.count),
-                        backgroundColor: platforms.map(p => colorMap[p.platform] || '#8b949e'),
-                        borderColor: '#21262d',
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    cutout: '60%',
-                    plugins: {
-                        legend: {
-                            display: true,
-                            position: 'bottom',
-                            labels: {
-                                color: '#f0f6fc',
-                                padding: 6,
-                                font: { size: 11 },
-                                boxWidth: 10
-                            }
-                        },
-                        tooltip: {
-                            backgroundColor: '#21262d',
-                            titleColor: '#f0f6fc',
-                            bodyColor: '#f0f6fc',
-                            borderColor: '#30363d',
-                            borderWidth: 1,
-                            callbacks: {
-                                label: function(context) {
-                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
-                                    const pct = Math.round((context.raw / total) * 100);
-                                    return `${context.label}: ${context.raw} (${pct}%)`;
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-        function renderEpochsChart(epoch4Live) {
-            const ctx = document.getElementById('epochsChart').getContext('2d');
-
-            // Historical epoch data (hardcoded)
-            const epoch1 = 67;
-            const epoch2 = 284;
-            const epoch3 = 568;
-            const epoch4Testing = 210;
-
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Proof of Work'],
-                    datasets: [
-                        {
-                            label: 'Epoch 1 (May 25)',
-                            data: [epoch1],
-                            backgroundColor: '#a371f7',
-                            borderColor: '#a371f7',
-                            borderWidth: 0
-                        },
-                        {
-                            label: 'Epoch 2 (Aug 25)',
-                            data: [epoch2],
-                            backgroundColor: '#26c6da',
-                            borderColor: '#26c6da',
-                            borderWidth: 0
-                        },
-                        {
-                            label: 'Epoch 3 (Nov 25)',
-                            data: [epoch3],
-                            backgroundColor: '#42a5f5',
-                            borderColor: '#42a5f5',
-                            borderWidth: 0
-                        },
-                        {
-                            label: 'Epoch 4 Testing',
-                            data: [epoch4Testing],
-                            backgroundColor: '#c9820a',
-                            borderColor: '#c9820a',
-                            borderWidth: 0
-                        },
-                        {
-                            label: 'Epoch 4 Live',
-                            data: [epoch4Live],
-                            backgroundColor: '#f7931a',
-                            borderColor: '#f7931a',
-                            borderWidth: 0
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    barPercentage: 1,
-                    categoryPercentage: 1,
-                    scales: {
-                        x: {
-                            stacked: true,
-                            display: false
-                        },
-                        y: {
-                            stacked: true,
-                            grid: {
-                                color: 'rgba(48, 54, 61, 0.5)'
-                            },
-                            ticks: {
-                                color: '#8b949e'
-                            },
-                            title: {
-                                display: true,
-                                text: 'Posts',
-                                color: '#f0f6fc'
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: true,
-                            position: 'bottom',
-                            labels: {
-                                color: '#f0f6fc',
-                                padding: 10,
-                                font: { size: 11 },
-                                boxWidth: 10
-                            }
-                        },
-                        tooltip: {
-                            backgroundColor: '#21262d',
-                            titleColor: '#f0f6fc',
-                            bodyColor: '#f0f6fc',
-                            borderColor: '#30363d',
-                            borderWidth: 1,
-                            callbacks: {
-                                label: function(context) {
-                                    const total = context.chart.data.datasets.reduce((sum, ds) => sum + ds.data[0], 0);
-                                    const pct = Math.round((context.raw / total) * 100);
-                                    return `${context.dataset.label}: ${context.raw} posts (${pct}%)`;
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        }
-
-        // Block countdown configuration
-        const DIFFICULTY_ADJUSTMENT_BLOCK = 938679; // Sixth difficulty adjustment (1008 blocks per epoch)
-
-        // Block countdown state
-        let currentBlockHeight = null;
-        let blockTimeAvg = 600000; // Default 10 minutes in ms
-        let countdownWebSocket = null;
-
-        function renderCountdown() {
-            const container = document.getElementById('countdown-content');
-            if (!container || currentBlockHeight === null) return;
-
-            const blocksRemaining = DIFFICULTY_ADJUSTMENT_BLOCK - currentBlockHeight;
-
-            if (blocksRemaining <= 0) {
-                // Adjustment has occurred
-                container.innerHTML = `
-                    <div class="countdown-content">
-                        <div class="countdown-complete">
-                            <div class="checkmark">✓</div>
-                            <div class="message">Epoch 4 Complete!</div>
+                        <!-- Epoch 1 -->
+                        <div class="leaderboard-grid">
+                            <div class="card">
+                                <h2>Epoch 1 – May 2025 (${formatNumber(historical.epochs.epoch1.total_posts)} posts)</h2>
+                                <div id="epoch1-projects"></div>
+                            </div>
                         </div>
                     </div>
                 `;
-                return;
-            }
 
-            // Calculate progress and time
-            const startBlock = 937671; // Fifth difficulty adjustment (start of epoch 6)
-            const totalBlocks = DIFFICULTY_ADJUSTMENT_BLOCK - startBlock;
-            const blocksPassed = currentBlockHeight - startBlock;
-            const progressPercent = Math.min(100, Math.max(0, (blocksPassed / totalBlocks) * 100));
+                // Render all leaderboards
+                renderLeaderboard('epoch4-live-projects', epoch4Live.top_projects, 'project', true, 10);
+                renderLeaderboard('epoch4-live-merchants', epoch4Live.top_merchants, 'merchant', true, 10);
+                renderLeaderboard('epoch4-testing-projects', historical.epochs.epoch4_testing.top_projects, 'project', true, 10);
+                renderLeaderboard('epoch4-testing-merchants', historical.epochs.epoch4_testing.top_merchants, 'merchant', true, 10);
+                renderLeaderboard('epoch3-projects', historical.epochs.epoch3.top_projects, 'project', false, 5);
+                renderLeaderboard('epoch2-projects', historical.epochs.epoch2.top_projects, 'project', false, 5);
+                renderLeaderboard('epoch1-projects', historical.epochs.epoch1.top_projects, 'project', false, 5);
 
-            const msRemaining = blocksRemaining * blockTimeAvg;
-            const hoursRemaining = Math.floor(msRemaining / (1000 * 60 * 60));
-            const minutesRemaining = Math.floor((msRemaining % (1000 * 60 * 60)) / (1000 * 60));
-
-            container.innerHTML = `
-                <div class="countdown-content">
-                    <div class="countdown-blocks">
-                        <div class="big-number">${formatNumber(blocksRemaining)} <span class="unit">blocks</span></div>
-                    </div>
-                    <div class="countdown-progress">
-                        <div class="countdown-progress-bar" style="width: ${progressPercent}%"></div>
-                    </div>
-                    <div class="countdown-stats">
-                        <div class="stat-row">
-                            <span class="stat-label">Current block</span>
-                            <span class="stat-value" style="color: var(--accent-green);">${formatNumber(currentBlockHeight)}</span>
-                        </div>
-                        <div class="stat-row">
-                            <span class="stat-label">Target block</span>
-                            <span class="stat-value" style="color: var(--accent-green);">${formatNumber(DIFFICULTY_ADJUSTMENT_BLOCK)}</span>
-                        </div>
-                        <div class="stat-row">
-                            <span class="stat-label">Est. time</span>
-                            <span class="stat-value" style="color: var(--accent-green);">~${hoursRemaining}h ${minutesRemaining}m</span>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        async function initBlockCountdown() {
-            try {
-                // Fetch initial block height
-                const heightResponse = await fetch('https://mempool.space/api/blocks/tip/height');
-                currentBlockHeight = await heightResponse.json();
-
-                // Fetch difficulty data for average block time
-                const diffResponse = await fetch('https://mempool.space/api/v1/difficulty-adjustment');
-                const diffData = await diffResponse.json();
-                if (diffData.timeAvg) {
-                    blockTimeAvg = diffData.timeAvg;
-                }
-
-                renderCountdown();
-
-                // Connect to WebSocket for live updates
-                connectBlockWebSocket();
             } catch (error) {
-                console.error('Failed to init block countdown:', error);
-                const container = document.getElementById('countdown-content');
-                if (container) {
-                    container.innerHTML = `<div class="error">Failed to load block data</div>`;
-                }
-            }
-        }
-
-        function triggerNewBlockFlash() {
-            const blocksEl = document.querySelector('.countdown-blocks');
-            const barEl = document.querySelector('.countdown-progress-bar');
-
-            if (blocksEl) {
-                blocksEl.classList.add('new-block');
-                setTimeout(() => blocksEl.classList.remove('new-block'), 600);
-            }
-            if (barEl) {
-                barEl.classList.add('new-block');
-                setTimeout(() => barEl.classList.remove('new-block'), 600);
-            }
-        }
-
-        function connectBlockWebSocket() {
-            if (countdownWebSocket) {
-                countdownWebSocket.close();
-            }
-
-            countdownWebSocket = new WebSocket('wss://mempool.space/api/v1/ws');
-
-            countdownWebSocket.onopen = () => {
-                // Subscribe to new blocks
-                countdownWebSocket.send(JSON.stringify({ action: 'want', data: ['blocks'] }));
-            };
-
-            countdownWebSocket.onmessage = (event) => {
-                const data = JSON.parse(event.data);
-                if (data.block && data.block.height) {
-                    currentBlockHeight = data.block.height;
-                    renderCountdown();
-                    triggerNewBlockFlash();
-                }
-            };
-
-            countdownWebSocket.onerror = (error) => {
-                console.error('WebSocket error:', error);
-            };
-
-            countdownWebSocket.onclose = () => {
-                // Reconnect after 5 seconds
-                setTimeout(connectBlockWebSocket, 5000);
-            };
-        }
-
-        // Highlights state
-        let allHighlights = [];
-        let highlightIndex = 0;
-        let highlightInterval = null;
-
-        function generateHighlights(stats) {
-            const highlights = [];
-            const stripFlags = (name) => name.replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
-
-            // Countries active
-            const countryCount = stats.countries?.length || 0;
-            if (countryCount > 0) {
-                highlights.push({
-                    label: '🌍 Countries active',
-                    value: countryCount
-                });
-            }
-
-            // Country firsts (countries with only 1 project)
-            if (stats.countries) {
-                const newCountries = stats.countries.filter(c => c.count === 1);
-                newCountries.forEach(c => {
-                    highlights.push({
-                        label: `🎉 First from ${c.country}`,
-                        value: c.flag
-                    });
-                });
-            }
-
-            // Approval record
-            if (stats.daily && stats.daily.length > 0) {
-                const recordDay = stats.daily.reduce((max, day) =>
-                    (day.project_count > (max?.project_count || 0)) ? day : max, null);
-                if (recordDay && recordDay.project_count > 0) {
-                    highlights.push({
-                        label: `📈 Approval record (${formatDate(recordDay.date)})`,
-                        value: `${recordDay.project_count} posts`
-                    });
-                }
-            }
-
-            // Top project
-            if (stats.top_projects && stats.top_projects.length > 0) {
-                const top = stats.top_projects[0];
-                highlights.push({
-                    label: '🏆 Top project',
-                    value: stripFlags(top.name)
-                });
-            }
-
-            // Newest project (find project with most recent first post)
-            if (stats.top_projects && stats.top_projects.length > 0) {
-                let newestProject = null;
-                let newestFirstDate = null;
-
-                stats.top_projects.forEach(project => {
-                    if (project.posts && project.posts.length > 0) {
-                        // Find the earliest post date for this project
-                        const dates = project.posts.map(p => p.date).sort();
-                        const firstDate = dates[0];
-
-                        if (!newestFirstDate || firstDate > newestFirstDate) {
-                            newestFirstDate = firstDate;
-                            newestProject = project;
-                        }
-                    }
-                });
-
-                if (newestProject && newestProject !== stats.top_projects[0]) {
-                    highlights.push({
-                        label: '✨ Newest project',
-                        value: stripFlags(newestProject.name)
-                    });
-                }
-            }
-
-            // Projects count
-            const projectCount = stats.top_projects?.length || 0;
-            if (projectCount > 0) {
-                highlights.push({
-                    label: '📊 Active projects',
-                    value: projectCount
-                });
-            }
-
-            // Merchants count
-            const merchantCount = stats.top_merchants?.length || 0;
-            if (merchantCount > 0) {
-                highlights.push({
-                    label: '🏪 Active merchants',
-                    value: merchantCount
-                });
-            }
-
-            // Approval rate highlight if good
-            const approvalRate = stats.reviewer?.total_reviewed > 0
-                ? Math.round((stats.reviewer.approved / stats.reviewer.total_reviewed) * 100)
-                : 0;
-            if (approvalRate >= 90) {
-                highlights.push({
-                    label: '✅ Approval rate',
-                    value: `${approvalRate}%`
-                });
-            }
-
-            // Days since launch
-            if (stats.launch?.days_active > 0) {
-                highlights.push({
-                    label: '📅 Days active',
-                    value: stats.launch.days_active
-                });
-            }
-
-            return highlights;
-        }
-
-        function shuffleArray(array) {
-            const shuffled = [...array];
-            for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-            }
-            return shuffled;
-        }
-
-        function displayHighlights() {
-            const container = document.getElementById('highlights-list');
-            if (!container || allHighlights.length === 0) return;
-
-            const displayCount = 5;
-            const toShow = [];
-
-            for (let i = 0; i < displayCount && i < allHighlights.length; i++) {
-                const idx = (highlightIndex + i) % allHighlights.length;
-                toShow.push(allHighlights[idx]);
-            }
-
-            container.innerHTML = toShow.map(h => `
-                <div class="stat-row">
-                    <span class="stat-label">${h.label}</span>
-                    <span class="stat-value" style="color: var(--accent-blue);">${h.value}</span>
-                </div>
-            `).join('');
-        }
-
-        function rotateHighlights() {
-            highlightIndex = (highlightIndex + 1) % allHighlights.length;
-            displayHighlights();
-        }
-
-        function renderHighlights(stats) {
-            const container = document.getElementById('highlights-list');
-            if (!container) return;
-
-            // Generate and shuffle highlights (randomised once on page load)
-            allHighlights = shuffleArray(generateHighlights(stats));
-            highlightIndex = 0;
-
-            // Display first 5
-            displayHighlights();
-        }
-
-        // Load and render stats
-        async function loadStats() {
-            try {
-                const response = await fetch('stats-epoch4.json?t=' + Date.now());
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}`);
-                }
-                const stats = await response.json();
-                renderDashboard(stats);
-            } catch (error) {
-                console.error('Failed to load stats:', error);
+                console.error('Failed to load archive:', error);
                 document.getElementById('content').innerHTML = `
                     <div class="error">
-                        <p>Failed to load stats</p>
+                        <p>Failed to load historical data</p>
                         <p style="font-size: 0.9rem; margin-top: 10px;">${error.message}</p>
                     </div>
                 `;
@@ -1853,7 +636,7 @@
         }
 
         // Initialize
-        loadStats();
+        loadArchive();
     </script>
 </body>
 </html>
