@@ -55,6 +55,45 @@
             margin: 0 auto;
         }
 
+        nav {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 20px;
+            position: sticky;
+            top: 0;
+            margin: -20px -20px 20px -20px;
+            z-index: 100;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav a.current {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
         header {
             text-align: center;
             margin-bottom: 20px;
@@ -106,6 +145,54 @@
             .header-text {
                 text-align: center;
             }
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .quick-link-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .quick-link-btn:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+            background: var(--bg-secondary);
+        }
+
+        .quick-link-icon {
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .quick-link-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .quick-link-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .quick-link-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
         }
 
         .launch-banner {
@@ -850,6 +937,51 @@
             justify-content: flex-end;
         }
 
+        /* Project Info Banner */
+        .project-info-banner {
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.15), rgba(88, 166, 255, 0.05));
+            padding: 12px 16px;
+            margin-bottom: 12px;
+            margin-left: -52px;
+            margin-right: -12px;
+            display: grid;
+            gap: 8px;
+        }
+
+        .project-info-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .project-info-icon {
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        .project-info-label {
+            color: var(--text-secondary);
+            flex-shrink: 0;
+        }
+
+        .project-info-value {
+            color: var(--text-primary);
+            font-family: monospace;
+            word-break: break-all;
+        }
+
+        .project-info-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .project-info-link:hover {
+            color: #79b8ff;
+            text-decoration: underline;
+        }
+
         @media (max-width: 600px) {
             header h1 {
                 font-size: 1.8rem;
@@ -860,10 +992,30 @@
             .leaderboard-grid {
                 grid-template-columns: 1fr;
             }
+
+            .project-info-banner {
+                padding: 10px 12px;
+            }
+
+            .project-info-row {
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="container">
+            <div class="nav-links">
+                <a href="index.html" class="current">Stats</a>
+                <span style="color: var(--text-secondary);">|</span>
+                <a href="members.html">Directory</a>
+                <span style="color: var(--text-secondary);">|</span>
+                <a href="archive.html">Archive</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <header>
             <div class="header-content">
@@ -881,6 +1033,24 @@
             </div>
         </header>
 
+        <!-- Quick Links Navigation -->
+        <div class="quick-links">
+            <a href="members.html" class="quick-link-btn">
+                <span class="quick-link-icon">👥</span>
+                <div class="quick-link-text">
+                    <div class="quick-link-title">CBAF Members</div>
+                    <div class="quick-link-subtitle">Support projects directly</div>
+                </div>
+            </a>
+            <a href="archive.html" class="quick-link-btn">
+                <span class="quick-link-icon">📚</span>
+                <div class="quick-link-text">
+                    <div class="quick-link-title">Historical Archive</div>
+                    <div class="quick-link-subtitle">Epoch 4 & earlier</div>
+                </div>
+            </a>
+        </div>
+
         <!-- Launch Announcement Banner -->
         <div class="launch-banner">
             <h2>🚀 Epoch 5 Launching Soon</h2>
@@ -892,11 +1062,14 @@
         </div>
 
         <footer>
-            <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | Data updated: <span id="updated">--</span> CAT | <a href="about.html">About</a> | <a href="archive.html">Archive</a></p>
+            <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | Data updated: <span id="updated">--</span> CAT | <a href="about.html">About</a></p>
         </footer>
     </div>
 
     <script>
+        // Global project metadata
+        let projectMetadata = {};
+
         // Format numbers with commas
         function formatNumber(num) {
             return num.toLocaleString();
@@ -1197,6 +1370,52 @@
             return { name: 'Nostr', icon: '🟣' };
         }
 
+        function renderProjectInfoBanner(projectName) {
+            const metadata = projectMetadata[projectName];
+            if (!metadata) return '';
+
+            const parts = [];
+
+            // Location
+            if (metadata.country) {
+                const location = metadata.city ? `${metadata.city}, ${metadata.country}` : metadata.country;
+                parts.push(`
+                    <div class="project-info-row">
+                        <span class="project-info-icon">📍</span>
+                        <span class="project-info-value">${location}</span>
+                    </div>
+                `);
+            }
+
+            // Lightning address
+            if (metadata.lightning) {
+                parts.push(`
+                    <div class="project-info-row">
+                        <span class="project-info-icon">⚡</span>
+                        <span class="project-info-value">${metadata.lightning}</span>
+                    </div>
+                `);
+            }
+
+            // More info link
+            if (metadata.info_url) {
+                parts.push(`
+                    <div class="project-info-row">
+                        <span class="project-info-icon">🔗</span>
+                        <a href="${metadata.info_url}" class="project-info-link">More Info →</a>
+                    </div>
+                `);
+            }
+
+            if (parts.length === 0) return '';
+
+            return `
+                <div class="project-info-banner">
+                    ${parts.join('')}
+                </div>
+            `;
+        }
+
         function renderLeaderboard(elementId, items, type) {
             const container = document.getElementById(elementId);
             const initialCount = 10;
@@ -1206,6 +1425,10 @@
                 const posts = item.posts || [];
                 const hasPosts = posts.length > 0;
                 const isHidden = index >= initialCount;
+
+                // Generate project info banner for projects only
+                const infoBanner = type === 'project' ? renderProjectInfoBanner(item.name) : '';
+
                 return `
                 <div class="leaderboard-item ${isHidden ? 'leaderboard-hidden' : ''}" data-index="${index}">
                     <div class="leaderboard-header" onclick="toggleLeaderboard(this)">
@@ -1218,6 +1441,7 @@
                     </div>
                     ${hasPosts ? `
                     <div class="leaderboard-posts">
+                        ${infoBanner}
                         ${posts.map(post => {
                             const platform = getPlatform(post.url);
                             const postLabel = type === 'project' ? (post.merchant || item.name) : (post.project || item.name);
@@ -1976,11 +2200,22 @@
         // Load and render stats
         async function loadStats() {
             try {
-                const response = await fetch('stats.json?t=' + Date.now());
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}`);
+                // Load both stats and metadata
+                const [statsResponse, metadataResponse] = await Promise.all([
+                    fetch('stats.json?t=' + Date.now()),
+                    fetch('project-metadata.json?t=' + Date.now()).catch(() => null)
+                ]);
+
+                if (!statsResponse.ok) {
+                    throw new Error(`HTTP ${statsResponse.status}`);
                 }
-                const stats = await response.json();
+                const stats = await statsResponse.json();
+
+                // Load metadata if available
+                if (metadataResponse && metadataResponse.ok) {
+                    projectMetadata = await metadataResponse.json();
+                }
+
                 renderDashboard(stats);
             } catch (error) {
                 console.error('Failed to load stats:', error);

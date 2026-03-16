@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Project Profile | CBAF</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-card: #21262d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent-orange: #f7931a;
+            --accent-green: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 20px;
+            position: sticky;
+            top: 0;
+            margin: -20px -20px 20px -20px;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav a.current {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 250px;
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+            margin: -20px -20px 20px -20px;
+        }
+
+        .hero-overlay {
+            padding: 40px 20px 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-end;
+            gap: 24px;
+        }
+
+        .hero-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 4px solid var(--bg-primary);
+            background: var(--bg-secondary);
+        }
+
+        .hero-logo-placeholder {
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            background: var(--bg-secondary);
+            border: 4px solid var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-bottom: 8px;
+        }
+
+        .hero-text h1 {
+            font-size: 2rem;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .hero-text .flag {
+            font-size: 2rem;
+        }
+
+        .hero-text .tagline {
+            color: var(--accent-orange);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .hero-text .location {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .hero-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .hero-link {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 6px 12px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .hero-link:hover {
+            border-color: var(--accent-blue);
+            background: rgba(88, 166, 255, 0.1);
+        }
+
+        /* Content */
+        .content {
+            padding: 30px 20px 0 20px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            color: var(--accent-blue);
+        }
+
+        .section h3 {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .section p, .section li {
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .section strong {
+            color: var(--text-primary);
+        }
+
+        /* Donate Section */
+        .donate-section {
+            background: linear-gradient(135deg, rgba(247, 147, 26, 0.15), rgba(247, 147, 26, 0.05));
+            border: 2px solid var(--accent-orange);
+        }
+
+        .donate-section h2 {
+            color: var(--accent-orange);
+        }
+
+        .donate-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .donate-method {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .donate-method h3 {
+            font-size: 1rem;
+            margin: 0 0 12px 0;
+        }
+
+        /* Two Column Layout */
+        .top-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+            align-items: stretch;
+        }
+
+        .top-cards > .section {
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .top-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Support Card with Flip */
+        .support-card {
+            perspective: 1000px;
+            min-height: 420px;
+        }
+
+        .support-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 420px;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .support-card.flipped .support-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .support-front,
+        .support-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            background: var(--bg-card);
+            border: 1px solid var(--accent-orange);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+        }
+
+        .support-front h2,
+        .support-back h2 {
+            color: var(--accent-orange);
+            font-size: 1.3rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        .support-front p,
+        .support-back p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0;
+            text-align: center;
+        }
+
+        .support-back {
+            transform: rotateY(180deg);
+        }
+
+        .support-front .qr-container,
+        .support-back .qr-container {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .support-front .qr-container canvas,
+        .support-back .qr-container canvas {
+            display: block;
+        }
+
+
+        #qr-lightning, #qr-onchain {
+            margin: 8px auto;
+            padding: 8px;
+            background: white;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        #qr-lightning canvas,
+        #qr-onchain canvas {
+            display: block;
+        }
+
+        .address {
+            font-family: monospace;
+            font-size: 0.8rem;
+            word-break: break-all;
+            color: var(--text-secondary);
+            background: var(--bg-primary);
+            padding: 8px;
+            border-radius: 6px;
+            margin-top: 6px;
+        }
+
+        .support-front .address,
+        .support-back .address {
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            background: var(--bg-secondary);
+            padding: 6px 10px;
+            border-radius: 6px;
+            word-break: break-all;
+            text-align: center;
+            max-width: 100%;
+            margin: 0;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .support-front .address:hover,
+        .support-back .address:hover {
+            background: rgba(88, 166, 255, 0.1);
+            border-color: var(--accent-blue);
+        }
+
+        .support-front .address.copied,
+        .support-back .address.copied {
+            background: rgba(63, 185, 80, 0.2);
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .support-actions {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .support-actions .btn-back {
+            flex: 1;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .support-actions .btn-back:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .copy-btn {
+            background: var(--accent-orange);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 16px;
+            margin-top: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .copy-btn:hover {
+            background: #e08416;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .stat-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stat-box .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-purple);
+        }
+
+        .stat-box .label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* Recent Posts */
+        .posts-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .post-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .post-item .merchant {
+            flex: 1;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .post-item .platform-icon {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .post-item .date {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .post-item a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .post-item a:hover {
+            text-decoration: underline;
+        }
+
+        .post-hidden {
+            display: none !important;
+        }
+
+        .posts-more {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            background: var(--bg-secondary);
+            border: 1px dashed var(--border);
+            border-radius: 8px;
+            color: var(--accent-blue);
+            font-size: 0.9rem;
+            cursor: pointer;
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+        }
+
+        @media (hover: hover) {
+            .posts-more:hover {
+                background: var(--bg-card);
+                border-color: var(--accent-blue);
+            }
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Links */
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .contact-link {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 16px;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .contact-link:hover {
+            border-color: var(--accent-blue);
+            background: rgba(88, 166, 255, 0.1);
+        }
+
+        /* Loading & Error */
+        .loading, .error {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+        }
+
+        .error {
+            color: #f85149;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                justify-content: center;
+            }
+
+            .hero-links {
+                justify-content: center;
+            }
+
+            .donate-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-links">
+                <a href="index.html">Stats</a>
+                <span style="color: var(--text-secondary);">|</span>
+                <a href="members.html">Directory</a>
+                <span style="color: var(--text-secondary);">|</span>
+                <a href="archive.html">Archive</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="profile-content">
+        <div class="loading">Loading profile...</div>
+    </div>
+
+    <footer>
+        <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | Data updated: <span id="updated">--</span> CAT | <a href="about.html">About</a></p>
+    </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const memberId = urlParams.get('id');
+
+        if (!memberId) {
+            document.getElementById('profile-content').innerHTML = `
+                <div class="error">
+                    <h2>Invalid Profile</h2>
+                    <p>No project ID specified. <a href="members.html" style="color: var(--accent-blue);">Return to directory</a></p>
+                </div>
+            `;
+        } else {
+            loadProfile();
+        }
+
+        async function loadProfile() {
+            try {
+                // Load member data and stats in parallel
+                const [membersData, statsEpoch4, statsLive] = await Promise.all([
+                    fetch('members.json').then(r => r.json()),
+                    fetch('stats-epoch4.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
+                    fetch('stats.json?t=' + Date.now()).then(r => r.json()).catch(() => null)
+                ]);
+
+                const member = membersData.members.find(m => m.id === memberId);
+                if (!member) {
+                    throw new Error('Member not found');
+                }
+
+                // Combine stats from both epochs
+                const allStats = {
+                    epoch4: statsEpoch4,
+                    live: statsLive
+                };
+
+                // Update timestamp (use live stats if available, otherwise epoch4)
+                const statsForTimestamp = statsLive || statsEpoch4;
+                if (statsForTimestamp && statsForTimestamp.generated_at) {
+                    document.getElementById('updated').textContent = new Date(statsForTimestamp.generated_at).toLocaleString();
+                }
+
+                renderProfile(member, allStats);
+            } catch (err) {
+                document.getElementById('profile-content').innerHTML = `
+                    <div class="error">
+                        <h2>Error Loading Profile</h2>
+                        <p>${err.message}. <a href="members.html" style="color: var(--accent-blue);">Return to directory</a></p>
+                    </div>
+                `;
+            }
+        }
+
+        function renderProfile(member, allStats) {
+            document.getElementById('page-title').textContent = `${member.name} | CBAF`;
+
+            const logoHtml = member.logo_url ?
+                `<img src="${member.logo_url}" alt="${member.name}" class="hero-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                 <div class="hero-logo-placeholder" style="display:none;">${member.flag || member.name.charAt(0)}</div>`
+                :
+                `<div class="hero-logo-placeholder">${member.flag || member.name.charAt(0)}</div>`;
+
+            let html = `
+                <div class="hero">
+                    <div class="hero-overlay">
+                        <div class="hero-content">
+                            ${logoHtml}
+                            <div class="hero-text">
+                                <h1>
+                                    ${member.name}
+                                    <span class="flag">${member.flag || ''}</span>
+                                </h1>
+                                ${member.tagline ? `<div class="tagline">${member.tagline}</div>` : ''}
+                                ${member.city || member.country ? `<div class="location">${[member.city, member.country].filter(Boolean).join(', ')}</div>` : ''}
+                            </div>
+                        </div>
+                        <div class="hero-links container">
+            `;
+
+            if (member.x_profile) {
+                const xHandle = member.x_profile.replace('@', '');
+                html += `<a href="https://x.com/${xHandle}" target="_blank" class="hero-link">🐦 X</a>`;
+            }
+
+            if (member.npub && member.npub !== 'n/a') {
+                html += `<a href="https://primal.net/p/${member.npub}" target="_blank" class="hero-link">⚡ Nostr</a>`;
+            }
+
+            if (member.email) {
+                html += `<a href="mailto:${member.email}" class="hero-link">📧 Email</a>`;
+            }
+
+            if (member.website) {
+                html += `<a href="${member.website}" target="_blank" class="hero-link">🌐 Website</a>`;
+            }
+
+            if (member.btcmap_url) {
+                html += `<a href="${member.btcmap_url}" target="_blank" class="hero-link">🗺️ BTCMap</a>`;
+            }
+
+            if (member.btcpay_campaign) {
+                html += `<a href="${member.btcpay_campaign}" target="_blank" class="hero-link">💰 Crowdfund</a>`;
+            }
+
+            if (member.geyser_campaign) {
+                html += `<a href="${member.geyser_campaign}" target="_blank" class="hero-link">🌊 Geyser</a>`;
+            }
+
+            html += `
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content container">
+            `;
+
+            // Two Column Layout: Support + About
+            html += `<div class="top-cards">`;
+
+            // Support Card (left) with flip functionality
+            html += `
+                <div class="support-card" id="support-card">
+                    <div class="support-card-inner">
+                        <!-- Front: Lightning -->
+                        <div class="support-front">
+                            <h2>Support ${member.name}</h2>
+                            <p>Lightning Network</p>
+            `;
+
+            if (member.lightning_address) {
+                html += `
+                                <div class="qr-container" id="qr-lightning"></div>
+                                <div class="address" id="lightning-address" onclick="copyAddressWithFeedback('${member.lightning_address}', 'lightning-address')" title="Click to copy">${member.lightning_address}</div>
+                `;
+                if (member.onchain_address) {
+                    html += `
+                                <div class="support-actions">
+                                    <button class="btn btn-back" onclick="flipSupportCard()">
+                                        Switch to Onchain
+                                    </button>
+                                </div>
+                    `;
+                }
+            }
+
+            html += `
+                        </div>
+            `;
+
+            // Back: Onchain (if available)
+            if (member.onchain_address) {
+                html += `
+                        <!-- Back: Onchain -->
+                        <div class="support-back">
+                            <h2>Support ${member.name}</h2>
+                            <p>Onchain</p>
+                            <div class="qr-container" id="qr-onchain"></div>
+                            <div class="address" id="onchain-address" onclick="copyAddressWithFeedback('${member.onchain_address}', 'onchain-address')" title="Click to copy">${member.onchain_address}</div>
+                            <div class="support-actions">
+                                <button class="btn btn-back" onclick="flipSupportCard()">
+                                    Switch to Lightning
+                                </button>
+                            </div>
+                        </div>
+                `;
+            }
+
+            html += `
+                    </div>
+                </div>
+            `;
+
+            // About Card (right) - always show
+            html += `
+                <div class="section">
+                    <h2>About</h2>
+                    <p>${member.description || 'Building a Bitcoin circular economy in ' + (member.city || member.country || 'Africa') + '.'}</p>
+                </div>
+            `;
+
+            html += `</div>`; // Close top-cards
+
+            // PoWBoT Stats - collect posts from all epochs
+            const allPosts = [];
+            let totalVideos = 0;
+
+            // Create the name format used in stats JSON: "ProjectName 🇫🇱"
+            const statsName = `${member.name} ${member.flag || ''}`.trim();
+
+            // Extract posts from Epoch 4
+            if (allStats.epoch4 && allStats.epoch4.top_projects) {
+                const epoch4Project = allStats.epoch4.top_projects.find(p => p.name === statsName);
+                if (epoch4Project) {
+                    totalVideos += epoch4Project.count;
+                    if (epoch4Project.posts) {
+                        allPosts.push(...epoch4Project.posts);
+                    }
+                }
+            }
+
+            // Extract posts from current epoch (Epoch 5)
+            if (allStats.live && allStats.live.top_projects) {
+                const liveProject = allStats.live.top_projects.find(p => p.name === statsName);
+                if (liveProject) {
+                    totalVideos += liveProject.count;
+                    if (liveProject.posts) {
+                        allPosts.push(...liveProject.posts);
+                    }
+                }
+            }
+
+            // Display PoWBoT Stats section if there are any posts
+            if (totalVideos > 0) {
+                html += `
+                    <div class="section">
+                        <h2>PoWBoT Activity</h2>
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <div class="value">${totalVideos}</div>
+                                <div class="label">${totalVideos === 1 ? 'Video' : 'Videos'} Submitted</div>
+                            </div>
+                        </div>
+                `;
+
+                if (allPosts.length > 0) {
+                    // Sort posts by date (newest first)
+                    allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                    const initialCount = 10;
+                    const hasMore = allPosts.length > initialCount;
+
+                    html += `
+                        <h3>Merchant ${allPosts.length === 1 ? 'Video' : 'Videos'} (${allPosts.length})</h3>
+                        <div class="posts-list" id="posts-list">
+                    `;
+                    allPosts.forEach((post, index) => {
+                        const platform = getPlatform(post.url);
+                        const isHidden = index >= initialCount;
+                        html += `
+                            <div class="post-item ${isHidden ? 'post-hidden' : ''}" data-index="${index}">
+                                <div class="merchant">
+                                    <span class="platform-icon">${platform.icon}</span>
+                                    ${post.merchant}
+                                </div>
+                                <div class="date">${post.date}</div>
+                                <a href="${post.url}" target="_blank">View →</a>
+                            </div>
+                        `;
+                    });
+                    html += `</div>`;
+
+                    // Add "Show more" button if there are more than 10 posts
+                    if (hasMore) {
+                        html += `
+                            <button class="posts-more" onclick="togglePosts(this)" data-count="${allPosts.length - initialCount}">
+                                Show ${allPosts.length - initialCount} more
+                            </button>
+                        `;
+                    }
+                }
+
+                html += `</div>`;
+            }
+
+            // Vision & Mission
+            if (member.vision_mission) {
+                html += `
+                    <div class="section">
+                        <h2>Vision & Mission</h2>
+                        <p>${member.vision_mission}</p>
+                    </div>
+                `;
+            }
+
+            // How Started
+            if (member.how_started) {
+                html += `
+                    <div class="section">
+                        <h2>How It Started</h2>
+                        <p>${member.how_started}</p>
+                    </div>
+                `;
+            }
+
+            // Milestones
+            if (member.milestones) {
+                html += `
+                    <div class="section">
+                        <h2>Milestones & Achievements</h2>
+                        <p>${member.milestones}</p>
+                    </div>
+                `;
+            }
+
+            // Gallery
+            if (member.gallery && member.gallery.length > 0) {
+                html += `
+                    <div class="section">
+                        <h2>Gallery</h2>
+                        <div class="gallery">
+                `;
+                member.gallery.forEach(img => {
+                    html += `<img src="${img}" alt="${member.name} photo" onclick="window.open('${img}', '_blank')">`;
+                });
+                html += `
+                        </div>
+                    </div>
+                `;
+            }
+
+            html += `</div>`; // Close content container
+
+            document.getElementById('profile-content').innerHTML = html;
+
+            // Generate QR codes
+            if (member.lightning_address) {
+                const qrLightning = document.getElementById('qr-lightning');
+                if (qrLightning) {
+                    QRCode.toCanvas(
+                        `lightning:${member.lightning_address}`,
+                        { width: 180, margin: 1 },
+                        (error, canvas) => {
+                            if (!error) {
+                                qrLightning.appendChild(canvas);
+                            }
+                        }
+                    );
+                }
+            }
+
+            if (member.onchain_address) {
+                const qrOnchain = document.getElementById('qr-onchain');
+                if (qrOnchain) {
+                    QRCode.toCanvas(
+                        `bitcoin:${member.onchain_address}`,
+                        { width: 180, margin: 1 },
+                        (error, canvas) => {
+                            if (!error) {
+                                qrOnchain.appendChild(canvas);
+                            }
+                        }
+                    );
+                }
+            }
+        }
+
+        function getPlatform(url) {
+            if (!url) return { name: 'Nostr', icon: '🟣' };
+            const lower = url.toLowerCase();
+            if (lower.includes('twitter.com') || lower.includes('x.com')) return { name: 'X', icon: '𝕏' };
+            return { name: 'Nostr', icon: '🟣' };
+        }
+
+        function flipSupportCard() {
+            const card = document.getElementById('support-card');
+            card.classList.toggle('flipped');
+        }
+
+        function togglePosts(button) {
+            const count = parseInt(button.dataset.count);
+            const isExpanded = button.classList.contains('expanded');
+            const container = document.getElementById('posts-list');
+
+            if (isExpanded) {
+                // Collapse - hide posts after 10th
+                container.querySelectorAll('.post-item').forEach((el, index) => {
+                    if (index >= 10) el.classList.add('post-hidden');
+                });
+                button.textContent = `Show ${count} more`;
+                button.classList.remove('expanded');
+            } else {
+                // Expand - show all posts
+                container.querySelectorAll('.post-hidden').forEach(el => {
+                    el.classList.remove('post-hidden');
+                });
+                button.textContent = 'Show less';
+                button.classList.add('expanded');
+            }
+        }
+
+        function copyAddressWithFeedback(address, elementId) {
+            const addressElement = document.getElementById(elementId);
+            const originalText = addressElement.textContent;
+
+            navigator.clipboard.writeText(address).then(() => {
+                // Add copied class for visual feedback
+                addressElement.classList.add('copied');
+                addressElement.textContent = '✓ Copied to clipboard!';
+
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    addressElement.classList.remove('copied');
+                    addressElement.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy address');
+            });
+        }
+
+        function copyToClipboard(text, label) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert(`${label} copied!\n\n${text}`);
+            });
+        }
+    </script>
+</body>
+</html>

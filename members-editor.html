@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBAF Members Editor</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-card: #21262d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent-orange: #f7931a;
+            --accent-green: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-red: #f85149;
+            --border: #30363d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.5rem;
+            color: var(--accent-orange);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .connect-btn {
+            background: var(--accent-blue);
+            color: var(--bg-primary);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 12px;
+        }
+
+        .connect-btn:hover {
+            background: #6cb6ff;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            height: calc(100vh - 120px);
+        }
+
+        .sidebar {
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border);
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .search-box {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 10px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .member-list {
+            list-style: none;
+        }
+
+        .member-item {
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 8px;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .member-item:hover {
+            background: var(--bg-card);
+            border-color: var(--border);
+        }
+
+        .member-item.active {
+            background: var(--bg-card);
+            border-color: var(--accent-orange);
+        }
+
+        .member-item-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .member-item-country {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .editor {
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .editor-empty {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: var(--text-secondary);
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .form-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-orange);
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 10px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+        }
+
+        .form-group small {
+            display: block;
+            margin-top: 4px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .form-actions {
+            position: sticky;
+            bottom: 0;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 20px;
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.9rem;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent-green);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: #4ac15e;
+        }
+
+        .btn-secondary {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-card);
+        }
+
+        .status-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+
+        .status-success {
+            background: var(--accent-green);
+            color: var(--bg-primary);
+        }
+
+        .status-error {
+            background: var(--accent-red);
+            color: white;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .array-input {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 10px;
+        }
+
+        .array-item {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .array-item input {
+            flex: 1;
+        }
+
+        .array-item button {
+            background: var(--accent-red);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .add-array-btn {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            margin-top: 8px;
+        }
+
+        .readonly {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CBAF Members Editor</h1>
+        <p>Edit member profile data for the PoWBoT Stats dashboard</p>
+        <button class="connect-btn" id="connectBtn" onclick="connectToFolder()">Connect to powbot-stats folder</button>
+    </header>
+
+    <div class="container" id="container" style="display: none;">
+        <div class="sidebar">
+            <input type="text" class="search-box" id="searchBox" placeholder="Search members..." onkeyup="filterMembers()">
+            <ul class="member-list" id="memberList"></ul>
+        </div>
+
+        <div class="editor" id="editor">
+            <div class="editor-empty">
+                <div style="font-size: 2rem;">👈</div>
+                <div>Select a member to edit</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let directoryHandle = null;
+        let membersFileHandle = null;
+        let membersData = null;
+        let currentMember = null;
+
+        async function connectToFolder() {
+            try {
+                directoryHandle = await window.showDirectoryPicker({ mode: 'readwrite' });
+                membersFileHandle = await directoryHandle.getFileHandle('members.json');
+                await loadMembers();
+                document.getElementById('connectBtn').style.display = 'none';
+                document.getElementById('container').style.display = 'grid';
+            } catch (err) {
+                if (err.name !== 'AbortError') {
+                    showStatus('Failed to connect: ' + err.message, 'error');
+                }
+            }
+        }
+
+        async function loadMembers() {
+            try {
+                const file = await membersFileHandle.getFile();
+                const text = await file.text();
+                membersData = JSON.parse(text);
+                renderMemberList();
+            } catch (err) {
+                showStatus('Failed to load members: ' + err.message, 'error');
+            }
+        }
+
+        function renderMemberList() {
+            const list = document.getElementById('memberList');
+            list.innerHTML = membersData.members.map(member => `
+                <li class="member-item" onclick="selectMember('${member.id}')">
+                    <div class="member-item-name">${member.name} ${member.flag || ''}</div>
+                    <div class="member-item-country">${member.country || ''}</div>
+                </li>
+            `).join('');
+        }
+
+        function filterMembers() {
+            const query = document.getElementById('searchBox').value.toLowerCase();
+            const items = document.querySelectorAll('.member-item');
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(query) ? 'block' : 'none';
+            });
+        }
+
+        function selectMember(memberId) {
+            currentMember = membersData.members.find(m => m.id === memberId);
+            if (!currentMember) return;
+
+            // Update active state
+            document.querySelectorAll('.member-item').forEach(item => item.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            renderEditForm();
+        }
+
+        function renderEditForm() {
+            const editor = document.getElementById('editor');
+            const m = currentMember;
+
+            editor.innerHTML = `
+                <form id="editForm" onsubmit="return false;">
+                    <div class="form-section">
+                        <h2>Basic Information</h2>
+                        <div class="form-grid">
+                            <div class="form-group readonly">
+                                <label>ID</label>
+                                <input type="text" value="${m.id}" readonly>
+                                <small>Auto-generated, cannot be edited</small>
+                            </div>
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" id="name" value="${m.name || ''}" required>
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Flag Emoji</label>
+                                <input type="text" id="flag" value="${m.flag || ''}" maxlength="2">
+                                <small>Country flag emoji</small>
+                            </div>
+                            <div class="form-group">
+                                <label>Contact Person</label>
+                                <input type="text" id="contact_person" value="${m.contact_person || ''}">
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Country</label>
+                                <input type="text" id="country" value="${m.country || ''}">
+                            </div>
+                            <div class="form-group">
+                                <label>City</label>
+                                <input type="text" id="city" value="${m.city || ''}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Contact & Social</h2>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="email" value="${m.email || ''}">
+                        </div>
+                        <div class="form-group">
+                            <label>Website</label>
+                            <input type="url" id="website" value="${m.website || ''}" placeholder="https://example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>X Profile (Twitter)</label>
+                            <input type="text" id="x_profile" value="${m.x_profile || ''}" placeholder="@username">
+                        </div>
+                        <div class="form-group">
+                            <label>Nostr npub</label>
+                            <input type="text" id="npub" value="${m.npub || ''}" placeholder="npub1...">
+                        </div>
+                        <div class="form-group">
+                            <label>Lightning Address</label>
+                            <input type="text" id="lightning_address" value="${m.lightning_address || ''}" placeholder="username@blink.sv">
+                        </div>
+                        <div class="form-group">
+                            <label>Onchain Address</label>
+                            <input type="text" id="onchain_address" value="${m.onchain_address || ''}" placeholder="bc1...">
+                        </div>
+                        <div class="form-group">
+                            <label>BTCMap URL</label>
+                            <input type="url" id="btcmap_url" value="${m.btcmap_url || ''}">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Content</h2>
+                        <div class="form-group">
+                            <label>Tagline</label>
+                            <input type="text" id="tagline" value="${escapeHtml(m.tagline || '')}" maxlength="100">
+                            <small>Short one-line description</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea id="description" rows="4">${escapeHtml(m.description || '')}</textarea>
+                            <small>Main project description</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Vision & Mission</label>
+                            <textarea id="vision_mission" rows="6">${escapeHtml(m.vision_mission || '')}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>How Started</label>
+                            <textarea id="how_started" rows="4">${escapeHtml(m.how_started || '')}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Milestones</label>
+                            <textarea id="milestones" rows="4">${escapeHtml(m.milestones || '')}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Media</h2>
+                        <div class="form-group">
+                            <label>Logo URL</label>
+                            <input type="url" id="logo_url" value="${m.logo_url || ''}" placeholder="images/members/project-name/logo.jpg">
+                        </div>
+                        <div class="form-group">
+                            <label>Cover Image URL</label>
+                            <input type="url" id="cover_url" value="${m.cover_url || ''}" placeholder="images/members/project-name/cover.jpg">
+                        </div>
+                        <div class="form-group">
+                            <label>Gallery Images</label>
+                            <div id="gallery-array"></div>
+                            <small>One URL per line</small>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2>Campaigns</h2>
+                        <div class="form-group">
+                            <label>BTCPay Campaign URL</label>
+                            <input type="url" id="btcpay_campaign" value="${m.btcpay_campaign || ''}">
+                        </div>
+                        <div class="form-group">
+                            <label>Geyser Campaign URL</label>
+                            <input type="url" id="geyser_campaign" value="${m.geyser_campaign || ''}">
+                        </div>
+                    </div>
+
+                    <div class="form-section readonly">
+                        <h2>PoWBoT Stats (Read-Only)</h2>
+                        <div class="form-group">
+                            <label>Epoch 4 Videos</label>
+                            <input type="number" value="${m.powbot_stats?.epoch4_videos || 0}" readonly>
+                            <small>Managed by stats export script</small>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="form-actions">
+                    <button class="btn btn-secondary" onclick="cancelEdit()">Cancel</button>
+                    <button class="btn btn-primary" onclick="saveChanges()">Save Changes</button>
+                </div>
+            `;
+
+            // Render gallery array
+            renderArrayField('gallery-array', m.gallery || [], 'url');
+        }
+
+        function renderArrayField(containerId, items, type) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = `
+                <div class="array-input">
+                    ${items.map((item, index) => `
+                        <div class="array-item">
+                            <input type="${type}" value="${item}" data-array-index="${index}">
+                            <button onclick="removeArrayItem('${containerId}', ${index})">Remove</button>
+                        </div>
+                    `).join('')}
+                    <button class="add-array-btn" onclick="addArrayItem('${containerId}', '${type}')">Add Item</button>
+                </div>
+            `;
+        }
+
+        function addArrayItem(containerId, type) {
+            const container = document.getElementById(containerId);
+            const items = Array.from(container.querySelectorAll('.array-item input')).map(inp => inp.value);
+            items.push('');
+            renderArrayField(containerId, items, type);
+        }
+
+        function removeArrayItem(containerId, index) {
+            const container = document.getElementById(containerId);
+            const items = Array.from(container.querySelectorAll('.array-item input')).map(inp => inp.value);
+            items.splice(index, 1);
+            renderArrayField(containerId, items, 'url');
+        }
+
+        function getArrayValues(containerId) {
+            const container = document.getElementById(containerId);
+            return Array.from(container.querySelectorAll('.array-item input'))
+                .map(inp => inp.value.trim())
+                .filter(v => v);
+        }
+
+        async function saveChanges() {
+            try {
+                // Get all form values
+                const updatedMember = {
+                    ...currentMember,
+                    name: document.getElementById('name').value,
+                    name_with_flag: `${document.getElementById('name').value} (${document.getElementById('country').value}) ${document.getElementById('flag').value}`.trim(),
+                    flag: document.getElementById('flag').value,
+                    contact_person: document.getElementById('contact_person').value,
+                    email: document.getElementById('email').value,
+                    website: document.getElementById('website').value,
+                    x_profile: document.getElementById('x_profile').value,
+                    npub: document.getElementById('npub').value,
+                    lightning_address: document.getElementById('lightning_address').value,
+                    onchain_address: document.getElementById('onchain_address').value.toLowerCase(),
+                    tagline: document.getElementById('tagline').value,
+                    description: document.getElementById('description').value,
+                    vision_mission: document.getElementById('vision_mission').value,
+                    how_started: document.getElementById('how_started').value,
+                    milestones: document.getElementById('milestones').value,
+                    country: document.getElementById('country').value,
+                    city: document.getElementById('city').value,
+                    btcmap_url: document.getElementById('btcmap_url').value,
+                    logo_url: document.getElementById('logo_url').value,
+                    cover_url: document.getElementById('cover_url').value,
+                    gallery: getArrayValues('gallery-array'),
+                    btcpay_campaign: document.getElementById('btcpay_campaign').value,
+                    geyser_campaign: document.getElementById('geyser_campaign').value
+                };
+
+                // Update in membersData
+                const index = membersData.members.findIndex(m => m.id === currentMember.id);
+                membersData.members[index] = updatedMember;
+
+                // Save to file
+                const writable = await membersFileHandle.createWritable();
+                await writable.write(JSON.stringify(membersData, null, 2));
+                await writable.close();
+
+                currentMember = updatedMember;
+                renderMemberList();
+                showStatus('Changes saved successfully!', 'success');
+            } catch (err) {
+                showStatus('Failed to save: ' + err.message, 'error');
+            }
+        }
+
+        function cancelEdit() {
+            renderEditForm();
+            showStatus('Changes cancelled', 'success');
+        }
+
+        function showStatus(message, type) {
+            const statusDiv = document.createElement('div');
+            statusDiv.className = `status-message status-${type}`;
+            statusDiv.textContent = message;
+            document.body.appendChild(statusDiv);
+
+            setTimeout(() => {
+                statusDiv.remove();
+            }, 3000);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>

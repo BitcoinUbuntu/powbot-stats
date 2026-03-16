@@ -51,8 +51,45 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+        }
+
+        nav {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 20px;
+            position: sticky;
+            top: 0;
+            margin: -20px -20px 20px -20px;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav a.current {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
         }
 
         header {
@@ -162,17 +199,6 @@
             font-size: 0.85rem;
         }
 
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: var(--accent-blue);
-            text-decoration: none;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
         .card-mascot {
             position: absolute;
             bottom: 20px;
@@ -196,9 +222,19 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="back-link">&larr; Back to Dashboard</a>
+    <nav>
+        <div class="container">
+            <div class="nav-links">
+                <a href="index.html">Stats</a>
+                <span style="color: var(--text-secondary);">|</span>
+                <a href="members.html">Directory</a>
+                <span style="color: var(--text-secondary);">|</span>
+                <a href="archive.html">Archive</a>
+            </div>
+        </div>
+    </nav>
 
+    <div class="container">
         <header>
             <h1>About PoWBoT</h1>
         </header>
@@ -246,10 +282,8 @@
             <p class="highlight">This bot has processed hundreds of PoW posts and rewarded dozens of <a href="https://bitcoinconfederation.org" target="_blank">projects</a> and <a href="https://btcmap.org" target="_blank">merchants</a> across Africa.</p>
         </div>
 
-        <a href="index.html" class="back-link">&larr; Back to Dashboard</a>
-
         <footer>
-            <p>Vibe coded with 🧡 by <a href="https://x.com/bitcoinubuntu" target="_blank">@bitcoinubuntu</a></p>
+            <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | <a href="about.html">About</a></p>
         </footer>
     </div>
 </body>

@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBAF Members | PoWBoT Directory</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
+
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bitcoinubuntu.github.io/powbot-stats/members">
+    <meta property="og:title" content="CBAF Members Directory">
+    <meta property="og:description" content="Discover Bitcoin circular economy projects across Africa. Support them directly with Lightning donations.">
+    <meta property="og:image" content="https://bitcoinubuntu.github.io/powbot-stats/images/PoWBoT_preview.jpg">
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-card: #21262d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent-orange: #f7931a;
+            --accent-green: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header & Nav */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        nav {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 20px;
+            position: sticky;
+            top: 0;
+            margin: -20px -20px 20px -20px;
+            z-index: 100;
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav a.current {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--accent-orange);
+            margin-bottom: 8px;
+        }
+
+        header .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Stats Summary */
+        .stats-summary {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-pill {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .stat-pill strong {
+            color: var(--text-primary);
+            margin-left: 4px;
+        }
+
+        /* Filters & Search */
+        .controls {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .controls-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .search-box input {
+            width: 100%;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 14px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-blue);
+            color: var(--text-primary);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: white;
+        }
+
+        select.filter-btn {
+            cursor: pointer;
+        }
+
+        /* Member Grid */
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .member-card {
+            background: transparent;
+            border: none;
+            border-radius: 12px;
+            overflow: visible;
+            cursor: pointer;
+            position: relative;
+            perspective: 1000px;
+            height: 360px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .member-card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+        }
+
+        .card-front {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .member-card:not(.flipped) .card-front:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            border-color: var(--accent-orange);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-back-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s;
+        }
+
+        .card-back.show-onchain .card-back-inner {
+            transform: translateX(-100%);
+        }
+
+        .card-back-side {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+            gap: 12px;
+        }
+
+        .card-back-lightning {
+            left: 0;
+        }
+
+        .card-back-onchain {
+            left: 100%;
+        }
+
+        .card-header {
+            position: relative;
+            height: 120px;
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--bg-card);
+            background: var(--bg-secondary);
+        }
+
+        .card-logo-placeholder {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 3px solid var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .card-title h3 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        .card-title .flag {
+            font-size: 1.5rem;
+        }
+
+        .card-tagline {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            min-height: 60px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+
+        .card-footer {
+            margin-top: auto;
+        }
+
+        .card-stats {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .stat-badge {
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            border-radius: 6px;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            color: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .stat-badge.top-performer {
+            background: rgba(163, 113, 247, 0.1);
+            border-color: rgba(163, 113, 247, 0.3);
+            color: var(--accent-purple);
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent-orange);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #e08416;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .lightning-address {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            font-family: monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Card Back Styles */
+        .card-back h3 {
+            font-size: 1rem;
+            color: var(--accent-orange);
+            text-align: center;
+            margin: 0;
+        }
+
+        .card-back .qr-container {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .card-back .qr-container canvas {
+            display: block;
+        }
+
+        .card-back .lightning-address-display {
+            font-family: monospace;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            background: var(--bg-secondary);
+            padding: 6px 10px;
+            border-radius: 6px;
+            word-break: break-all;
+            text-align: center;
+            max-width: 100%;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .card-back .lightning-address-display:hover {
+            background: rgba(88, 166, 255, 0.1);
+            border-color: var(--accent-blue);
+        }
+
+        .card-back .lightning-address-display.copied {
+            background: rgba(63, 185, 80, 0.2);
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .card-back .back-actions {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .card-back .btn-back {
+            flex: 1;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .card-back .btn-back:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+        }
+
+        .empty-state h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-links">
+                <a href="index.html">Stats</a>
+                <span style="color: var(--text-secondary);">|</span>
+                <a href="members.html" class="current">Directory</a>
+                <span style="color: var(--text-secondary);">|</span>
+                <a href="archive.html">Archive</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>CBAF Members</h1>
+            <p class="subtitle">Support Bitcoin circular economy projects across Africa</p>
+
+            <div class="stats-summary">
+                <div class="stat-pill">
+                    <span>Total Projects:</span>
+                    <strong id="total-count">-</strong>
+                </div>
+                <div class="stat-pill">
+                    <span>Active on PoWBoT:</span>
+                    <strong id="active-count">-</strong>
+                </div>
+                <div class="stat-pill">
+                    <span>Countries:</span>
+                    <strong id="country-count">-</strong>
+                </div>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div class="controls-row">
+                <div class="search-box">
+                    <input type="text" id="search" placeholder="Search projects by name, country, or city...">
+                </div>
+            </div>
+            <div class="controls-row" style="margin-top: 12px;">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="active">Active on PoWBoT</button>
+                    <button class="filter-btn" data-filter="top">Top Performers</button>
+                </div>
+                <select id="country-filter" class="filter-btn">
+                    <option value="">All Countries</option>
+                </select>
+                <select id="sort" class="filter-btn">
+                    <option value="activity">Sort: Most Active</option>
+                    <option value="name">Sort: Name A-Z</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="members-grid" id="members-grid">
+            <div class="loading">Loading members...</div>
+        </div>
+
+        <footer>
+            <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | <a href="about.html">About</a></p>
+        </footer>
+    </div>
+
+    <script>
+        let allMembers = [];
+        let currentFilter = 'all';
+        let currentCountry = '';
+        let currentSort = 'activity';
+        let searchQuery = '';
+
+        // Load members data
+        fetch('members.json')
+            .then(res => res.json())
+            .then(data => {
+                allMembers = data.members;
+                initializeFilters();
+                updateStats();
+                renderMembers();
+            })
+            .catch(err => {
+                document.getElementById('members-grid').innerHTML = `
+                    <div class="empty-state">
+                        <h3>Error loading members</h3>
+                        <p>Please try refreshing the page</p>
+                    </div>
+                `;
+            });
+
+        function initializeFilters() {
+            // Populate country filter
+            const countries = [...new Set(allMembers.map(m => m.flag + ' ' + m.name_with_flag.match(/\(([^)]+)\)/)?.[1] || '').filter(Boolean))];
+            const countrySelect = document.getElementById('country-filter');
+            countries.sort().forEach(country => {
+                const option = document.createElement('option');
+                option.value = country;
+                option.textContent = country;
+                countrySelect.appendChild(option);
+            });
+        }
+
+        function updateStats() {
+            document.getElementById('total-count').textContent = allMembers.length;
+            document.getElementById('active-count').textContent = allMembers.filter(m => m.powbot_stats.epoch4_videos > 0).length;
+
+            const countries = new Set(allMembers.map(m => m.name_with_flag.match(/\(([^)]+)\)/)?.[1]).filter(Boolean));
+            document.getElementById('country-count').textContent = countries.size;
+        }
+
+        function filterMembers() {
+            let filtered = [...allMembers];
+
+            // Apply activity filter
+            if (currentFilter === 'active') {
+                filtered = filtered.filter(m => m.powbot_stats.epoch4_videos > 0);
+            } else if (currentFilter === 'top') {
+                filtered = filtered.filter(m => m.powbot_stats.epoch4_videos >= 50);
+            }
+
+            // Apply country filter
+            if (currentCountry) {
+                filtered = filtered.filter(m => {
+                    const memberCountry = m.flag + ' ' + (m.name_with_flag.match(/\(([^)]+)\)/)?.[1] || '');
+                    return memberCountry === currentCountry;
+                });
+            }
+
+            // Apply search
+            if (searchQuery) {
+                const query = searchQuery.toLowerCase();
+                filtered = filtered.filter(m =>
+                    m.name.toLowerCase().includes(query) ||
+                    m.country.toLowerCase().includes(query) ||
+                    m.city.toLowerCase().includes(query) ||
+                    m.tagline.toLowerCase().includes(query)
+                );
+            }
+
+            // Apply sort
+            if (currentSort === 'activity') {
+                filtered.sort((a, b) => b.powbot_stats.epoch4_videos - a.powbot_stats.epoch4_videos);
+            } else if (currentSort === 'name') {
+                filtered.sort((a, b) => a.name.localeCompare(b.name));
+            }
+
+            return filtered;
+        }
+
+        function renderMembers() {
+            const grid = document.getElementById('members-grid');
+            const members = filterMembers();
+
+            if (members.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-state">
+                        <h3>No projects found</h3>
+                        <p>Try adjusting your filters or search query</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = members.map((member, index) => {
+                const videoCount = member.powbot_stats.epoch4_videos;
+                const isTopPerformer = videoCount >= 50;
+                const logoUrl = member.logo_url || '';
+                const emoji = member.flag || member.name.charAt(0);
+                const cardId = `card-${index}`;
+
+                return `
+                    <div class="member-card" id="${cardId}" data-member-id="${member.id}">
+                        <div class="card-inner">
+                            <!-- Front of Card -->
+                            <div class="card-front" onclick="viewProfile('${member.id}', event)">
+                                <div class="card-header">
+                                    ${logoUrl ?
+                                        `<img src="${logoUrl}" alt="${member.name}" class="card-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                         <div class="card-logo-placeholder" style="display:none;">${emoji}</div>`
+                                        :
+                                        `<div class="card-logo-placeholder">${emoji}</div>`
+                                    }
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3>${member.name}</h3>
+                                        <span class="flag">${member.flag || ''}</span>
+                                    </div>
+                                    <div class="card-tagline">${member.tagline || 'Bitcoin circular economy project'}</div>
+
+                                    <div class="card-footer">
+                                        ${videoCount > 0 ? `
+                                            <div class="card-stats">
+                                                <div class="stat-badge ${isTopPerformer ? 'top-performer' : ''}">
+                                                    ⚡ ${videoCount} ${videoCount === 1 ? 'video' : 'videos'}
+                                                </div>
+                                                ${isTopPerformer ? '<div class="stat-badge top-performer">🏆 Top Performer</div>' : ''}
+                                            </div>
+                                        ` : ''}
+
+                                        <div class="card-actions">
+                                            <button class="btn btn-primary" onclick="event.stopPropagation(); flipCard('${cardId}', '${member.lightning_address}', '${member.onchain_address || ''}')">
+                                                Donate
+                                            </button>
+                                            <a href="profile.html?id=${member.id}" class="btn btn-secondary" onclick="event.stopPropagation();">
+                                                View Profile
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Back of Card -->
+                            <div class="card-back" id="back-${cardId}">
+                                <div class="card-back-inner">
+                                    <!-- Lightning Side -->
+                                    <div class="card-back-side card-back-lightning">
+                                        <h3>Donate to ${member.name}</h3>
+                                        <div class="qr-container" id="qr-lightning-${cardId}"></div>
+                                        <div class="lightning-address-display" id="address-lightning-${cardId}" onclick="event.stopPropagation(); copyAddressWithFeedback('${member.lightning_address}', 'address-lightning-${cardId}')" title="Click to copy">${member.lightning_address || 'No Lightning address available'}</div>
+                                        <div class="back-actions">
+                                            <button class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">
+                                                ← Back
+                                            </button>
+                                            ${member.onchain_address ? `<button class="btn btn-back" onclick="event.stopPropagation(); switchPaymentMethod('${cardId}')">Switch to Onchain</button>` : ''}
+                                        </div>
+                                    </div>
+
+                                    <!-- Onchain Side -->
+                                    ${member.onchain_address ? `
+                                    <div class="card-back-side card-back-onchain">
+                                        <h3>Donate to ${member.name}</h3>
+                                        <div class="qr-container" id="qr-onchain-${cardId}"></div>
+                                        <div class="lightning-address-display" id="address-onchain-${cardId}" onclick="event.stopPropagation(); copyAddressWithFeedback('${member.onchain_address}', 'address-onchain-${cardId}')" title="Click to copy">${member.onchain_address}</div>
+                                        <div class="back-actions">
+                                            <button class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">
+                                                ← Back
+                                            </button>
+                                            <button class="btn btn-back" onclick="event.stopPropagation(); switchPaymentMethod('${cardId}')">Switch to Lightning</button>
+                                        </div>
+                                    </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function flipCard(cardId, lightningAddress = null, onchainAddress = null) {
+            const card = document.getElementById(cardId);
+            const isFlipped = card.classList.contains('flipped');
+
+            if (!isFlipped && lightningAddress) {
+                // Flipping to back - generate QR codes
+                card.classList.add('flipped');
+
+                // Generate QR codes after a short delay to ensure the back is visible
+                setTimeout(() => {
+                    // Generate Lightning QR code
+                    const qrLightningContainer = document.getElementById(`qr-lightning-${cardId}`);
+                    if (qrLightningContainer && qrLightningContainer.children.length === 0) {
+                        QRCode.toCanvas(
+                            `lightning:${lightningAddress}`,
+                            { width: 160, margin: 1 },
+                            (error, canvas) => {
+                                if (!error) {
+                                    qrLightningContainer.appendChild(canvas);
+                                }
+                            }
+                        );
+                    }
+
+                    // Generate Onchain QR code if address exists
+                    if (onchainAddress) {
+                        const qrOnchainContainer = document.getElementById(`qr-onchain-${cardId}`);
+                        if (qrOnchainContainer && qrOnchainContainer.children.length === 0) {
+                            QRCode.toCanvas(
+                                `bitcoin:${onchainAddress}`,
+                                { width: 160, margin: 1 },
+                                (error, canvas) => {
+                                    if (!error) {
+                                        qrOnchainContainer.appendChild(canvas);
+                                    }
+                                }
+                            );
+                        }
+                    }
+                }, 300);
+            } else {
+                // Flipping back to front
+                card.classList.remove('flipped');
+            }
+        }
+
+        function switchPaymentMethod(cardId) {
+            const cardBack = document.getElementById(`back-${cardId}`);
+            cardBack.classList.toggle('show-onchain');
+        }
+
+        function viewProfile(memberId, event) {
+            // Only navigate if clicking the card itself, not the buttons
+            if (event.target.tagName !== 'BUTTON' && event.target.tagName !== 'A') {
+                window.location.href = `profile.html?id=${memberId}`;
+            }
+        }
+
+        function copyLightningAddress(address) {
+            if (!address) return;
+
+            navigator.clipboard.writeText(address).then(() => {
+                alert(`Lightning address copied: ${address}\n\nPaste this in your Lightning wallet to send sats!`);
+            });
+        }
+
+        function copyAddressWithFeedback(address, elementId) {
+            if (!address) return;
+
+            const addressElement = document.getElementById(elementId);
+            const originalText = addressElement.textContent;
+
+            navigator.clipboard.writeText(address).then(() => {
+                // Add copied class for visual feedback
+                addressElement.classList.add('copied');
+                addressElement.textContent = '✓ Copied to clipboard!';
+
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    addressElement.classList.remove('copied');
+                    addressElement.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy address');
+            });
+        }
+
+        // Event listeners
+        document.querySelectorAll('[data-filter]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                renderMembers();
+            });
+        });
+
+        document.getElementById('country-filter').addEventListener('change', (e) => {
+            currentCountry = e.target.value;
+            renderMembers();
+        });
+
+        document.getElementById('sort').addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            renderMembers();
+        });
+
+        document.getElementById('search').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderMembers();
+        });
+    </script>
+</body>
+</html>
