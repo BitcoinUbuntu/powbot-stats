@@ -808,7 +808,6 @@
         }
 
         .view-profile-button {
-            display: none;
             margin-bottom: 12px;
         }
 
@@ -996,18 +995,6 @@
             .post-link {
                 margin-left: 12px;
             }
-
-            .project-info-banner {
-                display: none;
-            }
-
-            .view-profile-button {
-                display: block;
-            }
-
-            .project-info-row {
-                font-size: 0.85rem;
-            }
         }
     </style>
 </head>
@@ -1116,12 +1103,16 @@
         }
 
         function renderViewProfileButton(projectName) {
-            const metadata = projectMetadata[projectName];
-            if (!metadata || !metadata.info_url) return '';
+            // Convert project name to profile ID (e.g., "Bitcoin Ekasi 🇿🇦" -> "bitcoin-ekasi")
+            const profileId = projectName
+                .replace(/[^\w\s-]/g, '') // Remove emojis and special characters
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, '-'); // Replace spaces with hyphens
 
             return `
                 <div class="view-profile-button">
-                    <a href="${metadata.info_url}">View Profile →</a>
+                    <a href="profile.html?id=${profileId}">View Profile →</a>
                 </div>
             `;
         }
@@ -1335,8 +1326,7 @@
                 const hasPosts = posts.length > 0;
                 const isHidden = index >= initialCount;
 
-                // Generate project info banner and button for projects only
-                const infoBanner = type === 'project' ? renderProjectInfoBanner(item.name) : '';
+                // Generate view profile button for projects only
                 const viewProfileButton = type === 'project' ? renderViewProfileButton(item.name) : '';
 
                 return `
@@ -1351,7 +1341,6 @@
                     </div>
                     ${hasPosts ? `
                     <div class="leaderboard-posts">
-                        ${infoBanner}
                         ${viewProfileButton}
                         ${posts.map(post => {
                             const platform = getPlatform(post.url);
