@@ -584,7 +584,7 @@
 
         .leaderboard-posts {
             display: none;
-            padding: 0 12px 12px 52px;
+            padding: 0 0 12px 0;
             border-top: 1px solid var(--border);
         }
 
@@ -598,6 +598,8 @@
             justify-content: space-between;
             padding: 10px 12px;
             margin-top: 8px;
+            margin-left: 48px;
+            margin-right: 12px;
             background: var(--bg-primary);
             border-radius: 6px;
             text-decoration: none;
@@ -942,8 +944,6 @@
             background: linear-gradient(135deg, rgba(88, 166, 255, 0.15), rgba(88, 166, 255, 0.05));
             padding: 12px 16px;
             margin-bottom: 12px;
-            margin-left: -52px;
-            margin-right: -12px;
             display: grid;
             gap: 8px;
         }
@@ -997,14 +997,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .leaderboard-posts {
-                padding-left: 12px;
-            }
-
-            .project-info-banner {
-                padding: 10px 12px;
-                margin-left: -12px;
-                margin-right: -12px;
+            .post-link {
+                margin-left: 12px;
             }
 
             .project-info-row {
