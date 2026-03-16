@@ -941,7 +941,7 @@
 
         /* Project Info Banner */
         .project-info-banner {
-            background: rgba(88, 166, 255, 0.1);
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.15), rgba(88, 166, 255, 0.05));
             padding: 12px 16px;
             margin-bottom: 12px;
             display: grid;
@@ -982,6 +982,28 @@
             text-decoration: underline;
         }
 
+        .view-profile-button {
+            display: none;
+            margin-bottom: 12px;
+        }
+
+        .view-profile-button a {
+            display: block;
+            background: var(--accent-blue);
+            color: var(--bg-primary);
+            text-align: center;
+            padding: 12px 16px;
+            border-radius: 6px 6px 0 0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s ease;
+        }
+
+        .view-profile-button a:hover {
+            background: #79b8ff;
+        }
+
         @media (max-width: 600px) {
             nav .container {
                 justify-content: center;
@@ -999,6 +1021,14 @@
 
             .post-link {
                 margin-left: 12px;
+            }
+
+            .project-info-banner {
+                display: none;
+            }
+
+            .view-profile-button {
+                display: block;
             }
 
             .project-info-row {
@@ -1420,6 +1450,17 @@
             `;
         }
 
+        function renderViewProfileButton(projectName) {
+            const metadata = projectMetadata[projectName];
+            if (!metadata || !metadata.info_url) return '';
+
+            return `
+                <div class="view-profile-button">
+                    <a href="${metadata.info_url}">View Profile →</a>
+                </div>
+            `;
+        }
+
         function renderLeaderboard(elementId, items, type) {
             const container = document.getElementById(elementId);
             const initialCount = 10;
@@ -1430,8 +1471,9 @@
                 const hasPosts = posts.length > 0;
                 const isHidden = index >= initialCount;
 
-                // Generate project info banner for projects only
+                // Generate project info banner and button for projects only
                 const infoBanner = type === 'project' ? renderProjectInfoBanner(item.name) : '';
+                const viewProfileButton = type === 'project' ? renderViewProfileButton(item.name) : '';
 
                 return `
                 <div class="leaderboard-item ${isHidden ? 'leaderboard-hidden' : ''}" data-index="${index}">
@@ -1446,6 +1488,7 @@
                     ${hasPosts ? `
                     <div class="leaderboard-posts">
                         ${infoBanner}
+                        ${viewProfileButton}
                         ${posts.map(post => {
                             const platform = getPlatform(post.url);
                             const postLabel = type === 'project' ? (post.merchant || item.name) : (post.project || item.name);
