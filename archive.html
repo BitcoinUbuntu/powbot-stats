@@ -1102,17 +1102,19 @@
             `;
         }
 
-        function renderViewProfileButton(projectName) {
-            // Convert project name to profile ID (e.g., "Bitcoin Ekasi 🇿🇦" -> "bitcoin-ekasi")
-            const profileId = projectName
+        function renderViewProfileButton(name, type = 'project') {
+            // Convert name to profile ID (e.g., "Bitcoin Ekasi 🇿🇦" -> "bitcoin-ekasi")
+            const profileId = name
                 .replace(/[^\w\s-]/g, '') // Remove emojis and special characters
                 .trim()
                 .toLowerCase()
                 .replace(/\s+/g, '-'); // Replace spaces with hyphens
 
+            const profileUrl = type === 'merchant' ? 'merchant-profile.html' : 'profile.html';
+
             return `
                 <div class="view-profile-button">
-                    <a href="profile.html?id=${profileId}">View Profile →</a>
+                    <a href="${profileUrl}?id=${profileId}">View Profile →</a>
                 </div>
             `;
         }
@@ -1326,8 +1328,8 @@
                 const hasPosts = posts.length > 0;
                 const isHidden = index >= initialCount;
 
-                // Generate view profile button for projects only
-                const viewProfileButton = type === 'project' ? renderViewProfileButton(item.name) : '';
+                // Generate view profile button for projects and merchants
+                const viewProfileButton = renderViewProfileButton(item.name, type);
 
                 return `
                 <div class="leaderboard-item ${isHidden ? 'leaderboard-hidden' : ''}" data-index="${index}">
