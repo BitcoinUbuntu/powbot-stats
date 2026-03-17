@@ -832,82 +832,116 @@
 
             html += `</div>`; // Close top-cards
 
-            // PoWBoT Stats - collect posts from all epochs
-            const allPosts = [];
-            let totalVideos = 0;
+            // PoWBoT Stats - collect posts separately by epoch
+            const epoch5Posts = [];
+            const epoch4Posts = [];
 
             // Create the name format used in stats JSON: "ProjectName 🇫🇱"
             const statsName = `${member.name} ${member.flag || ''}`.trim();
 
+            // Extract posts from Epoch 5 (current/live)
+            if (allStats.live && allStats.live.top_projects) {
+                const epoch5Project = allStats.live.top_projects.find(p => p.name === statsName);
+                if (epoch5Project && epoch5Project.posts) {
+                    epoch5Posts.push(...epoch5Project.posts);
+                }
+            }
+
             // Extract posts from Epoch 4
             if (allStats.epoch4 && allStats.epoch4.top_projects) {
                 const epoch4Project = allStats.epoch4.top_projects.find(p => p.name === statsName);
-                if (epoch4Project) {
-                    totalVideos += epoch4Project.count;
-                    if (epoch4Project.posts) {
-                        allPosts.push(...epoch4Project.posts);
-                    }
+                if (epoch4Project && epoch4Project.posts) {
+                    epoch4Posts.push(...epoch4Project.posts);
                 }
             }
 
-            // Extract posts from current epoch (Epoch 5)
-            if (allStats.live && allStats.live.top_projects) {
-                const liveProject = allStats.live.top_projects.find(p => p.name === statsName);
-                if (liveProject) {
-                    totalVideos += liveProject.count;
-                    if (liveProject.posts) {
-                        allPosts.push(...liveProject.posts);
-                    }
-                }
-            }
+            // Display Epoch 5 section
+            if (epoch5Posts.length > 0) {
+                epoch5Posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                const initialCount = 5;
+                const hasMore = epoch5Posts.length > initialCount;
 
-            // Display PoWBoT Stats section if there are any posts
-            if (totalVideos > 0) {
                 html += `
                     <div class="section">
-                        <h2>PoWBoT Activity</h2>
+                        <h2>PoWBoT Activity – Epoch 5</h2>
                         <div class="stats-grid">
                             <div class="stat-box">
-                                <div class="value">${totalVideos}</div>
-                                <div class="label">${totalVideos === 1 ? 'Video' : 'Videos'} Submitted</div>
+                                <div class="value">${epoch5Posts.length}</div>
+                                <div class="label">${epoch5Posts.length === 1 ? 'Video' : 'Videos'} Submitted</div>
                             </div>
                         </div>
+                        <h3>Merchant ${epoch5Posts.length === 1 ? 'Video' : 'Videos'} (${epoch5Posts.length})</h3>
+                        <div class="posts-list" id="posts-list-epoch5">
                 `;
 
-                if (allPosts.length > 0) {
-                    // Sort posts by date (newest first)
-                    allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-                    const initialCount = 10;
-                    const hasMore = allPosts.length > initialCount;
-
+                epoch5Posts.forEach((post, index) => {
+                    const platform = getPlatform(post.url);
+                    const isHidden = index >= initialCount;
                     html += `
-                        <h3>Merchant ${allPosts.length === 1 ? 'Video' : 'Videos'} (${allPosts.length})</h3>
-                        <div class="posts-list" id="posts-list">
+                        <a href="${post.url}" target="_blank" rel="noopener" class="post-item ${isHidden ? 'post-hidden' : ''}">
+                            <span class="post-info">
+                                <span class="post-platform">${platform.name}</span>
+                                <span class="post-merchant">${post.merchant}</span>
+                            </span>
+                            <span class="post-date">${formatDate(post.date)}</span>
+                        </a>
                     `;
-                    allPosts.forEach((post, index) => {
-                        const platform = getPlatform(post.url);
-                        const isHidden = index >= initialCount;
-                        html += `
-                            <a href="${post.url}" target="_blank" rel="noopener" class="post-item ${isHidden ? 'post-hidden' : ''}" data-index="${index}">
-                                <span class="post-info">
-                                    <span class="post-platform">${platform.name}</span>
-                                    <span class="post-merchant">${post.merchant}</span>
-                                </span>
-                                <span class="post-date">${formatDate(post.date)}</span>
-                            </a>
-                        `;
-                    });
-                    html += `</div>`;
+                });
 
-                    // Add "Show more" button if there are more than 10 posts
-                    if (hasMore) {
-                        html += `
-                            <button class="posts-more" onclick="togglePosts(this)" data-count="${allPosts.length - initialCount}">
-                                Show ${allPosts.length - initialCount} more
-                            </button>
-                        `;
-                    }
+                html += `</div>`;
+
+                if (hasMore) {
+                    html += `
+                        <button class="posts-more" onclick="toggleEpoch5Posts(this)" data-count="${epoch5Posts.length - initialCount}">
+                            Show ${epoch5Posts.length - initialCount} more
+                        </button>
+                    `;
+                }
+
+                html += `</div>`;
+            }
+
+            // Display Epoch 4 section
+            if (epoch4Posts.length > 0) {
+                epoch4Posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+                const initialCount = 5;
+                const hasMore = epoch4Posts.length > initialCount;
+
+                html += `
+                    <div class="section">
+                        <h2>PoWBoT Activity – Epoch 4</h2>
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <div class="value">${epoch4Posts.length}</div>
+                                <div class="label">${epoch4Posts.length === 1 ? 'Video' : 'Videos'} Submitted</div>
+                            </div>
+                        </div>
+                        <h3>Merchant ${epoch4Posts.length === 1 ? 'Video' : 'Videos'} (${epoch4Posts.length})</h3>
+                        <div class="posts-list" id="posts-list-epoch4">
+                `;
+
+                epoch4Posts.forEach((post, index) => {
+                    const platform = getPlatform(post.url);
+                    const isHidden = index >= initialCount;
+                    html += `
+                        <a href="${post.url}" target="_blank" rel="noopener" class="post-item ${isHidden ? 'post-hidden' : ''}">
+                            <span class="post-info">
+                                <span class="post-platform">${platform.name}</span>
+                                <span class="post-merchant">${post.merchant}</span>
+                            </span>
+                            <span class="post-date">${formatDate(post.date)}</span>
+                        </a>
+                    `;
+                });
+
+                html += `</div>`;
+
+                if (hasMore) {
+                    html += `
+                        <button class="posts-more" onclick="toggleEpoch4Posts(this)" data-count="${epoch4Posts.length - initialCount}">
+                            Show ${epoch4Posts.length - initialCount} more
+                        </button>
+                    `;
                 }
 
                 html += `</div>`;
@@ -937,19 +971,23 @@
                 });
 
                 if (historicalPosts.length > 0) {
+                    const initialHistoricalCount = 5;
+                    const hasMoreHistorical = historicalPosts.length > initialHistoricalCount;
+
                     html += `
                         <div class="section">
                             <h2>Pre-PoWBoT History</h2>
                             <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 0.9rem;">
                                 Posts from Epochs 1–3 and Epoch 4 Testing Phase (${historicalPosts.length} ${historicalPosts.length === 1 ? 'video' : 'videos'})
                             </p>
-                            <div class="posts-list">
+                            <div class="posts-list" id="posts-list-historical">
                     `;
 
                     historicalPosts.forEach((post, index) => {
                         const platform = getPlatform(post.url);
+                        const isHidden = index >= initialHistoricalCount;
                         html += `
-                            <a href="${post.url}" target="_blank" rel="noopener" class="post-item">
+                            <a href="${post.url}" target="_blank" rel="noopener" class="post-item ${isHidden ? 'post-hidden' : ''}">
                                 <span class="post-info">
                                     <span class="post-platform">${platform.name}</span>
                                     <span class="post-merchant">${post.epoch} (${post.period})</span>
@@ -959,10 +997,18 @@
                         `;
                     });
 
-                    html += `
-                            </div>
-                        </div>
-                    `;
+                    html += `</div>`;
+
+                    // Add "Show more" button if there are more than 5 posts
+                    if (hasMoreHistorical) {
+                        html += `
+                            <button class="posts-more" onclick="toggleHistoricalPosts(this)" data-count="${historicalPosts.length - initialHistoricalCount}">
+                                Show ${historicalPosts.length - initialHistoricalCount} more
+                            </button>
+                        `;
+                    }
+
+                    html += `</div>`;
                 }
             }
 
@@ -1068,15 +1114,59 @@
             card.classList.toggle('flipped');
         }
 
-        function togglePosts(button) {
+        function toggleEpoch5Posts(button) {
             const count = parseInt(button.dataset.count);
             const isExpanded = button.classList.contains('expanded');
-            const container = document.getElementById('posts-list');
+            const container = document.getElementById('posts-list-epoch5');
 
             if (isExpanded) {
-                // Collapse - hide posts after 10th
+                // Collapse - hide posts after 5th
                 container.querySelectorAll('.post-item').forEach((el, index) => {
-                    if (index >= 10) el.classList.add('post-hidden');
+                    if (index >= 5) el.classList.add('post-hidden');
+                });
+                button.textContent = `Show ${count} more`;
+                button.classList.remove('expanded');
+            } else {
+                // Expand - show all posts
+                container.querySelectorAll('.post-hidden').forEach(el => {
+                    el.classList.remove('post-hidden');
+                });
+                button.textContent = 'Show less';
+                button.classList.add('expanded');
+            }
+        }
+
+        function toggleEpoch4Posts(button) {
+            const count = parseInt(button.dataset.count);
+            const isExpanded = button.classList.contains('expanded');
+            const container = document.getElementById('posts-list-epoch4');
+
+            if (isExpanded) {
+                // Collapse - hide posts after 5th
+                container.querySelectorAll('.post-item').forEach((el, index) => {
+                    if (index >= 5) el.classList.add('post-hidden');
+                });
+                button.textContent = `Show ${count} more`;
+                button.classList.remove('expanded');
+            } else {
+                // Expand - show all posts
+                container.querySelectorAll('.post-hidden').forEach(el => {
+                    el.classList.remove('post-hidden');
+                });
+                button.textContent = 'Show less';
+                button.classList.add('expanded');
+            }
+        }
+
+        function toggleHistoricalPosts(button) {
+            const count = parseInt(button.dataset.count);
+            const isExpanded = button.classList.contains('expanded');
+            const container = document.getElementById('posts-list-historical');
+
+            if (isExpanded) {
+                // Collapse - hide posts after 5th
+                container.querySelectorAll('.post-item').forEach((el, index) => {
+                    if (index >= 5) el.classList.add('post-hidden');
                 });
                 button.textContent = `Show ${count} more`;
                 button.classList.remove('expanded');
