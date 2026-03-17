@@ -602,6 +602,72 @@
             fill: var(--text-secondary);
         }
 
+        /* Badges */
+        .badges-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .badges-section h2 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .badges-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-purple);
+        }
+
+        .badge-icon {
+            font-size: 1.1rem;
+            line-height: 1;
+        }
+
+        .badge-label {
+            color: var(--text-primary);
+        }
+
+        /* Badge color variations */
+        .badge.activity { border-color: var(--accent-blue); }
+        .badge.activity:hover { border-color: var(--accent-blue); background: rgba(88, 166, 255, 0.1); }
+
+        .badge.community { border-color: var(--accent-green); }
+        .badge.community:hover { border-color: var(--accent-green); background: rgba(63, 185, 80, 0.1); }
+
+        .badge.consistency { border-color: var(--accent-purple); }
+        .badge.consistency:hover { border-color: var(--accent-purple); background: rgba(163, 113, 247, 0.1); }
+
+        .badge.legacy { border-color: var(--accent-orange); }
+        .badge.legacy:hover { border-color: var(--accent-orange); background: rgba(247, 147, 26, 0.1); }
+
+        .badge.excellence { border-color: #ffd700; }
+        .badge.excellence:hover { border-color: #ffd700; background: rgba(255, 215, 0, 0.1); }
+
         /* Recent Posts */
         .posts-list {
             display: flex;
@@ -975,6 +1041,7 @@
             // PoWBoT Stats - collect posts separately by epoch
             const epoch5Posts = [];
             const epoch4Posts = [];
+            const historicalPosts = [];
 
             // Create the name format used in stats JSON: "ProjectName 🇫🇱"
             const statsName = `${member.name} ${member.flag || ''}`.trim();
@@ -993,6 +1060,52 @@
                 if (epoch4Project && epoch4Project.posts) {
                     epoch4Posts.push(...epoch4Project.posts);
                 }
+            }
+
+            // Extract historical posts (Epochs 1-3 + Epoch 4 Testing)
+            if (allStats.historical && allStats.historical.epochs) {
+                const epochs = allStats.historical.epochs;
+                ['epoch1', 'epoch2', 'epoch3', 'epoch4_testing'].forEach(epochKey => {
+                    const epoch = epochs[epochKey];
+                    if (epoch && epoch.top_projects) {
+                        const project = epoch.top_projects.find(p => p.name === statsName);
+                        if (project && project.posts) {
+                            project.posts.forEach(post => {
+                                historicalPosts.push({
+                                    ...post,
+                                    epoch: epoch.name,
+                                    period: epoch.period
+                                });
+                            });
+                        }
+                    }
+                });
+            }
+
+            // Calculate badges
+            const badges = calculateBadges(epoch4Posts, epoch5Posts, historicalPosts, allStats, statsName);
+
+            // Render badges section if there are any badges
+            if (badges.length > 0) {
+                html += `
+                    <div class="badges-section">
+                        <h2>Achievements</h2>
+                        <div class="badges-grid">
+                `;
+
+                badges.forEach(badge => {
+                    html += `
+                        <div class="badge ${badge.type}" title="${badge.title}">
+                            <span class="badge-icon">${badge.icon}</span>
+                            <span class="badge-label">${badge.label}</span>
+                        </div>
+                    `;
+                });
+
+                html += `
+                        </div>
+                    </div>
+                `;
             }
 
             // Display Epoch 5 section
@@ -1118,32 +1231,9 @@
             }
 
             // Pre-PoWBoT History (Epochs 1-3 + Epoch 4 Testing)
-            if (allStats.historical && allStats.historical.epochs) {
-                const historicalPosts = [];
-                const epochs = allStats.historical.epochs;
-                const statsName = `${member.name} ${member.flag || ''}`.trim();
-
-                // Collect posts from epoch1, epoch2, epoch3, and epoch4_testing
-                ['epoch1', 'epoch2', 'epoch3', 'epoch4_testing'].forEach(epochKey => {
-                    const epoch = epochs[epochKey];
-                    if (epoch && epoch.top_projects) {
-                        const project = epoch.top_projects.find(p => p.name === statsName);
-                        if (project && project.posts) {
-                            project.posts.forEach(post => {
-                                historicalPosts.push({
-                                    ...post,
-                                    epoch: epoch.name,
-                                    period: epoch.period
-                                });
-                            });
-                        }
-                    }
-                });
-
+            if (historicalPosts.length > 0) {
                 // Sort in reverse chronological order (newest first) to match Epoch 4 section
                 historicalPosts.reverse();
-
-                if (historicalPosts.length > 0) {
                     const initialHistoricalCount = 5;
                     const hasMoreHistorical = historicalPosts.length > initialHistoricalCount;
 
@@ -1182,7 +1272,6 @@
                     }
 
                     html += `</div>`;
-                }
             }
 
             // Vision & Mission
@@ -1412,6 +1501,85 @@
                     </div>
                 </div>
             `;
+        }
+
+        function calculateBadges(epoch4Posts, epoch5Posts, historicalPosts, allStats, statsName) {
+            const badges = [];
+
+            // Total posts across all epochs
+            const totalPosts = epoch4Posts.length + epoch5Posts.length + historicalPosts.length;
+
+            // Activity Milestones
+            if (totalPosts >= 500) {
+                badges.push({ icon: '💎', label: 'Diamond Status', type: 'activity', title: '500+ posts' });
+            } else if (totalPosts >= 100) {
+                badges.push({ icon: '⭐', label: 'Rising Star', type: 'activity', title: '100+ posts' });
+            } else if (totalPosts >= 50) {
+                badges.push({ icon: '🔥', label: 'On Fire', type: 'activity', title: '50+ posts' });
+            } else if (totalPosts >= 10) {
+                badges.push({ icon: '🌱', label: 'First Steps', type: 'activity', title: '10+ posts' });
+            }
+
+            // Community Impact - based on unique merchants in Epoch 4
+            if (epoch4Posts.length > 0) {
+                const uniqueMerchants = new Set(epoch4Posts.map(p => p.merchant)).size;
+
+                if (uniqueMerchants >= 25) {
+                    badges.push({ icon: '🌍', label: 'Network Connector', type: 'community', title: '25+ unique merchants' });
+                } else if (uniqueMerchants >= 15) {
+                    badges.push({ icon: '🏪', label: 'Merchant Champion', type: 'community', title: '15+ unique merchants' });
+                } else if (uniqueMerchants >= 5) {
+                    badges.push({ icon: '🤝', label: 'Community Builder', type: 'community', title: '5+ unique merchants' });
+                }
+            }
+
+            // Platform Diversity - active on both X and Nostr
+            const allPosts = [...epoch4Posts, ...epoch5Posts];
+            if (allPosts.length > 0) {
+                const hasXPosts = allPosts.some(p => {
+                    const url = p.url ? p.url.toLowerCase() : '';
+                    return url.includes('twitter.com') || url.includes('x.com');
+                });
+                const hasNostrPosts = allPosts.some(p => {
+                    const url = p.url ? p.url.toLowerCase() : '';
+                    return url.includes('primal.net') || url.includes('njump') || (!url.includes('twitter.com') && !url.includes('x.com'));
+                });
+
+                if (hasXPosts && hasNostrPosts) {
+                    badges.push({ icon: '🎯', label: 'All-Rounder', type: 'consistency', title: 'Active on both X and Nostr' });
+                }
+            }
+
+            // Legacy & Tenure
+            if (historicalPosts.length > 0) {
+                // Count unique epochs from historical posts
+                const historicalEpochs = new Set(historicalPosts.map(p => p.epoch)).size;
+
+                if (historicalEpochs >= 3 || (historicalEpochs > 0 && epoch4Posts.length > 0 && epoch5Posts.length > 0)) {
+                    badges.push({ icon: '🔄', label: 'Multi-Epoch Veteran', type: 'legacy', title: 'Active across 3+ epochs' });
+                } else if (historicalEpochs > 0) {
+                    badges.push({ icon: '👑', label: 'Founding Member', type: 'legacy', title: 'Pre-PoWBoT participant' });
+                }
+
+                badges.push({ icon: '🏆', label: 'Early Adopter', type: 'legacy', title: 'Participated in Epochs 1-3' });
+            }
+
+            // Excellence - ranking based on Epoch 4 data
+            if (allStats.epoch4 && allStats.epoch4.top_projects) {
+                const ranking = allStats.epoch4.top_projects.findIndex(p => p.name === statsName);
+
+                if (ranking === 0) {
+                    badges.push({ icon: '🥇', label: 'Top Performer', type: 'excellence', title: '#1 in Epoch 4' });
+                } else if (ranking === 1) {
+                    badges.push({ icon: '🥈', label: '2nd Place', type: 'excellence', title: '#2 in Epoch 4' });
+                } else if (ranking === 2) {
+                    badges.push({ icon: '🥉', label: '3rd Place', type: 'excellence', title: '#3 in Epoch 4' });
+                } else if (ranking >= 0 && ranking < 10) {
+                    badges.push({ icon: '🏅', label: 'Top 10', type: 'excellence', title: `#${ranking + 1} in Epoch 4` });
+                }
+            }
+
+            return badges;
         }
 
         function getPlatform(url) {
