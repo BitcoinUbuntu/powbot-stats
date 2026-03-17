@@ -795,7 +795,7 @@
             if (member.lightning_address) {
                 html += `
                                 <div class="qr-container" id="qr-lightning"></div>
-                                <div class="address" id="lightning-address" onclick="copyAddressWithFeedback('${member.lightning_address}', 'lightning-address')" title="Click to copy" ${!member.onchain_address ? 'style="margin-top: auto;"' : ''}>${member.lightning_address}</div>
+                                <div class="address" id="lightning-address" onclick="copyAddressWithFeedback('${member.lightning_address}', 'lightning-address')" title="Click to copy">${member.lightning_address}</div>
                 `;
                 if (member.onchain_address) {
                     html += `
