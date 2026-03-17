@@ -1301,13 +1301,10 @@
             // Get max count for color scaling
             const maxCount = Math.max(...Object.values(postsByDay));
 
-            // Generate grid for date range (start from Sunday before first post)
-            const gridStartDate = new Date(startDate);
-            gridStartDate.setDate(gridStartDate.getDate() - gridStartDate.getDay());
-
+            // Generate grid starting exactly on Jan 13
             let html = '<div class="heatmap-container"><div class="heatmap-grid">';
 
-            const currentDate = new Date(gridStartDate);
+            const currentDate = new Date(startDate);
 
             while (currentDate <= endDate) {
                 const dateKey = currentDate.toISOString().split('T')[0];
