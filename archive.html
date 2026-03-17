@@ -828,6 +828,27 @@
             background: #79b8ff;
         }
 
+        .view-all-button {
+            margin-top: 12px;
+        }
+
+        .view-all-button a {
+            display: block;
+            background: var(--accent-blue);
+            color: var(--bg-primary);
+            text-align: center;
+            padding: 12px 16px;
+            border-radius: 0 0 6px 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s ease;
+        }
+
+        .view-all-button a:hover {
+            background: #79b8ff;
+        }
+
         .loading {
             text-align: center;
             padding: 40px;
@@ -1119,6 +1140,23 @@
             `;
         }
 
+        function renderViewAllButton(name, type, postCount) {
+            // Convert name to profile ID
+            const profileId = name
+                .replace(/[^\w\s-]/g, '')
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, '-');
+
+            const profileUrl = type === 'merchant' ? 'merchant-profile.html' : 'profile.html';
+
+            return `
+                <div class="view-all-button">
+                    <a href="${profileUrl}?id=${profileId}">View all ${postCount} posts →</a>
+                </div>
+            `;
+        }
+
         // Render the dashboard
         function renderDashboard(epoch4Live, historical) {
             const content = document.getElementById('content');
@@ -1361,6 +1399,7 @@
                                 ${post.date ? `<span class="post-date">${formatDate(post.date)}</span>` : ''}
                             </a>
                         `}).join('')}
+                        ${posts.length > 10 ? renderViewAllButton(item.name, type, posts.length) : ''}
                     </div>
                     ` : ''}
                 </div>
