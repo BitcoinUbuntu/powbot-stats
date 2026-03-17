@@ -1480,7 +1480,7 @@
                     ${hasPosts ? `
                     <div class="leaderboard-posts">
                         ${viewProfileButton}
-                        ${posts.map(post => {
+                        ${posts.slice(0, 10).map(post => {
                             const platform = getPlatform(post.url);
                             const postLabel = type === 'project' ? (post.merchant || item.name) : (post.project || item.name);
                             return `
