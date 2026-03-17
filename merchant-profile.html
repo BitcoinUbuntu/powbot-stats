@@ -299,6 +299,14 @@
             return `${day} ${month} ${year}`;
         }
 
+        function normalizeId(name) {
+            return name
+                .replace(/[^\w\s-]/g, '') // Remove emojis and special characters
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, '-'); // Replace spaces with hyphens
+        }
+
         async function loadMerchantData(merchantName) {
             try {
                 // Load current epoch stats
@@ -309,14 +317,17 @@
                 const historicalResponse = await fetch('stats-epoch4.json');
                 const historicalStats = await historicalResponse.json();
 
+                // Normalize the URL parameter for comparison
+                const normalizedParam = normalizeId(merchantName);
+
                 // Find merchant in current stats
                 const currentMerchant = currentStats.top_merchants?.find(m =>
-                    m.name.toLowerCase() === merchantName.toLowerCase()
+                    normalizeId(m.name) === normalizedParam
                 );
 
                 // Find merchant in historical stats
                 const historicalMerchant = historicalStats.top_merchants?.find(m =>
-                    m.name.toLowerCase() === merchantName.toLowerCase()
+                    normalizeId(m.name) === normalizedParam
                 );
 
                 // Combine posts from both epochs
