@@ -862,6 +862,54 @@
             color: #f85149;
         }
 
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .quick-link-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .quick-link-btn:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+            background: var(--bg-secondary);
+        }
+
+        .quick-link-icon {
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        .quick-link-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .quick-link-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .quick-link-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
         /* Countdown & Highlights Section */
         .live-grid {
             display: grid;
@@ -1049,6 +1097,24 @@
                 </div>
             </div>
         </header>
+
+        <!-- Quick Links Navigation -->
+        <div class="quick-links">
+            <a href="index.html" class="quick-link-btn">
+                <span class="quick-link-icon">📊</span>
+                <div class="quick-link-text">
+                    <div class="quick-link-title">Live Stats</div>
+                    <div class="quick-link-subtitle">Current epoch activity</div>
+                </div>
+            </a>
+            <a href="members.html" class="quick-link-btn">
+                <span class="quick-link-icon">👥</span>
+                <div class="quick-link-text">
+                    <div class="quick-link-title">CBAF Members</div>
+                    <div class="quick-link-subtitle">Support projects directly</div>
+                </div>
+            </a>
+        </div>
 
         <div id="content">
             <div class="loading">Loading stats...</div>
