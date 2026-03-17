@@ -493,7 +493,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 12px 20px 20px 20px;
+            padding: 12px 20px 32px 20px;
         }
 
         .chart-card h3 {
@@ -530,8 +530,8 @@
         }
 
         .heatmap-day {
-            width: 12px;
-            height: 12px;
+            width: 16px;
+            height: 16px;
             border-radius: 2px;
             background: var(--bg-secondary);
             cursor: pointer;
@@ -562,48 +562,44 @@
 
         /* Timeline */
         .timeline-container {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+            position: relative;
+            width: 100%;
+            height: 120px;
         }
 
-        .timeline-bar {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        .timeline-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .timeline-line {
+            fill: none;
+            stroke: var(--accent-purple);
+            stroke-width: 2;
+        }
+
+        .timeline-area {
+            fill: var(--accent-purple);
+            opacity: 0.15;
+        }
+
+        .timeline-dot {
+            fill: var(--accent-purple);
+            cursor: pointer;
+        }
+
+        .timeline-dot:hover {
+            r: 4;
+        }
+
+        .timeline-axis {
+            stroke: var(--border);
+            stroke-width: 1;
         }
 
         .timeline-label {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            min-width: 60px;
-            text-align: right;
-        }
-
-        .timeline-track {
-            flex: 1;
-            height: 24px;
-            background: var(--bg-secondary);
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .timeline-fill {
-            height: 100%;
-            background: var(--accent-purple);
-            border-radius: 4px;
-            transition: width 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 8px;
-        }
-
-        .timeline-count {
-            font-size: 0.75rem;
-            color: white;
-            font-weight: 600;
+            font-size: 0.7rem;
+            fill: var(--text-secondary);
         }
 
         /* Recent Posts */
@@ -1082,7 +1078,7 @@
                                 <div id="heatmap-epoch4"></div>
                             </div>
                             <div class="chart-card">
-                                <h3>Monthly Timeline</h3>
+                                <h3>Activity Timeline</h3>
                                 <div id="timeline-epoch4"></div>
                             </div>
                         </div>
@@ -1347,49 +1343,72 @@
             const container = document.getElementById(elementId);
             if (!container || posts.length === 0) return;
 
-            // Get date range from posts
-            const dates = posts.map(p => new Date(p.date)).sort((a, b) => a - b);
-            const startDate = dates[0];
-            const endDate = dates[dates.length - 1];
+            // Epoch 4 Live date range
+            const startDate = new Date('2026-01-13');
+            const endDate = new Date('2026-03-04');
 
-            // Group posts by month
-            const postsByMonth = {};
+            // Count posts by day
+            const postsByDay = {};
             posts.forEach(post => {
-                const date = new Date(post.date);
-                const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
-                const monthLabel = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
-
-                if (!postsByMonth[monthKey]) {
-                    postsByMonth[monthKey] = {
-                        label: monthLabel,
-                        count: 0,
-                        date: date
-                    };
-                }
-                postsByMonth[monthKey].count++;
+                const dateKey = post.date.split('T')[0];
+                postsByDay[dateKey] = (postsByDay[dateKey] || 0) + 1;
             });
 
-            // Sort by date and get max count for scaling
-            const monthsData = Object.values(postsByMonth).sort((a, b) => a.date - b.date);
-            const maxCount = Math.max(...monthsData.map(m => m.count));
+            // Create daily data points for entire range
+            const dataPoints = [];
+            const currentDate = new Date(startDate);
+            while (currentDate <= endDate) {
+                const dateKey = currentDate.toISOString().split('T')[0];
+                dataPoints.push({
+                    date: new Date(currentDate),
+                    count: postsByDay[dateKey] || 0
+                });
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
 
-            // Render bars
-            let html = '<div class="timeline-container">';
-            monthsData.forEach(month => {
-                const widthPercent = (month.count / maxCount) * 100;
-                html += `
-                    <div class="timeline-bar">
-                        <div class="timeline-label">${month.label}</div>
-                        <div class="timeline-track">
-                            <div class="timeline-fill" style="width: ${widthPercent}%">
-                                ${month.count >= 3 ? `<span class="timeline-count">${month.count}</span>` : ''}
-                            </div>
-                        </div>
+            // Get max count for scaling
+            const maxCount = Math.max(...dataPoints.map(d => d.count), 1);
+
+            // SVG dimensions
+            const width = 100; // percentage
+            const height = 100;
+            const padding = { top: 10, right: 5, bottom: 5, left: 5 };
+            const chartWidth = 100 - padding.left - padding.right;
+            const chartHeight = 100 - padding.top - padding.bottom;
+
+            // Generate line path
+            const points = dataPoints.map((d, i) => {
+                const x = padding.left + (i / (dataPoints.length - 1)) * chartWidth;
+                const y = padding.top + chartHeight - (d.count / maxCount) * chartHeight;
+                return { x, y, count: d.count };
+            });
+
+            const linePath = points.map((p, i) =>
+                `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`
+            ).join(' ');
+
+            // Area path (for fill under line)
+            const areaPath = `M ${padding.left} ${padding.top + chartHeight} ` +
+                points.map(p => `L ${p.x} ${p.y}`).join(' ') +
+                ` L ${padding.left + chartWidth} ${padding.top + chartHeight} Z`;
+
+            // Format dates for labels
+            const startLabel = startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            const endLabel = endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+            // Render SVG
+            container.innerHTML = `
+                <div class="timeline-container">
+                    <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="timeline-svg">
+                        <path class="timeline-area" d="${areaPath}" />
+                        <path class="timeline-line" d="${linePath}" vector-effect="non-scaling-stroke" />
+                    </svg>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-secondary); margin-top: 4px;">
+                        <span>${startLabel}</span>
+                        <span>${endLabel}</span>
                     </div>
-                `;
-            });
-            html += '</div>';
-            container.innerHTML = html;
+                </div>
+            `;
         }
 
         function getPlatform(url) {
