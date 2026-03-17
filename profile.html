@@ -881,6 +881,10 @@
                                 <div class="value">${epoch5Posts.length}</div>
                                 <div class="label">${epoch5Posts.length === 1 ? 'Post' : 'Posts'} Submitted</div>
                             </div>
+                            <div class="stat-box">
+                                <div class="value">${new Set(epoch5Posts.map(p => p.merchant)).size}</div>
+                                <div class="label">${new Set(epoch5Posts.map(p => p.merchant)).size === 1 ? 'Merchant' : 'Merchants'}</div>
+                            </div>
                         </div>
                         <h3>Merchant ${epoch5Posts.length === 1 ? 'Post' : 'Posts'} (${epoch5Posts.length})</h3>
                         <div class="posts-list" id="posts-list-epoch5">
@@ -926,6 +930,10 @@
                             <div class="stat-box">
                                 <div class="value">${epoch4Posts.length}</div>
                                 <div class="label">${epoch4Posts.length === 1 ? 'Post' : 'Posts'} Submitted</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="value">${new Set(epoch4Posts.map(p => p.merchant)).size}</div>
+                                <div class="label">${new Set(epoch4Posts.map(p => p.merchant)).size === 1 ? 'Merchant' : 'Merchants'}</div>
                             </div>
                         </div>
                         <h3>Merchant ${epoch4Posts.length === 1 ? 'Post' : 'Posts'} (${epoch4Posts.length})</h3>
