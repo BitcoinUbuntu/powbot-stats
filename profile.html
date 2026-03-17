@@ -1140,6 +1140,9 @@
                     }
                 });
 
+                // Sort in reverse chronological order (newest first) to match Epoch 4 section
+                historicalPosts.reverse();
+
                 if (historicalPosts.length > 0) {
                     const initialHistoricalCount = 5;
                     const hasMoreHistorical = historicalPosts.length > initialHistoricalCount;
