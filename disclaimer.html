@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer | PoWBoT Stats</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
+
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-card: #21262d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent-orange: #f7931a;
+            --accent-green: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 20px;
+            position: sticky;
+            top: 0;
+            margin: -20px -20px 20px -20px;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        nav a.current {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--accent-orange);
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 24px;
+        }
+
+        .card h2 {
+            color: var(--accent-blue);
+            margin-bottom: 16px;
+            font-size: 1.5rem;
+        }
+
+        .card h3 {
+            color: var(--text-primary);
+            margin-top: 24px;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        .card ul {
+            margin-left: 24px;
+            margin-bottom: 16px;
+            color: var(--text-secondary);
+        }
+
+        .card li {
+            margin-bottom: 8px;
+        }
+
+        .card a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent-orange);
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent-blue);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-links">
+                <a href="index.html">Stats</a>
+                <span style="color: var(--text-secondary);">|</span>
+                <a href="members.html">Directory</a>
+                <span style="color: var(--text-secondary);">|</span>
+                <a href="archive.html">Archive</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Disclaimer</h1>
+            <p class="subtitle">Important information about using this site</p>
+        </header>
+
+        <div class="card">
+            <h2>Information Accuracy</h2>
+            <p>All information on this website is provided on a best-effort basis. While we strive for accuracy, we cannot guarantee that all data is complete, current, or error-free.</p>
+            <p>Statistics, payment counts, and activity data are generated from available records and may not reflect real-time status.</p>
+        </div>
+
+        <div class="card">
+            <h2>Project Information & Payment Addresses</h2>
+            <p>We rely on projects themselves to provide and maintain accurate information, including:</p>
+            <ul>
+                <li>Lightning addresses for donations</li>
+                <li>Bitcoin on-chain addresses</li>
+                <li>Project descriptions and details</li>
+                <li>Contact information</li>
+            </ul>
+            <p class="highlight"><strong>Important:</strong> It is the responsibility of each project to inform us of any changes to their payment addresses or other critical information. We are not liable for donations sent to outdated, incorrect, or compromised addresses.</p>
+        </div>
+
+        <div class="card">
+            <h2>Verification Before Donating</h2>
+            <p>Before making any payments or donations:</p>
+            <ul>
+                <li>Verify payment addresses directly with the project through their official channels</li>
+                <li>Confirm that the project information is current</li>
+                <li>Exercise due diligence when sending any funds</li>
+                <li>Start with small test transactions if unsure</li>
+            </ul>
+            <p>We strongly recommend contacting projects directly if you have any doubts about the information displayed on this site.</p>
+        </div>
+
+        <div class="card">
+            <h2>Limitation of Liability</h2>
+            <p>The operators of this website accept no liability for:</p>
+            <ul>
+                <li>Payments sent to incorrect, outdated, or compromised addresses</li>
+                <li>Financial losses resulting from reliance on information displayed here</li>
+                <li>Errors, omissions, or inaccuracies in the data presented</li>
+                <li>Service interruptions or data availability</li>
+                <li>Actions taken based on the information provided</li>
+            </ul>
+            <p>Use of this website and any actions taken based on the information provided are entirely at your own risk.</p>
+        </div>
+
+        <div class="card">
+            <h2>No Warranties</h2>
+            <p>This website and all information contained herein are provided "as is" without warranty of any kind, either express or implied, including but not limited to warranties of accuracy, reliability, or fitness for a particular purpose.</p>
+        </div>
+
+        <div class="card">
+            <h2>Contact & Updates</h2>
+            <p>If you are a project representative and need to update your information or report inaccuracies, please contact us through the official channels listed on the <a href="about.html">About page</a>.</p>
+            <p>We will make reasonable efforts to correct errors when brought to our attention, but we cannot guarantee immediate updates.</p>
+        </div>
+
+        <footer>
+            <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | <a href="about.html">About</a> | <a href="disclaimer.html" class="current">Disclaimer</a></p>
+        </footer>
+    </div>
+</body>
+</html>
