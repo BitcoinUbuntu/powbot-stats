@@ -1290,7 +1290,11 @@
             // Get date range from posts
             const dates = posts.map(p => new Date(p.date)).sort((a, b) => a - b);
             const startDate = new Date(dates[0]);
-            const endDate = new Date(dates[dates.length - 1]);
+
+            // Epoch 4 ended March 4, 2026 - end heatmap at end of that week (Saturday March 7)
+            const epoch4EndDate = new Date('2026-03-04');
+            const endDate = new Date(epoch4EndDate);
+            endDate.setDate(endDate.getDate() + (6 - endDate.getDay())); // Move to Saturday of that week
 
             // Count posts per day
             const postsByDay = {};
@@ -1309,9 +1313,8 @@
             let html = '<div class="heatmap-container"><div class="heatmap-grid">';
 
             const currentDate = new Date(gridStartDate);
-            const today = new Date();
 
-            while (currentDate <= endDate || currentDate <= today) {
+            while (currentDate <= endDate) {
                 const dateKey = currentDate.toISOString().split('T')[0];
                 const count = postsByDay[dateKey] || 0;
 
