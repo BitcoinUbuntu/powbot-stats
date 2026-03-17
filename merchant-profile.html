@@ -245,6 +245,17 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent-blue);
+        }
     </style>
 </head>
 <body>
@@ -394,6 +405,11 @@
                 // Render posts
                 renderPosts(allPosts);
 
+                // Update footer timestamp
+                if (currentStats && currentStats.generated_at) {
+                    document.getElementById('updated').textContent = new Date(currentStats.generated_at).toLocaleString();
+                }
+
             } catch (error) {
                 console.error('Error loading merchant data:', error);
                 document.getElementById('merchant-name').textContent = 'Error Loading Data';
@@ -484,5 +500,9 @@
             }
         }
     </script>
+
+    <footer>
+        <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | Data updated: <span id="updated">--</span> CAT | <a href="about.html">About</a></p>
+    </footer>
 </body>
 </html>
