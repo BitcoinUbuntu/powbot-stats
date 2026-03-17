@@ -1301,14 +1301,18 @@
             // Get max count for color scaling
             const maxCount = Math.max(...Object.values(postsByDay));
 
-            // Generate grid starting exactly on Jan 13
+            // Align grid to Sunday before Jan 13 for proper weekday rows
+            const gridStartDate = new Date(startDate);
+            gridStartDate.setDate(gridStartDate.getDate() - gridStartDate.getDay());
+
             let html = '<div class="heatmap-container"><div class="heatmap-grid">';
 
-            const currentDate = new Date(startDate);
+            const currentDate = new Date(gridStartDate);
 
             while (currentDate <= endDate) {
                 const dateKey = currentDate.toISOString().split('T')[0];
                 const count = postsByDay[dateKey] || 0;
+                const isBeforeEpoch = currentDate < startDate;
 
                 // Determine color level (0-4)
                 let level = 0;
@@ -1321,7 +1325,13 @@
                 }
 
                 const formattedDate = currentDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-                html += `<div class="heatmap-day level-${level}" data-date="${formattedDate}" data-count="${count}"></div>`;
+
+                // Make days before epoch start invisible
+                if (isBeforeEpoch) {
+                    html += `<div class="heatmap-day" style="opacity: 0; pointer-events: none;"></div>`;
+                } else {
+                    html += `<div class="heatmap-day level-${level}" data-date="${formattedDate}" data-count="${count}"></div>`;
+                }
 
                 currentDate.setDate(currentDate.getDate() + 1);
             }
