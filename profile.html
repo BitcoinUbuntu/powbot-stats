@@ -474,6 +474,138 @@
             margin-top: 4px;
         }
 
+        /* Activity Charts */
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .chart-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .chart-card h3 {
+            font-size: 1rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        /* Heatmap */
+        .heatmap-container {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .heatmap-months {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 8px;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        .heatmap-month {
+            flex: 1;
+            text-align: center;
+        }
+
+        .heatmap-grid {
+            display: grid;
+            grid-template-rows: repeat(7, 1fr);
+            grid-auto-flow: column;
+            gap: 3px;
+        }
+
+        .heatmap-day {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+            background: var(--bg-secondary);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .heatmap-day.level-0 { background: var(--bg-secondary); }
+        .heatmap-day.level-1 { background: rgba(163, 113, 247, 0.3); }
+        .heatmap-day.level-2 { background: rgba(163, 113, 247, 0.5); }
+        .heatmap-day.level-3 { background: rgba(163, 113, 247, 0.7); }
+        .heatmap-day.level-4 { background: rgba(163, 113, 247, 1); }
+
+        .heatmap-day:hover::after {
+            content: attr(data-date) ': ' attr(data-count) ' posts';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            z-index: 10;
+            border: 1px solid var(--border);
+        }
+
+        /* Timeline */
+        .timeline-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .timeline-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .timeline-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            min-width: 60px;
+            text-align: right;
+        }
+
+        .timeline-track {
+            flex: 1;
+            height: 24px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-fill {
+            height: 100%;
+            background: var(--accent-purple);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 8px;
+        }
+
+        .timeline-count {
+            font-size: 0.75rem;
+            color: white;
+            font-weight: 600;
+        }
+
         /* Recent Posts */
         .posts-list {
             display: flex;
@@ -936,6 +1068,25 @@
                                 <div class="label">${new Set(epoch4Posts.map(p => p.merchant)).size === 1 ? 'Merchant' : 'Merchants'}</div>
                             </div>
                         </div>
+                `;
+
+                // Add activity visualizations for projects with 20+ posts
+                if (epoch4Posts.length >= 20) {
+                    html += `
+                        <div class="charts-grid">
+                            <div class="chart-card">
+                                <h3>Activity Calendar</h3>
+                                <div id="heatmap-epoch4"></div>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Monthly Timeline</h3>
+                                <div id="timeline-epoch4"></div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                html += `
                         <h3>Merchant ${epoch4Posts.length === 1 ? 'Post' : 'Posts'} (${epoch4Posts.length})</h3>
                         <div class="posts-list" id="posts-list-epoch4">
                 `;
@@ -1124,6 +1275,113 @@
                     }
                 }
             }, 100);
+
+            // Render activity visualizations for Epoch 4
+            if (epoch4Posts && epoch4Posts.length >= 20) {
+                renderHeatmap('heatmap-epoch4', epoch4Posts);
+                renderTimeline('timeline-epoch4', epoch4Posts);
+            }
+        }
+
+        function renderHeatmap(elementId, posts) {
+            const container = document.getElementById(elementId);
+            if (!container || posts.length === 0) return;
+
+            // Get date range from posts
+            const dates = posts.map(p => new Date(p.date)).sort((a, b) => a - b);
+            const startDate = new Date(dates[0]);
+            const endDate = new Date(dates[dates.length - 1]);
+
+            // Count posts per day
+            const postsByDay = {};
+            posts.forEach(post => {
+                const dateKey = post.date.split('T')[0]; // YYYY-MM-DD
+                postsByDay[dateKey] = (postsByDay[dateKey] || 0) + 1;
+            });
+
+            // Get max count for color scaling
+            const maxCount = Math.max(...Object.values(postsByDay));
+
+            // Generate grid for date range (start from Sunday before first post)
+            const gridStartDate = new Date(startDate);
+            gridStartDate.setDate(gridStartDate.getDate() - gridStartDate.getDay());
+
+            let html = '<div class="heatmap-container"><div class="heatmap-grid">';
+
+            const currentDate = new Date(gridStartDate);
+            const today = new Date();
+
+            while (currentDate <= endDate || currentDate <= today) {
+                const dateKey = currentDate.toISOString().split('T')[0];
+                const count = postsByDay[dateKey] || 0;
+
+                // Determine color level (0-4)
+                let level = 0;
+                if (count > 0) {
+                    if (maxCount <= 4) {
+                        level = count;
+                    } else {
+                        level = Math.min(4, Math.ceil((count / maxCount) * 4));
+                    }
+                }
+
+                const formattedDate = currentDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                html += `<div class="heatmap-day level-${level}" data-date="${formattedDate}" data-count="${count}"></div>`;
+
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+
+            html += '</div></div>';
+            container.innerHTML = html;
+        }
+
+        function renderTimeline(elementId, posts) {
+            const container = document.getElementById(elementId);
+            if (!container || posts.length === 0) return;
+
+            // Get date range from posts
+            const dates = posts.map(p => new Date(p.date)).sort((a, b) => a - b);
+            const startDate = dates[0];
+            const endDate = dates[dates.length - 1];
+
+            // Group posts by month
+            const postsByMonth = {};
+            posts.forEach(post => {
+                const date = new Date(post.date);
+                const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+                const monthLabel = date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+
+                if (!postsByMonth[monthKey]) {
+                    postsByMonth[monthKey] = {
+                        label: monthLabel,
+                        count: 0,
+                        date: date
+                    };
+                }
+                postsByMonth[monthKey].count++;
+            });
+
+            // Sort by date and get max count for scaling
+            const monthsData = Object.values(postsByMonth).sort((a, b) => a.date - b.date);
+            const maxCount = Math.max(...monthsData.map(m => m.count));
+
+            // Render bars
+            let html = '<div class="timeline-container">';
+            monthsData.forEach(month => {
+                const widthPercent = (month.count / maxCount) * 100;
+                html += `
+                    <div class="timeline-bar">
+                        <div class="timeline-label">${month.label}</div>
+                        <div class="timeline-track">
+                            <div class="timeline-fill" style="width: ${widthPercent}%">
+                                ${month.count >= 3 ? `<span class="timeline-count">${month.count}</span>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            container.innerHTML = html;
         }
 
         function getPlatform(url) {
