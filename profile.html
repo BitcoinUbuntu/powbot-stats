@@ -466,47 +466,47 @@
         .posts-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
             margin-top: 16px;
         }
 
         .post-item {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 12px;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .post-item .merchant {
-            flex: 1;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .post-item .platform-icon {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .post-item .date {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
-
-        .post-item a {
-            color: var(--accent-blue);
+            padding: 10px 12px;
+            margin-top: 8px;
+            background: var(--bg-primary);
+            border-radius: 6px;
             text-decoration: none;
             font-size: 0.85rem;
+            transition: background 0.2s ease;
+            color: inherit;
         }
 
-        .post-item a:hover {
-            text-decoration: underline;
+        .post-item:hover {
+            background: var(--bg-card);
+        }
+
+        .post-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .post-platform {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+
+        .post-merchant {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .post-date {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            flex-shrink: 0;
         }
 
         .post-hidden {
@@ -887,14 +887,13 @@
                         const platform = getPlatform(post.url);
                         const isHidden = index >= initialCount;
                         html += `
-                            <div class="post-item ${isHidden ? 'post-hidden' : ''}" data-index="${index}">
-                                <div class="merchant">
-                                    <span class="platform-icon">${platform.icon}</span>
-                                    ${post.merchant}
-                                </div>
-                                <div class="date">${post.date}</div>
-                                <a href="${post.url}" target="_blank">View →</a>
-                            </div>
+                            <a href="${post.url}" target="_blank" rel="noopener" class="post-item ${isHidden ? 'post-hidden' : ''}" data-index="${index}">
+                                <span class="post-info">
+                                    <span class="post-platform">${platform.name}</span>
+                                    <span class="post-merchant">${post.merchant}</span>
+                                </span>
+                                <span class="post-date">${formatDate(post.date)}</span>
+                            </a>
                         `;
                     });
                     html += `</div>`;
@@ -999,6 +998,14 @@
             const lower = url.toLowerCase();
             if (lower.includes('twitter.com') || lower.includes('x.com')) return { name: 'X', icon: '𝕏' };
             return { name: 'Nostr', icon: '🟣' };
+        }
+
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric'
+            });
         }
 
         function flipSupportCard() {
