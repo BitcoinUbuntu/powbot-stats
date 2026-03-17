@@ -339,10 +339,19 @@
                 const totalCount = allPosts.length;
                 const merchantDisplayName = currentMerchant?.name || historicalMerchant?.name || merchantName;
 
+                // Extract country from project name (gets flag emoji from end of project name)
+                let countryInfo = '';
+                if (allPosts.length > 0 && allPosts[0].project) {
+                    const flagMatch = allPosts[0].project.match(/[\u{1F1E6}-\u{1F1FF}][\u{1F1E6}-\u{1F1FF}]/u);
+                    if (flagMatch) {
+                        countryInfo = ` in ${flagMatch[0]}`;
+                    }
+                }
+
                 // Update page title and header
                 document.getElementById('page-title').textContent = `${merchantDisplayName} | CBAF`;
                 document.getElementById('merchant-name').textContent = merchantDisplayName;
-                document.getElementById('merchant-subtitle').textContent = 'Circular Economy Merchant';
+                document.getElementById('merchant-subtitle').textContent = `Circular Economy Merchant${countryInfo}`;
 
                 // Render stats
                 renderStats(totalCount, allPosts);
