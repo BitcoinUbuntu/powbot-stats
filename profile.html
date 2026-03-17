@@ -1585,10 +1585,11 @@
                 }
             }
 
-            // Daily Posting Streaks (based on Epoch 4 data)
-            if (epoch4Posts.length > 0) {
-                // Calculate longest consecutive day streak
-                const dates = epoch4Posts.map(p => p.date.split('T')[0]).sort();
+            // Daily Posting Streaks - calculate best streak across all epochs
+            const calculateStreak = (posts) => {
+                if (posts.length === 0) return 0;
+
+                const dates = posts.map(p => p.date.split('T')[0]).sort();
                 const uniqueDates = [...new Set(dates)];
 
                 let maxStreak = 1;
@@ -1607,14 +1608,21 @@
                     }
                 }
 
-                // Award streak badges
-                if (maxStreak >= 21) {
-                    badges.push({ icon: '💪', label: '21-Day Streak', type: 'consistency', title: 'Posted for 21+ consecutive days' });
-                } else if (maxStreak >= 14) {
-                    badges.push({ icon: '⚡', label: '14-Day Streak', type: 'consistency', title: 'Posted for 14+ consecutive days' });
-                } else if (maxStreak >= 7) {
-                    badges.push({ icon: '🔥', label: '7-Day Streak', type: 'consistency', title: 'Posted for 7+ consecutive days' });
-                }
+                return maxStreak;
+            };
+
+            // Calculate best streak from each epoch
+            const epoch4Streak = calculateStreak(epoch4Posts);
+            const epoch5Streak = calculateStreak(epoch5Posts);
+            const bestStreak = Math.max(epoch4Streak, epoch5Streak);
+
+            // Award streak badges based on best achievement
+            if (bestStreak >= 21) {
+                badges.push({ icon: '💪', label: '21-Day Streak', type: 'consistency', title: 'Posted for 21+ consecutive days' });
+            } else if (bestStreak >= 14) {
+                badges.push({ icon: '⚡', label: '14-Day Streak', type: 'consistency', title: 'Posted for 14+ consecutive days' });
+            } else if (bestStreak >= 7) {
+                badges.push({ icon: '🔥', label: '7-Day Streak', type: 'consistency', title: 'Posted for 7+ consecutive days' });
             }
 
             // Legacy & Tenure
