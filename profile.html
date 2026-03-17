@@ -1129,7 +1129,7 @@
 
                 badges.forEach(badge => {
                     html += `
-                        <div class="badge ${badge.type}" title="${badge.title}" onclick="showBadgeTooltip(this)">
+                        <div class="badge ${badge.type}" onclick="showBadgeTooltip(this)">
                             <span class="badge-icon">${badge.icon}</span>
                             <span class="badge-label">${badge.label}</span>
                             <span class="badge-tooltip">${badge.title}</span>
@@ -1587,19 +1587,29 @@
 
             // Legacy & Tenure
             if (historicalPosts.length > 0) {
-                // Count unique epochs from historical posts
-                const historicalEpochs = new Set(historicalPosts.map(p => p.epoch)).size;
+                // Get unique epoch names
+                const epochNames = new Set(historicalPosts.map(p => p.epoch));
+                const historicalEpochs = epochNames.size;
 
-                // Founding Member - all projects with pre-PoWBoT participation (gold - prestigious)
-                badges.push({ icon: '👑', label: 'Founding Member', type: 'excellence', title: 'Pre-PoWBoT participant' });
+                // Founding Member - participated in Epoch 1 (May 2025, the very first)
+                if (epochNames.has('Epoch 1')) {
+                    badges.push({ icon: '👑', label: 'Founding Member', type: 'excellence', title: 'Participated in Epoch 1' });
+                }
+
+                // Early Adopter - participated in Epoch 2 or 3 (Aug/Nov 2025)
+                if (epochNames.has('Epoch 2') || epochNames.has('Epoch 3')) {
+                    badges.push({ icon: '🏆', label: 'Early Adopter', type: 'legacy', title: 'Participated in Epoch 2 or 3' });
+                }
+
+                // Beta Tester - participated in Epoch 4 Testing
+                if (epochNames.has('Epoch 4 Testing')) {
+                    badges.push({ icon: '🧪', label: 'Beta Tester', type: 'activity', title: 'Helped test PoWBoT automation' });
+                }
 
                 // Multi-Epoch Veteran - active across many epochs (purple - consistency)
                 if (historicalEpochs >= 3 || (historicalEpochs > 0 && epoch4Posts.length > 0 && epoch5Posts.length > 0)) {
                     badges.push({ icon: '🔄', label: 'Multi-Epoch Veteran', type: 'consistency', title: 'Active across 3+ epochs' });
                 }
-
-                // Early Adopter - participated in Epochs 1-3 (orange - legacy)
-                badges.push({ icon: '🏆', label: 'Early Adopter', type: 'legacy', title: 'Participated in Epochs 1-3' });
             }
 
             // Excellence - ranking based on Epoch 4 data
