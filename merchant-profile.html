@@ -307,6 +307,34 @@
                 .replace(/\s+/g, '-'); // Replace spaces with hyphens
         }
 
+        function getCountryName(flagEmoji) {
+            const countryMap = {
+                '🇿🇦': 'South Africa',
+                '🇰🇪': 'Kenya',
+                '🇳🇬': 'Nigeria',
+                '🇬🇭': 'Ghana',
+                '🇹🇿': 'Tanzania',
+                '🇺🇬': 'Uganda',
+                '🇿🇲': 'Zambia',
+                '🇿🇼': 'Zimbabwe',
+                '🇧🇼': 'Botswana',
+                '🇲🇼': 'Malawi',
+                '🇷🇼': 'Rwanda',
+                '🇪🇹': 'Ethiopia',
+                '🇨🇩': 'Democratic Republic of Congo',
+                '🇨🇬': 'Republic of Congo',
+                '🇧🇯': 'Benin',
+                '🇹🇬': 'Togo',
+                '🇨🇲': 'Cameroon',
+                '🇸🇳': 'Senegal',
+                '🇨🇮': 'Côte d\'Ivoire',
+                '🇲🇱': 'Mali',
+                '🇧🇫': 'Burkina Faso',
+                '🇳🇪': 'Niger'
+            };
+            return countryMap[flagEmoji] || flagEmoji;
+        }
+
         async function loadMerchantData(merchantName) {
             try {
                 // Load current epoch stats
@@ -344,7 +372,8 @@
                 if (allPosts.length > 0 && allPosts[0].project) {
                     const flagMatch = allPosts[0].project.match(/[\u{1F1E6}-\u{1F1FF}][\u{1F1E6}-\u{1F1FF}]/u);
                     if (flagMatch) {
-                        countryInfo = ` in ${flagMatch[0]}`;
+                        const countryName = getCountryName(flagMatch[0]);
+                        countryInfo = ` in ${countryName}`;
                     }
                 }
 
