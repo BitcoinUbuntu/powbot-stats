@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <parameter name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">Merchant Profile | CBAF</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
@@ -229,6 +229,10 @@
         }
 
         @media (max-width: 768px) {
+            nav .container {
+                justify-content: center;
+            }
+
             .hero {
                 padding: 30px 20px;
             }
@@ -248,7 +252,9 @@
         <div class="container">
             <div class="nav-links">
                 <a href="index.html">Stats</a>
+                <span style="color: var(--text-secondary);">|</span>
                 <a href="members.html">Directory</a>
+                <span style="color: var(--text-secondary);">|</span>
                 <a href="archive.html">Archive</a>
             </div>
         </div>
