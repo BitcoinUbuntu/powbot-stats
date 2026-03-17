@@ -667,10 +667,11 @@
         async function loadProfile() {
             try {
                 // Load member data and stats in parallel
-                const [membersData, statsEpoch4, statsLive] = await Promise.all([
+                const [membersData, statsEpoch4, statsLive, statsHistorical] = await Promise.all([
                     fetch('members.json').then(r => r.json()),
                     fetch('stats-epoch4.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
-                    fetch('stats.json?t=' + Date.now()).then(r => r.json()).catch(() => null)
+                    fetch('stats.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
+                    fetch('stats-historical.json?t=' + Date.now()).then(r => r.json()).catch(() => null)
                 ]);
 
                 const member = membersData.members.find(m => m.id === memberId);
@@ -678,10 +679,11 @@
                     throw new Error('Member not found');
                 }
 
-                // Combine stats from both epochs
+                // Combine stats from all epochs
                 const allStats = {
                     epoch4: statsEpoch4,
-                    live: statsLive
+                    live: statsLive,
+                    historical: statsHistorical
                 };
 
                 // Update timestamp (use live stats if available, otherwise epoch4)
@@ -909,6 +911,59 @@
                 }
 
                 html += `</div>`;
+            }
+
+            // Pre-PoWBoT History (Epochs 1-3 + Epoch 4 Testing)
+            if (allStats.historical && allStats.historical.epochs) {
+                const historicalPosts = [];
+                const epochs = allStats.historical.epochs;
+                const statsName = `${member.name} ${member.flag || ''}`.trim();
+
+                // Collect posts from epoch1, epoch2, epoch3, and epoch4_testing
+                ['epoch1', 'epoch2', 'epoch3', 'epoch4_testing'].forEach(epochKey => {
+                    const epoch = epochs[epochKey];
+                    if (epoch && epoch.top_projects) {
+                        const project = epoch.top_projects.find(p => p.name === statsName);
+                        if (project && project.posts) {
+                            project.posts.forEach(post => {
+                                historicalPosts.push({
+                                    ...post,
+                                    epoch: epoch.name,
+                                    period: epoch.period
+                                });
+                            });
+                        }
+                    }
+                });
+
+                if (historicalPosts.length > 0) {
+                    html += `
+                        <div class="section">
+                            <h2>Pre-PoWBoT History</h2>
+                            <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 0.9rem;">
+                                Posts from Epochs 1–3 and Epoch 4 Testing Phase (${historicalPosts.length} ${historicalPosts.length === 1 ? 'video' : 'videos'})
+                            </p>
+                            <div class="posts-list">
+                    `;
+
+                    historicalPosts.forEach((post, index) => {
+                        const platform = getPlatform(post.url);
+                        html += `
+                            <a href="${post.url}" target="_blank" rel="noopener" class="post-item">
+                                <span class="post-info">
+                                    <span class="post-platform">${platform.name}</span>
+                                    <span class="post-merchant">${post.epoch} (${post.period})</span>
+                                </span>
+                                <span class="post-date">→</span>
+                            </a>
+                        `;
+                    });
+
+                    html += `
+                            </div>
+                        </div>
+                    `;
+                }
             }
 
             // Vision & Mission
