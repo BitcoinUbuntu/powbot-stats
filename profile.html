@@ -1291,10 +1291,8 @@
             const dates = posts.map(p => new Date(p.date)).sort((a, b) => a - b);
             const startDate = new Date(dates[0]);
 
-            // Epoch 4 ended March 4, 2026 - end heatmap at end of that week (Saturday March 7)
-            const epoch4EndDate = new Date('2026-03-04');
-            const endDate = new Date(epoch4EndDate);
-            endDate.setDate(endDate.getDate() + (6 - endDate.getDay())); // Move to Saturday of that week
+            // Epoch 4 ended March 4, 2026
+            const endDate = new Date('2026-03-04');
 
             // Count posts per day
             const postsByDay = {};
