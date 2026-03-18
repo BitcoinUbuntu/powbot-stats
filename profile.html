@@ -645,36 +645,20 @@
             border-color: var(--accent-purple);
         }
 
-        .badge-tooltip {
+        .badge:hover::after {
+            content: attr(data-title);
             position: absolute;
             bottom: calc(100% + 8px);
             left: 50%;
             transform: translateX(-50%);
             background: var(--bg-primary);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 8px 12px;
-            font-size: 0.8rem;
-            color: var(--text-secondary);
+            color: var(--text-primary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
             white-space: nowrap;
             z-index: 10;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .badge-tooltip.show {
-            opacity: 1;
-        }
-
-        .badge-tooltip::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 6px solid transparent;
-            border-top-color: var(--border);
+            border: 1px solid var(--border);
         }
 
         .badge-icon {
@@ -1129,10 +1113,9 @@
 
                 badges.forEach(badge => {
                     html += `
-                        <div class="badge ${badge.type}" onclick="showBadgeTooltip(this)">
+                        <div class="badge ${badge.type}" data-title="${badge.title}">
                             <span class="badge-icon">${badge.icon}</span>
                             <span class="badge-label">${badge.label}</span>
-                            <span class="badge-tooltip">${badge.title}</span>
                         </div>
                     `;
                 });
@@ -1672,23 +1655,6 @@
             return badges;
         }
 
-        function showBadgeTooltip(badgeElement) {
-            const tooltip = badgeElement.querySelector('.badge-tooltip');
-            if (!tooltip) return;
-
-            // Hide any other visible tooltips
-            document.querySelectorAll('.badge-tooltip.show').forEach(t => {
-                if (t !== tooltip) t.classList.remove('show');
-            });
-
-            // Show this tooltip
-            tooltip.classList.add('show');
-
-            // Hide after 3 seconds
-            setTimeout(() => {
-                tooltip.classList.remove('show');
-            }, 3000);
-        }
 
         function getPlatform(url) {
             if (!url) return { name: 'Nostr', icon: '🟣' };
