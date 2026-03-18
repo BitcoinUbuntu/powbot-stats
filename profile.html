@@ -1550,9 +1550,11 @@
             } else if (totalPosts >= 100) {
                 badges.push({ icon: '⭐', label: 'Rising Star', type: 'activity', title: '100+ posts' });
             } else if (totalPosts >= 50) {
-                badges.push({ icon: '🔥', label: 'On Fire', type: 'activity', title: '50+ posts' });
+                badges.push({ icon: '🚀', label: 'On Fire', type: 'activity', title: '50+ posts' });
             } else if (totalPosts >= 10) {
                 badges.push({ icon: '🌱', label: 'First Steps', type: 'activity', title: '10+ posts' });
+            } else if (totalPosts >= 1) {
+                badges.push({ icon: '👋', label: 'First Post', type: 'activity', title: 'Made your first post' });
             }
 
             // Community Impact - based on unique merchants in Epoch 4

@@ -360,29 +360,30 @@
             margin-top: auto;
         }
 
-        .card-stats {
+        .post-count {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .badge-emojis {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             margin-bottom: 12px;
             flex-wrap: wrap;
         }
 
-        .stat-badge {
-            background: rgba(88, 166, 255, 0.1);
-            border: 1px solid rgba(88, 166, 255, 0.3);
-            border-radius: 6px;
-            padding: 4px 10px;
-            font-size: 0.8rem;
-            color: var(--accent-blue);
-            display: flex;
-            align-items: center;
-            gap: 4px;
+        .emoji-badge {
+            font-size: 1.05rem;
+            line-height: 1;
+            opacity: 0.9;
+            transition: transform 0.2s;
         }
 
-        .stat-badge.top-performer {
-            background: rgba(163, 113, 247, 0.1);
-            border-color: rgba(163, 113, 247, 0.3);
-            color: var(--accent-purple);
+        .emoji-badge:hover {
+            transform: scale(1.15);
+            opacity: 1;
         }
 
         .card-actions {
@@ -609,16 +610,24 @@
 
     <script>
         let allMembers = [];
+        let allStats = {};
         let currentFilter = 'all';
         let currentCountry = '';
         let currentSort = 'activity';
         let searchQuery = '';
 
-        // Load members data
-        fetch('members.json')
-            .then(res => res.json())
-            .then(data => {
-                allMembers = data.members;
+        // Load members data and stats
+        Promise.all([
+            fetch('members.json').then(res => res.json()),
+            fetch('stats-epoch4.json').then(res => res.json()),
+            fetch('stats-historical.json').then(res => res.json())
+        ])
+            .then(([membersData, epoch4Data, historicalData]) => {
+                allMembers = membersData.members;
+                allStats = {
+                    epoch4: epoch4Data,
+                    historical: historicalData
+                };
                 initializeFilters();
                 updateStats();
                 renderMembers();
@@ -659,7 +668,11 @@
             if (currentFilter === 'active') {
                 filtered = filtered.filter(m => m.powbot_stats.epoch4_videos > 0);
             } else if (currentFilter === 'top') {
-                filtered = filtered.filter(m => m.powbot_stats.epoch4_videos >= 50);
+                // Show only top 10 projects by Epoch 4 video count
+                filtered = filtered
+                    .filter(m => m.powbot_stats.epoch4_videos > 0)
+                    .sort((a, b) => b.powbot_stats.epoch4_videos - a.powbot_stats.epoch4_videos)
+                    .slice(0, 10);
             }
 
             // Apply country filter
@@ -681,14 +694,154 @@
                 );
             }
 
-            // Apply sort
-            if (currentSort === 'activity') {
-                filtered.sort((a, b) => b.powbot_stats.epoch4_videos - a.powbot_stats.epoch4_videos);
-            } else if (currentSort === 'name') {
-                filtered.sort((a, b) => a.name.localeCompare(b.name));
+            // Apply sort (only if not already sorted by top filter)
+            if (currentFilter !== 'top') {
+                if (currentSort === 'activity') {
+                    filtered.sort((a, b) => b.powbot_stats.epoch4_videos - a.powbot_stats.epoch4_videos);
+                } else if (currentSort === 'name') {
+                    filtered.sort((a, b) => a.name.localeCompare(b.name));
+                }
             }
 
             return filtered;
+        }
+
+        function getMemberBadgeEmojis(member) {
+            // Calculate all badges for directory cards (emoji only)
+            const badges = [];
+            const statsName = `${member.name} ${member.flag || ''}`.trim();
+
+            // Get Epoch 4 data
+            let epoch4Posts = [];
+            if (allStats.epoch4 && allStats.epoch4.top_projects) {
+                const epoch4Project = allStats.epoch4.top_projects.find(p => p.name === statsName);
+                if (epoch4Project && epoch4Project.posts) {
+                    epoch4Posts = epoch4Project.posts;
+                }
+            }
+
+            // Get historical data
+            let historicalPosts = [];
+            let epochNames = new Set();
+            if (allStats.historical && allStats.historical.epochs) {
+                const epochs = allStats.historical.epochs;
+                ['epoch1', 'epoch2', 'epoch3', 'epoch4_testing'].forEach(epochKey => {
+                    const epoch = epochs[epochKey];
+                    if (epoch && epoch.top_projects) {
+                        const project = epoch.top_projects.find(p => p.name === statsName);
+                        if (project && project.posts && project.posts.length > 0) {
+                            historicalPosts.push(...project.posts);
+                            epochNames.add(epoch.name); // Use the epoch name from the data
+                        }
+                    }
+                });
+            }
+
+            const totalPosts = epoch4Posts.length + historicalPosts.length;
+
+            // Excellence badges (highest priority)
+            if (allStats.epoch4 && allStats.epoch4.top_projects) {
+                const ranking = allStats.epoch4.top_projects.findIndex(p => p.name === statsName);
+                if (ranking === 0) badges.push('🥇');
+                else if (ranking === 1) badges.push('🥈');
+                else if (ranking === 2) badges.push('🥉');
+                else if (ranking >= 0 && ranking < 10) badges.push('🏅');
+            }
+
+            // Activity milestones
+            if (totalPosts >= 500) {
+                badges.push('💎');
+            } else if (totalPosts >= 100) {
+                badges.push('⭐');
+            } else if (totalPosts >= 50) {
+                badges.push('🚀');
+            } else if (totalPosts >= 10) {
+                badges.push('🌱');
+            } else if (totalPosts >= 1) {
+                badges.push('👋');
+            }
+
+            // Community impact - all tiers
+            if (epoch4Posts.length > 0) {
+                const uniqueMerchants = new Set(epoch4Posts.map(p => p.merchant)).size;
+                if (uniqueMerchants >= 25) {
+                    badges.push('🌍');
+                } else if (uniqueMerchants >= 15) {
+                    badges.push('🏪');
+                } else if (uniqueMerchants >= 5) {
+                    badges.push('🤝');
+                }
+            }
+
+            // Platform diversity
+            if (epoch4Posts.length > 0) {
+                const hasXPosts = epoch4Posts.some(p => {
+                    const url = p.url ? p.url.toLowerCase() : '';
+                    return url.includes('twitter.com') || url.includes('x.com');
+                });
+                const hasNostrPosts = epoch4Posts.some(p => {
+                    const url = p.url ? p.url.toLowerCase() : '';
+                    return url.includes('primal.net') || url.includes('njump') || (!url.includes('twitter.com') && !url.includes('x.com'));
+                });
+                if (hasXPosts && hasNostrPosts) {
+                    badges.push('🎯');
+                }
+            }
+
+            // Daily streaks
+            if (epoch4Posts.length > 0) {
+                const dates = epoch4Posts.map(p => p.date.split('T')[0]).sort();
+                const uniqueDates = [...new Set(dates)];
+                let maxStreak = 1;
+                let currentStreak = 1;
+
+                for (let i = 1; i < uniqueDates.length; i++) {
+                    const prevDate = new Date(uniqueDates[i - 1]);
+                    const currDate = new Date(uniqueDates[i]);
+                    const dayDiff = Math.floor((currDate - prevDate) / (1000 * 60 * 60 * 24));
+                    if (dayDiff === 1) {
+                        currentStreak++;
+                        maxStreak = Math.max(maxStreak, currentStreak);
+                    } else {
+                        currentStreak = 1;
+                    }
+                }
+
+                if (maxStreak >= 21) {
+                    badges.push('💪');
+                } else if (maxStreak >= 14) {
+                    badges.push('⚡');
+                } else if (maxStreak >= 7) {
+                    badges.push('🔥');
+                }
+            }
+
+            // Legacy badges
+            if (historicalPosts.length > 0) {
+                const historicalEpochs = epochNames.size;
+
+                // Founding Member
+                if (epochNames.has('Epoch 1')) {
+                    badges.push('👑');
+                }
+
+                // Early Adopter
+                if (epochNames.has('Epoch 2') || epochNames.has('Epoch 3')) {
+                    badges.push('🏆');
+                }
+
+                // Beta Tester
+                if (epochNames.has('Epoch 4 Testing')) {
+                    badges.push('🧪');
+                }
+
+                // Multi-Epoch Veteran
+                if (historicalEpochs >= 3 || (historicalEpochs > 0 && epoch4Posts.length > 0)) {
+                    badges.push('🔄');
+                }
+            }
+
+            return badges;
         }
 
         function renderMembers() {
@@ -707,7 +860,6 @@
 
             grid.innerHTML = members.map((member, index) => {
                 const videoCount = member.powbot_stats.epoch4_videos;
-                const isTopPerformer = videoCount >= 50;
                 const logoUrl = member.logo_url || '';
                 const emoji = member.flag || member.name.charAt(0);
                 const cardId = `card-${index}`;
@@ -734,13 +886,18 @@
 
                                     <div class="card-footer">
                                         ${videoCount > 0 ? `
-                                            <div class="card-stats">
-                                                <div class="stat-badge ${isTopPerformer ? 'top-performer' : ''}">
-                                                    ⚡ ${videoCount} ${videoCount === 1 ? 'post' : 'posts'}
-                                                </div>
-                                                ${isTopPerformer ? '<div class="stat-badge top-performer">🏆 Top Performer</div>' : ''}
+                                            <div class="post-count">
+                                                ${videoCount} ${videoCount === 1 ? 'post' : 'posts'}
                                             </div>
                                         ` : ''}
+
+                                        ${(() => {
+                                            const badgeEmojis = getMemberBadgeEmojis(member);
+                                            if (badgeEmojis.length > 0) {
+                                                return `<div class="badge-emojis">${badgeEmojis.map(emoji => `<span class="emoji-badge">${emoji}</span>`).join('')}</div>`;
+                                            }
+                                            return '';
+                                        })()}
 
                                         <div class="card-actions">
                                             <button class="btn btn-primary" onclick="event.stopPropagation(); flipCard('${cardId}', '${member.lightning_address}', '${member.onchain_address || ''}')">
