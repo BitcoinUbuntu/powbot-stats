@@ -108,8 +108,13 @@
         }
 
         .member-item.active {
-            background: var(--bg-card);
+            background: rgba(247, 147, 26, 0.15);
             border-color: var(--accent-orange);
+            border-width: 2px;
+        }
+
+        .member-item.active .member-item-name {
+            color: var(--accent-orange);
         }
 
         .member-item-name {
@@ -376,12 +381,15 @@
 
         function renderMemberList() {
             const list = document.getElementById('memberList');
-            list.innerHTML = membersData.members.map(member => `
-                <li class="member-item" onclick="selectMember('${member.id}')">
-                    <div class="member-item-name">${member.name} ${member.flag || ''}</div>
-                    <div class="member-item-country">${member.country || ''}</div>
-                </li>
-            `).join('');
+            list.innerHTML = membersData.members.map(member => {
+                const isActive = currentMember && currentMember.id === member.id;
+                return `
+                    <li class="member-item ${isActive ? 'active' : ''}" data-id="${member.id}" onclick="selectMember('${member.id}')">
+                        <div class="member-item-name">${member.name} ${member.flag || ''}</div>
+                        <div class="member-item-country">${member.country || ''}</div>
+                    </li>
+                `;
+            }).join('');
         }
 
         function filterMembers() {
@@ -398,8 +406,13 @@
             if (!currentMember) return;
 
             // Update active state
-            document.querySelectorAll('.member-item').forEach(item => item.classList.remove('active'));
-            event.currentTarget.classList.add('active');
+            document.querySelectorAll('.member-item').forEach(item => {
+                if (item.dataset.id === memberId) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
 
             renderEditForm();
         }
