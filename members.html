@@ -891,7 +891,10 @@
                                         <h3>${member.name}</h3>
                                         <span class="flag">${member.flag || ''}</span>
                                     </div>
-                                    <div class="card-tagline">${member.tagline || 'Bitcoin circular economy project'}</div>
+                                    <div class="card-tagline">${(() => {
+                                        const tagline = member.tagline || 'Bitcoin circular economy project';
+                                        return tagline.endsWith('.') || tagline.endsWith('!') || tagline.endsWith('?') ? tagline : tagline + '.';
+                                    })()}</div>
 
                                     <div class="card-footer">
                                         ${videoCount > 0 ? `
