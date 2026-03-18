@@ -759,26 +759,57 @@
             }
         }
 
-        /* Gallery */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 12px;
-            margin-top: 16px;
+        /* Gallery Carousel */
+        .gallery-carousel {
+            position: relative;
+            margin-bottom: 20px;
         }
 
-        .gallery img {
+        .gallery-track-container {
+            overflow: hidden;
+            position: relative;
+            cursor: grab;
+            border-radius: 12px;
+        }
+
+        .gallery-track-container:active {
+            cursor: grabbing;
+        }
+
+        .gallery-track {
+            display: flex;
+            gap: 12px;
+            transition: transform 0.3s ease;
+            user-select: none;
+        }
+
+        .gallery-track.dragging {
+            transition: none;
+        }
+
+        .gallery-slide {
+            min-width: calc((100% - 24px) / 3);
+            flex-shrink: 0;
+        }
+
+        .gallery-slide img {
             width: 100%;
-            height: 200px;
+            height: 170px;
             object-fit: cover;
             border-radius: 8px;
-            border: 1px solid var(--border);
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: opacity 0.2s;
+            pointer-events: none;
         }
 
-        .gallery img:hover {
-            transform: scale(1.05);
+        .gallery-slide img:hover {
+            opacity: 0.85;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-slide {
+                min-width: 100%;
+            }
         }
 
         /* Contact Links */
@@ -1302,11 +1333,32 @@
                 `;
             }
 
+            // Gallery (full-width, not in card)
+            if (member.gallery && member.gallery.length > 0) {
+                html += `
+                    <div class="gallery-carousel" id="gallery-carousel">
+                        <div class="gallery-track-container" id="gallery-container">
+                            <div class="gallery-track" id="gallery-track">
+                `;
+                member.gallery.forEach(img => {
+                    html += `
+                        <div class="gallery-slide">
+                            <img src="${img}" alt="${member.name} photo" data-url="${img}">
+                        </div>
+                    `;
+                });
+                html += `
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
             // How Started
             if (member.how_started) {
                 html += `
                     <div class="section">
-                        <h2>How It Started</h2>
+                        <h2>Origin Story</h2>
                         <p>${member.how_started}</p>
                     </div>
                 `;
@@ -1316,24 +1368,8 @@
             if (member.milestones) {
                 html += `
                     <div class="section">
-                        <h2>Milestones & Achievements</h2>
+                        <h2>Key Highlights</h2>
                         <p>${member.milestones}</p>
-                    </div>
-                `;
-            }
-
-            // Gallery
-            if (member.gallery && member.gallery.length > 0) {
-                html += `
-                    <div class="section">
-                        <h2>Gallery</h2>
-                        <div class="gallery">
-                `;
-                member.gallery.forEach(img => {
-                    html += `<img src="${img}" alt="${member.name} photo" onclick="window.open('${img}', '_blank')">`;
-                });
-                html += `
-                        </div>
                     </div>
                 `;
             }
@@ -1390,6 +1426,9 @@
                 renderHeatmap('heatmap-epoch4', epoch4Posts);
                 renderTimeline('timeline-epoch4', epoch4Posts);
             }
+
+            // Initialize gallery drag-to-scroll
+            initGalleryDragScroll();
         }
 
         function renderHeatmap(elementId, posts) {
@@ -1669,6 +1708,211 @@
             const month = date.toLocaleDateString('en-US', { month: 'short' });
             const year = date.getFullYear();
             return `${day} ${month} ${year}`;
+        }
+
+        // Gallery infinite carousel functionality
+        let galleryAutoRotate = null;
+        let galleryScrollPosition = 0;
+        let galleryRealSlideCount = 0;
+        let gallerySingleSlideWidth = 0;
+        let isDragging = false;
+        let startX = 0;
+        let scrollLeft = 0;
+
+        function initGalleryDragScroll() {
+            const container = document.getElementById('gallery-container');
+            const track = document.getElementById('gallery-track');
+            if (!container || !track) return;
+
+            const originalSlides = Array.from(track.querySelectorAll('.gallery-slide'));
+            galleryRealSlideCount = originalSlides.length;
+
+            if (galleryRealSlideCount <= 3) return; // No scrolling needed
+
+            // Clone slides for infinite effect (clone all slides and append/prepend)
+            const clonedSlidesStart = originalSlides.map(slide => slide.cloneNode(true));
+            const clonedSlidesEnd = originalSlides.map(slide => slide.cloneNode(true));
+
+            // Prepend clones at start
+            clonedSlidesStart.reverse().forEach(clone => {
+                track.insertBefore(clone, track.firstChild);
+            });
+
+            // Append clones at end
+            clonedSlidesEnd.forEach(clone => {
+                track.appendChild(clone);
+            });
+
+            // Calculate slide width
+            const containerWidth = container.offsetWidth;
+            gallerySingleSlideWidth = (containerWidth - 24) / 3 + 12;
+
+            // Start at first real slide (after prepended clones)
+            galleryScrollPosition = galleryRealSlideCount * gallerySingleSlideWidth;
+            track.style.transform = `translateX(-${galleryScrollPosition}px)`;
+
+            // Mouse events
+            container.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.pageX - container.offsetLeft;
+                scrollLeft = galleryScrollPosition;
+                stopGalleryAutoRotate();
+                track.classList.add('dragging');
+            });
+
+            container.addEventListener('mouseleave', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    track.classList.remove('dragging');
+                    checkGalleryLoop();
+                    startGalleryAutoRotate();
+                }
+            });
+
+            container.addEventListener('mouseup', (e) => {
+                if (isDragging) {
+                    isDragging = false;
+                    track.classList.remove('dragging');
+
+                    // Check if it was a click (minimal movement)
+                    const x = e.pageX - container.offsetLeft;
+                    const walk = Math.abs(x - startX);
+
+                    if (walk < 5) {
+                        // It's a click - open image
+                        const img = e.target.closest('.gallery-slide')?.querySelector('img');
+                        if (img) {
+                            window.open(img.dataset.url, '_blank');
+                        }
+                    }
+
+                    checkGalleryLoop();
+                    startGalleryAutoRotate();
+                }
+            });
+
+            container.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX - container.offsetLeft;
+                const walk = (x - startX) * 1.5;
+                updateGalleryPosition(scrollLeft - walk);
+            });
+
+            // Touch events
+            container.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                startX = e.touches[0].pageX - container.offsetLeft;
+                scrollLeft = galleryScrollPosition;
+                stopGalleryAutoRotate();
+                track.classList.add('dragging');
+            });
+
+            container.addEventListener('touchend', (e) => {
+                isDragging = false;
+                track.classList.remove('dragging');
+
+                // Check if it was a tap
+                if (e.changedTouches.length > 0) {
+                    const touch = e.changedTouches[0];
+                    const x = touch.pageX - container.offsetLeft;
+                    const walk = Math.abs(x - startX);
+
+                    if (walk < 5) {
+                        const img = e.target.closest('.gallery-slide')?.querySelector('img');
+                        if (img) {
+                            window.open(img.dataset.url, '_blank');
+                        }
+                    }
+                }
+
+                checkGalleryLoop();
+                startGalleryAutoRotate();
+            });
+
+            container.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                const x = e.touches[0].pageX - container.offsetLeft;
+                const walk = (x - startX) * 1.5;
+                updateGalleryPosition(scrollLeft - walk);
+            });
+
+            // Pause on hover
+            container.addEventListener('mouseenter', stopGalleryAutoRotate);
+            container.addEventListener('mouseleave', () => {
+                if (!isDragging) startGalleryAutoRotate();
+            });
+
+            // Start auto-scroll immediately
+            startGalleryAutoRotate();
+        }
+
+        function updateGalleryPosition(position) {
+            const track = document.getElementById('gallery-track');
+            if (!track) return;
+
+            galleryScrollPosition = position;
+            track.style.transform = `translateX(-${galleryScrollPosition}px)`;
+        }
+
+        function checkGalleryLoop() {
+            const track = document.getElementById('gallery-track');
+            if (!track) return;
+
+            const totalWidth = galleryRealSlideCount * gallerySingleSlideWidth;
+            const startCloneEnd = totalWidth;
+            const endCloneStart = totalWidth * 2;
+
+            // If scrolled past end clones, jump to equivalent position in real slides
+            if (galleryScrollPosition >= endCloneStart) {
+                const offset = galleryScrollPosition - endCloneStart;
+                galleryScrollPosition = totalWidth + offset;
+                track.style.transform = `translateX(-${galleryScrollPosition}px)`;
+            }
+
+            // If scrolled before start clones, jump to equivalent position in real slides
+            if (galleryScrollPosition <= 0) {
+                const offset = -galleryScrollPosition;
+                galleryScrollPosition = startCloneEnd - offset;
+                track.style.transform = `translateX(-${galleryScrollPosition}px)`;
+            }
+        }
+
+        function autoScrollGallery() {
+            const track = document.getElementById('gallery-track');
+            if (!track || !galleryAutoRotate) return;
+
+            // Constant slow scroll - move 0.3px per frame at 60fps (~18px per second)
+            galleryScrollPosition += 0.3;
+            track.style.transform = `translateX(-${galleryScrollPosition}px)`;
+
+            checkGalleryLoop();
+
+            // Continue animation
+            galleryAutoRotate = requestAnimationFrame(autoScrollGallery);
+        }
+
+        function startGalleryAutoRotate() {
+            const track = document.getElementById('gallery-track');
+            if (!track || galleryRealSlideCount <= 3) return;
+
+            // Disable CSS transition for smooth constant scroll
+            track.classList.add('dragging');
+
+            galleryAutoRotate = requestAnimationFrame(autoScrollGallery);
+        }
+
+        function stopGalleryAutoRotate() {
+            if (galleryAutoRotate) {
+                cancelAnimationFrame(galleryAutoRotate);
+                galleryAutoRotate = null;
+            }
+
+            // Re-enable CSS transitions when stopped
+            const track = document.getElementById('gallery-track');
+            if (track) {
+                track.classList.remove('dragging');
+            }
         }
 
         function flipSupportCard() {
