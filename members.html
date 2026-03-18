@@ -720,6 +720,15 @@
                 }
             }
 
+            // Get Epoch 5 data (when available)
+            let epoch5Posts = [];
+            if (allStats.epoch5 && allStats.epoch5.top_projects) {
+                const epoch5Project = allStats.epoch5.top_projects.find(p => p.name === statsName);
+                if (epoch5Project && epoch5Project.posts) {
+                    epoch5Posts = epoch5Project.posts;
+                }
+            }
+
             // Get historical data
             let historicalPosts = [];
             let epochNames = new Set();
@@ -737,7 +746,7 @@
                 });
             }
 
-            const totalPosts = epoch4Posts.length + historicalPosts.length;
+            const totalPosts = epoch4Posts.length + epoch5Posts.length + historicalPosts.length;
 
             // Excellence badges (highest priority)
             if (allStats.epoch4 && allStats.epoch4.top_projects) {
@@ -836,7 +845,7 @@
                 }
 
                 // Multi-Epoch Veteran
-                if (historicalEpochs >= 3 || (historicalEpochs > 0 && epoch4Posts.length > 0)) {
+                if (historicalEpochs >= 3 || (historicalEpochs > 0 && epoch4Posts.length > 0 && epoch5Posts.length > 0)) {
                     badges.push('🛡️');
                 }
             }
