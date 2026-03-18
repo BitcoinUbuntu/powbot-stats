@@ -1882,8 +1882,8 @@
             const track = document.getElementById('gallery-track');
             if (!track || !galleryAutoRotate) return;
 
-            // Constant slow scroll - move 0.3px per frame at 60fps (~18px per second)
-            galleryScrollPosition += 0.3;
+            // Constant subtle scroll - move 0.15px per frame at 60fps (~9px per second)
+            galleryScrollPosition += 0.15;
             track.style.transform = `translateX(-${galleryScrollPosition}px)`;
 
             checkGalleryLoop();
