@@ -32,6 +32,9 @@ function initProfileEditor(projectName, projectData) {
     currentProject = projectName;
     currentProjectData = projectData;
 
+    // Populate form with existing member data
+    populateFormWithMemberData(projectData);
+
     // Check for existing session
     const storedSessionId = sessionStorage.getItem(SESSION_KEY);
     const storedExpiry = sessionStorage.getItem(SESSION_EXPIRY_KEY);
@@ -49,7 +52,7 @@ function initProfileEditor(projectName, projectData) {
         }
     }
 
-    // Restore draft if exists
+    // Restore draft if exists (overwrites existing data)
     restoreDraft();
 
     // Update UI based on session state
@@ -206,6 +209,44 @@ function saveDraft() {
 
         // Show save indicator
         showSaveIndicator();
+    }
+}
+
+/**
+ * Populate form fields with existing member data
+ */
+function populateFormWithMemberData(member) {
+    if (!member) return;
+
+    const form = document.getElementById('profile-edit-form');
+    if (!form) return;
+
+    // Map member data fields to form field names
+    const fieldMap = {
+        'tagline': member.tagline || '',
+        'description': member.description || '',
+        'city': member.city || '',
+        'country': member.country || '',
+        'vision': member.vision_mission || '',
+        'mission': '',  // Will be populated from vision_mission split
+        'how_started': member.how_started || '',
+        'website': member.website || '',
+        'email': member.email || '',
+        'x_profile': member.x_profile || '',
+        'npub': member.npub || '',
+        'btcmap_url': member.btcmap_url || '',
+        'lightning_address': member.lightning_address || '',
+        'onchain_address': member.onchain_address || '',
+        'btcpay_campaign': member.btcpay_campaign || '',
+        'geyser_campaign': member.geyser_campaign || ''
+    };
+
+    // Populate each field
+    for (const [fieldName, value] of Object.entries(fieldMap)) {
+        const field = form.querySelector(`[name="${fieldName}"]`);
+        if (field && value) {
+            field.value = value;
+        }
     }
 }
 
