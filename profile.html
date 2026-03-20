@@ -882,24 +882,23 @@
             color: var(--accent-blue);
         }
 
-        /* Edit Profile Link */
-        .edit-profile-link {
-            display: inline-block;
-            background: var(--accent-orange);
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.2s;
-            margin: 20px auto;
+        /* Profile Footnote */
+        .profile-footnote {
             text-align: center;
+            font-size: 0.85rem;
+            color: #888;
+            margin: 30px auto 20px;
+            max-width: 600px;
+            line-height: 1.6;
         }
 
-        .edit-profile-link:hover {
-            background: #e08416;
-            transform: translateY(-2px);
+        .profile-footnote a {
+            color: var(--accent-blue);
+            text-decoration: underline;
+        }
+
+        .profile-footnote a:hover {
+            color: #4da3ff;
         }
     </style>
 </head>
@@ -920,11 +919,9 @@
         <div class="loading">Loading profile...</div>
     </div>
 
-    <!-- Edit Profile Link (shown after profile loads) -->
-    <div style="text-align: center; margin-bottom: 20px;">
-        <a href="#" id="edit-profile-link" class="edit-profile-link" style="display: none;">
-            Edit this profile →
-        </a>
+    <!-- Profile Footnote -->
+    <div class="profile-footnote" id="profile-footnote" style="display: none;">
+        If you would like to report any inaccuracies on this page please <a href="mailto:admin@powbot.africa" id="contact-admin-link">contact the admin</a>. If you are the project lead for this project you can request changes by <a href="#" id="edit-profile-link">signing in</a>.
     </div>
 
     <footer>
@@ -932,12 +929,14 @@
     </footer>
 
     <script>
-        // Show edit link after profile loads
+        // Show profile footnote after profile loads
         function showEditLink(memberId) {
             const editLink = document.getElementById('edit-profile-link');
-            if (editLink) {
+            const footnote = document.getElementById('profile-footnote');
+
+            if (editLink && footnote) {
                 editLink.href = `profile-edit.html?id=${encodeURIComponent(memberId)}`;
-                editLink.style.display = 'inline-block';
+                footnote.style.display = 'block';
             }
         }
     </script>
