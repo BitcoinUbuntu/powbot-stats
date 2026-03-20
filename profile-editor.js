@@ -232,7 +232,7 @@ function populateFormWithMemberData(member) {
         'how_started': member.how_started || '',
         'website': member.website || '',
         'email': member.email || '',
-        'x_profile': member.x_profile || '',
+        'x_profile': (member.x_profile || '').replace(/^@/, ''), // Remove @ prefix if present
         'npub': member.npub || '',
         'btcmap_url': member.btcmap_url || '',
         'lightning_address': member.lightning_address || '',
@@ -246,6 +246,8 @@ function populateFormWithMemberData(member) {
         const field = form.querySelector(`[name="${fieldName}"]`);
         if (field && value) {
             field.value = value;
+            // Trigger input event to update character counters
+            field.dispatchEvent(new Event('input', { bubbles: true }));
         }
     }
 }
@@ -491,7 +493,10 @@ async function submitProfileEdits(event) {
 
         if (!response.ok) {
             const error = await response.json();
-            throw new Error(error.detail || 'Failed to submit changes');
+            const errorMsg = typeof error.detail === 'object'
+                ? JSON.stringify(error.detail)
+                : (error.detail || 'Failed to submit changes');
+            throw new Error(errorMsg);
         }
 
         const data = await response.json();
