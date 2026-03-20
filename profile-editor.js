@@ -535,12 +535,23 @@ async function submitProfileEdits(event) {
                 } else {
                     try {
                         const error = JSON.parse(xhr.responseText);
-                        const errorMsg = typeof error.detail === 'object'
+                        let errorMsg = typeof error.detail === 'object'
                             ? JSON.stringify(error.detail)
                             : (error.detail || 'Failed to submit changes');
+
+                        // Add status code info for auth errors
+                        if (xhr.status === 401) {
+                            errorMsg = 'Invalid or unverified session';
+                        }
+
                         reject(new Error(errorMsg));
                     } catch (e) {
-                        reject(new Error(`Request failed with status ${xhr.status}`));
+                        // If can't parse response, use status code
+                        if (xhr.status === 401) {
+                            reject(new Error('Unauthorized - session expired'));
+                        } else {
+                            reject(new Error(`Request failed with status ${xhr.status}`));
+                        }
                     }
                 }
             });
@@ -579,7 +590,16 @@ async function submitProfileEdits(event) {
 
     } catch (error) {
         console.error('Submit error:', error);
-        showError('Failed to submit: ' + error.message);
+
+        // If it's an auth error, prompt to re-authenticate
+        if (error.message.includes('Invalid or unverified session') || error.message.includes('Unauthorized')) {
+            clearSession();
+            updateEditorUI();
+            showError('Your session has expired. Please click "Authenticate" to sign in again.');
+            setTimeout(() => startOTPAuth(), 1500);
+        } else {
+            showError('Failed to submit: ' + error.message);
+        }
     } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;
