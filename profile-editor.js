@@ -375,16 +375,59 @@ async function submitProfileEdits(event) {
     }
 
     const form = document.getElementById('profile-edit-form');
-    const formData = new FormData(form);
-    const changes = {};
+    const formData = new FormData();
 
-    for (const [key, value] of formData.entries()) {
-        if (value && value.trim()) {
-            changes[key] = value.trim();
+    // Add session_id
+    formData.append('session_id', currentSessionId);
+
+    // Add all text fields from form (excluding file inputs)
+    const textFields = [
+        'tagline', 'description', 'vision', 'mission', 'how_started', 'milestones',
+        'contact_person', 'email', 'website', 'x_username', 'npub',
+        'lightning_address', 'btcmap_url', 'btcpay_campaign', 'geyser_campaign', 'onchain_address',
+        'city', 'country'
+    ];
+
+    let hasChanges = false;
+    textFields.forEach(field => {
+        const input = form.querySelector(`[name="${field}"]`);
+        if (input && input.value && input.value.trim()) {
+            formData.append(field, input.value.trim());
+            hasChanges = true;
+        }
+    });
+
+    // Add logo file if selected
+    const logoInput = document.getElementById('edit-logo');
+    if (logoInput && logoInput.files && logoInput.files.length > 0) {
+        formData.append('logo', logoInput.files[0]);
+        hasChanges = true;
+    }
+
+    // Add gallery files from newGalleryFiles array (if it exists in the page context)
+    if (typeof newGalleryFiles !== 'undefined' && newGalleryFiles.length > 0) {
+        newGalleryFiles.forEach(file => {
+            formData.append('gallery', file);
+        });
+        hasChanges = true;
+    }
+
+    // Add list of gallery images to keep (from hidden field)
+    const keepGalleryInput = document.getElementById('keep-gallery-images');
+    if (keepGalleryInput && keepGalleryInput.value) {
+        formData.append('keep_gallery_images', keepGalleryInput.value);
+    }
+
+    // Validate gallery count (kept + new must be <= 12)
+    if (typeof galleryToKeep !== 'undefined' && typeof newGalleryFiles !== 'undefined') {
+        const totalGalleryCount = galleryToKeep.length + newGalleryFiles.length;
+        if (totalGalleryCount > 12) {
+            showError(`Too many gallery images. You have ${totalGalleryCount} total (max 12). Please delete ${totalGalleryCount - 12} more images.`);
+            return;
         }
     }
 
-    if (Object.keys(changes).length === 0) {
+    if (!hasChanges) {
         showError('No changes to submit');
         return;
     }
@@ -399,11 +442,8 @@ async function submitProfileEdits(event) {
             `${API_BASE}/profiles/${encodeURIComponent(currentProject)}/edit`,
             {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    session_id: currentSessionId,
-                    changes: changes
-                })
+                // Don't set Content-Type - browser will set it with boundary for multipart/form-data
+                body: formData
             }
         );
 
@@ -423,12 +463,16 @@ async function submitProfileEdits(event) {
         showMessage(
             `Changes submitted successfully! <a href="${data.pr_url}" target="_blank">View Pull Request</a>`,
             'success',
-            0
+            3000
         );
 
-        // Reset form
-        form.reset();
-        updateEditorUI();
+        // Redirect back to profile page after brief delay
+        setTimeout(() => {
+            const currentProjectId = new URLSearchParams(window.location.search).get('id');
+            if (currentProjectId) {
+                window.location.href = 'profile.html?id=' + encodeURIComponent(currentProjectId);
+            }
+        }, 3000);
 
     } catch (error) {
         console.error('Submit error:', error);

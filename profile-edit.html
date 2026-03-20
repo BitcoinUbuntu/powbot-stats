@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Edit Profile | CBAF</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
+
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-card: #21262d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent-orange: #f7931a;
+            --accent-green: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 20px;
+            position: sticky;
+            top: 0;
+            margin: -20px -20px 20px -20px;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Project Header */
+        .project-header {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .project-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            object-fit: cover;
+            background: var(--bg-secondary);
+        }
+
+        .project-logo-placeholder {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .project-info h1 {
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+        }
+
+        .project-info p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Messages */
+        .message {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            font-size: 0.9rem;
+        }
+
+        .message-error {
+            background: rgba(248, 81, 73, 0.15);
+            border: 1px solid #f85149;
+            color: #f85149;
+        }
+
+        .message-success {
+            background: rgba(63, 185, 80, 0.15);
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        .message-info {
+            background: rgba(87, 171, 255, 0.15);
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .message-warning {
+            background: rgba(247, 147, 26, 0.15);
+            border: 1px solid var(--accent-orange);
+            color: var(--accent-orange);
+        }
+
+        .message a {
+            color: inherit;
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Section */
+        .section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            color: var(--accent-blue);
+        }
+
+        /* Form Styles */
+        #profile-edit-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+        }
+
+        .form-help {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* Form section headers */
+        #profile-edit-form h3 {
+            font-size: 1rem;
+            color: var(--accent-orange);
+            margin-top: 24px;
+            margin-bottom: 12px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        #profile-edit-form h3:first-child {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        /* Character counter */
+        .char-counter {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-align: right;
+            margin-top: 4px;
+        }
+
+        .char-counter.warning {
+            color: var(--accent-orange);
+        }
+
+        .char-counter.error {
+            color: #f85149;
+        }
+
+        /* Gallery grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid var(--border);
+            background: var(--bg-secondary);
+        }
+
+        .gallery-item.deleted {
+            opacity: 0.3;
+            filter: grayscale(100%);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-delete {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #f85149;
+            color: white;
+            border: 2px solid white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            line-height: 1;
+            font-weight: bold;
+            transition: transform 0.2s;
+            padding-bottom: 2px;
+        }
+
+        .gallery-delete:hover {
+            transform: scale(1.1);
+        }
+
+        .gallery-counter {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .gallery-counter.warning {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+
+        /* Twitter username prefix */
+        .input-with-prefix {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-prefix {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-right: none;
+            border-radius: 6px 0 0 6px;
+            padding: 10px 8px 10px 12px;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .input-with-prefix input {
+            border-radius: 0 6px 6px 0 !important;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: var(--accent-orange);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .btn-primary:hover {
+            background: #e08416;
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-small {
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            margin-left: 12px;
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .modal-content h3 {
+            color: var(--accent-orange);
+            margin-bottom: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--accent-blue);
+        }
+
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .project-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="profile.html" id="back-link">← Back to Profile</a>
+            <a href="members.html">Directory</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Project Context Header -->
+        <div id="project-header" class="project-header hidden">
+            <div id="project-logo"></div>
+            <div class="project-info">
+                <h1 id="project-name">Project Name</h1>
+                <p>Editing your profile</p>
+            </div>
+        </div>
+
+        <!-- Session Warning -->
+        <div id="session-warning" class="message message-warning hidden"></div>
+
+        <!-- Editor Messages -->
+        <div id="editor-message" class="hidden"></div>
+
+        <!-- Edit Form -->
+        <div id="edit-section" class="hidden">
+            <div class="section">
+                <h2>Edit Your Profile</h2>
+
+                <!-- Save Indicator -->
+                <div id="save-indicator" class="hidden" style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 12px; font-style: italic;"></div>
+
+                <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                    Submit changes to your project profile. All edits will be reviewed before being published.
+                    <br><strong>Your work is auto-saved every 30 seconds.</strong>
+                </p>
+
+                <form id="profile-edit-form" onsubmit="submitProfileEdits(event)">
+                    <!-- Basic Info -->
+                    <h3>Basic Information</h3>
+
+                    <div class="form-group">
+                        <label for="edit-tagline">Profile Description</label>
+                        <input type="text" id="edit-tagline" name="tagline" maxlength="125" placeholder="A compelling one-sentence summary of your project">
+                        <div class="char-counter" id="tagline-counter">0 / 125</div>
+                        <span class="form-help">Appears on your profile card across the site (max 125 characters)</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-description">About</label>
+                        <textarea id="edit-description" name="description" maxlength="600" placeholder="Tell us about your project..."></textarea>
+                        <div class="char-counter" id="description-counter">0 / 600</div>
+                        <span class="form-help">A short paragraph describing what your project does</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-city">City</label>
+                        <input type="text" id="edit-city" name="city" maxlength="50" placeholder="City name">
+                        <span class="form-help">The city where your project is based</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-country">Country</label>
+                        <input type="text" id="edit-country" name="country" maxlength="50" placeholder="Country name">
+                        <span class="form-help">The country where your project is based</span>
+                    </div>
+
+                    <!-- Vision & Mission -->
+                    <h3>Vision & Mission</h3>
+
+                    <div class="form-group">
+                        <label for="edit-vision">Vision</label>
+                        <textarea id="edit-vision" name="vision" maxlength="400" placeholder="Your long-term vision..."></textarea>
+                        <div class="char-counter" id="vision-counter">0 / 400</div>
+                        <span class="form-help">Where do you see your project going in the future?</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-mission">Mission</label>
+                        <textarea id="edit-mission" name="mission" maxlength="400" placeholder="Your mission statement..."></textarea>
+                        <div class="char-counter" id="mission-counter">0 / 400</div>
+                        <span class="form-help">What drives your project day-to-day?</span>
+                    </div>
+
+                    <!-- Story -->
+                    <h3>Your Story</h3>
+
+                    <div class="form-group">
+                        <label for="edit-how-started">Origin Story</label>
+                        <textarea id="edit-how-started" name="how_started" maxlength="1000" placeholder="How did your project begin?"></textarea>
+                        <div class="char-counter" id="how-started-counter">0 / 1000</div>
+                        <span class="form-help">Tell the story of how your project came to be</span>
+                    </div>
+
+                    <!-- Contact & Links -->
+                    <h3>Contact & Links</h3>
+
+                    <div class="form-group">
+                        <label for="edit-website">Website</label>
+                        <input type="url" id="edit-website" name="website" maxlength="100" placeholder="https://example.com">
+                        <span class="form-help">Your project's website URL</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-email">Email</label>
+                        <input type="email" id="edit-email" name="email" maxlength="75" placeholder="contact@example.com">
+                        <span class="form-help">Contact email for your project</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-x-username">X Username</label>
+                        <div class="input-with-prefix">
+                            <span class="input-prefix">@</span>
+                            <input type="text" id="edit-x-username" name="x_username" maxlength="15" placeholder="yourproject" pattern="[A-Za-z0-9_]+" title="Username can only contain letters, numbers, and underscores">
+                        </div>
+                        <span class="form-help">Your X username without the @ symbol</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-npub">Nostr npub</label>
+                        <input type="text" id="edit-npub" name="npub" maxlength="63" placeholder="npub1..." pattern="npub[a-z0-9]{59}" title="Must be a valid npub (63 characters)">
+                        <span class="form-help">Your Nostr public key (npub format, 63 characters)</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-btcmap-url">BTCMap URL</label>
+                        <input type="url" id="edit-btcmap-url" name="btcmap_url" maxlength="100" placeholder="https://btcmap.org/...">
+                        <span class="form-help">Your BTCMap profile or area URL</span>
+                    </div>
+
+                    <!-- Bitcoin Addresses -->
+                    <h3>Bitcoin Addresses</h3>
+
+                    <div class="form-group">
+                        <label for="edit-lightning-address">Lightning Address</label>
+                        <input type="text" id="edit-lightning-address" name="lightning_address" maxlength="75" placeholder="you@yourdomain.com">
+                        <span class="form-help">Lightning address for receiving donations</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-onchain-address">Onchain Address</label>
+                        <input type="text" id="edit-onchain-address" name="onchain_address" maxlength="62" placeholder="bc1..." pattern="[a-zA-Z0-9]+" title="Valid Bitcoin address">
+                        <span class="form-help">Bitcoin onchain address (advisable to rotate regularly)</span>
+                    </div>
+
+                    <!-- Campaigns -->
+                    <h3>Fundraising Campaigns</h3>
+
+                    <div class="form-group">
+                        <label for="edit-btcpay-campaign">BTCPay Campaign</label>
+                        <input type="url" id="edit-btcpay-campaign" name="btcpay_campaign" maxlength="100" placeholder="https://btcpay...">
+                        <span class="form-help">BTCPay crowdfunding campaign URL</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-geyser-campaign">Geyser Campaign</label>
+                        <input type="url" id="edit-geyser-campaign" name="geyser_campaign" maxlength="100" placeholder="https://geyser.fund/project/...">
+                        <span class="form-help">Geyser fundraising project URL</span>
+                    </div>
+
+                    <!-- Media -->
+                    <h3>Media</h3>
+
+                    <div class="form-group">
+                        <label for="edit-logo">Logo</label>
+
+                        <!-- Current Logo Preview -->
+                        <div id="current-logo-preview" class="hidden" style="margin-bottom: 12px;">
+                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 8px;">Current logo:</p>
+                            <div style="width: 120px; height: 120px; border: 2px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary);">
+                                <img id="current-logo-img" src="" alt="Current logo" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                        </div>
+
+                        <input type="file" id="edit-logo" name="logo_file" accept="image/jpeg,image/jpg" style="width: 100%; padding: 10px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary); cursor: pointer;">
+                        <span class="form-help">Upload your project logo (JPEG only, max 2MB, square recommended)</span>
+
+                        <!-- Preview of new logo -->
+                        <div id="logo-preview" style="display: none; margin-top: 12px;">
+                            <p style="color: var(--accent-green); font-size: 0.85rem; margin-bottom: 8px;">New logo preview:</p>
+                            <div style="width: 120px; height: 120px; border: 2px solid var(--accent-green); border-radius: 8px; overflow: hidden; background: var(--bg-secondary);">
+                                <img id="logo-preview-img" src="" alt="Logo preview" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Gallery Images</label>
+
+                        <!-- Current Gallery -->
+                        <div id="current-gallery-section" class="hidden">
+                            <p style="color: var(--text-secondary); margin-bottom: 12px; font-size: 0.9rem;">
+                                Current gallery images (click × to remove):
+                            </p>
+                            <div id="gallery-grid" class="gallery-grid"></div>
+                            <div id="gallery-counter" class="gallery-counter"></div>
+                        </div>
+
+                        <!-- New Gallery Images - File Upload Only -->
+                        <p style="color: var(--text-secondary); margin-bottom: 8px; font-size: 0.9rem; margin-top: 16px;">
+                            Upload new images from your device:
+                        </p>
+                        <input type="file" id="gallery-upload" name="gallery_files" accept="image/jpeg,image/jpg" multiple style="width: 100%; padding: 10px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary); cursor: pointer;">
+                        <span class="form-help">Select up to 12 images (JPEG only, max 5MB each)</span>
+
+                        <!-- Preview of uploaded files -->
+                        <div id="upload-preview-grid" class="gallery-grid hidden" style="margin-top: 12px;"></div>
+
+                        <!-- Hidden field for images to keep -->
+                        <input type="hidden" id="keep-gallery-images" name="keep_gallery_images" value="">
+                    </div>
+
+                    <!-- Disclaimer -->
+                    <div style="background: rgba(247, 147, 26, 0.1); border: 1px solid var(--accent-orange); border-radius: 8px; padding: 16px; margin: 24px 0;">
+                        <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-weight: normal;">
+                            <input type="checkbox" id="disclaimer-checkbox" required style="margin-top: 4px; width: 18px; height: 18px; cursor: pointer;">
+                            <span style="flex: 1; font-size: 0.9rem; line-height: 1.5;">
+                                I confirm that all information provided is factually correct to the best of my knowledge, and I have the legal right to share all images included in this submission. I understand that I am responsible for ensuring no copyright infringement occurs.
+                            </span>
+                        </label>
+                    </div>
+
+                    <button type="submit" id="submit-edits-btn" class="btn-primary">
+                        Submit Changes
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Auth Button (if not authenticated) -->
+        <button id="claim-profile-btn" class="btn-primary hidden">
+            Authenticate
+        </button>
+    </div>
+
+    <!-- OTP Modal -->
+    <div id="otp-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Enter Verification Code</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 16px;">
+                Check your Telegram for a 6-digit code
+            </p>
+            <form onsubmit="handleOTPSubmit(event)">
+                <input
+                    type="text"
+                    id="otp-input"
+                    placeholder="000000"
+                    maxlength="6"
+                    pattern="[0-9]{6}"
+                    required
+                    style="width: 100%; padding: 12px; text-align: center; font-size: 1.5rem; letter-spacing: 0.5rem; font-weight: bold; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-secondary); color: var(--text-primary); margin-bottom: 16px;"
+                />
+                <button type="submit" class="btn-primary" style="width: 100%; margin: 0;">
+                    Verify
+                </button>
+            </form>
+            <button
+                onclick="hideOTPModal()"
+                style="margin-top: 16px; background: transparent; color: var(--text-secondary); border: 1px solid var(--border); padding: 8px 16px; border-radius: 6px; cursor: pointer; width: 100%;"
+            >
+                Cancel
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21</p>
+    </footer>
+
+    <script>
+        // Character counters
+        function updateCharCounter(textareaId, counterId, maxLength) {
+            const textarea = document.getElementById(textareaId);
+            const counter = document.getElementById(counterId);
+            if (!textarea || !counter) return;
+
+            function update() {
+                const length = textarea.value.length;
+                counter.textContent = `${length} / ${maxLength}`;
+
+                if (length > maxLength * 0.9) {
+                    counter.classList.add('warning');
+                    counter.classList.remove('error');
+                } else {
+                    counter.classList.remove('warning', 'error');
+                }
+
+                if (length >= maxLength) {
+                    counter.classList.remove('warning');
+                    counter.classList.add('error');
+                }
+            }
+
+            textarea.addEventListener('input', update);
+            update();
+        }
+
+        // Initialize character counters
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCharCounter('edit-tagline', 'tagline-counter', 125);
+            updateCharCounter('edit-description', 'description-counter', 600);
+            updateCharCounter('edit-vision', 'vision-counter', 400);
+            updateCharCounter('edit-mission', 'mission-counter', 400);
+            updateCharCounter('edit-how-started', 'how-started-counter', 1000);
+        });
+
+        // Gallery management
+        let galleryToKeep = [];
+        let currentGalleryImages = [];
+        let newGalleryFiles = []; // Accumulated uploaded files
+
+        function initGallery(images) {
+            currentGalleryImages = images || [];
+            galleryToKeep = [...currentGalleryImages];
+            renderGallery();
+            updateGalleryCounter();
+        }
+
+        function renderGallery() {
+            const grid = document.getElementById('gallery-grid');
+            const section = document.getElementById('current-gallery-section');
+
+            if (!currentGalleryImages || currentGalleryImages.length === 0) {
+                section.classList.add('hidden');
+                return;
+            }
+
+            section.classList.remove('hidden');
+            grid.innerHTML = '';
+
+            currentGalleryImages.forEach((imagePath, index) => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                if (!galleryToKeep.includes(imagePath)) {
+                    item.classList.add('deleted');
+                }
+
+                const img = document.createElement('img');
+                img.src = imagePath;
+                img.alt = `Gallery image ${index + 1}`;
+
+                const deleteBtn = document.createElement('div');
+                deleteBtn.className = 'gallery-delete';
+                deleteBtn.innerHTML = '×';
+                deleteBtn.onclick = () => toggleGalleryImage(imagePath);
+
+                item.appendChild(img);
+                item.appendChild(deleteBtn);
+                grid.appendChild(item);
+            });
+
+            // Update hidden input
+            document.getElementById('keep-gallery-images').value = JSON.stringify(galleryToKeep);
+        }
+
+        function toggleGalleryImage(imagePath) {
+            const index = galleryToKeep.indexOf(imagePath);
+            if (index > -1) {
+                galleryToKeep.splice(index, 1);
+            } else {
+                galleryToKeep.push(imagePath);
+            }
+            renderGallery();
+            updateGalleryCounter();
+        }
+
+        // Handle logo upload preview
+        function handleLogoUpload(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById('logo-preview');
+            const previewImg = document.getElementById('logo-preview-img');
+
+            if (!file) {
+                preview.style.display = 'none';
+                return;
+            }
+
+            if (!file.type.match('image.*')) {
+                alert('Please select an image file (JPG, PNG, or WebP)');
+                return;
+            }
+
+            if (file.size > 2 * 1024 * 1024) {
+                alert('Logo file is too large. Maximum size is 2MB.');
+                event.target.value = '';
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                previewImg.src = e.target.result;
+                preview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Handle gallery file upload preview (cumulative)
+        function handleGalleryUpload(event) {
+            const files = event.target.files;
+
+            if (files.length === 0) return;
+
+            // Check file sizes
+            let oversizedFiles = [];
+            Array.from(files).forEach(file => {
+                if (file.size > 5 * 1024 * 1024) {
+                    oversizedFiles.push(file.name);
+                }
+            });
+
+            if (oversizedFiles.length > 0) {
+                alert(`The following files are too large (max 5MB each):\n${oversizedFiles.join('\n')}`);
+                event.target.value = ''; // Clear the input
+                return;
+            }
+
+            // Add new files to the accumulated array
+            Array.from(files).forEach(file => {
+                if (file.type.match('image.*')) {
+                    newGalleryFiles.push(file);
+                }
+            });
+
+            // Clear the file input so user can select the same files again if needed
+            event.target.value = '';
+
+            // Render all accumulated files
+            renderNewGalleryPreviews();
+            updateGalleryCounter();
+        }
+
+        // Render previews of all accumulated new gallery files
+        function renderNewGalleryPreviews() {
+            const previewGrid = document.getElementById('upload-preview-grid');
+
+            if (newGalleryFiles.length === 0) {
+                previewGrid.classList.add('hidden');
+                previewGrid.innerHTML = '';
+                return;
+            }
+
+            previewGrid.classList.remove('hidden');
+            previewGrid.innerHTML = '';
+
+            newGalleryFiles.forEach((file, index) => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const item = document.createElement('div');
+                    item.className = 'gallery-item';
+                    item.style.border = '2px solid var(--accent-green)';
+
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.alt = file.name;
+
+                    const deleteBtn = document.createElement('div');
+                    deleteBtn.className = 'gallery-delete';
+                    deleteBtn.innerHTML = '×';
+                    deleteBtn.onclick = () => removeNewGalleryFile(index);
+
+                    const label = document.createElement('div');
+                    label.style = 'position: absolute; bottom: 4px; left: 4px; right: 4px; background: rgba(0,0,0,0.7); color: white; font-size: 0.7rem; padding: 4px; border-radius: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;';
+                    label.textContent = file.name;
+
+                    item.appendChild(img);
+                    item.appendChild(deleteBtn);
+                    item.appendChild(label);
+                    previewGrid.appendChild(item);
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // Remove a file from the accumulated new gallery files
+        function removeNewGalleryFile(index) {
+            newGalleryFiles.splice(index, 1);
+            renderNewGalleryPreviews();
+            updateGalleryCounter();
+        }
+
+        function updateGalleryCounter() {
+            const counter = document.getElementById('gallery-counter');
+
+            const keptCount = galleryToKeep.length;
+            const uploadedFiles = newGalleryFiles.length;
+            const totalCount = keptCount + uploadedFiles;
+            const availableSlots = 12 - totalCount;
+
+            let message = `${keptCount} existing, ${availableSlots} slot${availableSlots !== 1 ? 's' : ''} available`;
+
+            if (uploadedFiles > 0) {
+                message += ` (uploading ${uploadedFiles})`;
+            }
+
+            if (totalCount > 12) {
+                counter.classList.add('warning');
+                message = `⚠️ Too many images! You have ${totalCount} total (max 12). Please delete ${totalCount - 12} ${totalCount - 12 === 1 ? 'image' : 'images'}.`;
+            } else {
+                counter.classList.remove('warning');
+            }
+
+            counter.textContent = message;
+        }
+
+        // Initialize file upload handlers
+        document.addEventListener('DOMContentLoaded', () => {
+            const logoInput = document.getElementById('edit-logo');
+            const galleryInput = document.getElementById('gallery-upload');
+
+            if (logoInput) {
+                logoInput.addEventListener('change', handleLogoUpload);
+            }
+            if (galleryInput) {
+                galleryInput.addEventListener('change', handleGalleryUpload);
+            }
+        });
+
+        // Get project ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+
+        if (!projectId) {
+            document.getElementById('editor-message').innerHTML = 'No project specified';
+            document.getElementById('editor-message').className = 'message message-error';
+            document.getElementById('editor-message').classList.remove('hidden');
+        } else {
+            // Update back link
+            document.getElementById('back-link').href = `profile.html?id=${encodeURIComponent(projectId)}`;
+
+            // Load project info
+            loadProjectInfo();
+        }
+
+        async function loadProjectInfo() {
+            try {
+                const response = await fetch('members.json');
+                const data = await response.json();
+                const member = data.members.find(m => m.id === projectId);
+
+                if (member) {
+                    // Update page title
+                    document.getElementById('page-title').textContent = `Edit ${member.name} | CBAF`;
+
+                    // Update project header
+                    const projectHeader = document.getElementById('project-header');
+                    const projectLogo = document.getElementById('project-logo');
+                    const projectName = document.getElementById('project-name');
+
+                    if (member.logo_url) {
+                        projectLogo.innerHTML = `<img src="${member.logo_url}" alt="${member.name}" class="project-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="project-logo-placeholder" style="display:none;">${member.flag || member.name.charAt(0)}</div>`;
+                    } else {
+                        projectLogo.innerHTML = `<div class="project-logo-placeholder">${member.flag || member.name.charAt(0)}</div>`;
+                    }
+
+                    projectName.textContent = member.name;
+                    projectHeader.classList.remove('hidden');
+
+                    // Show current logo if exists
+                    if (member.logo_url) {
+                        const currentLogoPreview = document.getElementById('current-logo-preview');
+                        const currentLogoImg = document.getElementById('current-logo-img');
+                        currentLogoImg.src = member.logo_url;
+                        currentLogoPreview.classList.remove('hidden');
+                    }
+
+                    // Initialize gallery if exists
+                    if (member.gallery && member.gallery.length > 0) {
+                        initGallery(member.gallery);
+                    }
+
+                    // Initialize editor with member data
+                    if (typeof initProfileEditor === 'function') {
+                        initProfileEditor(member.name, member);
+                    }
+                }
+            } catch (error) {
+                console.error('Failed to load project info:', error);
+            }
+        }
+    </script>
+
+    <!-- Profile Editor JavaScript -->
+    <script src="profile-editor.js"></script>
+</body>
+</html>
