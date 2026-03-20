@@ -882,158 +882,24 @@
             color: var(--accent-blue);
         }
 
-        /* Profile Editor Styles */
-        .btn-primary {
+        /* Edit Profile Link */
+        .edit-profile-link {
+            display: inline-block;
             background: var(--accent-orange);
             color: white;
-            border: none;
+            text-decoration: none;
+            padding: 10px 20px;
             border-radius: 8px;
-            padding: 12px 24px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            cursor: pointer;
             transition: all 0.2s;
             margin: 20px auto;
-            display: block;
-        }
-
-        .btn-primary:hover {
-            background: #e08416;
-            transform: translateY(-2px);
-        }
-
-        .btn-primary:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .btn-small {
-            background: var(--accent-blue);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 6px 12px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            margin-left: 12px;
-        }
-
-        .hidden {
-            display: none !important;
-        }
-
-        /* Modal */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
-            max-width: 400px;
-            width: 90%;
             text-align: center;
         }
 
-        .modal-content h3 {
-            color: var(--accent-orange);
-            margin-bottom: 12px;
-        }
-
-        /* Messages */
-        .message {
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-bottom: 16px;
-            font-size: 0.9rem;
-        }
-
-        .message-error {
-            background: rgba(248, 81, 73, 0.15);
-            border: 1px solid #f85149;
-            color: #f85149;
-        }
-
-        .message-success {
-            background: rgba(63, 185, 80, 0.15);
-            border: 1px solid var(--accent-green);
-            color: var(--accent-green);
-        }
-
-        .message-info {
-            background: rgba(87, 171, 255, 0.15);
-            border: 1px solid var(--accent-blue);
-            color: var(--accent-blue);
-        }
-
-        .message-warning {
-            background: rgba(247, 147, 26, 0.15);
-            border: 1px solid var(--accent-orange);
-            color: var(--accent-orange);
-        }
-
-        .message a {
-            color: inherit;
-            text-decoration: underline;
-        }
-
-        /* Form Styles */
-        #profile-edit-form {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 6px;
-            display: block;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px 12px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 0.95rem;
-        }
-
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-        }
-
-        .form-help {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-top: 4px;
+        .edit-profile-link:hover {
+            background: #e08416;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -1054,73 +920,27 @@
         <div class="loading">Loading profile...</div>
     </div>
 
-    <!-- Claim/Edit Profile Button -->
-    <button id="claim-profile-btn" class="btn-primary hidden">
-        Claim/Edit Profile
-    </button>
-
-    <!-- Session Warning -->
-    <div id="session-warning" class="message message-warning hidden" style="max-width: 800px; margin: 20px auto;"></div>
-
-    <!-- Editor Messages -->
-    <div id="editor-message" class="hidden" style="max-width: 800px; margin: 20px auto;"></div>
-
-    <!-- Edit Profile Section -->
-    <div id="edit-section" class="hidden">
-        <div class="content container" style="max-width: 800px;">
-            <div class="section">
-                <h2>Edit Your Profile</h2>
-
-                <!-- Save Indicator -->
-                <div id="save-indicator" class="hidden" style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 12px; font-style: italic;"></div>
-
-                <p style="color: var(--text-secondary); margin-bottom: 20px;">
-                    Submit changes to your project profile. All edits will be reviewed before being published.
-                    <br><strong>Your work is auto-saved every 30 seconds.</strong>
-                </p>
-
-                <form id="profile-edit-form" onsubmit="submitProfileEdits(event)">
-                    <div class="form-group">
-                        <label for="edit-description">Description</label>
-                        <textarea id="edit-description" name="description" placeholder="Brief overview of your project..."></textarea>
-                        <span class="form-help">A short description of what your project does</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="edit-vision">Vision</label>
-                        <textarea id="edit-vision" name="vision" placeholder="Your long-term vision..."></textarea>
-                        <span class="form-help">Where do you see your project going?</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="edit-mission">Mission</label>
-                        <textarea id="edit-mission" name="mission" placeholder="Your mission statement..."></textarea>
-                        <span class="form-help">What drives your project day-to-day?</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="edit-website">Website</label>
-                        <input type="url" id="edit-website" name="website" placeholder="https://example.com">
-                        <span class="form-help">Your project's website URL</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="edit-email">Email</label>
-                        <input type="email" id="edit-email" name="email" placeholder="contact@example.com">
-                        <span class="form-help">Contact email for your project</span>
-                    </div>
-
-                    <button type="submit" id="submit-edits-btn" class="btn-primary">
-                        Submit Changes
-                    </button>
-                </form>
-            </div>
-        </div>
+    <!-- Edit Profile Link (shown after profile loads) -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <a href="#" id="edit-profile-link" class="edit-profile-link" style="display: none;">
+            Edit this profile →
+        </a>
     </div>
 
     <footer>
         <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | Data updated: <span id="updated">--</span> CAT | <a href="about.html">About</a> | <a href="disclaimer.html">Disclaimer</a></p>
     </footer>
+
+    <script>
+        // Show edit link after profile loads
+        function showEditLink(memberId) {
+            const editLink = document.getElementById('edit-profile-link');
+            if (editLink) {
+                editLink.href = `profile-edit.html?id=${encodeURIComponent(memberId)}`;
+                editLink.style.display = 'inline-block';
+            }
+        }
+    </script>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
@@ -1179,11 +999,13 @@
         function renderProfile(member, allStats) {
             document.getElementById('page-title').textContent = `${member.name} | CBAF`;
 
-            const logoHtml = member.logo_url ?
-                `<img src="${member.logo_url}" alt="${member.name}" class="hero-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                 <div class="hero-logo-placeholder" style="display:none;">${member.flag || member.name.charAt(0)}</div>`
-                :
-                `<div class="hero-logo-placeholder">${member.flag || member.name.charAt(0)}</div>`;
+            // Use logo from members.json, fallback to placeholder
+            const logoUrl = member.logo_url || `images/members/${member.id}/logo.jpg`;
+            const logoHtml = `
+                <img src="${logoUrl}" alt="${member.name}" class="hero-logo"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="hero-logo-placeholder" style="display:none;">${member.flag || member.name.charAt(0)}</div>
+            `;
 
             let html = `
                 <div class="hero">
@@ -1542,35 +1364,26 @@
             }
 
             // Vision & Mission
-            if (member.vision_mission) {
-                html += `
-                    <div class="section">
-                        <h2>Vision & Mission</h2>
-                        <p>${member.vision_mission}</p>
-                    </div>
-                `;
+            if (member.vision || member.mission) {
+                html += `<div class="section"><h2>Vision & Mission</h2>`;
+
+                if (member.vision) {
+                    html += `<h3>Our Vision</h3><p>${member.vision}</p>`;
+                }
+
+                if (member.mission) {
+                    html += `<h3>Our Mission</h3><p>${member.mission}</p>`;
+                }
+
+                html += `</div>`;
             }
 
             // Gallery (full-width, not in card)
-            if (member.gallery && member.gallery.length > 0) {
-                html += `
-                    <div class="gallery-carousel" id="gallery-carousel">
-                        <div class="gallery-track-container" id="gallery-container">
-                            <div class="gallery-track" id="gallery-track">
-                `;
-                member.gallery.forEach(img => {
-                    html += `
-                        <div class="gallery-slide">
-                            <img src="${img}" alt="${member.name} photo" data-url="${img}">
-                        </div>
-                    `;
-                });
-                html += `
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }
+            // Probe for gallery images (gallery-1.jpg, gallery-2.jpg, etc.)
+            html += '<div id="gallery-placeholder"></div>';
+
+            // We'll load gallery images asynchronously after the page renders
+            window.galleryMember = member;
 
             // How Started
             if (member.how_started) {
@@ -1595,6 +1408,9 @@
             html += `</div>`; // Close content container
 
             document.getElementById('profile-content').innerHTML = html;
+
+            // Load gallery images (reads from gallery array)
+            loadGalleryImages(member);
 
             // Generate QR codes
             if (member.lightning_address) {
@@ -1648,10 +1464,48 @@
             // Initialize gallery drag-to-scroll
             initGalleryDragScroll();
 
-            // Initialize profile editor
-            if (typeof initProfileEditor === 'function') {
-                initProfileEditor(member.name, member);
+            // Show edit link
+            showEditLink(member.id);
+        }
+
+        function loadGalleryImages(member) {
+            const placeholder = document.getElementById('gallery-placeholder');
+            if (!placeholder) return;
+
+            // Check if member has gallery images (gallery array is source of truth)
+            const galleryImages = member.gallery || [];
+
+            if (galleryImages.length === 0) {
+                placeholder.remove();
+                return;
             }
+
+            // Build gallery HTML from array
+            let galleryHtml = `
+                <div class="gallery-carousel" id="gallery-carousel">
+                    <div class="gallery-track-container" id="gallery-container">
+                        <div class="gallery-track" id="gallery-track">
+            `;
+
+            galleryImages.forEach(imgPath => {
+                galleryHtml += `
+                    <div class="gallery-slide">
+                        <img src="${imgPath}" alt="${member.name} photo" data-url="${imgPath}">
+                    </div>
+                `;
+            });
+
+            galleryHtml += `
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            placeholder.outerHTML = galleryHtml;
+
+            // Initialize gallery interactions
+            initGalleryDragScroll();
+            startGalleryAutoRotate();
         }
 
         function renderHeatmap(elementId, posts) {
@@ -2247,39 +2101,6 @@
             });
         }
     </script>
-
-    <!-- OTP Modal -->
-    <div id="otp-modal" class="modal hidden">
-        <div class="modal-content">
-            <h3>Enter Verification Code</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 16px;">
-                Check your Telegram for a 6-digit code
-            </p>
-            <form onsubmit="handleOTPSubmit(event)">
-                <input
-                    type="text"
-                    id="otp-input"
-                    placeholder="000000"
-                    maxlength="6"
-                    pattern="[0-9]{6}"
-                    required
-                    style="width: 100%; padding: 12px; text-align: center; font-size: 1.5rem; letter-spacing: 0.5rem; font-weight: bold; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-secondary); color: var(--text-primary); margin-bottom: 16px;"
-                />
-                <button type="submit" class="btn-primary" style="width: 100%; margin: 0;">
-                    Verify
-                </button>
-            </form>
-            <button
-                onclick="hideOTPModal()"
-                style="margin-top: 16px; background: transparent; color: var(--text-secondary); border: 1px solid var(--border); padding: 8px 16px; border-radius: 6px; cursor: pointer; width: 100%;"
-            >
-                Cancel
-            </button>
-        </div>
-    </div>
-
-    <!-- Profile Editor JavaScript -->
-    <script src="profile-editor.js"></script>
 
 </body>
 </html>

@@ -227,8 +227,8 @@ function populateFormWithMemberData(member) {
         'description': member.description || '',
         'city': member.city || '',
         'country': member.country || '',
-        'vision': member.vision_mission || '',
-        'mission': '',  // Will be populated from vision_mission split
+        'vision': member.vision || '',
+        'mission': member.mission || '',
         'how_started': member.how_started || '',
         'website': member.website || '',
         'email': member.email || '',
