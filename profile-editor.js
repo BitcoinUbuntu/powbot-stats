@@ -280,13 +280,15 @@ function restoreDraft() {
             }
         }
 
-        // Show restoration message
-        const savedAt = new Date(draft.savedAt);
-        showMessage(
-            `Draft restored from ${savedAt.toLocaleString()}`,
-            'info',
-            5000
-        );
+        // Only show restoration message if user is authenticated
+        if (currentSessionId && sessionExpiryTime && new Date() < sessionExpiryTime) {
+            const savedAt = new Date(draft.savedAt);
+            showMessage(
+                `Draft restored from ${savedAt.toLocaleString()}`,
+                'info',
+                5000
+            );
+        }
 
     } catch (error) {
         console.error('Failed to restore draft:', error);
