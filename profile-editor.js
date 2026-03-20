@@ -57,6 +57,9 @@ function initProfileEditor(projectName, projectData) {
 
     // Update UI based on session state
     updateEditorUI();
+
+    // Fallback: ensure UI updates even if there's a timing issue
+    setTimeout(updateEditorUI, 100);
 }
 
 /**
@@ -547,22 +550,17 @@ function updateEditorUI() {
     if (!editSection || !claimBtn) return;
 
     if (currentSessionId && sessionExpiryTime && new Date() < sessionExpiryTime) {
-        // Authenticated - show editor
-        claimBtn.textContent = 'Edit Profile';
-        claimBtn.onclick = () => {
-            editSection.classList.remove('hidden');
-            editSection.scrollIntoView({ behavior: 'smooth' });
-            startAutoSave();
-        };
+        // Authenticated - show editor, hide button
         editSection.classList.remove('hidden');
+        claimBtn.classList.add('hidden');
+        startAutoSave();
     } else {
-        // Not authenticated - show auth button
+        // Not authenticated - show auth button, hide editor
         claimBtn.textContent = 'Claim/Edit Profile';
         claimBtn.onclick = startOTPAuth;
         editSection.classList.add('hidden');
+        claimBtn.classList.remove('hidden');
     }
-
-    claimBtn.classList.remove('hidden');
 }
 
 /**
