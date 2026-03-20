@@ -556,7 +556,7 @@ function updateEditorUI() {
         startAutoSave();
     } else {
         // Not authenticated - show auth button, hide editor
-        claimBtn.textContent = 'Claim/Edit Profile';
+        claimBtn.textContent = 'Authenticate';
         claimBtn.onclick = startOTPAuth;
         editSection.classList.add('hidden');
         claimBtn.classList.remove('hidden');
