@@ -232,7 +232,7 @@ function populateFormWithMemberData(member) {
         'how_started': member.how_started || '',
         'website': member.website || '',
         'email': member.email || '',
-        'x_profile': (member.x_profile || '').replace(/^@/, ''), // Remove @ prefix if present
+        'x_username': (member.x_profile || '').replace(/^@/, ''), // Remove @ prefix if present
         'npub': member.npub || '',
         'btcmap_url': member.btcmap_url || '',
         'lightning_address': member.lightning_address || '',
@@ -436,7 +436,14 @@ async function submitProfileEdits(event) {
     textFields.forEach(field => {
         const input = form.querySelector(`[name="${field}"]`);
         if (input && input.value && input.value.trim()) {
-            formData.append(field, input.value.trim());
+            let value = input.value.trim();
+
+            // Add @ prefix to X username if not present (backend expects @username format)
+            if (field === 'x_username' && value && !value.startsWith('@')) {
+                value = '@' + value;
+            }
+
+            formData.append(field, value);
             hasChanges = true;
         }
     });
