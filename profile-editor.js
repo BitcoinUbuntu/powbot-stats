@@ -490,28 +490,72 @@ async function submitProfileEdits(event) {
 
     const submitBtn = document.getElementById('submit-edits-btn');
     const originalText = submitBtn.textContent;
+    const progressContainer = document.getElementById('upload-progress-container');
+    const progressBar = document.getElementById('upload-progress-bar');
+    const progressPercent = document.getElementById('upload-progress-percent');
+    const statusText = document.getElementById('upload-status-text');
+
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting...';
+    submitBtn.textContent = 'Preparing...';
 
     try {
-        const response = await fetch(
-            `${API_BASE}/profiles/${encodeURIComponent(currentProject)}/edit`,
-            {
-                method: 'POST',
-                // Don't set Content-Type - browser will set it with boundary for multipart/form-data
-                body: formData
-            }
-        );
+        // Show progress container
+        if (progressContainer) progressContainer.classList.remove('hidden');
 
-        if (!response.ok) {
-            const error = await response.json();
-            const errorMsg = typeof error.detail === 'object'
-                ? JSON.stringify(error.detail)
-                : (error.detail || 'Failed to submit changes');
-            throw new Error(errorMsg);
-        }
+        // Use XMLHttpRequest for upload progress tracking
+        const data = await new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
 
-        const data = await response.json();
+            // Track upload progress
+            xhr.upload.addEventListener('progress', (e) => {
+                if (e.lengthComputable) {
+                    const percentComplete = Math.round((e.loaded / e.total) * 100);
+                    if (progressBar) progressBar.style.width = percentComplete + '%';
+                    if (progressPercent) progressPercent.textContent = percentComplete + '%';
+                    if (statusText) {
+                        if (percentComplete < 100) {
+                            statusText.textContent = 'Uploading...';
+                        } else {
+                            statusText.textContent = 'Processing...';
+                        }
+                    }
+                    if (submitBtn) submitBtn.textContent = `Uploading ${percentComplete}%`;
+                }
+            });
+
+            // Handle completion
+            xhr.addEventListener('load', () => {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    try {
+                        const responseData = JSON.parse(xhr.responseText);
+                        resolve(responseData);
+                    } catch (e) {
+                        reject(new Error('Invalid response from server'));
+                    }
+                } else {
+                    try {
+                        const error = JSON.parse(xhr.responseText);
+                        const errorMsg = typeof error.detail === 'object'
+                            ? JSON.stringify(error.detail)
+                            : (error.detail || 'Failed to submit changes');
+                        reject(new Error(errorMsg));
+                    } catch (e) {
+                        reject(new Error(`Request failed with status ${xhr.status}`));
+                    }
+                }
+            });
+
+            // Handle errors
+            xhr.addEventListener('error', () => {
+                reject(new Error('Network error occurred'));
+            });
+
+            // Send request
+            xhr.open('POST', `${API_BASE}/profiles/${encodeURIComponent(currentProject)}/edit`);
+            xhr.send(formData);
+        });
+
+        // Success - data is already parsed
 
         // Success! Clear draft and session
         clearDraft();
@@ -539,6 +583,12 @@ async function submitProfileEdits(event) {
     } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;
+
+        // Hide and reset progress indicator
+        if (progressContainer) progressContainer.classList.add('hidden');
+        if (progressBar) progressBar.style.width = '0%';
+        if (progressPercent) progressPercent.textContent = '0%';
+        if (statusText) statusText.textContent = 'Uploading...';
     }
 }
 
