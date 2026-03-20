@@ -190,7 +190,8 @@ function saveDraft() {
     const draft = {};
 
     for (const [key, value] of formData.entries()) {
-        if (value && value.trim()) {
+        // Only save string values (skip File objects from file inputs)
+        if (typeof value === 'string' && value.trim()) {
             draft[key] = value.trim();
         }
     }
