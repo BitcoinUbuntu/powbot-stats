@@ -604,8 +604,7 @@ async function submitProfileEdits(event) {
             0  // Don't auto-hide
         );
 
-        // Hide the submit button since form is done
-        const submitBtn = document.getElementById('submit-edits-btn');
+        // Hide the submit button since form is done (reuse submitBtn from line 503)
         if (submitBtn) submitBtn.style.display = 'none';
 
     } catch (error) {
