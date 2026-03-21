@@ -21,3 +21,4 @@ The `stats.json` file contains the dashboard data and is updated periodically.
 ## Credits
 
 Powered by [Bitcoin Ubuntu](https://bitcoinubuntu.org)
+# Trigger deployment

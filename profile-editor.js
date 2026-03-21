@@ -24,6 +24,7 @@ let expiryCheckTimer = null;
 const DRAFT_KEY_PREFIX = 'powbot_profile_draft_';
 const SESSION_KEY = 'powbot_session_id';
 const SESSION_EXPIRY_KEY = 'powbot_session_expiry';
+const SESSION_PROJECT_KEY = 'powbot_session_project';
 
 /**
  * Initialize profile editor for a project
@@ -38,8 +39,17 @@ function initProfileEditor(projectName, projectData) {
     // Check for existing session
     const storedSessionId = sessionStorage.getItem(SESSION_KEY);
     const storedExpiry = sessionStorage.getItem(SESSION_EXPIRY_KEY);
+    const storedProject = sessionStorage.getItem(SESSION_PROJECT_KEY);
 
-    if (storedSessionId && storedExpiry) {
+    if (storedSessionId && storedExpiry && storedProject) {
+        // Validate project matches
+        if (storedProject !== projectName) {
+            clearSession();
+            showError('This session is for a different project. Please sign in.');
+            updateEditorUI();
+            return;
+        }
+
         const expiryTime = new Date(storedExpiry);
         if (expiryTime > new Date()) {
             // Session still valid
@@ -57,6 +67,9 @@ function initProfileEditor(projectName, projectData) {
 
     // Update UI based on session state
     updateEditorUI();
+
+    // Fallback: ensure UI updates even if there's a timing issue
+    setTimeout(updateEditorUI, 100);
 }
 
 /**
@@ -124,6 +137,7 @@ async function verifyOTP(otpCode) {
         sessionExpiryTime = new Date(Date.now() + 2 * 60 * 60 * 1000); // 2 hours
         sessionStorage.setItem(SESSION_KEY, currentSessionId);
         sessionStorage.setItem(SESSION_EXPIRY_KEY, sessionExpiryTime.toISOString());
+        sessionStorage.setItem(SESSION_PROJECT_KEY, currentProject);
 
         showMessage('Authenticated successfully!', 'success');
         hideOTPModal();
@@ -232,7 +246,7 @@ function populateFormWithMemberData(member) {
         'how_started': member.how_started || '',
         'website': member.website || '',
         'email': member.email || '',
-        'x_profile': member.x_profile || '',
+        'x_username': (member.x_profile || '').replace(/^@/, ''), // Remove @ prefix if present
         'npub': member.npub || '',
         'btcmap_url': member.btcmap_url || '',
         'lightning_address': member.lightning_address || '',
@@ -246,6 +260,8 @@ function populateFormWithMemberData(member) {
         const field = form.querySelector(`[name="${fieldName}"]`);
         if (field && value) {
             field.value = value;
+            // Trigger input event to update character counters
+            field.dispatchEvent(new Event('input', { bubbles: true }));
         }
     }
 }
@@ -275,13 +291,15 @@ function restoreDraft() {
             }
         }
 
-        // Show restoration message
-        const savedAt = new Date(draft.savedAt);
-        showMessage(
-            `Draft restored from ${savedAt.toLocaleString()}`,
-            'info',
-            5000
-        );
+        // Only show restoration message if user is authenticated
+        if (currentSessionId && sessionExpiryTime && new Date() < sessionExpiryTime) {
+            const savedAt = new Date(draft.savedAt);
+            showMessage(
+                `Draft restored from ${savedAt.toLocaleString()}`,
+                'info',
+                5000
+            );
+        }
 
     } catch (error) {
         console.error('Failed to restore draft:', error);
@@ -390,6 +408,7 @@ function clearSession() {
     sessionExpiryTime = null;
     sessionStorage.removeItem(SESSION_KEY);
     sessionStorage.removeItem(SESSION_EXPIRY_KEY);
+    sessionStorage.removeItem(SESSION_PROJECT_KEY);
 
     if (expiryCheckTimer) {
         clearInterval(expiryCheckTimer);
@@ -434,7 +453,14 @@ async function submitProfileEdits(event) {
     textFields.forEach(field => {
         const input = form.querySelector(`[name="${field}"]`);
         if (input && input.value && input.value.trim()) {
-            formData.append(field, input.value.trim());
+            let value = input.value.trim();
+
+            // Remove @ prefix from X username if present (we store without @)
+            if (field === 'x_username' && value && value.startsWith('@')) {
+                value = value.substring(1);
+            }
+
+            formData.append(field, value);
             hasChanges = true;
         }
     });
@@ -476,25 +502,89 @@ async function submitProfileEdits(event) {
 
     const submitBtn = document.getElementById('submit-edits-btn');
     const originalText = submitBtn.textContent;
+    const progressContainer = document.getElementById('upload-progress-container');
+    const progressBar = document.getElementById('upload-progress-bar');
+    const progressPercent = document.getElementById('upload-progress-percent');
+    const statusText = document.getElementById('upload-status-text');
+
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting...';
+    submitBtn.textContent = 'Preparing...';
 
     try {
-        const response = await fetch(
-            `${API_BASE}/profiles/${encodeURIComponent(currentProject)}/edit`,
-            {
-                method: 'POST',
-                // Don't set Content-Type - browser will set it with boundary for multipart/form-data
-                body: formData
-            }
-        );
+        // Show progress container
+        if (progressContainer) progressContainer.classList.remove('hidden');
 
-        if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.detail || 'Failed to submit changes');
-        }
+        // Use XMLHttpRequest for upload progress tracking
+        const data = await new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
 
-        const data = await response.json();
+            // Track upload progress
+            xhr.upload.addEventListener('progress', (e) => {
+                if (e.lengthComputable) {
+                    const percentComplete = Math.round((e.loaded / e.total) * 100);
+                    if (statusText) {
+                        if (percentComplete < 100) {
+                            statusText.textContent = `Submitting changes ${percentComplete}%`;
+                            statusText.classList.remove('pulse');
+                        } else {
+                            statusText.textContent = 'Creating pull request...';
+                            statusText.classList.add('pulse');
+                        }
+                    }
+                    if (submitBtn) {
+                        if (percentComplete < 100) {
+                            submitBtn.textContent = `Uploading ${percentComplete}%`;
+                        } else {
+                            submitBtn.textContent = 'Creating pull request...';
+                        }
+                    }
+                }
+            });
+
+            // Handle completion
+            xhr.addEventListener('load', () => {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    try {
+                        const responseData = JSON.parse(xhr.responseText);
+                        resolve(responseData);
+                    } catch (e) {
+                        reject(new Error('Invalid response from server'));
+                    }
+                } else {
+                    try {
+                        const error = JSON.parse(xhr.responseText);
+                        let errorMsg = typeof error.detail === 'object'
+                            ? JSON.stringify(error.detail)
+                            : (error.detail || 'Failed to submit changes');
+
+                        // Add status code info for auth errors
+                        if (xhr.status === 401) {
+                            errorMsg = 'Invalid or unverified session';
+                        }
+
+                        reject(new Error(errorMsg));
+                    } catch (e) {
+                        // If can't parse response, use status code
+                        if (xhr.status === 401) {
+                            reject(new Error('Unauthorized - session expired'));
+                        } else {
+                            reject(new Error(`Request failed with status ${xhr.status}`));
+                        }
+                    }
+                }
+            });
+
+            // Handle errors
+            xhr.addEventListener('error', () => {
+                reject(new Error('Network error occurred'));
+            });
+
+            // Send request
+            xhr.open('POST', `${API_BASE}/profiles/${encodeURIComponent(currentProject)}/edit`);
+            xhr.send(formData);
+        });
+
+        // Success - data is already parsed
 
         // Success! Clear draft and session
         clearDraft();
@@ -518,11 +608,29 @@ async function submitProfileEdits(event) {
 
     } catch (error) {
         console.error('Submit error:', error);
-        showError('Failed to submit: ' + error.message);
-    } finally {
+
+        // Reset button and progress ONLY on error
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;
+
+        // Hide and reset progress indicator
+        if (progressContainer) progressContainer.classList.add('hidden');
+        if (statusText) {
+            statusText.textContent = '';
+            statusText.classList.remove('pulse');
+        }
+
+        // If it's an auth error, prompt to re-authenticate
+        if (error.message.includes('Invalid or unverified session') || error.message.includes('Unauthorized')) {
+            clearSession();
+            updateEditorUI();
+            showError('Your session has expired. Please click "Authenticate" to sign in again.');
+            setTimeout(() => startOTPAuth(), 1500);
+        } else {
+            showError('Failed to submit: ' + error.message);
+        }
     }
+    // No finally block - button stays disabled on success until redirect
 }
 
 /**
@@ -530,27 +638,84 @@ async function submitProfileEdits(event) {
  */
 function updateEditorUI() {
     const editSection = document.getElementById('edit-section');
+    const telegramVerification = document.getElementById('telegram-verification');
     const claimBtn = document.getElementById('claim-profile-btn');
 
-    if (!editSection || !claimBtn) return;
+    if (!editSection) return;
 
     if (currentSessionId && sessionExpiryTime && new Date() < sessionExpiryTime) {
-        // Authenticated - show editor
-        claimBtn.textContent = 'Edit Profile';
-        claimBtn.onclick = () => {
-            editSection.classList.remove('hidden');
-            editSection.scrollIntoView({ behavior: 'smooth' });
-            startAutoSave();
-        };
+        // Authenticated - show editor, hide verification
         editSection.classList.remove('hidden');
+        if (telegramVerification) telegramVerification.classList.add('hidden');
+        startAutoSave();
     } else {
-        // Not authenticated - show auth button
-        claimBtn.textContent = 'Claim/Edit Profile';
-        claimBtn.onclick = startOTPAuth;
+        // Not authenticated - show verification section, hide editor
         editSection.classList.add('hidden');
+
+        if (telegramVerification) {
+            telegramVerification.classList.remove('hidden');
+            initTelegramVerification();
+        }
+    }
+}
+
+/**
+ * Initialize Telegram username verification
+ */
+function initTelegramVerification() {
+    if (!currentProjectData) return;
+
+    const usernameInput = document.getElementById('telegram-username-input');
+    const feedback = document.getElementById('telegram-verify-feedback');
+    const claimBtn = document.getElementById('claim-profile-btn');
+
+    const expectedUsername = currentProjectData.telegram_username;
+    const supportUrl = window.SUPPORT_URL || 'https://t.me/bitcoinubuntu';
+
+    if (!expectedUsername) {
+        // No Telegram username configured for this project
+        if (feedback) {
+            feedback.innerHTML = `This project does not have a Telegram username configured. Please <a href="${supportUrl}" target="_blank" style="color: var(--accent-blue); text-decoration: underline;">contact support</a>.`;
+            feedback.style.color = '#f85149';
+        }
+        if (claimBtn) {
+            claimBtn.disabled = true;
+        }
+        if (usernameInput) {
+            usernameInput.disabled = true;
+        }
+        return;
     }
 
-    claimBtn.classList.remove('hidden');
+    // Set up input verification
+    if (usernameInput && claimBtn) {
+        claimBtn.onclick = startOTPAuth;
+
+        usernameInput.addEventListener('input', () => {
+            const inputValue = usernameInput.value.trim().toLowerCase();
+            const expectedValue = expectedUsername.toLowerCase();
+
+            if (inputValue === expectedValue) {
+                // Match! Enable button
+                claimBtn.disabled = false;
+                if (feedback) {
+                    feedback.textContent = '✓ Username verified. You can now authenticate.';
+                    feedback.style.color = 'var(--accent-green)';
+                }
+            } else {
+                // No match - disable button
+                claimBtn.disabled = true;
+                if (feedback) {
+                    if (inputValue.length > 0) {
+                        feedback.textContent = 'Username does not match. Please check and try again.';
+                        feedback.style.color = '#f85149';
+                    } else {
+                        feedback.textContent = '';
+                    }
+                }
+            }
+        });
+    }
 }
 
 /**
@@ -597,7 +762,7 @@ function showSaveIndicator() {
     const indicator = document.getElementById('save-indicator');
     if (indicator) {
         const now = new Date();
-        indicator.textContent = `Draft saved at ${now.toLocaleTimeString()}`;
+        indicator.textContent = `Draft saved at ${now.toLocaleTimeString()} (autosaved every 30s)`;
         indicator.classList.remove('hidden');
     }
 }

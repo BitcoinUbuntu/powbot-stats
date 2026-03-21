@@ -882,62 +882,55 @@
             color: var(--accent-blue);
         }
 
-        /* Edit Profile Link */
-        .edit-profile-link {
-            display: inline-block;
-            background: var(--accent-orange);
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.2s;
-            margin: 20px auto;
+        /* Profile Footnote */
+        .profile-footnote {
             text-align: center;
+            padding: 15px 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-style: italic;
+            line-height: 1.5;
         }
 
-        .edit-profile-link:hover {
-            background: #e08416;
-            transform: translateY(-2px);
+        .profile-footnote a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-style: normal;
+        }
+
+        .profile-footnote a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <div class="nav-links">
-                <a href="index.html">Stats</a>
-                <span style="color: var(--text-secondary);">|</span>
-                <a href="members.html">Directory</a>
-                <span style="color: var(--text-secondary);">|</span>
-                <a href="archive.html">Archive</a>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
 
     <div id="profile-content">
         <div class="loading">Loading profile...</div>
     </div>
 
-    <!-- Edit Profile Link (shown after profile loads) -->
-    <div style="text-align: center; margin-bottom: 20px;">
-        <a href="#" id="edit-profile-link" class="edit-profile-link" style="display: none;">
-            Edit this profile →
-        </a>
+    <!-- Profile Footnote -->
+    <div class="profile-footnote" id="profile-footnote" style="display: none;">
+        Please report inaccuracies to the <a href="https://t.me/bitcoinubuntu" target="_blank" id="contact-admin-link">administrators</a>. Registered project leads can <a href="#" id="edit-profile-link">sign in</a> to request changes.
     </div>
 
-    <footer>
-        <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | Data updated: <span id="updated">--</span> CAT | <a href="about.html">About</a> | <a href="disclaimer.html">Disclaimer</a></p>
-    </footer>
+    <!-- Footer (loaded from includes/footer.html) -->
+        <div id="site-footer"></div>
+
+    <!-- Shared nav/footer injection - load first -->
+    <script src="includes/inject.js"></script>
 
     <script>
-        // Show edit link after profile loads
+        // Show profile footnote after profile loads
         function showEditLink(memberId) {
             const editLink = document.getElementById('edit-profile-link');
-            if (editLink) {
+            const footnote = document.getElementById('profile-footnote');
+
+            if (editLink && footnote) {
                 editLink.href = `profile-edit.html?id=${encodeURIComponent(memberId)}`;
-                editLink.style.display = 'inline-block';
+                footnote.style.display = 'block';
             }
         }
     </script>
@@ -982,7 +975,10 @@
                 // Update timestamp (use live stats if available, otherwise epoch4)
                 const statsForTimestamp = statsLive || statsEpoch4;
                 if (statsForTimestamp && statsForTimestamp.generated_at) {
-                    document.getElementById('updated').textContent = new Date(statsForTimestamp.generated_at).toLocaleString();
+                    const updatedElement = document.getElementById('updated');
+                    if (updatedElement) {
+                        updatedElement.textContent = new Date(statsForTimestamp.generated_at).toLocaleString();
+                    }
                 }
 
                 renderProfile(member, allStats);
@@ -996,15 +992,23 @@
             }
         }
 
+        // Escape HTML to prevent injection (for existing unescaped data)
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
         function renderProfile(member, allStats) {
             document.getElementById('page-title').textContent = `${member.name} | CBAF`;
 
             // Use logo from members.json, fallback to placeholder
             const logoUrl = member.logo_url || `images/members/${member.id}/logo.jpg`;
             const logoHtml = `
-                <img src="${logoUrl}" alt="${member.name}" class="hero-logo"
+                <img src="${logoUrl}" alt="${escapeHtml(member.name)}" class="hero-logo"
                      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="hero-logo-placeholder" style="display:none;">${member.flag || member.name.charAt(0)}</div>
+                <div class="hero-logo-placeholder" style="display:none;">${member.flag || escapeHtml(member.name.charAt(0))}</div>
             `;
 
             let html = `
@@ -1014,19 +1018,18 @@
                             ${logoHtml}
                             <div class="hero-text">
                                 <h1>
-                                    ${member.name}
+                                    ${escapeHtml(member.name)}
                                     <span class="flag">${member.flag || ''}</span>
                                 </h1>
-                                ${member.tagline ? `<div class="tagline">${member.tagline}</div>` : ''}
-                                ${member.city || member.country ? `<div class="location">${[member.city, member.country].filter(Boolean).join(', ')}</div>` : ''}
+                                ${member.tagline ? `<div class="tagline">${escapeHtml(member.tagline)}</div>` : ''}
+                                ${member.city || member.country ? `<div class="location">${escapeHtml([member.city, member.country].filter(Boolean).join(', '))}</div>` : ''}
                             </div>
                         </div>
                         <div class="hero-links container">
             `;
 
             if (member.x_profile) {
-                const xHandle = member.x_profile.replace('@', '');
-                html += `<a href="https://x.com/${xHandle}" target="_blank" class="hero-link">🐦 X</a>`;
+                html += `<a href="https://x.com/${member.x_profile}" target="_blank" class="hero-link">🐦 X</a>`;
             }
 
             if (member.npub && member.npub !== 'n/a') {
@@ -1070,7 +1073,7 @@
                     <div class="support-card-inner">
                         <!-- Front: Lightning -->
                         <div class="support-front">
-                            <h2>Support ${member.name}</h2>
+                            <h2>Support ${escapeHtml(member.name)}</h2>
                             <p>Lightning Network</p>
             `;
 
@@ -1099,7 +1102,7 @@
                 html += `
                         <!-- Back: Onchain -->
                         <div class="support-back">
-                            <h2>Support ${member.name}</h2>
+                            <h2>Support ${escapeHtml(member.name)}</h2>
                             <p>Onchain</p>
                             <div class="qr-container" id="qr-onchain"></div>
                             <div class="address" id="onchain-address" onclick="copyAddressWithFeedback('${member.onchain_address}', 'onchain-address')" title="Click to copy">${member.onchain_address}</div>
@@ -1121,7 +1124,7 @@
             html += `
                 <div class="section">
                     <h2>About</h2>
-                    <p>${member.description || 'Building a Bitcoin circular economy in ' + (member.city || member.country || 'Africa') + '.'}</p>
+                    <p>${member.description ? escapeHtml(member.description) : 'Building a Bitcoin circular economy in ' + (member.city || member.country || 'Africa') + '.'}</p>
                 </div>
             `;
 
@@ -1368,11 +1371,11 @@
                 html += `<div class="section"><h2>Vision & Mission</h2>`;
 
                 if (member.vision) {
-                    html += `<h3>Our Vision</h3><p>${member.vision}</p>`;
+                    html += `<h3>Our Vision</h3><p>${escapeHtml(member.vision)}</p>`;
                 }
 
                 if (member.mission) {
-                    html += `<h3>Our Mission</h3><p>${member.mission}</p>`;
+                    html += `<h3>Our Mission</h3><p>${escapeHtml(member.mission)}</p>`;
                 }
 
                 html += `</div>`;
@@ -1390,7 +1393,7 @@
                 html += `
                     <div class="section">
                         <h2>Origin Story</h2>
-                        <p>${member.how_started}</p>
+                        <p>${escapeHtml(member.how_started)}</p>
                     </div>
                 `;
             }
@@ -1400,7 +1403,7 @@
                 html += `
                     <div class="section">
                         <h2>Key Highlights</h2>
-                        <p>${member.milestones}</p>
+                        <p>${escapeHtml(member.milestones)}</p>
                     </div>
                 `;
             }
@@ -1490,7 +1493,7 @@
             galleryImages.forEach(imgPath => {
                 galleryHtml += `
                     <div class="gallery-slide">
-                        <img src="${imgPath}" alt="${member.name} photo" data-url="${imgPath}">
+                        <img src="${imgPath}" alt="${escapeHtml(member.name)} photo" data-url="${imgPath}">
                     </div>
                 `;
             });
@@ -2101,6 +2104,5 @@
             });
         }
     </script>
-
 </body>
 </html>
