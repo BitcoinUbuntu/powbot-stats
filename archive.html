@@ -1065,17 +1065,8 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <div class="nav-links">
-                <a href="index.html">Stats</a>
-                <span style="color: var(--text-secondary);">|</span>
-                <a href="members.html">Directory</a>
-                <span style="color: var(--text-secondary);">|</span>
-                <a href="archive.html" class="current">Archive</a>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
 
     <div class="container">
         <header>
@@ -1116,10 +1107,12 @@
             <div class="loading">Loading stats...</div>
         </div>
 
-        <footer>
-            <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | Data updated: <span id="updated">--</span> CAT | <a href="about.html">About</a> | <a href="disclaimer.html">Disclaimer</a></p>
-        </footer>
+        <!-- Footer (loaded from includes/footer.html) -->
+        <div id="site-footer"></div>
     </div>
+
+    <!-- Shared nav/footer injection - load first -->
+    <script src="includes/inject.js"></script>
 
     <script>
         // Global project metadata
@@ -1223,7 +1216,10 @@
         // Render the dashboard
         function renderDashboard(epoch4Live, historical) {
             const content = document.getElementById('content');
-            document.getElementById('updated').textContent = new Date(epoch4Live.generated_at).toLocaleString();
+            const updatedElement = document.getElementById('updated');
+            if (updatedElement) {
+                updatedElement.textContent = new Date(epoch4Live.generated_at).toLocaleString();
+            }
 
             content.innerHTML = `
                 <!-- Epoch 4 -->
@@ -2224,8 +2220,8 @@
             }
         }
 
-        // Initialize
-        loadStats();
+        // Initialize - wait for includes to load first
+        window.includesLoaded.then(() => loadStats());
     </script>
 </body>
 </html>

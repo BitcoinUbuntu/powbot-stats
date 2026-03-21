@@ -226,17 +226,8 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <div class="nav-links">
-                <a href="index.html">Stats</a>
-                <span style="color: var(--text-secondary);">|</span>
-                <a href="members.html">Directory</a>
-                <span style="color: var(--text-secondary);">|</span>
-                <a href="archive.html">Archive</a>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
 
     <div class="container">
         <header>
@@ -286,9 +277,11 @@
             <p class="highlight">This bot has processed hundreds of PoW posts and rewarded dozens of <a href="https://bitcoinconfederation.org" target="_blank">projects</a> and <a href="https://btcmap.org" target="_blank">merchants</a> across Africa.</p>
         </div>
 
-        <footer>
-            <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | <a href="about.html">About</a> | <a href="disclaimer.html">Disclaimer</a></p>
-        </footer>
+        <!-- Footer (loaded from includes/footer.html) -->
+        <div id="site-footer"></div>
     </div>
+
+    <!-- Shared nav/footer injection -->
+    <script src="includes/inject.js"></script>
 </body>
 </html>

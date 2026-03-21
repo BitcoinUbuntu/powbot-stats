@@ -210,7 +210,9 @@
         .form-help {
             font-size: 0.85rem;
             color: var(--text-secondary);
-            margin-top: 4px;
+            margin-top: 2px;
+            margin-bottom: 8px;
+            display: block;
         }
 
         /* Form section headers */
@@ -275,27 +277,19 @@
 
         .gallery-delete {
             position: absolute;
-            top: 4px;
-            right: 4px;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: #f85149;
-            color: white;
-            border: 2px solid white;
+            top: 2px;
+            right: 2px;
+            background: none;
+            border: none;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
+            font-size: 22px;
             line-height: 1;
-            font-weight: bold;
             transition: transform 0.2s;
-            padding-bottom: 3px;
+            filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.8));
         }
 
         .gallery-delete:hover {
-            transform: scale(1.1);
+            transform: scale(1.2);
         }
 
         .gallery-counter {
@@ -465,28 +459,28 @@
 
                     <div class="form-group">
                         <label for="edit-tagline">Profile Description</label>
+                        <span class="form-help">Appears on your profile card across the site (max 125 characters)</span>
                         <input type="text" id="edit-tagline" name="tagline" maxlength="125" placeholder="A compelling one-sentence summary of your project">
                         <div class="char-counter" id="tagline-counter">0 / 125</div>
-                        <span class="form-help">Appears on your profile card across the site (max 125 characters)</span>
                     </div>
 
                     <div class="form-group">
                         <label for="edit-description">About</label>
+                        <span class="form-help">A short paragraph describing what your project does</span>
                         <textarea id="edit-description" name="description" maxlength="600" placeholder="Tell us about your project..."></textarea>
                         <div class="char-counter" id="description-counter">0 / 600</div>
-                        <span class="form-help">A short paragraph describing what your project does</span>
                     </div>
 
                     <div class="form-group">
                         <label for="edit-city">City</label>
-                        <input type="text" id="edit-city" name="city" maxlength="50" placeholder="City name">
                         <span class="form-help">The city where your project is based</span>
+                        <input type="text" id="edit-city" name="city" maxlength="50" placeholder="City name">
                     </div>
 
                     <div class="form-group">
                         <label for="edit-country">Country</label>
-                        <input type="text" id="edit-country" name="country" maxlength="50" placeholder="Country name">
                         <span class="form-help">The country where your project is based</span>
+                        <input type="text" id="edit-country" name="country" maxlength="50" placeholder="Country name">
                     </div>
 
                     <!-- Vision & Mission -->
@@ -494,16 +488,16 @@
 
                     <div class="form-group">
                         <label for="edit-vision">Vision</label>
+                        <span class="form-help">Where do you see your project going in the future?</span>
                         <textarea id="edit-vision" name="vision" maxlength="400" placeholder="Your long-term vision..."></textarea>
                         <div class="char-counter" id="vision-counter">0 / 400</div>
-                        <span class="form-help">Where do you see your project going in the future?</span>
                     </div>
 
                     <div class="form-group">
                         <label for="edit-mission">Mission</label>
+                        <span class="form-help">What drives your project day-to-day?</span>
                         <textarea id="edit-mission" name="mission" maxlength="400" placeholder="Your mission statement..."></textarea>
                         <div class="char-counter" id="mission-counter">0 / 400</div>
-                        <span class="form-help">What drives your project day-to-day?</span>
                     </div>
 
                     <!-- Story -->
@@ -511,9 +505,9 @@
 
                     <div class="form-group">
                         <label for="edit-how-started">Origin Story</label>
+                        <span class="form-help">Tell the story of how your project came to be</span>
                         <textarea id="edit-how-started" name="how_started" maxlength="1000" placeholder="How did your project begin?"></textarea>
                         <div class="char-counter" id="how-started-counter">0 / 1000</div>
-                        <span class="form-help">Tell the story of how your project came to be</span>
                     </div>
 
                     <!-- Contact & Links -->
@@ -521,35 +515,35 @@
 
                     <div class="form-group">
                         <label for="edit-website">Website</label>
-                        <input type="url" id="edit-website" name="website" maxlength="100" placeholder="https://example.com">
                         <span class="form-help">Your project's website URL</span>
+                        <input type="url" id="edit-website" name="website" maxlength="100" placeholder="https://example.com">
                     </div>
 
                     <div class="form-group">
                         <label for="edit-email">Email</label>
-                        <input type="email" id="edit-email" name="email" maxlength="75" placeholder="contact@example.com">
                         <span class="form-help">Contact email for your project</span>
+                        <input type="email" id="edit-email" name="email" maxlength="75" placeholder="contact@example.com">
                     </div>
 
                     <div class="form-group">
                         <label for="edit-x-username">X Username</label>
+                        <span class="form-help">Your X username without the @ symbol</span>
                         <div class="input-with-prefix">
                             <span class="input-prefix">@</span>
                             <input type="text" id="edit-x-username" name="x_username" maxlength="15" placeholder="yourproject" pattern="[A-Za-z0-9_]+" title="Username can only contain letters, numbers, and underscores">
                         </div>
-                        <span class="form-help">Your X username without the @ symbol</span>
                     </div>
 
                     <div class="form-group">
                         <label for="edit-npub">Nostr npub</label>
-                        <input type="text" id="edit-npub" name="npub" maxlength="63" placeholder="npub1..." pattern="npub[a-z0-9]{59}" title="Must be a valid npub (63 characters)">
                         <span class="form-help">Your Nostr public key (npub format, 63 characters)</span>
+                        <input type="text" id="edit-npub" name="npub" maxlength="63" placeholder="npub1..." pattern="npub[a-z0-9]{59}" title="Must be a valid npub (63 characters)">
                     </div>
 
                     <div class="form-group">
                         <label for="edit-btcmap-url">BTCMap URL</label>
-                        <input type="url" id="edit-btcmap-url" name="btcmap_url" maxlength="100" placeholder="https://btcmap.org/...">
                         <span class="form-help">Your BTCMap profile or area URL</span>
+                        <input type="url" id="edit-btcmap-url" name="btcmap_url" maxlength="100" placeholder="https://btcmap.org/...">
                     </div>
 
                     <!-- Bitcoin Addresses -->
@@ -557,14 +551,14 @@
 
                     <div class="form-group">
                         <label for="edit-lightning-address">Lightning Address</label>
-                        <input type="text" id="edit-lightning-address" name="lightning_address" maxlength="75" placeholder="you@yourdomain.com">
                         <span class="form-help">Lightning address for receiving donations</span>
+                        <input type="text" id="edit-lightning-address" name="lightning_address" maxlength="75" placeholder="you@yourdomain.com">
                     </div>
 
                     <div class="form-group">
                         <label for="edit-onchain-address">Onchain Address</label>
-                        <input type="text" id="edit-onchain-address" name="onchain_address" maxlength="62" placeholder="bc1..." pattern="[a-zA-Z0-9]+" title="Valid Bitcoin address">
                         <span class="form-help">Bitcoin onchain address (advisable to rotate regularly)</span>
+                        <input type="text" id="edit-onchain-address" name="onchain_address" maxlength="62" placeholder="bc1..." pattern="[a-zA-Z0-9]+" title="Valid Bitcoin address">
                     </div>
 
                     <!-- Campaigns -->
@@ -572,14 +566,14 @@
 
                     <div class="form-group">
                         <label for="edit-btcpay-campaign">BTCPay Campaign</label>
-                        <input type="url" id="edit-btcpay-campaign" name="btcpay_campaign" maxlength="100" placeholder="https://btcpay...">
                         <span class="form-help">BTCPay crowdfunding campaign URL</span>
+                        <input type="url" id="edit-btcpay-campaign" name="btcpay_campaign" maxlength="100" placeholder="https://btcpay...">
                     </div>
 
                     <div class="form-group">
                         <label for="edit-geyser-campaign">Geyser Campaign</label>
-                        <input type="url" id="edit-geyser-campaign" name="geyser_campaign" maxlength="100" placeholder="https://geyser.fund/project/...">
                         <span class="form-help">Geyser fundraising project URL</span>
+                        <input type="url" id="edit-geyser-campaign" name="geyser_campaign" maxlength="100" placeholder="https://geyser.fund/project/...">
                     </div>
 
                     <!-- Media -->
@@ -587,6 +581,7 @@
 
                     <div class="form-group">
                         <label for="edit-logo">Logo</label>
+                        <span class="form-help">Upload your project logo (JPEG only, max 2MB, square recommended)</span>
 
                         <!-- Current Logo Preview -->
                         <div id="current-logo-preview" class="hidden" style="margin-bottom: 12px;">
@@ -597,7 +592,6 @@
                         </div>
 
                         <input type="file" id="edit-logo" name="logo_file" accept="image/jpeg,image/jpg" style="width: 100%; padding: 10px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary); cursor: pointer;">
-                        <span class="form-help">Upload your project logo (JPEG only, max 2MB, square recommended)</span>
 
                         <!-- Preview of new logo -->
                         <div id="logo-preview" style="display: none; margin-top: 12px;">
@@ -610,6 +604,7 @@
 
                     <div class="form-group">
                         <label>Gallery Images</label>
+                        <span class="form-help">Select up to 12 images (JPEG only, max 5MB each)</span>
 
                         <!-- Current Gallery -->
                         <div id="current-gallery-section" class="hidden">
@@ -625,7 +620,6 @@
                             Upload new images from your device:
                         </p>
                         <input type="file" id="gallery-upload" name="gallery_files" accept="image/jpeg,image/jpg" multiple style="width: 100%; padding: 10px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary); cursor: pointer;">
-                        <span class="form-help">Select up to 12 images (JPEG only, max 5MB each)</span>
 
                         <!-- Preview of uploaded files -->
                         <div id="upload-preview-grid" class="gallery-grid hidden" style="margin-top: 12px;"></div>
@@ -662,10 +656,27 @@
             </div>
         </div>
 
-        <!-- Auth Button (if not authenticated) -->
-        <button id="claim-profile-btn" class="btn-primary hidden">
-            Authenticate
-        </button>
+        <!-- Telegram Verification Section (if not authenticated) -->
+        <div id="telegram-verification" class="section hidden">
+            <h2>Verify Your Identity</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                To prevent unauthorized access, please enter the project lead's Telegram username.
+            </p>
+
+            <div style="margin-bottom: 20px;">
+                <input
+                    type="text"
+                    id="telegram-username-input"
+                    placeholder="@username"
+                    style="width: 100%; padding: 12px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary); font-size: 1rem;"
+                />
+                <p id="telegram-verify-feedback" style="margin-top: 8px; font-size: 0.85rem; color: var(--text-secondary);"></p>
+            </div>
+
+            <button id="claim-profile-btn" class="btn-primary" disabled>
+                Authenticate
+            </button>
+        </div>
     </div>
 
     <!-- OTP Modal -->
@@ -698,9 +709,14 @@
         </div>
     </div>
 
-    <footer>
-        <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | <a href="about.html">About</a> | <a href="disclaimer.html">Disclaimer</a></p>
-    </footer>
+    <!-- Footer (loaded from includes/footer.html) -->
+    <div id="site-footer"></div>
+
+    <!-- Shared includes -->
+    <script src="includes/inject.js"></script>
+
+    <!-- Profile Editor JavaScript - load first -->
+    <script src="profile-editor.js"></script>
 
     <script>
         // Character counters
@@ -776,7 +792,7 @@
 
                 const deleteBtn = document.createElement('div');
                 deleteBtn.className = 'gallery-delete';
-                deleteBtn.innerHTML = '×';
+                deleteBtn.innerHTML = '❌';
                 deleteBtn.onclick = () => toggleGalleryImage(imagePath);
 
                 item.appendChild(img);
@@ -890,7 +906,7 @@
 
                     const deleteBtn = document.createElement('div');
                     deleteBtn.className = 'gallery-delete';
-                    deleteBtn.innerHTML = '×';
+                    deleteBtn.innerHTML = '❌';
                     deleteBtn.onclick = () => removeNewGalleryFile(index);
 
                     const label = document.createElement('div');
@@ -1005,17 +1021,12 @@
                     }
 
                     // Initialize editor with member data
-                    if (typeof initProfileEditor === 'function') {
-                        initProfileEditor(member.id, member);
-                    }
+                    initProfileEditor(member.id, member);
                 }
             } catch (error) {
                 console.error('Failed to load project info:', error);
             }
         }
     </script>
-
-    <!-- Profile Editor JavaScript -->
-    <script src="profile-editor.js"></script>
 </body>
 </html>

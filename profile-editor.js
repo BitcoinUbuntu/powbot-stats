@@ -443,9 +443,9 @@ async function submitProfileEdits(event) {
         if (input && input.value && input.value.trim()) {
             let value = input.value.trim();
 
-            // Add @ prefix to X username if not present (backend expects @username format)
-            if (field === 'x_username' && value && !value.startsWith('@')) {
-                value = '@' + value;
+            // Remove @ prefix from X username if present (we store without @)
+            if (field === 'x_username' && value && value.startsWith('@')) {
+                value = value.substring(1);
             }
 
             formData.append(field, value);
@@ -617,21 +617,83 @@ async function submitProfileEdits(event) {
  */
 function updateEditorUI() {
     const editSection = document.getElementById('edit-section');
+    const telegramVerification = document.getElementById('telegram-verification');
     const claimBtn = document.getElementById('claim-profile-btn');
 
-    if (!editSection || !claimBtn) return;
+    if (!editSection) return;
 
     if (currentSessionId && sessionExpiryTime && new Date() < sessionExpiryTime) {
-        // Authenticated - show editor, hide button
+        // Authenticated - show editor, hide verification
         editSection.classList.remove('hidden');
-        claimBtn.classList.add('hidden');
+        if (telegramVerification) telegramVerification.classList.add('hidden');
         startAutoSave();
     } else {
-        // Not authenticated - show auth button, hide editor
-        claimBtn.textContent = 'Authenticate';
-        claimBtn.onclick = startOTPAuth;
+        // Not authenticated - show verification section, hide editor
         editSection.classList.add('hidden');
-        claimBtn.classList.remove('hidden');
+
+        if (telegramVerification) {
+            telegramVerification.classList.remove('hidden');
+            initTelegramVerification();
+        }
+    }
+}
+
+/**
+ * Initialize Telegram username verification
+ */
+function initTelegramVerification() {
+    if (!currentProjectData) return;
+
+    const usernameInput = document.getElementById('telegram-username-input');
+    const feedback = document.getElementById('telegram-verify-feedback');
+    const claimBtn = document.getElementById('claim-profile-btn');
+
+    const expectedUsername = currentProjectData.telegram_username;
+    const supportUrl = window.SUPPORT_URL || 'https://t.me/bitcoinubuntu';
+
+    if (!expectedUsername) {
+        // No Telegram username configured for this project
+        if (feedback) {
+            feedback.innerHTML = `This project does not have a Telegram username configured. Please <a href="${supportUrl}" target="_blank" style="color: var(--accent-blue); text-decoration: underline;">contact support</a>.`;
+            feedback.style.color = '#f85149';
+        }
+        if (claimBtn) {
+            claimBtn.disabled = true;
+        }
+        if (usernameInput) {
+            usernameInput.disabled = true;
+        }
+        return;
+    }
+
+    // Set up input verification
+    if (usernameInput && claimBtn) {
+        claimBtn.onclick = startOTPAuth;
+
+        usernameInput.addEventListener('input', () => {
+            const inputValue = usernameInput.value.trim().toLowerCase();
+            const expectedValue = expectedUsername.toLowerCase();
+
+            if (inputValue === expectedValue) {
+                // Match! Enable button
+                claimBtn.disabled = false;
+                if (feedback) {
+                    feedback.textContent = '✓ Username verified. You can now authenticate.';
+                    feedback.style.color = 'var(--accent-green)';
+                }
+            } else {
+                // No match - disable button
+                claimBtn.disabled = true;
+                if (feedback) {
+                    if (inputValue.length > 0) {
+                        feedback.textContent = 'Username does not match. Please check and try again.';
+                        feedback.style.color = '#f85149';
+                    } else {
+                        feedback.textContent = '';
+                    }
+                }
+            }
+        });
     }
 }
 

@@ -544,17 +544,8 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <div class="nav-links">
-                <a href="index.html">Stats</a>
-                <span style="color: var(--text-secondary);">|</span>
-                <a href="members.html" class="current">Directory</a>
-                <span style="color: var(--text-secondary);">|</span>
-                <a href="archive.html">Archive</a>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
 
     <div class="container">
         <header>
@@ -603,9 +594,8 @@
             <div class="loading">Loading members...</div>
         </div>
 
-        <footer>
-            <p>Made possible thanks to <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> & the <a href="https://fbce.io/" target="_blank">FBCE</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | <a href="about.html">About</a> | <a href="disclaimer.html">Disclaimer</a></p>
-        </footer>
+        <!-- Footer (loaded from includes/footer.html) -->
+        <div id="site-footer"></div>
     </div>
 
     <script>
@@ -1074,5 +1064,8 @@
             renderMembers();
         });
     </script>
+
+    <!-- Shared nav/footer injection -->
+    <script src="includes/inject.js"></script>
 </body>
 </html>
