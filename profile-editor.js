@@ -594,22 +594,31 @@ async function submitProfileEdits(event) {
         // Get current project ID for back link
         const currentProjectId = new URLSearchParams(window.location.search).get('id');
 
-        // Hide progress indicator
-        if (progressContainer) progressContainer.classList.add('hidden');
-        if (statusText) {
-            statusText.textContent = '';
-            statusText.classList.remove('pulse');
-        }
+        // Show success message in the progress indicator area
+        if (progressBar) progressBar.style.width = '100%';
+        if (progressPercent) progressPercent.textContent = '100%';
 
-        // Show success message with PR link (no auto-hide, no redirect)
-        showMessage(
-            `✅ <strong>Profile changes submitted successfully!</strong><br><br>
-             Your changes have been submitted for review.<br>
-             <a href="${data.pr_url}" target="_blank" style="color: var(--accent-green); font-weight: 600; text-decoration: underline;">View Pull Request →</a><br><br>
-             <a href="profile.html?id=${encodeURIComponent(currentProjectId)}" style="color: var(--accent-blue); text-decoration: underline;">← Back to Profile</a>`,
-            'success',
-            0  // Don't auto-hide
-        );
+        if (statusText) {
+            statusText.classList.remove('pulse');
+            statusText.innerHTML = `
+                <div style="color: var(--accent-green); font-weight: 600; margin-bottom: 16px;">
+                    ✅ Profile changes submitted successfully!
+                </div>
+                <div style="margin-bottom: 12px;">
+                    Your changes have been submitted for review.
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <a href="${data.pr_url}" target="_blank" style="color: var(--accent-green); font-weight: 600; text-decoration: underline;">
+                        View Pull Request →
+                    </a>
+                </div>
+                <div>
+                    <a href="profile.html?id=${encodeURIComponent(currentProjectId)}" style="color: var(--accent-blue); text-decoration: underline;">
+                        ← Back to Profile
+                    </a>
+                </div>
+            `;
+        }
 
         // Hide the submit button since form is done (reuse submitBtn from line 503)
         if (submitBtn) submitBtn.style.display = 'none';
