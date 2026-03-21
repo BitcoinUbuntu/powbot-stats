@@ -24,6 +24,7 @@ let expiryCheckTimer = null;
 const DRAFT_KEY_PREFIX = 'powbot_profile_draft_';
 const SESSION_KEY = 'powbot_session_id';
 const SESSION_EXPIRY_KEY = 'powbot_session_expiry';
+const SESSION_PROJECT_KEY = 'powbot_session_project';
 
 /**
  * Initialize profile editor for a project
@@ -38,8 +39,17 @@ function initProfileEditor(projectName, projectData) {
     // Check for existing session
     const storedSessionId = sessionStorage.getItem(SESSION_KEY);
     const storedExpiry = sessionStorage.getItem(SESSION_EXPIRY_KEY);
+    const storedProject = sessionStorage.getItem(SESSION_PROJECT_KEY);
 
-    if (storedSessionId && storedExpiry) {
+    if (storedSessionId && storedExpiry && storedProject) {
+        // Validate project matches
+        if (storedProject !== projectName) {
+            clearSession();
+            showError('This session is for a different project. Please sign in.');
+            updateEditorUI();
+            return;
+        }
+
         const expiryTime = new Date(storedExpiry);
         if (expiryTime > new Date()) {
             // Session still valid
@@ -127,6 +137,7 @@ async function verifyOTP(otpCode) {
         sessionExpiryTime = new Date(Date.now() + 2 * 60 * 60 * 1000); // 2 hours
         sessionStorage.setItem(SESSION_KEY, currentSessionId);
         sessionStorage.setItem(SESSION_EXPIRY_KEY, sessionExpiryTime.toISOString());
+        sessionStorage.setItem(SESSION_PROJECT_KEY, currentProject);
 
         showMessage('Authenticated successfully!', 'success');
         hideOTPModal();
@@ -397,6 +408,7 @@ function clearSession() {
     sessionExpiryTime = null;
     sessionStorage.removeItem(SESSION_KEY);
     sessionStorage.removeItem(SESSION_EXPIRY_KEY);
+    sessionStorage.removeItem(SESSION_PROJECT_KEY);
 
     if (expiryCheckTimer) {
         clearInterval(expiryCheckTimer);
