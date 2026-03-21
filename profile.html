@@ -992,15 +992,23 @@
             }
         }
 
+        // Escape HTML to prevent injection (for existing unescaped data)
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
         function renderProfile(member, allStats) {
             document.getElementById('page-title').textContent = `${member.name} | CBAF`;
 
             // Use logo from members.json, fallback to placeholder
             const logoUrl = member.logo_url || `images/members/${member.id}/logo.jpg`;
             const logoHtml = `
-                <img src="${logoUrl}" alt="${member.name}" class="hero-logo"
+                <img src="${logoUrl}" alt="${escapeHtml(member.name)}" class="hero-logo"
                      onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="hero-logo-placeholder" style="display:none;">${member.flag || member.name.charAt(0)}</div>
+                <div class="hero-logo-placeholder" style="display:none;">${member.flag || escapeHtml(member.name.charAt(0))}</div>
             `;
 
             let html = `
@@ -1010,11 +1018,11 @@
                             ${logoHtml}
                             <div class="hero-text">
                                 <h1>
-                                    ${member.name}
+                                    ${escapeHtml(member.name)}
                                     <span class="flag">${member.flag || ''}</span>
                                 </h1>
-                                ${member.tagline ? `<div class="tagline">${member.tagline}</div>` : ''}
-                                ${member.city || member.country ? `<div class="location">${[member.city, member.country].filter(Boolean).join(', ')}</div>` : ''}
+                                ${member.tagline ? `<div class="tagline">${escapeHtml(member.tagline)}</div>` : ''}
+                                ${member.city || member.country ? `<div class="location">${escapeHtml([member.city, member.country].filter(Boolean).join(', '))}</div>` : ''}
                             </div>
                         </div>
                         <div class="hero-links container">
@@ -1065,7 +1073,7 @@
                     <div class="support-card-inner">
                         <!-- Front: Lightning -->
                         <div class="support-front">
-                            <h2>Support ${member.name}</h2>
+                            <h2>Support ${escapeHtml(member.name)}</h2>
                             <p>Lightning Network</p>
             `;
 
@@ -1094,7 +1102,7 @@
                 html += `
                         <!-- Back: Onchain -->
                         <div class="support-back">
-                            <h2>Support ${member.name}</h2>
+                            <h2>Support ${escapeHtml(member.name)}</h2>
                             <p>Onchain</p>
                             <div class="qr-container" id="qr-onchain"></div>
                             <div class="address" id="onchain-address" onclick="copyAddressWithFeedback('${member.onchain_address}', 'onchain-address')" title="Click to copy">${member.onchain_address}</div>
@@ -1116,7 +1124,7 @@
             html += `
                 <div class="section">
                     <h2>About</h2>
-                    <p>${member.description || 'Building a Bitcoin circular economy in ' + (member.city || member.country || 'Africa') + '.'}</p>
+                    <p>${member.description ? escapeHtml(member.description) : 'Building a Bitcoin circular economy in ' + (member.city || member.country || 'Africa') + '.'}</p>
                 </div>
             `;
 
@@ -1363,11 +1371,11 @@
                 html += `<div class="section"><h2>Vision & Mission</h2>`;
 
                 if (member.vision) {
-                    html += `<h3>Our Vision</h3><p>${member.vision}</p>`;
+                    html += `<h3>Our Vision</h3><p>${escapeHtml(member.vision)}</p>`;
                 }
 
                 if (member.mission) {
-                    html += `<h3>Our Mission</h3><p>${member.mission}</p>`;
+                    html += `<h3>Our Mission</h3><p>${escapeHtml(member.mission)}</p>`;
                 }
 
                 html += `</div>`;
@@ -1385,7 +1393,7 @@
                 html += `
                     <div class="section">
                         <h2>Origin Story</h2>
-                        <p>${member.how_started}</p>
+                        <p>${escapeHtml(member.how_started)}</p>
                     </div>
                 `;
             }
@@ -1395,7 +1403,7 @@
                 html += `
                     <div class="section">
                         <h2>Key Highlights</h2>
-                        <p>${member.milestones}</p>
+                        <p>${escapeHtml(member.milestones)}</p>
                     </div>
                 `;
             }
@@ -1485,7 +1493,7 @@
             galleryImages.forEach(imgPath => {
                 galleryHtml += `
                     <div class="gallery-slide">
-                        <img src="${imgPath}" alt="${member.name} photo" data-url="${imgPath}">
+                        <img src="${imgPath}" alt="${escapeHtml(member.name)} photo" data-url="${imgPath}">
                     </div>
                 `;
             });
