@@ -1033,27 +1033,27 @@
             }
 
             if (member.npub && member.npub !== 'n/a') {
-                html += `<a href="https://primal.net/p/${member.npub}" target="_blank" class="hero-link">⚡ Nostr</a>`;
+                html += `<a href="https://primal.net/p/${escapeHtml(member.npub)}" target="_blank" class="hero-link">⚡ Nostr</a>`;
             }
 
             if (member.email) {
-                html += `<a href="mailto:${member.email}" class="hero-link">📧 Email</a>`;
+                html += `<a href="mailto:${escapeHtml(member.email)}" class="hero-link">📧 Email</a>`;
             }
 
             if (member.website) {
-                html += `<a href="${member.website}" target="_blank" class="hero-link">🌐 Website</a>`;
+                html += `<a href="${escapeHtml(member.website)}" target="_blank" class="hero-link">🌐 Website</a>`;
             }
 
             if (member.btcmap_url) {
-                html += `<a href="${member.btcmap_url}" target="_blank" class="hero-link">🗺️ BTCMap</a>`;
+                html += `<a href="${escapeHtml(member.btcmap_url)}" target="_blank" class="hero-link">🗺️ BTCMap</a>`;
             }
 
             if (member.btcpay_campaign) {
-                html += `<a href="${member.btcpay_campaign}" target="_blank" class="hero-link">💰 Crowdfund</a>`;
+                html += `<a href="${escapeHtml(member.btcpay_campaign)}" target="_blank" class="hero-link">💰 Crowdfund</a>`;
             }
 
             if (member.geyser_campaign) {
-                html += `<a href="${member.geyser_campaign}" target="_blank" class="hero-link">🌊 Geyser</a>`;
+                html += `<a href="${escapeHtml(member.geyser_campaign)}" target="_blank" class="hero-link">🌊 Geyser</a>`;
             }
 
             html += `
@@ -1080,7 +1080,7 @@
             if (member.lightning_address) {
                 html += `
                                 <div class="qr-container" id="qr-lightning"></div>
-                                <div class="address" id="lightning-address" onclick="copyAddressWithFeedback('${member.lightning_address}', 'lightning-address')" title="Click to copy">${member.lightning_address}</div>
+                                <div class="address" id="lightning-address" onclick="copyAddressWithFeedback('${escapeHtml(member.lightning_address)}', 'lightning-address')" title="Click to copy">${escapeHtml(member.lightning_address)}</div>
                 `;
                 if (member.onchain_address) {
                     html += `
@@ -1105,7 +1105,7 @@
                             <h2>Support ${escapeHtml(member.name)}</h2>
                             <p>Onchain</p>
                             <div class="qr-container" id="qr-onchain"></div>
-                            <div class="address" id="onchain-address" onclick="copyAddressWithFeedback('${member.onchain_address}', 'onchain-address')" title="Click to copy">${member.onchain_address}</div>
+                            <div class="address" id="onchain-address" onclick="copyAddressWithFeedback('${escapeHtml(member.onchain_address)}', 'onchain-address')" title="Click to copy">${escapeHtml(member.onchain_address)}</div>
                             <div class="support-actions">
                                 <button class="btn btn-back" onclick="flipSupportCard()">
                                     Switch to Lightning

@@ -696,6 +696,13 @@
             return filtered;
         }
 
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
         function getMemberBadgeEmojis(member) {
             // Calculate all badges for directory cards (emoji only)
             const badges = [];
@@ -870,7 +877,7 @@
                             <div class="card-front" onclick="viewProfile('${member.id}', event)">
                                 <div class="card-header">
                                     ${logoUrl ?
-                                        `<img src="${logoUrl}" alt="${member.name}" class="card-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                        `<img src="${logoUrl}" alt="${escapeHtml(member.name)}" class="card-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                                          <div class="card-logo-placeholder" style="display:none;">${emoji}</div>`
                                         :
                                         `<div class="card-logo-placeholder">${emoji}</div>`
@@ -878,12 +885,13 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <h3>${member.name}</h3>
+                                        <h3>${escapeHtml(member.name)}</h3>
                                         <span class="flag">${member.flag || ''}</span>
                                     </div>
                                     <div class="card-tagline">${(() => {
                                         const tagline = member.tagline || 'Bitcoin circular economy project';
-                                        return tagline.endsWith('.') || tagline.endsWith('!') || tagline.endsWith('?') ? tagline : tagline + '.';
+                                        const escaped = escapeHtml(tagline);
+                                        return escaped.endsWith('.') || escaped.endsWith('!') || escaped.endsWith('?') ? escaped : escaped + '.';
                                     })()}</div>
 
                                     <div class="card-footer">
@@ -902,7 +910,7 @@
                                         })()}
 
                                         <div class="card-actions">
-                                            <button class="btn btn-primary" onclick="event.stopPropagation(); flipCard('${cardId}', '${member.lightning_address}', '${member.onchain_address || ''}')">
+                                            <button class="btn btn-primary" onclick="event.stopPropagation(); flipCard('${cardId}', '${escapeHtml(member.lightning_address)}', '${escapeHtml(member.onchain_address || '')}')">
                                                 Donate
                                             </button>
                                             <a href="profile.html?id=${member.id}" class="btn btn-secondary" onclick="event.stopPropagation();">
@@ -918,9 +926,9 @@
                                 <div class="card-back-inner">
                                     <!-- Lightning Side -->
                                     <div class="card-back-side card-back-lightning">
-                                        <h3>Donate to ${member.name}</h3>
+                                        <h3>Donate to ${escapeHtml(member.name)}</h3>
                                         <div class="qr-container" id="qr-lightning-${cardId}"></div>
-                                        <div class="lightning-address-display" id="address-lightning-${cardId}" onclick="event.stopPropagation(); copyAddressWithFeedback('${member.lightning_address}', 'address-lightning-${cardId}')" title="Click to copy">${member.lightning_address || 'No Lightning address available'}</div>
+                                        <div class="lightning-address-display" id="address-lightning-${cardId}" onclick="event.stopPropagation(); copyAddressWithFeedback('${escapeHtml(member.lightning_address)}', 'address-lightning-${cardId}')" title="Click to copy">${escapeHtml(member.lightning_address || 'No Lightning address available')}</div>
                                         <div class="back-actions">
                                             <button class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">
                                                 ← Back
@@ -932,9 +940,9 @@
                                     <!-- Onchain Side -->
                                     ${member.onchain_address ? `
                                     <div class="card-back-side card-back-onchain">
-                                        <h3>Donate to ${member.name}</h3>
+                                        <h3>Donate to ${escapeHtml(member.name)}</h3>
                                         <div class="qr-container" id="qr-onchain-${cardId}"></div>
-                                        <div class="lightning-address-display" id="address-onchain-${cardId}" onclick="event.stopPropagation(); copyAddressWithFeedback('${member.onchain_address}', 'address-onchain-${cardId}')" title="Click to copy">${member.onchain_address}</div>
+                                        <div class="lightning-address-display" id="address-onchain-${cardId}" onclick="event.stopPropagation(); copyAddressWithFeedback('${escapeHtml(member.onchain_address)}', 'address-onchain-${cardId}')" title="Click to copy">${escapeHtml(member.onchain_address)}</div>
                                         <div class="back-actions">
                                             <button class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">
                                                 ← Back
