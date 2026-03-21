@@ -898,8 +898,8 @@
                 return;
             }
 
-            // Clear localStorage draft
-            const storageKey = `profile_draft_${projectId}`;
+            // Clear localStorage draft (must match DRAFT_KEY_PREFIX in profile-editor.js)
+            const storageKey = 'powbot_profile_draft_' + projectId;
             localStorage.removeItem(storageKey);
 
             // Clear all file inputs
