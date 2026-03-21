@@ -602,13 +602,10 @@ async function submitProfileEdits(event) {
             statusText.classList.remove('pulse');
             statusText.innerHTML = `
                 <div style="color: var(--accent-green); font-weight: 600; margin-bottom: 16px;">
-                    ✅ Profile changes submitted successfully!
+                    ✅ Profile changes submitted successfully for review!
                 </div>
                 <div style="margin-bottom: 12px;">
-                    Your changes have been submitted for review.
-                </div>
-                <div style="margin-bottom: 12px;">
-                    <a href="${data.pr_url}" target="_blank" style="color: var(--accent-green); font-weight: 600; text-decoration: underline;">
+                    <a href="${data.pr_url}" target="_blank" style="color: white; font-weight: 600; text-decoration: underline;">
                         View Pull Request →
                     </a>
                 </div>
