@@ -510,16 +510,22 @@ async function submitProfileEdits(event) {
             xhr.upload.addEventListener('progress', (e) => {
                 if (e.lengthComputable) {
                     const percentComplete = Math.round((e.loaded / e.total) * 100);
-                    if (progressBar) progressBar.style.width = percentComplete + '%';
-                    if (progressPercent) progressPercent.textContent = percentComplete + '%';
                     if (statusText) {
                         if (percentComplete < 100) {
-                            statusText.textContent = 'Uploading...';
+                            statusText.textContent = `Uploading images ${percentComplete}%`;
+                            statusText.classList.remove('pulse');
                         } else {
-                            statusText.textContent = 'Processing...';
+                            statusText.textContent = 'Upload complete - Creating pull request...';
+                            statusText.classList.add('pulse');
                         }
                     }
-                    if (submitBtn) submitBtn.textContent = `Uploading ${percentComplete}%`;
+                    if (submitBtn) {
+                        if (percentComplete < 100) {
+                            submitBtn.textContent = `Uploading ${percentComplete}%`;
+                        } else {
+                            submitBtn.textContent = 'Creating pull request...';
+                        }
+                    }
                 }
             });
 
@@ -591,6 +597,17 @@ async function submitProfileEdits(event) {
     } catch (error) {
         console.error('Submit error:', error);
 
+        // Reset button and progress ONLY on error
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+
+        // Hide and reset progress indicator
+        if (progressContainer) progressContainer.classList.add('hidden');
+        if (statusText) {
+            statusText.textContent = '';
+            statusText.classList.remove('pulse');
+        }
+
         // If it's an auth error, prompt to re-authenticate
         if (error.message.includes('Invalid or unverified session') || error.message.includes('Unauthorized')) {
             clearSession();
@@ -600,16 +617,8 @@ async function submitProfileEdits(event) {
         } else {
             showError('Failed to submit: ' + error.message);
         }
-    } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
-
-        // Hide and reset progress indicator
-        if (progressContainer) progressContainer.classList.add('hidden');
-        if (progressBar) progressBar.style.width = '0%';
-        if (progressPercent) progressPercent.textContent = '0%';
-        if (statusText) statusText.textContent = 'Uploading...';
     }
+    // No finally block - button stays disabled on success until redirect
 }
 
 /**
