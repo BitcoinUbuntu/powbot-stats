@@ -594,6 +594,13 @@ async function submitProfileEdits(event) {
         // Get current project ID for back link
         const currentProjectId = new URLSearchParams(window.location.search).get('id');
 
+        // Hide progress indicator
+        if (progressContainer) progressContainer.classList.add('hidden');
+        if (statusText) {
+            statusText.textContent = '';
+            statusText.classList.remove('pulse');
+        }
+
         // Show success message with PR link (no auto-hide, no redirect)
         showMessage(
             `✅ <strong>Profile changes submitted successfully!</strong><br><br>

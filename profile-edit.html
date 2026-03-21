@@ -858,9 +858,14 @@
         function toggleGalleryImage(imagePath) {
             const index = galleryToKeep.indexOf(imagePath);
             if (index > -1) {
+                // Remove from keep list
                 galleryToKeep.splice(index, 1);
             } else {
-                galleryToKeep.push(imagePath);
+                // Add back in original order (not at end)
+                // Rebuild galleryToKeep based on currentGalleryImages order
+                galleryToKeep = currentGalleryImages.filter(img =>
+                    galleryToKeep.includes(img) || img === imagePath
+                );
             }
             renderGallery();
             updateGalleryCounter();
