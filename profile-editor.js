@@ -591,20 +591,22 @@ async function submitProfileEdits(event) {
         clearSession();
         stopAutoSave();
 
-        // Show success
+        // Get current project ID for back link
+        const currentProjectId = new URLSearchParams(window.location.search).get('id');
+
+        // Show success message with PR link (no auto-hide, no redirect)
         showMessage(
-            `Changes submitted successfully! <a href="${data.pr_url}" target="_blank">View Pull Request</a>`,
+            `✅ <strong>Profile changes submitted successfully!</strong><br><br>
+             Your changes have been submitted for review.<br>
+             <a href="${data.pr_url}" target="_blank" style="color: var(--accent-green); font-weight: 600; text-decoration: underline;">View Pull Request →</a><br><br>
+             <a href="profile.html?id=${encodeURIComponent(currentProjectId)}" style="color: var(--accent-blue); text-decoration: underline;">← Back to Profile</a>`,
             'success',
-            3000
+            0  // Don't auto-hide
         );
 
-        // Redirect back to profile page after brief delay
-        setTimeout(() => {
-            const currentProjectId = new URLSearchParams(window.location.search).get('id');
-            if (currentProjectId) {
-                window.location.href = 'profile.html?id=' + encodeURIComponent(currentProjectId);
-            }
-        }, 3000);
+        // Hide the submit button since form is done
+        const submitBtn = document.getElementById('submit-edits-btn');
+        if (submitBtn) submitBtn.style.display = 'none';
 
     } catch (error) {
         console.error('Submit error:', error);

@@ -1036,10 +1036,12 @@
             const totalCount = keptCount + uploadedFiles;
             const availableSlots = 12 - totalCount;
 
-            let message = `${keptCount} existing, ${availableSlots} slot${availableSlots !== 1 ? 's' : ''} available`;
+            let message = `${keptCount} existing`;
 
             if (uploadedFiles > 0) {
-                message += ` (uploading ${uploadedFiles})`;
+                message += ` + ${uploadedFiles} ready to upload (${totalCount}/12 total)`;
+            } else {
+                message += `, ${availableSlots} slot${availableSlots !== 1 ? 's' : ''} available`;
             }
 
             if (totalCount > 12) {
