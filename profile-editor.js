@@ -512,10 +512,10 @@ async function submitProfileEdits(event) {
                     const percentComplete = Math.round((e.loaded / e.total) * 100);
                     if (statusText) {
                         if (percentComplete < 100) {
-                            statusText.textContent = `Uploading images ${percentComplete}%`;
+                            statusText.textContent = `Submitting changes ${percentComplete}%`;
                             statusText.classList.remove('pulse');
                         } else {
-                            statusText.textContent = 'Upload complete - Creating pull request...';
+                            statusText.textContent = 'Creating pull request...';
                             statusText.classList.add('pulse');
                         }
                     }
