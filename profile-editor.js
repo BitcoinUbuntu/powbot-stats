@@ -705,6 +705,13 @@ function initTelegramVerification() {
     if (usernameInput && claimBtn) {
         claimBtn.onclick = startOTPAuth;
 
+        // Allow Enter key to trigger authentication
+        usernameInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !claimBtn.disabled) {
+                startOTPAuth();
+            }
+        });
+
         usernameInput.addEventListener('input', () => {
             const inputValue = usernameInput.value.trim().toLowerCase();
             const expectedValue = expectedUsername.toLowerCase();
