@@ -527,7 +527,7 @@ async function submitProfileEdits(event) {
                             statusText.textContent = `Submitting changes ${percentComplete}%`;
                             statusText.classList.remove('pulse');
                         } else {
-                            statusText.textContent = 'Creating pull request...';
+                            statusText.textContent = 'Creating pull request... Please wait.';
                             statusText.classList.add('pulse');
                         }
                     }
@@ -535,7 +535,7 @@ async function submitProfileEdits(event) {
                         if (percentComplete < 100) {
                             submitBtn.textContent = `Uploading ${percentComplete}%`;
                         } else {
-                            submitBtn.textContent = 'Creating pull request...';
+                            submitBtn.textContent = 'Please wait...';
                         }
                     }
                 }
