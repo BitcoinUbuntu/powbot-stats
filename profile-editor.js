@@ -741,7 +741,7 @@ function showSaveIndicator() {
     const indicator = document.getElementById('save-indicator');
     if (indicator) {
         const now = new Date();
-        indicator.textContent = `Draft saved at ${now.toLocaleTimeString()}`;
+        indicator.textContent = `Draft saved at ${now.toLocaleTimeString()} (autosaved every 30s)`;
         indicator.classList.remove('hidden');
     }
 }
