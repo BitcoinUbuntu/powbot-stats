@@ -4,7 +4,7 @@ A stats visualization dashboard for the CBAF PoWBoT, showing payment statistics 
 
 ## Live Site
 
-View the dashboard at: [bitcoinubuntu.github.io/powbot-stats](https://bitcoinubuntu.github.io/powbot-stats)
+View the dashboard at: [powbot.africa](https://powbot.africa)
 
 ## Features
 
