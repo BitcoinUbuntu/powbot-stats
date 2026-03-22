@@ -19,6 +19,7 @@ let currentSessionId = null;
 let sessionExpiryTime = null;
 let autoSaveTimer = null;
 let expiryCheckTimer = null;
+let messageTimeout = null;
 
 // LocalStorage keys
 const DRAFT_KEY_PREFIX = 'powbot_profile_draft_';
@@ -844,13 +845,20 @@ function showMessage(message, type = 'info', duration = 5000) {
     const messageDiv = document.getElementById('editor-message');
     if (!messageDiv) return;
 
+    // Clear any pending message timeout to prevent flash
+    if (messageTimeout) {
+        clearTimeout(messageTimeout);
+        messageTimeout = null;
+    }
+
     messageDiv.innerHTML = message;
     messageDiv.className = `message message-${type}`;
     messageDiv.classList.remove('hidden');
 
     if (duration > 0) {
-        setTimeout(() => {
+        messageTimeout = setTimeout(() => {
             messageDiv.classList.add('hidden');
+            messageTimeout = null;
         }, duration);
     }
 }
