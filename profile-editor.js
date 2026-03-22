@@ -283,6 +283,22 @@ function restoreDraft() {
 
         if (!form) return;
 
+        // Check if draft is newer than published data
+        const draftSavedAt = new Date(draft.savedAt);
+        const lastUpdated = currentProjectData?.last_updated
+            ? new Date(currentProjectData.last_updated)
+            : new Date(0); // Treat missing last_updated as very old
+
+        if (draftSavedAt <= lastUpdated) {
+            // Draft is older than published data - discard it
+            console.log('Discarding stale draft (saved:', draftSavedAt.toISOString(), 'vs published:', lastUpdated.toISOString(), ')');
+            clearDraft();
+            return;
+        }
+
+        // Draft is newer - restore it
+        console.log('Restoring draft (saved:', draftSavedAt.toISOString(), 'vs published:', lastUpdated.toISOString(), ')');
+
         // Populate form fields
         for (const [key, value] of Object.entries(draft.data)) {
             const field = form.querySelector(`[name="${key}"]`);
@@ -293,9 +309,8 @@ function restoreDraft() {
 
         // Only show restoration message if user is authenticated
         if (currentSessionId && sessionExpiryTime && new Date() < sessionExpiryTime) {
-            const savedAt = new Date(draft.savedAt);
             showMessage(
-                `Draft restored from ${savedAt.toLocaleString()}`,
+                `Draft restored from ${draftSavedAt.toLocaleString()}`,
                 'info',
                 5000
             );
@@ -314,6 +329,40 @@ function clearDraft() {
 
     const draftKey = DRAFT_KEY_PREFIX + currentProject;
     localStorage.removeItem(draftKey);
+}
+
+/**
+ * Clear all form state (draft, previews, file inputs)
+ * Used after successful submission and by Reset Form button
+ */
+function clearFormState() {
+    // Clear localStorage draft
+    clearDraft();
+
+    // Clear all file inputs
+    const logoInput = document.getElementById('edit-logo');
+    const galleryInput = document.getElementById('gallery-upload');
+    if (logoInput) logoInput.value = '';
+    if (galleryInput) galleryInput.value = '';
+
+    // Hide all previews
+    const logoPreview = document.getElementById('logo-preview');
+    const uploadPreviewGrid = document.getElementById('upload-preview-grid');
+    if (logoPreview) logoPreview.style.display = 'none';
+    if (uploadPreviewGrid) {
+        uploadPreviewGrid.innerHTML = '';
+        uploadPreviewGrid.classList.add('hidden');
+    }
+
+    // Clear new gallery files array (defined in profile-edit.html)
+    if (typeof window.newGalleryFiles !== 'undefined') {
+        window.newGalleryFiles = [];
+    }
+
+    // Clear gallery to keep array
+    if (typeof window.galleryToKeep !== 'undefined') {
+        window.galleryToKeep = [];
+    }
 }
 
 /**
@@ -586,8 +635,8 @@ async function submitProfileEdits(event) {
 
         // Success - data is already parsed
 
-        // Success! Clear draft and session
-        clearDraft();
+        // Success! Clear all form state (draft, previews, files) and session
+        clearFormState();
         clearSession();
         stopAutoSave();
 
