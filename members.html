@@ -534,6 +534,7 @@
                 <div class="filter-group">
                     <button class="filter-btn active" data-filter="all">All Projects</button>
                     <button class="filter-btn" data-filter="active">Active on PoWBoT</button>
+                    <button class="filter-btn" data-filter="epoch5">Active this Epoch</button>
                     <button class="filter-btn" data-filter="top">Top Performers</button>
                 </div>
                 <select id="country-filter" class="filter-btn">
@@ -603,6 +604,20 @@
             });
         }
 
+        function getEpoch5PostCount(member) {
+            // Count posts only from Epoch 5 (current epoch)
+            const statsName = `${member.name} ${member.flag || ''}`.trim();
+
+            if (allStats.epoch5 && allStats.epoch5.top_projects) {
+                const epoch5Project = allStats.epoch5.top_projects.find(p => p.name === statsName);
+                if (epoch5Project && epoch5Project.posts) {
+                    return epoch5Project.posts.length;
+                }
+            }
+
+            return 0;
+        }
+
         function getRecentEpochPostCount(member) {
             // Count posts only from Epoch 4 testing, Epoch 4, and Epoch 5
             const statsName = `${member.name} ${member.flag || ''}`.trim();
@@ -651,7 +666,9 @@
 
             // Apply activity filter
             if (currentFilter === 'active') {
-                filtered = filtered.filter(m => getTotalPostCount(m) > 0);
+                filtered = filtered.filter(m => getRecentEpochPostCount(m) > 0);
+            } else if (currentFilter === 'epoch5') {
+                filtered = filtered.filter(m => getEpoch5PostCount(m) > 0);
             } else if (currentFilter === 'top') {
                 // Show only top 10 projects by all-time post count
                 filtered = filtered
