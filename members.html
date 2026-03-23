@@ -562,13 +562,15 @@
         Promise.all([
             fetch('members.json').then(res => res.json()),
             fetch('stats-epoch4.json').then(res => res.json()),
-            fetch('stats-historical.json').then(res => res.json())
+            fetch('stats-historical.json').then(res => res.json()),
+            fetch('stats.json').then(res => res.json())
         ])
-            .then(([membersData, epoch4Data, historicalData]) => {
+            .then(([membersData, epoch4Data, historicalData, epoch5Data]) => {
                 allMembers = membersData.members;
                 allStats = {
                     epoch4: epoch4Data,
-                    historical: historicalData
+                    historical: historicalData,
+                    epoch5: epoch5Data
                 };
                 initializeFilters();
                 updateStats();
