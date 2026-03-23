@@ -50,50 +50,11 @@
             margin: 0 auto;
         }
 
-        /* Header & Nav */
+        /* Header */
         header {
             text-align: center;
             margin-bottom: 30px;
             padding: 20px;
-        }
-
-        nav {
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 20px;
-            position: sticky;
-            top: 0;
-            margin: -20px -20px 20px -20px;
-            z-index: 100;
-        }
-
-        nav .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        nav a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        nav a.current {
-            color: var(--accent-orange);
-            font-weight: 600;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            align-items: center;
         }
 
         header h1 {
@@ -532,16 +493,6 @@
             }
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
-
-        footer a {
-            color: var(--accent-blue);
-        }
     </style>
 </head>
 <body>
@@ -624,10 +575,12 @@
                 renderMembers();
             })
             .catch(err => {
+                console.error('Error loading members:', err);
                 document.getElementById('members-grid').innerHTML = `
                     <div class="empty-state">
                         <h3>Error loading members</h3>
                         <p>Please try refreshing the page</p>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;">${err.message}</p>
                     </div>
                 `;
             });
@@ -646,7 +599,7 @@
 
         function updateStats() {
             document.getElementById('total-count').textContent = allMembers.length;
-            document.getElementById('active-count').textContent = allMembers.filter(m => m.powbot_stats.epoch4_videos > 0).length;
+            document.getElementById('active-count').textContent = allMembers.filter(m => getTotalPostCount(m) > 0).length;
 
             const countries = new Set(allMembers.map(m => m.name_with_flag.match(/\(([^)]+)\)/)?.[1]).filter(Boolean));
             document.getElementById('country-count').textContent = countries.size;
@@ -657,12 +610,12 @@
 
             // Apply activity filter
             if (currentFilter === 'active') {
-                filtered = filtered.filter(m => m.powbot_stats.epoch4_videos > 0);
+                filtered = filtered.filter(m => getTotalPostCount(m) > 0);
             } else if (currentFilter === 'top') {
-                // Show only top 10 projects by Epoch 4 video count
+                // Show only top 10 projects by all-time post count
                 filtered = filtered
-                    .filter(m => m.powbot_stats.epoch4_videos > 0)
-                    .sort((a, b) => b.powbot_stats.epoch4_videos - a.powbot_stats.epoch4_videos)
+                    .filter(m => getTotalPostCount(m) > 0)
+                    .sort((a, b) => getTotalPostCount(b) - getTotalPostCount(a))
                     .slice(0, 10);
             }
 
@@ -688,7 +641,7 @@
             // Apply sort (only if not already sorted by top filter)
             if (currentFilter !== 'top') {
                 if (currentSort === 'activity') {
-                    filtered.sort((a, b) => b.powbot_stats.epoch4_videos - a.powbot_stats.epoch4_videos);
+                    filtered.sort((a, b) => getTotalPostCount(b) - getTotalPostCount(a));
                 } else if (currentSort === 'name') {
                     filtered.sort((a, b) => a.name.localeCompare(b.name));
                 }
@@ -704,12 +657,53 @@
             return div.innerHTML;
         }
 
-        function getMemberBadgeEmojis(member) {
-            // Calculate all badges for directory cards (emoji only)
-            const badges = [];
+        function getTotalPostCount(member) {
+            // Calculate total posts across all epochs for a member
             const statsName = `${member.name} ${member.flag || ''}`.trim();
 
             // Get Epoch 4 data
+            let epoch4Posts = [];
+            if (allStats.epoch4 && allStats.epoch4.top_projects) {
+                const epoch4Project = allStats.epoch4.top_projects.find(p => p.name === statsName);
+                if (epoch4Project && epoch4Project.posts) {
+                    epoch4Posts = epoch4Project.posts;
+                }
+            }
+
+            // Get Epoch 5 data (when available)
+            let epoch5Posts = [];
+            if (allStats.epoch5 && allStats.epoch5.top_projects) {
+                const epoch5Project = allStats.epoch5.top_projects.find(p => p.name === statsName);
+                if (epoch5Project && epoch5Project.posts) {
+                    epoch5Posts = epoch5Project.posts;
+                }
+            }
+
+            // Get historical data
+            let historicalPosts = [];
+            if (allStats.historical && allStats.historical.epochs) {
+                const epochs = allStats.historical.epochs;
+                ['epoch1', 'epoch2', 'epoch3', 'epoch4_testing'].forEach(epochKey => {
+                    const epoch = epochs[epochKey];
+                    if (epoch && epoch.top_projects) {
+                        const project = epoch.top_projects.find(p => p.name === statsName);
+                        if (project && project.posts && project.posts.length > 0) {
+                            historicalPosts.push(...project.posts);
+                        }
+                    }
+                });
+            }
+
+            return epoch4Posts.length + epoch5Posts.length + historicalPosts.length;
+        }
+
+        function getMemberBadgeEmojis(member) {
+            // Calculate all badges for directory cards (emoji only)
+            const badges = [];
+            const totalPosts = getTotalPostCount(member);
+            const statsName = `${member.name} ${member.flag || ''}`.trim();
+
+            // Get Epoch 4 data for badge-specific calculations
             let epoch4Posts = [];
             if (allStats.epoch4 && allStats.epoch4.top_projects) {
                 const epoch4Project = allStats.epoch4.top_projects.find(p => p.name === statsName);
@@ -738,13 +732,11 @@
                         const project = epoch.top_projects.find(p => p.name === statsName);
                         if (project && project.posts && project.posts.length > 0) {
                             historicalPosts.push(...project.posts);
-                            epochNames.add(epoch.name); // Use the epoch name from the data
+                            epochNames.add(epoch.name);
                         }
                     }
                 });
             }
-
-            const totalPosts = epoch4Posts.length + epoch5Posts.length + historicalPosts.length;
 
             // Excellence badges (highest priority)
             if (allStats.epoch4 && allStats.epoch4.top_projects) {
@@ -866,7 +858,7 @@
             }
 
             grid.innerHTML = members.map((member, index) => {
-                const videoCount = member.powbot_stats.epoch4_videos;
+                const videoCount = getTotalPostCount(member);
                 const logoUrl = member.logo_url || '';
                 const emoji = member.flag || member.name.charAt(0);
                 const cardId = `card-${index}`;

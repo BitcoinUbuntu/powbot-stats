@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoW Video Guidelines | PoWBoT</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
+
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-card: #21262d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent-orange: #f7931a;
+            --accent-green: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-red: #f85149;
+            --border: #30363d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--accent-orange);
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: var(--accent-orange);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h3 {
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            margin: 25px 0 15px 0;
+        }
+
+        .alert {
+            background: rgba(248, 81, 73, 0.1);
+            border: 1px solid var(--accent-red);
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-bottom: 25px;
+            color: var(--text-primary);
+        }
+
+        .alert strong {
+            color: var(--accent-red);
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .requirements {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .requirements li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .requirements li:last-child {
+            border-bottom: none;
+        }
+
+        .requirements.allowed li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .requirements.disallowed li::before {
+            content: "✗";
+            position: absolute;
+            left: 0;
+            color: var(--accent-red);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .example-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            font-family: monospace;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .example-box strong {
+            color: var(--accent-blue);
+        }
+
+        .video-elements {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .video-element {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .video-element span {
+            display: block;
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .video-tip {
+            background: rgba(88, 166, 255, 0.1);
+            border-left: 3px solid var(--accent-blue);
+            border-radius: 8px;
+            padding: 15px 20px;
+            grid-column: span 2;
+            text-align: left;
+        }
+
+        .video-tip strong {
+            color: var(--accent-blue);
+        }
+
+        .tip {
+            background: rgba(88, 166, 255, 0.1);
+            border-left: 3px solid var(--accent-blue);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .tip strong {
+            color: var(--accent-blue);
+        }
+
+        code {
+            background: var(--bg-card);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: var(--accent-orange);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .video-elements {
+                grid-template-columns: 1fr;
+            }
+
+            .video-tip {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
+
+    <div class="container">
+        <header>
+            <h1>PoW Video Guidelines</h1>
+            <p class="subtitle">How to create qualifying Proof of Work video posts for PoWBoT</p>
+        </header>
+
+        <!-- What Qualifies -->
+        <div class="section">
+            <h2>What Qualifies</h2>
+            <p style="margin-bottom: 20px;">Your video post must meet <strong>ALL</strong> of these requirements:</p>
+
+            <ul class="requirements allowed">
+                <li><strong>Show the transaction:</strong> Video must capture an actual Bitcoin payment happening</li>
+                <li><strong>Merchant receives sats directly:</strong> No fiat settlement services – merchant must receive Bitcoin</li>
+                <li><strong>Merchant paycode/LNURL in post:</strong> Must be clearly typed in the written post text (not just shown in video). If multiple paycodes are included, the merchant's must appear first</li>
+                <li><strong>BTCMap.org link required:</strong> Must include a link to the merchant's BTCMap.org profile in your post</li>
+                <li><strong>Permanent merchant location:</strong> Must be an established business with a fixed physical location (no mobile vendors, delivery services, or temporary stands)</li>
+                <li><strong>Include #spedn hashtag:</strong> Your post must include the hashtag <code>#spedn</code></li>
+                <li><strong>Valid on X & Nostr:</strong> Posts on either platform qualify</li>
+            </ul>
+
+            <div class="tip">
+                <strong>Submission Limit:</strong> Only ONE submission per day per merchant-platform combination.<br><br>
+                This means:<br>
+                ✅ Submit as many different merchants as you want each day<br>
+                ✅ Post the same merchant video on BOTH X and Nostr (both submissions qualify)<br>
+                ❌ Post the same merchant twice on the same platform in one day<br><br>
+                <strong>Example:</strong> Post about Merchant A on X and Nostr today? Yes! Post about Merchants A, B, and C on X today? Yes! Post about Merchant A twice on X today? No.
+            </div>
+        </div>
+
+        <!-- Video Requirements -->
+        <div class="section">
+            <h2>🎥 Required Video Elements</h2>
+
+            <div class="video-elements">
+                <div class="video-element">
+                    <span>🏪</span>
+                    <strong>1. Shopfront</strong>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 8px;">Brief exterior/street view</p>
+                </div>
+                <div class="video-element">
+                    <span>🛍️</span>
+                    <strong>2. Shop Interior</strong>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 8px;">Brief overview inside</p>
+                </div>
+                <div class="video-element">
+                    <span>₿</span>
+                    <strong>3. Bitcoin Sign</strong>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 8px;">"Bitcoin Accepted" signage</p>
+                </div>
+                <div class="video-element">
+                    <span>🛒</span>
+                    <strong>4. Selection</strong>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 8px;">Customer choosing product</p>
+                </div>
+                <div class="video-element">
+                    <span>📱</span>
+                    <strong>5. Transaction</strong>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 8px;">Payment process clearly shown</p>
+                </div>
+                <div class="video-element">
+                    <span>✅</span>
+                    <strong>6. Confirmation</strong>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 8px;">Payment success screen</p>
+                </div>
+                <div class="video-element">
+                    <span>🎯</span>
+                    <strong>7. Ending Screen</strong>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 8px;">Project Donation QR codes</p>
+                </div>
+                <div class="video-tip">
+                    <strong>Keep it short:</strong> Videos should be 45-60 seconds maximum. Show only what's necessary – we don't need to see you eat the entire meal. Edit your clips to the essential moments.
+                </div>
+            </div>
+
+            <div class="tip">
+                <strong>Proper formatting:</strong> Crop your videos correctly. Do not edit portrait videos onto a horizontal canvas – keep videos in their native orientation.
+            </div>
+        </div>
+
+        <!-- Suggested Post Format -->
+        <div class="section">
+            <h2>📝 Suggested Post Format</h2>
+
+            <div class="example-box">
+⚡️ Use Bitcoin as everyday money<br>
+#spedn<br>
+merchant@blink.sv<br>
+btcmap.org/merchant/12345<br>
+[Your post's story here...]<br>
+[UPLOADED VIDEO]
+            </div>
+
+            <div class="tip" style="margin-top: 20px;">
+                <strong>⚠️ X Tip:</strong> Posts truncate at 280 chars. Put required elements first!
+            </div>
+
+            <p style="margin-top: 15px; color: var(--text-secondary);"><strong>Remember:</strong> The merchant's Lightning address must appear <strong>first</strong> if you're including multiple paycodes or donation addresses in your post.</p>
+        </div>
+
+        <!-- What Doesn't Qualify -->
+        <div class="section">
+            <h2>What Doesn't Qualify</h2>
+
+            <ul class="requirements disallowed">
+                <li><strong>Fiat settlement:</strong> Merchant receiving fiat through off-ramps</li>
+                <li><strong>No verifiable location:</strong> Random sellers, unidentifiable locations, temporary stands, street vendors</li>
+                <li><strong>Mobile services:</strong> Taxis, delivery services, or any mobile merchants (too difficult to verify location)</li>
+                <li><strong>Random people at meetups:</strong> Sending sats to individuals who aren't merchants</li>
+                <li><strong>Salary payments:</strong> Paying employees is not a PoW video. Employees should spend their salaries at merchants instead</li>
+                <li><strong>Talking without showing:</strong> Describing what you did without on-camera evidence of the transaction</li>
+                <li><strong>No context videos:</strong> Videos filmed outside your circular economy project or without identifying location</li>
+                <li><strong>Project-owned shops:</strong> Spending at a demo shop your project set up, or at stores your project owns/operates</li>
+                <li><strong>Unclear transactions:</strong> If the video doesn't clearly show sats being spent, it won't count</li>
+            </ul>
+        </div>
+
+        <!-- Footer (loaded from includes/footer.html) -->
+        <div id="site-footer"></div>
+    </div>
+
+    <!-- Shared nav/footer injection -->
+    <script src="includes/inject.js"></script>
+</body>
+</html>
