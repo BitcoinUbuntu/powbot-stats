@@ -766,13 +766,11 @@
                 );
             }
 
-            // Apply sort (only if not already sorted by top filter)
-            if (currentFilter !== 'top') {
-                if (currentSort === 'activity') {
-                    filtered.sort((a, b) => getTotalPostCount(b) - getTotalPostCount(a));
-                } else if (currentSort === 'name') {
-                    filtered.sort((a, b) => a.name.localeCompare(b.name));
-                }
+            // Apply sort
+            if (currentSort === 'activity') {
+                filtered.sort((a, b) => getTotalPostCount(b) - getTotalPostCount(a));
+            } else if (currentSort === 'name') {
+                filtered.sort((a, b) => a.name.localeCompare(b.name));
             }
 
             return filtered;
