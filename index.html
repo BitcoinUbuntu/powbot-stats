@@ -330,16 +330,23 @@
             border-bottom: none;
         }
 
-        .top-performer-item:hover {
-            background: rgba(163, 113, 247, 0.1);
-            margin: 0 -8px;
-            padding: 8px 8px;
-            border-radius: 8px;
-            transform: translateX(4px);
+        @media (hover: hover) {
+            .top-performer-item:hover {
+                background: rgba(163, 113, 247, 0.1);
+                margin: 0 -8px;
+                padding: 8px 8px;
+                border-radius: 8px;
+                transform: translateX(4px);
+            }
+
+            .top-performer-item:hover .top-performer-name {
+                color: var(--accent-purple);
+            }
         }
 
-        .top-performer-item:hover .top-performer-name {
-            color: var(--accent-purple);
+        .top-performer-item:active {
+            background: rgba(163, 113, 247, 0.15);
+            opacity: 0.8;
         }
 
         .top-performer-rank {
