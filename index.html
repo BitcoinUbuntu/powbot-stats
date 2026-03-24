@@ -318,29 +318,27 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 8px;
-            margin: 0 -8px;
+            padding: 8px 0;
             border-bottom: 1px solid var(--border);
             text-decoration: none;
             color: var(--text-primary);
             transition: all 0.2s;
             cursor: pointer;
-            -webkit-tap-highlight-color: rgba(163, 113, 247, 0.2);
         }
 
         .top-performer-item:last-child {
             border-bottom: none;
         }
 
-        .top-performer-item:hover,
-        .top-performer-item:active {
+        .top-performer-item:hover {
             background: rgba(163, 113, 247, 0.1);
+            margin: 0 -8px;
+            padding: 8px 8px;
             border-radius: 8px;
             transform: translateX(4px);
         }
 
-        .top-performer-item:hover .top-performer-name,
-        .top-performer-item:active .top-performer-name {
+        .top-performer-item:hover .top-performer-name {
             color: var(--accent-purple);
         }
 
