@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 45,
+    "all_payments": 48,
     "by_type": {
       "merchant": {
-        "count": 15
+        "count": 16
       },
       "project": {
-        "count": 15
+        "count": 16
       },
       "reviewer": {
-        "count": 15
+        "count": 16
       }
     }
   },
   "today": {
     "date": "2026-03-24",
-    "payments": 45,
+    "payments": 48,
     "by_type": {
       "merchant": {
-        "count": 15
+        "count": 16
       },
       "project": {
-        "count": 15
+        "count": 16
       },
       "reviewer": {
-        "count": 15
+        "count": 16
       }
     },
-    "approved": 15,
+    "approved": 16,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2036395349577695397",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Ayoola Minimart",
+        "platform": "X",
+        "time": "11:03"
+      },
       {
         "url": "https://x.com/i/status/2033459777913716800",
         "project": "Bitcoin Ekasi 🇿🇦",
@@ -139,6 +146,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
       {
         "project": "Bitcoin Ekasi 🇿🇦"
       },
@@ -363,14 +373,14 @@
     },
     {
       "date": "2026-03-24",
-      "project_count": 15,
-      "merchant_count": 15,
-      "reviewer_count": 15
+      "project_count": 16,
+      "merchant_count": 16,
+      "reviewer_count": 16
     }
   ],
   "reviewer": {
-    "total_reviewed": 15,
-    "approved": 15,
+    "total_reviewed": 16,
+    "approved": 16,
     "rejected": 0
   },
   "top_projects": [
@@ -470,6 +480,17 @@
           "url": "https://x.com/i/status/2036214499900899561",
           "date": "2026-03-24",
           "merchant": "Preso's Food and Drinks"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Ekiti 🇳🇬",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2036395349577695397",
+          "date": "2026-03-24",
+          "merchant": "Ayoola Minimart"
         }
       ]
     }
@@ -597,23 +618,39 @@
           "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
+    },
+    {
+      "name": "Ayoola Minimart",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2036395349577695397",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Mar 24",
     "days_active": 1,
-    "daily_average_payments": 45
+    "daily_average_payments": 48
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 45
+      "count": 48
     }
   ],
   "countries": [
     {
       "flag": "🇰🇪",
       "country": "Kenya",
+      "count": 1
+    },
+    {
+      "flag": "🇳🇬",
+      "country": "Nigeria",
       "count": 1
     },
     {
@@ -635,13 +672,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 24
+      "count": 27
     },
     {
       "platform": "Nostr",
       "count": 21
     }
   ],
-  "generated_at": "2026-03-24T11:00:01.930701+00:00",
+  "generated_at": "2026-03-24T11:10:01.839311+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
