@@ -1924,7 +1924,8 @@
         }
 
         // Block countdown configuration
-        const DIFFICULTY_ADJUSTMENT_BLOCK = 938679; // Sixth difficulty adjustment (1008 blocks per epoch)
+        const GENESIS_BLOCK = 932631; // First epoch started here (calculated from epoch 6 start: 937671 - (5 * 1008))
+        const BLOCKS_PER_EPOCH = 1008; // Blocks per difficulty adjustment period
 
         // Block countdown state
         let currentBlockHeight = null;
@@ -1935,15 +1936,31 @@
             const container = document.getElementById('countdown-content');
             if (!container || currentBlockHeight === null) return;
 
-            const blocksRemaining = DIFFICULTY_ADJUSTMENT_BLOCK - currentBlockHeight;
+            // Automatically calculate current epoch and next adjustment
+            const currentEpoch = Math.floor((currentBlockHeight - GENESIS_BLOCK) / BLOCKS_PER_EPOCH);
+            const currentEpochStart = GENESIS_BLOCK + (currentEpoch * BLOCKS_PER_EPOCH);
+            const nextAdjustmentBlock = GENESIS_BLOCK + ((currentEpoch + 1) * BLOCKS_PER_EPOCH);
 
-            if (blocksRemaining <= 0) {
-                // Adjustment has occurred
+            const blocksRemaining = nextAdjustmentBlock - currentBlockHeight;
+            const blocksPassed = currentBlockHeight - currentEpochStart;
+
+            // Show celebration for first 3 blocks of new epoch
+            if (blocksPassed < 3) {
                 container.innerHTML = `
                     <div class="countdown-content">
                         <div class="countdown-complete">
                             <div class="checkmark">✓</div>
                             <div class="message">New rates now active!</div>
+                        </div>
+                        <div class="countdown-stats" style="margin-top: 16px;">
+                            <div class="stat-row">
+                                <span class="stat-label">Current block</span>
+                                <span class="stat-value" style="color: var(--accent-green);">${formatNumber(currentBlockHeight)}</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Next adjustment</span>
+                                <span class="stat-value" style="color: var(--accent-green);">${formatNumber(nextAdjustmentBlock)}</span>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -1951,9 +1968,7 @@
             }
 
             // Calculate progress and time
-            const startBlock = 937671; // Fifth difficulty adjustment (start of epoch 6)
-            const totalBlocks = DIFFICULTY_ADJUSTMENT_BLOCK - startBlock;
-            const blocksPassed = currentBlockHeight - startBlock;
+            const totalBlocks = BLOCKS_PER_EPOCH;
             const progressPercent = Math.min(100, Math.max(0, (blocksPassed / totalBlocks) * 100));
 
             const msRemaining = blocksRemaining * blockTimeAvg;
@@ -1975,7 +1990,7 @@
                         </div>
                         <div class="stat-row">
                             <span class="stat-label">Target block</span>
-                            <span class="stat-value" style="color: var(--accent-green);">${formatNumber(DIFFICULTY_ADJUSTMENT_BLOCK)}</span>
+                            <span class="stat-value" style="color: var(--accent-green);">${formatNumber(nextAdjustmentBlock)}</span>
                         </div>
                         <div class="stat-row">
                             <span class="stat-label">Est. time</span>
