@@ -710,6 +710,16 @@
             padding: 6px 10px;
             border-radius: 16px;
             font-size: 0.85rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .country-tag:hover {
+            background: var(--accent-blue);
+            color: white;
+            transform: translateY(-2px);
         }
 
         .country-flag {
@@ -1265,11 +1275,11 @@
                         <div class="insight-total">${stats.countries?.length || 0} active</div>
                         <div class="countries-list" id="countries-list">
                             ${(stats.countries || []).map(c => `
-                                <span class="country-tag">
+                                <a href="members.html?country=${encodeURIComponent(c.flag + ' ' + c.country)}" class="country-tag">
                                     <span class="country-flag">${c.flag}</span>
                                     <span class="country-name">${c.country}</span>
                                     ${c.count > 1 ? `<span class="country-count">(${c.count})</span>` : ''}
-                                </span>
+                                </a>
                             `).join('')}
                         </div>
                     </div>

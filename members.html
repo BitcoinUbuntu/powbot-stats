@@ -164,6 +164,17 @@
             cursor: pointer;
         }
 
+        select.filter-btn.active {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: white;
+        }
+
+        select.filter-btn.active option {
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+
         /* Member Grid */
         .members-grid {
             display: grid;
@@ -611,6 +622,7 @@
                     epoch5: epoch5Data
                 };
                 initializeFilters();
+                applyURLFilters();
                 updateStats();
                 renderMembers();
             })
@@ -635,6 +647,19 @@
                 option.textContent = country;
                 countrySelect.appendChild(option);
             });
+        }
+
+        function applyURLFilters() {
+            // Check for URL parameters and apply filters
+            const urlParams = new URLSearchParams(window.location.search);
+            const countryParam = urlParams.get('country');
+
+            if (countryParam) {
+                currentCountry = countryParam;
+                const countrySelect = document.getElementById('country-filter');
+                countrySelect.value = countryParam;
+                countrySelect.classList.add('active');
+            }
         }
 
         function getEpoch5PostCount(member) {
@@ -1143,6 +1168,12 @@
 
         document.getElementById('country-filter').addEventListener('change', (e) => {
             currentCountry = e.target.value;
+            // Highlight dropdown when a country is selected
+            if (currentCountry) {
+                e.target.classList.add('active');
+            } else {
+                e.target.classList.remove('active');
+            }
             renderMembers();
         });
 
