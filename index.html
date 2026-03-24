@@ -330,16 +330,23 @@
             border-bottom: none;
         }
 
+        /* Mobile-safe hover - no layout shifts */
         a.top-performer-item:hover {
             background: rgba(163, 113, 247, 0.1);
-            margin: 0 -8px;
-            padding: 8px 8px;
             border-radius: 8px;
-            transform: translateX(4px);
         }
 
         a.top-performer-item:hover .top-performer-name {
             color: var(--accent-purple);
+        }
+
+        /* Desktop-only polished hover - layout shifts allowed */
+        @media (hover: hover) and (pointer: fine) {
+            a.top-performer-item:hover {
+                margin: 0 -8px;
+                padding: 8px 8px;
+                transform: translateX(4px);
+            }
         }
 
         .top-performer-rank {
