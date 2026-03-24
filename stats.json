@@ -1,26 +1,52 @@
 {
   "totals": {
-    "all_payments": 0,
-    "by_type": {}
+    "all_payments": 3,
+    "by_type": {
+      "merchant": {
+        "count": 1
+      },
+      "project": {
+        "count": 1
+      },
+      "reviewer": {
+        "count": 1
+      }
+    }
   },
   "today": {
-    "date": "2026-03-23",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "date": "2026-03-24",
+    "payments": 3,
+    "by_type": {
+      "merchant": {
+        "count": 1
+      },
+      "project": {
+        "count": 1
+      },
+      "reviewer": {
+        "count": 1
+      }
+    },
+    "approved": 1,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2031308988403360062",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Kwallos Shop",
+        "platform": "X",
+        "time": "08:49"
+      }
+    ]
   },
   "last_24h": {
-    "videos": []
+    "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      }
+    ]
   },
   "daily": [
-    {
-      "date": "2026-02-22",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
-    },
     {
       "date": "2026-02-23",
       "project_count": 0,
@@ -194,23 +220,69 @@
       "project_count": 0,
       "merchant_count": 0,
       "reviewer_count": 0
+    },
+    {
+      "date": "2026-03-24",
+      "project_count": 1,
+      "merchant_count": 1,
+      "reviewer_count": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 0,
-    "approved": 0,
+    "total_reviewed": 1,
+    "approved": 1,
     "rejected": 0
   },
-  "top_projects": [],
-  "top_merchants": [],
+  "top_projects": [
+    {
+      "name": "Bitcoin Ekasi 🇿🇦",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2031308988403360062",
+          "date": "2026-03-24",
+          "merchant": "Kwallos Shop"
+        }
+      ]
+    }
+  ],
+  "top_merchants": [
+    {
+      "name": "Kwallos Shop",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2031308988403360062",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    }
+  ],
   "launch": {
-    "date": "2026-03-23",
-    "days_active": 0,
-    "daily_average_payments": 0
+    "date": "Mar 24",
+    "days_active": 1,
+    "daily_average_payments": 3
   },
-  "lightning_providers": [],
-  "countries": [],
-  "platforms": [],
-  "generated_at": "2026-03-23T22:20:01.836075+00:00",
+  "lightning_providers": [
+    {
+      "domain": "blink.sv",
+      "count": 3
+    }
+  ],
+  "countries": [
+    {
+      "flag": "🇿🇦",
+      "country": "South Africa",
+      "count": 1
+    }
+  ],
+  "platforms": [
+    {
+      "platform": "X",
+      "count": 3
+    }
+  ],
+  "generated_at": "2026-03-24T09:12:48.707459+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
