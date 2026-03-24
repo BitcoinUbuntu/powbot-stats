@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 72,
+    "all_payments": 78,
     "by_type": {
       "merchant": {
-        "count": 24
+        "count": 26
       },
       "project": {
-        "count": 24
+        "count": 26
       },
       "reviewer": {
-        "count": 24
+        "count": 26
       }
     }
   },
   "today": {
     "date": "2026-03-24",
-    "payments": 72,
+    "payments": 78,
     "by_type": {
       "merchant": {
-        "count": 24
+        "count": 26
       },
       "project": {
-        "count": 24
+        "count": 26
       },
       "reviewer": {
-        "count": 24
+        "count": 26
       }
     },
-    "approved": 24,
+    "approved": 26,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2036510768489746651",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Dona Marta Stand Shop",
+        "platform": "X",
+        "time": "18:48"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs0sxwp0cuxt7s7yxtrwkc4l3hr8hp7alu3648xqkz84vsr3z0yzhcnyn3lw",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Dona Marta Stand Shop",
+        "platform": "Nostr",
+        "time": "18:45"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsdwwkhkcm0gpmknst5ewu68h67rx38fwnx397trhkp7ajce3240vcax5xjm",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -202,6 +216,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -453,21 +473,31 @@
     },
     {
       "date": "2026-03-24",
-      "project_count": 24,
-      "merchant_count": 24,
-      "reviewer_count": 24
+      "project_count": 26,
+      "merchant_count": 26,
+      "reviewer_count": 26
     }
   ],
   "reviewer": {
-    "total_reviewed": 24,
-    "approved": 24,
+    "total_reviewed": 26,
+    "approved": 26,
     "rejected": 0
   },
   "top_projects": [
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 8,
+      "count": 10,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2036510768489746651",
+          "date": "2026-03-24",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0sxwp0cuxt7s7yxtrwkc4l3hr8hp7alu3648xqkz84vsr3z0yzhcnyn3lw",
+          "date": "2026-03-24",
+          "merchant": "Dona Marta Stand Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsdwwkhkcm0gpmknst5ewu68h67rx38fwnx397trhkp7ajce3240vcax5xjm",
           "date": "2026-03-24",
@@ -789,6 +819,22 @@
       ]
     },
     {
+      "name": "Dona Marta Stand Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2036510768489746651",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0sxwp0cuxt7s7yxtrwkc4l3hr8hp7alu3648xqkz84vsr3z0yzhcnyn3lw",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Ayoola Minimart",
       "count": 2,
       "posts": [
@@ -830,12 +876,12 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 1,
-    "daily_average_payments": 72
+    "daily_average_payments": 78
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 72
+      "count": 78
     }
   ],
   "countries": [
@@ -868,13 +914,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 36
+      "count": 39
     },
     {
       "platform": "Nostr",
-      "count": 36
+      "count": 39
     }
   ],
-  "generated_at": "2026-03-24T18:40:01.913650+00:00",
+  "generated_at": "2026-03-24T18:50:02.464552+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
