@@ -364,27 +364,15 @@
             margin-bottom: 20px;
         }
 
-        .stats-grid .card:nth-child(3):last-child {
-            grid-column: span 2;
-        }
-
-        @media (min-width: 1000px) {
+        @media (min-width: 900px) {
             .stats-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-
-            .stats-grid .card:nth-child(3):last-child {
-                grid-column: span 1;
+                grid-template-columns: repeat(4, 1fr);
             }
         }
 
         @media (max-width: 600px) {
             .stats-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .stats-grid .card:nth-child(3):last-child {
-                grid-column: span 1;
             }
         }
 
@@ -420,8 +408,10 @@
         .stat-row {
             display: flex;
             justify-content: space-between;
+            align-items: flex-end;
             padding: 8px 0;
             border-bottom: 1px solid var(--border);
+            gap: 12px;
         }
 
         .stat-row:last-child {
@@ -430,10 +420,13 @@
 
         .stat-label {
             color: var(--text-secondary);
+            flex: 1;
         }
 
         .stat-value {
             font-weight: 600;
+            white-space: nowrap;
+            text-align: right;
         }
 
         .stat-value.merchant { color: var(--accent-green); }
@@ -2117,7 +2110,7 @@
                     (day.project_count > (max?.project_count || 0)) ? day : max, null);
                 if (recordDay && recordDay.project_count > 0) {
                     highlights.push({
-                        label: `📈 Approval record (${formatDate(recordDay.date)})`,
+                        label: `📈 Approval record <span style="white-space: nowrap;">(${formatDate(recordDay.date)})</span>`,
                         value: `${recordDay.project_count} posts`
                     });
                 }
