@@ -653,12 +653,24 @@
             // Check for URL parameters and apply filters
             const urlParams = new URLSearchParams(window.location.search);
             const countryParam = urlParams.get('country');
+            const filterParam = urlParams.get('filter');
 
             if (countryParam) {
                 currentCountry = countryParam;
                 const countrySelect = document.getElementById('country-filter');
                 countrySelect.value = countryParam;
                 countrySelect.classList.add('active');
+            }
+
+            if (filterParam) {
+                currentFilter = filterParam;
+                // Update button states
+                document.querySelectorAll('[data-filter]').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.filter === filterParam) {
+                        btn.classList.add('active');
+                    }
+                });
             }
         }
 

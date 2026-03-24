@@ -1282,7 +1282,7 @@
                         <div class="insight-total">${epoch4Live.countries?.length || 0} active</div>
                         <div class="countries-list" id="countries-list">
                             ${(epoch4Live.countries || []).map(c => `
-                                <a href="members.html?country=${encodeURIComponent(c.flag + ' ' + c.country)}" class="country-tag">
+                                <a href="members.html?filter=active&country=${encodeURIComponent(c.flag + ' ' + c.country)}" class="country-tag">
                                     <span class="country-flag">${c.flag}</span>
                                     <span class="country-name">${c.country}</span>
                                     ${c.count > 1 ? `<span class="country-count">(${c.count})</span>` : ''}
