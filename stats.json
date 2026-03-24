@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 48,
+    "all_payments": 54,
     "by_type": {
       "merchant": {
-        "count": 16
+        "count": 18
       },
       "project": {
-        "count": 16
+        "count": 18
       },
       "reviewer": {
-        "count": 16
+        "count": 18
       }
     }
   },
   "today": {
     "date": "2026-03-24",
-    "payments": 48,
+    "payments": 54,
     "by_type": {
       "merchant": {
-        "count": 16
+        "count": 18
       },
       "project": {
-        "count": 16
+        "count": 18
       },
       "reviewer": {
-        "count": 16
+        "count": 18
       }
     },
-    "approved": 16,
+    "approved": 18,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsxcc5yqp7alvy06tekmrw4txvqawv9najdfg6rwk3sp49enyw9qlstq7uhm",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Ayoola Minimart",
+        "platform": "Nostr",
+        "time": "11:39"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsrfpprvdfdfs8syy44pdlnw99p5zraengfcmmhky89pjwh2n5zkuqk6j0lf",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "Nostr",
+        "time": "11:38"
+      },
       {
         "url": "https://x.com/i/status/2036395349577695397",
         "project": "Bitcoin Ekiti 🇳🇬",
@@ -146,6 +160,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Ekiti 🇳🇬"
       },
@@ -373,14 +393,14 @@
     },
     {
       "date": "2026-03-24",
-      "project_count": 16,
-      "merchant_count": 16,
-      "reviewer_count": 16
+      "project_count": 18,
+      "merchant_count": 18,
+      "reviewer_count": 18
     }
   ],
   "reviewer": {
-    "total_reviewed": 16,
-    "approved": 16,
+    "total_reviewed": 18,
+    "approved": 18,
     "rejected": 0
   },
   "top_projects": [
@@ -422,8 +442,13 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 4,
+      "count": 5,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrfpprvdfdfs8syy44pdlnw99p5zraengfcmmhky89pjwh2n5zkuqk6j0lf",
+          "date": "2026-03-24",
+          "merchant": "Grandsmatt"
+        },
         {
           "url": "https://primal.net/e/nevent1qqst4gfr0237me2rvyzc33kmzmf69aqmazhgughk7682hwy3z5e483qsjfa72",
           "date": "2026-03-24",
@@ -468,6 +493,22 @@
       ]
     },
     {
+      "name": "Bitcoin Ekiti 🇳🇬",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxcc5yqp7alvy06tekmrw4txvqawv9najdfg6rwk3sp49enyw9qlstq7uhm",
+          "date": "2026-03-24",
+          "merchant": "Ayoola Minimart"
+        },
+        {
+          "url": "https://x.com/i/status/2036395349577695397",
+          "date": "2026-03-24",
+          "merchant": "Ayoola Minimart"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Dua 🇬🇭",
       "count": 2,
       "posts": [
@@ -480,17 +521,6 @@
           "url": "https://x.com/i/status/2036214499900899561",
           "date": "2026-03-24",
           "merchant": "Preso's Food and Drinks"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2036395349577695397",
-          "date": "2026-03-24",
-          "merchant": "Ayoola Minimart"
         }
       ]
     }
@@ -609,6 +639,22 @@
       ]
     },
     {
+      "name": "Ayoola Minimart",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxcc5yqp7alvy06tekmrw4txvqawv9najdfg6rwk3sp49enyw9qlstq7uhm",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2036395349577695397",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Jabulani Shop 3",
       "count": 1,
       "posts": [
@@ -620,13 +666,13 @@
       ]
     },
     {
-      "name": "Ayoola Minimart",
+      "name": "Grandsmatt",
       "count": 1,
       "posts": [
         {
-          "url": "https://x.com/i/status/2036395349577695397",
+          "url": "https://primal.net/e/nevent1qqsrfpprvdfdfs8syy44pdlnw99p5zraengfcmmhky89pjwh2n5zkuqk6j0lf",
           "date": "2026-03-24",
-          "project": "Bitcoin Ekiti 🇳🇬"
+          "project": "Bitbiashara 🇰🇪"
         }
       ]
     }
@@ -634,12 +680,12 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 1,
-    "daily_average_payments": 48
+    "daily_average_payments": 54
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 48
+      "count": 54
     }
   ],
   "countries": [
@@ -676,9 +722,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 21
+      "count": 27
     }
   ],
-  "generated_at": "2026-03-24T11:30:02.333909+00:00",
+  "generated_at": "2026-03-24T11:40:02.083170+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
