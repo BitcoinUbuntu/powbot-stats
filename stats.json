@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 42,
+    "all_payments": 45,
     "by_type": {
       "merchant": {
-        "count": 14
+        "count": 15
       },
       "project": {
-        "count": 14
+        "count": 15
       },
       "reviewer": {
-        "count": 14
+        "count": 15
       }
     }
   },
   "today": {
     "date": "2026-03-24",
-    "payments": 42,
+    "payments": 45,
     "by_type": {
       "merchant": {
-        "count": 14
+        "count": 15
       },
       "project": {
-        "count": 14
+        "count": 15
       },
       "reviewer": {
-        "count": 14
+        "count": 15
       }
     },
-    "approved": 14,
+    "approved": 15,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2033459777913716800",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Jabulani Shop 3",
+        "platform": "X",
+        "time": "10:23"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsvdwsujxvm39qcvls55qfjythrn0eh0eqjyuh0xuxf0fw6najjv6sdvgnzk",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -132,6 +139,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -353,14 +363,14 @@
     },
     {
       "date": "2026-03-24",
-      "project_count": 14,
-      "merchant_count": 14,
-      "reviewer_count": 14
+      "project_count": 15,
+      "merchant_count": 15,
+      "reviewer_count": 15
     }
   ],
   "reviewer": {
-    "total_reviewed": 14,
-    "approved": 14,
+    "total_reviewed": 15,
+    "approved": 15,
     "rejected": 0
   },
   "top_projects": [
@@ -428,8 +438,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 2,
+      "count": 3,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2033459777913716800",
+          "date": "2026-03-24",
+          "merchant": "Jabulani Shop 3"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsq7r77mlck9j5ftlmrlp4fzz73ypgrqxvvzl4yxsrm3cvzghfdrmsdfp7ac",
           "date": "2026-03-24",
@@ -571,17 +586,28 @@
           "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
+    },
+    {
+      "name": "Jabulani Shop 3",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2033459777913716800",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Mar 24",
     "days_active": 1,
-    "daily_average_payments": 42
+    "daily_average_payments": 45
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 42
+      "count": 45
     }
   ],
   "countries": [
@@ -609,13 +635,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 21
+      "count": 24
     },
     {
       "platform": "Nostr",
       "count": 21
     }
   ],
-  "generated_at": "2026-03-24T10:20:02.111090+00:00",
+  "generated_at": "2026-03-24T10:30:01.737294+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
