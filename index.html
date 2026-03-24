@@ -330,16 +330,16 @@
             border-bottom: none;
         }
 
-        .top-performer-item:hover {
-            background: rgba(163, 113, 247, 0.15);
+        a.top-performer-item:hover {
+            background: rgba(163, 113, 247, 0.1);
+            margin: 0 -8px;
+            padding: 8px 8px;
+            border-radius: 8px;
+            transform: translateX(4px);
         }
 
-        .top-performer-item:hover .top-performer-name {
+        a.top-performer-item:hover .top-performer-name {
             color: var(--accent-purple);
-        }
-
-        .top-performer-item:active {
-            background: rgba(163, 113, 247, 0.2);
         }
 
         .top-performer-rank {
@@ -1607,6 +1607,9 @@
             // Strip flag emojis from name
             const stripFlags = (name) => name.replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
 
+            // Detect touch device - disable links on mobile
+            const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
             // Count approvals per project
             const projectCounts = {};
             videos.forEach(video => {
@@ -1624,10 +1627,11 @@
             container.innerHTML = sorted.map(([project, count], index) => {
                 const metadata = projectMetadata[project];
                 const profileUrl = metadata?.info_url || '#';
-                const tag = metadata?.info_url ? 'a' : 'div';
+                // Use div on touch devices, link on desktop
+                const tag = (isTouchDevice || !metadata?.info_url) ? 'div' : 'a';
 
                 return `
-                    <${tag} href="${profileUrl}" class="top-performer-item">
+                    <${tag} ${tag === 'a' ? `href="${profileUrl}"` : ''} class="top-performer-item">
                         <span class="top-performer-rank">${rankEmojis[index]}</span>
                         <span class="top-performer-name">${stripFlags(project)}</span>
                         <span class="top-performer-count">${count}</span>
