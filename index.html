@@ -320,10 +320,26 @@
             justify-content: space-between;
             padding: 8px 0;
             border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s;
+            cursor: pointer;
         }
 
         .top-performer-item:last-child {
             border-bottom: none;
+        }
+
+        .top-performer-item:hover {
+            background: rgba(163, 113, 247, 0.1);
+            margin: 0 -8px;
+            padding: 8px 8px;
+            border-radius: 8px;
+            transform: translateX(4px);
+        }
+
+        .top-performer-item:hover .top-performer-name {
+            color: var(--accent-purple);
         }
 
         .top-performer-rank {
@@ -1601,14 +1617,20 @@
 
             const rankEmojis = ['🥇', '🥈', '🥉'];
 
-            container.innerHTML = sorted.map(([project, count], index) => `
-                <div class="top-performer-item">
-                    <span class="top-performer-rank">${rankEmojis[index]}</span>
-                    <span class="top-performer-name">${stripFlags(project)}</span>
-                    <span class="top-performer-count">${count}</span>
-                    <span class="top-performer-label">${count === 1 ? 'post' : 'posts'}</span>
-                </div>
-            `).join('');
+            container.innerHTML = sorted.map(([project, count], index) => {
+                const metadata = projectMetadata[project];
+                const profileUrl = metadata?.info_url || '#';
+                const tag = metadata?.info_url ? 'a' : 'div';
+
+                return `
+                    <${tag} href="${profileUrl}" class="top-performer-item">
+                        <span class="top-performer-rank">${rankEmojis[index]}</span>
+                        <span class="top-performer-name">${stripFlags(project)}</span>
+                        <span class="top-performer-count">${count}</span>
+                        <span class="top-performer-label">${count === 1 ? 'post' : 'posts'}</span>
+                    </${tag}>
+                `;
+            }).join('');
         }
 
         function renderChart(daily) {
