@@ -1627,7 +1627,7 @@
                 const tag = metadata?.info_url ? 'a' : 'div';
 
                 return `
-                    <${tag} href="${profileUrl}" class="top-performer-item" data-url="${profileUrl}">
+                    <${tag} href="${profileUrl}" class="top-performer-item">
                         <span class="top-performer-rank">${rankEmojis[index]}</span>
                         <span class="top-performer-name">${stripFlags(project)}</span>
                         <span class="top-performer-count">${count}</span>
@@ -1635,16 +1635,6 @@
                     </${tag}>
                 `;
             }).join('');
-
-            // Add explicit click handlers for mobile compatibility
-            container.querySelectorAll('.top-performer-item').forEach(item => {
-                const url = item.getAttribute('data-url');
-                if (url && url !== '#') {
-                    item.addEventListener('click', (e) => {
-                        window.location.href = url;
-                    });
-                }
-            });
         }
 
         function renderChart(daily) {
