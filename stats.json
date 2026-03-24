@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 57,
+    "all_payments": 66,
     "by_type": {
       "merchant": {
-        "count": 19
+        "count": 22
       },
       "project": {
-        "count": 19
+        "count": 22
       },
       "reviewer": {
-        "count": 19
+        "count": 22
       }
     }
   },
   "today": {
     "date": "2026-03-24",
-    "payments": 57,
+    "payments": 66,
     "by_type": {
       "merchant": {
-        "count": 19
+        "count": 22
       },
       "project": {
-        "count": 19
+        "count": 22
       },
       "reviewer": {
-        "count": 19
+        "count": 22
       }
     },
-    "approved": 19,
+    "approved": 22,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs92prhvwvkhnq4344f27ujt345gjv4wmpeepnucmcka2p7twh48kqadsx30",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "Wa Ngala Hardware",
+        "platform": "Nostr",
+        "time": "11:58"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsp7syewyuzlqtx3mk62876ujnk2hduhpxl24jvh03373cdqmja4cqc70drk",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Ellygant Unisex Salon",
+        "platform": "Nostr",
+        "time": "11:57"
+      },
+      {
+        "url": "https://x.com/i/status/2036404666301284738",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "X",
+        "time": "11:56"
+      },
       {
         "url": "https://x.com/i/status/2036407703967240585",
         "project": "Bitcoin Ikorodu 🇳🇬",
@@ -167,6 +188,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "EcoBitz 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -403,14 +433,14 @@
     },
     {
       "date": "2026-03-24",
-      "project_count": 19,
-      "merchant_count": 19,
-      "reviewer_count": 19
+      "project_count": 22,
+      "merchant_count": 22,
+      "reviewer_count": 22
     }
   ],
   "reviewer": {
-    "total_reviewed": 19,
-    "approved": 19,
+    "total_reviewed": 22,
+    "approved": 22,
     "rejected": 0
   },
   "top_projects": [
@@ -452,8 +482,13 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 5,
+      "count": 6,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2036404666301284738",
+          "date": "2026-03-24",
+          "merchant": "Grandsmatt"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrfpprvdfdfs8syy44pdlnw99p5zraengfcmmhky89pjwh2n5zkuqk6j0lf",
           "date": "2026-03-24",
@@ -503,6 +538,22 @@
       ]
     },
     {
+      "name": "Bitcoin Ikorodu 🇳🇬",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp7syewyuzlqtx3mk62876ujnk2hduhpxl24jvh03373cdqmja4cqc70drk",
+          "date": "2026-03-24",
+          "merchant": "Ellygant Unisex Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2036407703967240585",
+          "date": "2026-03-24",
+          "merchant": "Ellygant Unisex Salon"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Ekiti 🇳🇬",
       "count": 2,
       "posts": [
@@ -535,13 +586,13 @@
       ]
     },
     {
-      "name": "Bitcoin Ikorodu 🇳🇬",
+      "name": "EcoBitz 🇰🇪",
       "count": 1,
       "posts": [
         {
-          "url": "https://x.com/i/status/2036407703967240585",
+          "url": "https://primal.net/e/nevent1qqs92prhvwvkhnq4344f27ujt345gjv4wmpeepnucmcka2p7twh48kqadsx30",
           "date": "2026-03-24",
-          "merchant": "Ellygant Unisex Salon"
+          "merchant": "Wa Ngala Hardware"
         }
       ]
     }
@@ -644,6 +695,22 @@
       ]
     },
     {
+      "name": "Grandsmatt",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2036404666301284738",
+          "date": "2026-03-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrfpprvdfdfs8syy44pdlnw99p5zraengfcmmhky89pjwh2n5zkuqk6j0lf",
+          "date": "2026-03-24",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Folami Game Zone",
       "count": 2,
       "posts": [
@@ -656,6 +723,22 @@
           "url": "https://x.com/i/status/2036118314569572836",
           "date": "2026-03-24",
           "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
+      "name": "Ellygant Unisex Salon",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp7syewyuzlqtx3mk62876ujnk2hduhpxl24jvh03373cdqmja4cqc70drk",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2036407703967240585",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ikorodu 🇳🇬"
         }
       ]
     },
@@ -676,6 +759,17 @@
       ]
     },
     {
+      "name": "Wa Ngala Hardware",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs92prhvwvkhnq4344f27ujt345gjv4wmpeepnucmcka2p7twh48kqadsx30",
+          "date": "2026-03-24",
+          "project": "EcoBitz 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Jabulani Shop 3",
       "count": 1,
       "posts": [
@@ -685,51 +779,29 @@
           "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
-    },
-    {
-      "name": "Grandsmatt",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsrfpprvdfdfs8syy44pdlnw99p5zraengfcmmhky89pjwh2n5zkuqk6j0lf",
-          "date": "2026-03-24",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Ellygant Unisex Salon",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2036407703967240585",
-          "date": "2026-03-24",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
     }
   ],
   "launch": {
     "date": "Mar 24",
     "days_active": 1,
-    "daily_average_payments": 57
+    "daily_average_payments": 66
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 57
+      "count": 66
     }
   ],
   "countries": [
     {
-      "flag": "🇳🇬",
-      "country": "Nigeria",
+      "flag": "🇰🇪",
+      "country": "Kenya",
       "count": 2
     },
     {
-      "flag": "🇰🇪",
-      "country": "Kenya",
-      "count": 1
+      "flag": "🇳🇬",
+      "country": "Nigeria",
+      "count": 2
     },
     {
       "flag": "🇿🇦",
@@ -750,13 +822,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 30
+      "count": 33
     },
     {
       "platform": "Nostr",
-      "count": 27
+      "count": 33
     }
   ],
-  "generated_at": "2026-03-24T11:50:01.677178+00:00",
+  "generated_at": "2026-03-24T12:00:02.493226+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
