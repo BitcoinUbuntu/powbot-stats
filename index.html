@@ -2269,10 +2269,10 @@
         // Load and render stats
         async function loadStats() {
             try {
-                // Load both stats and metadata
-                const [statsResponse, metadataResponse] = await Promise.all([
+                // Load both stats and members
+                const [statsResponse, membersResponse] = await Promise.all([
                     fetch('stats.json?t=' + Date.now()),
-                    fetch('project-metadata.json?t=' + Date.now()).catch(() => null)
+                    fetch('members.json?t=' + Date.now()).catch(() => null)
                 ]);
 
                 if (!statsResponse.ok) {
@@ -2280,9 +2280,17 @@
                 }
                 const stats = await statsResponse.json();
 
-                // Load metadata if available
-                if (metadataResponse && metadataResponse.ok) {
-                    projectMetadata = await metadataResponse.json();
+                // Build project metadata from members.json
+                if (membersResponse && membersResponse.ok) {
+                    const membersData = await membersResponse.json();
+                    // Build lookup map: project name with flag → profile URL
+                    membersData.members.forEach(member => {
+                        // Match format used in stats: "Bitbiashara 🇰🇪"
+                        const projectKey = `${member.name} ${member.flag}`;
+                        projectMetadata[projectKey] = {
+                            info_url: `profile.html?id=${member.id}`
+                        };
+                    });
                 }
 
                 renderDashboard(stats);

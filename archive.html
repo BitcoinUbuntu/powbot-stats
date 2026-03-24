@@ -2158,14 +2158,20 @@
         async function loadStats() {
             try {
                 // Load all data sources
-                const [epoch4Live, historical, metadata] = await Promise.all([
+                const [epoch4Live, historical, members] = await Promise.all([
                     fetch('stats-epoch4.json?t=' + Date.now()).then(r => r.json()),
                     fetch('stats-historical.json?t=' + Date.now()).then(r => r.json()),
-                    fetch('project-metadata.json?t=' + Date.now()).then(r => r.json()).catch(() => ({}))
+                    fetch('members.json?t=' + Date.now()).then(r => r.json()).catch(() => ({ members: [] }))
                 ]);
 
-                // Store metadata globally
-                projectMetadata = metadata;
+                // Build project metadata from members.json
+                members.members.forEach(member => {
+                    // Match format used in stats: "Bitbiashara 🇰🇪"
+                    const projectKey = `${member.name} ${member.flag}`;
+                    projectMetadata[projectKey] = {
+                        info_url: `profile.html?id=${member.id}`
+                    };
+                });
 
                 renderDashboard(epoch4Live, historical);
             } catch (error) {
