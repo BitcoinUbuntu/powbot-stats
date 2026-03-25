@@ -1,28 +1,59 @@
 {
   "totals": {
-    "all_payments": 90,
+    "all_payments": 96,
     "by_type": {
       "merchant": {
-        "count": 30
+        "count": 32
       },
       "project": {
-        "count": 30
+        "count": 32
       },
       "reviewer": {
-        "count": 30
+        "count": 32
       }
     }
   },
   "today": {
     "date": "2026-03-25",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 6,
+    "by_type": {
+      "merchant": {
+        "count": 2
+      },
+      "project": {
+        "count": 2
+      },
+      "reviewer": {
+        "count": 2
+      }
+    },
+    "approved": 2,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsz6hlehacne2jgprwvkkn2k9aef2fmfacl2ljtqsjnz4wltswf52sd6z3rc",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Sena Store",
+        "platform": "Nostr",
+        "time": "03:48"
+      },
+      {
+        "url": "https://x.com/i/status/2036549899513196557",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Sena Store",
+        "platform": "X",
+        "time": "03:47"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -292,14 +323,14 @@
     },
     {
       "date": "2026-03-25",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 2,
+      "merchant_count": 2,
+      "reviewer_count": 2
     }
   ],
   "reviewer": {
-    "total_reviewed": 30,
-    "approved": 30,
+    "total_reviewed": 32,
+    "approved": 32,
     "rejected": 0
   },
   "top_projects": [
@@ -360,6 +391,42 @@
       ]
     },
     {
+      "name": "Bitcoin Dua 🇬🇭",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsz6hlehacne2jgprwvkkn2k9aef2fmfacl2ljtqsjnz4wltswf52sd6z3rc",
+          "date": "2026-03-25",
+          "merchant": "Sena Store"
+        },
+        {
+          "url": "https://x.com/i/status/2036549899513196557",
+          "date": "2026-03-25",
+          "merchant": "Sena Store"
+        },
+        {
+          "url": "https://x.com/i/status/2036548013494014211",
+          "date": "2026-03-24",
+          "merchant": "Antitor Provision Store"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswqh6n9rhqtrj4ujqg0tdds3qdrjlyg6vyyg4hs738g8l26t2crqg59pjjl",
+          "date": "2026-03-24",
+          "merchant": "Antitor Provision Store"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgkw4mlruhla2mqvrwmqfzrm4ngjkshssl46ed3egn8jguc58l4zspd9laq",
+          "date": "2026-03-24",
+          "merchant": "Preso's Food and Drinks"
+        },
+        {
+          "url": "https://x.com/i/status/2036214499900899561",
+          "date": "2026-03-24",
+          "merchant": "Preso's Food and Drinks"
+        }
+      ]
+    },
+    {
       "name": "Bitbiashara 🇰🇪",
       "count": 6,
       "posts": [
@@ -392,32 +459,6 @@
           "url": "https://x.com/i/status/2036276822472556817",
           "date": "2026-03-24",
           "merchant": "Lydiah Richland Shop"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Dua 🇬🇭",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2036548013494014211",
-          "date": "2026-03-24",
-          "merchant": "Antitor Provision Store"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswqh6n9rhqtrj4ujqg0tdds3qdrjlyg6vyyg4hs738g8l26t2crqg59pjjl",
-          "date": "2026-03-24",
-          "merchant": "Antitor Provision Store"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgkw4mlruhla2mqvrwmqfzrm4ngjkshssl46ed3egn8jguc58l4zspd9laq",
-          "date": "2026-03-24",
-          "merchant": "Preso's Food and Drinks"
-        },
-        {
-          "url": "https://x.com/i/status/2036214499900899561",
-          "date": "2026-03-24",
-          "merchant": "Preso's Food and Drinks"
         }
       ]
     },
@@ -516,6 +557,22 @@
           "url": "https://x.com/i/status/2035686016615424433",
           "date": "2026-03-24",
           "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
+      "name": "Sena Store",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsz6hlehacne2jgprwvkkn2k9aef2fmfacl2ljtqsjnz4wltswf52sd6z3rc",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2036549899513196557",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dua 🇬🇭"
         }
       ]
     },
@@ -753,12 +810,12 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 1,
-    "daily_average_payments": 90
+    "daily_average_payments": 96
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 90
+      "count": 96
     }
   ],
   "countries": [
@@ -791,13 +848,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 45
+      "count": 48
     },
     {
       "platform": "Nostr",
-      "count": 45
+      "count": 48
     }
   ],
-  "generated_at": "2026-03-25T03:40:02.184527+00:00",
+  "generated_at": "2026-03-25T03:50:01.589224+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
