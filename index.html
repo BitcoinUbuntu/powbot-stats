@@ -1471,7 +1471,7 @@
 
         function renderLeaderboard(elementId, items, type) {
             const container = document.getElementById(elementId);
-            const initialCount = 10;
+            const initialCount = 5;
             const hasMore = items.length > initialCount;
 
             container.innerHTML = items.map((item, index) => {
@@ -1854,8 +1854,7 @@
             const epoch1 = 81;
             const epoch2 = 298;
             const epoch3 = 604;
-            const epoch4Testing = 187;
-            const epoch4Live = 1697;
+            const epoch4Combined = 187 + 1697; // Testing + Live combined
 
             new Chart(ctx, {
                 type: 'bar',
@@ -1884,24 +1883,17 @@
                             borderWidth: 0
                         },
                         {
-                            label: 'Epoch 4 Testing',
-                            data: [epoch4Testing],
-                            backgroundColor: '#c9820a',
-                            borderColor: '#c9820a',
-                            borderWidth: 0
-                        },
-                        {
-                            label: 'Epoch 4',
-                            data: [epoch4Live],
-                            backgroundColor: '#f7931a',
-                            borderColor: '#f7931a',
+                            label: 'Epoch 4 (Feb 26)',
+                            data: [epoch4Combined],
+                            backgroundColor: '#10b981',
+                            borderColor: '#10b981',
                             borderWidth: 0
                         },
                         {
                             label: 'Epoch 5 Live',
                             data: [epoch5Live],
-                            backgroundColor: '#10b981',
-                            borderColor: '#10b981',
+                            backgroundColor: '#f7931a',
+                            borderColor: '#f7931a',
                             borderWidth: 0
                         }
                     ]
