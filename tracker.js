@@ -31,6 +31,12 @@ async function loadTrackerData() {
 
         allSubmissions = data.submissions || [];
 
+        // Update footer timestamp
+        const updatedElement = document.getElementById('updated');
+        if (updatedElement && data.last_updated) {
+            updatedElement.textContent = new Date(data.last_updated).toLocaleString();
+        }
+
         // Populate project dropdown
         populateProjectFilter();
 
