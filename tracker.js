@@ -120,12 +120,6 @@ function applyURLFilters() {
         }
     }
 
-    // Apply platform filter
-    const platformParam = urlParams.get('platform');
-    if (platformParam) {
-        document.getElementById('filter-platform').value = platformParam;
-    }
-
     // Apply search query
     const searchParam = urlParams.get('search');
     if (searchParam) {
@@ -147,11 +141,10 @@ function applyFilters() {
     const statusFilter = document.getElementById('filter-status').value;
     const projectFilter = document.getElementById('filter-project').value;
     const dateFilter = document.getElementById('filter-date').value;
-    const platformFilter = document.getElementById('filter-platform').value;
     const searchQuery = document.getElementById('filter-search').value.toLowerCase();
 
     // Update active filter styling
-    updateFilterActiveStates(statusFilter, projectFilter, dateFilter, platformFilter, searchQuery);
+    updateFilterActiveStates(statusFilter, projectFilter, dateFilter, searchQuery);
 
     // Start with all submissions
     filteredSubmissions = allSubmissions.filter(submission => {
@@ -162,11 +155,6 @@ function applyFilters() {
 
         // Project filter
         if (projectFilter && submission.project_name !== projectFilter) {
-            return false;
-        }
-
-        // Platform filter
-        if (platformFilter && submission.platform !== platformFilter) {
             return false;
         }
 
@@ -196,7 +184,7 @@ function applyFilters() {
     updatePagination();
 }
 
-function updateFilterActiveStates(statusFilter, projectFilter, dateFilter, platformFilter, searchQuery) {
+function updateFilterActiveStates(statusFilter, projectFilter, dateFilter, searchQuery) {
     // Status
     const statusSelect = document.getElementById('filter-status');
     statusSelect.classList.toggle('active', statusFilter !== '');
@@ -208,10 +196,6 @@ function updateFilterActiveStates(statusFilter, projectFilter, dateFilter, platf
     // Date
     const dateSelect = document.getElementById('filter-date');
     dateSelect.classList.toggle('active', dateFilter !== 'all');
-
-    // Platform
-    const platformSelect = document.getElementById('filter-platform');
-    platformSelect.classList.toggle('active', platformFilter !== '');
 
     // Search
     const searchInput = document.getElementById('filter-search');
@@ -453,12 +437,26 @@ function renderPayment(payment) {
 function updatePagination() {
     const totalPages = Math.max(1, Math.ceil(filteredSubmissions.length / ITEMS_PER_PAGE));
 
+    // Update top pagination
     document.getElementById('current-page').textContent = currentPage;
     document.getElementById('total-pages').textContent = totalPages;
-
-    // Update button states
     document.getElementById('btn-prev-page').disabled = currentPage === 1;
     document.getElementById('btn-next-page').disabled = currentPage === totalPages;
+
+    // Update bottom pagination
+    document.getElementById('current-page-bottom').textContent = currentPage;
+    document.getElementById('total-pages-bottom').textContent = totalPages;
+    document.getElementById('btn-prev-page-bottom').disabled = currentPage === 1;
+    document.getElementById('btn-next-page-bottom').disabled = currentPage === totalPages;
+
+    // Show bottom pagination
+    document.getElementById('bottom-pagination').style.display = 'flex';
+
+    // Update results count on bottom
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    document.getElementById('results-count-bottom').textContent =
+        `Showing ${startIndex + 1}-${Math.min(endIndex, filteredSubmissions.length)} of ${filteredSubmissions.length} submissions`;
 }
 
 function goToPage(page) {
@@ -498,16 +496,19 @@ function attachFilterListeners() {
         customRange.style.display = e.target.value === 'custom' ? 'block' : 'none';
         applyFilters();
     });
-    document.getElementById('filter-platform').addEventListener('change', applyFilters);
     document.getElementById('filter-search').addEventListener('input', applyFilters);
 
     // Custom date range
     document.getElementById('filter-date-from').addEventListener('change', applyFilters);
     document.getElementById('filter-date-to').addEventListener('change', applyFilters);
 
-    // Pagination
+    // Top pagination
     document.getElementById('btn-prev-page').addEventListener('click', () => goToPage(currentPage - 1));
     document.getElementById('btn-next-page').addEventListener('click', () => goToPage(currentPage + 1));
+
+    // Bottom pagination
+    document.getElementById('btn-prev-page-bottom').addEventListener('click', () => goToPage(currentPage - 1));
+    document.getElementById('btn-next-page-bottom').addEventListener('click', () => goToPage(currentPage + 1));
 }
 
 function showError(message) {

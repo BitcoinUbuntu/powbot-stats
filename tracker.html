@@ -529,15 +529,6 @@
                         <option value="custom">Custom Range</option>
                     </select>
                 </div>
-
-                <div class="filter-group">
-                    <label for="filter-platform">Platform</label>
-                    <select id="filter-platform">
-                        <option value="">All</option>
-                        <option value="X">X (Twitter)</option>
-                        <option value="Nostr">Nostr</option>
-                    </select>
-                </div>
             </div>
 
             <div class="filter-group search-box">
@@ -576,6 +567,18 @@
             <div class="loading">
                 <div class="loading-spinner"></div>
                 <p style="margin-top: 16px;">Loading submissions...</p>
+            </div>
+        </div>
+
+        <!-- Bottom Pagination -->
+        <div class="results-summary" id="bottom-pagination" style="display: none; margin-top: 20px;">
+            <div class="results-count" id="results-count-bottom"></div>
+            <div class="pagination-controls">
+                <button id="btn-prev-page-bottom">← Previous</button>
+                <span class="page-info">
+                    Page <span id="current-page-bottom">1</span> of <span id="total-pages-bottom">1</span>
+                </span>
+                <button id="btn-next-page-bottom">Next →</button>
             </div>
         </div>
     </div>
