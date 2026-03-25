@@ -1,35 +1,70 @@
 {
   "totals": {
-    "all_payments": 107,
+    "all_payments": 122,
     "by_type": {
       "merchant": {
-        "count": 35
+        "count": 40
       },
       "project": {
-        "count": 35
+        "count": 40
       },
       "reviewer": {
-        "count": 37
+        "count": 42
       }
     }
   },
   "today": {
     "date": "2026-03-25",
-    "payments": 17,
+    "payments": 32,
     "by_type": {
       "merchant": {
-        "count": 5
+        "count": 10
       },
       "project": {
-        "count": 5
+        "count": 10
       },
       "reviewer": {
-        "count": 7
+        "count": 12
       }
     },
-    "approved": 5,
+    "approved": 10,
     "rejected": 2,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2032095033218814174",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Simunye No3",
+        "platform": "X",
+        "time": "09:17"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs8fr4r9pehzkp7mtpp9phw27spzzwq8dxg8tkcvqwmyphldnwvxlgg345pa",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Milofa Skate Shop",
+        "platform": "Nostr",
+        "time": "09:15"
+      },
+      {
+        "url": "https://x.com/i/status/2036728638415015976",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Milofa Skate Shop",
+        "platform": "X",
+        "time": "09:15"
+      },
+      {
+        "url": "https://x.com/i/status/2036713873995071907",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "X",
+        "time": "09:15"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs9ssxz57vu5yu2fnzayn7524fmaqqwf7sp6vu39pmgryyhqyyp8eqawax4l",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "Nostr",
+        "time": "09:15"
+      },
       {
         "url": "https://x.com/i/status/2036693935049888250",
         "project": "Bitcoin Ikorodu 🇳🇬",
@@ -69,6 +104,21 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -350,14 +400,14 @@
     },
     {
       "date": "2026-03-25",
-      "project_count": 5,
-      "merchant_count": 5,
-      "reviewer_count": 7
+      "project_count": 10,
+      "merchant_count": 10,
+      "reviewer_count": 12
     }
   ],
   "reviewer": {
-    "total_reviewed": 37,
-    "approved": 35,
+    "total_reviewed": 42,
+    "approved": 40,
     "rejected": 2
   },
   "top_projects": [
@@ -428,6 +478,52 @@
       ]
     },
     {
+      "name": "Bitbiashara 🇰🇪",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2036713873995071907",
+          "date": "2026-03-25",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9ssxz57vu5yu2fnzayn7524fmaqqwf7sp6vu39pmgryyhqyyp8eqawax4l",
+          "date": "2026-03-25",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2036404666301284738",
+          "date": "2026-03-24",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrfpprvdfdfs8syy44pdlnw99p5zraengfcmmhky89pjwh2n5zkuqk6j0lf",
+          "date": "2026-03-24",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst4gfr0237me2rvyzc33kmzmf69aqmazhgughk7682hwy3z5e483qsjfa72",
+          "date": "2026-03-24",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2036317185426006090",
+          "date": "2026-03-24",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd8mmjtuwcjwjf9g9lrdrnx592sep8ztlxzar6zgnv7u48mdafjsq9uzdpl",
+          "date": "2026-03-24",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2036276822472556817",
+          "date": "2026-03-24",
+          "merchant": "Lydiah Richland Shop"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Dua 🇬🇭",
       "count": 6,
       "posts": [
@@ -464,38 +560,28 @@
       ]
     },
     {
-      "name": "Bitbiashara 🇰🇪",
-      "count": 6,
+      "name": "Bitcoin Ekasi 🇿🇦",
+      "count": 4,
       "posts": [
         {
-          "url": "https://x.com/i/status/2036404666301284738",
-          "date": "2026-03-24",
-          "merchant": "Grandsmatt"
+          "url": "https://x.com/i/status/2032095033218814174",
+          "date": "2026-03-25",
+          "merchant": "Simunye No3"
         },
         {
-          "url": "https://primal.net/e/nevent1qqsrfpprvdfdfs8syy44pdlnw99p5zraengfcmmhky89pjwh2n5zkuqk6j0lf",
+          "url": "https://x.com/i/status/2033459777913716800",
           "date": "2026-03-24",
-          "merchant": "Grandsmatt"
+          "merchant": "Jabulani Shop 3"
         },
         {
-          "url": "https://primal.net/e/nevent1qqst4gfr0237me2rvyzc33kmzmf69aqmazhgughk7682hwy3z5e483qsjfa72",
+          "url": "https://primal.net/e/nevent1qqsq7r77mlck9j5ftlmrlp4fzz73ypgrqxvvzl4yxsrm3cvzghfdrmsdfp7ac",
           "date": "2026-03-24",
-          "merchant": "Haven food court"
+          "merchant": "Kwallos Shop"
         },
         {
-          "url": "https://x.com/i/status/2036317185426006090",
+          "url": "https://x.com/i/status/2031308988403360062",
           "date": "2026-03-24",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd8mmjtuwcjwjf9g9lrdrnx592sep8ztlxzar6zgnv7u48mdafjsq9uzdpl",
-          "date": "2026-03-24",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2036276822472556817",
-          "date": "2026-03-24",
-          "merchant": "Lydiah Richland Shop"
+          "merchant": "Kwallos Shop"
         }
       ]
     },
@@ -521,27 +607,6 @@
       ]
     },
     {
-      "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2033459777913716800",
-          "date": "2026-03-24",
-          "merchant": "Jabulani Shop 3"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq7r77mlck9j5ftlmrlp4fzz73ypgrqxvvzl4yxsrm3cvzghfdrmsdfp7ac",
-          "date": "2026-03-24",
-          "merchant": "Kwallos Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2031308988403360062",
-          "date": "2026-03-24",
-          "merchant": "Kwallos Shop"
-        }
-      ]
-    },
-    {
       "name": "Soweto BTC 🇿🇦",
       "count": 2,
       "posts": [
@@ -554,6 +619,22 @@
           "url": "https://x.com/i/status/2036545281097883722",
           "date": "2026-03-24",
           "merchant": "Kelokitso Community Farm"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Famba 🇲🇿",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8fr4r9pehzkp7mtpp9phw27spzzwq8dxg8tkcvqwmyphldnwvxlgg345pa",
+          "date": "2026-03-25",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2036728638415015976",
+          "date": "2026-03-25",
+          "merchant": "Milofa Skate Shop"
         }
       ]
     },
@@ -698,6 +779,22 @@
       ]
     },
     {
+      "name": "Milofa Skate Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8fr4r9pehzkp7mtpp9phw27spzzwq8dxg8tkcvqwmyphldnwvxlgg345pa",
+          "date": "2026-03-25",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036728638415015976",
+          "date": "2026-03-25",
+          "project": "Bitcoin Famba 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Lydiah Richland Shop",
       "count": 2,
       "posts": [
@@ -810,6 +907,22 @@
       ]
     },
     {
+      "name": "Bliss beauty Salon",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2036713873995071907",
+          "date": "2026-03-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9ssxz57vu5yu2fnzayn7524fmaqqwf7sp6vu39pmgryyhqyyp8eqawax4l",
+          "date": "2026-03-25",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Ayoola Minimart",
       "count": 2,
       "posts": [
@@ -853,6 +966,17 @@
       ]
     },
     {
+      "name": "Simunye No3",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2032095033218814174",
+          "date": "2026-03-25",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Jabulani Shop 3",
       "count": 1,
       "posts": [
@@ -867,12 +991,12 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 2,
-    "daily_average_payments": 53
+    "daily_average_payments": 61
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 107
+      "count": 122
     }
   ],
   "countries": [
@@ -892,26 +1016,26 @@
       "count": 2
     },
     {
-      "flag": "🇬🇭",
-      "country": "Ghana",
-      "count": 1
-    },
-    {
       "flag": "🇲🇿",
       "country": "Mozambique",
+      "count": 2
+    },
+    {
+      "flag": "🇬🇭",
+      "country": "Ghana",
       "count": 1
     }
   ],
   "platforms": [
     {
       "platform": "X",
-      "count": 55
+      "count": 64
     },
     {
       "platform": "Nostr",
-      "count": 52
+      "count": 58
     }
   ],
-  "generated_at": "2026-03-25T09:10:02.008624+00:00",
+  "generated_at": "2026-03-25T09:20:02.483661+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
