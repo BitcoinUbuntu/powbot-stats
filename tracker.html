@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PoW Submission Tracker - PoWBoT</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
+
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://powbot.africa/tracker.html">
+    <meta property="og:title" content="PoW Submission Tracker">
+    <meta property="og:description" content="Track PoW video submissions from review through payment.">
+    <meta property="og:image" content="https://powbot.africa/images/PoWBoT_preview.jpg">
+
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-card: #21262d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent-orange: #f7931a;
+            --accent-green: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --accent-red: #f85149;
+            --accent-yellow: #d29922;
+            --border: #30363d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Navigation will be injected here */
+
+        header {
+            text-align: center;
+            margin: 40px 0 30px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: var(--accent-orange);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .filter-grid {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            margin-bottom: 12px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            min-width: 160px;
+        }
+
+        .filter-group label {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .filter-group select,
+        .filter-group input[type="date"] {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            padding: 8px 14px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-group select:hover,
+        .filter-group input[type="date"]:hover {
+            border-color: var(--accent-blue);
+            color: var(--text-primary);
+        }
+
+        .filter-group select:focus,
+        .filter-group input[type="date"]:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+        }
+
+        .filter-group select.active,
+        .filter-group input[type="date"].active {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: white;
+        }
+
+        .filter-group select.active option {
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .search-box input {
+            width: 100%;
+            background: #e8eaed;
+            border: 1px solid #c1c5cc;
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: #1a1d22;
+            font-size: 0.95rem;
+        }
+
+        .search-box input::placeholder {
+            color: #5f6368;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            background: #f0f2f5;
+        }
+
+        /* Results Summary */
+        .results-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding: 12px 16px;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+        }
+
+        .results-count {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .pagination-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .pagination-controls button {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-primary);
+            padding: 8px 14px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            min-width: 60px;
+        }
+
+        .pagination-controls button:hover:not(:disabled) {
+            background: var(--bg-secondary);
+            border-color: var(--accent-blue);
+        }
+
+        .pagination-controls button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination-controls .page-info {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            padding: 0 8px;
+        }
+
+        /* Submission Cards */
+        .submissions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .submission-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+
+        .submission-card:hover {
+            border-color: var(--accent-blue);
+        }
+
+        .card-header {
+            padding: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card-header:hover {
+            background: rgba(88, 166, 255, 0.05);
+        }
+
+        .card-summary {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .card-summary-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .project-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .merchant-name {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .merchant-platform {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        .timestamp {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .status-processed {
+            background: rgba(63, 185, 80, 0.15);
+            color: var(--accent-green);
+        }
+
+        .status-approved {
+            background: rgba(88, 166, 255, 0.15);
+            color: var(--accent-blue);
+        }
+
+        .status-pending-review {
+            background: rgba(210, 153, 34, 0.15);
+            color: var(--accent-yellow);
+        }
+
+        .status-rejected {
+            background: rgba(248, 81, 73, 0.15);
+            color: var(--accent-red);
+        }
+
+        .status-duplicate {
+            background: rgba(139, 148, 158, 0.15);
+            color: var(--text-secondary);
+        }
+
+        .expand-icon {
+            color: var(--text-secondary);
+            transition: transform 0.2s;
+        }
+
+        .submission-card.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .card-details {
+            display: none;
+            padding: 0 16px 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .submission-card.expanded .card-details {
+            display: block;
+        }
+
+        .detail-section {
+            margin-top: 16px;
+        }
+
+        .detail-label {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .detail-value {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
+        .detail-value a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            word-break: break-all;
+            overflow-wrap: break-word;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        .detail-value a:hover {
+            text-decoration: underline;
+        }
+
+        .payment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .payment-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .payment-icon {
+            font-size: 1rem;
+        }
+
+        .payment-type {
+            color: var(--text-secondary);
+            min-width: 70px;
+        }
+
+        .payment-recipient {
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent-orange);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+        }
+
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 12px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .filter-grid {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-group {
+                min-width: auto;
+            }
+
+            .filter-bar {
+                padding: 16px;
+            }
+
+            .results-summary {
+                flex-direction: column;
+                gap: 12px;
+                align-items: stretch;
+            }
+
+            .pagination-controls {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .pagination-controls button {
+                padding: 8px 12px;
+                min-width: auto;
+                flex: 1;
+            }
+
+            .pagination-controls .page-info {
+                padding: 0 4px;
+                font-size: 0.8rem;
+            }
+
+            .card-summary-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+
+            .card-header {
+                padding: 12px;
+            }
+
+            .submission-card {
+                margin: 0 -2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation will be injected here -->
+    <div id="nav-placeholder"></div>
+
+    <div class="container">
+        <header>
+            <h1>PoW Submission Tracker</h1>
+            <p>Track all PoW video submissions from review through payment</p>
+        </header>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <label for="filter-status">Status</label>
+                    <select id="filter-status">
+                        <option value="">All</option>
+                        <option value="Pending Review">Pending Review</option>
+                        <option value="Approved">Approved</option>
+                        <option value="Processed">Processed</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filter-project">Project</label>
+                    <select id="filter-project">
+                        <option value="">All Projects</option>
+                        <!-- Populated by JavaScript -->
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filter-date">Date Range</label>
+                    <select id="filter-date">
+                        <option value="all">All Time</option>
+                        <option value="today">Today</option>
+                        <option value="7days">Last 7 Days</option>
+                        <option value="30days">Last 30 Days</option>
+                        <option value="custom">Custom Range</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="filter-platform">Platform</label>
+                    <select id="filter-platform">
+                        <option value="">All</option>
+                        <option value="X">X (Twitter)</option>
+                        <option value="Nostr">Nostr</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="filter-group search-box">
+                <label for="filter-search">Search</label>
+                <input type="text" id="filter-search" placeholder="Search project, merchant, or notes...">
+            </div>
+
+            <div id="custom-date-range" style="display: none; flex-basis: 100%; margin-top: 0;">
+                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                    <div class="filter-group">
+                        <label for="filter-date-from">From</label>
+                        <input type="date" id="filter-date-from">
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-date-to">To</label>
+                        <input type="date" id="filter-date-to">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Summary & Pagination -->
+        <div class="results-summary">
+            <div class="results-count" id="results-count">Loading...</div>
+            <div class="pagination-controls">
+                <button id="btn-prev-page">← Previous</button>
+                <span class="page-info">
+                    Page <span id="current-page">1</span> of <span id="total-pages">1</span>
+                </span>
+                <button id="btn-next-page">Next →</button>
+            </div>
+        </div>
+
+        <!-- Submissions List -->
+        <div id="submissions-container">
+            <div class="loading">
+                <div class="loading-spinner"></div>
+                <p style="margin-top: 16px;">Loading submissions...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer will be injected here -->
+    <div id="footer-placeholder"></div>
+
+    <script src="tracker.js"></script>
+    <script>
+        // Load includes
+        fetch('includes/nav.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('nav-placeholder').innerHTML = html;
+                // Set current page
+                const currentPage = document.querySelector('nav a[data-page="tracker"]');
+                if (currentPage) currentPage.classList.add('current');
+            });
+
+        fetch('includes/footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-placeholder').innerHTML = html;
+            });
+    </script>
+</body>
+</html>
