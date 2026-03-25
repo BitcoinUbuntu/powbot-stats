@@ -1104,6 +1104,9 @@
                 updatedElement.textContent = new Date(stats.generated_at).toLocaleString();
             }
 
+            // Store burn rate data for countdown display
+            burnRateData = stats.burn_rate || null;
+
             content.innerHTML = `
                 <!-- Summary Cards -->
                 <div class="stats-grid">
@@ -1963,6 +1966,7 @@
         let currentBlockHeight = null;
         let blockTimeAvg = 600000; // Default 10 minutes in ms
         let countdownWebSocket = null;
+        let burnRateData = null; // From stats.json burn_rate
 
         function renderCountdown() {
             const container = document.getElementById('countdown-content');
@@ -2007,10 +2011,19 @@
             const hoursRemaining = Math.floor(msRemaining / (1000 * 60 * 60));
             const minutesRemaining = Math.floor((msRemaining % (1000 * 60 * 60)) / (1000 * 60));
 
+            // Build burn rate indicator
+            let burnRateHtml = '';
+            if (burnRateData) {
+                const icon = burnRateData.status === 'hot' ? '🔥' : burnRateData.status === 'cold' ? '❄️' : '🎯';
+                const color = burnRateData.status === 'hot' ? 'var(--accent-orange)' : burnRateData.status === 'cold' ? 'var(--accent-blue, #58a6ff)' : 'var(--accent-green)';
+                burnRateHtml = `<div class="burn-status" style="font-size: 1.1rem; color: ${color};">${icon} ${burnRateData.percentage}%</div>`;
+            }
+
             container.innerHTML = `
                 <div class="countdown-content">
-                    <div class="countdown-blocks">
+                    <div class="countdown-blocks" style="display: flex; justify-content: space-between; align-items: baseline;">
                         <div class="big-number">${formatNumber(blocksRemaining)} <span class="unit">blocks</span></div>
+                        ${burnRateHtml}
                     </div>
                     <div class="countdown-progress">
                         <div class="countdown-progress-bar" style="width: ${progressPercent}%"></div>
