@@ -416,9 +416,12 @@
             letter-spacing: 0.5px;
         }
 
-        .big-number {
+        .big-number, .burn-status {
             font-size: 2.5rem;
             font-weight: 700;
+        }
+
+        .big-number {
             color: var(--accent-orange);
         }
 
@@ -1009,7 +1012,7 @@
             header h1 {
                 font-size: 1.8rem;
             }
-            .big-number {
+            .big-number, .burn-status {
                 font-size: 2rem;
             }
             .leaderboard-grid {
@@ -2016,7 +2019,7 @@
             if (burnRateData) {
                 const icon = burnRateData.status === 'hot' ? '🔥' : burnRateData.status === 'cold' ? '❄️' : '🎯';
                 const color = burnRateData.status === 'hot' ? 'var(--accent-orange)' : burnRateData.status === 'cold' ? 'var(--accent-blue, #58a6ff)' : 'var(--accent-green)';
-                burnRateHtml = `<div class="burn-status" style="font-size: 2.5rem; font-weight: 700; color: ${color};">${icon} ${burnRateData.percentage}%</div>`;
+                burnRateHtml = `<div class="burn-status" style="font-weight: 700; color: ${color};">${icon} ${burnRateData.percentage}%</div>`;
             }
 
             container.innerHTML = `
