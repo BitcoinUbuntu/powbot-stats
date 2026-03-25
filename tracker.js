@@ -179,9 +179,39 @@ function applyFilters() {
     // Reset to page 1 when filters change
     currentPage = 1;
 
+    // Update URL with current filters
+    updateURL(statusFilter, projectFilter, dateFilter, searchQuery);
+
     // Render
     renderSubmissions();
     updatePagination();
+}
+
+function updateURL(statusFilter, projectFilter, dateFilter, searchQuery) {
+    const params = new URLSearchParams();
+
+    // Only add non-empty filters to URL
+    if (statusFilter) params.set('status', statusFilter);
+    if (projectFilter) {
+        // Use project name without flag/country for cleaner URL
+        params.set('project', extractProjectNameOnly(projectFilter));
+    }
+    if (dateFilter && dateFilter !== 'all') {
+        params.set('date', dateFilter);
+
+        // Add custom date range if applicable
+        if (dateFilter === 'custom') {
+            const fromDate = document.getElementById('filter-date-from').value;
+            const toDate = document.getElementById('filter-date-to').value;
+            if (fromDate) params.set('from', fromDate);
+            if (toDate) params.set('to', toDate);
+        }
+    }
+    if (searchQuery) params.set('search', searchQuery);
+
+    // Update URL without reloading the page
+    const newURL = params.toString() ? `?${params.toString()}` : 'tracker.html';
+    window.history.replaceState({}, '', newURL);
 }
 
 function updateFilterActiveStates(statusFilter, projectFilter, dateFilter, searchQuery) {
