@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 104,
+    "all_payments": 107,
     "by_type": {
       "merchant": {
-        "count": 34
+        "count": 35
       },
       "project": {
-        "count": 34
+        "count": 35
       },
       "reviewer": {
-        "count": 36
+        "count": 37
       }
     }
   },
   "today": {
     "date": "2026-03-25",
-    "payments": 14,
+    "payments": 17,
     "by_type": {
       "merchant": {
-        "count": 4
+        "count": 5
       },
       "project": {
-        "count": 4
+        "count": 5
       },
       "reviewer": {
-        "count": 6
+        "count": 7
       }
     },
-    "approved": 4,
+    "approved": 5,
     "rejected": 2,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2036693935049888250",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Ellygant Unisex Salon",
+        "platform": "X",
+        "time": "07:31"
+      },
       {
         "url": "https://x.com/i/status/2036666806752903414",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -62,6 +69,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -343,14 +353,14 @@
     },
     {
       "date": "2026-03-25",
-      "project_count": 4,
-      "merchant_count": 4,
-      "reviewer_count": 6
+      "project_count": 5,
+      "merchant_count": 5,
+      "reviewer_count": 7
     }
   ],
   "reviewer": {
-    "total_reviewed": 36,
-    "approved": 34,
+    "total_reviewed": 37,
+    "approved": 35,
     "rejected": 2
   },
   "top_projects": [
@@ -493,6 +503,27 @@
       ]
     },
     {
+      "name": "Bitcoin Ikorodu 🇳🇬",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2036693935049888250",
+          "date": "2026-03-25",
+          "merchant": "Ellygant Unisex Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp7syewyuzlqtx3mk62876ujnk2hduhpxl24jvh03373cdqmja4cqc70drk",
+          "date": "2026-03-24",
+          "merchant": "Ellygant Unisex Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2036407703967240585",
+          "date": "2026-03-24",
+          "merchant": "Ellygant Unisex Salon"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Ekasi 🇿🇦",
       "count": 3,
       "posts": [
@@ -526,22 +557,6 @@
           "url": "https://x.com/i/status/2036545281097883722",
           "date": "2026-03-24",
           "merchant": "Kelokitso Community Farm"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsp7syewyuzlqtx3mk62876ujnk2hduhpxl24jvh03373cdqmja4cqc70drk",
-          "date": "2026-03-24",
-          "merchant": "Ellygant Unisex Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2036407703967240585",
-          "date": "2026-03-24",
-          "merchant": "Ellygant Unisex Salon"
         }
       ]
     },
@@ -597,6 +612,27 @@
           "url": "https://x.com/i/status/2036057680742117842",
           "date": "2026-03-24",
           "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
+      "name": "Ellygant Unisex Salon",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2036693935049888250",
+          "date": "2026-03-25",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp7syewyuzlqtx3mk62876ujnk2hduhpxl24jvh03373cdqmja4cqc70drk",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2036407703967240585",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ikorodu 🇳🇬"
         }
       ]
     },
@@ -761,22 +797,6 @@
       ]
     },
     {
-      "name": "Ellygant Unisex Salon",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsp7syewyuzlqtx3mk62876ujnk2hduhpxl24jvh03373cdqmja4cqc70drk",
-          "date": "2026-03-24",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2036407703967240585",
-          "date": "2026-03-24",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
-    },
-    {
       "name": "Dona Marta Stand Shop",
       "count": 2,
       "posts": [
@@ -850,12 +870,12 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 1,
-    "daily_average_payments": 104
+    "daily_average_payments": 107
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 104
+      "count": 107
     }
   ],
   "countries": [
@@ -888,13 +908,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 52
+      "count": 55
     },
     {
       "platform": "Nostr",
       "count": 52
     }
   ],
-  "generated_at": "2026-03-25T07:30:01.535128+00:00",
+  "generated_at": "2026-03-25T07:40:02.013897+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
