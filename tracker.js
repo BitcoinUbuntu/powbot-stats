@@ -31,11 +31,8 @@ async function loadTrackerData() {
 
         allSubmissions = data.submissions || [];
 
-        // Update footer timestamp
-        const updatedElement = document.getElementById('updated');
-        if (updatedElement && data.last_updated) {
-            updatedElement.textContent = new Date(data.last_updated).toLocaleString();
-        }
+        // Update footer timestamp (with retry in case footer loads after data)
+        updateFooterTimestamp(data.last_updated);
 
         // Populate project dropdown
         populateProjectFilter();
@@ -75,6 +72,35 @@ function populateProjectFilter() {
 function stripCountryName(name) {
     // Remove country name in parentheses, keep flag emoji
     return name.replace(/\s*\([^)]+\)/, '').trim();
+}
+
+// ============================================================================
+// Footer Timestamp Update
+// ============================================================================
+
+function updateFooterTimestamp(lastUpdated) {
+    if (!lastUpdated) return;
+
+    const updateElement = () => {
+        const updatedElement = document.getElementById('updated');
+        if (updatedElement) {
+            updatedElement.textContent = new Date(lastUpdated).toLocaleString();
+            return true;
+        }
+        return false;
+    };
+
+    // Try immediately
+    if (updateElement()) return;
+
+    // Retry up to 5 times if footer hasn't loaded yet
+    let retries = 0;
+    const retryInterval = setInterval(() => {
+        if (updateElement() || retries >= 5) {
+            clearInterval(retryInterval);
+        }
+        retries++;
+    }, 200);
 }
 
 // ============================================================================
