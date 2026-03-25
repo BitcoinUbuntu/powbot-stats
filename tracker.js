@@ -40,6 +40,9 @@ async function loadTrackerData() {
         // Populate project dropdown
         populateProjectFilter();
 
+        // Apply URL parameters if present
+        applyURLFilters();
+
         // Apply initial filter and render
         applyFilters();
 
@@ -72,6 +75,62 @@ function populateProjectFilter() {
 function stripCountryName(name) {
     // Remove country name in parentheses, keep flag emoji
     return name.replace(/\s*\([^)]+\)/, '').trim();
+}
+
+// ============================================================================
+// URL Parameter Handling
+// ============================================================================
+
+function applyURLFilters() {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // Apply status filter
+    const statusParam = urlParams.get('status');
+    if (statusParam) {
+        document.getElementById('filter-status').value = statusParam;
+    }
+
+    // Apply project filter
+    const projectParam = urlParams.get('project');
+    if (projectParam) {
+        // Find the full project name that matches (case-insensitive)
+        const projectSelect = document.getElementById('filter-project');
+        for (let option of projectSelect.options) {
+            if (option.value.toLowerCase().includes(projectParam.toLowerCase()) ||
+                option.textContent.toLowerCase().includes(projectParam.toLowerCase())) {
+                projectSelect.value = option.value;
+                break;
+            }
+        }
+    }
+
+    // Apply date filter
+    const dateParam = urlParams.get('date');
+    if (dateParam) {
+        document.getElementById('filter-date').value = dateParam;
+
+        // Show custom date range if needed
+        if (dateParam === 'custom') {
+            document.getElementById('custom-date-range').style.display = 'block';
+
+            const fromParam = urlParams.get('from');
+            const toParam = urlParams.get('to');
+            if (fromParam) document.getElementById('filter-date-from').value = fromParam;
+            if (toParam) document.getElementById('filter-date-to').value = toParam;
+        }
+    }
+
+    // Apply platform filter
+    const platformParam = urlParams.get('platform');
+    if (platformParam) {
+        document.getElementById('filter-platform').value = platformParam;
+    }
+
+    // Apply search query
+    const searchParam = urlParams.get('search');
+    if (searchParam) {
+        document.getElementById('filter-search').value = searchParam;
+    }
 }
 
 function extractProjectNameOnly(name) {
