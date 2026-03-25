@@ -1197,7 +1197,7 @@
                 <!-- Today's Activity Banner -->
                 ${stats.today.payments > 0 ? `
                 <div class="today-banner">
-                    <span class="today-label">Today <span class="today-time">(updated ${new Date(stats.generated_at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'UTC' })} UTC)</span></span>
+                    <span class="today-label">Today <span class="today-time">(updated ${new Date(stats.generated_at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Africa/Johannesburg' })} CAT)</span></span>
                     <div class="today-stats">
                         <div class="today-stat">
                             <span class="today-value" style="color: var(--accent-orange);">${formatNumber(stats.today.by_type.reviewer?.count || 0)}</span>
@@ -2016,7 +2016,7 @@
             if (burnRateData) {
                 const icon = burnRateData.status === 'hot' ? '🔥' : burnRateData.status === 'cold' ? '❄️' : '🎯';
                 const color = burnRateData.status === 'hot' ? 'var(--accent-orange)' : burnRateData.status === 'cold' ? 'var(--accent-blue, #58a6ff)' : 'var(--accent-green)';
-                burnRateHtml = `<div class="burn-status" style="font-size: 1.1rem; color: ${color};">${icon} ${burnRateData.percentage}%</div>`;
+                burnRateHtml = `<div class="burn-status" style="font-size: 2.5rem; font-weight: 700; color: ${color};">${icon} ${burnRateData.percentage}%</div>`;
             }
 
             container.innerHTML = `
