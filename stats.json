@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 234,
+    "all_payments": 237,
     "by_type": {
       "merchant": {
-        "count": 77
+        "count": 78
       },
       "project": {
-        "count": 77
+        "count": 78
       },
       "reviewer": {
-        "count": 80
+        "count": 81
       }
     }
   },
   "today": {
     "date": "2026-03-26",
-    "payments": 67,
+    "payments": 70,
     "by_type": {
       "merchant": {
-        "count": 22
+        "count": 23
       },
       "project": {
-        "count": 22
+        "count": 23
       },
       "reviewer": {
-        "count": 23
+        "count": 24
       }
     },
-    "approved": 22,
+    "approved": 23,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2037113262492328187",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Lydiah Richland Shop",
+        "platform": "X",
+        "time": "11:39"
+      },
       {
         "url": "https://x.com/i/status/2037057555025854850",
         "project": "Bitcoin Ikorodu 🇳🇬",
@@ -188,6 +195,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -469,21 +479,26 @@
     },
     {
       "date": "2026-03-26",
-      "project_count": 22,
-      "merchant_count": 22,
-      "reviewer_count": 23
+      "project_count": 23,
+      "merchant_count": 23,
+      "reviewer_count": 24
     }
   ],
   "reviewer": {
-    "total_reviewed": 80,
-    "approved": 77,
+    "total_reviewed": 81,
+    "approved": 78,
     "rejected": 3
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 20,
+      "count": 21,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2037113262492328187",
+          "date": "2026-03-26",
+          "merchant": "Lydiah Richland Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9yhyr6xpl9ep3qngm7s5qhwaawhd3esqhukfsjwknztc95kpxg0q7d2s72",
           "date": "2026-03-26",
@@ -1006,6 +1021,37 @@
       ]
     },
     {
+      "name": "Lydiah Richland Shop",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2037113262492328187",
+          "date": "2026-03-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2036827644025618556",
+          "date": "2026-03-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxqe9ghwuvyhxkd3ev3nlyqqhg4ny9x60d7kwthf06tpj9a94j2hc6lcsrp",
+          "date": "2026-03-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd8mmjtuwcjwjf9g9lrdrnx592sep8ztlxzar6zgnv7u48mdafjsq9uzdpl",
+          "date": "2026-03-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2036276822472556817",
+          "date": "2026-03-24",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Ellygant Unisex Salon",
       "count": 5,
       "posts": [
@@ -1085,32 +1131,6 @@
           "url": "https://x.com/i/status/2036214499900899561",
           "date": "2026-03-24",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Lydiah Richland Shop",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2036827644025618556",
-          "date": "2026-03-25",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxqe9ghwuvyhxkd3ev3nlyqqhg4ny9x60d7kwthf06tpj9a94j2hc6lcsrp",
-          "date": "2026-03-25",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd8mmjtuwcjwjf9g9lrdrnx592sep8ztlxzar6zgnv7u48mdafjsq9uzdpl",
-          "date": "2026-03-24",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2036276822472556817",
-          "date": "2026-03-24",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -1490,17 +1510,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 3,
-    "daily_average_payments": 78
+    "daily_average_payments": 79
   },
   "burn_rate": {
-    "percentage": 47,
+    "percentage": 48,
     "status": "cold",
     "days_active": 3
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 234
+      "count": 237
     }
   ],
   "countries": [
@@ -1538,13 +1558,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 121
+      "count": 124
     },
     {
       "platform": "Nostr",
       "count": 113
     }
   ],
-  "generated_at": "2026-03-26T11:30:01.844923+00:00",
+  "generated_at": "2026-03-26T11:40:01.668822+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
