@@ -2384,11 +2384,14 @@
                     const membersData = await membersResponse.json();
                     // Build lookup map: project name with flag → profile URL
                     membersData.members.forEach(member => {
-                        // Match format used in stats: "Bitbiashara 🇰🇪"
-                        const projectKey = `${member.name} ${member.flag}`;
-                        projectMetadata[projectKey] = {
+                        // Index by both formats for compatibility
+                        const shortKey = `${member.name} ${member.flag}`;  // "Bitbiashara 🇰🇪"
+                        const longKey = member.name_with_flag;  // "Bitbiashara (Kenya) 🇰🇪"
+                        const metadata = {
                             info_url: `profile.html?id=${member.id}`
                         };
+                        projectMetadata[shortKey] = metadata;
+                        projectMetadata[longKey] = metadata;
                     });
                 }
 
