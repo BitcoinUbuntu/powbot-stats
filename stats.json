@@ -1,35 +1,63 @@
 {
   "totals": {
-    "all_payments": 170,
+    "all_payments": 182,
     "by_type": {
       "merchant": {
-        "count": 56
+        "count": 60
       },
       "project": {
-        "count": 56
+        "count": 60
       },
       "reviewer": {
-        "count": 58
+        "count": 62
       }
     }
   },
   "today": {
     "date": "2026-03-26",
-    "payments": 3,
+    "payments": 15,
     "by_type": {
       "merchant": {
-        "count": 1
+        "count": 5
       },
       "project": {
-        "count": 1
+        "count": 5
       },
       "reviewer": {
-        "count": 1
+        "count": 5
       }
     },
-    "approved": 1,
+    "approved": 5,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2029552965485216255",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Delfinos Seaside Restaurant",
+        "platform": "X",
+        "time": "08:29"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqspkaj9j6uvlhgunkjf2usfjdcn538zk5z8emys3vszays7f3evn7qj789vj",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "Nostr",
+        "time": "08:27"
+      },
+      {
+        "url": "https://x.com/i/status/2036911839464816870",
+        "project": "BitJR Academy 🇿🇲",
+        "merchant": "Sweet & Salty Cafe",
+        "platform": "X",
+        "time": "08:22"
+      },
+      {
+        "url": "https://x.com/i/status/2036868700028989611",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Folami Game Zone",
+        "platform": "X",
+        "time": "08:21"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsv6dtvr7ylszkldlhewuerugcq8xu89y6djtspp5l9umurtmd8lvqe00q9p",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -41,6 +69,18 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "BitJR Academy 🇿🇲"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -283,21 +323,26 @@
     },
     {
       "date": "2026-03-26",
-      "project_count": 1,
-      "merchant_count": 1,
-      "reviewer_count": 1
+      "project_count": 5,
+      "merchant_count": 5,
+      "reviewer_count": 5
     }
   ],
   "reviewer": {
-    "total_reviewed": 58,
-    "approved": 56,
+    "total_reviewed": 62,
+    "approved": 60,
     "rejected": 2
   },
   "top_projects": [
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 17,
+      "count": 18,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2036868700028989611",
+          "date": "2026-03-26",
+          "merchant": "Folami Game Zone"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsv6dtvr7ylszkldlhewuerugcq8xu89y6djtspp5l9umurtmd8lvqe00q9p",
           "date": "2026-03-26",
@@ -387,8 +432,13 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 13,
+      "count": 14,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspkaj9j6uvlhgunkjf2usfjdcn538zk5z8emys3vszays7f3evn7qj789vj",
+          "date": "2026-03-26",
+          "merchant": "Bliss beauty Salon"
+        },
         {
           "url": "https://x.com/i/status/2036827644025618556",
           "date": "2026-03-25",
@@ -458,8 +508,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 7,
+      "count": 8,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2029552965485216255",
+          "date": "2026-03-26",
+          "merchant": "Delfinos Seaside Restaurant"
+        },
         {
           "url": "https://x.com/i/status/2032419130062541118",
           "date": "2026-03-25",
@@ -633,6 +688,17 @@
           "merchant": "Mundayam Restaurant"
         }
       ]
+    },
+    {
+      "name": "BitJR Academy 🇿🇲",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2036911839464816870",
+          "date": "2026-03-26",
+          "merchant": "Sweet & Salty Cafe"
+        }
+      ]
     }
   ],
   "top_merchants": [
@@ -715,6 +781,32 @@
       ]
     },
     {
+      "name": "Folami Game Zone",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2036868700028989611",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv6dtvr7ylszkldlhewuerugcq8xu89y6djtspp5l9umurtmd8lvqe00q9p",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvdwsujxvm39qcvls55qfjythrn0eh0eqjyuh0xuxf0fw6najjv6sdvgnzk",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036118314569572836",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Haven food court",
       "count": 3,
       "posts": [
@@ -736,27 +828,6 @@
       ]
     },
     {
-      "name": "Folami Game Zone",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsv6dtvr7ylszkldlhewuerugcq8xu89y6djtspp5l9umurtmd8lvqe00q9p",
-          "date": "2026-03-26",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvdwsujxvm39qcvls55qfjythrn0eh0eqjyuh0xuxf0fw6najjv6sdvgnzk",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036118314569572836",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
       "name": "Ellygant Unisex Salon",
       "count": 3,
       "posts": [
@@ -774,6 +845,27 @@
           "url": "https://x.com/i/status/2036407703967240585",
           "date": "2026-03-24",
           "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
+      "name": "Bliss beauty Salon",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspkaj9j6uvlhgunkjf2usfjdcn538zk5z8emys3vszays7f3evn7qj789vj",
+          "date": "2026-03-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2036713873995071907",
+          "date": "2026-03-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9ssxz57vu5yu2fnzayn7524fmaqqwf7sp6vu39pmgryyhqyyp8eqawax4l",
+          "date": "2026-03-25",
+          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -970,22 +1062,6 @@
       ]
     },
     {
-      "name": "Bliss beauty Salon",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2036713873995071907",
-          "date": "2026-03-25",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9ssxz57vu5yu2fnzayn7524fmaqqwf7sp6vu39pmgryyhqyyp8eqawax4l",
-          "date": "2026-03-25",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Ayoola Minimart",
       "count": 2,
       "posts": [
@@ -1045,6 +1121,17 @@
       ]
     },
     {
+      "name": "Sweet & Salty Cafe",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2036911839464816870",
+          "date": "2026-03-26",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Mundayam Restaurant",
       "count": 1,
       "posts": [
@@ -1065,22 +1152,33 @@
           "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
+    },
+    {
+      "name": "Delfinos Seaside Restaurant",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2029552965485216255",
+          "date": "2026-03-26",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Mar 24",
     "days_active": 2,
-    "daily_average_payments": 85
+    "daily_average_payments": 91
   },
   "burn_rate": {
-    "percentage": 52,
+    "percentage": 55,
     "status": "cold",
     "days_active": 2
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 170
+      "count": 182
     }
   ],
   "countries": [
@@ -1100,6 +1198,11 @@
       "count": 2
     },
     {
+      "flag": "🇿🇲",
+      "country": "Zambia",
+      "count": 2
+    },
+    {
       "flag": "🇲🇿",
       "country": "Mozambique",
       "count": 2
@@ -1108,23 +1211,18 @@
       "flag": "🇬🇭",
       "country": "Ghana",
       "count": 1
-    },
-    {
-      "flag": "🇿🇲",
-      "country": "Zambia",
-      "count": 1
     }
   ],
   "platforms": [
     {
       "platform": "X",
-      "count": 85
+      "count": 94
     },
     {
       "platform": "Nostr",
-      "count": 85
+      "count": 88
     }
   ],
-  "generated_at": "2026-03-26T08:20:01.965017+00:00",
+  "generated_at": "2026-03-26T08:30:01.911939+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
