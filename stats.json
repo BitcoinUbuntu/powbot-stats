@@ -1,35 +1,84 @@
 {
   "totals": {
-    "all_payments": 243,
+    "all_payments": 264,
     "by_type": {
       "merchant": {
-        "count": 80
+        "count": 87
       },
       "project": {
-        "count": 80
+        "count": 87
       },
       "reviewer": {
-        "count": 83
+        "count": 90
       }
     }
   },
   "today": {
     "date": "2026-03-26",
-    "payments": 76,
+    "payments": 97,
     "by_type": {
       "merchant": {
-        "count": 25
+        "count": 32
       },
       "project": {
-        "count": 25
+        "count": 32
       },
       "reviewer": {
-        "count": 26
+        "count": 33
       }
     },
-    "approved": 25,
+    "approved": 32,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsxekltdu8vahpv976fu8662ksyljcgx0vrqcdwuychte0kpnhakeqrfy9qw",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "Nostr",
+        "time": "16:19"
+      },
+      {
+        "url": "https://x.com/i/status/2037198388920279348",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "X",
+        "time": "16:19"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswla6maugxvlzs3lmwjkxmljs8xsa3wruckhw564p8uf7w8hwcpvsrcdywu",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Kyn Design",
+        "platform": "Nostr",
+        "time": "16:18"
+      },
+      {
+        "url": "https://x.com/i/status/2037190844126507368",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Kyn Design",
+        "platform": "X",
+        "time": "16:17"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqspcdr2surd2a3hs4st0ltaxx5het5mg6cvcvltngst6qgs3cjlcdgzzgjvv",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Leni Boutique",
+        "platform": "Nostr",
+        "time": "16:17"
+      },
+      {
+        "url": "https://x.com/i/status/2037162175236563014",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Leni Boutique",
+        "platform": "X",
+        "time": "16:15"
+      },
+      {
+        "url": "https://x.com/i/status/2037147270928290061",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Isac Mini-Shop",
+        "platform": "X",
+        "time": "16:11"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsw03zyshvk9v35w85u5cw2zhfjg6l5ygk6rh05cpv6kyfw9l2ytegu2fmcy",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -209,6 +258,27 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -475,21 +545,31 @@
     },
     {
       "date": "2026-03-26",
-      "project_count": 25,
-      "merchant_count": 25,
-      "reviewer_count": 26
+      "project_count": 32,
+      "merchant_count": 32,
+      "reviewer_count": 33
     }
   ],
   "reviewer": {
-    "total_reviewed": 83,
-    "approved": 80,
+    "total_reviewed": 90,
+    "approved": 87,
     "rejected": 3
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 22,
+      "count": 24,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxekltdu8vahpv976fu8662ksyljcgx0vrqcdwuychte0kpnhakeqrfy9qw",
+          "date": "2026-03-26",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2037198388920279348",
+          "date": "2026-03-26",
+          "merchant": "Manu Groceries"
+        },
         {
           "url": "https://primal.net/e/nevent1qqspz5ayxnaykgnqylsjm8x5hrvkjyd4uxgenvpuja8xm58g2dg64eg7ehhlc",
           "date": "2026-03-26",
@@ -604,8 +684,13 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 19,
+      "count": 20,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2037147270928290061",
+          "date": "2026-03-26",
+          "merchant": "Isac Mini-Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsw03zyshvk9v35w85u5cw2zhfjg6l5ygk6rh05cpv6kyfw9l2ytegu2fmcy",
           "date": "2026-03-26",
@@ -705,8 +790,28 @@
     },
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 12,
+      "count": 16,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswla6maugxvlzs3lmwjkxmljs8xsa3wruckhw564p8uf7w8hwcpvsrcdywu",
+          "date": "2026-03-26",
+          "merchant": "Kyn Design"
+        },
+        {
+          "url": "https://x.com/i/status/2037190844126507368",
+          "date": "2026-03-26",
+          "merchant": "Kyn Design"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspcdr2surd2a3hs4st0ltaxx5het5mg6cvcvltngst6qgs3cjlcdgzzgjvv",
+          "date": "2026-03-26",
+          "merchant": "Leni Boutique"
+        },
+        {
+          "url": "https://x.com/i/status/2037162175236563014",
+          "date": "2026-03-26",
+          "merchant": "Leni Boutique"
+        },
         {
           "url": "https://x.com/i/status/2037006417547108614",
           "date": "2026-03-26",
@@ -991,6 +1096,42 @@
       ]
     },
     {
+      "name": "Isac Mini-Shop",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2037147270928290061",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw03zyshvk9v35w85u5cw2zhfjg6l5ygk6rh05cpv6kyfw9l2ytegu2fmcy",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036666806752903414",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq3f0zsmkaqp450jqu6rxtczv5leamvxry97dwcc2x5w6lafuz69s02qlkt",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd6w8nrqk8vmrve3h60wqv64vfkpqfqqmya0sy9c8hy0etxkukntgahhhm4",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036057680742117842",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Haven food court",
       "count": 6,
       "posts": [
@@ -1059,37 +1200,6 @@
           "url": "https://primal.net/e/nevent1qqsrfpprvdfdfs8syy44pdlnw99p5zraengfcmmhky89pjwh2n5zkuqk6j0lf",
           "date": "2026-03-24",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Isac Mini-Shop",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsw03zyshvk9v35w85u5cw2zhfjg6l5ygk6rh05cpv6kyfw9l2ytegu2fmcy",
-          "date": "2026-03-26",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036666806752903414",
-          "date": "2026-03-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq3f0zsmkaqp450jqu6rxtczv5leamvxry97dwcc2x5w6lafuz69s02qlkt",
-          "date": "2026-03-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd6w8nrqk8vmrve3h60wqv64vfkpqfqqmya0sy9c8hy0etxkukntgahhhm4",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036057680742117842",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
     },
@@ -1388,6 +1498,54 @@
       ]
     },
     {
+      "name": "Manu Groceries",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxekltdu8vahpv976fu8662ksyljcgx0vrqcdwuychte0kpnhakeqrfy9qw",
+          "date": "2026-03-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2037198388920279348",
+          "date": "2026-03-26",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Leni Boutique",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspcdr2surd2a3hs4st0ltaxx5het5mg6cvcvltngst6qgs3cjlcdgzzgjvv",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2037162175236563014",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
+      "name": "Kyn Design",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswla6maugxvlzs3lmwjkxmljs8xsa3wruckhw564p8uf7w8hwcpvsrcdywu",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2037190844126507368",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Kwallos Shop",
       "count": 2,
       "posts": [
@@ -1526,17 +1684,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 3,
-    "daily_average_payments": 81
+    "daily_average_payments": 88
   },
   "burn_rate": {
-    "percentage": 49,
+    "percentage": 54,
     "status": "cold",
     "days_active": 3
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 243
+      "count": 264
     }
   ],
   "countries": [
@@ -1574,13 +1732,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 124
+      "count": 136
     },
     {
       "platform": "Nostr",
-      "count": 119
+      "count": 128
     }
   ],
-  "generated_at": "2026-03-26T16:10:02.300182+00:00",
+  "generated_at": "2026-03-26T16:20:04.065266+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
