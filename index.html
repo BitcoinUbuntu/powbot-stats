@@ -297,6 +297,33 @@
             }
         }
 
+        .countries-banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .countries-banner-list {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 8px;
+            margin: 0;
+        }
+
+        @media (max-width: 1100px) {
+            .countries-banner-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .countries-banner-list {
+                justify-content: center;
+            }
+        }
+
         .card.top-performers {
             background: linear-gradient(135deg, rgba(163, 113, 247, 0.15), rgba(163, 113, 247, 0.05));
             border-color: var(--accent-purple);
@@ -1095,6 +1122,14 @@
             return `${day} ${month} ${year}`;
         }
 
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
 
         // Render the dashboard
         function renderDashboard(stats) {
@@ -1180,6 +1215,24 @@
                     </div>
                 </div>
 
+                <!-- Countries Banner -->
+                ${(stats.countries?.length || 0) > 0 ? `
+                <div class="card" style="margin-bottom: 20px; padding: 16px 24px;">
+                    <div class="countries-banner-content">
+                        <h2 style="margin: 0;">${stats.countries?.length || 0} ${(stats.countries?.length || 0) === 1 ? 'Country' : 'Countries'} Active</h2>
+                        <div class="countries-banner-list" id="countries-list">
+                            ${(stats.countries || []).map(c => `
+                                <a href="members.html?filter=epoch5&country=${encodeURIComponent(c.flag + ' ' + c.country)}" class="country-tag">
+                                    <span class="country-flag">${c.flag}</span>
+                                    <span class="country-name">${c.country}</span>
+                                    ${c.count > 1 ? `<span class="country-count">(${c.count})</span>` : ''}
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+                ` : ''}
+
                 <!-- Live Block Countdown & Highlights -->
                 <div class="live-grid">
                     <div class="card countdown">
@@ -1197,41 +1250,60 @@
                     </div>
                 </div>
 
-                <!-- Today's Activity Banner -->
-                ${stats.today.payments > 0 ? `
+                <!-- Last 24h Activity Banner -->
+                ${(stats.last_24h?.payments || 0) > 0 ? `
                 <div class="today-banner">
-                    <span class="today-label">Today <span class="today-time">(updated ${new Date(stats.generated_at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Africa/Johannesburg' })} CAT)</span></span>
+                    <span class="today-label">Last 24h <span class="today-time">(updated ${new Date(stats.generated_at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Africa/Johannesburg' })} CAT)</span></span>
                     <div class="today-stats">
                         <div class="today-stat">
-                            <span class="today-value" style="color: var(--accent-orange);">${formatNumber(stats.today.by_type.reviewer?.count || 0)}</span>
-                            <span class="today-unit">${(stats.today.by_type.reviewer?.count || 0) === 1 ? 'post' : 'posts'}</span>
+                            <span class="today-value" style="color: var(--accent-orange);">${formatNumber(stats.last_24h?.posts || 0)}</span>
+                            <span class="today-unit">${(stats.last_24h?.posts || 0) === 1 ? 'post' : 'posts'}</span>
                         </div>
                         <div class="today-stat">
-                            <span class="today-value" style="color: var(--accent-green);">${formatNumber(stats.today.approved || 0)}</span>
-                            <span class="today-unit">${(stats.today.approved || 0) === 1 ? 'approval' : 'approvals'}</span>
+                            <span class="today-value" style="color: var(--accent-green);">${formatNumber(stats.last_24h?.approved || 0)}</span>
+                            <span class="today-unit">${(stats.last_24h?.approved || 0) === 1 ? 'approval' : 'approvals'}</span>
                         </div>
                         <div class="today-stat">
-                            <span class="today-value" style="color: #f85149;">${formatNumber(stats.today.rejected || 0)}</span>
-                            <span class="today-unit">${(stats.today.rejected || 0) === 1 ? 'rejection' : 'rejections'}</span>
+                            <span class="today-value" style="color: #f85149;">${formatNumber(stats.last_24h?.rejected || 0)}</span>
+                            <span class="today-unit">${(stats.last_24h?.rejected || 0) === 1 ? 'rejection' : 'rejections'}</span>
                         </div>
                         <div class="today-stat">
-                            <span class="today-value" style="color: var(--text-primary);">${formatNumber(stats.today.payments || 0)}</span>
-                            <span class="today-unit">${(stats.today.payments || 0) === 1 ? 'payment' : 'payments'}</span>
+                            <span class="today-value" style="color: var(--text-primary);">${formatNumber(stats.last_24h?.payments || 0)}</span>
+                            <span class="today-unit">${(stats.last_24h?.payments || 0) === 1 ? 'payment' : 'payments'}</span>
                         </div>
                     </div>
                 </div>
                 ` : ''}
 
-                <!-- Today's Videos by Platform -->
-                ${(stats.today.videos && stats.today.videos.length > 0) ? `
+                <!-- Leaderboards -->
+                ${((stats.top_projects?.length || 0) > 0 || (stats.top_merchants?.length || 0) > 0) ? `
+                <div class="leaderboard-grid">
+                    ${(stats.top_projects?.length || 0) > 0 ? `
+                    <div class="card">
+                        <h2>Project Leaderboard</h2>
+                        <div id="top-projects"></div>
+                    </div>
+                    ` : ''}
+
+                    ${(stats.top_merchants?.length || 0) > 0 ? `
+                    <div class="card">
+                        <h2>Merchant Leaderboard</h2>
+                        <div id="top-merchants"></div>
+                    </div>
+                    ` : ''}
+                </div>
+                ` : ''}
+
+                <!-- Last 24h Videos by Platform -->
+                ${(stats.last_24h.videos && stats.last_24h.videos.length > 0) ? `
                 <div class="leaderboard-grid">
                     <div class="card">
-                        <h2>Today on X</h2>
+                        <h2>Last 24h on X</h2>
                         <div id="today-x"></div>
                     </div>
 
                     <div class="card">
-                        <h2>Today on Nostr</h2>
+                        <h2>Last 24h on Nostr</h2>
                         <div id="today-nostr"></div>
                     </div>
                 </div>
@@ -1282,30 +1354,21 @@
                 <!-- Insights Section -->
                 ${((stats.lightning_providers?.length || 0) > 0 || (stats.countries?.length || 0) > 0 || (stats.platforms?.length || 0) > 0) ? `
                 <div class="insights-grid">
-                    ${(stats.lightning_providers?.length || 0) > 0 ? `
+                    ${(stats.countries?.length || 0) > 0 ? `
                     <div class="card insight-card">
-                        <h2>Lightning Providers</h2>
+                        <h2>${stats.countries?.length || 0} ${(stats.countries?.length || 0) === 1 ? 'Country' : 'Countries'} Active</h2>
                         <div class="pie-chart-wrapper">
-                            <canvas id="lightningChart"></canvas>
+                            <canvas id="countriesChart"></canvas>
                         </div>
                     </div>
                     ` : ''}
 
-                    ${(stats.countries?.length || 0) > 0 ? `
                     <div class="card insight-card">
-                        <h2>Countries</h2>
-                        <div class="insight-total">${stats.countries?.length || 0} active</div>
-                        <div class="countries-list" id="countries-list">
-                            ${(stats.countries || []).map(c => `
-                                <a href="members.html?filter=epoch5&country=${encodeURIComponent(c.flag + ' ' + c.country)}" class="country-tag">
-                                    <span class="country-flag">${c.flag}</span>
-                                    <span class="country-name">${c.country}</span>
-                                    ${c.count > 1 ? `<span class="country-count">(${c.count})</span>` : ''}
-                                </a>
-                            `).join('')}
+                        <h2>Total Posts Over All Time: ${formatNumber(2867 + (stats.reviewer?.approved || 0))}</h2>
+                        <div class="chart-wrapper" style="height: 240px; margin-top: 20px;">
+                            <canvas id="epochsChart"></canvas>
                         </div>
                     </div>
-                    ` : ''}
 
                     ${(stats.platforms?.length || 0) > 0 ? `
                     <div class="card insight-card">
@@ -1317,33 +1380,6 @@
                     ` : ''}
                 </div>
                 ` : ''}
-
-                <!-- Leaderboards -->
-                ${((stats.top_projects?.length || 0) > 0 || (stats.top_merchants?.length || 0) > 0) ? `
-                <div class="leaderboard-grid">
-                    ${(stats.top_projects?.length || 0) > 0 ? `
-                    <div class="card">
-                        <h2>Project Leaderboard</h2>
-                        <div id="top-projects"></div>
-                    </div>
-                    ` : ''}
-
-                    ${(stats.top_merchants?.length || 0) > 0 ? `
-                    <div class="card">
-                        <h2>Merchant Leaderboard</h2>
-                        <div id="top-merchants"></div>
-                    </div>
-                    ` : ''}
-                </div>
-                ` : ''}
-
-                <!-- Epochs Chart -->
-                <div class="chart-container">
-                    <h2>Total Posts Over All Time: ${formatNumber(2867 + (stats.reviewer?.approved || 0))}</h2>
-                    <div class="chart-wrapper">
-                        <canvas id="epochsChart"></canvas>
-                    </div>
-                </div>
             `;
 
             // Render leaderboards (only if they exist)
@@ -1354,10 +1390,10 @@
                 renderLeaderboard('top-merchants', stats.top_merchants, 'merchant');
             }
 
-            // Render today's videos if any
-            if (stats.today.videos && stats.today.videos.length > 0) {
-                const xVideos = stats.today.videos.filter(v => v.platform === 'X');
-                const nostrVideos = stats.today.videos.filter(v => v.platform === 'Nostr');
+            // Render last 24h videos if any
+            if (stats.last_24h.videos && stats.last_24h.videos.length > 0) {
+                const xVideos = stats.last_24h.videos.filter(v => v.platform === 'X');
+                const nostrVideos = stats.last_24h.videos.filter(v => v.platform === 'Nostr');
                 renderTodayVideos('today-x', xVideos, '𝕏');
                 renderTodayVideos('today-nostr', nostrVideos, '🟣');
             }
@@ -1369,8 +1405,8 @@
 
             // Render charts
             renderChart(stats.daily);
-            if ((stats.lightning_providers?.length || 0) > 0) {
-                renderLightningChart(stats.lightning_providers);
+            if ((stats.countries?.length || 0) > 0) {
+                renderCountriesChart(stats.countries);
             }
             if ((stats.platforms?.length || 0) > 0) {
                 renderPlatformChart(stats.platforms);
@@ -1565,13 +1601,13 @@
             container.innerHTML = videos.map((video, index) => {
                 const isHidden = index >= initialCount;
                 return `
-                <a href="${video.url}" target="_blank" rel="noopener" class="today-video-item ${isHidden ? 'leaderboard-hidden' : ''}" data-index="${index}">
+                <a href="${escapeHtml(video.url)}" target="_blank" rel="noopener" class="today-video-item ${isHidden ? 'leaderboard-hidden' : ''}" data-index="${index}">
                     <span class="today-video-icon">${icon}</span>
                     <span class="today-video-info">
-                        <span class="today-video-project">${video.project}</span>
-                        <span class="today-video-merchant">${video.merchant}</span>
+                        <span class="today-video-project">${escapeHtml(video.project)}</span>
+                        <span class="today-video-merchant">${escapeHtml(video.merchant)}</span>
                     </span>
-                    <span class="today-video-time">${video.time || ''}</span>
+                    <span class="today-video-time">${escapeHtml(video.time || '')}</span>
                 </a>
             `}).join('');
 
@@ -1793,6 +1829,59 @@
             });
         }
 
+        function renderCountriesChart(countries) {
+            if (!countries.length) return;
+
+            const ctx = document.getElementById('countriesChart').getContext('2d');
+            const defaultColors = ['#3fb950', '#58a6ff', '#a371f7', '#f7931a', '#26c6da', '#42a5f5', '#10b981', '#f85149', '#8b949e'];
+
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: countries.map(c => `${c.flag} ${c.country}`),
+                    datasets: [{
+                        data: countries.map(c => c.count),
+                        backgroundColor: countries.map((c, i) => defaultColors[i % defaultColors.length]),
+                        borderColor: '#21262d',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            padding: 15,
+                            labels: {
+                                color: '#f0f6fc',
+                                padding: 3,
+                                font: { size: 11 },
+                                boxWidth: 8
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#21262d',
+                            titleColor: '#f0f6fc',
+                            bodyColor: '#f0f6fc',
+                            borderColor: '#30363d',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const pct = Math.round((context.raw / total) * 100);
+                                    const projectText = context.raw === 1 ? 'project' : 'projects';
+                                    return `${context.label}: ${context.raw} ${projectText} (${pct}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
         function renderPlatformChart(platforms) {
             if (!platforms.length) return;
 
@@ -1821,6 +1910,7 @@
                         legend: {
                             display: true,
                             position: 'bottom',
+                            padding: 15,
                             labels: {
                                 color: '#f0f6fc',
                                 padding: 6,
@@ -2277,10 +2367,11 @@
         // Load and render stats
         async function loadStats() {
             try {
-                // Load both stats and members
-                const [statsResponse, membersResponse] = await Promise.all([
+                // Load stats, members, and tracker data
+                const [statsResponse, membersResponse, trackerResponse] = await Promise.all([
                     fetch('stats.json?t=' + Date.now()),
-                    fetch('members.json?t=' + Date.now()).catch(() => null)
+                    fetch('members.json?t=' + Date.now()).catch(() => null),
+                    fetch('tracker-data.json?t=' + Date.now()).catch(() => null)
                 ]);
 
                 if (!statsResponse.ok) {
@@ -2299,6 +2390,42 @@
                             info_url: `profile.html?id=${member.id}`
                         };
                     });
+                }
+
+                // Process tracker data for last 24h videos and stats
+                if (trackerResponse && trackerResponse.ok) {
+                    const trackerData = await trackerResponse.json();
+                    const now = new Date();
+                    const last24h = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+
+                    // Filter all submissions in last 24h
+                    const recentSubmissions = trackerData.submissions.filter(sub => {
+                        const subDate = new Date(sub.timestamp.replace(' UTC', 'Z'));
+                        return subDate >= last24h;
+                    });
+
+                    // Calculate stats
+                    const approved = recentSubmissions.filter(sub => sub.status === 'Processed').length;
+                    const rejected = recentSubmissions.filter(sub => sub.status === 'Rejected').length;
+                    const totalPosts = recentSubmissions.length;
+
+                    // Map to video format (only processed ones)
+                    const recentVideos = recentSubmissions
+                        .filter(sub => sub.status === 'Processed')
+                        .map(sub => ({
+                            project: sub.project_name,
+                            merchant: sub.merchant_name,
+                            platform: sub.platform,
+                            url: sub.post_url
+                        }));
+
+                    // Add to stats object
+                    stats.last_24h = stats.last_24h || {};
+                    stats.last_24h.videos = recentVideos;
+                    stats.last_24h.posts = totalPosts;
+                    stats.last_24h.approved = approved;
+                    stats.last_24h.rejected = rejected;
+                    stats.last_24h.payments = approved; // Processed posts = paid posts
                 }
 
                 renderDashboard(stats);
