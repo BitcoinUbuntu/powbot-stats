@@ -1,28 +1,49 @@
 {
   "totals": {
-    "all_payments": 167,
+    "all_payments": 170,
     "by_type": {
       "merchant": {
-        "count": 55
+        "count": 56
       },
       "project": {
-        "count": 55
+        "count": 56
       },
       "reviewer": {
-        "count": 57
+        "count": 58
       }
     }
   },
   "today": {
     "date": "2026-03-26",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 3,
+    "by_type": {
+      "merchant": {
+        "count": 1
+      },
+      "project": {
+        "count": 1
+      },
+      "reviewer": {
+        "count": 1
+      }
+    },
+    "approved": 1,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsv6dtvr7ylszkldlhewuerugcq8xu89y6djtspp5l9umurtmd8lvqe00q9p",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Folami Game Zone",
+        "platform": "Nostr",
+        "time": "08:18"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitcoin Victoria Falls 🇿🇲"
       },
@@ -262,21 +283,26 @@
     },
     {
       "date": "2026-03-26",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 1,
+      "merchant_count": 1,
+      "reviewer_count": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 57,
-    "approved": 55,
+    "total_reviewed": 58,
+    "approved": 56,
     "rejected": 2
   },
   "top_projects": [
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 16,
+      "count": 17,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsv6dtvr7ylszkldlhewuerugcq8xu89y6djtspp5l9umurtmd8lvqe00q9p",
+          "date": "2026-03-26",
+          "merchant": "Folami Game Zone"
+        },
         {
           "url": "https://x.com/i/status/2036818927724933623",
           "date": "2026-03-25",
@@ -710,6 +736,27 @@
       ]
     },
     {
+      "name": "Folami Game Zone",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsv6dtvr7ylszkldlhewuerugcq8xu89y6djtspp5l9umurtmd8lvqe00q9p",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvdwsujxvm39qcvls55qfjythrn0eh0eqjyuh0xuxf0fw6najjv6sdvgnzk",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036118314569572836",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Ellygant Unisex Salon",
       "count": 3,
       "posts": [
@@ -907,22 +954,6 @@
       ]
     },
     {
-      "name": "Folami Game Zone",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsvdwsujxvm39qcvls55qfjythrn0eh0eqjyuh0xuxf0fw6najjv6sdvgnzk",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036118314569572836",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
       "name": "Dona Marta Stand Shop",
       "count": 2,
       "posts": [
@@ -1039,17 +1070,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 2,
-    "daily_average_payments": 83
+    "daily_average_payments": 85
   },
   "burn_rate": {
-    "percentage": 51,
+    "percentage": 52,
     "status": "cold",
     "days_active": 2
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 167
+      "count": 170
     }
   ],
   "countries": [
@@ -1091,9 +1122,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 82
+      "count": 85
     }
   ],
-  "generated_at": "2026-03-26T08:10:02.345064+00:00",
+  "generated_at": "2026-03-26T08:20:01.965017+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
