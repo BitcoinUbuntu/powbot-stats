@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 300,
+    "all_payments": 306,
     "by_type": {
       "merchant": {
-        "count": 99
+        "count": 101
       },
       "project": {
-        "count": 99
+        "count": 101
       },
       "reviewer": {
-        "count": 102
+        "count": 104
       }
     }
   },
   "today": {
     "date": "2026-03-27",
-    "payments": 3,
+    "payments": 9,
     "by_type": {
       "merchant": {
-        "count": 1
+        "count": 3
       },
       "project": {
-        "count": 1
+        "count": 3
       },
       "reviewer": {
-        "count": 1
+        "count": 3
       }
     },
-    "approved": 1,
+    "approved": 3,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2037408503808082189",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Sena Store",
+        "platform": "X",
+        "time": "10:03"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqstvysy3252veeq4t2hfde48ergppjy0x4fdgcywepa4sqywc4v8wqdmk3dw",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Jennifer Musya",
+        "platform": "Nostr",
+        "time": "09:59"
+      },
       {
         "url": "https://x.com/i/status/2037376931696464142",
         "project": "Bitbiashara 🇰🇪",
@@ -41,6 +55,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -103,12 +123,6 @@
       },
       {
         "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Ikorodu 🇳🇬"
       },
       {
         "project": "Bitbiashara 🇰🇪"
@@ -292,21 +306,26 @@
     },
     {
       "date": "2026-03-27",
-      "project_count": 1,
-      "merchant_count": 1,
-      "reviewer_count": 1
+      "project_count": 3,
+      "merchant_count": 3,
+      "reviewer_count": 3
     }
   ],
   "reviewer": {
-    "total_reviewed": 102,
-    "approved": 99,
+    "total_reviewed": 104,
+    "approved": 101,
     "rejected": 3
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 25,
+      "count": 26,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstvysy3252veeq4t2hfde48ergppjy0x4fdgcywepa4sqywc4v8wqdmk3dw",
+          "date": "2026-03-27",
+          "merchant": "Jennifer Musya"
+        },
         {
           "url": "https://x.com/i/status/2037376931696464142",
           "date": "2026-03-27",
@@ -436,8 +455,13 @@
     },
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 22,
+      "count": 23,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2037408503808082189",
+          "date": "2026-03-27",
+          "merchant": "Sena Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsya0ylv8hnaavncfu3ex068a89fkpyjlgw2wvs8hgnxwthpg4utlgsd7xjd",
           "date": "2026-03-26",
@@ -1023,6 +1047,37 @@
       ]
     },
     {
+      "name": "Sena Store",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2037408503808082189",
+          "date": "2026-03-27",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2037006417547108614",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspfcf85k0nfmlmlu0ssjfxkqxnsehz76ly38m29z4rlf3h7r2u59ssue8f6",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsz6hlehacne2jgprwvkkn2k9aef2fmfacl2ljtqsjnz4wltswf52sd6z3rc",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2036549899513196557",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Ellygant Unisex Salon",
       "count": 5,
       "posts": [
@@ -1050,32 +1105,6 @@
           "url": "https://x.com/i/status/2036407703967240585",
           "date": "2026-03-24",
           "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Sena Store",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2037006417547108614",
-          "date": "2026-03-26",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspfcf85k0nfmlmlu0ssjfxkqxnsehz76ly38m29z4rlf3h7r2u59ssue8f6",
-          "date": "2026-03-26",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsz6hlehacne2jgprwvkkn2k9aef2fmfacl2ljtqsjnz4wltswf52sd6z3rc",
-          "date": "2026-03-25",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2036549899513196557",
-          "date": "2026-03-25",
-          "project": "Bitcoin Dua 🇬🇭"
         }
       ]
     },
@@ -1445,6 +1474,22 @@
       ]
     },
     {
+      "name": "Jennifer Musya",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstvysy3252veeq4t2hfde48ergppjy0x4fdgcywepa4sqywc4v8wqdmk3dw",
+          "date": "2026-03-27",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2037376931696464142",
+          "date": "2026-03-27",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Dona Marta Stand Shop",
       "count": 2,
       "posts": [
@@ -1569,17 +1614,6 @@
       ]
     },
     {
-      "name": "Jennifer Musya",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2037376931696464142",
-          "date": "2026-03-27",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Ebonydud",
       "count": 1,
       "posts": [
@@ -1605,17 +1639,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 4,
-    "daily_average_payments": 75
+    "daily_average_payments": 76
   },
   "burn_rate": {
-    "percentage": 46,
+    "percentage": 47,
     "status": "cold",
     "days_active": 4
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 300
+      "count": 306
     }
   ],
   "countries": [
@@ -1658,13 +1692,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 157
+      "count": 160
     },
     {
       "platform": "Nostr",
-      "count": 143
+      "count": 146
     }
   ],
-  "generated_at": "2026-03-27T09:59:48.444767+00:00",
+  "generated_at": "2026-03-27T10:10:02.352013+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
