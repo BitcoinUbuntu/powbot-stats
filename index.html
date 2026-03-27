@@ -443,6 +443,16 @@
             letter-spacing: 0.5px;
         }
 
+        .epoch-overview-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .epoch-overview-stats {
+            margin-top: auto;
+        }
+
         .big-number, .burn-status {
             font-size: 2.5rem;
             font-weight: 700;
@@ -1158,21 +1168,24 @@
                     </div>
                     ` : ''}
 
-                    <div class="card">
-                        <h2>Total Payments</h2>
-                        <div class="big-number">${formatNumber(stats.totals.all_payments)}</div>
-                        <div style="margin-top: 15px;">
+                    <div class="card epoch-overview-card">
+                        <h2>Epoch Overview</h2>
+                        <div class="epoch-overview-stats">
                             <div class="stat-row">
-                                <span class="stat-label">Merchants</span>
-                                <span class="stat-value merchant">${formatNumber(stats.totals.by_type.merchant?.count || 0)}</span>
+                                <span class="stat-label">Active Projects</span>
+                                <span class="stat-value" style="color: var(--accent-orange);">${formatNumber(stats.top_projects?.length || 0)}</span>
                             </div>
                             <div class="stat-row">
-                                <span class="stat-label">Projects</span>
-                                <span class="stat-value project">${formatNumber(stats.totals.by_type.project?.count || 0)}</span>
+                                <span class="stat-label">Active Merchants</span>
+                                <span class="stat-value" style="color: var(--accent-orange);">${formatNumber(stats.top_merchants?.length || 0)}</span>
                             </div>
                             <div class="stat-row">
-                                <span class="stat-label">Reviewer</span>
-                                <span class="stat-value" style="color: var(--accent-purple);">${formatNumber(stats.totals.by_type.reviewer?.count || 0)}</span>
+                                <span class="stat-label">Posts Approved</span>
+                                <span class="stat-value" style="color: var(--accent-orange);">${formatNumber(stats.reviewer?.approved || 0)}</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Countries Reached</span>
+                                <span class="stat-value" style="color: var(--accent-orange);">${formatNumber(stats.countries?.length || 0)}</span>
                             </div>
                         </div>
                     </div>
@@ -2428,7 +2441,7 @@
                     stats.last_24h.posts = totalPosts;
                     stats.last_24h.approved = approved;
                     stats.last_24h.rejected = rejected;
-                    stats.last_24h.payments = approved; // Processed posts = paid posts
+                    stats.last_24h.payments = (approved * 2) + totalPosts; // project + merchant + reviewer (paid for all posts)
                 }
 
                 renderDashboard(stats);
