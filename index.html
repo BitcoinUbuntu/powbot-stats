@@ -1264,7 +1264,7 @@
                 </div>
 
                 <!-- Last 24h Activity Banner -->
-                ${(stats.last_24h?.payments || 0) > 0 ? `
+                ${(stats.last_24h?.posts || 0) > 0 ? `
                 <div class="today-banner">
                     <span class="today-label">Last 24h <span class="today-time">(updated ${new Date(stats.generated_at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Africa/Johannesburg' })} CAT)</span></span>
                     <div class="today-stats">
@@ -1276,13 +1276,15 @@
                             <span class="today-value" style="color: var(--accent-green);">${formatNumber(stats.last_24h?.approved || 0)}</span>
                             <span class="today-unit">${(stats.last_24h?.approved || 0) === 1 ? 'approval' : 'approvals'}</span>
                         </div>
+                        ${(stats.last_24h?.pending || 0) > 0 ? `
+                        <div class="today-stat">
+                            <span class="today-value" style="color: var(--text-secondary);">${formatNumber(stats.last_24h?.pending || 0)}</span>
+                            <span class="today-unit">${(stats.last_24h?.pending || 0) === 1 ? 'pending' : 'pending'}</span>
+                        </div>
+                        ` : ''}
                         <div class="today-stat">
                             <span class="today-value" style="color: #f85149;">${formatNumber(stats.last_24h?.rejected || 0)}</span>
                             <span class="today-unit">${(stats.last_24h?.rejected || 0) === 1 ? 'rejection' : 'rejections'}</span>
-                        </div>
-                        <div class="today-stat">
-                            <span class="today-value" style="color: var(--text-primary);">${formatNumber(stats.last_24h?.payments || 0)}</span>
-                            <span class="today-unit">${(stats.last_24h?.payments || 0) === 1 ? 'payment' : 'payments'}</span>
                         </div>
                     </div>
                 </div>
@@ -1328,9 +1330,8 @@
                     const weekPosts = last7Days.reduce((sum, d) => sum + (d.reviewer_count || 0), 0);
                     const weekApproved = last7Days.reduce((sum, d) => sum + (d.project_count || 0), 0);
                     const weekRejected = weekPosts - weekApproved;
-                    const weekPayments = last7Days.reduce((sum, d) => sum + (d.project_count || 0) + (d.merchant_count || 0) + (d.reviewer_count || 0), 0);
 
-                    if (weekPayments === 0) return '';
+                    if (weekPosts === 0) return '';
 
                     return `
                 <div class="week-banner">
@@ -1347,10 +1348,6 @@
                         <div class="week-stat">
                             <span class="week-value" style="color: #f85149;">${formatNumber(weekRejected)}</span>
                             <span class="week-unit">${weekRejected === 1 ? 'rejection' : 'rejections'}</span>
-                        </div>
-                        <div class="week-stat">
-                            <span class="week-value" style="color: var(--text-primary);">${formatNumber(weekPayments)}</span>
-                            <span class="week-unit">${weekPayments === 1 ? 'payment' : 'payments'}</span>
                         </div>
                     </div>
                 </div>`;
@@ -2423,6 +2420,7 @@
                     // Calculate stats
                     const approved = recentSubmissions.filter(sub => sub.status === 'Processed').length;
                     const rejected = recentSubmissions.filter(sub => sub.status === 'Rejected').length;
+                    const pending = recentSubmissions.filter(sub => sub.status === 'Pending Review').length;
                     const totalPosts = recentSubmissions.length;
 
                     // Map to video format (only processed ones)
@@ -2441,7 +2439,7 @@
                     stats.last_24h.posts = totalPosts;
                     stats.last_24h.approved = approved;
                     stats.last_24h.rejected = rejected;
-                    stats.last_24h.payments = (approved * 2) + totalPosts; // project + merchant + reviewer (paid for all posts)
+                    stats.last_24h.pending = pending;
                 }
 
                 renderDashboard(stats);
