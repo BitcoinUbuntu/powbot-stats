@@ -1373,7 +1373,7 @@
             return { name: 'Nostr', icon: '🟣' };
         }
 
-        function renderLeaderboard(elementId, items, type, showMerchant = true, initialCount = 10) {
+        function renderLeaderboard(elementId, items, type, showMerchant = true, initialCount = 5) {
             const container = document.getElementById(elementId);
             if (!container) return;
 
@@ -1436,7 +1436,7 @@
             const container = document.getElementById(elementId);
             const isExpanded = button.classList.contains('expanded');
             const count = button.dataset.count;
-            const initialCount = parseInt(button.dataset.initial || '10');
+            const initialCount = parseInt(button.dataset.initial || '5');
 
             if (isExpanded) {
                 container.querySelectorAll('.leaderboard-item').forEach((el, index) => {

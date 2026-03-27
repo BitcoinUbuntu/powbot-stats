@@ -1575,7 +1575,7 @@
 
             if (isExpanded) {
                 container.querySelectorAll('.leaderboard-item').forEach((el, index) => {
-                    if (index >= 10) el.classList.add('leaderboard-hidden');
+                    if (index >= 5) el.classList.add('leaderboard-hidden');
                 });
                 button.textContent = `Show ${count} more`;
                 button.classList.remove('expanded');
