@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 350,
+    "all_payments": 353,
     "by_type": {
       "merchant": {
-        "count": 115
+        "count": 116
       },
       "project": {
-        "count": 115
+        "count": 116
       },
       "reviewer": {
-        "count": 120
+        "count": 121
       }
     }
   },
   "today": {
     "date": "2026-03-27",
-    "payments": 53,
+    "payments": 56,
     "by_type": {
       "merchant": {
-        "count": 17
+        "count": 18
       },
       "project": {
-        "count": 17
+        "count": 18
       },
       "reviewer": {
-        "count": 19
+        "count": 20
       }
     },
-    "approved": 17,
+    "approved": 18,
     "rejected": 2,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "Nostr",
+        "time": "11:53"
+      },
       {
         "url": "https://x.com/i/status/2037462310810255475",
         "project": "Bitbiashara 🇰🇪",
@@ -153,6 +160,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -443,14 +453,14 @@
     },
     {
       "date": "2026-03-27",
-      "project_count": 17,
-      "merchant_count": 17,
-      "reviewer_count": 19
+      "project_count": 18,
+      "merchant_count": 18,
+      "reviewer_count": 20
     }
   ],
   "reviewer": {
-    "total_reviewed": 120,
-    "approved": 115,
+    "total_reviewed": 121,
+    "approved": 116,
     "rejected": 5
   },
   "top_projects": [
@@ -1065,6 +1075,22 @@
       ]
     },
     {
+      "name": "BTC Shule 🇧🇮",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
+          "date": "2026-03-27",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2037264780444991537",
+          "date": "2026-03-26",
+          "merchant": "Kwa Innocent"
+        }
+      ]
+    },
+    {
       "name": "EcoBitz 🇰🇪",
       "count": 1,
       "posts": [
@@ -1105,17 +1131,6 @@
           "url": "https://x.com/i/status/2036911839464816870",
           "date": "2026-03-26",
           "merchant": "Sweet & Salty Cafe"
-        }
-      ]
-    },
-    {
-      "name": "BTC Shule 🇧🇮",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2037264780444991537",
-          "date": "2026-03-26",
-          "merchant": "Kwa Innocent"
         }
       ]
     }
@@ -1723,6 +1738,22 @@
       ]
     },
     {
+      "name": "Kwa Innocent",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
+          "date": "2026-03-27",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2037264780444991537",
+          "date": "2026-03-26",
+          "project": "BTC Shule 🇧🇮"
+        }
+      ]
+    },
+    {
       "name": "Klenam Stores",
       "count": 2,
       "posts": [
@@ -1927,17 +1958,6 @@
       ]
     },
     {
-      "name": "Kwa Innocent",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2037264780444991537",
-          "date": "2026-03-26",
-          "project": "BTC Shule 🇧🇮"
-        }
-      ]
-    },
-    {
       "name": "Delfinos Seaside Restaurant",
       "count": 1,
       "posts": [
@@ -1952,17 +1972,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 4,
-    "daily_average_payments": 87
+    "daily_average_payments": 88
   },
   "burn_rate": {
-    "percentage": 53,
+    "percentage": 54,
     "status": "cold",
     "days_active": 4
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 350
+      "count": 353
     }
   ],
   "countries": [
@@ -2004,14 +2024,14 @@
   ],
   "platforms": [
     {
-      "platform": "X",
-      "count": 176
+      "platform": "Nostr",
+      "count": 177
     },
     {
-      "platform": "Nostr",
-      "count": 174
+      "platform": "X",
+      "count": 176
     }
   ],
-  "generated_at": "2026-03-27T11:50:02.486454+00:00",
+  "generated_at": "2026-03-27T12:00:02.167314+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
