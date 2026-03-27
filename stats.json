@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 315,
+    "all_payments": 318,
     "by_type": {
       "merchant": {
-        "count": 104
+        "count": 105
       },
       "project": {
-        "count": 104
+        "count": 105
       },
       "reviewer": {
-        "count": 107
+        "count": 108
       }
     }
   },
   "today": {
     "date": "2026-03-27",
-    "payments": 18,
+    "payments": 21,
     "by_type": {
       "merchant": {
-        "count": 6
+        "count": 7
       },
       "project": {
-        "count": 6
+        "count": 7
       },
       "reviewer": {
-        "count": 6
+        "count": 7
       }
     },
-    "approved": 6,
+    "approved": 7,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsfhx9tvxdmf2unwu6xfn5cy62amy2txmrtvqly926u9ccjmm2herceguvz9",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Ellygant Unisex Salon",
+        "platform": "Nostr",
+        "time": "10:27"
+      },
       {
         "url": "https://primal.net/e/nevent1qqspcl9p5evl4zfufmrauxwln9sah6hpgtjclq7n4huyvsxy3ck7y2gklfxhs",
         "project": "Bitcoin Dua 🇬🇭",
@@ -76,6 +83,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -336,14 +346,14 @@
     },
     {
       "date": "2026-03-27",
-      "project_count": 6,
-      "merchant_count": 6,
-      "reviewer_count": 6
+      "project_count": 7,
+      "merchant_count": 7,
+      "reviewer_count": 7
     }
   ],
   "reviewer": {
-    "total_reviewed": 107,
-    "approved": 104,
+    "total_reviewed": 108,
+    "approved": 105,
     "rejected": 3
   },
   "top_projects": [
@@ -793,8 +803,13 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 5,
+      "count": 6,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfhx9tvxdmf2unwu6xfn5cy62amy2txmrtvqly926u9ccjmm2herceguvz9",
+          "date": "2026-03-27",
+          "merchant": "Ellygant Unisex Salon"
+        },
         {
           "url": "https://x.com/i/status/2037057555025854850",
           "date": "2026-03-26",
@@ -1129,8 +1144,13 @@
     },
     {
       "name": "Ellygant Unisex Salon",
-      "count": 5,
+      "count": 6,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfhx9tvxdmf2unwu6xfn5cy62amy2txmrtvqly926u9ccjmm2herceguvz9",
+          "date": "2026-03-27",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
         {
           "url": "https://x.com/i/status/2037057555025854850",
           "date": "2026-03-26",
@@ -1699,7 +1719,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 4,
-    "daily_average_payments": 78
+    "daily_average_payments": 79
   },
   "burn_rate": {
     "percentage": 48,
@@ -1709,7 +1729,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 315
+      "count": 318
     }
   ],
   "countries": [
@@ -1756,9 +1776,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 152
+      "count": 155
     }
   ],
-  "generated_at": "2026-03-27T10:20:03.058539+00:00",
+  "generated_at": "2026-03-27T10:30:01.638748+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
