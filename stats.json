@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 318,
+    "all_payments": 324,
     "by_type": {
       "merchant": {
-        "count": 105
+        "count": 107
       },
       "project": {
-        "count": 105
+        "count": 107
       },
       "reviewer": {
-        "count": 108
+        "count": 110
       }
     }
   },
   "today": {
     "date": "2026-03-27",
-    "payments": 21,
+    "payments": 27,
     "by_type": {
       "merchant": {
-        "count": 7
+        "count": 9
       },
       "project": {
-        "count": 7
+        "count": 9
       },
       "reviewer": {
-        "count": 7
+        "count": 9
       }
     },
-    "approved": 7,
+    "approved": 9,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "T-Junction fast food",
+        "platform": "Nostr",
+        "time": "10:36"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswx8agsjt6vyu300zp3tq39yzkcwdwtsrwjq89x96xt24ufea6zrscqttrr",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Ebonydud",
+        "platform": "Nostr",
+        "time": "10:35"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsfhx9tvxdmf2unwu6xfn5cy62amy2txmrtvqly926u9ccjmm2herceguvz9",
         "project": "Bitcoin Ikorodu 🇳🇬",
@@ -83,6 +97,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -346,14 +366,14 @@
     },
     {
       "date": "2026-03-27",
-      "project_count": 7,
-      "merchant_count": 7,
-      "reviewer_count": 7
+      "project_count": 9,
+      "merchant_count": 9,
+      "reviewer_count": 9
     }
   ],
   "reviewer": {
-    "total_reviewed": 108,
-    "approved": 105,
+    "total_reviewed": 110,
+    "approved": 107,
     "rejected": 3
   },
   "top_projects": [
@@ -839,8 +859,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 5,
+      "count": 6,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswx8agsjt6vyu300zp3tq39yzkcwdwtsrwjq89x96xt24ufea6zrscqttrr",
+          "date": "2026-03-27",
+          "merchant": "Ebonydud"
+        },
         {
           "url": "https://x.com/i/status/2037090108365500735",
           "date": "2026-03-26",
@@ -935,6 +960,17 @@
           "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
           "date": "2026-03-25",
           "merchant": "Mundayam Restaurant"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Sisonke 🇿🇦",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
+          "date": "2026-03-27",
+          "merchant": "T-Junction fast food"
         }
       ]
     },
@@ -1570,6 +1606,22 @@
       ]
     },
     {
+      "name": "Ebonydud",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswx8agsjt6vyu300zp3tq39yzkcwdwtsrwjq89x96xt24ufea6zrscqttrr",
+          "date": "2026-03-27",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2037090108365500735",
+          "date": "2026-03-26",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Dona Marta Stand Shop",
       "count": 2,
       "posts": [
@@ -1661,6 +1713,17 @@
       ]
     },
     {
+      "name": "T-Junction fast food",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
+          "date": "2026-03-27",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Sweet & Salty Cafe",
       "count": 1,
       "posts": [
@@ -1694,17 +1757,6 @@
       ]
     },
     {
-      "name": "Ebonydud",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2037090108365500735",
-          "date": "2026-03-26",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        }
-      ]
-    },
-    {
       "name": "Delfinos Seaside Restaurant",
       "count": 1,
       "posts": [
@@ -1719,17 +1771,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 4,
-    "daily_average_payments": 79
+    "daily_average_payments": 81
   },
   "burn_rate": {
-    "percentage": 48,
+    "percentage": 49,
     "status": "cold",
     "days_active": 4
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 318
+      "count": 324
     }
   ],
   "countries": [
@@ -1739,13 +1791,13 @@
       "count": 3
     },
     {
-      "flag": "🇰🇪",
-      "country": "Kenya",
-      "count": 2
-    },
-    {
       "flag": "🇿🇦",
       "country": "South Africa",
+      "count": 3
+    },
+    {
+      "flag": "🇰🇪",
+      "country": "Kenya",
       "count": 2
     },
     {
@@ -1776,9 +1828,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 155
+      "count": 161
     }
   ],
-  "generated_at": "2026-03-27T10:33:29.987377+00:00",
+  "generated_at": "2026-03-27T10:40:01.680243+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
