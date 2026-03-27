@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 324,
+    "all_payments": 333,
     "by_type": {
       "merchant": {
-        "count": 107
+        "count": 110
       },
       "project": {
-        "count": 107
+        "count": 110
       },
       "reviewer": {
-        "count": 110
+        "count": 113
       }
     }
   },
   "today": {
     "date": "2026-03-27",
-    "payments": 27,
+    "payments": 36,
     "by_type": {
       "merchant": {
-        "count": 9
+        "count": 12
       },
       "project": {
-        "count": 9
+        "count": 12
       },
       "reviewer": {
-        "count": 9
+        "count": 12
       }
     },
-    "approved": 9,
+    "approved": 12,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2037433865677963645",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Peace Pot",
+        "platform": "X",
+        "time": "10:49"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqspha2rm7d5pn5a4mnwql9qclzxt2qwsruns060sk6sjlycesxnc5sfzgc99",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Antitor Provision Store",
+        "platform": "Nostr",
+        "time": "10:48"
+      },
+      {
+        "url": "https://x.com/i/status/2036825218086314438",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Antitor Provision Store",
+        "platform": "X",
+        "time": "10:47"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
         "project": "Bitcoin Sisonke 🇿🇦",
@@ -97,6 +118,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
       {
         "project": "Bitcoin Sisonke 🇿🇦"
       },
@@ -366,21 +396,31 @@
     },
     {
       "date": "2026-03-27",
-      "project_count": 9,
-      "merchant_count": 9,
-      "reviewer_count": 9
+      "project_count": 12,
+      "merchant_count": 12,
+      "reviewer_count": 12
     }
   ],
   "reviewer": {
-    "total_reviewed": 110,
-    "approved": 107,
+    "total_reviewed": 113,
+    "approved": 110,
     "rejected": 3
   },
   "top_projects": [
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 26,
+      "count": 28,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspha2rm7d5pn5a4mnwql9qclzxt2qwsruns060sk6sjlycesxnc5sfzgc99",
+          "date": "2026-03-27",
+          "merchant": "Antitor Provision Store"
+        },
+        {
+          "url": "https://x.com/i/status/2036825218086314438",
+          "date": "2026-03-27",
+          "merchant": "Antitor Provision Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqspcl9p5evl4zfufmrauxwln9sah6hpgtjclq7n4huyvsxy3ck7y2gklfxhs",
           "date": "2026-03-27",
@@ -975,6 +1015,17 @@
       ]
     },
     {
+      "name": "Bitcoin Aves 🇬🇭",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2037433865677963645",
+          "date": "2026-03-27",
+          "merchant": "Peace Pot"
+        }
+      ]
+    },
+    {
       "name": "BitJR Academy 🇿🇲",
       "count": 1,
       "posts": [
@@ -1215,6 +1266,42 @@
       ]
     },
     {
+      "name": "Antitor Provision Store",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspha2rm7d5pn5a4mnwql9qclzxt2qwsruns060sk6sjlycesxnc5sfzgc99",
+          "date": "2026-03-27",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2036825218086314438",
+          "date": "2026-03-27",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2037013143495266380",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqe46f5g6zqy2c8z90j80y0syt9kgpq8vv3w67xaw6h06ek9ru6scvqj3zf",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2036548013494014211",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswqh6n9rhqtrj4ujqg0tdds3qdrjlyg6vyyg4hs738g8l26t2crqg59pjjl",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Preso's Food and Drinks",
       "count": 4,
       "posts": [
@@ -1315,32 +1402,6 @@
           "url": "https://primal.net/e/nevent1qqs9ssxz57vu5yu2fnzayn7524fmaqqwf7sp6vu39pmgryyhqyyp8eqawax4l",
           "date": "2026-03-25",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Antitor Provision Store",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2037013143495266380",
-          "date": "2026-03-26",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqe46f5g6zqy2c8z90j80y0syt9kgpq8vv3w67xaw6h06ek9ru6scvqj3zf",
-          "date": "2026-03-26",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2036548013494014211",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswqh6n9rhqtrj4ujqg0tdds3qdrjlyg6vyyg4hs738g8l26t2crqg59pjjl",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dua 🇬🇭"
         }
       ]
     },
@@ -1735,6 +1796,17 @@
       ]
     },
     {
+      "name": "Peace Pot",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2037433865677963645",
+          "date": "2026-03-27",
+          "project": "Bitcoin Aves 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Mundayam Restaurant",
       "count": 1,
       "posts": [
@@ -1771,17 +1843,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 4,
-    "daily_average_payments": 81
+    "daily_average_payments": 83
   },
   "burn_rate": {
-    "percentage": 49,
+    "percentage": 51,
     "status": "cold",
     "days_active": 4
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 324
+      "count": 333
     }
   ],
   "countries": [
@@ -1801,6 +1873,11 @@
       "count": 2
     },
     {
+      "flag": "🇬🇭",
+      "country": "Ghana",
+      "count": 2
+    },
+    {
       "flag": "🇿🇲",
       "country": "Zambia",
       "count": 2
@@ -1811,11 +1888,6 @@
       "count": 2
     },
     {
-      "flag": "🇬🇭",
-      "country": "Ghana",
-      "count": 1
-    },
-    {
       "flag": "🇧🇮",
       "country": "Burundi",
       "count": 1
@@ -1824,13 +1896,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 163
+      "count": 169
     },
     {
       "platform": "Nostr",
-      "count": 161
+      "count": 164
     }
   ],
-  "generated_at": "2026-03-27T10:40:01.680243+00:00",
+  "generated_at": "2026-03-27T10:50:02.585489+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
