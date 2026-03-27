@@ -367,7 +367,8 @@ function renderSubmissionCard(submission) {
     });
 
     // Merchant tip status indicator
-    const tipStatus = submission.merchant_tip_status === '✅' ? '✓' : '✗';
+    const tipStatus = submission.merchant_tip_status === '✅' ? '✓' :
+                     submission.merchant_tip_status === '❌' ? '✗' : '';
     const tipColor = submission.merchant_tip_status === '✅' ? 'var(--accent-green)' : 'var(--accent-red)';
 
     return `
@@ -430,14 +431,13 @@ function renderCardDetails(submission, tipStatus, tipColor) {
 
     // Lightning Address & Tip Status
     if (submission.lightning_address) {
+        const tipIcon = tipStatus ? `<span style="margin-left: 8px; color: ${tipColor}; font-weight: 600; font-size: 1.1rem;">${tipStatus}</span>` : '';
         html += `
             <div class="detail-section">
                 <div class="detail-label">Merchant Lightning Address</div>
                 <div class="detail-value">
                     <span>${submission.lightning_address}</span>
-                    <span style="margin-left: 8px; color: ${tipColor}; font-weight: 600; font-size: 1.1rem;">
-                        ${tipStatus}
-                    </span>
+                    ${tipIcon}
                 </div>
             </div>
         `;
