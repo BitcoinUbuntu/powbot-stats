@@ -1,35 +1,63 @@
 {
   "totals": {
-    "all_payments": 333,
+    "all_payments": 345,
     "by_type": {
       "merchant": {
-        "count": 110
+        "count": 114
       },
       "project": {
-        "count": 110
+        "count": 114
       },
       "reviewer": {
-        "count": 113
+        "count": 117
       }
     }
   },
   "today": {
     "date": "2026-03-27",
-    "payments": 36,
+    "payments": 48,
     "by_type": {
       "merchant": {
-        "count": 12
+        "count": 16
       },
       "project": {
-        "count": 12
+        "count": 16
       },
       "reviewer": {
-        "count": 12
+        "count": 16
       }
     },
-    "approved": 12,
+    "approved": 16,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs28wauluucprwmxupkl0gywcf4muclzdpcv6csszjkdlsfyfvg83q2utlns",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Chips point",
+        "platform": "Nostr",
+        "time": "10:58"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsttaknk20xcw7lxpu62l2x95egay0qp5mjamsvtj4clk83c2tn09sdqkyn2",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Mossel Bay Gas",
+        "platform": "Nostr",
+        "time": "10:55"
+      },
+      {
+        "url": "https://x.com/i/status/2034268984623685948",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Mossel Bay Gas",
+        "platform": "X",
+        "time": "10:54"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs2p8hrya73ek0fhwhymlheqs0lf574lpp6fjdkk4yh3qqsa4ugprsqz9vwt",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Peace Pot",
+        "platform": "Nostr",
+        "time": "10:50"
+      },
       {
         "url": "https://x.com/i/status/2037433865677963645",
         "project": "Bitcoin Aves 🇬🇭",
@@ -118,6 +146,18 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
       {
         "project": "Bitcoin Aves 🇬🇭"
       },
@@ -396,14 +436,14 @@
     },
     {
       "date": "2026-03-27",
-      "project_count": 12,
-      "merchant_count": 12,
-      "reviewer_count": 12
+      "project_count": 16,
+      "merchant_count": 16,
+      "reviewer_count": 16
     }
   ],
   "reviewer": {
-    "total_reviewed": 113,
-    "approved": 110,
+    "total_reviewed": 117,
+    "approved": 114,
     "rejected": 3
   },
   "top_projects": [
@@ -555,8 +595,13 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 26,
+      "count": 27,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs28wauluucprwmxupkl0gywcf4muclzdpcv6csszjkdlsfyfvg83q2utlns",
+          "date": "2026-03-27",
+          "merchant": "Chips point"
+        },
         {
           "url": "https://primal.net/e/nevent1qqstvysy3252veeq4t2hfde48ergppjy0x4fdgcywepa4sqywc4v8wqdmk3dw",
           "date": "2026-03-27",
@@ -807,8 +852,18 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 10,
+      "count": 12,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsttaknk20xcw7lxpu62l2x95egay0qp5mjamsvtj4clk83c2tn09sdqkyn2",
+          "date": "2026-03-27",
+          "merchant": "Mossel Bay Gas"
+        },
+        {
+          "url": "https://x.com/i/status/2034268984623685948",
+          "date": "2026-03-27",
+          "merchant": "Mossel Bay Gas"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsv009eqg9lfyc2fxgkfkhn6w6dwlh2x0mrcv57j62ueh7vwjsc47q5uqsfd",
           "date": "2026-03-26",
@@ -966,6 +1021,22 @@
       ]
     },
     {
+      "name": "Bitcoin Aves 🇬🇭",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs2p8hrya73ek0fhwhymlheqs0lf574lpp6fjdkk4yh3qqsa4ugprsqz9vwt",
+          "date": "2026-03-27",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://x.com/i/status/2037433865677963645",
+          "date": "2026-03-27",
+          "merchant": "Peace Pot"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Anambra 🇳🇬",
       "count": 2,
       "posts": [
@@ -1011,17 +1082,6 @@
           "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
           "date": "2026-03-27",
           "merchant": "T-Junction fast food"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Aves 🇬🇭",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2037433865677963645",
-          "date": "2026-03-27",
-          "merchant": "Peace Pot"
         }
       ]
     },
@@ -1523,6 +1583,22 @@
       ]
     },
     {
+      "name": "Peace Pot",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs2p8hrya73ek0fhwhymlheqs0lf574lpp6fjdkk4yh3qqsa4ugprsqz9vwt",
+          "date": "2026-03-27",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2037433865677963645",
+          "date": "2026-03-27",
+          "project": "Bitcoin Aves 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Nelton Services Shop",
       "count": 2,
       "posts": [
@@ -1535,6 +1611,22 @@
           "url": "https://x.com/i/status/2036460872176934991",
           "date": "2026-03-24",
           "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
+      "name": "Mossel Bay Gas",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsttaknk20xcw7lxpu62l2x95egay0qp5mjamsvtj4clk83c2tn09sdqkyn2",
+          "date": "2026-03-27",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2034268984623685948",
+          "date": "2026-03-27",
+          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
@@ -1796,17 +1888,6 @@
       ]
     },
     {
-      "name": "Peace Pot",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2037433865677963645",
-          "date": "2026-03-27",
-          "project": "Bitcoin Aves 🇬🇭"
-        }
-      ]
-    },
-    {
       "name": "Mundayam Restaurant",
       "count": 1,
       "posts": [
@@ -1838,22 +1919,33 @@
           "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
+    },
+    {
+      "name": "Chips point",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs28wauluucprwmxupkl0gywcf4muclzdpcv6csszjkdlsfyfvg83q2utlns",
+          "date": "2026-03-27",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Mar 24",
     "days_active": 4,
-    "daily_average_payments": 83
+    "daily_average_payments": 86
   },
   "burn_rate": {
-    "percentage": 51,
+    "percentage": 52,
     "status": "cold",
     "days_active": 4
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 333
+      "count": 345
     }
   ],
   "countries": [
@@ -1895,14 +1987,14 @@
   ],
   "platforms": [
     {
-      "platform": "X",
-      "count": 169
+      "platform": "Nostr",
+      "count": 173
     },
     {
-      "platform": "Nostr",
-      "count": 164
+      "platform": "X",
+      "count": 172
     }
   ],
-  "generated_at": "2026-03-27T10:50:02.585489+00:00",
+  "generated_at": "2026-03-27T11:00:02.381288+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
