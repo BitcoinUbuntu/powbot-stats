@@ -1,28 +1,49 @@
 {
   "totals": {
-    "all_payments": 297,
+    "all_payments": 300,
     "by_type": {
       "merchant": {
-        "count": 98
+        "count": 99
       },
       "project": {
-        "count": 98
+        "count": 99
       },
       "reviewer": {
-        "count": 101
+        "count": 102
       }
     }
   },
   "today": {
     "date": "2026-03-27",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 3,
+    "by_type": {
+      "merchant": {
+        "count": 1
+      },
+      "project": {
+        "count": 1
+      },
+      "reviewer": {
+        "count": 1
+      }
+    },
+    "approved": 1,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2037376931696464142",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Jennifer Musya",
+        "platform": "X",
+        "time": "09:58"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -271,21 +292,26 @@
     },
     {
       "date": "2026-03-27",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 1,
+      "merchant_count": 1,
+      "reviewer_count": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 101,
-    "approved": 98,
+    "total_reviewed": 102,
+    "approved": 99,
     "rejected": 3
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 24,
+      "count": 25,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2037376931696464142",
+          "date": "2026-03-27",
+          "merchant": "Jennifer Musya"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsxekltdu8vahpv976fu8662ksyljcgx0vrqcdwuychte0kpnhakeqrfy9qw",
           "date": "2026-03-26",
@@ -1543,6 +1569,17 @@
       ]
     },
     {
+      "name": "Jennifer Musya",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2037376931696464142",
+          "date": "2026-03-27",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Ebonydud",
       "count": 1,
       "posts": [
@@ -1568,17 +1605,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 4,
-    "daily_average_payments": 74
+    "daily_average_payments": 75
   },
   "burn_rate": {
-    "percentage": 45,
+    "percentage": 46,
     "status": "cold",
     "days_active": 4
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 297
+      "count": 300
     }
   ],
   "countries": [
@@ -1621,13 +1658,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 154
+      "count": 157
     },
     {
       "platform": "Nostr",
       "count": 143
     }
   ],
-  "generated_at": "2026-03-27T09:50:01.674322+00:00",
+  "generated_at": "2026-03-27T09:59:48.444767+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
