@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 499,
+    "all_payments": 505,
     "by_type": {
       "merchant": {
-        "count": 165
+        "count": 167
       },
       "project": {
-        "count": 165
+        "count": 167
       },
       "reviewer": {
-        "count": 169
+        "count": 171
       }
     }
   },
   "today": {
     "date": "2026-03-28",
-    "payments": 109,
+    "payments": 115,
     "by_type": {
       "merchant": {
-        "count": 37
+        "count": 39
       },
       "project": {
-        "count": 37
+        "count": 39
       },
       "reviewer": {
-        "count": 35
+        "count": 37
       }
     },
-    "approved": 35,
+    "approved": 37,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqstx3magssdguv8n7cxv0lh7dart9jv2u707kfwpkfmwjlmhg0cjfgcsvx3h",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nubelle",
+        "platform": "Nostr",
+        "time": "19:22"
+      },
+      {
+        "url": "https://x.com/i/status/2037963008027009156",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nubelle",
+        "platform": "X",
+        "time": "19:20"
+      },
       {
         "url": "https://x.com/i/status/2037501732511453655",
         "project": "Bitcoin Ekasi 🇿🇦",
@@ -280,6 +294,12 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
         "project": "Bitcoin Ekasi 🇿🇦"
       },
       {
@@ -383,15 +403,6 @@
       },
       {
         "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Dombo 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Dombo 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Ikorodu 🇳🇬"
       }
     ]
   },
@@ -572,14 +583,14 @@
     },
     {
       "date": "2026-03-28",
-      "project_count": 37,
-      "merchant_count": 37,
-      "reviewer_count": 35
+      "project_count": 39,
+      "merchant_count": 39,
+      "reviewer_count": 37
     }
   ],
   "reviewer": {
-    "total_reviewed": 172,
-    "approved": 165,
+    "total_reviewed": 174,
+    "approved": 167,
     "rejected": 7
   },
   "top_projects": [
@@ -1042,8 +1053,18 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 30,
+      "count": 32,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstx3magssdguv8n7cxv0lh7dart9jv2u707kfwpkfmwjlmhg0cjfgcsvx3h",
+          "date": "2026-03-28",
+          "merchant": "Nubelle"
+        },
+        {
+          "url": "https://x.com/i/status/2037963008027009156",
+          "date": "2026-03-28",
+          "merchant": "Nubelle"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsxres0fc9djcsev50e6xvw5x7yvgytha8cgxczgr00ll64ryw2skcg59k9l",
           "date": "2026-03-28",
@@ -2338,6 +2359,22 @@
       ]
     },
     {
+      "name": "Nubelle",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstx3magssdguv8n7cxv0lh7dart9jv2u707kfwpkfmwjlmhg0cjfgcsvx3h",
+          "date": "2026-03-28",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2037963008027009156",
+          "date": "2026-03-28",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Nelton Services Shop",
       "count": 2,
       "posts": [
@@ -2599,17 +2636,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 5,
-    "daily_average_payments": 99
+    "daily_average_payments": 101
   },
   "burn_rate": {
-    "percentage": 61,
+    "percentage": 62,
     "status": "cold",
     "days_active": 5
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 499
+      "count": 505
     }
   ],
   "countries": [
@@ -2652,13 +2689,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 251
+      "count": 254
     },
     {
       "platform": "X",
-      "count": 248
+      "count": 251
     }
   ],
-  "generated_at": "2026-03-28T19:20:01.807189+00:00",
+  "generated_at": "2026-03-28T19:30:02.518021+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
