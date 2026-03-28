@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 505,
+    "all_payments": 514,
     "by_type": {
       "merchant": {
-        "count": 167
+        "count": 170
       },
       "project": {
-        "count": 167
+        "count": 170
       },
       "reviewer": {
-        "count": 171
+        "count": 174
       }
     }
   },
   "today": {
     "date": "2026-03-28",
-    "payments": 115,
+    "payments": 124,
     "by_type": {
       "merchant": {
-        "count": 39
+        "count": 42
       },
       "project": {
-        "count": 39
+        "count": 42
       },
       "reviewer": {
-        "count": 37
+        "count": 40
       }
     },
-    "approved": 37,
+    "approved": 40,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2037985930317873400",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Stay Safe Restaurante & Lounge",
+        "platform": "X",
+        "time": "21:23"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswpt26a0g3ypyx0vxxp2z4czeyd09nug2fxytp8d98r8v0nwa2cts39vyh6",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Stay Safe Restaurante & Lounge",
+        "platform": "Nostr",
+        "time": "21:22"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs8n7qhrfgwz4upmlm63473dsw5m0xslvumdf5evql58pkct77aj0cj2xvre",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Kwallos Shop",
+        "platform": "Nostr",
+        "time": "21:22"
+      },
       {
         "url": "https://primal.net/e/nevent1qqstx3magssdguv8n7cxv0lh7dart9jv2u707kfwpkfmwjlmhg0cjfgcsvx3h",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -293,6 +314,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -583,14 +613,14 @@
     },
     {
       "date": "2026-03-28",
-      "project_count": 39,
-      "merchant_count": 39,
-      "reviewer_count": 37
+      "project_count": 42,
+      "merchant_count": 42,
+      "reviewer_count": 40
     }
   ],
   "reviewer": {
-    "total_reviewed": 174,
-    "approved": 167,
+    "total_reviewed": 177,
+    "approved": 170,
     "rejected": 7
   },
   "top_projects": [
@@ -1053,8 +1083,18 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 32,
+      "count": 34,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2037985930317873400",
+          "date": "2026-03-28",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswpt26a0g3ypyx0vxxp2z4czeyd09nug2fxytp8d98r8v0nwa2cts39vyh6",
+          "date": "2026-03-28",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
         {
           "url": "https://primal.net/e/nevent1qqstx3magssdguv8n7cxv0lh7dart9jv2u707kfwpkfmwjlmhg0cjfgcsvx3h",
           "date": "2026-03-28",
@@ -1219,8 +1259,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 13,
+      "count": 14,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8n7qhrfgwz4upmlm63473dsw5m0xslvumdf5evql58pkct77aj0cj2xvre",
+          "date": "2026-03-28",
+          "merchant": "Kwallos Shop"
+        },
         {
           "url": "https://x.com/i/status/2037501732511453655",
           "date": "2026-03-28",
@@ -2039,6 +2084,32 @@
       ]
     },
     {
+      "name": "Stay Safe Restaurante & Lounge",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2037985930317873400",
+          "date": "2026-03-28",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswpt26a0g3ypyx0vxxp2z4czeyd09nug2fxytp8d98r8v0nwa2cts39vyh6",
+          "date": "2026-03-28",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036818927724933623",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdfgag824f929evtqecfh6ehjg53qx83l48hccc7xypf564zmcdcgqxg9a3",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Peace Pot",
       "count": 4,
       "posts": [
@@ -2087,6 +2158,32 @@
           "url": "https://x.com/i/status/2037278318957867051",
           "date": "2026-03-26",
           "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
+      "name": "Kwallos Shop",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8n7qhrfgwz4upmlm63473dsw5m0xslvumdf5evql58pkct77aj0cj2xvre",
+          "date": "2026-03-28",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2037501732511453655",
+          "date": "2026-03-28",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq7r77mlck9j5ftlmrlp4fzz73ypgrqxvvzl4yxsrm3cvzghfdrmsdfp7ac",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2031308988403360062",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
@@ -2221,27 +2318,6 @@
       ]
     },
     {
-      "name": "Kwallos Shop",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2037501732511453655",
-          "date": "2026-03-28",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq7r77mlck9j5ftlmrlp4fzz73ypgrqxvvzl4yxsrm3cvzghfdrmsdfp7ac",
-          "date": "2026-03-24",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2031308988403360062",
-          "date": "2026-03-24",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
       "name": "Jabulani Shop 3",
       "count": 3,
       "posts": [
@@ -2289,22 +2365,6 @@
         },
         {
           "url": "https://x.com/i/status/2036770826096095273",
-          "date": "2026-03-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Stay Safe Restaurante & Lounge",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2036818927724933623",
-          "date": "2026-03-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdfgag824f929evtqecfh6ehjg53qx83l48hccc7xypf564zmcdcgqxg9a3",
           "date": "2026-03-25",
           "project": "Bitcoin Dombo 🇲🇿"
         }
@@ -2636,17 +2696,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 5,
-    "daily_average_payments": 101
+    "daily_average_payments": 102
   },
   "burn_rate": {
-    "percentage": 62,
+    "percentage": 63,
     "status": "cold",
     "days_active": 5
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 505
+      "count": 514
     }
   ],
   "countries": [
@@ -2689,13 +2749,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 254
+      "count": 260
     },
     {
       "platform": "X",
-      "count": 251
+      "count": 254
     }
   ],
-  "generated_at": "2026-03-28T21:20:02.256574+00:00",
+  "generated_at": "2026-03-28T21:30:01.917539+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
