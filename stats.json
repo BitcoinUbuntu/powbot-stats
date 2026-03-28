@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 487,
+    "all_payments": 493,
     "by_type": {
       "merchant": {
-        "count": 161
+        "count": 163
       },
       "project": {
-        "count": 161
+        "count": 163
       },
       "reviewer": {
-        "count": 165
+        "count": 167
       }
     }
   },
   "today": {
     "date": "2026-03-28",
-    "payments": 97,
+    "payments": 103,
     "by_type": {
       "merchant": {
-        "count": 33
+        "count": 35
       },
       "project": {
-        "count": 33
+        "count": 35
       },
       "reviewer": {
-        "count": 31
+        "count": 33
       }
     },
-    "approved": 31,
+    "approved": 33,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2037959525219614902",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Jennifer Musya",
+        "platform": "X",
+        "time": "18:36"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsg2uyqkkkkyrafemnc8tmqq2eflahy7wntpltdc8dwr2rwakj6f7qk5ahfm",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "Rehoboth freshmilk diary",
+        "platform": "Nostr",
+        "time": "18:36"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsza06q35nyntgd2x722njchvev28ea6h42qstdf5pq2k8xet5zq4gzpgr53",
         "project": "Bitcoin Dua 🇬🇭",
@@ -251,6 +265,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "EcoBitz 🇰🇪"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -559,14 +579,14 @@
     },
     {
       "date": "2026-03-28",
-      "project_count": 33,
-      "merchant_count": 33,
-      "reviewer_count": 31
+      "project_count": 35,
+      "merchant_count": 35,
+      "reviewer_count": 33
     }
   ],
   "reviewer": {
-    "total_reviewed": 168,
-    "approved": 161,
+    "total_reviewed": 170,
+    "approved": 163,
     "rejected": 7
   },
   "top_projects": [
@@ -798,8 +818,13 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 43,
+      "count": 44,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2037959525219614902",
+          "date": "2026-03-28",
+          "merchant": "Jennifer Musya"
+        },
         {
           "url": "https://x.com/i/status/2037834001319166330",
           "date": "2026-03-28",
@@ -1374,6 +1399,22 @@
       ]
     },
     {
+      "name": "EcoBitz 🇰🇪",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsg2uyqkkkkyrafemnc8tmqq2eflahy7wntpltdc8dwr2rwakj6f7qk5ahfm",
+          "date": "2026-03-28",
+          "merchant": "Rehoboth freshmilk diary"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs92prhvwvkhnq4344f27ujt345gjv4wmpeepnucmcka2p7twh48kqadsx30",
+          "date": "2026-03-24",
+          "merchant": "Wa Ngala Hardware"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Famba 🇲🇿",
       "count": 2,
       "posts": [
@@ -1418,17 +1459,6 @@
           "url": "https://x.com/i/status/2037264780444991537",
           "date": "2026-03-26",
           "merchant": "Kwa Innocent"
-        }
-      ]
-    },
-    {
-      "name": "EcoBitz 🇰🇪",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs92prhvwvkhnq4344f27ujt345gjv4wmpeepnucmcka2p7twh48kqadsx30",
-          "date": "2026-03-24",
-          "merchant": "Wa Ngala Hardware"
         }
       ]
     },
@@ -2141,6 +2171,27 @@
       ]
     },
     {
+      "name": "Jennifer Musya",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2037959525219614902",
+          "date": "2026-03-28",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstvysy3252veeq4t2hfde48ergppjy0x4fdgcywepa4sqywc4v8wqdmk3dw",
+          "date": "2026-03-27",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2037376931696464142",
+          "date": "2026-03-27",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Jabulani Shop 3",
       "count": 3,
       "posts": [
@@ -2370,22 +2421,6 @@
       ]
     },
     {
-      "name": "Jennifer Musya",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqstvysy3252veeq4t2hfde48ergppjy0x4fdgcywepa4sqywc4v8wqdmk3dw",
-          "date": "2026-03-27",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2037376931696464142",
-          "date": "2026-03-27",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Harmony Enterprises",
       "count": 2,
       "posts": [
@@ -2515,6 +2550,17 @@
       ]
     },
     {
+      "name": "Rehoboth freshmilk diary",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsg2uyqkkkkyrafemnc8tmqq2eflahy7wntpltdc8dwr2rwakj6f7qk5ahfm",
+          "date": "2026-03-28",
+          "project": "EcoBitz 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Mundayam Restaurant",
       "count": 1,
       "posts": [
@@ -2540,17 +2586,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 5,
-    "daily_average_payments": 97
+    "daily_average_payments": 98
   },
   "burn_rate": {
-    "percentage": 59,
+    "percentage": 60,
     "status": "cold",
     "days_active": 5
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 487
+      "count": 493
     }
   ],
   "countries": [
@@ -2593,13 +2639,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 245
+      "count": 248
     },
     {
       "platform": "X",
-      "count": 242
+      "count": 245
     }
   ],
-  "generated_at": "2026-03-28T18:30:01.622454+00:00",
+  "generated_at": "2026-03-28T18:40:02.357242+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
