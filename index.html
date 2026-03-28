@@ -1324,34 +1324,6 @@
                 </div>
                 ` : ''}
 
-                <!-- Last 7 Days Banner -->
-                ${(() => {
-                    const last7Days = (stats.daily || []).slice(-7);
-                    const weekPosts = last7Days.reduce((sum, d) => sum + (d.reviewer_count || 0), 0);
-                    const weekApproved = last7Days.reduce((sum, d) => sum + (d.project_count || 0), 0);
-                    const weekRejected = weekPosts - weekApproved;
-
-                    if (weekPosts === 0) return '';
-
-                    return `
-                <div class="week-banner">
-                    <span class="week-label">Last 7 Days</span>
-                    <div class="week-stats">
-                        <div class="week-stat">
-                            <span class="week-value" style="color: var(--accent-purple);">${formatNumber(weekPosts)}</span>
-                            <span class="week-unit">${weekPosts === 1 ? 'post' : 'posts'}</span>
-                        </div>
-                        <div class="week-stat">
-                            <span class="week-value" style="color: var(--accent-green);">${formatNumber(weekApproved)}</span>
-                            <span class="week-unit">${weekApproved === 1 ? 'approval' : 'approvals'}</span>
-                        </div>
-                        <div class="week-stat">
-                            <span class="week-value" style="color: #f85149;">${formatNumber(weekRejected)}</span>
-                            <span class="week-unit">${weekRejected === 1 ? 'rejection' : 'rejections'}</span>
-                        </div>
-                    </div>
-                </div>`;
-                })()}
 
                 <!-- Daily Chart -->
                 <div class="chart-container">
