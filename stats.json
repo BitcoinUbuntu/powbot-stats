@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 472,
+    "all_payments": 475,
     "by_type": {
       "merchant": {
-        "count": 156
+        "count": 157
       },
       "project": {
-        "count": 156
+        "count": 157
       },
       "reviewer": {
-        "count": 160
+        "count": 161
       }
     }
   },
   "today": {
     "date": "2026-03-28",
-    "payments": 82,
+    "payments": 85,
     "by_type": {
       "merchant": {
-        "count": 28
+        "count": 29
       },
       "project": {
-        "count": 28
+        "count": 29
       },
       "reviewer": {
-        "count": 26
+        "count": 27
       }
     },
-    "approved": 26,
+    "approved": 27,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsq8xpuwzrjrwvxr7ap8c4fl8um8t9prqdrqhhgqfs0md2vugz8fvgvkhqgf",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Klenam Stores",
+        "platform": "Nostr",
+        "time": "16:17"
+      },
       {
         "url": "https://x.com/i/status/2037858361924895147",
         "project": "Bitcoin Dua 🇬🇭",
@@ -216,6 +223,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -509,14 +519,14 @@
     },
     {
       "date": "2026-03-28",
-      "project_count": 28,
-      "merchant_count": 28,
-      "reviewer_count": 26
+      "project_count": 29,
+      "merchant_count": 29,
+      "reviewer_count": 27
     }
   ],
   "reviewer": {
-    "total_reviewed": 160,
-    "approved": 156,
+    "total_reviewed": 161,
+    "approved": 157,
     "rejected": 4
   },
   "top_projects": [
@@ -743,8 +753,13 @@
     },
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 41,
+      "count": 42,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsq8xpuwzrjrwvxr7ap8c4fl8um8t9prqdrqhhgqfs0md2vugz8fvgvkhqgf",
+          "date": "2026-03-28",
+          "merchant": "Klenam Stores"
+        },
         {
           "url": "https://x.com/i/status/2037858361924895147",
           "date": "2026-03-28",
@@ -1957,6 +1972,32 @@
       ]
     },
     {
+      "name": "Klenam Stores",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsq8xpuwzrjrwvxr7ap8c4fl8um8t9prqdrqhhgqfs0md2vugz8fvgvkhqgf",
+          "date": "2026-03-28",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2037858361924895147",
+          "date": "2026-03-28",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvz9nu08phgzd8tkmyv9dq7rfunm7ulvfpmp5k59s4zl45gtp8dkquxd855",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2037247050526425276",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Dehart Brothers Ventures",
       "count": 4,
       "posts": [
@@ -2005,27 +2046,6 @@
           "url": "https://primal.net/e/nevent1qqs9ssxz57vu5yu2fnzayn7524fmaqqwf7sp6vu39pmgryyhqyyp8eqawax4l",
           "date": "2026-03-25",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Klenam Stores",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2037858361924895147",
-          "date": "2026-03-28",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvz9nu08phgzd8tkmyv9dq7rfunm7ulvfpmp5k59s4zl45gtp8dkquxd855",
-          "date": "2026-03-26",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2037247050526425276",
-          "date": "2026-03-26",
-          "project": "Bitcoin Dua 🇬🇭"
         }
       ]
     },
@@ -2434,17 +2454,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 5,
-    "daily_average_payments": 94
+    "daily_average_payments": 95
   },
   "burn_rate": {
-    "percentage": 57,
+    "percentage": 58,
     "status": "cold",
     "days_active": 5
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 472
+      "count": 475
     }
   ],
   "countries": [
@@ -2491,9 +2511,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 233
+      "count": 236
     }
   ],
-  "generated_at": "2026-03-28T16:10:02.566340+00:00",
+  "generated_at": "2026-03-28T16:20:02.308452+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
