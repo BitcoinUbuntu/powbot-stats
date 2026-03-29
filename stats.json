@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 565,
+    "all_payments": 568,
     "by_type": {
       "merchant": {
-        "count": 186
+        "count": 187
       },
       "project": {
-        "count": 186
+        "count": 187
       },
       "reviewer": {
-        "count": 193
+        "count": 194
       }
     }
   },
   "today": {
     "date": "2026-03-29",
-    "payments": 51,
+    "payments": 54,
     "by_type": {
       "merchant": {
-        "count": 16
+        "count": 17
       },
       "project": {
-        "count": 16
+        "count": 17
       },
       "reviewer": {
-        "count": 19
+        "count": 20
       }
     },
-    "approved": 16,
+    "approved": 17,
     "rejected": 3,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2037427903151964631",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "T-Junction fast food",
+        "platform": "X",
+        "time": "10:55"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsy2gvwcqjflavujecysfqhh8zqxmpuyr9kg9ru0gpphtqvzf96l0c7maulj",
         "project": "Bitcoin Dua 🇬🇭",
@@ -146,6 +153,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -421,14 +431,14 @@
     },
     {
       "date": "2026-03-29",
-      "project_count": 16,
-      "merchant_count": 16,
-      "reviewer_count": 19
+      "project_count": 17,
+      "merchant_count": 17,
+      "reviewer_count": 20
     }
   ],
   "reviewer": {
-    "total_reviewed": 197,
-    "approved": 186,
+    "total_reviewed": 198,
+    "approved": 187,
     "rejected": 11
   },
   "top_projects": [
@@ -1388,6 +1398,22 @@
       ]
     },
     {
+      "name": "Bitcoin Sisonke 🇿🇦",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2037427903151964631",
+          "date": "2026-03-29",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
+          "date": "2026-03-27",
+          "merchant": "T-Junction fast food"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Anambra 🇳🇬",
       "count": 2,
       "posts": [
@@ -1427,17 +1453,6 @@
           "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
           "date": "2026-03-25",
           "merchant": "Mundayam Restaurant"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Sisonke 🇿🇦",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
-          "date": "2026-03-27",
-          "merchant": "T-Junction fast food"
         }
       ]
     },
@@ -2289,6 +2304,22 @@
       ]
     },
     {
+      "name": "T-Junction fast food",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2037427903151964631",
+          "date": "2026-03-29",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
+          "date": "2026-03-27",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Simunye No3",
       "count": 2,
       "posts": [
@@ -2636,17 +2667,6 @@
       ]
     },
     {
-      "name": "T-Junction fast food",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
-          "date": "2026-03-27",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        }
-      ]
-    },
-    {
       "name": "Sweet & Salty Cafe",
       "count": 1,
       "posts": [
@@ -2697,14 +2717,14 @@
     "daily_average_payments": 94
   },
   "burn_rate": {
-    "percentage": 57,
+    "percentage": 58,
     "status": "cold",
     "days_active": 6
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 565
+      "count": 568
     }
   ],
   "countries": [
@@ -2751,9 +2771,9 @@
     },
     {
       "platform": "X",
-      "count": 280
+      "count": 283
     }
   ],
-  "generated_at": "2026-03-29T10:50:01.710487+00:00",
+  "generated_at": "2026-03-29T11:00:02.732047+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
