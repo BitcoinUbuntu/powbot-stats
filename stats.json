@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 595,
+    "all_payments": 598,
     "by_type": {
       "merchant": {
-        "count": 196
+        "count": 197
       },
       "project": {
-        "count": 196
+        "count": 197
       },
       "reviewer": {
-        "count": 203
+        "count": 204
       }
     }
   },
   "today": {
     "date": "2026-03-29",
-    "payments": 81,
+    "payments": 84,
     "by_type": {
       "merchant": {
-        "count": 26
+        "count": 27
       },
       "project": {
-        "count": 26
+        "count": 27
       },
       "reviewer": {
-        "count": 29
+        "count": 30
       }
     },
-    "approved": 26,
+    "approved": 27,
     "rejected": 3,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2038379037702189102",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Leni Boutique",
+        "platform": "X",
+        "time": "22:16"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsv3l2utp3e6cdpx73jjlcucm439mzqry7p7e90tgrp0hay640m5fghdm76t",
         "project": "Bitcoin Dua 🇬🇭",
@@ -216,6 +223,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -473,21 +483,26 @@
     },
     {
       "date": "2026-03-29",
-      "project_count": 26,
-      "merchant_count": 26,
-      "reviewer_count": 29
+      "project_count": 27,
+      "merchant_count": 27,
+      "reviewer_count": 30
     }
   ],
   "reviewer": {
-    "total_reviewed": 209,
-    "approved": 196,
+    "total_reviewed": 210,
+    "approved": 197,
     "rejected": 13
   },
   "top_projects": [
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 60,
+      "count": 61,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2038379037702189102",
+          "date": "2026-03-29",
+          "merchant": "Leni Boutique"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsv3l2utp3e6cdpx73jjlcucm439mzqry7p7e90tgrp0hay640m5fghdm76t",
           "date": "2026-03-29",
@@ -2022,8 +2037,13 @@
     },
     {
       "name": "Leni Boutique",
-      "count": 6,
+      "count": 7,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2038379037702189102",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
         {
           "url": "https://x.com/i/status/2037715932726915419",
           "date": "2026-03-28",
@@ -2861,14 +2881,14 @@
     "daily_average_payments": 99
   },
   "burn_rate": {
-    "percentage": 60,
+    "percentage": 61,
     "status": "cold",
     "days_active": 6
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 594
+      "count": 597
     },
     {
       "domain": "8333.mobi",
@@ -2919,9 +2939,9 @@
     },
     {
       "platform": "X",
-      "count": 295
+      "count": 298
     }
   ],
-  "generated_at": "2026-03-29T22:10:02.132254+00:00",
+  "generated_at": "2026-03-29T22:20:01.991125+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
