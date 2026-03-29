@@ -1,38 +1,52 @@
 {
   "totals": {
-    "all_payments": 525,
+    "all_payments": 532,
     "by_type": {
       "merchant": {
-        "count": 174
+        "count": 176
       },
       "project": {
-        "count": 173
+        "count": 176
       },
       "reviewer": {
-        "count": 178
+        "count": 180
       }
     }
   },
   "today": {
     "date": "2026-03-29",
-    "payments": 11,
+    "payments": 18,
     "by_type": {
       "merchant": {
-        "count": 4
+        "count": 6
       },
       "project": {
-        "count": 3
+        "count": 6
       },
       "reviewer": {
-        "count": 4
+        "count": 6
       }
     },
-    "approved": 4,
+    "approved": 6,
     "rejected": 0,
     "videos": [
       {
+        "url": "https://x.com/i/status/2038013284578673044",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Folami Game Zone",
+        "platform": "X",
+        "time": "04:10"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsywf9uajudptjf0lza0mqn65chfslnz0l5mx39s4zv3sa5vc92r5ckxnypg",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Folami Game Zone",
+        "platform": "Nostr",
+        "time": "04:10"
+      },
+      {
         "url": "https://primal.net/e/nevent1qqsv0h2wd55d53d4wyc3mev8s4jtlj0xvrsl5ph9m5ffcdsqp76tvjgk0pnvh",
-        "project": "Unknown",
+        "project": "Bitcoin Famba 🇲🇿",
         "merchant": "Olympia Chicken",
         "platform": "Nostr",
         "time": "04:10"
@@ -63,7 +77,13 @@
   "last_24h": {
     "videos": [
       {
-        "project": "Unknown"
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Famba 🇲🇿"
       },
       {
         "project": "Bitcoin Famba 🇲🇿"
@@ -373,14 +393,14 @@
     },
     {
       "date": "2026-03-29",
-      "project_count": 3,
-      "merchant_count": 4,
-      "reviewer_count": 4
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 6
     }
   ],
   "reviewer": {
-    "total_reviewed": 181,
-    "approved": 174,
+    "total_reviewed": 183,
+    "approved": 176,
     "rejected": 7
   },
   "top_projects": [
@@ -843,8 +863,18 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 36,
+      "count": 38,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2038013284578673044",
+          "date": "2026-03-29",
+          "merchant": "Folami Game Zone"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsywf9uajudptjf0lza0mqn65chfslnz0l5mx39s4zv3sa5vc92r5ckxnypg",
+          "date": "2026-03-29",
+          "merchant": "Folami Game Zone"
+        },
         {
           "url": "https://x.com/i/status/2037998084685169068",
           "date": "2026-03-29",
@@ -1196,6 +1226,32 @@
       ]
     },
     {
+      "name": "Bitcoin Famba 🇲🇿",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsv0h2wd55d53d4wyc3mev8s4jtlj0xvrsl5ph9m5ffcdsqp76tvjgk0pnvh",
+          "date": "2026-03-29",
+          "merchant": "Olympia Chicken"
+        },
+        {
+          "url": "https://x.com/i/status/2038002239483089051",
+          "date": "2026-03-29",
+          "merchant": "Olympia Chicken"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8fr4r9pehzkp7mtpp9phw27spzzwq8dxg8tkcvqwmyphldnwvxlgg345pa",
+          "date": "2026-03-25",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2036728638415015976",
+          "date": "2026-03-25",
+          "merchant": "Milofa Skate Shop"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Aves 🇬🇭",
       "count": 4,
       "posts": [
@@ -1218,27 +1274,6 @@
           "url": "https://x.com/i/status/2037433865677963645",
           "date": "2026-03-27",
           "merchant": "Peace Pot"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Famba 🇲🇿",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2038002239483089051",
-          "date": "2026-03-29",
-          "merchant": "Olympia Chicken"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8fr4r9pehzkp7mtpp9phw27spzzwq8dxg8tkcvqwmyphldnwvxlgg345pa",
-          "date": "2026-03-25",
-          "merchant": "Milofa Skate Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2036728638415015976",
-          "date": "2026-03-25",
-          "merchant": "Milofa Skate Shop"
         }
       ]
     },
@@ -1602,6 +1637,52 @@
       ]
     },
     {
+      "name": "Folami Game Zone",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2038013284578673044",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsywf9uajudptjf0lza0mqn65chfslnz0l5mx39s4zv3sa5vc92r5ckxnypg",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0nyfzuqw0ud2055hf8hrz2at2tgdw0d3wpwt7z8606l2397f78jgdjgpqm",
+          "date": "2026-03-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2037598959636447502",
+          "date": "2026-03-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036868700028989611",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv6dtvr7ylszkldlhewuerugcq8xu89y6djtspp5l9umurtmd8lvqe00q9p",
+          "date": "2026-03-26",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvdwsujxvm39qcvls55qfjythrn0eh0eqjyuh0xuxf0fw6najjv6sdvgnzk",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036118314569572836",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Ellygant Unisex Salon",
       "count": 8,
       "posts": [
@@ -1762,42 +1843,6 @@
           "url": "https://x.com/i/status/2037162175236563014",
           "date": "2026-03-26",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Folami Game Zone",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs0nyfzuqw0ud2055hf8hrz2at2tgdw0d3wpwt7z8606l2397f78jgdjgpqm",
-          "date": "2026-03-27",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2037598959636447502",
-          "date": "2026-03-27",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036868700028989611",
-          "date": "2026-03-26",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv6dtvr7ylszkldlhewuerugcq8xu89y6djtspp5l9umurtmd8lvqe00q9p",
-          "date": "2026-03-26",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvdwsujxvm39qcvls55qfjythrn0eh0eqjyuh0xuxf0fw6najjv6sdvgnzk",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036118314569572836",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
     },
@@ -2210,7 +2255,7 @@
         {
           "url": "https://primal.net/e/nevent1qqsv0h2wd55d53d4wyc3mev8s4jtlj0xvrsl5ph9m5ffcdsqp76tvjgk0pnvh",
           "date": "2026-03-29",
-          "project": "Unknown"
+          "project": "Bitcoin Famba 🇲🇿"
         },
         {
           "url": "https://x.com/i/status/2038002239483089051",
@@ -2497,17 +2542,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 5,
-    "daily_average_payments": 105
+    "daily_average_payments": 106
   },
   "burn_rate": {
-    "percentage": 64,
+    "percentage": 65,
     "status": "cold",
     "days_active": 5
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 525
+      "count": 532
     }
   ],
   "countries": [
@@ -2550,13 +2595,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 265
+      "count": 269
     },
     {
       "platform": "X",
-      "count": 260
+      "count": 263
     }
   ],
-  "generated_at": "2026-03-29T04:10:02.817778+00:00",
+  "generated_at": "2026-03-29T04:20:02.490859+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
