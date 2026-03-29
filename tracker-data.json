@@ -1,7 +1,23 @@
 {
-  "last_updated": "2026-03-29T20:40:02.129810+00:00",
-  "total_submissions": 207,
+  "last_updated": "2026-03-29T20:50:01.793742+00:00",
+  "total_submissions": 208,
   "submissions": [
+    {
+      "id": 210,
+      "timestamp": "2026-03-29 20:49:22 UTC",
+      "project_name": "BitJR Academy (Zambia) 🇿🇲",
+      "project_flag": "🇿🇲",
+      "merchant_name": "Liberty trading point",
+      "lightning_address": "libertytrading@blink.sv",
+      "merchant_tip_status": "",
+      "platform": "X",
+      "post_url": "https://x.com/i/status/2038357558646206720",
+      "telegram_link": "https://t.me/c/2378392967/12316",
+      "btcmap_link": "https://btcmap.org/merchant/24442",
+      "note": "❌ Post rejected via data quality alert | Reason: Missing PoW elements: #spedn",
+      "status": "Rejected",
+      "payments": []
+    },
     {
       "id": 209,
       "timestamp": "2026-03-29 19:33:51 UTC",
@@ -14,9 +30,28 @@
       "post_url": "https://primal.net/e/nevent1qqsv3l2utp3e6cdpx73jjlcucm439mzqry7p7e90tgrp0hay640m5fghdm76t",
       "telegram_link": "https://t.me/c/2378392967/12313",
       "btcmap_link": "https://btcmap.org/merchant/36107",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
-      "payments": []
+      "note": "🔁 Duplicate video",
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69c98ed5198317c0fbc57ac6",
+          "timestamp": "2026-03-29T20:43:02.011549+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Antitor Provision Store",
+          "tx_id": "69c98ed6198317c0fbc57b43",
+          "timestamp": "2026-03-29T20:43:02.690119+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dua (Ghana) 🇬🇭",
+          "tx_id": "69c98ed8198317c0fbc57bb4",
+          "timestamp": "2026-03-29T20:43:04.297174+00:00"
+        }
+      ]
     },
     {
       "id": 208,
@@ -31,8 +66,27 @@
       "telegram_link": "https://t.me/c/2378392967/12310",
       "btcmap_link": "https://btcmap.org/merchant/36107",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69c98ec3198317c0fbc575a5",
+          "timestamp": "2026-03-29T20:42:43.542128+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Antitor Provision Store",
+          "tx_id": "69c98ec3198317c0fbc57608",
+          "timestamp": "2026-03-29T20:42:44.139251+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dua (Ghana) 🇬🇭",
+          "tx_id": "69c98ec5198317c0fbc57701",
+          "timestamp": "2026-03-29T20:42:46.091504+00:00"
+        }
+      ]
     },
     {
       "id": 207,
