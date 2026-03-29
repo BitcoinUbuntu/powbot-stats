@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 568,
+    "all_payments": 571,
     "by_type": {
       "merchant": {
-        "count": 187
+        "count": 188
       },
       "project": {
-        "count": 187
+        "count": 188
       },
       "reviewer": {
-        "count": 194
+        "count": 195
       }
     }
   },
   "today": {
     "date": "2026-03-29",
-    "payments": 54,
+    "payments": 57,
     "by_type": {
       "merchant": {
-        "count": 17
+        "count": 18
       },
       "project": {
-        "count": 17
+        "count": 18
       },
       "reviewer": {
-        "count": 20
+        "count": 21
       }
     },
-    "approved": 17,
+    "approved": 18,
     "rejected": 3,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2038291469987897637",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Sena Store",
+        "platform": "X",
+        "time": "20:19"
+      },
       {
         "url": "https://x.com/i/status/2037427903151964631",
         "project": "Bitcoin Sisonke 🇿🇦",
@@ -153,6 +160,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
       {
         "project": "Bitcoin Sisonke 🇿🇦"
       },
@@ -392,21 +402,26 @@
     },
     {
       "date": "2026-03-29",
-      "project_count": 17,
-      "merchant_count": 17,
-      "reviewer_count": 20
+      "project_count": 18,
+      "merchant_count": 18,
+      "reviewer_count": 21
     }
   ],
   "reviewer": {
-    "total_reviewed": 198,
-    "approved": 187,
+    "total_reviewed": 199,
+    "approved": 188,
     "rejected": 11
   },
   "top_projects": [
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 54,
+      "count": 55,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2038291469987897637",
+          "date": "2026-03-29",
+          "merchant": "Sena Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsy2gvwcqjflavujecysfqhh8zqxmpuyr9kg9ru0gpphtqvzf96l0c7maulj",
           "date": "2026-03-29",
@@ -1600,8 +1615,13 @@
     },
     {
       "name": "Sena Store",
-      "count": 8,
+      "count": 9,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2038291469987897637",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
         {
           "url": "https://x.com/i/status/2037714112784847134",
           "date": "2026-03-28",
@@ -2675,7 +2695,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 6,
-    "daily_average_payments": 94
+    "daily_average_payments": 95
   },
   "burn_rate": {
     "percentage": 58,
@@ -2685,7 +2705,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 568
+      "count": 571
     }
   ],
   "countries": [
@@ -2727,14 +2747,14 @@
   ],
   "platforms": [
     {
-      "platform": "Nostr",
-      "count": 285
+      "platform": "X",
+      "count": 286
     },
     {
-      "platform": "X",
-      "count": 283
+      "platform": "Nostr",
+      "count": 285
     }
   ],
-  "generated_at": "2026-03-29T20:10:01.673045+00:00",
+  "generated_at": "2026-03-29T20:20:02.474426+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
