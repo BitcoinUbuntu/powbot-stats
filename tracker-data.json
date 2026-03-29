@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-29T07:00:02.334805+00:00",
+  "last_updated": "2026-03-29T07:10:02.036368+00:00",
   "total_submissions": 197,
   "submissions": [
     {
@@ -14,8 +14,8 @@
       "post_url": "https://x.com/i/status/2038141793036914913",
       "telegram_link": "https://t.me/c/2378392967/12271",
       "btcmap_link": "https://btcmap.org/merchant/28730",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "❌ Video rejected",
+      "status": "Rejected",
       "payments": []
     },
     {
@@ -30,8 +30,8 @@
       "post_url": "https://primal.net/e/nevent1qqs9txrspxkxvtg8y24ek6seudmdpvj57ffetw4wxdsm8kmtcsv9v8q0jqz4c",
       "telegram_link": "https://t.me/c/2378392967/12268",
       "btcmap_link": "https://btcmap.org/merchant/28730",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "❌ Video rejected",
+      "status": "Rejected",
       "payments": []
     },
     {
@@ -46,9 +46,16 @@
       "post_url": "https://primal.net/e/nevent1qqspvkrm2zhfsrlj3veff7dln8yr6hqwvrg6wkm7y8cv2gdcd8csepg0jssml",
       "telegram_link": "https://t.me/c/2378392967/12265",
       "btcmap_link": "https://btcmap.org/merchant/23261",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
-      "payments": []
+      "note": "❌ Video rejected",
+      "status": "Rejected",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69c8cf99198317c0fb9d45c6",
+          "timestamp": "2026-03-29T07:07:05.505299+00:00"
+        }
+      ]
     },
     {
       "id": 196,
@@ -62,9 +69,28 @@
       "post_url": "https://primal.net/e/nevent1qqsy2gvwcqjflavujecysfqhh8zqxmpuyr9kg9ru0gpphtqvzf96l0c7maulj",
       "telegram_link": "https://t.me/c/2378392967/12262",
       "btcmap_link": "https://btcmap.org/merchant/36662",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
-      "payments": []
+      "note": "🔁 Duplicate video",
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69c8cf91198317c0fb9d4345",
+          "timestamp": "2026-03-29T07:06:57.387096+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "RozzyBeads Store",
+          "tx_id": "69c8cf91198317c0fb9d43c5",
+          "timestamp": "2026-03-29T07:06:58.047942+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dua (Ghana) 🇬🇭",
+          "tx_id": "69c8cf93198317c0fb9d4448",
+          "timestamp": "2026-03-29T07:06:59.644154+00:00"
+        }
+      ]
     },
     {
       "id": 195,
@@ -79,8 +105,27 @@
       "telegram_link": "https://t.me/c/2378392967/12257",
       "btcmap_link": "https://btcmap.org/merchant/36662",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69c8cf87198317c0fb9d40f4",
+          "timestamp": "2026-03-29T07:06:47.818290+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "RozzyBeads Store",
+          "tx_id": "69c8cf88198317c0fb9d4167",
+          "timestamp": "2026-03-29T07:06:48.496795+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dua (Ghana) 🇬🇭",
+          "tx_id": "69c8cf89198317c0fb9d41ea",
+          "timestamp": "2026-03-29T07:06:49.964518+00:00"
+        }
+      ]
     },
     {
       "id": 194,
@@ -96,7 +141,26 @@
       "btcmap_link": "https://btcmap.org/merchant/36657",
       "note": "🔁 Duplicate video",
       "status": "Processed",
-      "payments": []
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69c8cf7e198317c0fb9d3e7d",
+          "timestamp": "2026-03-29T07:06:38.963463+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Ayuba’s Washing Bay",
+          "tx_id": "69c8cf7f198317c0fb9d3ee2",
+          "timestamp": "2026-03-29T07:06:39.598862+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dua (Ghana) 🇬🇭",
+          "tx_id": "69c8cf81198317c0fb9d3fd1",
+          "timestamp": "2026-03-29T07:06:41.212151+00:00"
+        }
+      ]
     },
     {
       "id": 193,
@@ -111,8 +175,27 @@
       "telegram_link": "https://t.me/c/2378392967/12251",
       "btcmap_link": "https://btcmap.org/merchant/36657",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69c8cf76198317c0fb9d3c9f",
+          "timestamp": "2026-03-29T07:06:30.874718+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Ayuba’s Washing Bay",
+          "tx_id": "69c8cf77198317c0fb9d3d03",
+          "timestamp": "2026-03-29T07:06:31.483999+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dua (Ghana) 🇬🇭",
+          "tx_id": "69c8cf79198317c0fb9d3d80",
+          "timestamp": "2026-03-29T07:06:33.265411+00:00"
+        }
+      ]
     },
     {
       "id": 192,
@@ -128,7 +211,26 @@
       "btcmap_link": "https://btcmap.org/merchant/36664",
       "note": "🔁 Duplicate video",
       "status": "Processed",
-      "payments": []
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69c8cf6f198317c0fb9d3a99",
+          "timestamp": "2026-03-29T07:06:23.208282+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Aliasadex Provisions And More",
+          "tx_id": "69c8cf6f198317c0fb9d3b15",
+          "timestamp": "2026-03-29T07:06:23.806274+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dua (Ghana) 🇬🇭",
+          "tx_id": "69c8cf71198317c0fb9d3ba0",
+          "timestamp": "2026-03-29T07:06:25.370981+00:00"
+        }
+      ]
     },
     {
       "id": 191,
@@ -143,8 +245,27 @@
       "telegram_link": "https://t.me/c/2378392967/12245",
       "btcmap_link": "https://btcmap.org/merchant/36664",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69c8cf66198317c0fb9d3818",
+          "timestamp": "2026-03-29T07:06:14.683011+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Aliasadex Provisions And More",
+          "tx_id": "69c8cf67198317c0fb9d3895",
+          "timestamp": "2026-03-29T07:06:15.395965+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dua (Ghana) 🇬🇭",
+          "tx_id": "69c8cf68198317c0fb9d3944",
+          "timestamp": "2026-03-29T07:06:16.871958+00:00"
+        }
+      ]
     },
     {
       "id": 190,
@@ -160,7 +281,26 @@
       "btcmap_link": "https://btcmap.org/merchant/36659",
       "note": "🔁 Duplicate video",
       "status": "Processed",
-      "payments": []
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69c8cf5e198317c0fb9d360d",
+          "timestamp": "2026-03-29T07:06:06.323459+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Jiro Enterprise",
+          "tx_id": "69c8cf5e198317c0fb9d366d",
+          "timestamp": "2026-03-29T07:06:06.886703+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dua (Ghana) 🇬🇭",
+          "tx_id": "69c8cf60198317c0fb9d36f8",
+          "timestamp": "2026-03-29T07:06:08.308877+00:00"
+        }
+      ]
     },
     {
       "id": 189,
@@ -175,8 +315,27 @@
       "telegram_link": "https://t.me/c/2378392967/12239",
       "btcmap_link": "https://btcmap.org/merchant/36659",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69c8cf53198317c0fb9d32e6",
+          "timestamp": "2026-03-29T07:05:55.527909+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Jiro Enterprise",
+          "tx_id": "69c8cf53198317c0fb9d3356",
+          "timestamp": "2026-03-29T07:05:56.153472+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dua (Ghana) 🇬🇭",
+          "tx_id": "69c8cf55198317c0fb9d33e6",
+          "timestamp": "2026-03-29T07:05:57.837904+00:00"
+        }
+      ]
     },
     {
       "id": 188,
