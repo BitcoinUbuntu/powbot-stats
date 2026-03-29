@@ -1,28 +1,79 @@
 {
   "totals": {
-    "all_payments": 514,
+    "all_payments": 525,
     "by_type": {
       "merchant": {
-        "count": 170
+        "count": 174
       },
       "project": {
-        "count": 170
+        "count": 173
       },
       "reviewer": {
-        "count": 174
+        "count": 178
       }
     }
   },
   "today": {
     "date": "2026-03-29",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 11,
+    "by_type": {
+      "merchant": {
+        "count": 4
+      },
+      "project": {
+        "count": 3
+      },
+      "reviewer": {
+        "count": 4
+      }
+    },
+    "approved": 4,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsv0h2wd55d53d4wyc3mev8s4jtlj0xvrsl5ph9m5ffcdsqp76tvjgk0pnvh",
+        "project": "Unknown",
+        "merchant": "Olympia Chicken",
+        "platform": "Nostr",
+        "time": "04:10"
+      },
+      {
+        "url": "https://x.com/i/status/2038002239483089051",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Olympia Chicken",
+        "platform": "X",
+        "time": "04:09"
+      },
+      {
+        "url": "https://x.com/i/status/2037998084685169068",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Tenorio Baber Shop",
+        "platform": "X",
+        "time": "04:09"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs2d4vc3vyf72kqh3jwdzvctgsy3mztw6dyrdlzvemthwfx4ygcjjq9w9fal",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Tenorio Baber Shop",
+        "platform": "Nostr",
+        "time": "04:09"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Unknown"
+      },
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -322,14 +373,14 @@
     },
     {
       "date": "2026-03-29",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 3,
+      "merchant_count": 4,
+      "reviewer_count": 4
     }
   ],
   "reviewer": {
-    "total_reviewed": 177,
-    "approved": 170,
+    "total_reviewed": 181,
+    "approved": 174,
     "rejected": 7
   },
   "top_projects": [
@@ -792,8 +843,18 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 34,
+      "count": 36,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2037998084685169068",
+          "date": "2026-03-29",
+          "merchant": "Tenorio Baber Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2d4vc3vyf72kqh3jwdzvctgsy3mztw6dyrdlzvemthwfx4ygcjjq9w9fal",
+          "date": "2026-03-29",
+          "merchant": "Tenorio Baber Shop"
+        },
         {
           "url": "https://x.com/i/status/2037985930317873400",
           "date": "2026-03-28",
@@ -1161,6 +1222,27 @@
       ]
     },
     {
+      "name": "Bitcoin Famba 🇲🇿",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2038002239483089051",
+          "date": "2026-03-29",
+          "merchant": "Olympia Chicken"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8fr4r9pehzkp7mtpp9phw27spzzwq8dxg8tkcvqwmyphldnwvxlgg345pa",
+          "date": "2026-03-25",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2036728638415015976",
+          "date": "2026-03-25",
+          "merchant": "Milofa Skate Shop"
+        }
+      ]
+    },
+    {
       "name": "Soweto BTC 🇿🇦",
       "count": 2,
       "posts": [
@@ -1189,22 +1271,6 @@
           "url": "https://primal.net/e/nevent1qqs92prhvwvkhnq4344f27ujt345gjv4wmpeepnucmcka2p7twh48kqadsx30",
           "date": "2026-03-24",
           "merchant": "Wa Ngala Hardware"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Famba 🇲🇿",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs8fr4r9pehzkp7mtpp9phw27spzzwq8dxg8tkcvqwmyphldnwvxlgg345pa",
-          "date": "2026-03-25",
-          "merchant": "Milofa Skate Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2036728638415015976",
-          "date": "2026-03-25",
-          "merchant": "Milofa Skate Shop"
         }
       ]
     },
@@ -1793,6 +1859,32 @@
       ]
     },
     {
+      "name": "Tenorio Baber Shop",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2037998084685169068",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2d4vc3vyf72kqh3jwdzvctgsy3mztw6dyrdlzvemthwfx4ygcjjq9w9fal",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstqfhvqazzv7er94pgnehhk6l02296euk3zduz9y3kguvw9nuwzcsz3pjzj",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036770826096095273",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Stay Safe Restaurante & Lounge",
       "count": 4,
       "posts": [
@@ -2064,22 +2156,6 @@
       ]
     },
     {
-      "name": "Tenorio Baber Shop",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqstqfhvqazzv7er94pgnehhk6l02296euk3zduz9y3kguvw9nuwzcsz3pjzj",
-          "date": "2026-03-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036770826096095273",
-          "date": "2026-03-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
       "name": "Simunye No3",
       "count": 2,
       "posts": [
@@ -2124,6 +2200,22 @@
           "url": "https://x.com/i/status/2037938713108328704",
           "date": "2026-03-28",
           "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
+      "name": "Olympia Chicken",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsv0h2wd55d53d4wyc3mev8s4jtlj0xvrsl5ph9m5ffcdsqp76tvjgk0pnvh",
+          "date": "2026-03-29",
+          "project": "Unknown"
+        },
+        {
+          "url": "https://x.com/i/status/2038002239483089051",
+          "date": "2026-03-29",
+          "project": "Bitcoin Famba 🇲🇿"
         }
       ]
     },
@@ -2405,17 +2497,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 5,
-    "daily_average_payments": 102
+    "daily_average_payments": 105
   },
   "burn_rate": {
-    "percentage": 63,
+    "percentage": 64,
     "status": "cold",
     "days_active": 5
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 514
+      "count": 525
     }
   ],
   "countries": [
@@ -2458,13 +2550,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 260
+      "count": 265
     },
     {
       "platform": "X",
-      "count": 254
+      "count": 260
     }
   ],
-  "generated_at": "2026-03-29T04:00:02.524689+00:00",
+  "generated_at": "2026-03-29T04:10:02.817778+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
