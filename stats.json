@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 629,
+    "all_payments": 635,
     "by_type": {
       "merchant": {
-        "count": 207
+        "count": 209
       },
       "project": {
-        "count": 207
+        "count": 209
       },
       "reviewer": {
-        "count": 215
+        "count": 217
       }
     }
   },
   "today": {
     "date": "2026-03-30",
-    "payments": 22,
+    "payments": 28,
     "by_type": {
       "merchant": {
-        "count": 7
+        "count": 9
       },
       "project": {
-        "count": 7
+        "count": 9
       },
       "reviewer": {
-        "count": 8
+        "count": 10
       }
     },
-    "approved": 7,
+    "approved": 9,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2038538882568921552",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "John Shop",
+        "platform": "X",
+        "time": "09:08"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsr5xqa8rgq3qqlz446ahgp0hrpwh3x3kynaklp0e3qdyy2dtsjcjc4ky5c9",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "John Shop",
+        "platform": "Nostr",
+        "time": "09:02"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsds0lf4uv29a5n9v6edvr5grl6r7nc9w32nse4qvsxtx7p4x26aas06nfjv",
         "project": "Bitcoin Dua 🇬🇭",
@@ -83,6 +97,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -325,14 +345,14 @@
     },
     {
       "date": "2026-03-30",
-      "project_count": 7,
-      "merchant_count": 7,
-      "reviewer_count": 8
+      "project_count": 9,
+      "merchant_count": 9,
+      "reviewer_count": 10
     }
   ],
   "reviewer": {
-    "total_reviewed": 221,
-    "approved": 207,
+    "total_reviewed": 223,
+    "approved": 209,
     "rejected": 14
   },
   "top_projects": [
@@ -1121,8 +1141,18 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 14,
+      "count": 16,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2038538882568921552",
+          "date": "2026-03-30",
+          "merchant": "John Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsr5xqa8rgq3qqlz446ahgp0hrpwh3x3kynaklp0e3qdyy2dtsjcjc4ky5c9",
+          "date": "2026-03-30",
+          "merchant": "John Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs8n7qhrfgwz4upmlm63473dsw5m0xslvumdf5evql58pkct77aj0cj2xvre",
           "date": "2026-03-28",
@@ -2650,6 +2680,22 @@
       ]
     },
     {
+      "name": "John Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2038538882568921552",
+          "date": "2026-03-30",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsr5xqa8rgq3qqlz446ahgp0hrpwh3x3kynaklp0e3qdyy2dtsjcjc4ky5c9",
+          "date": "2026-03-30",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Jiro Enterprise",
       "count": 2,
       "posts": [
@@ -2826,7 +2872,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 7,
-    "daily_average_payments": 89
+    "daily_average_payments": 90
   },
   "burn_rate": {
     "percentage": 55,
@@ -2836,7 +2882,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 628
+      "count": 634
     },
     {
       "domain": "8333.mobi",
@@ -2883,13 +2929,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 318
+      "count": 321
     },
     {
       "platform": "X",
-      "count": 311
+      "count": 314
     }
   ],
-  "generated_at": "2026-03-30T09:00:02.528624+00:00",
+  "generated_at": "2026-03-30T09:10:02.456298+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
