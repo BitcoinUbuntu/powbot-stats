@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 623,
+    "all_payments": 629,
     "by_type": {
       "merchant": {
-        "count": 205
+        "count": 207
       },
       "project": {
-        "count": 205
+        "count": 207
       },
       "reviewer": {
-        "count": 213
+        "count": 215
       }
     }
   },
   "today": {
     "date": "2026-03-30",
-    "payments": 16,
+    "payments": 22,
     "by_type": {
       "merchant": {
-        "count": 5
+        "count": 7
       },
       "project": {
-        "count": 5
+        "count": 7
       },
       "reviewer": {
-        "count": 6
+        "count": 8
       }
     },
-    "approved": 5,
+    "approved": 7,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsds0lf4uv29a5n9v6edvr5grl6r7nc9w32nse4qvsxtx7p4x26aas06nfjv",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Ayuba’s Washing Bay",
+        "platform": "Nostr",
+        "time": "08:53"
+      },
+      {
+        "url": "https://x.com/i/status/2038468189529448561",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Ayuba’s Washing Bay",
+        "platform": "X",
+        "time": "08:51"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs2ddtxdw7qes6upmr7tvjtkw6qxngufa0k34zrwksvg9a4gv3fmnglu6nr9",
         "project": "Bitcoin Dua 🇬🇭",
@@ -69,6 +83,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -305,21 +325,31 @@
     },
     {
       "date": "2026-03-30",
-      "project_count": 5,
-      "merchant_count": 5,
-      "reviewer_count": 6
+      "project_count": 7,
+      "merchant_count": 7,
+      "reviewer_count": 8
     }
   ],
   "reviewer": {
-    "total_reviewed": 219,
-    "approved": 205,
+    "total_reviewed": 221,
+    "approved": 207,
     "rejected": 14
   },
   "top_projects": [
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 68,
+      "count": 70,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsds0lf4uv29a5n9v6edvr5grl6r7nc9w32nse4qvsxtx7p4x26aas06nfjv",
+          "date": "2026-03-30",
+          "merchant": "Ayuba’s Washing Bay"
+        },
+        {
+          "url": "https://x.com/i/status/2038468189529448561",
+          "date": "2026-03-30",
+          "merchant": "Ayuba’s Washing Bay"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs2ddtxdw7qes6upmr7tvjtkw6qxngufa0k34zrwksvg9a4gv3fmnglu6nr9",
           "date": "2026-03-30",
@@ -2297,6 +2327,32 @@
       ]
     },
     {
+      "name": "Ayuba’s Washing Bay",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsds0lf4uv29a5n9v6edvr5grl6r7nc9w32nse4qvsxtx7p4x26aas06nfjv",
+          "date": "2026-03-30",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2038468189529448561",
+          "date": "2026-03-30",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszke5nf4nqp6375rj7ghrhr2wzv82vkxjjvvta6ntgdqzrv6a60lsy2x48f",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2038072286582878450",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Ayoola Minimart",
       "count": 4,
       "posts": [
@@ -2674,22 +2730,6 @@
       ]
     },
     {
-      "name": "Ayuba’s Washing Bay",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqszke5nf4nqp6375rj7ghrhr2wzv82vkxjjvvta6ntgdqzrv6a60lsy2x48f",
-          "date": "2026-03-29",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2038072286582878450",
-          "date": "2026-03-29",
-          "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
       "name": "Asha Botanical Garden",
       "count": 2,
       "posts": [
@@ -2789,14 +2829,14 @@
     "daily_average_payments": 89
   },
   "burn_rate": {
-    "percentage": 54,
+    "percentage": 55,
     "status": "cold",
     "days_active": 7
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 622
+      "count": 628
     },
     {
       "domain": "8333.mobi",
@@ -2843,13 +2883,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 315
+      "count": 318
     },
     {
       "platform": "X",
-      "count": 308
+      "count": 311
     }
   ],
-  "generated_at": "2026-03-30T08:50:02.142145+00:00",
+  "generated_at": "2026-03-30T09:00:02.528624+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
