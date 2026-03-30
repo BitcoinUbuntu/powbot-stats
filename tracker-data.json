@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-30T08:30:03.007265+00:00",
+  "last_updated": "2026-03-30T08:40:02.161097+00:00",
   "total_submissions": 221,
   "submissions": [
     {
@@ -110,8 +110,8 @@
       "post_url": "https://x.com/i/status/2038384638528233814",
       "telegram_link": "https://t.me/c/2378392967/12340",
       "btcmap_link": "https://btcmap.org/merchant/35336",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "❌ Video rejected",
+      "status": "Rejected",
       "payments": []
     },
     {
@@ -126,9 +126,28 @@
       "post_url": "https://primal.net/e/nevent1qqs8tauhqyjwv9a6k55cl55v90qz6qckn2pahcnrjqdel7n26cs2apc6mrztp",
       "telegram_link": "https://t.me/c/2378392967/12337",
       "btcmap_link": "https://btcmap.org/merchant/24442",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
-      "payments": []
+      "note": "👍 Video reviewed",
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69ca3680198317c0fbe4f11a",
+          "timestamp": "2026-03-30T08:38:24.265328+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Liberty trading point",
+          "tx_id": "69ca3680198317c0fbe4f198",
+          "timestamp": "2026-03-30T08:38:24.956277+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "BitJR Academy (Zambia) 🇿🇲",
+          "tx_id": "69ca3682198317c0fbe4f227",
+          "timestamp": "2026-03-30T08:38:26.635522+00:00"
+        }
+      ]
     },
     {
       "id": 215,

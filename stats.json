@@ -1,28 +1,49 @@
 {
   "totals": {
-    "all_payments": 607,
+    "all_payments": 610,
     "by_type": {
       "merchant": {
-        "count": 200
+        "count": 201
       },
       "project": {
-        "count": 200
+        "count": 201
       },
       "reviewer": {
-        "count": 207
+        "count": 208
       }
     }
   },
   "today": {
     "date": "2026-03-30",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 3,
+    "by_type": {
+      "merchant": {
+        "count": 1
+      },
+      "project": {
+        "count": 1
+      },
+      "reviewer": {
+        "count": 1
+      }
+    },
+    "approved": 1,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs8tauhqyjwv9a6k55cl55v90qz6qckn2pahcnrjqdel7n26cs2apc6mrztp",
+        "project": "BitJR Academy 🇿🇲",
+        "merchant": "Liberty trading point",
+        "platform": "Nostr",
+        "time": "08:38"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "BitJR Academy 🇿🇲"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -244,15 +265,15 @@
     },
     {
       "date": "2026-03-30",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 1,
+      "merchant_count": 1,
+      "reviewer_count": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 213,
-    "approved": 200,
-    "rejected": 13
+    "total_reviewed": 215,
+    "approved": 201,
+    "rejected": 14
   },
   "top_projects": [
     {
@@ -1319,6 +1340,22 @@
       ]
     },
     {
+      "name": "BitJR Academy 🇿🇲",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8tauhqyjwv9a6k55cl55v90qz6qckn2pahcnrjqdel7n26cs2apc6mrztp",
+          "date": "2026-03-30",
+          "merchant": "Liberty trading point"
+        },
+        {
+          "url": "https://x.com/i/status/2036911839464816870",
+          "date": "2026-03-26",
+          "merchant": "Sweet & Salty Cafe"
+        }
+      ]
+    },
+    {
       "name": "BTC Shule 🇧🇮",
       "count": 2,
       "posts": [
@@ -1331,17 +1368,6 @@
           "url": "https://x.com/i/status/2037264780444991537",
           "date": "2026-03-26",
           "merchant": "Kwa Innocent"
-        }
-      ]
-    },
-    {
-      "name": "BitJR Academy 🇿🇲",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2036911839464816870",
-          "date": "2026-03-26",
-          "merchant": "Sweet & Salty Cafe"
         }
       ]
     }
@@ -2655,6 +2681,17 @@
       ]
     },
     {
+      "name": "Liberty trading point",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8tauhqyjwv9a6k55cl55v90qz6qckn2pahcnrjqdel7n26cs2apc6mrztp",
+          "date": "2026-03-30",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Delfinos Seaside Restaurant",
       "count": 1,
       "posts": [
@@ -2679,7 +2716,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 606
+      "count": 609
     },
     {
       "domain": "8333.mobi",
@@ -2726,13 +2763,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 306
+      "count": 309
     },
     {
       "platform": "X",
       "count": 301
     }
   ],
-  "generated_at": "2026-03-30T08:30:02.900523+00:00",
+  "generated_at": "2026-03-30T08:40:02.079148+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
