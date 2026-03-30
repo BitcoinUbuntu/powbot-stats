@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 665,
+    "all_payments": 671,
     "by_type": {
       "merchant": {
-        "count": 219
+        "count": 221
       },
       "project": {
-        "count": 219
+        "count": 221
       },
       "reviewer": {
-        "count": 227
+        "count": 229
       }
     }
   },
   "today": {
     "date": "2026-03-30",
-    "payments": 58,
+    "payments": 64,
     "by_type": {
       "merchant": {
-        "count": 19
+        "count": 21
       },
       "project": {
-        "count": 19
+        "count": 21
       },
       "reviewer": {
-        "count": 20
+        "count": 22
       }
     },
-    "approved": 19,
+    "approved": 21,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsrf0epm0zhkrtdc9fd2l3cpk240trumphsdehs3zdrw3wdhmrsw4cyva794",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Pizza Express Mossel Bay",
+        "platform": "Nostr",
+        "time": "13:30"
+      },
+      {
+        "url": "https://x.com/i/status/2038563836773458129",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Pizza Express Mossel Bay",
+        "platform": "X",
+        "time": "13:30"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsz37sy9lmzuzfrjh6fvf3xz7ek022azym7t6xz9n227y6fqnm8waskq87lg",
         "project": "Bitcoin Dua 🇬🇭",
@@ -167,6 +181,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -442,14 +462,14 @@
     },
     {
       "date": "2026-03-30",
-      "project_count": 19,
-      "merchant_count": 19,
-      "reviewer_count": 20
+      "project_count": 21,
+      "merchant_count": 21,
+      "reviewer_count": 22
     }
   ],
   "reviewer": {
-    "total_reviewed": 233,
-    "approved": 219,
+    "total_reviewed": 235,
+    "approved": 221,
     "rejected": 14
   },
   "top_projects": [
@@ -1288,8 +1308,18 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 16,
+      "count": 18,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrf0epm0zhkrtdc9fd2l3cpk240trumphsdehs3zdrw3wdhmrsw4cyva794",
+          "date": "2026-03-30",
+          "merchant": "Pizza Express Mossel Bay"
+        },
+        {
+          "url": "https://x.com/i/status/2038563836773458129",
+          "date": "2026-03-30",
+          "merchant": "Pizza Express Mossel Bay"
+        },
         {
           "url": "https://x.com/i/status/2038538882568921552",
           "date": "2026-03-30",
@@ -2733,6 +2763,22 @@
       ]
     },
     {
+      "name": "Pizza Express Mossel Bay",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrf0epm0zhkrtdc9fd2l3cpk240trumphsdehs3zdrw3wdhmrsw4cyva794",
+          "date": "2026-03-30",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2038563836773458129",
+          "date": "2026-03-30",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Olympia Chicken",
       "count": 2,
       "posts": [
@@ -3079,7 +3125,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 664
+      "count": 670
     },
     {
       "domain": "8333.mobi",
@@ -3126,13 +3172,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 336
+      "count": 339
     },
     {
       "platform": "X",
-      "count": 329
+      "count": 332
     }
   ],
-  "generated_at": "2026-03-30T13:30:01.830690+00:00",
+  "generated_at": "2026-03-30T13:40:02.495421+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
