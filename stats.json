@@ -1,35 +1,63 @@
 {
   "totals": {
-    "all_payments": 653,
+    "all_payments": 665,
     "by_type": {
       "merchant": {
-        "count": 215
+        "count": 219
       },
       "project": {
-        "count": 215
+        "count": 219
       },
       "reviewer": {
-        "count": 223
+        "count": 227
       }
     }
   },
   "today": {
     "date": "2026-03-30",
-    "payments": 46,
+    "payments": 58,
     "by_type": {
       "merchant": {
-        "count": 15
+        "count": 19
       },
       "project": {
-        "count": 15
+        "count": 19
       },
       "reviewer": {
-        "count": 16
+        "count": 20
       }
     },
-    "approved": 15,
+    "approved": 19,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsz37sy9lmzuzfrjh6fvf3xz7ek022azym7t6xz9n227y6fqnm8waskq87lg",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Dehart Brothers Ventures",
+        "platform": "Nostr",
+        "time": "12:24"
+      },
+      {
+        "url": "https://x.com/i/status/2038591045747835063",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Dehart Brothers Ventures",
+        "platform": "X",
+        "time": "12:23"
+      },
+      {
+        "url": "https://x.com/i/status/2038575111444279359",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "X",
+        "time": "12:21"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsf45mmd8kaqv3lk3mh2g5svzxfq4fn0juntrqav5yvwrlhcga3klqy8q9jq",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "Nostr",
+        "time": "12:21"
+      },
       {
         "url": "https://primal.net/e/nevent1qqspwperartnydzam2cdvfc22whep3d8wj37kd4xc7vqjuglafduy3smmnzjg",
         "project": "Bitbiashara 🇰🇪",
@@ -139,6 +167,18 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -402,21 +442,31 @@
     },
     {
       "date": "2026-03-30",
-      "project_count": 15,
-      "merchant_count": 15,
-      "reviewer_count": 16
+      "project_count": 19,
+      "merchant_count": 19,
+      "reviewer_count": 20
     }
   ],
   "reviewer": {
-    "total_reviewed": 229,
-    "approved": 215,
+    "total_reviewed": 233,
+    "approved": 219,
     "rejected": 14
   },
   "top_projects": [
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 70,
+      "count": 72,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsz37sy9lmzuzfrjh6fvf3xz7ek022azym7t6xz9n227y6fqnm8waskq87lg",
+          "date": "2026-03-30",
+          "merchant": "Dehart Brothers Ventures"
+        },
+        {
+          "url": "https://x.com/i/status/2038591045747835063",
+          "date": "2026-03-30",
+          "merchant": "Dehart Brothers Ventures"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsds0lf4uv29a5n9v6edvr5grl6r7nc9w32nse4qvsxtx7p4x26aas06nfjv",
           "date": "2026-03-30",
@@ -771,8 +821,18 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 51,
+      "count": 53,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2038575111444279359",
+          "date": "2026-03-30",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf45mmd8kaqv3lk3mh2g5svzxfq4fn0juntrqav5yvwrlhcga3klqy8q9jq",
+          "date": "2026-03-30",
+          "merchant": "Manu Groceries"
+        },
         {
           "url": "https://primal.net/e/nevent1qqspwperartnydzam2cdvfc22whep3d8wj37kd4xc7vqjuglafduy3smmnzjg",
           "date": "2026-03-30",
@@ -2121,6 +2181,47 @@
       ]
     },
     {
+      "name": "Manu Groceries",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2038575111444279359",
+          "date": "2026-03-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf45mmd8kaqv3lk3mh2g5svzxfq4fn0juntrqav5yvwrlhcga3klqy8q9jq",
+          "date": "2026-03-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2037834001319166330",
+          "date": "2026-03-28",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvan7tk7zuhypy8crhmljjd4xtdg449lzwqew697864rw6mnvr9lsjmyfms",
+          "date": "2026-03-28",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0dwspqwf37du4ylmluermvcqumezzynsefykn3tecx7yc0u8s77c9he99l",
+          "date": "2026-03-27",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxekltdu8vahpv976fu8662ksyljcgx0vrqcdwuychte0kpnhakeqrfy9qw",
+          "date": "2026-03-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2037198388920279348",
+          "date": "2026-03-26",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Lawabi Creations",
       "count": 6,
       "posts": [
@@ -2157,33 +2258,38 @@
       ]
     },
     {
-      "name": "Manu Groceries",
-      "count": 5,
+      "name": "Dehart Brothers Ventures",
+      "count": 6,
       "posts": [
         {
-          "url": "https://x.com/i/status/2037834001319166330",
+          "url": "https://primal.net/e/nevent1qqsz37sy9lmzuzfrjh6fvf3xz7ek022azym7t6xz9n227y6fqnm8waskq87lg",
+          "date": "2026-03-30",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2038591045747835063",
+          "date": "2026-03-30",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2037622457922634212",
           "date": "2026-03-28",
-          "project": "Bitbiashara 🇰🇪"
+          "project": "Bitcoin Dua 🇬🇭"
         },
         {
-          "url": "https://primal.net/e/nevent1qqsvan7tk7zuhypy8crhmljjd4xtdg449lzwqew697864rw6mnvr9lsjmyfms",
+          "url": "https://primal.net/e/nevent1qqsy22tvzl5w8ghnjad4g2vfvpvpyur0dwev6t4at40sh5xav5p8w3qpns5s8",
           "date": "2026-03-28",
-          "project": "Bitbiashara 🇰🇪"
+          "project": "Bitcoin Dua 🇬🇭"
         },
         {
-          "url": "https://primal.net/e/nevent1qqs0dwspqwf37du4ylmluermvcqumezzynsefykn3tecx7yc0u8s77c9he99l",
-          "date": "2026-03-27",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxekltdu8vahpv976fu8662ksyljcgx0vrqcdwuychte0kpnhakeqrfy9qw",
+          "url": "https://primal.net/e/nevent1qqsgm88rnnkcvyp2ajqgun993a2wwsswjyauqypwd2awd4m0apcl8hqy3393r",
           "date": "2026-03-26",
-          "project": "Bitbiashara 🇰🇪"
+          "project": "Bitcoin Dua 🇬🇭"
         },
         {
-          "url": "https://x.com/i/status/2037198388920279348",
+          "url": "https://x.com/i/status/2037249317908406293",
           "date": "2026-03-26",
-          "project": "Bitbiashara 🇰🇪"
+          "project": "Bitcoin Dua 🇬🇭"
         }
       ]
     },
@@ -2418,32 +2524,6 @@
           "url": "https://primal.net/e/nevent1qqs0sxwp0cuxt7s7yxtrwkc4l3hr8hp7alu3648xqkz84vsr3z0yzhcnyn3lw",
           "date": "2026-03-24",
           "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Dehart Brothers Ventures",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2037622457922634212",
-          "date": "2026-03-28",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy22tvzl5w8ghnjad4g2vfvpvpyur0dwev6t4at40sh5xav5p8w3qpns5s8",
-          "date": "2026-03-28",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgm88rnnkcvyp2ajqgun993a2wwsswjyauqypwd2awd4m0apcl8hqy3393r",
-          "date": "2026-03-26",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2037249317908406293",
-          "date": "2026-03-26",
-          "project": "Bitcoin Dua 🇬🇭"
         }
       ]
     },
@@ -2989,17 +3069,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 7,
-    "daily_average_payments": 93
+    "daily_average_payments": 95
   },
   "burn_rate": {
-    "percentage": 57,
+    "percentage": 58,
     "status": "cold",
     "days_active": 7
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 652
+      "count": 664
     },
     {
       "domain": "8333.mobi",
@@ -3046,13 +3126,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 330
+      "count": 336
     },
     {
       "platform": "X",
-      "count": 323
+      "count": 329
     }
   ],
-  "generated_at": "2026-03-30T12:20:01.868963+00:00",
+  "generated_at": "2026-03-30T12:30:02.557392+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
