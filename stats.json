@@ -1,28 +1,79 @@
 {
   "totals": {
-    "all_payments": 707,
+    "all_payments": 719,
     "by_type": {
       "merchant": {
-        "count": 233
+        "count": 237
       },
       "project": {
-        "count": 233
+        "count": 237
       },
       "reviewer": {
-        "count": 241
+        "count": 245
       }
     }
   },
   "today": {
     "date": "2026-03-31",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 12,
+    "by_type": {
+      "merchant": {
+        "count": 4
+      },
+      "project": {
+        "count": 4
+      },
+      "reviewer": {
+        "count": 4
+      }
+    },
+    "approved": 4,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2038671536387768749",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Tena cyberpalace",
+        "platform": "X",
+        "time": "02:56"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Tena cyberpalace",
+        "platform": "Nostr",
+        "time": "02:56"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsg95se2tjhzg6kjrmedk63m23xujtjcw2y030suxq3cuy4v9lth9s26uqyy",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Chips point",
+        "platform": "Nostr",
+        "time": "02:55"
+      },
+      {
+        "url": "https://x.com/i/status/2038669558681071692",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Chips point",
+        "platform": "X",
+        "time": "02:55"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -301,14 +352,14 @@
     },
     {
       "date": "2026-03-31",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4
     }
   ],
   "reviewer": {
-    "total_reviewed": 247,
-    "approved": 233,
+    "total_reviewed": 251,
+    "approved": 237,
     "rejected": 14
   },
   "top_projects": [
@@ -730,8 +781,28 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 53,
+      "count": 57,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2038671536387768749",
+          "date": "2026-03-31",
+          "merchant": "Tena cyberpalace"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
+          "date": "2026-03-31",
+          "merchant": "Tena cyberpalace"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg95se2tjhzg6kjrmedk63m23xujtjcw2y030suxq3cuy4v9lth9s26uqyy",
+          "date": "2026-03-31",
+          "merchant": "Chips point"
+        },
+        {
+          "url": "https://x.com/i/status/2038669558681071692",
+          "date": "2026-03-31",
+          "merchant": "Chips point"
+        },
         {
           "url": "https://x.com/i/status/2038575111444279359",
           "date": "2026-03-30",
@@ -2533,6 +2604,32 @@
       ]
     },
     {
+      "name": "Chips point",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsg95se2tjhzg6kjrmedk63m23xujtjcw2y030suxq3cuy4v9lth9s26uqyy",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2038669558681071692",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2037462310810255475",
+          "date": "2026-03-27",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs28wauluucprwmxupkl0gywcf4muclzdpcv6csszjkdlsfyfvg83q2utlns",
+          "date": "2026-03-27",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Bliss beauty Salon",
       "count": 4,
       "posts": [
@@ -2670,6 +2767,22 @@
           "url": "https://x.com/i/status/2037223959003828237",
           "date": "2026-03-26",
           "project": "Bitcoin Anambra 🇳🇬"
+        }
+      ]
+    },
+    {
+      "name": "Tena cyberpalace",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2038671536387768749",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -2946,22 +3059,6 @@
       ]
     },
     {
-      "name": "Chips point",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2037462310810255475",
-          "date": "2026-03-27",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs28wauluucprwmxupkl0gywcf4muclzdpcv6csszjkdlsfyfvg83q2utlns",
-          "date": "2026-03-27",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Barbearia IG",
       "count": 2,
       "posts": [
@@ -3074,17 +3171,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 7,
-    "daily_average_payments": 101
+    "daily_average_payments": 102
   },
   "burn_rate": {
-    "percentage": 61,
+    "percentage": 62,
     "status": "cold",
     "days_active": 7
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 706
+      "count": 718
     },
     {
       "domain": "8333.mobi",
@@ -3131,13 +3228,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 357
+      "count": 363
     },
     {
       "platform": "X",
-      "count": 350
+      "count": 356
     }
   ],
-  "generated_at": "2026-03-31T02:50:01.683159+00:00",
+  "generated_at": "2026-03-31T03:00:01.884818+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
