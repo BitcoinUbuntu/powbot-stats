@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 788,
+    "all_payments": 797,
     "by_type": {
       "merchant": {
-        "count": 260
+        "count": 263
       },
       "project": {
-        "count": 260
+        "count": 263
       },
       "reviewer": {
-        "count": 268
+        "count": 271
       }
     }
   },
   "today": {
     "date": "2026-03-31",
-    "payments": 81,
+    "payments": 90,
     "by_type": {
       "merchant": {
-        "count": 27
+        "count": 30
       },
       "project": {
-        "count": 27
+        "count": 30
       },
       "reviewer": {
-        "count": 27
+        "count": 30
       }
     },
-    "approved": 27,
+    "approved": 30,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsvwx8ed3ggpc0kc2ehekh7u0e7t2smge4wkfsj7s2p4sqpxd8krzs8et26h",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "The Young Shall Grow",
+        "platform": "Nostr",
+        "time": "17:08"
+      },
+      {
+        "url": "https://x.com/i/status/2039003278105526559",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "The Young Shall Grow",
+        "platform": "X",
+        "time": "17:03"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsf6l5uv0rjj5ur2m74t4n8rn9uhlsh67fh4rez8w9xhzlm6nq6ehc9te7nw",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Aliasadex Provisions And More",
+        "platform": "Nostr",
+        "time": "17:02"
+      },
       {
         "url": "https://x.com/i/status/2038958887966060900",
         "project": "Bitcoin Dua 🇬🇭",
@@ -227,6 +248,15 @@
         "project": "Bitcoin Dua 🇬🇭"
       },
       {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
       {
@@ -303,9 +333,6 @@
       },
       {
         "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Dua 🇬🇭"
       }
     ]
   },
@@ -486,21 +513,36 @@
     },
     {
       "date": "2026-03-31",
-      "project_count": 27,
-      "merchant_count": 27,
-      "reviewer_count": 27
+      "project_count": 30,
+      "merchant_count": 30,
+      "reviewer_count": 30
     }
   ],
   "reviewer": {
-    "total_reviewed": 274,
-    "approved": 260,
+    "total_reviewed": 277,
+    "approved": 263,
     "rejected": 14
   },
   "top_projects": [
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 87,
+      "count": 90,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsvwx8ed3ggpc0kc2ehekh7u0e7t2smge4wkfsj7s2p4sqpxd8krzs8et26h",
+          "date": "2026-03-31",
+          "merchant": "The Young Shall Grow"
+        },
+        {
+          "url": "https://x.com/i/status/2039003278105526559",
+          "date": "2026-03-31",
+          "merchant": "The Young Shall Grow"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf6l5uv0rjj5ur2m74t4n8rn9uhlsh67fh4rez8w9xhzlm6nq6ehc9te7nw",
+          "date": "2026-03-31",
+          "merchant": "Aliasadex Provisions And More"
+        },
         {
           "url": "https://x.com/i/status/2038958887966060900",
           "date": "2026-03-31",
@@ -2748,8 +2790,13 @@
     },
     {
       "name": "Aliasadex Provisions And More",
-      "count": 5,
+      "count": 6,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsf6l5uv0rjj5ur2m74t4n8rn9uhlsh67fh4rez8w9xhzlm6nq6ehc9te7nw",
+          "date": "2026-03-31",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
         {
           "url": "https://x.com/i/status/2038958887966060900",
           "date": "2026-03-31",
@@ -3081,6 +3128,22 @@
           "url": "https://x.com/i/status/2033459777913716800",
           "date": "2026-03-24",
           "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
+      "name": "The Young Shall Grow",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsvwx8ed3ggpc0kc2ehekh7u0e7t2smge4wkfsj7s2p4sqpxd8krzs8et26h",
+          "date": "2026-03-31",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2039003278105526559",
+          "date": "2026-03-31",
+          "project": "Bitcoin Dua 🇬🇭"
         }
       ]
     },
@@ -3571,17 +3634,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 8,
-    "daily_average_payments": 98
+    "daily_average_payments": 99
   },
   "burn_rate": {
-    "percentage": 60,
+    "percentage": 61,
     "status": "cold",
     "days_active": 8
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 784
+      "count": 793
     },
     {
       "domain": "8333.mobi",
@@ -3632,13 +3695,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 396
+      "count": 402
     },
     {
       "platform": "X",
-      "count": 392
+      "count": 395
     }
   ],
-  "generated_at": "2026-03-31T17:00:03.005643+00:00",
+  "generated_at": "2026-03-31T17:10:02.432810+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
