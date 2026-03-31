@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 815,
+    "all_payments": 824,
     "by_type": {
       "merchant": {
-        "count": 269
+        "count": 272
       },
       "project": {
-        "count": 269
+        "count": 272
       },
       "reviewer": {
-        "count": 277
+        "count": 280
       }
     }
   },
   "today": {
     "date": "2026-03-31",
-    "payments": 108,
+    "payments": 117,
     "by_type": {
       "merchant": {
-        "count": 36
+        "count": 39
       },
       "project": {
-        "count": 36
+        "count": 39
       },
       "reviewer": {
-        "count": 36
+        "count": 39
       }
     },
-    "approved": 36,
+    "approved": 39,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2039048229052969022",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Cartia's Shawarma & Hot wings",
+        "platform": "X",
+        "time": "20:08"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs2yjqv89qmxgqxteln2klmz0fprpl4ch54lqllk3tjfzaczmaeg5qanwlmt",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Peace and Love Shop",
+        "platform": "Nostr",
+        "time": "20:08"
+      },
+      {
+        "url": "https://x.com/i/status/2039040301268951286",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Peace and Love Shop",
+        "platform": "X",
+        "time": "20:05"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs9hp39rl884sl7mjln0sckgeydl0kpkqmgm6kk502zf4r9y284glguppmal",
         "project": "Bitcoin Dua 🇬🇭",
@@ -286,6 +307,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -573,21 +603,31 @@
     },
     {
       "date": "2026-03-31",
-      "project_count": 36,
-      "merchant_count": 36,
-      "reviewer_count": 36
+      "project_count": 39,
+      "merchant_count": 39,
+      "reviewer_count": 39
     }
   ],
   "reviewer": {
-    "total_reviewed": 284,
-    "approved": 269,
+    "total_reviewed": 287,
+    "approved": 272,
     "rejected": 15
   },
   "top_projects": [
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 94,
+      "count": 96,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs2yjqv89qmxgqxteln2klmz0fprpl4ch54lqllk3tjfzaczmaeg5qanwlmt",
+          "date": "2026-03-31",
+          "merchant": "Peace and Love Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039040301268951286",
+          "date": "2026-03-31",
+          "merchant": "Peace and Love Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9hp39rl884sl7mjln0sckgeydl0kpkqmgm6kk502zf4r9y284glguppmal",
           "date": "2026-03-31",
@@ -1888,6 +1928,32 @@
       ]
     },
     {
+      "name": "Bitcoin Victoria Falls 🇿🇲",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039048229052969022",
+          "date": "2026-03-31",
+          "merchant": "Cartia's Shawarma & Hot wings"
+        },
+        {
+          "url": "https://x.com/i/status/2038746470497603682",
+          "date": "2026-03-31",
+          "merchant": "Livingstone Crocodile Park"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsta87w3ml9n0tqfqwcuzlc25gq9s7jsekajpgqrejjneqh7g9nd2qun6sj7",
+          "date": "2026-03-29",
+          "merchant": "Watson Fruits"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
+          "date": "2026-03-25",
+          "merchant": "Mundayam Restaurant"
+        }
+      ]
+    },
+    {
       "name": "EcoBitz 🇰🇪",
       "count": 3,
       "posts": [
@@ -1905,27 +1971,6 @@
           "url": "https://primal.net/e/nevent1qqs92prhvwvkhnq4344f27ujt345gjv4wmpeepnucmcka2p7twh48kqadsx30",
           "date": "2026-03-24",
           "merchant": "Wa Ngala Hardware"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2038746470497603682",
-          "date": "2026-03-31",
-          "merchant": "Livingstone Crocodile Park"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsta87w3ml9n0tqfqwcuzlc25gq9s7jsekajpgqrejjneqh7g9nd2qun6sj7",
-          "date": "2026-03-29",
-          "merchant": "Watson Fruits"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
-          "date": "2026-03-25",
-          "merchant": "Mundayam Restaurant"
         }
       ]
     },
@@ -3386,6 +3431,22 @@
       ]
     },
     {
+      "name": "Peace and Love Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs2yjqv89qmxgqxteln2klmz0fprpl4ch54lqllk3tjfzaczmaeg5qanwlmt",
+          "date": "2026-03-31",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2039040301268951286",
+          "date": "2026-03-31",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Olympia Chicken",
       "count": 2,
       "posts": [
@@ -3755,22 +3816,33 @@
           "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
+    },
+    {
+      "name": "Cartia's Shawarma & Hot wings",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039048229052969022",
+          "date": "2026-03-31",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Mar 24",
     "days_active": 8,
-    "daily_average_payments": 101
+    "daily_average_payments": 103
   },
   "burn_rate": {
-    "percentage": 62,
+    "percentage": 63,
     "status": "cold",
     "days_active": 8
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 811
+      "count": 820
     },
     {
       "domain": "8333.mobi",
@@ -3821,13 +3893,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 411
+      "count": 414
     },
     {
       "platform": "X",
-      "count": 404
+      "count": 410
     }
   ],
-  "generated_at": "2026-03-31T20:00:02.172196+00:00",
+  "generated_at": "2026-03-31T20:10:02.379729+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
