@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 737,
+    "all_payments": 740,
     "by_type": {
       "merchant": {
-        "count": 243
+        "count": 244
       },
       "project": {
-        "count": 243
+        "count": 244
       },
       "reviewer": {
-        "count": 251
+        "count": 252
       }
     }
   },
   "today": {
     "date": "2026-03-31",
-    "payments": 30,
+    "payments": 33,
     "by_type": {
       "merchant": {
-        "count": 10
+        "count": 11
       },
       "project": {
-        "count": 10
+        "count": 11
       },
       "reviewer": {
-        "count": 10
+        "count": 11
       }
     },
-    "approved": 10,
+    "approved": 11,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2038867564852388075",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "RozzyBeads Store",
+        "platform": "X",
+        "time": "10:39"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsr8mfgyx0rt7m85se2nkaqa8hmfzwkdmp42rjhhvnq8s74j7r294q4zn9qn",
         "project": "Bitcoin Dua 🇬🇭",
@@ -104,6 +111,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -385,21 +395,26 @@
     },
     {
       "date": "2026-03-31",
-      "project_count": 10,
-      "merchant_count": 10,
-      "reviewer_count": 10
+      "project_count": 11,
+      "merchant_count": 11,
+      "reviewer_count": 11
     }
   ],
   "reviewer": {
-    "total_reviewed": 257,
-    "approved": 243,
+    "total_reviewed": 258,
+    "approved": 244,
     "rejected": 14
   },
   "top_projects": [
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 84,
+      "count": 85,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2038867564852388075",
+          "date": "2026-03-31",
+          "merchant": "RozzyBeads Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsr8mfgyx0rt7m85se2nkaqa8hmfzwkdmp42rjhhvnq8s74j7r294q4zn9qn",
           "date": "2026-03-31",
@@ -2479,6 +2494,37 @@
       ]
     },
     {
+      "name": "RozzyBeads Store",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2038867564852388075",
+          "date": "2026-03-31",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2ddtxdw7qes6upmr7tvjtkw6qxngufa0k34zrwksvg9a4gv3fmnglu6nr9",
+          "date": "2026-03-30",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2038466509844955360",
+          "date": "2026-03-30",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy2gvwcqjflavujecysfqhh8zqxmpuyr9kg9ru0gpphtqvzf96l0c7maulj",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2038074010072695087",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Uaieca Car Wash",
       "count": 4,
       "posts": [
@@ -2553,32 +2599,6 @@
           "url": "https://primal.net/e/nevent1qqsdfgag824f929evtqecfh6ehjg53qx83l48hccc7xypf564zmcdcgqxg9a3",
           "date": "2026-03-25",
           "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "RozzyBeads Store",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs2ddtxdw7qes6upmr7tvjtkw6qxngufa0k34zrwksvg9a4gv3fmnglu6nr9",
-          "date": "2026-03-30",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2038466509844955360",
-          "date": "2026-03-30",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy2gvwcqjflavujecysfqhh8zqxmpuyr9kg9ru0gpphtqvzf96l0c7maulj",
-          "date": "2026-03-29",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2038074010072695087",
-          "date": "2026-03-29",
-          "project": "Bitcoin Dua 🇬🇭"
         }
       ]
     },
@@ -3280,7 +3300,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 735
+      "count": 738
     },
     {
       "domain": "8333.mobi",
@@ -3335,9 +3355,9 @@
     },
     {
       "platform": "X",
-      "count": 365
+      "count": 368
     }
   ],
-  "generated_at": "2026-03-31T10:30:02.594856+00:00",
+  "generated_at": "2026-03-31T10:40:02.710848+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }

@@ -1,7 +1,39 @@
 {
-  "last_updated": "2026-03-31T10:30:02.745517+00:00",
-  "total_submissions": 269,
+  "last_updated": "2026-03-31T10:40:02.856889+00:00",
+  "total_submissions": 271,
   "submissions": [
+    {
+      "id": 273,
+      "timestamp": "2026-03-31 10:37:23 UTC",
+      "project_name": "Bitcoin Famba (Mozambique) 🇲🇿",
+      "project_flag": "🇲🇿",
+      "merchant_name": "Brasukas - Bar & Surf",
+      "lightning_address": "brasukasbar@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "Nostr",
+      "post_url": "https://primal.net/e/nevent1qqs8qfzlnpggzz9p2gvx08rzqrn7kgm470vf29yelm45gpscq7plppckle02x",
+      "telegram_link": "https://t.me/c/2378392967/12515",
+      "btcmap_link": "https://btcmap.org/merchant/34245",
+      "note": "⚠️ Multiple Lightning addresses detected (5)",
+      "status": "Pending Review",
+      "payments": []
+    },
+    {
+      "id": 272,
+      "timestamp": "2026-03-31 10:36:34 UTC",
+      "project_name": "Bitcoin Famba (Mozambique) 🇲🇿",
+      "project_flag": "🇲🇿",
+      "merchant_name": "Brasukas - Bar & Surf",
+      "lightning_address": "brasukasbar@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "X",
+      "post_url": "https://x.com/i/status/2038917658708439153",
+      "telegram_link": "https://t.me/c/2378392967/12512",
+      "btcmap_link": "https://btcmap.org/merchant/34245",
+      "note": "⚠️ Multiple Lightning addresses detected (2)",
+      "status": "Pending Review",
+      "payments": []
+    },
     {
       "id": 271,
       "timestamp": "2026-03-31 10:21:16 UTC",
@@ -14,8 +46,8 @@
       "post_url": "https://primal.net/e/nevent1qqsycc7dv6p699e7wra5zat0desthjqn3gf2pusxplr99nwqju788qg6jl6w6",
       "telegram_link": "https://t.me/c/2378392967/12509",
       "btcmap_link": "https://btcmap.org/merchant/30969",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "🔁 Duplicate video",
+      "status": "Processed",
       "payments": []
     },
     {
@@ -30,8 +62,8 @@
       "post_url": "https://x.com/i/status/2038921669981458574",
       "telegram_link": "https://t.me/c/2378392967/12506",
       "btcmap_link": "https://btcmap.org/merchant/30969",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "👍 Video reviewed",
+      "status": "Approved",
       "payments": []
     },
     {
@@ -191,8 +223,27 @@
       "telegram_link": "https://t.me/c/2378392967/12473",
       "btcmap_link": "https://btcmap.org/merchant/36662",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69cba449198317c0fb4bd089",
+          "timestamp": "2026-03-31T10:39:05.644002+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "RozzyBeads Store",
+          "tx_id": "69cba44a198317c0fb4bd12e",
+          "timestamp": "2026-03-31T10:39:06.464822+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dua (Ghana) 🇬🇭",
+          "tx_id": "69cba44c198317c0fb4bd2d9",
+          "timestamp": "2026-03-31T10:39:08.338714+00:00"
+        }
+      ]
     },
     {
       "id": 259,
