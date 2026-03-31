@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 797,
+    "all_payments": 806,
     "by_type": {
       "merchant": {
-        "count": 263
+        "count": 266
       },
       "project": {
-        "count": 263
+        "count": 266
       },
       "reviewer": {
-        "count": 271
+        "count": 274
       }
     }
   },
   "today": {
     "date": "2026-03-31",
-    "payments": 90,
+    "payments": 99,
     "by_type": {
       "merchant": {
-        "count": 30
+        "count": 33
       },
       "project": {
-        "count": 30
+        "count": 33
       },
       "reviewer": {
-        "count": 30
+        "count": 33
       }
     },
-    "approved": 30,
+    "approved": 33,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqszpdccprafj9jddywkptej7u24gn4ha4vp8u90p8zkyztwu4c46rge008xl",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Good Morning Shop",
+        "platform": "Nostr",
+        "time": "18:36"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqspamtnwvulz6nqup29x09y53fu0hpg6q2slymsnzqu33aj5wc7y2sk3u5kt",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Jiro Enterprise",
+        "platform": "Nostr",
+        "time": "18:33"
+      },
+      {
+        "url": "https://x.com/i/status/2039006420134178970",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Jiro Enterprise",
+        "platform": "X",
+        "time": "18:33"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsvwx8ed3ggpc0kc2ehekh7u0e7t2smge4wkfsj7s2p4sqpxd8krzs8et26h",
         "project": "Bitcoin Dua 🇬🇭",
@@ -244,6 +265,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -513,21 +543,31 @@
     },
     {
       "date": "2026-03-31",
-      "project_count": 30,
-      "merchant_count": 30,
-      "reviewer_count": 30
+      "project_count": 33,
+      "merchant_count": 33,
+      "reviewer_count": 33
     }
   ],
   "reviewer": {
-    "total_reviewed": 277,
-    "approved": 263,
+    "total_reviewed": 280,
+    "approved": 266,
     "rejected": 14
   },
   "top_projects": [
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 90,
+      "count": 92,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspamtnwvulz6nqup29x09y53fu0hpg6q2slymsnzqu33aj5wc7y2sk3u5kt",
+          "date": "2026-03-31",
+          "merchant": "Jiro Enterprise"
+        },
+        {
+          "url": "https://x.com/i/status/2039006420134178970",
+          "date": "2026-03-31",
+          "merchant": "Jiro Enterprise"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsvwx8ed3ggpc0kc2ehekh7u0e7t2smge4wkfsj7s2p4sqpxd8krzs8et26h",
           "date": "2026-03-31",
@@ -1509,8 +1549,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 18,
+      "count": 19,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszpdccprafj9jddywkptej7u24gn4ha4vp8u90p8zkyztwu4c46rge008xl",
+          "date": "2026-03-31",
+          "merchant": "Good Morning Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrf0epm0zhkrtdc9fd2l3cpk240trumphsdehs3zdrw3wdhmrsw4cyva794",
           "date": "2026-03-30",
@@ -2753,6 +2798,42 @@
       ]
     },
     {
+      "name": "Jiro Enterprise",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspamtnwvulz6nqup29x09y53fu0hpg6q2slymsnzqu33aj5wc7y2sk3u5kt",
+          "date": "2026-03-31",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2039006420134178970",
+          "date": "2026-03-31",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg88cl6ta9qlc94hs23tp2gr838tkk8enmdqmrgrh9jkl662trarcqwrxen",
+          "date": "2026-03-30",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2038623463020073343",
+          "date": "2026-03-30",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdjy9yt7j8hwkfmzc5zuv2lqzdjwr25t43tps9n5v2lmjmyvpfq0gt4uvpj",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2038068472035291328",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Dehart Brothers Ventures",
       "count": 6,
       "posts": [
@@ -2925,32 +3006,6 @@
           "url": "https://x.com/i/status/2031308988403360062",
           "date": "2026-03-24",
           "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Jiro Enterprise",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsg88cl6ta9qlc94hs23tp2gr838tkk8enmdqmrgrh9jkl662trarcqwrxen",
-          "date": "2026-03-30",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2038623463020073343",
-          "date": "2026-03-30",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdjy9yt7j8hwkfmzc5zuv2lqzdjwr25t43tps9n5v2lmjmyvpfq0gt4uvpj",
-          "date": "2026-03-29",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2038068472035291328",
-          "date": "2026-03-29",
-          "project": "Bitcoin Dua 🇬🇭"
         }
       ]
     },
@@ -3609,6 +3664,17 @@
       ]
     },
     {
+      "name": "Good Morning Shop",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszpdccprafj9jddywkptej7u24gn4ha4vp8u90p8zkyztwu4c46rge008xl",
+          "date": "2026-03-31",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Goat Farm",
       "count": 1,
       "posts": [
@@ -3634,7 +3700,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 8,
-    "daily_average_payments": 99
+    "daily_average_payments": 100
   },
   "burn_rate": {
     "percentage": 61,
@@ -3644,7 +3710,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 793
+      "count": 802
     },
     {
       "domain": "8333.mobi",
@@ -3695,13 +3761,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 402
+      "count": 408
     },
     {
       "platform": "X",
-      "count": 395
+      "count": 398
     }
   ],
-  "generated_at": "2026-03-31T18:30:01.866957+00:00",
+  "generated_at": "2026-03-31T18:40:02.393700+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
