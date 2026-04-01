@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 902,
+    "all_payments": 905,
     "by_type": {
       "merchant": {
-        "count": 298
+        "count": 299
       },
       "project": {
-        "count": 298
+        "count": 299
       },
       "reviewer": {
-        "count": 306
+        "count": 307
       }
     }
   },
   "today": {
     "date": "2026-04-01",
-    "payments": 78,
+    "payments": 81,
     "by_type": {
       "merchant": {
-        "count": 26
+        "count": 27
       },
       "project": {
-        "count": 26
+        "count": 27
       },
       "reviewer": {
-        "count": 26
+        "count": 27
       }
     },
-    "approved": 26,
+    "approved": 27,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs9lldqzcu9xsglf6ynrcalsh0k8329ewgpredwgattf5yr6ex027s27c99z",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nelton Services Shop",
+        "platform": "Nostr",
+        "time": "12:22"
+      },
       {
         "url": "https://x.com/i/status/2039304493859316174",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -216,6 +223,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -512,14 +522,14 @@
     },
     {
       "date": "2026-04-01",
-      "project_count": 26,
-      "merchant_count": 26,
-      "reviewer_count": 26
+      "project_count": 27,
+      "merchant_count": 27,
+      "reviewer_count": 27
     }
   ],
   "reviewer": {
-    "total_reviewed": 313,
-    "approved": 298,
+    "total_reviewed": 314,
+    "approved": 299,
     "rejected": 15
   },
   "top_projects": [
@@ -1432,8 +1442,13 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 39,
+      "count": 40,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs9lldqzcu9xsglf6ynrcalsh0k8329ewgpredwgattf5yr6ex027s27c99z",
+          "date": "2026-04-01",
+          "merchant": "Nelton Services Shop"
+        },
         {
           "url": "https://x.com/i/status/2039304493859316174",
           "date": "2026-04-01",
@@ -3209,6 +3224,32 @@
       ]
     },
     {
+      "name": "Nelton Services Shop",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs9lldqzcu9xsglf6ynrcalsh0k8329ewgpredwgattf5yr6ex027s27c99z",
+          "date": "2026-04-01",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2039304493859316174",
+          "date": "2026-04-01",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdwwkhkcm0gpmknst5ewu68h67rx38fwnx397trhkp7ajce3240vcax5xjm",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036460872176934991",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Kwallos Shop",
       "count": 4,
       "posts": [
@@ -3361,27 +3402,6 @@
           "url": "https://x.com/i/status/2036395349577695397",
           "date": "2026-03-24",
           "project": "Bitcoin Ekiti 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Nelton Services Shop",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2039304493859316174",
-          "date": "2026-04-01",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdwwkhkcm0gpmknst5ewu68h67rx38fwnx397trhkp7ajce3240vcax5xjm",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036460872176934991",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
     },
@@ -4059,7 +4079,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 894
+      "count": 897
     },
     {
       "domain": "8333.mobi",
@@ -4114,9 +4134,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 444
+      "count": 447
     }
   ],
-  "generated_at": "2026-04-01T12:20:02.576099+00:00",
+  "generated_at": "2026-04-01T12:30:02.136862+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
