@@ -1,7 +1,58 @@
 {
-  "last_updated": "2026-04-01T11:40:02.500490+00:00",
-  "total_submissions": 313,
+  "last_updated": "2026-04-01T11:50:02.632114+00:00",
+  "total_submissions": 315,
   "submissions": [
+    {
+      "id": 317,
+      "timestamp": "2026-04-01 11:46:17 UTC",
+      "project_name": "Bitcoin Dombo (Mozambique) 🇲🇿",
+      "project_flag": "🇲🇿",
+      "merchant_name": "Nelton Services Shop",
+      "lightning_address": "neltonsk8@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "Nostr",
+      "post_url": "https://primal.net/e/nevent1qqs9lldqzcu9xsglf6ynrcalsh0k8329ewgpredwgattf5yr6ex027s27c99z",
+      "telegram_link": "https://t.me/c/2378392967/12653",
+      "btcmap_link": "https://btcmap.org/merchant/node:13378163013",
+      "note": "🤖 Video requires human review",
+      "status": "Pending Review",
+      "payments": []
+    },
+    {
+      "id": 316,
+      "timestamp": "2026-04-01 11:44:06 UTC",
+      "project_name": "Bitcoin Dombo (Mozambique) 🇲🇿",
+      "project_flag": "🇲🇿",
+      "merchant_name": "Nelton Services Shop",
+      "lightning_address": "neltonsk8@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "X",
+      "post_url": "https://x.com/i/status/2039304493859316174",
+      "telegram_link": "https://t.me/c/2378392967/12650",
+      "btcmap_link": "https://btcmap.org/merchant/node:13378163013",
+      "note": "👍 Video reviewed",
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69cd05ab198317c0fb9b788f",
+          "timestamp": "2026-04-01T11:46:51.682683+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Nelton Services Shop",
+          "tx_id": "69cd05ac198317c0fb9b791a",
+          "timestamp": "2026-04-01T11:46:52.484584+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dombo (Mozambique) 🇲🇿",
+          "tx_id": "69cd05ad198317c0fb9b799c",
+          "timestamp": "2026-04-01T11:46:54.144609+00:00"
+        }
+      ]
+    },
     {
       "id": 315,
       "timestamp": "2026-04-01 11:34:00 UTC",
@@ -15,8 +66,27 @@
       "telegram_link": "https://t.me/c/2378392967/12644",
       "btcmap_link": "https://btcmap.org/merchant/33200",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69cd043f198317c0fb9b30f8",
+          "timestamp": "2026-04-01T11:40:47.430272+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Obwanchani Farm",
+          "tx_id": "69cd0442198317c0fb9b3191",
+          "timestamp": "2026-04-01T11:40:53.935898+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Chama (Kenya) 🇰🇪",
+          "tx_id": "69cd0447198317c0fb9b338f",
+          "timestamp": "2026-04-01T11:40:55.732801+00:00"
+        }
+      ]
     },
     {
       "id": 314,
@@ -30,9 +100,28 @@
       "post_url": "https://x.com/i/status/2039299798335939033",
       "telegram_link": "https://t.me/c/2378392967/12646",
       "btcmap_link": "https://btcmap.org/merchant/33200",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
-      "payments": []
+      "note": "🔁 Duplicate video",
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69cd0452198317c0fb9b36ba",
+          "timestamp": "2026-04-01T11:41:06.420211+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Obwanchani Farm",
+          "tx_id": "69cd0454198317c0fb9b377b",
+          "timestamp": "2026-04-01T11:41:11.484032+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Chama (Kenya) 🇰🇪",
+          "tx_id": "69cd0459198317c0fb9b3928",
+          "timestamp": "2026-04-01T11:41:13.182101+00:00"
+        }
+      ]
     },
     {
       "id": 313,
@@ -46,7 +135,7 @@
       "post_url": "https://primal.net/e/nevent1qqs8xd8yaty6tqmt80q3n66ykst750zgff32x352flr5xh8kczkvn4qnu5pzu",
       "telegram_link": "https://t.me/c/2378392967/12641",
       "btcmap_link": "https://btcmap.org/merchant/34742",
-      "note": "🔁 Duplicate video | 🔁 Duplicate video",
+      "note": "🔁 Duplicate video | 🔁 Duplicate video | 🔁 Duplicate video",
       "status": "Processed",
       "payments": []
     },

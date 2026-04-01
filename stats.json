@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 893,
+    "all_payments": 902,
     "by_type": {
       "merchant": {
-        "count": 295
+        "count": 298
       },
       "project": {
-        "count": 295
+        "count": 298
       },
       "reviewer": {
-        "count": 303
+        "count": 306
       }
     }
   },
   "today": {
     "date": "2026-04-01",
-    "payments": 69,
+    "payments": 78,
     "by_type": {
       "merchant": {
-        "count": 23
+        "count": 26
       },
       "project": {
-        "count": 23
+        "count": 26
       },
       "reviewer": {
-        "count": 23
+        "count": 26
       }
     },
-    "approved": 23,
+    "approved": 26,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2039304493859316174",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nelton Services Shop",
+        "platform": "X",
+        "time": "11:46"
+      },
+      {
+        "url": "https://x.com/i/status/2039299798335939033",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Obwanchani Farm",
+        "platform": "X",
+        "time": "11:41"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Obwanchani Farm",
+        "platform": "Nostr",
+        "time": "11:40"
+      },
       {
         "url": "https://x.com/i/status/2039299532077285789",
         "project": "Bitbiashara 🇰🇪",
@@ -195,6 +216,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -482,14 +512,14 @@
     },
     {
       "date": "2026-04-01",
-      "project_count": 23,
-      "merchant_count": 23,
-      "reviewer_count": 23
+      "project_count": 26,
+      "merchant_count": 26,
+      "reviewer_count": 26
     }
   ],
   "reviewer": {
-    "total_reviewed": 310,
-    "approved": 295,
+    "total_reviewed": 313,
+    "approved": 298,
     "rejected": 15
   },
   "top_projects": [
@@ -1402,8 +1432,13 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 38,
+      "count": 39,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2039304493859316174",
+          "date": "2026-04-01",
+          "merchant": "Nelton Services Shop"
+        },
         {
           "url": "https://x.com/i/status/2038013284578673044",
           "date": "2026-03-29",
@@ -1907,6 +1942,42 @@
       ]
     },
     {
+      "name": "Bitcoin Chama 🇰🇪",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039299798335939033",
+          "date": "2026-04-01",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
+          "date": "2026-04-01",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2034660669149073477",
+          "date": "2026-04-01",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039292941349396690",
+          "date": "2026-04-01",
+          "merchant": "Goat Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9atjc2m0vfrnna6jp3zrzq9dd84ytrsa29sq5dg6yzsvnedq9xmsedum75",
+          "date": "2026-03-31",
+          "merchant": "Goat Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2033851794384662900",
+          "date": "2026-03-31",
+          "merchant": "Mwabosire"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Victoria Falls 🇿🇲",
       "count": 4,
       "posts": [
@@ -1929,32 +2000,6 @@
           "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
           "date": "2026-03-25",
           "merchant": "Mundayam Restaurant"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Chama 🇰🇪",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2034660669149073477",
-          "date": "2026-04-01",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039292941349396690",
-          "date": "2026-04-01",
-          "merchant": "Goat Farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9atjc2m0vfrnna6jp3zrzq9dd84ytrsa29sq5dg6yzsvnedq9xmsedum75",
-          "date": "2026-03-31",
-          "merchant": "Goat Farm"
-        },
-        {
-          "url": "https://x.com/i/status/2033851794384662900",
-          "date": "2026-03-31",
-          "merchant": "Mwabosire"
         }
       ]
     },
@@ -3320,6 +3365,27 @@
       ]
     },
     {
+      "name": "Nelton Services Shop",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039304493859316174",
+          "date": "2026-04-01",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdwwkhkcm0gpmknst5ewu68h67rx38fwnx397trhkp7ajce3240vcax5xjm",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036460872176934991",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Jabulani Shop 3",
       "count": 3,
       "posts": [
@@ -3533,6 +3599,22 @@
       ]
     },
     {
+      "name": "Obwanchani Farm",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039299798335939033",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Nubelle",
       "count": 2,
       "posts": [
@@ -3544,22 +3626,6 @@
         {
           "url": "https://x.com/i/status/2037963008027009156",
           "date": "2026-03-28",
-          "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Nelton Services Shop",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsdwwkhkcm0gpmknst5ewu68h67rx38fwnx397trhkp7ajce3240vcax5xjm",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036460872176934991",
-          "date": "2026-03-24",
           "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
@@ -3983,21 +4049,21 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 9,
-    "daily_average_payments": 99
+    "daily_average_payments": 100
   },
   "burn_rate": {
-    "percentage": 60,
+    "percentage": 61,
     "status": "cold",
     "days_active": 9
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 887
+      "count": 894
     },
     {
       "domain": "8333.mobi",
-      "count": 5
+      "count": 7
     },
     {
       "domain": "walletofsatoshi.com",
@@ -4044,13 +4110,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 452
+      "count": 458
     },
     {
       "platform": "Nostr",
-      "count": 441
+      "count": 444
     }
   ],
-  "generated_at": "2026-04-01T11:40:02.356002+00:00",
+  "generated_at": "2026-04-01T11:50:02.429081+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
