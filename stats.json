@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 875,
+    "all_payments": 878,
     "by_type": {
       "merchant": {
-        "count": 289
+        "count": 290
       },
       "project": {
-        "count": 289
+        "count": 290
       },
       "reviewer": {
-        "count": 297
+        "count": 298
       }
     }
   },
   "today": {
     "date": "2026-04-01",
-    "payments": 51,
+    "payments": 54,
     "by_type": {
       "merchant": {
-        "count": 17
+        "count": 18
       },
       "project": {
-        "count": 17
+        "count": 18
       },
       "reviewer": {
-        "count": 17
+        "count": 18
       }
     },
-    "approved": 17,
+    "approved": 18,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqszgwfuzhc8e894lw9qcsld3phjadr0rs7sdy24ctsysdqh6u6xr8s7yphq0",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Sarah Nutritives Eastlands",
+        "platform": "Nostr",
+        "time": "11:06"
+      },
       {
         "url": "https://x.com/i/status/2039277850562293977",
         "project": "Bitbiashara 🇰🇪",
@@ -193,6 +200,9 @@
         "project": "Bitbiashara 🇰🇪"
       },
       {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
         "project": "Bitcoin Dua 🇬🇭"
       },
       {
@@ -263,15 +273,6 @@
       },
       {
         "project": "Bitcoin Ekiti 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
       }
     ]
   },
@@ -452,14 +453,14 @@
     },
     {
       "date": "2026-04-01",
-      "project_count": 17,
-      "merchant_count": 17,
-      "reviewer_count": 17
+      "project_count": 18,
+      "merchant_count": 18,
+      "reviewer_count": 18
     }
   ],
   "reviewer": {
-    "total_reviewed": 304,
-    "approved": 289,
+    "total_reviewed": 305,
+    "approved": 290,
     "rejected": 15
   },
   "top_projects": [
@@ -961,8 +962,13 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 79,
+      "count": 80,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszgwfuzhc8e894lw9qcsld3phjadr0rs7sdy24ctsysdqh6u6xr8s7yphq0",
+          "date": "2026-04-01",
+          "merchant": "Sarah Nutritives Eastlands"
+        },
         {
           "url": "https://x.com/i/status/2039277850562293977",
           "date": "2026-04-01",
@@ -3361,6 +3367,22 @@
       ]
     },
     {
+      "name": "Sarah Nutritives Eastlands",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszgwfuzhc8e894lw9qcsld3phjadr0rs7sdy24ctsysdqh6u6xr8s7yphq0",
+          "date": "2026-04-01",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2039277850562293977",
+          "date": "2026-04-01",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Rehoboth freshmilk diary",
       "count": 2,
       "posts": [
@@ -3762,17 +3784,6 @@
       ]
     },
     {
-      "name": "Sarah Nutritives Eastlands",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2039277850562293977",
-          "date": "2026-04-01",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Phillard Shop",
       "count": 1,
       "posts": [
@@ -3885,7 +3896,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 871
+      "count": 874
     },
     {
       "domain": "8333.mobi",
@@ -3940,9 +3951,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 435
+      "count": 438
     }
   ],
-  "generated_at": "2026-04-01T11:00:02.147084+00:00",
+  "generated_at": "2026-04-01T11:10:02.112785+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
