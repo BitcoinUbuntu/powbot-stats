@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 872,
+    "all_payments": 875,
     "by_type": {
       "merchant": {
-        "count": 288
+        "count": 289
       },
       "project": {
-        "count": 288
+        "count": 289
       },
       "reviewer": {
-        "count": 296
+        "count": 297
       }
     }
   },
   "today": {
     "date": "2026-04-01",
-    "payments": 48,
+    "payments": 51,
     "by_type": {
       "merchant": {
-        "count": 16
+        "count": 17
       },
       "project": {
-        "count": 16
+        "count": 17
       },
       "reviewer": {
-        "count": 16
+        "count": 17
       }
     },
-    "approved": 16,
+    "approved": 17,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2039277850562293977",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Sarah Nutritives Eastlands",
+        "platform": "X",
+        "time": "10:58"
+      },
       {
         "url": "https://x.com/i/status/2039234745066754408",
         "project": "Bitbiashara 🇰🇪",
@@ -183,6 +190,9 @@
         "project": "Bitbiashara 🇰🇪"
       },
       {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
         "project": "Bitcoin Dua 🇬🇭"
       },
       {
@@ -256,9 +266,6 @@
       },
       {
         "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
       },
       {
         "project": "Bitbiashara 🇰🇪"
@@ -445,14 +452,14 @@
     },
     {
       "date": "2026-04-01",
-      "project_count": 16,
-      "merchant_count": 16,
-      "reviewer_count": 16
+      "project_count": 17,
+      "merchant_count": 17,
+      "reviewer_count": 17
     }
   ],
   "reviewer": {
-    "total_reviewed": 303,
-    "approved": 288,
+    "total_reviewed": 304,
+    "approved": 289,
     "rejected": 15
   },
   "top_projects": [
@@ -954,8 +961,13 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 78,
+      "count": 79,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2039277850562293977",
+          "date": "2026-04-01",
+          "merchant": "Sarah Nutritives Eastlands"
+        },
         {
           "url": "https://x.com/i/status/2039234745066754408",
           "date": "2026-04-01",
@@ -3750,6 +3762,17 @@
       ]
     },
     {
+      "name": "Sarah Nutritives Eastlands",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039277850562293977",
+          "date": "2026-04-01",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Phillard Shop",
       "count": 1,
       "posts": [
@@ -3852,7 +3875,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 9,
-    "daily_average_payments": 96
+    "daily_average_payments": 97
   },
   "burn_rate": {
     "percentage": 59,
@@ -3862,7 +3885,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 868
+      "count": 871
     },
     {
       "domain": "8333.mobi",
@@ -3913,13 +3936,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 437
+      "count": 440
     },
     {
       "platform": "Nostr",
       "count": 435
     }
   ],
-  "generated_at": "2026-04-01T10:50:01.810353+00:00",
+  "generated_at": "2026-04-01T11:00:02.147084+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
