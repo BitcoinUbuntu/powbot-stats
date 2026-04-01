@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 914,
+    "all_payments": 920,
     "by_type": {
       "merchant": {
-        "count": 302
+        "count": 304
       },
       "project": {
-        "count": 302
+        "count": 304
       },
       "reviewer": {
-        "count": 310
+        "count": 312
       }
     }
   },
   "today": {
     "date": "2026-04-01",
-    "payments": 90,
+    "payments": 96,
     "by_type": {
       "merchant": {
-        "count": 30
+        "count": 32
       },
       "project": {
-        "count": 30
+        "count": 32
       },
       "reviewer": {
-        "count": 30
+        "count": 32
       }
     },
-    "approved": 30,
+    "approved": 32,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2039328718447911052",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Ayuba’s Washing Bay",
+        "platform": "X",
+        "time": "14:22"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqspvda3vc27827875u9qrfxgrymrsrvq0c2whxpuyen0ehpca2hssgfn8tfj",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "C&P Roasters Café & Roastery",
+        "platform": "Nostr",
+        "time": "14:22"
+      },
       {
         "url": "https://x.com/i/status/2039313726147289303",
         "project": "Bitcoin Chama 🇰🇪",
@@ -244,6 +258,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -552,21 +572,26 @@
     },
     {
       "date": "2026-04-01",
-      "project_count": 30,
-      "merchant_count": 30,
-      "reviewer_count": 30
+      "project_count": 32,
+      "merchant_count": 32,
+      "reviewer_count": 32
     }
   ],
   "reviewer": {
-    "total_reviewed": 317,
-    "approved": 302,
+    "total_reviewed": 319,
+    "approved": 304,
     "rejected": 15
   },
   "top_projects": [
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 98,
+      "count": 99,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2039328718447911052",
+          "date": "2026-04-01",
+          "merchant": "Ayuba’s Washing Bay"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsp0e8jlgnaxv5xzcga0h0exu7m4vv0qadep05lemqf5hnj20wq8xqtr6w4e",
           "date": "2026-04-01",
@@ -1678,8 +1703,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 21,
+      "count": 22,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspvda3vc27827875u9qrfxgrymrsrvq0c2whxpuyen0ehpca2hssgfn8tfj",
+          "date": "2026-04-01",
+          "merchant": "C&P Roasters Café & Roastery"
+        },
         {
           "url": "https://x.com/i/status/2039314266969227472",
           "date": "2026-04-01",
@@ -3191,6 +3221,37 @@
       ]
     },
     {
+      "name": "Ayuba’s Washing Bay",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039328718447911052",
+          "date": "2026-04-01",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsds0lf4uv29a5n9v6edvr5grl6r7nc9w32nse4qvsxtx7p4x26aas06nfjv",
+          "date": "2026-03-30",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2038468189529448561",
+          "date": "2026-03-30",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszke5nf4nqp6375rj7ghrhr2wzv82vkxjjvvta6ntgdqzrv6a60lsy2x48f",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2038072286582878450",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Uaieca Car Wash",
       "count": 4,
       "posts": [
@@ -3395,32 +3456,6 @@
           "url": "https://primal.net/e/nevent1qqs28wauluucprwmxupkl0gywcf4muclzdpcv6csszjkdlsfyfvg83q2utlns",
           "date": "2026-03-27",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Ayuba’s Washing Bay",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsds0lf4uv29a5n9v6edvr5grl6r7nc9w32nse4qvsxtx7p4x26aas06nfjv",
-          "date": "2026-03-30",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2038468189529448561",
-          "date": "2026-03-30",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszke5nf4nqp6375rj7ghrhr2wzv82vkxjjvvta6ntgdqzrv6a60lsy2x48f",
-          "date": "2026-03-29",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2038072286582878450",
-          "date": "2026-03-29",
-          "project": "Bitcoin Dua 🇬🇭"
         }
       ]
     },
@@ -3936,6 +3971,22 @@
       ]
     },
     {
+      "name": "C&P Roasters Café & Roastery",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspvda3vc27827875u9qrfxgrymrsrvq0c2whxpuyen0ehpca2hssgfn8tfj",
+          "date": "2026-04-01",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2039314266969227472",
+          "date": "2026-04-01",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Brasukas - Bar & Surf",
       "count": 2,
       "posts": [
@@ -4116,17 +4167,6 @@
       ]
     },
     {
-      "name": "C&P Roasters Café & Roastery",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2039314266969227472",
-          "date": "2026-04-01",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
       "name": "Aqua Selim",
       "count": 1,
       "posts": [
@@ -4141,7 +4181,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 9,
-    "daily_average_payments": 101
+    "daily_average_payments": 102
   },
   "burn_rate": {
     "percentage": 62,
@@ -4151,7 +4191,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 906
+      "count": 912
     },
     {
       "domain": "8333.mobi",
@@ -4202,13 +4242,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 464
+      "count": 467
     },
     {
       "platform": "Nostr",
-      "count": 450
+      "count": 453
     }
   ],
-  "generated_at": "2026-04-01T14:20:02.694477+00:00",
+  "generated_at": "2026-04-01T14:30:02.062086+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
