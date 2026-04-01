@@ -1,12 +1,12 @@
 {
   "totals": {
-    "all_payments": 920,
+    "all_payments": 922,
     "by_type": {
       "merchant": {
-        "count": 304
+        "count": 305
       },
       "project": {
-        "count": 304
+        "count": 305
       },
       "reviewer": {
         "count": 312
@@ -15,13 +15,13 @@
   },
   "today": {
     "date": "2026-04-01",
-    "payments": 96,
+    "payments": 98,
     "by_type": {
       "merchant": {
-        "count": 32
+        "count": 33
       },
       "project": {
-        "count": 32
+        "count": 33
       },
       "reviewer": {
         "count": 32
@@ -572,8 +572,8 @@
     },
     {
       "date": "2026-04-01",
-      "project_count": 32,
-      "merchant_count": 32,
+      "project_count": 33,
+      "merchant_count": 33,
       "reviewer_count": 32
     }
   ],
@@ -1086,8 +1086,13 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 81,
+      "count": 82,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8xd8yaty6tqmt80q3n66ykst750zgff32x352flr5xh8kczkvn4qnu5pzu",
+          "date": "2026-04-01",
+          "merchant": "Aqua Selim"
+        },
         {
           "url": "https://x.com/i/status/2039299532077285789",
           "date": "2026-04-01",
@@ -4035,6 +4040,22 @@
       ]
     },
     {
+      "name": "Aqua Selim",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8xd8yaty6tqmt80q3n66ykst750zgff32x352flr5xh8kczkvn4qnu5pzu",
+          "date": "2026-04-01",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2039299532077285789",
+          "date": "2026-04-01",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Watson Fruits",
       "count": 1,
       "posts": [
@@ -4165,17 +4186,6 @@
           "project": "Bitcoin Victoria Falls 🇿🇲"
         }
       ]
-    },
-    {
-      "name": "Aqua Selim",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2039299532077285789",
-          "date": "2026-04-01",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
     }
   ],
   "launch": {
@@ -4191,7 +4201,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 912
+      "count": 914
     },
     {
       "domain": "8333.mobi",
@@ -4246,9 +4256,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 453
+      "count": 455
     }
   ],
-  "generated_at": "2026-04-01T14:30:02.062086+00:00",
+  "generated_at": "2026-04-01T14:40:01.987344+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
