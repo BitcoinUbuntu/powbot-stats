@@ -1,28 +1,49 @@
 {
   "totals": {
-    "all_payments": 824,
+    "all_payments": 827,
     "by_type": {
       "merchant": {
-        "count": 272
+        "count": 273
       },
       "project": {
-        "count": 272
+        "count": 273
       },
       "reviewer": {
-        "count": 280
+        "count": 281
       }
     }
   },
   "today": {
     "date": "2026-04-01",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 3,
+    "by_type": {
+      "merchant": {
+        "count": 1
+      },
+      "project": {
+        "count": 1
+      },
+      "reviewer": {
+        "count": 1
+      }
+    },
+    "approved": 1,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2039104183031189571",
+        "project": "BitJR Academy 🇿🇲",
+        "merchant": "Phillard Shop",
+        "platform": "X",
+        "time": "03:40"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "BitJR Academy 🇿🇲"
+      },
       {
         "project": "Bitcoin Victoria Falls 🇿🇲"
       },
@@ -307,14 +328,14 @@
     },
     {
       "date": "2026-04-01",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 1,
+      "merchant_count": 1,
+      "reviewer_count": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 287,
-    "approved": 272,
+    "total_reviewed": 288,
+    "approved": 273,
     "rejected": 15
   },
   "top_projects": [
@@ -1679,6 +1700,27 @@
       ]
     },
     {
+      "name": "BitJR Academy 🇿🇲",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039104183031189571",
+          "date": "2026-04-01",
+          "merchant": "Phillard Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8tauhqyjwv9a6k55cl55v90qz6qckn2pahcnrjqdel7n26cs2apc6mrztp",
+          "date": "2026-03-30",
+          "merchant": "Liberty trading point"
+        },
+        {
+          "url": "https://x.com/i/status/2036911839464816870",
+          "date": "2026-03-26",
+          "merchant": "Sweet & Salty Cafe"
+        }
+      ]
+    },
+    {
       "name": "Soweto BTC 🇿🇦",
       "count": 2,
       "posts": [
@@ -1739,22 +1781,6 @@
           "url": "https://x.com/i/status/2037223959003828237",
           "date": "2026-03-26",
           "merchant": "The Sario Eventers"
-        }
-      ]
-    },
-    {
-      "name": "BitJR Academy 🇿🇲",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs8tauhqyjwv9a6k55cl55v90qz6qckn2pahcnrjqdel7n26cs2apc6mrztp",
-          "date": "2026-03-30",
-          "merchant": "Liberty trading point"
-        },
-        {
-          "url": "https://x.com/i/status/2036911839464816870",
-          "date": "2026-03-26",
-          "merchant": "Sweet & Salty Cafe"
         }
       ]
     },
@@ -3456,6 +3482,17 @@
       ]
     },
     {
+      "name": "Phillard Shop",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039104183031189571",
+          "date": "2026-04-01",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Mwabosire",
       "count": 1,
       "posts": [
@@ -3546,7 +3583,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 820
+      "count": 823
     },
     {
       "domain": "8333.mobi",
@@ -3601,9 +3638,9 @@
     },
     {
       "platform": "X",
-      "count": 410
+      "count": 413
     }
   ],
-  "generated_at": "2026-04-01T03:40:02.464624+00:00",
+  "generated_at": "2026-04-01T03:50:02.311816+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
