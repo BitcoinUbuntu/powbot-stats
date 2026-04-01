@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 905,
+    "all_payments": 914,
     "by_type": {
       "merchant": {
-        "count": 299
+        "count": 302
       },
       "project": {
-        "count": 299
+        "count": 302
       },
       "reviewer": {
-        "count": 307
+        "count": 310
       }
     }
   },
   "today": {
     "date": "2026-04-01",
-    "payments": 81,
+    "payments": 90,
     "by_type": {
       "merchant": {
-        "count": 27
+        "count": 30
       },
       "project": {
-        "count": 27
+        "count": 30
       },
       "reviewer": {
-        "count": 27
+        "count": 30
       }
     },
-    "approved": 27,
+    "approved": 30,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2039313726147289303",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "X",
+        "time": "12:34"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs8u3e9ygm078ents36l79hlzxknlw4dha37xdg40gh4jhec550x7ct26wmk",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "Nostr",
+        "time": "12:33"
+      },
+      {
+        "url": "https://x.com/i/status/2039314266969227472",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "C&P Roasters Café & Roastery",
+        "platform": "X",
+        "time": "12:32"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs9lldqzcu9xsglf6ynrcalsh0k8329ewgpredwgattf5yr6ex027s27c99z",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -223,6 +244,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -522,14 +552,14 @@
     },
     {
       "date": "2026-04-01",
-      "project_count": 27,
-      "merchant_count": 27,
-      "reviewer_count": 27
+      "project_count": 30,
+      "merchant_count": 30,
+      "reviewer_count": 30
     }
   ],
   "reviewer": {
-    "total_reviewed": 314,
-    "approved": 299,
+    "total_reviewed": 317,
+    "approved": 302,
     "rejected": 15
   },
   "top_projects": [
@@ -1648,8 +1678,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 20,
+      "count": 21,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2039314266969227472",
+          "date": "2026-04-01",
+          "merchant": "C&P Roasters Café & Roastery"
+        },
         {
           "url": "https://x.com/i/status/2038994729032187978",
           "date": "2026-03-31",
@@ -1875,6 +1910,52 @@
       ]
     },
     {
+      "name": "Bitcoin Chama 🇰🇪",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039313726147289303",
+          "date": "2026-04-01",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8u3e9ygm078ents36l79hlzxknlw4dha37xdg40gh4jhec550x7ct26wmk",
+          "date": "2026-04-01",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039299798335939033",
+          "date": "2026-04-01",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
+          "date": "2026-04-01",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2034660669149073477",
+          "date": "2026-04-01",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039292941349396690",
+          "date": "2026-04-01",
+          "merchant": "Goat Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9atjc2m0vfrnna6jp3zrzq9dd84ytrsa29sq5dg6yzsvnedq9xmsedum75",
+          "date": "2026-03-31",
+          "merchant": "Goat Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2033851794384662900",
+          "date": "2026-03-31",
+          "merchant": "Mwabosire"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Aves 🇬🇭",
       "count": 8,
       "posts": [
@@ -1953,42 +2034,6 @@
           "url": "https://x.com/i/status/2036728638415015976",
           "date": "2026-03-25",
           "merchant": "Milofa Skate Shop"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Chama 🇰🇪",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2039299798335939033",
-          "date": "2026-04-01",
-          "merchant": "Obwanchani Farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
-          "date": "2026-04-01",
-          "merchant": "Obwanchani Farm"
-        },
-        {
-          "url": "https://x.com/i/status/2034660669149073477",
-          "date": "2026-04-01",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039292941349396690",
-          "date": "2026-04-01",
-          "merchant": "Goat Farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9atjc2m0vfrnna6jp3zrzq9dd84ytrsa29sq5dg6yzsvnedq9xmsedum75",
-          "date": "2026-03-31",
-          "merchant": "Goat Farm"
-        },
-        {
-          "url": "https://x.com/i/status/2033851794384662900",
-          "date": "2026-03-31",
-          "merchant": "Mwabosire"
         }
       ]
     },
@@ -3699,6 +3744,22 @@
       ]
     },
     {
+      "name": "Mary Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039313726147289303",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8u3e9ygm078ents36l79hlzxknlw4dha37xdg40gh4jhec550x7ct26wmk",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Kyn Design",
       "count": 2,
       "posts": [
@@ -4055,6 +4116,17 @@
       ]
     },
     {
+      "name": "C&P Roasters Café & Roastery",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039314266969227472",
+          "date": "2026-04-01",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Aqua Selim",
       "count": 1,
       "posts": [
@@ -4069,17 +4141,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 9,
-    "daily_average_payments": 100
+    "daily_average_payments": 101
   },
   "burn_rate": {
-    "percentage": 61,
+    "percentage": 62,
     "status": "cold",
     "days_active": 9
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 897
+      "count": 906
     },
     {
       "domain": "8333.mobi",
@@ -4130,13 +4202,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 458
+      "count": 464
     },
     {
       "platform": "Nostr",
-      "count": 447
+      "count": 450
     }
   ],
-  "generated_at": "2026-04-01T12:30:02.136862+00:00",
+  "generated_at": "2026-04-01T12:40:01.886385+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }

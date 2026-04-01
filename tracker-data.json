@@ -1,7 +1,23 @@
 {
-  "last_updated": "2026-04-01T12:30:02.359995+00:00",
-  "total_submissions": 318,
+  "last_updated": "2026-04-01T12:40:02.084501+00:00",
+  "total_submissions": 319,
   "submissions": [
+    {
+      "id": 321,
+      "timestamp": "2026-04-01 12:35:33 UTC",
+      "project_name": "Bitcoin Ekasi (South Africa) 🇿🇦",
+      "project_flag": "🇿🇦",
+      "merchant_name": "C&P Roasters Café & Roastery",
+      "lightning_address": "kiliman@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "Nostr",
+      "post_url": "https://primal.net/e/nevent1qqspvda3vc27827875u9qrfxgrymrsrvq0c2whxpuyen0ehpca2hssgfn8tfj",
+      "telegram_link": "https://t.me/c/2378392967/12665",
+      "btcmap_link": "https://btcmap.org/merchant/36357",
+      "note": "🤖 Video requires human review",
+      "status": "Pending Review",
+      "payments": []
+    },
     {
       "id": 320,
       "timestamp": "2026-04-01 12:15:38 UTC",
@@ -15,8 +31,27 @@
       "telegram_link": "https://t.me/c/2378392967/12659",
       "btcmap_link": "https://btcmap.org/merchant/31767",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69cd10a1198317c0fb9dbd8f",
+          "timestamp": "2026-04-01T12:33:38.003195+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Mary Shop",
+          "tx_id": "69cd10a2198317c0fb9dbe15",
+          "timestamp": "2026-04-01T12:33:38.776883+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Chama (Kenya) 🇰🇪",
+          "tx_id": "69cd10a4198317c0fb9dbf2e",
+          "timestamp": "2026-04-01T12:33:40.995164+00:00"
+        }
+      ]
     },
     {
       "id": 319,
@@ -32,7 +67,26 @@
       "btcmap_link": "https://btcmap.org/merchant/31767",
       "note": "🔁 Duplicate video",
       "status": "Processed",
-      "payments": []
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69cd10e4198317c0fb9dccb6",
+          "timestamp": "2026-04-01T12:34:44.996556+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Mary Shop",
+          "tx_id": "69cd10e5198317c0fb9dcd71",
+          "timestamp": "2026-04-01T12:34:45.737280+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Chama (Kenya) 🇰🇪",
+          "tx_id": "69cd10ea198317c0fb9dcf0e",
+          "timestamp": "2026-04-01T12:34:50.692407+00:00"
+        }
+      ]
     },
     {
       "id": 318,
@@ -47,8 +101,27 @@
       "telegram_link": "https://t.me/c/2378392967/12656",
       "btcmap_link": "https://btcmap.org/merchant/36357",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69cd1049198317c0fb9da82a",
+          "timestamp": "2026-04-01T12:32:09.265671+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "C&P Roasters Café & Roastery",
+          "tx_id": "69cd1049198317c0fb9da8ba",
+          "timestamp": "2026-04-01T12:32:09.915139+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Ekasi (South Africa) 🇿🇦",
+          "tx_id": "69cd106d198317c0fb9db0e3",
+          "timestamp": "2026-04-01T12:32:45.743191+00:00"
+        }
+      ]
     },
     {
       "id": 317,
