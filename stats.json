@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 931,
+    "all_payments": 934,
     "by_type": {
       "merchant": {
-        "count": 308
+        "count": 309
       },
       "project": {
-        "count": 308
+        "count": 309
       },
       "reviewer": {
-        "count": 315
+        "count": 316
       }
     }
   },
   "today": {
     "date": "2026-04-02",
-    "payments": 9,
+    "payments": 12,
     "by_type": {
       "merchant": {
-        "count": 3
+        "count": 4
       },
       "project": {
-        "count": 3
+        "count": 4
       },
       "reviewer": {
-        "count": 3
+        "count": 4
       }
     },
-    "approved": 3,
+    "approved": 4,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2039382012067217580",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "SMG Electronics Store",
+        "platform": "X",
+        "time": "11:39"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsfrxssa2qukyjzmnupz2zgvz0cywxxsdrc5p4kgg9nu8na5lj6rgc7gp992",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -55,6 +62,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -270,14 +280,14 @@
     },
     {
       "date": "2026-04-02",
-      "project_count": 3,
-      "merchant_count": 3,
-      "reviewer_count": 3
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4
     }
   ],
   "reviewer": {
-    "total_reviewed": 322,
-    "approved": 307,
+    "total_reviewed": 323,
+    "approved": 308,
     "rejected": 15
   },
   "top_projects": [
@@ -1603,8 +1613,13 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 10,
+      "count": 11,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2039382012067217580",
+          "date": "2026-04-02",
+          "merchant": "SMG Electronics Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsgz7hgj0he2s732fdsrawujeguf30j5udsd423faqtacrxe3zva3cpvcxxl",
           "date": "2026-03-31",
@@ -3823,6 +3838,17 @@
       ]
     },
     {
+      "name": "SMG Electronics Store",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039382012067217580",
+          "date": "2026-04-02",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Phillard Shop",
       "count": 1,
       "posts": [
@@ -3935,7 +3961,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 923
+      "count": 926
     },
     {
       "domain": "8333.mobi",
@@ -3986,13 +4012,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 470
+      "count": 473
     },
     {
       "platform": "Nostr",
       "count": 461
     }
   ],
-  "generated_at": "2026-04-02T11:30:02.189319+00:00",
+  "generated_at": "2026-04-02T11:40:02.461942+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
