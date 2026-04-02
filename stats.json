@@ -1,28 +1,69 @@
 {
   "totals": {
-    "all_payments": 922,
+    "all_payments": 931,
     "by_type": {
       "merchant": {
-        "count": 305
+        "count": 308
       },
       "project": {
-        "count": 305
+        "count": 308
       },
       "reviewer": {
-        "count": 312
+        "count": 315
       }
     }
   },
   "today": {
     "date": "2026-04-02",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 9,
+    "by_type": {
+      "merchant": {
+        "count": 3
+      },
+      "project": {
+        "count": 3
+      },
+      "reviewer": {
+        "count": 3
+      }
+    },
+    "approved": 3,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsfrxssa2qukyjzmnupz2zgvz0cywxxsdrc5p4kgg9nu8na5lj6rgc7gp992",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Mercearia Abençoada",
+        "platform": "Nostr",
+        "time": "10:33"
+      },
+      {
+        "url": "https://x.com/i/status/2039358962189893851",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Mercearia Abençoada",
+        "platform": "X",
+        "time": "10:32"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqszwvejg97vekh6qs92ez99eaqgez27kg385ryztuyf72v2phl6ymgvm59xk",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Dona Marta Stand Shop",
+        "platform": "Nostr",
+        "time": "10:32"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
@@ -250,14 +291,14 @@
     },
     {
       "date": "2026-04-02",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 3,
+      "merchant_count": 3,
+      "reviewer_count": 3
     }
   ],
   "reviewer": {
-    "total_reviewed": 319,
-    "approved": 304,
+    "total_reviewed": 322,
+    "approved": 307,
     "rejected": 15
   },
   "top_projects": [
@@ -1180,8 +1221,23 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 40,
+      "count": 43,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfrxssa2qukyjzmnupz2zgvz0cywxxsdrc5p4kgg9nu8na5lj6rgc7gp992",
+          "date": "2026-04-02",
+          "merchant": "Mercearia Abençoada"
+        },
+        {
+          "url": "https://x.com/i/status/2039358962189893851",
+          "date": "2026-04-02",
+          "merchant": "Mercearia Abençoada"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszwvejg97vekh6qs92ez99eaqgez27kg385ryztuyf72v2phl6ymgvm59xk",
+          "date": "2026-04-02",
+          "merchant": "Dona Marta Stand Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9lldqzcu9xsglf6ynrcalsh0k8329ewgpredwgattf5yr6ex027s27c99z",
           "date": "2026-04-01",
@@ -2904,6 +2960,37 @@
       ]
     },
     {
+      "name": "Dona Marta Stand Shop",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszwvejg97vekh6qs92ez99eaqgez27kg385ryztuyf72v2phl6ymgvm59xk",
+          "date": "2026-04-02",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxres0fc9djcsev50e6xvw5x7yvgytha8cgxczgr00ll64ryw2skcg59k9l",
+          "date": "2026-03-28",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2037852386660700202",
+          "date": "2026-03-28",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036510768489746651",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0sxwp0cuxt7s7yxtrwkc4l3hr8hp7alu3648xqkz84vsr3z0yzhcnyn3lw",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Ayuba’s Washing Bay",
       "count": 5,
       "posts": [
@@ -3087,32 +3174,6 @@
           "url": "https://x.com/i/status/2037376931696464142",
           "date": "2026-03-27",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Dona Marta Stand Shop",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsxres0fc9djcsev50e6xvw5x7yvgytha8cgxczgr00ll64ryw2skcg59k9l",
-          "date": "2026-03-28",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2037852386660700202",
-          "date": "2026-03-28",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036510768489746651",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0sxwp0cuxt7s7yxtrwkc4l3hr8hp7alu3648xqkz84vsr3z0yzhcnyn3lw",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
     },
@@ -3442,6 +3503,22 @@
           "url": "https://x.com/i/status/2036728638415015976",
           "date": "2026-03-25",
           "project": "Bitcoin Famba 🇲🇿"
+        }
+      ]
+    },
+    {
+      "name": "Mercearia Abençoada",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfrxssa2qukyjzmnupz2zgvz0cywxxsdrc5p4kgg9nu8na5lj6rgc7gp992",
+          "date": "2026-04-02",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2039358962189893851",
+          "date": "2026-04-02",
+          "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
     },
@@ -3869,17 +3946,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 10,
-    "daily_average_payments": 92
+    "daily_average_payments": 93
   },
   "burn_rate": {
-    "percentage": 56,
+    "percentage": 57,
     "status": "cold",
     "days_active": 10
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 914
+      "count": 923
     },
     {
       "domain": "8333.mobi",
@@ -3930,13 +4007,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 467
+      "count": 470
     },
     {
       "platform": "Nostr",
-      "count": 455
+      "count": 461
     }
   ],
-  "generated_at": "2026-04-02T10:30:02.542179+00:00",
+  "generated_at": "2026-04-02T10:40:01.928347+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
