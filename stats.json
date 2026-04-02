@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 943,
+    "all_payments": 949,
     "by_type": {
       "merchant": {
-        "count": 312
+        "count": 314
       },
       "project": {
-        "count": 312
+        "count": 314
       },
       "reviewer": {
-        "count": 319
+        "count": 321
       }
     }
   },
   "today": {
     "date": "2026-04-02",
-    "payments": 21,
+    "payments": 27,
     "by_type": {
       "merchant": {
-        "count": 7
+        "count": 9
       },
       "project": {
-        "count": 7
+        "count": 9
       },
       "reviewer": {
-        "count": 7
+        "count": 9
       }
     },
-    "approved": 7,
+    "approved": 9,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2039604876909351240",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "X",
+        "time": "12:27"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswk5g5z30hkplze0z44umdd9l7xncl6y3syztmwsgzcw2zd85h7rstwy4sj",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "Nostr",
+        "time": "12:24"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsdd86ytalvvazqw0gpgjmaeu2w6t0u7txthf7wvsay4ac3h2jzaegzxw8ms",
         "project": "Bitcoin Famba 🇲🇿",
@@ -84,6 +98,12 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
         "project": "Bitcoin Famba 🇲🇿"
       },
       {
@@ -118,9 +138,6 @@
       },
       {
         "project": "Bitcoin Ekasi 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Dombo 🇲🇿"
       }
     ]
   },
@@ -301,14 +318,14 @@
     },
     {
       "date": "2026-04-02",
-      "project_count": 7,
-      "merchant_count": 7,
-      "reviewer_count": 7
+      "project_count": 9,
+      "merchant_count": 9,
+      "reviewer_count": 9
     }
   ],
   "reviewer": {
-    "total_reviewed": 326,
-    "approved": 311,
+    "total_reviewed": 328,
+    "approved": 313,
     "rejected": 15
   },
   "top_projects": [
@@ -815,8 +832,18 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 82,
+      "count": 84,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2039604876909351240",
+          "date": "2026-04-02",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswk5g5z30hkplze0z44umdd9l7xncl6y3syztmwsgzcw2zd85h7rstwy4sj",
+          "date": "2026-04-02",
+          "merchant": "Bliss beauty Salon"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs8xd8yaty6tqmt80q3n66ykst750zgff32x352flr5xh8kczkvn4qnu5pzu",
           "date": "2026-04-01",
@@ -2702,6 +2729,52 @@
       ]
     },
     {
+      "name": "Bliss beauty Salon",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039604876909351240",
+          "date": "2026-04-02",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswk5g5z30hkplze0z44umdd9l7xncl6y3syztmwsgzcw2zd85h7rstwy4sj",
+          "date": "2026-04-02",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy649ws5hkfcvu9l48ls8f7ujy3wxsyvlm3dazekjjpvyj6clsaxs2fhfu0",
+          "date": "2026-04-01",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2039224979628146820",
+          "date": "2026-04-01",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2037055229070348305",
+          "date": "2026-03-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspkaj9j6uvlhgunkjf2usfjdcn538zk5z8emys3vszays7f3evn7qj789vj",
+          "date": "2026-03-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2036713873995071907",
+          "date": "2026-03-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9ssxz57vu5yu2fnzayn7524fmaqqwf7sp6vu39pmgryyhqyyp8eqawax4l",
+          "date": "2026-03-25",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "RozzyBeads Store",
       "count": 6,
       "posts": [
@@ -2914,42 +2987,6 @@
           "url": "https://x.com/i/status/2037249317908406293",
           "date": "2026-03-26",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Bliss beauty Salon",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsy649ws5hkfcvu9l48ls8f7ujy3wxsyvlm3dazekjjpvyj6clsaxs2fhfu0",
-          "date": "2026-04-01",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2039224979628146820",
-          "date": "2026-04-01",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2037055229070348305",
-          "date": "2026-03-26",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspkaj9j6uvlhgunkjf2usfjdcn538zk5z8emys3vszays7f3evn7qj789vj",
-          "date": "2026-03-26",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2036713873995071907",
-          "date": "2026-03-25",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9ssxz57vu5yu2fnzayn7524fmaqqwf7sp6vu39pmgryyhqyyp8eqawax4l",
-          "date": "2026-03-25",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -4005,14 +4042,14 @@
     "daily_average_payments": 94
   },
   "burn_rate": {
-    "percentage": 57,
+    "percentage": 58,
     "status": "cold",
     "days_active": 10
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 935
+      "count": 941
     },
     {
       "domain": "8333.mobi",
@@ -4063,13 +4100,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 476
+      "count": 479
     },
     {
       "platform": "Nostr",
-      "count": 467
+      "count": 470
     }
   ],
-  "generated_at": "2026-04-02T12:20:02.225661+00:00",
+  "generated_at": "2026-04-02T12:30:02.501636+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
