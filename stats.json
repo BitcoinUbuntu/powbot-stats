@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1027,
+    "all_payments": 1030,
     "by_type": {
       "merchant": {
-        "count": 340
+        "count": 341
       },
       "project": {
-        "count": 340
+        "count": 341
       },
       "reviewer": {
-        "count": 347
+        "count": 348
       }
     }
   },
   "today": {
     "date": "2026-04-03",
-    "payments": 51,
+    "payments": 54,
     "by_type": {
       "merchant": {
-        "count": 17
+        "count": 18
       },
       "project": {
-        "count": 17
+        "count": 18
       },
       "reviewer": {
-        "count": 17
+        "count": 18
       }
     },
-    "approved": 17,
+    "approved": 18,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsd6qlvehpd5dvslyskkayp2sfvc07rvv2m2gthqy0s807fxz5u7jgr4y3rd",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Sombo Groceries",
+        "platform": "Nostr",
+        "time": "08:40"
+      },
       {
         "url": "https://x.com/i/status/2039975615445520709",
         "project": "Bitcoin Tofo 🇲🇿",
@@ -153,6 +160,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
       {
         "project": "Bitcoin Tofo 🇲🇿"
       },
@@ -437,14 +447,14 @@
     },
     {
       "date": "2026-04-03",
-      "project_count": 17,
-      "merchant_count": 17,
-      "reviewer_count": 17
+      "project_count": 18,
+      "merchant_count": 18,
+      "reviewer_count": 18
     }
   ],
   "reviewer": {
-    "total_reviewed": 355,
-    "approved": 339,
+    "total_reviewed": 356,
+    "approved": 340,
     "rejected": 16
   },
   "top_projects": [
@@ -2109,8 +2119,13 @@
     },
     {
       "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 4,
+      "count": 5,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsd6qlvehpd5dvslyskkayp2sfvc07rvv2m2gthqy0s807fxz5u7jgr4y3rd",
+          "date": "2026-04-03",
+          "merchant": "Sombo Groceries"
+        },
         {
           "url": "https://x.com/i/status/2039048229052969022",
           "date": "2026-03-31",
@@ -4329,6 +4344,17 @@
       ]
     },
     {
+      "name": "Sombo Groceries",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsd6qlvehpd5dvslyskkayp2sfvc07rvv2m2gthqy0s807fxz5u7jgr4y3rd",
+          "date": "2026-04-03",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Phillard Shop",
       "count": 1,
       "posts": [
@@ -4441,18 +4467,18 @@
   ],
   "launch": {
     "date": "Mar 24",
-    "days_active": 10,
-    "daily_average_payments": 102
+    "days_active": 11,
+    "daily_average_payments": 93
   },
   "burn_rate": {
-    "percentage": 63,
+    "percentage": 57,
     "status": "cold",
-    "days_active": 10
+    "days_active": 11
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1019
+      "count": 1022
     },
     {
       "domain": "8333.mobi",
@@ -4507,9 +4533,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 509
+      "count": 512
     }
   ],
-  "generated_at": "2026-04-03T08:40:02.651358+00:00",
+  "generated_at": "2026-04-03T08:50:01.768101+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
