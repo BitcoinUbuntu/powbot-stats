@@ -1,7 +1,23 @@
 {
-  "last_updated": "2026-04-03T08:50:02.077388+00:00",
-  "total_submissions": 375,
+  "last_updated": "2026-04-03T09:00:02.310772+00:00",
+  "total_submissions": 376,
   "submissions": [
+    {
+      "id": 379,
+      "timestamp": "2026-04-03 08:59:12 UTC",
+      "project_name": "Bitcoin Ekiti (Nigeria) 🇳🇬",
+      "project_flag": "🇳🇬",
+      "merchant_name": "KJ Mulitipurpose Store",
+      "lightning_address": "adonsken@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "Nostr",
+      "post_url": "https://primal.net/e/nevent1qqsrlk5h30wv8lqcrz56kzdz6fls7zeck4dhp6z274zcd5s85h9tjzcu08dzp",
+      "telegram_link": "https://t.me/c/2378392967/12851",
+      "btcmap_link": "https://btcmap.org/merchant/30969",
+      "note": "🤖 Video requires human review",
+      "status": "Pending Review",
+      "payments": []
+    },
     {
       "id": 378,
       "timestamp": "2026-04-03 08:48:09 UTC",
@@ -14,9 +30,28 @@
       "post_url": "https://primal.net/e/nevent1qqsr7dmwnx0u958735y6le3hrh8z38dzfswagw6w9h4sxydvlwuf5dg3kuy8q",
       "telegram_link": "https://t.me/c/2378392967/12848",
       "btcmap_link": "https://btcmap.org/merchant/20986",
-      "note": "⚠️ Multiple Lightning addresses detected (2)",
-      "status": "Pending Review",
-      "payments": []
+      "note": "🔁 Duplicate video | ⚠️ Multiple Lightning addresses detected (2)",
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69cf8179198317c0fb2cfdc2",
+          "timestamp": "2026-04-03T08:59:37.595443+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Jorge Bitcoin Tofo Clothes Market",
+          "tx_id": "69cf817a198317c0fb2cfe49",
+          "timestamp": "2026-04-03T08:59:38.222473+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Tofo (Mozambique) 🇲🇿",
+          "tx_id": "69cf817b198317c0fb2cfefc",
+          "timestamp": "2026-04-03T08:59:40.018836+00:00"
+        }
+      ]
     },
     {
       "id": 377,
@@ -31,8 +66,27 @@
       "telegram_link": "https://t.me/c/2378392967/12845",
       "btcmap_link": "https://btcmap.org/merchant/30969",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69cf814c198317c0fb2cf3fd",
+          "timestamp": "2026-04-03T08:58:52.882062+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "KJ Mulitipurpose Store",
+          "tx_id": "69cf814d198317c0fb2cf474",
+          "timestamp": "2026-04-03T08:58:53.569861+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Ekiti (Nigeria) 🇳🇬",
+          "tx_id": "69cf814f198317c0fb2cf52a",
+          "timestamp": "2026-04-03T08:58:55.217613+00:00"
+        }
+      ]
     },
     {
       "id": 376,
@@ -47,8 +101,27 @@
       "telegram_link": "https://t.me/c/2378392967/12841",
       "btcmap_link": "https://btcmap.org/merchant/34299",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69cf813c198317c0fb2cef92",
+          "timestamp": "2026-04-03T08:58:36.420741+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Tafeyo Innovations",
+          "tx_id": "69cf813c198317c0fb2cf022",
+          "timestamp": "2026-04-03T08:58:37.164090+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Victoria Falls (Zambia) 🇿🇲",
+          "tx_id": "69cf813e198317c0fb2cf0bb",
+          "timestamp": "2026-04-03T08:58:38.878320+00:00"
+        }
+      ]
     },
     {
       "id": 375,
