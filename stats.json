@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1024,
+    "all_payments": 1027,
     "by_type": {
       "merchant": {
-        "count": 339
+        "count": 340
       },
       "project": {
-        "count": 339
+        "count": 340
       },
       "reviewer": {
-        "count": 346
+        "count": 347
       }
     }
   },
   "today": {
     "date": "2026-04-03",
-    "payments": 48,
+    "payments": 51,
     "by_type": {
       "merchant": {
-        "count": 16
+        "count": 17
       },
       "project": {
-        "count": 16
+        "count": 17
       },
       "reviewer": {
-        "count": 16
+        "count": 17
       }
     },
-    "approved": 16,
+    "approved": 17,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2039975615445520709",
+        "project": "Bitcoin Tofo 🇲🇿",
+        "merchant": "Jorge Bitcoin Tofo Clothes Market",
+        "platform": "X",
+        "time": "08:34"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsyz49a7zq6ftey3dznjszj2n0t7avw8lwfuwal5qcgtgpzuzv9pgqstd7r6",
         "project": "Bitbiashara 🇰🇪",
@@ -146,6 +153,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Tofo 🇲🇿"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -427,14 +437,14 @@
     },
     {
       "date": "2026-04-03",
-      "project_count": 16,
-      "merchant_count": 16,
-      "reviewer_count": 16
+      "project_count": 17,
+      "merchant_count": 17,
+      "reviewer_count": 17
     }
   ],
   "reviewer": {
-    "total_reviewed": 354,
-    "approved": 338,
+    "total_reviewed": 355,
+    "approved": 339,
     "rejected": 16
   },
   "top_projects": [
@@ -2226,6 +2236,17 @@
           "url": "https://x.com/i/status/2037264780444991537",
           "date": "2026-03-26",
           "merchant": "Kwa Innocent"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Tofo 🇲🇿",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039975615445520709",
+          "date": "2026-04-03",
+          "merchant": "Jorge Bitcoin Tofo Clothes Market"
         }
       ]
     }
@@ -4385,6 +4406,17 @@
       ]
     },
     {
+      "name": "Jorge Bitcoin Tofo Clothes Market",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2039975615445520709",
+          "date": "2026-04-03",
+          "project": "Bitcoin Tofo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Delfinos Seaside Restaurant",
       "count": 1,
       "posts": [
@@ -4413,14 +4445,14 @@
     "daily_average_payments": 102
   },
   "burn_rate": {
-    "percentage": 62,
+    "percentage": 63,
     "status": "cold",
     "days_active": 10
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1016
+      "count": 1019
     },
     {
       "domain": "8333.mobi",
@@ -4448,6 +4480,11 @@
       "count": 3
     },
     {
+      "flag": "🇲🇿",
+      "country": "Mozambique",
+      "count": 3
+    },
+    {
       "flag": "🇬🇭",
       "country": "Ghana",
       "count": 2
@@ -4455,11 +4492,6 @@
     {
       "flag": "🇿🇲",
       "country": "Zambia",
-      "count": 2
-    },
-    {
-      "flag": "🇲🇿",
-      "country": "Mozambique",
       "count": 2
     },
     {
@@ -4471,13 +4503,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 515
+      "count": 518
     },
     {
       "platform": "Nostr",
       "count": 509
     }
   ],
-  "generated_at": "2026-04-03T08:30:02.204400+00:00",
+  "generated_at": "2026-04-03T08:40:02.651358+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
