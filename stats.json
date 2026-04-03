@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1039,
+    "all_payments": 1042,
     "by_type": {
       "merchant": {
-        "count": 344
+        "count": 345
       },
       "project": {
-        "count": 344
+        "count": 345
       },
       "reviewer": {
-        "count": 351
+        "count": 352
       }
     }
   },
   "today": {
     "date": "2026-04-03",
-    "payments": 63,
+    "payments": 66,
     "by_type": {
       "merchant": {
-        "count": 21
+        "count": 22
       },
       "project": {
-        "count": 21
+        "count": 22
       },
       "reviewer": {
-        "count": 21
+        "count": 22
       }
     },
-    "approved": 21,
+    "approved": 22,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsrlk5h30wv8lqcrz56kzdz6fls7zeck4dhp6z274zcd5s85h9tjzcu08dzp",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "KJ Mulitipurpose Store",
+        "platform": "Nostr",
+        "time": "12:49"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsr7dmwnx0u958735y6le3hrh8z38dzfswagw6w9h4sxydvlwuf5dg3kuy8q",
         "project": "Bitcoin Tofo 🇲🇿",
@@ -182,6 +189,9 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
         "project": "Bitcoin Tofo 🇲🇿"
       },
       {
@@ -246,18 +256,6 @@
       },
       {
         "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
       }
     ]
   },
@@ -438,14 +436,14 @@
     },
     {
       "date": "2026-04-03",
-      "project_count": 21,
-      "merchant_count": 21,
-      "reviewer_count": 21
+      "project_count": 22,
+      "merchant_count": 22,
+      "reviewer_count": 22
     }
   ],
   "reviewer": {
-    "total_reviewed": 359,
-    "approved": 343,
+    "total_reviewed": 360,
+    "approved": 344,
     "rejected": 16
   },
   "top_projects": [
@@ -1810,8 +1808,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 15,
+      "count": 16,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrlk5h30wv8lqcrz56kzdz6fls7zeck4dhp6z274zcd5s85h9tjzcu08dzp",
+          "date": "2026-04-03",
+          "merchant": "KJ Mulitipurpose Store"
+        },
         {
           "url": "https://x.com/i/status/2039985859613606349",
           "date": "2026-04-03",
@@ -3642,6 +3645,32 @@
       ]
     },
     {
+      "name": "KJ Mulitipurpose Store",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrlk5h30wv8lqcrz56kzdz6fls7zeck4dhp6z274zcd5s85h9tjzcu08dzp",
+          "date": "2026-04-03",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2039985859613606349",
+          "date": "2026-04-03",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2038921669981458574",
+          "date": "2026-03-31",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsycc7dv6p699e7wra5zat0desthjqn3gf2pusxplr99nwqju788qg6jl6w6",
+          "date": "2026-03-31",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Jennifer Musya",
       "count": 4,
       "posts": [
@@ -3716,27 +3745,6 @@
           "url": "https://x.com/i/status/2039299532077285789",
           "date": "2026-04-01",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "KJ Mulitipurpose Store",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2039985859613606349",
-          "date": "2026-04-03",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2038921669981458574",
-          "date": "2026-03-31",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsycc7dv6p699e7wra5zat0desthjqn3gf2pusxplr99nwqju788qg6jl6w6",
-          "date": "2026-03-31",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -4505,7 +4513,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1031
+      "count": 1034
     },
     {
       "domain": "8333.mobi",
@@ -4560,9 +4568,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 518
+      "count": 521
     }
   ],
-  "generated_at": "2026-04-03T12:40:02.076331+00:00",
+  "generated_at": "2026-04-03T12:50:02.079574+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
