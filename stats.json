@@ -1,35 +1,63 @@
 {
   "totals": {
-    "all_payments": 1012,
+    "all_payments": 1024,
     "by_type": {
       "merchant": {
-        "count": 335
+        "count": 339
       },
       "project": {
-        "count": 335
+        "count": 339
       },
       "reviewer": {
-        "count": 342
+        "count": 346
       }
     }
   },
   "today": {
     "date": "2026-04-03",
-    "payments": 36,
+    "payments": 48,
     "by_type": {
       "merchant": {
-        "count": 12
+        "count": 16
       },
       "project": {
-        "count": 12
+        "count": 16
       },
       "reviewer": {
-        "count": 12
+        "count": 16
       }
     },
-    "approved": 12,
+    "approved": 16,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsyz49a7zq6ftey3dznjszj2n0t7avw8lwfuwal5qcgtgpzuzv9pgqstd7r6",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Borjulink communications Eastlands",
+        "platform": "Nostr",
+        "time": "07:12"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsrtfh6jhamwzj5ramln7xd8vad0a209m7y0muh29hgudkdeujwjqc5p398w",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Lydiah Richland Shop",
+        "platform": "Nostr",
+        "time": "07:11"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsr29fazkqvew8ucltwvqjs6jumanxumtkjukeskne64as5aae3rcqfcdaen",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "Nostr",
+        "time": "07:10"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsg9e2rkmlapezxa0p675a7dzzec0jmlze3qkkxggp564g3ps9qk6sv9jez5",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "Nostr",
+        "time": "07:10"
+      },
       {
         "url": "https://x.com/i/status/2039930745322340673",
         "project": "Bitbiashara 🇰🇪",
@@ -118,6 +146,18 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -387,17 +427,528 @@
     },
     {
       "date": "2026-04-03",
-      "project_count": 12,
-      "merchant_count": 12,
-      "reviewer_count": 12
+      "project_count": 16,
+      "merchant_count": 16,
+      "reviewer_count": 16
     }
   ],
   "reviewer": {
-    "total_reviewed": 350,
-    "approved": 334,
+    "total_reviewed": 354,
+    "approved": 338,
     "rejected": 16
   },
   "top_projects": [
+    {
+      "name": "Bitbiashara 🇰🇪",
+      "count": 101,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyz49a7zq6ftey3dznjszj2n0t7avw8lwfuwal5qcgtgpzuzv9pgqstd7r6",
+          "date": "2026-04-03",
+          "merchant": "Borjulink communications Eastlands"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrtfh6jhamwzj5ramln7xd8vad0a209m7y0muh29hgudkdeujwjqc5p398w",
+          "date": "2026-04-03",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsr29fazkqvew8ucltwvqjs6jumanxumtkjukeskne64as5aae3rcqfcdaen",
+          "date": "2026-04-03",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg9e2rkmlapezxa0p675a7dzzec0jmlze3qkkxggp564g3ps9qk6sv9jez5",
+          "date": "2026-04-03",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2039930745322340673",
+          "date": "2026-04-03",
+          "merchant": "Borjulink communications Eastlands"
+        },
+        {
+          "url": "https://x.com/i/status/2039926206800261142",
+          "date": "2026-04-03",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039929131547160680",
+          "date": "2026-04-03",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg0e9sgp0u3pk3mxxmdr2yr0zjwpecc4gf4rd0hk3cl26fe29pd6gq8d3t0",
+          "date": "2026-04-03",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2039777907615113388",
+          "date": "2026-04-03",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswf225fcpn4pp2xavlceu7zypafuwxasv6v2nnlzpraz3gqnt0mvg90fg2x",
+          "date": "2026-04-03",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2039774915771892142",
+          "date": "2026-04-03",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqx8hk8lgzlqsa0rnsv8zyqy0ee4j2cl582e5ukjgrvvhtteqzpqgu35m4u",
+          "date": "2026-04-02",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039617340795494447",
+          "date": "2026-04-02",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039610191683924418",
+          "date": "2026-04-02",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy96j8pu44hsqvmgqd2028cqajnryej3dqnlgv0kktc8kmzf9u6cqp2d44q",
+          "date": "2026-04-02",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2039607187266294030",
+          "date": "2026-04-02",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0nwaze6r0qfyrhsrjl9nvc2mdun8s7xxs5pewck7jtlgxmg7hkhqzeu6rx",
+          "date": "2026-04-02",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2039604876909351240",
+          "date": "2026-04-02",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswk5g5z30hkplze0z44umdd9l7xncl6y3syztmwsgzcw2zd85h7rstwy4sj",
+          "date": "2026-04-02",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8xd8yaty6tqmt80q3n66ykst750zgff32x352flr5xh8kczkvn4qnu5pzu",
+          "date": "2026-04-01",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2039299532077285789",
+          "date": "2026-04-01",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszgwfuzhc8e894lw9qcsld3phjadr0rs7sdy24ctsysdqh6u6xr8s7yphq0",
+          "date": "2026-04-01",
+          "merchant": "Sarah Nutritives Eastlands"
+        },
+        {
+          "url": "https://x.com/i/status/2039277850562293977",
+          "date": "2026-04-01",
+          "merchant": "Sarah Nutritives Eastlands"
+        },
+        {
+          "url": "https://x.com/i/status/2039234745066754408",
+          "date": "2026-04-01",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvagclf6d3mn3rw6rsrssvysvyexlwuvqnmzg2vre3yx9w9fevlwgtz73vu",
+          "date": "2026-04-01",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0gfj9e9k2qetywl80lkya9n086m9zvgq397ftpvakdchmjulx0acxfv5sq",
+          "date": "2026-04-01",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039233278620655727",
+          "date": "2026-04-01",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0nt6753qg2gdjv746q8qdxgxv82fuqm8l277ff8wqna2hmzynwnck009h2",
+          "date": "2026-04-01",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2039230448048509275",
+          "date": "2026-04-01",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2039229322259493367",
+          "date": "2026-04-01",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs99ul3g9ndhpkfukmgkhwqpehrman6uetyhnq73276sfkw02jkvac79m8sy",
+          "date": "2026-04-01",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2039227141808615624",
+          "date": "2026-04-01",
+          "merchant": "Kirathimo ventures"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqdmz7cm5vn2tns308294fsgjnxgkxfagfg53ees5lzzcwg54855crkjpxw",
+          "date": "2026-04-01",
+          "merchant": "Kirathimo ventures"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy649ws5hkfcvu9l48ls8f7ujy3wxsyvlm3dazekjjpvyj6clsaxs2fhfu0",
+          "date": "2026-04-01",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2039224979628146820",
+          "date": "2026-04-01",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2039223176433897951",
+          "date": "2026-04-01",
+          "merchant": "Peshy's beauty parlour"
+        },
+        {
+          "url": "https://x.com/i/status/2038910394635366757",
+          "date": "2026-03-31",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrtudyxjl5gmjsyceg8yef7trdv6qwq3m56nzrlw8fs9zl7pq6f7svu2xjp",
+          "date": "2026-03-31",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspfdyr58jzmxzgrwchrmydyayr2rfdve5supwx07nwvw495rmyyasnpywft",
+          "date": "2026-03-31",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2038908576211591207",
+          "date": "2026-03-31",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2038907535986467062",
+          "date": "2026-03-31",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfwjjn4lnnpu0uvvju8mqan39m6pk5hrpjjg6zwxm4vmnt6q38ghg05jwtp",
+          "date": "2026-03-31",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8chvw6lp4d2n6zpx2ljupml3f475terdjasvtgxpnflswjyhw09gaxh6vy",
+          "date": "2026-03-31",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2038814629489455378",
+          "date": "2026-03-31",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2038671536387768749",
+          "date": "2026-03-31",
+          "merchant": "Tena cyberpalace"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
+          "date": "2026-03-31",
+          "merchant": "Tena cyberpalace"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg95se2tjhzg6kjrmedk63m23xujtjcw2y030suxq3cuy4v9lth9s26uqyy",
+          "date": "2026-03-31",
+          "merchant": "Chips point"
+        },
+        {
+          "url": "https://x.com/i/status/2038669558681071692",
+          "date": "2026-03-31",
+          "merchant": "Chips point"
+        },
+        {
+          "url": "https://x.com/i/status/2038575111444279359",
+          "date": "2026-03-30",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf45mmd8kaqv3lk3mh2g5svzxfq4fn0juntrqav5yvwrlhcga3klqy8q9jq",
+          "date": "2026-03-30",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspwperartnydzam2cdvfc22whep3d8wj37kd4xc7vqjuglafduy3smmnzjg",
+          "date": "2026-03-30",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2038574021504020811",
+          "date": "2026-03-30",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2038571684953817579",
+          "date": "2026-03-30",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsx2ne7g8qt7ldvk6svruwmj2x4szz3aez9vpn6u44ecge2svfzcfq39y9hq",
+          "date": "2026-03-30",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2038569129649623428",
+          "date": "2026-03-30",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqr9ftkqp0yc0gyzvlgs3mwfwwd9ql63phdx4yj65ejz4wxfh22ys40zfv4",
+          "date": "2026-03-30",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszxnhkrq9qjg9tr5yfx6hkhhvkwrv7wl39edw9gpvdk0d4gyec82sfnx40j",
+          "date": "2026-03-28",
+          "merchant": "Jennifer Musya"
+        },
+        {
+          "url": "https://x.com/i/status/2037959525219614902",
+          "date": "2026-03-28",
+          "merchant": "Jennifer Musya"
+        },
+        {
+          "url": "https://x.com/i/status/2037834001319166330",
+          "date": "2026-03-28",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvan7tk7zuhypy8crhmljjd4xtdg449lzwqew697864rw6mnvr9lsjmyfms",
+          "date": "2026-03-28",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqahf2zmv50fysr9eccmtugfhsxt9zpsc9m8hgjfkhx6ggzymrjyglqafra",
+          "date": "2026-03-28",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2037776606232539301",
+          "date": "2026-03-28",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2037775026141720655",
+          "date": "2026-03-28",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgvdu0sr9mk0f5qc3yky73ycutngmdav409cmdpw8rejd66smkrwszsqaql",
+          "date": "2026-03-28",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxt05uv7n2ucfelu8szw4zrc5zftgucsly4ps8zcs86tdenz6rv7g0wapu6",
+          "date": "2026-03-28",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2037773170220892427",
+          "date": "2026-03-28",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2037587494238302379",
+          "date": "2026-03-27",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswghclzmvef9u8u9kn6znd72tsy8xqqg6lpztzmz8fq9q94zkhc6sr0uj4m",
+          "date": "2026-03-27",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdn2sd4ltmhyl8ppmkuzk7fww8g79848xl7yq5hl9su8e6m4xq57cnqxncq",
+          "date": "2026-03-27",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2037585838482104718",
+          "date": "2026-03-27",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2037536246096953612",
+          "date": "2026-03-27",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqzst7pndhgv3lgkglw5g28mw9lfwl3cw3kwl52n82cvuh0y5am0csmdwkn",
+          "date": "2026-03-27",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0dwspqwf37du4ylmluermvcqumezzynsefykn3tecx7yc0u8s77c9he99l",
+          "date": "2026-03-27",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2037462310810255475",
+          "date": "2026-03-27",
+          "merchant": "Chips point"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs28wauluucprwmxupkl0gywcf4muclzdpcv6csszjkdlsfyfvg83q2utlns",
+          "date": "2026-03-27",
+          "merchant": "Chips point"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstvysy3252veeq4t2hfde48ergppjy0x4fdgcywepa4sqywc4v8wqdmk3dw",
+          "date": "2026-03-27",
+          "merchant": "Jennifer Musya"
+        },
+        {
+          "url": "https://x.com/i/status/2037376931696464142",
+          "date": "2026-03-27",
+          "merchant": "Jennifer Musya"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxekltdu8vahpv976fu8662ksyljcgx0vrqcdwuychte0kpnhakeqrfy9qw",
+          "date": "2026-03-26",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2037198388920279348",
+          "date": "2026-03-26",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspz5ayxnaykgnqylsjm8x5hrvkjyd4uxgenvpuja8xm58g2dg64eg7ehhlc",
+          "date": "2026-03-26",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2037113262492328187",
+          "date": "2026-03-26",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9yhyr6xpl9ep3qngm7s5qhwaawhd3esqhukfsjwknztc95kpxg0q7d2s72",
+          "date": "2026-03-26",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0gx85fecjq3n22j0rx6050efzk3lmx34666n6j4p25nlylfjdp5spg5rh7",
+          "date": "2026-03-26",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2036985364502454594",
+          "date": "2026-03-26",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2037010362147491997",
+          "date": "2026-03-26",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0lcv6v93ze07tmp5q93kmy52fqestp34drf4j7vflpjsy9sn08rc322c82",
+          "date": "2026-03-26",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2037055229070348305",
+          "date": "2026-03-26",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspkaj9j6uvlhgunkjf2usfjdcn538zk5z8emys3vszays7f3evn7qj789vj",
+          "date": "2026-03-26",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2036827644025618556",
+          "date": "2026-03-25",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxqe9ghwuvyhxkd3ev3nlyqqhg4ny9x60d7kwthf06tpj9a94j2hc6lcsrp",
+          "date": "2026-03-25",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2036801064268152987",
+          "date": "2026-03-25",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf4cml2vhmfhcum7r95hua4a2qm8p3n52kgh0ulpfvkhq5vvtsltgm90ksz",
+          "date": "2026-03-25",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2036735683922895105",
+          "date": "2026-03-25",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2036713873995071907",
+          "date": "2026-03-25",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9ssxz57vu5yu2fnzayn7524fmaqqwf7sp6vu39pmgryyhqyyp8eqawax4l",
+          "date": "2026-03-25",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2036404666301284738",
+          "date": "2026-03-24",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrfpprvdfdfs8syy44pdlnw99p5zraengfcmmhky89pjwh2n5zkuqk6j0lf",
+          "date": "2026-03-24",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst4gfr0237me2rvyzc33kmzmf69aqmazhgughk7682hwy3z5e483qsjfa72",
+          "date": "2026-03-24",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2036317185426006090",
+          "date": "2026-03-24",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd8mmjtuwcjwjf9g9lrdrnx592sep8ztlxzar6zgnv7u48mdafjsq9uzdpl",
+          "date": "2026-03-24",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2036276822472556817",
+          "date": "2026-03-24",
+          "merchant": "Lydiah Richland Shop"
+        }
+      ]
+    },
     {
       "name": "Bitcoin Dua 🇬🇭",
       "count": 99,
@@ -896,497 +1447,6 @@
           "url": "https://x.com/i/status/2036214499900899561",
           "date": "2026-03-24",
           "merchant": "Preso's Food and Drinks"
-        }
-      ]
-    },
-    {
-      "name": "Bitbiashara 🇰🇪",
-      "count": 97,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2039930745322340673",
-          "date": "2026-04-03",
-          "merchant": "Borjulink communications Eastlands"
-        },
-        {
-          "url": "https://x.com/i/status/2039926206800261142",
-          "date": "2026-04-03",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039929131547160680",
-          "date": "2026-04-03",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg0e9sgp0u3pk3mxxmdr2yr0zjwpecc4gf4rd0hk3cl26fe29pd6gq8d3t0",
-          "date": "2026-04-03",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://x.com/i/status/2039777907615113388",
-          "date": "2026-04-03",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswf225fcpn4pp2xavlceu7zypafuwxasv6v2nnlzpraz3gqnt0mvg90fg2x",
-          "date": "2026-04-03",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2039774915771892142",
-          "date": "2026-04-03",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqx8hk8lgzlqsa0rnsv8zyqy0ee4j2cl582e5ukjgrvvhtteqzpqgu35m4u",
-          "date": "2026-04-02",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039617340795494447",
-          "date": "2026-04-02",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039610191683924418",
-          "date": "2026-04-02",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy96j8pu44hsqvmgqd2028cqajnryej3dqnlgv0kktc8kmzf9u6cqp2d44q",
-          "date": "2026-04-02",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://x.com/i/status/2039607187266294030",
-          "date": "2026-04-02",
-          "merchant": "Aqua Selim"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0nwaze6r0qfyrhsrjl9nvc2mdun8s7xxs5pewck7jtlgxmg7hkhqzeu6rx",
-          "date": "2026-04-02",
-          "merchant": "Aqua Selim"
-        },
-        {
-          "url": "https://x.com/i/status/2039604876909351240",
-          "date": "2026-04-02",
-          "merchant": "Bliss beauty Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswk5g5z30hkplze0z44umdd9l7xncl6y3syztmwsgzcw2zd85h7rstwy4sj",
-          "date": "2026-04-02",
-          "merchant": "Bliss beauty Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8xd8yaty6tqmt80q3n66ykst750zgff32x352flr5xh8kczkvn4qnu5pzu",
-          "date": "2026-04-01",
-          "merchant": "Aqua Selim"
-        },
-        {
-          "url": "https://x.com/i/status/2039299532077285789",
-          "date": "2026-04-01",
-          "merchant": "Aqua Selim"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszgwfuzhc8e894lw9qcsld3phjadr0rs7sdy24ctsysdqh6u6xr8s7yphq0",
-          "date": "2026-04-01",
-          "merchant": "Sarah Nutritives Eastlands"
-        },
-        {
-          "url": "https://x.com/i/status/2039277850562293977",
-          "date": "2026-04-01",
-          "merchant": "Sarah Nutritives Eastlands"
-        },
-        {
-          "url": "https://x.com/i/status/2039234745066754408",
-          "date": "2026-04-01",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvagclf6d3mn3rw6rsrssvysvyexlwuvqnmzg2vre3yx9w9fevlwgtz73vu",
-          "date": "2026-04-01",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0gfj9e9k2qetywl80lkya9n086m9zvgq397ftpvakdchmjulx0acxfv5sq",
-          "date": "2026-04-01",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039233278620655727",
-          "date": "2026-04-01",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0nt6753qg2gdjv746q8qdxgxv82fuqm8l277ff8wqna2hmzynwnck009h2",
-          "date": "2026-04-01",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://x.com/i/status/2039230448048509275",
-          "date": "2026-04-01",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://x.com/i/status/2039229322259493367",
-          "date": "2026-04-01",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs99ul3g9ndhpkfukmgkhwqpehrman6uetyhnq73276sfkw02jkvac79m8sy",
-          "date": "2026-04-01",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://x.com/i/status/2039227141808615624",
-          "date": "2026-04-01",
-          "merchant": "Kirathimo ventures"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqdmz7cm5vn2tns308294fsgjnxgkxfagfg53ees5lzzcwg54855crkjpxw",
-          "date": "2026-04-01",
-          "merchant": "Kirathimo ventures"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy649ws5hkfcvu9l48ls8f7ujy3wxsyvlm3dazekjjpvyj6clsaxs2fhfu0",
-          "date": "2026-04-01",
-          "merchant": "Bliss beauty Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2039224979628146820",
-          "date": "2026-04-01",
-          "merchant": "Bliss beauty Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2039223176433897951",
-          "date": "2026-04-01",
-          "merchant": "Peshy's beauty parlour"
-        },
-        {
-          "url": "https://x.com/i/status/2038910394635366757",
-          "date": "2026-03-31",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrtudyxjl5gmjsyceg8yef7trdv6qwq3m56nzrlw8fs9zl7pq6f7svu2xjp",
-          "date": "2026-03-31",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspfdyr58jzmxzgrwchrmydyayr2rfdve5supwx07nwvw495rmyyasnpywft",
-          "date": "2026-03-31",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2038908576211591207",
-          "date": "2026-03-31",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2038907535986467062",
-          "date": "2026-03-31",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfwjjn4lnnpu0uvvju8mqan39m6pk5hrpjjg6zwxm4vmnt6q38ghg05jwtp",
-          "date": "2026-03-31",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8chvw6lp4d2n6zpx2ljupml3f475terdjasvtgxpnflswjyhw09gaxh6vy",
-          "date": "2026-03-31",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2038814629489455378",
-          "date": "2026-03-31",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2038671536387768749",
-          "date": "2026-03-31",
-          "merchant": "Tena cyberpalace"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
-          "date": "2026-03-31",
-          "merchant": "Tena cyberpalace"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg95se2tjhzg6kjrmedk63m23xujtjcw2y030suxq3cuy4v9lth9s26uqyy",
-          "date": "2026-03-31",
-          "merchant": "Chips point"
-        },
-        {
-          "url": "https://x.com/i/status/2038669558681071692",
-          "date": "2026-03-31",
-          "merchant": "Chips point"
-        },
-        {
-          "url": "https://x.com/i/status/2038575111444279359",
-          "date": "2026-03-30",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf45mmd8kaqv3lk3mh2g5svzxfq4fn0juntrqav5yvwrlhcga3klqy8q9jq",
-          "date": "2026-03-30",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspwperartnydzam2cdvfc22whep3d8wj37kd4xc7vqjuglafduy3smmnzjg",
-          "date": "2026-03-30",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://x.com/i/status/2038574021504020811",
-          "date": "2026-03-30",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://x.com/i/status/2038571684953817579",
-          "date": "2026-03-30",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsx2ne7g8qt7ldvk6svruwmj2x4szz3aez9vpn6u44ecge2svfzcfq39y9hq",
-          "date": "2026-03-30",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2038569129649623428",
-          "date": "2026-03-30",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqr9ftkqp0yc0gyzvlgs3mwfwwd9ql63phdx4yj65ejz4wxfh22ys40zfv4",
-          "date": "2026-03-30",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszxnhkrq9qjg9tr5yfx6hkhhvkwrv7wl39edw9gpvdk0d4gyec82sfnx40j",
-          "date": "2026-03-28",
-          "merchant": "Jennifer Musya"
-        },
-        {
-          "url": "https://x.com/i/status/2037959525219614902",
-          "date": "2026-03-28",
-          "merchant": "Jennifer Musya"
-        },
-        {
-          "url": "https://x.com/i/status/2037834001319166330",
-          "date": "2026-03-28",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvan7tk7zuhypy8crhmljjd4xtdg449lzwqew697864rw6mnvr9lsjmyfms",
-          "date": "2026-03-28",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqahf2zmv50fysr9eccmtugfhsxt9zpsc9m8hgjfkhx6ggzymrjyglqafra",
-          "date": "2026-03-28",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://x.com/i/status/2037776606232539301",
-          "date": "2026-03-28",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://x.com/i/status/2037775026141720655",
-          "date": "2026-03-28",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgvdu0sr9mk0f5qc3yky73ycutngmdav409cmdpw8rejd66smkrwszsqaql",
-          "date": "2026-03-28",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxt05uv7n2ucfelu8szw4zrc5zftgucsly4ps8zcs86tdenz6rv7g0wapu6",
-          "date": "2026-03-28",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2037773170220892427",
-          "date": "2026-03-28",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2037587494238302379",
-          "date": "2026-03-27",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswghclzmvef9u8u9kn6znd72tsy8xqqg6lpztzmz8fq9q94zkhc6sr0uj4m",
-          "date": "2026-03-27",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdn2sd4ltmhyl8ppmkuzk7fww8g79848xl7yq5hl9su8e6m4xq57cnqxncq",
-          "date": "2026-03-27",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://x.com/i/status/2037585838482104718",
-          "date": "2026-03-27",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://x.com/i/status/2037536246096953612",
-          "date": "2026-03-27",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqzst7pndhgv3lgkglw5g28mw9lfwl3cw3kwl52n82cvuh0y5am0csmdwkn",
-          "date": "2026-03-27",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0dwspqwf37du4ylmluermvcqumezzynsefykn3tecx7yc0u8s77c9he99l",
-          "date": "2026-03-27",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://x.com/i/status/2037462310810255475",
-          "date": "2026-03-27",
-          "merchant": "Chips point"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs28wauluucprwmxupkl0gywcf4muclzdpcv6csszjkdlsfyfvg83q2utlns",
-          "date": "2026-03-27",
-          "merchant": "Chips point"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstvysy3252veeq4t2hfde48ergppjy0x4fdgcywepa4sqywc4v8wqdmk3dw",
-          "date": "2026-03-27",
-          "merchant": "Jennifer Musya"
-        },
-        {
-          "url": "https://x.com/i/status/2037376931696464142",
-          "date": "2026-03-27",
-          "merchant": "Jennifer Musya"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxekltdu8vahpv976fu8662ksyljcgx0vrqcdwuychte0kpnhakeqrfy9qw",
-          "date": "2026-03-26",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://x.com/i/status/2037198388920279348",
-          "date": "2026-03-26",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspz5ayxnaykgnqylsjm8x5hrvkjyd4uxgenvpuja8xm58g2dg64eg7ehhlc",
-          "date": "2026-03-26",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2037113262492328187",
-          "date": "2026-03-26",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9yhyr6xpl9ep3qngm7s5qhwaawhd3esqhukfsjwknztc95kpxg0q7d2s72",
-          "date": "2026-03-26",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0gx85fecjq3n22j0rx6050efzk3lmx34666n6j4p25nlylfjdp5spg5rh7",
-          "date": "2026-03-26",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://x.com/i/status/2036985364502454594",
-          "date": "2026-03-26",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://x.com/i/status/2037010362147491997",
-          "date": "2026-03-26",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0lcv6v93ze07tmp5q93kmy52fqestp34drf4j7vflpjsy9sn08rc322c82",
-          "date": "2026-03-26",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2037055229070348305",
-          "date": "2026-03-26",
-          "merchant": "Bliss beauty Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspkaj9j6uvlhgunkjf2usfjdcn538zk5z8emys3vszays7f3evn7qj789vj",
-          "date": "2026-03-26",
-          "merchant": "Bliss beauty Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2036827644025618556",
-          "date": "2026-03-25",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxqe9ghwuvyhxkd3ev3nlyqqhg4ny9x60d7kwthf06tpj9a94j2hc6lcsrp",
-          "date": "2026-03-25",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2036801064268152987",
-          "date": "2026-03-25",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf4cml2vhmfhcum7r95hua4a2qm8p3n52kgh0ulpfvkhq5vvtsltgm90ksz",
-          "date": "2026-03-25",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://x.com/i/status/2036735683922895105",
-          "date": "2026-03-25",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2036713873995071907",
-          "date": "2026-03-25",
-          "merchant": "Bliss beauty Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9ssxz57vu5yu2fnzayn7524fmaqqwf7sp6vu39pmgryyhqyyp8eqawax4l",
-          "date": "2026-03-25",
-          "merchant": "Bliss beauty Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2036404666301284738",
-          "date": "2026-03-24",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrfpprvdfdfs8syy44pdlnw99p5zraengfcmmhky89pjwh2n5zkuqk6j0lf",
-          "date": "2026-03-24",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst4gfr0237me2rvyzc33kmzmf69aqmazhgughk7682hwy3z5e483qsjfa72",
-          "date": "2026-03-24",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2036317185426006090",
-          "date": "2026-03-24",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd8mmjtuwcjwjf9g9lrdrnx592sep8ztlxzar6zgnv7u48mdafjsq9uzdpl",
-          "date": "2026-03-24",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2036276822472556817",
-          "date": "2026-03-24",
-          "merchant": "Lydiah Richland Shop"
         }
       ]
     },
@@ -2173,8 +2233,13 @@
   "top_merchants": [
     {
       "name": "Lydiah Richland Shop",
-      "count": 19,
+      "count": 20,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrtfh6jhamwzj5ramln7xd8vad0a209m7y0muh29hgudkdeujwjqc5p398w",
+          "date": "2026-04-03",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2039926206800261142",
           "date": "2026-04-03",
@@ -2274,8 +2339,13 @@
     },
     {
       "name": "Grandsmatt",
-      "count": 19,
+      "count": 20,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsg9e2rkmlapezxa0p675a7dzzec0jmlze3qkkxggp564g3ps9qk6sv9jez5",
+          "date": "2026-04-03",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2039929131547160680",
           "date": "2026-04-03",
@@ -2375,8 +2445,13 @@
     },
     {
       "name": "Haven food court",
-      "count": 18,
+      "count": 19,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsr29fazkqvew8ucltwvqjs6jumanxumtkjukeskne64as5aae3rcqfcdaen",
+          "date": "2026-04-03",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqswf225fcpn4pp2xavlceu7zypafuwxasv6v2nnlzpraz3gqnt0mvg90fg2x",
           "date": "2026-04-03",
@@ -4152,6 +4227,22 @@
       ]
     },
     {
+      "name": "Borjulink communications Eastlands",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyz49a7zq6ftey3dznjszj2n0t7avw8lwfuwal5qcgtgpzuzv9pgqstd7r6",
+          "date": "2026-04-03",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2039930745322340673",
+          "date": "2026-04-03",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Barbearia IG",
       "count": 2,
       "posts": [
@@ -4314,23 +4405,12 @@
           "project": "Bitcoin Victoria Falls 🇿🇲"
         }
       ]
-    },
-    {
-      "name": "Borjulink communications Eastlands",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2039930745322340673",
-          "date": "2026-04-03",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
     }
   ],
   "launch": {
     "date": "Mar 24",
     "days_active": 10,
-    "daily_average_payments": 101
+    "daily_average_payments": 102
   },
   "burn_rate": {
     "percentage": 62,
@@ -4340,7 +4420,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1004
+      "count": 1016
     },
     {
       "domain": "8333.mobi",
@@ -4395,9 +4475,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 497
+      "count": 509
     }
   ],
-  "generated_at": "2026-04-03T07:10:02.089035+00:00",
+  "generated_at": "2026-04-03T07:20:02.231733+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
