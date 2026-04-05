@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 1069,
+    "all_payments": 1075,
     "by_type": {
       "merchant": {
-        "count": 354
+        "count": 356
       },
       "project": {
-        "count": 354
+        "count": 356
       },
       "reviewer": {
-        "count": 361
+        "count": 363
       }
     }
   },
   "today": {
     "date": "2026-04-05",
-    "payments": 27,
+    "payments": 33,
     "by_type": {
       "merchant": {
-        "count": 9
+        "count": 11
       },
       "project": {
-        "count": 9
+        "count": 11
       },
       "reviewer": {
-        "count": 9
+        "count": 11
       }
     },
-    "approved": 9,
+    "approved": 11,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsg5hdsxquxf3dukkrqal72ar9sggrq5edcpn3ulcwfk9h4act7kds9ksy0k",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Diamond Barbing Saloon",
+        "platform": "Nostr",
+        "time": "12:29"
+      },
+      {
+        "url": "https://x.com/i/status/2040416302968291523",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Diamond Barbing Saloon",
+        "platform": "X",
+        "time": "12:27"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs0unfn60flve07wpduka8y7x29g6jxwcg7s74tkrdsxzdzrg3vc9g40c7sd",
         "project": "Bitcoin Tofo 🇲🇿",
@@ -97,6 +111,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
       {
         "project": "Bitcoin Tofo 🇲🇿"
       },
@@ -303,14 +323,14 @@
     },
     {
       "date": "2026-04-05",
-      "project_count": 9,
-      "merchant_count": 9,
-      "reviewer_count": 9
+      "project_count": 11,
+      "merchant_count": 11,
+      "reviewer_count": 11
     }
   ],
   "reviewer": {
-    "total_reviewed": 369,
-    "approved": 353,
+    "total_reviewed": 371,
+    "approved": 355,
     "rejected": 16
   },
   "top_projects": [
@@ -1675,8 +1695,18 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 16,
+      "count": 18,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsg5hdsxquxf3dukkrqal72ar9sggrq5edcpn3ulcwfk9h4act7kds9ksy0k",
+          "date": "2026-04-05",
+          "merchant": "Diamond Barbing Saloon"
+        },
+        {
+          "url": "https://x.com/i/status/2040416302968291523",
+          "date": "2026-04-05",
+          "merchant": "Diamond Barbing Saloon"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrlk5h30wv8lqcrz56kzdz6fls7zeck4dhp6z274zcd5s85h9tjzcu08dzp",
           "date": "2026-04-03",
@@ -4209,6 +4239,22 @@
       ]
     },
     {
+      "name": "Diamond Barbing Saloon",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsg5hdsxquxf3dukkrqal72ar9sggrq5edcpn3ulcwfk9h4act7kds9ksy0k",
+          "date": "2026-04-05",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2040416302968291523",
+          "date": "2026-04-05",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "De Palace Haircuts",
       "count": 2,
       "posts": [
@@ -4488,7 +4534,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1059
+      "count": 1065
     },
     {
       "domain": "8333.mobi",
@@ -4539,13 +4585,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 536
+      "count": 539
     },
     {
       "platform": "Nostr",
-      "count": 533
+      "count": 536
     }
   ],
-  "generated_at": "2026-04-05T12:20:02.176840+00:00",
+  "generated_at": "2026-04-05T12:30:02.143435+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
