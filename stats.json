@@ -1,28 +1,70 @@
 {
   "totals": {
-    "all_payments": 1042,
+    "all_payments": 1051,
     "by_type": {
       "merchant": {
-        "count": 345
+        "count": 348
       },
       "project": {
-        "count": 345
+        "count": 348
       },
       "reviewer": {
-        "count": 352
+        "count": 355
       }
     }
   },
   "today": {
     "date": "2026-04-05",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 9,
+    "by_type": {
+      "merchant": {
+        "count": 3
+      },
+      "project": {
+        "count": 3
+      },
+      "reviewer": {
+        "count": 3
+      }
+    },
+    "approved": 3,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2040043668141129948",
+        "project": "Soweto BTC 🇿🇦",
+        "merchant": "Zwakala Cafe",
+        "platform": "X",
+        "time": "11:58"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs23tq7ewa4qrx082frfrp0a4msnm9vw9vsmu5aqs6nksk4tzyrjls7sfl35",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "Nostr",
+        "time": "11:57"
+      },
+      {
+        "url": "https://x.com/i/status/2040057934357381514",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "11:55"
+      }
+    ]
   },
   "last_24h": {
-    "videos": []
+    "videos": [
+      {
+        "project": "Soweto BTC 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      }
+    ]
   },
   "daily": [
     {
@@ -201,14 +243,14 @@
     },
     {
       "date": "2026-04-05",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 3,
+      "merchant_count": 3,
+      "reviewer_count": 3
     }
   ],
   "reviewer": {
-    "total_reviewed": 360,
-    "approved": 344,
+    "total_reviewed": 363,
+    "approved": 347,
     "rejected": 16
   },
   "top_projects": [
@@ -1790,6 +1832,62 @@
       ]
     },
     {
+      "name": "Bitcoin Chama 🇰🇪",
+      "count": 10,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs23tq7ewa4qrx082frfrp0a4msnm9vw9vsmu5aqs6nksk4tzyrjls7sfl35",
+          "date": "2026-04-05",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2040057934357381514",
+          "date": "2026-04-05",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039313726147289303",
+          "date": "2026-04-01",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8u3e9ygm078ents36l79hlzxknlw4dha37xdg40gh4jhec550x7ct26wmk",
+          "date": "2026-04-01",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039299798335939033",
+          "date": "2026-04-01",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
+          "date": "2026-04-01",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2034660669149073477",
+          "date": "2026-04-01",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039292941349396690",
+          "date": "2026-04-01",
+          "merchant": "Goat Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9atjc2m0vfrnna6jp3zrzq9dd84ytrsa29sq5dg6yzsvnedq9xmsedum75",
+          "date": "2026-03-31",
+          "merchant": "Goat Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2033851794384662900",
+          "date": "2026-03-31",
+          "merchant": "Mwabosire"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Famba 🇲🇿",
       "count": 8,
       "posts": [
@@ -1836,52 +1934,6 @@
       ]
     },
     {
-      "name": "Bitcoin Chama 🇰🇪",
-      "count": 8,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2039313726147289303",
-          "date": "2026-04-01",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8u3e9ygm078ents36l79hlzxknlw4dha37xdg40gh4jhec550x7ct26wmk",
-          "date": "2026-04-01",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039299798335939033",
-          "date": "2026-04-01",
-          "merchant": "Obwanchani Farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
-          "date": "2026-04-01",
-          "merchant": "Obwanchani Farm"
-        },
-        {
-          "url": "https://x.com/i/status/2034660669149073477",
-          "date": "2026-04-01",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039292941349396690",
-          "date": "2026-04-01",
-          "merchant": "Goat Farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9atjc2m0vfrnna6jp3zrzq9dd84ytrsa29sq5dg6yzsvnedq9xmsedum75",
-          "date": "2026-03-31",
-          "merchant": "Goat Farm"
-        },
-        {
-          "url": "https://x.com/i/status/2033851794384662900",
-          "date": "2026-03-31",
-          "merchant": "Mwabosire"
-        }
-      ]
-    },
-    {
       "name": "Bitcoin Victoria Falls 🇿🇲",
       "count": 6,
       "posts": [
@@ -1914,6 +1966,27 @@
           "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
           "date": "2026-03-25",
           "merchant": "Mundayam Restaurant"
+        }
+      ]
+    },
+    {
+      "name": "Soweto BTC 🇿🇦",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2040043668141129948",
+          "date": "2026-04-05",
+          "merchant": "Zwakala Cafe"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxhemdkxyfuyswkvnwcut8yuuc3t95ljm0u9ayl96fryze60z98wgxlhwdq",
+          "date": "2026-03-24",
+          "merchant": "Kelokitso Community Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2036545281097883722",
+          "date": "2026-03-24",
+          "merchant": "Kelokitso Community Farm"
         }
       ]
     },
@@ -1956,22 +2029,6 @@
           "url": "https://x.com/i/status/2036911839464816870",
           "date": "2026-03-26",
           "merchant": "Sweet & Salty Cafe"
-        }
-      ]
-    },
-    {
-      "name": "Soweto BTC 🇿🇦",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsxhemdkxyfuyswkvnwcut8yuuc3t95ljm0u9ayl96fryze60z98wgxlhwdq",
-          "date": "2026-03-24",
-          "merchant": "Kelokitso Community Farm"
-        },
-        {
-          "url": "https://x.com/i/status/2036545281097883722",
-          "date": "2026-03-24",
-          "merchant": "Kelokitso Community Farm"
         }
       ]
     },
@@ -3514,6 +3571,27 @@
       ]
     },
     {
+      "name": "Orero shop",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs23tq7ewa4qrx082frfrp0a4msnm9vw9vsmu5aqs6nksk4tzyrjls7sfl35",
+          "date": "2026-04-05",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2040057934357381514",
+          "date": "2026-04-05",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2034660669149073477",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Jabulani Shop 3",
       "count": 3,
       "posts": [
@@ -4111,6 +4189,17 @@
       ]
     },
     {
+      "name": "Zwakala Cafe",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2040043668141129948",
+          "date": "2026-04-05",
+          "project": "Soweto BTC 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Watson Fruits",
       "count": 1,
       "posts": [
@@ -4184,17 +4273,6 @@
           "url": "https://x.com/i/status/2039223176433897951",
           "date": "2026-04-01",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Orero shop",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2034660669149073477",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -4278,11 +4356,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1034
+      "count": 1041
     },
     {
       "domain": "8333.mobi",
-      "count": 7
+      "count": 9
     },
     {
       "domain": "walletofsatoshi.com",
@@ -4329,13 +4407,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 521
+      "count": 527
     },
     {
       "platform": "Nostr",
-      "count": 521
+      "count": 524
     }
   ],
-  "generated_at": "2026-04-05T11:50:01.667332+00:00",
+  "generated_at": "2026-04-05T12:00:01.780598+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
