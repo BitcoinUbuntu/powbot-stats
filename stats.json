@@ -1,28 +1,159 @@
 {
   "totals": {
-    "all_payments": 1093,
+    "all_payments": 1129,
     "by_type": {
       "merchant": {
-        "count": 362
+        "count": 374
       },
       "project": {
-        "count": 362
+        "count": 374
       },
       "reviewer": {
-        "count": 369
+        "count": 381
       }
     }
   },
   "today": {
     "date": "2026-04-06",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 36,
+    "by_type": {
+      "merchant": {
+        "count": 12
+      },
+      "project": {
+        "count": 12
+      },
+      "reviewer": {
+        "count": 12
+      }
+    },
+    "approved": 12,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsdlx92efkak0hj2rktx47h48yt5mfr73puynqjz830f9wctwalgvsyrz2nh",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Ayoola Minimart",
+        "platform": "Nostr",
+        "time": "11:19"
+      },
+      {
+        "url": "https://x.com/i/status/2041073949874815430",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Ayoola Minimart",
+        "platform": "X",
+        "time": "11:18"
+      },
+      {
+        "url": "https://x.com/i/status/2041066482050732162",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Chicken farm",
+        "platform": "X",
+        "time": "11:17"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsdplafs06lmlr30lnpxvvdzzhk6hts6dv2r2y728fvky0fnpyu78qm6arfp",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Chicken farm",
+        "platform": "Nostr",
+        "time": "11:16"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs0ag6ghc2sm8q83jznmu2nma8um0sfdehelm2qh7fazwd5qlssq8cze2aa9",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Peace Pot",
+        "platform": "Nostr",
+        "time": "11:15"
+      },
+      {
+        "url": "https://x.com/i/status/2040971676788121864",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Peace Pot",
+        "platform": "X",
+        "time": "11:14"
+      },
+      {
+        "url": "https://x.com/i/status/2040858690954137791",
+        "project": "Bitcoin Anambra 🇳🇬",
+        "merchant": "Nelly's Blend",
+        "platform": "X",
+        "time": "11:14"
+      },
+      {
+        "url": "https://x.com/i/status/2040857379198169264",
+        "project": "Bitcoin Anambra 🇳🇬",
+        "merchant": "The Sario Eventers",
+        "platform": "X",
+        "time": "11:13"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsq7wxnp4csg7cv3l74ugqvpnhggcc70ldexghwvu0wt8y4sn67mqsw4huvj",
+        "project": "Bitcoin Anambra 🇳🇬",
+        "merchant": "The Sario Eventers",
+        "platform": "Nostr",
+        "time": "11:12"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsf5259yz6xckn0nd9xszg0ls3f6dc9lu8h2jt536h2937usuvctxc2xdfyn",
+        "project": "Bitcoin Anambra 🇳🇬",
+        "merchant": "Nelly's Blend",
+        "platform": "Nostr",
+        "time": "11:11"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsy5krpcfrcphml937x0ur5yrn2qq0jfhj5fcsvgu32p37kke97tdsk0maq8",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "Nostr",
+        "time": "11:11"
+      },
+      {
+        "url": "https://x.com/i/status/2040804826926190957",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "11:10"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Anambra 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Anambra 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Anambra 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Anambra 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Aves 🇬🇭"
       },
@@ -253,14 +384,14 @@
     },
     {
       "date": "2026-04-06",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 12,
+      "merchant_count": 12,
+      "reviewer_count": 12
     }
   ],
   "reviewer": {
-    "total_reviewed": 377,
-    "approved": 361,
+    "total_reviewed": 389,
+    "approved": 373,
     "rejected": 16
   },
   "top_projects": [
@@ -1625,8 +1756,18 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 18,
+      "count": 20,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdlx92efkak0hj2rktx47h48yt5mfr73puynqjz830f9wctwalgvsyrz2nh",
+          "date": "2026-04-06",
+          "merchant": "Ayoola Minimart"
+        },
+        {
+          "url": "https://x.com/i/status/2041073949874815430",
+          "date": "2026-04-06",
+          "merchant": "Ayoola Minimart"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsg5hdsxquxf3dukkrqal72ar9sggrq5edcpn3ulcwfk9h4act7kds9ksy0k",
           "date": "2026-04-05",
@@ -1721,8 +1862,18 @@
     },
     {
       "name": "Bitcoin Aves 🇬🇭",
-      "count": 16,
+      "count": 18,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0ag6ghc2sm8q83jznmu2nma8um0sfdehelm2qh7fazwd5qlssq8cze2aa9",
+          "date": "2026-04-06",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://x.com/i/status/2040971676788121864",
+          "date": "2026-04-06",
+          "merchant": "Peace Pot"
+        },
         {
           "url": "https://x.com/i/status/2040742407814156536",
           "date": "2026-04-05",
@@ -1802,6 +1953,82 @@
           "url": "https://x.com/i/status/2037433865677963645",
           "date": "2026-03-27",
           "merchant": "Peace Pot"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Chama 🇰🇪",
+      "count": 14,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2041066482050732162",
+          "date": "2026-04-06",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdplafs06lmlr30lnpxvvdzzhk6hts6dv2r2y728fvky0fnpyu78qm6arfp",
+          "date": "2026-04-06",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy5krpcfrcphml937x0ur5yrn2qq0jfhj5fcsvgu32p37kke97tdsk0maq8",
+          "date": "2026-04-06",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2040804826926190957",
+          "date": "2026-04-06",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs23tq7ewa4qrx082frfrp0a4msnm9vw9vsmu5aqs6nksk4tzyrjls7sfl35",
+          "date": "2026-04-05",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2040057934357381514",
+          "date": "2026-04-05",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039313726147289303",
+          "date": "2026-04-01",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8u3e9ygm078ents36l79hlzxknlw4dha37xdg40gh4jhec550x7ct26wmk",
+          "date": "2026-04-01",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039299798335939033",
+          "date": "2026-04-01",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
+          "date": "2026-04-01",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2034660669149073477",
+          "date": "2026-04-01",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039292941349396690",
+          "date": "2026-04-01",
+          "merchant": "Goat Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9atjc2m0vfrnna6jp3zrzq9dd84ytrsa29sq5dg6yzsvnedq9xmsedum75",
+          "date": "2026-03-31",
+          "merchant": "Goat Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2033851794384662900",
+          "date": "2026-03-31",
+          "merchant": "Mwabosire"
         }
       ]
     },
@@ -1928,62 +2155,6 @@
       ]
     },
     {
-      "name": "Bitcoin Chama 🇰🇪",
-      "count": 10,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs23tq7ewa4qrx082frfrp0a4msnm9vw9vsmu5aqs6nksk4tzyrjls7sfl35",
-          "date": "2026-04-05",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2040057934357381514",
-          "date": "2026-04-05",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039313726147289303",
-          "date": "2026-04-01",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8u3e9ygm078ents36l79hlzxknlw4dha37xdg40gh4jhec550x7ct26wmk",
-          "date": "2026-04-01",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039299798335939033",
-          "date": "2026-04-01",
-          "merchant": "Obwanchani Farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
-          "date": "2026-04-01",
-          "merchant": "Obwanchani Farm"
-        },
-        {
-          "url": "https://x.com/i/status/2034660669149073477",
-          "date": "2026-04-01",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039292941349396690",
-          "date": "2026-04-01",
-          "merchant": "Goat Farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9atjc2m0vfrnna6jp3zrzq9dd84ytrsa29sq5dg6yzsvnedq9xmsedum75",
-          "date": "2026-03-31",
-          "merchant": "Goat Farm"
-        },
-        {
-          "url": "https://x.com/i/status/2033851794384662900",
-          "date": "2026-03-31",
-          "merchant": "Mwabosire"
-        }
-      ]
-    },
-    {
       "name": "Bitcoin Victoria Falls 🇿🇲",
       "count": 6,
       "posts": [
@@ -2016,6 +2187,42 @@
           "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
           "date": "2026-03-25",
           "merchant": "Mundayam Restaurant"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Anambra 🇳🇬",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2040858690954137791",
+          "date": "2026-04-06",
+          "merchant": "Nelly's Blend"
+        },
+        {
+          "url": "https://x.com/i/status/2040857379198169264",
+          "date": "2026-04-06",
+          "merchant": "The Sario Eventers"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq7wxnp4csg7cv3l74ugqvpnhggcc70ldexghwvu0wt8y4sn67mqsw4huvj",
+          "date": "2026-04-06",
+          "merchant": "The Sario Eventers"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf5259yz6xckn0nd9xszg0ls3f6dc9lu8h2jt536h2937usuvctxc2xdfyn",
+          "date": "2026-04-06",
+          "merchant": "Nelly's Blend"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2nw4jgmxfgu0dylzj09w77pz4gjuy9aamprsqa36h427wczcsxjs5sygqw",
+          "date": "2026-03-26",
+          "merchant": "The Sario Eventers"
+        },
+        {
+          "url": "https://x.com/i/status/2037223959003828237",
+          "date": "2026-03-26",
+          "merchant": "The Sario Eventers"
         }
       ]
     },
@@ -2141,22 +2348,6 @@
           "url": "https://primal.net/e/nevent1qqs92prhvwvkhnq4344f27ujt345gjv4wmpeepnucmcka2p7twh48kqadsx30",
           "date": "2026-03-24",
           "merchant": "Wa Ngala Hardware"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Anambra 🇳🇬",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs2nw4jgmxfgu0dylzj09w77pz4gjuy9aamprsqa36h427wczcsxjs5sygqw",
-          "date": "2026-03-26",
-          "merchant": "The Sario Eventers"
-        },
-        {
-          "url": "https://x.com/i/status/2037223959003828237",
-          "date": "2026-03-26",
-          "merchant": "The Sario Eventers"
         }
       ]
     },
@@ -2639,6 +2830,72 @@
       ]
     },
     {
+      "name": "Peace Pot",
+      "count": 12,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0ag6ghc2sm8q83jznmu2nma8um0sfdehelm2qh7fazwd5qlssq8cze2aa9",
+          "date": "2026-04-06",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2040971676788121864",
+          "date": "2026-04-06",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2040249256993275906",
+          "date": "2026-04-05",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstfeu7reemy64a06wd34gvaqvzav7etqeagfhu8ukl5jdw44a7prc2ujjzw",
+          "date": "2026-04-05",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszw0truvq7ha5quwflk070jd0tsphp3pe3nw597tugvkkestv0mfsyufal0",
+          "date": "2026-04-02",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2039651586729795615",
+          "date": "2026-04-02",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2038643854031651281",
+          "date": "2026-03-30",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszsmxqdmpljdamk8s4a5dz58enxj2rh20dyt77dt226ggqpxsyhqq577mqs",
+          "date": "2026-03-30",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf3wk3n3sa77a9vz9qmrg75h36n044dqd9dpm8hq9rxg7pzhlejpcyhkdh6",
+          "date": "2026-03-28",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2037107196433928641",
+          "date": "2026-03-28",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2p8hrya73ek0fhwhymlheqs0lf574lpp6fjdkk4yh3qqsa4ugprsqz9vwt",
+          "date": "2026-03-27",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2037433865677963645",
+          "date": "2026-03-27",
+          "project": "Bitcoin Aves 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Leni Boutique",
       "count": 12,
       "posts": [
@@ -2823,62 +3080,6 @@
           "url": "https://x.com/i/status/2036214499900899561",
           "date": "2026-03-24",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Peace Pot",
-      "count": 10,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2040249256993275906",
-          "date": "2026-04-05",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstfeu7reemy64a06wd34gvaqvzav7etqeagfhu8ukl5jdw44a7prc2ujjzw",
-          "date": "2026-04-05",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszw0truvq7ha5quwflk070jd0tsphp3pe3nw597tugvkkestv0mfsyufal0",
-          "date": "2026-04-02",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2039651586729795615",
-          "date": "2026-04-02",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2038643854031651281",
-          "date": "2026-03-30",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszsmxqdmpljdamk8s4a5dz58enxj2rh20dyt77dt226ggqpxsyhqq577mqs",
-          "date": "2026-03-30",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf3wk3n3sa77a9vz9qmrg75h36n044dqd9dpm8hq9rxg7pzhlejpcyhkdh6",
-          "date": "2026-03-28",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2037107196433928641",
-          "date": "2026-03-28",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2p8hrya73ek0fhwhymlheqs0lf574lpp6fjdkk4yh3qqsa4ugprsqz9vwt",
-          "date": "2026-03-27",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2037433865677963645",
-          "date": "2026-03-27",
-          "project": "Bitcoin Aves 🇬🇭"
         }
       ]
     },
@@ -3073,6 +3274,52 @@
           "url": "https://primal.net/e/nevent1qqs9ssxz57vu5yu2fnzayn7524fmaqqwf7sp6vu39pmgryyhqyyp8eqawax4l",
           "date": "2026-03-25",
           "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Ayoola Minimart",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdlx92efkak0hj2rktx47h48yt5mfr73puynqjz830f9wctwalgvsyrz2nh",
+          "date": "2026-04-06",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2041073949874815430",
+          "date": "2026-04-06",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvkmccuh0d0629wa0rr9w4zu4a99dhjpdfk3s6d8hl04dhhcls86q3cvgyp",
+          "date": "2026-04-03",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2039741897338503662",
+          "date": "2026-04-03",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsykv0nyldj3974hpd8x8ka73zgy5ljt4efdh4zf528fs6yva2gcts6g5zsc",
+          "date": "2026-03-29",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2038323271905525820",
+          "date": "2026-03-29",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxcc5yqp7alvy06tekmrw4txvqawv9najdfg6rwk3sp49enyw9qlstq7uhm",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2036395349577695397",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -3293,42 +3540,6 @@
       ]
     },
     {
-      "name": "Ayoola Minimart",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsvkmccuh0d0629wa0rr9w4zu4a99dhjpdfk3s6d8hl04dhhcls86q3cvgyp",
-          "date": "2026-04-03",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2039741897338503662",
-          "date": "2026-04-03",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsykv0nyldj3974hpd8x8ka73zgy5ljt4efdh4zf528fs6yva2gcts6g5zsc",
-          "date": "2026-03-29",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2038323271905525820",
-          "date": "2026-03-29",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxcc5yqp7alvy06tekmrw4txvqawv9najdfg6rwk3sp49enyw9qlstq7uhm",
-          "date": "2026-03-24",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2036395349577695397",
-          "date": "2026-03-24",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        }
-      ]
-    },
-    {
       "name": "Aliasadex Provisions And More",
       "count": 6,
       "posts": [
@@ -3361,6 +3572,37 @@
           "url": "https://x.com/i/status/2038070513692529119",
           "date": "2026-03-29",
           "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
+      "name": "Orero shop",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsy5krpcfrcphml937x0ur5yrn2qq0jfhj5fcsvgu32p37kke97tdsk0maq8",
+          "date": "2026-04-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2040804826926190957",
+          "date": "2026-04-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs23tq7ewa4qrx082frfrp0a4msnm9vw9vsmu5aqs6nksk4tzyrjls7sfl35",
+          "date": "2026-04-05",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2040057934357381514",
+          "date": "2026-04-05",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2034660669149073477",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -3475,6 +3717,32 @@
           "url": "https://x.com/i/status/2039861514585211084",
           "date": "2026-04-03",
           "project": "Bitcoin Aves 🇬🇭"
+        }
+      ]
+    },
+    {
+      "name": "The Sario Eventers",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2040857379198169264",
+          "date": "2026-04-06",
+          "project": "Bitcoin Anambra 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq7wxnp4csg7cv3l74ugqvpnhggcc70ldexghwvu0wt8y4sn67mqsw4huvj",
+          "date": "2026-04-06",
+          "project": "Bitcoin Anambra 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2nw4jgmxfgu0dylzj09w77pz4gjuy9aamprsqa36h427wczcsxjs5sygqw",
+          "date": "2026-03-26",
+          "project": "Bitcoin Anambra 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2037223959003828237",
+          "date": "2026-03-26",
+          "project": "Bitcoin Anambra 🇳🇬"
         }
       ]
     },
@@ -3739,27 +4007,6 @@
       ]
     },
     {
-      "name": "Orero shop",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs23tq7ewa4qrx082frfrp0a4msnm9vw9vsmu5aqs6nksk4tzyrjls7sfl35",
-          "date": "2026-04-05",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2040057934357381514",
-          "date": "2026-04-05",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2034660669149073477",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Jabulani Shop 3",
       "count": 3,
       "posts": [
@@ -3809,22 +4056,6 @@
           "url": "https://x.com/i/status/2039003278105526559",
           "date": "2026-03-31",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "The Sario Eventers",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs2nw4jgmxfgu0dylzj09w77pz4gjuy9aamprsqa36h427wczcsxjs5sygqw",
-          "date": "2026-03-26",
-          "project": "Bitcoin Anambra 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2037223959003828237",
-          "date": "2026-03-26",
-          "project": "Bitcoin Anambra 🇳🇬"
         }
       ]
     },
@@ -4001,6 +4232,22 @@
           "url": "https://x.com/i/status/2037963008027009156",
           "date": "2026-03-28",
           "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
+      "name": "Nelly's Blend",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2040858690954137791",
+          "date": "2026-04-06",
+          "project": "Bitcoin Anambra 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf5259yz6xckn0nd9xszg0ls3f6dc9lu8h2jt536h2937usuvctxc2xdfyn",
+          "date": "2026-04-06",
+          "project": "Bitcoin Anambra 🇳🇬"
         }
       ]
     },
@@ -4261,6 +4508,22 @@
       ]
     },
     {
+      "name": "Chicken farm",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2041066482050732162",
+          "date": "2026-04-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdplafs06lmlr30lnpxvvdzzhk6hts6dv2r2y728fvky0fnpyu78qm6arfp",
+          "date": "2026-04-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Chauque & Joao Tofo Juice Shop",
       "count": 2,
       "posts": [
@@ -4514,21 +4777,21 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 14,
-    "daily_average_payments": 78
+    "daily_average_payments": 80
   },
   "burn_rate": {
-    "percentage": 48,
+    "percentage": 49,
     "status": "cold",
     "days_active": 14
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1083
+      "count": 1115
     },
     {
       "domain": "8333.mobi",
-      "count": 9
+      "count": 13
     },
     {
       "domain": "walletofsatoshi.com",
@@ -4575,13 +4838,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 548
+      "count": 566
     },
     {
       "platform": "Nostr",
-      "count": 545
+      "count": 563
     }
   ],
-  "generated_at": "2026-04-06T11:10:01.628026+00:00",
+  "generated_at": "2026-04-06T11:20:01.754600+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
