@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 1171,
+    "all_payments": 1180,
     "by_type": {
       "merchant": {
-        "count": 388
+        "count": 391
       },
       "project": {
-        "count": 388
+        "count": 391
       },
       "reviewer": {
-        "count": 395
+        "count": 398
       }
     }
   },
   "today": {
     "date": "2026-04-07",
-    "payments": 27,
+    "payments": 36,
     "by_type": {
       "merchant": {
-        "count": 9
+        "count": 12
       },
       "project": {
-        "count": 9
+        "count": 12
       },
       "reviewer": {
-        "count": 9
+        "count": 12
       }
     },
-    "approved": 9,
+    "approved": 12,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsv8q8r4lhmzcwe0n7wpd4ryn9z3rajjyuvvyc8j73m05az4m93jxs0qfrux",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Mercearia Abençoada",
+        "platform": "Nostr",
+        "time": "19:12"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsp8kgegy5d3mmtkput4rlf4px596h7n8n2y0dzxnpgv9u0fezrwnsuzgeud",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "Rehoboth freshmilk diary",
+        "platform": "Nostr",
+        "time": "19:11"
+      },
+      {
+        "url": "https://x.com/i/status/2041467074795475240",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Mercearia Abençoada",
+        "platform": "X",
+        "time": "19:11"
+      },
       {
         "url": "https://primal.net/e/nevent1qqswnjt729qy72fnjnfzwgjfy9um4vp7pesyuzygzukkn92nk293rfgn7k2wn",
         "project": "Bitcoin Ikorodu 🇳🇬",
@@ -97,6 +118,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "EcoBitz 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -303,14 +333,14 @@
     },
     {
       "date": "2026-04-07",
-      "project_count": 9,
-      "merchant_count": 9,
-      "reviewer_count": 9
+      "project_count": 12,
+      "merchant_count": 12,
+      "reviewer_count": 12
     }
   ],
   "reviewer": {
-    "total_reviewed": 403,
-    "approved": 387,
+    "total_reviewed": 406,
+    "approved": 390,
     "rejected": 16
   },
   "top_projects": [
@@ -1328,8 +1358,18 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 51,
+      "count": 53,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsv8q8r4lhmzcwe0n7wpd4ryn9z3rajjyuvvyc8j73m05az4m93jxs0qfrux",
+          "date": "2026-04-07",
+          "merchant": "Mercearia Abençoada"
+        },
+        {
+          "url": "https://x.com/i/status/2041467074795475240",
+          "date": "2026-04-07",
+          "merchant": "Mercearia Abençoada"
+        },
         {
           "url": "https://x.com/i/status/2041384467634221122",
           "date": "2026-04-07",
@@ -2242,6 +2282,32 @@
       ]
     },
     {
+      "name": "EcoBitz 🇰🇪",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp8kgegy5d3mmtkput4rlf4px596h7n8n2y0dzxnpgv9u0fezrwnsuzgeud",
+          "date": "2026-04-07",
+          "merchant": "Rehoboth freshmilk diary"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstd0su5rl6tuqevk5ukake0fjywtqz2tl9aqrtujc2xj3mlm4uffgggwnxr",
+          "date": "2026-03-31",
+          "merchant": "Rehoboth freshmilk diary"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg2uyqkkkkyrafemnc8tmqq2eflahy7wntpltdc8dwr2rwakj6f7qk5ahfm",
+          "date": "2026-03-28",
+          "merchant": "Rehoboth freshmilk diary"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs92prhvwvkhnq4344f27ujt345gjv4wmpeepnucmcka2p7twh48kqadsx30",
+          "date": "2026-03-24",
+          "merchant": "Wa Ngala Hardware"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Tofo 🇲🇿",
       "count": 4,
       "posts": [
@@ -2316,27 +2382,6 @@
           "url": "https://x.com/i/status/2036911839464816870",
           "date": "2026-03-26",
           "merchant": "Sweet & Salty Cafe"
-        }
-      ]
-    },
-    {
-      "name": "EcoBitz 🇰🇪",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqstd0su5rl6tuqevk5ukake0fjywtqz2tl9aqrtujc2xj3mlm4uffgggwnxr",
-          "date": "2026-03-31",
-          "merchant": "Rehoboth freshmilk diary"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg2uyqkkkkyrafemnc8tmqq2eflahy7wntpltdc8dwr2rwakj6f7qk5ahfm",
-          "date": "2026-03-28",
-          "merchant": "Rehoboth freshmilk diary"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs92prhvwvkhnq4344f27ujt345gjv4wmpeepnucmcka2p7twh48kqadsx30",
-          "date": "2026-03-24",
-          "merchant": "Wa Ngala Hardware"
         }
       ]
     },
@@ -3405,6 +3450,42 @@
       ]
     },
     {
+      "name": "Mercearia Abençoada",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsv8q8r4lhmzcwe0n7wpd4ryn9z3rajjyuvvyc8j73m05az4m93jxs0qfrux",
+          "date": "2026-04-07",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2041467074795475240",
+          "date": "2026-04-07",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2041137392959000658",
+          "date": "2026-04-06",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs24yyxwxrveugvqaj84mn0qjjwszulhjxygxmx4zwxsgv9rtpfg7snj5d4p",
+          "date": "2026-04-06",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfrxssa2qukyjzmnupz2zgvz0cywxxsdrc5p4kgg9nu8na5lj6rgc7gp992",
+          "date": "2026-04-02",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2039358962189893851",
+          "date": "2026-04-02",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Lawabi Creations",
       "count": 6,
       "posts": [
@@ -3922,32 +4003,6 @@
       ]
     },
     {
-      "name": "Mercearia Abençoada",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2041137392959000658",
-          "date": "2026-04-06",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs24yyxwxrveugvqaj84mn0qjjwszulhjxygxmx4zwxsgv9rtpfg7snj5d4p",
-          "date": "2026-04-06",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfrxssa2qukyjzmnupz2zgvz0cywxxsdrc5p4kgg9nu8na5lj6rgc7gp992",
-          "date": "2026-04-02",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2039358962189893851",
-          "date": "2026-04-02",
-          "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
       "name": "Mary Shop",
       "count": 4,
       "posts": [
@@ -4104,6 +4159,27 @@
       ]
     },
     {
+      "name": "Rehoboth freshmilk diary",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp8kgegy5d3mmtkput4rlf4px596h7n8n2y0dzxnpgv9u0fezrwnsuzgeud",
+          "date": "2026-04-07",
+          "project": "EcoBitz 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstd0su5rl6tuqevk5ukake0fjywtqz2tl9aqrtujc2xj3mlm4uffgggwnxr",
+          "date": "2026-03-31",
+          "project": "EcoBitz 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg2uyqkkkkyrafemnc8tmqq2eflahy7wntpltdc8dwr2rwakj6f7qk5ahfm",
+          "date": "2026-03-28",
+          "project": "EcoBitz 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Jabulani Shop 3",
       "count": 3,
       "posts": [
@@ -4217,22 +4293,6 @@
           "url": "https://x.com/i/status/2039382012067217580",
           "date": "2026-04-02",
           "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Rehoboth freshmilk diary",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqstd0su5rl6tuqevk5ukake0fjywtqz2tl9aqrtujc2xj3mlm4uffgggwnxr",
-          "date": "2026-03-31",
-          "project": "EcoBitz 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg2uyqkkkkyrafemnc8tmqq2eflahy7wntpltdc8dwr2rwakj6f7qk5ahfm",
-          "date": "2026-03-28",
-          "project": "EcoBitz 🇰🇪"
         }
       ]
     },
@@ -4852,7 +4912,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1157
+      "count": 1166
     },
     {
       "domain": "8333.mobi",
@@ -4903,13 +4963,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 587
+      "count": 590
     },
     {
       "platform": "Nostr",
-      "count": 584
+      "count": 590
     }
   ],
-  "generated_at": "2026-04-07T19:10:02.114984+00:00",
+  "generated_at": "2026-04-07T19:20:02.589930+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
