@@ -1,12 +1,12 @@
 {
   "totals": {
-    "all_payments": 1232,
+    "all_payments": 1234,
     "by_type": {
       "merchant": {
-        "count": 408
+        "count": 409
       },
       "project": {
-        "count": 408
+        "count": 409
       },
       "reviewer": {
         "count": 416
@@ -15,21 +15,28 @@
   },
   "today": {
     "date": "2026-04-08",
-    "payments": 25,
+    "payments": 27,
     "by_type": {
       "merchant": {
-        "count": 8
+        "count": 9
       },
       "project": {
-        "count": 8
+        "count": 9
       },
       "reviewer": {
         "count": 9
       }
     },
-    "approved": 8,
-    "rejected": 1,
+    "approved": 9,
+    "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2041803430100869617",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Simunye No3",
+        "platform": "X",
+        "time": "10:40"
+      },
       {
         "url": "https://x.com/i/status/2041802769271509243",
         "project": "Bitcoin Ekasi 🇿🇦",
@@ -90,6 +97,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Ekasi 🇿🇦"
       },
@@ -329,14 +339,14 @@
     },
     {
       "date": "2026-04-08",
-      "project_count": 8,
-      "merchant_count": 8,
+      "project_count": 9,
+      "merchant_count": 9,
       "reviewer_count": 9
     }
   ],
   "reviewer": {
-    "total_reviewed": 424,
-    "approved": 407,
+    "total_reviewed": 425,
+    "approved": 408,
     "rejected": 17
   },
   "top_projects": [
@@ -1685,8 +1695,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 26,
+      "count": 27,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2041803430100869617",
+          "date": "2026-04-08",
+          "merchant": "Simunye No3"
+        },
         {
           "url": "https://x.com/i/status/2041802769271509243",
           "date": "2026-04-08",
@@ -4342,6 +4357,27 @@
       ]
     },
     {
+      "name": "Simunye No3",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2041803430100869617",
+          "date": "2026-04-08",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxj8h0ejn2z256d85lng40pl5qxa7jec50jppzfgnc5333w379l2grx06em",
+          "date": "2026-03-25",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2032095033218814174",
+          "date": "2026-03-25",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Rehoboth freshmilk diary",
       "count": 3,
       "posts": [
@@ -4449,22 +4485,6 @@
           "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
           "date": "2026-03-31",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Simunye No3",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsxj8h0ejn2z256d85lng40pl5qxa7jec50jppzfgnc5333w379l2grx06em",
-          "date": "2026-03-25",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2032095033218814174",
-          "date": "2026-03-25",
-          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
@@ -5084,7 +5104,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1218
+      "count": 1220
     },
     {
       "domain": "8333.mobi",
@@ -5135,13 +5155,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 618
+      "count": 620
     },
     {
       "platform": "Nostr",
       "count": 614
     }
   ],
-  "generated_at": "2026-04-08T10:40:02.605028+00:00",
+  "generated_at": "2026-04-08T10:50:01.804321+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
