@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 1333,
+    "all_payments": 1339,
     "by_type": {
       "merchant": {
-        "count": 442
+        "count": 444
       },
       "project": {
-        "count": 442
+        "count": 444
       },
       "reviewer": {
-        "count": 449
+        "count": 451
       }
     }
   },
   "today": {
     "date": "2026-04-09",
-    "payments": 57,
+    "payments": 63,
     "by_type": {
       "merchant": {
-        "count": 19
+        "count": 21
       },
       "project": {
-        "count": 19
+        "count": 21
       },
       "reviewer": {
-        "count": 19
+        "count": 21
       }
     },
-    "approved": 19,
+    "approved": 21,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2042284252776079584",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "X",
+        "time": "18:08"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsdylp67fxphawv2m9za7r2kpw44vcyqpqkwayvzz648d7hqe7en0g0tljx4",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "Nostr",
+        "time": "18:08"
+      },
       {
         "url": "https://x.com/i/status/2042260173285199925",
         "project": "Bitcoin Chama 🇰🇪",
@@ -167,6 +181,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -403,21 +423,26 @@
     },
     {
       "date": "2026-04-09",
-      "project_count": 19,
-      "merchant_count": 19,
-      "reviewer_count": 19
+      "project_count": 21,
+      "merchant_count": 21,
+      "reviewer_count": 21
     }
   ],
   "reviewer": {
-    "total_reviewed": 458,
-    "approved": 441,
-    "rejected": 17
+    "total_reviewed": 462,
+    "approved": 443,
+    "rejected": 19
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 121,
+      "count": 122,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2042284252776079584",
+          "date": "2026-04-09",
+          "merchant": "Grandsmatt"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs2rzpva632lklf72cer4np68ndrdldvr7sxcmqvqh7knwet3krcxg953ehp",
           "date": "2026-04-09",
@@ -2000,8 +2025,13 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 25,
+      "count": 26,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdylp67fxphawv2m9za7r2kpw44vcyqpqkwayvzz648d7hqe7en0g0tljx4",
+          "date": "2026-04-09",
+          "merchant": "Orero shop"
+        },
         {
           "url": "https://x.com/i/status/2042260173285199925",
           "date": "2026-04-09",
@@ -2977,8 +3007,13 @@
     },
     {
       "name": "Grandsmatt",
-      "count": 22,
+      "count": 23,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2042284252776079584",
+          "date": "2026-04-09",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2041874033164116090",
           "date": "2026-04-08",
@@ -3636,8 +3671,13 @@
     },
     {
       "name": "Orero shop",
-      "count": 8,
+      "count": 9,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdylp67fxphawv2m9za7r2kpw44vcyqpqkwayvzz648d7hqe7en0g0tljx4",
+          "date": "2026-04-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2042260173285199925",
           "date": "2026-04-09",
@@ -5504,11 +5544,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1310
+      "count": 1315
     },
     {
       "domain": "8333.mobi",
-      "count": 22
+      "count": 23
     },
     {
       "domain": "walletofsatoshi.com",
@@ -5555,13 +5595,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 668
+      "count": 671
     },
     {
       "platform": "Nostr",
-      "count": 665
+      "count": 668
     }
   ],
-  "generated_at": "2026-04-09T18:00:02.286223+00:00",
+  "generated_at": "2026-04-09T18:10:01.984003+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }

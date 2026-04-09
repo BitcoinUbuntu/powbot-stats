@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-09T18:00:02.719911+00:00",
+  "last_updated": "2026-04-09T18:10:02.330140+00:00",
   "total_submissions": 483,
   "submissions": [
     {
@@ -14,8 +14,8 @@
       "post_url": "https://x.com/i/status/2042296206475272625",
       "telegram_link": "https://t.me/c/2378392967/13202",
       "btcmap_link": "https://btcmap.org/merchant/node:13378163013",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "❌ Video rejected",
+      "status": "Rejected",
       "payments": []
     },
     {
@@ -30,8 +30,8 @@
       "post_url": "https://primal.net/e/nevent1qqs9marxrg032kzqqsnuykwngn88d4ncwt9dtycw0xvqkf8te3jvfvsacdn79",
       "telegram_link": "https://t.me/c/2378392967/13199",
       "btcmap_link": "https://btcmap.org/merchant/node:13378163013",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "❌ Video rejected",
+      "status": "Rejected",
       "payments": []
     },
     {
@@ -46,8 +46,8 @@
       "post_url": "https://x.com/i/status/2042287587163803921",
       "telegram_link": "https://t.me/c/2378392967/13196",
       "btcmap_link": "https://btcmap.org/merchant/28405",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "👍 Video reviewed",
+      "status": "Approved",
       "payments": []
     },
     {
@@ -78,8 +78,8 @@
       "post_url": "https://x.com/i/status/2042285298197909909",
       "telegram_link": "https://t.me/c/2378392967/13190",
       "btcmap_link": "https://btcmap.org/merchant/28406",
-      "note": "👍 Video reviewed",
-      "status": "Approved",
+      "note": "🔁 Duplicate video",
+      "status": "Processed",
       "payments": []
     },
     {
@@ -127,8 +127,27 @@
       "telegram_link": "https://t.me/c/2378392967/13181",
       "btcmap_link": "https://btcmap.org/merchant/31116",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69d7eb20198317c0fb420bda",
+          "timestamp": "2026-04-09T18:08:32.786201+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Grandsmatt",
+          "tx_id": "69d7eb21198317c0fb420ce1",
+          "timestamp": "2026-04-09T18:08:33.477806+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitbiashara (Kenya) 🇰🇪",
+          "tx_id": "69d7eb23198317c0fb420ddd",
+          "timestamp": "2026-04-09T18:08:35.186460+00:00"
+        }
+      ]
     },
     {
       "id": 478,
@@ -144,7 +163,26 @@
       "btcmap_link": "https://btcmap.org/merchant/31642",
       "note": "🔁 Duplicate video",
       "status": "Processed",
-      "payments": []
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69d7eb0a198317c0fb4201c7",
+          "timestamp": "2026-04-09T18:08:10.735984+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Orero shop",
+          "tx_id": "69d7eb0e198317c0fb420490",
+          "timestamp": "2026-04-09T18:08:16.324757+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Chama (Kenya) 🇰🇪",
+          "tx_id": "69d7eb11198317c0fb420608",
+          "timestamp": "2026-04-09T18:08:18.040948+00:00"
+        }
+      ]
     },
     {
       "id": 477,
