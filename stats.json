@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 1318,
+    "all_payments": 1327,
     "by_type": {
       "merchant": {
-        "count": 437
+        "count": 440
       },
       "project": {
-        "count": 437
+        "count": 440
       },
       "reviewer": {
-        "count": 444
+        "count": 447
       }
     }
   },
   "today": {
     "date": "2026-04-09",
-    "payments": 42,
+    "payments": 51,
     "by_type": {
       "merchant": {
-        "count": 14
+        "count": 17
       },
       "project": {
-        "count": 14
+        "count": 17
       },
       "reviewer": {
-        "count": 14
+        "count": 17
       }
     },
-    "approved": 14,
+    "approved": 17,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2042252573206327456",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Chicken farm",
+        "platform": "X",
+        "time": "16:02"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs2rzpva632lklf72cer4np68ndrdldvr7sxcmqvqh7knwet3krcxg953ehp",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Viwa Accessories",
+        "platform": "Nostr",
+        "time": "16:02"
+      },
+      {
+        "url": "https://x.com/i/status/2042244535212777689",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Viwa Accessories",
+        "platform": "X",
+        "time": "16:01"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsgdv4zy4atmemlxvclwn0vdlqzl4gucztmug2phqmurqkxql3h02c6depj8",
         "project": "Bitcoin Chama 🇰🇪",
@@ -132,6 +153,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -377,21 +407,31 @@
     },
     {
       "date": "2026-04-09",
-      "project_count": 14,
-      "merchant_count": 14,
-      "reviewer_count": 14
+      "project_count": 17,
+      "merchant_count": 17,
+      "reviewer_count": 17
     }
   ],
   "reviewer": {
-    "total_reviewed": 453,
-    "approved": 436,
+    "total_reviewed": 456,
+    "approved": 439,
     "rejected": 17
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 119,
+      "count": 121,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs2rzpva632lklf72cer4np68ndrdldvr7sxcmqvqh7knwet3krcxg953ehp",
+          "date": "2026-04-09",
+          "merchant": "Viwa Accessories"
+        },
+        {
+          "url": "https://x.com/i/status/2042244535212777689",
+          "date": "2026-04-09",
+          "merchant": "Viwa Accessories"
+        },
         {
           "url": "https://x.com/i/status/2041928098682208348",
           "date": "2026-04-08",
@@ -1964,8 +2004,13 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 22,
+      "count": 23,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2042252573206327456",
+          "date": "2026-04-09",
+          "merchant": "Chicken farm"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsgdv4zy4atmemlxvclwn0vdlqzl4gucztmug2phqmurqkxql3h02c6depj8",
           "date": "2026-04-09",
@@ -4802,6 +4847,27 @@
       ]
     },
     {
+      "name": "Chicken farm",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2042252573206327456",
+          "date": "2026-04-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2041066482050732162",
+          "date": "2026-04-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdplafs06lmlr30lnpxvvdzzhk6hts6dv2r2y728fvky0fnpyu78qm6arfp",
+          "date": "2026-04-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Zwakala Cafe",
       "count": 2,
       "posts": [
@@ -4814,6 +4880,22 @@
           "url": "https://x.com/i/status/2040043668141129948",
           "date": "2026-04-05",
           "project": "Soweto BTC 🇿🇦"
+        }
+      ]
+    },
+    {
+      "name": "Viwa Accessories",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs2rzpva632lklf72cer4np68ndrdldvr7sxcmqvqh7knwet3krcxg953ehp",
+          "date": "2026-04-09",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2042244535212777689",
+          "date": "2026-04-09",
+          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -5186,22 +5268,6 @@
       ]
     },
     {
-      "name": "Chicken farm",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2041066482050732162",
-          "date": "2026-04-06",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdplafs06lmlr30lnpxvvdzzhk6hts6dv2r2y728fvky0fnpyu78qm6arfp",
-          "date": "2026-04-06",
-          "project": "Bitcoin Chama 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Chauque & Joao Tofo Juice Shop",
       "count": 2,
       "posts": [
@@ -5412,21 +5478,21 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 17,
-    "daily_average_payments": 77
+    "daily_average_payments": 78
   },
   "burn_rate": {
-    "percentage": 47,
+    "percentage": 48,
     "status": "cold",
     "days_active": 17
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1298
+      "count": 1306
     },
     {
       "domain": "8333.mobi",
-      "count": 19
+      "count": 20
     },
     {
       "domain": "walletofsatoshi.com",
@@ -5473,13 +5539,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 659
+      "count": 665
     },
     {
       "platform": "Nostr",
-      "count": 659
+      "count": 662
     }
   ],
-  "generated_at": "2026-04-09T16:00:01.787897+00:00",
+  "generated_at": "2026-04-09T16:10:01.742510+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
