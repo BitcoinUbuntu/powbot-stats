@@ -1,7 +1,23 @@
 {
-  "last_updated": "2026-04-09T19:00:04.735727+00:00",
-  "total_submissions": 485,
+  "last_updated": "2026-04-09T19:10:02.531533+00:00",
+  "total_submissions": 486,
   "submissions": [
+    {
+      "id": 489,
+      "timestamp": "2026-04-09 19:02:00 UTC",
+      "project_name": "Bitcoin Dombo (Mozambique) 🇲🇿",
+      "project_flag": "🇲🇿",
+      "merchant_name": "Dona Marta Stand Shop",
+      "lightning_address": "comoosvaldosergio2@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "Nostr",
+      "post_url": "https://primal.net/e/nevent1qqs9svc2yvvpedv8zasnpsehadqehydyc3njfhf4cryfl93w9hzn0ksl784k4",
+      "telegram_link": "https://t.me/c/2378392967/13213",
+      "btcmap_link": "https://btcmap.org/merchant/node:13378120486",
+      "note": "🤖 Video requires human review",
+      "status": "Pending Review",
+      "payments": []
+    },
     {
       "id": 488,
       "timestamp": "2026-04-09 18:59:51 UTC",
@@ -14,9 +30,28 @@
       "post_url": "https://x.com/i/status/2042315713600270778",
       "telegram_link": "https://t.me/c/2378392967/13210",
       "btcmap_link": "https://btcmap.org/merchant/node:13378120486",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
-      "payments": []
+      "note": "👍 Video reviewed",
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69d7f888198317c0fb467143",
+          "timestamp": "2026-04-09T19:05:44.896218+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Dona Marta Stand Shop",
+          "tx_id": "69d7f889198317c0fb4671e5",
+          "timestamp": "2026-04-09T19:05:45.616681+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dombo (Mozambique) 🇲🇿",
+          "tx_id": "69d7f88a198317c0fb4672cf",
+          "timestamp": "2026-04-09T19:05:47.147702+00:00"
+        }
+      ]
     },
     {
       "id": 487,
@@ -48,7 +83,14 @@
       "btcmap_link": "https://btcmap.org/merchant/node:13378163013",
       "note": "❌ Video rejected",
       "status": "Rejected",
-      "payments": []
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69d7f873198317c0fb466406",
+          "timestamp": "2026-04-09T19:05:23.326413+00:00"
+        }
+      ]
     },
     {
       "id": 485,
@@ -64,7 +106,14 @@
       "btcmap_link": "https://btcmap.org/merchant/node:13378163013",
       "note": "❌ Video rejected",
       "status": "Rejected",
-      "payments": []
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69d7f86b198317c0fb466063",
+          "timestamp": "2026-04-09T19:05:15.215060+00:00"
+        }
+      ]
     },
     {
       "id": 484,
@@ -79,8 +128,27 @@
       "telegram_link": "https://t.me/c/2378392967/13196",
       "btcmap_link": "https://btcmap.org/merchant/28405",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69d7f839198317c0fb464dd9",
+          "timestamp": "2026-04-09T19:04:25.614272+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Lydiah Richland Shop",
+          "tx_id": "69d7f83a198317c0fb464e79",
+          "timestamp": "2026-04-09T19:04:26.270312+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitbiashara (Kenya) 🇰🇪",
+          "tx_id": "69d7f83b198317c0fb464f51",
+          "timestamp": "2026-04-09T19:04:27.860173+00:00"
+        }
+      ]
     },
     {
       "id": 483,
@@ -96,7 +164,26 @@
       "btcmap_link": "https://btcmap.org/merchant/28405",
       "note": "🔁 Duplicate video",
       "status": "Processed",
-      "payments": []
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69d7f802198317c0fb46371d",
+          "timestamp": "2026-04-09T19:03:31.067980+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Lydiah Richland Shop",
+          "tx_id": "69d7f803198317c0fb4637b0",
+          "timestamp": "2026-04-09T19:03:31.897224+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitbiashara (Kenya) 🇰🇪",
+          "tx_id": "69d7f805198317c0fb46383e",
+          "timestamp": "2026-04-09T19:03:33.510889+00:00"
+        }
+      ]
     },
     {
       "id": 482,
@@ -112,7 +199,26 @@
       "btcmap_link": "https://btcmap.org/merchant/28406",
       "note": "🔁 Duplicate video",
       "status": "Processed",
-      "payments": []
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69d7f7e5198317c0fb462c4a",
+          "timestamp": "2026-04-09T19:03:01.536748+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Chips point",
+          "tx_id": "69d7f7e6198317c0fb462d3e",
+          "timestamp": "2026-04-09T19:03:02.340215+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitbiashara (Kenya) 🇰🇪",
+          "tx_id": "69d7f7e7198317c0fb462ec5",
+          "timestamp": "2026-04-09T19:03:03.868660+00:00"
+        }
+      ]
     },
     {
       "id": 481,
@@ -127,8 +233,27 @@
       "telegram_link": "https://t.me/c/2378392967/13187",
       "btcmap_link": "https://btcmap.org/merchant/28406",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69d7f7c9198317c0fb4622d0",
+          "timestamp": "2026-04-09T19:02:33.460735+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Chips point",
+          "tx_id": "69d7f7c9198317c0fb4623ca",
+          "timestamp": "2026-04-09T19:02:34.110946+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitbiashara (Kenya) 🇰🇪",
+          "tx_id": "69d7f7cc198317c0fb4624de",
+          "timestamp": "2026-04-09T19:02:36.667658+00:00"
+        }
+      ]
     },
     {
       "id": 480,
@@ -144,7 +269,26 @@
       "btcmap_link": "https://btcmap.org/merchant/31116",
       "note": "🔁 Duplicate video",
       "status": "Processed",
-      "payments": []
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69d7f7bb198317c0fb461d8d",
+          "timestamp": "2026-04-09T19:02:19.945805+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Grandsmatt",
+          "tx_id": "69d7f7bc198317c0fb461e57",
+          "timestamp": "2026-04-09T19:02:20.834955+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitbiashara (Kenya) 🇰🇪",
+          "tx_id": "69d7f7bf198317c0fb46200b",
+          "timestamp": "2026-04-09T19:02:23.398908+00:00"
+        }
+      ]
     },
     {
       "id": 479,
