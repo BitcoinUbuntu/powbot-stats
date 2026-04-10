@@ -959,6 +959,51 @@
             justify-content: flex-end;
         }
 
+        #highlights-list .stat-row {
+            perspective: 1000px;
+        }
+
+        /* Airport ticker flip animation */
+        @keyframes flipHighlight {
+            0% {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+            45% {
+                transform: rotateX(90deg);
+                opacity: 0;
+            }
+            55% {
+                transform: rotateX(-90deg);
+                opacity: 0;
+            }
+            100% {
+                transform: rotateX(0deg);
+                opacity: 1;
+            }
+        }
+
+        /* Stagger the flip animation for each row */
+        #highlights-list.flipping .stat-row:nth-child(1) {
+            animation: flipHighlight 0.6s ease-in-out 0s;
+        }
+
+        #highlights-list.flipping .stat-row:nth-child(2) {
+            animation: flipHighlight 0.6s ease-in-out 0.15s;
+        }
+
+        #highlights-list.flipping .stat-row:nth-child(3) {
+            animation: flipHighlight 0.6s ease-in-out 0.3s;
+        }
+
+        #highlights-list.flipping .stat-row:nth-child(4) {
+            animation: flipHighlight 0.6s ease-in-out 0.45s;
+        }
+
+        #highlights-list.flipping .stat-row:nth-child(5) {
+            animation: flipHighlight 0.6s ease-in-out 0.6s;
+        }
+
         /* Project Info Banner */
         .project-info-banner {
             background: linear-gradient(135deg, rgba(88, 166, 255, 0.15), rgba(88, 166, 255, 0.05));
@@ -2301,6 +2346,62 @@
                 });
             }
 
+            // Platform distribution (X vs Nostr)
+            if (stats.platforms && stats.platforms.length > 0) {
+                const totalPlatforms = stats.platforms.reduce((sum, p) => sum + p.count, 0);
+                stats.platforms.forEach(p => {
+                    const percentage = Math.round((p.count / totalPlatforms) * 100);
+                    highlights.push({
+                        label: `📱 ${p.platform} posts`,
+                        value: `${percentage}%`
+                    });
+                });
+            }
+
+            // Top Lightning provider
+            if (stats.lightning_providers && stats.lightning_providers.length > 0) {
+                const top = stats.lightning_providers[0];
+                highlights.push({
+                    label: '⚡ Top LN provider',
+                    value: top.domain
+                });
+            }
+
+            // Top merchant
+            if (stats.top_merchants && stats.top_merchants.length > 0) {
+                const top = stats.top_merchants[0];
+                highlights.push({
+                    label: '🏅 Top merchant',
+                    value: top.name
+                });
+            }
+
+            // Most active country
+            if (stats.countries && stats.countries.length > 0) {
+                const top = stats.countries[0];
+                highlights.push({
+                    label: '🌐 Most active',
+                    value: `${top.flag} ${top.country}`
+                });
+            }
+
+            // Total posts reviewed
+            if (stats.reviewer?.total_reviewed > 0) {
+                highlights.push({
+                    label: '📝 Posts reviewed',
+                    value: formatNumber(stats.reviewer.total_reviewed)
+                });
+            }
+
+            // Average posts per day
+            if (stats.launch?.days_active > 0 && stats.reviewer?.approved > 0) {
+                const avgPerDay = Math.round(stats.reviewer.approved / stats.launch.days_active);
+                highlights.push({
+                    label: '📊 Avg posts/day',
+                    value: avgPerDay
+                });
+            }
+
             return highlights;
         }
 
@@ -2313,7 +2414,7 @@
             return shuffled;
         }
 
-        function displayHighlights() {
+        function displayHighlights(animate = false) {
             const container = document.getElementById('highlights-list');
             if (!container || allHighlights.length === 0) return;
 
@@ -2325,17 +2426,38 @@
                 toShow.push(allHighlights[idx]);
             }
 
-            container.innerHTML = toShow.map(h => `
-                <div class="stat-row">
-                    <span class="stat-label">${h.label}</span>
-                    <span class="stat-value" style="color: var(--accent-blue);">${h.value}</span>
-                </div>
-            `).join('');
+            if (animate) {
+                container.classList.add('flipping');
+
+                // Update each row's content mid-flip (staggered timing)
+                const rows = container.querySelectorAll('.stat-row');
+                toShow.forEach((h, i) => {
+                    const delay = (i * 150) + 300; // Stagger + mid-flip point
+                    setTimeout(() => {
+                        if (rows[i]) {
+                            rows[i].innerHTML = `
+                                <span class="stat-label">${h.label}</span>
+                                <span class="stat-value" style="color: var(--accent-blue);">${h.value}</span>
+                            `;
+                        }
+                    }, delay);
+                });
+
+                setTimeout(() => container.classList.remove('flipping'), 1800);
+            } else {
+                container.innerHTML = toShow.map(h => `
+                    <div class="stat-row">
+                        <span class="stat-label">${h.label}</span>
+                        <span class="stat-value" style="color: var(--accent-blue);">${h.value}</span>
+                    </div>
+                `).join('');
+            }
         }
 
         function rotateHighlights() {
-            highlightIndex = (highlightIndex + 1) % allHighlights.length;
-            displayHighlights();
+            // Advance by 5 to get completely new set of highlights
+            highlightIndex = (highlightIndex + 5) % allHighlights.length;
+            displayHighlights(true);
         }
 
         function renderHighlights(stats) {
@@ -2348,6 +2470,12 @@
 
             // Display first 5
             displayHighlights();
+
+            // Start rotation (flip to new highlights every 8 seconds)
+            if (highlightInterval) {
+                clearInterval(highlightInterval);
+            }
+            highlightInterval = setInterval(rotateHighlights, 8000);
         }
 
         // Load and render stats
