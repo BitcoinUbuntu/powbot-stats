@@ -552,7 +552,7 @@
         .leaderboard-rank {
             width: 28px;
             height: 28px;
-            background: var(--accent-orange);
+            background: var(--text-secondary);
             color: var(--bg-primary);
             border-radius: 50%;
             display: flex;
@@ -1339,6 +1339,21 @@
                 </div>
                 ` : ''}
 
+                <!-- Last 24h Videos by Platform -->
+                ${(stats.last_24h.videos && stats.last_24h.videos.length > 0) ? `
+                <div class="leaderboard-grid">
+                    <div class="card">
+                        <h2>Last 24h on X</h2>
+                        <div id="today-x"></div>
+                    </div>
+
+                    <div class="card">
+                        <h2>Last 24h on Nostr</h2>
+                        <div id="today-nostr"></div>
+                    </div>
+                </div>
+                ` : ''}
+
                 <!-- Leaderboards -->
                 ${((stats.top_projects?.length || 0) > 0 || (stats.top_merchants?.length || 0) > 0) ? `
                 <div class="leaderboard-grid">
@@ -1355,21 +1370,6 @@
                         <div id="top-merchants"></div>
                     </div>
                     ` : ''}
-                </div>
-                ` : ''}
-
-                <!-- Last 24h Videos by Platform -->
-                ${(stats.last_24h.videos && stats.last_24h.videos.length > 0) ? `
-                <div class="leaderboard-grid">
-                    <div class="card">
-                        <h2>Last 24h on X</h2>
-                        <div id="today-x"></div>
-                    </div>
-
-                    <div class="card">
-                        <h2>Last 24h on Nostr</h2>
-                        <div id="today-nostr"></div>
-                    </div>
                 </div>
                 ` : ''}
 
