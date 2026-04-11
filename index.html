@@ -484,6 +484,9 @@
         .stat-label {
             color: var(--text-secondary);
             flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .stat-value {
@@ -552,8 +555,8 @@
         .leaderboard-rank {
             width: 28px;
             height: 28px;
-            background: var(--text-secondary);
-            color: var(--bg-primary);
+            background: linear-gradient(135deg, rgba(247, 147, 26, 0.15), rgba(247, 147, 26, 0.05));
+            color: var(--accent-orange);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1373,6 +1376,32 @@
                 </div>
                 ` : ''}
 
+                <!-- Last 7 Days Banner -->
+                ${(stats.last_7d?.posts || 0) > 0 ? `
+                <div class="week-banner">
+                    <span class="week-label">Last 7 Days</span>
+                    <div class="week-stats">
+                        <div class="week-stat">
+                            <span class="week-value" style="color: var(--accent-purple);">${formatNumber(stats.last_7d?.posts || 0)}</span>
+                            <span class="week-unit">${(stats.last_7d?.posts || 0) === 1 ? 'post' : 'posts'}</span>
+                        </div>
+                        <div class="week-stat">
+                            <span class="week-value" style="color: var(--accent-green);">${formatNumber(stats.last_7d?.approved || 0)}</span>
+                            <span class="week-unit">${(stats.last_7d?.approved || 0) === 1 ? 'approval' : 'approvals'}</span>
+                        </div>
+                        ${(stats.last_7d?.pending || 0) > 0 ? `
+                        <div class="week-stat">
+                            <span class="week-value" style="color: var(--text-secondary);">${formatNumber(stats.last_7d?.pending || 0)}</span>
+                            <span class="week-unit">${(stats.last_7d?.pending || 0) === 1 ? 'pending' : 'pending'}</span>
+                        </div>
+                        ` : ''}
+                        <div class="week-stat">
+                            <span class="week-value" style="color: #f85149;">${formatNumber(stats.last_7d?.rejected || 0)}</span>
+                            <span class="week-unit">${(stats.last_7d?.rejected || 0) === 1 ? 'rejection' : 'rejections'}</span>
+                        </div>
+                    </div>
+                </div>
+                ` : ''}
 
                 <!-- Daily Chart -->
                 <div class="chart-container">
@@ -2509,19 +2538,20 @@
                     });
                 }
 
-                // Process tracker data for last 24h videos and stats
+                // Process tracker data for last 24h and last 7d stats
                 if (trackerResponse && trackerResponse.ok) {
                     const trackerData = await trackerResponse.json();
                     const now = new Date();
                     const last24h = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+                    const last7d = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
 
-                    // Filter all submissions in last 24h
+                    // Filter submissions for last 24h
                     const recentSubmissions = trackerData.submissions.filter(sub => {
                         const subDate = new Date(sub.timestamp.replace(' UTC', 'Z'));
                         return subDate >= last24h;
                     });
 
-                    // Calculate stats
+                    // Calculate last 24h stats
                     const approved = recentSubmissions.filter(sub => sub.status === 'Processed').length;
                     const rejected = recentSubmissions.filter(sub => sub.status === 'Rejected').length;
                     const pending = recentSubmissions.filter(sub => sub.status === 'Pending Review').length;
@@ -2537,13 +2567,33 @@
                             url: sub.post_url
                         }));
 
-                    // Add to stats object
+                    // Add last 24h to stats object
                     stats.last_24h = stats.last_24h || {};
                     stats.last_24h.videos = recentVideos;
                     stats.last_24h.posts = totalPosts;
                     stats.last_24h.approved = approved;
                     stats.last_24h.rejected = rejected;
                     stats.last_24h.pending = pending;
+
+                    // Filter submissions for last 7 days
+                    const recent7dSubmissions = trackerData.submissions.filter(sub => {
+                        const subDate = new Date(sub.timestamp.replace(' UTC', 'Z'));
+                        return subDate >= last7d;
+                    });
+
+                    // Calculate last 7d stats
+                    const approved7d = recent7dSubmissions.filter(sub => sub.status === 'Processed').length;
+                    const rejected7d = recent7dSubmissions.filter(sub => sub.status === 'Rejected').length;
+                    const pending7d = recent7dSubmissions.filter(sub => sub.status === 'Pending Review').length;
+                    const totalPosts7d = recent7dSubmissions.length;
+
+                    // Add last 7d to stats object
+                    stats.last_7d = {
+                        posts: totalPosts7d,
+                        approved: approved7d,
+                        rejected: rejected7d,
+                        pending: pending7d
+                    };
                 }
 
                 renderDashboard(stats);
