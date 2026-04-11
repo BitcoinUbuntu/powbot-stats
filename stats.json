@@ -1,28 +1,49 @@
 {
   "totals": {
-    "all_payments": 1374,
+    "all_payments": 1377,
     "by_type": {
       "merchant": {
-        "count": 455
+        "count": 456
       },
       "project": {
-        "count": 455
+        "count": 456
       },
       "reviewer": {
-        "count": 464
+        "count": 465
       }
     }
   },
   "today": {
     "date": "2026-04-11",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 3,
+    "by_type": {
+      "merchant": {
+        "count": 1
+      },
+      "project": {
+        "count": 1
+      },
+      "reviewer": {
+        "count": 1
+      }
+    },
+    "approved": 1,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2042626639742296430",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Jabulani Shop 3",
+        "platform": "X",
+        "time": "11:09"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -211,14 +232,14 @@
     },
     {
       "date": "2026-04-11",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0
+      "project_count": 1,
+      "merchant_count": 1,
+      "reviewer_count": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 488,
-    "approved": 454,
+    "total_reviewed": 489,
+    "approved": 455,
     "rejected": 34
   },
   "top_projects": [
@@ -1697,8 +1718,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 31,
+      "count": 32,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2042626639742296430",
+          "date": "2026-04-11",
+          "merchant": "Jabulani Shop 3"
+        },
         {
           "url": "https://primal.net/e/nevent1qqstugsqd8z2cpuf07dtu796nx4zu3hkdutegh2kp2zvj3wehg6rcmqddz4xf",
           "date": "2026-04-09",
@@ -4286,6 +4312,37 @@
       ]
     },
     {
+      "name": "Jabulani Shop 3",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2042626639742296430",
+          "date": "2026-04-11",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2041502604039954889",
+          "date": "2026-04-07",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv009eqg9lfyc2fxgkfkhn6w6dwlh2x0mrcv57j62ueh7vwjsc47q5uqsfd",
+          "date": "2026-03-26",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2037080954921980160",
+          "date": "2026-03-26",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2033459777913716800",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Ayuba’s Washing Bay",
       "count": 5,
       "posts": [
@@ -4651,32 +4708,6 @@
           "url": "https://x.com/i/status/2037376931696464142",
           "date": "2026-03-27",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Jabulani Shop 3",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2041502604039954889",
-          "date": "2026-04-07",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv009eqg9lfyc2fxgkfkhn6w6dwlh2x0mrcv57j62ueh7vwjsc47q5uqsfd",
-          "date": "2026-03-26",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2037080954921980160",
-          "date": "2026-03-26",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2033459777913716800",
-          "date": "2026-03-24",
-          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
@@ -5442,7 +5473,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1350
+      "count": 1353
     },
     {
       "domain": "8333.mobi",
@@ -5493,13 +5524,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 690
+      "count": 693
     },
     {
       "platform": "Nostr",
       "count": 684
     }
   ],
-  "generated_at": "2026-04-11T11:00:02.577066+00:00",
+  "generated_at": "2026-04-11T11:10:01.944332+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
