@@ -409,12 +409,12 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
             gap: 20px;
             margin-bottom: 20px;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 650px) {
             .stats-grid {
                 grid-template-columns: 1fr;
             }
@@ -2563,7 +2563,10 @@
 
                     // Add last 24h to stats object
                     stats.last_24h = stats.last_24h || {};
-                    stats.last_24h.videos = recentVideos;
+                    // Only overwrite videos if tracker has data, otherwise keep stats.json data
+                    if (recentVideos.length > 0) {
+                        stats.last_24h.videos = recentVideos;
+                    }
                     stats.last_24h.posts = totalPosts;
                     stats.last_24h.approved = approved;
                     stats.last_24h.rejected = rejected;
