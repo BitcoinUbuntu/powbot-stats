@@ -282,6 +282,30 @@
             <!-- Stats will be inserted here -->
         </div>
 
+        <div class="section" id="btcmap-section" style="display: none;">
+            <h2>Location on BTC Map</h2>
+            <div id="btcmap-container">
+                <iframe
+                    id="btcmap-embed"
+                    src=""
+                    width="100%"
+                    height="450px"
+                    style="border: 1px solid var(--border); border-radius: 8px;"
+                    allowfullscreen>
+                </iframe>
+                <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-secondary);">
+                    <a href="" id="btcmap-link" target="_blank" rel="noopener" style="color: var(--accent-blue);">View on BTC Map ↗</a>
+                </p>
+            </div>
+            <div id="btcmap-fallback" style="display: none; text-align: center; padding: 40px 20px; color: var(--text-secondary);">
+                <p style="margin-bottom: 12px;">This merchant may be listed on BTC Map</p>
+                <a href="" id="btcmap-search-link" target="_blank" rel="noopener"
+                   style="display: inline-block; padding: 10px 20px; background: var(--bg-primary); color: var(--accent-blue); border: 1px solid var(--border); border-radius: 6px; text-decoration: none; transition: all 0.2s;">
+                    Search on BTC Map ↗
+                </a>
+            </div>
+        </div>
+
         <div class="section">
             <h2>PoWBoT Activity</h2>
             <div class="posts-list" id="posts-list">
@@ -354,9 +378,9 @@
 
         async function loadMerchantData(merchantName) {
             try {
-                // Load current epoch stats
-                const currentResponse = await fetch('stats.json');
-                const currentStats = await currentResponse.json();
+                // Load tracker data (current epoch - has btcmap_link)
+                const trackerResponse = await fetch('tracker-data.json');
+                const trackerData = await trackerResponse.json();
 
                 // Load historical stats (Epoch 4)
                 const historicalResponse = await fetch('stats-epoch4.json');
@@ -365,10 +389,18 @@
                 // Normalize the URL parameter for comparison
                 const normalizedParam = normalizeId(merchantName);
 
-                // Find merchant in current stats
-                const currentMerchant = currentStats.top_merchants?.find(m =>
-                    normalizeId(m.name) === normalizedParam
-                );
+                // Find merchant in tracker submissions
+                const merchantSubmissions = trackerData.submissions?.filter(s =>
+                    normalizeId(s.merchant_name) === normalizedParam
+                ) || [];
+
+                // Convert tracker submissions to post format
+                const currentPosts = merchantSubmissions.map(s => ({
+                    url: s.post_url,
+                    date: s.timestamp.split(' ')[0], // Extract date from "2026-04-12 05:08:45 UTC"
+                    project: s.project_name,
+                    btcmap_link: s.btcmap_link
+                }));
 
                 // Find merchant in historical stats
                 const historicalMerchant = historicalStats.top_merchants?.find(m =>
@@ -377,12 +409,12 @@
 
                 // Combine posts from both epochs
                 const allPosts = [
-                    ...(currentMerchant?.posts || []),
+                    ...currentPosts,
                     ...(historicalMerchant?.posts || [])
                 ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
                 const totalCount = allPosts.length;
-                const merchantDisplayName = currentMerchant?.name || historicalMerchant?.name || merchantName;
+                const merchantDisplayName = merchantSubmissions[0]?.merchant_name || historicalMerchant?.name || merchantName;
 
                 // Extract country from project name (gets flag emoji from end of project name)
                 let countryInfo = '';
@@ -405,9 +437,12 @@
                 // Render posts
                 renderPosts(allPosts);
 
+                // Handle BTC Map section
+                renderBtcMapSection(merchantDisplayName, allPosts);
+
                 // Update footer timestamp
-                if (currentStats && currentStats.generated_at) {
-                    document.getElementById('updated').textContent = new Date(currentStats.generated_at).toLocaleString();
+                if (trackerData && trackerData.last_updated) {
+                    document.getElementById('updated').textContent = new Date(trackerData.last_updated).toLocaleString();
                 }
 
             } catch (error) {
@@ -497,6 +532,45 @@
                     }
                 });
                 button.textContent = `Show ${totalCount - initialCount} more`;
+            }
+        }
+
+        function renderBtcMapSection(merchantName, posts) {
+            const section = document.getElementById('btcmap-section');
+            const embedContainer = document.getElementById('btcmap-container');
+            const fallbackContainer = document.getElementById('btcmap-fallback');
+            const embed = document.getElementById('btcmap-embed');
+            const link = document.getElementById('btcmap-link');
+            const searchLink = document.getElementById('btcmap-search-link');
+
+            // If no posts, don't show the section
+            if (!posts || posts.length === 0) {
+                section.style.display = 'none';
+                return;
+            }
+
+            // Show the section
+            section.style.display = 'block';
+
+            // Look for btcmap_link in the posts (available for current epoch submissions)
+            const postWithBtcMap = posts.find(p => p.btcmap_link);
+
+            if (postWithBtcMap && postWithBtcMap.btcmap_link) {
+                // Use the btcmap_link directly from the submission data
+                const btcmapUrl = postWithBtcMap.btcmap_link;
+
+                console.log('Using BTC Map link from submission:', btcmapUrl);
+
+                embed.src = btcmapUrl;
+                link.href = btcmapUrl;
+                embedContainer.style.display = 'block';
+                fallbackContainer.style.display = 'none';
+            } else {
+                // No btcmap_link found (historical data) - show search fallback
+                const searchUrl = `https://btcmap.org/?search=${encodeURIComponent(merchantName)}`;
+                searchLink.href = searchUrl;
+                embedContainer.style.display = 'none';
+                fallbackContainer.style.display = 'block';
             }
         }
     </script>
