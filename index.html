@@ -1211,7 +1211,6 @@
             content.innerHTML = `
                 <!-- Summary Cards -->
                 <div class="stats-grid">
-                    ${(stats.last_24h?.videos && stats.last_24h.videos.length > 0) ? `
                     <div class="card top-performers">
                         <h2>Top Performers (24h)</h2>
                         <div class="big-number">🏆</div>
@@ -1219,7 +1218,6 @@
                             <!-- Populated by JavaScript -->
                         </div>
                     </div>
-                    ` : ''}
 
                     <div class="card epoch-overview-card">
                         <h2>Epoch Overview</h2>
@@ -1459,10 +1457,8 @@
                 renderTodayVideos('today-nostr', nostrVideos, '🟣');
             }
 
-            // Render top performers (only if data exists)
-            if (stats.last_24h?.videos && stats.last_24h.videos.length > 0) {
-                renderTopPerformers(stats.last_24h.videos);
-            }
+            // Render top performers (always show card, with empty state message if needed)
+            renderTopPerformers(stats.last_24h?.videos || []);
 
             // Render charts
             renderChart(stats.daily);
