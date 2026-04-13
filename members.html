@@ -621,6 +621,16 @@
                     historical: historicalData,
                     epoch5: epoch5Data
                 };
+
+                // Update footer timestamp (use live stats if available, otherwise epoch4)
+                const statsForTimestamp = epoch5Data || epoch4Data;
+                if (statsForTimestamp && statsForTimestamp.generated_at) {
+                    const updatedElement = document.getElementById('updated');
+                    if (updatedElement) {
+                        updatedElement.textContent = new Date(statsForTimestamp.generated_at).toLocaleString();
+                    }
+                }
+
                 initializeFilters();
                 applyURLFilters();
                 updateStats();
