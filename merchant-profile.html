@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
+    <script src="qrcode.min.js"></script>
 
     <style>
         :root {
@@ -108,34 +109,134 @@
             font-size: 0.95rem;
         }
 
-        /* Stats Section */
+        /* Stats Section - Two Column Layout */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
             margin-bottom: 24px;
         }
 
-        .stat-card {
+        /* Support Card */
+        .support-card {
+            background: var(--bg-card);
+            border: 1px solid var(--accent-orange);
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+        }
+
+        .support-card h2 {
+            color: var(--accent-orange);
+            font-size: 1.3rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        .support-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0;
+            text-align: center;
+        }
+
+        .qr-container {
+            margin: 8px auto;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .qr-container canvas {
+            display: block;
+        }
+
+        .address {
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            background: var(--bg-secondary);
+            padding: 6px 10px;
+            border-radius: 6px;
+            word-break: break-all;
+            text-align: center;
+            max-width: 100%;
+            margin: 0;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .address:hover {
+            background: rgba(88, 166, 255, 0.1);
+            border-color: var(--accent-blue);
+        }
+
+        .address.copied {
+            background: rgba(63, 185, 80, 0.2);
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        /* PoWBoT Overview Card */
+        .overview-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 20px;
-            text-align: center;
+        }
+
+        .overview-card h2 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            gap: 12px;
+        }
+
+        .stat-row:last-child {
+            border-bottom: none;
         }
 
         .stat-label {
             color: var(--text-secondary);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .stat-value {
-            font-size: 2rem;
+            font-weight: 600;
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        .big-number {
+            font-size: 2.5rem;
             font-weight: 700;
-            color: var(--accent-green);
+            color: var(--accent-orange);
+            margin: 16px 0;
+        }
+
+        .big-number .unit {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
         }
 
         /* Activity Section */
@@ -243,6 +344,18 @@
 
             .stats-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .support-card h2 {
+                font-size: 1.1rem;
+            }
+
+            .stat-value {
+                font-size: 0.9rem;
+            }
+
+            .big-number {
+                font-size: 2rem;
             }
         }
 
@@ -415,13 +528,15 @@
 
                 const totalCount = allPosts.length;
                 const merchantDisplayName = merchantSubmissions[0]?.merchant_name || historicalMerchant?.name || merchantName;
+                const lightningAddress = merchantSubmissions[0]?.lightning_address || null;
 
                 // Extract country from project name (gets flag emoji from end of project name)
                 let countryInfo = '';
+                let countryName = null;
                 if (allPosts.length > 0 && allPosts[0].project) {
                     const flagMatch = allPosts[0].project.match(/[\u{1F1E6}-\u{1F1FF}][\u{1F1E6}-\u{1F1FF}]/u);
                     if (flagMatch) {
-                        const countryName = getCountryName(flagMatch[0]);
+                        countryName = getCountryName(flagMatch[0]);
                         countryInfo = ` in ${countryName}`;
                     }
                 }
@@ -432,7 +547,7 @@
                 document.getElementById('merchant-subtitle').textContent = `Circular Economy Merchant${countryInfo}`;
 
                 // Render stats
-                renderStats(totalCount, allPosts);
+                renderStats(totalCount, allPosts, merchantDisplayName, lightningAddress, countryName);
 
                 // Render posts
                 renderPosts(allPosts);
@@ -452,7 +567,7 @@
             }
         }
 
-        function renderStats(totalCount, posts) {
+        function renderStats(totalCount, posts, merchantName, lightningAddress, countryName) {
             const statsGrid = document.getElementById('stats-grid');
 
             // Calculate first and last post dates
@@ -460,24 +575,105 @@
             const firstPost = dates.length > 0 ? dates[0] : null;
             const lastPost = dates.length > 0 ? dates[dates.length - 1] : null;
 
-            statsGrid.innerHTML = `
-                <div class="stat-card">
-                    <div class="stat-label">Total Posts</div>
-                    <div class="stat-value">${totalCount}</div>
+            // Support Card
+            let supportCardHTML = '';
+            if (lightningAddress) {
+                supportCardHTML = `
+                    <div class="support-card">
+                        <h2>Support ${escapeHtml(merchantName)}</h2>
+                        <p>Lightning Network</p>
+                        <div class="qr-container" id="qr-lightning"></div>
+                        <div class="address" id="lightning-address" onclick="copyAddressWithFeedback('${escapeHtml(lightningAddress)}', 'lightning-address')" title="Click to copy">${escapeHtml(lightningAddress)}</div>
+                    </div>
+                `;
+            } else {
+                supportCardHTML = `
+                    <div class="support-card">
+                        <h2>Support ${escapeHtml(merchantName)}</h2>
+                        <p style="text-align: center; color: var(--text-secondary); margin-top: 20px;">Lightning address not available</p>
+                    </div>
+                `;
+            }
+
+            // Overview Card
+            const overviewCardHTML = `
+                <div class="overview-card">
+                    <h2>PoWBoT Overview</h2>
+                    <div class="big-number">${totalCount}<span class="unit"> ${totalCount === 1 ? 'post' : 'posts'}</span></div>
+                    <div style="margin-top: 15px;">
+                        ${countryName ? `
+                        <div class="stat-row">
+                            <span class="stat-label">Location</span>
+                            <span class="stat-value" style="color: var(--accent-orange);">${escapeHtml(countryName)}</span>
+                        </div>
+                        ` : ''}
+                        ${firstPost ? `
+                        <div class="stat-row">
+                            <span class="stat-label">First Post</span>
+                            <span class="stat-value" style="color: var(--accent-orange);">${formatDate(firstPost)}</span>
+                        </div>
+                        ` : ''}
+                        ${lastPost ? `
+                        <div class="stat-row">
+                            <span class="stat-label">Latest Post</span>
+                            <span class="stat-value" style="color: var(--accent-orange);">${formatDate(lastPost)}</span>
+                        </div>
+                        ` : ''}
+                    </div>
                 </div>
-                ${firstPost ? `
-                <div class="stat-card">
-                    <div class="stat-label">First Post</div>
-                    <div class="stat-value" style="font-size: 1.2rem;">${formatDate(firstPost)}</div>
-                </div>
-                ` : ''}
-                ${lastPost ? `
-                <div class="stat-card">
-                    <div class="stat-label">Latest Post</div>
-                    <div class="stat-value" style="font-size: 1.2rem;">${formatDate(lastPost)}</div>
-                </div>
-                ` : ''}
             `;
+
+            statsGrid.innerHTML = supportCardHTML + overviewCardHTML;
+
+            // Generate QR code if lightning address exists
+            if (lightningAddress) {
+                setTimeout(() => {
+                    const canvas = document.createElement('canvas');
+                    QRCode.toCanvas(
+                        canvas,
+                        `lightning:${lightningAddress}`,
+                        { width: 200, margin: 1 },
+                        (error) => {
+                            if (error) {
+                                console.error('QR generation failed:', error);
+                            } else {
+                                document.getElementById('qr-lightning').appendChild(canvas);
+                            }
+                        }
+                    );
+                }, 100);
+            }
+        }
+
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        function copyAddressWithFeedback(address, elementId) {
+            const addressElement = document.getElementById(elementId);
+            const originalText = addressElement.textContent;
+
+            navigator.clipboard.writeText(address).then(() => {
+                // Add copied class for visual feedback
+                addressElement.classList.add('copied');
+                addressElement.textContent = 'Copied to clipboard!';
+
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    addressElement.classList.remove('copied');
+                    addressElement.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy address');
+            });
         }
 
         function renderPosts(allPosts) {
