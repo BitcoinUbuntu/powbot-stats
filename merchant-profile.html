@@ -473,6 +473,8 @@
                 '🇿🇼': 'Zimbabwe',
                 '🇧🇼': 'Botswana',
                 '🇲🇼': 'Malawi',
+                '🇲🇿': 'Mozambique',
+                '🇧🇮': 'Burundi',
                 '🇷🇼': 'Rwanda',
                 '🇪🇹': 'Ethiopia',
                 '🇨🇩': 'Democratic Republic of Congo',
@@ -530,13 +532,14 @@
                 const merchantDisplayName = merchantSubmissions[0]?.merchant_name || historicalMerchant?.name || merchantName;
                 const lightningAddress = merchantSubmissions[0]?.lightning_address || null;
 
-                // Extract country from project name (gets flag emoji from end of project name)
+                // Extract country flag from project name
                 let countryInfo = '';
-                let countryName = null;
+                let countryFlag = null;
                 if (allPosts.length > 0 && allPosts[0].project) {
                     const flagMatch = allPosts[0].project.match(/[\u{1F1E6}-\u{1F1FF}][\u{1F1E6}-\u{1F1FF}]/u);
                     if (flagMatch) {
-                        countryName = getCountryName(flagMatch[0]);
+                        countryFlag = flagMatch[0];
+                        const countryName = getCountryName(countryFlag);
                         countryInfo = ` in ${countryName}`;
                     }
                 }
@@ -547,7 +550,7 @@
                 document.getElementById('merchant-subtitle').textContent = `Circular Economy Merchant${countryInfo}`;
 
                 // Render stats
-                renderStats(totalCount, allPosts, merchantDisplayName, lightningAddress, countryName);
+                renderStats(totalCount, allPosts, merchantDisplayName, lightningAddress, countryFlag);
 
                 // Render posts
                 renderPosts(allPosts);
@@ -567,7 +570,7 @@
             }
         }
 
-        function renderStats(totalCount, posts, merchantName, lightningAddress, countryName) {
+        function renderStats(totalCount, posts, merchantName, lightningAddress, countryFlag) {
             const statsGrid = document.getElementById('stats-grid');
 
             // Calculate first and last post dates
@@ -601,10 +604,10 @@
                     <h2>PoWBoT Overview</h2>
                     <div class="big-number">${totalCount}<span class="unit"> ${totalCount === 1 ? 'post' : 'posts'}</span></div>
                     <div style="margin-top: 15px;">
-                        ${countryName ? `
+                        ${countryFlag ? `
                         <div class="stat-row">
                             <span class="stat-label">Location</span>
-                            <span class="stat-value" style="color: var(--accent-orange);">${escapeHtml(countryName)}</span>
+                            <span class="stat-value" style="font-size: 1.5rem;">${countryFlag}</span>
                         </div>
                         ` : ''}
                         ${firstPost ? `
