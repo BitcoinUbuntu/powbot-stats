@@ -2542,7 +2542,7 @@
                     // Calculate last 24h stats
                     const approved = recentSubmissions.filter(sub => sub.status === 'Processed').length;
                     const rejected = recentSubmissions.filter(sub => sub.status === 'Rejected').length;
-                    const pending = recentSubmissions.filter(sub => sub.status === 'Pending Review').length;
+                    const pending = recentSubmissions.filter(sub => sub.status === 'Pending Review' || sub.status === 'Approved').length;
                     const totalPosts = recentSubmissions.length;
 
                     // Map to video format (only processed ones)
@@ -2572,7 +2572,7 @@
                     // Calculate last 7d stats
                     const approved7d = recent7dSubmissions.filter(sub => sub.status === 'Processed').length;
                     const rejected7d = recent7dSubmissions.filter(sub => sub.status === 'Rejected').length;
-                    const pending7d = recent7dSubmissions.filter(sub => sub.status === 'Pending Review').length;
+                    const pending7d = recent7dSubmissions.filter(sub => sub.status === 'Pending Review' || sub.status === 'Approved').length;
                     const totalPosts7d = recent7dSubmissions.length;
 
                     // Add last 7d to stats object
