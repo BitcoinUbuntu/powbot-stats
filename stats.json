@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 1503,
+    "all_payments": 1509,
     "by_type": {
       "merchant": {
-        "count": 498
+        "count": 500
       },
       "project": {
-        "count": 498
+        "count": 500
       },
       "reviewer": {
-        "count": 507
+        "count": 509
       }
     }
   },
   "today": {
     "date": "2026-04-13",
-    "payments": 93,
+    "payments": 99,
     "by_type": {
       "merchant": {
-        "count": 31
+        "count": 33
       },
       "project": {
-        "count": 31
+        "count": 33
       },
       "reviewer": {
-        "count": 31
+        "count": 33
       }
     },
-    "approved": 31,
+    "approved": 33,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsxlwmgka7f20qpd2ud0py92z2tq8wnhyuns9sr4utslzjtkwm5l0c32k33l",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Jabulani Shop 3",
+        "platform": "Nostr",
+        "time": "13:24"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqstdy4agu3cksrnqt4xlc5c0nzhnexnpznhk287s85j23yhrwn9ljcdd47aq",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Gabi's Kitchen",
+        "platform": "Nostr",
+        "time": "13:24"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsgtmwtfg9rcrmlxrqag24pa6fgsxjt6r74gc8wgn62fegdfdyx58qww0gjn",
         "project": "Bitcoin Ikorodu 🇳🇬",
@@ -251,6 +265,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -581,16 +601,16 @@
     },
     {
       "date": "2026-04-13",
-      "project_count": 31,
-      "merchant_count": 31,
-      "reviewer_count": 31,
-      "approved": 31,
+      "project_count": 33,
+      "merchant_count": 33,
+      "reviewer_count": 33,
+      "approved": 33,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 531,
-    "approved": 497,
+    "total_reviewed": 533,
+    "approved": 499,
     "rejected": 34
   },
   "top_projects": [
@@ -2169,8 +2189,18 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 37,
+      "count": 39,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxlwmgka7f20qpd2ud0py92z2tq8wnhyuns9sr4utslzjtkwm5l0c32k33l",
+          "date": "2026-04-13",
+          "merchant": "Jabulani Shop 3"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstdy4agu3cksrnqt4xlc5c0nzhnexnpznhk287s85j23yhrwn9ljcdd47aq",
+          "date": "2026-04-13",
+          "merchant": "Gabi's Kitchen"
+        },
         {
           "url": "https://x.com/i/status/2043647958491525517",
           "date": "2026-04-13",
@@ -4501,6 +4531,52 @@
       ]
     },
     {
+      "name": "Jabulani Shop 3",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxlwmgka7f20qpd2ud0py92z2tq8wnhyuns9sr4utslzjtkwm5l0c32k33l",
+          "date": "2026-04-13",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2043647958491525517",
+          "date": "2026-04-13",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf742rjvqsy2u2gv9cdgeqrfm9sgthh6jhtse0z69ga56mqwkrlyq8q3czr",
+          "date": "2026-04-11",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2042626639742296430",
+          "date": "2026-04-11",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2041502604039954889",
+          "date": "2026-04-07",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv009eqg9lfyc2fxgkfkhn6w6dwlh2x0mrcv57j62ueh7vwjsc47q5uqsfd",
+          "date": "2026-03-26",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2037080954921980160",
+          "date": "2026-03-26",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2033459777913716800",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Folami Game Zone",
       "count": 8,
       "posts": [
@@ -4681,47 +4757,6 @@
           "url": "https://x.com/i/status/2039299532077285789",
           "date": "2026-04-01",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Jabulani Shop 3",
-      "count": 7,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2043647958491525517",
-          "date": "2026-04-13",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf742rjvqsy2u2gv9cdgeqrfm9sgthh6jhtse0z69ga56mqwkrlyq8q3czr",
-          "date": "2026-04-11",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2042626639742296430",
-          "date": "2026-04-11",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2041502604039954889",
-          "date": "2026-04-07",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv009eqg9lfyc2fxgkfkhn6w6dwlh2x0mrcv57j62ueh7vwjsc47q5uqsfd",
-          "date": "2026-03-26",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2037080954921980160",
-          "date": "2026-03-26",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2033459777913716800",
-          "date": "2026-03-24",
-          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
@@ -5429,6 +5464,32 @@
       ]
     },
     {
+      "name": "Gabi's Kitchen",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstdy4agu3cksrnqt4xlc5c0nzhnexnpznhk287s85j23yhrwn9ljcdd47aq",
+          "date": "2026-04-13",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2043647206574494016",
+          "date": "2026-04-13",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfl4svjzq6v6t46vqmauhsc4l20u85guzqndte57teyldg533x8mchr8e3f",
+          "date": "2026-04-11",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2042627091305255089",
+          "date": "2026-04-11",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Diamond Barbing Saloon",
       "count": 4,
       "posts": [
@@ -5592,27 +5653,6 @@
           "url": "https://x.com/i/status/2033851794384662900",
           "date": "2026-03-31",
           "project": "Bitcoin Chama 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Gabi's Kitchen",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2043647206574494016",
-          "date": "2026-04-13",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfl4svjzq6v6t46vqmauhsc4l20u85guzqndte57teyldg533x8mchr8e3f",
-          "date": "2026-04-11",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2042627091305255089",
-          "date": "2026-04-11",
-          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
@@ -6274,7 +6314,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1477
+      "count": 1483
     },
     {
       "domain": "8333.mobi",
@@ -6329,9 +6369,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 747
+      "count": 753
     }
   ],
-  "generated_at": "2026-04-13T13:20:01.928447+00:00",
+  "generated_at": "2026-04-13T13:30:02.249058+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
