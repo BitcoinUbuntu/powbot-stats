@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-13T05:10:02.520248+00:00",
+  "last_updated": "2026-04-13T05:20:02.818414+00:00",
   "total_submissions": 519,
   "submissions": [
     {
@@ -174,8 +174,8 @@
       "post_url": "https://x.com/i/status/2043192733863448753",
       "telegram_link": "https://t.me/c/2378392967/13310",
       "btcmap_link": "https://btcmap.org/merchant/node:13378163013",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "🔁 Duplicate video",
+      "status": "Approved",
       "payments": []
     },
     {
@@ -190,8 +190,8 @@
       "post_url": "https://primal.net/e/nevent1qqsphrctz496pe3dqylfu8l9ktnppfkxcx6nsmwnht3d5kqepc0375q6u859a",
       "telegram_link": "https://t.me/c/2378392967/13307",
       "btcmap_link": "https://btcmap.org/merchant/node:13378163013",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "👍 Video reviewed",
+      "status": "Approved",
       "payments": []
     },
     {
@@ -206,8 +206,8 @@
       "post_url": "https://primal.net/e/nevent1qqsqx2295p4ft3xjhmxa2hqz9v6xx4pkluxen0pj95v38ygct67v4kccaxutj",
       "telegram_link": "https://t.me/c/2378392967/13304",
       "btcmap_link": "https://btcmap.org/merchant/31453",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "🔁 Duplicate video",
+      "status": "Approved",
       "payments": []
     },
     {
@@ -222,8 +222,8 @@
       "post_url": "https://x.com/i/status/2043010791566139869",
       "telegram_link": "https://t.me/c/2378392967/13276",
       "btcmap_link": "https://btcmap.org/merchant/31453",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "👍 Video reviewed",
+      "status": "Approved",
       "payments": []
     },
     {
@@ -239,8 +239,21 @@
       "telegram_link": "https://t.me/c/2378392967/13273",
       "btcmap_link": "https://btcmap.org/merchant/node:12971361969",
       "note": "🔁 Duplicate video",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69dc7d01198317c0fb89e71a",
+          "timestamp": "2026-04-13T05:20:01.281588+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Matsogo Maatle Projects",
+          "tx_id": "69dc7d01198317c0fb89e7f9",
+          "timestamp": "2026-04-13T05:20:02.026988+00:00"
+        }
+      ]
     },
     {
       "id": 507,
@@ -255,8 +268,27 @@
       "telegram_link": "https://t.me/c/2378392967/13270",
       "btcmap_link": "https://btcmap.org/merchant/node:12971361969",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69dc7cef198317c0fb89e041",
+          "timestamp": "2026-04-13T05:19:43.308380+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Matsogo Maatle Projects",
+          "tx_id": "69dc7cef198317c0fb89e11c",
+          "timestamp": "2026-04-13T05:19:44.046534+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Soweto BTC (South Africa) 🇿🇦",
+          "tx_id": "69dc7cf2198317c0fb89e248",
+          "timestamp": "2026-04-13T05:19:46.569469+00:00"
+        }
+      ]
     },
     {
       "id": 506,

@@ -1,28 +1,60 @@
 {
   "totals": {
-    "all_payments": 1410,
+    "all_payments": 1415,
     "by_type": {
       "merchant": {
-        "count": 467
+        "count": 469
       },
       "project": {
-        "count": 467
+        "count": 468
       },
       "reviewer": {
-        "count": 476
+        "count": 478
       }
     }
   },
   "today": {
     "date": "2026-04-13",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 5,
+    "by_type": {
+      "merchant": {
+        "count": 2
+      },
+      "project": {
+        "count": 1
+      },
+      "reviewer": {
+        "count": 2
+      }
+    },
+    "approved": 2,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2042932202120364241",
+        "project": "Unknown",
+        "merchant": "Matsogo Maatle Projects",
+        "platform": "X",
+        "time": "05:20"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswkcr23jr2jsjew9mhj78cj0chhczwr7g5rk90fqgkqkhu2u6mr8qrxz3rt",
+        "project": "Soweto BTC 🇿🇦",
+        "merchant": "Matsogo Maatle Projects",
+        "platform": "Nostr",
+        "time": "05:19"
+      }
+    ]
   },
   "last_24h": {
-    "videos": []
+    "videos": [
+      {
+        "project": "Unknown"
+      },
+      {
+        "project": "Soweto BTC 🇿🇦"
+      }
+    ]
   },
   "daily": [
     {
@@ -259,16 +291,16 @@
     },
     {
       "date": "2026-04-13",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 1,
+      "merchant_count": 2,
+      "reviewer_count": 2,
+      "approved": 2,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 500,
-    "approved": 466,
+    "total_reviewed": 502,
+    "approved": 468,
     "rejected": 34
   },
   "top_projects": [
@@ -2565,8 +2597,13 @@
     },
     {
       "name": "Soweto BTC 🇿🇦",
-      "count": 4,
+      "count": 5,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswkcr23jr2jsjew9mhj78cj0chhczwr7g5rk90fqgkqkhu2u6mr8qrxz3rt",
+          "date": "2026-04-13",
+          "merchant": "Matsogo Maatle Projects"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrrs23tpl76fvx0g9cn49gqtagw0644d59gqggdxw9rvzksdm5eucjrzl88",
           "date": "2026-04-05",
@@ -5206,6 +5243,22 @@
       ]
     },
     {
+      "name": "Matsogo Maatle Projects",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2042932202120364241",
+          "date": "2026-04-13",
+          "project": "Unknown"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswkcr23jr2jsjew9mhj78cj0chhczwr7g5rk90fqgkqkhu2u6mr8qrxz3rt",
+          "date": "2026-04-13",
+          "project": "Soweto BTC 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Kyn Design",
       "count": 2,
       "posts": [
@@ -5618,7 +5671,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1384
+      "count": 1389
     },
     {
       "domain": "8333.mobi",
@@ -5669,13 +5722,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 708
+      "count": 710
     },
     {
       "platform": "Nostr",
-      "count": 702
+      "count": 705
     }
   ],
-  "generated_at": "2026-04-13T05:10:02.086569+00:00",
+  "generated_at": "2026-04-13T05:20:02.375675+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
