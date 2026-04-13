@@ -1,35 +1,91 @@
 {
   "totals": {
-    "all_payments": 1434,
+    "all_payments": 1458,
     "by_type": {
       "merchant": {
-        "count": 475
+        "count": 483
       },
       "project": {
-        "count": 475
+        "count": 483
       },
       "reviewer": {
-        "count": 484
+        "count": 492
       }
     }
   },
   "today": {
     "date": "2026-04-13",
-    "payments": 24,
+    "payments": 48,
     "by_type": {
       "merchant": {
-        "count": 8
+        "count": 16
       },
       "project": {
-        "count": 8
+        "count": 16
       },
       "reviewer": {
-        "count": 8
+        "count": 16
       }
     },
-    "approved": 8,
+    "approved": 16,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2043399125572440324",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Sombo Groceries",
+        "platform": "X",
+        "time": "05:52"
+      },
+      {
+        "url": "https://x.com/i/status/2043396426734919708",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Mr Mwanza",
+        "platform": "X",
+        "time": "05:52"
+      },
+      {
+        "url": "https://x.com/i/status/2043394542993330386",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Mundayam Restaurant",
+        "platform": "X",
+        "time": "05:51"
+      },
+      {
+        "url": "https://x.com/i/status/2043389051697262816",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Uaieca Car Wash",
+        "platform": "X",
+        "time": "05:51"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsqcs286qq6m9rxxncd7as0xpqme4g2tw2n2k2xwzqyrwf48s2qhac5musmy",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Uaieca Car Wash",
+        "platform": "Nostr",
+        "time": "05:51"
+      },
+      {
+        "url": "https://x.com/i/status/2043331418508452275",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "X",
+        "time": "05:50"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswzeuyp60ulwxvzjy98qswfxtsde7lky4qcfsckemwlnsx22hyn8qt9tfzm",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "Nostr",
+        "time": "05:50"
+      },
+      {
+        "url": "https://x.com/i/status/2043324935074975979",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Tena cyberpalace",
+        "platform": "X",
+        "time": "05:50"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs9cq5awu9rres563v4a4hfzn8xx38mwdz63df4jr2d5q0mvstyq8sqn9546",
         "project": "BitJR Academy 🇿🇲",
@@ -90,6 +146,30 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "BitJR Academy 🇿🇲"
       },
@@ -351,23 +431,38 @@
     },
     {
       "date": "2026-04-13",
-      "project_count": 8,
-      "merchant_count": 8,
-      "reviewer_count": 8,
-      "approved": 8,
+      "project_count": 16,
+      "merchant_count": 16,
+      "reviewer_count": 16,
+      "approved": 16,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 508,
-    "approved": 474,
+    "total_reviewed": 516,
+    "approved": 482,
     "rejected": 34
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 132,
+      "count": 135,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2043331418508452275",
+          "date": "2026-04-13",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswzeuyp60ulwxvzjy98qswfxtsde7lky4qcfsckemwlnsx22hyn8qt9tfzm",
+          "date": "2026-04-13",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2043324935074975979",
+          "date": "2026-04-13",
+          "merchant": "Tena cyberpalace"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsgp5dd4f74dj084syct5736dxvd7pc5yjdqnu0ylruqha64hnskpc435qqv",
           "date": "2026-04-13",
@@ -1533,8 +1628,18 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 67,
+      "count": 69,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2043389051697262816",
+          "date": "2026-04-13",
+          "merchant": "Uaieca Car Wash"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqcs286qq6m9rxxncd7as0xpqme4g2tw2n2k2xwzqyrwf48s2qhac5musmy",
+          "date": "2026-04-13",
+          "merchant": "Uaieca Car Wash"
+        },
         {
           "url": "https://x.com/i/status/2043192733863448753",
           "date": "2026-04-13",
@@ -2605,8 +2710,23 @@
     },
     {
       "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 7,
+      "count": 10,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2043399125572440324",
+          "date": "2026-04-13",
+          "merchant": "Sombo Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2043396426734919708",
+          "date": "2026-04-13",
+          "merchant": "Mr Mwanza"
+        },
+        {
+          "url": "https://x.com/i/status/2043394542993330386",
+          "date": "2026-04-13",
+          "merchant": "Mundayam Restaurant"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsy45gawfmsdmwj4zj3j8jupx9ad762mlleud26a6z3wvrvwtk29ag0pg0w5",
           "date": "2026-04-08",
@@ -2844,6 +2964,152 @@
   ],
   "top_merchants": [
     {
+      "name": "Grandsmatt",
+      "count": 28,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2043331418508452275",
+          "date": "2026-04-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswzeuyp60ulwxvzjy98qswfxtsde7lky4qcfsckemwlnsx22hyn8qt9tfzm",
+          "date": "2026-04-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2042676991686521152",
+          "date": "2026-04-11",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw95f3add3dgxsk0wpzt80c39sw9cugh2ct6xsx9dv94nclg0fhjs3gewat",
+          "date": "2026-04-11",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdyvnf5x6w6lcc4m4knfxamaf0pesmkj7hzegygq9qqmqw7dlrd9syje8f0",
+          "date": "2026-04-09",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2042284252776079584",
+          "date": "2026-04-09",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2041874033164116090",
+          "date": "2026-04-08",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfy99gkmda9m9w6a79p32gexnqkkk75uvw4mr24x6j4733dm80zvqng5ckz",
+          "date": "2026-04-08",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg9e2rkmlapezxa0p675a7dzzec0jmlze3qkkxggp564g3ps9qk6sv9jez5",
+          "date": "2026-04-03",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2039929131547160680",
+          "date": "2026-04-03",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2039610191683924418",
+          "date": "2026-04-02",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy96j8pu44hsqvmgqd2028cqajnryej3dqnlgv0kktc8kmzf9u6cqp2d44q",
+          "date": "2026-04-02",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2039229322259493367",
+          "date": "2026-04-01",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs99ul3g9ndhpkfukmgkhwqpehrman6uetyhnq73276sfkw02jkvac79m8sy",
+          "date": "2026-04-01",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2038907535986467062",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfwjjn4lnnpu0uvvju8mqan39m6pk5hrpjjg6zwxm4vmnt6q38ghg05jwtp",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspwperartnydzam2cdvfc22whep3d8wj37kd4xc7vqjuglafduy3smmnzjg",
+          "date": "2026-03-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2038574021504020811",
+          "date": "2026-03-30",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqahf2zmv50fysr9eccmtugfhsxt9zpsc9m8hgjfkhx6ggzymrjyglqafra",
+          "date": "2026-03-28",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2037776606232539301",
+          "date": "2026-03-28",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdn2sd4ltmhyl8ppmkuzk7fww8g79848xl7yq5hl9su8e6m4xq57cnqxncq",
+          "date": "2026-03-27",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2037585838482104718",
+          "date": "2026-03-27",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0gx85fecjq3n22j0rx6050efzk3lmx34666n6j4p25nlylfjdp5spg5rh7",
+          "date": "2026-03-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2036985364502454594",
+          "date": "2026-03-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2036801064268152987",
+          "date": "2026-03-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf4cml2vhmfhcum7r95hua4a2qm8p3n52kgh0ulpfvkhq5vvtsltgm90ksz",
+          "date": "2026-03-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2036404666301284738",
+          "date": "2026-03-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrfpprvdfdfs8syy44pdlnw99p5zraengfcmmhky89pjwh2n5zkuqk6j0lf",
+          "date": "2026-03-24",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Lydiah Richland Shop",
       "count": 26,
       "posts": [
@@ -2974,142 +3240,6 @@
         },
         {
           "url": "https://x.com/i/status/2036276822472556817",
-          "date": "2026-03-24",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Grandsmatt",
-      "count": 26,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2042676991686521152",
-          "date": "2026-04-11",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsw95f3add3dgxsk0wpzt80c39sw9cugh2ct6xsx9dv94nclg0fhjs3gewat",
-          "date": "2026-04-11",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdyvnf5x6w6lcc4m4knfxamaf0pesmkj7hzegygq9qqmqw7dlrd9syje8f0",
-          "date": "2026-04-09",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2042284252776079584",
-          "date": "2026-04-09",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2041874033164116090",
-          "date": "2026-04-08",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfy99gkmda9m9w6a79p32gexnqkkk75uvw4mr24x6j4733dm80zvqng5ckz",
-          "date": "2026-04-08",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg9e2rkmlapezxa0p675a7dzzec0jmlze3qkkxggp564g3ps9qk6sv9jez5",
-          "date": "2026-04-03",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2039929131547160680",
-          "date": "2026-04-03",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2039610191683924418",
-          "date": "2026-04-02",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy96j8pu44hsqvmgqd2028cqajnryej3dqnlgv0kktc8kmzf9u6cqp2d44q",
-          "date": "2026-04-02",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2039229322259493367",
-          "date": "2026-04-01",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs99ul3g9ndhpkfukmgkhwqpehrman6uetyhnq73276sfkw02jkvac79m8sy",
-          "date": "2026-04-01",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2038907535986467062",
-          "date": "2026-03-31",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfwjjn4lnnpu0uvvju8mqan39m6pk5hrpjjg6zwxm4vmnt6q38ghg05jwtp",
-          "date": "2026-03-31",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspwperartnydzam2cdvfc22whep3d8wj37kd4xc7vqjuglafduy3smmnzjg",
-          "date": "2026-03-30",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2038574021504020811",
-          "date": "2026-03-30",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqahf2zmv50fysr9eccmtugfhsxt9zpsc9m8hgjfkhx6ggzymrjyglqafra",
-          "date": "2026-03-28",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2037776606232539301",
-          "date": "2026-03-28",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdn2sd4ltmhyl8ppmkuzk7fww8g79848xl7yq5hl9su8e6m4xq57cnqxncq",
-          "date": "2026-03-27",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2037585838482104718",
-          "date": "2026-03-27",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0gx85fecjq3n22j0rx6050efzk3lmx34666n6j4p25nlylfjdp5spg5rh7",
-          "date": "2026-03-26",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2036985364502454594",
-          "date": "2026-03-26",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2036801064268152987",
-          "date": "2026-03-25",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf4cml2vhmfhcum7r95hua4a2qm8p3n52kgh0ulpfvkhq5vvtsltgm90ksz",
-          "date": "2026-03-25",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2036404666301284738",
-          "date": "2026-03-24",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrfpprvdfdfs8syy44pdlnw99p5zraengfcmmhky89pjwh2n5zkuqk6j0lf",
           "date": "2026-03-24",
           "project": "Bitbiashara 🇰🇪"
         }
@@ -4280,6 +4410,42 @@
       ]
     },
     {
+      "name": "Uaieca Car Wash",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2043389051697262816",
+          "date": "2026-04-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqcs286qq6m9rxxncd7as0xpqme4g2tw2n2k2xwzqyrwf48s2qhac5musmy",
+          "date": "2026-04-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfgjyls4pdqdj67psljas9m8su8jqfg9m0ls6znvg5mhhcvh7cg8g7uv4qh",
+          "date": "2026-03-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2037569252022985017",
+          "date": "2026-03-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv7ts29xy5547e4mdhsq5wdem0322w7z3jpkgkfmn3t8nxeffgk5gu20rz0",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2035686016615424433",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Topic's Pub",
       "count": 6,
       "posts": [
@@ -4671,32 +4837,6 @@
       ]
     },
     {
-      "name": "Uaieca Car Wash",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsfgjyls4pdqdj67psljas9m8su8jqfg9m0ls6znvg5mhhcvh7cg8g7uv4qh",
-          "date": "2026-03-27",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2037569252022985017",
-          "date": "2026-03-27",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv7ts29xy5547e4mdhsq5wdem0322w7z3jpkgkfmn3t8nxeffgk5gu20rz0",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2035686016615424433",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
       "name": "The Sario Eventers",
       "count": 4,
       "posts": [
@@ -4745,6 +4885,32 @@
           "url": "https://x.com/i/status/2036770826096095273",
           "date": "2026-03-25",
           "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
+      "name": "Tena cyberpalace",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2043324935074975979",
+          "date": "2026-04-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgp5dd4f74dj084syct5736dxvd7pc5yjdqnu0ylruqha64hnskpc435qqv",
+          "date": "2026-04-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2038671536387768749",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -5087,27 +5253,6 @@
       ]
     },
     {
-      "name": "Tena cyberpalace",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsgp5dd4f74dj084syct5736dxvd7pc5yjdqnu0ylruqha64hnskpc435qqv",
-          "date": "2026-04-13",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2038671536387768749",
-          "date": "2026-03-31",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
-          "date": "2026-03-31",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Rehoboth freshmilk diary",
       "count": 3,
       "posts": [
@@ -5215,6 +5360,22 @@
           "url": "https://x.com/i/status/2039003278105526559",
           "date": "2026-03-31",
           "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
+      "name": "Sombo Groceries",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2043399125572440324",
+          "date": "2026-04-13",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd6qlvehpd5dvslyskkayp2sfvc07rvv2m2gthqy0s807fxz5u7jgr4y3rd",
+          "date": "2026-04-03",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
         }
       ]
     },
@@ -5343,6 +5504,22 @@
           "url": "https://primal.net/e/nevent1qqsf5259yz6xckn0nd9xszg0ls3f6dc9lu8h2jt536h2937usuvctxc2xdfyn",
           "date": "2026-04-06",
           "project": "Bitcoin Anambra 🇳🇬"
+        }
+      ]
+    },
+    {
+      "name": "Mundayam Restaurant",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2043394542993330386",
+          "date": "2026-04-13",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
+          "date": "2026-03-25",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
         }
       ]
     },
@@ -5695,17 +5872,6 @@
       ]
     },
     {
-      "name": "Sombo Groceries",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsd6qlvehpd5dvslyskkayp2sfvc07rvv2m2gthqy0s807fxz5u7jgr4y3rd",
-          "date": "2026-04-03",
-          "project": "Bitcoin Victoria Falls 🇿🇲"
-        }
-      ]
-    },
-    {
       "name": "Phillard Shop",
       "count": 1,
       "posts": [
@@ -5728,12 +5894,12 @@
       ]
     },
     {
-      "name": "Mundayam Restaurant",
+      "name": "Mr Mwanza",
       "count": 1,
       "posts": [
         {
-          "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
-          "date": "2026-03-25",
+          "url": "https://x.com/i/status/2043396426734919708",
+          "date": "2026-04-13",
           "project": "Bitcoin Victoria Falls 🇿🇲"
         }
       ]
@@ -5786,17 +5952,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 20,
-    "daily_average_payments": 71
+    "daily_average_payments": 72
   },
   "burn_rate": {
-    "percentage": 44,
+    "percentage": 45,
     "status": "cold",
     "days_active": 20
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1408
+      "count": 1432
     },
     {
       "domain": "8333.mobi",
@@ -5847,13 +6013,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 717
+      "count": 735
     },
     {
       "platform": "Nostr",
-      "count": 717
+      "count": 723
     }
   ],
-  "generated_at": "2026-04-13T05:50:02.551470+00:00",
+  "generated_at": "2026-04-13T06:00:01.894130+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
