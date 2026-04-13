@@ -1,38 +1,73 @@
 {
   "totals": {
-    "all_payments": 1415,
+    "all_payments": 1431,
     "by_type": {
       "merchant": {
-        "count": 469
+        "count": 474
       },
       "project": {
-        "count": 468
+        "count": 474
       },
       "reviewer": {
-        "count": 478
+        "count": 483
       }
     }
   },
   "today": {
     "date": "2026-04-13",
-    "payments": 5,
+    "payments": 21,
     "by_type": {
       "merchant": {
-        "count": 2
+        "count": 7
       },
       "project": {
-        "count": 1
+        "count": 7
       },
       "reviewer": {
-        "count": 2
+        "count": 7
       }
     },
-    "approved": 2,
+    "approved": 7,
     "rejected": 0,
     "videos": [
       {
+        "url": "https://primal.net/e/nevent1qqsgp5dd4f74dj084syct5736dxvd7pc5yjdqnu0ylruqha64hnskpc435qqv",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Tena cyberpalace",
+        "platform": "Nostr",
+        "time": "05:25"
+      },
+      {
+        "url": "https://x.com/i/status/2043192733863448753",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nelton Services Shop",
+        "platform": "X",
+        "time": "05:24"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsphrctz496pe3dqylfu8l9ktnppfkxcx6nsmwnht3d5kqepc0375q6u859a",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nelton Services Shop",
+        "platform": "Nostr",
+        "time": "05:23"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsqx2295p4ft3xjhmxa2hqz9v6xx4pkluxen0pj95v38ygct67v4kccaxutj",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Diamond Barbing Saloon",
+        "platform": "Nostr",
+        "time": "05:22"
+      },
+      {
+        "url": "https://x.com/i/status/2043010791566139869",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Diamond Barbing Saloon",
+        "platform": "X",
+        "time": "05:20"
+      },
+      {
         "url": "https://x.com/i/status/2042932202120364241",
-        "project": "Unknown",
+        "project": "Soweto BTC 🇿🇦",
         "merchant": "Matsogo Maatle Projects",
         "platform": "X",
         "time": "05:20"
@@ -49,7 +84,22 @@
   "last_24h": {
     "videos": [
       {
-        "project": "Unknown"
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Soweto BTC 🇿🇦"
       },
       {
         "project": "Soweto BTC 🇿🇦"
@@ -291,23 +341,28 @@
     },
     {
       "date": "2026-04-13",
-      "project_count": 1,
-      "merchant_count": 2,
-      "reviewer_count": 2,
-      "approved": 2,
+      "project_count": 7,
+      "merchant_count": 7,
+      "reviewer_count": 7,
+      "approved": 7,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 502,
-    "approved": 468,
+    "total_reviewed": 507,
+    "approved": 473,
     "rejected": 34
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 131,
+      "count": 132,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgp5dd4f74dj084syct5736dxvd7pc5yjdqnu0ylruqha64hnskpc435qqv",
+          "date": "2026-04-13",
+          "merchant": "Tena cyberpalace"
+        },
         {
           "url": "https://x.com/i/status/2042676991686521152",
           "date": "2026-04-11",
@@ -1468,8 +1523,18 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 65,
+      "count": 67,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2043192733863448753",
+          "date": "2026-04-13",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsphrctz496pe3dqylfu8l9ktnppfkxcx6nsmwnht3d5kqepc0375q6u859a",
+          "date": "2026-04-13",
+          "merchant": "Nelton Services Shop"
+        },
         {
           "url": "https://x.com/i/status/2042494596748296567",
           "date": "2026-04-10",
@@ -2135,6 +2200,122 @@
       ]
     },
     {
+      "name": "Bitcoin Ekiti 🇳🇬",
+      "count": 22,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsqx2295p4ft3xjhmxa2hqz9v6xx4pkluxen0pj95v38ygct67v4kccaxutj",
+          "date": "2026-04-13",
+          "merchant": "Diamond Barbing Saloon"
+        },
+        {
+          "url": "https://x.com/i/status/2043010791566139869",
+          "date": "2026-04-13",
+          "merchant": "Diamond Barbing Saloon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdlx92efkak0hj2rktx47h48yt5mfr73puynqjz830f9wctwalgvsyrz2nh",
+          "date": "2026-04-06",
+          "merchant": "Ayoola Minimart"
+        },
+        {
+          "url": "https://x.com/i/status/2041073949874815430",
+          "date": "2026-04-06",
+          "merchant": "Ayoola Minimart"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg5hdsxquxf3dukkrqal72ar9sggrq5edcpn3ulcwfk9h4act7kds9ksy0k",
+          "date": "2026-04-05",
+          "merchant": "Diamond Barbing Saloon"
+        },
+        {
+          "url": "https://x.com/i/status/2040416302968291523",
+          "date": "2026-04-05",
+          "merchant": "Diamond Barbing Saloon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrlk5h30wv8lqcrz56kzdz6fls7zeck4dhp6z274zcd5s85h9tjzcu08dzp",
+          "date": "2026-04-03",
+          "merchant": "KJ Mulitipurpose Store"
+        },
+        {
+          "url": "https://x.com/i/status/2039985859613606349",
+          "date": "2026-04-03",
+          "merchant": "KJ Mulitipurpose Store"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvkmccuh0d0629wa0rr9w4zu4a99dhjpdfk3s6d8hl04dhhcls86q3cvgyp",
+          "date": "2026-04-03",
+          "merchant": "Ayoola Minimart"
+        },
+        {
+          "url": "https://x.com/i/status/2039741897338503662",
+          "date": "2026-04-03",
+          "merchant": "Ayoola Minimart"
+        },
+        {
+          "url": "https://x.com/i/status/2038921669981458574",
+          "date": "2026-03-31",
+          "merchant": "KJ Mulitipurpose Store"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsycc7dv6p699e7wra5zat0desthjqn3gf2pusxplr99nwqju788qg6jl6w6",
+          "date": "2026-03-31",
+          "merchant": "KJ Mulitipurpose Store"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsykv0nyldj3974hpd8x8ka73zgy5ljt4efdh4zf528fs6yva2gcts6g5zsc",
+          "date": "2026-03-29",
+          "merchant": "Ayoola Minimart"
+        },
+        {
+          "url": "https://x.com/i/status/2038323271905525820",
+          "date": "2026-03-29",
+          "merchant": "Ayoola Minimart"
+        },
+        {
+          "url": "https://x.com/i/status/2037634108331843635",
+          "date": "2026-03-28",
+          "merchant": "Harmony Enterprises"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9zfwawcxq7ncrk696pta4qethgyp0hhxqtzhf4c32txrc6ee20ygtl9684",
+          "date": "2026-03-28",
+          "merchant": "Harmony Enterprises"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswx8agsjt6vyu300zp3tq39yzkcwdwtsrwjq89x96xt24ufea6zrscqttrr",
+          "date": "2026-03-27",
+          "merchant": "Ebonydud"
+        },
+        {
+          "url": "https://x.com/i/status/2037090108365500735",
+          "date": "2026-03-26",
+          "merchant": "Ebonydud"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs286nk95fvev4z783x7xpsx90y56v7ha5f4y0dt73ycgh3qa6ltecvf22xs",
+          "date": "2026-03-25",
+          "merchant": "Asha Botanical Garden"
+        },
+        {
+          "url": "https://x.com/i/status/2036744717094785357",
+          "date": "2026-03-25",
+          "merchant": "Asha Botanical Garden"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxcc5yqp7alvy06tekmrw4txvqawv9najdfg6rwk3sp49enyw9qlstq7uhm",
+          "date": "2026-03-24",
+          "merchant": "Ayoola Minimart"
+        },
+        {
+          "url": "https://x.com/i/status/2036395349577695397",
+          "date": "2026-03-24",
+          "merchant": "Ayoola Minimart"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Ikorodu 🇳🇬",
       "count": 20,
       "posts": [
@@ -2237,112 +2418,6 @@
           "url": "https://x.com/i/status/2036407703967240585",
           "date": "2026-03-24",
           "merchant": "Ellygant Unisex Salon"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 20,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsdlx92efkak0hj2rktx47h48yt5mfr73puynqjz830f9wctwalgvsyrz2nh",
-          "date": "2026-04-06",
-          "merchant": "Ayoola Minimart"
-        },
-        {
-          "url": "https://x.com/i/status/2041073949874815430",
-          "date": "2026-04-06",
-          "merchant": "Ayoola Minimart"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg5hdsxquxf3dukkrqal72ar9sggrq5edcpn3ulcwfk9h4act7kds9ksy0k",
-          "date": "2026-04-05",
-          "merchant": "Diamond Barbing Saloon"
-        },
-        {
-          "url": "https://x.com/i/status/2040416302968291523",
-          "date": "2026-04-05",
-          "merchant": "Diamond Barbing Saloon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrlk5h30wv8lqcrz56kzdz6fls7zeck4dhp6z274zcd5s85h9tjzcu08dzp",
-          "date": "2026-04-03",
-          "merchant": "KJ Mulitipurpose Store"
-        },
-        {
-          "url": "https://x.com/i/status/2039985859613606349",
-          "date": "2026-04-03",
-          "merchant": "KJ Mulitipurpose Store"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvkmccuh0d0629wa0rr9w4zu4a99dhjpdfk3s6d8hl04dhhcls86q3cvgyp",
-          "date": "2026-04-03",
-          "merchant": "Ayoola Minimart"
-        },
-        {
-          "url": "https://x.com/i/status/2039741897338503662",
-          "date": "2026-04-03",
-          "merchant": "Ayoola Minimart"
-        },
-        {
-          "url": "https://x.com/i/status/2038921669981458574",
-          "date": "2026-03-31",
-          "merchant": "KJ Mulitipurpose Store"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsycc7dv6p699e7wra5zat0desthjqn3gf2pusxplr99nwqju788qg6jl6w6",
-          "date": "2026-03-31",
-          "merchant": "KJ Mulitipurpose Store"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsykv0nyldj3974hpd8x8ka73zgy5ljt4efdh4zf528fs6yva2gcts6g5zsc",
-          "date": "2026-03-29",
-          "merchant": "Ayoola Minimart"
-        },
-        {
-          "url": "https://x.com/i/status/2038323271905525820",
-          "date": "2026-03-29",
-          "merchant": "Ayoola Minimart"
-        },
-        {
-          "url": "https://x.com/i/status/2037634108331843635",
-          "date": "2026-03-28",
-          "merchant": "Harmony Enterprises"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9zfwawcxq7ncrk696pta4qethgyp0hhxqtzhf4c32txrc6ee20ygtl9684",
-          "date": "2026-03-28",
-          "merchant": "Harmony Enterprises"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswx8agsjt6vyu300zp3tq39yzkcwdwtsrwjq89x96xt24ufea6zrscqttrr",
-          "date": "2026-03-27",
-          "merchant": "Ebonydud"
-        },
-        {
-          "url": "https://x.com/i/status/2037090108365500735",
-          "date": "2026-03-26",
-          "merchant": "Ebonydud"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs286nk95fvev4z783x7xpsx90y56v7ha5f4y0dt73ycgh3qa6ltecvf22xs",
-          "date": "2026-03-25",
-          "merchant": "Asha Botanical Garden"
-        },
-        {
-          "url": "https://x.com/i/status/2036744717094785357",
-          "date": "2026-03-25",
-          "merchant": "Asha Botanical Garden"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxcc5yqp7alvy06tekmrw4txvqawv9najdfg6rwk3sp49enyw9qlstq7uhm",
-          "date": "2026-03-24",
-          "merchant": "Ayoola Minimart"
-        },
-        {
-          "url": "https://x.com/i/status/2036395349577695397",
-          "date": "2026-03-24",
-          "merchant": "Ayoola Minimart"
         }
       ]
     },
@@ -2560,6 +2635,42 @@
       ]
     },
     {
+      "name": "Soweto BTC 🇿🇦",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2042932202120364241",
+          "date": "2026-04-13",
+          "merchant": "Matsogo Maatle Projects"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswkcr23jr2jsjew9mhj78cj0chhczwr7g5rk90fqgkqkhu2u6mr8qrxz3rt",
+          "date": "2026-04-13",
+          "merchant": "Matsogo Maatle Projects"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrrs23tpl76fvx0g9cn49gqtagw0644d59gqggdxw9rvzksdm5eucjrzl88",
+          "date": "2026-04-05",
+          "merchant": "Zwakala Cafe"
+        },
+        {
+          "url": "https://x.com/i/status/2040043668141129948",
+          "date": "2026-04-05",
+          "merchant": "Zwakala Cafe"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxhemdkxyfuyswkvnwcut8yuuc3t95ljm0u9ayl96fryze60z98wgxlhwdq",
+          "date": "2026-03-24",
+          "merchant": "Kelokitso Community Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2036545281097883722",
+          "date": "2026-03-24",
+          "merchant": "Kelokitso Community Farm"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Anambra 🇳🇬",
       "count": 6,
       "posts": [
@@ -2592,37 +2703,6 @@
           "url": "https://x.com/i/status/2037223959003828237",
           "date": "2026-03-26",
           "merchant": "The Sario Eventers"
-        }
-      ]
-    },
-    {
-      "name": "Soweto BTC 🇿🇦",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqswkcr23jr2jsjew9mhj78cj0chhczwr7g5rk90fqgkqkhu2u6mr8qrxz3rt",
-          "date": "2026-04-13",
-          "merchant": "Matsogo Maatle Projects"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrrs23tpl76fvx0g9cn49gqtagw0644d59gqggdxw9rvzksdm5eucjrzl88",
-          "date": "2026-04-05",
-          "merchant": "Zwakala Cafe"
-        },
-        {
-          "url": "https://x.com/i/status/2040043668141129948",
-          "date": "2026-04-05",
-          "merchant": "Zwakala Cafe"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxhemdkxyfuyswkvnwcut8yuuc3t95ljm0u9ayl96fryze60z98wgxlhwdq",
-          "date": "2026-03-24",
-          "merchant": "Kelokitso Community Farm"
-        },
-        {
-          "url": "https://x.com/i/status/2036545281097883722",
-          "date": "2026-03-24",
-          "merchant": "Kelokitso Community Farm"
         }
       ]
     },
@@ -3767,8 +3847,18 @@
     },
     {
       "name": "Nelton Services Shop",
-      "count": 8,
+      "count": 10,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2043192733863448753",
+          "date": "2026-04-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsphrctz496pe3dqylfu8l9ktnppfkxcx6nsmwnht3d5kqepc0375q6u859a",
+          "date": "2026-04-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
         {
           "url": "https://x.com/i/status/2042494596748296567",
           "date": "2026-04-10",
@@ -4878,6 +4968,32 @@
       ]
     },
     {
+      "name": "Diamond Barbing Saloon",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsqx2295p4ft3xjhmxa2hqz9v6xx4pkluxen0pj95v38ygct67v4kccaxutj",
+          "date": "2026-04-13",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2043010791566139869",
+          "date": "2026-04-13",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg5hdsxquxf3dukkrqal72ar9sggrq5edcpn3ulcwfk9h4act7kds9ksy0k",
+          "date": "2026-04-05",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2040416302968291523",
+          "date": "2026-04-05",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Chicken farm",
       "count": 4,
       "posts": [
@@ -4952,6 +5068,27 @@
           "url": "https://x.com/i/status/2041337224650768470",
           "date": "2026-04-07",
           "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
+      "name": "Tena cyberpalace",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgp5dd4f74dj084syct5736dxvd7pc5yjdqnu0ylruqha64hnskpc435qqv",
+          "date": "2026-04-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2038671536387768749",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -5063,22 +5200,6 @@
           "url": "https://x.com/i/status/2039003278105526559",
           "date": "2026-03-31",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Tena cyberpalace",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2038671536387768749",
-          "date": "2026-03-31",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
-          "date": "2026-03-31",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -5249,7 +5370,7 @@
         {
           "url": "https://x.com/i/status/2042932202120364241",
           "date": "2026-04-13",
-          "project": "Unknown"
+          "project": "Soweto BTC 🇿🇦"
         },
         {
           "url": "https://primal.net/e/nevent1qqswkcr23jr2jsjew9mhj78cj0chhczwr7g5rk90fqgkqkhu2u6mr8qrxz3rt",
@@ -5414,22 +5535,6 @@
         {
           "url": "https://x.com/i/status/2037090108365500735",
           "date": "2026-03-26",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Diamond Barbing Saloon",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsg5hdsxquxf3dukkrqal72ar9sggrq5edcpn3ulcwfk9h4act7kds9ksy0k",
-          "date": "2026-04-05",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2040416302968291523",
-          "date": "2026-04-05",
           "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
@@ -5661,17 +5766,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 20,
-    "daily_average_payments": 70
+    "daily_average_payments": 71
   },
   "burn_rate": {
-    "percentage": 43,
+    "percentage": 44,
     "status": "cold",
     "days_active": 20
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1389
+      "count": 1405
     },
     {
       "domain": "8333.mobi",
@@ -5722,13 +5827,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 710
+      "count": 717
     },
     {
       "platform": "Nostr",
-      "count": 705
+      "count": 714
     }
   ],
-  "generated_at": "2026-04-13T05:20:02.375675+00:00",
+  "generated_at": "2026-04-13T05:30:01.704669+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
