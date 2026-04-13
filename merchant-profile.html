@@ -607,7 +607,7 @@
                         ${countryFlag ? `
                         <div class="stat-row">
                             <span class="stat-label">Location</span>
-                            <span class="stat-value" style="font-size: 1.5rem;">${countryFlag}</span>
+                            <span class="stat-value" style="color: var(--accent-orange);">${escapeHtml(getCountryName(countryFlag))}</span>
                         </div>
                         ` : ''}
                         ${firstPost ? `
