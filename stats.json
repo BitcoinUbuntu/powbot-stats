@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1582,
+    "all_payments": 1585,
     "by_type": {
       "merchant": {
-        "count": 524
+        "count": 525
       },
       "project": {
-        "count": 524
+        "count": 525
       },
       "reviewer": {
-        "count": 534
+        "count": 535
       }
     }
   },
   "today": {
     "date": "2026-04-14",
-    "payments": 52,
+    "payments": 55,
     "by_type": {
       "merchant": {
-        "count": 17
+        "count": 18
       },
       "project": {
-        "count": 17
+        "count": 18
       },
       "reviewer": {
-        "count": 18
+        "count": 19
       }
     },
-    "approved": 17,
+    "approved": 18,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2044087558888431679",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "X",
+        "time": "18:31"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsg6gef8jysgx2vr77vdz4skp7x06h0lw2fmmx8zkcmh553zdgwx4gs5mawp",
         "project": "Bitcoin Ikorodu 🇳🇬",
@@ -153,6 +160,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -444,23 +454,28 @@
     },
     {
       "date": "2026-04-14",
-      "project_count": 17,
-      "merchant_count": 17,
-      "reviewer_count": 18,
-      "approved": 17,
+      "project_count": 18,
+      "merchant_count": 18,
+      "reviewer_count": 19,
+      "approved": 18,
       "rejected": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 558,
-    "approved": 523,
+    "total_reviewed": 559,
+    "approved": 524,
     "rejected": 35
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 154,
+      "count": 155,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2044087558888431679",
+          "date": "2026-04-14",
+          "merchant": "Manu Groceries"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs2hwdu6dse8eq3sncqyg3ep9dcjnp3rvlkekdlja8s8wfrqcqxlxg4adu34",
           "date": "2026-04-14",
@@ -3636,8 +3651,13 @@
     },
     {
       "name": "Manu Groceries",
-      "count": 16,
+      "count": 17,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2044087558888431679",
+          "date": "2026-04-14",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqstpv2q3w9ung5gzkzar77cars7q3kvmr2c3hfmnzl9fxscs7k22vq2ljnev",
           "date": "2026-04-14",
@@ -6393,7 +6413,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 22,
-    "daily_average_payments": 71
+    "daily_average_payments": 72
   },
   "burn_rate": {
     "percentage": 46,
@@ -6403,7 +6423,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1552
+      "count": 1555
     },
     {
       "domain": "8333.mobi",
@@ -6454,13 +6474,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 793
+      "count": 796
     },
     {
       "platform": "Nostr",
       "count": 789
     }
   ],
-  "generated_at": "2026-04-14T18:30:02.499552+00:00",
+  "generated_at": "2026-04-14T18:40:02.180655+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
