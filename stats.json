@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 1624,
+    "all_payments": 1630,
     "by_type": {
       "merchant": {
-        "count": 538
+        "count": 540
       },
       "project": {
-        "count": 538
+        "count": 540
       },
       "reviewer": {
-        "count": 548
+        "count": 550
       }
     }
   },
   "today": {
     "date": "2026-04-15",
-    "payments": 33,
+    "payments": 39,
     "by_type": {
       "merchant": {
-        "count": 11
+        "count": 13
       },
       "project": {
-        "count": 11
+        "count": 13
       },
       "reviewer": {
-        "count": 11
+        "count": 13
       }
     },
-    "approved": 11,
+    "approved": 13,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2044377187797635368",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Simunye No3",
+        "platform": "X",
+        "time": "11:57"
+      },
+      {
+        "url": "https://x.com/i/status/2044376657142698047",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Ebenezer Shop",
+        "platform": "X",
+        "time": "11:57"
+      },
       {
         "url": "https://x.com/i/status/2044358059078652032",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -111,6 +125,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -438,16 +458,16 @@
     },
     {
       "date": "2026-04-15",
-      "project_count": 11,
-      "merchant_count": 11,
-      "reviewer_count": 11,
-      "approved": 11,
+      "project_count": 13,
+      "merchant_count": 13,
+      "reviewer_count": 13,
+      "approved": 13,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 572,
-    "approved": 537,
+    "total_reviewed": 574,
+    "approved": 539,
     "rejected": 35
   },
   "top_projects": [
@@ -2151,8 +2171,18 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 40,
+      "count": 42,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2044377187797635368",
+          "date": "2026-04-15",
+          "merchant": "Simunye No3"
+        },
+        {
+          "url": "https://x.com/i/status/2044376657142698047",
+          "date": "2026-04-15",
+          "merchant": "Ebenezer Shop"
+        },
         {
           "url": "https://x.com/i/status/2043971991535825133",
           "date": "2026-04-14",
@@ -5422,6 +5452,37 @@
       ]
     },
     {
+      "name": "Simunye No3",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2044377187797635368",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfu05t0h6slckahw5d0kd00d5ffnvpejwp8dpgrp82qwk24yezzzsgc6vyc",
+          "date": "2026-04-09",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2041803430100869617",
+          "date": "2026-04-08",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxj8h0ejn2z256d85lng40pl5qxa7jec50jppzfgnc5333w379l2grx06em",
+          "date": "2026-03-25",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2032095033218814174",
+          "date": "2026-03-25",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Ayuba’s Washing Bay",
       "count": 5,
       "posts": [
@@ -5553,32 +5614,6 @@
           "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
           "date": "2026-03-27",
           "project": "Bitcoin Sisonke 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Simunye No3",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsfu05t0h6slckahw5d0kd00d5ffnvpejwp8dpgrp82qwk24yezzzsgc6vyc",
-          "date": "2026-04-09",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2041803430100869617",
-          "date": "2026-04-08",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxj8h0ejn2z256d85lng40pl5qxa7jec50jppzfgnc5333w379l2grx06em",
-          "date": "2026-03-25",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2032095033218814174",
-          "date": "2026-03-25",
-          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
@@ -6486,6 +6521,17 @@
       ]
     },
     {
+      "name": "Ebenezer Shop",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2044376657142698047",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Delfinos Seaside Restaurant",
       "count": 1,
       "posts": [
@@ -6543,7 +6589,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1594
+      "count": 1600
     },
     {
       "domain": "8333.mobi",
@@ -6594,13 +6640,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 817
+      "count": 823
     },
     {
       "platform": "Nostr",
       "count": 807
     }
   ],
-  "generated_at": "2026-04-15T11:50:02.616575+00:00",
+  "generated_at": "2026-04-15T12:00:02.690300+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
