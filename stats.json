@@ -1,28 +1,79 @@
 {
   "totals": {
-    "all_payments": 1591,
+    "all_payments": 1603,
     "by_type": {
       "merchant": {
-        "count": 527
+        "count": 531
       },
       "project": {
-        "count": 527
+        "count": 531
       },
       "reviewer": {
-        "count": 537
+        "count": 541
       }
     }
   },
   "today": {
     "date": "2026-04-15",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 12,
+    "by_type": {
+      "merchant": {
+        "count": 4
+      },
+      "project": {
+        "count": 4
+      },
+      "reviewer": {
+        "count": 4
+      }
+    },
+    "approved": 4,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsfa5xectsqz7futc3nz2qa6anvf6lz6pv5lsntzu4hzp8rm7398ncvdcqz7",
+        "project": "Bitcoin Anambra 🇳🇬",
+        "merchant": "Nelly's Blend",
+        "platform": "Nostr",
+        "time": "10:07"
+      },
+      {
+        "url": "https://x.com/i/status/2044003095311458706",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "KJ Mulitipurpose Store",
+        "platform": "X",
+        "time": "10:06"
+      },
+      {
+        "url": "https://x.com/i/status/2044270566350213546",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Stay Safe Restaurante & Lounge",
+        "platform": "X",
+        "time": "10:04"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsqup8dlnqwlvdcfwamdp382kplw093n6m3rghq8q9d2tzp5eqrsxghsfkf9",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Stay Safe Restaurante & Lounge",
+        "platform": "Nostr",
+        "time": "10:04"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Anambra 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -317,16 +368,16 @@
     },
     {
       "date": "2026-04-15",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4,
+      "approved": 4,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 561,
-    "approved": 526,
+    "total_reviewed": 565,
+    "approved": 530,
     "rejected": 35
   },
   "top_projects": [
@@ -1614,8 +1665,18 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 75,
+      "count": 77,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2044270566350213546",
+          "date": "2026-04-15",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqup8dlnqwlvdcfwamdp382kplw093n6m3rghq8q9d2tzp5eqrsxghsfkf9",
+          "date": "2026-04-15",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
         {
           "url": "https://primal.net/e/nevent1qqszgjs5l4cx60ne5unzjsn5uuhdcngl3xasftfkynpjdvfdjqqnwvqdkeafx",
           "date": "2026-04-14",
@@ -2503,8 +2564,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 23,
+      "count": 24,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2044003095311458706",
+          "date": "2026-04-15",
+          "merchant": "KJ Mulitipurpose Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqspxt9zh8fe7qtpm5uzhfgk92fgagguj2gmwdnpepe7j3q0tt8m9tg4csdrj",
           "date": "2026-04-14",
@@ -2851,6 +2917,47 @@
       ]
     },
     {
+      "name": "Bitcoin Anambra 🇳🇬",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfa5xectsqz7futc3nz2qa6anvf6lz6pv5lsntzu4hzp8rm7398ncvdcqz7",
+          "date": "2026-04-15",
+          "merchant": "Nelly's Blend"
+        },
+        {
+          "url": "https://x.com/i/status/2040858690954137791",
+          "date": "2026-04-06",
+          "merchant": "Nelly's Blend"
+        },
+        {
+          "url": "https://x.com/i/status/2040857379198169264",
+          "date": "2026-04-06",
+          "merchant": "The Sario Eventers"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq7wxnp4csg7cv3l74ugqvpnhggcc70ldexghwvu0wt8y4sn67mqsw4huvj",
+          "date": "2026-04-06",
+          "merchant": "The Sario Eventers"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf5259yz6xckn0nd9xszg0ls3f6dc9lu8h2jt536h2937usuvctxc2xdfyn",
+          "date": "2026-04-06",
+          "merchant": "Nelly's Blend"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2nw4jgmxfgu0dylzj09w77pz4gjuy9aamprsqa36h427wczcsxjs5sygqw",
+          "date": "2026-03-26",
+          "merchant": "The Sario Eventers"
+        },
+        {
+          "url": "https://x.com/i/status/2037223959003828237",
+          "date": "2026-03-26",
+          "merchant": "The Sario Eventers"
+        }
+      ]
+    },
+    {
       "name": "Soweto BTC 🇿🇦",
       "count": 6,
       "posts": [
@@ -2919,42 +3026,6 @@
           "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
           "date": "2026-03-27",
           "merchant": "T-Junction fast food"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Anambra 🇳🇬",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2040858690954137791",
-          "date": "2026-04-06",
-          "merchant": "Nelly's Blend"
-        },
-        {
-          "url": "https://x.com/i/status/2040857379198169264",
-          "date": "2026-04-06",
-          "merchant": "The Sario Eventers"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq7wxnp4csg7cv3l74ugqvpnhggcc70ldexghwvu0wt8y4sn67mqsw4huvj",
-          "date": "2026-04-06",
-          "merchant": "The Sario Eventers"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf5259yz6xckn0nd9xszg0ls3f6dc9lu8h2jt536h2937usuvctxc2xdfyn",
-          "date": "2026-04-06",
-          "merchant": "Nelly's Blend"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2nw4jgmxfgu0dylzj09w77pz4gjuy9aamprsqa36h427wczcsxjs5sygqw",
-          "date": "2026-03-26",
-          "merchant": "The Sario Eventers"
-        },
-        {
-          "url": "https://x.com/i/status/2037223959003828237",
-          "date": "2026-03-26",
-          "merchant": "The Sario Eventers"
         }
       ]
     },
@@ -4477,6 +4548,52 @@
       ]
     },
     {
+      "name": "Stay Safe Restaurante & Lounge",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2044270566350213546",
+          "date": "2026-04-15",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqup8dlnqwlvdcfwamdp382kplw093n6m3rghq8q9d2tzp5eqrsxghsfkf9",
+          "date": "2026-04-15",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszgjs5l4cx60ne5unzjsn5uuhdcngl3xasftfkynpjdvfdjqqnwvqdkeafx",
+          "date": "2026-04-14",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2044145364677042557",
+          "date": "2026-04-14",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2037985930317873400",
+          "date": "2026-03-28",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswpt26a0g3ypyx0vxxp2z4czeyd09nug2fxytp8d98r8v0nwa2cts39vyh6",
+          "date": "2026-03-28",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036818927724933623",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdfgag824f929evtqecfh6ehjg53qx83l48hccc7xypf564zmcdcgqxg9a3",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Mercearia Abençoada",
       "count": 8,
       "posts": [
@@ -4779,42 +4896,6 @@
       ]
     },
     {
-      "name": "Stay Safe Restaurante & Lounge",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqszgjs5l4cx60ne5unzjsn5uuhdcngl3xasftfkynpjdvfdjqqnwvqdkeafx",
-          "date": "2026-04-14",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2044145364677042557",
-          "date": "2026-04-14",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2037985930317873400",
-          "date": "2026-03-28",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswpt26a0g3ypyx0vxxp2z4czeyd09nug2fxytp8d98r8v0nwa2cts39vyh6",
-          "date": "2026-03-28",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036818927724933623",
-          "date": "2026-03-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdfgag824f929evtqecfh6ehjg53qx83l48hccc7xypf564zmcdcgqxg9a3",
-          "date": "2026-03-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
       "name": "RozzyBeads Store",
       "count": 6,
       "posts": [
@@ -4955,6 +5036,42 @@
           "url": "https://x.com/i/status/2037247050526425276",
           "date": "2026-03-26",
           "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
+      "name": "KJ Mulitipurpose Store",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2044003095311458706",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspxt9zh8fe7qtpm5uzhfgk92fgagguj2gmwdnpepe7j3q0tt8m9tg4csdrj",
+          "date": "2026-04-14",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrlk5h30wv8lqcrz56kzdz6fls7zeck4dhp6z274zcd5s85h9tjzcu08dzp",
+          "date": "2026-04-03",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2039985859613606349",
+          "date": "2026-04-03",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2038921669981458574",
+          "date": "2026-03-31",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsycc7dv6p699e7wra5zat0desthjqn3gf2pusxplr99nwqju788qg6jl6w6",
+          "date": "2026-03-31",
+          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -5171,37 +5288,6 @@
           "url": "https://x.com/i/status/2038070513692529119",
           "date": "2026-03-29",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "KJ Mulitipurpose Store",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqspxt9zh8fe7qtpm5uzhfgk92fgagguj2gmwdnpepe7j3q0tt8m9tg4csdrj",
-          "date": "2026-04-14",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrlk5h30wv8lqcrz56kzdz6fls7zeck4dhp6z274zcd5s85h9tjzcu08dzp",
-          "date": "2026-04-03",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2039985859613606349",
-          "date": "2026-04-03",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2038921669981458574",
-          "date": "2026-03-31",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsycc7dv6p699e7wra5zat0desthjqn3gf2pusxplr99nwqju788qg6jl6w6",
-          "date": "2026-03-31",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -5617,6 +5703,27 @@
       ]
     },
     {
+      "name": "Nelly's Blend",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfa5xectsqz7futc3nz2qa6anvf6lz6pv5lsntzu4hzp8rm7398ncvdcqz7",
+          "date": "2026-04-15",
+          "project": "Bitcoin Anambra 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2040858690954137791",
+          "date": "2026-04-06",
+          "project": "Bitcoin Anambra 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf5259yz6xckn0nd9xszg0ls3f6dc9lu8h2jt536h2937usuvctxc2xdfyn",
+          "date": "2026-04-06",
+          "project": "Bitcoin Anambra 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Mwabosire",
       "count": 3,
       "posts": [
@@ -5810,22 +5917,6 @@
           "url": "https://x.com/i/status/2037963008027009156",
           "date": "2026-03-28",
           "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Nelly's Blend",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2040858690954137791",
-          "date": "2026-04-06",
-          "project": "Bitcoin Anambra 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf5259yz6xckn0nd9xszg0ls3f6dc9lu8h2jt536h2937usuvctxc2xdfyn",
-          "date": "2026-04-06",
-          "project": "Bitcoin Anambra 🇳🇬"
         }
       ]
     },
@@ -6299,14 +6390,14 @@
     "daily_average_payments": 69
   },
   "burn_rate": {
-    "percentage": 44,
+    "percentage": 45,
     "status": "cold",
     "days_active": 23
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1561
+      "count": 1573
     },
     {
       "domain": "8333.mobi",
@@ -6357,13 +6448,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 799
+      "count": 805
     },
     {
       "platform": "Nostr",
-      "count": 792
+      "count": 798
     }
   ],
-  "generated_at": "2026-04-15T10:00:02.850699+00:00",
+  "generated_at": "2026-04-15T10:10:02.222904+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
