@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1672,
+    "all_payments": 1675,
     "by_type": {
       "merchant": {
-        "count": 554
+        "count": 555
       },
       "project": {
-        "count": 554
+        "count": 555
       },
       "reviewer": {
-        "count": 564
+        "count": 565
       }
     }
   },
   "today": {
     "date": "2026-04-15",
-    "payments": 81,
+    "payments": 84,
     "by_type": {
       "merchant": {
-        "count": 27
+        "count": 28
       },
       "project": {
-        "count": 27
+        "count": 28
       },
       "reviewer": {
-        "count": 27
+        "count": 28
       }
     },
-    "approved": 27,
+    "approved": 28,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsrp9wk2wtenav2hz9kwnkn89xvlrxzyrxzq875janemhgsvc6mugcxe7md3",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Jabulani Shop 3",
+        "platform": "Nostr",
+        "time": "20:50"
+      },
       {
         "url": "https://x.com/i/status/2044445849522942224",
         "project": "Bitcoin Chama 🇰🇪",
@@ -223,6 +230,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -547,16 +557,16 @@
     },
     {
       "date": "2026-04-15",
-      "project_count": 27,
-      "merchant_count": 27,
-      "reviewer_count": 27,
-      "approved": 27,
+      "project_count": 28,
+      "merchant_count": 28,
+      "reviewer_count": 28,
+      "approved": 28,
       "rejected": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 589,
-    "approved": 553,
+    "total_reviewed": 590,
+    "approved": 554,
     "rejected": 36
   },
   "top_projects": [
@@ -2295,8 +2305,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 42,
+      "count": 43,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrp9wk2wtenav2hz9kwnkn89xvlrxzyrxzq875janemhgsvc6mugcxe7md3",
+          "date": "2026-04-15",
+          "merchant": "Jabulani Shop 3"
+        },
         {
           "url": "https://x.com/i/status/2044377187797635368",
           "date": "2026-04-15",
@@ -4852,8 +4867,13 @@
     },
     {
       "name": "Jabulani Shop 3",
-      "count": 9,
+      "count": 10,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrp9wk2wtenav2hz9kwnkn89xvlrxzyrxzq875janemhgsvc6mugcxe7md3",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
         {
           "url": "https://x.com/i/status/2043971991535825133",
           "date": "2026-04-14",
@@ -6818,7 +6838,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1640
+      "count": 1643
     },
     {
       "domain": "8333.mobi",
@@ -6873,9 +6893,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 831
+      "count": 834
     }
   ],
-  "generated_at": "2026-04-15T20:50:02.212911+00:00",
+  "generated_at": "2026-04-15T21:00:02.420042+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
