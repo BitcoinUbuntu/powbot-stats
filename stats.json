@@ -1,35 +1,63 @@
 {
   "totals": {
-    "all_payments": 1603,
+    "all_payments": 1615,
     "by_type": {
       "merchant": {
-        "count": 531
+        "count": 535
       },
       "project": {
-        "count": 531
+        "count": 535
       },
       "reviewer": {
-        "count": 541
+        "count": 545
       }
     }
   },
   "today": {
     "date": "2026-04-15",
-    "payments": 12,
+    "payments": 24,
     "by_type": {
       "merchant": {
-        "count": 4
+        "count": 8
       },
       "project": {
-        "count": 4
+        "count": 8
       },
       "reviewer": {
-        "count": 4
+        "count": 8
       }
     },
-    "approved": 4,
+    "approved": 8,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2044336448992604601",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Dora's Joint",
+        "platform": "X",
+        "time": "10:19"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs2qdsqxr4kphtk74cm7uue92u6mufl7psf9lhr93ecsgjrq8n3u3gg6v500",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Dora's Joint",
+        "platform": "Nostr",
+        "time": "10:18"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsrralk8syuuk400pdx8hg3r2gusk54r8k5rmr5u5c5zvc5ns4dmgc6msf8c",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "Nostr",
+        "time": "10:15"
+      },
+      {
+        "url": "https://x.com/i/status/2044328273480393016",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "X",
+        "time": "10:14"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsfa5xectsqz7futc3nz2qa6anvf6lz6pv5lsntzu4hzp8rm7398ncvdcqz7",
         "project": "Bitcoin Anambra 🇳🇬",
@@ -62,6 +90,18 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Anambra 🇳🇬"
       },
@@ -368,23 +408,33 @@
     },
     {
       "date": "2026-04-15",
-      "project_count": 4,
-      "merchant_count": 4,
-      "reviewer_count": 4,
-      "approved": 4,
+      "project_count": 8,
+      "merchant_count": 8,
+      "reviewer_count": 8,
+      "approved": 8,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 565,
-    "approved": 530,
+    "total_reviewed": 569,
+    "approved": 534,
     "rejected": 35
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 155,
+      "count": 157,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrralk8syuuk400pdx8hg3r2gusk54r8k5rmr5u5c5zvc5ns4dmgc6msf8c",
+          "date": "2026-04-15",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2044328273480393016",
+          "date": "2026-04-15",
+          "merchant": "Haven food court"
+        },
         {
           "url": "https://x.com/i/status/2044087558888431679",
           "date": "2026-04-14",
@@ -2690,8 +2740,18 @@
     },
     {
       "name": "Bitcoin Aves 🇬🇭",
-      "count": 20,
+      "count": 22,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2044336448992604601",
+          "date": "2026-04-15",
+          "merchant": "Dora's Joint"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2qdsqxr4kphtk74cm7uue92u6mufl7psf9lhr93ecsgjrq8n3u3gg6v500",
+          "date": "2026-04-15",
+          "merchant": "Dora's Joint"
+        },
         {
           "url": "https://x.com/i/status/2041434072660971964",
           "date": "2026-04-07",
@@ -3454,8 +3514,18 @@
     },
     {
       "name": "Haven food court",
-      "count": 27,
+      "count": 29,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrralk8syuuk400pdx8hg3r2gusk54r8k5rmr5u5c5zvc5ns4dmgc6msf8c",
+          "date": "2026-04-15",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2044328273480393016",
+          "date": "2026-04-15",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2044000545543749924",
           "date": "2026-04-14",
@@ -6161,6 +6231,22 @@
       ]
     },
     {
+      "name": "Dora's Joint",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2044336448992604601",
+          "date": "2026-04-15",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2qdsqxr4kphtk74cm7uue92u6mufl7psf9lhr93ecsgjrq8n3u3gg6v500",
+          "date": "2026-04-15",
+          "project": "Bitcoin Aves 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "De Palace Haircuts",
       "count": 2,
       "posts": [
@@ -6387,7 +6473,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 23,
-    "daily_average_payments": 69
+    "daily_average_payments": 70
   },
   "burn_rate": {
     "percentage": 45,
@@ -6397,7 +6483,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1573
+      "count": 1585
     },
     {
       "domain": "8333.mobi",
@@ -6448,13 +6534,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 805
+      "count": 811
     },
     {
       "platform": "Nostr",
-      "count": 798
+      "count": 804
     }
   ],
-  "generated_at": "2026-04-15T10:10:02.222904+00:00",
+  "generated_at": "2026-04-15T10:20:01.968706+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
