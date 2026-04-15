@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 1630,
+    "all_payments": 1636,
     "by_type": {
       "merchant": {
-        "count": 540
+        "count": 542
       },
       "project": {
-        "count": 540
+        "count": 542
       },
       "reviewer": {
-        "count": 550
+        "count": 552
       }
     }
   },
   "today": {
     "date": "2026-04-15",
-    "payments": 39,
+    "payments": 45,
     "by_type": {
       "merchant": {
-        "count": 13
+        "count": 15
       },
       "project": {
-        "count": 13
+        "count": 15
       },
       "reviewer": {
-        "count": 13
+        "count": 15
       }
     },
-    "approved": 13,
+    "approved": 15,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsql9vdskaduhu7m3attjc4aystcn8z8sp2wnwdz705ev0pzcu6tpq4e7zmh",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Peshy's beauty parlour",
+        "platform": "Nostr",
+        "time": "12:18"
+      },
+      {
+        "url": "https://x.com/i/status/2044379888379916630",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Peshy's beauty parlour",
+        "platform": "X",
+        "time": "12:17"
+      },
       {
         "url": "https://x.com/i/status/2044377187797635368",
         "project": "Bitcoin Ekasi 🇿🇦",
@@ -125,6 +139,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Ekasi 🇿🇦"
       },
@@ -458,23 +478,33 @@
     },
     {
       "date": "2026-04-15",
-      "project_count": 13,
-      "merchant_count": 13,
-      "reviewer_count": 13,
-      "approved": 13,
+      "project_count": 15,
+      "merchant_count": 15,
+      "reviewer_count": 15,
+      "approved": 15,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 574,
-    "approved": 539,
+    "total_reviewed": 576,
+    "approved": 541,
     "rejected": 35
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 159,
+      "count": 161,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsql9vdskaduhu7m3attjc4aystcn8z8sp2wnwdz705ev0pzcu6tpq4e7zmh",
+          "date": "2026-04-15",
+          "merchant": "Peshy's beauty parlour"
+        },
+        {
+          "url": "https://x.com/i/status/2044379888379916630",
+          "date": "2026-04-15",
+          "merchant": "Peshy's beauty parlour"
+        },
         {
           "url": "https://x.com/i/status/2044359665660698843",
           "date": "2026-04-15",
@@ -5483,6 +5513,37 @@
       ]
     },
     {
+      "name": "Peshy's beauty parlour",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsql9vdskaduhu7m3attjc4aystcn8z8sp2wnwdz705ev0pzcu6tpq4e7zmh",
+          "date": "2026-04-15",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2044379888379916630",
+          "date": "2026-04-15",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2041564474880971073",
+          "date": "2026-04-07",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8yhmwcekeeut9dc2nv9js7ct7yxsswa0nml2j0mxgxmujxjv47fst8m3s3",
+          "date": "2026-04-07",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2039223176433897951",
+          "date": "2026-04-01",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Ayuba’s Washing Bay",
       "count": 5,
       "posts": [
@@ -5843,27 +5904,6 @@
           "url": "https://primal.net/e/nevent1qqsg2uyqkkkkyrafemnc8tmqq2eflahy7wntpltdc8dwr2rwakj6f7qk5ahfm",
           "date": "2026-03-28",
           "project": "EcoBitz 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Peshy's beauty parlour",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2041564474880971073",
-          "date": "2026-04-07",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8yhmwcekeeut9dc2nv9js7ct7yxsswa0nml2j0mxgxmujxjv47fst8m3s3",
-          "date": "2026-04-07",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2039223176433897951",
-          "date": "2026-04-01",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -6579,7 +6619,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 23,
-    "daily_average_payments": 70
+    "daily_average_payments": 71
   },
   "burn_rate": {
     "percentage": 46,
@@ -6589,7 +6629,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1600
+      "count": 1606
     },
     {
       "domain": "8333.mobi",
@@ -6640,13 +6680,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 823
+      "count": 826
     },
     {
       "platform": "Nostr",
-      "count": 807
+      "count": 810
     }
   ],
-  "generated_at": "2026-04-15T12:10:01.844600+00:00",
+  "generated_at": "2026-04-15T12:20:01.994241+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
