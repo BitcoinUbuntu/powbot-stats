@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1729,
+    "all_payments": 1732,
     "by_type": {
       "merchant": {
-        "count": 573
+        "count": 574
       },
       "project": {
-        "count": 573
+        "count": 574
       },
       "reviewer": {
-        "count": 583
+        "count": 584
       }
     }
   },
   "today": {
     "date": "2026-04-16",
-    "payments": 54,
+    "payments": 57,
     "by_type": {
       "merchant": {
-        "count": 18
+        "count": 19
       },
       "project": {
-        "count": 18
+        "count": 19
       },
       "reviewer": {
-        "count": 18
+        "count": 19
       }
     },
-    "approved": 18,
+    "approved": 19,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsz8hqqnk6sddehmwpl3enm7ad8lcpt7jjcu5wnxppypcmm79q9yjskupk3c",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Luchume Caterers",
+        "platform": "Nostr",
+        "time": "16:36"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsyncst40ln6geyt2h9xplq76peztq5exsqhptxcp2rtrlz2r64cgqa6afhe",
         "project": "Bitcoin Ekasi 🇿🇦",
@@ -160,6 +167,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Ekasi 🇿🇦"
       },
@@ -460,16 +470,16 @@
     },
     {
       "date": "2026-04-16",
-      "project_count": 18,
-      "merchant_count": 18,
-      "reviewer_count": 18,
-      "approved": 18,
+      "project_count": 19,
+      "merchant_count": 19,
+      "reviewer_count": 19,
+      "approved": 19,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 608,
-    "approved": 572,
+    "total_reviewed": 609,
+    "approved": 573,
     "rejected": 36
   },
   "top_projects": [
@@ -2258,8 +2268,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 46,
+      "count": 47,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsz8hqqnk6sddehmwpl3enm7ad8lcpt7jjcu5wnxppypcmm79q9yjskupk3c",
+          "date": "2026-04-16",
+          "merchant": "Luchume Caterers"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsyncst40ln6geyt2h9xplq76peztq5exsqhptxcp2rtrlz2r64cgqa6afhe",
           "date": "2026-04-16",
@@ -6484,6 +6499,22 @@
       ]
     },
     {
+      "name": "Luchume Caterers",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsz8hqqnk6sddehmwpl3enm7ad8lcpt7jjcu5wnxppypcmm79q9yjskupk3c",
+          "date": "2026-04-16",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2044786744675934231",
+          "date": "2026-04-16",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Liberty trading point",
       "count": 2,
       "posts": [
@@ -6860,17 +6891,6 @@
       ]
     },
     {
-      "name": "Luchume Caterers",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2044786744675934231",
-          "date": "2026-04-16",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
       "name": "Livingstone Crocodile Park",
       "count": 1,
       "posts": [
@@ -6939,7 +6959,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1695
+      "count": 1698
     },
     {
       "domain": "8333.mobi",
@@ -6994,9 +7014,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 861
+      "count": 864
     }
   ],
-  "generated_at": "2026-04-16T16:30:01.930579+00:00",
+  "generated_at": "2026-04-16T16:40:02.006131+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
