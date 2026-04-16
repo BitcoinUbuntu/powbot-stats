@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1687,
+    "all_payments": 1690,
     "by_type": {
       "merchant": {
-        "count": 559
+        "count": 560
       },
       "project": {
-        "count": 559
+        "count": 560
       },
       "reviewer": {
-        "count": 569
+        "count": 570
       }
     }
   },
   "today": {
     "date": "2026-04-16",
-    "payments": 12,
+    "payments": 15,
     "by_type": {
       "merchant": {
-        "count": 4
+        "count": 5
       },
       "project": {
-        "count": 4
+        "count": 5
       },
       "reviewer": {
-        "count": 4
+        "count": 5
       }
     },
-    "approved": 4,
+    "approved": 5,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsqqdtclte6tldtmxf47dtfsyj3e5x2dexkyaxzxwdngxxkgy9vmxgd63aqg",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nelton Services Shop",
+        "platform": "Nostr",
+        "time": "06:23"
+      },
       {
         "url": "https://x.com/i/status/2044534539855220888",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -62,6 +69,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -395,16 +405,16 @@
     },
     {
       "date": "2026-04-16",
-      "project_count": 4,
-      "merchant_count": 4,
-      "reviewer_count": 4,
-      "approved": 4,
+      "project_count": 5,
+      "merchant_count": 5,
+      "reviewer_count": 5,
+      "approved": 5,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 594,
-    "approved": 558,
+    "total_reviewed": 595,
+    "approved": 559,
     "rejected": 36
   },
   "top_projects": [
@@ -1742,8 +1752,13 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 82,
+      "count": 83,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsqqdtclte6tldtmxf47dtfsyj3e5x2dexkyaxzxwdngxxkgy9vmxgd63aqg",
+          "date": "2026-04-16",
+          "merchant": "Nelton Services Shop"
+        },
         {
           "url": "https://x.com/i/status/2044534539855220888",
           "date": "2026-04-16",
@@ -4222,8 +4237,13 @@
     },
     {
       "name": "Nelton Services Shop",
-      "count": 13,
+      "count": 14,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsqqdtclte6tldtmxf47dtfsyj3e5x2dexkyaxzxwdngxxkgy9vmxgd63aqg",
+          "date": "2026-04-16",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
         {
           "url": "https://x.com/i/status/2044534539855220888",
           "date": "2026-04-16",
@@ -6716,7 +6736,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1655
+      "count": 1658
     },
     {
       "domain": "8333.mobi",
@@ -6771,9 +6791,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 840
+      "count": 843
     }
   ],
-  "generated_at": "2026-04-16T06:20:01.855732+00:00",
+  "generated_at": "2026-04-16T06:30:01.811795+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
