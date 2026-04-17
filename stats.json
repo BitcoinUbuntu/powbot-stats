@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1792,
+    "all_payments": 1795,
     "by_type": {
       "merchant": {
-        "count": 594
+        "count": 595
       },
       "project": {
-        "count": 594
+        "count": 595
       },
       "reviewer": {
-        "count": 604
+        "count": 605
       }
     }
   },
   "today": {
     "date": "2026-04-17",
-    "payments": 45,
+    "payments": 48,
     "by_type": {
       "merchant": {
-        "count": 15
+        "count": 16
       },
       "project": {
-        "count": 15
+        "count": 16
       },
       "reviewer": {
-        "count": 15
+        "count": 16
       }
     },
-    "approved": 15,
+    "approved": 16,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2045197886854414528",
+        "project": "Lwandi Bitcoin 🇲🇿",
+        "merchant": "Dino Printer Services",
+        "platform": "X",
+        "time": "19:03"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsq76w9v7ndlnt22vne0zxtf4ruux9jwlz50pqtgwysn8y4x2vs5pqyjtf4n",
         "project": "Bitcoin Aves 🇬🇭",
@@ -139,6 +146,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Lwandi Bitcoin 🇲🇿"
+      },
       {
         "project": "Bitcoin Aves 🇬🇭"
       },
@@ -421,16 +431,16 @@
     },
     {
       "date": "2026-04-17",
-      "project_count": 15,
-      "merchant_count": 15,
-      "reviewer_count": 15,
-      "approved": 15,
+      "project_count": 16,
+      "merchant_count": 16,
+      "reviewer_count": 16,
+      "approved": 16,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 629,
-    "approved": 593,
+    "total_reviewed": 630,
+    "approved": 594,
     "rejected": 36
   },
   "top_projects": [
@@ -3509,6 +3519,17 @@
           "url": "https://x.com/i/status/2037264780444991537",
           "date": "2026-03-26",
           "merchant": "Kwa Innocent"
+        }
+      ]
+    },
+    {
+      "name": "Lwandi Bitcoin 🇲🇿",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2045197886854414528",
+          "date": "2026-04-17",
+          "merchant": "Dino Printer Services"
         }
       ]
     }
@@ -7059,6 +7080,17 @@
       ]
     },
     {
+      "name": "Dino Printer Services",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2045197886854414528",
+          "date": "2026-04-17",
+          "project": "Lwandi Bitcoin 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Delfinos Seaside Restaurant",
       "count": 1,
       "posts": [
@@ -7116,7 +7148,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1758
+      "count": 1761
     },
     {
       "domain": "8333.mobi",
@@ -7134,6 +7166,11 @@
       "count": 4
     },
     {
+      "flag": "🇲🇿",
+      "country": "Mozambique",
+      "count": 4
+    },
+    {
       "flag": "🇰🇪",
       "country": "Kenya",
       "count": 3
@@ -7141,11 +7178,6 @@
     {
       "flag": "🇿🇦",
       "country": "South Africa",
-      "count": 3
-    },
-    {
-      "flag": "🇲🇿",
-      "country": "Mozambique",
       "count": 3
     },
     {
@@ -7167,13 +7199,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 901
+      "count": 904
     },
     {
       "platform": "Nostr",
       "count": 891
     }
   ],
-  "generated_at": "2026-04-17T19:00:02.618879+00:00",
+  "generated_at": "2026-04-17T19:10:02.072783+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
