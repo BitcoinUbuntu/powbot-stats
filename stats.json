@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1771,
+    "all_payments": 1774,
     "by_type": {
       "merchant": {
-        "count": 587
+        "count": 588
       },
       "project": {
-        "count": 587
+        "count": 588
       },
       "reviewer": {
-        "count": 597
+        "count": 598
       }
     }
   },
   "today": {
     "date": "2026-04-17",
-    "payments": 24,
+    "payments": 27,
     "by_type": {
       "merchant": {
-        "count": 8
+        "count": 9
       },
       "project": {
-        "count": 8
+        "count": 9
       },
       "reviewer": {
-        "count": 8
+        "count": 9
       }
     },
-    "approved": 8,
+    "approved": 9,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2045091145173147683",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Embo Foods",
+        "platform": "X",
+        "time": "11:07"
+      },
       {
         "url": "https://x.com/i/status/2045064629752041976",
         "project": "Bitbiashara 🇰🇪",
@@ -90,6 +97,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -408,16 +418,16 @@
     },
     {
       "date": "2026-04-17",
-      "project_count": 8,
-      "merchant_count": 8,
-      "reviewer_count": 8,
-      "approved": 8,
+      "project_count": 9,
+      "merchant_count": 9,
+      "reviewer_count": 9,
+      "approved": 9,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 622,
-    "approved": 586,
+    "total_reviewed": 623,
+    "approved": 587,
     "rejected": 36
   },
   "top_projects": [
@@ -2246,8 +2256,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 47,
+      "count": 48,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2045091145173147683",
+          "date": "2026-04-17",
+          "merchant": "Embo Foods"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsz8hqqnk6sddehmwpl3enm7ad8lcpt7jjcu5wnxppypcmm79q9yjskupk3c",
           "date": "2026-04-16",
@@ -6970,6 +6985,17 @@
       ]
     },
     {
+      "name": "Embo Foods",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2045091145173147683",
+          "date": "2026-04-17",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Delfinos Seaside Restaurant",
       "count": 1,
       "posts": [
@@ -7027,7 +7053,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1737
+      "count": 1740
     },
     {
       "domain": "8333.mobi",
@@ -7078,13 +7104,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 889
+      "count": 892
     },
     {
       "platform": "Nostr",
       "count": 882
     }
   ],
-  "generated_at": "2026-04-17T11:00:02.211180+00:00",
+  "generated_at": "2026-04-17T11:10:02.728053+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
