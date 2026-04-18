@@ -1,35 +1,70 @@
 {
   "totals": {
-    "all_payments": 1834,
+    "all_payments": 1849,
     "by_type": {
       "merchant": {
-        "count": 608
+        "count": 613
       },
       "project": {
-        "count": 608
+        "count": 613
       },
       "reviewer": {
-        "count": 618
+        "count": 623
       }
     }
   },
   "today": {
     "date": "2026-04-18",
-    "payments": 18,
+    "payments": 33,
     "by_type": {
       "merchant": {
-        "count": 6
+        "count": 11
       },
       "project": {
-        "count": 6
+        "count": 11
       },
       "reviewer": {
-        "count": 6
+        "count": 11
       }
     },
-    "approved": 6,
+    "approved": 11,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsrfdn2fn4hm7f6gulcyl4kyy2tngddet7symuwnte6nmtw5qn683c09gnyx",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "Rehoboth freshmilk diary",
+        "platform": "Nostr",
+        "time": "13:59"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqszl8nnz739kl45hrhqfpv4kjhymqjwquyamugsg9mqtw625z8en2g9qemn9",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Alvin Game House",
+        "platform": "Nostr",
+        "time": "13:57"
+      },
+      {
+        "url": "https://x.com/i/status/2045028583094009921",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Alvin Game House",
+        "platform": "X",
+        "time": "13:56"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsghqtj5yt52txsaaxh9qd09vsatc242uw6yguxqxaknmqzupn65rgpngwqx",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "The Meat Station TakeAway & Groceries",
+        "platform": "Nostr",
+        "time": "13:55"
+      },
+      {
+        "url": "https://x.com/i/status/2045412015481729421",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "The Meat Station TakeAway & Groceries",
+        "platform": "X",
+        "time": "13:55"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsvccp3uwxg7u3rseda2d6rs2eajx5508u2zs84sdd3md9eg6w9rpqjz6ttz",
         "project": "Bitcoin Famba 🇲🇿",
@@ -76,6 +111,21 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "EcoBitz 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Famba 🇲🇿"
       },
@@ -364,16 +414,16 @@
     },
     {
       "date": "2026-04-18",
-      "project_count": 6,
-      "merchant_count": 6,
-      "reviewer_count": 6,
-      "approved": 6,
+      "project_count": 11,
+      "merchant_count": 11,
+      "reviewer_count": 11,
+      "approved": 11,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 643,
-    "approved": 607,
+    "total_reviewed": 648,
+    "approved": 612,
     "rejected": 36
   },
   "top_projects": [
@@ -2242,8 +2292,18 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 49,
+      "count": 51,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsghqtj5yt52txsaaxh9qd09vsatc242uw6yguxqxaknmqzupn65rgpngwqx",
+          "date": "2026-04-18",
+          "merchant": "The Meat Station TakeAway & Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2045412015481729421",
+          "date": "2026-04-18",
+          "merchant": "The Meat Station TakeAway & Groceries"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsyh9dxlvhhc3rf0tx06ymn4v470w2720fszckt2xdh54tlsekg7cgat3t36",
           "date": "2026-04-17",
@@ -2699,8 +2759,18 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 28,
+      "count": 30,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszl8nnz739kl45hrhqfpv4kjhymqjwquyamugsg9mqtw625z8en2g9qemn9",
+          "date": "2026-04-18",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://x.com/i/status/2045028583094009921",
+          "date": "2026-04-18",
+          "merchant": "Alvin Game House"
+        },
         {
           "url": "https://primal.net/e/nevent1qqstjjtexqp5f0r0wp3x02d4uw22wwt6g6xf7rsvch9rvkxvk0ywtkqljq2m8",
           "date": "2026-04-17",
@@ -3249,8 +3319,13 @@
     },
     {
       "name": "EcoBitz 🇰🇪",
-      "count": 8,
+      "count": 9,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrfdn2fn4hm7f6gulcyl4kyy2tngddet7symuwnte6nmtw5qn683c09gnyx",
+          "date": "2026-04-18",
+          "merchant": "Rehoboth freshmilk diary"
+        },
         {
           "url": "https://x.com/i/status/2045135484691591592",
           "date": "2026-04-17",
@@ -5248,6 +5323,62 @@
       ]
     },
     {
+      "name": "Alvin Game House",
+      "count": 10,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszl8nnz739kl45hrhqfpv4kjhymqjwquyamugsg9mqtw625z8en2g9qemn9",
+          "date": "2026-04-18",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2045028583094009921",
+          "date": "2026-04-18",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw0qnm354apzgqu0mtnqujfzwqnwexmpumm6493lmsew48zusv42sfdhl4g",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2044391389723566412",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg6gef8jysgx2vr77vdz4skp7x06h0lw2fmmx8zkcmh553zdgwx4gs5mawp",
+          "date": "2026-04-14",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2044095635494768885",
+          "date": "2026-04-14",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2042140542843191514",
+          "date": "2026-04-09",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf27q7ymawd7n3phx9acm9cy5csk6h02ysc5yqkpvrqz5ek9dptgspxepg6",
+          "date": "2026-04-09",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswnjt729qy72fnjnfzwgjfy9um4vp7pesyuzygzukkn92nk293rfgn7k2wn",
+          "date": "2026-04-07",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2041337224650768470",
+          "date": "2026-04-07",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Stay Safe Restaurante & Lounge",
       "count": 8,
       "posts": [
@@ -5524,48 +5655,43 @@
       ]
     },
     {
-      "name": "Alvin Game House",
-      "count": 8,
+      "name": "Rehoboth freshmilk diary",
+      "count": 7,
       "posts": [
         {
-          "url": "https://primal.net/e/nevent1qqsw0qnm354apzgqu0mtnqujfzwqnwexmpumm6493lmsew48zusv42sfdhl4g",
+          "url": "https://primal.net/e/nevent1qqsrfdn2fn4hm7f6gulcyl4kyy2tngddet7symuwnte6nmtw5qn683c09gnyx",
+          "date": "2026-04-18",
+          "project": "EcoBitz 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2045135484691591592",
+          "date": "2026-04-17",
+          "project": "EcoBitz 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2044638571978506359",
+          "date": "2026-04-16",
+          "project": "EcoBitz 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdn8yex8etgpyu27nww80etqafu4g93unm0jczxs05jh7hqd9wyvg2kn285",
           "date": "2026-04-15",
-          "project": "Bitcoin Ikorodu 🇳🇬"
+          "project": "EcoBitz 🇰🇪"
         },
         {
-          "url": "https://x.com/i/status/2044391389723566412",
-          "date": "2026-04-15",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg6gef8jysgx2vr77vdz4skp7x06h0lw2fmmx8zkcmh553zdgwx4gs5mawp",
-          "date": "2026-04-14",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2044095635494768885",
-          "date": "2026-04-14",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2042140542843191514",
-          "date": "2026-04-09",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf27q7ymawd7n3phx9acm9cy5csk6h02ysc5yqkpvrqz5ek9dptgspxepg6",
-          "date": "2026-04-09",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswnjt729qy72fnjnfzwgjfy9um4vp7pesyuzygzukkn92nk293rfgn7k2wn",
+          "url": "https://primal.net/e/nevent1qqsp8kgegy5d3mmtkput4rlf4px596h7n8n2y0dzxnpgv9u0fezrwnsuzgeud",
           "date": "2026-04-07",
-          "project": "Bitcoin Ikorodu 🇳🇬"
+          "project": "EcoBitz 🇰🇪"
         },
         {
-          "url": "https://x.com/i/status/2041337224650768470",
-          "date": "2026-04-07",
-          "project": "Bitcoin Ikorodu 🇳🇬"
+          "url": "https://primal.net/e/nevent1qqstd0su5rl6tuqevk5ukake0fjywtqz2tl9aqrtujc2xj3mlm4uffgggwnxr",
+          "date": "2026-03-31",
+          "project": "EcoBitz 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg2uyqkkkkyrafemnc8tmqq2eflahy7wntpltdc8dwr2rwakj6f7qk5ahfm",
+          "date": "2026-03-28",
+          "project": "EcoBitz 🇰🇪"
         }
       ]
     },
@@ -5746,42 +5872,6 @@
           "url": "https://x.com/i/status/2038074010072695087",
           "date": "2026-03-29",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Rehoboth freshmilk diary",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2045135484691591592",
-          "date": "2026-04-17",
-          "project": "EcoBitz 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2044638571978506359",
-          "date": "2026-04-16",
-          "project": "EcoBitz 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdn8yex8etgpyu27nww80etqafu4g93unm0jczxs05jh7hqd9wyvg2kn285",
-          "date": "2026-04-15",
-          "project": "EcoBitz 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp8kgegy5d3mmtkput4rlf4px596h7n8n2y0dzxnpgv9u0fezrwnsuzgeud",
-          "date": "2026-04-07",
-          "project": "EcoBitz 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstd0su5rl6tuqevk5ukake0fjywtqz2tl9aqrtujc2xj3mlm4uffgggwnxr",
-          "date": "2026-03-31",
-          "project": "EcoBitz 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg2uyqkkkkyrafemnc8tmqq2eflahy7wntpltdc8dwr2rwakj6f7qk5ahfm",
-          "date": "2026-03-28",
-          "project": "EcoBitz 🇰🇪"
         }
       ]
     },
@@ -6511,6 +6601,22 @@
       ]
     },
     {
+      "name": "The Meat Station TakeAway & Groceries",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsghqtj5yt52txsaaxh9qd09vsatc242uw6yguxqxaknmqzupn65rgpngwqx",
+          "date": "2026-04-18",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2045412015481729421",
+          "date": "2026-04-18",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Sombo Groceries",
       "count": 2,
       "posts": [
@@ -7201,7 +7307,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 26,
-    "daily_average_payments": 70
+    "daily_average_payments": 71
   },
   "burn_rate": {
     "percentage": 48,
@@ -7211,7 +7317,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1798
+      "count": 1813
     },
     {
       "domain": "8333.mobi",
@@ -7262,13 +7368,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 922
+      "count": 928
     },
     {
       "platform": "Nostr",
-      "count": 912
+      "count": 921
     }
   ],
-  "generated_at": "2026-04-18T13:50:02.431622+00:00",
+  "generated_at": "2026-04-18T14:00:02.567520+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
