@@ -1,28 +1,99 @@
 {
   "totals": {
-    "all_payments": 1816,
+    "all_payments": 1834,
     "by_type": {
       "merchant": {
-        "count": 602
+        "count": 608
       },
       "project": {
-        "count": 602
+        "count": 608
       },
       "reviewer": {
-        "count": 612
+        "count": 618
       }
     }
   },
   "today": {
     "date": "2026-04-18",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 18,
+    "by_type": {
+      "merchant": {
+        "count": 6
+      },
+      "project": {
+        "count": 6
+      },
+      "reviewer": {
+        "count": 6
+      }
+    },
+    "approved": 6,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsvccp3uwxg7u3rseda2d6rs2eajx5508u2zs84sdd3md9eg6w9rpqjz6ttz",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Milofa Skate Shop",
+        "platform": "Nostr",
+        "time": "08:57"
+      },
+      {
+        "url": "https://x.com/i/status/2045371987606770055",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Milofa Skate Shop",
+        "platform": "X",
+        "time": "08:54"
+      },
+      {
+        "url": "https://x.com/i/status/2045368060811317436",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "08:54"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsqgr3kdqxhhmay300ml8rmejw45zjfseayum4kqgzg6y7fa3j7h2q98qukq",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "Nostr",
+        "time": "08:53"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsdaqpehf0nuh7ksxg93anp30rz9ku6t98m0sq6gjgpgjdd3leeacsdu0aeu",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "Nostr",
+        "time": "08:53"
+      },
+      {
+        "url": "https://x.com/i/status/2045362666563137888",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "X",
+        "time": "08:52"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -329,16 +400,16 @@
     },
     {
       "date": "2026-04-18",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 6,
+      "approved": 6,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 637,
-    "approved": 601,
+    "total_reviewed": 643,
+    "approved": 607,
     "rejected": 36
   },
   "top_projects": [
@@ -2458,8 +2529,28 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 36,
+      "count": 40,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2045368060811317436",
+          "date": "2026-04-18",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqgr3kdqxhhmay300ml8rmejw45zjfseayum4kqgzg6y7fa3j7h2q98qukq",
+          "date": "2026-04-18",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdaqpehf0nuh7ksxg93anp30rz9ku6t98m0sq6gjgpgjdd3leeacsdu0aeu",
+          "date": "2026-04-18",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2045362666563137888",
+          "date": "2026-04-18",
+          "merchant": "Mary Shop"
+        },
         {
           "url": "https://x.com/i/status/2044445849522942224",
           "date": "2026-04-15",
@@ -3062,8 +3153,18 @@
     },
     {
       "name": "Bitcoin Famba 🇲🇿",
-      "count": 12,
+      "count": 14,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsvccp3uwxg7u3rseda2d6rs2eajx5508u2zs84sdd3md9eg6w9rpqjz6ttz",
+          "date": "2026-04-18",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2045371987606770055",
+          "date": "2026-04-18",
+          "merchant": "Milofa Skate Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqstvkyxhchnan63p0psuapkrq7n6dr8wdlewuupseakta98x9zmg0ctvvcfa",
           "date": "2026-04-08",
@@ -4113,6 +4214,107 @@
       ]
     },
     {
+      "name": "Orero shop",
+      "count": 19,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2045368060811317436",
+          "date": "2026-04-18",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqgr3kdqxhhmay300ml8rmejw45zjfseayum4kqgzg6y7fa3j7h2q98qukq",
+          "date": "2026-04-18",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2044445849522942224",
+          "date": "2026-04-15",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfhmuvx5rre323nw288j45l22ljer8wypu6989dz4wygcu9tfnvkcfuy2n4",
+          "date": "2026-04-15",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2044036960935710891",
+          "date": "2026-04-14",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp8pd4tm075jvzylpqushg276hf8ca6w29pduxmcy8gek9228u2xskmc38s",
+          "date": "2026-04-14",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2043712277409419742",
+          "date": "2026-04-13",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswf64jd99h08xurg2vsye5cz2xzaz9gfgk7z03mtpu3hpxsvl96jcwcflxj",
+          "date": "2026-04-13",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgmgn9pnwj0cgrktryrfmftdtsldsp9eyldzw6wcu9065gy0t7lhgmw3e9l",
+          "date": "2026-04-11",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2042640073770869210",
+          "date": "2026-04-11",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdylp67fxphawv2m9za7r2kpw44vcyqpqkwayvzz648d7hqe7en0g0tljx4",
+          "date": "2026-04-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2042260173285199925",
+          "date": "2026-04-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqhykpcq7a6r0tuqemw7etsuehs22dh2wwe4p5j0cqhuzpv6wqykqt933u7",
+          "date": "2026-04-08",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2041837282936639798",
+          "date": "2026-04-08",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy5krpcfrcphml937x0ur5yrn2qq0jfhj5fcsvgu32p37kke97tdsk0maq8",
+          "date": "2026-04-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2040804826926190957",
+          "date": "2026-04-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs23tq7ewa4qrx082frfrp0a4msnm9vw9vsmu5aqs6nksk4tzyrjls7sfl35",
+          "date": "2026-04-05",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2040057934357381514",
+          "date": "2026-04-05",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2034660669149073477",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Ellygant Unisex Salon",
       "count": 18,
       "posts": [
@@ -4205,97 +4407,6 @@
           "url": "https://x.com/i/status/2036407703967240585",
           "date": "2026-03-24",
           "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Orero shop",
-      "count": 17,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2044445849522942224",
-          "date": "2026-04-15",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfhmuvx5rre323nw288j45l22ljer8wypu6989dz4wygcu9tfnvkcfuy2n4",
-          "date": "2026-04-15",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2044036960935710891",
-          "date": "2026-04-14",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp8pd4tm075jvzylpqushg276hf8ca6w29pduxmcy8gek9228u2xskmc38s",
-          "date": "2026-04-14",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2043712277409419742",
-          "date": "2026-04-13",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswf64jd99h08xurg2vsye5cz2xzaz9gfgk7z03mtpu3hpxsvl96jcwcflxj",
-          "date": "2026-04-13",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgmgn9pnwj0cgrktryrfmftdtsldsp9eyldzw6wcu9065gy0t7lhgmw3e9l",
-          "date": "2026-04-11",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2042640073770869210",
-          "date": "2026-04-11",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdylp67fxphawv2m9za7r2kpw44vcyqpqkwayvzz648d7hqe7en0g0tljx4",
-          "date": "2026-04-09",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2042260173285199925",
-          "date": "2026-04-09",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqhykpcq7a6r0tuqemw7etsuehs22dh2wwe4p5j0cqhuzpv6wqykqt933u7",
-          "date": "2026-04-08",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2041837282936639798",
-          "date": "2026-04-08",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy5krpcfrcphml937x0ur5yrn2qq0jfhj5fcsvgu32p37kke97tdsk0maq8",
-          "date": "2026-04-06",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2040804826926190957",
-          "date": "2026-04-06",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs23tq7ewa4qrx082frfrp0a4msnm9vw9vsmu5aqs6nksk4tzyrjls7sfl35",
-          "date": "2026-04-05",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2040057934357381514",
-          "date": "2026-04-05",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2034660669149073477",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -5265,6 +5376,52 @@
       ]
     },
     {
+      "name": "Mary Shop",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdaqpehf0nuh7ksxg93anp30rz9ku6t98m0sq6gjgpgjdd3leeacsdu0aeu",
+          "date": "2026-04-18",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2045362666563137888",
+          "date": "2026-04-18",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg8jk809r7xrxxsycuw5pf42y5x7gfqs3p38a4mmg9yqawxceccwcq64tuj",
+          "date": "2026-04-11",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2042649729419370563",
+          "date": "2026-04-11",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszee8v5dh0hpvj0k5mxw5zczlfhl8rrv7vtpplfyvzvrgew9rsefcmg6ehk",
+          "date": "2026-04-07",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2041365574081552860",
+          "date": "2026-04-07",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2039313726147289303",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8u3e9ygm078ents36l79hlzxknlw4dha37xdg40gh4jhec550x7ct26wmk",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Kwallos Shop",
       "count": 8,
       "posts": [
@@ -5665,38 +5822,38 @@
       ]
     },
     {
-      "name": "Mary Shop",
+      "name": "Milofa Skate Shop",
       "count": 6,
       "posts": [
         {
-          "url": "https://primal.net/e/nevent1qqsg8jk809r7xrxxsycuw5pf42y5x7gfqs3p38a4mmg9yqawxceccwcq64tuj",
-          "date": "2026-04-11",
-          "project": "Bitcoin Chama 🇰🇪"
+          "url": "https://primal.net/e/nevent1qqsvccp3uwxg7u3rseda2d6rs2eajx5508u2zs84sdd3md9eg6w9rpqjz6ttz",
+          "date": "2026-04-18",
+          "project": "Bitcoin Famba 🇲🇿"
         },
         {
-          "url": "https://x.com/i/status/2042649729419370563",
-          "date": "2026-04-11",
-          "project": "Bitcoin Chama 🇰🇪"
+          "url": "https://x.com/i/status/2045371987606770055",
+          "date": "2026-04-18",
+          "project": "Bitcoin Famba 🇲🇿"
         },
         {
-          "url": "https://primal.net/e/nevent1qqszee8v5dh0hpvj0k5mxw5zczlfhl8rrv7vtpplfyvzvrgew9rsefcmg6ehk",
-          "date": "2026-04-07",
-          "project": "Bitcoin Chama 🇰🇪"
+          "url": "https://primal.net/e/nevent1qqsdd86ytalvvazqw0gpgjmaeu2w6t0u7txthf7wvsay4ac3h2jzaegzxw8ms",
+          "date": "2026-04-02",
+          "project": "Bitcoin Famba 🇲🇿"
         },
         {
-          "url": "https://x.com/i/status/2041365574081552860",
-          "date": "2026-04-07",
-          "project": "Bitcoin Chama 🇰🇪"
+          "url": "https://x.com/i/status/2039414254722322769",
+          "date": "2026-04-02",
+          "project": "Bitcoin Famba 🇲🇿"
         },
         {
-          "url": "https://x.com/i/status/2039313726147289303",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
+          "url": "https://primal.net/e/nevent1qqs8fr4r9pehzkp7mtpp9phw27spzzwq8dxg8tkcvqwmyphldnwvxlgg345pa",
+          "date": "2026-03-25",
+          "project": "Bitcoin Famba 🇲🇿"
         },
         {
-          "url": "https://primal.net/e/nevent1qqs8u3e9ygm078ents36l79hlzxknlw4dha37xdg40gh4jhec550x7ct26wmk",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
+          "url": "https://x.com/i/status/2036728638415015976",
+          "date": "2026-03-25",
+          "project": "Bitcoin Famba 🇲🇿"
         }
       ]
     },
@@ -6213,32 +6370,6 @@
           "url": "https://primal.net/e/nevent1qqsf5259yz6xckn0nd9xszg0ls3f6dc9lu8h2jt536h2937usuvctxc2xdfyn",
           "date": "2026-04-06",
           "project": "Bitcoin Anambra 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Milofa Skate Shop",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsdd86ytalvvazqw0gpgjmaeu2w6t0u7txthf7wvsay4ac3h2jzaegzxw8ms",
-          "date": "2026-04-02",
-          "project": "Bitcoin Famba 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2039414254722322769",
-          "date": "2026-04-02",
-          "project": "Bitcoin Famba 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8fr4r9pehzkp7mtpp9phw27spzzwq8dxg8tkcvqwmyphldnwvxlgg345pa",
-          "date": "2026-03-25",
-          "project": "Bitcoin Famba 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036728638415015976",
-          "date": "2026-03-25",
-          "project": "Bitcoin Famba 🇲🇿"
         }
       ]
     },
@@ -7106,21 +7237,21 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 26,
-    "daily_average_payments": 69
+    "daily_average_payments": 70
   },
   "burn_rate": {
-    "percentage": 47,
+    "percentage": 48,
     "status": "cold",
     "days_active": 26
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1782
+      "count": 1798
     },
     {
       "domain": "8333.mobi",
-      "count": 33
+      "count": 35
     },
     {
       "domain": "walletofsatoshi.com",
@@ -7167,13 +7298,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 913
+      "count": 922
     },
     {
       "platform": "Nostr",
-      "count": 903
+      "count": 912
     }
   ],
-  "generated_at": "2026-04-18T08:50:01.957588+00:00",
+  "generated_at": "2026-04-18T09:00:02.108509+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
