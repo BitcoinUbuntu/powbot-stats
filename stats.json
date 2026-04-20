@@ -1,35 +1,77 @@
 {
   "totals": {
-    "all_payments": 2005,
+    "all_payments": 2023,
     "by_type": {
       "merchant": {
-        "count": 665
+        "count": 671
       },
       "project": {
-        "count": 665
+        "count": 671
       },
       "reviewer": {
-        "count": 675
+        "count": 681
       }
     }
   },
   "today": {
     "date": "2026-04-20",
-    "payments": 87,
+    "payments": 105,
     "by_type": {
       "merchant": {
-        "count": 29
+        "count": 35
       },
       "project": {
-        "count": 29
+        "count": 35
       },
       "reviewer": {
-        "count": 29
+        "count": 35
       }
     },
-    "approved": 29,
+    "approved": 35,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsgzefxq2kfx33gp2gqhv9rhyurqfw9jtr54uu7ckhw0udxzzmxuzs3x5s9y",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "Nostr",
+        "time": "17:18"
+      },
+      {
+        "url": "https://x.com/i/status/2046270999788761405",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "X",
+        "time": "17:17"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsvhgh44ccnl97qum0djecmhnyr956a3kmrjqgq8axlmjlv0r6ajzcer4xa9",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Munali Cafe",
+        "platform": "Nostr",
+        "time": "17:16"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs2prt7nddt33y5u7lmr0lqft8npsxr70aw5menjesl2t6nr565clqgfkucx",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "Cafeleu Hotel",
+        "platform": "Nostr",
+        "time": "17:12"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs9c3c8ydcdghtr6jkzzs3hz2t4ad45cpxnzy7aj7c6teu9808h98qethjny",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "Wa Ngala Hardware",
+        "platform": "Nostr",
+        "time": "17:11"
+      },
+      {
+        "url": "https://x.com/i/status/2046261584805126280",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Tena cyberpalace",
+        "platform": "X",
+        "time": "17:10"
+      },
       {
         "url": "https://x.com/i/status/2046175821241413783",
         "project": "Bitcoin Ekasi 🇿🇦",
@@ -237,6 +279,24 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
+      {
+        "project": "EcoBitz 🇰🇪"
+      },
+      {
+        "project": "EcoBitz 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Ekasi 🇿🇦"
       },
@@ -561,23 +621,38 @@
     },
     {
       "date": "2026-04-20",
-      "project_count": 29,
-      "merchant_count": 29,
-      "reviewer_count": 29,
-      "approved": 29,
+      "project_count": 35,
+      "merchant_count": 35,
+      "reviewer_count": 35,
+      "approved": 35,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 700,
-    "approved": 664,
+    "total_reviewed": 706,
+    "approved": 670,
     "rejected": 36
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 202,
+      "count": 205,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgzefxq2kfx33gp2gqhv9rhyurqfw9jtr54uu7ckhw0udxzzmxuzs3x5s9y",
+          "date": "2026-04-20",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2046270999788761405",
+          "date": "2026-04-20",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2046261584805126280",
+          "date": "2026-04-20",
+          "merchant": "Tena cyberpalace"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsyydz92tjjnujdkcje9aq75stsmlhrshjmpyr2hyn9upk52u5dzyqn0n8mq",
           "date": "2026-04-20",
@@ -3659,9 +3734,75 @@
       ]
     },
     {
-      "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 10,
+      "name": "EcoBitz 🇰🇪",
+      "count": 11,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs2prt7nddt33y5u7lmr0lqft8npsxr70aw5menjesl2t6nr565clqgfkucx",
+          "date": "2026-04-20",
+          "merchant": "Cafeleu Hotel"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9c3c8ydcdghtr6jkzzs3hz2t4ad45cpxnzy7aj7c6teu9808h98qethjny",
+          "date": "2026-04-20",
+          "merchant": "Wa Ngala Hardware"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrfdn2fn4hm7f6gulcyl4kyy2tngddet7symuwnte6nmtw5qn683c09gnyx",
+          "date": "2026-04-18",
+          "merchant": "Rehoboth freshmilk diary"
+        },
+        {
+          "url": "https://x.com/i/status/2045135484691591592",
+          "date": "2026-04-17",
+          "merchant": "Rehoboth freshmilk diary"
+        },
+        {
+          "url": "https://x.com/i/status/2044638571978506359",
+          "date": "2026-04-16",
+          "merchant": "Rehoboth freshmilk diary"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdn8yex8etgpyu27nww80etqafu4g93unm0jczxs05jh7hqd9wyvg2kn285",
+          "date": "2026-04-15",
+          "merchant": "Rehoboth freshmilk diary"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9a3nx2mpqmfg7hc0r6m9qp5qu9hkypgjs8zq5cdet99epalzgg6s3wetc2",
+          "date": "2026-04-13",
+          "merchant": "Cafeleu Hotel"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp8kgegy5d3mmtkput4rlf4px596h7n8n2y0dzxnpgv9u0fezrwnsuzgeud",
+          "date": "2026-04-07",
+          "merchant": "Rehoboth freshmilk diary"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstd0su5rl6tuqevk5ukake0fjywtqz2tl9aqrtujc2xj3mlm4uffgggwnxr",
+          "date": "2026-03-31",
+          "merchant": "Rehoboth freshmilk diary"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg2uyqkkkkyrafemnc8tmqq2eflahy7wntpltdc8dwr2rwakj6f7qk5ahfm",
+          "date": "2026-03-28",
+          "merchant": "Rehoboth freshmilk diary"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs92prhvwvkhnq4344f27ujt345gjv4wmpeepnucmcka2p7twh48kqadsx30",
+          "date": "2026-03-24",
+          "merchant": "Wa Ngala Hardware"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Victoria Falls 🇿🇲",
+      "count": 11,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsvhgh44ccnl97qum0djecmhnyr956a3kmrjqgq8axlmjlv0r6ajzcer4xa9",
+          "date": "2026-04-20",
+          "merchant": "Munali Cafe"
+        },
         {
           "url": "https://x.com/i/status/2043399125572440324",
           "date": "2026-04-13",
@@ -3711,57 +3852,6 @@
           "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
           "date": "2026-03-25",
           "merchant": "Mundayam Restaurant"
-        }
-      ]
-    },
-    {
-      "name": "EcoBitz 🇰🇪",
-      "count": 9,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsrfdn2fn4hm7f6gulcyl4kyy2tngddet7symuwnte6nmtw5qn683c09gnyx",
-          "date": "2026-04-18",
-          "merchant": "Rehoboth freshmilk diary"
-        },
-        {
-          "url": "https://x.com/i/status/2045135484691591592",
-          "date": "2026-04-17",
-          "merchant": "Rehoboth freshmilk diary"
-        },
-        {
-          "url": "https://x.com/i/status/2044638571978506359",
-          "date": "2026-04-16",
-          "merchant": "Rehoboth freshmilk diary"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdn8yex8etgpyu27nww80etqafu4g93unm0jczxs05jh7hqd9wyvg2kn285",
-          "date": "2026-04-15",
-          "merchant": "Rehoboth freshmilk diary"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9a3nx2mpqmfg7hc0r6m9qp5qu9hkypgjs8zq5cdet99epalzgg6s3wetc2",
-          "date": "2026-04-13",
-          "merchant": "Cafeleu Hotel"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp8kgegy5d3mmtkput4rlf4px596h7n8n2y0dzxnpgv9u0fezrwnsuzgeud",
-          "date": "2026-04-07",
-          "merchant": "Rehoboth freshmilk diary"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstd0su5rl6tuqevk5ukake0fjywtqz2tl9aqrtujc2xj3mlm4uffgggwnxr",
-          "date": "2026-03-31",
-          "merchant": "Rehoboth freshmilk diary"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg2uyqkkkkyrafemnc8tmqq2eflahy7wntpltdc8dwr2rwakj6f7qk5ahfm",
-          "date": "2026-03-28",
-          "merchant": "Rehoboth freshmilk diary"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs92prhvwvkhnq4344f27ujt345gjv4wmpeepnucmcka2p7twh48kqadsx30",
-          "date": "2026-03-24",
-          "merchant": "Wa Ngala Hardware"
         }
       ]
     },
@@ -4717,8 +4807,18 @@
     },
     {
       "name": "Manu Groceries",
-      "count": 21,
+      "count": 23,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgzefxq2kfx33gp2gqhv9rhyurqfw9jtr54uu7ckhw0udxzzmxuzs3x5s9y",
+          "date": "2026-04-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2046270999788761405",
+          "date": "2026-04-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsv8fyj8pwdph3935zh8dwvfn3dx3wve8c4a60jrzczkkeywnvpmqsmwsx5h",
           "date": "2026-04-17",
@@ -6029,6 +6129,52 @@
       ]
     },
     {
+      "name": "Tena cyberpalace",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2046261584805126280",
+          "date": "2026-04-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyydz92tjjnujdkcje9aq75stsmlhrshjmpyr2hyn9upk52u5dzyqn0n8mq",
+          "date": "2026-04-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2045582022727307420",
+          "date": "2026-04-19",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxvhqy72pgf9pkpqf8t0wgqn4k7mh79spphmfyfavu3zcqzga9s9sdstn7v",
+          "date": "2026-04-19",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2043324935074975979",
+          "date": "2026-04-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgp5dd4f74dj084syct5736dxvd7pc5yjdqnu0ylruqha64hnskpc435qqv",
+          "date": "2026-04-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2038671536387768749",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Mercearia Abençoada",
       "count": 8,
       "posts": [
@@ -6347,47 +6493,6 @@
           "url": "https://x.com/i/status/2036395349577695397",
           "date": "2026-03-24",
           "project": "Bitcoin Ekiti 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Tena cyberpalace",
-      "count": 7,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsyydz92tjjnujdkcje9aq75stsmlhrshjmpyr2hyn9upk52u5dzyqn0n8mq",
-          "date": "2026-04-20",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2045582022727307420",
-          "date": "2026-04-19",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxvhqy72pgf9pkpqf8t0wgqn4k7mh79spphmfyfavu3zcqzga9s9sdstn7v",
-          "date": "2026-04-19",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2043324935074975979",
-          "date": "2026-04-13",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgp5dd4f74dj084syct5736dxvd7pc5yjdqnu0ylruqha64hnskpc435qqv",
-          "date": "2026-04-13",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2038671536387768749",
-          "date": "2026-03-31",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
-          "date": "2026-03-31",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -7281,6 +7386,22 @@
       ]
     },
     {
+      "name": "Wa Ngala Hardware",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs9c3c8ydcdghtr6jkzzs3hz2t4ad45cpxnzy7aj7c6teu9808h98qethjny",
+          "date": "2026-04-20",
+          "project": "EcoBitz 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs92prhvwvkhnq4344f27ujt345gjv4wmpeepnucmcka2p7twh48kqadsx30",
+          "date": "2026-03-24",
+          "project": "EcoBitz 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Viwa Accessories",
       "count": 2,
       "posts": [
@@ -7793,6 +7914,22 @@
       ]
     },
     {
+      "name": "Cafeleu Hotel",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs2prt7nddt33y5u7lmr0lqft8npsxr70aw5menjesl2t6nr565clqgfkucx",
+          "date": "2026-04-20",
+          "project": "EcoBitz 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9a3nx2mpqmfg7hc0r6m9qp5qu9hkypgjs8zq5cdet99epalzgg6s3wetc2",
+          "date": "2026-04-13",
+          "project": "EcoBitz 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "C&P Roasters Café & Roastery",
       "count": 2,
       "posts": [
@@ -7852,17 +7989,6 @@
       ]
     },
     {
-      "name": "Wa Ngala Hardware",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs92prhvwvkhnq4344f27ujt345gjv4wmpeepnucmcka2p7twh48kqadsx30",
-          "date": "2026-03-24",
-          "project": "EcoBitz 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Tafeyo Innovations",
       "count": 1,
       "posts": [
@@ -7913,6 +8039,17 @@
         {
           "url": "https://primal.net/e/nevent1qqsy45gawfmsdmwj4zj3j8jupx9ad762mlleud26a6z3wvrvwtk29ag0pg0w5",
           "date": "2026-04-08",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        }
+      ]
+    },
+    {
+      "name": "Munali Cafe",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsvhgh44ccnl97qum0djecmhnyr956a3kmrjqgq8axlmjlv0r6ajzcer4xa9",
+          "date": "2026-04-20",
           "project": "Bitcoin Victoria Falls 🇿🇲"
         }
       ]
@@ -7982,33 +8119,22 @@
           "project": "Bitcoin Victoria Falls 🇿🇲"
         }
       ]
-    },
-    {
-      "name": "Cafeleu Hotel",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs9a3nx2mpqmfg7hc0r6m9qp5qu9hkypgjs8zq5cdet99epalzgg6s3wetc2",
-          "date": "2026-04-13",
-          "project": "EcoBitz 🇰🇪"
-        }
-      ]
     }
   ],
   "launch": {
     "date": "Mar 24",
     "days_active": 28,
-    "daily_average_payments": 71
+    "daily_average_payments": 72
   },
   "burn_rate": {
-    "percentage": 50,
+    "percentage": 51,
     "status": "cold",
     "days_active": 28
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1965
+      "count": 1983
     },
     {
       "domain": "8333.mobi",
@@ -8059,13 +8185,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1009
+      "count": 1015
     },
     {
       "platform": "Nostr",
-      "count": 996
+      "count": 1008
     }
   ],
-  "generated_at": "2026-04-20T17:10:01.878675+00:00",
+  "generated_at": "2026-04-20T17:20:02.436522+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
