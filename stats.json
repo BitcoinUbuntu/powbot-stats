@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 1996,
+    "all_payments": 1999,
     "by_type": {
       "merchant": {
-        "count": 662
+        "count": 663
       },
       "project": {
-        "count": 662
+        "count": 663
       },
       "reviewer": {
-        "count": 672
+        "count": 673
       }
     }
   },
   "today": {
     "date": "2026-04-20",
-    "payments": 78,
+    "payments": 81,
     "by_type": {
       "merchant": {
-        "count": 26
+        "count": 27
       },
       "project": {
-        "count": 26
+        "count": 27
       },
       "reviewer": {
-        "count": 26
+        "count": 27
       }
     },
-    "approved": 26,
+    "approved": 27,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsyj35fl96z6x3zysev56t5kn6rctek2wjyc5xejwucs7vfejad4jstcl0ly",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Mossel Bay Gas",
+        "platform": "Nostr",
+        "time": "15:42"
+      },
       {
         "url": "https://x.com/i/status/2046187884068147612",
         "project": "Bit-Fitness 🇿🇦",
@@ -216,6 +223,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bit-Fitness 🇿🇦"
       },
@@ -534,16 +544,16 @@
     },
     {
       "date": "2026-04-20",
-      "project_count": 26,
-      "merchant_count": 26,
-      "reviewer_count": 26,
-      "approved": 26,
+      "project_count": 27,
+      "merchant_count": 27,
+      "reviewer_count": 27,
+      "approved": 27,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 697,
-    "approved": 661,
+    "total_reviewed": 698,
+    "approved": 662,
     "rejected": 36
   },
   "top_projects": [
@@ -2572,8 +2582,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 53,
+      "count": 54,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyj35fl96z6x3zysev56t5kn6rctek2wjyc5xejwucs7vfejad4jstcl0ly",
+          "date": "2026-04-20",
+          "merchant": "Mossel Bay Gas"
+        },
         {
           "url": "https://x.com/i/status/2046237131043930423",
           "date": "2026-04-20",
@@ -7020,6 +7035,32 @@
       ]
     },
     {
+      "name": "Mossel Bay Gas",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyj35fl96z6x3zysev56t5kn6rctek2wjyc5xejwucs7vfejad4jstcl0ly",
+          "date": "2026-04-20",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2046237131043930423",
+          "date": "2026-04-20",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsttaknk20xcw7lxpu62l2x95egay0qp5mjamsvtj4clk83c2tn09sdqkyn2",
+          "date": "2026-03-27",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2034268984623685948",
+          "date": "2026-03-27",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "John Shop",
       "count": 4,
       "posts": [
@@ -7167,27 +7208,6 @@
           "url": "https://x.com/i/status/2033851794384662900",
           "date": "2026-03-31",
           "project": "Bitcoin Chama 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Mossel Bay Gas",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2046237131043930423",
-          "date": "2026-04-20",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsttaknk20xcw7lxpu62l2x95egay0qp5mjamsvtj4clk83c2tn09sdqkyn2",
-          "date": "2026-03-27",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2034268984623685948",
-          "date": "2026-03-27",
-          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
@@ -7951,7 +7971,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1956
+      "count": 1959
     },
     {
       "domain": "8333.mobi",
@@ -8006,9 +8026,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 990
+      "count": 993
     }
   ],
-  "generated_at": "2026-04-20T15:40:02.527763+00:00",
+  "generated_at": "2026-04-20T15:50:01.852315+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
