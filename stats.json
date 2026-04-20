@@ -1,35 +1,70 @@
 {
   "totals": {
-    "all_payments": 1982,
+    "all_payments": 1996,
     "by_type": {
       "merchant": {
-        "count": 657
+        "count": 662
       },
       "project": {
-        "count": 657
+        "count": 662
       },
       "reviewer": {
-        "count": 668
+        "count": 672
       }
     }
   },
   "today": {
     "date": "2026-04-20",
-    "payments": 64,
+    "payments": 78,
     "by_type": {
       "merchant": {
-        "count": 21
+        "count": 26
       },
       "project": {
-        "count": 21
+        "count": 26
       },
       "reviewer": {
-        "count": 22
+        "count": 26
       }
     },
-    "approved": 21,
+    "approved": 26,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2046187884068147612",
+        "project": "Bit-Fitness 🇿🇦",
+        "merchant": "Moto Wash & Valet",
+        "platform": "X",
+        "time": "15:25"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsxfa9lg4jv72yvlfwzurlm97suntc7fvl2n8su9yt4rdqxaf095qsckk9jn",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nubelle",
+        "platform": "Nostr",
+        "time": "15:23"
+      },
+      {
+        "url": "https://x.com/i/status/2046237131043930423",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Mossel Bay Gas",
+        "platform": "X",
+        "time": "15:21"
+      },
+      {
+        "url": "https://x.com/i/status/2046181484537454659",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nubelle",
+        "platform": "X",
+        "time": "15:20"
+      },
+      {
+        "url": "https://x.com/i/status/2046218026496696597",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "X",
+        "time": "15:20"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsyw0xp8f089kg8d9rq5s0e820t4k229z3r46c9ed9672r37e6w4ec7trv9q",
         "project": "Bitbiashara 🇰🇪",
@@ -181,6 +216,21 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bit-Fitness 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -484,23 +534,28 @@
     },
     {
       "date": "2026-04-20",
-      "project_count": 21,
-      "merchant_count": 21,
-      "reviewer_count": 22,
-      "approved": 21,
+      "project_count": 26,
+      "merchant_count": 26,
+      "reviewer_count": 26,
+      "approved": 26,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 692,
-    "approved": 656,
+    "total_reviewed": 697,
+    "approved": 661,
     "rejected": 36
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 200,
+      "count": 201,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2046218026496696597",
+          "date": "2026-04-20",
+          "merchant": "Bliss beauty Salon"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsyw0xp8f089kg8d9rq5s0e820t4k229z3r46c9ed9672r37e6w4ec7trv9q",
           "date": "2026-04-20",
@@ -1504,6 +1559,517 @@
       ]
     },
     {
+      "name": "Bitcoin Dombo 🇲🇿",
+      "count": 101,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxfa9lg4jv72yvlfwzurlm97suntc7fvl2n8su9yt4rdqxaf095qsckk9jn",
+          "date": "2026-04-20",
+          "merchant": "Nubelle"
+        },
+        {
+          "url": "https://x.com/i/status/2046181484537454659",
+          "date": "2026-04-20",
+          "merchant": "Nubelle"
+        },
+        {
+          "url": "https://x.com/i/status/2046103721545728147",
+          "date": "2026-04-20",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswqcsdnrh8446shmkmtk8fknfa4g3x7q83v972pn2n0e5j3env7xcfvhpuz",
+          "date": "2026-04-20",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
+        {
+          "url": "https://x.com/i/status/2046091392322064671",
+          "date": "2026-04-20",
+          "merchant": "Barbearia IG"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfa7cdqewm54q94t4gdsj6y3edm582jfzshfrdxuehy9jwregdwtgx6jlax",
+          "date": "2026-04-20",
+          "merchant": "Barbearia IG"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszu3kqxlp5fenqstpg3dnj5788ftn0dsne004ukla0m0rcnnx002qfl529n",
+          "date": "2026-04-20",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
+        {
+          "url": "https://x.com/i/status/2045915716679802964",
+          "date": "2026-04-20",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
+        {
+          "url": "https://x.com/i/status/2045771825154519185",
+          "date": "2026-04-19",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswy8un0eryfmkveeu5xxr05330j7fyxj8llh98t9lyzppa3l70c6s42mzqs",
+          "date": "2026-04-19",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2045760070181392447",
+          "date": "2026-04-19",
+          "merchant": "Folami Game Zone"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8u759cx78v830t24jdnexg9mnthg6qjmhpjg2atqh9eqcnqwkp2semf2ht",
+          "date": "2026-04-19",
+          "merchant": "Folami Game Zone"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsr4ykgyc5clgaqh90xpn8qgg7sd3s8zygd6pyaqv9hseq4zqjhdus8gfd5s",
+          "date": "2026-04-19",
+          "merchant": "Folami Game Zone"
+        },
+        {
+          "url": "https://x.com/i/status/2045597551643029588",
+          "date": "2026-04-19",
+          "merchant": "Folami Game Zone"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8n5v09w2d5x8rez5f62rzk7v92ce80jjemvmq7fsy6ed2dcy7qkspef48j",
+          "date": "2026-04-17",
+          "merchant": "Tenorio Baber Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2045222658824888607",
+          "date": "2026-04-17",
+          "merchant": "Tenorio Baber Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2044643998824898764",
+          "date": "2026-04-16",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0wvh5y409myv87kquc50xlpnktudsy4mg4ufl9zsemwcqjay75kqv7nx7k",
+          "date": "2026-04-16",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqqdtclte6tldtmxf47dtfsyj3e5x2dexkyaxzxwdngxxkgy9vmxgd63aqg",
+          "date": "2026-04-16",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2044534539855220888",
+          "date": "2026-04-16",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2044433523679940989",
+          "date": "2026-04-15",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd8eassppk4qgxmndqqz3jzs7arg4g3ch87e4rll73rpw2cy8n94q8r2uz4",
+          "date": "2026-04-15",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsft59s79zr9w3cl03zn4xqfhwrkvs3mrvc6y4dt40keq4q0r9vylca793ne",
+          "date": "2026-04-15",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2044358059078652032",
+          "date": "2026-04-15",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2044270566350213546",
+          "date": "2026-04-15",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqup8dlnqwlvdcfwamdp382kplw093n6m3rghq8q9d2tzp5eqrsxghsfkf9",
+          "date": "2026-04-15",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszgjs5l4cx60ne5unzjsn5uuhdcngl3xasftfkynpjdvfdjqqnwvqdkeafx",
+          "date": "2026-04-14",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
+        {
+          "url": "https://x.com/i/status/2044145364677042557",
+          "date": "2026-04-14",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
+        {
+          "url": "https://x.com/i/status/2044037538403295628",
+          "date": "2026-04-14",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfdtec7zuwvuyu2kssz6k3mycksqw7qq8p5jfkdw86f3f8u654trqx0d2tz",
+          "date": "2026-04-14",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstnj3xqtmc6v9vz4jd82ens6njtmz8lg4xe0sujf5a4k6nlps5tcq97fw8d",
+          "date": "2026-04-13",
+          "merchant": "Mercearia Abençoada"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9svc2yvvpedv8zasnpsehadqehydyc3njfhf4cryfl93w9hzn0ksl784k4",
+          "date": "2026-04-13",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2043389051697262816",
+          "date": "2026-04-13",
+          "merchant": "Uaieca Car Wash"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqcs286qq6m9rxxncd7as0xpqme4g2tw2n2k2xwzqyrwf48s2qhac5musmy",
+          "date": "2026-04-13",
+          "merchant": "Uaieca Car Wash"
+        },
+        {
+          "url": "https://x.com/i/status/2043192733863448753",
+          "date": "2026-04-13",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsphrctz496pe3dqylfu8l9ktnppfkxcx6nsmwnht3d5kqepc0375q6u859a",
+          "date": "2026-04-13",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2042494596748296567",
+          "date": "2026-04-10",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq2ytlrjh4df8qhe93vemhpa30q5m808lmh2wexxtt0z447x37vdcnhfmv7",
+          "date": "2026-04-10",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2042323338094149765",
+          "date": "2026-04-09",
+          "merchant": "Mercearia Abençoada"
+        },
+        {
+          "url": "https://x.com/i/status/2042315713600270778",
+          "date": "2026-04-09",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2041993244201095342",
+          "date": "2026-04-09",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsguq44f8n8csye6s96vgwkz6zf3deqw2hwtaff6n997k0nemytvjs7ferzk",
+          "date": "2026-04-09",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2jkaumujjhsdnn9rndueg4wqqtvmc7y0ylqhhrert9m55nnde3as5fe6d0",
+          "date": "2026-04-09",
+          "merchant": "Barbearia IG"
+        },
+        {
+          "url": "https://x.com/i/status/2041986983291977961",
+          "date": "2026-04-09",
+          "merchant": "Barbearia IG"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfd7czyj060n647vlsuxffzr8f3w2eyjs73e76vlxnw4wy06xksdqnqj5eh",
+          "date": "2026-04-08",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2041834437168578877",
+          "date": "2026-04-08",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2scp3mxshpjpplxxpry048dwtx7vhny5wkg0umspy84p8pewlqeg2hxep3",
+          "date": "2026-04-08",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2041756493788131793",
+          "date": "2026-04-08",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv8q8r4lhmzcwe0n7wpd4ryn9z3rajjyuvvyc8j73m05az4m93jxs0qfrux",
+          "date": "2026-04-07",
+          "merchant": "Mercearia Abençoada"
+        },
+        {
+          "url": "https://x.com/i/status/2041467074795475240",
+          "date": "2026-04-07",
+          "merchant": "Mercearia Abençoada"
+        },
+        {
+          "url": "https://x.com/i/status/2041384467634221122",
+          "date": "2026-04-07",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspw047t9lpzkzhncz70rd8j6m3wh97kgzppv99xzwhsg9gk2cg4eskvzdv3",
+          "date": "2026-04-07",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2041213424219074881",
+          "date": "2026-04-07",
+          "merchant": "Barbearia IG"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0l40ncrqzxyhjr7wns3gcqzvfctfmthz5ke4u0l5gp0y9eaw579qxa3wqc",
+          "date": "2026-04-06",
+          "merchant": "Barbearia IG"
+        },
+        {
+          "url": "https://x.com/i/status/2041137392959000658",
+          "date": "2026-04-06",
+          "merchant": "Mercearia Abençoada"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs24yyxwxrveugvqaj84mn0qjjwszulhjxygxmx4zwxsgv9rtpfg7snj5d4p",
+          "date": "2026-04-06",
+          "merchant": "Mercearia Abençoada"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2dmpcme9sm4m8q6rqy76x55j36sjl6h9xzt7afv0de8xy9jsaevqf3acd5",
+          "date": "2026-04-06",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2041085890336891359",
+          "date": "2026-04-06",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfrxssa2qukyjzmnupz2zgvz0cywxxsdrc5p4kgg9nu8na5lj6rgc7gp992",
+          "date": "2026-04-02",
+          "merchant": "Mercearia Abençoada"
+        },
+        {
+          "url": "https://x.com/i/status/2039358962189893851",
+          "date": "2026-04-02",
+          "merchant": "Mercearia Abençoada"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszwvejg97vekh6qs92ez99eaqgez27kg385ryztuyf72v2phl6ymgvm59xk",
+          "date": "2026-04-02",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9lldqzcu9xsglf6ynrcalsh0k8329ewgpredwgattf5yr6ex027s27c99z",
+          "date": "2026-04-01",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039304493859316174",
+          "date": "2026-04-01",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2038013284578673044",
+          "date": "2026-03-29",
+          "merchant": "Folami Game Zone"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsywf9uajudptjf0lza0mqn65chfslnz0l5mx39s4zv3sa5vc92r5ckxnypg",
+          "date": "2026-03-29",
+          "merchant": "Folami Game Zone"
+        },
+        {
+          "url": "https://x.com/i/status/2037998084685169068",
+          "date": "2026-03-29",
+          "merchant": "Tenorio Baber Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2d4vc3vyf72kqh3jwdzvctgsy3mztw6dyrdlzvemthwfx4ygcjjq9w9fal",
+          "date": "2026-03-29",
+          "merchant": "Tenorio Baber Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2037985930317873400",
+          "date": "2026-03-28",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswpt26a0g3ypyx0vxxp2z4czeyd09nug2fxytp8d98r8v0nwa2cts39vyh6",
+          "date": "2026-03-28",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstx3magssdguv8n7cxv0lh7dart9jv2u707kfwpkfmwjlmhg0cjfgcsvx3h",
+          "date": "2026-03-28",
+          "merchant": "Nubelle"
+        },
+        {
+          "url": "https://x.com/i/status/2037963008027009156",
+          "date": "2026-03-28",
+          "merchant": "Nubelle"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxres0fc9djcsev50e6xvw5x7yvgytha8cgxczgr00ll64ryw2skcg59k9l",
+          "date": "2026-03-28",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2037852386660700202",
+          "date": "2026-03-28",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2037485038724382954",
+          "date": "2026-03-28",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8fhadm6rv226rcc8s4yzsezfptxs52x74fjz7rxykgk89z6chs4gacfcys",
+          "date": "2026-03-28",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0nyfzuqw0ud2055hf8hrz2at2tgdw0d3wpwt7z8606l2397f78jgdjgpqm",
+          "date": "2026-03-27",
+          "merchant": "Folami Game Zone"
+        },
+        {
+          "url": "https://x.com/i/status/2037598959636447502",
+          "date": "2026-03-27",
+          "merchant": "Folami Game Zone"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfgjyls4pdqdj67psljas9m8su8jqfg9m0ls6znvg5mhhcvh7cg8g7uv4qh",
+          "date": "2026-03-27",
+          "merchant": "Uaieca Car Wash"
+        },
+        {
+          "url": "https://x.com/i/status/2037569252022985017",
+          "date": "2026-03-27",
+          "merchant": "Uaieca Car Wash"
+        },
+        {
+          "url": "https://x.com/i/status/2037264643815535017",
+          "date": "2026-03-26",
+          "merchant": "Barbearia IG"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv7ptdpm9sv3shd89xz2a2nze6ucc30v4ejrllt2xxkvzgftvjm7q7lm3qy",
+          "date": "2026-03-26",
+          "merchant": "Barbearia IG"
+        },
+        {
+          "url": "https://x.com/i/status/2037147270928290061",
+          "date": "2026-03-26",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw03zyshvk9v35w85u5cw2zhfjg6l5ygk6rh05cpv6kyfw9l2ytegu2fmcy",
+          "date": "2026-03-26",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2036868700028989611",
+          "date": "2026-03-26",
+          "merchant": "Folami Game Zone"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv6dtvr7ylszkldlhewuerugcq8xu89y6djtspp5l9umurtmd8lvqe00q9p",
+          "date": "2026-03-26",
+          "merchant": "Folami Game Zone"
+        },
+        {
+          "url": "https://x.com/i/status/2036818927724933623",
+          "date": "2026-03-25",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdfgag824f929evtqecfh6ehjg53qx83l48hccc7xypf564zmcdcgqxg9a3",
+          "date": "2026-03-25",
+          "merchant": "Stay Safe Restaurante & Lounge"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstqfhvqazzv7er94pgnehhk6l02296euk3zduz9y3kguvw9nuwzcsz3pjzj",
+          "date": "2026-03-25",
+          "merchant": "Tenorio Baber Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2036770826096095273",
+          "date": "2026-03-25",
+          "merchant": "Tenorio Baber Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2036666806752903414",
+          "date": "2026-03-25",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq3f0zsmkaqp450jqu6rxtczv5leamvxry97dwcc2x5w6lafuz69s02qlkt",
+          "date": "2026-03-25",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2036510768489746651",
+          "date": "2026-03-24",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0sxwp0cuxt7s7yxtrwkc4l3hr8hp7alu3648xqkz84vsr3z0yzhcnyn3lw",
+          "date": "2026-03-24",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdwwkhkcm0gpmknst5ewu68h67rx38fwnx397trhkp7ajce3240vcax5xjm",
+          "date": "2026-03-24",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2036460872176934991",
+          "date": "2026-03-24",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvdwsujxvm39qcvls55qfjythrn0eh0eqjyuh0xuxf0fw6najjv6sdvgnzk",
+          "date": "2026-03-24",
+          "merchant": "Folami Game Zone"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv7ts29xy5547e4mdhsq5wdem0322w7z3jpkgkfmn3t8nxeffgk5gu20rz0",
+          "date": "2026-03-24",
+          "merchant": "Uaieca Car Wash"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd6w8nrqk8vmrve3h60wqv64vfkpqfqqmya0sy9c8hy0etxkukntgahhhm4",
+          "date": "2026-03-24",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2035686016615424433",
+          "date": "2026-03-24",
+          "merchant": "Uaieca Car Wash"
+        },
+        {
+          "url": "https://x.com/i/status/2036057680742117842",
+          "date": "2026-03-24",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2036118314569572836",
+          "date": "2026-03-24",
+          "merchant": "Folami Game Zone"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Dua 🇬🇭",
       "count": 99,
       "posts": [
@@ -2005,510 +2571,14 @@
       ]
     },
     {
-      "name": "Bitcoin Dombo 🇲🇿",
-      "count": 99,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2046103721545728147",
-          "date": "2026-04-20",
-          "merchant": "Stay Safe Restaurante & Lounge"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswqcsdnrh8446shmkmtk8fknfa4g3x7q83v972pn2n0e5j3env7xcfvhpuz",
-          "date": "2026-04-20",
-          "merchant": "Stay Safe Restaurante & Lounge"
-        },
-        {
-          "url": "https://x.com/i/status/2046091392322064671",
-          "date": "2026-04-20",
-          "merchant": "Barbearia IG"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfa7cdqewm54q94t4gdsj6y3edm582jfzshfrdxuehy9jwregdwtgx6jlax",
-          "date": "2026-04-20",
-          "merchant": "Barbearia IG"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszu3kqxlp5fenqstpg3dnj5788ftn0dsne004ukla0m0rcnnx002qfl529n",
-          "date": "2026-04-20",
-          "merchant": "Stay Safe Restaurante & Lounge"
-        },
-        {
-          "url": "https://x.com/i/status/2045915716679802964",
-          "date": "2026-04-20",
-          "merchant": "Stay Safe Restaurante & Lounge"
-        },
-        {
-          "url": "https://x.com/i/status/2045771825154519185",
-          "date": "2026-04-19",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswy8un0eryfmkveeu5xxr05330j7fyxj8llh98t9lyzppa3l70c6s42mzqs",
-          "date": "2026-04-19",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2045760070181392447",
-          "date": "2026-04-19",
-          "merchant": "Folami Game Zone"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8u759cx78v830t24jdnexg9mnthg6qjmhpjg2atqh9eqcnqwkp2semf2ht",
-          "date": "2026-04-19",
-          "merchant": "Folami Game Zone"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsr4ykgyc5clgaqh90xpn8qgg7sd3s8zygd6pyaqv9hseq4zqjhdus8gfd5s",
-          "date": "2026-04-19",
-          "merchant": "Folami Game Zone"
-        },
-        {
-          "url": "https://x.com/i/status/2045597551643029588",
-          "date": "2026-04-19",
-          "merchant": "Folami Game Zone"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8n5v09w2d5x8rez5f62rzk7v92ce80jjemvmq7fsy6ed2dcy7qkspef48j",
-          "date": "2026-04-17",
-          "merchant": "Tenorio Baber Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2045222658824888607",
-          "date": "2026-04-17",
-          "merchant": "Tenorio Baber Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2044643998824898764",
-          "date": "2026-04-16",
-          "merchant": "Dona Marta Stand Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0wvh5y409myv87kquc50xlpnktudsy4mg4ufl9zsemwcqjay75kqv7nx7k",
-          "date": "2026-04-16",
-          "merchant": "Dona Marta Stand Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqqdtclte6tldtmxf47dtfsyj3e5x2dexkyaxzxwdngxxkgy9vmxgd63aqg",
-          "date": "2026-04-16",
-          "merchant": "Nelton Services Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2044534539855220888",
-          "date": "2026-04-16",
-          "merchant": "Nelton Services Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2044433523679940989",
-          "date": "2026-04-15",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd8eassppk4qgxmndqqz3jzs7arg4g3ch87e4rll73rpw2cy8n94q8r2uz4",
-          "date": "2026-04-15",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsft59s79zr9w3cl03zn4xqfhwrkvs3mrvc6y4dt40keq4q0r9vylca793ne",
-          "date": "2026-04-15",
-          "merchant": "Dona Marta Stand Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2044358059078652032",
-          "date": "2026-04-15",
-          "merchant": "Dona Marta Stand Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2044270566350213546",
-          "date": "2026-04-15",
-          "merchant": "Stay Safe Restaurante & Lounge"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqup8dlnqwlvdcfwamdp382kplw093n6m3rghq8q9d2tzp5eqrsxghsfkf9",
-          "date": "2026-04-15",
-          "merchant": "Stay Safe Restaurante & Lounge"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszgjs5l4cx60ne5unzjsn5uuhdcngl3xasftfkynpjdvfdjqqnwvqdkeafx",
-          "date": "2026-04-14",
-          "merchant": "Stay Safe Restaurante & Lounge"
-        },
-        {
-          "url": "https://x.com/i/status/2044145364677042557",
-          "date": "2026-04-14",
-          "merchant": "Stay Safe Restaurante & Lounge"
-        },
-        {
-          "url": "https://x.com/i/status/2044037538403295628",
-          "date": "2026-04-14",
-          "merchant": "Nelton Services Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfdtec7zuwvuyu2kssz6k3mycksqw7qq8p5jfkdw86f3f8u654trqx0d2tz",
-          "date": "2026-04-14",
-          "merchant": "Nelton Services Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstnj3xqtmc6v9vz4jd82ens6njtmz8lg4xe0sujf5a4k6nlps5tcq97fw8d",
-          "date": "2026-04-13",
-          "merchant": "Mercearia Abençoada"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9svc2yvvpedv8zasnpsehadqehydyc3njfhf4cryfl93w9hzn0ksl784k4",
-          "date": "2026-04-13",
-          "merchant": "Dona Marta Stand Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2043389051697262816",
-          "date": "2026-04-13",
-          "merchant": "Uaieca Car Wash"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqcs286qq6m9rxxncd7as0xpqme4g2tw2n2k2xwzqyrwf48s2qhac5musmy",
-          "date": "2026-04-13",
-          "merchant": "Uaieca Car Wash"
-        },
-        {
-          "url": "https://x.com/i/status/2043192733863448753",
-          "date": "2026-04-13",
-          "merchant": "Nelton Services Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsphrctz496pe3dqylfu8l9ktnppfkxcx6nsmwnht3d5kqepc0375q6u859a",
-          "date": "2026-04-13",
-          "merchant": "Nelton Services Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2042494596748296567",
-          "date": "2026-04-10",
-          "merchant": "Nelton Services Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq2ytlrjh4df8qhe93vemhpa30q5m808lmh2wexxtt0z447x37vdcnhfmv7",
-          "date": "2026-04-10",
-          "merchant": "Nelton Services Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2042323338094149765",
-          "date": "2026-04-09",
-          "merchant": "Mercearia Abençoada"
-        },
-        {
-          "url": "https://x.com/i/status/2042315713600270778",
-          "date": "2026-04-09",
-          "merchant": "Dona Marta Stand Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2041993244201095342",
-          "date": "2026-04-09",
-          "merchant": "Nelton Services Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsguq44f8n8csye6s96vgwkz6zf3deqw2hwtaff6n997k0nemytvjs7ferzk",
-          "date": "2026-04-09",
-          "merchant": "Nelton Services Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2jkaumujjhsdnn9rndueg4wqqtvmc7y0ylqhhrert9m55nnde3as5fe6d0",
-          "date": "2026-04-09",
-          "merchant": "Barbearia IG"
-        },
-        {
-          "url": "https://x.com/i/status/2041986983291977961",
-          "date": "2026-04-09",
-          "merchant": "Barbearia IG"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfd7czyj060n647vlsuxffzr8f3w2eyjs73e76vlxnw4wy06xksdqnqj5eh",
-          "date": "2026-04-08",
-          "merchant": "Dona Marta Stand Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2041834437168578877",
-          "date": "2026-04-08",
-          "merchant": "Dona Marta Stand Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2scp3mxshpjpplxxpry048dwtx7vhny5wkg0umspy84p8pewlqeg2hxep3",
-          "date": "2026-04-08",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2041756493788131793",
-          "date": "2026-04-08",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv8q8r4lhmzcwe0n7wpd4ryn9z3rajjyuvvyc8j73m05az4m93jxs0qfrux",
-          "date": "2026-04-07",
-          "merchant": "Mercearia Abençoada"
-        },
-        {
-          "url": "https://x.com/i/status/2041467074795475240",
-          "date": "2026-04-07",
-          "merchant": "Mercearia Abençoada"
-        },
-        {
-          "url": "https://x.com/i/status/2041384467634221122",
-          "date": "2026-04-07",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspw047t9lpzkzhncz70rd8j6m3wh97kgzppv99xzwhsg9gk2cg4eskvzdv3",
-          "date": "2026-04-07",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2041213424219074881",
-          "date": "2026-04-07",
-          "merchant": "Barbearia IG"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0l40ncrqzxyhjr7wns3gcqzvfctfmthz5ke4u0l5gp0y9eaw579qxa3wqc",
-          "date": "2026-04-06",
-          "merchant": "Barbearia IG"
-        },
-        {
-          "url": "https://x.com/i/status/2041137392959000658",
-          "date": "2026-04-06",
-          "merchant": "Mercearia Abençoada"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs24yyxwxrveugvqaj84mn0qjjwszulhjxygxmx4zwxsgv9rtpfg7snj5d4p",
-          "date": "2026-04-06",
-          "merchant": "Mercearia Abençoada"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2dmpcme9sm4m8q6rqy76x55j36sjl6h9xzt7afv0de8xy9jsaevqf3acd5",
-          "date": "2026-04-06",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2041085890336891359",
-          "date": "2026-04-06",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfrxssa2qukyjzmnupz2zgvz0cywxxsdrc5p4kgg9nu8na5lj6rgc7gp992",
-          "date": "2026-04-02",
-          "merchant": "Mercearia Abençoada"
-        },
-        {
-          "url": "https://x.com/i/status/2039358962189893851",
-          "date": "2026-04-02",
-          "merchant": "Mercearia Abençoada"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszwvejg97vekh6qs92ez99eaqgez27kg385ryztuyf72v2phl6ymgvm59xk",
-          "date": "2026-04-02",
-          "merchant": "Dona Marta Stand Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9lldqzcu9xsglf6ynrcalsh0k8329ewgpredwgattf5yr6ex027s27c99z",
-          "date": "2026-04-01",
-          "merchant": "Nelton Services Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039304493859316174",
-          "date": "2026-04-01",
-          "merchant": "Nelton Services Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2038013284578673044",
-          "date": "2026-03-29",
-          "merchant": "Folami Game Zone"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsywf9uajudptjf0lza0mqn65chfslnz0l5mx39s4zv3sa5vc92r5ckxnypg",
-          "date": "2026-03-29",
-          "merchant": "Folami Game Zone"
-        },
-        {
-          "url": "https://x.com/i/status/2037998084685169068",
-          "date": "2026-03-29",
-          "merchant": "Tenorio Baber Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2d4vc3vyf72kqh3jwdzvctgsy3mztw6dyrdlzvemthwfx4ygcjjq9w9fal",
-          "date": "2026-03-29",
-          "merchant": "Tenorio Baber Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2037985930317873400",
-          "date": "2026-03-28",
-          "merchant": "Stay Safe Restaurante & Lounge"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswpt26a0g3ypyx0vxxp2z4czeyd09nug2fxytp8d98r8v0nwa2cts39vyh6",
-          "date": "2026-03-28",
-          "merchant": "Stay Safe Restaurante & Lounge"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstx3magssdguv8n7cxv0lh7dart9jv2u707kfwpkfmwjlmhg0cjfgcsvx3h",
-          "date": "2026-03-28",
-          "merchant": "Nubelle"
-        },
-        {
-          "url": "https://x.com/i/status/2037963008027009156",
-          "date": "2026-03-28",
-          "merchant": "Nubelle"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxres0fc9djcsev50e6xvw5x7yvgytha8cgxczgr00ll64ryw2skcg59k9l",
-          "date": "2026-03-28",
-          "merchant": "Dona Marta Stand Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2037852386660700202",
-          "date": "2026-03-28",
-          "merchant": "Dona Marta Stand Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2037485038724382954",
-          "date": "2026-03-28",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8fhadm6rv226rcc8s4yzsezfptxs52x74fjz7rxykgk89z6chs4gacfcys",
-          "date": "2026-03-28",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0nyfzuqw0ud2055hf8hrz2at2tgdw0d3wpwt7z8606l2397f78jgdjgpqm",
-          "date": "2026-03-27",
-          "merchant": "Folami Game Zone"
-        },
-        {
-          "url": "https://x.com/i/status/2037598959636447502",
-          "date": "2026-03-27",
-          "merchant": "Folami Game Zone"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfgjyls4pdqdj67psljas9m8su8jqfg9m0ls6znvg5mhhcvh7cg8g7uv4qh",
-          "date": "2026-03-27",
-          "merchant": "Uaieca Car Wash"
-        },
-        {
-          "url": "https://x.com/i/status/2037569252022985017",
-          "date": "2026-03-27",
-          "merchant": "Uaieca Car Wash"
-        },
-        {
-          "url": "https://x.com/i/status/2037264643815535017",
-          "date": "2026-03-26",
-          "merchant": "Barbearia IG"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv7ptdpm9sv3shd89xz2a2nze6ucc30v4ejrllt2xxkvzgftvjm7q7lm3qy",
-          "date": "2026-03-26",
-          "merchant": "Barbearia IG"
-        },
-        {
-          "url": "https://x.com/i/status/2037147270928290061",
-          "date": "2026-03-26",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsw03zyshvk9v35w85u5cw2zhfjg6l5ygk6rh05cpv6kyfw9l2ytegu2fmcy",
-          "date": "2026-03-26",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2036868700028989611",
-          "date": "2026-03-26",
-          "merchant": "Folami Game Zone"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv6dtvr7ylszkldlhewuerugcq8xu89y6djtspp5l9umurtmd8lvqe00q9p",
-          "date": "2026-03-26",
-          "merchant": "Folami Game Zone"
-        },
-        {
-          "url": "https://x.com/i/status/2036818927724933623",
-          "date": "2026-03-25",
-          "merchant": "Stay Safe Restaurante & Lounge"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdfgag824f929evtqecfh6ehjg53qx83l48hccc7xypf564zmcdcgqxg9a3",
-          "date": "2026-03-25",
-          "merchant": "Stay Safe Restaurante & Lounge"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstqfhvqazzv7er94pgnehhk6l02296euk3zduz9y3kguvw9nuwzcsz3pjzj",
-          "date": "2026-03-25",
-          "merchant": "Tenorio Baber Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2036770826096095273",
-          "date": "2026-03-25",
-          "merchant": "Tenorio Baber Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2036666806752903414",
-          "date": "2026-03-25",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq3f0zsmkaqp450jqu6rxtczv5leamvxry97dwcc2x5w6lafuz69s02qlkt",
-          "date": "2026-03-25",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2036510768489746651",
-          "date": "2026-03-24",
-          "merchant": "Dona Marta Stand Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0sxwp0cuxt7s7yxtrwkc4l3hr8hp7alu3648xqkz84vsr3z0yzhcnyn3lw",
-          "date": "2026-03-24",
-          "merchant": "Dona Marta Stand Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdwwkhkcm0gpmknst5ewu68h67rx38fwnx397trhkp7ajce3240vcax5xjm",
-          "date": "2026-03-24",
-          "merchant": "Nelton Services Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2036460872176934991",
-          "date": "2026-03-24",
-          "merchant": "Nelton Services Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvdwsujxvm39qcvls55qfjythrn0eh0eqjyuh0xuxf0fw6najjv6sdvgnzk",
-          "date": "2026-03-24",
-          "merchant": "Folami Game Zone"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv7ts29xy5547e4mdhsq5wdem0322w7z3jpkgkfmn3t8nxeffgk5gu20rz0",
-          "date": "2026-03-24",
-          "merchant": "Uaieca Car Wash"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd6w8nrqk8vmrve3h60wqv64vfkpqfqqmya0sy9c8hy0etxkukntgahhhm4",
-          "date": "2026-03-24",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2035686016615424433",
-          "date": "2026-03-24",
-          "merchant": "Uaieca Car Wash"
-        },
-        {
-          "url": "https://x.com/i/status/2036057680742117842",
-          "date": "2026-03-24",
-          "merchant": "Isac Mini-Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2036118314569572836",
-          "date": "2026-03-24",
-          "merchant": "Folami Game Zone"
-        }
-      ]
-    },
-    {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 52,
+      "count": 53,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2046237131043930423",
+          "date": "2026-04-20",
+          "merchant": "Mossel Bay Gas"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsw7520k996tyvnqdggeat0dg4tkdxprmetdez5musthgj437cmkjc36mfsw",
           "date": "2026-04-20",
@@ -3895,6 +3965,17 @@
           "merchant": "Kwa Innocent"
         }
       ]
+    },
+    {
+      "name": "Bit-Fitness 🇿🇦",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2046187884068147612",
+          "date": "2026-04-20",
+          "merchant": "Moto Wash & Valet"
+        }
+      ]
     }
   ],
   "top_merchants": [
@@ -4897,8 +4978,13 @@
     },
     {
       "name": "Bliss beauty Salon",
-      "count": 15,
+      "count": 16,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2046218026496696597",
+          "date": "2026-04-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsyw0xp8f089kg8d9rq5s0e820t4k229z3r46c9ed9672r37e6w4ec7trv9q",
           "date": "2026-04-20",
@@ -6882,6 +6968,32 @@
       ]
     },
     {
+      "name": "Nubelle",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxfa9lg4jv72yvlfwzurlm97suntc7fvl2n8su9yt4rdqxaf095qsckk9jn",
+          "date": "2026-04-20",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2046181484537454659",
+          "date": "2026-04-20",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstx3magssdguv8n7cxv0lh7dart9jv2u707kfwpkfmwjlmhg0cjfgcsvx3h",
+          "date": "2026-03-28",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2037963008027009156",
+          "date": "2026-03-28",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Nelly's Blend",
       "count": 4,
       "posts": [
@@ -7055,6 +7167,27 @@
           "url": "https://x.com/i/status/2033851794384662900",
           "date": "2026-03-31",
           "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Mossel Bay Gas",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2046237131043930423",
+          "date": "2026-04-20",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsttaknk20xcw7lxpu62l2x95egay0qp5mjamsvtj4clk83c2tn09sdqkyn2",
+          "date": "2026-03-27",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2034268984623685948",
+          "date": "2026-03-27",
+          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
@@ -7272,22 +7405,6 @@
       ]
     },
     {
-      "name": "Nubelle",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqstx3magssdguv8n7cxv0lh7dart9jv2u707kfwpkfmwjlmhg0cjfgcsvx3h",
-          "date": "2026-03-28",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2037963008027009156",
-          "date": "2026-03-28",
-          "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
       "name": "Mundayam Restaurant",
       "count": 2,
       "posts": [
@@ -7300,22 +7417,6 @@
           "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
           "date": "2026-03-25",
           "project": "Bitcoin Victoria Falls 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Mossel Bay Gas",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsttaknk20xcw7lxpu62l2x95egay0qp5mjamsvtj4clk83c2tn09sdqkyn2",
-          "date": "2026-03-27",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2034268984623685948",
-          "date": "2026-03-27",
-          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
@@ -7760,6 +7861,17 @@
       ]
     },
     {
+      "name": "Moto Wash & Valet",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2046187884068147612",
+          "date": "2026-04-20",
+          "project": "Bit-Fitness 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Livingstone Crocodile Park",
       "count": 1,
       "posts": [
@@ -7829,17 +7941,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 28,
-    "daily_average_payments": 70
+    "daily_average_payments": 71
   },
   "burn_rate": {
-    "percentage": 49,
+    "percentage": 50,
     "status": "cold",
     "days_active": 28
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1942
+      "count": 1956
     },
     {
       "domain": "8333.mobi",
@@ -7857,6 +7969,11 @@
       "count": 4
     },
     {
+      "flag": "🇿🇦",
+      "country": "South Africa",
+      "count": 4
+    },
+    {
       "flag": "🇲🇿",
       "country": "Mozambique",
       "count": 4
@@ -7864,11 +7981,6 @@
     {
       "flag": "🇰🇪",
       "country": "Kenya",
-      "count": 3
-    },
-    {
-      "flag": "🇿🇦",
-      "country": "South Africa",
       "count": 3
     },
     {
@@ -7890,13 +8002,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 995
+      "count": 1006
     },
     {
       "platform": "Nostr",
-      "count": 987
+      "count": 990
     }
   ],
-  "generated_at": "2026-04-20T15:20:02.375132+00:00",
+  "generated_at": "2026-04-20T15:30:02.533742+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
