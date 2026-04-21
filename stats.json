@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 2086,
+    "all_payments": 2089,
     "by_type": {
       "merchant": {
-        "count": 692
+        "count": 693
       },
       "project": {
-        "count": 692
+        "count": 693
       },
       "reviewer": {
-        "count": 702
+        "count": 703
       }
     }
   },
   "today": {
     "date": "2026-04-21",
-    "payments": 51,
+    "payments": 54,
     "by_type": {
       "merchant": {
-        "count": 17
+        "count": 18
       },
       "project": {
-        "count": 17
+        "count": 18
       },
       "reviewer": {
-        "count": 17
+        "count": 18
       }
     },
-    "approved": 17,
-    "rejected": 0,
+    "approved": 18,
+    "rejected": 1,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2046601481281757285",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Padis Eatery",
+        "platform": "X",
+        "time": "18:36"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs93gz8eqgwnqd6e8axyz0sh0kudmu4r8942ptyrdlt3qxks2f384sug78cw",
         "project": "Bitcoin Aves 🇬🇭",
@@ -153,6 +160,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
       {
         "project": "Bitcoin Aves 🇬🇭"
       },
@@ -441,17 +451,17 @@
     },
     {
       "date": "2026-04-21",
-      "project_count": 17,
-      "merchant_count": 17,
-      "reviewer_count": 17,
-      "approved": 17,
-      "rejected": 0
+      "project_count": 18,
+      "merchant_count": 18,
+      "reviewer_count": 18,
+      "approved": 18,
+      "rejected": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 727,
-    "approved": 691,
-    "rejected": 36
+    "total_reviewed": 729,
+    "approved": 692,
+    "rejected": 37
   },
   "top_projects": [
     {
@@ -3267,8 +3277,13 @@
     },
     {
       "name": "Bitcoin Aves 🇬🇭",
-      "count": 31,
+      "count": 32,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2046601481281757285",
+          "date": "2026-04-21",
+          "merchant": "Padis Eatery"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs93gz8eqgwnqd6e8axyz0sh0kudmu4r8942ptyrdlt3qxks2f384sug78cw",
           "date": "2026-04-21",
@@ -7146,6 +7161,32 @@
       ]
     },
     {
+      "name": "Padis Eatery",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2046601481281757285",
+          "date": "2026-04-21",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs93gz8eqgwnqd6e8axyz0sh0kudmu4r8942ptyrdlt3qxks2f384sug78cw",
+          "date": "2026-04-21",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2045458234232754383",
+          "date": "2026-04-18",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvx25gqhmd9eeql72py0n6js4nwl84cr07s74dn5tvjwp73n7ql3qwpq89g",
+          "date": "2026-04-18",
+          "project": "Bitcoin Aves 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Olympia Chicken",
       "count": 4,
       "posts": [
@@ -7397,27 +7438,6 @@
           "url": "https://x.com/i/status/2039382012067217580",
           "date": "2026-04-02",
           "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Padis Eatery",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs93gz8eqgwnqd6e8axyz0sh0kudmu4r8942ptyrdlt3qxks2f384sug78cw",
-          "date": "2026-04-21",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2045458234232754383",
-          "date": "2026-04-18",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvx25gqhmd9eeql72py0n6js4nwl84cr07s74dn5tvjwp73n7ql3qwpq89g",
-          "date": "2026-04-18",
-          "project": "Bitcoin Aves 🇬🇭"
         }
       ]
     },
@@ -8154,7 +8174,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 29,
-    "daily_average_payments": 71
+    "daily_average_payments": 72
   },
   "burn_rate": {
     "percentage": 51,
@@ -8164,7 +8184,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2040
+      "count": 2043
     },
     {
       "domain": "8333.mobi",
@@ -8214,14 +8234,14 @@
   ],
   "platforms": [
     {
-      "platform": "Nostr",
-      "count": 1044
+      "platform": "X",
+      "count": 1045
     },
     {
-      "platform": "X",
-      "count": 1042
+      "platform": "Nostr",
+      "count": 1044
     }
   ],
-  "generated_at": "2026-04-21T18:30:02.202046+00:00",
+  "generated_at": "2026-04-21T18:40:02.204368+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }

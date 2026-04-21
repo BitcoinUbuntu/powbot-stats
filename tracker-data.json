@@ -1,7 +1,23 @@
 {
-  "last_updated": "2026-04-21T18:30:03.196115+00:00",
-  "total_submissions": 733,
+  "last_updated": "2026-04-21T18:40:03.089875+00:00",
+  "total_submissions": 734,
   "submissions": [
+    {
+      "id": 738,
+      "timestamp": "2026-04-21 18:36:48 UTC",
+      "project_name": "BTC Shule (Burundi) 🇧🇮",
+      "project_flag": "🇧🇮",
+      "merchant_name": "Unknown merchant",
+      "lightning_address": "nadiandacayisaba@blink.sv",
+      "merchant_tip_status": "",
+      "platform": "X",
+      "post_url": "https://x.com/i/status/2046648242004181333",
+      "telegram_link": "https://t.me/c/2378392967/14035",
+      "btcmap_link": "https://btcmap.org/26332",
+      "note": "❌ Post rejected via data quality alert | Reason: BTCMap merchant not found",
+      "status": "Rejected",
+      "payments": []
+    },
     {
       "id": 737,
       "timestamp": "2026-04-21 18:21:15 UTC",
@@ -79,8 +95,27 @@
       "telegram_link": "https://t.me/c/2378392967/14020",
       "btcmap_link": "https://btcmap.org/merchant/node:12945071305",
       "note": "🔁 Duplicate video",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69e7c39195c1298fd5e0056f",
+          "timestamp": "2026-04-21T18:36:01.476232+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Padis Eatery",
+          "tx_id": "69e7c39295c1298fd5e00693",
+          "timestamp": "2026-04-21T18:36:02.348010+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Aves (Ghana) 🇬🇭",
+          "tx_id": "69e7c39395c1298fd5e007e7",
+          "timestamp": "2026-04-21T18:36:04.050481+00:00"
+        }
+      ]
     },
     {
       "id": 732,
