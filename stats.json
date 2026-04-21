@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 2050,
+    "all_payments": 2059,
     "by_type": {
       "merchant": {
-        "count": 680
+        "count": 683
       },
       "project": {
-        "count": 680
+        "count": 683
       },
       "reviewer": {
-        "count": 690
+        "count": 693
       }
     }
   },
   "today": {
     "date": "2026-04-21",
-    "payments": 15,
+    "payments": 24,
     "by_type": {
       "merchant": {
-        "count": 5
+        "count": 8
       },
       "project": {
-        "count": 5
+        "count": 8
       },
       "reviewer": {
-        "count": 5
+        "count": 8
       }
     },
-    "approved": 5,
+    "approved": 8,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2046517837968105524",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "The Meat Station TakeAway & Groceries",
+        "platform": "X",
+        "time": "11:16"
+      },
+      {
+        "url": "https://x.com/i/status/2046514838017380408",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Viwa Accessories",
+        "platform": "X",
+        "time": "11:16"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsdpc0w78f4k5n9cms2552apje0d0mv8mcjrp0c6w2ut2p5gwrn0kszkvy8q",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Viwa Accessories",
+        "platform": "Nostr",
+        "time": "11:16"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs8wx6p67ej78h7ltg2xpnd7h375q9twqpamx860jglhh3ypazmaqckjud3q",
         "project": "Bitcoin Ikorodu 🇳🇬",
@@ -69,6 +90,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -426,23 +456,33 @@
     },
     {
       "date": "2026-04-21",
-      "project_count": 5,
-      "merchant_count": 5,
-      "reviewer_count": 5,
-      "approved": 5,
+      "project_count": 8,
+      "merchant_count": 8,
+      "reviewer_count": 8,
+      "approved": 8,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 715,
-    "approved": 679,
+    "total_reviewed": 718,
+    "approved": 682,
     "rejected": 36
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 205,
+      "count": 207,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2046514838017380408",
+          "date": "2026-04-21",
+          "merchant": "Viwa Accessories"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdpc0w78f4k5n9cms2552apje0d0mv8mcjrp0c6w2ut2p5gwrn0kszkvy8q",
+          "date": "2026-04-21",
+          "merchant": "Viwa Accessories"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsgzefxq2kfx33gp2gqhv9rhyurqfw9jtr54uu7ckhw0udxzzmxuzs3x5s9y",
           "date": "2026-04-20",
@@ -2494,8 +2534,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 55,
+      "count": 56,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2046517837968105524",
+          "date": "2026-04-21",
+          "merchant": "The Meat Station TakeAway & Groceries"
+        },
         {
           "url": "https://x.com/i/status/2046175821241413783",
           "date": "2026-04-20",
@@ -6963,6 +7008,32 @@
       ]
     },
     {
+      "name": "Viwa Accessories",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2046514838017380408",
+          "date": "2026-04-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdpc0w78f4k5n9cms2552apje0d0mv8mcjrp0c6w2ut2p5gwrn0kszkvy8q",
+          "date": "2026-04-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2rzpva632lklf72cer4np68ndrdldvr7sxcmqvqh7knwet3krcxg953ehp",
+          "date": "2026-04-09",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2042244535212777689",
+          "date": "2026-04-09",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "The Sario Eventers",
       "count": 4,
       "posts": [
@@ -7223,6 +7294,27 @@
       ]
     },
     {
+      "name": "The Meat Station TakeAway & Groceries",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2046517837968105524",
+          "date": "2026-04-21",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsghqtj5yt52txsaaxh9qd09vsatc242uw6yguxqxaknmqzupn65rgpngwqx",
+          "date": "2026-04-18",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2045412015481729421",
+          "date": "2026-04-18",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Mwabosire",
       "count": 3,
       "posts": [
@@ -7297,22 +7389,6 @@
       ]
     },
     {
-      "name": "Viwa Accessories",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs2rzpva632lklf72cer4np68ndrdldvr7sxcmqvqh7knwet3krcxg953ehp",
-          "date": "2026-04-09",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2042244535212777689",
-          "date": "2026-04-09",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "The Young Shall Grow",
       "count": 2,
       "posts": [
@@ -7325,22 +7401,6 @@
           "url": "https://x.com/i/status/2039003278105526559",
           "date": "2026-03-31",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "The Meat Station TakeAway & Groceries",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsghqtj5yt52txsaaxh9qd09vsatc242uw6yguxqxaknmqzupn65rgpngwqx",
-          "date": "2026-04-18",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2045412015481729421",
-          "date": "2026-04-18",
-          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
@@ -8019,7 +8079,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 29,
-    "daily_average_payments": 70
+    "daily_average_payments": 71
   },
   "burn_rate": {
     "percentage": 50,
@@ -8029,7 +8089,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2004
+      "count": 2013
     },
     {
       "domain": "8333.mobi",
@@ -8080,13 +8140,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1027
+      "count": 1033
     },
     {
       "platform": "Nostr",
-      "count": 1023
+      "count": 1026
     }
   ],
-  "generated_at": "2026-04-21T11:10:02.030917+00:00",
+  "generated_at": "2026-04-21T11:20:02.693489+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
