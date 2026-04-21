@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 2065,
+    "all_payments": 2068,
     "by_type": {
       "merchant": {
-        "count": 685
+        "count": 686
       },
       "project": {
-        "count": 685
+        "count": 686
       },
       "reviewer": {
-        "count": 695
+        "count": 696
       }
     }
   },
   "today": {
     "date": "2026-04-21",
-    "payments": 30,
+    "payments": 33,
     "by_type": {
       "merchant": {
-        "count": 10
+        "count": 11
       },
       "project": {
-        "count": 10
+        "count": 11
       },
       "reviewer": {
-        "count": 10
+        "count": 11
       }
     },
-    "approved": 10,
+    "approved": 11,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs0dmustj8rvlpyyy7slgqrnwpe6a6n7e28uyr8f6qrldr7wcns52gw5e73a",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "The Meat Station TakeAway & Groceries",
+        "platform": "Nostr",
+        "time": "12:04"
+      },
       {
         "url": "https://x.com/i/status/2046521423422742799",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -104,6 +111,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -476,16 +486,16 @@
     },
     {
       "date": "2026-04-21",
-      "project_count": 10,
-      "merchant_count": 10,
-      "reviewer_count": 10,
-      "approved": 10,
+      "project_count": 11,
+      "merchant_count": 11,
+      "reviewer_count": 11,
+      "approved": 11,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 720,
-    "approved": 684,
+    "total_reviewed": 721,
+    "approved": 685,
     "rejected": 36
   },
   "top_projects": [
@@ -2564,8 +2574,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 56,
+      "count": 57,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0dmustj8rvlpyyy7slgqrnwpe6a6n7e28uyr8f6qrldr7wcns52gw5e73a",
+          "date": "2026-04-21",
+          "merchant": "The Meat Station TakeAway & Groceries"
+        },
         {
           "url": "https://x.com/i/status/2046517837968105524",
           "date": "2026-04-21",
@@ -7100,6 +7115,32 @@
       ]
     },
     {
+      "name": "The Meat Station TakeAway & Groceries",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0dmustj8rvlpyyy7slgqrnwpe6a6n7e28uyr8f6qrldr7wcns52gw5e73a",
+          "date": "2026-04-21",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2046517837968105524",
+          "date": "2026-04-21",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsghqtj5yt52txsaaxh9qd09vsatc242uw6yguxqxaknmqzupn65rgpngwqx",
+          "date": "2026-04-18",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2045412015481729421",
+          "date": "2026-04-18",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Olympia Chicken",
       "count": 4,
       "posts": [
@@ -7330,27 +7371,6 @@
           "url": "https://x.com/i/status/2038917658708439153",
           "date": "2026-03-31",
           "project": "Bitcoin Famba 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "The Meat Station TakeAway & Groceries",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2046517837968105524",
-          "date": "2026-04-21",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsghqtj5yt52txsaaxh9qd09vsatc242uw6yguxqxaknmqzupn65rgpngwqx",
-          "date": "2026-04-18",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2045412015481729421",
-          "date": "2026-04-18",
-          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
@@ -8129,7 +8149,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2019
+      "count": 2022
     },
     {
       "domain": "8333.mobi",
@@ -8184,9 +8204,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1029
+      "count": 1032
     }
   ],
-  "generated_at": "2026-04-21T12:00:02.051806+00:00",
+  "generated_at": "2026-04-21T12:10:01.783837+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
