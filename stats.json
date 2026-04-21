@@ -1,28 +1,89 @@
 {
   "totals": {
-    "all_payments": 2035,
+    "all_payments": 2050,
     "by_type": {
       "merchant": {
-        "count": 675
+        "count": 680
       },
       "project": {
-        "count": 675
+        "count": 680
       },
       "reviewer": {
-        "count": 685
+        "count": 690
       }
     }
   },
   "today": {
     "date": "2026-04-21",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 15,
+    "by_type": {
+      "merchant": {
+        "count": 5
+      },
+      "project": {
+        "count": 5
+      },
+      "reviewer": {
+        "count": 5
+      }
+    },
+    "approved": 5,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs8wx6p67ej78h7ltg2xpnd7h375q9twqpamx860jglhh3ypazmaqckjud3q",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Alvin Game House",
+        "platform": "Nostr",
+        "time": "09:05"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsdxzr6pcyheqdd40agk9tngs7ygg3mqtg39uptdg0fca55vrq92pg6tph64",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "Nostr",
+        "time": "09:05"
+      },
+      {
+        "url": "https://x.com/i/status/2046480637972857068",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "09:04"
+      },
+      {
+        "url": "https://x.com/i/status/2046480315825234115",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Chicken farm",
+        "platform": "X",
+        "time": "09:04"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs8hxggemse2qj5dhqxerm4mcktdhxcq72ehpghkwuusjth43rm93qmh57rp",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Chicken farm",
+        "platform": "Nostr",
+        "time": "09:04"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -365,16 +426,16 @@
     },
     {
       "date": "2026-04-21",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 5,
+      "merchant_count": 5,
+      "reviewer_count": 5,
+      "approved": 5,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 710,
-    "approved": 674,
+    "total_reviewed": 715,
+    "approved": 679,
     "rejected": 36
   },
   "top_projects": [
@@ -2714,8 +2775,28 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 46,
+      "count": 50,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdxzr6pcyheqdd40agk9tngs7ygg3mqtg39uptdg0fca55vrq92pg6tph64",
+          "date": "2026-04-21",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2046480637972857068",
+          "date": "2026-04-21",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2046480315825234115",
+          "date": "2026-04-21",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8hxggemse2qj5dhqxerm4mcktdhxcq72ehpghkwuusjth43rm93qmh57rp",
+          "date": "2026-04-21",
+          "merchant": "Chicken farm"
+        },
         {
           "url": "https://x.com/i/status/2046276170912608753",
           "date": "2026-04-20",
@@ -2950,8 +3031,13 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 31,
+      "count": 32,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8wx6p67ej78h7ltg2xpnd7h375q9twqpamx860jglhh3ypazmaqckjud3q",
+          "date": "2026-04-21",
+          "merchant": "Alvin Game House"
+        },
         {
           "url": "https://x.com/i/status/2046127453316255801",
           "date": "2026-04-20",
@@ -4450,8 +4536,18 @@
     },
     {
       "name": "Orero shop",
-      "count": 23,
+      "count": 25,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdxzr6pcyheqdd40agk9tngs7ygg3mqtg39uptdg0fca55vrq92pg6tph64",
+          "date": "2026-04-21",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2046480637972857068",
+          "date": "2026-04-21",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsfqw90l627vlhh0cp95qcr0yf3makgy506wx0q9esp2vxdksve6jcapd2g9",
           "date": "2026-04-20",
@@ -5665,8 +5761,13 @@
     },
     {
       "name": "Alvin Game House",
-      "count": 11,
+      "count": 12,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8wx6p67ej78h7ltg2xpnd7h375q9twqpamx860jglhh3ypazmaqckjud3q",
+          "date": "2026-04-21",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
         {
           "url": "https://x.com/i/status/2046127453316255801",
           "date": "2026-04-20",
@@ -6215,6 +6316,52 @@
       ]
     },
     {
+      "name": "Chicken farm",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2046480315825234115",
+          "date": "2026-04-21",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8hxggemse2qj5dhqxerm4mcktdhxcq72ehpghkwuusjth43rm93qmh57rp",
+          "date": "2026-04-21",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2046276170912608753",
+          "date": "2026-04-20",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg3rqcyvsl5h4r9vl22yl4hu2qkz4penxscfm476s8gpzvhgpwrqcvp8fur",
+          "date": "2026-04-20",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2cxx6rjckl3nmka5gatxma5harzhz22sk3hu0x20uh5a6ptzh9psj3zdgc",
+          "date": "2026-04-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2042252573206327456",
+          "date": "2026-04-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2041066482050732162",
+          "date": "2026-04-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdplafs06lmlr30lnpxvvdzzhk6hts6dv2r2y728fvky0fnpyu78qm6arfp",
+          "date": "2026-04-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Barbearia IG",
       "count": 8,
       "posts": [
@@ -6745,42 +6892,6 @@
           "url": "https://x.com/i/status/2037249317908406293",
           "date": "2026-03-26",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Chicken farm",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2046276170912608753",
-          "date": "2026-04-20",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg3rqcyvsl5h4r9vl22yl4hu2qkz4penxscfm476s8gpzvhgpwrqcvp8fur",
-          "date": "2026-04-20",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2cxx6rjckl3nmka5gatxma5harzhz22sk3hu0x20uh5a6ptzh9psj3zdgc",
-          "date": "2026-04-09",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2042252573206327456",
-          "date": "2026-04-09",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2041066482050732162",
-          "date": "2026-04-06",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdplafs06lmlr30lnpxvvdzzhk6hts6dv2r2y728fvky0fnpyu78qm6arfp",
-          "date": "2026-04-06",
-          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -7911,18 +8022,18 @@
     "daily_average_payments": 70
   },
   "burn_rate": {
-    "percentage": 49,
+    "percentage": 50,
     "status": "cold",
     "days_active": 29
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1993
+      "count": 2004
     },
     {
       "domain": "8333.mobi",
-      "count": 41
+      "count": 45
     },
     {
       "domain": "walletofsatoshi.com",
@@ -7969,13 +8080,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1021
+      "count": 1027
     },
     {
       "platform": "Nostr",
-      "count": 1014
+      "count": 1023
     }
   ],
-  "generated_at": "2026-04-21T09:00:02.046922+00:00",
+  "generated_at": "2026-04-21T09:10:01.792632+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
