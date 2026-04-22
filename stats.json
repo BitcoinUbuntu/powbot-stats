@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 2117,
+    "all_payments": 2126,
     "by_type": {
       "merchant": {
-        "count": 702
+        "count": 705
       },
       "project": {
-        "count": 702
+        "count": 705
       },
       "reviewer": {
-        "count": 713
+        "count": 716
       }
     }
   },
   "today": {
     "date": "2026-04-22",
-    "payments": 13,
+    "payments": 22,
     "by_type": {
       "merchant": {
-        "count": 4
+        "count": 7
       },
       "project": {
-        "count": 4
+        "count": 7
       },
       "reviewer": {
-        "count": 5
+        "count": 8
       }
     },
-    "approved": 4,
+    "approved": 7,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs90k9scd7sxx5feljrvmhqp3fthmmpmlckf4hll5zh3vkeh3zpqfgehg3w8",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "Nostr",
+        "time": "09:21"
+      },
+      {
+        "url": "https://x.com/i/status/2046859823833137593",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "09:20"
+      },
+      {
+        "url": "https://x.com/i/status/2046508665998328010",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "SMG Electronics Store",
+        "platform": "X",
+        "time": "09:20"
+      },
       {
         "url": "https://primal.net/e/nevent1qqswjkl30c5tsrrv68ypfqaxca03ck8fxyl44pu4cmhyvyv3acklqucjwcx0p",
         "project": "BTC Shule 🇧🇮",
@@ -62,6 +83,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
       {
         "project": "BTC Shule 🇧🇮"
       },
@@ -365,16 +395,16 @@
     },
     {
       "date": "2026-04-22",
-      "project_count": 4,
-      "merchant_count": 4,
-      "reviewer_count": 5,
-      "approved": 4,
+      "project_count": 7,
+      "merchant_count": 7,
+      "reviewer_count": 8,
+      "approved": 7,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 739,
-    "approved": 701,
+    "total_reviewed": 742,
+    "approved": 704,
     "rejected": 38
   },
   "top_projects": [
@@ -2784,8 +2814,18 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 50,
+      "count": 52,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs90k9scd7sxx5feljrvmhqp3fthmmpmlckf4hll5zh3vkeh3zpqfgehg3w8",
+          "date": "2026-04-22",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2046859823833137593",
+          "date": "2026-04-22",
+          "merchant": "Orero shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsdxzr6pcyheqdd40agk9tngs7ygg3mqtg39uptdg0fca55vrq92pg6tph64",
           "date": "2026-04-21",
@@ -3040,8 +3080,13 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 33,
+      "count": 34,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2046508665998328010",
+          "date": "2026-04-22",
+          "merchant": "SMG Electronics Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs0h22uzzytxvuafrwp8ld40cktygyhhujers0t0rfmefsp4jacrecxv3z09",
           "date": "2026-04-21",
@@ -4595,8 +4640,18 @@
     },
     {
       "name": "Orero shop",
-      "count": 25,
+      "count": 27,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs90k9scd7sxx5feljrvmhqp3fthmmpmlckf4hll5zh3vkeh3zpqfgehg3w8",
+          "date": "2026-04-22",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2046859823833137593",
+          "date": "2026-04-22",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsdxzr6pcyheqdd40agk9tngs7ygg3mqtg39uptdg0fca55vrq92pg6tph64",
           "date": "2026-04-21",
@@ -7150,6 +7205,32 @@
       ]
     },
     {
+      "name": "SMG Electronics Store",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2046508665998328010",
+          "date": "2026-04-22",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0h22uzzytxvuafrwp8ld40cktygyhhujers0t0rfmefsp4jacrecxv3z09",
+          "date": "2026-04-21",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0sazc9x4af3wae9vqymjghwhhzd88jfakyy5stzxx99x978s0kag2zp9gt",
+          "date": "2026-04-02",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2039382012067217580",
+          "date": "2026-04-02",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Padis Eatery",
       "count": 4,
       "posts": [
@@ -7406,27 +7487,6 @@
           "url": "https://x.com/i/status/2038917658708439153",
           "date": "2026-03-31",
           "project": "Bitcoin Famba 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "SMG Electronics Store",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs0h22uzzytxvuafrwp8ld40cktygyhhujers0t0rfmefsp4jacrecxv3z09",
-          "date": "2026-04-21",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0sazc9x4af3wae9vqymjghwhhzd88jfakyy5stzxx99x978s0kag2zp9gt",
-          "date": "2026-04-02",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2039382012067217580",
-          "date": "2026-04-02",
-          "project": "Bitcoin Ikorodu 🇳🇬"
         }
       ]
     },
@@ -8194,11 +8254,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2071
+      "count": 2078
     },
     {
       "domain": "8333.mobi",
-      "count": 45
+      "count": 47
     },
     {
       "domain": "walletofsatoshi.com",
@@ -8245,13 +8305,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1061
+      "count": 1067
     },
     {
       "platform": "Nostr",
-      "count": 1056
+      "count": 1059
     }
   ],
-  "generated_at": "2026-04-22T09:20:02.656274+00:00",
+  "generated_at": "2026-04-22T09:30:02.253258+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
