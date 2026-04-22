@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 2183,
+    "all_payments": 2186,
     "by_type": {
       "merchant": {
-        "count": 724
+        "count": 725
       },
       "project": {
-        "count": 724
+        "count": 725
       },
       "reviewer": {
-        "count": 735
+        "count": 736
       }
     }
   },
   "today": {
     "date": "2026-04-22",
-    "payments": 79,
+    "payments": 82,
     "by_type": {
       "merchant": {
-        "count": 26
+        "count": 27
       },
       "project": {
-        "count": 26
+        "count": 27
       },
       "reviewer": {
-        "count": 27
+        "count": 28
       }
     },
-    "approved": 26,
+    "approved": 27,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2047036400902586455",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "JM General Dealers",
+        "platform": "X",
+        "time": "20:25"
+      },
       {
         "url": "https://x.com/i/status/2047024557257597254",
         "project": "Bitcoin Victoria Falls 🇿🇲",
@@ -216,6 +223,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
       {
         "project": "Bitcoin Victoria Falls 🇿🇲"
       },
@@ -531,16 +541,16 @@
     },
     {
       "date": "2026-04-22",
-      "project_count": 26,
-      "merchant_count": 26,
-      "reviewer_count": 27,
-      "approved": 26,
+      "project_count": 27,
+      "merchant_count": 27,
+      "reviewer_count": 28,
+      "approved": 27,
       "rejected": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 762,
-    "approved": 723,
+    "total_reviewed": 763,
+    "approved": 724,
     "rejected": 39
   },
   "top_projects": [
@@ -3875,8 +3885,13 @@
     },
     {
       "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 12,
+      "count": 13,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2047036400902586455",
+          "date": "2026-04-22",
+          "merchant": "JM General Dealers"
+        },
         {
           "url": "https://x.com/i/status/2047024557257597254",
           "date": "2026-04-22",
@@ -8535,6 +8550,17 @@
       ]
     },
     {
+      "name": "JM General Dealers",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2047036400902586455",
+          "date": "2026-04-22",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "IT Enterprise",
       "count": 1,
       "posts": [
@@ -8592,7 +8618,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2135
+      "count": 2138
     },
     {
       "domain": "8333.mobi",
@@ -8643,13 +8669,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1094
+      "count": 1097
     },
     {
       "platform": "Nostr",
       "count": 1089
     }
   ],
-  "generated_at": "2026-04-22T20:20:01.692996+00:00",
+  "generated_at": "2026-04-22T20:30:02.384070+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
