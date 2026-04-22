@@ -1,7 +1,23 @@
 {
-  "last_updated": "2026-04-22T13:50:03.460162+00:00",
-  "total_submissions": 750,
+  "last_updated": "2026-04-22T14:00:03.360983+00:00",
+  "total_submissions": 751,
   "submissions": [
+    {
+      "id": 755,
+      "timestamp": "2026-04-22 13:55:14 UTC",
+      "project_name": "Bitcoin Tofo (Mozambique) 🇲🇿",
+      "project_flag": "🇲🇿",
+      "merchant_name": "Not found",
+      "lightning_address": "rafal30232330@blink.sv",
+      "merchant_tip_status": "",
+      "platform": "X",
+      "post_url": "https://x.com/i/status/2046913246188200015",
+      "telegram_link": "https://t.me/c/2378392967/14087",
+      "btcmap_link": "https://btcmap.org/merchant/32208#Bitcoin",
+      "note": "❌ Post rejected via data quality alert | Reason: Missing PoW elements: #spedn",
+      "status": "Rejected",
+      "payments": []
+    },
     {
       "id": 754,
       "timestamp": "2026-04-22 12:16:49 UTC",
@@ -111,8 +127,27 @@
       "telegram_link": "https://t.me/c/2378392967/14067",
       "btcmap_link": "https://btcmap.org/merchant/31451",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69e8d2eb95c1298fd52f691a",
+          "timestamp": "2026-04-22T13:53:47.451568+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "T and N Gas Station",
+          "tx_id": "69e8d2ec95c1298fd52f6a0c",
+          "timestamp": "2026-04-22T13:53:48.750435+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Ekiti (Nigeria) 🇳🇬",
+          "tx_id": "69e8d2ee95c1298fd52f6c16",
+          "timestamp": "2026-04-22T13:53:50.598808+00:00"
+        }
+      ]
     },
     {
       "id": 747,

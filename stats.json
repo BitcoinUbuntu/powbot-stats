@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 2126,
+    "all_payments": 2129,
     "by_type": {
       "merchant": {
-        "count": 705
+        "count": 706
       },
       "project": {
-        "count": 705
+        "count": 706
       },
       "reviewer": {
-        "count": 716
+        "count": 717
       }
     }
   },
   "today": {
     "date": "2026-04-22",
-    "payments": 22,
+    "payments": 25,
     "by_type": {
       "merchant": {
-        "count": 7
+        "count": 8
       },
       "project": {
-        "count": 7
+        "count": 8
       },
       "reviewer": {
-        "count": 8
+        "count": 9
       }
     },
-    "approved": 7,
-    "rejected": 0,
+    "approved": 8,
+    "rejected": 1,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2046891919175811296",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "T and N Gas Station",
+        "platform": "X",
+        "time": "13:53"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs90k9scd7sxx5feljrvmhqp3fthmmpmlckf4hll5zh3vkeh3zpqfgehg3w8",
         "project": "Bitcoin Chama 🇰🇪",
@@ -83,6 +90,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -371,17 +381,17 @@
     },
     {
       "date": "2026-04-22",
-      "project_count": 7,
-      "merchant_count": 7,
-      "reviewer_count": 8,
-      "approved": 7,
-      "rejected": 0
+      "project_count": 8,
+      "merchant_count": 8,
+      "reviewer_count": 9,
+      "approved": 8,
+      "rejected": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 742,
-    "approved": 704,
-    "rejected": 38
+    "total_reviewed": 744,
+    "approved": 705,
+    "rejected": 39
   },
   "top_projects": [
     {
@@ -3398,8 +3408,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 30,
+      "count": 31,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2046891919175811296",
+          "date": "2026-04-22",
+          "merchant": "T and N Gas Station"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs0ma5jt0gf4u9ajfpd5m66uur0wcx00v0nawcchpjhfugsz3y6y4ccjfstu",
           "date": "2026-04-20",
@@ -8107,6 +8122,17 @@
       ]
     },
     {
+      "name": "T and N Gas Station",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2046891919175811296",
+          "date": "2026-04-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Sweet & Salty Cafe",
       "count": 1,
       "posts": [
@@ -8230,7 +8256,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2078
+      "count": 2081
     },
     {
       "domain": "8333.mobi",
@@ -8281,13 +8307,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1067
+      "count": 1070
     },
     {
       "platform": "Nostr",
       "count": 1059
     }
   ],
-  "generated_at": "2026-04-22T13:50:02.498075+00:00",
+  "generated_at": "2026-04-22T14:00:02.320270+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
