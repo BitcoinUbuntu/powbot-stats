@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 2108,
+    "all_payments": 2117,
     "by_type": {
       "merchant": {
-        "count": 699
+        "count": 702
       },
       "project": {
-        "count": 699
+        "count": 702
       },
       "reviewer": {
-        "count": 710
+        "count": 713
       }
     }
   },
   "today": {
     "date": "2026-04-22",
-    "payments": 4,
+    "payments": 13,
     "by_type": {
       "merchant": {
-        "count": 1
+        "count": 4
       },
       "project": {
-        "count": 1
+        "count": 4
       },
       "reviewer": {
-        "count": 2
+        "count": 5
       }
     },
-    "approved": 1,
+    "approved": 4,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqswjkl30c5tsrrv68ypfqaxca03ck8fxyl44pu4cmhyvyv3acklqucjwcx0p",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Jiyeve",
+        "platform": "Nostr",
+        "time": "06:21"
+      },
+      {
+        "url": "https://x.com/i/status/2046709455782314121",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Jiyeve",
+        "platform": "X",
+        "time": "06:20"
+      },
+      {
+        "url": "https://x.com/i/status/2046781260907925963",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "T-Junction fast food",
+        "platform": "X",
+        "time": "06:20"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsq0nmgh3q7je4aajq8f7swzxcmhvhnycje73ma3k27j3cu3nved2sp9z483",
         "project": "Bitcoin Sisonke 🇿🇦",
@@ -41,6 +62,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
       {
         "project": "Bitcoin Sisonke 🇿🇦"
       },
@@ -350,16 +380,16 @@
     },
     {
       "date": "2026-04-22",
-      "project_count": 1,
-      "merchant_count": 1,
-      "reviewer_count": 2,
-      "approved": 1,
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 5,
+      "approved": 4,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 736,
-    "approved": 698,
+    "total_reviewed": 739,
+    "approved": 701,
     "rejected": 38
   },
   "top_projects": [
@@ -3716,8 +3746,13 @@
     },
     {
       "name": "Bitcoin Sisonke 🇿🇦",
-      "count": 9,
+      "count": 10,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2046781260907925963",
+          "date": "2026-04-22",
+          "merchant": "T-Junction fast food"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsq0nmgh3q7je4aajq8f7swzxcmhvhnycje73ma3k27j3cu3nved2sp9z483",
           "date": "2026-04-22",
@@ -3920,6 +3955,32 @@
       ]
     },
     {
+      "name": "BTC Shule 🇧🇮",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswjkl30c5tsrrv68ypfqaxca03ck8fxyl44pu4cmhyvyv3acklqucjwcx0p",
+          "date": "2026-04-22",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://x.com/i/status/2046709455782314121",
+          "date": "2026-04-22",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
+          "date": "2026-03-27",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2037264780444991537",
+          "date": "2026-03-26",
+          "merchant": "Kwa Innocent"
+        }
+      ]
+    },
+    {
       "name": "Lwandi Bitcoin 🇲🇿",
       "count": 2,
       "posts": [
@@ -3948,22 +4009,6 @@
           "url": "https://primal.net/e/nevent1qqs24tx5vzar3hv6j85k5zcm87n4208dehq32y7qx4ypplzydg38spc3gtgf6",
           "date": "2026-04-16",
           "merchant": "Emmy Store"
-        }
-      ]
-    },
-    {
-      "name": "BTC Shule 🇧🇮",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
-          "date": "2026-03-27",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://x.com/i/status/2037264780444991537",
-          "date": "2026-03-26",
-          "merchant": "Kwa Innocent"
         }
       ]
     },
@@ -6201,6 +6246,52 @@
       ]
     },
     {
+      "name": "T-Junction fast food",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2046781260907925963",
+          "date": "2026-04-22",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq0nmgh3q7je4aajq8f7swzxcmhvhnycje73ma3k27j3cu3nved2sp9z483",
+          "date": "2026-04-22",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2045024789786431691",
+          "date": "2026-04-17",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd5rzk53xe53grpaqe9tepqvz8da2mmyhdl4f8g4e22nyja9jmcng7cup0c",
+          "date": "2026-04-17",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdcxc4j67hetp3mfr6xpsk49m9gzntjrmhxh0k7drpq3uqgmehcrqx3m5v2",
+          "date": "2026-04-05",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2040723699683274994",
+          "date": "2026-04-05",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2037427903151964631",
+          "date": "2026-03-29",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
+          "date": "2026-03-27",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Mercearia Abençoada",
       "count": 8,
       "posts": [
@@ -6519,47 +6610,6 @@
           "url": "https://x.com/i/status/2036395349577695397",
           "date": "2026-03-24",
           "project": "Bitcoin Ekiti 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "T-Junction fast food",
-      "count": 7,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsq0nmgh3q7je4aajq8f7swzxcmhvhnycje73ma3k27j3cu3nved2sp9z483",
-          "date": "2026-04-22",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2045024789786431691",
-          "date": "2026-04-17",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd5rzk53xe53grpaqe9tepqvz8da2mmyhdl4f8g4e22nyja9jmcng7cup0c",
-          "date": "2026-04-17",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdcxc4j67hetp3mfr6xpsk49m9gzntjrmhxh0k7drpq3uqgmehcrqx3m5v2",
-          "date": "2026-04-05",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2040723699683274994",
-          "date": "2026-04-05",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2037427903151964631",
-          "date": "2026-03-29",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
-          "date": "2026-03-27",
-          "project": "Bitcoin Sisonke 🇿🇦"
         }
       ]
     },
@@ -7694,6 +7744,22 @@
       ]
     },
     {
+      "name": "Kwa Jiyeve",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswjkl30c5tsrrv68ypfqaxca03ck8fxyl44pu4cmhyvyv3acklqucjwcx0p",
+          "date": "2026-04-22",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2046709455782314121",
+          "date": "2026-04-22",
+          "project": "BTC Shule 🇧🇮"
+        }
+      ]
+    },
+    {
       "name": "Kwa Innocent",
       "count": 2,
       "posts": [
@@ -8133,7 +8199,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 29,
-    "daily_average_payments": 72
+    "daily_average_payments": 73
   },
   "burn_rate": {
     "percentage": 52,
@@ -8143,7 +8209,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2062
+      "count": 2071
     },
     {
       "domain": "8333.mobi",
@@ -8194,13 +8260,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1055
+      "count": 1061
     },
     {
       "platform": "Nostr",
-      "count": 1053
+      "count": 1056
     }
   ],
-  "generated_at": "2026-04-22T06:20:01.982229+00:00",
+  "generated_at": "2026-04-22T06:30:02.520004+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
