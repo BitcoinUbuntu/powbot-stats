@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 2217,
+    "all_payments": 2223,
     "by_type": {
       "merchant": {
-        "count": 735
+        "count": 737
       },
       "project": {
-        "count": 735
+        "count": 737
       },
       "reviewer": {
-        "count": 747
+        "count": 749
       }
     }
   },
   "today": {
     "date": "2026-04-23",
-    "payments": 31,
+    "payments": 37,
     "by_type": {
       "merchant": {
-        "count": 10
+        "count": 12
       },
       "project": {
-        "count": 10
+        "count": 12
       },
       "reviewer": {
-        "count": 11
+        "count": 13
       }
     },
-    "approved": 10,
+    "approved": 12,
     "rejected": 2,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsy0qf0kkn8r0trpug3mxepfe9uxq309wxwp0kq9vjj38fcyef0lycspq9en",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Lydiah Richland Shop",
+        "platform": "Nostr",
+        "time": "20:22"
+      },
+      {
+        "url": "https://x.com/i/status/2047333240252375123",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Ayoola Minimart",
+        "platform": "X",
+        "time": "20:22"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs0ajtu9lev0ee2xg3rd8ma6gdur5eyh5mzwuencyn67qnqrg2e64szn0rqc",
         "project": "Bitcoin Chama 🇰🇪",
@@ -105,6 +119,12 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
         "project": "Bitcoin Chama 🇰🇪"
       },
       {
@@ -133,9 +153,6 @@
       },
       {
         "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
       }
     ]
   },
@@ -374,23 +391,28 @@
     },
     {
       "date": "2026-04-23",
-      "project_count": 10,
-      "merchant_count": 10,
-      "reviewer_count": 11,
-      "approved": 10,
+      "project_count": 12,
+      "merchant_count": 12,
+      "reviewer_count": 13,
+      "approved": 12,
       "rejected": 2
     }
   ],
   "reviewer": {
-    "total_reviewed": 775,
-    "approved": 734,
+    "total_reviewed": 777,
+    "approved": 736,
     "rejected": 41
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 225,
+      "count": 226,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsy0qf0kkn8r0trpug3mxepfe9uxq309wxwp0kq9vjj38fcyef0lycspq9en",
+          "date": "2026-04-23",
+          "merchant": "Lydiah Richland Shop"
+        },
         {
           "url": "https://x.com/i/status/2047008318577680812",
           "date": "2026-04-22",
@@ -3516,8 +3538,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 32,
+      "count": 33,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2047333240252375123",
+          "date": "2026-04-23",
+          "merchant": "Ayoola Minimart"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrdfzst2050pzf0x6yec5yyczq29j2sw20y527af4drrl9rzszj0gxc9elq",
           "date": "2026-04-22",
@@ -4603,8 +4630,13 @@
     },
     {
       "name": "Lydiah Richland Shop",
-      "count": 36,
+      "count": 37,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsy0qf0kkn8r0trpug3mxepfe9uxq309wxwp0kq9vjj38fcyef0lycspq9en",
+          "date": "2026-04-23",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2045801818479808699",
           "date": "2026-04-19",
@@ -6612,6 +6644,57 @@
       ]
     },
     {
+      "name": "Ayoola Minimart",
+      "count": 9,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2047333240252375123",
+          "date": "2026-04-23",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdlx92efkak0hj2rktx47h48yt5mfr73puynqjz830f9wctwalgvsyrz2nh",
+          "date": "2026-04-06",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2041073949874815430",
+          "date": "2026-04-06",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvkmccuh0d0629wa0rr9w4zu4a99dhjpdfk3s6d8hl04dhhcls86q3cvgyp",
+          "date": "2026-04-03",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2039741897338503662",
+          "date": "2026-04-03",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsykv0nyldj3974hpd8x8ka73zgy5ljt4efdh4zf528fs6yva2gcts6g5zsc",
+          "date": "2026-03-29",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2038323271905525820",
+          "date": "2026-03-29",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxcc5yqp7alvy06tekmrw4txvqawv9najdfg6rwk3sp49enyw9qlstq7uhm",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2036395349577695397",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "T-Junction fast food",
       "count": 8,
       "posts": [
@@ -6838,52 +6921,6 @@
           "url": "https://primal.net/e/nevent1qqsv7ptdpm9sv3shd89xz2a2nze6ucc30v4ejrllt2xxkvzgftvjm7q7lm3qy",
           "date": "2026-03-26",
           "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Ayoola Minimart",
-      "count": 8,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsdlx92efkak0hj2rktx47h48yt5mfr73puynqjz830f9wctwalgvsyrz2nh",
-          "date": "2026-04-06",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2041073949874815430",
-          "date": "2026-04-06",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvkmccuh0d0629wa0rr9w4zu4a99dhjpdfk3s6d8hl04dhhcls86q3cvgyp",
-          "date": "2026-04-03",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2039741897338503662",
-          "date": "2026-04-03",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsykv0nyldj3974hpd8x8ka73zgy5ljt4efdh4zf528fs6yva2gcts6g5zsc",
-          "date": "2026-03-29",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2038323271905525820",
-          "date": "2026-03-29",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxcc5yqp7alvy06tekmrw4txvqawv9najdfg6rwk3sp49enyw9qlstq7uhm",
-          "date": "2026-03-24",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2036395349577695397",
-          "date": "2026-03-24",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -8544,14 +8581,14 @@
     "daily_average_payments": 71
   },
   "burn_rate": {
-    "percentage": 51,
+    "percentage": 52,
     "status": "cold",
     "days_active": 31
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2165
+      "count": 2171
     },
     {
       "domain": "8333.mobi",
@@ -8602,13 +8639,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1115
+      "count": 1118
     },
     {
       "platform": "Nostr",
-      "count": 1102
+      "count": 1105
     }
   ],
-  "generated_at": "2026-04-23T20:20:01.778938+00:00",
+  "generated_at": "2026-04-23T20:30:02.371054+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
