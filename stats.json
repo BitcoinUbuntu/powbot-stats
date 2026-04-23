@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 2199,
+    "all_payments": 2205,
     "by_type": {
       "merchant": {
-        "count": 729
+        "count": 731
       },
       "project": {
-        "count": 729
+        "count": 731
       },
       "reviewer": {
-        "count": 741
+        "count": 743
       }
     }
   },
   "today": {
     "date": "2026-04-23",
-    "payments": 13,
+    "payments": 19,
     "by_type": {
       "merchant": {
-        "count": 4
+        "count": 6
       },
       "project": {
-        "count": 4
+        "count": 6
       },
       "reviewer": {
-        "count": 5
+        "count": 7
       }
     },
-    "approved": 4,
+    "approved": 6,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2047021112899322077",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Jiyeve",
+        "platform": "X",
+        "time": "09:03"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsrkhgsgwrh988jgfyxsmmgr76klyjyrgqmsl0qddrc2rqfhue5xvshvezru",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Obwanchani Farm",
+        "platform": "Nostr",
+        "time": "09:03"
+      },
       {
         "url": "https://x.com/i/status/2047177669498806419",
         "project": "Bitcoin Chama 🇰🇪",
@@ -62,6 +76,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -380,16 +400,16 @@
     },
     {
       "date": "2026-04-23",
-      "project_count": 4,
-      "merchant_count": 4,
-      "reviewer_count": 5,
-      "approved": 4,
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 7,
+      "approved": 6,
       "rejected": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 768,
-    "approved": 728,
+    "total_reviewed": 770,
+    "approved": 730,
     "rejected": 40
   },
   "top_projects": [
@@ -2864,8 +2884,13 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 54,
+      "count": 55,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrkhgsgwrh988jgfyxsmmgr76klyjyrgqmsl0qddrc2rqfhue5xvshvezru",
+          "date": "2026-04-23",
+          "merchant": "Obwanchani Farm"
+        },
         {
           "url": "https://x.com/i/status/2047177669498806419",
           "date": "2026-04-23",
@@ -4059,6 +4084,37 @@
       ]
     },
     {
+      "name": "BTC Shule 🇧🇮",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2047021112899322077",
+          "date": "2026-04-23",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswjkl30c5tsrrv68ypfqaxca03ck8fxyl44pu4cmhyvyv3acklqucjwcx0p",
+          "date": "2026-04-22",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://x.com/i/status/2046709455782314121",
+          "date": "2026-04-22",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
+          "date": "2026-03-27",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2037264780444991537",
+          "date": "2026-03-26",
+          "merchant": "Kwa Innocent"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Tofo 🇲🇿",
       "count": 4,
       "posts": [
@@ -4081,32 +4137,6 @@
           "url": "https://x.com/i/status/2039975615445520709",
           "date": "2026-04-03",
           "merchant": "Jorge Bitcoin Tofo Clothes Market"
-        }
-      ]
-    },
-    {
-      "name": "BTC Shule 🇧🇮",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqswjkl30c5tsrrv68ypfqaxca03ck8fxyl44pu4cmhyvyv3acklqucjwcx0p",
-          "date": "2026-04-22",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://x.com/i/status/2046709455782314121",
-          "date": "2026-04-22",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
-          "date": "2026-03-27",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://x.com/i/status/2037264780444991537",
-          "date": "2026-03-26",
-          "merchant": "Kwa Innocent"
         }
       ]
     },
@@ -7039,6 +7069,42 @@
       ]
     },
     {
+      "name": "Obwanchani Farm",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrkhgsgwrh988jgfyxsmmgr76klyjyrgqmsl0qddrc2rqfhue5xvshvezru",
+          "date": "2026-04-23",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2047177669498806419",
+          "date": "2026-04-23",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgdv4zy4atmemlxvclwn0vdlqzl4gucztmug2phqmurqkxql3h02c6depj8",
+          "date": "2026-04-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2042241653910499680",
+          "date": "2026-04-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2039299798335939033",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Milofa Skate Shop",
       "count": 6,
       "posts": [
@@ -7287,37 +7353,6 @@
           "url": "https://x.com/i/status/2038070513692529119",
           "date": "2026-03-29",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Obwanchani Farm",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2047177669498806419",
-          "date": "2026-04-23",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgdv4zy4atmemlxvclwn0vdlqzl4gucztmug2phqmurqkxql3h02c6depj8",
-          "date": "2026-04-09",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2042241653910499680",
-          "date": "2026-04-09",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2039299798335939033",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -7733,6 +7768,27 @@
       ]
     },
     {
+      "name": "Kwa Jiyeve",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2047021112899322077",
+          "date": "2026-04-23",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswjkl30c5tsrrv68ypfqaxca03ck8fxyl44pu4cmhyvyv3acklqucjwcx0p",
+          "date": "2026-04-22",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2046709455782314121",
+          "date": "2026-04-22",
+          "project": "BTC Shule 🇧🇮"
+        }
+      ]
+    },
+    {
       "name": "Zwakala Cafe",
       "count": 2,
       "posts": [
@@ -8017,22 +8073,6 @@
           "url": "https://x.com/i/status/2037190844126507368",
           "date": "2026-03-26",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Kwa Jiyeve",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqswjkl30c5tsrrv68ypfqaxca03ck8fxyl44pu4cmhyvyv3acklqucjwcx0p",
-          "date": "2026-04-22",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2046709455782314121",
-          "date": "2026-04-22",
-          "project": "BTC Shule 🇧🇮"
         }
       ]
     },
@@ -8487,7 +8527,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 31,
-    "daily_average_payments": 70
+    "daily_average_payments": 71
   },
   "burn_rate": {
     "percentage": 51,
@@ -8497,11 +8537,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2150
+      "count": 2155
     },
     {
       "domain": "8333.mobi",
-      "count": 48
+      "count": 49
     },
     {
       "domain": "walletofsatoshi.com",
@@ -8548,13 +8588,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1106
+      "count": 1109
     },
     {
       "platform": "Nostr",
-      "count": 1093
+      "count": 1096
     }
   ],
-  "generated_at": "2026-04-23T09:00:02.036038+00:00",
+  "generated_at": "2026-04-23T09:10:02.074102+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
