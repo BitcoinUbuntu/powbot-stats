@@ -1,28 +1,79 @@
 {
   "totals": {
-    "all_payments": 2186,
+    "all_payments": 2199,
     "by_type": {
       "merchant": {
-        "count": 725
+        "count": 729
       },
       "project": {
-        "count": 725
+        "count": 729
       },
       "reviewer": {
-        "count": 736
+        "count": 741
       }
     }
   },
   "today": {
     "date": "2026-04-23",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
-    "rejected": 0,
-    "videos": []
+    "payments": 13,
+    "by_type": {
+      "merchant": {
+        "count": 4
+      },
+      "project": {
+        "count": 4
+      },
+      "reviewer": {
+        "count": 5
+      }
+    },
+    "approved": 4,
+    "rejected": 1,
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2047177669498806419",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Obwanchani Farm",
+        "platform": "X",
+        "time": "08:19"
+      },
+      {
+        "url": "https://x.com/i/status/2047042592051724663",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "X",
+        "time": "08:18"
+      },
+      {
+        "url": "https://x.com/i/status/2047064932206747665",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Peace Pot",
+        "platform": "X",
+        "time": "08:18"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs9cvd5zam0e296d0q2zlu0yswkm0639cxmn0as0nmace7h268guns3xcpan",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Peace Pot",
+        "platform": "Nostr",
+        "time": "08:18"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
       {
         "project": "Bitcoin Victoria Falls 🇿🇲"
       },
@@ -329,17 +380,17 @@
     },
     {
       "date": "2026-04-23",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
-      "rejected": 0
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 5,
+      "approved": 4,
+      "rejected": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 763,
-    "approved": 724,
-    "rejected": 39
+    "total_reviewed": 768,
+    "approved": 728,
+    "rejected": 40
   },
   "top_projects": [
     {
@@ -2813,8 +2864,18 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 52,
+      "count": 54,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2047177669498806419",
+          "date": "2026-04-23",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2047042592051724663",
+          "date": "2026-04-23",
+          "merchant": "Mary Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs90k9scd7sxx5feljrvmhqp3fthmmpmlckf4hll5zh3vkeh3zpqfgehg3w8",
           "date": "2026-04-22",
@@ -3264,6 +3325,182 @@
       ]
     },
     {
+      "name": "Bitcoin Aves 🇬🇭",
+      "count": 34,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2047064932206747665",
+          "date": "2026-04-23",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9cvd5zam0e296d0q2zlu0yswkm0639cxmn0as0nmace7h268guns3xcpan",
+          "date": "2026-04-23",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://x.com/i/status/2046601481281757285",
+          "date": "2026-04-21",
+          "merchant": "Padis Eatery"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs93gz8eqgwnqd6e8axyz0sh0kudmu4r8942ptyrdlt3qxks2f384sug78cw",
+          "date": "2026-04-21",
+          "merchant": "Padis Eatery"
+        },
+        {
+          "url": "https://x.com/i/status/2046198084258971889",
+          "date": "2026-04-20",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgd72t3wn43qmq8ptcx3pydh5ehdcnafzv2l702zp57p0x9dw4vzgwa2a43",
+          "date": "2026-04-20",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://x.com/i/status/2045458234232754383",
+          "date": "2026-04-18",
+          "merchant": "Padis Eatery"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvx25gqhmd9eeql72py0n6js4nwl84cr07s74dn5tvjwp73n7ql3qwpq89g",
+          "date": "2026-04-18",
+          "merchant": "Padis Eatery"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq76w9v7ndlnt22vne0zxtf4ruux9jwlz50pqtgwysn8y4x2vs5pqyjtf4n",
+          "date": "2026-04-17",
+          "merchant": "Topic's Pub"
+        },
+        {
+          "url": "https://x.com/i/status/2045143868383920177",
+          "date": "2026-04-17",
+          "merchant": "Topic's Pub"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs07vd7rllusgg4tteg5g6x630hcxt2lchw3qxu6qyxd0d3tk54pfcznd958",
+          "date": "2026-04-16",
+          "merchant": "Topic's Pub"
+        },
+        {
+          "url": "https://x.com/i/status/2044705808286429581",
+          "date": "2026-04-16",
+          "merchant": "Topic's Pub"
+        },
+        {
+          "url": "https://x.com/i/status/2044336448992604601",
+          "date": "2026-04-15",
+          "merchant": "Dora's Joint"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2qdsqxr4kphtk74cm7uue92u6mufl7psf9lhr93ecsgjrq8n3u3gg6v500",
+          "date": "2026-04-15",
+          "merchant": "Dora's Joint"
+        },
+        {
+          "url": "https://x.com/i/status/2041434072660971964",
+          "date": "2026-04-07",
+          "merchant": "Topic's Pub"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsra682zyvmfrr9av4h8pu4djgcc42arlxs7mss8vnmz40cy9j2zpsd8ptf8",
+          "date": "2026-04-07",
+          "merchant": "Topic's Pub"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0ag6ghc2sm8q83jznmu2nma8um0sfdehelm2qh7fazwd5qlssq8cze2aa9",
+          "date": "2026-04-06",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://x.com/i/status/2040971676788121864",
+          "date": "2026-04-06",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://x.com/i/status/2040742407814156536",
+          "date": "2026-04-05",
+          "merchant": "Topic's Pub"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd6mrnm2cnrndj8r3n3yr7rs97dnegk9yf3sa39q7lhp0hcn3sevgc067p7",
+          "date": "2026-04-05",
+          "merchant": "Topic's Pub"
+        },
+        {
+          "url": "https://x.com/i/status/2040249256993275906",
+          "date": "2026-04-05",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstfeu7reemy64a06wd34gvaqvzav7etqeagfhu8ukl5jdw44a7prc2ujjzw",
+          "date": "2026-04-05",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs02lcjxdcn7v93zqf9rfmmeqrpv29e0m06wumjawmn3wr8cuj0llsq2atga",
+          "date": "2026-04-03",
+          "merchant": "Topic's Pub"
+        },
+        {
+          "url": "https://x.com/i/status/2039861514585211084",
+          "date": "2026-04-03",
+          "merchant": "Topic's Pub"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszw0truvq7ha5quwflk070jd0tsphp3pe3nw597tugvkkestv0mfsyufal0",
+          "date": "2026-04-02",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://x.com/i/status/2039651586729795615",
+          "date": "2026-04-02",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxafq64p3c7g6a7ny3ftxlgw5lgcdh8pgquasmszdywnq57vjh22gdjmrps",
+          "date": "2026-04-01",
+          "merchant": "De Palace Haircuts"
+        },
+        {
+          "url": "https://x.com/i/status/2039289633519829292",
+          "date": "2026-04-01",
+          "merchant": "De Palace Haircuts"
+        },
+        {
+          "url": "https://x.com/i/status/2038643854031651281",
+          "date": "2026-03-30",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszsmxqdmpljdamk8s4a5dz58enxj2rh20dyt77dt226ggqpxsyhqq577mqs",
+          "date": "2026-03-30",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf3wk3n3sa77a9vz9qmrg75h36n044dqd9dpm8hq9rxg7pzhlejpcyhkdh6",
+          "date": "2026-03-28",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://x.com/i/status/2037107196433928641",
+          "date": "2026-03-28",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2p8hrya73ek0fhwhymlheqs0lf574lpp6fjdkk4yh3qqsa4ugprsqz9vwt",
+          "date": "2026-03-27",
+          "merchant": "Peace Pot"
+        },
+        {
+          "url": "https://x.com/i/status/2037433865677963645",
+          "date": "2026-03-27",
+          "merchant": "Peace Pot"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Ekiti 🇳🇬",
       "count": 32,
       "posts": [
@@ -3426,172 +3663,6 @@
           "url": "https://x.com/i/status/2036395349577695397",
           "date": "2026-03-24",
           "merchant": "Ayoola Minimart"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Aves 🇬🇭",
-      "count": 32,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2046601481281757285",
-          "date": "2026-04-21",
-          "merchant": "Padis Eatery"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs93gz8eqgwnqd6e8axyz0sh0kudmu4r8942ptyrdlt3qxks2f384sug78cw",
-          "date": "2026-04-21",
-          "merchant": "Padis Eatery"
-        },
-        {
-          "url": "https://x.com/i/status/2046198084258971889",
-          "date": "2026-04-20",
-          "merchant": "Peace Pot"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgd72t3wn43qmq8ptcx3pydh5ehdcnafzv2l702zp57p0x9dw4vzgwa2a43",
-          "date": "2026-04-20",
-          "merchant": "Peace Pot"
-        },
-        {
-          "url": "https://x.com/i/status/2045458234232754383",
-          "date": "2026-04-18",
-          "merchant": "Padis Eatery"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvx25gqhmd9eeql72py0n6js4nwl84cr07s74dn5tvjwp73n7ql3qwpq89g",
-          "date": "2026-04-18",
-          "merchant": "Padis Eatery"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq76w9v7ndlnt22vne0zxtf4ruux9jwlz50pqtgwysn8y4x2vs5pqyjtf4n",
-          "date": "2026-04-17",
-          "merchant": "Topic's Pub"
-        },
-        {
-          "url": "https://x.com/i/status/2045143868383920177",
-          "date": "2026-04-17",
-          "merchant": "Topic's Pub"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs07vd7rllusgg4tteg5g6x630hcxt2lchw3qxu6qyxd0d3tk54pfcznd958",
-          "date": "2026-04-16",
-          "merchant": "Topic's Pub"
-        },
-        {
-          "url": "https://x.com/i/status/2044705808286429581",
-          "date": "2026-04-16",
-          "merchant": "Topic's Pub"
-        },
-        {
-          "url": "https://x.com/i/status/2044336448992604601",
-          "date": "2026-04-15",
-          "merchant": "Dora's Joint"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2qdsqxr4kphtk74cm7uue92u6mufl7psf9lhr93ecsgjrq8n3u3gg6v500",
-          "date": "2026-04-15",
-          "merchant": "Dora's Joint"
-        },
-        {
-          "url": "https://x.com/i/status/2041434072660971964",
-          "date": "2026-04-07",
-          "merchant": "Topic's Pub"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsra682zyvmfrr9av4h8pu4djgcc42arlxs7mss8vnmz40cy9j2zpsd8ptf8",
-          "date": "2026-04-07",
-          "merchant": "Topic's Pub"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0ag6ghc2sm8q83jznmu2nma8um0sfdehelm2qh7fazwd5qlssq8cze2aa9",
-          "date": "2026-04-06",
-          "merchant": "Peace Pot"
-        },
-        {
-          "url": "https://x.com/i/status/2040971676788121864",
-          "date": "2026-04-06",
-          "merchant": "Peace Pot"
-        },
-        {
-          "url": "https://x.com/i/status/2040742407814156536",
-          "date": "2026-04-05",
-          "merchant": "Topic's Pub"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd6mrnm2cnrndj8r3n3yr7rs97dnegk9yf3sa39q7lhp0hcn3sevgc067p7",
-          "date": "2026-04-05",
-          "merchant": "Topic's Pub"
-        },
-        {
-          "url": "https://x.com/i/status/2040249256993275906",
-          "date": "2026-04-05",
-          "merchant": "Peace Pot"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstfeu7reemy64a06wd34gvaqvzav7etqeagfhu8ukl5jdw44a7prc2ujjzw",
-          "date": "2026-04-05",
-          "merchant": "Peace Pot"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs02lcjxdcn7v93zqf9rfmmeqrpv29e0m06wumjawmn3wr8cuj0llsq2atga",
-          "date": "2026-04-03",
-          "merchant": "Topic's Pub"
-        },
-        {
-          "url": "https://x.com/i/status/2039861514585211084",
-          "date": "2026-04-03",
-          "merchant": "Topic's Pub"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszw0truvq7ha5quwflk070jd0tsphp3pe3nw597tugvkkestv0mfsyufal0",
-          "date": "2026-04-02",
-          "merchant": "Peace Pot"
-        },
-        {
-          "url": "https://x.com/i/status/2039651586729795615",
-          "date": "2026-04-02",
-          "merchant": "Peace Pot"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxafq64p3c7g6a7ny3ftxlgw5lgcdh8pgquasmszdywnq57vjh22gdjmrps",
-          "date": "2026-04-01",
-          "merchant": "De Palace Haircuts"
-        },
-        {
-          "url": "https://x.com/i/status/2039289633519829292",
-          "date": "2026-04-01",
-          "merchant": "De Palace Haircuts"
-        },
-        {
-          "url": "https://x.com/i/status/2038643854031651281",
-          "date": "2026-03-30",
-          "merchant": "Peace Pot"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszsmxqdmpljdamk8s4a5dz58enxj2rh20dyt77dt226ggqpxsyhqq577mqs",
-          "date": "2026-03-30",
-          "merchant": "Peace Pot"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf3wk3n3sa77a9vz9qmrg75h36n044dqd9dpm8hq9rxg7pzhlejpcyhkdh6",
-          "date": "2026-03-28",
-          "merchant": "Peace Pot"
-        },
-        {
-          "url": "https://x.com/i/status/2037107196433928641",
-          "date": "2026-03-28",
-          "merchant": "Peace Pot"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2p8hrya73ek0fhwhymlheqs0lf574lpp6fjdkk4yh3qqsa4ugprsqz9vwt",
-          "date": "2026-03-27",
-          "merchant": "Peace Pot"
-        },
-        {
-          "url": "https://x.com/i/status/2037433865677963645",
-          "date": "2026-03-27",
-          "merchant": "Peace Pot"
         }
       ]
     },
@@ -5253,6 +5324,92 @@
       ]
     },
     {
+      "name": "Peace Pot",
+      "count": 16,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2047064932206747665",
+          "date": "2026-04-23",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9cvd5zam0e296d0q2zlu0yswkm0639cxmn0as0nmace7h268guns3xcpan",
+          "date": "2026-04-23",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2046198084258971889",
+          "date": "2026-04-20",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgd72t3wn43qmq8ptcx3pydh5ehdcnafzv2l702zp57p0x9dw4vzgwa2a43",
+          "date": "2026-04-20",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0ag6ghc2sm8q83jznmu2nma8um0sfdehelm2qh7fazwd5qlssq8cze2aa9",
+          "date": "2026-04-06",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2040971676788121864",
+          "date": "2026-04-06",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2040249256993275906",
+          "date": "2026-04-05",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstfeu7reemy64a06wd34gvaqvzav7etqeagfhu8ukl5jdw44a7prc2ujjzw",
+          "date": "2026-04-05",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszw0truvq7ha5quwflk070jd0tsphp3pe3nw597tugvkkestv0mfsyufal0",
+          "date": "2026-04-02",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2039651586729795615",
+          "date": "2026-04-02",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2038643854031651281",
+          "date": "2026-03-30",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszsmxqdmpljdamk8s4a5dz58enxj2rh20dyt77dt226ggqpxsyhqq577mqs",
+          "date": "2026-03-30",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf3wk3n3sa77a9vz9qmrg75h36n044dqd9dpm8hq9rxg7pzhlejpcyhkdh6",
+          "date": "2026-03-28",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2037107196433928641",
+          "date": "2026-03-28",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2p8hrya73ek0fhwhymlheqs0lf574lpp6fjdkk4yh3qqsa4ugprsqz9vwt",
+          "date": "2026-03-27",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2037433865677963645",
+          "date": "2026-03-27",
+          "project": "Bitcoin Aves 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Sena Store",
       "count": 14,
       "posts": [
@@ -5325,82 +5482,6 @@
           "url": "https://x.com/i/status/2036549899513196557",
           "date": "2026-03-25",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Peace Pot",
-      "count": 14,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2046198084258971889",
-          "date": "2026-04-20",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgd72t3wn43qmq8ptcx3pydh5ehdcnafzv2l702zp57p0x9dw4vzgwa2a43",
-          "date": "2026-04-20",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0ag6ghc2sm8q83jznmu2nma8um0sfdehelm2qh7fazwd5qlssq8cze2aa9",
-          "date": "2026-04-06",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2040971676788121864",
-          "date": "2026-04-06",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2040249256993275906",
-          "date": "2026-04-05",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstfeu7reemy64a06wd34gvaqvzav7etqeagfhu8ukl5jdw44a7prc2ujjzw",
-          "date": "2026-04-05",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszw0truvq7ha5quwflk070jd0tsphp3pe3nw597tugvkkestv0mfsyufal0",
-          "date": "2026-04-02",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2039651586729795615",
-          "date": "2026-04-02",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2038643854031651281",
-          "date": "2026-03-30",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszsmxqdmpljdamk8s4a5dz58enxj2rh20dyt77dt226ggqpxsyhqq577mqs",
-          "date": "2026-03-30",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf3wk3n3sa77a9vz9qmrg75h36n044dqd9dpm8hq9rxg7pzhlejpcyhkdh6",
-          "date": "2026-03-28",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2037107196433928641",
-          "date": "2026-03-28",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2p8hrya73ek0fhwhymlheqs0lf574lpp6fjdkk4yh3qqsa4ugprsqz9vwt",
-          "date": "2026-03-27",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2037433865677963645",
-          "date": "2026-03-27",
-          "project": "Bitcoin Aves 🇬🇭"
         }
       ]
     },
@@ -6390,6 +6471,57 @@
       ]
     },
     {
+      "name": "Mary Shop",
+      "count": 9,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2047042592051724663",
+          "date": "2026-04-23",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdaqpehf0nuh7ksxg93anp30rz9ku6t98m0sq6gjgpgjdd3leeacsdu0aeu",
+          "date": "2026-04-18",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2045362666563137888",
+          "date": "2026-04-18",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg8jk809r7xrxxsycuw5pf42y5x7gfqs3p38a4mmg9yqawxceccwcq64tuj",
+          "date": "2026-04-11",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2042649729419370563",
+          "date": "2026-04-11",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszee8v5dh0hpvj0k5mxw5zczlfhl8rrv7vtpplfyvzvrgew9rsefcmg6ehk",
+          "date": "2026-04-07",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2041365574081552860",
+          "date": "2026-04-07",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2039313726147289303",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8u3e9ygm078ents36l79hlzxknlw4dha37xdg40gh4jhec550x7ct26wmk",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Kwallos Shop",
       "count": 9,
       "posts": [
@@ -6529,52 +6661,6 @@
           "url": "https://x.com/i/status/2039358962189893851",
           "date": "2026-04-02",
           "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Mary Shop",
-      "count": 8,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsdaqpehf0nuh7ksxg93anp30rz9ku6t98m0sq6gjgpgjdd3leeacsdu0aeu",
-          "date": "2026-04-18",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2045362666563137888",
-          "date": "2026-04-18",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg8jk809r7xrxxsycuw5pf42y5x7gfqs3p38a4mmg9yqawxceccwcq64tuj",
-          "date": "2026-04-11",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2042649729419370563",
-          "date": "2026-04-11",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszee8v5dh0hpvj0k5mxw5zczlfhl8rrv7vtpplfyvzvrgew9rsefcmg6ehk",
-          "date": "2026-04-07",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2041365574081552860",
-          "date": "2026-04-07",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2039313726147289303",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8u3e9ygm078ents36l79hlzxknlw4dha37xdg40gh4jhec550x7ct26wmk",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -7205,6 +7291,37 @@
       ]
     },
     {
+      "name": "Obwanchani Farm",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2047177669498806419",
+          "date": "2026-04-23",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgdv4zy4atmemlxvclwn0vdlqzl4gucztmug2phqmurqkxql3h02c6depj8",
+          "date": "2026-04-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2042241653910499680",
+          "date": "2026-04-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2039299798335939033",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Ayuba’s Washing Bay",
       "count": 5,
       "posts": [
@@ -7388,32 +7505,6 @@
           "url": "https://x.com/i/status/2038002239483089051",
           "date": "2026-03-29",
           "project": "Bitcoin Famba 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Obwanchani Farm",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsgdv4zy4atmemlxvclwn0vdlqzl4gucztmug2phqmurqkxql3h02c6depj8",
-          "date": "2026-04-09",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2042241653910499680",
-          "date": "2026-04-09",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2039299798335939033",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -8396,21 +8487,21 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 30,
-    "daily_average_payments": 72
+    "daily_average_payments": 73
   },
   "burn_rate": {
-    "percentage": 52,
+    "percentage": 53,
     "status": "cold",
     "days_active": 30
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2138
+      "count": 2150
     },
     {
       "domain": "8333.mobi",
-      "count": 47
+      "count": 48
     },
     {
       "domain": "walletofsatoshi.com",
@@ -8457,13 +8548,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1097
+      "count": 1106
     },
     {
       "platform": "Nostr",
-      "count": 1089
+      "count": 1093
     }
   ],
-  "generated_at": "2026-04-23T08:10:02.551597+00:00",
+  "generated_at": "2026-04-23T08:20:02.344612+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
