@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 2205,
+    "all_payments": 2208,
     "by_type": {
       "merchant": {
-        "count": 731
+        "count": 732
       },
       "project": {
-        "count": 731
+        "count": 732
       },
       "reviewer": {
-        "count": 743
+        "count": 744
       }
     }
   },
   "today": {
     "date": "2026-04-23",
-    "payments": 19,
+    "payments": 22,
     "by_type": {
       "merchant": {
-        "count": 6
+        "count": 7
       },
       "project": {
-        "count": 6
+        "count": 7
       },
       "reviewer": {
-        "count": 7
+        "count": 8
       }
     },
-    "approved": 6,
+    "approved": 7,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs8ldt8xgyzw0y227l6767ur62jpymstuzqxf6ml9az6sy3q69wlfq2wed80",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "Cafeleu Hotel",
+        "platform": "Nostr",
+        "time": "10:17"
+      },
       {
         "url": "https://x.com/i/status/2047021112899322077",
         "project": "BTC Shule 🇧🇮",
@@ -76,6 +83,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "EcoBitz 🇰🇪"
+      },
       {
         "project": "BTC Shule 🇧🇮"
       },
@@ -391,16 +401,16 @@
     },
     {
       "date": "2026-04-23",
-      "project_count": 6,
-      "merchant_count": 6,
-      "reviewer_count": 7,
-      "approved": 6,
+      "project_count": 7,
+      "merchant_count": 7,
+      "reviewer_count": 8,
+      "approved": 7,
       "rejected": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 770,
-    "approved": 730,
+    "total_reviewed": 771,
+    "approved": 731,
     "rejected": 40
   },
   "top_projects": [
@@ -3831,8 +3841,13 @@
     },
     {
       "name": "EcoBitz 🇰🇪",
-      "count": 11,
+      "count": 12,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8ldt8xgyzw0y227l6767ur62jpymstuzqxf6ml9az6sy3q69wlfq2wed80",
+          "date": "2026-04-23",
+          "merchant": "Cafeleu Hotel"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs2prt7nddt33y5u7lmr0lqft8npsxr70aw5menjesl2t6nr565clqgfkucx",
           "date": "2026-04-20",
@@ -7780,6 +7795,27 @@
       ]
     },
     {
+      "name": "Cafeleu Hotel",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8ldt8xgyzw0y227l6767ur62jpymstuzqxf6ml9az6sy3q69wlfq2wed80",
+          "date": "2026-04-23",
+          "project": "EcoBitz 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2prt7nddt33y5u7lmr0lqft8npsxr70aw5menjesl2t6nr565clqgfkucx",
+          "date": "2026-04-20",
+          "project": "EcoBitz 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9a3nx2mpqmfg7hc0r6m9qp5qu9hkypgjs8zq5cdet99epalzgg6s3wetc2",
+          "date": "2026-04-13",
+          "project": "EcoBitz 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Zwakala Cafe",
       "count": 2,
       "posts": [
@@ -8308,22 +8344,6 @@
       ]
     },
     {
-      "name": "Cafeleu Hotel",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs2prt7nddt33y5u7lmr0lqft8npsxr70aw5menjesl2t6nr565clqgfkucx",
-          "date": "2026-04-20",
-          "project": "EcoBitz 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9a3nx2mpqmfg7hc0r6m9qp5qu9hkypgjs8zq5cdet99epalzgg6s3wetc2",
-          "date": "2026-04-13",
-          "project": "EcoBitz 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "C&P Roasters Café & Roastery",
       "count": 2,
       "posts": [
@@ -8528,7 +8548,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2155
+      "count": 2158
     },
     {
       "domain": "8333.mobi",
@@ -8583,9 +8603,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1096
+      "count": 1099
     }
   ],
-  "generated_at": "2026-04-23T10:10:01.618059+00:00",
+  "generated_at": "2026-04-23T10:20:02.442165+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
