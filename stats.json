@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 2310,
+    "all_payments": 2316,
     "by_type": {
       "merchant": {
-        "count": 766
+        "count": 768
       },
       "project": {
-        "count": 766
+        "count": 768
       },
       "reviewer": {
-        "count": 778
+        "count": 780
       }
     }
   },
   "today": {
     "date": "2026-04-25",
-    "payments": 12,
+    "payments": 18,
     "by_type": {
       "merchant": {
-        "count": 4
+        "count": 6
       },
       "project": {
-        "count": 4
+        "count": 6
       },
       "reviewer": {
-        "count": 4
+        "count": 6
       }
     },
-    "approved": 4,
+    "approved": 6,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsfgl0zh5z2fqqxasvww3zxe5wr5g0sh8l2wj4z92rpdsjw3r07gagzyg0pa",
+        "project": "Bit-Fitness 🇿🇦",
+        "merchant": "Moto Wash & Valet",
+        "platform": "Nostr",
+        "time": "16:15"
+      },
+      {
+        "url": "https://x.com/i/status/2048012703420109114",
+        "project": "Bit-Fitness 🇿🇦",
+        "merchant": "Moto Wash & Valet",
+        "platform": "X",
+        "time": "16:15"
+      },
       {
         "url": "https://x.com/i/status/2047925541366292954",
         "project": "Bitcoin Aves 🇬🇭",
@@ -62,6 +76,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bit-Fitness 🇿🇦"
+      },
+      {
+        "project": "Bit-Fitness 🇿🇦"
+      },
       {
         "project": "Bitcoin Aves 🇬🇭"
       },
@@ -317,16 +337,16 @@
     },
     {
       "date": "2026-04-25",
-      "project_count": 4,
-      "merchant_count": 4,
-      "reviewer_count": 4,
-      "approved": 4,
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 6,
+      "approved": 6,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 807,
-    "approved": 765,
+    "total_reviewed": 809,
+    "approved": 767,
     "rejected": 42
   },
   "top_projects": [
@@ -4233,6 +4253,32 @@
       ]
     },
     {
+      "name": "Bit-Fitness 🇿🇦",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfgl0zh5z2fqqxasvww3zxe5wr5g0sh8l2wj4z92rpdsjw3r07gagzyg0pa",
+          "date": "2026-04-25",
+          "merchant": "Moto Wash & Valet"
+        },
+        {
+          "url": "https://x.com/i/status/2048012703420109114",
+          "date": "2026-04-25",
+          "merchant": "Moto Wash & Valet"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsra4ujk0rpj6ump030aj567e0yhekm8vf8aq6u88jz3ruccc62w7qexerp8",
+          "date": "2026-04-22",
+          "merchant": "Moto Wash & Valet"
+        },
+        {
+          "url": "https://x.com/i/status/2046187884068147612",
+          "date": "2026-04-20",
+          "merchant": "Moto Wash & Valet"
+        }
+      ]
+    },
+    {
       "name": "Lwandi Bitcoin 🇲🇿",
       "count": 2,
       "posts": [
@@ -4261,22 +4307,6 @@
           "url": "https://primal.net/e/nevent1qqs24tx5vzar3hv6j85k5zcm87n4208dehq32y7qx4ypplzydg38spc3gtgf6",
           "date": "2026-04-16",
           "merchant": "Emmy Store"
-        }
-      ]
-    },
-    {
-      "name": "Bit-Fitness 🇿🇦",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsra4ujk0rpj6ump030aj567e0yhekm8vf8aq6u88jz3ruccc62w7qexerp8",
-          "date": "2026-04-22",
-          "merchant": "Moto Wash & Valet"
-        },
-        {
-          "url": "https://x.com/i/status/2046187884068147612",
-          "date": "2026-04-20",
-          "merchant": "Moto Wash & Valet"
         }
       ]
     }
@@ -7859,6 +7889,32 @@
       ]
     },
     {
+      "name": "Moto Wash & Valet",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfgl0zh5z2fqqxasvww3zxe5wr5g0sh8l2wj4z92rpdsjw3r07gagzyg0pa",
+          "date": "2026-04-25",
+          "project": "Bit-Fitness 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2048012703420109114",
+          "date": "2026-04-25",
+          "project": "Bit-Fitness 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsra4ujk0rpj6ump030aj567e0yhekm8vf8aq6u88jz3ruccc62w7qexerp8",
+          "date": "2026-04-22",
+          "project": "Bit-Fitness 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2046187884068147612",
+          "date": "2026-04-20",
+          "project": "Bit-Fitness 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Mossel Bay Gas",
       "count": 4,
       "posts": [
@@ -8282,22 +8338,6 @@
           "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
           "date": "2026-03-25",
           "project": "Bitcoin Victoria Falls 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Moto Wash & Valet",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsra4ujk0rpj6ump030aj567e0yhekm8vf8aq6u88jz3ruccc62w7qexerp8",
-          "date": "2026-04-22",
-          "project": "Bit-Fitness 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2046187884068147612",
-          "date": "2026-04-20",
-          "project": "Bit-Fitness 🇿🇦"
         }
       ]
     },
@@ -8810,7 +8850,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2256
+      "count": 2262
     },
     {
       "domain": "8333.mobi",
@@ -8861,13 +8901,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1160
+      "count": 1163
     },
     {
       "platform": "Nostr",
-      "count": 1150
+      "count": 1153
     }
   ],
-  "generated_at": "2026-04-25T16:10:02.422638+00:00",
+  "generated_at": "2026-04-25T16:20:02.025897+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
