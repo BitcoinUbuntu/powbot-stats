@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 2364,
+    "all_payments": 2367,
     "by_type": {
       "merchant": {
-        "count": 784
+        "count": 785
       },
       "project": {
-        "count": 784
+        "count": 785
       },
       "reviewer": {
-        "count": 796
+        "count": 797
       }
     }
   },
   "today": {
     "date": "2026-04-26",
-    "payments": 18,
+    "payments": 21,
     "by_type": {
       "merchant": {
-        "count": 6
+        "count": 7
       },
       "project": {
-        "count": 6
+        "count": 7
       },
       "reviewer": {
-        "count": 6
+        "count": 7
       }
     },
-    "approved": 6,
+    "approved": 7,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqszcxed0lm73lu5nqj0mn07gryev4urjlyqmk9erfkugek8v6y4vvslmdfnj",
+        "project": "Bitcoin Tofo 🇲🇿",
+        "merchant": "Rafal Happy Groceries Tofo Shop",
+        "platform": "Nostr",
+        "time": "19:03"
+      },
       {
         "url": "https://x.com/i/status/2048435681920262585",
         "project": "Bitcoin Aves 🇬🇭",
@@ -76,6 +83,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Tofo 🇲🇿"
+      },
       {
         "project": "Bitcoin Aves 🇬🇭"
       },
@@ -361,16 +371,16 @@
     },
     {
       "date": "2026-04-26",
-      "project_count": 6,
-      "merchant_count": 6,
-      "reviewer_count": 6,
-      "approved": 6,
+      "project_count": 7,
+      "merchant_count": 7,
+      "reviewer_count": 7,
+      "approved": 7,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 825,
-    "approved": 783,
+    "total_reviewed": 826,
+    "approved": 784,
     "rejected": 42
   },
   "top_projects": [
@@ -4327,8 +4337,13 @@
     },
     {
       "name": "Bitcoin Tofo 🇲🇿",
-      "count": 5,
+      "count": 6,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszcxed0lm73lu5nqj0mn07gryev4urjlyqmk9erfkugek8v6y4vvslmdfnj",
+          "date": "2026-04-26",
+          "merchant": "Rafal Happy Groceries Tofo Shop"
+        },
         {
           "url": "https://x.com/i/status/2048396133169258961",
           "date": "2026-04-26",
@@ -8457,6 +8472,22 @@
       ]
     },
     {
+      "name": "Rafal Happy Groceries Tofo Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszcxed0lm73lu5nqj0mn07gryev4urjlyqmk9erfkugek8v6y4vvslmdfnj",
+          "date": "2026-04-26",
+          "project": "Bitcoin Tofo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2048396133169258961",
+          "date": "2026-04-26",
+          "project": "Bitcoin Tofo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Pokpixel Studio & Dezigns",
       "count": 2,
       "posts": [
@@ -8906,17 +8937,6 @@
       ]
     },
     {
-      "name": "Rafal Happy Groceries Tofo Shop",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2048396133169258961",
-          "date": "2026-04-26",
-          "project": "Bitcoin Tofo 🇲🇿"
-        }
-      ]
-    },
-    {
       "name": "Obrien Shop",
       "count": 1,
       "posts": [
@@ -9040,7 +9060,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2310
+      "count": 2313
     },
     {
       "domain": "8333.mobi",
@@ -9095,9 +9115,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1174
+      "count": 1177
     }
   ],
-  "generated_at": "2026-04-26T19:00:02.843716+00:00",
+  "generated_at": "2026-04-26T19:10:02.513789+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
