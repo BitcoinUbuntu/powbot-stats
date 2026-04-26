@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 2361,
+    "all_payments": 2364,
     "by_type": {
       "merchant": {
-        "count": 783
+        "count": 784
       },
       "project": {
-        "count": 783
+        "count": 784
       },
       "reviewer": {
-        "count": 795
+        "count": 796
       }
     }
   },
   "today": {
     "date": "2026-04-26",
-    "payments": 15,
+    "payments": 18,
     "by_type": {
       "merchant": {
-        "count": 5
+        "count": 6
       },
       "project": {
-        "count": 5
+        "count": 6
       },
       "reviewer": {
-        "count": 5
+        "count": 6
       }
     },
-    "approved": 5,
+    "approved": 6,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2048435681920262585",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Dora's Joint",
+        "platform": "X",
+        "time": "18:55"
+      },
       {
         "url": "https://x.com/i/status/2048396133169258961",
         "project": "Bitcoin Tofo 🇲🇿",
@@ -69,6 +76,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
       {
         "project": "Bitcoin Tofo 🇲🇿"
       },
@@ -351,16 +361,16 @@
     },
     {
       "date": "2026-04-26",
-      "project_count": 5,
-      "merchant_count": 5,
-      "reviewer_count": 5,
-      "approved": 5,
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 6,
+      "approved": 6,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 824,
-    "approved": 782,
+    "total_reviewed": 825,
+    "approved": 783,
     "rejected": 42
   },
   "top_projects": [
@@ -3281,8 +3291,13 @@
     },
     {
       "name": "Bitcoin Aves 🇬🇭",
-      "count": 38,
+      "count": 39,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2048435681920262585",
+          "date": "2026-04-26",
+          "merchant": "Dora's Joint"
+        },
         {
           "url": "https://x.com/i/status/2047925541366292954",
           "date": "2026-04-25",
@@ -8272,6 +8287,27 @@
       ]
     },
     {
+      "name": "Dora's Joint",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2048435681920262585",
+          "date": "2026-04-26",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2044336448992604601",
+          "date": "2026-04-15",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2qdsqxr4kphtk74cm7uue92u6mufl7psf9lhr93ecsgjrq8n3u3gg6v500",
+          "date": "2026-04-15",
+          "project": "Bitcoin Aves 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Cafeleu Hotel",
       "count": 3,
       "posts": [
@@ -8741,22 +8777,6 @@
       ]
     },
     {
-      "name": "Dora's Joint",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2044336448992604601",
-          "date": "2026-04-15",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2qdsqxr4kphtk74cm7uue92u6mufl7psf9lhr93ecsgjrq8n3u3gg6v500",
-          "date": "2026-04-15",
-          "project": "Bitcoin Aves 🇬🇭"
-        }
-      ]
-    },
-    {
       "name": "Dino Printer Services",
       "count": 2,
       "posts": [
@@ -9020,7 +9040,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2307
+      "count": 2310
     },
     {
       "domain": "8333.mobi",
@@ -9071,13 +9091,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1187
+      "count": 1190
     },
     {
       "platform": "Nostr",
       "count": 1174
     }
   ],
-  "generated_at": "2026-04-26T18:50:01.797264+00:00",
+  "generated_at": "2026-04-26T19:00:02.843716+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
