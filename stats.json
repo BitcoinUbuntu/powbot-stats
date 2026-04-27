@@ -1,28 +1,69 @@
 {
   "totals": {
-    "all_payments": 2367,
+    "all_payments": 2376,
     "by_type": {
       "merchant": {
-        "count": 785
+        "count": 788
       },
       "project": {
-        "count": 785
+        "count": 788
       },
       "reviewer": {
-        "count": 797
+        "count": 800
       }
     }
   },
   "today": {
     "date": "2026-04-27",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 9,
+    "by_type": {
+      "merchant": {
+        "count": 3
+      },
+      "project": {
+        "count": 3
+      },
+      "reviewer": {
+        "count": 3
+      }
+    },
+    "approved": 3,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsfwmmqvfwm3grs9dr795989ytgd5prasttx7g863e4cx3mdkn7rxspuyymu",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "La Casa Moz",
+        "platform": "Nostr",
+        "time": "05:32"
+      },
+      {
+        "url": "https://x.com/i/status/2048506796654924217",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "La Casa Moz",
+        "platform": "X",
+        "time": "05:31"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsgftjwnta29xqax35rjy8tmpd43sam76n7x254ztctzdzrtrk6acccztwxw",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Dora's Joint",
+        "platform": "Nostr",
+        "time": "05:31"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
       {
         "project": "Bitcoin Tofo 🇲🇿"
       },
@@ -281,16 +322,16 @@
     },
     {
       "date": "2026-04-27",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 3,
+      "merchant_count": 3,
+      "reviewer_count": 3,
+      "approved": 3,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 826,
-    "approved": 784,
+    "total_reviewed": 829,
+    "approved": 787,
     "rejected": 42
   },
   "top_projects": [
@@ -3211,8 +3252,13 @@
     },
     {
       "name": "Bitcoin Aves 🇬🇭",
-      "count": 39,
+      "count": 40,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgftjwnta29xqax35rjy8tmpd43sam76n7x254ztctzdzrtrk6acccztwxw",
+          "date": "2026-04-27",
+          "merchant": "Dora's Joint"
+        },
         {
           "url": "https://x.com/i/status/2048435681920262585",
           "date": "2026-04-26",
@@ -3784,8 +3830,18 @@
     },
     {
       "name": "Bitcoin Famba 🇲🇿",
-      "count": 14,
+      "count": 16,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfwmmqvfwm3grs9dr795989ytgd5prasttx7g863e4cx3mdkn7rxspuyymu",
+          "date": "2026-04-27",
+          "merchant": "La Casa Moz"
+        },
+        {
+          "url": "https://x.com/i/status/2048506796654924217",
+          "date": "2026-04-27",
+          "merchant": "La Casa Moz"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsvccp3uwxg7u3rseda2d6rs2eajx5508u2zs84sdd3md9eg6w9rpqjz6ttz",
           "date": "2026-04-18",
@@ -8144,6 +8200,32 @@
       ]
     },
     {
+      "name": "Dora's Joint",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgftjwnta29xqax35rjy8tmpd43sam76n7x254ztctzdzrtrk6acccztwxw",
+          "date": "2026-04-27",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2048435681920262585",
+          "date": "2026-04-26",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2044336448992604601",
+          "date": "2026-04-15",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2qdsqxr4kphtk74cm7uue92u6mufl7psf9lhr93ecsgjrq8n3u3gg6v500",
+          "date": "2026-04-15",
+          "project": "Bitcoin Aves 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Brasukas - Bar & Surf",
       "count": 4,
       "posts": [
@@ -8208,27 +8290,6 @@
           "url": "https://primal.net/e/nevent1qqs8tauhqyjwv9a6k55cl55v90qz6qckn2pahcnrjqdel7n26cs2apc6mrztp",
           "date": "2026-03-30",
           "project": "BitJR Academy 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Dora's Joint",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2048435681920262585",
-          "date": "2026-04-26",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2044336448992604601",
-          "date": "2026-04-15",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2qdsqxr4kphtk74cm7uue92u6mufl7psf9lhr93ecsgjrq8n3u3gg6v500",
-          "date": "2026-04-15",
-          "project": "Bitcoin Aves 🇬🇭"
         }
       ]
     },
@@ -8522,6 +8583,22 @@
           "url": "https://x.com/i/status/2044786744675934231",
           "date": "2026-04-16",
           "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
+      "name": "La Casa Moz",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfwmmqvfwm3grs9dr795989ytgd5prasttx7g863e4cx3mdkn7rxspuyymu",
+          "date": "2026-04-27",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2048506796654924217",
+          "date": "2026-04-27",
+          "project": "Bitcoin Famba 🇲🇿"
         }
       ]
     },
@@ -8970,7 +9047,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2313
+      "count": 2322
     },
     {
       "domain": "8333.mobi",
@@ -9021,13 +9098,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1190
+      "count": 1193
     },
     {
       "platform": "Nostr",
-      "count": 1177
+      "count": 1183
     }
   ],
-  "generated_at": "2026-04-27T05:30:02.614970+00:00",
+  "generated_at": "2026-04-27T05:40:02.749536+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
