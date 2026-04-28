@@ -1,28 +1,69 @@
 {
   "totals": {
-    "all_payments": 2440,
+    "all_payments": 2449,
     "by_type": {
       "merchant": {
-        "count": 809
+        "count": 812
       },
       "project": {
-        "count": 809
+        "count": 812
       },
       "reviewer": {
-        "count": 822
+        "count": 825
       }
     }
   },
   "today": {
     "date": "2026-04-28",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 9,
+    "by_type": {
+      "merchant": {
+        "count": 3
+      },
+      "project": {
+        "count": 3
+      },
+      "reviewer": {
+        "count": 3
+      }
+    },
+    "approved": 3,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2048892811160813599",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Diamond Barbing Saloon",
+        "platform": "X",
+        "time": "05:35"
+      },
+      {
+        "url": "https://x.com/i/status/2048820227048165631",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Lydiah Richland Shop",
+        "platform": "X",
+        "time": "05:35"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsd0qscqv4pf4dj0n5nky4ngff5nyf5p500qwt8jqd6lgahwzmtw6grsx86p",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Lydiah Richland Shop",
+        "platform": "Nostr",
+        "time": "05:34"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "EcoBitz 🇰🇪"
       },
@@ -85,15 +126,6 @@
       },
       {
         "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Famba 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Famba 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Aves 🇬🇭"
       }
     ]
   },
@@ -332,23 +364,33 @@
     },
     {
       "date": "2026-04-28",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 3,
+      "merchant_count": 3,
+      "reviewer_count": 3,
+      "approved": 3,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 851,
-    "approved": 808,
+    "total_reviewed": 854,
+    "approved": 811,
     "rejected": 43
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 259,
+      "count": 261,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2048820227048165631",
+          "date": "2026-04-28",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd0qscqv4pf4dj0n5nky4ngff5nyf5p500qwt8jqd6lgahwzmtw6grsx86p",
+          "date": "2026-04-28",
+          "merchant": "Lydiah Richland Shop"
+        },
         {
           "url": "https://x.com/i/status/2048793608870887511",
           "date": "2026-04-27",
@@ -3734,8 +3776,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 36,
+      "count": 37,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2048892811160813599",
+          "date": "2026-04-28",
+          "merchant": "Diamond Barbing Saloon"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsy35ejhxe2vkj5rlrxdewcnfwz7n5jqgvt7tf9sssdg2z50x9c9tc7qsc0n",
           "date": "2026-04-25",
@@ -4991,8 +5038,18 @@
     },
     {
       "name": "Lydiah Richland Shop",
-      "count": 40,
+      "count": 42,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2048820227048165631",
+          "date": "2026-04-28",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd0qscqv4pf4dj0n5nky4ngff5nyf5p500qwt8jqd6lgahwzmtw6grsx86p",
+          "date": "2026-04-28",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2047672808126222639",
           "date": "2026-04-24",
@@ -7554,6 +7611,47 @@
       ]
     },
     {
+      "name": "Diamond Barbing Saloon",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2048892811160813599",
+          "date": "2026-04-28",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswgp98gpctek73nzzq3x3flut64qh6vmthcqzmsu69w8f6xf06vhsalqaqq",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2044430581652480503",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqx2295p4ft3xjhmxa2hqz9v6xx4pkluxen0pj95v38ygct67v4kccaxutj",
+          "date": "2026-04-13",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2043010791566139869",
+          "date": "2026-04-13",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg5hdsxquxf3dukkrqal72ar9sggrq5edcpn3ulcwfk9h4act7kds9ksy0k",
+          "date": "2026-04-05",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2040416302968291523",
+          "date": "2026-04-05",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Viwa Accessories",
       "count": 6,
       "posts": [
@@ -7946,42 +8044,6 @@
           "url": "https://x.com/i/status/2038068472035291328",
           "date": "2026-03-29",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Diamond Barbing Saloon",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqswgp98gpctek73nzzq3x3flut64qh6vmthcqzmsu69w8f6xf06vhsalqaqq",
-          "date": "2026-04-15",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2044430581652480503",
-          "date": "2026-04-15",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqx2295p4ft3xjhmxa2hqz9v6xx4pkluxen0pj95v38ygct67v4kccaxutj",
-          "date": "2026-04-13",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2043010791566139869",
-          "date": "2026-04-13",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg5hdsxquxf3dukkrqal72ar9sggrq5edcpn3ulcwfk9h4act7kds9ksy0k",
-          "date": "2026-04-05",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2040416302968291523",
-          "date": "2026-04-05",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -9272,14 +9334,14 @@
     "daily_average_payments": 69
   },
   "burn_rate": {
-    "percentage": 51,
+    "percentage": 52,
     "status": "cold",
     "days_active": 35
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2386
+      "count": 2395
     },
     {
       "domain": "8333.mobi",
@@ -9330,13 +9392,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1224
+      "count": 1230
     },
     {
       "platform": "Nostr",
-      "count": 1216
+      "count": 1219
     }
   ],
-  "generated_at": "2026-04-28T05:30:02.168752+00:00",
+  "generated_at": "2026-04-28T05:40:02.052157+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
