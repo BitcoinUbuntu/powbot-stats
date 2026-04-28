@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 2449,
+    "all_payments": 2452,
     "by_type": {
       "merchant": {
-        "count": 812
+        "count": 813
       },
       "project": {
-        "count": 812
+        "count": 813
       },
       "reviewer": {
-        "count": 825
+        "count": 826
       }
     }
   },
   "today": {
     "date": "2026-04-28",
-    "payments": 9,
+    "payments": 12,
     "by_type": {
       "merchant": {
-        "count": 3
+        "count": 4
       },
       "project": {
-        "count": 3
+        "count": 4
       },
       "reviewer": {
-        "count": 3
+        "count": 4
       }
     },
-    "approved": 3,
+    "approved": 4,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs8l3zaulfu3uhcm82z9zyc807kpmt4xy5rrxtn039egn0e6e95cxg7t0mg0",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "T-Junction fast food",
+        "platform": "Nostr",
+        "time": "06:49"
+      },
       {
         "url": "https://x.com/i/status/2048892811160813599",
         "project": "Bitcoin Ekiti 🇳🇬",
@@ -55,6 +62,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
       {
         "project": "Bitcoin Ekiti 🇳🇬"
       },
@@ -358,16 +368,16 @@
     },
     {
       "date": "2026-04-28",
-      "project_count": 3,
-      "merchant_count": 3,
-      "reviewer_count": 3,
-      "approved": 3,
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4,
+      "approved": 4,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 854,
-    "approved": 811,
+    "total_reviewed": 855,
+    "approved": 812,
     "rejected": 43
   },
   "top_projects": [
@@ -4189,8 +4199,13 @@
     },
     {
       "name": "Bitcoin Sisonke 🇿🇦",
-      "count": 12,
+      "count": 13,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8l3zaulfu3uhcm82z9zyc807kpmt4xy5rrxtn039egn0e6e95cxg7t0mg0",
+          "date": "2026-04-28",
+          "merchant": "T-Junction fast food"
+        },
         {
           "url": "https://x.com/i/status/2047465165222772753",
           "date": "2026-04-24",
@@ -7248,8 +7263,13 @@
     },
     {
       "name": "T-Junction fast food",
-      "count": 8,
+      "count": 9,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8l3zaulfu3uhcm82z9zyc807kpmt4xy5rrxtn039egn0e6e95cxg7t0mg0",
+          "date": "2026-04-28",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
         {
           "url": "https://x.com/i/status/2046781260907925963",
           "date": "2026-04-22",
@@ -9325,7 +9345,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 35,
-    "daily_average_payments": 69
+    "daily_average_payments": 70
   },
   "burn_rate": {
     "percentage": 52,
@@ -9335,7 +9355,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2395
+      "count": 2398
     },
     {
       "domain": "8333.mobi",
@@ -9390,9 +9410,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1219
+      "count": 1222
     }
   ],
-  "generated_at": "2026-04-28T06:40:02.355225+00:00",
+  "generated_at": "2026-04-28T06:50:02.363464+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
