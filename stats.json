@@ -1,28 +1,70 @@
 {
   "totals": {
-    "all_payments": 2464,
+    "all_payments": 2473,
     "by_type": {
       "merchant": {
-        "count": 817
+        "count": 820
       },
       "project": {
-        "count": 817
+        "count": 820
       },
       "reviewer": {
-        "count": 830
+        "count": 833
       }
     }
   },
   "today": {
     "date": "2026-04-29",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 9,
+    "by_type": {
+      "merchant": {
+        "count": 3
+      },
+      "project": {
+        "count": 3
+      },
+      "reviewer": {
+        "count": 3
+      }
+    },
+    "approved": 3,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2049093867648024846",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Tena cyberpalace",
+        "platform": "X",
+        "time": "13:59"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs86q0vun9njmda8v3lg9lkp0pqxazs7rt07d4x25enc2rq2n40pdq2w4vdg",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "Nostr",
+        "time": "13:59"
+      },
+      {
+        "url": "https://x.com/i/status/2049064203722350912",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "X",
+        "time": "13:58"
+      }
+    ]
   },
   "last_24h": {
-    "videos": []
+    "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      }
+    ]
   },
   "daily": [
     {
@@ -259,23 +301,38 @@
     },
     {
       "date": "2026-04-29",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 3,
+      "merchant_count": 3,
+      "reviewer_count": 3,
+      "approved": 3,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 859,
-    "approved": 816,
+    "total_reviewed": 862,
+    "approved": 819,
     "rejected": 43
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 261,
+      "count": 264,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2049093867648024846",
+          "date": "2026-04-29",
+          "merchant": "Tena cyberpalace"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs86q0vun9njmda8v3lg9lkp0pqxazs7rt07d4x25enc2rq2n40pdq2w4vdg",
+          "date": "2026-04-29",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2049064203722350912",
+          "date": "2026-04-29",
+          "merchant": "Haven food court"
+        },
         {
           "url": "https://x.com/i/status/2048820227048165631",
           "date": "2026-04-28",
@@ -4481,8 +4538,18 @@
   "top_merchants": [
     {
       "name": "Haven food court",
-      "count": 47,
+      "count": 49,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs86q0vun9njmda8v3lg9lkp0pqxazs7rt07d4x25enc2rq2n40pdq2w4vdg",
+          "date": "2026-04-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2049064203722350912",
+          "date": "2026-04-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2048793608870887511",
           "date": "2026-04-27",
@@ -6355,6 +6422,77 @@
       ]
     },
     {
+      "name": "Tena cyberpalace",
+      "count": 13,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2049093867648024846",
+          "date": "2026-04-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2048070318128783527",
+          "date": "2026-04-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd3lz6xyq7rxh8l4re4vcmakvg3m4r343n990qevzgtpl2e0qu8gcteqxsq",
+          "date": "2026-04-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs29634h75l3efweudv3mzde26xrhl2w3ggfdc2nkwjghah66lm8jgflvxfg",
+          "date": "2026-04-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2046655055365865762",
+          "date": "2026-04-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2046261584805126280",
+          "date": "2026-04-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyydz92tjjnujdkcje9aq75stsmlhrshjmpyr2hyn9upk52u5dzyqn0n8mq",
+          "date": "2026-04-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2045582022727307420",
+          "date": "2026-04-19",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxvhqy72pgf9pkpqf8t0wgqn4k7mh79spphmfyfavu3zcqzga9s9sdstn7v",
+          "date": "2026-04-19",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2043324935074975979",
+          "date": "2026-04-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgp5dd4f74dj084syct5736dxvd7pc5yjdqnu0ylruqha64hnskpc435qqv",
+          "date": "2026-04-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2038671536387768749",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Dona Marta Stand Shop",
       "count": 13,
       "posts": [
@@ -6488,72 +6626,6 @@
           "url": "https://x.com/i/status/2039861514585211084",
           "date": "2026-04-03",
           "project": "Bitcoin Aves 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Tena cyberpalace",
-      "count": 12,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2048070318128783527",
-          "date": "2026-04-25",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd3lz6xyq7rxh8l4re4vcmakvg3m4r343n990qevzgtpl2e0qu8gcteqxsq",
-          "date": "2026-04-25",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs29634h75l3efweudv3mzde26xrhl2w3ggfdc2nkwjghah66lm8jgflvxfg",
-          "date": "2026-04-21",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2046655055365865762",
-          "date": "2026-04-21",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2046261584805126280",
-          "date": "2026-04-20",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyydz92tjjnujdkcje9aq75stsmlhrshjmpyr2hyn9upk52u5dzyqn0n8mq",
-          "date": "2026-04-20",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2045582022727307420",
-          "date": "2026-04-19",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxvhqy72pgf9pkpqf8t0wgqn4k7mh79spphmfyfavu3zcqzga9s9sdstn7v",
-          "date": "2026-04-19",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2043324935074975979",
-          "date": "2026-04-13",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgp5dd4f74dj084syct5736dxvd7pc5yjdqnu0ylruqha64hnskpc435qqv",
-          "date": "2026-04-13",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2038671536387768749",
-          "date": "2026-03-31",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
-          "date": "2026-03-31",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -9286,7 +9358,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2410
+      "count": 2419
     },
     {
       "domain": "8333.mobi",
@@ -9337,13 +9409,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1236
+      "count": 1242
     },
     {
       "platform": "Nostr",
-      "count": 1228
+      "count": 1231
     }
   ],
-  "generated_at": "2026-04-29T13:50:02.480358+00:00",
+  "generated_at": "2026-04-29T14:00:02.325080+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
