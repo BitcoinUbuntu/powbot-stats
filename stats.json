@@ -1,35 +1,63 @@
 {
   "totals": {
-    "all_payments": 2515,
+    "all_payments": 2527,
     "by_type": {
       "merchant": {
-        "count": 834
+        "count": 838
       },
       "project": {
-        "count": 834
+        "count": 838
       },
       "reviewer": {
-        "count": 847
+        "count": 851
       }
     }
   },
   "today": {
     "date": "2026-04-29",
-    "payments": 51,
+    "payments": 63,
     "by_type": {
       "merchant": {
-        "count": 17
+        "count": 21
       },
       "project": {
-        "count": 17
+        "count": 21
       },
       "reviewer": {
-        "count": 17
+        "count": 21
       }
     },
-    "approved": 17,
+    "approved": 21,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsrv803ymu24wdhfv5xfhv7k6akvvet63zhjap7lnj2twr4u02mwngs57wk5",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "Nostr",
+        "time": "14:23"
+      },
+      {
+        "url": "https://x.com/i/status/2048274130231857595",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "X",
+        "time": "14:23"
+      },
+      {
+        "url": "https://x.com/i/status/2049187492163694633",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Lydiah Richland Shop",
+        "platform": "X",
+        "time": "14:20"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsygahmwhg3k4rwlkvdxgw233j2wzlm9e7e3l3gamly255rlenregqmkxgjs",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Lydiah Richland Shop",
+        "platform": "Nostr",
+        "time": "14:20"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsfmtu5a77l26ec5ayunf02y702hxewrxgkzt097xf00hnjrf6l68qcvx2ly",
         "project": "Bitbiashara 🇰🇪",
@@ -153,6 +181,18 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -441,23 +481,33 @@
     },
     {
       "date": "2026-04-29",
-      "project_count": 17,
-      "merchant_count": 17,
-      "reviewer_count": 17,
-      "approved": 17,
+      "project_count": 21,
+      "merchant_count": 21,
+      "reviewer_count": 21,
+      "approved": 21,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 876,
-    "approved": 833,
+    "total_reviewed": 880,
+    "approved": 837,
     "rejected": 43
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 267,
+      "count": 269,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2049187492163694633",
+          "date": "2026-04-29",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsygahmwhg3k4rwlkvdxgw233j2wzlm9e7e3l3gamly255rlenregqmkxgjs",
+          "date": "2026-04-29",
+          "merchant": "Lydiah Richland Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsfmtu5a77l26ec5ayunf02y702hxewrxgkzt097xf00hnjrf6l68qcvx2ly",
           "date": "2026-04-29",
@@ -4494,8 +4544,18 @@
     },
     {
       "name": "BTC Shule 🇧🇮",
-      "count": 10,
+      "count": 12,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrv803ymu24wdhfv5xfhv7k6akvvet63zhjap7lnj2twr4u02mwngs57wk5",
+          "date": "2026-04-29",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2048274130231857595",
+          "date": "2026-04-29",
+          "merchant": "Kwa Innocent"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9ql2vypydmdwty60w7254kzy65c8a7k45xtn5dmke76ccp2de5nqeydur7",
           "date": "2026-04-26",
@@ -5235,8 +5295,18 @@
     },
     {
       "name": "Lydiah Richland Shop",
-      "count": 42,
+      "count": 44,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2049187492163694633",
+          "date": "2026-04-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsygahmwhg3k4rwlkvdxgw233j2wzlm9e7e3l3gamly255rlenregqmkxgjs",
+          "date": "2026-04-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2048820227048165631",
           "date": "2026-04-28",
@@ -8646,6 +8716,32 @@
       ]
     },
     {
+      "name": "Kwa Innocent",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrv803ymu24wdhfv5xfhv7k6akvvet63zhjap7lnj2twr4u02mwngs57wk5",
+          "date": "2026-04-29",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2048274130231857595",
+          "date": "2026-04-29",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
+          "date": "2026-03-27",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2037264780444991537",
+          "date": "2026-03-26",
+          "project": "BTC Shule 🇧🇮"
+        }
+      ]
+    },
+    {
       "name": "John Shop",
       "count": 4,
       "posts": [
@@ -9211,22 +9307,6 @@
       ]
     },
     {
-      "name": "Kwa Innocent",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
-          "date": "2026-03-27",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2037264780444991537",
-          "date": "2026-03-26",
-          "project": "BTC Shule 🇧🇮"
-        }
-      ]
-    },
-    {
       "name": "Kirathimo ventures",
       "count": 2,
       "posts": [
@@ -9634,17 +9714,17 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 37,
-    "daily_average_payments": 67
+    "daily_average_payments": 68
   },
   "burn_rate": {
-    "percentage": 50,
+    "percentage": 51,
     "status": "cold",
     "days_active": 37
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2461
+      "count": 2473
     },
     {
       "domain": "8333.mobi",
@@ -9695,13 +9775,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1260
+      "count": 1266
     },
     {
       "platform": "Nostr",
-      "count": 1255
+      "count": 1261
     }
   ],
-  "generated_at": "2026-04-29T14:20:02.353159+00:00",
+  "generated_at": "2026-04-29T14:30:02.502568+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
