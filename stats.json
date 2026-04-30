@@ -1,28 +1,69 @@
 {
   "totals": {
-    "all_payments": 2599,
+    "all_payments": 2608,
     "by_type": {
       "merchant": {
-        "count": 862
+        "count": 865
       },
       "project": {
-        "count": 862
+        "count": 865
       },
       "reviewer": {
-        "count": 875
+        "count": 878
       }
     }
   },
   "today": {
     "date": "2026-04-30",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 9,
+    "by_type": {
+      "merchant": {
+        "count": 3
+      },
+      "project": {
+        "count": 3
+      },
+      "reviewer": {
+        "count": 3
+      }
+    },
+    "approved": 3,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2049574414698635574",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Tenorio Baber Shop",
+        "platform": "X",
+        "time": "05:59"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqst6300227jzchulfathta9w344yhcx44s4c9gstx2psxklnadzj2s30dq02",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "Nostr",
+        "time": "05:59"
+      },
+      {
+        "url": "https://x.com/i/status/2048498892065345827",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "X",
+        "time": "05:59"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -395,16 +436,16 @@
     },
     {
       "date": "2026-04-30",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 3,
+      "merchant_count": 3,
+      "reviewer_count": 3,
+      "approved": 3,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 906,
-    "approved": 861,
+    "total_reviewed": 909,
+    "approved": 864,
     "rejected": 45
   },
   "top_projects": [
@@ -1811,8 +1852,13 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 106,
+      "count": 107,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2049574414698635574",
+          "date": "2026-04-30",
+          "merchant": "Tenorio Baber Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9k23spm0snk64djnm3ueyqna0eug27j2578r63dvae4aqkvfqenq3hhmsc",
           "date": "2026-04-28",
@@ -4359,6 +4405,82 @@
       ]
     },
     {
+      "name": "BTC Shule 🇧🇮",
+      "count": 14,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqst6300227jzchulfathta9w344yhcx44s4c9gstx2psxklnadzj2s30dq02",
+          "date": "2026-04-30",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2048498892065345827",
+          "date": "2026-04-30",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrv803ymu24wdhfv5xfhv7k6akvvet63zhjap7lnj2twr4u02mwngs57wk5",
+          "date": "2026-04-29",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2048274130231857595",
+          "date": "2026-04-29",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9ql2vypydmdwty60w7254kzy65c8a7k45xtn5dmke76ccp2de5nqeydur7",
+          "date": "2026-04-26",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://x.com/i/status/2047774200828469311",
+          "date": "2026-04-26",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst8gyq5cqs7s230jh458pf8r5z5mcjervzl3yjasvjqkd8u63uz8calnsys",
+          "date": "2026-04-24",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://x.com/i/status/2047406408153338301",
+          "date": "2026-04-24",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyzedw5fcjk5caajfzwsglcf4ncshshvva2dls0n6q2yhwg202vqc7tua3n",
+          "date": "2026-04-23",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://x.com/i/status/2047021112899322077",
+          "date": "2026-04-23",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswjkl30c5tsrrv68ypfqaxca03ck8fxyl44pu4cmhyvyv3acklqucjwcx0p",
+          "date": "2026-04-22",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://x.com/i/status/2046709455782314121",
+          "date": "2026-04-22",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
+          "date": "2026-03-27",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2037264780444991537",
+          "date": "2026-03-26",
+          "merchant": "Kwa Innocent"
+        }
+      ]
+    },
+    {
       "name": "EcoBitz 🇰🇪",
       "count": 13,
       "posts": [
@@ -4563,72 +4685,6 @@
           "url": "https://x.com/i/status/2037223959003828237",
           "date": "2026-03-26",
           "merchant": "The Sario Eventers"
-        }
-      ]
-    },
-    {
-      "name": "BTC Shule 🇧🇮",
-      "count": 12,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsrv803ymu24wdhfv5xfhv7k6akvvet63zhjap7lnj2twr4u02mwngs57wk5",
-          "date": "2026-04-29",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://x.com/i/status/2048274130231857595",
-          "date": "2026-04-29",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9ql2vypydmdwty60w7254kzy65c8a7k45xtn5dmke76ccp2de5nqeydur7",
-          "date": "2026-04-26",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://x.com/i/status/2047774200828469311",
-          "date": "2026-04-26",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst8gyq5cqs7s230jh458pf8r5z5mcjervzl3yjasvjqkd8u63uz8calnsys",
-          "date": "2026-04-24",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://x.com/i/status/2047406408153338301",
-          "date": "2026-04-24",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyzedw5fcjk5caajfzwsglcf4ncshshvva2dls0n6q2yhwg202vqc7tua3n",
-          "date": "2026-04-23",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://x.com/i/status/2047021112899322077",
-          "date": "2026-04-23",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswjkl30c5tsrrv68ypfqaxca03ck8fxyl44pu4cmhyvyv3acklqucjwcx0p",
-          "date": "2026-04-22",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://x.com/i/status/2046709455782314121",
-          "date": "2026-04-22",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
-          "date": "2026-03-27",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://x.com/i/status/2037264780444991537",
-          "date": "2026-03-26",
-          "merchant": "Kwa Innocent"
         }
       ]
     },
@@ -7527,8 +7583,13 @@
     },
     {
       "name": "Tenorio Baber Shop",
-      "count": 10,
+      "count": 11,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2049574414698635574",
+          "date": "2026-04-30",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
         {
           "url": "https://x.com/i/status/2046521423422742799",
           "date": "2026-04-21",
@@ -8519,6 +8580,42 @@
       ]
     },
     {
+      "name": "Kwa Innocent",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqst6300227jzchulfathta9w344yhcx44s4c9gstx2psxklnadzj2s30dq02",
+          "date": "2026-04-30",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2048498892065345827",
+          "date": "2026-04-30",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrv803ymu24wdhfv5xfhv7k6akvvet63zhjap7lnj2twr4u02mwngs57wk5",
+          "date": "2026-04-29",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2048274130231857595",
+          "date": "2026-04-29",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
+          "date": "2026-03-27",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2037264780444991537",
+          "date": "2026-03-26",
+          "project": "BTC Shule 🇧🇮"
+        }
+      ]
+    },
+    {
       "name": "Klenam Stores",
       "count": 6,
       "posts": [
@@ -8846,32 +8943,6 @@
           "url": "https://primal.net/e/nevent1qqs943yatccghsjps68cf7uunstkql7fpxlca0v9atchd6yfcp2vgeqfrhxta",
           "date": "2026-04-13",
           "project": "Bitcoin Sisonke 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Kwa Innocent",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsrv803ymu24wdhfv5xfhv7k6akvvet63zhjap7lnj2twr4u02mwngs57wk5",
-          "date": "2026-04-29",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2048274130231857595",
-          "date": "2026-04-29",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
-          "date": "2026-03-27",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2037264780444991537",
-          "date": "2026-03-26",
-          "project": "BTC Shule 🇧🇮"
         }
       ]
     },
@@ -9877,14 +9948,14 @@
     "daily_average_payments": 70
   },
   "burn_rate": {
-    "percentage": 52,
+    "percentage": 53,
     "status": "cold",
     "days_active": 37
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2543
+      "count": 2552
     },
     {
       "domain": "8333.mobi",
@@ -9935,13 +10006,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1302
+      "count": 1308
     },
     {
       "platform": "Nostr",
-      "count": 1297
+      "count": 1300
     }
   ],
-  "generated_at": "2026-04-30T05:50:01.711663+00:00",
+  "generated_at": "2026-04-30T06:00:02.422467+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
