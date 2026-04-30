@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 2608,
+    "all_payments": 2611,
     "by_type": {
       "merchant": {
-        "count": 865
+        "count": 866
       },
       "project": {
-        "count": 865
+        "count": 866
       },
       "reviewer": {
-        "count": 878
+        "count": 879
       }
     }
   },
   "today": {
     "date": "2026-04-30",
-    "payments": 9,
+    "payments": 12,
     "by_type": {
       "merchant": {
-        "count": 3
+        "count": 4
       },
       "project": {
-        "count": 3
+        "count": 4
       },
       "reviewer": {
-        "count": 3
+        "count": 4
       }
     },
-    "approved": 3,
+    "approved": 4,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2049589713107898875",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Tofun'sleatherwork",
+        "platform": "X",
+        "time": "06:00"
+      },
       {
         "url": "https://x.com/i/status/2049574414698635574",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -55,6 +62,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -436,16 +446,16 @@
     },
     {
       "date": "2026-04-30",
-      "project_count": 3,
-      "merchant_count": 3,
-      "reviewer_count": 3,
-      "approved": 3,
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4,
+      "approved": 4,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 909,
-    "approved": 864,
+    "total_reviewed": 910,
+    "approved": 865,
     "rejected": 45
   },
   "top_projects": [
@@ -4048,8 +4058,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 38,
+      "count": 39,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2049589713107898875",
+          "date": "2026-04-30",
+          "merchant": "Tofun'sleatherwork"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsvqhsqang8cp05htwnvhap5u73up4sqjgs52ulz6utfayl7ffy7rsff9yxq",
           "date": "2026-04-28",
@@ -9821,6 +9836,17 @@
       ]
     },
     {
+      "name": "Tofun'sleatherwork",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2049589713107898875",
+          "date": "2026-04-30",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Tafeyo Innovations",
       "count": 1,
       "posts": [
@@ -9955,7 +9981,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2552
+      "count": 2555
     },
     {
       "domain": "8333.mobi",
@@ -10006,13 +10032,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1308
+      "count": 1311
     },
     {
       "platform": "Nostr",
       "count": 1300
     }
   ],
-  "generated_at": "2026-04-30T06:00:02.422467+00:00",
+  "generated_at": "2026-04-30T06:10:01.924387+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
