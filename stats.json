@@ -1,35 +1,70 @@
 {
   "totals": {
-    "all_payments": 2611,
+    "all_payments": 2626,
     "by_type": {
       "merchant": {
-        "count": 866
+        "count": 871
       },
       "project": {
-        "count": 866
+        "count": 871
       },
       "reviewer": {
-        "count": 879
+        "count": 884
       }
     }
   },
   "today": {
     "date": "2026-04-30",
-    "payments": 12,
+    "payments": 27,
     "by_type": {
       "merchant": {
-        "count": 4
+        "count": 9
       },
       "project": {
-        "count": 4
+        "count": 9
       },
       "reviewer": {
-        "count": 4
+        "count": 9
       }
     },
-    "approved": 4,
+    "approved": 9,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs9qfxtc97wfm88ss707p0j9j8wa0t2prqw947hz6rckvzfjlhz3nswzejcf",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "Nostr",
+        "time": "14:08"
+      },
+      {
+        "url": "https://x.com/i/status/2049748828601917523",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "14:08"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs00dccwzaxexuwsf6svm85jlkr6wtrn0lnwcqpa3rj0j32l2zksasjpf85m",
+        "project": "Bitcoin Tofo 🇲🇿",
+        "merchant": "Sifoianatunu Atelier",
+        "platform": "Nostr",
+        "time": "14:07"
+      },
+      {
+        "url": "https://x.com/i/status/2049453817989673417",
+        "project": "Bitcoin Tofo 🇲🇿",
+        "merchant": "Sifoianatunu Atelier",
+        "platform": "X",
+        "time": "14:06"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs25vvghf7ax4af6dztcjgnguksal3wcjhzf66axm0kcusvlsuk26cyuar3p",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Tenorio Baber Shop",
+        "platform": "Nostr",
+        "time": "14:06"
+      },
       {
         "url": "https://x.com/i/status/2049589713107898875",
         "project": "Bitcoin Ekiti 🇳🇬",
@@ -62,6 +97,21 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Tofo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Tofo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitcoin Ekiti 🇳🇬"
       },
@@ -193,12 +243,6 @@
       },
       {
         "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
       }
     ]
   },
@@ -437,16 +481,16 @@
     },
     {
       "date": "2026-04-30",
-      "project_count": 4,
-      "merchant_count": 4,
-      "reviewer_count": 4,
-      "approved": 4,
+      "project_count": 9,
+      "merchant_count": 9,
+      "reviewer_count": 9,
+      "approved": 9,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 910,
-    "approved": 865,
+    "total_reviewed": 915,
+    "approved": 870,
     "rejected": 45
   },
   "top_projects": [
@@ -1853,8 +1897,13 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 107,
+      "count": 108,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs25vvghf7ax4af6dztcjgnguksal3wcjhzf66axm0kcusvlsuk26cyuar3p",
+          "date": "2026-04-30",
+          "merchant": "Tenorio Baber Shop"
+        },
         {
           "url": "https://x.com/i/status/2049574414698635574",
           "date": "2026-04-30",
@@ -3256,8 +3305,18 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 69,
+      "count": 71,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs9qfxtc97wfm88ss707p0j9j8wa0t2prqw947hz6rckvzfjlhz3nswzejcf",
+          "date": "2026-04-30",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2049748828601917523",
+          "date": "2026-04-30",
+          "merchant": "Orero shop"
+        },
         {
           "url": "https://x.com/i/status/2049357373643325801",
           "date": "2026-04-29",
@@ -4629,6 +4688,72 @@
       ]
     },
     {
+      "name": "Bitcoin Tofo 🇲🇿",
+      "count": 12,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs00dccwzaxexuwsf6svm85jlkr6wtrn0lnwcqpa3rj0j32l2zksasjpf85m",
+          "date": "2026-04-30",
+          "merchant": "Sifoianatunu Atelier"
+        },
+        {
+          "url": "https://x.com/i/status/2049453817989673417",
+          "date": "2026-04-30",
+          "merchant": "Sifoianatunu Atelier"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvhp775c40h799lplf7qufz4f6584tgt62c3v8adsv6guc4ujvuwqpj2p4g",
+          "date": "2026-04-29",
+          "merchant": "Sifoianatunu Atelier"
+        },
+        {
+          "url": "https://x.com/i/status/2049441194879418719",
+          "date": "2026-04-29",
+          "merchant": "Sifoianatunu Atelier"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf9t5tg0ds5ztesffwupqkh85ffax2cwk5pz9fv6x0cu3znzunw2qe0es49",
+          "date": "2026-04-29",
+          "merchant": "Rafael Maria Fruits & Vegetables Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2049026817365868612",
+          "date": "2026-04-29",
+          "merchant": "Rafael Maria Fruits & Vegetables Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszcxed0lm73lu5nqj0mn07gryev4urjlyqmk9erfkugek8v6y4vvslmdfnj",
+          "date": "2026-04-26",
+          "merchant": "Rafal Happy Groceries Tofo Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2048396133169258961",
+          "date": "2026-04-26",
+          "merchant": "Rafal Happy Groceries Tofo Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0unfn60flve07wpduka8y7x29g6jxwcg7s74tkrdsxzdzrg3vc9g40c7sd",
+          "date": "2026-04-05",
+          "merchant": "Chauque & Joao Tofo Juice Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2040298647674331428",
+          "date": "2026-04-05",
+          "merchant": "Chauque & Joao Tofo Juice Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsr7dmwnx0u958735y6le3hrh8z38dzfswagw6w9h4sxydvlwuf5dg3kuy8q",
+          "date": "2026-04-03",
+          "merchant": "Jorge Bitcoin Tofo Clothes Market"
+        },
+        {
+          "url": "https://x.com/i/status/2039975615445520709",
+          "date": "2026-04-03",
+          "merchant": "Jorge Bitcoin Tofo Clothes Market"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Anambra 🇳🇬",
       "count": 12,
       "posts": [
@@ -4691,62 +4816,6 @@
           "url": "https://x.com/i/status/2037223959003828237",
           "date": "2026-03-26",
           "merchant": "The Sario Eventers"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Tofo 🇲🇿",
-      "count": 10,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsvhp775c40h799lplf7qufz4f6584tgt62c3v8adsv6guc4ujvuwqpj2p4g",
-          "date": "2026-04-29",
-          "merchant": "Sifoianatunu Atelier"
-        },
-        {
-          "url": "https://x.com/i/status/2049441194879418719",
-          "date": "2026-04-29",
-          "merchant": "Sifoianatunu Atelier"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf9t5tg0ds5ztesffwupqkh85ffax2cwk5pz9fv6x0cu3znzunw2qe0es49",
-          "date": "2026-04-29",
-          "merchant": "Rafael Maria Fruits & Vegetables Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2049026817365868612",
-          "date": "2026-04-29",
-          "merchant": "Rafael Maria Fruits & Vegetables Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszcxed0lm73lu5nqj0mn07gryev4urjlyqmk9erfkugek8v6y4vvslmdfnj",
-          "date": "2026-04-26",
-          "merchant": "Rafal Happy Groceries Tofo Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2048396133169258961",
-          "date": "2026-04-26",
-          "merchant": "Rafal Happy Groceries Tofo Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0unfn60flve07wpduka8y7x29g6jxwcg7s74tkrdsxzdzrg3vc9g40c7sd",
-          "date": "2026-04-05",
-          "merchant": "Chauque & Joao Tofo Juice Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2040298647674331428",
-          "date": "2026-04-05",
-          "merchant": "Chauque & Joao Tofo Juice Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsr7dmwnx0u958735y6le3hrh8z38dzfswagw6w9h4sxydvlwuf5dg3kuy8q",
-          "date": "2026-04-03",
-          "merchant": "Jorge Bitcoin Tofo Clothes Market"
-        },
-        {
-          "url": "https://x.com/i/status/2039975615445520709",
-          "date": "2026-04-03",
-          "merchant": "Jorge Bitcoin Tofo Clothes Market"
         }
       ]
     },
@@ -5627,8 +5696,18 @@
     },
     {
       "name": "Orero shop",
-      "count": 33,
+      "count": 35,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs9qfxtc97wfm88ss707p0j9j8wa0t2prqw947hz6rckvzfjlhz3nswzejcf",
+          "date": "2026-04-30",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2049748828601917523",
+          "date": "2026-04-30",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqspd2hkzyedtp0k23s4ar72cq5tjf5az3p7qkq79uzmkhxz26hdlwch48kt0",
           "date": "2026-04-29",
@@ -7324,6 +7403,72 @@
       ]
     },
     {
+      "name": "Tenorio Baber Shop",
+      "count": 12,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs25vvghf7ax4af6dztcjgnguksal3wcjhzf66axm0kcusvlsuk26cyuar3p",
+          "date": "2026-04-30",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2049574414698635574",
+          "date": "2026-04-30",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2046521423422742799",
+          "date": "2026-04-21",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrnxxq49ydtjt3z749mdeakpy56yae6daar2nhzdxdgftnnhwuevccket0f",
+          "date": "2026-04-21",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2046276452438389119",
+          "date": "2026-04-20",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxdl28a02ckue07gwk6f5n9rcdvqxq2ll4sxkt6lnjmel065qe2lqn7w40n",
+          "date": "2026-04-20",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8n5v09w2d5x8rez5f62rzk7v92ce80jjemvmq7fsy6ed2dcy7qkspef48j",
+          "date": "2026-04-17",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2045222658824888607",
+          "date": "2026-04-17",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2037998084685169068",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2d4vc3vyf72kqh3jwdzvctgsy3mztw6dyrdlzvemthwfx4ygcjjq9w9fal",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstqfhvqazzv7er94pgnehhk6l02296euk3zduz9y3kguvw9nuwzcsz3pjzj",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036770826096095273",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Stay Safe Restaurante & Lounge",
       "count": 12,
       "posts": [
@@ -7584,67 +7729,6 @@
           "url": "https://primal.net/e/nevent1qqswqh6n9rhqtrj4ujqg0tdds3qdrjlyg6vyyg4hs738g8l26t2crqg59pjjl",
           "date": "2026-03-24",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Tenorio Baber Shop",
-      "count": 11,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2049574414698635574",
-          "date": "2026-04-30",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2046521423422742799",
-          "date": "2026-04-21",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrnxxq49ydtjt3z749mdeakpy56yae6daar2nhzdxdgftnnhwuevccket0f",
-          "date": "2026-04-21",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2046276452438389119",
-          "date": "2026-04-20",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxdl28a02ckue07gwk6f5n9rcdvqxq2ll4sxkt6lnjmel065qe2lqn7w40n",
-          "date": "2026-04-20",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8n5v09w2d5x8rez5f62rzk7v92ce80jjemvmq7fsy6ed2dcy7qkspef48j",
-          "date": "2026-04-17",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2045222658824888607",
-          "date": "2026-04-17",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2037998084685169068",
-          "date": "2026-03-29",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2d4vc3vyf72kqh3jwdzvctgsy3mztw6dyrdlzvemthwfx4ygcjjq9w9fal",
-          "date": "2026-03-29",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstqfhvqazzv7er94pgnehhk6l02296euk3zduz9y3kguvw9nuwzcsz3pjzj",
-          "date": "2026-03-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036770826096095273",
-          "date": "2026-03-25",
-          "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
     },
@@ -8823,6 +8907,32 @@
       ]
     },
     {
+      "name": "Sifoianatunu Atelier",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs00dccwzaxexuwsf6svm85jlkr6wtrn0lnwcqpa3rj0j32l2zksasjpf85m",
+          "date": "2026-04-30",
+          "project": "Bitcoin Tofo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2049453817989673417",
+          "date": "2026-04-30",
+          "project": "Bitcoin Tofo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvhp775c40h799lplf7qufz4f6584tgt62c3v8adsv6guc4ujvuwqpj2p4g",
+          "date": "2026-04-29",
+          "project": "Bitcoin Tofo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2049441194879418719",
+          "date": "2026-04-29",
+          "project": "Bitcoin Tofo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Olympia Chicken",
       "count": 4,
       "posts": [
@@ -9316,22 +9426,6 @@
           "url": "https://primal.net/e/nevent1qqsd6qlvehpd5dvslyskkayp2sfvc07rvv2m2gthqy0s807fxz5u7jgr4y3rd",
           "date": "2026-04-03",
           "project": "Bitcoin Victoria Falls 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Sifoianatunu Atelier",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsvhp775c40h799lplf7qufz4f6584tgt62c3v8adsv6guc4ujvuwqpj2p4g",
-          "date": "2026-04-29",
-          "project": "Bitcoin Tofo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2049441194879418719",
-          "date": "2026-04-29",
-          "project": "Bitcoin Tofo 🇲🇿"
         }
       ]
     },
@@ -9962,21 +10056,21 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 38,
-    "daily_average_payments": 68
+    "daily_average_payments": 69
   },
   "burn_rate": {
-    "percentage": 51,
+    "percentage": 52,
     "status": "cold",
     "days_active": 38
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2555
+      "count": 2568
     },
     {
       "domain": "8333.mobi",
-      "count": 55
+      "count": 57
     },
     {
       "domain": "walletofsatoshi.com",
@@ -10023,13 +10117,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1311
+      "count": 1317
     },
     {
       "platform": "Nostr",
-      "count": 1300
+      "count": 1309
     }
   ],
-  "generated_at": "2026-04-30T14:00:02.089877+00:00",
+  "generated_at": "2026-04-30T14:10:02.775225+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
