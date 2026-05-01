@@ -1,28 +1,99 @@
 {
   "totals": {
-    "all_payments": 2650,
+    "all_payments": 2668,
     "by_type": {
       "merchant": {
-        "count": 879
+        "count": 885
       },
       "project": {
-        "count": 879
+        "count": 885
       },
       "reviewer": {
-        "count": 892
+        "count": 898
       }
     }
   },
   "today": {
     "date": "2026-05-01",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 18,
+    "by_type": {
+      "merchant": {
+        "count": 6
+      },
+      "project": {
+        "count": 6
+      },
+      "reviewer": {
+        "count": 6
+      }
+    },
+    "approved": 6,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsf37332gfw0s8n7gj8l5aphrf5k6r6tpj2t47kc8276cgp6vf4zdq4fp30d",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Lydiah Richland Shop",
+        "platform": "Nostr",
+        "time": "13:28"
+      },
+      {
+        "url": "https://x.com/i/status/2049897640087761074",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Lydiah Richland Shop",
+        "platform": "X",
+        "time": "13:28"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs8yffu98y8gvf24jwf8cg6py83t0t4nw7lqk86vz6lvak049x9e5gcyfwpj",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Jennifer Musya",
+        "platform": "Nostr",
+        "time": "13:28"
+      },
+      {
+        "url": "https://x.com/i/status/2049881780220473676",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Jennifer Musya",
+        "platform": "X",
+        "time": "13:27"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs8m2ae05tpm7nd0c5sefvstnj62m2888czpnnx78wk8p6c2a4sl8s9rvnaz",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "Nostr",
+        "time": "13:27"
+      },
+      {
+        "url": "https://x.com/i/status/2049854194610217057",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "X",
+        "time": "13:27"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -299,23 +370,43 @@
     },
     {
       "date": "2026-05-01",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 6,
+      "approved": 6,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 923,
-    "approved": 878,
+    "total_reviewed": 929,
+    "approved": 884,
     "rejected": 45
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 285,
+      "count": 289,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsf37332gfw0s8n7gj8l5aphrf5k6r6tpj2t47kc8276cgp6vf4zdq4fp30d",
+          "date": "2026-05-01",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2049897640087761074",
+          "date": "2026-05-01",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8yffu98y8gvf24jwf8cg6py83t0t4nw7lqk86vz6lvak049x9e5gcyfwpj",
+          "date": "2026-05-01",
+          "merchant": "Jennifer Musya"
+        },
+        {
+          "url": "https://x.com/i/status/2049881780220473676",
+          "date": "2026-05-01",
+          "merchant": "Jennifer Musya"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsxkv065tpgqpcefwlpd44x28ph2qzjlfcxu035fzhupuemrmswtkg2z6wss",
           "date": "2026-04-30",
@@ -2791,6 +2882,377 @@
       ]
     },
     {
+      "name": "Bitcoin Chama 🇰🇪",
+      "count": 73,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8m2ae05tpm7nd0c5sefvstnj62m2888czpnnx78wk8p6c2a4sl8s9rvnaz",
+          "date": "2026-05-01",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2049854194610217057",
+          "date": "2026-05-01",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9qfxtc97wfm88ss707p0j9j8wa0t2prqw947hz6rckvzfjlhz3nswzejcf",
+          "date": "2026-04-30",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2049748828601917523",
+          "date": "2026-04-30",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2049357373643325801",
+          "date": "2026-04-29",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdnu2lcacmtqq38jxmcz5mqfafe83wsghgyptd4vtrd32pwgjjprsn094ch",
+          "date": "2026-04-29",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspd2hkzyedtp0k23s4ar72cq5tjf5az3p7qkq79uzmkhxz26hdlwch48kt0",
+          "date": "2026-04-29",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2049356027510899095",
+          "date": "2026-04-29",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2049345260074004944",
+          "date": "2026-04-29",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8xtlzg8lc6ra445ln26jp9y9lg8790y2z7ucsyem3hvzsqxdn5rs9wdqj7",
+          "date": "2026-04-29",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy3md468ar9l6tea7t2eaqq6xhn52ud3mcnwwtr4atw22rpsyy46qykt2xz",
+          "date": "2026-04-27",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2048636339478761541",
+          "date": "2026-04-27",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9n5l9rwwd39nxdkgqxw2dwk33dpt2z8rg47qmldvwdeyx9cpsjaq7reckm",
+          "date": "2026-04-24",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2047563736802578647",
+          "date": "2026-04-24",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvgq2hqr8c378jf2kk36z0zpypg4dpun7yn77av7rz870llkn45ls39sy9n",
+          "date": "2026-04-24",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2047553270948774019",
+          "date": "2026-04-24",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0ajtu9lev0ee2xg3rd8ma6gdur5eyh5mzwuencyn67qnqrg2e64szn0rqc",
+          "date": "2026-04-23",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2047301389630534047",
+          "date": "2026-04-23",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrkhgsgwrh988jgfyxsmmgr76klyjyrgqmsl0qddrc2rqfhue5xvshvezru",
+          "date": "2026-04-23",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2047177669498806419",
+          "date": "2026-04-23",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2047042592051724663",
+          "date": "2026-04-23",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs90k9scd7sxx5feljrvmhqp3fthmmpmlckf4hll5zh3vkeh3zpqfgehg3w8",
+          "date": "2026-04-22",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2046859823833137593",
+          "date": "2026-04-22",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdxzr6pcyheqdd40agk9tngs7ygg3mqtg39uptdg0fca55vrq92pg6tph64",
+          "date": "2026-04-21",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2046480637972857068",
+          "date": "2026-04-21",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2046480315825234115",
+          "date": "2026-04-21",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8hxggemse2qj5dhqxerm4mcktdhxcq72ehpghkwuusjth43rm93qmh57rp",
+          "date": "2026-04-21",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://x.com/i/status/2046276170912608753",
+          "date": "2026-04-20",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg3rqcyvsl5h4r9vl22yl4hu2qkz4penxscfm476s8gpzvhgpwrqcvp8fur",
+          "date": "2026-04-20",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfqw90l627vlhh0cp95qcr0yf3makgy506wx0q9esp2vxdksve6jcapd2g9",
+          "date": "2026-04-20",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2046091520390971902",
+          "date": "2026-04-20",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrqwk2w5l0cptpgge3hg58s2fk8qy4uevk0z3mdt8434sq9vttpkc8zc35p",
+          "date": "2026-04-19",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2045774284992176410",
+          "date": "2026-04-19",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2045368060811317436",
+          "date": "2026-04-18",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqgr3kdqxhhmay300ml8rmejw45zjfseayum4kqgzg6y7fa3j7h2q98qukq",
+          "date": "2026-04-18",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdaqpehf0nuh7ksxg93anp30rz9ku6t98m0sq6gjgpgjdd3leeacsdu0aeu",
+          "date": "2026-04-18",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2045362666563137888",
+          "date": "2026-04-18",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2044445849522942224",
+          "date": "2026-04-15",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfhmuvx5rre323nw288j45l22ljer8wypu6989dz4wygcu9tfnvkcfuy2n4",
+          "date": "2026-04-15",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2044036960935710891",
+          "date": "2026-04-14",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp8pd4tm075jvzylpqushg276hf8ca6w29pduxmcy8gek9228u2xskmc38s",
+          "date": "2026-04-14",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2043712277409419742",
+          "date": "2026-04-13",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswf64jd99h08xurg2vsye5cz2xzaz9gfgk7z03mtpu3hpxsvl96jcwcflxj",
+          "date": "2026-04-13",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg8jk809r7xrxxsycuw5pf42y5x7gfqs3p38a4mmg9yqawxceccwcq64tuj",
+          "date": "2026-04-11",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2042649729419370563",
+          "date": "2026-04-11",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgmgn9pnwj0cgrktryrfmftdtsldsp9eyldzw6wcu9065gy0t7lhgmw3e9l",
+          "date": "2026-04-11",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2042640073770869210",
+          "date": "2026-04-11",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdylp67fxphawv2m9za7r2kpw44vcyqpqkwayvzz648d7hqe7en0g0tljx4",
+          "date": "2026-04-09",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2042260173285199925",
+          "date": "2026-04-09",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2cxx6rjckl3nmka5gatxma5harzhz22sk3hu0x20uh5a6ptzh9psj3zdgc",
+          "date": "2026-04-09",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://x.com/i/status/2042252573206327456",
+          "date": "2026-04-09",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgdv4zy4atmemlxvclwn0vdlqzl4gucztmug2phqmurqkxql3h02c6depj8",
+          "date": "2026-04-09",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2042241653910499680",
+          "date": "2026-04-09",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqhykpcq7a6r0tuqemw7etsuehs22dh2wwe4p5j0cqhuzpv6wqykqt933u7",
+          "date": "2026-04-08",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2041837282936639798",
+          "date": "2026-04-08",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgum7y99cv4u8hsmts3tkukrazxyauwrscgwkawa5dwsunvdtmpegjr2sn5",
+          "date": "2026-04-08",
+          "merchant": "Mwabosire"
+        },
+        {
+          "url": "https://x.com/i/status/2041832357326442709",
+          "date": "2026-04-08",
+          "merchant": "Mwabosire"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszee8v5dh0hpvj0k5mxw5zczlfhl8rrv7vtpplfyvzvrgew9rsefcmg6ehk",
+          "date": "2026-04-07",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2041365574081552860",
+          "date": "2026-04-07",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2041066482050732162",
+          "date": "2026-04-06",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdplafs06lmlr30lnpxvvdzzhk6hts6dv2r2y728fvky0fnpyu78qm6arfp",
+          "date": "2026-04-06",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy5krpcfrcphml937x0ur5yrn2qq0jfhj5fcsvgu32p37kke97tdsk0maq8",
+          "date": "2026-04-06",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2040804826926190957",
+          "date": "2026-04-06",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs23tq7ewa4qrx082frfrp0a4msnm9vw9vsmu5aqs6nksk4tzyrjls7sfl35",
+          "date": "2026-04-05",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2040057934357381514",
+          "date": "2026-04-05",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039313726147289303",
+          "date": "2026-04-01",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8u3e9ygm078ents36l79hlzxknlw4dha37xdg40gh4jhec550x7ct26wmk",
+          "date": "2026-04-01",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039299798335939033",
+          "date": "2026-04-01",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
+          "date": "2026-04-01",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2034660669149073477",
+          "date": "2026-04-01",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039292941349396690",
+          "date": "2026-04-01",
+          "merchant": "Goat Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9atjc2m0vfrnna6jp3zrzq9dd84ytrsa29sq5dg6yzsvnedq9xmsedum75",
+          "date": "2026-03-31",
+          "merchant": "Goat Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2033851794384662900",
+          "date": "2026-03-31",
+          "merchant": "Mwabosire"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Ekasi 🇿🇦",
       "count": 71,
       "posts": [
@@ -3148,367 +3610,6 @@
           "url": "https://x.com/i/status/2031308988403360062",
           "date": "2026-03-24",
           "merchant": "Kwallos Shop"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Chama 🇰🇪",
-      "count": 71,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs9qfxtc97wfm88ss707p0j9j8wa0t2prqw947hz6rckvzfjlhz3nswzejcf",
-          "date": "2026-04-30",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2049748828601917523",
-          "date": "2026-04-30",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2049357373643325801",
-          "date": "2026-04-29",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdnu2lcacmtqq38jxmcz5mqfafe83wsghgyptd4vtrd32pwgjjprsn094ch",
-          "date": "2026-04-29",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspd2hkzyedtp0k23s4ar72cq5tjf5az3p7qkq79uzmkhxz26hdlwch48kt0",
-          "date": "2026-04-29",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2049356027510899095",
-          "date": "2026-04-29",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2049345260074004944",
-          "date": "2026-04-29",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8xtlzg8lc6ra445ln26jp9y9lg8790y2z7ucsyem3hvzsqxdn5rs9wdqj7",
-          "date": "2026-04-29",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy3md468ar9l6tea7t2eaqq6xhn52ud3mcnwwtr4atw22rpsyy46qykt2xz",
-          "date": "2026-04-27",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2048636339478761541",
-          "date": "2026-04-27",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9n5l9rwwd39nxdkgqxw2dwk33dpt2z8rg47qmldvwdeyx9cpsjaq7reckm",
-          "date": "2026-04-24",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2047563736802578647",
-          "date": "2026-04-24",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvgq2hqr8c378jf2kk36z0zpypg4dpun7yn77av7rz870llkn45ls39sy9n",
-          "date": "2026-04-24",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2047553270948774019",
-          "date": "2026-04-24",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0ajtu9lev0ee2xg3rd8ma6gdur5eyh5mzwuencyn67qnqrg2e64szn0rqc",
-          "date": "2026-04-23",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2047301389630534047",
-          "date": "2026-04-23",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrkhgsgwrh988jgfyxsmmgr76klyjyrgqmsl0qddrc2rqfhue5xvshvezru",
-          "date": "2026-04-23",
-          "merchant": "Obwanchani Farm"
-        },
-        {
-          "url": "https://x.com/i/status/2047177669498806419",
-          "date": "2026-04-23",
-          "merchant": "Obwanchani Farm"
-        },
-        {
-          "url": "https://x.com/i/status/2047042592051724663",
-          "date": "2026-04-23",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs90k9scd7sxx5feljrvmhqp3fthmmpmlckf4hll5zh3vkeh3zpqfgehg3w8",
-          "date": "2026-04-22",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2046859823833137593",
-          "date": "2026-04-22",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdxzr6pcyheqdd40agk9tngs7ygg3mqtg39uptdg0fca55vrq92pg6tph64",
-          "date": "2026-04-21",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2046480637972857068",
-          "date": "2026-04-21",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2046480315825234115",
-          "date": "2026-04-21",
-          "merchant": "Chicken farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8hxggemse2qj5dhqxerm4mcktdhxcq72ehpghkwuusjth43rm93qmh57rp",
-          "date": "2026-04-21",
-          "merchant": "Chicken farm"
-        },
-        {
-          "url": "https://x.com/i/status/2046276170912608753",
-          "date": "2026-04-20",
-          "merchant": "Chicken farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg3rqcyvsl5h4r9vl22yl4hu2qkz4penxscfm476s8gpzvhgpwrqcvp8fur",
-          "date": "2026-04-20",
-          "merchant": "Chicken farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfqw90l627vlhh0cp95qcr0yf3makgy506wx0q9esp2vxdksve6jcapd2g9",
-          "date": "2026-04-20",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2046091520390971902",
-          "date": "2026-04-20",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrqwk2w5l0cptpgge3hg58s2fk8qy4uevk0z3mdt8434sq9vttpkc8zc35p",
-          "date": "2026-04-19",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2045774284992176410",
-          "date": "2026-04-19",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2045368060811317436",
-          "date": "2026-04-18",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqgr3kdqxhhmay300ml8rmejw45zjfseayum4kqgzg6y7fa3j7h2q98qukq",
-          "date": "2026-04-18",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdaqpehf0nuh7ksxg93anp30rz9ku6t98m0sq6gjgpgjdd3leeacsdu0aeu",
-          "date": "2026-04-18",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2045362666563137888",
-          "date": "2026-04-18",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2044445849522942224",
-          "date": "2026-04-15",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfhmuvx5rre323nw288j45l22ljer8wypu6989dz4wygcu9tfnvkcfuy2n4",
-          "date": "2026-04-15",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2044036960935710891",
-          "date": "2026-04-14",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp8pd4tm075jvzylpqushg276hf8ca6w29pduxmcy8gek9228u2xskmc38s",
-          "date": "2026-04-14",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2043712277409419742",
-          "date": "2026-04-13",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswf64jd99h08xurg2vsye5cz2xzaz9gfgk7z03mtpu3hpxsvl96jcwcflxj",
-          "date": "2026-04-13",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg8jk809r7xrxxsycuw5pf42y5x7gfqs3p38a4mmg9yqawxceccwcq64tuj",
-          "date": "2026-04-11",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2042649729419370563",
-          "date": "2026-04-11",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgmgn9pnwj0cgrktryrfmftdtsldsp9eyldzw6wcu9065gy0t7lhgmw3e9l",
-          "date": "2026-04-11",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2042640073770869210",
-          "date": "2026-04-11",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdylp67fxphawv2m9za7r2kpw44vcyqpqkwayvzz648d7hqe7en0g0tljx4",
-          "date": "2026-04-09",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2042260173285199925",
-          "date": "2026-04-09",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2cxx6rjckl3nmka5gatxma5harzhz22sk3hu0x20uh5a6ptzh9psj3zdgc",
-          "date": "2026-04-09",
-          "merchant": "Chicken farm"
-        },
-        {
-          "url": "https://x.com/i/status/2042252573206327456",
-          "date": "2026-04-09",
-          "merchant": "Chicken farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgdv4zy4atmemlxvclwn0vdlqzl4gucztmug2phqmurqkxql3h02c6depj8",
-          "date": "2026-04-09",
-          "merchant": "Obwanchani Farm"
-        },
-        {
-          "url": "https://x.com/i/status/2042241653910499680",
-          "date": "2026-04-09",
-          "merchant": "Obwanchani Farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqhykpcq7a6r0tuqemw7etsuehs22dh2wwe4p5j0cqhuzpv6wqykqt933u7",
-          "date": "2026-04-08",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2041837282936639798",
-          "date": "2026-04-08",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgum7y99cv4u8hsmts3tkukrazxyauwrscgwkawa5dwsunvdtmpegjr2sn5",
-          "date": "2026-04-08",
-          "merchant": "Mwabosire"
-        },
-        {
-          "url": "https://x.com/i/status/2041832357326442709",
-          "date": "2026-04-08",
-          "merchant": "Mwabosire"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszee8v5dh0hpvj0k5mxw5zczlfhl8rrv7vtpplfyvzvrgew9rsefcmg6ehk",
-          "date": "2026-04-07",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2041365574081552860",
-          "date": "2026-04-07",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2041066482050732162",
-          "date": "2026-04-06",
-          "merchant": "Chicken farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdplafs06lmlr30lnpxvvdzzhk6hts6dv2r2y728fvky0fnpyu78qm6arfp",
-          "date": "2026-04-06",
-          "merchant": "Chicken farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy5krpcfrcphml937x0ur5yrn2qq0jfhj5fcsvgu32p37kke97tdsk0maq8",
-          "date": "2026-04-06",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2040804826926190957",
-          "date": "2026-04-06",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs23tq7ewa4qrx082frfrp0a4msnm9vw9vsmu5aqs6nksk4tzyrjls7sfl35",
-          "date": "2026-04-05",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2040057934357381514",
-          "date": "2026-04-05",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039313726147289303",
-          "date": "2026-04-01",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8u3e9ygm078ents36l79hlzxknlw4dha37xdg40gh4jhec550x7ct26wmk",
-          "date": "2026-04-01",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039299798335939033",
-          "date": "2026-04-01",
-          "merchant": "Obwanchani Farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
-          "date": "2026-04-01",
-          "merchant": "Obwanchani Farm"
-        },
-        {
-          "url": "https://x.com/i/status/2034660669149073477",
-          "date": "2026-04-01",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039292941349396690",
-          "date": "2026-04-01",
-          "merchant": "Goat Farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9atjc2m0vfrnna6jp3zrzq9dd84ytrsa29sq5dg6yzsvnedq9xmsedum75",
-          "date": "2026-03-31",
-          "merchant": "Goat Farm"
-        },
-        {
-          "url": "https://x.com/i/status/2033851794384662900",
-          "date": "2026-03-31",
-          "merchant": "Mwabosire"
         }
       ]
     },
@@ -5348,8 +5449,18 @@
     },
     {
       "name": "Lydiah Richland Shop",
-      "count": 44,
+      "count": 46,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsf37332gfw0s8n7gj8l5aphrf5k6r6tpj2t47kc8276cgp6vf4zdq4fp30d",
+          "date": "2026-05-01",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2049897640087761074",
+          "date": "2026-05-01",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2049187492163694633",
           "date": "2026-04-29",
@@ -6541,6 +6652,173 @@
       ]
     },
     {
+      "name": "Jennifer Musya",
+      "count": 16,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8yffu98y8gvf24jwf8cg6py83t0t4nw7lqk86vz6lvak049x9e5gcyfwpj",
+          "date": "2026-05-01",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2049881780220473676",
+          "date": "2026-05-01",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2048360426367320485",
+          "date": "2026-04-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxsn25plj420jtms2zn7p9c2ljmk8astaegrg2ez4s666f2uv7jks9e5vcs",
+          "date": "2026-04-26",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2046991960888525292",
+          "date": "2026-04-22",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspu2pg22ejw5t6035staztqmw36an8vcktr0hd8mpg2vck2cvcqrc0y5nr3",
+          "date": "2026-04-22",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2046572460963733694",
+          "date": "2026-04-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd9nryhkn5seru30shus7frnl808ys039d9n6a7pcn0f7249hdk4g9qrrfq",
+          "date": "2026-04-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2046207409715056842",
+          "date": "2026-04-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg54eudtsaqtae38w9zm2xg0vhmfxqamsgqcw3lnkdn0weemvcuwgu5x9kp",
+          "date": "2026-04-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2hwdu6dse8eq3sncqyg3ep9dcjnp3rvlkekdlja8s8wfrqcqxlxg4adu34",
+          "date": "2026-04-14",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2044094570963567018",
+          "date": "2026-04-14",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszxnhkrq9qjg9tr5yfx6hkhhvkwrv7wl39edw9gpvdk0d4gyec82sfnx40j",
+          "date": "2026-03-28",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2037959525219614902",
+          "date": "2026-03-28",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstvysy3252veeq4t2hfde48ergppjy0x4fdgcywepa4sqywc4v8wqdmk3dw",
+          "date": "2026-03-27",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2037376931696464142",
+          "date": "2026-03-27",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Mary Shop",
+      "count": 15,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8m2ae05tpm7nd0c5sefvstnj62m2888czpnnx78wk8p6c2a4sl8s9rvnaz",
+          "date": "2026-05-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2049854194610217057",
+          "date": "2026-05-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2049357373643325801",
+          "date": "2026-04-29",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdnu2lcacmtqq38jxmcz5mqfafe83wsghgyptd4vtrd32pwgjjprsn094ch",
+          "date": "2026-04-29",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9n5l9rwwd39nxdkgqxw2dwk33dpt2z8rg47qmldvwdeyx9cpsjaq7reckm",
+          "date": "2026-04-24",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2047563736802578647",
+          "date": "2026-04-24",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2047042592051724663",
+          "date": "2026-04-23",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdaqpehf0nuh7ksxg93anp30rz9ku6t98m0sq6gjgpgjdd3leeacsdu0aeu",
+          "date": "2026-04-18",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2045362666563137888",
+          "date": "2026-04-18",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg8jk809r7xrxxsycuw5pf42y5x7gfqs3p38a4mmg9yqawxceccwcq64tuj",
+          "date": "2026-04-11",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2042649729419370563",
+          "date": "2026-04-11",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszee8v5dh0hpvj0k5mxw5zczlfhl8rrv7vtpplfyvzvrgew9rsefcmg6ehk",
+          "date": "2026-04-07",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2041365574081552860",
+          "date": "2026-04-07",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2039313726147289303",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8u3e9ygm078ents36l79hlzxknlw4dha37xdg40gh4jhec550x7ct26wmk",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Topic's Pub",
       "count": 14,
       "posts": [
@@ -6921,82 +7199,6 @@
       ]
     },
     {
-      "name": "Jennifer Musya",
-      "count": 14,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2048360426367320485",
-          "date": "2026-04-26",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxsn25plj420jtms2zn7p9c2ljmk8astaegrg2ez4s666f2uv7jks9e5vcs",
-          "date": "2026-04-26",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2046991960888525292",
-          "date": "2026-04-22",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspu2pg22ejw5t6035staztqmw36an8vcktr0hd8mpg2vck2cvcqrc0y5nr3",
-          "date": "2026-04-22",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2046572460963733694",
-          "date": "2026-04-21",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd9nryhkn5seru30shus7frnl808ys039d9n6a7pcn0f7249hdk4g9qrrfq",
-          "date": "2026-04-21",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2046207409715056842",
-          "date": "2026-04-20",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg54eudtsaqtae38w9zm2xg0vhmfxqamsgqcw3lnkdn0weemvcuwgu5x9kp",
-          "date": "2026-04-20",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2hwdu6dse8eq3sncqyg3ep9dcjnp3rvlkekdlja8s8wfrqcqxlxg4adu34",
-          "date": "2026-04-14",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2044094570963567018",
-          "date": "2026-04-14",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszxnhkrq9qjg9tr5yfx6hkhhvkwrv7wl39edw9gpvdk0d4gyec82sfnx40j",
-          "date": "2026-03-28",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2037959525219614902",
-          "date": "2026-03-28",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstvysy3252veeq4t2hfde48ergppjy0x4fdgcywepa4sqywc4v8wqdmk3dw",
-          "date": "2026-03-27",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2037376931696464142",
-          "date": "2026-03-27",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Jabulani Shop 3",
       "count": 14,
       "posts": [
@@ -7145,77 +7347,6 @@
           "url": "https://x.com/i/status/2041337224650768470",
           "date": "2026-04-07",
           "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Mary Shop",
-      "count": 13,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2049357373643325801",
-          "date": "2026-04-29",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdnu2lcacmtqq38jxmcz5mqfafe83wsghgyptd4vtrd32pwgjjprsn094ch",
-          "date": "2026-04-29",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9n5l9rwwd39nxdkgqxw2dwk33dpt2z8rg47qmldvwdeyx9cpsjaq7reckm",
-          "date": "2026-04-24",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2047563736802578647",
-          "date": "2026-04-24",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2047042592051724663",
-          "date": "2026-04-23",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdaqpehf0nuh7ksxg93anp30rz9ku6t98m0sq6gjgpgjdd3leeacsdu0aeu",
-          "date": "2026-04-18",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2045362666563137888",
-          "date": "2026-04-18",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg8jk809r7xrxxsycuw5pf42y5x7gfqs3p38a4mmg9yqawxceccwcq64tuj",
-          "date": "2026-04-11",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2042649729419370563",
-          "date": "2026-04-11",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszee8v5dh0hpvj0k5mxw5zczlfhl8rrv7vtpplfyvzvrgew9rsefcmg6ehk",
-          "date": "2026-04-07",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2041365574081552860",
-          "date": "2026-04-07",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2039313726147289303",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8u3e9ygm078ents36l79hlzxknlw4dha37xdg40gh4jhec550x7ct26wmk",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -9954,7 +10085,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 39,
-    "daily_average_payments": 67
+    "daily_average_payments": 68
   },
   "burn_rate": {
     "percentage": 51,
@@ -9964,7 +10095,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2592
+      "count": 2610
     },
     {
       "domain": "8333.mobi",
@@ -10015,13 +10146,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1329
+      "count": 1338
     },
     {
       "platform": "Nostr",
-      "count": 1321
+      "count": 1330
     }
   ],
-  "generated_at": "2026-05-01T13:20:02.380088+00:00",
+  "generated_at": "2026-05-01T13:30:01.610496+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
