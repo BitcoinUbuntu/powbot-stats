@@ -1,35 +1,63 @@
 {
   "totals": {
-    "all_payments": 2751,
+    "all_payments": 2763,
     "by_type": {
       "merchant": {
-        "count": 912
+        "count": 916
       },
       "project": {
-        "count": 912
+        "count": 916
       },
       "reviewer": {
-        "count": 927
+        "count": 931
       }
     }
   },
   "today": {
     "date": "2026-05-02",
-    "payments": 53,
+    "payments": 65,
     "by_type": {
       "merchant": {
-        "count": 17
+        "count": 21
       },
       "project": {
-        "count": 17
+        "count": 21
       },
       "reviewer": {
-        "count": 19
+        "count": 23
       }
     },
-    "approved": 17,
+    "approved": 21,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsguvf673ml23k5r2xsw2x2ynnxv9aflda9msymjuq7cp09r437mfscxj49k",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Tena cyberpalace",
+        "platform": "Nostr",
+        "time": "21:06"
+      },
+      {
+        "url": "https://x.com/i/status/2050529692675985440",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Ellygant Unisex Salon",
+        "platform": "X",
+        "time": "21:05"
+      },
+      {
+        "url": "https://x.com/i/status/2050571214070985138",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Ebonydud",
+        "platform": "X",
+        "time": "21:03"
+      },
+      {
+        "url": "https://x.com/i/status/2050483956437418280",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "X",
+        "time": "21:01"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsrs04f5nwmc67tqfxyuxstmp36e0v2gnlwgukqe3qtzp364xax2vsuhkxv3",
         "project": "Bitbiashara 🇰🇪",
@@ -153,6 +181,18 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -441,23 +481,33 @@
     },
     {
       "date": "2026-05-02",
-      "project_count": 17,
-      "merchant_count": 17,
-      "reviewer_count": 19,
-      "approved": 17,
+      "project_count": 21,
+      "merchant_count": 21,
+      "reviewer_count": 23,
+      "approved": 21,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 958,
-    "approved": 911,
+    "total_reviewed": 962,
+    "approved": 915,
     "rejected": 47
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 298,
+      "count": 300,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsguvf673ml23k5r2xsw2x2ynnxv9aflda9msymjuq7cp09r437mfscxj49k",
+          "date": "2026-05-02",
+          "merchant": "Tena cyberpalace"
+        },
+        {
+          "url": "https://x.com/i/status/2050483956437418280",
+          "date": "2026-05-02",
+          "merchant": "Manu Groceries"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrs04f5nwmc67tqfxyuxstmp36e0v2gnlwgukqe3qtzp364xax2vsuhkxv3",
           "date": "2026-05-02",
@@ -4007,8 +4057,13 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 42,
+      "count": 43,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2050529692675985440",
+          "date": "2026-05-02",
+          "merchant": "Ellygant Unisex Salon"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs0ltawmgzl06744gu75rzaakqhmgfg97z9eerayy0kx0vu988634gy9cyrn",
           "date": "2026-04-29",
@@ -4223,8 +4278,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 40,
+      "count": 41,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2050571214070985138",
+          "date": "2026-05-02",
+          "merchant": "Ebonydud"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsztfd7uh5p8xpvm3j7jayefpuqshlcjrwm6fy7fvt4qjkctjqmgpcuehqpc",
           "date": "2026-04-30",
@@ -6082,8 +6142,13 @@
     },
     {
       "name": "Manu Groceries",
-      "count": 28,
+      "count": 29,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2050483956437418280",
+          "date": "2026-05-02",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrs04f5nwmc67tqfxyuxstmp36e0v2gnlwgukqe3qtzp364xax2vsuhkxv3",
           "date": "2026-05-02",
@@ -6500,8 +6565,13 @@
     },
     {
       "name": "Ellygant Unisex Salon",
-      "count": 22,
+      "count": 23,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2050529692675985440",
+          "date": "2026-05-02",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
         {
           "url": "https://primal.net/e/nevent1qqswuz5pygp9mxppxnqvxp39lfjmxtjfq0zc40am03tlcddkdx0hzscv64mm2",
           "date": "2026-04-29",
@@ -7166,6 +7236,87 @@
       ]
     },
     {
+      "name": "Tena cyberpalace",
+      "count": 15,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsguvf673ml23k5r2xsw2x2ynnxv9aflda9msymjuq7cp09r437mfscxj49k",
+          "date": "2026-05-02",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszkx9x5yqk5hn7s8rh7xt6e20zgpkatee6qjv4uhpzh35lkdmwmyqwcsxuz",
+          "date": "2026-04-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2049093867648024846",
+          "date": "2026-04-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2048070318128783527",
+          "date": "2026-04-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd3lz6xyq7rxh8l4re4vcmakvg3m4r343n990qevzgtpl2e0qu8gcteqxsq",
+          "date": "2026-04-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs29634h75l3efweudv3mzde26xrhl2w3ggfdc2nkwjghah66lm8jgflvxfg",
+          "date": "2026-04-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2046655055365865762",
+          "date": "2026-04-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2046261584805126280",
+          "date": "2026-04-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyydz92tjjnujdkcje9aq75stsmlhrshjmpyr2hyn9upk52u5dzyqn0n8mq",
+          "date": "2026-04-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2045582022727307420",
+          "date": "2026-04-19",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxvhqy72pgf9pkpqf8t0wgqn4k7mh79spphmfyfavu3zcqzga9s9sdstn7v",
+          "date": "2026-04-19",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2043324935074975979",
+          "date": "2026-04-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgp5dd4f74dj084syct5736dxvd7pc5yjdqnu0ylruqha64hnskpc435qqv",
+          "date": "2026-04-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2038671536387768749",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
+          "date": "2026-03-31",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Topic's Pub",
       "count": 14,
       "posts": [
@@ -7238,82 +7389,6 @@
           "url": "https://x.com/i/status/2039861514585211084",
           "date": "2026-04-03",
           "project": "Bitcoin Aves 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Tena cyberpalace",
-      "count": 14,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqszkx9x5yqk5hn7s8rh7xt6e20zgpkatee6qjv4uhpzh35lkdmwmyqwcsxuz",
-          "date": "2026-04-29",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2049093867648024846",
-          "date": "2026-04-29",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2048070318128783527",
-          "date": "2026-04-25",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd3lz6xyq7rxh8l4re4vcmakvg3m4r343n990qevzgtpl2e0qu8gcteqxsq",
-          "date": "2026-04-25",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs29634h75l3efweudv3mzde26xrhl2w3ggfdc2nkwjghah66lm8jgflvxfg",
-          "date": "2026-04-21",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2046655055365865762",
-          "date": "2026-04-21",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2046261584805126280",
-          "date": "2026-04-20",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyydz92tjjnujdkcje9aq75stsmlhrshjmpyr2hyn9upk52u5dzyqn0n8mq",
-          "date": "2026-04-20",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2045582022727307420",
-          "date": "2026-04-19",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxvhqy72pgf9pkpqf8t0wgqn4k7mh79spphmfyfavu3zcqzga9s9sdstn7v",
-          "date": "2026-04-19",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2043324935074975979",
-          "date": "2026-04-13",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgp5dd4f74dj084syct5736dxvd7pc5yjdqnu0ylruqha64hnskpc435qqv",
-          "date": "2026-04-13",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2038671536387768749",
-          "date": "2026-03-31",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgfepxlfghuctwt2cuj25wynr69whega630fv2qfl5t48z03g8a3q76nw2r",
-          "date": "2026-03-31",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -9684,6 +9759,27 @@
       ]
     },
     {
+      "name": "Ebonydud",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2050571214070985138",
+          "date": "2026-05-02",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswx8agsjt6vyu300zp3tq39yzkcwdwtsrwjq89x96xt24ufea6zrscqttrr",
+          "date": "2026-03-27",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2037090108365500735",
+          "date": "2026-03-26",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Delfinos Seaside Restaurant",
       "count": 3,
       "posts": [
@@ -10169,22 +10265,6 @@
       ]
     },
     {
-      "name": "Ebonydud",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqswx8agsjt6vyu300zp3tq39yzkcwdwtsrwjq89x96xt24ufea6zrscqttrr",
-          "date": "2026-03-27",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2037090108365500735",
-          "date": "2026-03-26",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        }
-      ]
-    },
-    {
       "name": "Ebenezer Shop",
       "count": 2,
       "posts": [
@@ -10438,7 +10518,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 40,
-    "daily_average_payments": 68
+    "daily_average_payments": 69
   },
   "burn_rate": {
     "percentage": 52,
@@ -10448,7 +10528,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2693
+      "count": 2705
     },
     {
       "domain": "8333.mobi",
@@ -10498,14 +10578,14 @@
   ],
   "platforms": [
     {
-      "platform": "Nostr",
-      "count": 1376
+      "platform": "X",
+      "count": 1384
     },
     {
-      "platform": "X",
-      "count": 1375
+      "platform": "Nostr",
+      "count": 1379
     }
   ],
-  "generated_at": "2026-05-02T21:00:02.221556+00:00",
+  "generated_at": "2026-05-02T21:10:02.421827+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
