@@ -1,28 +1,50 @@
 {
   "totals": {
-    "all_payments": 2698,
+    "all_payments": 2701,
     "by_type": {
       "merchant": {
-        "count": 895
+        "count": 896
       },
       "project": {
-        "count": 895
+        "count": 896
       },
       "reviewer": {
-        "count": 908
+        "count": 909
       }
     }
   },
   "today": {
     "date": "2026-05-02",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 3,
+    "by_type": {
+      "merchant": {
+        "count": 1
+      },
+      "project": {
+        "count": 1
+      },
+      "reviewer": {
+        "count": 1
+      }
+    },
+    "approved": 1,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2050222253715886381",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Lydiah Richland Shop",
+        "platform": "X",
+        "time": "19:47"
+      }
+    ]
   },
   "last_24h": {
-    "videos": []
+    "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      }
+    ]
   },
   "daily": [
     {
@@ -259,23 +281,28 @@
     },
     {
       "date": "2026-05-02",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 1,
+      "merchant_count": 1,
+      "reviewer_count": 1,
+      "approved": 1,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 939,
-    "approved": 894,
+    "total_reviewed": 940,
+    "approved": 895,
     "rejected": 45
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 293,
+      "count": 294,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2050222253715886381",
+          "date": "2026-05-02",
+          "merchant": "Lydiah Richland Shop"
+        },
         {
           "url": "https://x.com/i/status/2050172852049998158",
           "date": "2026-05-01",
@@ -5388,8 +5415,13 @@
     },
     {
       "name": "Lydiah Richland Shop",
-      "count": 46,
+      "count": 47,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2050222253715886381",
+          "date": "2026-05-02",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsf37332gfw0s8n7gj8l5aphrf5k6r6tpj2t47kc8276cgp6vf4zdq4fp30d",
           "date": "2026-05-01",
@@ -10096,7 +10128,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2640
+      "count": 2643
     },
     {
       "domain": "8333.mobi",
@@ -10147,13 +10179,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1350
+      "count": 1353
     },
     {
       "platform": "Nostr",
       "count": 1348
     }
   ],
-  "generated_at": "2026-05-02T19:40:02.490290+00:00",
+  "generated_at": "2026-05-02T19:50:02.578878+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
