@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 2701,
+    "all_payments": 2710,
     "by_type": {
       "merchant": {
-        "count": 896
+        "count": 899
       },
       "project": {
-        "count": 896
+        "count": 899
       },
       "reviewer": {
-        "count": 909
+        "count": 912
       }
     }
   },
   "today": {
     "date": "2026-05-02",
-    "payments": 3,
+    "payments": 12,
     "by_type": {
       "merchant": {
-        "count": 1
+        "count": 4
       },
       "project": {
-        "count": 1
+        "count": 4
       },
       "reviewer": {
-        "count": 1
+        "count": 4
       }
     },
-    "approved": 1,
+    "approved": 4,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2050225217457320045",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Uaieca Car Wash",
+        "platform": "X",
+        "time": "20:08"
+      },
+      {
+        "url": "https://x.com/i/status/2050226305199706324",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Jabulani Shop 3",
+        "platform": "X",
+        "time": "20:07"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs98plpazq23dxcl6mnycl8d5yq6jejmchkml4jrhq6lfc8kgc2pag88ylkh",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Lydiah Richland Shop",
+        "platform": "Nostr",
+        "time": "20:06"
+      },
       {
         "url": "https://x.com/i/status/2050222253715886381",
         "project": "Bitbiashara 🇰🇪",
@@ -41,6 +62,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       }
@@ -281,23 +311,28 @@
     },
     {
       "date": "2026-05-02",
-      "project_count": 1,
-      "merchant_count": 1,
-      "reviewer_count": 1,
-      "approved": 1,
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4,
+      "approved": 4,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 940,
-    "approved": 895,
+    "total_reviewed": 943,
+    "approved": 898,
     "rejected": 45
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 294,
+      "count": 295,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs98plpazq23dxcl6mnycl8d5yq6jejmchkml4jrhq6lfc8kgc2pag88ylkh",
+          "date": "2026-05-02",
+          "merchant": "Lydiah Richland Shop"
+        },
         {
           "url": "https://x.com/i/status/2050222253715886381",
           "date": "2026-05-02",
@@ -1772,8 +1807,13 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 108,
+      "count": 109,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2050225217457320045",
+          "date": "2026-05-02",
+          "merchant": "Uaieca Car Wash"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs25vvghf7ax4af6dztcjgnguksal3wcjhzf66axm0kcusvlsuk26cyuar3p",
           "date": "2026-04-30",
@@ -3190,8 +3230,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 71,
+      "count": 72,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2050226305199706324",
+          "date": "2026-05-02",
+          "merchant": "Jabulani Shop 3"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs0mqva6lfvf4fgy4aqn9annxwhf9fnf27seua0jzevahdg5qgndhq0hayaw",
           "date": "2026-04-29",
@@ -5415,8 +5460,13 @@
     },
     {
       "name": "Lydiah Richland Shop",
-      "count": 47,
+      "count": 48,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs98plpazq23dxcl6mnycl8d5yq6jejmchkml4jrhq6lfc8kgc2pag88ylkh",
+          "date": "2026-05-02",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2050222253715886381",
           "date": "2026-05-02",
@@ -6810,6 +6860,87 @@
       ]
     },
     {
+      "name": "Jabulani Shop 3",
+      "count": 15,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2050226305199706324",
+          "date": "2026-05-02",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf0ywzcf3mnlnz8a0g5sjshztmcpmrduezwvpdnp6fs5cdp8t629crjahpr",
+          "date": "2026-04-29",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2049127385870533115",
+          "date": "2026-04-29",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2046912787247513811",
+          "date": "2026-04-22",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstnqw9a0sla68q80sypsdxf7pp98z8tj3l3dph7dv740smrlvt3ng6e0fjt",
+          "date": "2026-04-22",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrp9wk2wtenav2hz9kwnkn89xvlrxzyrxzq875janemhgsvc6mugcxe7md3",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2043971991535825133",
+          "date": "2026-04-14",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxlwmgka7f20qpd2ud0py92z2tq8wnhyuns9sr4utslzjtkwm5l0c32k33l",
+          "date": "2026-04-13",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2043647958491525517",
+          "date": "2026-04-13",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf742rjvqsy2u2gv9cdgeqrfm9sgthh6jhtse0z69ga56mqwkrlyq8q3czr",
+          "date": "2026-04-11",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2042626639742296430",
+          "date": "2026-04-11",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2041502604039954889",
+          "date": "2026-04-07",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv009eqg9lfyc2fxgkfkhn6w6dwlh2x0mrcv57j62ueh7vwjsc47q5uqsfd",
+          "date": "2026-03-26",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2037080954921980160",
+          "date": "2026-03-26",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2033459777913716800",
+          "date": "2026-03-24",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Topic's Pub",
       "count": 14,
       "posts": [
@@ -7184,82 +7315,6 @@
         },
         {
           "url": "https://x.com/i/status/2031308988403360062",
-          "date": "2026-03-24",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Jabulani Shop 3",
-      "count": 14,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsf0ywzcf3mnlnz8a0g5sjshztmcpmrduezwvpdnp6fs5cdp8t629crjahpr",
-          "date": "2026-04-29",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2049127385870533115",
-          "date": "2026-04-29",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2046912787247513811",
-          "date": "2026-04-22",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstnqw9a0sla68q80sypsdxf7pp98z8tj3l3dph7dv740smrlvt3ng6e0fjt",
-          "date": "2026-04-22",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrp9wk2wtenav2hz9kwnkn89xvlrxzyrxzq875janemhgsvc6mugcxe7md3",
-          "date": "2026-04-15",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2043971991535825133",
-          "date": "2026-04-14",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxlwmgka7f20qpd2ud0py92z2tq8wnhyuns9sr4utslzjtkwm5l0c32k33l",
-          "date": "2026-04-13",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2043647958491525517",
-          "date": "2026-04-13",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf742rjvqsy2u2gv9cdgeqrfm9sgthh6jhtse0z69ga56mqwkrlyq8q3czr",
-          "date": "2026-04-11",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2042626639742296430",
-          "date": "2026-04-11",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2041502604039954889",
-          "date": "2026-04-07",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv009eqg9lfyc2fxgkfkhn6w6dwlh2x0mrcv57j62ueh7vwjsc47q5uqsfd",
-          "date": "2026-03-26",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2037080954921980160",
-          "date": "2026-03-26",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2033459777913716800",
           "date": "2026-03-24",
           "project": "Bitcoin Ekasi 🇿🇦"
         }
@@ -7957,6 +8012,52 @@
       ]
     },
     {
+      "name": "Uaieca Car Wash",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2050225217457320045",
+          "date": "2026-05-02",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9k23spm0snk64djnm3ueyqna0eug27j2578r63dvae4aqkvfqenq3hhmsc",
+          "date": "2026-04-28",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2043389051697262816",
+          "date": "2026-04-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqcs286qq6m9rxxncd7as0xpqme4g2tw2n2k2xwzqyrwf48s2qhac5musmy",
+          "date": "2026-04-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfgjyls4pdqdj67psljas9m8su8jqfg9m0ls6znvg5mhhcvh7cg8g7uv4qh",
+          "date": "2026-03-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2037569252022985017",
+          "date": "2026-03-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv7ts29xy5547e4mdhsq5wdem0322w7z3jpkgkfmn3t8nxeffgk5gu20rz0",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2035686016615424433",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Padis Eatery",
       "count": 8,
       "posts": [
@@ -8320,47 +8421,6 @@
         {
           "url": "https://primal.net/e/nevent1qqsv7ptdpm9sv3shd89xz2a2nze6ucc30v4ejrllt2xxkvzgftvjm7q7lm3qy",
           "date": "2026-03-26",
-          "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Uaieca Car Wash",
-      "count": 7,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs9k23spm0snk64djnm3ueyqna0eug27j2578r63dvae4aqkvfqenq3hhmsc",
-          "date": "2026-04-28",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2043389051697262816",
-          "date": "2026-04-13",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqcs286qq6m9rxxncd7as0xpqme4g2tw2n2k2xwzqyrwf48s2qhac5musmy",
-          "date": "2026-04-13",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfgjyls4pdqdj67psljas9m8su8jqfg9m0ls6znvg5mhhcvh7cg8g7uv4qh",
-          "date": "2026-03-27",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2037569252022985017",
-          "date": "2026-03-27",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv7ts29xy5547e4mdhsq5wdem0322w7z3jpkgkfmn3t8nxeffgk5gu20rz0",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2035686016615424433",
-          "date": "2026-03-24",
           "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
@@ -10128,7 +10188,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2643
+      "count": 2652
     },
     {
       "domain": "8333.mobi",
@@ -10179,13 +10239,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1353
+      "count": 1359
     },
     {
       "platform": "Nostr",
-      "count": 1348
+      "count": 1351
     }
   ],
-  "generated_at": "2026-05-02T20:00:02.004639+00:00",
+  "generated_at": "2026-05-02T20:10:02.498023+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
