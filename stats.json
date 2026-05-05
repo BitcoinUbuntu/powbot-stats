@@ -1,28 +1,89 @@
 {
   "totals": {
-    "all_payments": 2839,
+    "all_payments": 2854,
     "by_type": {
       "merchant": {
-        "count": 941
+        "count": 946
       },
       "project": {
-        "count": 941
+        "count": 946
       },
       "reviewer": {
-        "count": 957
+        "count": 962
       }
     }
   },
   "today": {
     "date": "2026-05-05",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 15,
+    "by_type": {
+      "merchant": {
+        "count": 5
+      },
+      "project": {
+        "count": 5
+      },
+      "reviewer": {
+        "count": 5
+      }
+    },
+    "approved": 5,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2051413518532976773",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Dona Marta Stand Shop",
+        "platform": "X",
+        "time": "06:07"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsx557gdkqrrevq7yx3sc4tnkqdp53fst94phr9cygg5uc6043t7hcu25jhr",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Dona Marta Stand Shop",
+        "platform": "Nostr",
+        "time": "06:07"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqspeywjqsuepvymthfmfxdqrtafrqla0qv0fkx9wrddwhtfu67ehxcqmmgyp",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nelton Services Shop",
+        "platform": "Nostr",
+        "time": "06:07"
+      },
+      {
+        "url": "https://x.com/i/status/2051376300405797234",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nelton Services Shop",
+        "platform": "X",
+        "time": "06:07"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsgx9guyr3fp8tf4ykfhuce98lxvhvp7w4y5stpyx53ckwvpemlwvg8tzyun",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "T-S food stuff",
+        "platform": "Nostr",
+        "time": "06:06"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -308,16 +369,16 @@
     },
     {
       "date": "2026-05-05",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 5,
+      "merchant_count": 5,
+      "reviewer_count": 5,
+      "approved": 5,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 991,
-    "approved": 940,
+    "total_reviewed": 996,
+    "approved": 945,
     "rejected": 51
   },
   "top_projects": [
@@ -1894,8 +1955,28 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 110,
+      "count": 114,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2051413518532976773",
+          "date": "2026-05-05",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsx557gdkqrrevq7yx3sc4tnkqdp53fst94phr9cygg5uc6043t7hcu25jhr",
+          "date": "2026-05-05",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspeywjqsuepvymthfmfxdqrtafrqla0qv0fkx9wrddwhtfu67ehxcqmmgyp",
+          "date": "2026-05-05",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2051376300405797234",
+          "date": "2026-05-05",
+          "merchant": "Nelton Services Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsgpph4he8fcneasz8m85xan2hx0c28y92aw22n2cgu269yfchgsmcgk376v",
           "date": "2026-05-02",
@@ -4215,8 +4296,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 42,
+      "count": 43,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgx9guyr3fp8tf4ykfhuce98lxvhvp7w4y5stpyx53ckwvpemlwvg8tzyun",
+          "date": "2026-05-05",
+          "merchant": "T-S food stuff"
+        },
         {
           "url": "https://x.com/i/status/2051358124162843115",
           "date": "2026-05-04",
@@ -7157,6 +7243,92 @@
       ]
     },
     {
+      "name": "Nelton Services Shop",
+      "count": 16,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspeywjqsuepvymthfmfxdqrtafrqla0qv0fkx9wrddwhtfu67ehxcqmmgyp",
+          "date": "2026-05-05",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2051376300405797234",
+          "date": "2026-05-05",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqqdtclte6tldtmxf47dtfsyj3e5x2dexkyaxzxwdngxxkgy9vmxgd63aqg",
+          "date": "2026-04-16",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2044534539855220888",
+          "date": "2026-04-16",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2044037538403295628",
+          "date": "2026-04-14",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfdtec7zuwvuyu2kssz6k3mycksqw7qq8p5jfkdw86f3f8u654trqx0d2tz",
+          "date": "2026-04-14",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2043192733863448753",
+          "date": "2026-04-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsphrctz496pe3dqylfu8l9ktnppfkxcx6nsmwnht3d5kqepc0375q6u859a",
+          "date": "2026-04-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2042494596748296567",
+          "date": "2026-04-10",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq2ytlrjh4df8qhe93vemhpa30q5m808lmh2wexxtt0z447x37vdcnhfmv7",
+          "date": "2026-04-10",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2041993244201095342",
+          "date": "2026-04-09",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsguq44f8n8csye6s96vgwkz6zf3deqw2hwtaff6n997k0nemytvjs7ferzk",
+          "date": "2026-04-09",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9lldqzcu9xsglf6ynrcalsh0k8329ewgpredwgattf5yr6ex027s27c99z",
+          "date": "2026-04-01",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2039304493859316174",
+          "date": "2026-04-01",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdwwkhkcm0gpmknst5ewu68h67rx38fwnx397trhkp7ajce3240vcax5xjm",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036460872176934991",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Jennifer Musya",
       "count": 16,
       "posts": [
@@ -7329,6 +7501,87 @@
       ]
     },
     {
+      "name": "Dona Marta Stand Shop",
+      "count": 15,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2051413518532976773",
+          "date": "2026-05-05",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsx557gdkqrrevq7yx3sc4tnkqdp53fst94phr9cygg5uc6043t7hcu25jhr",
+          "date": "2026-05-05",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2044643998824898764",
+          "date": "2026-04-16",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0wvh5y409myv87kquc50xlpnktudsy4mg4ufl9zsemwcqjay75kqv7nx7k",
+          "date": "2026-04-16",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsft59s79zr9w3cl03zn4xqfhwrkvs3mrvc6y4dt40keq4q0r9vylca793ne",
+          "date": "2026-04-15",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2044358059078652032",
+          "date": "2026-04-15",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9svc2yvvpedv8zasnpsehadqehydyc3njfhf4cryfl93w9hzn0ksl784k4",
+          "date": "2026-04-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2042315713600270778",
+          "date": "2026-04-09",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfd7czyj060n647vlsuxffzr8f3w2eyjs73e76vlxnw4wy06xksdqnqj5eh",
+          "date": "2026-04-08",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2041834437168578877",
+          "date": "2026-04-08",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszwvejg97vekh6qs92ez99eaqgez27kg385ryztuyf72v2phl6ymgvm59xk",
+          "date": "2026-04-02",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxres0fc9djcsev50e6xvw5x7yvgytha8cgxczgr00ll64ryw2skcg59k9l",
+          "date": "2026-03-28",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2037852386660700202",
+          "date": "2026-03-28",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036510768489746651",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0sxwp0cuxt7s7yxtrwkc4l3hr8hp7alu3648xqkz84vsr3z0yzhcnyn3lw",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Topic's Pub",
       "count": 14,
       "posts": [
@@ -7481,82 +7734,6 @@
       ]
     },
     {
-      "name": "Nelton Services Shop",
-      "count": 14,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsqqdtclte6tldtmxf47dtfsyj3e5x2dexkyaxzxwdngxxkgy9vmxgd63aqg",
-          "date": "2026-04-16",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2044534539855220888",
-          "date": "2026-04-16",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2044037538403295628",
-          "date": "2026-04-14",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfdtec7zuwvuyu2kssz6k3mycksqw7qq8p5jfkdw86f3f8u654trqx0d2tz",
-          "date": "2026-04-14",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2043192733863448753",
-          "date": "2026-04-13",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsphrctz496pe3dqylfu8l9ktnppfkxcx6nsmwnht3d5kqepc0375q6u859a",
-          "date": "2026-04-13",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2042494596748296567",
-          "date": "2026-04-10",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq2ytlrjh4df8qhe93vemhpa30q5m808lmh2wexxtt0z447x37vdcnhfmv7",
-          "date": "2026-04-10",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2041993244201095342",
-          "date": "2026-04-09",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsguq44f8n8csye6s96vgwkz6zf3deqw2hwtaff6n997k0nemytvjs7ferzk",
-          "date": "2026-04-09",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9lldqzcu9xsglf6ynrcalsh0k8329ewgpredwgattf5yr6ex027s27c99z",
-          "date": "2026-04-01",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2039304493859316174",
-          "date": "2026-04-01",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdwwkhkcm0gpmknst5ewu68h67rx38fwnx397trhkp7ajce3240vcax5xjm",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036460872176934991",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
       "name": "Kwallos Shop",
       "count": 14,
       "posts": [
@@ -7705,77 +7882,6 @@
           "url": "https://x.com/i/status/2041337224650768470",
           "date": "2026-04-07",
           "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Dona Marta Stand Shop",
-      "count": 13,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2044643998824898764",
-          "date": "2026-04-16",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0wvh5y409myv87kquc50xlpnktudsy4mg4ufl9zsemwcqjay75kqv7nx7k",
-          "date": "2026-04-16",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsft59s79zr9w3cl03zn4xqfhwrkvs3mrvc6y4dt40keq4q0r9vylca793ne",
-          "date": "2026-04-15",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2044358059078652032",
-          "date": "2026-04-15",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9svc2yvvpedv8zasnpsehadqehydyc3njfhf4cryfl93w9hzn0ksl784k4",
-          "date": "2026-04-13",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2042315713600270778",
-          "date": "2026-04-09",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfd7czyj060n647vlsuxffzr8f3w2eyjs73e76vlxnw4wy06xksdqnqj5eh",
-          "date": "2026-04-08",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2041834437168578877",
-          "date": "2026-04-08",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszwvejg97vekh6qs92ez99eaqgez27kg385ryztuyf72v2phl6ymgvm59xk",
-          "date": "2026-04-02",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxres0fc9djcsev50e6xvw5x7yvgytha8cgxczgr00ll64ryw2skcg59k9l",
-          "date": "2026-03-28",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2037852386660700202",
-          "date": "2026-03-28",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036510768489746651",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0sxwp0cuxt7s7yxtrwkc4l3hr8hp7alu3648xqkz84vsr3z0yzhcnyn3lw",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
     },
@@ -9426,6 +9532,32 @@
       ]
     },
     {
+      "name": "T-S food stuff",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgx9guyr3fp8tf4ykfhuce98lxvhvp7w4y5stpyx53ckwvpemlwvg8tzyun",
+          "date": "2026-05-05",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2051358124162843115",
+          "date": "2026-05-04",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy35ejhxe2vkj5rlrxdewcnfwz7n5jqgvt7tf9sssdg2z50x9c9tc7qsc0n",
+          "date": "2026-04-25",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2047808060253442532",
+          "date": "2026-04-25",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Sifoianatunu Atelier",
       "count": 4,
       "posts": [
@@ -9760,27 +9892,6 @@
           "url": "https://x.com/i/status/2038917658708439153",
           "date": "2026-03-31",
           "project": "Bitcoin Famba 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "T-S food stuff",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2051358124162843115",
-          "date": "2026-05-04",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy35ejhxe2vkj5rlrxdewcnfwz7n5jqgvt7tf9sssdg2z50x9c9tc7qsc0n",
-          "date": "2026-04-25",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2047808060253442532",
-          "date": "2026-04-25",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -10610,14 +10721,14 @@
     "daily_average_payments": 67
   },
   "burn_rate": {
-    "percentage": 51,
+    "percentage": 52,
     "status": "cold",
     "days_active": 42
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2781
+      "count": 2796
     },
     {
       "domain": "8333.mobi",
@@ -10668,13 +10779,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1424
+      "count": 1430
     },
     {
       "platform": "Nostr",
-      "count": 1415
+      "count": 1424
     }
   ],
-  "generated_at": "2026-05-05T06:00:02.114173+00:00",
+  "generated_at": "2026-05-05T06:10:02.650082+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }

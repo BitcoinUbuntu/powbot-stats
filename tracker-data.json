@@ -1,7 +1,39 @@
 {
-  "last_updated": "2026-05-05T06:00:03.633061+00:00",
-  "total_submissions": 997,
+  "last_updated": "2026-05-05T06:10:04.084318+00:00",
+  "total_submissions": 999,
   "submissions": [
+    {
+      "id": 1003,
+      "timestamp": "2026-05-05 06:04:09 UTC",
+      "project_name": "Bitcoin Chama (Kenya) 🇰🇪",
+      "project_flag": "🇰🇪",
+      "merchant_name": "Mary Shop",
+      "lightning_address": "Kemunto@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "Nostr",
+      "post_url": "https://primal.net/e/nevent1qqsval2svl7ak60lt355a7als0j7atys6vsu5f5gcmskmw9pjm95vhcp2jr88",
+      "telegram_link": "https://t.me/c/2378392967/14898",
+      "btcmap_link": "https://btcmap.org/merchant/31767",
+      "note": "🤖 Video requires human review",
+      "status": "Pending Review",
+      "payments": []
+    },
+    {
+      "id": 1002,
+      "timestamp": "2026-05-05 06:04:05 UTC",
+      "project_name": "Bitcoin Chama (Kenya) 🇰🇪",
+      "project_flag": "🇰🇪",
+      "merchant_name": "Mary Shop",
+      "lightning_address": "Kemunto@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "X",
+      "post_url": "https://x.com/i/status/2051543063131050150",
+      "telegram_link": "https://t.me/c/2378392967/14896",
+      "btcmap_link": "https://btcmap.org/merchant/31767",
+      "note": "🤖 Video requires human review",
+      "status": "Pending Review",
+      "payments": []
+    },
     {
       "id": 1001,
       "timestamp": "2026-05-04 21:35:27 UTC",
@@ -15,8 +47,27 @@
       "telegram_link": "https://t.me/c/2378392967/14893",
       "btcmap_link": "https://btcmap.org/merchant/node:13378120486",
       "note": "🔁 Duplicate video",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69f9893f95c1298fd54f3ba0",
+          "timestamp": "2026-05-05T06:07:59.688403+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Dona Marta Stand Shop",
+          "tx_id": "69f9894095c1298fd54f3c28",
+          "timestamp": "2026-05-05T06:08:00.369300+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dombo (Mozambique) 🇲🇿",
+          "tx_id": "69f9894195c1298fd54f3d84",
+          "timestamp": "2026-05-05T06:08:02.160376+00:00"
+        }
+      ]
     },
     {
       "id": 1000,
@@ -31,8 +82,27 @@
       "telegram_link": "https://t.me/c/2378392967/14890",
       "btcmap_link": "https://btcmap.org/merchant/node:13378120486",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69f9893195c1298fd54f366f",
+          "timestamp": "2026-05-05T06:07:45.299572+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Dona Marta Stand Shop",
+          "tx_id": "69f9893195c1298fd54f3704",
+          "timestamp": "2026-05-05T06:07:46.072474+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dombo (Mozambique) 🇲🇿",
+          "tx_id": "69f9893395c1298fd54f37d2",
+          "timestamp": "2026-05-05T06:07:47.735312+00:00"
+        }
+      ]
     },
     {
       "id": 999,
@@ -47,8 +117,27 @@
       "telegram_link": "https://t.me/c/2378392967/14887",
       "btcmap_link": "https://btcmap.org/merchant/node:13378163013",
       "note": "🔁 Duplicate video",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69f9891c95c1298fd54f2f25",
+          "timestamp": "2026-05-05T06:07:24.303596+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Nelton Services Shop",
+          "tx_id": "69f9891c95c1298fd54f2fb5",
+          "timestamp": "2026-05-05T06:07:24.982406+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dombo (Mozambique) 🇲🇿",
+          "tx_id": "69f9891e95c1298fd54f30cd",
+          "timestamp": "2026-05-05T06:07:26.852648+00:00"
+        }
+      ]
     },
     {
       "id": 998,
@@ -63,8 +152,27 @@
       "telegram_link": "https://t.me/c/2378392967/14884",
       "btcmap_link": "https://btcmap.org/merchant/node:13378163013",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69f9890e95c1298fd54f29fe",
+          "timestamp": "2026-05-05T06:07:10.888890+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Nelton Services Shop",
+          "tx_id": "69f9890f95c1298fd54f2af1",
+          "timestamp": "2026-05-05T06:07:11.867499+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dombo (Mozambique) 🇲🇿",
+          "tx_id": "69f9891195c1298fd54f2be7",
+          "timestamp": "2026-05-05T06:07:13.632970+00:00"
+        }
+      ]
     },
     {
       "id": 997,
@@ -79,8 +187,27 @@
       "telegram_link": "https://t.me/c/2378392967/14881",
       "btcmap_link": "https://btcmap.org/merchant/32556",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "69f988fe95c1298fd54f22ee",
+          "timestamp": "2026-05-05T06:06:54.625418+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "T-S food stuff",
+          "tx_id": "69f988ff95c1298fd54f237e",
+          "timestamp": "2026-05-05T06:06:55.588926+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Ekiti (Nigeria) 🇳🇬",
+          "tx_id": "69f9890295c1298fd54f251d",
+          "timestamp": "2026-05-05T06:06:58.777182+00:00"
+        }
+      ]
     },
     {
       "id": 996,
