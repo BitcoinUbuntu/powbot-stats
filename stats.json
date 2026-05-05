@@ -1,35 +1,84 @@
 {
   "totals": {
-    "all_payments": 2854,
+    "all_payments": 2875,
     "by_type": {
       "merchant": {
-        "count": 946
+        "count": 953
       },
       "project": {
-        "count": 946
+        "count": 953
       },
       "reviewer": {
-        "count": 962
+        "count": 969
       }
     }
   },
   "today": {
     "date": "2026-05-05",
-    "payments": 15,
+    "payments": 36,
     "by_type": {
       "merchant": {
-        "count": 5
+        "count": 12
       },
       "project": {
-        "count": 5
+        "count": 12
       },
       "reviewer": {
-        "count": 5
+        "count": 12
       }
     },
-    "approved": 5,
-    "rejected": 0,
+    "approved": 12,
+    "rejected": 1,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqspug5pajl8f6xkh3xgaqhzhr3t0rr592c7tek9jxhkjcspnt4ccgc737chj",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Mercearia Abençoada",
+        "platform": "Nostr",
+        "time": "08:34"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs28u43h7pd6fxxwt8t3fg3weg5g8ar08qv4w66yhyewkxj2tlwwmcqfnjgl",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "T-Junction fast food",
+        "platform": "Nostr",
+        "time": "08:33"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswgz9kr7pa2p3ks8gyyhy4aelhl3xam2afwt3n4uczcygsz8fdkmshcufsg",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Peshy's beauty parlour",
+        "platform": "Nostr",
+        "time": "08:33"
+      },
+      {
+        "url": "https://x.com/i/status/2051568873212686845",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "T-Junction fast food",
+        "platform": "X",
+        "time": "08:33"
+      },
+      {
+        "url": "https://x.com/i/status/2051539977868038391",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Mercearia Abençoada",
+        "platform": "X",
+        "time": "08:32"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsval2svl7ak60lt355a7als0j7atys6vsu5f5gcmskmw9pjm95vhcp2jr88",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "Nostr",
+        "time": "08:32"
+      },
+      {
+        "url": "https://x.com/i/status/2051543063131050150",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "X",
+        "time": "08:32"
+      },
       {
         "url": "https://x.com/i/status/2051413518532976773",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -69,6 +118,27 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -369,23 +439,28 @@
     },
     {
       "date": "2026-05-05",
-      "project_count": 5,
-      "merchant_count": 5,
-      "reviewer_count": 5,
-      "approved": 5,
-      "rejected": 0
+      "project_count": 12,
+      "merchant_count": 12,
+      "reviewer_count": 12,
+      "approved": 12,
+      "rejected": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 996,
-    "approved": 945,
-    "rejected": 51
+    "total_reviewed": 1004,
+    "approved": 952,
+    "rejected": 52
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 313,
+      "count": 314,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswgz9kr7pa2p3ks8gyyhy4aelhl3xam2afwt3n4uczcygsz8fdkmshcufsg",
+          "date": "2026-05-05",
+          "merchant": "Peshy's beauty parlour"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9uf9nygqswdv02hp49gk26s20atgzj3mp060p65a6uykp3yash5c93mda3",
           "date": "2026-05-04",
@@ -1955,8 +2030,18 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 114,
+      "count": 116,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspug5pajl8f6xkh3xgaqhzhr3t0rr592c7tek9jxhkjcspnt4ccgc737chj",
+          "date": "2026-05-05",
+          "merchant": "Mercearia Abençoada"
+        },
+        {
+          "url": "https://x.com/i/status/2051539977868038391",
+          "date": "2026-05-05",
+          "merchant": "Mercearia Abençoada"
+        },
         {
           "url": "https://x.com/i/status/2051413518532976773",
           "date": "2026-05-05",
@@ -3032,8 +3117,18 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 81,
+      "count": 83,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsval2svl7ak60lt355a7als0j7atys6vsu5f5gcmskmw9pjm95vhcp2jr88",
+          "date": "2026-05-05",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2051543063131050150",
+          "date": "2026-05-05",
+          "merchant": "Mary Shop"
+        },
         {
           "url": "https://x.com/i/status/2050681900507734374",
           "date": "2026-05-03",
@@ -4612,6 +4707,92 @@
       ]
     },
     {
+      "name": "Bitcoin Sisonke 🇿🇦",
+      "count": 16,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs28u43h7pd6fxxwt8t3fg3weg5g8ar08qv4w66yhyewkxj2tlwwmcqfnjgl",
+          "date": "2026-05-05",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2051568873212686845",
+          "date": "2026-05-05",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2049006560291049743",
+          "date": "2026-04-28",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8l3zaulfu3uhcm82z9zyc807kpmt4xy5rrxtn039egn0e6e95cxg7t0mg0",
+          "date": "2026-04-28",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2047465165222772753",
+          "date": "2026-04-24",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2amf3cmn969mh7w2lcj7s6kxzeh4hcmyqtnppyd5gsppgvqhffksk6ud2f",
+          "date": "2026-04-24",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://x.com/i/status/2046781260907925963",
+          "date": "2026-04-22",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq0nmgh3q7je4aajq8f7swzxcmhvhnycje73ma3k27j3cu3nved2sp9z483",
+          "date": "2026-04-22",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2045024789786431691",
+          "date": "2026-04-17",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd5rzk53xe53grpaqe9tepqvz8da2mmyhdl4f8g4e22nyja9jmcng7cup0c",
+          "date": "2026-04-17",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2043585917760225290",
+          "date": "2026-04-13",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs943yatccghsjps68cf7uunstkql7fpxlca0v9atchd6yfcp2vgeqfrhxta",
+          "date": "2026-04-13",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdcxc4j67hetp3mfr6xpsk49m9gzntjrmhxh0k7drpq3uqgmehcrqx3m5v2",
+          "date": "2026-04-05",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2040723699683274994",
+          "date": "2026-04-05",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2037427903151964631",
+          "date": "2026-03-29",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
+          "date": "2026-03-27",
+          "merchant": "T-Junction fast food"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Famba 🇲🇿",
       "count": 16,
       "posts": [
@@ -4856,82 +5037,6 @@
           "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
           "date": "2026-03-25",
           "merchant": "Mundayam Restaurant"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Sisonke 🇿🇦",
-      "count": 14,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2049006560291049743",
-          "date": "2026-04-28",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8l3zaulfu3uhcm82z9zyc807kpmt4xy5rrxtn039egn0e6e95cxg7t0mg0",
-          "date": "2026-04-28",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2047465165222772753",
-          "date": "2026-04-24",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2amf3cmn969mh7w2lcj7s6kxzeh4hcmyqtnppyd5gsppgvqhffksk6ud2f",
-          "date": "2026-04-24",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://x.com/i/status/2046781260907925963",
-          "date": "2026-04-22",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq0nmgh3q7je4aajq8f7swzxcmhvhnycje73ma3k27j3cu3nved2sp9z483",
-          "date": "2026-04-22",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2045024789786431691",
-          "date": "2026-04-17",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd5rzk53xe53grpaqe9tepqvz8da2mmyhdl4f8g4e22nyja9jmcng7cup0c",
-          "date": "2026-04-17",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2043585917760225290",
-          "date": "2026-04-13",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs943yatccghsjps68cf7uunstkql7fpxlca0v9atchd6yfcp2vgeqfrhxta",
-          "date": "2026-04-13",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdcxc4j67hetp3mfr6xpsk49m9gzntjrmhxh0k7drpq3uqgmehcrqx3m5v2",
-          "date": "2026-04-05",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2040723699683274994",
-          "date": "2026-04-05",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2037427903151964631",
-          "date": "2026-03-29",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
-          "date": "2026-03-27",
-          "merchant": "T-Junction fast food"
         }
       ]
     },
@@ -6769,8 +6874,18 @@
     },
     {
       "name": "Mary Shop",
-      "count": 19,
+      "count": 21,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsval2svl7ak60lt355a7als0j7atys6vsu5f5gcmskmw9pjm95vhcp2jr88",
+          "date": "2026-05-05",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2051543063131050150",
+          "date": "2026-05-05",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2050681900507734374",
           "date": "2026-05-03",
@@ -7952,6 +8067,72 @@
       ]
     },
     {
+      "name": "T-Junction fast food",
+      "count": 12,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs28u43h7pd6fxxwt8t3fg3weg5g8ar08qv4w66yhyewkxj2tlwwmcqfnjgl",
+          "date": "2026-05-05",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2051568873212686845",
+          "date": "2026-05-05",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2049006560291049743",
+          "date": "2026-04-28",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8l3zaulfu3uhcm82z9zyc807kpmt4xy5rrxtn039egn0e6e95cxg7t0mg0",
+          "date": "2026-04-28",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2046781260907925963",
+          "date": "2026-04-22",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq0nmgh3q7je4aajq8f7swzxcmhvhnycje73ma3k27j3cu3nved2sp9z483",
+          "date": "2026-04-22",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2045024789786431691",
+          "date": "2026-04-17",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd5rzk53xe53grpaqe9tepqvz8da2mmyhdl4f8g4e22nyja9jmcng7cup0c",
+          "date": "2026-04-17",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdcxc4j67hetp3mfr6xpsk49m9gzntjrmhxh0k7drpq3uqgmehcrqx3m5v2",
+          "date": "2026-04-05",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2040723699683274994",
+          "date": "2026-04-05",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2037427903151964631",
+          "date": "2026-03-29",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
+          "date": "2026-03-27",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Stay Safe Restaurante & Lounge",
       "count": 12,
       "posts": [
@@ -8272,62 +8453,6 @@
       ]
     },
     {
-      "name": "T-Junction fast food",
-      "count": 10,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2049006560291049743",
-          "date": "2026-04-28",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8l3zaulfu3uhcm82z9zyc807kpmt4xy5rrxtn039egn0e6e95cxg7t0mg0",
-          "date": "2026-04-28",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2046781260907925963",
-          "date": "2026-04-22",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq0nmgh3q7je4aajq8f7swzxcmhvhnycje73ma3k27j3cu3nved2sp9z483",
-          "date": "2026-04-22",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2045024789786431691",
-          "date": "2026-04-17",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd5rzk53xe53grpaqe9tepqvz8da2mmyhdl4f8g4e22nyja9jmcng7cup0c",
-          "date": "2026-04-17",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdcxc4j67hetp3mfr6xpsk49m9gzntjrmhxh0k7drpq3uqgmehcrqx3m5v2",
-          "date": "2026-04-05",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2040723699683274994",
-          "date": "2026-04-05",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2037427903151964631",
-          "date": "2026-03-29",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
-          "date": "2026-03-27",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        }
-      ]
-    },
-    {
       "name": "Preso's Food and Drinks",
       "count": 10,
       "posts": [
@@ -8436,6 +8561,62 @@
           "url": "https://primal.net/e/nevent1qqsvx25gqhmd9eeql72py0n6js4nwl84cr07s74dn5tvjwp73n7ql3qwpq89g",
           "date": "2026-04-18",
           "project": "Bitcoin Aves 🇬🇭"
+        }
+      ]
+    },
+    {
+      "name": "Mercearia Abençoada",
+      "count": 10,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspug5pajl8f6xkh3xgaqhzhr3t0rr592c7tek9jxhkjcspnt4ccgc737chj",
+          "date": "2026-05-05",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2051539977868038391",
+          "date": "2026-05-05",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstnj3xqtmc6v9vz4jd82ens6njtmz8lg4xe0sujf5a4k6nlps5tcq97fw8d",
+          "date": "2026-04-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2042323338094149765",
+          "date": "2026-04-09",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv8q8r4lhmzcwe0n7wpd4ryn9z3rajjyuvvyc8j73m05az4m93jxs0qfrux",
+          "date": "2026-04-07",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2041467074795475240",
+          "date": "2026-04-07",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2041137392959000658",
+          "date": "2026-04-06",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs24yyxwxrveugvqaj84mn0qjjwszulhjxygxmx4zwxsgv9rtpfg7snj5d4p",
+          "date": "2026-04-06",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfrxssa2qukyjzmnupz2zgvz0cywxxsdrc5p4kgg9nu8na5lj6rgc7gp992",
+          "date": "2026-04-02",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2039358962189893851",
+          "date": "2026-04-02",
+          "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
     },
@@ -8654,48 +8835,48 @@
       ]
     },
     {
-      "name": "Mercearia Abençoada",
+      "name": "Peshy's beauty parlour",
       "count": 8,
       "posts": [
         {
-          "url": "https://primal.net/e/nevent1qqstnj3xqtmc6v9vz4jd82ens6njtmz8lg4xe0sujf5a4k6nlps5tcq97fw8d",
-          "date": "2026-04-13",
-          "project": "Bitcoin Dombo 🇲🇿"
+          "url": "https://primal.net/e/nevent1qqswgz9kr7pa2p3ks8gyyhy4aelhl3xam2afwt3n4uczcygsz8fdkmshcufsg",
+          "date": "2026-05-05",
+          "project": "Bitbiashara 🇰🇪"
         },
         {
-          "url": "https://x.com/i/status/2042323338094149765",
-          "date": "2026-04-09",
-          "project": "Bitcoin Dombo 🇲🇿"
+          "url": "https://x.com/i/status/2046213393036521498",
+          "date": "2026-04-20",
+          "project": "Bitbiashara 🇰🇪"
         },
         {
-          "url": "https://primal.net/e/nevent1qqsv8q8r4lhmzcwe0n7wpd4ryn9z3rajjyuvvyc8j73m05az4m93jxs0qfrux",
+          "url": "https://primal.net/e/nevent1qqs8lfd96pwk5mqjqh6rw8szpxuutkhk2llr067096859x34r24upsg5rzd55",
+          "date": "2026-04-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsql9vdskaduhu7m3attjc4aystcn8z8sp2wnwdz705ev0pzcu6tpq4e7zmh",
+          "date": "2026-04-15",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2044379888379916630",
+          "date": "2026-04-15",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2041564474880971073",
           "date": "2026-04-07",
-          "project": "Bitcoin Dombo 🇲🇿"
+          "project": "Bitbiashara 🇰🇪"
         },
         {
-          "url": "https://x.com/i/status/2041467074795475240",
+          "url": "https://primal.net/e/nevent1qqs8yhmwcekeeut9dc2nv9js7ct7yxsswa0nml2j0mxgxmujxjv47fst8m3s3",
           "date": "2026-04-07",
-          "project": "Bitcoin Dombo 🇲🇿"
+          "project": "Bitbiashara 🇰🇪"
         },
         {
-          "url": "https://x.com/i/status/2041137392959000658",
-          "date": "2026-04-06",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs24yyxwxrveugvqaj84mn0qjjwszulhjxygxmx4zwxsgv9rtpfg7snj5d4p",
-          "date": "2026-04-06",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfrxssa2qukyjzmnupz2zgvz0cywxxsdrc5p4kgg9nu8na5lj6rgc7gp992",
-          "date": "2026-04-02",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2039358962189893851",
-          "date": "2026-04-02",
-          "project": "Bitcoin Dombo 🇲🇿"
+          "url": "https://x.com/i/status/2039223176433897951",
+          "date": "2026-04-01",
+          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -8972,47 +9153,6 @@
           "url": "https://primal.net/e/nevent1qqsv7ptdpm9sv3shd89xz2a2nze6ucc30v4ejrllt2xxkvzgftvjm7q7lm3qy",
           "date": "2026-03-26",
           "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Peshy's beauty parlour",
-      "count": 7,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2046213393036521498",
-          "date": "2026-04-20",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8lfd96pwk5mqjqh6rw8szpxuutkhk2llr067096859x34r24upsg5rzd55",
-          "date": "2026-04-20",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsql9vdskaduhu7m3attjc4aystcn8z8sp2wnwdz705ev0pzcu6tpq4e7zmh",
-          "date": "2026-04-15",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2044379888379916630",
-          "date": "2026-04-15",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2041564474880971073",
-          "date": "2026-04-07",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8yhmwcekeeut9dc2nv9js7ct7yxsswa0nml2j0mxgxmujxjv47fst8m3s3",
-          "date": "2026-04-07",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2039223176433897951",
-          "date": "2026-04-01",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -10718,7 +10858,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 42,
-    "daily_average_payments": 67
+    "daily_average_payments": 68
   },
   "burn_rate": {
     "percentage": 52,
@@ -10728,7 +10868,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2796
+      "count": 2817
     },
     {
       "domain": "8333.mobi",
@@ -10779,13 +10919,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1430
+      "count": 1439
     },
     {
       "platform": "Nostr",
-      "count": 1424
+      "count": 1436
     }
   ],
-  "generated_at": "2026-05-05T08:30:02.694015+00:00",
+  "generated_at": "2026-05-05T08:40:01.897574+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
