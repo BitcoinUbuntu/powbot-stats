@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 2875,
+    "all_payments": 2881,
     "by_type": {
       "merchant": {
-        "count": 953
+        "count": 955
       },
       "project": {
-        "count": 953
+        "count": 955
       },
       "reviewer": {
-        "count": 969
+        "count": 971
       }
     }
   },
   "today": {
     "date": "2026-05-05",
-    "payments": 36,
+    "payments": 42,
     "by_type": {
       "merchant": {
-        "count": 12
+        "count": 14
       },
       "project": {
-        "count": 12
+        "count": 14
       },
       "reviewer": {
-        "count": 12
+        "count": 14
       }
     },
-    "approved": 12,
+    "approved": 14,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqszyw7z6xxz03nhye0ajv7p7nxpzl765a909543x0zzu5dtyllnkqc2wmthk",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Aqua Selim",
+        "platform": "Nostr",
+        "time": "09:36"
+      },
+      {
+        "url": "https://x.com/i/status/2051584288340967793",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Aqua Selim",
+        "platform": "X",
+        "time": "09:35"
+      },
       {
         "url": "https://primal.net/e/nevent1qqspug5pajl8f6xkh3xgaqhzhr3t0rr592c7tek9jxhkjcspnt4ccgc737chj",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -118,6 +132,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -439,23 +459,33 @@
     },
     {
       "date": "2026-05-05",
-      "project_count": 12,
-      "merchant_count": 12,
-      "reviewer_count": 12,
-      "approved": 12,
+      "project_count": 14,
+      "merchant_count": 14,
+      "reviewer_count": 14,
+      "approved": 14,
       "rejected": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 1004,
-    "approved": 952,
+    "total_reviewed": 1006,
+    "approved": 954,
     "rejected": 52
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 314,
+      "count": 316,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszyw7z6xxz03nhye0ajv7p7nxpzl765a909543x0zzu5dtyllnkqc2wmthk",
+          "date": "2026-05-05",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2051584288340967793",
+          "date": "2026-05-05",
+          "merchant": "Aqua Selim"
+        },
         {
           "url": "https://primal.net/e/nevent1qqswgz9kr7pa2p3ks8gyyhy4aelhl3xam2afwt3n4uczcygsz8fdkmshcufsg",
           "date": "2026-05-05",
@@ -6612,8 +6642,18 @@
     },
     {
       "name": "Aqua Selim",
-      "count": 26,
+      "count": 28,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszyw7z6xxz03nhye0ajv7p7nxpzl765a909543x0zzu5dtyllnkqc2wmthk",
+          "date": "2026-05-05",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2051584288340967793",
+          "date": "2026-05-05",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9uf9nygqswdv02hp49gk26s20atgzj3mp060p65a6uykp3yash5c93mda3",
           "date": "2026-05-04",
@@ -10858,7 +10898,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 43,
-    "daily_average_payments": 66
+    "daily_average_payments": 67
   },
   "burn_rate": {
     "percentage": 51,
@@ -10868,7 +10908,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2817
+      "count": 2823
     },
     {
       "domain": "8333.mobi",
@@ -10919,13 +10959,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1439
+      "count": 1442
     },
     {
       "platform": "Nostr",
-      "count": 1436
+      "count": 1439
     }
   ],
-  "generated_at": "2026-05-05T09:30:02.031042+00:00",
+  "generated_at": "2026-05-05T09:40:02.596171+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
