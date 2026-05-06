@@ -1,28 +1,99 @@
 {
   "totals": {
-    "all_payments": 2896,
+    "all_payments": 2914,
     "by_type": {
       "merchant": {
-        "count": 960
+        "count": 966
       },
       "project": {
-        "count": 960
+        "count": 966
       },
       "reviewer": {
-        "count": 976
+        "count": 982
       }
     }
   },
   "today": {
     "date": "2026-05-06",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 18,
+    "by_type": {
+      "merchant": {
+        "count": 6
+      },
+      "project": {
+        "count": 6
+      },
+      "reviewer": {
+        "count": 6
+      }
+    },
+    "approved": 6,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs0ce99hkvwdauqq36uwmzmcedk4mmaupakx2ted2v88k4a8uktgrc4nca5s",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Obrien Shop",
+        "platform": "Nostr",
+        "time": "07:49"
+      },
+      {
+        "url": "https://x.com/i/status/2051750382934671575",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Liberty trading point",
+        "platform": "X",
+        "time": "07:49"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs0m2nnslv33w3grx8c0y9ly5ljj5yqkqt2dffd9cc9cwnnl8juuxq85amyf",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "Nostr",
+        "time": "07:48"
+      },
+      {
+        "url": "https://x.com/i/status/2051013859440210292",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "X",
+        "time": "07:47"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs887ukluvdu2ta68wjl4clnysaznv4xrky235cgt9ed39es5t68nsfvr7ha",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "Nostr",
+        "time": "07:47"
+      },
+      {
+        "url": "https://x.com/i/status/2051721129560055816",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "X",
+        "time": "07:46"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Ekasi 🇿🇦"
       },
@@ -302,23 +373,33 @@
     },
     {
       "date": "2026-05-06",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 6,
+      "approved": 6,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1013,
-    "approved": 959,
+    "total_reviewed": 1019,
+    "approved": 965,
     "rejected": 54
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 320,
+      "count": 322,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs887ukluvdu2ta68wjl4clnysaznv4xrky235cgt9ed39es5t68nsfvr7ha",
+          "date": "2026-05-06",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2051721129560055816",
+          "date": "2026-05-06",
+          "merchant": "Bliss beauty Salon"
+        },
         {
           "url": "https://x.com/i/status/2051623414650085590",
           "date": "2026-05-05",
@@ -4510,8 +4591,18 @@
     },
     {
       "name": "BTC Shule 🇧🇮",
-      "count": 18,
+      "count": 20,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0m2nnslv33w3grx8c0y9ly5ljj5yqkqt2dffd9cc9cwnnl8juuxq85amyf",
+          "date": "2026-05-06",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2051013859440210292",
+          "date": "2026-05-06",
+          "merchant": "Kwa Innocent"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsd8ycp824dhf67tcjaf4rr7a7rw5yp0hae489xqjhygf9h69hc72svrhprc",
           "date": "2026-05-02",
@@ -4601,6 +4692,97 @@
           "url": "https://x.com/i/status/2037264780444991537",
           "date": "2026-03-26",
           "merchant": "Kwa Innocent"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Victoria Falls 🇿🇲",
+      "count": 17,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0ce99hkvwdauqq36uwmzmcedk4mmaupakx2ted2v88k4a8uktgrc4nca5s",
+          "date": "2026-05-06",
+          "merchant": "Obrien Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2051750382934671575",
+          "date": "2026-05-06",
+          "merchant": "Liberty trading point"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9kchyml4v3ukspwg3w3zwsuwa9cs47ttkguq5au8059zmh8lzt5qehmuv7",
+          "date": "2026-05-01",
+          "merchant": "Will J Nduna Arts"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdlnf2km5hzsyjtn4uppf4qa77e2xhycxventn9celyhmd93p82nsq0reug",
+          "date": "2026-05-01",
+          "merchant": "Stop Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2047036400902586455",
+          "date": "2026-04-22",
+          "merchant": "JM General Dealers"
+        },
+        {
+          "url": "https://x.com/i/status/2047024557257597254",
+          "date": "2026-04-22",
+          "merchant": "IT Enterprise"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvhgh44ccnl97qum0djecmhnyr956a3kmrjqgq8axlmjlv0r6ajzcer4xa9",
+          "date": "2026-04-20",
+          "merchant": "Munali Cafe"
+        },
+        {
+          "url": "https://x.com/i/status/2043399125572440324",
+          "date": "2026-04-13",
+          "merchant": "Sombo Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2043396426734919708",
+          "date": "2026-04-13",
+          "merchant": "Mr Mwanza"
+        },
+        {
+          "url": "https://x.com/i/status/2043394542993330386",
+          "date": "2026-04-13",
+          "merchant": "Mundayam Restaurant"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy45gawfmsdmwj4zj3j8jupx9ad762mlleud26a6z3wvrvwtk29ag0pg0w5",
+          "date": "2026-04-08",
+          "merchant": "Mwaka Mo Cosmetics"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs20nyg2zcdzwveh30u9l8yhatqn0njs6lzz9zqd4pq3dydvvyfrpcf3vmn5",
+          "date": "2026-04-03",
+          "merchant": "Tafeyo Innovations"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd6qlvehpd5dvslyskkayp2sfvc07rvv2m2gthqy0s807fxz5u7jgr4y3rd",
+          "date": "2026-04-03",
+          "merchant": "Sombo Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2039048229052969022",
+          "date": "2026-03-31",
+          "merchant": "Cartia's Shawarma & Hot wings"
+        },
+        {
+          "url": "https://x.com/i/status/2038746470497603682",
+          "date": "2026-03-31",
+          "merchant": "Livingstone Crocodile Park"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsta87w3ml9n0tqfqwcuzlc25gq9s7jsekajpgqrejjneqh7g9nd2qun6sj7",
+          "date": "2026-03-29",
+          "merchant": "Watson Fruits"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
+          "date": "2026-03-25",
+          "merchant": "Mundayam Restaurant"
         }
       ]
     },
@@ -4854,87 +5036,6 @@
           "url": "https://primal.net/e/nevent1qqs92prhvwvkhnq4344f27ujt345gjv4wmpeepnucmcka2p7twh48kqadsx30",
           "date": "2026-03-24",
           "merchant": "Wa Ngala Hardware"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 15,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs9kchyml4v3ukspwg3w3zwsuwa9cs47ttkguq5au8059zmh8lzt5qehmuv7",
-          "date": "2026-05-01",
-          "merchant": "Will J Nduna Arts"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdlnf2km5hzsyjtn4uppf4qa77e2xhycxventn9celyhmd93p82nsq0reug",
-          "date": "2026-05-01",
-          "merchant": "Stop Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2047036400902586455",
-          "date": "2026-04-22",
-          "merchant": "JM General Dealers"
-        },
-        {
-          "url": "https://x.com/i/status/2047024557257597254",
-          "date": "2026-04-22",
-          "merchant": "IT Enterprise"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvhgh44ccnl97qum0djecmhnyr956a3kmrjqgq8axlmjlv0r6ajzcer4xa9",
-          "date": "2026-04-20",
-          "merchant": "Munali Cafe"
-        },
-        {
-          "url": "https://x.com/i/status/2043399125572440324",
-          "date": "2026-04-13",
-          "merchant": "Sombo Groceries"
-        },
-        {
-          "url": "https://x.com/i/status/2043396426734919708",
-          "date": "2026-04-13",
-          "merchant": "Mr Mwanza"
-        },
-        {
-          "url": "https://x.com/i/status/2043394542993330386",
-          "date": "2026-04-13",
-          "merchant": "Mundayam Restaurant"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy45gawfmsdmwj4zj3j8jupx9ad762mlleud26a6z3wvrvwtk29ag0pg0w5",
-          "date": "2026-04-08",
-          "merchant": "Mwaka Mo Cosmetics"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs20nyg2zcdzwveh30u9l8yhatqn0njs6lzz9zqd4pq3dydvvyfrpcf3vmn5",
-          "date": "2026-04-03",
-          "merchant": "Tafeyo Innovations"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd6qlvehpd5dvslyskkayp2sfvc07rvv2m2gthqy0s807fxz5u7jgr4y3rd",
-          "date": "2026-04-03",
-          "merchant": "Sombo Groceries"
-        },
-        {
-          "url": "https://x.com/i/status/2039048229052969022",
-          "date": "2026-03-31",
-          "merchant": "Cartia's Shawarma & Hot wings"
-        },
-        {
-          "url": "https://x.com/i/status/2038746470497603682",
-          "date": "2026-03-31",
-          "merchant": "Livingstone Crocodile Park"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsta87w3ml9n0tqfqwcuzlc25gq9s7jsekajpgqrejjneqh7g9nd2qun6sj7",
-          "date": "2026-03-29",
-          "merchant": "Watson Fruits"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
-          "date": "2026-03-25",
-          "merchant": "Mundayam Restaurant"
         }
       ]
     },
@@ -6213,8 +6314,18 @@
     },
     {
       "name": "Bliss beauty Salon",
-      "count": 30,
+      "count": 32,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs887ukluvdu2ta68wjl4clnysaznv4xrky235cgt9ed39es5t68nsfvr7ha",
+          "date": "2026-05-06",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2051721129560055816",
+          "date": "2026-05-06",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs0t4wpr88kuzhnh2mx99hyqymwftlzm8du5kc5lcumwjacdp5myzcrmrx5y",
           "date": "2026-05-04",
@@ -8198,6 +8309,72 @@
       ]
     },
     {
+      "name": "Kwa Innocent",
+      "count": 12,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0m2nnslv33w3grx8c0y9ly5ljj5yqkqt2dffd9cc9cwnnl8juuxq85amyf",
+          "date": "2026-05-06",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2051013859440210292",
+          "date": "2026-05-06",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd8ycp824dhf67tcjaf4rr7a7rw5yp0hae489xqjhygf9h69hc72svrhprc",
+          "date": "2026-05-02",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2049942600086360466",
+          "date": "2026-05-02",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv9na07e3dmvkcv7pz4ymelh345kys5sfzefgmwthl7dpfm32stlc6gqggs",
+          "date": "2026-05-01",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2049726613453959316",
+          "date": "2026-05-01",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst6300227jzchulfathta9w344yhcx44s4c9gstx2psxklnadzj2s30dq02",
+          "date": "2026-04-30",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2048498892065345827",
+          "date": "2026-04-30",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrv803ymu24wdhfv5xfhv7k6akvvet63zhjap7lnj2twr4u02mwngs57wk5",
+          "date": "2026-04-29",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2048274130231857595",
+          "date": "2026-04-29",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
+          "date": "2026-03-27",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2037264780444991537",
+          "date": "2026-03-26",
+          "project": "BTC Shule 🇧🇮"
+        }
+      ]
+    },
+    {
       "name": "Folami Game Zone",
       "count": 12,
       "posts": [
@@ -8550,62 +8727,6 @@
           "url": "https://x.com/i/status/2039358962189893851",
           "date": "2026-04-02",
           "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Kwa Innocent",
-      "count": 10,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsd8ycp824dhf67tcjaf4rr7a7rw5yp0hae489xqjhygf9h69hc72svrhprc",
-          "date": "2026-05-02",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2049942600086360466",
-          "date": "2026-05-02",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv9na07e3dmvkcv7pz4ymelh345kys5sfzefgmwthl7dpfm32stlc6gqggs",
-          "date": "2026-05-01",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2049726613453959316",
-          "date": "2026-05-01",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst6300227jzchulfathta9w344yhcx44s4c9gstx2psxklnadzj2s30dq02",
-          "date": "2026-04-30",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2048498892065345827",
-          "date": "2026-04-30",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrv803ymu24wdhfv5xfhv7k6akvvet63zhjap7lnj2twr4u02mwngs57wk5",
-          "date": "2026-04-29",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2048274130231857595",
-          "date": "2026-04-29",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
-          "date": "2026-03-27",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2037264780444991537",
-          "date": "2026-03-26",
-          "project": "BTC Shule 🇧🇮"
         }
       ]
     },
@@ -9787,6 +9908,32 @@
       ]
     },
     {
+      "name": "Liberty trading point",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2051750382934671575",
+          "date": "2026-05-06",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2045870255377989717",
+          "date": "2026-04-19",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9cq5awu9rres563v4a4hfzn8xx38mwdz63df4jr2d5q0mvstyq8sqn9546",
+          "date": "2026-04-13",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8tauhqyjwv9a6k55cl55v90qz6qckn2pahcnrjqdel7n26cs2apc6mrztp",
+          "date": "2026-03-30",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "John Shop",
       "count": 4,
       "posts": [
@@ -10007,27 +10154,6 @@
           "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
           "date": "2026-03-25",
           "project": "Bitcoin Victoria Falls 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Liberty trading point",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2045870255377989717",
-          "date": "2026-04-19",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9cq5awu9rres563v4a4hfzn8xx38mwdz63df4jr2d5q0mvstyq8sqn9546",
-          "date": "2026-04-13",
-          "project": "BitJR Academy 🇿🇲"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8tauhqyjwv9a6k55cl55v90qz6qckn2pahcnrjqdel7n26cs2apc6mrztp",
-          "date": "2026-03-30",
-          "project": "BitJR Academy 🇿🇲"
         }
       ]
     },
@@ -10278,6 +10404,22 @@
           "url": "https://x.com/i/status/2039040301268951286",
           "date": "2026-03-31",
           "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
+      "name": "Obrien Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0ce99hkvwdauqq36uwmzmcedk4mmaupakx2ted2v88k4a8uktgrc4nca5s",
+          "date": "2026-05-06",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2043773017877025274",
+          "date": "2026-04-13",
+          "project": "BitJR Academy 🇿🇲"
         }
       ]
     },
@@ -10689,17 +10831,6 @@
       ]
     },
     {
-      "name": "Obrien Shop",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2043773017877025274",
-          "date": "2026-04-13",
-          "project": "BitJR Academy 🇿🇲"
-        }
-      ]
-    },
-    {
       "name": "Mwaka Mo Cosmetics",
       "count": 1,
       "posts": [
@@ -10794,14 +10925,14 @@
     "daily_average_payments": 67
   },
   "burn_rate": {
-    "percentage": 51,
+    "percentage": 52,
     "status": "cold",
     "days_active": 43
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2838
+      "count": 2856
     },
     {
       "domain": "8333.mobi",
@@ -10852,13 +10983,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1451
+      "count": 1460
     },
     {
       "platform": "Nostr",
-      "count": 1445
+      "count": 1454
     }
   ],
-  "generated_at": "2026-05-06T07:40:02.794232+00:00",
+  "generated_at": "2026-05-06T07:50:01.793655+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
