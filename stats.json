@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 3012,
+    "all_payments": 3015,
     "by_type": {
       "merchant": {
-        "count": 998
+        "count": 999
       },
       "project": {
-        "count": 998
+        "count": 999
       },
       "reviewer": {
-        "count": 1016
+        "count": 1017
       }
     }
   },
   "today": {
     "date": "2026-05-08",
-    "payments": 9,
+    "payments": 12,
     "by_type": {
       "merchant": {
-        "count": 3
+        "count": 4
       },
       "project": {
-        "count": 3
+        "count": 4
       },
       "reviewer": {
-        "count": 3
+        "count": 4
       }
     },
-    "approved": 3,
+    "approved": 4,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsr0tnqlm43mjq09ck7myy47zfuugtz0fe7hhp8g8clhtdaatdzpxsrgqwfu",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "T and N Gas Station",
+        "platform": "Nostr",
+        "time": "09:40"
+      },
       {
         "url": "https://x.com/i/status/2052527104084865333",
         "project": "Bitbiashara 🇰🇪",
@@ -55,6 +62,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -349,16 +359,16 @@
     },
     {
       "date": "2026-05-08",
-      "project_count": 3,
-      "merchant_count": 3,
-      "reviewer_count": 3,
-      "approved": 3,
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4,
+      "approved": 4,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1053,
-    "approved": 997,
+    "total_reviewed": 1054,
+    "approved": 998,
     "rejected": 56
   },
   "top_projects": [
@@ -4491,8 +4501,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 45,
+      "count": 46,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsr0tnqlm43mjq09ck7myy47zfuugtz0fe7hhp8g8clhtdaatdzpxsrgqwfu",
+          "date": "2026-05-08",
+          "merchant": "T and N Gas Station"
+        },
         {
           "url": "https://x.com/i/status/2052516627581718591",
           "date": "2026-05-08",
@@ -10039,6 +10054,32 @@
       ]
     },
     {
+      "name": "T and N Gas Station",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsr0tnqlm43mjq09ck7myy47zfuugtz0fe7hhp8g8clhtdaatdzpxsrgqwfu",
+          "date": "2026-05-08",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2052516627581718591",
+          "date": "2026-05-08",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrdfzst2050pzf0x6yec5yyczq29j2sw20y527af4drrl9rzszj0gxc9elq",
+          "date": "2026-04-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2046891919175811296",
+          "date": "2026-04-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Sifoianatunu Atelier",
       "count": 4,
       "posts": [
@@ -10425,27 +10466,6 @@
           "url": "https://x.com/i/status/2038917658708439153",
           "date": "2026-03-31",
           "project": "Bitcoin Famba 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "T and N Gas Station",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2052516627581718591",
-          "date": "2026-05-08",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrdfzst2050pzf0x6yec5yyczq29j2sw20y527af4drrl9rzszj0gxc9elq",
-          "date": "2026-04-22",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2046891919175811296",
-          "date": "2026-04-22",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -11240,7 +11260,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2954
+      "count": 2957
     },
     {
       "domain": "8333.mobi",
@@ -11295,9 +11315,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1504
+      "count": 1507
     }
   ],
-  "generated_at": "2026-05-08T09:40:02.244986+00:00",
+  "generated_at": "2026-05-08T09:50:01.914523+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
