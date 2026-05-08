@@ -1,28 +1,69 @@
 {
   "totals": {
-    "all_payments": 3003,
+    "all_payments": 3012,
     "by_type": {
       "merchant": {
-        "count": 995
+        "count": 998
       },
       "project": {
-        "count": 995
+        "count": 998
       },
       "reviewer": {
-        "count": 1013
+        "count": 1016
       }
     }
   },
   "today": {
     "date": "2026-05-08",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 9,
+    "by_type": {
+      "merchant": {
+        "count": 3
+      },
+      "project": {
+        "count": 3
+      },
+      "reviewer": {
+        "count": 3
+      }
+    },
+    "approved": 3,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2052527104084865333",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "X",
+        "time": "07:25"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsvk6zucpesr6aar3u63gs439f43kys8h5q5ndgx8uvknnnckljancpmsypk",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "Nostr",
+        "time": "07:25"
+      },
+      {
+        "url": "https://x.com/i/status/2052516627581718591",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "T and N Gas Station",
+        "platform": "X",
+        "time": "07:24"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -308,23 +349,33 @@
     },
     {
       "date": "2026-05-08",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 3,
+      "merchant_count": 3,
+      "reviewer_count": 3,
+      "approved": 3,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1050,
-    "approved": 994,
+    "total_reviewed": 1053,
+    "approved": 997,
     "rejected": 56
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 336,
+      "count": 338,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2052527104084865333",
+          "date": "2026-05-08",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvk6zucpesr6aar3u63gs439f43kys8h5q5ndgx8uvknnnckljancpmsypk",
+          "date": "2026-05-08",
+          "merchant": "Bliss beauty Salon"
+        },
         {
           "url": "https://x.com/i/status/2052429107800035622",
           "date": "2026-05-07",
@@ -4440,8 +4491,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 44,
+      "count": 45,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2052516627581718591",
+          "date": "2026-05-08",
+          "merchant": "T and N Gas Station"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsv0c32ymct57cswqfpe68kzaxdzsgrhhzedcc976aq3dzvhhpv56s4ckxkw",
           "date": "2026-05-07",
@@ -6440,8 +6496,18 @@
     },
     {
       "name": "Bliss beauty Salon",
-      "count": 32,
+      "count": 34,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2052527104084865333",
+          "date": "2026-05-08",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvk6zucpesr6aar3u63gs439f43kys8h5q5ndgx8uvknnnckljancpmsypk",
+          "date": "2026-05-08",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs887ukluvdu2ta68wjl4clnysaznv4xrky235cgt9ed39es5t68nsfvr7ha",
           "date": "2026-05-06",
@@ -10363,6 +10429,27 @@
       ]
     },
     {
+      "name": "T and N Gas Station",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2052516627581718591",
+          "date": "2026-05-08",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrdfzst2050pzf0x6yec5yyczq29j2sw20y527af4drrl9rzszj0gxc9elq",
+          "date": "2026-04-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2046891919175811296",
+          "date": "2026-04-22",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Mwabosire",
       "count": 3,
       "posts": [
@@ -10470,22 +10557,6 @@
           "url": "https://x.com/i/status/2039003278105526559",
           "date": "2026-03-31",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "T and N Gas Station",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsrdfzst2050pzf0x6yec5yyczq29j2sw20y527af4drrl9rzszj0gxc9elq",
-          "date": "2026-04-22",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2046891919175811296",
-          "date": "2026-04-22",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -11169,7 +11240,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2945
+      "count": 2954
     },
     {
       "domain": "8333.mobi",
@@ -11220,13 +11291,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1502
+      "count": 1508
     },
     {
       "platform": "Nostr",
-      "count": 1501
+      "count": 1504
     }
   ],
-  "generated_at": "2026-05-08T07:20:02.111702+00:00",
+  "generated_at": "2026-05-08T07:30:02.610399+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
