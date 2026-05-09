@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 3036,
+    "all_payments": 3039,
     "by_type": {
       "merchant": {
-        "count": 1006
+        "count": 1007
       },
       "project": {
-        "count": 1006
+        "count": 1007
       },
       "reviewer": {
-        "count": 1024
+        "count": 1025
       }
     }
   },
   "today": {
     "date": "2026-05-09",
-    "payments": 21,
+    "payments": 24,
     "by_type": {
       "merchant": {
-        "count": 7
+        "count": 8
       },
       "project": {
-        "count": 7
+        "count": 8
       },
       "reviewer": {
-        "count": 7
+        "count": 8
       }
     },
-    "approved": 7,
+    "approved": 8,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsgykk4me77hkhggkf4sy2mxqjl8nc39vws5n9vm78khjesf7dfa8sp3pswm",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "Nostr",
+        "time": "09:53"
+      },
       {
         "url": "https://x.com/i/status/2052965233224814858",
         "project": "Bitcoin Chama 🇰🇪",
@@ -83,6 +90,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -341,16 +351,16 @@
     },
     {
       "date": "2026-05-09",
-      "project_count": 7,
-      "merchant_count": 7,
-      "reviewer_count": 7,
-      "approved": 7,
+      "project_count": 8,
+      "merchant_count": 8,
+      "reviewer_count": 8,
+      "approved": 8,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1061,
-    "approved": 1005,
+    "total_reviewed": 1062,
+    "approved": 1006,
     "rejected": 56
   },
   "top_projects": [
@@ -3179,8 +3189,13 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 88,
+      "count": 89,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgykk4me77hkhggkf4sy2mxqjl8nc39vws5n9vm78khjesf7dfa8sp3pswm",
+          "date": "2026-05-09",
+          "merchant": "Mary Shop"
+        },
         {
           "url": "https://x.com/i/status/2052965233224814858",
           "date": "2026-05-09",
@@ -7041,8 +7056,13 @@
     },
     {
       "name": "Mary Shop",
-      "count": 24,
+      "count": 25,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgykk4me77hkhggkf4sy2mxqjl8nc39vws5n9vm78khjesf7dfa8sp3pswm",
+          "date": "2026-05-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2052965233224814858",
           "date": "2026-05-09",
@@ -11312,7 +11332,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2978
+      "count": 2981
     },
     {
       "domain": "8333.mobi",
@@ -11367,9 +11387,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1516
+      "count": 1519
     }
   ],
-  "generated_at": "2026-05-09T09:50:02.555296+00:00",
+  "generated_at": "2026-05-09T10:00:01.912882+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
