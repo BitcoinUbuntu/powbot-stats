@@ -1,12 +1,12 @@
 {
   "totals": {
-    "all_payments": 3081,
+    "all_payments": 3083,
     "by_type": {
       "merchant": {
-        "count": 1021
+        "count": 1022
       },
       "project": {
-        "count": 1021
+        "count": 1022
       },
       "reviewer": {
         "count": 1039
@@ -15,13 +15,13 @@
   },
   "today": {
     "date": "2026-05-10",
-    "payments": 30,
+    "payments": 32,
     "by_type": {
       "merchant": {
-        "count": 10
+        "count": 11
       },
       "project": {
-        "count": 10
+        "count": 11
       },
       "reviewer": {
         "count": 10
@@ -343,14 +343,14 @@
       "merchant_count": 8,
       "reviewer_count": 8,
       "approved": 8,
-      "rejected": 1
+      "rejected": 0
     },
     {
       "date": "2026-05-07",
       "project_count": 27,
       "merchant_count": 27,
       "reviewer_count": 29,
-      "approved": 27,
+      "approved": 28,
       "rejected": 1
     },
     {
@@ -371,8 +371,8 @@
     },
     {
       "date": "2026-05-10",
-      "project_count": 10,
-      "merchant_count": 10,
+      "project_count": 11,
+      "merchant_count": 11,
       "reviewer_count": 10,
       "approved": 10,
       "rejected": 0
@@ -380,8 +380,8 @@
   ],
   "reviewer": {
     "total_reviewed": 1076,
-    "approved": 1020,
-    "rejected": 56
+    "approved": 1021,
+    "rejected": 55
   },
   "top_projects": [
     {
@@ -4965,8 +4965,13 @@
     },
     {
       "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 17,
+      "count": 18,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0nmsa8gg06e7kspyycrhcqhfgeq8hmfmpe8u6edt7jjlg93w7qkqjxpyes",
+          "date": "2026-05-10",
+          "merchant": "Jobesa Food Centre"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs0ce99hkvwdauqq36uwmzmcedk4mmaupakx2ted2v88k4a8uktgrc4nca5s",
           "date": "2026-05-06",
@@ -11424,6 +11429,17 @@
       ]
     },
     {
+      "name": "Jobesa Food Centre",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0nmsa8gg06e7kspyycrhcqhfgeq8hmfmpe8u6edt7jjlg93w7qkqjxpyes",
+          "date": "2026-05-10",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "JM General Dealers",
       "count": 1,
       "posts": [
@@ -11492,7 +11508,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3023
+      "count": 3025
     },
     {
       "domain": "8333.mobi",
@@ -11542,14 +11558,14 @@
   ],
   "platforms": [
     {
-      "platform": "X",
-      "count": 1541
+      "platform": "Nostr",
+      "count": 1542
     },
     {
-      "platform": "Nostr",
-      "count": 1540
+      "platform": "X",
+      "count": 1541
     }
   ],
-  "generated_at": "2026-05-10T21:00:01.767435+00:00",
+  "generated_at": "2026-05-10T21:10:01.875989+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
