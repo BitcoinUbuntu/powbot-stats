@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 3089,
+    "all_payments": 3095,
     "by_type": {
       "merchant": {
-        "count": 1024
+        "count": 1026
       },
       "project": {
-        "count": 1024
+        "count": 1026
       },
       "reviewer": {
-        "count": 1041
+        "count": 1043
       }
     }
   },
   "today": {
     "date": "2026-05-11",
-    "payments": 6,
+    "payments": 12,
     "by_type": {
       "merchant": {
-        "count": 2
+        "count": 4
       },
       "project": {
-        "count": 2
+        "count": 4
       },
       "reviewer": {
-        "count": 2
+        "count": 4
       }
     },
-    "approved": 2,
+    "approved": 4,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs8nqn56tzxdmr4mqce5wskmx3llf6cgfxmtxkd0a562grgxhq5jhsc87fkj",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Alvin Game House",
+        "platform": "Nostr",
+        "time": "10:45"
+      },
+      {
+        "url": "https://x.com/i/status/2053762960942567621",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Alvin Game House",
+        "platform": "X",
+        "time": "10:45"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsdrurrkul642y5pmw9z05naz8eqtwa7lnhk6s3ashx34ky8xqyvsswdx7c5",
         "project": "Bitcoin Famba 🇲🇿",
@@ -48,6 +62,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
       {
         "project": "Bitcoin Famba 🇲🇿"
       },
@@ -321,16 +341,16 @@
     },
     {
       "date": "2026-05-11",
-      "project_count": 2,
-      "merchant_count": 2,
-      "reviewer_count": 2,
-      "approved": 2,
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4,
+      "approved": 4,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1078,
-    "approved": 1023,
+    "total_reviewed": 1080,
+    "approved": 1025,
     "rejected": 55
   },
   "top_projects": [
@@ -4051,8 +4071,18 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 54,
+      "count": 56,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8nqn56tzxdmr4mqce5wskmx3llf6cgfxmtxkd0a562grgxhq5jhsc87fkj",
+          "date": "2026-05-11",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://x.com/i/status/2053762960942567621",
+          "date": "2026-05-11",
+          "merchant": "Alvin Game House"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsqrw5z226xkaqy3x6edxx2qr8daq6pftsx82eulpv3vsxzuaaewmgcmht4u",
           "date": "2026-05-10",
@@ -7629,6 +7659,112 @@
       ]
     },
     {
+      "name": "Alvin Game House",
+      "count": 20,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8nqn56tzxdmr4mqce5wskmx3llf6cgfxmtxkd0a562grgxhq5jhsc87fkj",
+          "date": "2026-05-11",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2053762960942567621",
+          "date": "2026-05-11",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2052443316176761144",
+          "date": "2026-05-07",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvy748k2qttreuvx3nrsn8lq0wwspapejxyzkljv4tcsah5a7h2jqrallk5",
+          "date": "2026-05-07",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstq3l72zfem95q2qy9lvhsn5z3n2wenqxa9sddwz3g6p2xyl7m28cpa656k",
+          "date": "2026-05-07",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2052123657581867122",
+          "date": "2026-05-07",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2046877618453025079",
+          "date": "2026-04-22",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspjta85de9vu528xhhlc8spae3ukngjfqzwszk6xnnt8gjfppga2gv4d523",
+          "date": "2026-04-22",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8wx6p67ej78h7ltg2xpnd7h375q9twqpamx860jglhh3ypazmaqckjud3q",
+          "date": "2026-04-21",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2046127453316255801",
+          "date": "2026-04-20",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszl8nnz739kl45hrhqfpv4kjhymqjwquyamugsg9mqtw625z8en2g9qemn9",
+          "date": "2026-04-18",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2045028583094009921",
+          "date": "2026-04-18",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw0qnm354apzgqu0mtnqujfzwqnwexmpumm6493lmsew48zusv42sfdhl4g",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2044391389723566412",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg6gef8jysgx2vr77vdz4skp7x06h0lw2fmmx8zkcmh553zdgwx4gs5mawp",
+          "date": "2026-04-14",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2044095635494768885",
+          "date": "2026-04-14",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2042140542843191514",
+          "date": "2026-04-09",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf27q7ymawd7n3phx9acm9cy5csk6h02ysc5yqkpvrqz5ek9dptgspxepg6",
+          "date": "2026-04-09",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswnjt729qy72fnjnfzwgjfy9um4vp7pesyuzygzukkn92nk293rfgn7k2wn",
+          "date": "2026-04-07",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2041337224650768470",
+          "date": "2026-04-07",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Peace Pot",
       "count": 18,
       "posts": [
@@ -8009,102 +8145,6 @@
           "url": "https://x.com/i/status/2036057680742117842",
           "date": "2026-03-24",
           "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Alvin Game House",
-      "count": 18,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2052443316176761144",
-          "date": "2026-05-07",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvy748k2qttreuvx3nrsn8lq0wwspapejxyzkljv4tcsah5a7h2jqrallk5",
-          "date": "2026-05-07",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstq3l72zfem95q2qy9lvhsn5z3n2wenqxa9sddwz3g6p2xyl7m28cpa656k",
-          "date": "2026-05-07",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2052123657581867122",
-          "date": "2026-05-07",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2046877618453025079",
-          "date": "2026-04-22",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspjta85de9vu528xhhlc8spae3ukngjfqzwszk6xnnt8gjfppga2gv4d523",
-          "date": "2026-04-22",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8wx6p67ej78h7ltg2xpnd7h375q9twqpamx860jglhh3ypazmaqckjud3q",
-          "date": "2026-04-21",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2046127453316255801",
-          "date": "2026-04-20",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszl8nnz739kl45hrhqfpv4kjhymqjwquyamugsg9mqtw625z8en2g9qemn9",
-          "date": "2026-04-18",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2045028583094009921",
-          "date": "2026-04-18",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsw0qnm354apzgqu0mtnqujfzwqnwexmpumm6493lmsew48zusv42sfdhl4g",
-          "date": "2026-04-15",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2044391389723566412",
-          "date": "2026-04-15",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg6gef8jysgx2vr77vdz4skp7x06h0lw2fmmx8zkcmh553zdgwx4gs5mawp",
-          "date": "2026-04-14",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2044095635494768885",
-          "date": "2026-04-14",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2042140542843191514",
-          "date": "2026-04-09",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf27q7ymawd7n3phx9acm9cy5csk6h02ysc5yqkpvrqz5ek9dptgspxepg6",
-          "date": "2026-04-09",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswnjt729qy72fnjnfzwgjfy9um4vp7pesyuzygzukkn92nk293rfgn7k2wn",
-          "date": "2026-04-07",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2041337224650768470",
-          "date": "2026-04-07",
-          "project": "Bitcoin Ikorodu 🇳🇬"
         }
       ]
     },
@@ -11484,7 +11524,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3031
+      "count": 3037
     },
     {
       "domain": "8333.mobi",
@@ -11535,13 +11575,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 1545
+      "count": 1548
     },
     {
       "platform": "X",
-      "count": 1544
+      "count": 1547
     }
   ],
-  "generated_at": "2026-05-11T10:40:01.815225+00:00",
+  "generated_at": "2026-05-11T10:50:02.583319+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
