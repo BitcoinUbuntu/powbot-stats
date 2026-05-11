@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 3095,
+    "all_payments": 3104,
     "by_type": {
       "merchant": {
-        "count": 1026
+        "count": 1029
       },
       "project": {
-        "count": 1026
+        "count": 1029
       },
       "reviewer": {
-        "count": 1043
+        "count": 1046
       }
     }
   },
   "today": {
     "date": "2026-05-11",
-    "payments": 12,
+    "payments": 21,
     "by_type": {
       "merchant": {
-        "count": 4
+        "count": 7
       },
       "project": {
-        "count": 4
+        "count": 7
       },
       "reviewer": {
-        "count": 4
+        "count": 7
       }
     },
-    "approved": 4,
+    "approved": 7,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2053802688073048375",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "X",
+        "time": "13:14"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsgupzjr23l43dsdwak3my4jz7j4farfu7gvd25xrfevyl483ewm4g68wn52",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "Nostr",
+        "time": "13:14"
+      },
+      {
+        "url": "https://x.com/i/status/2053791921336664143",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Ebenezer Shop",
+        "platform": "X",
+        "time": "13:13"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs8nqn56tzxdmr4mqce5wskmx3llf6cgfxmtxkd0a562grgxhq5jhsc87fkj",
         "project": "Bitcoin Ikorodu 🇳🇬",
@@ -62,6 +83,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -341,23 +371,33 @@
     },
     {
       "date": "2026-05-11",
-      "project_count": 4,
-      "merchant_count": 4,
-      "reviewer_count": 4,
-      "approved": 4,
+      "project_count": 7,
+      "merchant_count": 7,
+      "reviewer_count": 7,
+      "approved": 7,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1080,
-    "approved": 1025,
+    "total_reviewed": 1083,
+    "approved": 1028,
     "rejected": 55
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 354,
+      "count": 356,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2053802688073048375",
+          "date": "2026-05-11",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgupzjr23l43dsdwak3my4jz7j4farfu7gvd25xrfevyl483ewm4g68wn52",
+          "date": "2026-05-11",
+          "merchant": "Grandsmatt"
+        },
         {
           "url": "https://x.com/i/status/2053542447385309429",
           "date": "2026-05-10",
@@ -3680,8 +3720,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 77,
+      "count": 78,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2053791921336664143",
+          "date": "2026-05-11",
+          "merchant": "Ebenezer Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqspenn4zw4phtw9zmr8sfjhgt6s07agjt92xgsl2meul22pdu0xjnc04mc3u",
           "date": "2026-05-07",
@@ -5925,8 +5970,18 @@
     },
     {
       "name": "Grandsmatt",
-      "count": 56,
+      "count": 58,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2053802688073048375",
+          "date": "2026-05-11",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgupzjr23l43dsdwak3my4jz7j4farfu7gvd25xrfevyl483ewm4g68wn52",
+          "date": "2026-05-11",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsqgqh2gyx3g00aunsckdj8gyk6takjlc8hqezgzn0dzjkf9fhg8eqhnzrdh",
           "date": "2026-05-09",
@@ -10749,6 +10804,27 @@
       ]
     },
     {
+      "name": "Ebenezer Shop",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2053791921336664143",
+          "date": "2026-05-11",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgmqaqfk0hsuxrh9jwrkw8m6ugg904xyrfnfep0nl73r7fkxqyquc9u8ltf",
+          "date": "2026-04-16",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2044376657142698047",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Delfinos Seaside Restaurant",
       "count": 3,
       "posts": [
@@ -11234,22 +11310,6 @@
       ]
     },
     {
-      "name": "Ebenezer Shop",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsgmqaqfk0hsuxrh9jwrkw8m6ugg904xyrfnfep0nl73r7fkxqyquc9u8ltf",
-          "date": "2026-04-16",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2044376657142698047",
-          "date": "2026-04-15",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
       "name": "De Palace Haircuts",
       "count": 2,
       "posts": [
@@ -11524,7 +11584,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3037
+      "count": 3046
     },
     {
       "domain": "8333.mobi",
@@ -11574,14 +11634,14 @@
   ],
   "platforms": [
     {
-      "platform": "Nostr",
-      "count": 1548
+      "platform": "X",
+      "count": 1553
     },
     {
-      "platform": "X",
-      "count": 1547
+      "platform": "Nostr",
+      "count": 1551
     }
   ],
-  "generated_at": "2026-05-11T13:10:02.529999+00:00",
+  "generated_at": "2026-05-11T13:20:01.708090+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
