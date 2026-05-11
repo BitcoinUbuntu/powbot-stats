@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 3086,
+    "all_payments": 3089,
     "by_type": {
       "merchant": {
-        "count": 1023
+        "count": 1024
       },
       "project": {
-        "count": 1023
+        "count": 1024
       },
       "reviewer": {
-        "count": 1040
+        "count": 1041
       }
     }
   },
   "today": {
     "date": "2026-05-11",
-    "payments": 3,
+    "payments": 6,
     "by_type": {
       "merchant": {
-        "count": 1
+        "count": 2
       },
       "project": {
-        "count": 1
+        "count": 2
       },
       "reviewer": {
-        "count": 1
+        "count": 2
       }
     },
-    "approved": 1,
+    "approved": 2,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsdrurrkul642y5pmw9z05naz8eqtwa7lnhk6s3ashx34ky8xqyvsswdx7c5",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Olympia Gym",
+        "platform": "Nostr",
+        "time": "06:54"
+      },
       {
         "url": "https://x.com/i/status/2053576927001133330",
         "project": "Bitcoin Famba 🇲🇿",
@@ -41,6 +48,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
       {
         "project": "Bitcoin Famba 🇲🇿"
       },
@@ -311,16 +321,16 @@
     },
     {
       "date": "2026-05-11",
-      "project_count": 1,
-      "merchant_count": 1,
-      "reviewer_count": 1,
-      "approved": 1,
+      "project_count": 2,
+      "merchant_count": 2,
+      "reviewer_count": 2,
+      "approved": 2,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1077,
-    "approved": 1022,
+    "total_reviewed": 1078,
+    "approved": 1023,
     "rejected": 55
   },
   "top_projects": [
@@ -5001,8 +5011,13 @@
     },
     {
       "name": "Bitcoin Famba 🇲🇿",
-      "count": 17,
+      "count": 18,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdrurrkul642y5pmw9z05naz8eqtwa7lnhk6s3ashx34ky8xqyvsswdx7c5",
+          "date": "2026-05-11",
+          "merchant": "Olympia Gym"
+        },
         {
           "url": "https://x.com/i/status/2053576927001133330",
           "date": "2026-05-11",
@@ -10907,6 +10922,22 @@
       ]
     },
     {
+      "name": "Olympia Gym",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdrurrkul642y5pmw9z05naz8eqtwa7lnhk6s3ashx34ky8xqyvsswdx7c5",
+          "date": "2026-05-11",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2053576927001133330",
+          "date": "2026-05-11",
+          "project": "Bitcoin Famba 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Obrien Shop",
       "count": 2,
       "posts": [
@@ -11330,17 +11361,6 @@
       ]
     },
     {
-      "name": "Olympia Gym",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2053576927001133330",
-          "date": "2026-05-11",
-          "project": "Bitcoin Famba 🇲🇿"
-        }
-      ]
-    },
-    {
       "name": "Mwaka Mo Cosmetics",
       "count": 1,
       "posts": [
@@ -11464,7 +11484,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3028
+      "count": 3031
     },
     {
       "domain": "8333.mobi",
@@ -11514,14 +11534,14 @@
   ],
   "platforms": [
     {
-      "platform": "X",
-      "count": 1544
+      "platform": "Nostr",
+      "count": 1545
     },
     {
-      "platform": "Nostr",
-      "count": 1542
+      "platform": "X",
+      "count": 1544
     }
   ],
-  "generated_at": "2026-05-11T06:50:02.465120+00:00",
+  "generated_at": "2026-05-11T07:00:01.770916+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
