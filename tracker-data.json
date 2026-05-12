@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-12T13:30:03.559740+00:00",
+  "last_updated": "2026-05-12T13:40:03.975588+00:00",
   "total_submissions": 1106,
   "submissions": [
     {
@@ -14,8 +14,8 @@
       "post_url": "https://x.com/i/status/2054190271949135935",
       "telegram_link": "https://t.me/c/2378392967/15245",
       "btcmap_link": "https://btcmap.org/merchant/28730",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "❌ Video rejected",
+      "status": "Rejected",
       "payments": []
     },
     {
@@ -30,8 +30,8 @@
       "post_url": "https://primal.net/e/nevent1qqsq3xh5qhm8gujhjza2klq2gzvw8ma2ya7grpkyu8p828tcfsdl04sm6e7rn",
       "telegram_link": "https://t.me/c/2378392967/15241",
       "btcmap_link": "https://btcmap.org/merchant/34742",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "🔁 Duplicate video",
+      "status": "Approved",
       "payments": []
     },
     {
@@ -46,9 +46,28 @@
       "post_url": "https://x.com/i/status/2054189661061255281",
       "telegram_link": "https://t.me/c/2378392967/15239",
       "btcmap_link": "https://btcmap.org/merchant/34742",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
-      "payments": []
+      "note": "👍 Video reviewed",
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6a032da995c1298fd500a26a",
+          "timestamp": "2026-05-12T13:39:53.547156+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Aqua Selim",
+          "tx_id": "6a032daa95c1298fd500a324",
+          "timestamp": "2026-05-12T13:39:54.335318+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitbiashara (Kenya) 🇰🇪",
+          "tx_id": "6a032dac95c1298fd500a428",
+          "timestamp": "2026-05-12T13:39:56.387666+00:00"
+        }
+      ]
     },
     {
       "id": 1107,
@@ -64,7 +83,14 @@
       "btcmap_link": "https://btcmap.org/merchant/28730",
       "note": "❌ Video rejected",
       "status": "Rejected",
-      "payments": []
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6a032d9195c1298fd500993e",
+          "timestamp": "2026-05-12T13:39:29.613834+00:00"
+        }
+      ]
     },
     {
       "id": 1106,
@@ -79,8 +105,27 @@
       "telegram_link": "https://t.me/c/2378392967/15230",
       "btcmap_link": "https://btcmap.org/merchant/26695",
       "note": "👍 Video reviewed",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6a032b7d95c1298fd5ffa2d4",
+          "timestamp": "2026-05-12T13:30:37.704610+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Haven food court",
+          "tx_id": "6a032b7e95c1298fd5ffa383",
+          "timestamp": "2026-05-12T13:30:38.695531+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitbiashara (Kenya) 🇰🇪",
+          "tx_id": "6a032b8095c1298fd5ffa4ce",
+          "timestamp": "2026-05-12T13:30:40.427207+00:00"
+        }
+      ]
     },
     {
       "id": 1105,
@@ -95,8 +140,27 @@
       "telegram_link": "https://t.me/c/2378392967/15232",
       "btcmap_link": "https://btcmap.org/merchant/26695",
       "note": "🔁 Duplicate video",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6a032b8f95c1298fd5ffaa86",
+          "timestamp": "2026-05-12T13:30:55.379040+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Haven food court",
+          "tx_id": "6a032b8f95c1298fd5ffab4d",
+          "timestamp": "2026-05-12T13:30:56.130078+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitbiashara (Kenya) 🇰🇪",
+          "tx_id": "6a032b9895c1298fd5ffaf9e",
+          "timestamp": "2026-05-12T13:31:05.144646+00:00"
+        }
+      ]
     },
     {
       "id": 1104,
