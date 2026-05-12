@@ -1,35 +1,70 @@
 {
   "totals": {
-    "all_payments": 3119,
+    "all_payments": 3134,
     "by_type": {
       "merchant": {
-        "count": 1034
+        "count": 1039
       },
       "project": {
-        "count": 1034
+        "count": 1039
       },
       "reviewer": {
-        "count": 1051
+        "count": 1056
       }
     }
   },
   "today": {
     "date": "2026-05-12",
-    "payments": 9,
+    "payments": 24,
     "by_type": {
       "merchant": {
-        "count": 3
+        "count": 8
       },
       "project": {
-        "count": 3
+        "count": 8
       },
       "reviewer": {
-        "count": 3
+        "count": 8
       }
     },
-    "approved": 3,
+    "approved": 8,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2053889461595803672",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Padis Eatery",
+        "platform": "X",
+        "time": "06:02"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs2wj8nlygr3zyg8jeaz9hv5q470wm72f0zgvmjfmerw9vjurcc4zc5qqpz6",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Padis Eatery",
+        "platform": "Nostr",
+        "time": "06:02"
+      },
+      {
+        "url": "https://x.com/i/status/2053874371811323913",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "X",
+        "time": "06:02"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsfx7x0qjwzfkeghxcfjaaq9qqdruevg86p7lkdmwk4exkhg0hr8hqhx56ja",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "Nostr",
+        "time": "06:02"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs0axrd0yc2k0dvmwh2xv8nwh00c92rxedetk7z64d9qw8sg7xv5tgaftqfu",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "Nostr",
+        "time": "06:01"
+      },
       {
         "url": "https://x.com/i/status/2053847706162831502",
         "project": "Bitcoin Chama 🇰🇪",
@@ -55,6 +90,21 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -328,23 +378,33 @@
     },
     {
       "date": "2026-05-12",
-      "project_count": 3,
-      "merchant_count": 3,
-      "reviewer_count": 3,
-      "approved": 3,
+      "project_count": 8,
+      "merchant_count": 8,
+      "reviewer_count": 8,
+      "approved": 8,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1088,
-    "approved": 1033,
+    "total_reviewed": 1093,
+    "approved": 1038,
     "rejected": 55
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 358,
+      "count": 360,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2053874371811323913",
+          "date": "2026-05-12",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfx7x0qjwzfkeghxcfjaaq9qqdruevg86p7lkdmwk4exkhg0hr8hqhx56ja",
+          "date": "2026-05-12",
+          "merchant": "Haven food court"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsq39xzgdgehpt3tnwq78dflr09usq8g7fw3y6z02kdguzldu7e75svp34nn",
           "date": "2026-05-11",
@@ -3236,8 +3296,13 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 92,
+      "count": 93,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0axrd0yc2k0dvmwh2xv8nwh00c92rxedetk7z64d9qw8sg7xv5tgaftqfu",
+          "date": "2026-05-12",
+          "merchant": "Mary Shop"
+        },
         {
           "url": "https://x.com/i/status/2053847706162831502",
           "date": "2026-05-12",
@@ -4384,8 +4449,18 @@
     },
     {
       "name": "Bitcoin Aves 🇬🇭",
-      "count": 48,
+      "count": 50,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2053889461595803672",
+          "date": "2026-05-12",
+          "merchant": "Padis Eatery"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2wj8nlygr3zyg8jeaz9hv5q470wm72f0zgvmjfmerw9vjurcc4zc5qqpz6",
+          "date": "2026-05-12",
+          "merchant": "Padis Eatery"
+        },
         {
           "url": "https://x.com/i/status/2050677261129449670",
           "date": "2026-05-03",
@@ -5641,8 +5716,18 @@
   "top_merchants": [
     {
       "name": "Haven food court",
-      "count": 61,
+      "count": 63,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2053874371811323913",
+          "date": "2026-05-12",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfx7x0qjwzfkeghxcfjaaq9qqdruevg86p7lkdmwk4exkhg0hr8hqhx56ja",
+          "date": "2026-05-12",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9d6cayd2a6e5yh5yt8ucc8quflqlasm0z3857ej0fxhrn5jn049cst0k6x",
           "date": "2026-05-10",
@@ -7354,8 +7439,13 @@
     },
     {
       "name": "Mary Shop",
-      "count": 26,
+      "count": 27,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0axrd0yc2k0dvmwh2xv8nwh00c92rxedetk7z64d9qw8sg7xv5tgaftqfu",
+          "date": "2026-05-12",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2053848744345378830",
           "date": "2026-05-12",
@@ -8870,6 +8960,72 @@
       ]
     },
     {
+      "name": "Padis Eatery",
+      "count": 12,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2053889461595803672",
+          "date": "2026-05-12",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2wj8nlygr3zyg8jeaz9hv5q470wm72f0zgvmjfmerw9vjurcc4zc5qqpz6",
+          "date": "2026-05-12",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2050677261129449670",
+          "date": "2026-05-03",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspdwumrmcfdp0krqd9sercwk6n54vfuxlpwtcqmd5xsfskuv2ahvqk2p9cm",
+          "date": "2026-05-03",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2049970680838451430",
+          "date": "2026-05-01",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs265vdefkunknjmv0rc7gxrar5wj55e263n7hja8jxg08wg82gc7cvz4dyx",
+          "date": "2026-05-01",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2047925541366292954",
+          "date": "2026-04-25",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspesewdwr7nsp9jzm2ulv9pyurv3wdjuyhjpqt7tkjct4nqn3mvacl2lqtz",
+          "date": "2026-04-25",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2046601481281757285",
+          "date": "2026-04-21",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs93gz8eqgwnqd6e8axyz0sh0kudmu4r8942ptyrdlt3qxks2f384sug78cw",
+          "date": "2026-04-21",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2045458234232754383",
+          "date": "2026-04-18",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvx25gqhmd9eeql72py0n6js4nwl84cr07s74dn5tvjwp73n7ql3qwpq89g",
+          "date": "2026-04-18",
+          "project": "Bitcoin Aves 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Leni Boutique",
       "count": 12,
       "posts": [
@@ -9308,62 +9464,6 @@
           "url": "https://x.com/i/status/2039223176433897951",
           "date": "2026-04-01",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Padis Eatery",
-      "count": 10,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2050677261129449670",
-          "date": "2026-05-03",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspdwumrmcfdp0krqd9sercwk6n54vfuxlpwtcqmd5xsfskuv2ahvqk2p9cm",
-          "date": "2026-05-03",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2049970680838451430",
-          "date": "2026-05-01",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs265vdefkunknjmv0rc7gxrar5wj55e263n7hja8jxg08wg82gc7cvz4dyx",
-          "date": "2026-05-01",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2047925541366292954",
-          "date": "2026-04-25",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspesewdwr7nsp9jzm2ulv9pyurv3wdjuyhjpqt7tkjct4nqn3mvacl2lqtz",
-          "date": "2026-04-25",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2046601481281757285",
-          "date": "2026-04-21",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs93gz8eqgwnqd6e8axyz0sh0kudmu4r8942ptyrdlt3qxks2f384sug78cw",
-          "date": "2026-04-21",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2045458234232754383",
-          "date": "2026-04-18",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvx25gqhmd9eeql72py0n6js4nwl84cr07s74dn5tvjwp73n7ql3qwpq89g",
-          "date": "2026-04-18",
-          "project": "Bitcoin Aves 🇬🇭"
         }
       ]
     },
@@ -11591,7 +11691,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3061
+      "count": 3076
     },
     {
       "domain": "8333.mobi",
@@ -11642,13 +11742,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1562
+      "count": 1568
     },
     {
       "platform": "Nostr",
-      "count": 1557
+      "count": 1566
     }
   ],
-  "generated_at": "2026-05-12T06:00:02.589354+00:00",
+  "generated_at": "2026-05-12T06:10:02.231486+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
