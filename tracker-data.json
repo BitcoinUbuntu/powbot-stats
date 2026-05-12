@@ -1,7 +1,23 @@
 {
-  "last_updated": "2026-05-12T13:40:03.975588+00:00",
-  "total_submissions": 1106,
+  "last_updated": "2026-05-12T13:50:03.948568+00:00",
+  "total_submissions": 1107,
   "submissions": [
+    {
+      "id": 1111,
+      "timestamp": "2026-05-12 13:44:05 UTC",
+      "project_name": "Bitcoin Ekasi (South Africa) 🇿🇦",
+      "project_flag": "🇿🇦",
+      "merchant_name": "Ebenezer Shop",
+      "lightning_address": "uba1@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "Nostr",
+      "post_url": "https://primal.net/e/nevent1qqsqxqhpsdfqc4kygtxna4rt50k44jsc8js9wmxu5ysp7aughchfa8gxlm99d",
+      "telegram_link": "https://t.me/c/2378392967/15249",
+      "btcmap_link": "https://btcmap.org/merchant/21227",
+      "note": "🔁 Duplicate video",
+      "status": "Approved",
+      "payments": []
+    },
     {
       "id": 1110,
       "timestamp": "2026-05-12 13:22:33 UTC",
@@ -16,7 +32,14 @@
       "btcmap_link": "https://btcmap.org/merchant/28730",
       "note": "❌ Video rejected",
       "status": "Rejected",
-      "payments": []
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6a032dca95c1298fd500b3e2",
+          "timestamp": "2026-05-12T13:40:26.334745+00:00"
+        }
+      ]
     },
     {
       "id": 1109,
@@ -31,8 +54,27 @@
       "telegram_link": "https://t.me/c/2378392967/15241",
       "btcmap_link": "https://btcmap.org/merchant/34742",
       "note": "🔁 Duplicate video",
-      "status": "Approved",
-      "payments": []
+      "status": "Processed",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6a032dba95c1298fd500abd5",
+          "timestamp": "2026-05-12T13:40:10.861765+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Aqua Selim",
+          "tx_id": "6a032dbb95c1298fd500acd4",
+          "timestamp": "2026-05-12T13:40:11.698931+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitbiashara (Kenya) 🇰🇪",
+          "tx_id": "6a032dbd95c1298fd500ae83",
+          "timestamp": "2026-05-12T13:40:13.682521+00:00"
+        }
+      ]
     },
     {
       "id": 1108,
