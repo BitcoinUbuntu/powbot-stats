@@ -1,28 +1,69 @@
 {
   "totals": {
-    "all_payments": 3110,
+    "all_payments": 3119,
     "by_type": {
       "merchant": {
-        "count": 1031
+        "count": 1034
       },
       "project": {
-        "count": 1031
+        "count": 1034
       },
       "reviewer": {
-        "count": 1048
+        "count": 1051
       }
     }
   },
   "today": {
     "date": "2026-05-12",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 9,
+    "by_type": {
+      "merchant": {
+        "count": 3
+      },
+      "project": {
+        "count": 3
+      },
+      "reviewer": {
+        "count": 3
+      }
+    },
+    "approved": 3,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2053847706162831502",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Flo Salon",
+        "platform": "X",
+        "time": "05:54"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsd2whezafcrmxx9m6yneefvq24e5fsp5gh3hkszfa4a4klhy9jcwg2ujtxz",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Flo Salon",
+        "platform": "Nostr",
+        "time": "05:54"
+      },
+      {
+        "url": "https://x.com/i/status/2053848744345378830",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "X",
+        "time": "05:54"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -287,16 +328,16 @@
     },
     {
       "date": "2026-05-12",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 3,
+      "merchant_count": 3,
+      "reviewer_count": 3,
+      "approved": 3,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1085,
-    "approved": 1030,
+    "total_reviewed": 1088,
+    "approved": 1033,
     "rejected": 55
   },
   "top_projects": [
@@ -3195,8 +3236,23 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 89,
+      "count": 92,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2053847706162831502",
+          "date": "2026-05-12",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd2whezafcrmxx9m6yneefvq24e5fsp5gh3hkszfa4a4klhy9jcwg2ujtxz",
+          "date": "2026-05-12",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2053848744345378830",
+          "date": "2026-05-12",
+          "merchant": "Mary Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsgykk4me77hkhggkf4sy2mxqjl8nc39vws5n9vm78khjesf7dfa8sp3pswm",
           "date": "2026-05-09",
@@ -7298,8 +7354,13 @@
     },
     {
       "name": "Mary Shop",
-      "count": 25,
+      "count": 26,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2053848744345378830",
+          "date": "2026-05-12",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsgykk4me77hkhggkf4sy2mxqjl8nc39vws5n9vm78khjesf7dfa8sp3pswm",
           "date": "2026-05-09",
@@ -9007,6 +9068,72 @@
       ]
     },
     {
+      "name": "Flo Salon",
+      "count": 12,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2053847706162831502",
+          "date": "2026-05-12",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd2whezafcrmxx9m6yneefvq24e5fsp5gh3hkszfa4a4klhy9jcwg2ujtxz",
+          "date": "2026-05-12",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg670pjqle60y52wn63vvapa5mh8d5lsxe8lqe6mmre2cjantlrfgaytxn6",
+          "date": "2026-05-07",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2052311255591907720",
+          "date": "2026-05-07",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2050678951085760988",
+          "date": "2026-05-03",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw4fj8gc43gq93qw9v63dep8x3xzremmvsferzwtrcnvu9fp33wus92dumf",
+          "date": "2026-05-03",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2050254341135647227",
+          "date": "2026-05-02",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqmej02e3y4g6cyumqhcf549kl05wn8vjwts386r2xrr45wwcn9tc9mewyl",
+          "date": "2026-05-02",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2049345260074004944",
+          "date": "2026-04-29",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8xtlzg8lc6ra445ln26jp9y9lg8790y2z7ucsyem3hvzsqxdn5rs9wdqj7",
+          "date": "2026-04-29",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy3md468ar9l6tea7t2eaqq6xhn52ud3mcnwwtr4atw22rpsyy46qykt2xz",
+          "date": "2026-04-27",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2048636339478761541",
+          "date": "2026-04-27",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Antitor Provision Store",
       "count": 12,
       "posts": [
@@ -9293,62 +9420,6 @@
           "url": "https://x.com/i/status/2039358962189893851",
           "date": "2026-04-02",
           "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Flo Salon",
-      "count": 10,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsg670pjqle60y52wn63vvapa5mh8d5lsxe8lqe6mmre2cjantlrfgaytxn6",
-          "date": "2026-05-07",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2052311255591907720",
-          "date": "2026-05-07",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2050678951085760988",
-          "date": "2026-05-03",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsw4fj8gc43gq93qw9v63dep8x3xzremmvsferzwtrcnvu9fp33wus92dumf",
-          "date": "2026-05-03",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2050254341135647227",
-          "date": "2026-05-02",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqmej02e3y4g6cyumqhcf549kl05wn8vjwts386r2xrr45wwcn9tc9mewyl",
-          "date": "2026-05-02",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2049345260074004944",
-          "date": "2026-04-29",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8xtlzg8lc6ra445ln26jp9y9lg8790y2z7ucsyem3hvzsqxdn5rs9wdqj7",
-          "date": "2026-04-29",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy3md468ar9l6tea7t2eaqq6xhn52ud3mcnwwtr4atw22rpsyy46qykt2xz",
-          "date": "2026-04-27",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2048636339478761541",
-          "date": "2026-04-27",
-          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -11520,7 +11591,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3052
+      "count": 3061
     },
     {
       "domain": "8333.mobi",
@@ -11571,13 +11642,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1556
+      "count": 1562
     },
     {
       "platform": "Nostr",
-      "count": 1554
+      "count": 1557
     }
   ],
-  "generated_at": "2026-05-12T05:50:02.495701+00:00",
+  "generated_at": "2026-05-12T06:00:02.589354+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
