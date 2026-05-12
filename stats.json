@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 3163,
+    "all_payments": 3166,
     "by_type": {
       "merchant": {
-        "count": 1048
+        "count": 1049
       },
       "project": {
-        "count": 1048
+        "count": 1049
       },
       "reviewer": {
-        "count": 1067
+        "count": 1068
       }
     }
   },
   "today": {
     "date": "2026-05-12",
-    "payments": 53,
+    "payments": 56,
     "by_type": {
       "merchant": {
-        "count": 17
+        "count": 18
       },
       "project": {
-        "count": 17
+        "count": 18
       },
       "reviewer": {
-        "count": 19
+        "count": 20
       }
     },
-    "approved": 17,
+    "approved": 18,
     "rejected": 2,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsqxqhpsdfqc4kygtxna4rt50k44jsc8js9wmxu5ysp7aughchfa8gxlm99d",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Ebenezer Shop",
+        "platform": "Nostr",
+        "time": "15:44"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsq3xh5qhm8gujhjza2klq2gzvw8ma2ya7grpkyu8p828tcfsdl04sm6e7rn",
         "project": "Bitbiashara 🇰🇪",
@@ -153,6 +160,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -447,16 +457,16 @@
     },
     {
       "date": "2026-05-12",
-      "project_count": 17,
-      "merchant_count": 17,
-      "reviewer_count": 19,
-      "approved": 17,
+      "project_count": 18,
+      "merchant_count": 18,
+      "reviewer_count": 20,
+      "approved": 18,
       "rejected": 2
     }
   ],
   "reviewer": {
-    "total_reviewed": 1104,
-    "approved": 1047,
+    "total_reviewed": 1105,
+    "approved": 1048,
     "rejected": 57
   },
   "top_projects": [
@@ -3876,8 +3886,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 78,
+      "count": 79,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsqxqhpsdfqc4kygtxna4rt50k44jsc8js9wmxu5ysp7aughchfa8gxlm99d",
+          "date": "2026-05-12",
+          "merchant": "Ebenezer Shop"
+        },
         {
           "url": "https://x.com/i/status/2053791921336664143",
           "date": "2026-05-11",
@@ -10924,6 +10939,32 @@
       ]
     },
     {
+      "name": "Ebenezer Shop",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsqxqhpsdfqc4kygtxna4rt50k44jsc8js9wmxu5ysp7aughchfa8gxlm99d",
+          "date": "2026-05-12",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2053791921336664143",
+          "date": "2026-05-11",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgmqaqfk0hsuxrh9jwrkw8m6ugg904xyrfnfep0nl73r7fkxqyquc9u8ltf",
+          "date": "2026-04-16",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2044376657142698047",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Dora's Joint",
       "count": 4,
       "posts": [
@@ -11066,27 +11107,6 @@
           "url": "https://primal.net/e/nevent1qqs074cy7q2fwhcga6lxa4487jecyzruemtf224j96krktns0jyx8xc5wcexj",
           "date": "2026-03-25",
           "project": "Bitcoin Victoria Falls 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Ebenezer Shop",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2053791921336664143",
-          "date": "2026-05-11",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgmqaqfk0hsuxrh9jwrkw8m6ugg904xyrfnfep0nl73r7fkxqyquc9u8ltf",
-          "date": "2026-04-16",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2044376657142698047",
-          "date": "2026-04-15",
-          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
@@ -11850,7 +11870,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3105
+      "count": 3108
     },
     {
       "domain": "8333.mobi",
@@ -11905,9 +11925,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 1579
+      "count": 1582
     }
   ],
-  "generated_at": "2026-05-12T15:40:02.474227+00:00",
+  "generated_at": "2026-05-12T15:50:02.468379+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
