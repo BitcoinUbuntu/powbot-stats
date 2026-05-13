@@ -1,28 +1,79 @@
 {
   "totals": {
-    "all_payments": 3190,
+    "all_payments": 3202,
     "by_type": {
       "merchant": {
-        "count": 1057
+        "count": 1061
       },
       "project": {
-        "count": 1057
+        "count": 1061
       },
       "reviewer": {
-        "count": 1076
+        "count": 1080
       }
     }
   },
   "today": {
     "date": "2026-05-13",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 12,
+    "by_type": {
+      "merchant": {
+        "count": 4
+      },
+      "project": {
+        "count": 4
+      },
+      "reviewer": {
+        "count": 4
+      }
+    },
+    "approved": 4,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsdlqcmyxs0488un2fhwjm94j0lm2cneeuqdltgvwr0wjk4fcskk4skrrfj3",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nelton Services Shop",
+        "platform": "Nostr",
+        "time": "04:19"
+      },
+      {
+        "url": "https://x.com/i/status/2054283684841218146",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nelton Services Shop",
+        "platform": "X",
+        "time": "04:19"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsp8u5kpd9ykcmfmpgw2r2emesqpxk4nuyzxu6gx952aefqn4962rgtgq3le",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "Nostr",
+        "time": "04:18"
+      },
+      {
+        "url": "https://x.com/i/status/2052817751631130877",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "X",
+        "time": "04:18"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -338,16 +389,16 @@
     },
     {
       "date": "2026-05-13",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4,
+      "approved": 4,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1113,
-    "approved": 1056,
+    "total_reviewed": 1117,
+    "approved": 1060,
     "rejected": 57
   },
   "top_projects": [
@@ -2209,8 +2260,18 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 122,
+      "count": 124,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdlqcmyxs0488un2fhwjm94j0lm2cneeuqdltgvwr0wjk4fcskk4skrrfj3",
+          "date": "2026-05-13",
+          "merchant": "Nelton Services Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2054283684841218146",
+          "date": "2026-05-13",
+          "merchant": "Nelton Services Shop"
+        },
         {
           "url": "https://x.com/i/status/2054213451946365128",
           "date": "2026-05-12",
@@ -4991,8 +5052,18 @@
     },
     {
       "name": "BTC Shule 🇧🇮",
-      "count": 20,
+      "count": 22,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp8u5kpd9ykcmfmpgw2r2emesqpxk4nuyzxu6gx952aefqn4962rgtgq3le",
+          "date": "2026-05-13",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2052817751631130877",
+          "date": "2026-05-13",
+          "merchant": "Kwa Innocent"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs0m2nnslv33w3grx8c0y9ly5ljj5yqkqt2dffd9cc9cwnnl8juuxq85amyf",
           "date": "2026-05-06",
@@ -7916,6 +7987,112 @@
       ]
     },
     {
+      "name": "Nelton Services Shop",
+      "count": 20,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdlqcmyxs0488un2fhwjm94j0lm2cneeuqdltgvwr0wjk4fcskk4skrrfj3",
+          "date": "2026-05-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2054283684841218146",
+          "date": "2026-05-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsddqk6u3qm26s0ltwj32dkszktdfjpe4qn9vkk7n23632g559u27q9n7t33",
+          "date": "2026-05-07",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2052087528648237196",
+          "date": "2026-05-07",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspeywjqsuepvymthfmfxdqrtafrqla0qv0fkx9wrddwhtfu67ehxcqmmgyp",
+          "date": "2026-05-05",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2051376300405797234",
+          "date": "2026-05-05",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqqdtclte6tldtmxf47dtfsyj3e5x2dexkyaxzxwdngxxkgy9vmxgd63aqg",
+          "date": "2026-04-16",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2044534539855220888",
+          "date": "2026-04-16",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2044037538403295628",
+          "date": "2026-04-14",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfdtec7zuwvuyu2kssz6k3mycksqw7qq8p5jfkdw86f3f8u654trqx0d2tz",
+          "date": "2026-04-14",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2043192733863448753",
+          "date": "2026-04-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsphrctz496pe3dqylfu8l9ktnppfkxcx6nsmwnht3d5kqepc0375q6u859a",
+          "date": "2026-04-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2042494596748296567",
+          "date": "2026-04-10",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq2ytlrjh4df8qhe93vemhpa30q5m808lmh2wexxtt0z447x37vdcnhfmv7",
+          "date": "2026-04-10",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2041993244201095342",
+          "date": "2026-04-09",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsguq44f8n8csye6s96vgwkz6zf3deqw2hwtaff6n997k0nemytvjs7ferzk",
+          "date": "2026-04-09",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9lldqzcu9xsglf6ynrcalsh0k8329ewgpredwgattf5yr6ex027s27c99z",
+          "date": "2026-04-01",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2039304493859316174",
+          "date": "2026-04-01",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdwwkhkcm0gpmknst5ewu68h67rx38fwnx397trhkp7ajce3240vcax5xjm",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036460872176934991",
+          "date": "2026-03-24",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Jennifer Musya",
       "count": 20,
       "posts": [
@@ -8220,102 +8397,6 @@
           "url": "https://x.com/i/status/2037433865677963645",
           "date": "2026-03-27",
           "project": "Bitcoin Aves 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Nelton Services Shop",
-      "count": 18,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsddqk6u3qm26s0ltwj32dkszktdfjpe4qn9vkk7n23632g559u27q9n7t33",
-          "date": "2026-05-07",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2052087528648237196",
-          "date": "2026-05-07",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspeywjqsuepvymthfmfxdqrtafrqla0qv0fkx9wrddwhtfu67ehxcqmmgyp",
-          "date": "2026-05-05",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2051376300405797234",
-          "date": "2026-05-05",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqqdtclte6tldtmxf47dtfsyj3e5x2dexkyaxzxwdngxxkgy9vmxgd63aqg",
-          "date": "2026-04-16",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2044534539855220888",
-          "date": "2026-04-16",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2044037538403295628",
-          "date": "2026-04-14",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfdtec7zuwvuyu2kssz6k3mycksqw7qq8p5jfkdw86f3f8u654trqx0d2tz",
-          "date": "2026-04-14",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2043192733863448753",
-          "date": "2026-04-13",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsphrctz496pe3dqylfu8l9ktnppfkxcx6nsmwnht3d5kqepc0375q6u859a",
-          "date": "2026-04-13",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2042494596748296567",
-          "date": "2026-04-10",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq2ytlrjh4df8qhe93vemhpa30q5m808lmh2wexxtt0z447x37vdcnhfmv7",
-          "date": "2026-04-10",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2041993244201095342",
-          "date": "2026-04-09",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsguq44f8n8csye6s96vgwkz6zf3deqw2hwtaff6n997k0nemytvjs7ferzk",
-          "date": "2026-04-09",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9lldqzcu9xsglf6ynrcalsh0k8329ewgpredwgattf5yr6ex027s27c99z",
-          "date": "2026-04-01",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2039304493859316174",
-          "date": "2026-04-01",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdwwkhkcm0gpmknst5ewu68h67rx38fwnx397trhkp7ajce3240vcax5xjm",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036460872176934991",
-          "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
     },
@@ -8831,6 +8912,82 @@
       ]
     },
     {
+      "name": "Kwa Innocent",
+      "count": 14,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp8u5kpd9ykcmfmpgw2r2emesqpxk4nuyzxu6gx952aefqn4962rgtgq3le",
+          "date": "2026-05-13",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2052817751631130877",
+          "date": "2026-05-13",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0m2nnslv33w3grx8c0y9ly5ljj5yqkqt2dffd9cc9cwnnl8juuxq85amyf",
+          "date": "2026-05-06",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2051013859440210292",
+          "date": "2026-05-06",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd8ycp824dhf67tcjaf4rr7a7rw5yp0hae489xqjhygf9h69hc72svrhprc",
+          "date": "2026-05-02",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2049942600086360466",
+          "date": "2026-05-02",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv9na07e3dmvkcv7pz4ymelh345kys5sfzefgmwthl7dpfm32stlc6gqggs",
+          "date": "2026-05-01",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2049726613453959316",
+          "date": "2026-05-01",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst6300227jzchulfathta9w344yhcx44s4c9gstx2psxklnadzj2s30dq02",
+          "date": "2026-04-30",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2048498892065345827",
+          "date": "2026-04-30",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrv803ymu24wdhfv5xfhv7k6akvvet63zhjap7lnj2twr4u02mwngs57wk5",
+          "date": "2026-04-29",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2048274130231857595",
+          "date": "2026-04-29",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
+          "date": "2026-03-27",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2037264780444991537",
+          "date": "2026-03-26",
+          "project": "BTC Shule 🇧🇮"
+        }
+      ]
+    },
+    {
       "name": "Viwa Accessories",
       "count": 12,
       "posts": [
@@ -9223,72 +9380,6 @@
           "url": "https://x.com/i/status/2037162175236563014",
           "date": "2026-03-26",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Kwa Innocent",
-      "count": 12,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs0m2nnslv33w3grx8c0y9ly5ljj5yqkqt2dffd9cc9cwnnl8juuxq85amyf",
-          "date": "2026-05-06",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2051013859440210292",
-          "date": "2026-05-06",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd8ycp824dhf67tcjaf4rr7a7rw5yp0hae489xqjhygf9h69hc72svrhprc",
-          "date": "2026-05-02",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2049942600086360466",
-          "date": "2026-05-02",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv9na07e3dmvkcv7pz4ymelh345kys5sfzefgmwthl7dpfm32stlc6gqggs",
-          "date": "2026-05-01",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2049726613453959316",
-          "date": "2026-05-01",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst6300227jzchulfathta9w344yhcx44s4c9gstx2psxklnadzj2s30dq02",
-          "date": "2026-04-30",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2048498892065345827",
-          "date": "2026-04-30",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrv803ymu24wdhfv5xfhv7k6akvvet63zhjap7lnj2twr4u02mwngs57wk5",
-          "date": "2026-04-29",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2048274130231857595",
-          "date": "2026-04-29",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyjqsc72z8c3my4tysc6ltg740lcp3re9meaa5ccaxx8ysve5rt9qh2rrus",
-          "date": "2026-03-27",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2037264780444991537",
-          "date": "2026-03-26",
-          "project": "BTC Shule 🇧🇮"
         }
       ]
     },
@@ -11821,7 +11912,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 50,
-    "daily_average_payments": 63
+    "daily_average_payments": 64
   },
   "burn_rate": {
     "percentage": 50,
@@ -11831,7 +11922,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3132
+      "count": 3144
     },
     {
       "domain": "8333.mobi",
@@ -11882,13 +11973,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1596
+      "count": 1602
     },
     {
       "platform": "Nostr",
-      "count": 1594
+      "count": 1600
     }
   ],
-  "generated_at": "2026-05-13T04:10:02.499082+00:00",
+  "generated_at": "2026-05-13T04:20:02.044277+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
