@@ -1,38 +1,52 @@
 {
   "totals": {
-    "all_payments": 3249,
+    "all_payments": 3256,
     "by_type": {
       "merchant": {
-        "count": 1077
+        "count": 1079
       },
       "project": {
-        "count": 1076
+        "count": 1079
       },
       "reviewer": {
-        "count": 1096
+        "count": 1098
       }
     }
   },
   "today": {
     "date": "2026-05-13",
-    "payments": 59,
+    "payments": 66,
     "by_type": {
       "merchant": {
-        "count": 20
+        "count": 22
       },
       "project": {
-        "count": 19
+        "count": 22
       },
       "reviewer": {
-        "count": 20
+        "count": 22
       }
     },
-    "approved": 20,
+    "approved": 22,
     "rejected": 0,
     "videos": [
       {
+        "url": "https://primal.net/e/nevent1qqsp6u2y8fxkulcxvvthz4kycjcke75nkpumvy7vevpefxvs4nf6xkq5j9h85",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "Joylove Cyber",
+        "platform": "Nostr",
+        "time": "16:51"
+      },
+      {
+        "url": "https://x.com/i/status/2054576665515143236",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Embo Foods",
+        "platform": "X",
+        "time": "16:51"
+      },
+      {
         "url": "https://x.com/i/status/2054585426480947608",
-        "project": "Unknown",
+        "project": "Bitbiashara 🇰🇪",
         "merchant": "Viwa Accessories",
         "platform": "X",
         "time": "16:50"
@@ -175,7 +189,13 @@
   "last_24h": {
     "videos": [
       {
-        "project": "Unknown"
+        "project": "EcoBitz 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
       },
       {
         "project": "Bitbiashara 🇰🇪"
@@ -477,23 +497,28 @@
     },
     {
       "date": "2026-05-13",
-      "project_count": 19,
-      "merchant_count": 20,
-      "reviewer_count": 20,
-      "approved": 20,
+      "project_count": 22,
+      "merchant_count": 22,
+      "reviewer_count": 22,
+      "approved": 22,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1133,
-    "approved": 1076,
+    "total_reviewed": 1135,
+    "approved": 1078,
     "rejected": 57
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 377,
+      "count": 378,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2054585426480947608",
+          "date": "2026-05-13",
+          "merchant": "Viwa Accessories"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrcn0ktg7gqvek6caavckl9uzsl2j9zacqkl8mfx9ssqwcc08saqcg9p38f",
           "date": "2026-05-13",
@@ -4001,8 +4026,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 79,
+      "count": 80,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2054576665515143236",
+          "date": "2026-05-13",
+          "merchant": "Embo Foods"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsqxqhpsdfqc4kygtxna4rt50k44jsc8js9wmxu5ysp7aughchfa8gxlm99d",
           "date": "2026-05-12",
@@ -5609,8 +5639,13 @@
     },
     {
       "name": "EcoBitz 🇰🇪",
-      "count": 15,
+      "count": 16,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp6u2y8fxkulcxvvthz4kycjcke75nkpumvy7vevpefxvs4nf6xkq5j9h85",
+          "date": "2026-05-13",
+          "merchant": "Joylove Cyber"
+        },
         {
           "url": "https://primal.net/e/nevent1qqszr3xxe5jf74zga2278wfmdynx3d0plun86nw86f03npgujt8zfzcvh6ah8",
           "date": "2026-05-02",
@@ -8979,7 +9014,7 @@
         {
           "url": "https://x.com/i/status/2054585426480947608",
           "date": "2026-05-13",
-          "project": "Unknown"
+          "project": "Bitbiashara 🇰🇪"
         },
         {
           "url": "https://primal.net/e/nevent1qqsrcn0ktg7gqvek6caavckl9uzsl2j9zacqkl8mfx9ssqwcc08saqcg9p38f",
@@ -11422,6 +11457,27 @@
       ]
     },
     {
+      "name": "Embo Foods",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2054576665515143236",
+          "date": "2026-05-13",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyh9dxlvhhc3rf0tx06ymn4v470w2720fszckt2xdh54tlsekg7cgat3t36",
+          "date": "2026-04-17",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2045091145173147683",
+          "date": "2026-04-17",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Delfinos Seaside Restaurant",
       "count": 3,
       "posts": [
@@ -11875,22 +11931,6 @@
       ]
     },
     {
-      "name": "Embo Foods",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsyh9dxlvhhc3rf0tx06ymn4v470w2720fszckt2xdh54tlsekg7cgat3t36",
-          "date": "2026-04-17",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2045091145173147683",
-          "date": "2026-04-17",
-          "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
       "name": "Ekasi Mobile Caterers",
       "count": 2,
       "posts": [
@@ -12086,6 +12126,17 @@
       ]
     },
     {
+      "name": "Joylove Cyber",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp6u2y8fxkulcxvvthz4kycjcke75nkpumvy7vevpefxvs4nf6xkq5j9h85",
+          "date": "2026-05-13",
+          "project": "EcoBitz 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Jobesa Food Centre",
       "count": 1,
       "posts": [
@@ -12165,7 +12216,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3191
+      "count": 3198
     },
     {
       "domain": "8333.mobi",
@@ -12216,13 +12267,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1625
+      "count": 1629
     },
     {
       "platform": "Nostr",
-      "count": 1624
+      "count": 1627
     }
   ],
-  "generated_at": "2026-05-13T16:50:02.666616+00:00",
+  "generated_at": "2026-05-13T17:00:02.839336+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
