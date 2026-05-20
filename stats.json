@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 3634,
+    "all_payments": 3640,
     "by_type": {
       "merchant": {
-        "count": 1204
+        "count": 1206
       },
       "project": {
-        "count": 1204
+        "count": 1206
       },
       "reviewer": {
-        "count": 1226
+        "count": 1228
       }
     }
   },
   "today": {
     "date": "2026-05-20",
-    "payments": 225,
+    "payments": 231,
     "by_type": {
       "merchant": {
-        "count": 74
+        "count": 76
       },
       "project": {
-        "count": 74
+        "count": 76
       },
       "reviewer": {
-        "count": 77
+        "count": 79
       }
     },
-    "approved": 74,
+    "approved": 76,
     "rejected": 3,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2057138287639175590",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "X",
+        "time": "18:39"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswsczgu9z73paf4fn6m33cjcgvu3d82f8jxl0k62eswneh400qjhg0f5rlu",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "Nostr",
+        "time": "18:39"
+      },
       {
         "url": "https://x.com/i/status/2057087392993911116",
         "project": "Bitcoin Chama 🇰🇪",
@@ -553,6 +567,12 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
         "project": "Bitcoin Chama 🇰🇪"
       },
       {
@@ -1011,23 +1031,33 @@
     },
     {
       "date": "2026-05-20",
-      "project_count": 74,
-      "merchant_count": 74,
-      "reviewer_count": 77,
-      "approved": 74,
+      "project_count": 76,
+      "merchant_count": 76,
+      "reviewer_count": 79,
+      "approved": 76,
       "rejected": 3
     }
   ],
   "reviewer": {
-    "total_reviewed": 1268,
-    "approved": 1203,
+    "total_reviewed": 1270,
+    "approved": 1205,
     "rejected": 65
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 416,
+      "count": 418,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2057138287639175590",
+          "date": "2026-05-20",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswsczgu9z73paf4fn6m33cjcgvu3d82f8jxl0k62eswneh400qjhg0f5rlu",
+          "date": "2026-05-20",
+          "merchant": "Bliss beauty Salon"
+        },
         {
           "url": "https://x.com/i/status/2057061675312771278",
           "date": "2026-05-20",
@@ -8193,8 +8223,18 @@
     },
     {
       "name": "Bliss beauty Salon",
-      "count": 44,
+      "count": 46,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2057138287639175590",
+          "date": "2026-05-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswsczgu9z73paf4fn6m33cjcgvu3d82f8jxl0k62eswneh400qjhg0f5rlu",
+          "date": "2026-05-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2056704921852944646",
           "date": "2026-05-20",
@@ -14010,7 +14050,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3572
+      "count": 3578
     },
     {
       "domain": "8333.mobi",
@@ -14061,13 +14101,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1829
+      "count": 1832
     },
     {
       "platform": "Nostr",
-      "count": 1805
+      "count": 1808
     }
   ],
-  "generated_at": "2026-05-20T18:30:02.599092+00:00",
+  "generated_at": "2026-05-20T18:40:01.849245+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
