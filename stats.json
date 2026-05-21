@@ -1,28 +1,139 @@
 {
   "totals": {
-    "all_payments": 3640,
+    "all_payments": 3670,
     "by_type": {
       "merchant": {
-        "count": 1206
+        "count": 1216
       },
       "project": {
-        "count": 1206
+        "count": 1216
       },
       "reviewer": {
-        "count": 1228
+        "count": 1238
       }
     }
   },
   "today": {
     "date": "2026-05-21",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 30,
+    "by_type": {
+      "merchant": {
+        "count": 10
+      },
+      "project": {
+        "count": 10
+      },
+      "reviewer": {
+        "count": 10
+      }
+    },
+    "approved": 10,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2057188652154040465",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "La Casa Moz",
+        "platform": "X",
+        "time": "06:09"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsts6vk30kv5fsw3afcuuksy4cr6flprdw5pldg8820fpjm8hprxhcv0dyl4",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "La Casa Moz",
+        "platform": "Nostr",
+        "time": "06:09"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqstkukydvtrnzya6ccgqnfwd84vckntytenkryx3as2s2ywdnlp55gzxtzar",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Obwanchani Farm",
+        "platform": "Nostr",
+        "time": "06:08"
+      },
+      {
+        "url": "https://x.com/i/status/2057157709389005194",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Obwanchani Farm",
+        "platform": "X",
+        "time": "06:08"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsydmyqz9m0qe528r5pmpkjxvtxusfqgah980c558a9mqe4ax7zpkgdtl6qe",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "Nostr",
+        "time": "06:08"
+      },
+      {
+        "url": "https://x.com/i/status/2057150680431759660",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "X",
+        "time": "06:08"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsqjjnf7w4ja6dqw7dgye0e4t0jkukjj4wn35ng4sy4mfgh0vlphhc0xa6zr",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Peshy's beauty parlour",
+        "platform": "Nostr",
+        "time": "06:07"
+      },
+      {
+        "url": "https://x.com/i/status/2057149801356017669",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Peshy's beauty parlour",
+        "platform": "X",
+        "time": "06:07"
+      },
+      {
+        "url": "https://x.com/i/status/2057148413184024855",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "X",
+        "time": "06:07"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsvh06jw403rw7cdhntppusg3f5fqeg08czk5f8ydk6j2a9lkc6zgcd98gpz",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "Nostr",
+        "time": "06:07"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -488,23 +599,53 @@
     },
     {
       "date": "2026-05-21",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 10,
+      "merchant_count": 10,
+      "reviewer_count": 10,
+      "approved": 10,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1270,
-    "approved": 1205,
+    "total_reviewed": 1280,
+    "approved": 1215,
     "rejected": 65
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 418,
+      "count": 424,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsydmyqz9m0qe528r5pmpkjxvtxusfqgah980c558a9mqe4ax7zpkgdtl6qe",
+          "date": "2026-05-21",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2057150680431759660",
+          "date": "2026-05-21",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqjjnf7w4ja6dqw7dgye0e4t0jkukjj4wn35ng4sy4mfgh0vlphhc0xa6zr",
+          "date": "2026-05-21",
+          "merchant": "Peshy's beauty parlour"
+        },
+        {
+          "url": "https://x.com/i/status/2057149801356017669",
+          "date": "2026-05-21",
+          "merchant": "Peshy's beauty parlour"
+        },
+        {
+          "url": "https://x.com/i/status/2057148413184024855",
+          "date": "2026-05-21",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvh06jw403rw7cdhntppusg3f5fqeg08czk5f8ydk6j2a9lkc6zgcd98gpz",
+          "date": "2026-05-21",
+          "merchant": "Grandsmatt"
+        },
         {
           "url": "https://x.com/i/status/2057138287639175590",
           "date": "2026-05-20",
@@ -3415,8 +3556,18 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 116,
+      "count": 118,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstkukydvtrnzya6ccgqnfwd84vckntytenkryx3as2s2ywdnlp55gzxtzar",
+          "date": "2026-05-21",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://x.com/i/status/2057157709389005194",
+          "date": "2026-05-21",
+          "merchant": "Obwanchani Farm"
+        },
         {
           "url": "https://x.com/i/status/2057087392993911116",
           "date": "2026-05-20",
@@ -6027,6 +6178,112 @@
       ]
     },
     {
+      "name": "Bitcoin Famba 🇲🇿",
+      "count": 20,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2057188652154040465",
+          "date": "2026-05-21",
+          "merchant": "La Casa Moz"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsts6vk30kv5fsw3afcuuksy4cr6flprdw5pldg8820fpjm8hprxhcv0dyl4",
+          "date": "2026-05-21",
+          "merchant": "La Casa Moz"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdrurrkul642y5pmw9z05naz8eqtwa7lnhk6s3ashx34ky8xqyvsswdx7c5",
+          "date": "2026-05-11",
+          "merchant": "Olympia Gym"
+        },
+        {
+          "url": "https://x.com/i/status/2053576927001133330",
+          "date": "2026-05-11",
+          "merchant": "Olympia Gym"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfwmmqvfwm3grs9dr795989ytgd5prasttx7g863e4cx3mdkn7rxspuyymu",
+          "date": "2026-04-27",
+          "merchant": "La Casa Moz"
+        },
+        {
+          "url": "https://x.com/i/status/2048506796654924217",
+          "date": "2026-04-27",
+          "merchant": "La Casa Moz"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvccp3uwxg7u3rseda2d6rs2eajx5508u2zs84sdd3md9eg6w9rpqjz6ttz",
+          "date": "2026-04-18",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2045371987606770055",
+          "date": "2026-04-18",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstvkyxhchnan63p0psuapkrq7n6dr8wdlewuupseakta98x9zmg0ctvvcfa",
+          "date": "2026-04-08",
+          "merchant": "Brasukas - Bar & Surf"
+        },
+        {
+          "url": "https://x.com/i/status/2041623053935710358",
+          "date": "2026-04-08",
+          "merchant": "Brasukas - Bar & Surf"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyd04gfsjaplzdf26jjhcppmvn0dn9e8x45n6y0nppz4yzj0hznnccxnl26",
+          "date": "2026-04-05",
+          "merchant": "Olympia Chicken"
+        },
+        {
+          "url": "https://x.com/i/status/2040529792156459413",
+          "date": "2026-04-05",
+          "merchant": "Olympia Chicken"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdd86ytalvvazqw0gpgjmaeu2w6t0u7txthf7wvsay4ac3h2jzaegzxw8ms",
+          "date": "2026-04-02",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2039414254722322769",
+          "date": "2026-04-02",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8qfzlnpggzz9p2gvx08rzqrn7kgm470vf29yelm45gpscq7plppckle02x",
+          "date": "2026-03-31",
+          "merchant": "Brasukas - Bar & Surf"
+        },
+        {
+          "url": "https://x.com/i/status/2038917658708439153",
+          "date": "2026-03-31",
+          "merchant": "Brasukas - Bar & Surf"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv0h2wd55d53d4wyc3mev8s4jtlj0xvrsl5ph9m5ffcdsqp76tvjgk0pnvh",
+          "date": "2026-03-29",
+          "merchant": "Olympia Chicken"
+        },
+        {
+          "url": "https://x.com/i/status/2038002239483089051",
+          "date": "2026-03-29",
+          "merchant": "Olympia Chicken"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8fr4r9pehzkp7mtpp9phw27spzzwq8dxg8tkcvqwmyphldnwvxlgg345pa",
+          "date": "2026-03-25",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2036728638415015976",
+          "date": "2026-03-25",
+          "merchant": "Milofa Skate Shop"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Sisonke 🇿🇦",
       "count": 18,
       "posts": [
@@ -6119,102 +6376,6 @@
           "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
           "date": "2026-03-27",
           "merchant": "T-Junction fast food"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Famba 🇲🇿",
-      "count": 18,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsdrurrkul642y5pmw9z05naz8eqtwa7lnhk6s3ashx34ky8xqyvsswdx7c5",
-          "date": "2026-05-11",
-          "merchant": "Olympia Gym"
-        },
-        {
-          "url": "https://x.com/i/status/2053576927001133330",
-          "date": "2026-05-11",
-          "merchant": "Olympia Gym"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfwmmqvfwm3grs9dr795989ytgd5prasttx7g863e4cx3mdkn7rxspuyymu",
-          "date": "2026-04-27",
-          "merchant": "La Casa Moz"
-        },
-        {
-          "url": "https://x.com/i/status/2048506796654924217",
-          "date": "2026-04-27",
-          "merchant": "La Casa Moz"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvccp3uwxg7u3rseda2d6rs2eajx5508u2zs84sdd3md9eg6w9rpqjz6ttz",
-          "date": "2026-04-18",
-          "merchant": "Milofa Skate Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2045371987606770055",
-          "date": "2026-04-18",
-          "merchant": "Milofa Skate Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstvkyxhchnan63p0psuapkrq7n6dr8wdlewuupseakta98x9zmg0ctvvcfa",
-          "date": "2026-04-08",
-          "merchant": "Brasukas - Bar & Surf"
-        },
-        {
-          "url": "https://x.com/i/status/2041623053935710358",
-          "date": "2026-04-08",
-          "merchant": "Brasukas - Bar & Surf"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyd04gfsjaplzdf26jjhcppmvn0dn9e8x45n6y0nppz4yzj0hznnccxnl26",
-          "date": "2026-04-05",
-          "merchant": "Olympia Chicken"
-        },
-        {
-          "url": "https://x.com/i/status/2040529792156459413",
-          "date": "2026-04-05",
-          "merchant": "Olympia Chicken"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdd86ytalvvazqw0gpgjmaeu2w6t0u7txthf7wvsay4ac3h2jzaegzxw8ms",
-          "date": "2026-04-02",
-          "merchant": "Milofa Skate Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2039414254722322769",
-          "date": "2026-04-02",
-          "merchant": "Milofa Skate Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8qfzlnpggzz9p2gvx08rzqrn7kgm470vf29yelm45gpscq7plppckle02x",
-          "date": "2026-03-31",
-          "merchant": "Brasukas - Bar & Surf"
-        },
-        {
-          "url": "https://x.com/i/status/2038917658708439153",
-          "date": "2026-03-31",
-          "merchant": "Brasukas - Bar & Surf"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv0h2wd55d53d4wyc3mev8s4jtlj0xvrsl5ph9m5ffcdsqp76tvjgk0pnvh",
-          "date": "2026-03-29",
-          "merchant": "Olympia Chicken"
-        },
-        {
-          "url": "https://x.com/i/status/2038002239483089051",
-          "date": "2026-03-29",
-          "merchant": "Olympia Chicken"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8fr4r9pehzkp7mtpp9phw27spzzwq8dxg8tkcvqwmyphldnwvxlgg345pa",
-          "date": "2026-03-25",
-          "merchant": "Milofa Skate Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2036728638415015976",
-          "date": "2026-03-25",
-          "merchant": "Milofa Skate Shop"
         }
       ]
     },
@@ -7048,8 +7209,18 @@
     },
     {
       "name": "Grandsmatt",
-      "count": 64,
+      "count": 66,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2057148413184024855",
+          "date": "2026-05-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvh06jw403rw7cdhntppusg3f5fqeg08czk5f8ydk6j2a9lkc6zgcd98gpz",
+          "date": "2026-05-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsxchzrk5zmag882z4nhye9wnz2nqgs3vzge3l0erexxa4hvzvw2nsd7xk6a",
           "date": "2026-05-20",
@@ -8509,8 +8680,18 @@
     },
     {
       "name": "Manu Groceries",
-      "count": 35,
+      "count": 37,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsydmyqz9m0qe528r5pmpkjxvtxusfqgah980c558a9mqe4ax7zpkgdtl6qe",
+          "date": "2026-05-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2057150680431759660",
+          "date": "2026-05-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs8rufx0fr2d97srelw95mllr5zuljrxp4xvf5wsfdprzp84d94d4c835yx4",
           "date": "2026-05-13",
@@ -10212,6 +10393,92 @@
       ]
     },
     {
+      "name": "Peshy's beauty parlour",
+      "count": 16,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsqjjnf7w4ja6dqw7dgye0e4t0jkukjj4wn35ng4sy4mfgh0vlphhc0xa6zr",
+          "date": "2026-05-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2057149801356017669",
+          "date": "2026-05-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstc3ap7qmnupyl5wtgsc9dyv6ex3c2tylxh3gwfqq3y25ucjeyawgvc69gv",
+          "date": "2026-05-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2056404513632784871",
+          "date": "2026-05-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgs37j0npanyvj9rudscgfzmch0fp4w6tj0w445h0j4mx3639pyggyavr46",
+          "date": "2026-05-16",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2055357999976182208",
+          "date": "2026-05-16",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2051929300849336509",
+          "date": "2026-05-06",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8ftpa3yvtrttt4xpffrcmqkjahhyyaytkkv538emevh38vfrxu7q2hagwg",
+          "date": "2026-05-06",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswgz9kr7pa2p3ks8gyyhy4aelhl3xam2afwt3n4uczcygsz8fdkmshcufsg",
+          "date": "2026-05-05",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2046213393036521498",
+          "date": "2026-04-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8lfd96pwk5mqjqh6rw8szpxuutkhk2llr067096859x34r24upsg5rzd55",
+          "date": "2026-04-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsql9vdskaduhu7m3attjc4aystcn8z8sp2wnwdz705ev0pzcu6tpq4e7zmh",
+          "date": "2026-04-15",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2044379888379916630",
+          "date": "2026-04-15",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2041564474880971073",
+          "date": "2026-04-07",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8yhmwcekeeut9dc2nv9js7ct7yxsswa0nml2j0mxgxmujxjv47fst8m3s3",
+          "date": "2026-04-07",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2039223176433897951",
+          "date": "2026-04-01",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Viwa Accessories",
       "count": 14,
       "posts": [
@@ -10436,82 +10703,6 @@
           "url": "https://x.com/i/status/2036549899513196557",
           "date": "2026-03-25",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Peshy's beauty parlour",
-      "count": 14,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqstc3ap7qmnupyl5wtgsc9dyv6ex3c2tylxh3gwfqq3y25ucjeyawgvc69gv",
-          "date": "2026-05-20",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2056404513632784871",
-          "date": "2026-05-20",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgs37j0npanyvj9rudscgfzmch0fp4w6tj0w445h0j4mx3639pyggyavr46",
-          "date": "2026-05-16",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2055357999976182208",
-          "date": "2026-05-16",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2051929300849336509",
-          "date": "2026-05-06",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8ftpa3yvtrttt4xpffrcmqkjahhyyaytkkv538emevh38vfrxu7q2hagwg",
-          "date": "2026-05-06",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswgz9kr7pa2p3ks8gyyhy4aelhl3xam2afwt3n4uczcygsz8fdkmshcufsg",
-          "date": "2026-05-05",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2046213393036521498",
-          "date": "2026-04-20",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8lfd96pwk5mqjqh6rw8szpxuutkhk2llr067096859x34r24upsg5rzd55",
-          "date": "2026-04-20",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsql9vdskaduhu7m3attjc4aystcn8z8sp2wnwdz705ev0pzcu6tpq4e7zmh",
-          "date": "2026-04-15",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2044379888379916630",
-          "date": "2026-04-15",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2041564474880971073",
-          "date": "2026-04-07",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8yhmwcekeeut9dc2nv9js7ct7yxsswa0nml2j0mxgxmujxjv47fst8m3s3",
-          "date": "2026-04-07",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2039223176433897951",
-          "date": "2026-04-01",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -11420,6 +11611,52 @@
       ]
     },
     {
+      "name": "Obwanchani Farm",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstkukydvtrnzya6ccgqnfwd84vckntytenkryx3as2s2ywdnlp55gzxtzar",
+          "date": "2026-05-21",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2057157709389005194",
+          "date": "2026-05-21",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrkhgsgwrh988jgfyxsmmgr76klyjyrgqmsl0qddrc2rqfhue5xvshvezru",
+          "date": "2026-04-23",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2047177669498806419",
+          "date": "2026-04-23",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgdv4zy4atmemlxvclwn0vdlqzl4gucztmug2phqmurqkxql3h02c6depj8",
+          "date": "2026-04-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2042241653910499680",
+          "date": "2026-04-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2039299798335939033",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Kwa Jiyeve",
       "count": 8,
       "posts": [
@@ -11713,42 +11950,6 @@
           "url": "https://x.com/i/status/2038074010072695087",
           "date": "2026-03-29",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Obwanchani Farm",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsrkhgsgwrh988jgfyxsmmgr76klyjyrgqmsl0qddrc2rqfhue5xvshvezru",
-          "date": "2026-04-23",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2047177669498806419",
-          "date": "2026-04-23",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgdv4zy4atmemlxvclwn0vdlqzl4gucztmug2phqmurqkxql3h02c6depj8",
-          "date": "2026-04-09",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2042241653910499680",
-          "date": "2026-04-09",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2039299798335939033",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswaq5rs52jv2mp3jgf0eglr5zq7ej7zq8kk55ctnzjrh2z4yawg2clmzdce",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -12435,6 +12636,32 @@
       ]
     },
     {
+      "name": "La Casa Moz",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2057188652154040465",
+          "date": "2026-05-21",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsts6vk30kv5fsw3afcuuksy4cr6flprdw5pldg8820fpjm8hprxhcv0dyl4",
+          "date": "2026-05-21",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfwmmqvfwm3grs9dr795989ytgd5prasttx7g863e4cx3mdkn7rxspuyymu",
+          "date": "2026-04-27",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2048506796654924217",
+          "date": "2026-04-27",
+          "project": "Bitcoin Famba 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "John Shop",
       "count": 4,
       "posts": [
@@ -13046,22 +13273,6 @@
       ]
     },
     {
-      "name": "La Casa Moz",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsfwmmqvfwm3grs9dr795989ytgd5prasttx7g863e4cx3mdkn7rxspuyymu",
-          "date": "2026-04-27",
-          "project": "Bitcoin Famba 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2048506796654924217",
-          "date": "2026-04-27",
-          "project": "Bitcoin Famba 🇲🇿"
-        }
-      ]
-    },
-    {
       "name": "Kyn Design",
       "count": 2,
       "posts": [
@@ -13497,7 +13708,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 58,
-    "daily_average_payments": 62
+    "daily_average_payments": 63
   },
   "burn_rate": {
     "percentage": 50,
@@ -13507,11 +13718,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3578
+      "count": 3606
     },
     {
       "domain": "8333.mobi",
-      "count": 61
+      "count": 63
     },
     {
       "domain": "walletofsatoshi.com",
@@ -13558,13 +13769,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1832
+      "count": 1847
     },
     {
       "platform": "Nostr",
-      "count": 1808
+      "count": 1823
     }
   ],
-  "generated_at": "2026-05-21T06:00:02.608348+00:00",
+  "generated_at": "2026-05-21T06:10:01.935629+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
