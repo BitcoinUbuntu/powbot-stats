@@ -1,35 +1,70 @@
 {
   "totals": {
-    "all_payments": 3901,
+    "all_payments": 3916,
     "by_type": {
       "merchant": {
-        "count": 1293
+        "count": 1298
       },
       "project": {
-        "count": 1293
+        "count": 1298
       },
       "reviewer": {
-        "count": 1315
+        "count": 1320
       }
     }
   },
   "today": {
     "date": "2026-05-24",
-    "payments": 36,
+    "payments": 51,
     "by_type": {
       "merchant": {
-        "count": 12
+        "count": 17
       },
       "project": {
-        "count": 12
+        "count": 17
       },
       "reviewer": {
-        "count": 12
+        "count": 17
       }
     },
-    "approved": 12,
+    "approved": 17,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2058530889483665620",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "19:56"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsyjfw47tj99uyun7ga93nq0tq5d6y90vaa2zh8uakqhx986jde9aczqwuxj",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "Albaytalabiid",
+        "platform": "Nostr",
+        "time": "19:56"
+      },
+      {
+        "url": "https://x.com/i/status/2058516755908055408",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "Albaytalabiid",
+        "platform": "X",
+        "time": "19:55"
+      },
+      {
+        "url": "https://x.com/i/status/2058514462491996514",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "X",
+        "time": "19:55"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswsx48344xfacrflj57f4drhpd2nlq6s3wwd7hmj9amhhqq8ug22sxr0vky",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "Nostr",
+        "time": "19:54"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsp3d4a03c9tqzwhzmxwe3q768eeh95vdp9nu9gph6vfts4k28h9zsym7vr4",
         "project": "Bitcoin Chama 🇰🇪",
@@ -118,6 +153,21 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -391,23 +441,33 @@
     },
     {
       "date": "2026-05-24",
-      "project_count": 12,
-      "merchant_count": 12,
-      "reviewer_count": 12,
-      "approved": 12,
+      "project_count": 17,
+      "merchant_count": 17,
+      "reviewer_count": 17,
+      "approved": 17,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1357,
-    "approved": 1292,
+    "total_reviewed": 1362,
+    "approved": 1297,
     "rejected": 65
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 448,
+      "count": 450,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2058514462491996514",
+          "date": "2026-05-24",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswsx48344xfacrflj57f4drhpd2nlq6s3wwd7hmj9amhhqq8ug22sxr0vky",
+          "date": "2026-05-24",
+          "merchant": "Manu Groceries"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs2dxr6lh7tv6l6hnayqw9u8e8fsyvcf2w76dzy2u8pr5fv8fn0agc70nsky",
           "date": "2026-05-24",
@@ -3498,8 +3558,13 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 144,
+      "count": 145,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2058530889483665620",
+          "date": "2026-05-24",
+          "merchant": "Orero shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsp3d4a03c9tqzwhzmxwe3q768eeh95vdp9nu9gph6vfts4k28h9zsym7vr4",
           "date": "2026-05-24",
@@ -6335,6 +6400,122 @@
       ]
     },
     {
+      "name": "Bitcoin Sisonke 🇿🇦",
+      "count": 22,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyjfw47tj99uyun7ga93nq0tq5d6y90vaa2zh8uakqhx986jde9aczqwuxj",
+          "date": "2026-05-24",
+          "merchant": "Albaytalabiid"
+        },
+        {
+          "url": "https://x.com/i/status/2058516755908055408",
+          "date": "2026-05-24",
+          "merchant": "Albaytalabiid"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2ngv8ehy6x8m75s9ud0c4ej0p3s4anzh8640x9g7pqk848rt4tvcw4dgpq",
+          "date": "2026-05-23",
+          "merchant": "Nyambose Prints"
+        },
+        {
+          "url": "https://x.com/i/status/2057974790892204269",
+          "date": "2026-05-23",
+          "merchant": "Nyambose Prints"
+        },
+        {
+          "url": "https://x.com/i/status/2054517966381715803",
+          "date": "2026-05-13",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspkdsrhyqcs9fv6ch67tcgdt3k6vez3ajy38ujjn55anh4qtc8t3cmpeks0",
+          "date": "2026-05-13",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs28u43h7pd6fxxwt8t3fg3weg5g8ar08qv4w66yhyewkxj2tlwwmcqfnjgl",
+          "date": "2026-05-05",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2051568873212686845",
+          "date": "2026-05-05",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2049006560291049743",
+          "date": "2026-04-28",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8l3zaulfu3uhcm82z9zyc807kpmt4xy5rrxtn039egn0e6e95cxg7t0mg0",
+          "date": "2026-04-28",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2047465165222772753",
+          "date": "2026-04-24",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2amf3cmn969mh7w2lcj7s6kxzeh4hcmyqtnppyd5gsppgvqhffksk6ud2f",
+          "date": "2026-04-24",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://x.com/i/status/2046781260907925963",
+          "date": "2026-04-22",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq0nmgh3q7je4aajq8f7swzxcmhvhnycje73ma3k27j3cu3nved2sp9z483",
+          "date": "2026-04-22",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2045024789786431691",
+          "date": "2026-04-17",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd5rzk53xe53grpaqe9tepqvz8da2mmyhdl4f8g4e22nyja9jmcng7cup0c",
+          "date": "2026-04-17",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2043585917760225290",
+          "date": "2026-04-13",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs943yatccghsjps68cf7uunstkql7fpxlca0v9atchd6yfcp2vgeqfrhxta",
+          "date": "2026-04-13",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdcxc4j67hetp3mfr6xpsk49m9gzntjrmhxh0k7drpq3uqgmehcrqx3m5v2",
+          "date": "2026-04-05",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2040723699683274994",
+          "date": "2026-04-05",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2037427903151964631",
+          "date": "2026-03-29",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
+          "date": "2026-03-27",
+          "merchant": "T-Junction fast food"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Famba 🇲🇿",
       "count": 22,
       "posts": [
@@ -6447,112 +6628,6 @@
           "url": "https://x.com/i/status/2036728638415015976",
           "date": "2026-03-25",
           "merchant": "Milofa Skate Shop"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Sisonke 🇿🇦",
-      "count": 20,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs2ngv8ehy6x8m75s9ud0c4ej0p3s4anzh8640x9g7pqk848rt4tvcw4dgpq",
-          "date": "2026-05-23",
-          "merchant": "Nyambose Prints"
-        },
-        {
-          "url": "https://x.com/i/status/2057974790892204269",
-          "date": "2026-05-23",
-          "merchant": "Nyambose Prints"
-        },
-        {
-          "url": "https://x.com/i/status/2054517966381715803",
-          "date": "2026-05-13",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspkdsrhyqcs9fv6ch67tcgdt3k6vez3ajy38ujjn55anh4qtc8t3cmpeks0",
-          "date": "2026-05-13",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs28u43h7pd6fxxwt8t3fg3weg5g8ar08qv4w66yhyewkxj2tlwwmcqfnjgl",
-          "date": "2026-05-05",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2051568873212686845",
-          "date": "2026-05-05",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2049006560291049743",
-          "date": "2026-04-28",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8l3zaulfu3uhcm82z9zyc807kpmt4xy5rrxtn039egn0e6e95cxg7t0mg0",
-          "date": "2026-04-28",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2047465165222772753",
-          "date": "2026-04-24",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2amf3cmn969mh7w2lcj7s6kxzeh4hcmyqtnppyd5gsppgvqhffksk6ud2f",
-          "date": "2026-04-24",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://x.com/i/status/2046781260907925963",
-          "date": "2026-04-22",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq0nmgh3q7je4aajq8f7swzxcmhvhnycje73ma3k27j3cu3nved2sp9z483",
-          "date": "2026-04-22",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2045024789786431691",
-          "date": "2026-04-17",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd5rzk53xe53grpaqe9tepqvz8da2mmyhdl4f8g4e22nyja9jmcng7cup0c",
-          "date": "2026-04-17",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2043585917760225290",
-          "date": "2026-04-13",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs943yatccghsjps68cf7uunstkql7fpxlca0v9atchd6yfcp2vgeqfrhxta",
-          "date": "2026-04-13",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdcxc4j67hetp3mfr6xpsk49m9gzntjrmhxh0k7drpq3uqgmehcrqx3m5v2",
-          "date": "2026-04-05",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2040723699683274994",
-          "date": "2026-04-05",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2037427903151964631",
-          "date": "2026-03-29",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyfkha4tp3pmqx2wacqeln05q9reh7n32smchw3dxzq0z8q74dfzc6uegdu",
-          "date": "2026-03-27",
-          "merchant": "T-Junction fast food"
         }
       ]
     },
@@ -8324,8 +8399,13 @@
     },
     {
       "name": "Orero shop",
-      "count": 45,
+      "count": 46,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2058530889483665620",
+          "date": "2026-05-24",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs99ejkecyrwwus2rcr4hnhddk3z9c0mjyzevre54raa6ay7nf200su3vt0q",
           "date": "2026-05-24",
@@ -9007,8 +9087,18 @@
     },
     {
       "name": "Manu Groceries",
-      "count": 39,
+      "count": 41,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2058514462491996514",
+          "date": "2026-05-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswsx48344xfacrflj57f4drhpd2nlq6s3wwd7hmj9amhhqq8ug22sxr0vky",
+          "date": "2026-05-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2057455959316869478",
           "date": "2026-05-22",
@@ -14089,6 +14179,22 @@
       ]
     },
     {
+      "name": "Albaytalabiid",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyjfw47tj99uyun7ga93nq0tq5d6y90vaa2zh8uakqhx986jde9aczqwuxj",
+          "date": "2026-05-24",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2058516755908055408",
+          "date": "2026-05-24",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "monmonphily",
       "count": 1,
       "posts": [
@@ -14312,21 +14418,21 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 62,
-    "daily_average_payments": 62
+    "daily_average_payments": 63
   },
   "burn_rate": {
-    "percentage": 50,
+    "percentage": 51,
     "status": "cold",
     "days_active": 62
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3831
+      "count": 3845
     },
     {
       "domain": "8333.mobi",
-      "count": 69
+      "count": 70
     },
     {
       "domain": "walletofsatoshi.com",
@@ -14373,13 +14479,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1973
+      "count": 1982
     },
     {
       "platform": "Nostr",
-      "count": 1928
+      "count": 1934
     }
   ],
-  "generated_at": "2026-05-24T19:50:01.815720+00:00",
+  "generated_at": "2026-05-24T20:00:01.828835+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
