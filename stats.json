@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 3982,
+    "all_payments": 3988,
     "by_type": {
       "merchant": {
-        "count": 1320
+        "count": 1322
       },
       "project": {
-        "count": 1320
+        "count": 1322
       },
       "reviewer": {
-        "count": 1342
+        "count": 1344
       }
     }
   },
   "today": {
     "date": "2026-05-25",
-    "payments": 66,
+    "payments": 72,
     "by_type": {
       "merchant": {
-        "count": 22
+        "count": 24
       },
       "project": {
-        "count": 22
+        "count": 24
       },
       "reviewer": {
-        "count": 22
+        "count": 24
       }
     },
-    "approved": 22,
+    "approved": 24,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2058876111719739873",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Viwa Accessories",
+        "platform": "X",
+        "time": "13:05"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsw8kjaf0umzvynptnaulsk8v8f5uelr3nnawhdf5gkv6z2ypl6cqqqze9v8",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Viwa Accessories",
+        "platform": "Nostr",
+        "time": "13:01"
+      },
       {
         "url": "https://primal.net/e/nevent1qqszdya56jc5sx80emfylj6xegj3qa0r8nwp3zhvm8udt3llxepqc2s7jm6pg",
         "project": "Bitcoin Chama 🇰🇪",
@@ -188,6 +202,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -506,23 +526,33 @@
     },
     {
       "date": "2026-05-25",
-      "project_count": 22,
-      "merchant_count": 22,
-      "reviewer_count": 22,
-      "approved": 22,
+      "project_count": 24,
+      "merchant_count": 24,
+      "reviewer_count": 24,
+      "approved": 24,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1384,
-    "approved": 1319,
+    "total_reviewed": 1386,
+    "approved": 1321,
     "rejected": 65
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 454,
+      "count": 456,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2058876111719739873",
+          "date": "2026-05-25",
+          "merchant": "Viwa Accessories"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw8kjaf0umzvynptnaulsk8v8f5uelr3nnawhdf5gkv6z2ypl6cqqqze9v8",
+          "date": "2026-05-25",
+          "merchant": "Viwa Accessories"
+        },
         {
           "url": "https://x.com/i/status/2058620504299217178",
           "date": "2026-05-25",
@@ -11323,8 +11353,18 @@
     },
     {
       "name": "Viwa Accessories",
-      "count": 16,
+      "count": 18,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2058876111719739873",
+          "date": "2026-05-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw8kjaf0umzvynptnaulsk8v8f5uelr3nnawhdf5gkv6z2ypl6cqqqze9v8",
+          "date": "2026-05-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs2dxr6lh7tv6l6hnayqw9u8e8fsyvcf2w76dzy2u8pr5fv8fn0agc70nsky",
           "date": "2026-05-24",
@@ -14719,7 +14759,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 3910
+      "count": 3916
     },
     {
       "domain": "8333.mobi",
@@ -14770,13 +14810,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2015
+      "count": 2018
     },
     {
       "platform": "Nostr",
-      "count": 1967
+      "count": 1970
     }
   ],
-  "generated_at": "2026-05-25T13:00:02.172628+00:00",
+  "generated_at": "2026-05-25T13:10:01.760332+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
