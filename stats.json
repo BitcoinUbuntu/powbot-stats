@@ -1,35 +1,63 @@
 {
   "totals": {
-    "all_payments": 4361,
+    "all_payments": 4375,
     "by_type": {
       "merchant": {
-        "count": 1444
+        "count": 1448
       },
       "project": {
-        "count": 1444
+        "count": 1448
       },
       "reviewer": {
-        "count": 1473
+        "count": 1479
       }
     }
   },
   "today": {
     "date": "2026-06-01",
-    "payments": 7,
+    "payments": 21,
     "by_type": {
       "merchant": {
-        "count": 2
+        "count": 6
       },
       "project": {
-        "count": 2
+        "count": 6
       },
       "reviewer": {
-        "count": 3
+        "count": 9
       }
     },
-    "approved": 2,
+    "approved": 6,
     "rejected": 3,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs2e4kx9mucpl3ecr84njkg3vqj8d2p3fau7t5a2uqvnecy9mlfxtclx6z45",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "Nostr",
+        "time": "14:52"
+      },
+      {
+        "url": "https://x.com/i/status/2061372889757049245",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "14:51"
+      },
+      {
+        "url": "https://x.com/i/status/2061371375156072787",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Flo Salon",
+        "platform": "X",
+        "time": "14:51"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsxah4ttp7nlc5rrnvy7wq0hzkwzdunfmczs3pf2zlcxl2lwvmmrmgh5hs2u",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Flo Salon",
+        "platform": "Nostr",
+        "time": "14:51"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs832pvudqm74wxm70sfm8gw5tvvugu5s52pz3fsd5wjgnmpvxq9wseewsvx",
         "project": "Bitcoin Chama 🇰🇪",
@@ -48,6 +76,18 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -333,16 +373,16 @@
     },
     {
       "date": "2026-06-01",
-      "project_count": 2,
-      "merchant_count": 2,
-      "reviewer_count": 3,
-      "approved": 2,
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 9,
+      "approved": 6,
       "rejected": 3
     }
   ],
   "reviewer": {
-    "total_reviewed": 1517,
-    "approved": 1443,
+    "total_reviewed": 1521,
+    "approved": 1447,
     "rejected": 74
   },
   "top_projects": [
@@ -2864,8 +2904,28 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 197,
+      "count": 201,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs2e4kx9mucpl3ecr84njkg3vqj8d2p3fau7t5a2uqvnecy9mlfxtclx6z45",
+          "date": "2026-06-01",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2061372889757049245",
+          "date": "2026-06-01",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2061371375156072787",
+          "date": "2026-06-01",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxah4ttp7nlc5rrnvy7wq0hzkwzdunfmczs3pf2zlcxl2lwvmmrmgh5hs2u",
+          "date": "2026-06-01",
+          "merchant": "Flo Salon"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs832pvudqm74wxm70sfm8gw5tvvugu5s52pz3fsd5wjgnmpvxq9wseewsvx",
           "date": "2026-06-01",
@@ -9191,8 +9251,18 @@
     },
     {
       "name": "Orero shop",
-      "count": 57,
+      "count": 59,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs2e4kx9mucpl3ecr84njkg3vqj8d2p3fau7t5a2uqvnecy9mlfxtclx6z45",
+          "date": "2026-06-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2061372889757049245",
+          "date": "2026-06-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsxszxewnvtdn9xktef74hmg83j53txedr9jqnv9t36v733qfsx6yqwqa2cz",
           "date": "2026-05-31",
@@ -10225,8 +10295,18 @@
     },
     {
       "name": "Flo Salon",
-      "count": 34,
+      "count": 36,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2061371375156072787",
+          "date": "2026-06-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxah4ttp7nlc5rrnvy7wq0hzkwzdunfmczs3pf2zlcxl2lwvmmrmgh5hs2u",
+          "date": "2026-06-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs98us3hhy9nctluyytfgguhqgamu8xhz48ljt9ntkn23qwam4mteg9gket5",
           "date": "2026-05-31",
@@ -15798,11 +15878,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4279
+      "count": 4291
     },
     {
       "domain": "8333.mobi",
-      "count": 81
+      "count": 83
     },
     {
       "domain": "walletofsatoshi.com",
@@ -15849,13 +15929,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2209
+      "count": 2216
     },
     {
       "platform": "Nostr",
-      "count": 2152
+      "count": 2159
     }
   ],
-  "generated_at": "2026-06-01T14:50:02.230060+00:00",
+  "generated_at": "2026-06-01T15:00:01.926397+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
