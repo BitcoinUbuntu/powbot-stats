@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 4444,
+    "all_payments": 4447,
     "by_type": {
       "merchant": {
-        "count": 1471
+        "count": 1472
       },
       "project": {
-        "count": 1471
+        "count": 1472
       },
       "reviewer": {
-        "count": 1502
+        "count": 1503
       }
     }
   },
   "today": {
     "date": "2026-06-02",
-    "payments": 30,
+    "payments": 33,
     "by_type": {
       "merchant": {
-        "count": 10
+        "count": 11
       },
       "project": {
-        "count": 10
+        "count": 11
       },
       "reviewer": {
-        "count": 10
+        "count": 11
       }
     },
-    "approved": 10,
+    "approved": 11,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2061437683931451693",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Kwallos Shop",
+        "platform": "X",
+        "time": "11:30"
+      },
       {
         "url": "https://x.com/i/status/2061683000526372912",
         "project": "Bitcoin Chama 🇰🇪",
@@ -104,6 +111,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -422,16 +432,16 @@
     },
     {
       "date": "2026-06-02",
-      "project_count": 10,
-      "merchant_count": 10,
-      "reviewer_count": 10,
-      "approved": 10,
+      "project_count": 11,
+      "merchant_count": 11,
+      "reviewer_count": 11,
+      "approved": 11,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1544,
-    "approved": 1470,
+    "total_reviewed": 1545,
+    "approved": 1471,
     "rejected": 74
   },
   "top_projects": [
@@ -5466,8 +5476,13 @@
     },
     {
       "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 88,
+      "count": 89,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2061437683931451693",
+          "date": "2026-06-02",
+          "merchant": "Kwallos Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsw40vjf57y2epuadpvtn84dee3xp9rjrn4mlf3q3y2tnlt6he225qruefen",
           "date": "2026-05-28",
@@ -12256,8 +12271,13 @@
     },
     {
       "name": "Kwallos Shop",
-      "count": 21,
+      "count": 22,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2061437683931451693",
+          "date": "2026-06-02",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsw40vjf57y2epuadpvtn84dee3xp9rjrn4mlf3q3y2tnlt6he225qruefen",
           "date": "2026-05-28",
@@ -16157,7 +16177,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4360
+      "count": 4363
     },
     {
       "domain": "8333.mobi",
@@ -16208,13 +16228,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2249
+      "count": 2252
     },
     {
       "platform": "Nostr",
       "count": 2195
     }
   ],
-  "generated_at": "2026-06-02T11:30:02.684504+00:00",
+  "generated_at": "2026-06-02T11:40:02.151319+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
