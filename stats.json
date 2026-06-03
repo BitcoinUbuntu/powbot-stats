@@ -1,28 +1,69 @@
 {
   "totals": {
-    "all_payments": 4459,
+    "all_payments": 4468,
     "by_type": {
       "merchant": {
-        "count": 1476
+        "count": 1479
       },
       "project": {
-        "count": 1476
+        "count": 1479
       },
       "reviewer": {
-        "count": 1507
+        "count": 1510
       }
     }
   },
   "today": {
     "date": "2026-06-03",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 9,
+    "by_type": {
+      "merchant": {
+        "count": 3
+      },
+      "project": {
+        "count": 3
+      },
+      "reviewer": {
+        "count": 3
+      }
+    },
+    "approved": 3,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsdta0m7wjkdeleqtj3nmf0zz0xnxqurprlpsk6w6d5g5azj7mqasshqay3p",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "Nostr",
+        "time": "07:49"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsyjzm88qrr35q0cmskmvrz6z4z8v54x676jrlk305k8zzq684m2ps0s7y7j",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "Nostr",
+        "time": "07:49"
+      },
+      {
+        "url": "https://x.com/i/status/2061833659028475913",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "X",
+        "time": "07:49"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bit-Fitness 🇿🇦"
       },
@@ -293,23 +334,38 @@
     },
     {
       "date": "2026-06-03",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 3,
+      "merchant_count": 3,
+      "reviewer_count": 3,
+      "approved": 3,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1549,
-    "approved": 1475,
+    "total_reviewed": 1552,
+    "approved": 1478,
     "rejected": 74
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 510,
+      "count": 513,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdta0m7wjkdeleqtj3nmf0zz0xnxqurprlpsk6w6d5g5azj7mqasshqay3p",
+          "date": "2026-06-03",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyjzm88qrr35q0cmskmvrz6z4z8v54x676jrlk305k8zzq684m2ps0s7y7j",
+          "date": "2026-06-03",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2061833659028475913",
+          "date": "2026-06-03",
+          "merchant": "Bliss beauty Salon"
+        },
         {
           "url": "https://x.com/i/status/2061516372316708992",
           "date": "2026-06-02",
@@ -7822,8 +7878,13 @@
   "top_merchants": [
     {
       "name": "Haven food court",
-      "count": 93,
+      "count": 94,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdta0m7wjkdeleqtj3nmf0zz0xnxqurprlpsk6w6d5g5azj7mqasshqay3p",
+          "date": "2026-06-03",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2061475488816570681",
           "date": "2026-06-01",
@@ -9647,8 +9708,18 @@
     },
     {
       "name": "Bliss beauty Salon",
-      "count": 54,
+      "count": 56,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyjzm88qrr35q0cmskmvrz6z4z8v54x676jrlk305k8zzq684m2ps0s7y7j",
+          "date": "2026-06-03",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2061833659028475913",
+          "date": "2026-06-03",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2061516372316708992",
           "date": "2026-06-02",
@@ -16078,7 +16149,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4375
+      "count": 4384
     },
     {
       "domain": "8333.mobi",
@@ -16129,13 +16200,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2258
+      "count": 2261
     },
     {
       "platform": "Nostr",
-      "count": 2201
+      "count": 2207
     }
   ],
-  "generated_at": "2026-06-03T07:40:01.733055+00:00",
+  "generated_at": "2026-06-03T07:50:01.949852+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
