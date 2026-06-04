@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 4594,
+    "all_payments": 4600,
     "by_type": {
       "merchant": {
-        "count": 1521
+        "count": 1523
       },
       "project": {
-        "count": 1521
+        "count": 1523
       },
       "reviewer": {
-        "count": 1552
+        "count": 1554
       }
     }
   },
   "today": {
     "date": "2026-06-04",
-    "payments": 99,
+    "payments": 105,
     "by_type": {
       "merchant": {
-        "count": 33
+        "count": 35
       },
       "project": {
-        "count": 33
+        "count": 35
       },
       "reviewer": {
-        "count": 33
+        "count": 35
       }
     },
-    "approved": 32,
+    "approved": 34,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsqrl5lkez6rdksgcjpwrfkv5zdrq05ddke2y63pxzuj7hl862shrc7wu5jk",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "Nostr",
+        "time": "20:34"
+      },
+      {
+        "url": "https://x.com/i/status/2062622810007105594",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "20:33"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsv5ps5azaxgpuktrfw6vr5em9ny0fwzcwtzxkv4pghq3kfgxfnn6qq80fcu",
         "project": "Bitcoin Chama 🇰🇪",
@@ -258,6 +272,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -591,16 +611,16 @@
     },
     {
       "date": "2026-06-04",
-      "project_count": 33,
-      "merchant_count": 33,
-      "reviewer_count": 33,
-      "approved": 32,
+      "project_count": 35,
+      "merchant_count": 35,
+      "reviewer_count": 35,
+      "approved": 34,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1593,
-    "approved": 1519,
+    "total_reviewed": 1595,
+    "approved": 1521,
     "rejected": 74
   },
   "top_projects": [
@@ -3282,8 +3302,18 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 225,
+      "count": 227,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsqrl5lkez6rdksgcjpwrfkv5zdrq05ddke2y63pxzuj7hl862shrc7wu5jk",
+          "date": "2026-06-04",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2062622810007105594",
+          "date": "2026-06-04",
+          "merchant": "Orero shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsv5ps5azaxgpuktrfw6vr5em9ny0fwzcwtzxkv4pghq3kfgxfnn6qq80fcu",
           "date": "2026-06-04",
@@ -9964,8 +9994,18 @@
     },
     {
       "name": "Orero shop",
-      "count": 61,
+      "count": 63,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsqrl5lkez6rdksgcjpwrfkv5zdrq05ddke2y63pxzuj7hl862shrc7wu5jk",
+          "date": "2026-06-04",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2062622810007105594",
+          "date": "2026-06-04",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9tenq2ldqfuxq4qdh64rvahrwlysngsfmwt0cc2f885062aweyfs334mf6",
           "date": "2026-06-03",
@@ -16822,7 +16862,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 73,
-    "daily_average_payments": 62
+    "daily_average_payments": 63
   },
   "burn_rate": {
     "percentage": 51,
@@ -16832,11 +16872,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4508
+      "count": 4512
     },
     {
       "domain": "8333.mobi",
-      "count": 85
+      "count": 87
     },
     {
       "domain": "walletofsatoshi.com",
@@ -16883,13 +16923,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2330
+      "count": 2333
     },
     {
       "platform": "Nostr",
-      "count": 2264
+      "count": 2267
     }
   ],
-  "generated_at": "2026-06-04T20:30:02.714302+00:00",
+  "generated_at": "2026-06-04T20:40:02.479929+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
