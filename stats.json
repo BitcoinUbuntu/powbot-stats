@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 4624,
+    "all_payments": 4626,
     "by_type": {
       "merchant": {
-        "count": 1531
+        "count": 1532
       },
       "project": {
         "count": 1531
       },
       "reviewer": {
-        "count": 1562
+        "count": 1563
       }
     }
   },
   "today": {
     "date": "2026-06-05",
-    "payments": 24,
+    "payments": 26,
     "by_type": {
       "merchant": {
-        "count": 8
+        "count": 9
       },
       "project": {
         "count": 8
       },
       "reviewer": {
-        "count": 8
+        "count": 9
       }
     },
-    "approved": 8,
+    "approved": 9,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqstxlcndvs7mydfk532794j9zhxj2pmwma7uz2lqmvn3zdfn80zefs05c58k",
+        "project": "Unknown",
+        "merchant": "AB Starry Communication",
+        "platform": "Nostr",
+        "time": "16:29"
+      },
       {
         "url": "https://x.com/i/status/2062841024385343662",
         "project": "Bitcoin Ikorodu 🇳🇬",
@@ -90,6 +97,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Unknown"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -400,15 +410,15 @@
     {
       "date": "2026-06-05",
       "project_count": 8,
-      "merchant_count": 8,
-      "reviewer_count": 8,
-      "approved": 8,
+      "merchant_count": 9,
+      "reviewer_count": 9,
+      "approved": 9,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1603,
-    "approved": 1529,
+    "total_reviewed": 1604,
+    "approved": 1530,
     "rejected": 74
   },
   "top_projects": [
@@ -15265,6 +15275,42 @@
       ]
     },
     {
+      "name": "AB Starry Communication",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstxlcndvs7mydfk532794j9zhxj2pmwma7uz2lqmvn3zdfn80zefs05c58k",
+          "date": "2026-06-05",
+          "project": "Unknown"
+        },
+        {
+          "url": "https://x.com/i/status/2062841024385343662",
+          "date": "2026-06-05",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswrz4fg97vvvph7v29j8e26sjas9543eh6z25dcpyxrchhqtwmulc2kxzav",
+          "date": "2026-05-23",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2057823989234368852",
+          "date": "2026-05-23",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstu3j4ng8f7fm5z52q4qy62pmfl372pp7w3kgf3aqz5j4yvdn9e8c28dyss",
+          "date": "2026-05-04",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2050952553697890335",
+          "date": "2026-05-04",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "The Meat Station TakeAway & Groceries",
       "count": 5,
       "posts": [
@@ -15385,37 +15431,6 @@
           "url": "https://x.com/i/status/2038072286582878450",
           "date": "2026-03-29",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "AB Starry Communication",
-      "count": 5,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2062841024385343662",
-          "date": "2026-06-05",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswrz4fg97vvvph7v29j8e26sjas9543eh6z25dcpyxrchhqtwmulc2kxzav",
-          "date": "2026-05-23",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2057823989234368852",
-          "date": "2026-05-23",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstu3j4ng8f7fm5z52q4qy62pmfl372pp7w3kgf3aqz5j4yvdn9e8c28dyss",
-          "date": "2026-05-04",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2050952553697890335",
-          "date": "2026-05-04",
-          "project": "Bitcoin Ikorodu 🇳🇬"
         }
       ]
     },
@@ -16740,7 +16755,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4536
+      "count": 4538
     },
     {
       "domain": "8333.mobi",
@@ -16795,9 +16810,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 2279
+      "count": 2281
     }
   ],
-  "generated_at": "2026-06-05T16:20:02.160876+00:00",
+  "generated_at": "2026-06-05T16:30:01.947212+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
