@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 4766,
+    "all_payments": 4771,
     "by_type": {
       "merchant": {
-        "count": 1578
+        "count": 1580
       },
       "project": {
-        "count": 1578
+        "count": 1580
       },
       "reviewer": {
-        "count": 1610
+        "count": 1611
       }
     }
   },
   "today": {
     "date": "2026-06-08",
-    "payments": 55,
+    "payments": 60,
     "by_type": {
       "merchant": {
-        "count": 18
+        "count": 20
       },
       "project": {
-        "count": 18
+        "count": 20
       },
       "reviewer": {
-        "count": 19
+        "count": 20
       }
     },
-    "approved": 18,
+    "approved": 20,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2063658090939945061",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "X",
+        "time": "13:40"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsp7cquetr9z596wz4hwqt3u4gaykedj9t8ypsjzqxpjk5kmzdz3zcqanlvw",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "Nostr",
+        "time": "13:40"
+      },
       {
         "url": "https://x.com/i/status/2063705139651690576",
         "project": "Bitcoin Chama 🇰🇪",
@@ -160,6 +174,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -451,23 +471,28 @@
     },
     {
       "date": "2026-06-08",
-      "project_count": 18,
-      "merchant_count": 18,
-      "reviewer_count": 19,
-      "approved": 18,
+      "project_count": 20,
+      "merchant_count": 20,
+      "reviewer_count": 20,
+      "approved": 20,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1650,
-    "approved": 1576,
+    "total_reviewed": 1652,
+    "approved": 1578,
     "rejected": 74
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 557,
+      "count": 558,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2063658090939945061",
+          "date": "2026-06-08",
+          "merchant": "Bliss beauty Salon"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsdk0qxnucdyvsncmcr0uu35gha53ltkux5rv6s8pxy6fk0qvd3fqqjdps5k",
           "date": "2026-06-08",
@@ -3257,8 +3282,13 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 248,
+      "count": 249,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp7cquetr9z596wz4hwqt3u4gaykedj9t8ypsjzqxpjk5kmzdz3zcqanlvw",
+          "date": "2026-06-08",
+          "merchant": "Orero shop"
+        },
         {
           "url": "https://x.com/i/status/2063705139651690576",
           "date": "2026-06-08",
@@ -10169,8 +10199,13 @@
     },
     {
       "name": "Orero shop",
-      "count": 66,
+      "count": 67,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp7cquetr9z596wz4hwqt3u4gaykedj9t8ypsjzqxpjk5kmzdz3zcqanlvw",
+          "date": "2026-06-08",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2063705139651690576",
           "date": "2026-06-08",
@@ -10505,8 +10540,13 @@
     },
     {
       "name": "Bliss beauty Salon",
-      "count": 61,
+      "count": 62,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2063658090939945061",
+          "date": "2026-06-08",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsqzuvez36p6ak30hh0w6k59hw0q3n0rwyzzyxlj49tw47eqhslfnsferv0l",
           "date": "2026-06-08",
@@ -17262,11 +17302,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4675
+      "count": 4679
     },
     {
       "domain": "8333.mobi",
-      "count": 90
+      "count": 91
     },
     {
       "domain": "walletofsatoshi.com",
@@ -17313,13 +17353,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2414
+      "count": 2417
     },
     {
       "platform": "Nostr",
-      "count": 2352
+      "count": 2354
     }
   ],
-  "generated_at": "2026-06-08T13:40:02.552455+00:00",
+  "generated_at": "2026-06-08T13:50:02.666724+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
