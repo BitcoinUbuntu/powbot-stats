@@ -1,28 +1,69 @@
 {
   "totals": {
-    "all_payments": 4802,
+    "all_payments": 4811,
     "by_type": {
       "merchant": {
-        "count": 1590
+        "count": 1593
       },
       "project": {
-        "count": 1590
+        "count": 1593
       },
       "reviewer": {
-        "count": 1622
+        "count": 1625
       }
     }
   },
   "today": {
     "date": "2026-06-09",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 9,
+    "by_type": {
+      "merchant": {
+        "count": 3
+      },
+      "project": {
+        "count": 3
+      },
+      "reviewer": {
+        "count": 3
+      }
+    },
+    "approved": 3,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2064046846310224244",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Lydiah Richland Shop",
+        "platform": "X",
+        "time": "12:26"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs83rhn4c3e6q4ke8x929kudjks6nz5kznkc0patmf0d2k8lyne3kc5myan0",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Lydiah Richland Shop",
+        "platform": "Nostr",
+        "time": "12:26"
+      },
+      {
+        "url": "https://x.com/i/status/2064011658293321772",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "X",
+        "time": "12:25"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -308,23 +349,38 @@
     },
     {
       "date": "2026-06-09",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 3,
+      "merchant_count": 3,
+      "reviewer_count": 3,
+      "approved": 3,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1663,
-    "approved": 1588,
+    "total_reviewed": 1666,
+    "approved": 1591,
     "rejected": 75
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 563,
+      "count": 566,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2064046846310224244",
+          "date": "2026-06-09",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs83rhn4c3e6q4ke8x929kudjks6nz5kznkc0patmf0d2k8lyne3kc5myan0",
+          "date": "2026-06-09",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2064011658293321772",
+          "date": "2026-06-09",
+          "merchant": "Haven food court"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsfx22kqdg9vd7p3m6smxk3ltqml5vr3s8v5q82kvdwrkpk35pegqgekgrtf",
           "date": "2026-06-08",
@@ -8407,8 +8463,13 @@
   "top_merchants": [
     {
       "name": "Haven food court",
-      "count": 102,
+      "count": 103,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2064011658293321772",
+          "date": "2026-06-09",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsfx22kqdg9vd7p3m6smxk3ltqml5vr3s8v5q82kvdwrkpk35pegqgekgrtf",
           "date": "2026-06-08",
@@ -9735,8 +9796,18 @@
     },
     {
       "name": "Lydiah Richland Shop",
-      "count": 74,
+      "count": 76,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2064046846310224244",
+          "date": "2026-06-09",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs83rhn4c3e6q4ke8x929kudjks6nz5kznkc0patmf0d2k8lyne3kc5myan0",
+          "date": "2026-06-09",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2062169092925034759",
           "date": "2026-06-04",
@@ -17232,14 +17303,14 @@
     "daily_average_payments": 61
   },
   "burn_rate": {
-    "percentage": 50,
+    "percentage": 51,
     "status": "cold",
     "days_active": 78
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4710
+      "count": 4719
     },
     {
       "domain": "8333.mobi",
@@ -17290,13 +17361,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2430
+      "count": 2436
     },
     {
       "platform": "Nostr",
-      "count": 2372
+      "count": 2375
     }
   ],
-  "generated_at": "2026-06-09T12:20:02.368401+00:00",
+  "generated_at": "2026-06-09T12:30:02.241752+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
