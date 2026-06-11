@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 4964,
+    "all_payments": 4970,
     "by_type": {
       "merchant": {
-        "count": 1644
+        "count": 1646
       },
       "project": {
-        "count": 1644
+        "count": 1646
       },
       "reviewer": {
-        "count": 1676
+        "count": 1678
       }
     }
   },
   "today": {
     "date": "2026-06-11",
-    "payments": 96,
+    "payments": 102,
     "by_type": {
       "merchant": {
-        "count": 32
+        "count": 34
       },
       "project": {
-        "count": 32
+        "count": 34
       },
       "reviewer": {
-        "count": 32
+        "count": 34
       }
     },
-    "approved": 32,
+    "approved": 34,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2065077537407893574",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Isac Mini-Shop",
+        "platform": "X",
+        "time": "20:12"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsygzum2kpt2a5cxdx7cscahz5s4pwnzjsh8zezuh5d9l0s9gsl3csh4h0da",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Isac Mini-Shop",
+        "platform": "Nostr",
+        "time": "20:12"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsfkn2r8hsgzje77duuachxyg0nz4gfamjwmdssncfwpd3e8pl04pgrs5fw8",
         "project": "Bitcoin Chama 🇰🇪",
@@ -258,6 +272,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -591,16 +611,16 @@
     },
     {
       "date": "2026-06-11",
-      "project_count": 32,
-      "merchant_count": 32,
-      "reviewer_count": 32,
-      "approved": 32,
+      "project_count": 34,
+      "merchant_count": 34,
+      "reviewer_count": 34,
+      "approved": 34,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1717,
-    "approved": 1642,
+    "total_reviewed": 1719,
+    "approved": 1644,
     "rejected": 75
   },
   "top_projects": [
@@ -4893,8 +4913,18 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 188,
+      "count": 190,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2065077537407893574",
+          "date": "2026-06-11",
+          "merchant": "Isac Mini-Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsygzum2kpt2a5cxdx7cscahz5s4pwnzjsh8zezuh5d9l0s9gsl3csh4h0da",
+          "date": "2026-06-11",
+          "merchant": "Isac Mini-Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9m0ca4uqnr5fvx6mhvmsdeffaalv470a3tm3jcmn7sdxksyx994cl5j38w",
           "date": "2026-06-11",
@@ -13003,8 +13033,18 @@
     },
     {
       "name": "Isac Mini-Shop",
-      "count": 32,
+      "count": 34,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2065077537407893574",
+          "date": "2026-06-11",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsygzum2kpt2a5cxdx7cscahz5s4pwnzjsh8zezuh5d9l0s9gsl3csh4h0da",
+          "date": "2026-06-11",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsv7t4ea23x06c7nt33cnqgm3axrjqrlskmee0s3eg8nsnagk3s5kgt6tfyc",
           "date": "2026-05-30",
@@ -18062,7 +18102,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4868
+      "count": 4874
     },
     {
       "domain": "8333.mobi",
@@ -18113,13 +18153,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2511
+      "count": 2514
     },
     {
       "platform": "Nostr",
-      "count": 2453
+      "count": 2456
     }
   ],
-  "generated_at": "2026-06-11T20:10:01.623040+00:00",
+  "generated_at": "2026-06-11T20:20:02.091913+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
