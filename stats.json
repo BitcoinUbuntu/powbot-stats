@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 5024,
+    "all_payments": 5026,
     "by_type": {
       "merchant": {
-        "count": 1664
+        "count": 1665
       },
       "project": {
         "count": 1664
       },
       "reviewer": {
-        "count": 1696
+        "count": 1697
       }
     }
   },
   "today": {
     "date": "2026-06-12",
-    "payments": 27,
+    "payments": 29,
     "by_type": {
       "merchant": {
-        "count": 9
+        "count": 10
       },
       "project": {
         "count": 9
       },
       "reviewer": {
-        "count": 9
+        "count": 10
       }
     },
-    "approved": 9,
+    "approved": 10,
     "rejected": 1,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2065382132474634345",
+        "project": "Unknown",
+        "merchant": "Mary Shop",
+        "platform": "X",
+        "time": "10:50"
+      },
       {
         "url": "https://x.com/i/status/2065187357825859992",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -97,6 +104,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Unknown"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -422,15 +432,15 @@
     {
       "date": "2026-06-12",
       "project_count": 9,
-      "merchant_count": 9,
-      "reviewer_count": 9,
-      "approved": 9,
+      "merchant_count": 10,
+      "reviewer_count": 10,
+      "approved": 10,
       "rejected": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 1737,
-    "approved": 1661,
+    "total_reviewed": 1738,
+    "approved": 1662,
     "rejected": 76
   },
   "top_projects": [
@@ -9877,8 +9887,13 @@
     },
     {
       "name": "Mary Shop",
-      "count": 80,
+      "count": 81,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2065382132474634345",
+          "date": "2026-06-12",
+          "project": "Unknown"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsdx4sfv3hfpk8x5xtdez3y00z8ad4qadrkf62u36nskqmdctfz6ws407c0g",
           "date": "2026-06-11",
@@ -18092,7 +18107,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4926
+      "count": 4928
     },
     {
       "domain": "8333.mobi",
@@ -18143,13 +18158,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2541
+      "count": 2543
     },
     {
       "platform": "Nostr",
       "count": 2483
     }
   ],
-  "generated_at": "2026-06-12T10:40:02.352456+00:00",
+  "generated_at": "2026-06-12T10:50:02.301532+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
