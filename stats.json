@@ -1,28 +1,79 @@
 {
   "totals": {
-    "all_payments": 4997,
+    "all_payments": 5009,
     "by_type": {
       "merchant": {
-        "count": 1655
+        "count": 1659
       },
       "project": {
-        "count": 1655
+        "count": 1659
       },
       "reviewer": {
-        "count": 1687
+        "count": 1691
       }
     }
   },
   "today": {
     "date": "2026-06-12",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
-    "rejected": 0,
-    "videos": []
+    "payments": 12,
+    "by_type": {
+      "merchant": {
+        "count": 4
+      },
+      "project": {
+        "count": 4
+      },
+      "reviewer": {
+        "count": 4
+      }
+    },
+    "approved": 4,
+    "rejected": 1,
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2065358019530043660",
+        "project": "Lwandi Bitcoin 🇲🇿",
+        "merchant": "Brasukas - Bar & Surf",
+        "platform": "X",
+        "time": "09:59"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsduky2ffshqslqd3d8xal0clk6sumyxe4dmmcpe4zgwcjteuhqefg220dla",
+        "project": "Lwandi Bitcoin 🇲🇿",
+        "merchant": "Brasukas - Bar & Surf",
+        "platform": "Nostr",
+        "time": "09:58"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsfdcqm9rzf66nwnj7yfzp2s0ncgvcjmg7kux45w6mv40fjk3n4lvgc0ch9d",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "Nostr",
+        "time": "09:58"
+      },
+      {
+        "url": "https://x.com/i/status/2065090800266952910",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "X",
+        "time": "09:58"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Lwandi Bitcoin 🇲🇿"
+      },
+      {
+        "project": "Lwandi Bitcoin 🇲🇿"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -320,23 +371,33 @@
     },
     {
       "date": "2026-06-12",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
-      "rejected": 0
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4,
+      "approved": 4,
+      "rejected": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 1727,
-    "approved": 1652,
-    "rejected": 75
+    "total_reviewed": 1732,
+    "approved": 1656,
+    "rejected": 76
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 586,
+      "count": 588,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfdcqm9rzf66nwnj7yfzp2s0ncgvcjmg7kux45w6mv40fjk3n4lvgc0ch9d",
+          "date": "2026-06-12",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2065090800266952910",
+          "date": "2026-06-12",
+          "merchant": "Bliss beauty Salon"
+        },
         {
           "url": "https://x.com/i/status/2065132236400206115",
           "date": "2026-06-11",
@@ -8658,8 +8719,18 @@
     },
     {
       "name": "Lwandi Bitcoin 🇲🇿",
-      "count": 8,
+      "count": 10,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2065358019530043660",
+          "date": "2026-06-12",
+          "merchant": "Brasukas - Bar & Surf"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsduky2ffshqslqd3d8xal0clk6sumyxe4dmmcpe4zgwcjteuhqefg220dla",
+          "date": "2026-06-12",
+          "merchant": "Brasukas - Bar & Surf"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs02cq9qm27m8zhpumrnrdgg2cny9yj787gylpw5km25hp98ea8rmq7m56e9",
           "date": "2026-06-11",
@@ -10904,8 +10975,18 @@
     },
     {
       "name": "Bliss beauty Salon",
-      "count": 64,
+      "count": 66,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfdcqm9rzf66nwnj7yfzp2s0ncgvcjmg7kux45w6mv40fjk3n4lvgc0ch9d",
+          "date": "2026-06-12",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2065090800266952910",
+          "date": "2026-06-12",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs8krasys374c9evf85sqzthp86qpt3yst9sv4l4w0ju8c2wmd9yagc0008x",
           "date": "2026-06-09",
@@ -15504,6 +15585,62 @@
       ]
     },
     {
+      "name": "Brasukas - Bar & Surf",
+      "count": 10,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2065358019530043660",
+          "date": "2026-06-12",
+          "project": "Lwandi Bitcoin 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsduky2ffshqslqd3d8xal0clk6sumyxe4dmmcpe4zgwcjteuhqefg220dla",
+          "date": "2026-06-12",
+          "project": "Lwandi Bitcoin 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs02cq9qm27m8zhpumrnrdgg2cny9yj787gylpw5km25hp98ea8rmq7m56e9",
+          "date": "2026-06-11",
+          "project": "Lwandi Bitcoin 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2064753284212982040",
+          "date": "2026-06-11",
+          "project": "Lwandi Bitcoin 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgrk40gy4h2s0lrcepw4sr9dx3lwzrvvn73gehg0y65gcymjtzc5sxn3kt7",
+          "date": "2026-06-09",
+          "project": "Lwandi Bitcoin 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2064048234255765800",
+          "date": "2026-06-09",
+          "project": "Lwandi Bitcoin 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstvkyxhchnan63p0psuapkrq7n6dr8wdlewuupseakta98x9zmg0ctvvcfa",
+          "date": "2026-04-08",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2041623053935710358",
+          "date": "2026-04-08",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8qfzlnpggzz9p2gvx08rzqrn7kgm470vf29yelm45gpscq7plppckle02x",
+          "date": "2026-03-31",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2038917658708439153",
+          "date": "2026-03-31",
+          "project": "Bitcoin Famba 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "SMG Electronics Store",
       "count": 9,
       "posts": [
@@ -15924,52 +16061,6 @@
           "url": "https://primal.net/e/nevent1qqsdplafs06lmlr30lnpxvvdzzhk6hts6dv2r2y728fvky0fnpyu78qm6arfp",
           "date": "2026-04-06",
           "project": "Bitcoin Chama 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Brasukas - Bar & Surf",
-      "count": 8,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs02cq9qm27m8zhpumrnrdgg2cny9yj787gylpw5km25hp98ea8rmq7m56e9",
-          "date": "2026-06-11",
-          "project": "Lwandi Bitcoin 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2064753284212982040",
-          "date": "2026-06-11",
-          "project": "Lwandi Bitcoin 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgrk40gy4h2s0lrcepw4sr9dx3lwzrvvn73gehg0y65gcymjtzc5sxn3kt7",
-          "date": "2026-06-09",
-          "project": "Lwandi Bitcoin 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2064048234255765800",
-          "date": "2026-06-09",
-          "project": "Lwandi Bitcoin 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstvkyxhchnan63p0psuapkrq7n6dr8wdlewuupseakta98x9zmg0ctvvcfa",
-          "date": "2026-04-08",
-          "project": "Bitcoin Famba 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2041623053935710358",
-          "date": "2026-04-08",
-          "project": "Bitcoin Famba 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8qfzlnpggzz9p2gvx08rzqrn7kgm470vf29yelm45gpscq7plppckle02x",
-          "date": "2026-03-31",
-          "project": "Bitcoin Famba 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2038917658708439153",
-          "date": "2026-03-31",
-          "project": "Bitcoin Famba 🇲🇿"
         }
       ]
     },
@@ -17901,7 +17992,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4899
+      "count": 4911
     },
     {
       "domain": "8333.mobi",
@@ -17952,13 +18043,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2526
+      "count": 2532
     },
     {
       "platform": "Nostr",
-      "count": 2471
+      "count": 2477
     }
   ],
-  "generated_at": "2026-06-12T09:50:02.468827+00:00",
+  "generated_at": "2026-06-12T10:00:01.739074+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
