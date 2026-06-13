@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 5051,
+    "all_payments": 5060,
     "by_type": {
       "merchant": {
-        "count": 1673
+        "count": 1676
       },
       "project": {
-        "count": 1673
+        "count": 1676
       },
       "reviewer": {
-        "count": 1705
+        "count": 1708
       }
     }
   },
   "today": {
     "date": "2026-06-13",
-    "payments": 15,
+    "payments": 24,
     "by_type": {
       "merchant": {
-        "count": 5
+        "count": 8
       },
       "project": {
-        "count": 5
+        "count": 8
       },
       "reviewer": {
-        "count": 5
+        "count": 8
       }
     },
-    "approved": 5,
+    "approved": 8,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs2e3czutam9c4z95tvyhqxlmu4ahwd7nfxs5duwpyddacavdsz37qex3vq7",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "Nostr",
+        "time": "10:31"
+      },
+      {
+        "url": "https://x.com/i/status/2065514736695783827",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "X",
+        "time": "10:30"
+      },
+      {
+        "url": "https://x.com/i/status/2065509351620813210",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "X",
+        "time": "10:30"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsgat6uj9xgh7vtk82pft6gn8gp2uha8hfgxjchnmrv4j2p3y0qa9crp4668",
         "project": "Bitbiashara 🇰🇪",
@@ -69,6 +90,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -333,23 +363,38 @@
     },
     {
       "date": "2026-06-13",
-      "project_count": 5,
-      "merchant_count": 5,
-      "reviewer_count": 5,
-      "approved": 5,
+      "project_count": 8,
+      "merchant_count": 8,
+      "reviewer_count": 8,
+      "approved": 8,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1746,
-    "approved": 1670,
+    "total_reviewed": 1749,
+    "approved": 1673,
     "rejected": 76
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 593,
+      "count": 596,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs2e3czutam9c4z95tvyhqxlmu4ahwd7nfxs5duwpyddacavdsz37qex3vq7",
+          "date": "2026-06-13",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2065514736695783827",
+          "date": "2026-06-13",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2065509351620813210",
+          "date": "2026-06-13",
+          "merchant": "Haven food court"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsgat6uj9xgh7vtk82pft6gn8gp2uha8hfgxjchnmrv4j2p3y0qa9crp4668",
           "date": "2026-06-13",
@@ -8847,8 +8892,13 @@
   "top_merchants": [
     {
       "name": "Haven food court",
-      "count": 110,
+      "count": 111,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2065509351620813210",
+          "date": "2026-06-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsgat6uj9xgh7vtk82pft6gn8gp2uha8hfgxjchnmrv4j2p3y0qa9crp4668",
           "date": "2026-06-13",
@@ -9403,8 +9453,18 @@
     },
     {
       "name": "Grandsmatt",
-      "count": 86,
+      "count": 88,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs2e3czutam9c4z95tvyhqxlmu4ahwd7nfxs5duwpyddacavdsz37qex3vq7",
+          "date": "2026-06-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2065514736695783827",
+          "date": "2026-06-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2065132236400206115",
           "date": "2026-06-11",
@@ -18094,7 +18154,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 4953
+      "count": 4962
     },
     {
       "domain": "8333.mobi",
@@ -18145,13 +18205,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2553
+      "count": 2559
     },
     {
       "platform": "Nostr",
-      "count": 2498
+      "count": 2501
     }
   ],
-  "generated_at": "2026-06-13T10:30:02.020476+00:00",
+  "generated_at": "2026-06-13T10:40:01.886989+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
