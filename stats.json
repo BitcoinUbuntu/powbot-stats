@@ -1,28 +1,79 @@
 {
   "totals": {
-    "all_payments": 5195,
+    "all_payments": 5207,
     "by_type": {
       "merchant": {
-        "count": 1721
+        "count": 1725
       },
       "project": {
-        "count": 1721
+        "count": 1725
       },
       "reviewer": {
-        "count": 1753
+        "count": 1757
       }
     }
   },
   "today": {
     "date": "2026-06-16",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 12,
+    "by_type": {
+      "merchant": {
+        "count": 4
+      },
+      "project": {
+        "count": 4
+      },
+      "reviewer": {
+        "count": 4
+      }
+    },
+    "approved": 4,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqswyl28t99sdkx6sq6ltes6z4dfzw9t0nlsmlk6lnzuq8jtrzx3zqqfvvvgy",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Diamond Barbing Saloon",
+        "platform": "Nostr",
+        "time": "09:59"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs24udw2d47xduawl9yw0etffqylygyy3e5qy4lnwh5tyg0sjfa4rsdx2ah8",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Uaieca Car Wash",
+        "platform": "Nostr",
+        "time": "09:58"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsttykecs35ezapcc5y6psnpzavjch0hdchttaa7k39e7fhu3sfz0czsx4wm",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Mercearia Abençoada",
+        "platform": "Nostr",
+        "time": "09:58"
+      },
+      {
+        "url": "https://x.com/i/status/2066493019386192365",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Isac Mini-Shop",
+        "platform": "X",
+        "time": "09:57"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitcoin Dombo 🇲🇿"
       },
@@ -278,16 +329,16 @@
     },
     {
       "date": "2026-06-16",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4,
+      "approved": 4,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1795,
-    "approved": 1718,
+    "total_reviewed": 1799,
+    "approved": 1722,
     "rejected": 77
   },
   "top_projects": [
@@ -4845,8 +4896,23 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 199,
+      "count": 202,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs24udw2d47xduawl9yw0etffqylygyy3e5qy4lnwh5tyg0sjfa4rsdx2ah8",
+          "date": "2026-06-16",
+          "merchant": "Uaieca Car Wash"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsttykecs35ezapcc5y6psnpzavjch0hdchttaa7k39e7fhu3sfz0czsx4wm",
+          "date": "2026-06-16",
+          "merchant": "Mercearia Abençoada"
+        },
+        {
+          "url": "https://x.com/i/status/2066493019386192365",
+          "date": "2026-06-16",
+          "merchant": "Isac Mini-Shop"
+        },
         {
           "url": "https://x.com/i/status/2066485771402362888",
           "date": "2026-06-15",
@@ -7249,8 +7315,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 64,
+      "count": 65,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswyl28t99sdkx6sq6ltes6z4dfzw9t0nlsmlk6lnzuq8jtrzx3zqqfvvvgy",
+          "date": "2026-06-16",
+          "merchant": "Diamond Barbing Saloon"
+        },
         {
           "url": "https://x.com/i/status/2066082249896825308",
           "date": "2026-06-14",
@@ -12762,8 +12833,13 @@
     },
     {
       "name": "Isac Mini-Shop",
-      "count": 37,
+      "count": 38,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2066493019386192365",
+          "date": "2026-06-16",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
         {
           "url": "https://x.com/i/status/2066251903286006002",
           "date": "2026-06-15",
@@ -15428,8 +15504,13 @@
     },
     {
       "name": "Mercearia Abençoada",
-      "count": 13,
+      "count": 14,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsttykecs35ezapcc5y6psnpzavjch0hdchttaa7k39e7fhu3sfz0czsx4wm",
+          "date": "2026-06-16",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
         {
           "url": "https://x.com/i/status/2066477667793113458",
           "date": "2026-06-15",
@@ -15499,8 +15580,13 @@
     },
     {
       "name": "Uaieca Car Wash",
-      "count": 12,
+      "count": 13,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs24udw2d47xduawl9yw0etffqylygyy3e5qy4lnwh5tyg0sjfa4rsdx2ah8",
+          "date": "2026-06-16",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
         {
           "url": "https://x.com/i/status/2066485771402362888",
           "date": "2026-06-15",
@@ -16062,6 +16148,62 @@
       ]
     },
     {
+      "name": "Diamond Barbing Saloon",
+      "count": 10,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswyl28t99sdkx6sq6ltes6z4dfzw9t0nlsmlk6lnzuq8jtrzx3zqqfvvvgy",
+          "date": "2026-06-16",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2066082249896825308",
+          "date": "2026-06-14",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvqhsqang8cp05htwnvhap5u73up4sqjgs52ulz6utfayl7ffy7rsff9yxq",
+          "date": "2026-04-28",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2048892811160813599",
+          "date": "2026-04-28",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswgp98gpctek73nzzq3x3flut64qh6vmthcqzmsu69w8f6xf06vhsalqaqq",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2044430581652480503",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqx2295p4ft3xjhmxa2hqz9v6xx4pkluxen0pj95v38ygct67v4kccaxutj",
+          "date": "2026-04-13",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2043010791566139869",
+          "date": "2026-04-13",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg5hdsxquxf3dukkrqal72ar9sggrq5edcpn3ulcwfk9h4act7kds9ksy0k",
+          "date": "2026-04-05",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2040416302968291523",
+          "date": "2026-04-05",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Brasukas - Bar & Surf",
       "count": 10,
       "posts": [
@@ -16216,57 +16358,6 @@
           "url": "https://primal.net/e/nevent1qqsg2uyqkkkkyrafemnc8tmqq2eflahy7wntpltdc8dwr2rwakj6f7qk5ahfm",
           "date": "2026-03-28",
           "project": "EcoBitz 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Diamond Barbing Saloon",
-      "count": 9,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2066082249896825308",
-          "date": "2026-06-14",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvqhsqang8cp05htwnvhap5u73up4sqjgs52ulz6utfayl7ffy7rsff9yxq",
-          "date": "2026-04-28",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2048892811160813599",
-          "date": "2026-04-28",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswgp98gpctek73nzzq3x3flut64qh6vmthcqzmsu69w8f6xf06vhsalqaqq",
-          "date": "2026-04-15",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2044430581652480503",
-          "date": "2026-04-15",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqx2295p4ft3xjhmxa2hqz9v6xx4pkluxen0pj95v38ygct67v4kccaxutj",
-          "date": "2026-04-13",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2043010791566139869",
-          "date": "2026-04-13",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg5hdsxquxf3dukkrqal72ar9sggrq5edcpn3ulcwfk9h4act7kds9ksy0k",
-          "date": "2026-04-05",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2040416302968291523",
-          "date": "2026-04-05",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -18543,7 +18634,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 5094
+      "count": 5106
     },
     {
       "domain": "8333.mobi",
@@ -18594,13 +18685,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2631
+      "count": 2634
     },
     {
       "platform": "Nostr",
-      "count": 2564
+      "count": 2573
     }
   ],
-  "generated_at": "2026-06-16T09:50:02.472107+00:00",
+  "generated_at": "2026-06-16T10:00:02.334806+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
