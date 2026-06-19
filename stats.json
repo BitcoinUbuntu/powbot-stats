@@ -1,35 +1,105 @@
 {
   "totals": {
-    "all_payments": 5391,
+    "all_payments": 5421,
     "by_type": {
       "merchant": {
-        "count": 1786
+        "count": 1796
       },
       "project": {
-        "count": 1786
+        "count": 1796
       },
       "reviewer": {
-        "count": 1819
+        "count": 1829
       }
     }
   },
   "today": {
     "date": "2026-06-19",
-    "payments": 27,
+    "payments": 57,
     "by_type": {
       "merchant": {
-        "count": 9
+        "count": 19
       },
       "project": {
-        "count": 9
+        "count": 19
       },
       "reviewer": {
-        "count": 9
+        "count": 19
       }
     },
-    "approved": 9,
+    "approved": 19,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2067881421683712288",
+        "project": "Bit-Fitness 🇿🇦",
+        "merchant": "Moto Wash & Valet",
+        "platform": "X",
+        "time": "09:43"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs8l3drel2egun4sakvd3sps8c7hwknl8tpcmfe0dztkj7djt9cmrgkg9qyd",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "Nostr",
+        "time": "09:43"
+      },
+      {
+        "url": "https://x.com/i/status/2067828372302909538",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "X",
+        "time": "09:43"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsqlvn840ljaq3p4zvakvhyz30ryv3dhl7rmyedlv7urud7ek8qcjssl6r5z",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Alvin Game House",
+        "platform": "Nostr",
+        "time": "09:42"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsfz8msjtp2kjvlxn3x025uc5cx7n69u4ygzwt9gj438jtt7rz4ajg3xur89",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mama Joyce Kibanda",
+        "platform": "Nostr",
+        "time": "09:42"
+      },
+      {
+        "url": "https://x.com/i/status/2067692208900407480",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mama Joyce Kibanda",
+        "platform": "X",
+        "time": "09:42"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqst26vkputjkuajejng4uctfu8lcf899h3uns4u8nfw3cu05jrppwcr9p7zd",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "Nostr",
+        "time": "09:42"
+      },
+      {
+        "url": "https://x.com/i/status/2067248461016183220",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "X",
+        "time": "09:41"
+      },
+      {
+        "url": "https://x.com/i/status/2067681611223605286",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Alvin Game House",
+        "platform": "X",
+        "time": "09:41"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsrg5663z6vu77hukd4p4e5q6ur3z7sd0ec83k0w4vj6jlcanthm2g54eks6",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Flo Salon",
+        "platform": "Nostr",
+        "time": "09:41"
+      },
       {
         "url": "https://x.com/i/status/2067677749855011202",
         "project": "Bitcoin Chama 🇰🇪",
@@ -97,6 +167,36 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bit-Fitness 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
+      {
+        "project": "BTC Shule 🇧🇮"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -357,21 +457,21 @@
       "merchant_count": 35,
       "reviewer_count": 36,
       "approved": 35,
-      "rejected": 1
+      "rejected": 0
     },
     {
       "date": "2026-06-19",
-      "project_count": 9,
-      "merchant_count": 9,
-      "reviewer_count": 9,
-      "approved": 9,
+      "project_count": 19,
+      "merchant_count": 19,
+      "reviewer_count": 19,
+      "approved": 19,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1862,
-    "approved": 1783,
-    "rejected": 79
+    "total_reviewed": 1871,
+    "approved": 1793,
+    "rejected": 78
   },
   "top_projects": [
     {
@@ -3522,8 +3622,33 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 317,
+      "count": 322,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8l3drel2egun4sakvd3sps8c7hwknl8tpcmfe0dztkj7djt9cmrgkg9qyd",
+          "date": "2026-06-19",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2067828372302909538",
+          "date": "2026-06-19",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfz8msjtp2kjvlxn3x025uc5cx7n69u4ygzwt9gj438jtt7rz4ajg3xur89",
+          "date": "2026-06-19",
+          "merchant": "Mama Joyce Kibanda"
+        },
+        {
+          "url": "https://x.com/i/status/2067692208900407480",
+          "date": "2026-06-19",
+          "merchant": "Mama Joyce Kibanda"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrg5663z6vu77hukd4p4e5q6ur3z7sd0ec83k0w4vj6jlcanthm2g54eks6",
+          "date": "2026-06-19",
+          "merchant": "Flo Salon"
+        },
         {
           "url": "https://x.com/i/status/2067677749855011202",
           "date": "2026-06-19",
@@ -6685,8 +6810,18 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 92,
+      "count": 94,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsqlvn840ljaq3p4zvakvhyz30ryv3dhl7rmyedlv7urud7ek8qcjssl6r5z",
+          "date": "2026-06-19",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://x.com/i/status/2067681611223605286",
+          "date": "2026-06-19",
+          "merchant": "Alvin Game House"
+        },
         {
           "url": "https://primal.net/e/nevent1qqszymeggfqm39e0f2knrtjecpxvwjgvrm6dcnvql882p29u98ey0lgqwgdua",
           "date": "2026-06-18",
@@ -8234,8 +8369,18 @@
     },
     {
       "name": "BTC Shule 🇧🇮",
-      "count": 34,
+      "count": 36,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqst26vkputjkuajejng4uctfu8lcf899h3uns4u8nfw3cu05jrppwcr9p7zd",
+          "date": "2026-06-19",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2067248461016183220",
+          "date": "2026-06-19",
+          "merchant": "Kwa Innocent"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsgl9m789umnlxj4e0elwnn2c7q072mgpqj6nqfdckqg8gfy3qlyzqlq4xgu",
           "date": "2026-06-11",
@@ -8983,6 +9128,87 @@
       ]
     },
     {
+      "name": "Bit-Fitness 🇿🇦",
+      "count": 15,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2067881421683712288",
+          "date": "2026-06-19",
+          "merchant": "Moto Wash & Valet"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy9f4yg2qktw3ejdtt34h9q88rxumdp8x6va6en3pqlejtz8lp4wsvnj9g3",
+          "date": "2026-06-18",
+          "merchant": "Moto Wash & Valet"
+        },
+        {
+          "url": "https://x.com/i/status/2067186022534857118",
+          "date": "2026-06-18",
+          "merchant": "Moto Wash & Valet"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvq0f8l67lf6e8m7kqslpx97k35t8awssm053hr6xldylkg7axdjqercp8k",
+          "date": "2026-06-02",
+          "merchant": "Moto Wash & Valet"
+        },
+        {
+          "url": "https://x.com/i/status/2061788571049033950",
+          "date": "2026-06-02",
+          "merchant": "Moto Wash & Valet"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxdctadhm7gfyh0e2sk5nyjd7mjw9654hvsj5aut7jrapw9macncq6p9x5t",
+          "date": "2026-06-01",
+          "merchant": "JB Clothing and Promotions"
+        },
+        {
+          "url": "https://x.com/i/status/2061456753393381445",
+          "date": "2026-06-01",
+          "merchant": "JB Clothing and Promotions"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxkazaux2v36l42ufu775xnt33t4vzm2v5ha6umskx98z9yhk3tmqytcy3s",
+          "date": "2026-05-30",
+          "merchant": "JB Clothing and Promotions"
+        },
+        {
+          "url": "https://x.com/i/status/2060375261649023045",
+          "date": "2026-05-30",
+          "merchant": "JB Clothing and Promotions"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsquhqyqlqup7jjry7f9le84ypyej706p8zh3fu4nvthmpy07ktpyc23n0na",
+          "date": "2026-05-20",
+          "merchant": "Moto Wash & Valet"
+        },
+        {
+          "url": "https://x.com/i/status/2055683923875668294",
+          "date": "2026-05-20",
+          "merchant": "Moto Wash & Valet"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfgl0zh5z2fqqxasvww3zxe5wr5g0sh8l2wj4z92rpdsjw3r07gagzyg0pa",
+          "date": "2026-04-25",
+          "merchant": "Moto Wash & Valet"
+        },
+        {
+          "url": "https://x.com/i/status/2048012703420109114",
+          "date": "2026-04-25",
+          "merchant": "Moto Wash & Valet"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsra4ujk0rpj6ump030aj567e0yhekm8vf8aq6u88jz3ruccc62w7qexerp8",
+          "date": "2026-04-22",
+          "merchant": "Moto Wash & Valet"
+        },
+        {
+          "url": "https://x.com/i/status/2046187884068147612",
+          "date": "2026-04-20",
+          "merchant": "Moto Wash & Valet"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Anambra 🇳🇬",
       "count": 14,
       "posts": [
@@ -9055,82 +9281,6 @@
           "url": "https://x.com/i/status/2037223959003828237",
           "date": "2026-03-26",
           "merchant": "The Sario Eventers"
-        }
-      ]
-    },
-    {
-      "name": "Bit-Fitness 🇿🇦",
-      "count": 14,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsy9f4yg2qktw3ejdtt34h9q88rxumdp8x6va6en3pqlejtz8lp4wsvnj9g3",
-          "date": "2026-06-18",
-          "merchant": "Moto Wash & Valet"
-        },
-        {
-          "url": "https://x.com/i/status/2067186022534857118",
-          "date": "2026-06-18",
-          "merchant": "Moto Wash & Valet"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvq0f8l67lf6e8m7kqslpx97k35t8awssm053hr6xldylkg7axdjqercp8k",
-          "date": "2026-06-02",
-          "merchant": "Moto Wash & Valet"
-        },
-        {
-          "url": "https://x.com/i/status/2061788571049033950",
-          "date": "2026-06-02",
-          "merchant": "Moto Wash & Valet"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxdctadhm7gfyh0e2sk5nyjd7mjw9654hvsj5aut7jrapw9macncq6p9x5t",
-          "date": "2026-06-01",
-          "merchant": "JB Clothing and Promotions"
-        },
-        {
-          "url": "https://x.com/i/status/2061456753393381445",
-          "date": "2026-06-01",
-          "merchant": "JB Clothing and Promotions"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxkazaux2v36l42ufu775xnt33t4vzm2v5ha6umskx98z9yhk3tmqytcy3s",
-          "date": "2026-05-30",
-          "merchant": "JB Clothing and Promotions"
-        },
-        {
-          "url": "https://x.com/i/status/2060375261649023045",
-          "date": "2026-05-30",
-          "merchant": "JB Clothing and Promotions"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsquhqyqlqup7jjry7f9le84ypyej706p8zh3fu4nvthmpy07ktpyc23n0na",
-          "date": "2026-05-20",
-          "merchant": "Moto Wash & Valet"
-        },
-        {
-          "url": "https://x.com/i/status/2055683923875668294",
-          "date": "2026-05-20",
-          "merchant": "Moto Wash & Valet"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfgl0zh5z2fqqxasvww3zxe5wr5g0sh8l2wj4z92rpdsjw3r07gagzyg0pa",
-          "date": "2026-04-25",
-          "merchant": "Moto Wash & Valet"
-        },
-        {
-          "url": "https://x.com/i/status/2048012703420109114",
-          "date": "2026-04-25",
-          "merchant": "Moto Wash & Valet"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsra4ujk0rpj6ump030aj567e0yhekm8vf8aq6u88jz3ruccc62w7qexerp8",
-          "date": "2026-04-22",
-          "merchant": "Moto Wash & Valet"
-        },
-        {
-          "url": "https://x.com/i/status/2046187884068147612",
-          "date": "2026-04-20",
-          "merchant": "Moto Wash & Valet"
         }
       ]
     },
@@ -10026,8 +10176,18 @@
     },
     {
       "name": "Mary Shop",
-      "count": 92,
+      "count": 94,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8l3drel2egun4sakvd3sps8c7hwknl8tpcmfe0dztkj7djt9cmrgkg9qyd",
+          "date": "2026-06-19",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2067828372302909538",
+          "date": "2026-06-19",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2067639154251280777",
           "date": "2026-06-19",
@@ -12146,8 +12306,13 @@
     },
     {
       "name": "Flo Salon",
-      "count": 65,
+      "count": 66,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrg5663z6vu77hukd4p4e5q6ur3z7sd0ec83k0w4vj6jlcanthm2g54eks6",
+          "date": "2026-06-19",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2067677749855011202",
           "date": "2026-06-19",
@@ -13324,6 +13489,227 @@
       ]
     },
     {
+      "name": "Alvin Game House",
+      "count": 43,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsqlvn840ljaq3p4zvakvhyz30ryv3dhl7rmyedlv7urud7ek8qcjssl6r5z",
+          "date": "2026-06-19",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2067681611223605286",
+          "date": "2026-06-19",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszymeggfqm39e0f2knrtjecpxvwjgvrm6dcnvql882p29u98ey0lgqwgdua",
+          "date": "2026-06-18",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2067297587665747990",
+          "date": "2026-06-18",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgmnn77zldesgj4dcpyps90cl3duhnsjyne6l9l00pvtgwc0znlmqwt5xg2",
+          "date": "2026-06-18",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2066950509727002699",
+          "date": "2026-06-18",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdmgx777m27g9xy86fqvgxphujwjl3s04l3e3m8cq5cc4u7hsm98q5y8c28",
+          "date": "2026-06-12",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2065490043003691010",
+          "date": "2026-06-12",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgh5vfgndxevven0v79qyp7lnk33eudq0scn5r5xg3r8nxut98qaglv4ft0",
+          "date": "2026-06-11",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2063985141626687497",
+          "date": "2026-06-09",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszrtsdke2wwh7kfw2dkz96pvaxkakfra6yf8xmrf0xz2z4udxaw6gwtcadj",
+          "date": "2026-06-09",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2060670508069261454",
+          "date": "2026-05-30",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxaksysssfe79nr5kkvefy4n2wp3s67l5u8pcsa46n56a3966z49gsu923q",
+          "date": "2026-05-27",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2059323134059094499",
+          "date": "2026-05-27",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9r405h5fz26jkanaf7v239a8jvdul5y6zzd0hhvucpcgut2hal8srukg43",
+          "date": "2026-05-25",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2058914913809039400",
+          "date": "2026-05-25",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxme0cenq20um939ram7ydfqqmt43gnmmjqs9uznszwwx4fk4c9jgc664sg",
+          "date": "2026-05-20",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2056363806389834101",
+          "date": "2026-05-20",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2055638223284494696",
+          "date": "2026-05-20",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgaxrn8t0j66593jvnexst8d80ka5n9eyx2uftsdqf5umlc5pmj2gq8j9ww",
+          "date": "2026-05-20",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2rnu2m2kxx6jwu9kgc3a2vgrrfdh3cv85ez0ff5rv2086gt925rs6crj0d",
+          "date": "2026-05-16",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2055358180578713669",
+          "date": "2026-05-16",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2054128843972047166",
+          "date": "2026-05-12",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8nqn56tzxdmr4mqce5wskmx3llf6cgfxmtxkd0a562grgxhq5jhsc87fkj",
+          "date": "2026-05-11",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2053762960942567621",
+          "date": "2026-05-11",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2052443316176761144",
+          "date": "2026-05-07",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvy748k2qttreuvx3nrsn8lq0wwspapejxyzkljv4tcsah5a7h2jqrallk5",
+          "date": "2026-05-07",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstq3l72zfem95q2qy9lvhsn5z3n2wenqxa9sddwz3g6p2xyl7m28cpa656k",
+          "date": "2026-05-07",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2052123657581867122",
+          "date": "2026-05-07",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2046877618453025079",
+          "date": "2026-04-22",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspjta85de9vu528xhhlc8spae3ukngjfqzwszk6xnnt8gjfppga2gv4d523",
+          "date": "2026-04-22",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8wx6p67ej78h7ltg2xpnd7h375q9twqpamx860jglhh3ypazmaqckjud3q",
+          "date": "2026-04-21",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2046127453316255801",
+          "date": "2026-04-20",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszl8nnz739kl45hrhqfpv4kjhymqjwquyamugsg9mqtw625z8en2g9qemn9",
+          "date": "2026-04-18",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2045028583094009921",
+          "date": "2026-04-18",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw0qnm354apzgqu0mtnqujfzwqnwexmpumm6493lmsew48zusv42sfdhl4g",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2044391389723566412",
+          "date": "2026-04-15",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg6gef8jysgx2vr77vdz4skp7x06h0lw2fmmx8zkcmh553zdgwx4gs5mawp",
+          "date": "2026-04-14",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2044095635494768885",
+          "date": "2026-04-14",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2042140542843191514",
+          "date": "2026-04-09",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf27q7ymawd7n3phx9acm9cy5csk6h02ysc5yqkpvrqz5ek9dptgspxepg6",
+          "date": "2026-04-09",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswnjt729qy72fnjnfzwgjfy9um4vp7pesyuzygzukkn92nk293rfgn7k2wn",
+          "date": "2026-04-07",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2041337224650768470",
+          "date": "2026-04-07",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Isac Mini-Shop",
       "count": 41,
       "posts": [
@@ -13531,217 +13917,6 @@
           "url": "https://x.com/i/status/2036057680742117842",
           "date": "2026-03-24",
           "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Alvin Game House",
-      "count": 41,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqszymeggfqm39e0f2knrtjecpxvwjgvrm6dcnvql882p29u98ey0lgqwgdua",
-          "date": "2026-06-18",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2067297587665747990",
-          "date": "2026-06-18",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgmnn77zldesgj4dcpyps90cl3duhnsjyne6l9l00pvtgwc0znlmqwt5xg2",
-          "date": "2026-06-18",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2066950509727002699",
-          "date": "2026-06-18",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdmgx777m27g9xy86fqvgxphujwjl3s04l3e3m8cq5cc4u7hsm98q5y8c28",
-          "date": "2026-06-12",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2065490043003691010",
-          "date": "2026-06-12",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgh5vfgndxevven0v79qyp7lnk33eudq0scn5r5xg3r8nxut98qaglv4ft0",
-          "date": "2026-06-11",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2063985141626687497",
-          "date": "2026-06-09",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszrtsdke2wwh7kfw2dkz96pvaxkakfra6yf8xmrf0xz2z4udxaw6gwtcadj",
-          "date": "2026-06-09",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2060670508069261454",
-          "date": "2026-05-30",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxaksysssfe79nr5kkvefy4n2wp3s67l5u8pcsa46n56a3966z49gsu923q",
-          "date": "2026-05-27",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2059323134059094499",
-          "date": "2026-05-27",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9r405h5fz26jkanaf7v239a8jvdul5y6zzd0hhvucpcgut2hal8srukg43",
-          "date": "2026-05-25",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2058914913809039400",
-          "date": "2026-05-25",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxme0cenq20um939ram7ydfqqmt43gnmmjqs9uznszwwx4fk4c9jgc664sg",
-          "date": "2026-05-20",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2056363806389834101",
-          "date": "2026-05-20",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2055638223284494696",
-          "date": "2026-05-20",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgaxrn8t0j66593jvnexst8d80ka5n9eyx2uftsdqf5umlc5pmj2gq8j9ww",
-          "date": "2026-05-20",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2rnu2m2kxx6jwu9kgc3a2vgrrfdh3cv85ez0ff5rv2086gt925rs6crj0d",
-          "date": "2026-05-16",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2055358180578713669",
-          "date": "2026-05-16",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2054128843972047166",
-          "date": "2026-05-12",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8nqn56tzxdmr4mqce5wskmx3llf6cgfxmtxkd0a562grgxhq5jhsc87fkj",
-          "date": "2026-05-11",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2053762960942567621",
-          "date": "2026-05-11",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2052443316176761144",
-          "date": "2026-05-07",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvy748k2qttreuvx3nrsn8lq0wwspapejxyzkljv4tcsah5a7h2jqrallk5",
-          "date": "2026-05-07",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstq3l72zfem95q2qy9lvhsn5z3n2wenqxa9sddwz3g6p2xyl7m28cpa656k",
-          "date": "2026-05-07",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2052123657581867122",
-          "date": "2026-05-07",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2046877618453025079",
-          "date": "2026-04-22",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspjta85de9vu528xhhlc8spae3ukngjfqzwszk6xnnt8gjfppga2gv4d523",
-          "date": "2026-04-22",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8wx6p67ej78h7ltg2xpnd7h375q9twqpamx860jglhh3ypazmaqckjud3q",
-          "date": "2026-04-21",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2046127453316255801",
-          "date": "2026-04-20",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszl8nnz739kl45hrhqfpv4kjhymqjwquyamugsg9mqtw625z8en2g9qemn9",
-          "date": "2026-04-18",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2045028583094009921",
-          "date": "2026-04-18",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsw0qnm354apzgqu0mtnqujfzwqnwexmpumm6493lmsew48zusv42sfdhl4g",
-          "date": "2026-04-15",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2044391389723566412",
-          "date": "2026-04-15",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg6gef8jysgx2vr77vdz4skp7x06h0lw2fmmx8zkcmh553zdgwx4gs5mawp",
-          "date": "2026-04-14",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2044095635494768885",
-          "date": "2026-04-14",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2042140542843191514",
-          "date": "2026-04-09",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf27q7ymawd7n3phx9acm9cy5csk6h02ysc5yqkpvrqz5ek9dptgspxepg6",
-          "date": "2026-04-09",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswnjt729qy72fnjnfzwgjfy9um4vp7pesyuzygzukkn92nk293rfgn7k2wn",
-          "date": "2026-04-07",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2041337224650768470",
-          "date": "2026-04-07",
-          "project": "Bitcoin Ikorodu 🇳🇬"
         }
       ]
     },
@@ -14461,8 +14636,18 @@
     },
     {
       "name": "Kwa Innocent",
-      "count": 26,
+      "count": 28,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqst26vkputjkuajejng4uctfu8lcf899h3uns4u8nfw3cu05jrppwcr9p7zd",
+          "date": "2026-06-19",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2067248461016183220",
+          "date": "2026-06-19",
+          "project": "BTC Shule 🇧🇮"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsgl9m789umnlxj4e0elwnn2c7q072mgpqj6nqfdckqg8gfy3qlyzqlq4xgu",
           "date": "2026-06-11",
@@ -16643,6 +16828,67 @@
       ]
     },
     {
+      "name": "Moto Wash & Valet",
+      "count": 11,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2067881421683712288",
+          "date": "2026-06-19",
+          "project": "Bit-Fitness 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy9f4yg2qktw3ejdtt34h9q88rxumdp8x6va6en3pqlejtz8lp4wsvnj9g3",
+          "date": "2026-06-18",
+          "project": "Bit-Fitness 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2067186022534857118",
+          "date": "2026-06-18",
+          "project": "Bit-Fitness 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvq0f8l67lf6e8m7kqslpx97k35t8awssm053hr6xldylkg7axdjqercp8k",
+          "date": "2026-06-02",
+          "project": "Bit-Fitness 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2061788571049033950",
+          "date": "2026-06-02",
+          "project": "Bit-Fitness 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsquhqyqlqup7jjry7f9le84ypyej706p8zh3fu4nvthmpy07ktpyc23n0na",
+          "date": "2026-05-20",
+          "project": "Bit-Fitness 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2055683923875668294",
+          "date": "2026-05-20",
+          "project": "Bit-Fitness 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfgl0zh5z2fqqxasvww3zxe5wr5g0sh8l2wj4z92rpdsjw3r07gagzyg0pa",
+          "date": "2026-04-25",
+          "project": "Bit-Fitness 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2048012703420109114",
+          "date": "2026-04-25",
+          "project": "Bit-Fitness 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsra4ujk0rpj6ump030aj567e0yhekm8vf8aq6u88jz3ruccc62w7qexerp8",
+          "date": "2026-04-22",
+          "project": "Bit-Fitness 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2046187884068147612",
+          "date": "2026-04-20",
+          "project": "Bit-Fitness 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Preso's Food and Drinks",
       "count": 10,
       "posts": [
@@ -16751,62 +16997,6 @@
           "url": "https://x.com/i/status/2038002239483089051",
           "date": "2026-03-29",
           "project": "Bitcoin Famba 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Moto Wash & Valet",
-      "count": 10,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsy9f4yg2qktw3ejdtt34h9q88rxumdp8x6va6en3pqlejtz8lp4wsvnj9g3",
-          "date": "2026-06-18",
-          "project": "Bit-Fitness 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2067186022534857118",
-          "date": "2026-06-18",
-          "project": "Bit-Fitness 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvq0f8l67lf6e8m7kqslpx97k35t8awssm053hr6xldylkg7axdjqercp8k",
-          "date": "2026-06-02",
-          "project": "Bit-Fitness 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2061788571049033950",
-          "date": "2026-06-02",
-          "project": "Bit-Fitness 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsquhqyqlqup7jjry7f9le84ypyej706p8zh3fu4nvthmpy07ktpyc23n0na",
-          "date": "2026-05-20",
-          "project": "Bit-Fitness 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2055683923875668294",
-          "date": "2026-05-20",
-          "project": "Bit-Fitness 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfgl0zh5z2fqqxasvww3zxe5wr5g0sh8l2wj4z92rpdsjw3r07gagzyg0pa",
-          "date": "2026-04-25",
-          "project": "Bit-Fitness 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2048012703420109114",
-          "date": "2026-04-25",
-          "project": "Bit-Fitness 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsra4ujk0rpj6ump030aj567e0yhekm8vf8aq6u88jz3ruccc62w7qexerp8",
-          "date": "2026-04-22",
-          "project": "Bit-Fitness 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2046187884068147612",
-          "date": "2026-04-20",
-          "project": "Bit-Fitness 🇿🇦"
         }
       ]
     },
@@ -18054,6 +18244,32 @@
       ]
     },
     {
+      "name": "Mama Joyce Kibanda",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfz8msjtp2kjvlxn3x025uc5cx7n69u4ygzwt9gj438jtt7rz4ajg3xur89",
+          "date": "2026-06-19",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2067692208900407480",
+          "date": "2026-06-19",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2066784011947503797",
+          "date": "2026-06-16",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2gk5sr8q8cjznlamyuzmnmc6dczy3f3hvrt0rw8vfa86y44cg2sck86cre",
+          "date": "2026-06-16",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Liberty trading point",
       "count": 4,
       "posts": [
@@ -18686,22 +18902,6 @@
       ]
     },
     {
-      "name": "Mama Joyce Kibanda",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2066784011947503797",
-          "date": "2026-06-16",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2gk5sr8q8cjznlamyuzmnmc6dczy3f3hvrt0rw8vfa86y44cg2sck86cre",
-          "date": "2026-06-16",
-          "project": "Bitcoin Chama 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Luchume Caterers",
       "count": 2,
       "posts": [
@@ -19288,11 +19488,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 5286
+      "count": 5314
     },
     {
       "domain": "8333.mobi",
-      "count": 104
+      "count": 106
     },
     {
       "domain": "walletofsatoshi.com",
@@ -19339,13 +19539,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2727
+      "count": 2742
     },
     {
       "platform": "Nostr",
-      "count": 2664
+      "count": 2679
     }
   ],
-  "generated_at": "2026-06-19T09:40:02.448071+00:00",
+  "generated_at": "2026-06-19T09:50:02.043725+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
