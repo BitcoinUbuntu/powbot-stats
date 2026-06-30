@@ -1,35 +1,77 @@
 {
   "totals": {
-    "all_payments": 5771,
+    "all_payments": 5789,
     "by_type": {
       "merchant": {
-        "count": 1912
+        "count": 1918
       },
       "project": {
-        "count": 1912
+        "count": 1918
       },
       "reviewer": {
-        "count": 1947
+        "count": 1953
       }
     }
   },
   "today": {
     "date": "2026-06-30",
-    "payments": 12,
+    "payments": 30,
     "by_type": {
       "merchant": {
-        "count": 4
+        "count": 10
       },
       "project": {
-        "count": 4
+        "count": 10
       },
       "reviewer": {
-        "count": 4
+        "count": 10
       }
     },
-    "approved": 4,
+    "approved": 10,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsvwhgn9t508zzy4dwqc20t9nf6p9wfxlw9erce3r9wlfl32kmjnesgfd3tj",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "Nostr",
+        "time": "13:02"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqszclshfxezuw853hy7n5vduuma3gu5tt094943lwa9qh4t0sfr8zqdkee7h",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Dama shop",
+        "platform": "Nostr",
+        "time": "13:02"
+      },
+      {
+        "url": "https://x.com/i/status/2071923935747150186",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "X",
+        "time": "13:01"
+      },
+      {
+        "url": "https://x.com/i/status/2071924179444576445",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Dama shop",
+        "platform": "X",
+        "time": "13:01"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs88072zv64nzkd5xt7gj8p2z42lj9qdt8ffrq70spwrpwkrnp3d3sgg9fy8",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Tenorio Baber Shop",
+        "platform": "Nostr",
+        "time": "13:01"
+      },
+      {
+        "url": "https://x.com/i/status/2071849118683529454",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Tenorio Baber Shop",
+        "platform": "X",
+        "time": "13:01"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsq6p024ux5599ggj49d6wsr9r8auky76nxuksd6l2hqt6rn9vm9eqj79dyw",
         "project": "Bitbiashara 🇰🇪",
@@ -62,6 +104,24 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -323,16 +383,16 @@
     },
     {
       "date": "2026-06-30",
-      "project_count": 4,
-      "merchant_count": 4,
-      "reviewer_count": 4,
-      "approved": 4,
+      "project_count": 10,
+      "merchant_count": 10,
+      "reviewer_count": 10,
+      "approved": 10,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1992,
-    "approved": 1909,
+    "total_reviewed": 1998,
+    "approved": 1915,
     "rejected": 83
   },
   "top_projects": [
@@ -3629,8 +3689,28 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 384,
+      "count": 388,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsvwhgn9t508zzy4dwqc20t9nf6p9wfxlw9erce3r9wlfl32kmjnesgfd3tj",
+          "date": "2026-06-30",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszclshfxezuw853hy7n5vduuma3gu5tt094943lwa9qh4t0sfr8zqdkee7h",
+          "date": "2026-06-30",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://x.com/i/status/2071923935747150186",
+          "date": "2026-06-30",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2071924179444576445",
+          "date": "2026-06-30",
+          "merchant": "Dama shop"
+        },
         {
           "url": "https://x.com/i/status/2071470182938148980",
           "date": "2026-06-29",
@@ -5555,8 +5635,18 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 217,
+      "count": 219,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs88072zv64nzkd5xt7gj8p2z42lj9qdt8ffrq70spwrpwkrnp3d3sgg9fy8",
+          "date": "2026-06-30",
+          "merchant": "Tenorio Baber Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2071849118683529454",
+          "date": "2026-06-30",
+          "merchant": "Tenorio Baber Shop"
+        },
         {
           "url": "https://x.com/i/status/2068414673549152526",
           "date": "2026-06-22",
@@ -10618,8 +10708,18 @@
     },
     {
       "name": "Mary Shop",
-      "count": 111,
+      "count": 113,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsvwhgn9t508zzy4dwqc20t9nf6p9wfxlw9erce3r9wlfl32kmjnesgfd3tj",
+          "date": "2026-06-30",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2071923935747150186",
+          "date": "2026-06-30",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2071470182938148980",
           "date": "2026-06-29",
@@ -13384,8 +13484,18 @@
     },
     {
       "name": "Dama shop",
-      "count": 72,
+      "count": 74,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqszclshfxezuw853hy7n5vduuma3gu5tt094943lwa9qh4t0sfr8zqdkee7h",
+          "date": "2026-06-30",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2071924179444576445",
+          "date": "2026-06-30",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsgwqpu8v5yqt7a8knjq2qfln5kwkm77x0dyrl0zgkqchhpsy233nq4d993p",
           "date": "2026-06-28",
@@ -14567,6 +14677,232 @@
       ]
     },
     {
+      "name": "Tenorio Baber Shop",
+      "count": 44,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs88072zv64nzkd5xt7gj8p2z42lj9qdt8ffrq70spwrpwkrnp3d3sgg9fy8",
+          "date": "2026-06-30",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2071849118683529454",
+          "date": "2026-06-30",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2068414673549152526",
+          "date": "2026-06-22",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdw0z0wj07uq47y9x85hmd8ygkyt72drxau7enefa4d7cvrs32ajqk3r9xz",
+          "date": "2026-06-22",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfkpf74pzzal8epa0pxvsgywevdtrvlc9yzvtr2pqhl0kwxm95mhcq7sltz",
+          "date": "2026-06-18",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2066934424562815161",
+          "date": "2026-06-18",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstykuwl434r4483uh7p3ym4gnqrpjjcrqpp0wf92rthavr8s207vcee7p8q",
+          "date": "2026-06-16",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2066602244913410095",
+          "date": "2026-06-16",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs20r3qwvu8p3082dwh44y44n9aa85tqe0axyp69x566u9ze4qg02qcsq2xf",
+          "date": "2026-06-15",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2066255669880099188",
+          "date": "2026-06-15",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9m0ca4uqnr5fvx6mhvmsdeffaalv470a3tm3jcmn7sdxksyx994cl5j38w",
+          "date": "2026-06-11",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2065019756034306084",
+          "date": "2026-06-11",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy3cqgnft3q6xe5lf6umvpnde8epx0ck3y9rflwzl44m90d7fpuacw08tf6",
+          "date": "2026-06-08",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2063687728047194522",
+          "date": "2026-06-08",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszt9ww32gud8s3xjmsg29kwl33kgljs69wjmzxsdglp074xg4ry8s3685hj",
+          "date": "2026-05-31",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2060775604845224294",
+          "date": "2026-05-31",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsx5mgwdcrghwaf03geegp78ywcx80f90ngvx7ntw5agk5lfuvh4kqw69chm",
+          "date": "2026-05-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2058547128733938032",
+          "date": "2026-05-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst06udjdnzag9wwtfjpk3qpfenq9zd6cghpvdp7lky4qt5agjvcuqntfxnr",
+          "date": "2026-05-22",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2057543329307381921",
+          "date": "2026-05-22",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxdw4uacax8a6fgq0ry57er4ttkcdkz4s7zhusrsc0jyzhsjdzdhqaykewd",
+          "date": "2026-05-20",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2056858553495822500",
+          "date": "2026-05-20",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdmyguhzu7tzt0arp2ymv03zvaczh97mrfduxn695jpe0eqh9f4gsdy4ukv",
+          "date": "2026-05-20",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2056482775838973975",
+          "date": "2026-05-20",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd7at52wezrhw5g5a5ry4hnnepjzu28eccuvh6wu2vc32zfywv5xqvhta0q",
+          "date": "2026-05-20",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2056028471306891402",
+          "date": "2026-05-20",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2055148394532769967",
+          "date": "2026-05-15",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxnht48eqjd0cgwl8ur58jmg0yaq8f69kxc80w78mlt03hwxuwf4qncz9hk",
+          "date": "2026-05-15",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2054895248187277428",
+          "date": "2026-05-15",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdppwc8epkc6lp5m6vlf7d7q85lqej3zxvrtfkg5yvah8zvzpzp5qdcqfl4",
+          "date": "2026-05-15",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxhjve4h5gsyfw08tuhu8nxptlpgchxqajvrqh3u2mjwtvdg7de0qqlxg9g",
+          "date": "2026-05-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2054656791682732233",
+          "date": "2026-05-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs25vvghf7ax4af6dztcjgnguksal3wcjhzf66axm0kcusvlsuk26cyuar3p",
+          "date": "2026-04-30",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2049574414698635574",
+          "date": "2026-04-30",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2046521423422742799",
+          "date": "2026-04-21",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrnxxq49ydtjt3z749mdeakpy56yae6daar2nhzdxdgftnnhwuevccket0f",
+          "date": "2026-04-21",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2046276452438389119",
+          "date": "2026-04-20",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxdl28a02ckue07gwk6f5n9rcdvqxq2ll4sxkt6lnjmel065qe2lqn7w40n",
+          "date": "2026-04-20",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8n5v09w2d5x8rez5f62rzk7v92ce80jjemvmq7fsy6ed2dcy7qkspef48j",
+          "date": "2026-04-17",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2045222658824888607",
+          "date": "2026-04-17",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2037998084685169068",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2d4vc3vyf72kqh3jwdzvctgsy3mztw6dyrdlzvemthwfx4ygcjjq9w9fal",
+          "date": "2026-03-29",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstqfhvqazzv7er94pgnehhk6l02296euk3zduz9y3kguvw9nuwzcsz3pjzj",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036770826096095273",
+          "date": "2026-03-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Isac Mini-Shop",
       "count": 43,
       "posts": [
@@ -14783,222 +15119,6 @@
         {
           "url": "https://x.com/i/status/2036057680742117842",
           "date": "2026-03-24",
-          "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Tenorio Baber Shop",
-      "count": 42,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2068414673549152526",
-          "date": "2026-06-22",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdw0z0wj07uq47y9x85hmd8ygkyt72drxau7enefa4d7cvrs32ajqk3r9xz",
-          "date": "2026-06-22",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfkpf74pzzal8epa0pxvsgywevdtrvlc9yzvtr2pqhl0kwxm95mhcq7sltz",
-          "date": "2026-06-18",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2066934424562815161",
-          "date": "2026-06-18",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstykuwl434r4483uh7p3ym4gnqrpjjcrqpp0wf92rthavr8s207vcee7p8q",
-          "date": "2026-06-16",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2066602244913410095",
-          "date": "2026-06-16",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs20r3qwvu8p3082dwh44y44n9aa85tqe0axyp69x566u9ze4qg02qcsq2xf",
-          "date": "2026-06-15",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2066255669880099188",
-          "date": "2026-06-15",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9m0ca4uqnr5fvx6mhvmsdeffaalv470a3tm3jcmn7sdxksyx994cl5j38w",
-          "date": "2026-06-11",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2065019756034306084",
-          "date": "2026-06-11",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy3cqgnft3q6xe5lf6umvpnde8epx0ck3y9rflwzl44m90d7fpuacw08tf6",
-          "date": "2026-06-08",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2063687728047194522",
-          "date": "2026-06-08",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszt9ww32gud8s3xjmsg29kwl33kgljs69wjmzxsdglp074xg4ry8s3685hj",
-          "date": "2026-05-31",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2060775604845224294",
-          "date": "2026-05-31",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsx5mgwdcrghwaf03geegp78ywcx80f90ngvx7ntw5agk5lfuvh4kqw69chm",
-          "date": "2026-05-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2058547128733938032",
-          "date": "2026-05-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst06udjdnzag9wwtfjpk3qpfenq9zd6cghpvdp7lky4qt5agjvcuqntfxnr",
-          "date": "2026-05-22",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2057543329307381921",
-          "date": "2026-05-22",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxdw4uacax8a6fgq0ry57er4ttkcdkz4s7zhusrsc0jyzhsjdzdhqaykewd",
-          "date": "2026-05-20",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2056858553495822500",
-          "date": "2026-05-20",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdmyguhzu7tzt0arp2ymv03zvaczh97mrfduxn695jpe0eqh9f4gsdy4ukv",
-          "date": "2026-05-20",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2056482775838973975",
-          "date": "2026-05-20",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd7at52wezrhw5g5a5ry4hnnepjzu28eccuvh6wu2vc32zfywv5xqvhta0q",
-          "date": "2026-05-20",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2056028471306891402",
-          "date": "2026-05-20",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2055148394532769967",
-          "date": "2026-05-15",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxnht48eqjd0cgwl8ur58jmg0yaq8f69kxc80w78mlt03hwxuwf4qncz9hk",
-          "date": "2026-05-15",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2054895248187277428",
-          "date": "2026-05-15",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdppwc8epkc6lp5m6vlf7d7q85lqej3zxvrtfkg5yvah8zvzpzp5qdcqfl4",
-          "date": "2026-05-15",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxhjve4h5gsyfw08tuhu8nxptlpgchxqajvrqh3u2mjwtvdg7de0qqlxg9g",
-          "date": "2026-05-13",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2054656791682732233",
-          "date": "2026-05-13",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs25vvghf7ax4af6dztcjgnguksal3wcjhzf66axm0kcusvlsuk26cyuar3p",
-          "date": "2026-04-30",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2049574414698635574",
-          "date": "2026-04-30",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2046521423422742799",
-          "date": "2026-04-21",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrnxxq49ydtjt3z749mdeakpy56yae6daar2nhzdxdgftnnhwuevccket0f",
-          "date": "2026-04-21",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2046276452438389119",
-          "date": "2026-04-20",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxdl28a02ckue07gwk6f5n9rcdvqxq2ll4sxkt6lnjmel065qe2lqn7w40n",
-          "date": "2026-04-20",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8n5v09w2d5x8rez5f62rzk7v92ce80jjemvmq7fsy6ed2dcy7qkspef48j",
-          "date": "2026-04-17",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2045222658824888607",
-          "date": "2026-04-17",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2037998084685169068",
-          "date": "2026-03-29",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2d4vc3vyf72kqh3jwdzvctgsy3mztw6dyrdlzvemthwfx4ygcjjq9w9fal",
-          "date": "2026-03-29",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstqfhvqazzv7er94pgnehhk6l02296euk3zduz9y3kguvw9nuwzcsz3pjzj",
-          "date": "2026-03-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036770826096095273",
-          "date": "2026-03-25",
           "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
@@ -20528,7 +20648,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 5654
+      "count": 5672
     },
     {
       "domain": "8333.mobi",
@@ -20579,13 +20699,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2914
+      "count": 2923
     },
     {
       "platform": "Nostr",
-      "count": 2857
+      "count": 2866
     }
   ],
-  "generated_at": "2026-06-30T13:00:02.285848+00:00",
+  "generated_at": "2026-06-30T13:10:02.184247+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
