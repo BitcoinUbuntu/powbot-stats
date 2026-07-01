@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 5825,
+    "all_payments": 5828,
     "by_type": {
       "merchant": {
-        "count": 1930
+        "count": 1931
       },
       "project": {
-        "count": 1930
+        "count": 1931
       },
       "reviewer": {
-        "count": 1965
+        "count": 1966
       }
     }
   },
   "today": {
     "date": "2026-07-01",
-    "payments": 21,
+    "payments": 24,
     "by_type": {
       "merchant": {
-        "count": 7
+        "count": 8
       },
       "project": {
-        "count": 7
+        "count": 8
       },
       "reviewer": {
-        "count": 7
+        "count": 8
       }
     },
-    "approved": 7,
+    "approved": 8,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2072361384554217799",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Obrien Shop",
+        "platform": "X",
+        "time": "17:35"
+      },
       {
         "url": "https://primal.net/e/nevent1qqs8f04vun2cxe5xe2jwz6aqchwyp8re69ernmw4el82fwkhw77vyas8m7hv7",
         "project": "Bitcoin Tofo 🇲🇿",
@@ -83,6 +90,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
       {
         "project": "Bitcoin Tofo 🇲🇿"
       },
@@ -344,16 +354,16 @@
     },
     {
       "date": "2026-07-01",
-      "project_count": 7,
-      "merchant_count": 7,
-      "reviewer_count": 7,
-      "approved": 7,
+      "project_count": 8,
+      "merchant_count": 8,
+      "reviewer_count": 8,
+      "approved": 8,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 2010,
-    "approved": 1927,
+    "total_reviewed": 2011,
+    "approved": 1928,
     "rejected": 83
   },
   "top_projects": [
@@ -9033,8 +9043,13 @@
     },
     {
       "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 35,
+      "count": 36,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2072361384554217799",
+          "date": "2026-07-01",
+          "merchant": "Obrien Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9usnaat9v4l9mxhqfrahckh5x3gx92zez5zexln8gj05gaxcj7pcz2hns5",
           "date": "2026-06-23",
@@ -19755,6 +19770,27 @@
       ]
     },
     {
+      "name": "Obrien Shop",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2072361384554217799",
+          "date": "2026-07-01",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0ce99hkvwdauqq36uwmzmcedk4mmaupakx2ted2v88k4a8uktgrc4nca5s",
+          "date": "2026-05-06",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2043773017877025274",
+          "date": "2026-04-13",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Mwabosire",
       "count": 3,
       "posts": [
@@ -20027,22 +20063,6 @@
           "url": "https://x.com/i/status/2053576927001133330",
           "date": "2026-05-11",
           "project": "Bitcoin Famba 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Obrien Shop",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs0ce99hkvwdauqq36uwmzmcedk4mmaupakx2ted2v88k4a8uktgrc4nca5s",
-          "date": "2026-05-06",
-          "project": "Bitcoin Victoria Falls 🇿🇲"
-        },
-        {
-          "url": "https://x.com/i/status/2043773017877025274",
-          "date": "2026-04-13",
-          "project": "BitJR Academy 🇿🇲"
         }
       ]
     },
@@ -20729,7 +20749,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 5704
+      "count": 5707
     },
     {
       "domain": "8333.mobi",
@@ -20780,13 +20800,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2941
+      "count": 2944
     },
     {
       "platform": "Nostr",
       "count": 2884
     }
   ],
-  "generated_at": "2026-07-01T17:30:01.922697+00:00",
+  "generated_at": "2026-07-01T17:40:01.832760+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
