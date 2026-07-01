@@ -1,28 +1,99 @@
 {
   "totals": {
-    "all_payments": 5804,
+    "all_payments": 5822,
     "by_type": {
       "merchant": {
-        "count": 1923
+        "count": 1929
       },
       "project": {
-        "count": 1923
+        "count": 1929
       },
       "reviewer": {
-        "count": 1958
+        "count": 1964
       }
     }
   },
   "today": {
     "date": "2026-07-01",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 18,
+    "by_type": {
+      "merchant": {
+        "count": 6
+      },
+      "project": {
+        "count": 6
+      },
+      "reviewer": {
+        "count": 6
+      }
+    },
+    "approved": 6,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2072178968573182263",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Dama shop",
+        "platform": "X",
+        "time": "08:47"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs2nmqshemaft6j9z42k2eqjyrvfe2ylytdyhzx70mh4v5r2ua9d3qdrzldc",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Dama shop",
+        "platform": "Nostr",
+        "time": "08:47"
+      },
+      {
+        "url": "https://x.com/i/status/2072178547888689633",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "X",
+        "time": "08:47"
+      },
+      {
+        "url": "https://x.com/i/status/2072178784728428929",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "08:47"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs9yegpklqul550tvdq4dp2jqjz5tsadnqx97veqpzgma7gua2p60s242e4x",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "Nostr",
+        "time": "08:46"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs9st28fygpjl0ua24vmfvhzwu6q27w7e5x709ry7gaafh8rvjsyggn4emsq",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "Nostr",
+        "time": "08:46"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Tofo 🇲🇿"
       },
@@ -305,16 +376,16 @@
     },
     {
       "date": "2026-07-01",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 6,
+      "approved": 6,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 2003,
-    "approved": 1920,
+    "total_reviewed": 2009,
+    "approved": 1926,
     "rejected": 83
   },
   "top_projects": [
@@ -3611,8 +3682,38 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 392,
+      "count": 398,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2072178968573182263",
+          "date": "2026-07-01",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2nmqshemaft6j9z42k2eqjyrvfe2ylytdyhzx70mh4v5r2ua9d3qdrzldc",
+          "date": "2026-07-01",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://x.com/i/status/2072178547888689633",
+          "date": "2026-07-01",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2072178784728428929",
+          "date": "2026-07-01",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9yegpklqul550tvdq4dp2jqjz5tsadnqx97veqpzgma7gua2p60s242e4x",
+          "date": "2026-07-01",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9st28fygpjl0ua24vmfvhzwu6q27w7e5x709ry7gaafh8rvjsyggn4emsq",
+          "date": "2026-07-01",
+          "merchant": "Orero shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs8289vt5srgarh7acn90sa9nald0qz35dhrez4l9rntzm48v3s8vqjtescs",
           "date": "2026-06-30",
@@ -10655,8 +10756,18 @@
     },
     {
       "name": "Mary Shop",
-      "count": 113,
+      "count": 115,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2072178547888689633",
+          "date": "2026-07-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9yegpklqul550tvdq4dp2jqjz5tsadnqx97veqpzgma7gua2p60s242e4x",
+          "date": "2026-07-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsvwhgn9t508zzy4dwqc20t9nf6p9wfxlw9erce3r9wlfl32kmjnesgfd3tj",
           "date": "2026-06-30",
@@ -11711,6 +11822,467 @@
       ]
     },
     {
+      "name": "Orero shop",
+      "count": 91,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2072178784728428929",
+          "date": "2026-07-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9st28fygpjl0ua24vmfvhzwu6q27w7e5x709ry7gaafh8rvjsyggn4emsq",
+          "date": "2026-07-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv59cpeyz2f3fk4j72taujt9rkftt3hgdlr5qutpa4eqhzc3xntgct6udt8",
+          "date": "2026-06-30",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2071931483959300174",
+          "date": "2026-06-30",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspvveqvyecqkrww56jkhlwf64yqvcvd68p97gn4n5tsxzngp624acmgjy0h",
+          "date": "2026-06-28",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2071216694698135670",
+          "date": "2026-06-28",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrlyy3v0n8we0hk0k3ja7yeuvxqxfez3xvv4u6emjn5udcr43mancve55l2",
+          "date": "2026-06-27",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2069673520695476579",
+          "date": "2026-06-27",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2069319962699649405",
+          "date": "2026-06-23",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8mmh87fvmrpcujrkrakgkjvvssqlwc3ajesy4zyfm4er3xzdj8csnnlmg3",
+          "date": "2026-06-23",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2jnqkk0xjvaffewe6mn9s0cc80um55298dgjtckjqhxe94cxffugcl80em",
+          "date": "2026-06-22",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2068549959645901150",
+          "date": "2026-06-22",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8fnq9q7ffnuukdmngrqf8wx83endrvy2lzmkh95pzk4cypj0na3q6z055n",
+          "date": "2026-06-22",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2068413652332621838",
+          "date": "2026-06-22",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9ts86zgpf7f8gtrd0yk3p5suj0g7pmsj5hkv0tz3dk8crty59zggvpdx2y",
+          "date": "2026-06-18",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2067299861246992596",
+          "date": "2026-06-18",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst7dawllkc440x9l24jaldrwawdhmzm3ts7fxvevzkpz339gpupwg057e58",
+          "date": "2026-06-14",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2066138298376999109",
+          "date": "2026-06-14",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszc4v6n25ye68pfzcar3u3ll6usz4lk0gl6u5thxk2ay9n3enup2s3tkq02",
+          "date": "2026-06-11",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2065121637943460313",
+          "date": "2026-06-11",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgd7g63n6puy24aewr25fwcprvfhd3e2gnj77gkneal3ggufse33qy9vlxx",
+          "date": "2026-06-11",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2064768869223313850",
+          "date": "2026-06-11",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2064052156907270481",
+          "date": "2026-06-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfekfuva5f2fvrxnn99zjwnc8eysapnzrtshqq7aka25dcfzl274qv8584j",
+          "date": "2026-06-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp7cquetr9z596wz4hwqt3u4gaykedj9t8ypsjzqxpjk5kmzdz3zcqanlvw",
+          "date": "2026-06-08",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2063705139651690576",
+          "date": "2026-06-08",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9zhscjmr05e3vujfc3mwa3mhxastftqx5lr6naeurc4srl8nturcl2q4rg",
+          "date": "2026-06-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2062986776340267412",
+          "date": "2026-06-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqrl5lkez6rdksgcjpwrfkv5zdrq05ddke2y63pxzuj7hl862shrc7wu5jk",
+          "date": "2026-06-04",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2062622810007105594",
+          "date": "2026-06-04",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9tenq2ldqfuxq4qdh64rvahrwlysngsfmwt0cc2f885062aweyfs334mf6",
+          "date": "2026-06-03",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2061862553936961937",
+          "date": "2026-06-03",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2e4kx9mucpl3ecr84njkg3vqj8d2p3fau7t5a2uqvnecy9mlfxtclx6z45",
+          "date": "2026-06-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2061372889757049245",
+          "date": "2026-06-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxszxewnvtdn9xktef74hmg83j53txedr9jqnv9t36v733qfsx6yqwqa2cz",
+          "date": "2026-05-31",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2060942825785593867",
+          "date": "2026-05-31",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv44nw7ayqpetv326c4mpnuvwjk2p4td9hyxlmdawz9rkqx8x9ckccseky5",
+          "date": "2026-05-28",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2060005260517593352",
+          "date": "2026-05-28",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2059657947001622949",
+          "date": "2026-05-28",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdqtkh3mpzuph2a4h2tm39wr9v0g5cg2p0juejykeng2lxtwq22qg256wks",
+          "date": "2026-05-28",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst7ztv06h4aprkhwqa87y075uqtc9q3t2rk23pczw4q4gdp2hd9hgu6tshj",
+          "date": "2026-05-27",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2059285273964351684",
+          "date": "2026-05-27",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspmweza0u5al25999d27paafr4u2xnshc0jgeuphm9xhpel2rgexcs2sf98",
+          "date": "2026-05-26",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2058985460265803969",
+          "date": "2026-05-26",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2n58fdrv09h2mkxss3gngkm68m2uhq3yt0pzu7kq32lxj5xmmcds9q5lu9",
+          "date": "2026-05-25",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2058530889483665620",
+          "date": "2026-05-24",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs99ejkecyrwwus2rcr4hnhddk3z9c0mjyzevre54raa6ay7nf200su3vt0q",
+          "date": "2026-05-24",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2058255874175414506",
+          "date": "2026-05-24",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2057573998486016511",
+          "date": "2026-05-22",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp465kjamj9uvmvfs8kfcgwt9dzx8frpk3hdqhmcwx9367j4zsn0czs66p3",
+          "date": "2026-05-22",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2057313901285392527",
+          "date": "2026-05-21",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs07phsy0yx99fqdsc78zkjk0gqm6p29pj0tx6tksgmmk4xpvknxqgenyrhz",
+          "date": "2026-05-21",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9qx0pcd6hk0ef58n2kj9640wgdvm082z9lh63c9s4xescckp5n4q9p30nf",
+          "date": "2026-05-20",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2056994224046850184",
+          "date": "2026-05-20",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2055914912199606475",
+          "date": "2026-05-20",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrxv9gy7surcrgz7avwwjv3h6kdh3k8hdc7c34e0ue5u6st26h5ts46974g",
+          "date": "2026-05-20",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9qfxtc97wfm88ss707p0j9j8wa0t2prqw947hz6rckvzfjlhz3nswzejcf",
+          "date": "2026-04-30",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2049748828601917523",
+          "date": "2026-04-30",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspd2hkzyedtp0k23s4ar72cq5tjf5az3p7qkq79uzmkhxz26hdlwch48kt0",
+          "date": "2026-04-29",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2049356027510899095",
+          "date": "2026-04-29",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvgq2hqr8c378jf2kk36z0zpypg4dpun7yn77av7rz870llkn45ls39sy9n",
+          "date": "2026-04-24",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2047553270948774019",
+          "date": "2026-04-24",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0ajtu9lev0ee2xg3rd8ma6gdur5eyh5mzwuencyn67qnqrg2e64szn0rqc",
+          "date": "2026-04-23",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2047301389630534047",
+          "date": "2026-04-23",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs90k9scd7sxx5feljrvmhqp3fthmmpmlckf4hll5zh3vkeh3zpqfgehg3w8",
+          "date": "2026-04-22",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2046859823833137593",
+          "date": "2026-04-22",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdxzr6pcyheqdd40agk9tngs7ygg3mqtg39uptdg0fca55vrq92pg6tph64",
+          "date": "2026-04-21",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2046480637972857068",
+          "date": "2026-04-21",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfqw90l627vlhh0cp95qcr0yf3makgy506wx0q9esp2vxdksve6jcapd2g9",
+          "date": "2026-04-20",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2046091520390971902",
+          "date": "2026-04-20",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrqwk2w5l0cptpgge3hg58s2fk8qy4uevk0z3mdt8434sq9vttpkc8zc35p",
+          "date": "2026-04-19",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2045774284992176410",
+          "date": "2026-04-19",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2045368060811317436",
+          "date": "2026-04-18",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqgr3kdqxhhmay300ml8rmejw45zjfseayum4kqgzg6y7fa3j7h2q98qukq",
+          "date": "2026-04-18",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2044445849522942224",
+          "date": "2026-04-15",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfhmuvx5rre323nw288j45l22ljer8wypu6989dz4wygcu9tfnvkcfuy2n4",
+          "date": "2026-04-15",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2044036960935710891",
+          "date": "2026-04-14",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp8pd4tm075jvzylpqushg276hf8ca6w29pduxmcy8gek9228u2xskmc38s",
+          "date": "2026-04-14",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2043712277409419742",
+          "date": "2026-04-13",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswf64jd99h08xurg2vsye5cz2xzaz9gfgk7z03mtpu3hpxsvl96jcwcflxj",
+          "date": "2026-04-13",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgmgn9pnwj0cgrktryrfmftdtsldsp9eyldzw6wcu9065gy0t7lhgmw3e9l",
+          "date": "2026-04-11",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2042640073770869210",
+          "date": "2026-04-11",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdylp67fxphawv2m9za7r2kpw44vcyqpqkwayvzz648d7hqe7en0g0tljx4",
+          "date": "2026-04-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2042260173285199925",
+          "date": "2026-04-09",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqhykpcq7a6r0tuqemw7etsuehs22dh2wwe4p5j0cqhuzpv6wqykqt933u7",
+          "date": "2026-04-08",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2041837282936639798",
+          "date": "2026-04-08",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy5krpcfrcphml937x0ur5yrn2qq0jfhj5fcsvgu32p37kke97tdsk0maq8",
+          "date": "2026-04-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2040804826926190957",
+          "date": "2026-04-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs23tq7ewa4qrx082frfrp0a4msnm9vw9vsmu5aqs6nksk4tzyrjls7sfl35",
+          "date": "2026-04-05",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2040057934357381514",
+          "date": "2026-04-05",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2034660669149073477",
+          "date": "2026-04-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Lydiah Richland Shop",
       "count": 90,
       "posts": [
@@ -12163,457 +12735,6 @@
           "url": "https://x.com/i/status/2036276822472556817",
           "date": "2026-03-24",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Orero shop",
-      "count": 89,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsv59cpeyz2f3fk4j72taujt9rkftt3hgdlr5qutpa4eqhzc3xntgct6udt8",
-          "date": "2026-06-30",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2071931483959300174",
-          "date": "2026-06-30",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspvveqvyecqkrww56jkhlwf64yqvcvd68p97gn4n5tsxzngp624acmgjy0h",
-          "date": "2026-06-28",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2071216694698135670",
-          "date": "2026-06-28",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrlyy3v0n8we0hk0k3ja7yeuvxqxfez3xvv4u6emjn5udcr43mancve55l2",
-          "date": "2026-06-27",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2069673520695476579",
-          "date": "2026-06-27",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2069319962699649405",
-          "date": "2026-06-23",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8mmh87fvmrpcujrkrakgkjvvssqlwc3ajesy4zyfm4er3xzdj8csnnlmg3",
-          "date": "2026-06-23",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2jnqkk0xjvaffewe6mn9s0cc80um55298dgjtckjqhxe94cxffugcl80em",
-          "date": "2026-06-22",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2068549959645901150",
-          "date": "2026-06-22",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8fnq9q7ffnuukdmngrqf8wx83endrvy2lzmkh95pzk4cypj0na3q6z055n",
-          "date": "2026-06-22",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2068413652332621838",
-          "date": "2026-06-22",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9ts86zgpf7f8gtrd0yk3p5suj0g7pmsj5hkv0tz3dk8crty59zggvpdx2y",
-          "date": "2026-06-18",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2067299861246992596",
-          "date": "2026-06-18",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst7dawllkc440x9l24jaldrwawdhmzm3ts7fxvevzkpz339gpupwg057e58",
-          "date": "2026-06-14",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2066138298376999109",
-          "date": "2026-06-14",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszc4v6n25ye68pfzcar3u3ll6usz4lk0gl6u5thxk2ay9n3enup2s3tkq02",
-          "date": "2026-06-11",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2065121637943460313",
-          "date": "2026-06-11",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgd7g63n6puy24aewr25fwcprvfhd3e2gnj77gkneal3ggufse33qy9vlxx",
-          "date": "2026-06-11",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2064768869223313850",
-          "date": "2026-06-11",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2064052156907270481",
-          "date": "2026-06-09",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfekfuva5f2fvrxnn99zjwnc8eysapnzrtshqq7aka25dcfzl274qv8584j",
-          "date": "2026-06-09",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp7cquetr9z596wz4hwqt3u4gaykedj9t8ypsjzqxpjk5kmzdz3zcqanlvw",
-          "date": "2026-06-08",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2063705139651690576",
-          "date": "2026-06-08",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9zhscjmr05e3vujfc3mwa3mhxastftqx5lr6naeurc4srl8nturcl2q4rg",
-          "date": "2026-06-06",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2062986776340267412",
-          "date": "2026-06-06",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqrl5lkez6rdksgcjpwrfkv5zdrq05ddke2y63pxzuj7hl862shrc7wu5jk",
-          "date": "2026-06-04",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2062622810007105594",
-          "date": "2026-06-04",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9tenq2ldqfuxq4qdh64rvahrwlysngsfmwt0cc2f885062aweyfs334mf6",
-          "date": "2026-06-03",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2061862553936961937",
-          "date": "2026-06-03",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2e4kx9mucpl3ecr84njkg3vqj8d2p3fau7t5a2uqvnecy9mlfxtclx6z45",
-          "date": "2026-06-01",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2061372889757049245",
-          "date": "2026-06-01",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxszxewnvtdn9xktef74hmg83j53txedr9jqnv9t36v733qfsx6yqwqa2cz",
-          "date": "2026-05-31",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2060942825785593867",
-          "date": "2026-05-31",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv44nw7ayqpetv326c4mpnuvwjk2p4td9hyxlmdawz9rkqx8x9ckccseky5",
-          "date": "2026-05-28",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2060005260517593352",
-          "date": "2026-05-28",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2059657947001622949",
-          "date": "2026-05-28",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdqtkh3mpzuph2a4h2tm39wr9v0g5cg2p0juejykeng2lxtwq22qg256wks",
-          "date": "2026-05-28",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst7ztv06h4aprkhwqa87y075uqtc9q3t2rk23pczw4q4gdp2hd9hgu6tshj",
-          "date": "2026-05-27",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2059285273964351684",
-          "date": "2026-05-27",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspmweza0u5al25999d27paafr4u2xnshc0jgeuphm9xhpel2rgexcs2sf98",
-          "date": "2026-05-26",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2058985460265803969",
-          "date": "2026-05-26",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2n58fdrv09h2mkxss3gngkm68m2uhq3yt0pzu7kq32lxj5xmmcds9q5lu9",
-          "date": "2026-05-25",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2058530889483665620",
-          "date": "2026-05-24",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs99ejkecyrwwus2rcr4hnhddk3z9c0mjyzevre54raa6ay7nf200su3vt0q",
-          "date": "2026-05-24",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2058255874175414506",
-          "date": "2026-05-24",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2057573998486016511",
-          "date": "2026-05-22",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp465kjamj9uvmvfs8kfcgwt9dzx8frpk3hdqhmcwx9367j4zsn0czs66p3",
-          "date": "2026-05-22",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2057313901285392527",
-          "date": "2026-05-21",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs07phsy0yx99fqdsc78zkjk0gqm6p29pj0tx6tksgmmk4xpvknxqgenyrhz",
-          "date": "2026-05-21",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9qx0pcd6hk0ef58n2kj9640wgdvm082z9lh63c9s4xescckp5n4q9p30nf",
-          "date": "2026-05-20",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2056994224046850184",
-          "date": "2026-05-20",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2055914912199606475",
-          "date": "2026-05-20",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrxv9gy7surcrgz7avwwjv3h6kdh3k8hdc7c34e0ue5u6st26h5ts46974g",
-          "date": "2026-05-20",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9qfxtc97wfm88ss707p0j9j8wa0t2prqw947hz6rckvzfjlhz3nswzejcf",
-          "date": "2026-04-30",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2049748828601917523",
-          "date": "2026-04-30",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspd2hkzyedtp0k23s4ar72cq5tjf5az3p7qkq79uzmkhxz26hdlwch48kt0",
-          "date": "2026-04-29",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2049356027510899095",
-          "date": "2026-04-29",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvgq2hqr8c378jf2kk36z0zpypg4dpun7yn77av7rz870llkn45ls39sy9n",
-          "date": "2026-04-24",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2047553270948774019",
-          "date": "2026-04-24",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0ajtu9lev0ee2xg3rd8ma6gdur5eyh5mzwuencyn67qnqrg2e64szn0rqc",
-          "date": "2026-04-23",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2047301389630534047",
-          "date": "2026-04-23",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs90k9scd7sxx5feljrvmhqp3fthmmpmlckf4hll5zh3vkeh3zpqfgehg3w8",
-          "date": "2026-04-22",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2046859823833137593",
-          "date": "2026-04-22",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdxzr6pcyheqdd40agk9tngs7ygg3mqtg39uptdg0fca55vrq92pg6tph64",
-          "date": "2026-04-21",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2046480637972857068",
-          "date": "2026-04-21",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfqw90l627vlhh0cp95qcr0yf3makgy506wx0q9esp2vxdksve6jcapd2g9",
-          "date": "2026-04-20",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2046091520390971902",
-          "date": "2026-04-20",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrqwk2w5l0cptpgge3hg58s2fk8qy4uevk0z3mdt8434sq9vttpkc8zc35p",
-          "date": "2026-04-19",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2045774284992176410",
-          "date": "2026-04-19",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2045368060811317436",
-          "date": "2026-04-18",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqgr3kdqxhhmay300ml8rmejw45zjfseayum4kqgzg6y7fa3j7h2q98qukq",
-          "date": "2026-04-18",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2044445849522942224",
-          "date": "2026-04-15",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfhmuvx5rre323nw288j45l22ljer8wypu6989dz4wygcu9tfnvkcfuy2n4",
-          "date": "2026-04-15",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2044036960935710891",
-          "date": "2026-04-14",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp8pd4tm075jvzylpqushg276hf8ca6w29pduxmcy8gek9228u2xskmc38s",
-          "date": "2026-04-14",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2043712277409419742",
-          "date": "2026-04-13",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswf64jd99h08xurg2vsye5cz2xzaz9gfgk7z03mtpu3hpxsvl96jcwcflxj",
-          "date": "2026-04-13",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgmgn9pnwj0cgrktryrfmftdtsldsp9eyldzw6wcu9065gy0t7lhgmw3e9l",
-          "date": "2026-04-11",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2042640073770869210",
-          "date": "2026-04-11",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdylp67fxphawv2m9za7r2kpw44vcyqpqkwayvzz648d7hqe7en0g0tljx4",
-          "date": "2026-04-09",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2042260173285199925",
-          "date": "2026-04-09",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqhykpcq7a6r0tuqemw7etsuehs22dh2wwe4p5j0cqhuzpv6wqykqt933u7",
-          "date": "2026-04-08",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2041837282936639798",
-          "date": "2026-04-08",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy5krpcfrcphml937x0ur5yrn2qq0jfhj5fcsvgu32p37kke97tdsk0maq8",
-          "date": "2026-04-06",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2040804826926190957",
-          "date": "2026-04-06",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs23tq7ewa4qrx082frfrp0a4msnm9vw9vsmu5aqs6nksk4tzyrjls7sfl35",
-          "date": "2026-04-05",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2040057934357381514",
-          "date": "2026-04-05",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2034660669149073477",
-          "date": "2026-04-01",
-          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -13451,8 +13572,18 @@
     },
     {
       "name": "Dama shop",
-      "count": 74,
+      "count": 76,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2072178968573182263",
+          "date": "2026-07-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2nmqshemaft6j9z42k2eqjyrvfe2ylytdyhzx70mh4v5r2ua9d3qdrzldc",
+          "date": "2026-07-01",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqszclshfxezuw853hy7n5vduuma3gu5tt094943lwa9qh4t0sfr8zqdkee7h",
           "date": "2026-06-30",
@@ -20609,22 +20740,22 @@
   ],
   "launch": {
     "date": "Mar 24",
-    "days_active": 99,
+    "days_active": 100,
     "daily_average_payments": 58
   },
   "burn_rate": {
     "percentage": 49,
     "status": "cold",
-    "days_active": 99
+    "days_active": 100
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 5685
+      "count": 5701
     },
     {
       "domain": "8333.mobi",
-      "count": 118
+      "count": 120
     },
     {
       "domain": "walletofsatoshi.com",
@@ -20671,13 +20802,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2932
+      "count": 2941
     },
     {
       "platform": "Nostr",
-      "count": 2872
+      "count": 2881
     }
   ],
-  "generated_at": "2026-07-01T08:40:01.983422+00:00",
+  "generated_at": "2026-07-01T08:50:01.861792+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
