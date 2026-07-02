@@ -19,7 +19,6 @@
             --accent-orange: #f7931a;
             --accent-green: #3fb950;
             --accent-blue: #58a6ff;
-            --accent-purple: #a371f7;
             --border: #30363d;
         }
 
@@ -38,32 +37,32 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
         header {
             text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
+            margin-bottom: 20px;
+            padding: 15px;
         }
 
         header h1 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--accent-orange);
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
 
         header .subtitle {
             color: var(--text-secondary);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             background: var(--bg-secondary);
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
         }
 
@@ -71,14 +70,16 @@
             background: var(--bg-card);
             color: var(--accent-orange);
             text-align: left;
-            padding: 16px;
+            padding: 10px 12px;
             font-weight: 600;
+            font-size: 0.9rem;
             border-bottom: 2px solid var(--border);
         }
 
         td {
-            padding: 14px 16px;
+            padding: 8px 12px;
             border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
         }
 
         tr:last-child td {
@@ -94,38 +95,27 @@
         }
 
         .flag {
-            margin-right: 8px;
+            margin-right: 6px;
         }
 
         .paycode {
             font-family: 'SF Mono', Monaco, 'Courier New', monospace;
             background: var(--bg-primary);
-            padding: 6px 12px;
-            border-radius: 6px;
+            padding: 4px 10px;
+            border-radius: 5px;
             color: var(--accent-green);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             display: inline-block;
-        }
-
-        .posts {
-            color: var(--text-secondary);
-            text-align: right;
-        }
-
-        .rank {
-            color: var(--text-secondary);
-            text-align: center;
-            width: 40px;
         }
 
         .status {
             text-align: center;
-            width: 70px;
+            width: 60px;
         }
 
         .status-confirmed {
             color: var(--accent-green);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .status-pending {
@@ -133,23 +123,19 @@
             font-size: 0.85rem;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 500px) {
             header h1 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
 
             th, td {
-                padding: 10px 8px;
-                font-size: 0.9rem;
+                padding: 8px 6px;
+                font-size: 0.85rem;
             }
 
             .paycode {
-                font-size: 0.8rem;
-                padding: 4px 8px;
-            }
-
-            .posts {
-                display: none;
+                font-size: 0.75rem;
+                padding: 3px 6px;
             }
         }
     </style>
@@ -164,166 +150,120 @@
         <table>
             <thead>
                 <tr>
-                    <th class="rank">#</th>
                     <th>Project</th>
                     <th>Paycode</th>
-                    <th class="posts">E5 Posts</th>
                     <th class="status">Status</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td class="rank">1</td>
-                    <td class="project-name"><span class="flag">🇰🇪</span>Bitbiashara</td>
-                    <td><span class="paycode">Bitbiasharake</span></td>
-                    <td class="posts">657</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">2</td>
-                    <td class="project-name"><span class="flag">🇰🇪</span>Bitcoin Chama</td>
-                    <td><span class="paycode">bitcoinchama</span></td>
-                    <td class="posts">392</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">3</td>
-                    <td class="project-name"><span class="flag">🇲🇿</span>Bitcoin Dombo</td>
-                    <td><span class="paycode">bitcoindombo</span></td>
-                    <td class="posts">219</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">4</td>
-                    <td class="project-name"><span class="flag">🇳🇬</span>Bitcoin Ikorodu</td>
-                    <td><span class="paycode">bitcoinikorodu</span></td>
-                    <td class="posts">100</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">5</td>
-                    <td class="project-name"><span class="flag">🇬🇭</span>Bitcoin Dua</td>
-                    <td><span class="paycode">folivi</span></td>
-                    <td class="posts">99</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">6</td>
-                    <td class="project-name"><span class="flag">🇿🇦</span>Bitcoin Ekasi</td>
-                    <td><span class="paycode">ekasicenter</span></td>
-                    <td class="posts">92</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">7</td>
-                    <td class="project-name"><span class="flag">🇳🇬</span>Bitcoin Ekiti</td>
-                    <td><span class="paycode">bitcoinekiti</span></td>
-                    <td class="posts">65</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">8</td>
-                    <td class="project-name"><span class="flag">🇬🇭</span>Bitcoin Aves</td>
-                    <td><span class="paycode">bitcoinaves</span></td>
-                    <td class="posts">56</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">9</td>
-                    <td class="project-name"><span class="flag">🇧🇮</span>BTC Shule</td>
-                    <td><span class="paycode">btcshule</span></td>
-                    <td class="posts">38</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">10</td>
-                    <td class="project-name"><span class="flag">🇿🇲</span>Bitcoin Victoria Falls</td>
-                    <td><span class="paycode">bitcoinvictoriafalls</span></td>
-                    <td class="posts">35</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">11</td>
-                    <td class="project-name"><span class="flag">🇲🇿</span>Bitcoin Famba</td>
-                    <td><span class="paycode">bitcoinfamba</span></td>
-                    <td class="posts">32</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">12</td>
-                    <td class="project-name"><span class="flag">🇿🇦</span>Bitcoin Sisonke</td>
-                    <td><span class="paycode">btc21vuselela</span></td>
-                    <td class="posts">26</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">13</td>
-                    <td class="project-name"><span class="flag">🇰🇪</span>EcoBitz</td>
-                    <td><span class="paycode">ecobitz_21m</span></td>
-                    <td class="posts">23</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">14</td>
-                    <td class="project-name"><span class="flag">🇲🇿</span>Lwandi Bitcoin</td>
-                    <td><span class="paycode">lwandibitcoin</span></td>
-                    <td class="posts">16</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">15</td>
                     <td class="project-name"><span class="flag">🇿🇦</span>Bit-Fitness</td>
                     <td><span class="paycode">bitfitness21m</span></td>
-                    <td class="posts">16</td>
                     <td class="status"><span class="status-pending">-</span></td>
                 </tr>
                 <tr>
-                    <td class="rank">16</td>
-                    <td class="project-name"><span class="flag">🇲🇿</span>Bitcoin Tofo</td>
-                    <td><span class="paycode">bitcointofo</span></td>
-                    <td class="posts">14</td>
+                    <td class="project-name"><span class="flag">🇰🇪</span>Bitbiashara</td>
+                    <td><span class="paycode">Bitbiasharake</span></td>
                     <td class="status"><span class="status-pending">-</span></td>
                 </tr>
                 <tr>
-                    <td class="rank">17</td>
-                    <td class="project-name"><span class="flag">🇳🇬</span>Bitcoin Anambra</td>
-                    <td><span class="paycode">bitcoinanambra</span></td>
-                    <td class="posts">14</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">18</td>
-                    <td class="project-name"><span class="flag">🇿🇦</span>Soweto BTC</td>
-                    <td><span class="paycode">sowetobtcrewards</span></td>
-                    <td class="posts">12</td>
-                    <td class="status"><span class="status-pending">-</span></td>
-                </tr>
-                <tr>
-                    <td class="rank">19</td>
                     <td class="project-name"><span class="flag">🇿🇲</span>BitJR Academy</td>
                     <td><span class="paycode">bitjracademyandspace</span></td>
-                    <td class="posts">12</td>
                     <td class="status"><span class="status-pending">-</span></td>
                 </tr>
                 <tr>
-                    <td class="rank">20</td>
+                    <td class="project-name"><span class="flag">🇳🇬</span>Bitcoin Anambra</td>
+                    <td><span class="paycode">bitcoinanambra</span></td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
+                    <td class="project-name"><span class="flag">🇬🇭</span>Bitcoin Aves</td>
+                    <td><span class="paycode">bitcoinaves</span></td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
+                    <td class="project-name"><span class="flag">🇰🇪</span>Bitcoin Chama</td>
+                    <td><span class="paycode">bitcoinchama</span></td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
+                    <td class="project-name"><span class="flag">🇲🇿</span>Bitcoin Dombo</td>
+                    <td><span class="paycode">bitcoindombo</span></td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
+                    <td class="project-name"><span class="flag">🇬🇭</span>Bitcoin Dua</td>
+                    <td><span class="paycode">folivi</span></td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
+                    <td class="project-name"><span class="flag">🇿🇦</span>Bitcoin Ekasi</td>
+                    <td><span class="paycode">ekasicenter</span></td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
+                    <td class="project-name"><span class="flag">🇳🇬</span>Bitcoin Ekiti</td>
+                    <td><span class="paycode">bitcoinekiti</span></td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
+                    <td class="project-name"><span class="flag">🇲🇿</span>Bitcoin Famba</td>
+                    <td><span class="paycode">bitcoinfamba</span></td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
+                    <td class="project-name"><span class="flag">🇳🇬</span>Bitcoin Ikorodu</td>
+                    <td><span class="paycode">bitcoinikorodu</span></td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
                     <td class="project-name"><span class="flag">🇳🇬</span>Bitcoin NextGen</td>
                     <td><span class="paycode">bitcoinnextgen</span></td>
-                    <td class="posts">2</td>
                     <td class="status"><span class="status-pending">-</span></td>
                 </tr>
                 <tr>
-                    <td class="rank">21</td>
-                    <td class="project-name"><span class="flag">🇳🇬</span>Calabar Bitcoin Club</td>
-                    <td><span class="paycode">bitcoincalabar</span></td>
-                    <td class="posts">1</td>
+                    <td class="project-name"><span class="flag">🇿🇦</span>Bitcoin Sisonke</td>
+                    <td><span class="paycode">btc21vuselela</span></td>
                     <td class="status"><span class="status-pending">-</span></td>
                 </tr>
                 <tr>
-                    <td class="rank">22</td>
+                    <td class="project-name"><span class="flag">🇲🇿</span>Bitcoin Tofo</td>
+                    <td><span class="paycode">bitcointofo</span></td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
+                    <td class="project-name"><span class="flag">🇿🇲</span>Bitcoin Victoria Falls</td>
+                    <td><span class="paycode">bitcoinvictoriafalls</span></td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
                     <td class="project-name"><span class="flag">🇰🇪</span>Bitsavers Eduhub</td>
                     <td><span class="paycode">biteduhub</span></td>
-                    <td class="posts">1</td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
+                    <td class="project-name"><span class="flag">🇧🇮</span>BTC Shule</td>
+                    <td><span class="paycode">btcshule</span></td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
+                    <td class="project-name"><span class="flag">🇳🇬</span>Calabar Bitcoin Club</td>
+                    <td><span class="paycode">bitcoincalabar</span></td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
+                    <td class="project-name"><span class="flag">🇰🇪</span>EcoBitz</td>
+                    <td><span class="paycode">ecobitz_21m</span></td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
+                    <td class="project-name"><span class="flag">🇲🇿</span>Lwandi Bitcoin</td>
+                    <td><span class="paycode">lwandibitcoin</span></td>
+                    <td class="status"><span class="status-pending">-</span></td>
+                </tr>
+                <tr>
+                    <td class="project-name"><span class="flag">🇿🇦</span>Soweto BTC</td>
+                    <td><span class="paycode">sowetobtcrewards</span></td>
                     <td class="status"><span class="status-pending">-</span></td>
                 </tr>
             </tbody>
