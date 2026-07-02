@@ -1,35 +1,49 @@
 {
   "totals": {
-    "all_payments": 5852,
+    "all_payments": 5858,
     "by_type": {
       "merchant": {
-        "count": 1939
+        "count": 1941
       },
       "project": {
-        "count": 1939
+        "count": 1941
       },
       "reviewer": {
-        "count": 1974
+        "count": 1976
       }
     }
   },
   "today": {
     "date": "2026-07-02",
-    "payments": 24,
+    "payments": 30,
     "by_type": {
       "merchant": {
-        "count": 8
+        "count": 10
       },
       "project": {
-        "count": 8
+        "count": 10
       },
       "reviewer": {
-        "count": 8
+        "count": 10
       }
     },
-    "approved": 8,
+    "approved": 10,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2072550459307434288",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Flo Salon",
+        "platform": "X",
+        "time": "14:31"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqspc3fjkasy0w0gffv587r8tsu8m5yn3sz64wk6smt88hhqtwe680qmh3kd8",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Flo Salon",
+        "platform": "Nostr",
+        "time": "14:31"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsxgh87nt54ur3vudq67tvgz7wa7p3wljkvmts2yyjyxuc3jswmdfclx3mrx",
         "project": "BTC Shule 🇧🇮",
@@ -90,6 +104,12 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "BTC Shule 🇧🇮"
       },
@@ -354,16 +374,16 @@
     },
     {
       "date": "2026-07-02",
-      "project_count": 8,
-      "merchant_count": 8,
-      "reviewer_count": 8,
-      "approved": 8,
+      "project_count": 10,
+      "merchant_count": 10,
+      "reviewer_count": 10,
+      "approved": 10,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 2019,
-    "approved": 1936,
+    "total_reviewed": 2021,
+    "approved": 1938,
     "rejected": 83
   },
   "top_projects": [
@@ -3660,8 +3680,18 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 402,
+      "count": 404,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2072550459307434288",
+          "date": "2026-07-02",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspc3fjkasy0w0gffv587r8tsu8m5yn3sz64wk6smt88hhqtwe680qmh3kd8",
+          "date": "2026-07-02",
+          "merchant": "Flo Salon"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsr5sev7l2g0r76d8whx923cl8qw8athne98k350jmqasgakn2c4use06hdt",
           "date": "2026-07-02",
@@ -12778,8 +12808,18 @@
     },
     {
       "name": "Flo Salon",
-      "count": 86,
+      "count": 88,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2072550459307434288",
+          "date": "2026-07-02",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspc3fjkasy0w0gffv587r8tsu8m5yn3sz64wk6smt88hhqtwe680qmh3kd8",
+          "date": "2026-07-02",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs8289vt5srgarh7acn90sa9nald0qz35dhrez4l9rntzm48v3s8vqjtescs",
           "date": "2026-06-30",
@@ -20819,7 +20859,7 @@
   "launch": {
     "date": "Mar 24",
     "days_active": 101,
-    "daily_average_payments": 57
+    "daily_average_payments": 58
   },
   "burn_rate": {
     "percentage": 48,
@@ -20829,7 +20869,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 5731
+      "count": 5737
     },
     {
       "domain": "8333.mobi",
@@ -20880,13 +20920,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2956
+      "count": 2959
     },
     {
       "platform": "Nostr",
-      "count": 2896
+      "count": 2899
     }
   ],
-  "generated_at": "2026-07-02T14:30:02.942911+00:00",
+  "generated_at": "2026-07-02T14:40:02.108599+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
