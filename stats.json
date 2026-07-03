@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 5930,
+    "all_payments": 5933,
     "by_type": {
       "merchant": {
-        "count": 1965
+        "count": 1966
       },
       "project": {
-        "count": 1965
+        "count": 1966
       },
       "reviewer": {
-        "count": 2000
+        "count": 2001
       }
     }
   },
   "today": {
     "date": "2026-07-03",
-    "payments": 48,
+    "payments": 51,
     "by_type": {
       "merchant": {
-        "count": 16
+        "count": 17
       },
       "project": {
-        "count": 16
+        "count": 17
       },
       "reviewer": {
-        "count": 16
+        "count": 17
       }
     },
-    "approved": 16,
+    "approved": 17,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs82wsjlg98y6xuuz7aaxraypv50zql4xxv45j77trrqgjg9arskwq8rn9m4",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "Nostr",
+        "time": "16:11"
+      },
       {
         "url": "https://x.com/i/status/2073004603587662059",
         "project": "Lwandi Bitcoin 🇲🇿",
@@ -146,6 +153,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
       {
         "project": "Lwandi Bitcoin 🇲🇿"
       },
@@ -455,16 +465,16 @@
     },
     {
       "date": "2026-07-03",
-      "project_count": 16,
-      "merchant_count": 16,
-      "reviewer_count": 16,
-      "approved": 16,
+      "project_count": 17,
+      "merchant_count": 17,
+      "reviewer_count": 17,
+      "approved": 17,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 2045,
-    "approved": 1962,
+    "total_reviewed": 2046,
+    "approved": 1963,
     "rejected": 83
   },
   "top_projects": [
@@ -10384,8 +10394,13 @@
     },
     {
       "name": "Bitcoin NextGen 🇳🇬",
-      "count": 3,
+      "count": 4,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs82wsjlg98y6xuuz7aaxraypv50zql4xxv45j77trrqgjg9arskwq8rn9m4",
+          "date": "2026-07-03",
+          "merchant": "Emmy Store"
+        },
         {
           "url": "https://x.com/i/status/2072918428805902361",
           "date": "2026-07-03",
@@ -20055,6 +20070,32 @@
       ]
     },
     {
+      "name": "Emmy Store",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs82wsjlg98y6xuuz7aaxraypv50zql4xxv45j77trrqgjg9arskwq8rn9m4",
+          "date": "2026-07-03",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2072918428805902361",
+          "date": "2026-07-03",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2044770096485106065",
+          "date": "2026-04-16",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs24tx5vzar3hv6j85k5zcm87n4208dehq32y7qx4ypplzydg38spc3gtgf6",
+          "date": "2026-04-16",
+          "project": "Bitcoin NextGen 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Ebenezer Shop",
       "count": 4,
       "posts": [
@@ -20260,27 +20301,6 @@
           "url": "https://primal.net/e/nevent1qqsvhgh44ccnl97qum0djecmhnyr956a3kmrjqgq8axlmjlv0r6ajzcer4xa9",
           "date": "2026-04-20",
           "project": "Bitcoin Victoria Falls 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Emmy Store",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2072918428805902361",
-          "date": "2026-07-03",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2044770096485106065",
-          "date": "2026-04-16",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs24tx5vzar3hv6j85k5zcm87n4208dehq32y7qx4ypplzydg38spc3gtgf6",
-          "date": "2026-04-16",
-          "project": "Bitcoin NextGen 🇳🇬"
         }
       ]
     },
@@ -21196,11 +21216,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 5806
+      "count": 5808
     },
     {
       "domain": "8333.mobi",
-      "count": 123
+      "count": 124
     },
     {
       "domain": "walletofsatoshi.com",
@@ -21251,9 +21271,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 2935
+      "count": 2938
     }
   ],
-  "generated_at": "2026-07-03T16:10:02.149545+00:00",
+  "generated_at": "2026-07-03T16:20:02.360666+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
