@@ -1,28 +1,89 @@
 {
   "totals": {
-    "all_payments": 5882,
+    "all_payments": 5897,
     "by_type": {
       "merchant": {
-        "count": 1949
+        "count": 1954
       },
       "project": {
-        "count": 1949
+        "count": 1954
       },
       "reviewer": {
-        "count": 1984
+        "count": 1989
       }
     }
   },
   "today": {
     "date": "2026-07-03",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 15,
+    "by_type": {
+      "merchant": {
+        "count": 5
+      },
+      "project": {
+        "count": 5
+      },
+      "reviewer": {
+        "count": 5
+      }
+    },
+    "approved": 5,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2072778125491016112",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Milofa Skate Shop",
+        "platform": "X",
+        "time": "07:59"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsprhkls52vsd9y408y2fuzk8snp5c274rz8qjfs2hcufcy2a0q7ecd2rqwd",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "SMG Electronics Store",
+        "platform": "Nostr",
+        "time": "07:56"
+      },
+      {
+        "url": "https://x.com/i/status/2072765286927741286",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "SMG Electronics Store",
+        "platform": "X",
+        "time": "07:56"
+      },
+      {
+        "url": "https://x.com/i/status/2072752275408461848",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Lydiah Richland Shop",
+        "platform": "X",
+        "time": "07:56"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsqcf8umpe4av67qxtwlvtfmg9cgumgvz3dkcqprpahqhul3qvt83s2rqjsj",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Lydiah Richland Shop",
+        "platform": "Nostr",
+        "time": "07:55"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -314,23 +375,33 @@
     },
     {
       "date": "2026-07-03",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 5,
+      "merchant_count": 5,
+      "reviewer_count": 5,
+      "approved": 5,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 2029,
-    "approved": 1946,
+    "total_reviewed": 2034,
+    "approved": 1951,
     "rejected": 83
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 663,
+      "count": 665,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2072752275408461848",
+          "date": "2026-07-03",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqcf8umpe4av67qxtwlvtfmg9cgumgvz3dkcqprpahqhul3qvt83s2rqjsj",
+          "date": "2026-07-03",
+          "merchant": "Lydiah Richland Shop"
+        },
         {
           "url": "https://x.com/i/status/2072736934980448681",
           "date": "2026-07-02",
@@ -6787,8 +6858,18 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 100,
+      "count": 102,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsprhkls52vsd9y408y2fuzk8snp5c274rz8qjfs2hcufcy2a0q7ecd2rqwd",
+          "date": "2026-07-03",
+          "merchant": "SMG Electronics Store"
+        },
+        {
+          "url": "https://x.com/i/status/2072765286927741286",
+          "date": "2026-07-03",
+          "merchant": "SMG Electronics Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsv53w28pchkxxlham8xgv32uhk66l2nefxsc8svh00zaas9wfdskg958j6x",
           "date": "2026-06-30",
@@ -9269,8 +9350,13 @@
     },
     {
       "name": "Bitcoin Famba 🇲🇿",
-      "count": 32,
+      "count": 33,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2072778125491016112",
+          "date": "2026-07-03",
+          "merchant": "Milofa Skate Shop"
+        },
         {
           "url": "https://x.com/i/status/2066074122275225810",
           "date": "2026-06-14",
@@ -12352,8 +12438,18 @@
     },
     {
       "name": "Lydiah Richland Shop",
-      "count": 90,
+      "count": 92,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2072752275408461848",
+          "date": "2026-07-03",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqcf8umpe4av67qxtwlvtfmg9cgumgvz3dkcqprpahqhul3qvt83s2rqjsj",
+          "date": "2026-07-03",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsq6p024ux5599ggj49d6wsr9r8auky76nxuksd6l2hqt6rn9vm9eqj79dyw",
           "date": "2026-06-30",
@@ -18177,6 +18273,67 @@
       ]
     },
     {
+      "name": "SMG Electronics Store",
+      "count": 11,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsprhkls52vsd9y408y2fuzk8snp5c274rz8qjfs2hcufcy2a0q7ecd2rqwd",
+          "date": "2026-07-03",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2072765286927741286",
+          "date": "2026-07-03",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs92c2lxh68a8nwx3yu8pe0ht22ug26vl2ct46wany3gh4mmysdv6g3q2e60",
+          "date": "2026-06-04",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2062105855173050725",
+          "date": "2026-06-04",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfscxx5w35qmsc8ww2haqccryy45yt3pfgxum2hwzlnp6nrf2c6gqm0nhmc",
+          "date": "2026-05-20",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0ltawmgzl06744gu75rzaakqhmgfg97z9eerayy0kx0vu988634gy9cyrn",
+          "date": "2026-04-29",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2049438353750192436",
+          "date": "2026-04-29",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2046508665998328010",
+          "date": "2026-04-22",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0h22uzzytxvuafrwp8ld40cktygyhhujers0t0rfmefsp4jacrecxv3z09",
+          "date": "2026-04-21",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0sazc9x4af3wae9vqymjghwhhzd88jfakyy5stzxx99x978s0kag2zp9gt",
+          "date": "2026-04-02",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2039382012067217580",
+          "date": "2026-04-02",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Zwakala Cafe",
       "count": 10,
       "posts": [
@@ -18513,57 +18670,6 @@
       ]
     },
     {
-      "name": "SMG Electronics Store",
-      "count": 9,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs92c2lxh68a8nwx3yu8pe0ht22ug26vl2ct46wany3gh4mmysdv6g3q2e60",
-          "date": "2026-06-04",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2062105855173050725",
-          "date": "2026-06-04",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfscxx5w35qmsc8ww2haqccryy45yt3pfgxum2hwzlnp6nrf2c6gqm0nhmc",
-          "date": "2026-05-20",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0ltawmgzl06744gu75rzaakqhmgfg97z9eerayy0kx0vu988634gy9cyrn",
-          "date": "2026-04-29",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2049438353750192436",
-          "date": "2026-04-29",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2046508665998328010",
-          "date": "2026-04-22",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0h22uzzytxvuafrwp8ld40cktygyhhujers0t0rfmefsp4jacrecxv3z09",
-          "date": "2026-04-21",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0sazc9x4af3wae9vqymjghwhhzd88jfakyy5stzxx99x978s0kag2zp9gt",
-          "date": "2026-04-02",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2039382012067217580",
-          "date": "2026-04-02",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
-    },
-    {
       "name": "Rehoboth freshmilk diary",
       "count": 9,
       "posts": [
@@ -18845,6 +18951,47 @@
       ]
     },
     {
+      "name": "Milofa Skate Shop",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2072778125491016112",
+          "date": "2026-07-03",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvccp3uwxg7u3rseda2d6rs2eajx5508u2zs84sdd3md9eg6w9rpqjz6ttz",
+          "date": "2026-04-18",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2045371987606770055",
+          "date": "2026-04-18",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdd86ytalvvazqw0gpgjmaeu2w6t0u7txthf7wvsay4ac3h2jzaegzxw8ms",
+          "date": "2026-04-02",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2039414254722322769",
+          "date": "2026-04-02",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8fr4r9pehzkp7mtpp9phw27spzzwq8dxg8tkcvqwmyphldnwvxlgg345pa",
+          "date": "2026-03-25",
+          "project": "Bitcoin Famba 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2036728638415015976",
+          "date": "2026-03-25",
+          "project": "Bitcoin Famba 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "The Meat Station TakeAway & Groceries",
       "count": 6,
       "posts": [
@@ -19057,42 +19204,6 @@
           "url": "https://primal.net/e/nevent1qqs943yatccghsjps68cf7uunstkql7fpxlca0v9atchd6yfcp2vgeqfrhxta",
           "date": "2026-04-13",
           "project": "Bitcoin Sisonke 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Milofa Skate Shop",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsvccp3uwxg7u3rseda2d6rs2eajx5508u2zs84sdd3md9eg6w9rpqjz6ttz",
-          "date": "2026-04-18",
-          "project": "Bitcoin Famba 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2045371987606770055",
-          "date": "2026-04-18",
-          "project": "Bitcoin Famba 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdd86ytalvvazqw0gpgjmaeu2w6t0u7txthf7wvsay4ac3h2jzaegzxw8ms",
-          "date": "2026-04-02",
-          "project": "Bitcoin Famba 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2039414254722322769",
-          "date": "2026-04-02",
-          "project": "Bitcoin Famba 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8fr4r9pehzkp7mtpp9phw27spzzwq8dxg8tkcvqwmyphldnwvxlgg345pa",
-          "date": "2026-03-25",
-          "project": "Bitcoin Famba 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2036728638415015976",
-          "date": "2026-03-25",
-          "project": "Bitcoin Famba 🇲🇿"
         }
       ]
     },
@@ -20889,7 +21000,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 5759
+      "count": 5774
     },
     {
       "domain": "8333.mobi",
@@ -20940,13 +21051,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2971
+      "count": 2980
     },
     {
       "platform": "Nostr",
-      "count": 2911
+      "count": 2917
     }
   ],
-  "generated_at": "2026-07-03T07:50:02.071161+00:00",
+  "generated_at": "2026-07-03T08:00:02.459348+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
