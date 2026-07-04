@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 5942,
+    "all_payments": 5951,
     "by_type": {
       "merchant": {
-        "count": 1969
+        "count": 1972
       },
       "project": {
-        "count": 1969
+        "count": 1972
       },
       "reviewer": {
-        "count": 2004
+        "count": 2007
       }
     }
   },
   "today": {
     "date": "2026-07-04",
-    "payments": 9,
+    "payments": 18,
     "by_type": {
       "merchant": {
-        "count": 3
+        "count": 6
       },
       "project": {
-        "count": 3
+        "count": 6
       },
       "reviewer": {
-        "count": 3
+        "count": 6
       }
     },
-    "approved": 3,
+    "approved": 6,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsqgz28k949v4384k3aq484sw80k94luqz2uvj4erewwqs2mtmrl6gxm7dyq",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Peshy's beauty parlour",
+        "platform": "Nostr",
+        "time": "10:45"
+      },
+      {
+        "url": "https://x.com/i/status/2073048209572667486",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Peshy's beauty parlour",
+        "platform": "X",
+        "time": "10:45"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsyt9y2adcdk9hyda236cvd0m7knazxj9eruj6hyl9gytk0c28haeq5zlt88",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "Nostr",
+        "time": "10:44"
+      },
       {
         "url": "https://x.com/i/status/2073039773686472818",
         "project": "Bitcoin Chama 🇰🇪",
@@ -55,6 +76,15 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -310,23 +340,33 @@
     },
     {
       "date": "2026-07-04",
-      "project_count": 3,
-      "merchant_count": 3,
-      "reviewer_count": 3,
-      "approved": 3,
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 6,
+      "approved": 6,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 2049,
-    "approved": 1966,
+    "total_reviewed": 2052,
+    "approved": 1969,
     "rejected": 83
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 665,
+      "count": 667,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsqgz28k949v4384k3aq484sw80k94luqz2uvj4erewwqs2mtmrl6gxm7dyq",
+          "date": "2026-07-04",
+          "merchant": "Peshy's beauty parlour"
+        },
+        {
+          "url": "https://x.com/i/status/2073048209572667486",
+          "date": "2026-07-04",
+          "merchant": "Peshy's beauty parlour"
+        },
         {
           "url": "https://x.com/i/status/2072752275408461848",
           "date": "2026-07-03",
@@ -3656,8 +3696,13 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 411,
+      "count": 412,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyt9y2adcdk9hyda236cvd0m7knazxj9eruj6hyl9gytk0c28haeq5zlt88",
+          "date": "2026-07-04",
+          "merchant": "Orero shop"
+        },
         {
           "url": "https://x.com/i/status/2073039773686472818",
           "date": "2026-07-04",
@@ -11987,8 +12032,13 @@
     },
     {
       "name": "Orero shop",
-      "count": 94,
+      "count": 95,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyt9y2adcdk9hyda236cvd0m7knazxj9eruj6hyl9gytk0c28haeq5zlt88",
+          "date": "2026-07-04",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2073039773686472818",
           "date": "2026-07-04",
@@ -16156,8 +16206,18 @@
     },
     {
       "name": "Peshy's beauty parlour",
-      "count": 26,
+      "count": 28,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsqgz28k949v4384k3aq484sw80k94luqz2uvj4erewwqs2mtmrl6gxm7dyq",
+          "date": "2026-07-04",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2073048209572667486",
+          "date": "2026-07-04",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2070899058982482373",
           "date": "2026-06-28",
@@ -21091,11 +21151,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 5816
+      "count": 5824
     },
     {
       "domain": "8333.mobi",
-      "count": 125
+      "count": 126
     },
     {
       "domain": "walletofsatoshi.com",
@@ -21142,13 +21202,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 3001
+      "count": 3004
     },
     {
       "platform": "Nostr",
-      "count": 2941
+      "count": 2947
     }
   ],
-  "generated_at": "2026-07-04T10:40:01.931130+00:00",
+  "generated_at": "2026-07-04T10:50:02.541606+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
