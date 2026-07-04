@@ -1,35 +1,42 @@
 {
   "totals": {
-    "all_payments": 5939,
+    "all_payments": 5942,
     "by_type": {
       "merchant": {
-        "count": 1968
+        "count": 1969
       },
       "project": {
-        "count": 1968
+        "count": 1969
       },
       "reviewer": {
-        "count": 2003
+        "count": 2004
       }
     }
   },
   "today": {
     "date": "2026-07-04",
-    "payments": 6,
+    "payments": 9,
     "by_type": {
       "merchant": {
-        "count": 2
+        "count": 3
       },
       "project": {
-        "count": 2
+        "count": 3
       },
       "reviewer": {
-        "count": 2
+        "count": 3
       }
     },
-    "approved": 2,
+    "approved": 3,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2073039773686472818",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
+        "platform": "X",
+        "time": "08:38"
+      },
       {
         "url": "https://primal.net/e/nevent1qqspdgetntl8aqjwapxrjpemwrucz5mr9vsktelq5ewlkahzq84fpfsmwuqm0",
         "project": "Bitcoin Chama 🇰🇪",
@@ -48,6 +55,9 @@
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
       {
         "project": "Bitcoin Chama 🇰🇪"
       },
@@ -300,16 +310,16 @@
     },
     {
       "date": "2026-07-04",
-      "project_count": 2,
-      "merchant_count": 2,
-      "reviewer_count": 2,
-      "approved": 2,
+      "project_count": 3,
+      "merchant_count": 3,
+      "reviewer_count": 3,
+      "approved": 3,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 2048,
-    "approved": 1965,
+    "total_reviewed": 2049,
+    "approved": 1966,
     "rejected": 83
   },
   "top_projects": [
@@ -3646,8 +3656,13 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 410,
+      "count": 411,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2073039773686472818",
+          "date": "2026-07-04",
+          "merchant": "Orero shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqspdgetntl8aqjwapxrjpemwrucz5mr9vsktelq5ewlkahzq84fpfsmwuqm0",
           "date": "2026-07-04",
@@ -11972,8 +11987,13 @@
     },
     {
       "name": "Orero shop",
-      "count": 93,
+      "count": 94,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2073039773686472818",
+          "date": "2026-07-04",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2072621097590084032",
           "date": "2026-07-02",
@@ -21071,11 +21091,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 5814
+      "count": 5816
     },
     {
       "domain": "8333.mobi",
-      "count": 124
+      "count": 125
     },
     {
       "domain": "walletofsatoshi.com",
@@ -21122,13 +21142,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 2998
+      "count": 3001
     },
     {
       "platform": "Nostr",
       "count": 2941
     }
   ],
-  "generated_at": "2026-07-04T08:30:02.565406+00:00",
+  "generated_at": "2026-07-04T08:40:02.346242+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
