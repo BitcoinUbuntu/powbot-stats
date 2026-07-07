@@ -1147,9 +1147,10 @@
         function renderChart(daily) {
             const ctx = document.getElementById('dailyChart').getContext('2d');
 
-            // Filter to only show days with activity for cleaner chart
-            const activeData = daily.filter(d => (d.approved || 0) > 0 || (d.rejected || 0) > 0);
-            const displayData = activeData.length > 0 ? activeData : daily.slice(-7);
+            // Show the full epoch as a continuous daily timeline, trimmed at the last day with activity
+            let end = daily.length;
+            while (end > 0 && !((daily[end - 1].approved || 0) > 0 || (daily[end - 1].rejected || 0) > 0)) end--;
+            const displayData = daily.slice(0, end);
 
             new Chart(ctx, {
                 type: 'bar',
@@ -1433,7 +1434,7 @@
                             borderWidth: 0
                         },
                         {
-                            label: 'Epoch 5 Live',
+                            label: 'Epoch 5 (Jul 26)',
                             data: [epoch5Live],
                             backgroundColor: '#f7931a',
                             borderColor: '#f7931a',
