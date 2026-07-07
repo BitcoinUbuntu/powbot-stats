@@ -1,12 +1,12 @@
 {
   "totals": {
-    "all_payments": 5969,
+    "all_payments": 5971,
     "by_type": {
       "merchant": {
-        "count": 1978
+        "count": 1979
       },
       "project": {
-        "count": 1978
+        "count": 1979
       },
       "reviewer": {
         "count": 2013
@@ -15,8 +15,15 @@
   },
   "today": {
     "date": "2026-07-07",
-    "payments": 0,
-    "by_type": {},
+    "payments": 2,
+    "by_type": {
+      "merchant": {
+        "count": 1
+      },
+      "project": {
+        "count": 1
+      }
+    },
     "approved": 0,
     "rejected": 0,
     "videos": []
@@ -259,8 +266,8 @@
     },
     {
       "date": "2026-07-07",
-      "project_count": 0,
-      "merchant_count": 0,
+      "project_count": 1,
+      "merchant_count": 1,
       "reviewer_count": 0,
       "approved": 0,
       "rejected": 0
@@ -3625,8 +3632,13 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 412,
+      "count": 413,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswceatgaxfq3js5pgfegyfua3wllhz5jwxrua7m068s8f8g2sjdcsazxmu5",
+          "date": "2026-07-07",
+          "merchant": "Mama Joyce Kibanda"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsyt9y2adcdk9hyda236cvd0m7knazxj9eruj6hyl9gytk0c28haeq5zlt88",
           "date": "2026-07-04",
@@ -19621,6 +19633,37 @@
       ]
     },
     {
+      "name": "Mama Joyce Kibanda",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswceatgaxfq3js5pgfegyfua3wllhz5jwxrua7m068s8f8g2sjdcsazxmu5",
+          "date": "2026-07-07",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfz8msjtp2kjvlxn3x025uc5cx7n69u4ygzwt9gj438jtt7rz4ajg3xur89",
+          "date": "2026-06-19",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2067692208900407480",
+          "date": "2026-06-19",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2066784011947503797",
+          "date": "2026-06-16",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2gk5sr8q8cjznlamyuzmnmc6dczy3f3hvrt0rw8vfa86y44cg2sck86cre",
+          "date": "2026-06-16",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Cafeleu Hotel",
       "count": 5,
       "posts": [
@@ -19809,32 +19852,6 @@
           "url": "https://x.com/i/status/2034268984623685948",
           "date": "2026-03-27",
           "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Mama Joyce Kibanda",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsfz8msjtp2kjvlxn3x025uc5cx7n69u4ygzwt9gj438jtt7rz4ajg3xur89",
-          "date": "2026-06-19",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2067692208900407480",
-          "date": "2026-06-19",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2066784011947503797",
-          "date": "2026-06-16",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2gk5sr8q8cjznlamyuzmnmc6dczy3f3hvrt0rw8vfa86y44cg2sck86cre",
-          "date": "2026-06-16",
-          "project": "Bitcoin Chama 🇰🇪"
         }
       ]
     },
@@ -21130,11 +21147,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 5842
+      "count": 5843
     },
     {
       "domain": "8333.mobi",
-      "count": 126
+      "count": 127
     },
     {
       "domain": "walletofsatoshi.com",
@@ -21185,9 +21202,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 2953
+      "count": 2955
     }
   ],
-  "generated_at": "2026-07-07T06:30:01.811493+00:00",
+  "generated_at": "2026-07-07T07:00:03.164432+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
