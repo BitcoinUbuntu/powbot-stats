@@ -570,7 +570,7 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 24px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .badges-section h2 {
@@ -1163,14 +1163,11 @@
                 const initialCount = 5;
                 const hasMore = epoch5Posts.length > initialCount;
 
-                const today = new Date();
-                const currentDate = `${today.getDate()} ${today.toLocaleString('en-US', { month: 'long' })} ${today.getFullYear()}`;
-
                 html += `
                     <div class="section">
                         <h2>Epoch 5</h2>
                         <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 0.9rem;">
-                            24 March – ${currentDate}, in&nbsp;progress
+                            24 March – 3 July 2026
                         </p>
                         <div class="stats-grid">
                             <div class="stat-box">
@@ -1182,6 +1179,25 @@
                                 <div class="label">${new Set(epoch5Posts.map(p => p.merchant)).size === 1 ? 'Merchant' : 'Merchants'}</div>
                             </div>
                         </div>
+                `;
+
+                // Add activity visualizations for projects with 20+ posts
+                if (epoch5Posts.length >= 20) {
+                    html += `
+                        <div class="charts-grid">
+                            <div class="chart-card">
+                                <h3>Activity Calendar</h3>
+                                <div id="heatmap-epoch5"></div>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Activity Timeline</h3>
+                                <div id="timeline-epoch5"></div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                html += `
                         <h3>Merchant ${epoch5Posts.length === 1 ? 'Post' : 'Posts'} (${epoch5Posts.length})</h3>
                         <div class="posts-list" id="posts-list-epoch5">
                 `;
@@ -1212,6 +1228,10 @@
 
                 html += `</div>`;
             }
+
+            // Gallery (full-width, between Epoch 5 and Epoch 4)
+            html += '<div id="gallery-placeholder"></div>';
+            window.galleryMember = member;
 
             // Display Epoch 4 section
             if (epoch4Posts.length > 0) {
@@ -1329,28 +1349,6 @@
                     html += `</div>`;
             }
 
-            // Vision & Mission
-            if (member.vision || member.mission) {
-                html += `<div class="section"><h2>Vision & Mission</h2>`;
-
-                if (member.vision) {
-                    html += `<h3>Our Vision</h3><p>${escapeHtml(member.vision)}</p>`;
-                }
-
-                if (member.mission) {
-                    html += `<h3>Our Mission</h3><p>${escapeHtml(member.mission)}</p>`;
-                }
-
-                html += `</div>`;
-            }
-
-            // Gallery (full-width, not in card)
-            // Probe for gallery images (gallery-1.jpg, gallery-2.jpg, etc.)
-            html += '<div id="gallery-placeholder"></div>';
-
-            // We'll load gallery images asynchronously after the page renders
-            window.galleryMember = member;
-
             // How Started
             if (member.how_started) {
                 html += `
@@ -1369,6 +1367,21 @@
                         <p>${escapeHtml(member.milestones)}</p>
                     </div>
                 `;
+            }
+
+            // Vision & Mission (at the bottom)
+            if (member.vision || member.mission) {
+                html += `<div class="section"><h2>Vision & Mission</h2>`;
+
+                if (member.vision) {
+                    html += `<h3>Our Vision</h3><p>${escapeHtml(member.vision)}</p>`;
+                }
+
+                if (member.mission) {
+                    html += `<h3>Our Mission</h3><p>${escapeHtml(member.mission)}</p>`;
+                }
+
+                html += `</div>`;
             }
 
             html += `</div>`; // Close content container
@@ -1423,8 +1436,14 @@
 
             // Render activity visualizations for Epoch 4
             if (epoch4Posts && epoch4Posts.length >= 20) {
-                renderHeatmap('heatmap-epoch4', epoch4Posts);
-                renderTimeline('timeline-epoch4', epoch4Posts);
+                renderHeatmap('heatmap-epoch4', epoch4Posts, '2026-01-13');
+                renderTimeline('timeline-epoch4', epoch4Posts, '2026-01-13');
+            }
+
+            // Render activity visualizations for Epoch 5
+            if (epoch5Posts && epoch5Posts.length >= 20) {
+                renderHeatmap('heatmap-epoch5', epoch5Posts, '2026-03-24');
+                renderTimeline('timeline-epoch5', epoch5Posts, '2026-03-24');
             }
 
             // Initialize gallery drag-to-scroll
@@ -1474,13 +1493,16 @@
             startGalleryAutoRotate();
         }
 
-        function renderHeatmap(elementId, posts) {
+        function renderHeatmap(elementId, posts, epochStartDate) {
             const container = document.getElementById(elementId);
             if (!container || posts.length === 0) return;
 
-            // Epoch 4 Live ran from January 13 to March 4, 2026
-            const startDate = new Date('2026-01-13');
-            const endDate = new Date('2026-03-04');
+            // Use provided start date or default to Epoch 4
+            const startDate = epochStartDate ? new Date(epochStartDate) : new Date('2026-01-13');
+
+            // Find the last post date dynamically
+            const postDates = posts.map(p => p.date.split('T')[0]).sort();
+            const endDate = new Date(postDates[postDates.length - 1]);
 
             // Count posts per day
             const postsByDay = {};
@@ -1531,13 +1553,16 @@
             container.innerHTML = html;
         }
 
-        function renderTimeline(elementId, posts) {
+        function renderTimeline(elementId, posts, epochStartDate) {
             const container = document.getElementById(elementId);
             if (!container || posts.length === 0) return;
 
-            // Epoch 4 Live date range
-            const startDate = new Date('2026-01-13');
-            const endDate = new Date('2026-03-04');
+            // Use provided start date or default to Epoch 4
+            const startDate = epochStartDate ? new Date(epochStartDate) : new Date('2026-01-13');
+
+            // Find the last post date dynamically
+            const postDates = posts.map(p => p.date.split('T')[0]).sort();
+            const endDate = new Date(postDates[postDates.length - 1]);
 
             // Count posts by day
             const postsByDay = {};
@@ -1729,22 +1754,31 @@
                 ? Math.min(epoch4Ranking, epoch5Ranking)
                 : epoch4Ranking >= 0 ? epoch4Ranking : epoch5Ranking;
 
-            // Build title showing which epochs they achieved this ranking
-            const buildTitle = (targetRank) => {
-                const epochs = [];
-                if (epoch4Ranking === targetRank) epochs.push('4');
-                if (epoch5Ranking === targetRank) epochs.push('5');
-                return `#${targetRank + 1} in Epoch ${epochs.join(' and ')}`;
+            // Build title showing all rankings achieved
+            const buildTitle = () => {
+                const in4 = epoch4Ranking >= 0 && epoch4Ranking < 10;
+                const in5 = epoch5Ranking >= 0 && epoch5Ranking < 10;
+
+                // Same ranking in both epochs
+                if (in4 && in5 && epoch4Ranking === epoch5Ranking) {
+                    return `#${epoch4Ranking + 1} in Epoch 4 and 5`;
+                }
+
+                // Different rankings
+                const parts = [];
+                if (in4) parts.push(`#${epoch4Ranking + 1} in Epoch 4`);
+                if (in5) parts.push(`#${epoch5Ranking + 1} in Epoch 5`);
+                return parts.join(', ');
             };
 
             if (bestRanking === 0) {
-                badges.push({ icon: '🥇', label: 'Top Performer', type: 'excellence', title: buildTitle(0) });
+                badges.push({ icon: '🥇', label: 'Top Performer', type: 'excellence', title: buildTitle() });
             } else if (bestRanking === 1) {
-                badges.push({ icon: '🥈', label: '2nd Place', type: 'excellence', title: buildTitle(1) });
+                badges.push({ icon: '🥈', label: '2nd Place', type: 'excellence', title: buildTitle() });
             } else if (bestRanking === 2) {
-                badges.push({ icon: '🥉', label: '3rd Place', type: 'excellence', title: buildTitle(2) });
+                badges.push({ icon: '🥉', label: '3rd Place', type: 'excellence', title: buildTitle() });
             } else if (bestRanking >= 0 && bestRanking < 10) {
-                badges.push({ icon: '🏅', label: 'Top 10', type: 'excellence', title: buildTitle(bestRanking) });
+                badges.push({ icon: '🏅', label: 'Top 10', type: 'excellence', title: buildTitle() });
             }
 
             return badges;
