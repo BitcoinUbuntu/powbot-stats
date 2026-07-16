@@ -612,7 +612,7 @@
             fetch('members.json').then(res => res.json()),
             fetch('stats-epoch4.json').then(res => res.json()),
             fetch('stats-historical.json').then(res => res.json()),
-            fetch('stats.json').then(res => res.json())
+            fetch('stats-epoch5.json').then(res => res.json())
         ])
             .then(([membersData, epoch4Data, historicalData, epoch5Data]) => {
                 allMembers = membersData.members;
@@ -874,14 +874,17 @@
                 });
             }
 
-            // Excellence badges (highest priority)
-            if (allStats.epoch4 && allStats.epoch4.top_projects) {
-                const ranking = allStats.epoch4.top_projects.findIndex(p => p.name === statsName);
-                if (ranking === 0) badges.push('🥇');
-                else if (ranking === 1) badges.push('🥈');
-                else if (ranking === 2) badges.push('🥉');
-                else if (ranking >= 0 && ranking < 10) badges.push('🏅');
-            }
+            // Excellence badges (highest priority) - based on best ranking across Epoch 4 and 5
+            const epoch4Ranking = allStats.epoch4?.top_projects?.findIndex(p => p.name === statsName) ?? -1;
+            const epoch5Ranking = allStats.epoch5?.top_projects?.findIndex(p => p.name === statsName) ?? -1;
+            const bestRanking = epoch4Ranking >= 0 && epoch5Ranking >= 0
+                ? Math.min(epoch4Ranking, epoch5Ranking)
+                : epoch4Ranking >= 0 ? epoch4Ranking : epoch5Ranking;
+
+            if (bestRanking === 0) badges.push('🥇');
+            else if (bestRanking === 1) badges.push('🥈');
+            else if (bestRanking === 2) badges.push('🥉');
+            else if (bestRanking >= 0 && bestRanking < 10) badges.push('🏅');
 
             // Activity milestones
             if (totalPosts >= 500) {
@@ -896,9 +899,10 @@
                 badges.push('👋');
             }
 
-            // Community impact - all tiers
-            if (epoch4Posts.length > 0) {
-                const uniqueMerchants = new Set(epoch4Posts.map(p => p.merchant)).size;
+            // Community impact - all tiers (across Epoch 4 and 5)
+            const powbotPosts = [...epoch4Posts, ...epoch5Posts];
+            if (powbotPosts.length > 0) {
+                const uniqueMerchants = new Set(powbotPosts.map(p => p.merchant)).size;
                 if (uniqueMerchants >= 25) {
                     badges.push('🌍');
                 } else if (uniqueMerchants >= 15) {
@@ -908,13 +912,13 @@
                 }
             }
 
-            // Platform diversity
-            if (epoch4Posts.length > 0) {
-                const hasXPosts = epoch4Posts.some(p => {
+            // Platform diversity (across Epoch 4 and 5)
+            if (powbotPosts.length > 0) {
+                const hasXPosts = powbotPosts.some(p => {
                     const url = p.url ? p.url.toLowerCase() : '';
                     return url.includes('twitter.com') || url.includes('x.com');
                 });
-                const hasNostrPosts = epoch4Posts.some(p => {
+                const hasNostrPosts = powbotPosts.some(p => {
                     const url = p.url ? p.url.toLowerCase() : '';
                     return url.includes('primal.net') || url.includes('njump') || (!url.includes('twitter.com') && !url.includes('x.com'));
                 });
@@ -923,9 +927,10 @@
                 }
             }
 
-            // Daily streaks
-            if (epoch4Posts.length > 0) {
-                const dates = epoch4Posts.map(p => p.date.split('T')[0]).sort();
+            // Daily streaks - best streak across Epoch 4 and 5
+            const calculateStreak = (posts) => {
+                if (posts.length === 0) return 0;
+                const dates = posts.map(p => p.date.split('T')[0]).sort();
                 const uniqueDates = [...new Set(dates)];
                 let maxStreak = 1;
                 let currentStreak = 1;
@@ -941,14 +946,19 @@
                         currentStreak = 1;
                     }
                 }
+                return maxStreak;
+            };
 
-                if (maxStreak >= 21) {
-                    badges.push('💪');
-                } else if (maxStreak >= 14) {
-                    badges.push('⚡');
-                } else if (maxStreak >= 7) {
-                    badges.push('🔥');
-                }
+            const epoch4Streak = calculateStreak(epoch4Posts);
+            const epoch5Streak = calculateStreak(epoch5Posts);
+            const bestStreak = Math.max(epoch4Streak, epoch5Streak);
+
+            if (bestStreak >= 21) {
+                badges.push('💪');
+            } else if (bestStreak >= 14) {
+                badges.push('⚡');
+            } else if (bestStreak >= 7) {
+                badges.push('🔥');
             }
 
             // Legacy badges

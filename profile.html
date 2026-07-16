@@ -910,10 +910,10 @@
         async function loadProfile() {
             try {
                 // Load member data and stats in parallel
-                const [membersData, statsEpoch4, statsLive, statsHistorical] = await Promise.all([
+                const [membersData, statsEpoch4, statsEpoch5, statsHistorical] = await Promise.all([
                     fetch('members.json').then(r => r.json()),
                     fetch('stats-epoch4.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
-                    fetch('stats.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
+                    fetch('stats-epoch5.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
                     fetch('stats-historical.json?t=' + Date.now()).then(r => r.json()).catch(() => null)
                 ]);
 
@@ -925,12 +925,12 @@
                 // Combine stats from all epochs
                 const allStats = {
                     epoch4: statsEpoch4,
-                    live: statsLive,
+                    epoch5: statsEpoch5,
                     historical: statsHistorical
                 };
 
-                // Update timestamp (use live stats if available, otherwise epoch4)
-                const statsForTimestamp = statsLive || statsEpoch4;
+                // Update timestamp (use epoch5 stats if available, otherwise epoch4)
+                const statsForTimestamp = statsEpoch5 || statsEpoch4;
                 if (statsForTimestamp && statsForTimestamp.generated_at) {
                     const updatedElement = document.getElementById('updated');
                     if (updatedElement) {
@@ -1096,8 +1096,8 @@
             const statsName = `${member.name} ${member.flag || ''}`.trim();
 
             // Extract posts from Epoch 5 (current/live)
-            if (allStats.live && allStats.live.top_projects) {
-                const epoch5Project = allStats.live.top_projects.find(p => p.name === statsName);
+            if (allStats.epoch5 && allStats.epoch5.top_projects) {
+                const epoch5Project = allStats.epoch5.top_projects.find(p => p.name === statsName);
                 if (epoch5Project && epoch5Project.posts) {
                     epoch5Posts.push(...epoch5Project.posts);
                 }
@@ -1622,9 +1622,10 @@
                 badges.push({ icon: '👋', label: 'First Post', type: 'activity', title: 'Made your first post' });
             }
 
-            // Community Impact - based on unique merchants in Epoch 4
-            if (epoch4Posts.length > 0) {
-                const uniqueMerchants = new Set(epoch4Posts.map(p => p.merchant)).size;
+            // Community Impact - based on unique merchants across Epoch 4 and 5
+            const powbotPosts = [...epoch4Posts, ...epoch5Posts];
+            if (powbotPosts.length > 0) {
+                const uniqueMerchants = new Set(powbotPosts.map(p => p.merchant)).size;
 
                 if (uniqueMerchants >= 25) {
                     badges.push({ icon: '🌍', label: 'Network Connector', type: 'community', title: '25+ unique merchants' });
@@ -1719,19 +1720,31 @@
                 }
             }
 
-            // Excellence - ranking based on Epoch 4 data
-            if (allStats.epoch4 && allStats.epoch4.top_projects) {
-                const ranking = allStats.epoch4.top_projects.findIndex(p => p.name === statsName);
+            // Excellence - ranking based on Epoch 4 and 5 data
+            const epoch4Ranking = allStats.epoch4?.top_projects?.findIndex(p => p.name === statsName) ?? -1;
+            const epoch5Ranking = allStats.epoch5?.top_projects?.findIndex(p => p.name === statsName) ?? -1;
 
-                if (ranking === 0) {
-                    badges.push({ icon: '🥇', label: 'Top Performer', type: 'excellence', title: '#1 in Epoch 4' });
-                } else if (ranking === 1) {
-                    badges.push({ icon: '🥈', label: '2nd Place', type: 'excellence', title: '#2 in Epoch 4' });
-                } else if (ranking === 2) {
-                    badges.push({ icon: '🥉', label: '3rd Place', type: 'excellence', title: '#3 in Epoch 4' });
-                } else if (ranking >= 0 && ranking < 10) {
-                    badges.push({ icon: '🏅', label: 'Top 10', type: 'excellence', title: `#${ranking + 1} in Epoch 4` });
-                }
+            // Use the best ranking achieved across epochs
+            const bestRanking = epoch4Ranking >= 0 && epoch5Ranking >= 0
+                ? Math.min(epoch4Ranking, epoch5Ranking)
+                : epoch4Ranking >= 0 ? epoch4Ranking : epoch5Ranking;
+
+            // Build title showing which epochs they achieved this ranking
+            const buildTitle = (targetRank) => {
+                const epochs = [];
+                if (epoch4Ranking === targetRank) epochs.push('4');
+                if (epoch5Ranking === targetRank) epochs.push('5');
+                return `#${targetRank + 1} in Epoch ${epochs.join(' and ')}`;
+            };
+
+            if (bestRanking === 0) {
+                badges.push({ icon: '🥇', label: 'Top Performer', type: 'excellence', title: buildTitle(0) });
+            } else if (bestRanking === 1) {
+                badges.push({ icon: '🥈', label: '2nd Place', type: 'excellence', title: buildTitle(1) });
+            } else if (bestRanking === 2) {
+                badges.push({ icon: '🥉', label: '3rd Place', type: 'excellence', title: buildTitle(2) });
+            } else if (bestRanking >= 0 && bestRanking < 10) {
+                badges.push({ icon: '🏅', label: 'Top 10', type: 'excellence', title: buildTitle(bestRanking) });
             }
 
             return badges;
