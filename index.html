@@ -414,7 +414,9 @@
             margin-bottom: 20px;
         }
 
-        @media (min-width: 900px) {
+        /* Four across only once the container is near its full 1200px width.
+           Below this the cards get too cramped, so stay two-up and wrap. */
+        @media (min-width: 1200px) {
             .stats-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
