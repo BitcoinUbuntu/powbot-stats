@@ -603,7 +603,7 @@
                 // archive, since archives are frozen and their stamps never move.
                 const liveTracker = trackerFiles[0];
                 if (liveTracker && liveTracker.last_updated) {
-                    document.getElementById('updated').textContent = new Date(liveTracker.last_updated).toLocaleString();
+                    document.getElementById('updated').textContent = new Date(liveTracker.last_updated).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
                 }
 
             } catch (error) {

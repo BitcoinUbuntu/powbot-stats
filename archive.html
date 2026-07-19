@@ -1177,7 +1177,7 @@
             const content = document.getElementById('content');
             const updatedElement = document.getElementById('updated');
             if (updatedElement) {
-                updatedElement.textContent = new Date(epoch4Live.generated_at).toLocaleString();
+                updatedElement.textContent = new Date(epoch4Live.generated_at).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
             }
 
             content.innerHTML = `

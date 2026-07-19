@@ -111,7 +111,7 @@ function updateFooterTimestamp(lastUpdated) {
     const updateElement = () => {
         const updatedElement = document.getElementById('updated');
         if (updatedElement) {
-            updatedElement.textContent = new Date(lastUpdated).toLocaleString();
+            updatedElement.textContent = new Date(lastUpdated).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
             return true;
         }
         return false;

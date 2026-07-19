@@ -822,7 +822,7 @@
             // Update timestamp (may not exist yet if footer is still loading)
             const updatedElement = document.getElementById('updated');
             if (updatedElement) {
-                updatedElement.textContent = new Date(stats.generated_at).toLocaleString();
+                updatedElement.textContent = new Date(stats.generated_at).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
             }
 
             content.innerHTML = `

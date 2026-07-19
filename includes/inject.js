@@ -54,12 +54,15 @@
         if (!updatedElement) return;
 
         try {
-            // Fetch the latest stats to get generated_at timestamp
-            const response = await fetch('stats.json');
+            // Fetch the latest stats to get generated_at timestamp.
+            // Cache-bust: without it the browser serves a stale stats.json and the
+            // footer reports an old "Data updated" time on every page. The cron
+            // rewrites this file every 30 minutes.
+            const response = await fetch('stats.json?t=' + Date.now());
             const stats = await response.json();
 
             if (stats && stats.generated_at) {
-                updatedElement.textContent = new Date(stats.generated_at).toLocaleString();
+                updatedElement.textContent = new Date(stats.generated_at).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
             }
         } catch (error) {
             console.error('Failed to update timestamp:', error);

@@ -631,7 +631,7 @@
                 if (statsForTimestamp && statsForTimestamp.generated_at) {
                     const updatedElement = document.getElementById('updated');
                     if (updatedElement) {
-                        updatedElement.textContent = new Date(statsForTimestamp.generated_at).toLocaleString();
+                        updatedElement.textContent = new Date(statsForTimestamp.generated_at).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
                     }
                 }
 
