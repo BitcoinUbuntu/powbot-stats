@@ -1132,17 +1132,12 @@
                         </div>
                     </div>
 
-                    <div class="card">
-                        <h2>Since Launch${stats.launch.days_active > 0 ? ` (${stats.launch.date})` : ''}</h2>
-                        <div class="big-number">${stats.launch.days_active}<span class="unit"> days</span></div>
-                        <div style="margin-top: 15px;">
-                            <div class="stat-row">
-                                <span class="stat-label" style="font-weight: 600;">Daily Averages</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="stat-label">Posts approved</span>
-                                <span class="stat-value" style="color: var(--accent-orange);">${stats.launch.days_active > 0 ? Math.round((stats.totals.by_type.project?.count || 0) / stats.launch.days_active) : 0}</span>
-                            </div>
+                    <!-- Takes the fourth grid slot once there is something to show.
+                         Hidden by renderHighlights() while the epoch is still empty. -->
+                    <div class="card highlights">
+                        <h2>Highlights</h2>
+                        <div class="highlights-list" id="highlights-list">
+                            <!-- Populated by JavaScript -->
                         </div>
                     </div>
                 </div>
@@ -1164,14 +1159,6 @@
                     </div>
                 </div>
                 ` : ''}
-
-                <!-- Highlights -->
-                <div class="card highlights">
-                    <h2>Highlights</h2>
-                    <div class="highlights-list" id="highlights-list">
-                        <!-- Populated by JavaScript -->
-                    </div>
-                </div>
 
                 <!-- Last 24h Activity Banner -->
                 ${(stats.last_24h?.posts || 0) > 0 ? `
