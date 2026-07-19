@@ -1184,7 +1184,7 @@
                 <!-- Last 24h Activity Banner -->
                 ${(stats.last_24h?.posts || 0) > 0 ? `
                 <div class="today-banner">
-                    <span class="today-label">Last 24h <span class="today-time">(updated ${new Date(stats.generated_at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Africa/Johannesburg' })} CAT)</span></span>
+                    <span class="today-label">Last 24h <span class="today-time">(updated ${new Date(stats.generated_at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'UTC' })} UTC)</span></span>
                     <div class="today-stats">
                         <div class="today-stat">
                             <span class="today-value" style="color: var(--accent-orange);">${formatNumber(stats.last_24h?.posts || 0)}</span>
