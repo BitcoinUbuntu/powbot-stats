@@ -762,6 +762,13 @@
             }
         }
 
+        /* The countries and platforms charts are only rendered once there is
+           data for them, so on a fresh epoch the all-time chart is left alone
+           in a three-column grid. Let it span the full width instead. */
+        .insights-grid > .insight-card:only-child {
+            grid-column: 1 / -1;
+        }
+
         .pie-chart-wrapper {
             position: relative;
             width: 240px;
