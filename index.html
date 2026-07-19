@@ -2318,7 +2318,7 @@
         }
 
         // Initialize - wait for includes to load first
-        // Epoch 6 launch: Mon 20 July 2026, 08:00 SAST (06:00 UTC)
+        // Epoch 6 launch: Mon 20 July 2026, 06:00 UTC
         const EPOCH6_LAUNCH = new Date('2026-07-20T06:00:00Z');
 
         function renderEpochBanner() {
@@ -2328,7 +2328,7 @@
             if (new Date() < EPOCH6_LAUNCH) {
                 banner.innerHTML = `
                     <h2>Epoch 6 starts Monday</h2>
-                    <p>Submissions open 20 July 2026 at 06:00 UTC (08:00 SAST). Stats below go live as the first posts arrive.</p>
+                    <p>Submissions open 20 July 2026 at 06:00 UTC. Stats below go live as the first posts arrive.</p>
                 `;
             } else {
                 banner.innerHTML = `
