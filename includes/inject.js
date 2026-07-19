@@ -64,8 +64,8 @@
             // depends on which one fetchLiveData reached.
             // Use fetchLiveData when the page has loaded data-source.js - it
             // prefers the VPS (regenerated every 5 min) and falls back to this
-            // repo's hourly copy, so the footer shows the freshest timestamp
-            // available. Otherwise fetch same-origin as before.
+            // repo's twice-daily copy, so the footer shows the freshest
+            // timestamp available. Otherwise fetch same-origin as before.
             //
             // inject.js is loaded by ELEVEN pages, most of which have no reason to
             // pull in data-source.js. Shared code must not assume an optional

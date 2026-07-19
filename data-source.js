@@ -5,7 +5,7 @@
  *
  *   PRIMARY   https://api.powbot.africa/data/   regenerated every 5 minutes
  *                                               straight from the bot's database
- *   FALLBACK  same-origin (GitHub Pages)        published hourly via git
+ *   FALLBACK  same-origin (GitHub Pages)        published twice daily via git
  *
  * The fallback is the point, not an afterthought. Before this, the dashboard
  * survived the VPS being down for free, because its data was baked into a static
