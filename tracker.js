@@ -21,6 +21,20 @@ let currentPage = 1;
 // Data Loading
 // ============================================================================
 
+// Frozen snapshots of past epochs, newest first.
+//
+// tracker-data.json holds ONLY the current epoch - the stats export is scoped by
+// CURRENT_EPOCH, so the moment an epoch rolls over its submissions disappear from
+// that file. Each finished epoch is therefore frozen into its own archive here,
+// the same way stats-epoch*.json already works.
+//
+// ==> WHEN AN EPOCH ENDS: freeze tracker-data.json as tracker-data-epochN.json
+//     and add it to this list. <==
+//
+// Archives carry the same per-submission detail as the live file (lightning
+// address, btcmap link, status, payments), so history loses nothing.
+const TRACKER_ARCHIVES = ['tracker-data-epoch5.json'];
+
 async function loadTrackerData() {
     try {
         const response = await fetch('tracker-data.json');
@@ -29,7 +43,20 @@ async function loadTrackerData() {
         }
         const data = await response.json();
 
-        allSubmissions = data.submissions || [];
+        // Load archived epochs alongside the live one. Each fails to null
+        // independently: a missing archive must not take the whole tracker down,
+        // it just means that epoch is absent from the list.
+        const archives = (await Promise.all(
+            TRACKER_ARCHIVES.map(f =>
+                fetch(f).then(r => r.ok ? r.json() : null).catch(() => null)
+            )
+        )).filter(Boolean);
+
+        const archivedSubmissions = archives.flatMap(a => a.submissions || []);
+
+        // Live epoch first, then archives, newest-first overall.
+        allSubmissions = [...(data.submissions || []), ...archivedSubmissions]
+            .sort((a, b) => (b.timestamp || '').localeCompare(a.timestamp || ''));
 
         // Update footer timestamp (with retry in case footer loads after data)
         updateFooterTimestamp(data.last_updated);

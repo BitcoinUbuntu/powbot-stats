@@ -493,21 +493,57 @@
 
         async function loadMerchantData(merchantName) {
             try {
-                // Load tracker data (current epoch - has btcmap_link)
-                const trackerResponse = await fetch('tracker-data.json');
-                const trackerData = await trackerResponse.json();
+                // ------------------------------------------------------------------
+                // TRACKER FILES - the live epoch plus every frozen epoch archive.
+                //
+                // tracker-data.json holds ONLY the current epoch, because the stats
+                // export is scoped by CURRENT_EPOCH. So the instant an epoch rolls
+                // over, its posts vanish from this page unless its archive is listed
+                // below. Not hypothetical: Epoch 5 disappeared exactly this way on
+                // 19 July 2026 when the export switched to Epoch 6.
+                //
+                // ==> WHEN AN EPOCH ENDS: freeze tracker-data.json as
+                //     tracker-data-epochN.json and add it here. <==
+                //
+                // All of these share one shape - submissions[] with merchant_name,
+                // timestamp, post_url, btcmap_link, lightning_address - so they go
+                // through the same mapping and keep full detail.
+                const TRACKER_FILES = ['tracker-data.json', 'tracker-data-epoch5.json'];
 
-                // Load historical stats (Epoch 4)
-                const historicalResponse = await fetch('stats-epoch4.json');
-                const historicalStats = await historicalResponse.json();
+                // STATS ARCHIVES - older epochs that predate the SQLite tracker.
+                // Epoch 4 and earlier lived in Google Sheets, so only the thinner
+                // stats snapshot exists: top_merchants[] with posts[] of
+                // {url, date, project}. No btcmap_link for those.
+                const STATS_ARCHIVES = ['stats-epoch4.json'];
+
+                // Every fetch fails to null independently - one missing archive must
+                // not blank the page, it just means that epoch is absent.
+                const loadJson = f => fetch(f).then(r => r.ok ? r.json() : null).catch(() => null);
+
+                const [trackerFiles, statsArchives] = await Promise.all([
+                    Promise.all(TRACKER_FILES.map(loadJson)),
+                    Promise.all(STATS_ARCHIVES.map(loadJson))
+                ]);
 
                 // Normalize the URL parameter for comparison
                 const normalizedParam = normalizeId(merchantName);
 
-                // Find merchant in tracker submissions
-                const merchantSubmissions = trackerData.submissions?.filter(s =>
-                    normalizeId(s.merchant_name) === normalizedParam
-                ) || [];
+                // Find this merchant across the live epoch AND every tracker archive.
+                //
+                // Rejected submissions are excluded: a merchant profile is a record
+                // of accepted PoW, and counting failed attempts would overstate it.
+                // The tracker files carry every submission regardless of outcome,
+                // unlike the stats archives below which only ever held accepted
+                // posts - so without this filter the two sources would disagree
+                // about the same merchant. A missing status is treated as NOT
+                // rejected, so nothing is dropped just for lacking the field.
+                const isRejected = s => (s.status || '').trim().toLowerCase() === 'rejected';
+
+                const merchantSubmissions = trackerFiles
+                    .filter(Boolean)
+                    .flatMap(t => (t.submissions || []).filter(s =>
+                        normalizeId(s.merchant_name) === normalizedParam && !isRejected(s)
+                    ));
 
                 // Convert tracker submissions to post format
                 const currentPosts = merchantSubmissions.map(s => ({
@@ -517,19 +553,24 @@
                     btcmap_link: s.btcmap_link
                 }));
 
-                // Find merchant in historical stats
-                const historicalMerchant = historicalStats.top_merchants?.find(m =>
-                    normalizeId(m.name) === normalizedParam
-                );
+                // Find this merchant in the older stats-only archives
+                const archivedMerchants = statsArchives
+                    .filter(Boolean)
+                    .map(a => a.top_merchants?.find(m =>
+                        normalizeId(m.name) === normalizedParam
+                    ))
+                    .filter(Boolean);
 
-                // Combine posts from both epochs
+                const archivedPosts = archivedMerchants.flatMap(m => m.posts || []);
+
+                // Combine every epoch, newest first
                 const allPosts = [
                     ...currentPosts,
-                    ...(historicalMerchant?.posts || [])
+                    ...archivedPosts
                 ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
                 const totalCount = allPosts.length;
-                const merchantDisplayName = merchantSubmissions[0]?.merchant_name || historicalMerchant?.name || merchantName;
+                const merchantDisplayName = merchantSubmissions[0]?.merchant_name || archivedMerchants[0]?.name || merchantName;
                 const lightningAddress = merchantSubmissions[0]?.lightning_address || null;
 
                 // Extract country flag from project name
@@ -558,9 +599,11 @@
                 // Handle BTC Map section
                 renderBtcMapSection(merchantDisplayName, allPosts);
 
-                // Update footer timestamp
-                if (trackerData && trackerData.last_updated) {
-                    document.getElementById('updated').textContent = new Date(trackerData.last_updated).toLocaleString();
+                // Update footer timestamp - from the LIVE file (index 0), not an
+                // archive, since archives are frozen and their stamps never move.
+                const liveTracker = trackerFiles[0];
+                if (liveTracker && liveTracker.last_updated) {
+                    document.getElementById('updated').textContent = new Date(liveTracker.last_updated).toLocaleString();
                 }
 
             } catch (error) {
