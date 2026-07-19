@@ -426,14 +426,14 @@
             }
         }
 
-        /* While Highlights is hidden (an epoch with no posts yet) Approval Rate
-           absorbs the empty slot instead of leaving a hole in the grid. */
-        .stats-grid.highlights-hidden .card.approval-rate {
+        /* While Highlights is hidden (an epoch with no posts yet) Top Performers
+           stretches to absorb the empty slot instead of leaving a hole. */
+        .stats-grid.highlights-hidden .card.top-performers {
             grid-column: span 2;
         }
 
         @media (max-width: 600px) {
-            .stats-grid.highlights-hidden .card.approval-rate {
+            .stats-grid.highlights-hidden .card.top-performers {
                 grid-column: span 1;
             }
         }
@@ -1125,7 +1125,7 @@
                         </div>
                     </div>
 
-                    <div class="card approval-rate">
+                    <div class="card">
                         <h2>Approval Rate</h2>
                         <div class="big-number">${stats.reviewer?.total_reviewed > 0 ? Math.round((stats.reviewer.approved / stats.reviewer.total_reviewed) * 100) : 0}<span class="unit">%</span></div>
                         <div style="margin-top: 15px;">
