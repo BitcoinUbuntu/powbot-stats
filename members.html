@@ -578,7 +578,7 @@
                 <div class="filter-group">
                     <button class="filter-btn active" data-filter="all">All Projects</button>
                     <button class="filter-btn" data-filter="active">Active on PoWBoT</button>
-                    <button class="filter-btn" data-filter="epoch5">Active this Epoch</button>
+                    <button class="filter-btn" data-filter="epoch6">Active this Epoch</button>
                     <button class="filter-btn" data-filter="top">Top Performers</button>
                 </div>
                 <select id="country-filter" class="filter-btn">
@@ -612,18 +612,22 @@
             fetch('members.json').then(res => res.json()),
             fetch('stats-epoch4.json').then(res => res.json()),
             fetch('stats-historical.json').then(res => res.json()),
-            fetch('stats-epoch5.json').then(res => res.json())
+            fetch('stats-epoch5.json').then(res => res.json()),
+            // Live epoch (currently Epoch 6). Tolerate failure so the directory
+            // still renders from the frozen archives if the live export is missing.
+            fetch('stats.json?t=' + Date.now()).then(res => res.json()).catch(() => null)
         ])
-            .then(([membersData, epoch4Data, historicalData, epoch5Data]) => {
+            .then(([membersData, epoch4Data, historicalData, epoch5Data, liveData]) => {
                 allMembers = membersData.members;
                 allStats = {
                     epoch4: epoch4Data,
                     historical: historicalData,
-                    epoch5: epoch5Data
+                    epoch5: epoch5Data,
+                    live: liveData
                 };
 
-                // Update footer timestamp (use live stats if available, otherwise epoch4)
-                const statsForTimestamp = epoch5Data || epoch4Data;
+                // Update footer timestamp (prefer the live epoch, fall back through the archives)
+                const statsForTimestamp = liveData || epoch5Data || epoch4Data;
                 if (statsForTimestamp && statsForTimestamp.generated_at) {
                     const updatedElement = document.getElementById('updated');
                     if (updatedElement) {
@@ -684,14 +688,14 @@
             }
         }
 
-        function getEpoch5PostCount(member) {
-            // Count posts only from Epoch 5 (current epoch)
+        function getCurrentEpochPostCount(member) {
+            // Count posts only from the live epoch (currently Epoch 6)
             const statsName = `${member.name} ${member.flag || ''}`.trim();
 
-            if (allStats.epoch5 && allStats.epoch5.top_projects) {
-                const epoch5Project = allStats.epoch5.top_projects.find(p => p.name === statsName);
-                if (epoch5Project && epoch5Project.posts) {
-                    return epoch5Project.posts.length;
+            if (allStats.live && allStats.live.top_projects) {
+                const liveProject = allStats.live.top_projects.find(p => p.name === statsName);
+                if (liveProject && liveProject.posts) {
+                    return liveProject.posts.length;
                 }
             }
 
@@ -699,9 +703,17 @@
         }
 
         function getRecentEpochPostCount(member) {
-            // Count posts only from Epoch 4 testing, Epoch 4, and Epoch 5
+            // Count posts from Epoch 4 testing, Epoch 4, Epoch 5 and the live epoch
             const statsName = `${member.name} ${member.flag || ''}`.trim();
             let totalPosts = 0;
+
+            // Get live epoch posts (currently Epoch 6)
+            if (allStats.live && allStats.live.top_projects) {
+                const liveProject = allStats.live.top_projects.find(p => p.name === statsName);
+                if (liveProject && liveProject.posts) {
+                    totalPosts += liveProject.posts.length;
+                }
+            }
 
             // Get Epoch 4 posts
             if (allStats.epoch4 && allStats.epoch4.top_projects) {
@@ -747,8 +759,8 @@
             // Apply activity filter
             if (currentFilter === 'active') {
                 filtered = filtered.filter(m => getRecentEpochPostCount(m) > 0);
-            } else if (currentFilter === 'epoch5') {
-                filtered = filtered.filter(m => getEpoch5PostCount(m) > 0);
+            } else if (currentFilter === 'epoch6') {
+                filtered = filtered.filter(m => getCurrentEpochPostCount(m) > 0);
             } else if (currentFilter === 'top') {
                 // Show only top 10 projects by all-time post count
                 filtered = filtered
@@ -815,6 +827,15 @@
                 }
             }
 
+            // Get live epoch data (currently Epoch 6)
+            let livePosts = [];
+            if (allStats.live && allStats.live.top_projects) {
+                const liveProject = allStats.live.top_projects.find(p => p.name === statsName);
+                if (liveProject && liveProject.posts) {
+                    livePosts = liveProject.posts;
+                }
+            }
+
             // Get historical data
             let historicalPosts = [];
             if (allStats.historical && allStats.historical.epochs) {
@@ -830,7 +851,7 @@
                 });
             }
 
-            return epoch4Posts.length + epoch5Posts.length + historicalPosts.length;
+            return epoch4Posts.length + epoch5Posts.length + livePosts.length + historicalPosts.length;
         }
 
         function getMemberBadgeEmojis(member) {
@@ -854,6 +875,15 @@
                 const epoch5Project = allStats.epoch5.top_projects.find(p => p.name === statsName);
                 if (epoch5Project && epoch5Project.posts) {
                     epoch5Posts = epoch5Project.posts;
+                }
+            }
+
+            // Get live epoch data (currently Epoch 6)
+            let livePosts = [];
+            if (allStats.live && allStats.live.top_projects) {
+                const liveProject = allStats.live.top_projects.find(p => p.name === statsName);
+                if (liveProject && liveProject.posts) {
+                    livePosts = liveProject.posts;
                 }
             }
 
@@ -900,7 +930,7 @@
             }
 
             // Community impact - all tiers (across Epoch 4 and 5)
-            const powbotPosts = [...epoch4Posts, ...epoch5Posts];
+            const powbotPosts = [...epoch4Posts, ...epoch5Posts, ...livePosts];
             if (powbotPosts.length > 0) {
                 const uniqueMerchants = new Set(powbotPosts.map(p => p.merchant)).size;
                 if (uniqueMerchants >= 25) {

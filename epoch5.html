@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PoWBoT Stats</title>
+    <title>PoWBoT Stats - Epoch 5 Results</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
 
     <!-- Open Graph / Social Preview -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bitcoinubuntu.github.io/powbot-stats/">
-    <meta property="og:title" content="PoWBoT Stats">
-    <meta property="og:description" content="Real-time activity stats for PoW rewards to merchants and projects across Africa.">
+    <meta property="og:url" content="https://powbot.africa/epoch5.html">
+    <meta property="og:title" content="PoWBoT Stats - Epoch 5 Results">
+    <meta property="og:description" content="Epoch 5 final results for PoW rewards to merchants and projects across Africa.">
     <meta property="og:image" content="https://bitcoinubuntu.github.io/powbot-stats/images/PoWBoT_preview.jpg">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://bitcoinubuntu.github.io/powbot-stats/">
-    <meta name="twitter:title" content="PoWBoT Stats">
-    <meta name="twitter:description" content="Real-time activity stats for PoW rewards to merchants and projects across Africa.">
+    <meta name="twitter:url" content="https://powbot.africa/epoch5.html">
+    <meta name="twitter:title" content="PoWBoT Stats - Epoch 5 Results">
+    <meta name="twitter:description" content="Epoch 5 final results for PoW rewards to merchants and projects across Africa.">
     <meta name="twitter:image" content="https://bitcoinubuntu.github.io/powbot-stats/images/PoWBoT_preview.jpg">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -178,125 +178,6 @@
             margin-bottom: 0;
         }
 
-        .today-banner {
-            background: linear-gradient(135deg, rgba(247, 147, 26, 0.15), rgba(247, 147, 26, 0.05));
-            border: 1px solid var(--accent-orange);
-            border-radius: 12px;
-            padding: 16px 24px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .today-banner .today-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            color: var(--accent-orange);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .today-banner .today-time {
-            text-transform: none;
-            font-weight: 400;
-            color: var(--text-secondary);
-        }
-
-        .today-banner .today-stats {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .today-banner .today-stat {
-            display: flex;
-            align-items: baseline;
-            gap: 6px;
-        }
-
-        .today-banner .today-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .today-banner .today-unit {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .today-banner .today-value.merchant { color: var(--accent-green); }
-        .today-banner .today-value.project { color: var(--accent-blue); }
-
-        .week-banner {
-            background: linear-gradient(135deg, rgba(163, 113, 247, 0.15), rgba(163, 113, 247, 0.05));
-            border: 1px solid var(--accent-purple);
-            border-radius: 12px;
-            padding: 16px 24px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .week-banner .week-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            color: var(--accent-purple);
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .week-banner .week-stats {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .week-banner .week-stat {
-            display: flex;
-            align-items: baseline;
-            gap: 6px;
-        }
-
-        .week-banner .week-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .week-banner .week-unit {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        @media (max-width: 600px) {
-            .week-banner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .week-banner .week-stats {
-                gap: 16px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .today-banner {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .today-banner .today-stats {
-                gap: 16px;
-            }
-        }
-
         .countries-banner-content {
             display: flex;
             align-items: center;
@@ -324,89 +205,6 @@
             }
         }
 
-        .card.top-performers {
-            background: linear-gradient(135deg, rgba(163, 113, 247, 0.15), rgba(163, 113, 247, 0.05));
-            border-color: var(--accent-purple);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card.top-performers h2 {
-            color: var(--accent-purple);
-        }
-
-        .top-performers-list {
-            display: flex;
-            flex-direction: column;
-            margin-top: auto;
-        }
-
-        .top-performer-item {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border);
-            text-decoration: none;
-            color: var(--text-primary);
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-
-        .top-performer-item:last-child {
-            border-bottom: none;
-        }
-
-        /* Mobile-safe hover - no layout shifts */
-        a.top-performer-item:hover {
-            background: rgba(163, 113, 247, 0.1);
-            border-radius: 8px;
-        }
-
-        a.top-performer-item:hover .top-performer-name {
-            color: var(--accent-purple);
-        }
-
-        /* Desktop-only polished hover - layout shifts allowed */
-        @media (hover: hover) and (pointer: fine) {
-            a.top-performer-item:hover {
-                margin: 0 -8px;
-                padding: 8px 8px;
-                transform: translateX(4px);
-            }
-        }
-
-        .top-performer-rank {
-            font-size: 1rem;
-            width: 24px;
-            flex-shrink: 0;
-        }
-
-        .top-performer-name {
-            flex: 1;
-            color: var(--text-secondary);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .top-performer-count {
-            font-weight: 600;
-            color: var(--accent-purple);
-        }
-
-        .top-performer-label {
-            color: var(--text-secondary);
-            margin-left: 4px;
-        }
-
-        .no-performers {
-            color: var(--text-secondary);
-            font-style: italic;
-            margin-top: auto;
-            padding: 8px 0;
-        }
-
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -416,7 +214,7 @@
 
         @media (min-width: 900px) {
             .stats-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -679,61 +477,6 @@
             }
         }
 
-        .today-video-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px;
-            margin-bottom: 8px;
-            background: var(--bg-secondary);
-            border-radius: 8px;
-            text-decoration: none;
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
-        }
-
-        @media (hover: hover) {
-            .today-video-item:hover {
-                background: var(--bg-card);
-            }
-        }
-
-        .today-video-icon {
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .today-video-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            min-width: 0;
-        }
-
-        .today-video-project {
-            color: var(--text-primary);
-            font-weight: 600;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .today-video-merchant {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .today-video-time {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            margin-left: auto;
-            flex-shrink: 0;
-        }
-
-
         .insights-grid {
             display: grid;
             grid-template-columns: 1fr 1.5fr 1fr;
@@ -822,7 +565,6 @@
             color: #f85149;
         }
 
-        /* Highlights Section */
         .card.highlights {
             background: linear-gradient(135deg, rgba(88, 166, 255, 0.15), rgba(88, 166, 255, 0.05));
             border-color: var(--accent-blue);
@@ -1019,17 +761,20 @@
                     <div class="quick-link-subtitle">Support projects directly</div>
                 </div>
             </a>
-            <a href="epoch5.html" class="quick-link-btn">
-                <span class="quick-link-icon">🏁</span>
+            <a href="index.html" class="quick-link-btn">
+                <span class="quick-link-icon">⚡</span>
                 <div class="quick-link-text">
-                    <div class="quick-link-title">Epoch 5 Results</div>
-                    <div class="quick-link-subtitle">Final standings</div>
+                    <div class="quick-link-title">Current Epoch</div>
+                    <div class="quick-link-subtitle">Live stats</div>
                 </div>
             </a>
         </div>
 
-        <!-- Epoch 6 Banner - flips itself at launch, no manual edit needed -->
-        <div class="launch-banner" id="epoch-banner"></div>
+        <!-- Epoch Ended Banner -->
+        <div class="launch-banner">
+            <h2>Epoch 5 final results</h2>
+            <p>23 March – 3 July 2026. Thank you to all participating projects across Africa.</p>
+        </div>
 
         <div id="content">
             <div class="loading">Loading stats...</div>
@@ -1083,14 +828,6 @@
             content.innerHTML = `
                 <!-- Summary Cards -->
                 <div class="stats-grid">
-                    <div class="card top-performers">
-                        <h2>Top Performers (24h)</h2>
-                        <div class="big-number">🏆</div>
-                        <div class="top-performers-list" id="top-performers-list">
-                            <!-- Populated by JavaScript -->
-                        </div>
-                    </div>
-
                     <div class="card epoch-overview-card">
                         <h2>Epoch Overview</h2>
                         <div class="epoch-overview-stats">
@@ -1131,20 +868,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="card">
-                        <h2>Since Launch${stats.launch.days_active > 0 ? ` (${stats.launch.date})` : ''}</h2>
-                        <div class="big-number">${stats.launch.days_active}<span class="unit"> days</span></div>
-                        <div style="margin-top: 15px;">
-                            <div class="stat-row">
-                                <span class="stat-label" style="font-weight: 600;">Daily Averages</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="stat-label">Posts approved</span>
-                                <span class="stat-value" style="color: var(--accent-orange);">${stats.launch.days_active > 0 ? Math.round((stats.totals.by_type.project?.count || 0) / stats.launch.days_active) : 0}</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Countries Banner -->
@@ -1154,7 +877,7 @@
                         <h2 style="margin: 0;">${stats.countries?.length || 0} ${(stats.countries?.length || 0) === 1 ? 'Country' : 'Countries'} Active</h2>
                         <div class="countries-banner-list" id="countries-list">
                             ${(stats.countries || []).map(c => `
-                                <a href="members.html?filter=epoch6&country=${encodeURIComponent(c.flag + ' ' + c.country)}" class="country-tag">
+                                <a href="members.html?filter=epoch5&country=${encodeURIComponent(c.flag + ' ' + c.country)}" class="country-tag">
                                     <span class="country-flag">${c.flag}</span>
                                     <span class="country-name">${c.country}</span>
                                     ${c.count > 1 ? `<span class="country-count">(${c.count})</span>` : ''}
@@ -1166,54 +889,12 @@
                 ` : ''}
 
                 <!-- Highlights -->
-                <div class="card highlights">
+                <div class="card highlights" style="margin-bottom: 20px;">
                     <h2>Highlights</h2>
                     <div class="highlights-list" id="highlights-list">
                         <!-- Populated by JavaScript -->
                     </div>
                 </div>
-
-                <!-- Last 24h Activity Banner -->
-                ${(stats.last_24h?.posts || 0) > 0 ? `
-                <div class="today-banner">
-                    <span class="today-label">Last 24h <span class="today-time">(updated ${new Date(stats.generated_at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'Africa/Johannesburg' })} CAT)</span></span>
-                    <div class="today-stats">
-                        <div class="today-stat">
-                            <span class="today-value" style="color: var(--accent-orange);">${formatNumber(stats.last_24h?.posts || 0)}</span>
-                            <span class="today-unit">${(stats.last_24h?.posts || 0) === 1 ? 'post' : 'posts'}</span>
-                        </div>
-                        <div class="today-stat">
-                            <span class="today-value" style="color: var(--accent-green);">${formatNumber(stats.last_24h?.approved || 0)}</span>
-                            <span class="today-unit">${(stats.last_24h?.approved || 0) === 1 ? 'approval' : 'approvals'}</span>
-                        </div>
-                        ${(stats.last_24h?.pending || 0) > 0 ? `
-                        <div class="today-stat">
-                            <span class="today-value" style="color: var(--text-secondary);">${formatNumber(stats.last_24h?.pending || 0)}</span>
-                            <span class="today-unit">${(stats.last_24h?.pending || 0) === 1 ? 'pending' : 'pending'}</span>
-                        </div>
-                        ` : ''}
-                        <div class="today-stat">
-                            <span class="today-value" style="color: #f85149;">${formatNumber(stats.last_24h?.rejected || 0)}</span>
-                            <span class="today-unit">${(stats.last_24h?.rejected || 0) === 1 ? 'rejection' : 'rejections'}</span>
-                        </div>
-                    </div>
-                </div>
-                ` : ''}
-
-                <!-- Last 24h Videos by Platform -->
-                ${(stats.last_24h.videos && stats.last_24h.videos.length > 0) ? `
-                <div class="leaderboard-grid">
-                    <div class="card">
-                        <h2>Last 24h on X</h2>
-                        <div id="today-x"></div>
-                    </div>
-
-                    <div class="card">
-                        <h2>Last 24h on Nostr</h2>
-                        <div id="today-nostr"></div>
-                    </div>
-                </div>
-                ` : ''}
 
                 <!-- Leaderboards -->
                 ${((stats.top_projects?.length || 0) > 0 || (stats.top_merchants?.length || 0) > 0) ? `
@@ -1234,33 +915,6 @@
                 </div>
                 ` : ''}
 
-                <!-- Last 7 Days Banner -->
-                ${(stats.last_7d?.posts || 0) > 0 ? `
-                <div class="week-banner">
-                    <span class="week-label">Last 7 Days</span>
-                    <div class="week-stats">
-                        <div class="week-stat">
-                            <span class="week-value" style="color: var(--accent-purple);">${formatNumber(stats.last_7d?.posts || 0)}</span>
-                            <span class="week-unit">${(stats.last_7d?.posts || 0) === 1 ? 'post' : 'posts'}</span>
-                        </div>
-                        <div class="week-stat">
-                            <span class="week-value" style="color: var(--accent-green);">${formatNumber(stats.last_7d?.approved || 0)}</span>
-                            <span class="week-unit">${(stats.last_7d?.approved || 0) === 1 ? 'approval' : 'approvals'}</span>
-                        </div>
-                        ${(stats.last_7d?.pending || 0) > 0 ? `
-                        <div class="week-stat">
-                            <span class="week-value" style="color: var(--text-secondary);">${formatNumber(stats.last_7d?.pending || 0)}</span>
-                            <span class="week-unit">${(stats.last_7d?.pending || 0) === 1 ? 'pending' : 'pending'}</span>
-                        </div>
-                        ` : ''}
-                        <div class="week-stat">
-                            <span class="week-value" style="color: #f85149;">${formatNumber(stats.last_7d?.rejected || 0)}</span>
-                            <span class="week-unit">${(stats.last_7d?.rejected || 0) === 1 ? 'rejection' : 'rejections'}</span>
-                        </div>
-                    </div>
-                </div>
-                ` : ''}
-
                 <!-- Daily Chart -->
                 <div class="chart-container">
                     <h2>Daily Activity</h2>
@@ -1270,9 +924,7 @@
                 </div>
 
                 <!-- Insights Section -->
-                <!-- Always rendered: the all-time epochs chart is meaningful even before the
-                     first post of a new epoch lands. Gating this on live data crashed the page
-                     at the Epoch 6 rollover (null #epochsChart canvas). -->
+                ${((stats.lightning_providers?.length || 0) > 0 || (stats.countries?.length || 0) > 0 || (stats.platforms?.length || 0) > 0) ? `
                 <div class="insights-grid">
                     ${(stats.countries?.length || 0) > 0 ? `
                     <div class="card insight-card">
@@ -1284,7 +936,7 @@
                     ` : ''}
 
                     <div class="card insight-card">
-                        <h2>Total Posts Over All Time: ${formatNumber(4852 + (stats.reviewer?.approved || 0))}</h2>
+                        <h2>Total Posts Over All Time: ${formatNumber(2867 + (stats.reviewer?.approved || 0))}</h2>
                         <div class="chart-wrapper" style="height: 240px;">
                             <canvas id="epochsChart"></canvas>
                         </div>
@@ -1299,6 +951,7 @@
                     </div>
                     ` : ''}
                 </div>
+                ` : ''}
             `;
 
             // Render leaderboards (only if they exist)
@@ -1308,17 +961,6 @@
             if ((stats.top_merchants?.length || 0) > 0) {
                 renderLeaderboard('top-merchants', stats.top_merchants, 'merchant');
             }
-
-            // Render last 24h videos if any
-            if (stats.last_24h.videos && stats.last_24h.videos.length > 0) {
-                const xVideos = stats.last_24h.videos.filter(v => v.platform === 'X');
-                const nostrVideos = stats.last_24h.videos.filter(v => v.platform === 'Nostr');
-                renderTodayVideos('today-x', xVideos, '𝕏');
-                renderTodayVideos('today-nostr', nostrVideos, '🟣');
-            }
-
-            // Render top performers (always show card, with empty state message if needed)
-            renderTopPerformers(stats.last_24h?.videos || []);
 
             // Render charts
             renderChart(stats.daily);
@@ -1330,6 +972,7 @@
             }
             renderEpochsChart(stats.reviewer?.approved || 0);
 
+            // Render highlights
             renderHighlights(stats);
         }
 
@@ -1501,108 +1144,13 @@
             }
         }
 
-        function renderTodayVideos(elementId, videos, icon) {
-            const container = document.getElementById(elementId);
-            if (!container) return;
-
-            if (videos.length === 0) {
-                container.innerHTML = '<div style="color: var(--text-secondary); padding: 12px;">No posts yet</div>';
-                return;
-            }
-
-            const initialCount = 5;
-            const hasMore = videos.length > initialCount;
-
-            container.innerHTML = videos.map((video, index) => {
-                const isHidden = index >= initialCount;
-                return `
-                <a href="${escapeHtml(video.url)}" target="_blank" rel="noopener" class="today-video-item ${isHidden ? 'leaderboard-hidden' : ''}" data-index="${index}">
-                    <span class="today-video-icon">${icon}</span>
-                    <span class="today-video-info">
-                        <span class="today-video-project">${escapeHtml(video.project)}</span>
-                        <span class="today-video-merchant">${escapeHtml(video.merchant)}</span>
-                    </span>
-                    <span class="today-video-time">${escapeHtml(video.time || '')}</span>
-                </a>
-            `}).join('');
-
-            if (hasMore) {
-                container.innerHTML += `
-                    <button class="leaderboard-more" data-count="${videos.length - initialCount}" onclick="toggleTodayVideos(this, '${elementId}')">
-                        Show ${videos.length - initialCount} more
-                    </button>
-                `;
-            }
-        }
-
-        function toggleTodayVideos(button, elementId) {
-            const container = document.getElementById(elementId);
-            const isExpanded = button.classList.contains('expanded');
-            const count = button.dataset.count;
-
-            if (isExpanded) {
-                container.querySelectorAll('.today-video-item').forEach((el, index) => {
-                    if (index >= 5) el.classList.add('leaderboard-hidden');
-                });
-                button.textContent = `Show ${count} more`;
-                button.classList.remove('expanded');
-            } else {
-                container.querySelectorAll('.leaderboard-hidden').forEach(el => {
-                    el.classList.remove('leaderboard-hidden');
-                });
-                button.textContent = 'Show less';
-                button.classList.add('expanded');
-            }
-        }
-
-        function renderTopPerformers(videos) {
-            const container = document.getElementById('top-performers-list');
-            if (!container) return;
-
-            if (videos.length === 0) {
-                container.innerHTML = '<div class="no-performers">No posts from the last 24 hours have been approved yet</div>';
-                return;
-            }
-
-            // Strip flag emojis from name
-            const stripFlags = (name) => name.replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
-
-            // Count approvals per project
-            const projectCounts = {};
-            videos.forEach(video => {
-                const project = video.project || 'Unknown';
-                projectCounts[project] = (projectCounts[project] || 0) + 1;
-            });
-
-            // Sort by count and get top 3
-            const sorted = Object.entries(projectCounts)
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 3);
-
-            const rankEmojis = ['🥇', '🥈', '🥉'];
-
-            container.innerHTML = sorted.map(([project, count], index) => {
-                const metadata = projectMetadata[project];
-                const profileUrl = metadata?.info_url || '#';
-                const tag = metadata?.info_url ? 'a' : 'div';
-
-                return `
-                    <${tag} ${tag === 'a' ? `href="${profileUrl}"` : ''} class="top-performer-item">
-                        <span class="top-performer-rank">${rankEmojis[index]}</span>
-                        <span class="top-performer-name">${stripFlags(project)}</span>
-                        <span class="top-performer-count">${count}</span>
-                        <span class="top-performer-label">${count === 1 ? 'post' : 'posts'}</span>
-                    </${tag}>
-                `;
-            }).join('');
-        }
-
         function renderChart(daily) {
             const ctx = document.getElementById('dailyChart').getContext('2d');
 
-            // Filter to only show days with activity for cleaner chart
-            const activeData = daily.filter(d => (d.approved || 0) > 0 || (d.rejected || 0) > 0);
-            const displayData = activeData.length > 0 ? activeData : daily.slice(-7);
+            // Show the full epoch as a continuous daily timeline, trimmed at the last day with activity
+            let end = daily.length;
+            while (end > 0 && !((daily[end - 1].approved || 0) > 0 || (daily[end - 1].rejected || 0) > 0)) end--;
+            const displayData = daily.slice(0, end);
 
             new Chart(ctx, {
                 type: 'bar',
@@ -1843,17 +1391,14 @@
             });
         }
 
-        function renderEpochsChart(epoch6Live) {
-            const canvas = document.getElementById('epochsChart');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
+        function renderEpochsChart(epoch5Live) {
+            const ctx = document.getElementById('epochsChart').getContext('2d');
 
             // Historical epoch data (hardcoded)
             const epoch1 = 81;
             const epoch2 = 298;
             const epoch3 = 604;
             const epoch4Combined = 187 + 1697; // Testing + Live combined
-            const epoch5 = 1985; // Final, frozen in stats-epoch5.json
 
             new Chart(ctx, {
                 type: 'bar',
@@ -1890,14 +1435,7 @@
                         },
                         {
                             label: 'Epoch 5 (Jul 26)',
-                            data: [epoch5],
-                            backgroundColor: '#ef7d1a',
-                            borderColor: '#ef7d1a',
-                            borderWidth: 0
-                        },
-                        {
-                            label: 'Epoch 6 Live',
-                            data: [epoch6Live],
+                            data: [epoch5Live],
                             backgroundColor: '#f7931a',
                             borderColor: '#f7931a',
                             borderWidth: 0
@@ -2194,15 +1732,6 @@
             allHighlights = shuffleArray(generateHighlights(stats));
             highlightIndex = 0;
 
-            // Before the first post of an epoch there is nothing to highlight.
-            // Hide the whole card rather than showing an empty one.
-            const card = container.closest('.card.highlights');
-            if (allHighlights.length === 0) {
-                if (card) card.style.display = 'none';
-                return;
-            }
-            if (card) card.style.display = '';
-
             // Display first 5
             displayHighlights();
 
@@ -2216,11 +1745,10 @@
         // Load and render stats
         async function loadStats() {
             try {
-                // Load stats, members, and tracker data
-                const [statsResponse, membersResponse, trackerResponse] = await Promise.all([
-                    fetch('stats.json?t=' + Date.now()),
-                    fetch('members.json?t=' + Date.now()).catch(() => null),
-                    fetch('tracker-data.json?t=' + Date.now()).catch(() => null)
+                // Frozen Epoch 5 snapshot - never reads the live stats.json
+                const [statsResponse, membersResponse] = await Promise.all([
+                    fetch('stats-epoch5.json?t=' + Date.now()),
+                    fetch('members.json?t=' + Date.now()).catch(() => null)
                 ]);
 
                 if (!statsResponse.ok) {
@@ -2244,64 +1772,6 @@
                     });
                 }
 
-                // Process tracker data for last 24h and last 7d stats
-                if (trackerResponse && trackerResponse.ok) {
-                    const trackerData = await trackerResponse.json();
-                    const now = new Date();
-                    const last24h = new Date(now.getTime() - 24 * 60 * 60 * 1000);
-                    const last7d = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
-
-                    // Filter submissions for last 24h
-                    const recentSubmissions = trackerData.submissions.filter(sub => {
-                        const subDate = new Date(sub.timestamp.replace(' UTC', 'Z'));
-                        return subDate >= last24h;
-                    });
-
-                    // Calculate last 24h stats
-                    const approved = recentSubmissions.filter(sub => sub.status === 'Processed').length;
-                    const rejected = recentSubmissions.filter(sub => sub.status === 'Rejected').length;
-                    const pending = recentSubmissions.filter(sub => sub.status === 'Pending Review' || sub.status === 'Approved').length;
-                    const totalPosts = recentSubmissions.length;
-
-                    // Map to video format (only processed ones)
-                    const recentVideos = recentSubmissions
-                        .filter(sub => sub.status === 'Processed')
-                        .map(sub => ({
-                            project: sub.project_name,
-                            merchant: sub.merchant_name,
-                            platform: sub.platform,
-                            url: sub.post_url
-                        }));
-
-                    // Add last 24h to stats object
-                    stats.last_24h = stats.last_24h || {};
-                    stats.last_24h.videos = recentVideos;
-                    stats.last_24h.posts = totalPosts;
-                    stats.last_24h.approved = approved;
-                    stats.last_24h.rejected = rejected;
-                    stats.last_24h.pending = pending;
-
-                    // Filter submissions for last 7 days
-                    const recent7dSubmissions = trackerData.submissions.filter(sub => {
-                        const subDate = new Date(sub.timestamp.replace(' UTC', 'Z'));
-                        return subDate >= last7d;
-                    });
-
-                    // Calculate last 7d stats
-                    const approved7d = recent7dSubmissions.filter(sub => sub.status === 'Processed').length;
-                    const rejected7d = recent7dSubmissions.filter(sub => sub.status === 'Rejected').length;
-                    const pending7d = recent7dSubmissions.filter(sub => sub.status === 'Pending Review' || sub.status === 'Approved').length;
-                    const totalPosts7d = recent7dSubmissions.length;
-
-                    // Add last 7d to stats object
-                    stats.last_7d = {
-                        posts: totalPosts7d,
-                        approved: approved7d,
-                        rejected: rejected7d,
-                        pending: pending7d
-                    };
-                }
-
                 renderDashboard(stats);
             } catch (error) {
                 console.error('Failed to load stats:', error);
@@ -2315,27 +1785,6 @@
         }
 
         // Initialize - wait for includes to load first
-        // Epoch 6 launch: Mon 20 July 2026, 08:00 SAST (06:00 UTC)
-        const EPOCH6_LAUNCH = new Date('2026-07-20T06:00:00Z');
-
-        function renderEpochBanner() {
-            const banner = document.getElementById('epoch-banner');
-            if (!banner) return;
-
-            if (new Date() < EPOCH6_LAUNCH) {
-                banner.innerHTML = `
-                    <h2>Epoch 6 starts Monday</h2>
-                    <p>Submissions open 20 July 2026 at 06:00 UTC (08:00 SAST). Stats below go live as the first posts arrive.</p>
-                `;
-            } else {
-                banner.innerHTML = `
-                    <h2>Epoch 6 is live</h2>
-                    <p>Tracking PoW rewards to merchants and projects across Africa.</p>
-                `;
-            }
-        }
-
-        renderEpochBanner();
         window.includesLoaded.then(() => loadStats());
     </script>
 </body>
