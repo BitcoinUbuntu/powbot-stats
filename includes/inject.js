@@ -56,8 +56,12 @@
         try {
             // Fetch the latest stats to get generated_at timestamp.
             // Cache-bust: without it the browser serves a stale stats.json and the
-            // footer reports an old "Data updated" time on every page. The cron
-            // rewrites this file every 30 minutes.
+            // footer reports an old "Data updated" time on every page.
+            //
+            // The export regenerates this file every 5 minutes on the VPS. The
+            // copy in this repo is only refreshed twice daily, because it is the
+            // fallback rather than the live source - so the timestamp shown
+            // depends on which one fetchLiveData reached.
             // Use fetchLiveData when the page has loaded data-source.js - it
             // prefers the VPS (regenerated every 5 min) and falls back to this
             // repo's hourly copy, so the footer shows the freshest timestamp
