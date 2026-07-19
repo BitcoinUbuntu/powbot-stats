@@ -518,7 +518,14 @@
 
                 // Every fetch fails to null independently - one missing archive must
                 // not blank the page, it just means that epoch is absent.
-                const loadJson = f => fetch(f).then(r => r.ok ? r.json() : null).catch(() => null);
+                // The LIVE file comes from the VPS via fetchLiveData (which falls
+                // back to this repo). Archives are frozen and change only via git,
+                // so they stay same-origin - no point adding a VPS dependency for
+                // data that cannot be fresher there.
+                const LIVE = 'tracker-data.json';
+                const loadJson = f => (f === LIVE && typeof fetchLiveData === 'function')
+                    ? fetchLiveData(f).catch(() => null)
+                    : fetch(f).then(r => r.ok ? r.json() : null).catch(() => null);
 
                 const [trackerFiles, statsArchives] = await Promise.all([
                     Promise.all(TRACKER_FILES.map(loadJson)),
@@ -821,6 +828,8 @@
     <div id="site-footer"></div>
 
     <!-- Shared nav/footer injection -->
+    <!-- Defines fetchLiveData(): VPS first, this repo as fallback. -->
+    <script src="data-source.js"></script>
     <script src="includes/inject.js"></script>
 </body>
 </html>

@@ -58,8 +58,18 @@
             // Cache-bust: without it the browser serves a stale stats.json and the
             // footer reports an old "Data updated" time on every page. The cron
             // rewrites this file every 30 minutes.
-            const response = await fetch('stats.json?t=' + Date.now());
-            const stats = await response.json();
+            // Use fetchLiveData when the page has loaded data-source.js - it
+            // prefers the VPS (regenerated every 5 min) and falls back to this
+            // repo's hourly copy, so the footer shows the freshest timestamp
+            // available. Otherwise fetch same-origin as before.
+            //
+            // inject.js is loaded by ELEVEN pages, most of which have no reason to
+            // pull in data-source.js. Shared code must not assume an optional
+            // dependency is present, or adding one here silently breaks the footer
+            // everywhere else.
+            const stats = (typeof fetchLiveData === 'function')
+                ? await fetchLiveData('stats.json')
+                : await (await fetch('stats.json?t=' + Date.now())).json();
 
             if (stats && stats.generated_at) {
                 updatedElement.textContent = new Date(stats.generated_at).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';

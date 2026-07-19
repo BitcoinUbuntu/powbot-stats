@@ -37,11 +37,10 @@ const TRACKER_ARCHIVES = ['tracker-data-epoch5.json'];
 
 async function loadTrackerData() {
     try {
-        const response = await fetch('tracker-data.json');
-        if (!response.ok) {
-            throw new Error('Failed to load tracker data');
-        }
-        const data = await response.json();
+        // Live epoch from the VPS, falling back to this repo's copy if it is
+        // unreachable. The archives below stay same-origin - they are frozen and
+        // change only via git, so there is nothing to gain from the VPS.
+        const data = await fetchLiveData('tracker-data.json');
 
         // Load archived epochs alongside the live one. Each fails to null
         // independently: a missing archive must not take the whole tracker down,

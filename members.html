@@ -16,6 +16,9 @@
     <meta property="og:image" content="https://bitcoinubuntu.github.io/powbot-stats/images/PoWBoT_preview.jpg">
 
     <script src="qrcode.min.js"></script>
+    <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Loaded here in
+         the head because this page's inline script runs before inject.js. -->
+    <script src="data-source.js"></script>
 
     <style>
         :root {
@@ -613,9 +616,10 @@
             fetch('stats-epoch4.json').then(res => res.json()),
             fetch('stats-historical.json').then(res => res.json()),
             fetch('stats-epoch5.json').then(res => res.json()),
-            // Live epoch (currently Epoch 6). Tolerate failure so the directory
-            // still renders from the frozen archives if the live export is missing.
-            fetch('stats.json?t=' + Date.now()).then(res => res.json()).catch(() => null)
+            // Live epoch (currently Epoch 6), from the VPS with this repo as
+            // fallback. Tolerate failure of BOTH so the directory still renders
+            // from the frozen archives if live data is unavailable entirely.
+            fetchLiveData('stats.json').catch(() => null)
         ])
             .then(([membersData, epoch4Data, historicalData, epoch5Data, liveData]) => {
                 allMembers = membersData.members;

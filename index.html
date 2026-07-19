@@ -1061,6 +1061,9 @@
     </div>
 
     <!-- Shared nav/footer injection - load first -->
+    <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Must load
+         before any script that fetches live data. -->
+    <script src="data-source.js"></script>
     <script src="includes/inject.js"></script>
 
     <script>
@@ -2228,17 +2231,17 @@
         // Load and render stats
         async function loadStats() {
             try {
-                // Load stats, members, and tracker data
-                const [statsResponse, membersResponse, trackerResponse] = await Promise.all([
-                    fetch('stats.json?t=' + Date.now()),
+                // Live data (stats, tracker) comes from the VPS via fetchLiveData,
+                // which falls back to the copy published in this repo if the VPS is
+                // unreachable. members.json stays same-origin: it changes via git,
+                // not the export, so routing it through the VPS would add a
+                // dependency for no freshness.
+                const [statsData, membersResponse, trackerData] = await Promise.all([
+                    fetchLiveData('stats.json'),
                     fetch('members.json?t=' + Date.now()).catch(() => null),
-                    fetch('tracker-data.json?t=' + Date.now()).catch(() => null)
+                    fetchLiveData('tracker-data.json').catch(() => null)
                 ]);
-
-                if (!statsResponse.ok) {
-                    throw new Error(`HTTP ${statsResponse.status}`);
-                }
-                const stats = await statsResponse.json();
+                const stats = statsData;
 
                 // Build project metadata from members.json
                 if (membersResponse && membersResponse.ok) {
@@ -2257,8 +2260,7 @@
                 }
 
                 // Process tracker data for last 24h and last 7d stats
-                if (trackerResponse && trackerResponse.ok) {
-                    const trackerData = await trackerResponse.json();
+                if (trackerData) {
                     const now = new Date();
                     const last24h = new Date(now.getTime() - 24 * 60 * 60 * 1000);
                     const last7d = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
