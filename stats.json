@@ -1,18 +1,90 @@
 {
   "totals": {
-    "all_payments": 0,
-    "by_type": {}
+    "all_payments": 15,
+    "by_type": {
+      "merchant": {
+        "count": 5
+      },
+      "project": {
+        "count": 5
+      },
+      "reviewer": {
+        "count": 5
+      }
+    }
   },
   "today": {
     "date": "2026-07-20",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
-    "rejected": 0,
-    "videos": []
+    "payments": 15,
+    "by_type": {
+      "merchant": {
+        "count": 5
+      },
+      "project": {
+        "count": 5
+      },
+      "reviewer": {
+        "count": 5
+      }
+    },
+    "approved": 5,
+    "rejected": 2,
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2079145001175457854",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "X",
+        "time": "12:18"
+      },
+      {
+        "url": "https://x.com/i/status/2079126914011152632",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "X",
+        "time": "12:18"
+      },
+      {
+        "url": "https://x.com/i/status/2079152981002367315",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Diamond Barbing Saloon",
+        "platform": "X",
+        "time": "12:18"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqspdl2a9qd3yh2uaknmhx79zdzwc0826dxlgqnlgkwtapkgmwcsh8chyardx",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "Nostr",
+        "time": "12:18"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsftu69zfk2zgq340a4k8tq2uzpu2a9zv2cksvvnx7xlrjly9gha7sfzw7wd",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "Nostr",
+        "time": "12:17"
+      }
+    ]
   },
   "last_24h": {
-    "videos": []
+    "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      }
+    ]
   },
   "daily": [
     {
@@ -249,33 +321,146 @@
     },
     {
       "date": "2026-07-20",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
-      "rejected": 0
+      "project_count": 5,
+      "merchant_count": 5,
+      "reviewer_count": 5,
+      "approved": 5,
+      "rejected": 2
     }
   ],
   "reviewer": {
-    "total_reviewed": 0,
-    "approved": 0,
-    "rejected": 0
+    "total_reviewed": 7,
+    "approved": 5,
+    "rejected": 2
   },
-  "top_projects": [],
-  "top_merchants": [],
+  "top_projects": [
+    {
+      "name": "Bitcoin Chama 🇰🇪",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2079126914011152632",
+          "date": "2026-07-20",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsftu69zfk2zgq340a4k8tq2uzpu2a9zv2cksvvnx7xlrjly9gha7sfzw7wd",
+          "date": "2026-07-20",
+          "merchant": "Mary Shop"
+        }
+      ]
+    },
+    {
+      "name": "Bitbiashara 🇰🇪",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2079145001175457854",
+          "date": "2026-07-20",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspdl2a9qd3yh2uaknmhx79zdzwc0826dxlgqnlgkwtapkgmwcsh8chyardx",
+          "date": "2026-07-20",
+          "merchant": "Bliss beauty Salon"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Ekiti 🇳🇬",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2079152981002367315",
+          "date": "2026-07-20",
+          "merchant": "Diamond Barbing Saloon"
+        }
+      ]
+    }
+  ],
+  "top_merchants": [
+    {
+      "name": "Mary Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2079126914011152632",
+          "date": "2026-07-20",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsftu69zfk2zgq340a4k8tq2uzpu2a9zv2cksvvnx7xlrjly9gha7sfzw7wd",
+          "date": "2026-07-20",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Bliss beauty Salon",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2079145001175457854",
+          "date": "2026-07-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspdl2a9qd3yh2uaknmhx79zdzwc0826dxlgqnlgkwtapkgmwcsh8chyardx",
+          "date": "2026-07-20",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Diamond Barbing Saloon",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2079152981002367315",
+          "date": "2026-07-20",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    }
+  ],
   "launch": {
-    "date": "2026-07-20",
-    "days_active": 0,
-    "daily_average_payments": 0
+    "date": "Jul 20",
+    "days_active": 1,
+    "daily_average_payments": 15
   },
   "burn_rate": {
-    "percentage": 0,
+    "percentage": 49,
     "status": "cold",
-    "days_active": 0
+    "days_active": 1
   },
-  "lightning_providers": [],
-  "countries": [],
-  "platforms": [],
-  "generated_at": "2026-07-20T07:05:01.761266+00:00",
+  "lightning_providers": [
+    {
+      "domain": "blink.sv",
+      "count": 15
+    }
+  ],
+  "countries": [
+    {
+      "flag": "🇰🇪",
+      "country": "Kenya",
+      "count": 2
+    },
+    {
+      "flag": "🇳🇬",
+      "country": "Nigeria",
+      "count": 1
+    }
+  ],
+  "platforms": [
+    {
+      "platform": "X",
+      "count": 9
+    },
+    {
+      "platform": "Nostr",
+      "count": 6
+    }
+  ],
+  "generated_at": "2026-07-20T19:05:02.084510+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
