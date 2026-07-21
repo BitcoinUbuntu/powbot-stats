@@ -1090,6 +1090,15 @@
         // Global project metadata
         let projectMetadata = {};
 
+        // How far back the "recent activity" surfaces look: the Top Performers card,
+        // the activity banner, and the per-platform video lists. Widened from 24 to
+        // 48 hours for Epoch 6, which runs at a much lower posting rate - a 24-hour
+        // window was often empty and made a live epoch look dormant.
+        //
+        // Drives BOTH the query window and every label, so the two cannot drift apart.
+        // Change this one number to retune the window.
+        const ACTIVITY_WINDOW_HOURS = 48;
+
         // Format numbers with commas
         function formatNumber(num) {
             return num.toLocaleString();
@@ -1137,7 +1146,7 @@
                 <!-- Summary Cards -->
                 <div class="stats-grid">
                     <div class="card top-performers">
-                        <h2>Top Performers (24h)</h2>
+                        <h2>Top Performers (${ACTIVITY_WINDOW_HOURS}h)</h2>
                         <div class="big-number">🏆</div>
                         <div class="top-performers-list" id="top-performers-list">
                             <!-- Populated by JavaScript -->
@@ -1216,7 +1225,7 @@
                 <!-- Last 24h Activity Banner -->
                 ${(stats.last_24h?.posts || 0) > 0 ? `
                 <div class="today-banner">
-                    <span class="today-label">Last 24h <span class="today-time">(updated ${new Date(stats.generated_at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'UTC' })} UTC)</span></span>
+                    <span class="today-label">Last ${ACTIVITY_WINDOW_HOURS}h <span class="today-time">(updated ${new Date(stats.generated_at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'UTC' })} UTC)</span></span>
                     <div class="today-stats">
                         <div class="today-stat">
                             <span class="today-value" style="color: var(--accent-orange);">${formatNumber(stats.last_24h?.posts || 0)}</span>
@@ -1244,12 +1253,12 @@
                 ${(stats.last_24h.videos && stats.last_24h.videos.length > 0) ? `
                 <div class="leaderboard-grid">
                     <div class="card">
-                        <h2>Last 24h on X</h2>
+                        <h2>Last ${ACTIVITY_WINDOW_HOURS}h on X</h2>
                         <div id="today-x"></div>
                     </div>
 
                     <div class="card">
-                        <h2>Last 24h on Nostr</h2>
+                        <h2>Last ${ACTIVITY_WINDOW_HOURS}h on Nostr</h2>
                         <div id="today-nostr"></div>
                     </div>
                 </div>
@@ -1600,7 +1609,7 @@
             if (!container) return;
 
             if (videos.length === 0) {
-                container.innerHTML = '<div class="no-performers">No posts from the last 24 hours have been approved yet</div>';
+                container.innerHTML = `<div class="no-performers">No posts from the last ${ACTIVITY_WINDOW_HOURS} hours have been approved yet</div>`;
                 return;
             }
 
@@ -2288,19 +2297,19 @@
                     });
                 }
 
-                // Process tracker data for last 24h and last 7d stats
+                // Process tracker data for the recent-activity window and last 7d stats
                 if (trackerData) {
                     const now = new Date();
-                    const last24h = new Date(now.getTime() - 24 * 60 * 60 * 1000);
+                    const windowStart = new Date(now.getTime() - ACTIVITY_WINDOW_HOURS * 60 * 60 * 1000);
                     const last7d = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
 
-                    // Filter submissions for last 24h
+                    // Filter submissions inside the recent-activity window
                     const recentSubmissions = trackerData.submissions.filter(sub => {
                         const subDate = new Date(sub.timestamp.replace(' UTC', 'Z'));
-                        return subDate >= last24h;
+                        return subDate >= windowStart;
                     });
 
-                    // Calculate last 24h stats
+                    // Calculate recent-activity stats
                     const approved = recentSubmissions.filter(sub => sub.status === 'Processed').length;
                     const rejected = recentSubmissions.filter(sub => sub.status === 'Rejected').length;
                     const pending = recentSubmissions.filter(sub => sub.status === 'Pending Review' || sub.status === 'Approved').length;
@@ -2316,7 +2325,18 @@
                             url: sub.post_url
                         }));
 
-                    // Add last 24h to stats object
+                    // NOTE THE KEY NAME. `last_24h` is the EXPORTER's key in stats.json,
+                    // where it really is a 24-hour window. Everything below overwrites it
+                    // with an ACTIVITY_WINDOW_HOURS window (48h), so once this runs the
+                    // key name no longer describes its contents. Kept because renaming it
+                    // would silently drop the exporter's copy, which is the fallback when
+                    // tracker-data.json cannot be fetched.
+                    //
+                    // That fallback is the one case where the labels can be wrong: with no
+                    // tracker data the video lists fall back to the exporter's genuine 24h
+                    // set while the headings still say 48h. It under-reports rather than
+                    // over-reports (24h is a subset of 48h), and the banner does not render
+                    // at all because `posts` is only ever set here.
                     stats.last_24h = stats.last_24h || {};
                     stats.last_24h.videos = recentVideos;
                     stats.last_24h.posts = totalPosts;
