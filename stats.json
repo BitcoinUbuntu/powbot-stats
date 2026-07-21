@@ -1,6 +1,21 @@
 {
   "totals": {
-    "all_payments": 17,
+    "all_payments": 35,
+    "by_type": {
+      "merchant": {
+        "count": 12
+      },
+      "project": {
+        "count": 12
+      },
+      "reviewer": {
+        "count": 11
+      }
+    }
+  },
+  "today": {
+    "date": "2026-07-21",
+    "payments": 18,
     "by_type": {
       "merchant": {
         "count": 6
@@ -9,34 +24,75 @@
         "count": 6
       },
       "reviewer": {
-        "count": 5
+        "count": 6
       }
-    }
-  },
-  "today": {
-    "date": "2026-07-21",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    },
+    "approved": 6,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2079547986967679039",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "AB Starry Communication",
+        "platform": "X",
+        "time": "15:12"
+      },
+      {
+        "url": "https://x.com/i/status/2079529948348289400",
+        "project": "Bitcoin Karoo 🇿🇦",
+        "merchant": "Ray’s Coffee Shop",
+        "platform": "X",
+        "time": "12:27"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsdextrfd3rhwuvv6pxh0x7dfa59s9auqn5z3x4qshg2a6mf6d0v8gwqlzw9",
+        "project": "Bitcoin Tofo 🇲🇿",
+        "merchant": "Nhampossa Blue Clothes Tofo Shop",
+        "platform": "Nostr",
+        "time": "09:01"
+      },
+      {
+        "url": "https://x.com/i/status/2079218043998322991",
+        "project": "Bitcoin Tofo 🇲🇿",
+        "merchant": "Nhampossa Blue Clothes Tofo Shop",
+        "platform": "X",
+        "time": "09:00"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsv4qs88smymu4xwt47qmrk6y3ctac0zu03el4vnvucne26fx3g0eqf92v0t",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Milofa Skate Shop",
+        "platform": "Nostr",
+        "time": "08:58"
+      },
+      {
+        "url": "https://x.com/i/status/2079294853330899136",
+        "project": "Bitcoin Famba 🇲🇿",
+        "merchant": "Milofa Skate Shop",
+        "platform": "X",
+        "time": "08:57"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
-        "project": "Bitbiashara 🇰🇪"
+        "project": "Bitcoin Ikorodu 🇳🇬"
       },
       {
-        "project": "Bitcoin Chama 🇰🇪"
+        "project": "Bitcoin Karoo 🇿🇦"
       },
       {
-        "project": "Bitcoin Ekiti 🇳🇬"
+        "project": "Bitcoin Tofo 🇲🇿"
       },
       {
-        "project": "Bitbiashara 🇰🇪"
+        "project": "Bitcoin Tofo 🇲🇿"
       },
       {
-        "project": "Bitcoin Chama 🇰🇪"
+        "project": "Bitcoin Famba 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Famba 🇲🇿"
       }
     ]
   },
@@ -275,35 +331,19 @@
     },
     {
       "date": "2026-07-21",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 6,
+      "approved": 6,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 7,
-    "approved": 5,
+    "total_reviewed": 13,
+    "approved": 11,
     "rejected": 2
   },
   "top_projects": [
-    {
-      "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsfsyrzw0mr00yjctd0aj5aaun33p9m54stmq5y3epue0m0rwyhwzqkse695",
-          "date": "2026-07-20",
-          "merchant": "Diamond Barbing Saloon"
-        },
-        {
-          "url": "https://x.com/i/status/2079152981002367315",
-          "date": "2026-07-20",
-          "merchant": "Diamond Barbing Saloon"
-        }
-      ]
-    },
     {
       "name": "Bitcoin Chama 🇰🇪",
       "count": 2,
@@ -335,6 +375,76 @@
           "merchant": "Bliss beauty Salon"
         }
       ]
+    },
+    {
+      "name": "Bitcoin Ekiti 🇳🇬",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfsyrzw0mr00yjctd0aj5aaun33p9m54stmq5y3epue0m0rwyhwzqkse695",
+          "date": "2026-07-20",
+          "merchant": "Diamond Barbing Saloon"
+        },
+        {
+          "url": "https://x.com/i/status/2079152981002367315",
+          "date": "2026-07-20",
+          "merchant": "Diamond Barbing Saloon"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Famba 🇲🇿",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsv4qs88smymu4xwt47qmrk6y3ctac0zu03el4vnvucne26fx3g0eqf92v0t",
+          "date": "2026-07-21",
+          "merchant": "Milofa Skate Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2079294853330899136",
+          "date": "2026-07-21",
+          "merchant": "Milofa Skate Shop"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Tofo 🇲🇿",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdextrfd3rhwuvv6pxh0x7dfa59s9auqn5z3x4qshg2a6mf6d0v8gwqlzw9",
+          "date": "2026-07-21",
+          "merchant": "Nhampossa Blue Clothes Tofo Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2079218043998322991",
+          "date": "2026-07-21",
+          "merchant": "Nhampossa Blue Clothes Tofo Shop"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Karoo 🇿🇦",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2079529948348289400",
+          "date": "2026-07-21",
+          "merchant": "Ray’s Coffee Shop"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Ikorodu 🇳🇬",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2079547986967679039",
+          "date": "2026-07-21",
+          "merchant": "AB Starry Communication"
+        }
+      ]
     }
   ],
   "top_merchants": [
@@ -355,6 +465,22 @@
       ]
     },
     {
+      "name": "Bliss beauty Salon",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2079145001175457854",
+          "date": "2026-07-20",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspdl2a9qd3yh2uaknmhx79zdzwc0826dxlgqnlgkwtapkgmwcsh8chyardx",
+          "date": "2026-07-20",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Diamond Barbing Saloon",
       "count": 2,
       "posts": [
@@ -371,36 +497,74 @@
       ]
     },
     {
-      "name": "Bliss beauty Salon",
+      "name": "Milofa Skate Shop",
       "count": 2,
       "posts": [
         {
-          "url": "https://x.com/i/status/2079145001175457854",
-          "date": "2026-07-20",
-          "project": "Bitbiashara 🇰🇪"
+          "url": "https://primal.net/e/nevent1qqsv4qs88smymu4xwt47qmrk6y3ctac0zu03el4vnvucne26fx3g0eqf92v0t",
+          "date": "2026-07-21",
+          "project": "Bitcoin Famba 🇲🇿"
         },
         {
-          "url": "https://primal.net/e/nevent1qqspdl2a9qd3yh2uaknmhx79zdzwc0826dxlgqnlgkwtapkgmwcsh8chyardx",
-          "date": "2026-07-20",
-          "project": "Bitbiashara 🇰🇪"
+          "url": "https://x.com/i/status/2079294853330899136",
+          "date": "2026-07-21",
+          "project": "Bitcoin Famba 🇲🇿"
+        }
+      ]
+    },
+    {
+      "name": "Nhampossa Blue Clothes Tofo Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdextrfd3rhwuvv6pxh0x7dfa59s9auqn5z3x4qshg2a6mf6d0v8gwqlzw9",
+          "date": "2026-07-21",
+          "project": "Bitcoin Tofo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2079218043998322991",
+          "date": "2026-07-21",
+          "project": "Bitcoin Tofo 🇲🇿"
+        }
+      ]
+    },
+    {
+      "name": "Ray’s Coffee Shop",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2079529948348289400",
+          "date": "2026-07-21",
+          "project": "Bitcoin Karoo 🇿🇦"
+        }
+      ]
+    },
+    {
+      "name": "AB Starry Communication",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2079547986967679039",
+          "date": "2026-07-21",
+          "project": "Bitcoin Ikorodu 🇳🇬"
         }
       ]
     }
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 1,
+    "days_active": 2,
     "daily_average_payments": 17
   },
   "burn_rate": {
-    "percentage": 52,
+    "percentage": 58,
     "status": "cold",
-    "days_active": 1
+    "days_active": 2
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 17
+      "count": 35
     }
   ],
   "countries": [
@@ -412,19 +576,29 @@
     {
       "flag": "🇳🇬",
       "country": "Nigeria",
+      "count": 2
+    },
+    {
+      "flag": "🇲🇿",
+      "country": "Mozambique",
+      "count": 2
+    },
+    {
+      "flag": "🇿🇦",
+      "country": "South Africa",
       "count": 1
     }
   ],
   "platforms": [
     {
       "platform": "X",
-      "count": 9
+      "count": 21
     },
     {
       "platform": "Nostr",
-      "count": 8
+      "count": 14
     }
   ],
-  "generated_at": "2026-07-21T07:05:01.550684+00:00",
+  "generated_at": "2026-07-21T19:05:01.493383+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
