@@ -866,6 +866,26 @@
             perspective: 1000px;
         }
 
+        /* Highlight values are names - merchants, projects, LN domains - and some
+           run long ("Nhampossa Blue Clothes Tofo Shop"). The base .stat-value is
+           nowrap with no shrink limit, so a long one took the whole row and squeezed
+           the label out entirely, leaving a name with nothing to say what it is.
+           The label identifies the row, so it keeps its width and the value takes
+           what is left, ellipsised. max-width stops a long label doing the reverse. */
+        /* 65% is bounded on both sides: below ~42% a long value starts clipping the
+           label again, above ~75% the longest label ("Approval record (date)") eats
+           the space its own value needs and truncates the count instead. */
+        #highlights-list .stat-label {
+            flex: 0 0 auto;
+            max-width: 65%;
+        }
+
+        #highlights-list .stat-value {
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
         /* Airport ticker flip animation */
         @keyframes flipHighlight {
             0% {
@@ -1090,6 +1110,15 @@
             const div = document.createElement('div');
             div.textContent = text;
             return div.innerHTML;
+        }
+
+        // For use inside a quoted HTML attribute. escapeHtml() is not enough here -
+        // it escapes & < > but leaves quotes intact, so a value containing one would
+        // close the attribute early.
+        function attrSafe(text) {
+            return escapeHtml(String(text ?? ''))
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
         }
 
 
@@ -2174,7 +2203,7 @@
                         if (rows[i]) {
                             rows[i].innerHTML = `
                                 <span class="stat-label">${h.label}</span>
-                                <span class="stat-value" style="color: var(--accent-blue);">${h.value}</span>
+                                <span class="stat-value" title="${attrSafe(h.value)}" style="color: var(--accent-blue);">${h.value}</span>
                             `;
                         }
                     }, delay);
@@ -2185,7 +2214,7 @@
                 container.innerHTML = toShow.map(h => `
                     <div class="stat-row">
                         <span class="stat-label">${h.label}</span>
-                        <span class="stat-value" style="color: var(--accent-blue);">${h.value}</span>
+                        <span class="stat-value" title="${attrSafe(h.value)}" style="color: var(--accent-blue);">${h.value}</span>
                     </div>
                 `).join('');
             }
