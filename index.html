@@ -178,7 +178,7 @@
             margin-bottom: 0;
         }
 
-        .today-banner {
+        .activity-banner {
             background: linear-gradient(135deg, rgba(247, 147, 26, 0.15), rgba(247, 147, 26, 0.05));
             border: 1px solid var(--accent-orange);
             border-radius: 12px;
@@ -191,7 +191,7 @@
             gap: 12px;
         }
 
-        .today-banner .today-label {
+        .activity-banner .activity-label {
             font-size: 0.85rem;
             text-transform: uppercase;
             color: var(--accent-orange);
@@ -199,38 +199,38 @@
             letter-spacing: 0.5px;
         }
 
-        .today-banner .today-time {
+        .activity-banner .activity-time {
             text-transform: none;
             font-weight: 400;
             color: var(--text-secondary);
         }
 
-        .today-banner .today-stats {
+        .activity-banner .activity-stats {
             display: flex;
             align-items: center;
             gap: 24px;
             flex-wrap: wrap;
         }
 
-        .today-banner .today-stat {
+        .activity-banner .activity-stat {
             display: flex;
             align-items: baseline;
             gap: 6px;
         }
 
-        .today-banner .today-value {
+        .activity-banner .activity-value {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--text-primary);
         }
 
-        .today-banner .today-unit {
+        .activity-banner .activity-unit {
             font-size: 0.9rem;
             color: var(--text-secondary);
         }
 
-        .today-banner .today-value.merchant { color: var(--accent-green); }
-        .today-banner .today-value.project { color: var(--accent-blue); }
+        .activity-banner .activity-value.merchant { color: var(--accent-green); }
+        .activity-banner .activity-value.project { color: var(--accent-blue); }
 
         .week-banner {
             background: linear-gradient(135deg, rgba(163, 113, 247, 0.15), rgba(163, 113, 247, 0.05));
@@ -288,11 +288,11 @@
         }
 
         @media (max-width: 600px) {
-            .today-banner {
+            .activity-banner {
                 flex-direction: column;
                 align-items: flex-start;
             }
-            .today-banner .today-stats {
+            .activity-banner .activity-stats {
                 gap: 16px;
             }
         }
@@ -693,7 +693,7 @@
             }
         }
 
-        .today-video-item {
+        .activity-video-item {
             display: flex;
             align-items: center;
             gap: 12px;
@@ -707,24 +707,24 @@
         }
 
         @media (hover: hover) {
-            .today-video-item:hover {
+            .activity-video-item:hover {
                 background: var(--bg-card);
             }
         }
 
-        .today-video-icon {
+        .activity-video-icon {
             font-size: 1.2rem;
             flex-shrink: 0;
         }
 
-        .today-video-info {
+        .activity-video-info {
             display: flex;
             flex-direction: column;
             gap: 2px;
             min-width: 0;
         }
 
-        .today-video-project {
+        .activity-video-project {
             color: var(--text-primary);
             font-weight: 600;
             white-space: nowrap;
@@ -732,7 +732,7 @@
             text-overflow: ellipsis;
         }
 
-        .today-video-merchant {
+        .activity-video-merchant {
             color: var(--text-secondary);
             font-size: 0.85rem;
             white-space: nowrap;
@@ -740,7 +740,7 @@
             text-overflow: ellipsis;
         }
 
-        .today-video-time {
+        .activity-video-time {
             color: var(--text-secondary);
             font-size: 0.8rem;
             margin-left: auto;
@@ -1222,44 +1222,44 @@
                 </div>
                 ` : ''}
 
-                <!-- Last 24h Activity Banner -->
+                <!-- Recent activity banner (ACTIVITY_WINDOW_HOURS) -->
                 ${(stats.recent_activity?.posts || 0) > 0 ? `
-                <div class="today-banner">
-                    <span class="today-label">Last ${ACTIVITY_WINDOW_HOURS}h <span class="today-time">(updated ${new Date(stats.generated_at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'UTC' })} UTC)</span></span>
-                    <div class="today-stats">
-                        <div class="today-stat">
-                            <span class="today-value" style="color: var(--accent-orange);">${formatNumber(stats.recent_activity?.posts || 0)}</span>
-                            <span class="today-unit">${(stats.recent_activity?.posts || 0) === 1 ? 'post' : 'posts'}</span>
+                <div class="activity-banner">
+                    <span class="activity-label">Last ${ACTIVITY_WINDOW_HOURS}h <span class="activity-time">(updated ${new Date(stats.generated_at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', timeZone: 'UTC' })} UTC)</span></span>
+                    <div class="activity-stats">
+                        <div class="activity-stat">
+                            <span class="activity-value" style="color: var(--accent-orange);">${formatNumber(stats.recent_activity?.posts || 0)}</span>
+                            <span class="activity-unit">${(stats.recent_activity?.posts || 0) === 1 ? 'post' : 'posts'}</span>
                         </div>
-                        <div class="today-stat">
-                            <span class="today-value" style="color: var(--accent-green);">${formatNumber(stats.recent_activity?.approved || 0)}</span>
-                            <span class="today-unit">${(stats.recent_activity?.approved || 0) === 1 ? 'approval' : 'approvals'}</span>
+                        <div class="activity-stat">
+                            <span class="activity-value" style="color: var(--accent-green);">${formatNumber(stats.recent_activity?.approved || 0)}</span>
+                            <span class="activity-unit">${(stats.recent_activity?.approved || 0) === 1 ? 'approval' : 'approvals'}</span>
                         </div>
                         ${(stats.recent_activity?.pending || 0) > 0 ? `
-                        <div class="today-stat">
-                            <span class="today-value" style="color: var(--text-secondary);">${formatNumber(stats.recent_activity?.pending || 0)}</span>
-                            <span class="today-unit">${(stats.recent_activity?.pending || 0) === 1 ? 'pending' : 'pending'}</span>
+                        <div class="activity-stat">
+                            <span class="activity-value" style="color: var(--text-secondary);">${formatNumber(stats.recent_activity?.pending || 0)}</span>
+                            <span class="activity-unit">${(stats.recent_activity?.pending || 0) === 1 ? 'pending' : 'pending'}</span>
                         </div>
                         ` : ''}
-                        <div class="today-stat">
-                            <span class="today-value" style="color: #f85149;">${formatNumber(stats.recent_activity?.rejected || 0)}</span>
-                            <span class="today-unit">${(stats.recent_activity?.rejected || 0) === 1 ? 'rejection' : 'rejections'}</span>
+                        <div class="activity-stat">
+                            <span class="activity-value" style="color: #f85149;">${formatNumber(stats.recent_activity?.rejected || 0)}</span>
+                            <span class="activity-unit">${(stats.recent_activity?.rejected || 0) === 1 ? 'rejection' : 'rejections'}</span>
                         </div>
                     </div>
                 </div>
                 ` : ''}
 
-                <!-- Last 24h Videos by Platform -->
+                <!-- Recent activity videos by platform (ACTIVITY_WINDOW_HOURS) -->
                 ${(stats.recent_activity.videos && stats.recent_activity.videos.length > 0) ? `
                 <div class="leaderboard-grid">
                     <div class="card">
                         <h2>Last ${ACTIVITY_WINDOW_HOURS}h on X</h2>
-                        <div id="today-x"></div>
+                        <div id="activity-x"></div>
                     </div>
 
                     <div class="card">
                         <h2>Last ${ACTIVITY_WINDOW_HOURS}h on Nostr</h2>
-                        <div id="today-nostr"></div>
+                        <div id="activity-nostr"></div>
                     </div>
                 </div>
                 ` : ''}
@@ -1358,12 +1358,12 @@
                 renderLeaderboard('top-merchants', stats.top_merchants, 'merchant');
             }
 
-            // Render last 24h videos if any
+            // Render recent-activity videos if any
             if (stats.recent_activity.videos && stats.recent_activity.videos.length > 0) {
                 const xVideos = stats.recent_activity.videos.filter(v => v.platform === 'X');
                 const nostrVideos = stats.recent_activity.videos.filter(v => v.platform === 'Nostr');
-                renderTodayVideos('today-x', xVideos, '𝕏');
-                renderTodayVideos('today-nostr', nostrVideos, '🟣');
+                renderActivityVideos('activity-x', xVideos, '𝕏');
+                renderActivityVideos('activity-nostr', nostrVideos, '🟣');
             }
 
             // Render top performers (always show card, with empty state message if needed)
@@ -1550,7 +1550,7 @@
             }
         }
 
-        function renderTodayVideos(elementId, videos, icon) {
+        function renderActivityVideos(elementId, videos, icon) {
             const container = document.getElementById(elementId);
             if (!container) return;
 
@@ -1565,32 +1565,32 @@
             container.innerHTML = videos.map((video, index) => {
                 const isHidden = index >= initialCount;
                 return `
-                <a href="${escapeHtml(video.url)}" target="_blank" rel="noopener" class="today-video-item ${isHidden ? 'leaderboard-hidden' : ''}" data-index="${index}">
-                    <span class="today-video-icon">${icon}</span>
-                    <span class="today-video-info">
-                        <span class="today-video-project">${escapeHtml(video.project)}</span>
-                        <span class="today-video-merchant">${escapeHtml(video.merchant)}</span>
+                <a href="${escapeHtml(video.url)}" target="_blank" rel="noopener" class="activity-video-item ${isHidden ? 'leaderboard-hidden' : ''}" data-index="${index}">
+                    <span class="activity-video-icon">${icon}</span>
+                    <span class="activity-video-info">
+                        <span class="activity-video-project">${escapeHtml(video.project)}</span>
+                        <span class="activity-video-merchant">${escapeHtml(video.merchant)}</span>
                     </span>
-                    <span class="today-video-time">${escapeHtml(video.time || '')}</span>
+                    <span class="activity-video-time">${escapeHtml(video.time || '')}</span>
                 </a>
             `}).join('');
 
             if (hasMore) {
                 container.innerHTML += `
-                    <button class="leaderboard-more" data-count="${videos.length - initialCount}" onclick="toggleTodayVideos(this, '${elementId}')">
+                    <button class="leaderboard-more" data-count="${videos.length - initialCount}" onclick="toggleActivityVideos(this, '${elementId}')">
                         Show ${videos.length - initialCount} more
                     </button>
                 `;
             }
         }
 
-        function toggleTodayVideos(button, elementId) {
+        function toggleActivityVideos(button, elementId) {
             const container = document.getElementById(elementId);
             const isExpanded = button.classList.contains('expanded');
             const count = button.dataset.count;
 
             if (isExpanded) {
-                container.querySelectorAll('.today-video-item').forEach((el, index) => {
+                container.querySelectorAll('.activity-video-item').forEach((el, index) => {
                     if (index >= 5) el.classList.add('leaderboard-hidden');
                 });
                 button.textContent = `Show ${count} more`;
