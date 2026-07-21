@@ -1083,9 +1083,11 @@
                                         })()}
 
                                         <div class="card-actions">
+                                            ${member.lightning_address ? `
                                             <button class="btn btn-primary" onclick="event.stopPropagation(); flipCard('${cardId}', '${escapeHtml(member.lightning_address)}', '${escapeHtml(member.onchain_address || '')}')">
                                                 Donate
                                             </button>
+                                            ` : ''}
                                             <a href="profile.html?id=${member.id}" class="btn btn-secondary" onclick="event.stopPropagation();">
                                                 View Profile
                                             </a>

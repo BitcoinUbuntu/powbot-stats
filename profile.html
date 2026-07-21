@@ -218,6 +218,18 @@
             height: 100%;
         }
 
+        /* No support card (project has no Lightning address): About spans the row on
+           its own. The height:100% above exists only to match the two cards to each
+           other, and left on would stretch About past its content. Must stay after
+           the rules it overrides - equal specificity, so source order decides. */
+        .top-cards-single {
+            grid-template-columns: 1fr;
+        }
+
+        .top-cards-single > .section {
+            height: auto;
+        }
+
         @media (max-width: 768px) {
             .top-cards {
                 grid-template-columns: 1fr;
@@ -1022,9 +1034,15 @@
             `;
 
             // Two Column Layout: Support + About
-            html += `<div class="top-cards">`;
+            // No Lightning address means nothing to show: the onchain side is only
+            // reachable from the Lightning front, so the card would render as an empty
+            // box under a "Lightning Network" heading. Drop it and let About span.
+            const hasSupport = !!member.lightning_address;
+
+            html += `<div class="top-cards${hasSupport ? '' : ' top-cards-single'}">`;
 
             // Support Card (left) with flip functionality
+            if (hasSupport) {
             html += `
                 <div class="support-card" id="support-card">
                     <div class="support-card-inner">
@@ -1076,6 +1094,7 @@
                     </div>
                 </div>
             `;
+            } // end if (hasSupport)
 
             // About Card (right) - always show
             html += `
