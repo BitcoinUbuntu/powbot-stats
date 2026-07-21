@@ -400,6 +400,19 @@
             margin-left: 4px;
         }
 
+        /* Equal performers that fell outside the visible three. Deliberately quiet -
+           it is a footnote on the last place, not a rank of its own. */
+        .top-performer-tied {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            margin-left: 8px;
+            padding: 2px 6px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
         .no-performers {
             color: var(--text-secondary);
             font-style: italic;
@@ -1616,21 +1629,37 @@
             // Strip flag emojis from name
             const stripFlags = (name) => name.replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
 
-            // Count approvals per project
-            const projectCounts = {};
+            // Count approvals per project, and note when each REACHED that count -
+            // its most recent post in the window, since that is the moment it got there.
+            const projectStats = {};
             videos.forEach(video => {
                 const project = video.project || 'Unknown';
-                projectCounts[project] = (projectCounts[project] || 0) + 1;
+                const entry = projectStats[project] || (projectStats[project] = { count: 0, reachedAt: '' });
+                entry.count += 1;
+                const t = video.timestamp || '';
+                if (t > entry.reachedAt) entry.reachedAt = t;
             });
 
-            // Sort by count and get top 3
-            const sorted = Object.entries(projectCounts)
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 3);
+            // Rank by count, then by who got there FIRST. Without the tie-break the
+            // order fell out of the tracker file being newest-first, so level projects
+            // were ranked by recency - i.e. posting later improved your position.
+            const ranked = Object.entries(projectStats).sort((a, b) =>
+                b[1].count - a[1].count || a[1].reachedAt.localeCompare(b[1].reachedAt)
+            );
+
+            const sorted = ranked.slice(0, 3);
+
+            // Epoch 6 volume is low enough that ties are normal, so equal performers
+            // regularly fall outside the top 3. Count the ones level with the last
+            // visible place and say so, rather than dropping them silently.
+            const cutoffCount = sorted.length ? sorted[sorted.length - 1][1].count : 0;
+            const tiedBeyond = ranked.slice(3).filter(([, s]) => s.count === cutoffCount).length;
 
             const rankEmojis = ['🥇', '🥈', '🥉'];
 
-            container.innerHTML = sorted.map(([project, count], index) => {
+            container.innerHTML = sorted.map(([project, entry], index) => {
+                const count = entry.count;
+                const showTie = tiedBeyond > 0 && index === sorted.length - 1;
                 const metadata = projectMetadata[project];
                 const profileUrl = metadata?.info_url || '#';
                 const tag = metadata?.info_url ? 'a' : 'div';
@@ -1641,6 +1670,7 @@
                         <span class="top-performer-name">${stripFlags(project)}</span>
                         <span class="top-performer-count">${count}</span>
                         <span class="top-performer-label">${count === 1 ? 'post' : 'posts'}</span>
+                        ${showTie ? `<span class="top-performer-tied" title="${tiedBeyond} more ${tiedBeyond === 1 ? 'project is' : 'projects are'} level on ${count} ${count === 1 ? 'post' : 'posts'}">+${tiedBeyond} tied</span>` : ''}
                     </${tag}>
                 `;
             }).join('');
@@ -2330,7 +2360,11 @@
                             project: sub.project_name,
                             merchant: sub.merchant_name,
                             platform: sub.platform,
-                            url: sub.post_url
+                            url: sub.post_url,
+                            // Needed to break ties in Top Performers by who got there
+                            // first. Kept as the raw "YYYY-MM-DD HH:MM:SS UTC" string:
+                            // one fixed format in one zone, so it sorts lexicographically.
+                            timestamp: sub.timestamp
                         }));
 
                     // Named for what it holds: an ACTIVITY_WINDOW_HOURS window computed
