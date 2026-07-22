@@ -467,6 +467,12 @@
             }
         }
 
+        /* One chart in the row (Epoch 4 keeps only its timeline) - span full width
+           rather than sit half-width with an empty column beside it. */
+        .charts-grid-single {
+            grid-template-columns: 1fr;
+        }
+
         .chart-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -508,11 +514,11 @@
             display: grid;
             grid-template-rows: repeat(7, auto);
             grid-auto-flow: column;
-            /* One column per week. minmax(0, 16px) caps a cell at 16px but lets the
-               whole grid scale down uniformly when the epoch is too long to fit -
-               a 15-week Epoch 5 shrinks its cells rather than overflowing or
-               scrolling, while a short epoch stays at full 16px. */
-            grid-auto-columns: minmax(0, 16px);
+            /* One column per week, each an equal fraction of the width, so the weeks
+               fill the card edge to edge however long the epoch is. A short epoch
+               gets larger cells, a long one smaller - both justified left and right.
+               aspect-ratio:1 on the cell keeps them square at whatever size. */
+            grid-auto-columns: 1fr;
             gap: 3px;
             width: 100%;
         }
@@ -1305,14 +1311,13 @@
                         </div>
                 `;
 
-                // Add activity visualizations for projects with 20+ posts
+                // Add activity visualization for projects with 20+ posts.
+                // Timeline only - the Epoch 4 calendar was dropped: at 7 weeks its
+                // fill-the-width cells rendered chunky and left the card mismatched in
+                // height beside the timeline. Epoch 5 (~15 weeks) keeps both.
                 if (epoch4Posts.length >= 20) {
                     html += `
-                        <div class="charts-grid">
-                            <div class="chart-card">
-                                <h3>Activity Calendar</h3>
-                                <div id="heatmap-epoch4"></div>
-                            </div>
+                        <div class="charts-grid charts-grid-single">
                             <div class="chart-card">
                                 <h3>Activity Timeline</h3>
                                 <div id="timeline-epoch4"></div>
@@ -1482,9 +1487,9 @@
                 }
             }, 100);
 
-            // Render activity visualizations for Epoch 4
+            // Render activity visualization for Epoch 4 (timeline only - see the
+            // charts markup above for why the calendar was dropped).
             if (epoch4Posts && epoch4Posts.length >= 20) {
-                renderHeatmap('heatmap-epoch4', epoch4Posts, '2026-01-13');
                 renderTimeline('timeline-epoch4', epoch4Posts, '2026-01-13');
             }
 
