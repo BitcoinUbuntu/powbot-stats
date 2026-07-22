@@ -1115,12 +1115,25 @@
             const epoch4Posts = [];
             const historicalPosts = [];
 
-            // Create the name format used in stats JSON: "ProjectName 🇫🇱"
-            const statsName = `${member.name} ${member.flag || ''}`.trim();
+            // Match project names ignoring the flag emoji and whitespace/case
+            // differences. The old exact-string match (`name + flag`) broke
+            // silently whenever a project's flag or name text was corrected
+            // in members.json after an epoch's stats were generated - the
+            // project simply vanished from that epoch's card (Epoch 5's
+            // heatmap/timeline never render below 20 posts, so the card
+            // looked "empty" rather than erroring). Stripping the flag and
+            // normalizing whitespace/case makes the join resilient to that.
+            const normalizeProjectName = (name) => (name || '')
+                .replace(/[\u{1F1E6}-\u{1F1FF}]/gu, '') // strip regional-indicator flag chars
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, ' ');
+
+            const statsName = normalizeProjectName(member.name);
 
             // Extract posts from Epoch 5 (current/live)
             if (allStats.epoch5 && allStats.epoch5.top_projects) {
-                const epoch5Project = allStats.epoch5.top_projects.find(p => p.name === statsName);
+                const epoch5Project = allStats.epoch5.top_projects.find(p => normalizeProjectName(p.name) === statsName);
                 if (epoch5Project && epoch5Project.posts) {
                     epoch5Posts.push(...epoch5Project.posts);
                 }
@@ -1128,7 +1141,7 @@
 
             // Extract posts from Epoch 4
             if (allStats.epoch4 && allStats.epoch4.top_projects) {
-                const epoch4Project = allStats.epoch4.top_projects.find(p => p.name === statsName);
+                const epoch4Project = allStats.epoch4.top_projects.find(p => normalizeProjectName(p.name) === statsName);
                 if (epoch4Project && epoch4Project.posts) {
                     epoch4Posts.push(...epoch4Project.posts);
                 }
@@ -1140,7 +1153,7 @@
                 ['epoch1', 'epoch2', 'epoch3', 'epoch4_testing'].forEach(epochKey => {
                     const epoch = epochs[epochKey];
                     if (epoch && epoch.top_projects) {
-                        const project = epoch.top_projects.find(p => p.name === statsName);
+                        const project = epoch.top_projects.find(p => normalizeProjectName(p.name) === statsName);
                         if (project && project.posts) {
                             project.posts.forEach(post => {
                                 historicalPosts.push({
@@ -1652,6 +1665,14 @@
         }
 
         function calculateBadges(epoch4Posts, epoch5Posts, historicalPosts, allStats, statsName) {
+            // Mirrors normalizeProjectName() above (flag-agnostic name match),
+            // duplicated here since this function has its own scope.
+            const normalizeProjectName = (name) => (name || '')
+                .replace(/[\u{1F1E6}-\u{1F1FF}]/gu, '')
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, ' ');
+
             const badges = [];
 
             // Total posts across all epochs
@@ -1769,8 +1790,8 @@
             }
 
             // Excellence - ranking based on Epoch 4 and 5 data
-            const epoch4Ranking = allStats.epoch4?.top_projects?.findIndex(p => p.name === statsName) ?? -1;
-            const epoch5Ranking = allStats.epoch5?.top_projects?.findIndex(p => p.name === statsName) ?? -1;
+            const epoch4Ranking = allStats.epoch4?.top_projects?.findIndex(p => normalizeProjectName(p.name) === statsName) ?? -1;
+            const epoch5Ranking = allStats.epoch5?.top_projects?.findIndex(p => normalizeProjectName(p.name) === statsName) ?? -1;
 
             // Use the best ranking achieved across epochs
             const bestRanking = epoch4Ranking >= 0 && epoch5Ranking >= 0
