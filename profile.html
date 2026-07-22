@@ -482,6 +482,25 @@
                content. Without this a long epoch's heatmap (see below) forced the
                card wider than its track and off a narrow screen. */
             min-width: 0;
+            /* Flex column so the timeline can grow to the card's full height. The two
+               cards in a row stretch to equal height, but the heatmap is taller than
+               a fixed timeline, which left the line graph floating with empty space
+               below it. Letting the timeline fill drops its baseline to match. */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* The chart body is the renderer's wrapper div (#heatmap-* / #timeline-*),
+           which is the actual flex child of the card - so the fill has to start here,
+           not on the container inside it. flex:1 makes it take the stretched card's
+           full height; the heatmap sits at its natural size at the top, the timeline
+           (flex:1 again inside) grows to the bottom. */
+        .chart-card > [id^="heatmap-"],
+        .chart-card > [id^="timeline-"] {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
         }
 
         .chart-card h3 {
@@ -560,12 +579,31 @@
         .timeline-container {
             position: relative;
             width: 100%;
-            height: 120px;
+            /* Grows to fill the card (see .chart-card) so the graph's baseline lines
+               up with the heatmap beside it, with a floor so it never collapses.
+               The SVG and labels inside are absolutely positioned, so this container
+               contributes only its min-height to the card's height - that is what
+               stops the SVG's square viewBox from blowing the row out. */
+            flex: 1;
+            min-height: 120px;
         }
 
         .timeline-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 100%;
+            /* Fills the container above the date-label row (~18px). */
+            height: calc(100% - 18px);
+        }
+
+        /* The date labels (an inline-styled div the renderer appends) pinned to the
+           bottom of the container, below the absolutely-filled SVG. */
+        .timeline-container > div:last-child {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
 
         .timeline-line {
