@@ -228,6 +228,10 @@
 
         .top-cards-single > .section {
             height: auto;
+            /* .top-cards already supplies the 20px below. In the two-column layout the
+               stretch absorbs this margin; with height:auto it does not, and the two
+               would stack into a 40px gap that no other card pair has. */
+            margin-bottom: 0;
         }
 
         @media (max-width: 768px) {
