@@ -472,6 +472,10 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 12px 20px 32px 20px;
+            /* A grid item defaults to min-width:auto and refuses to shrink below its
+               content. Without this a long epoch's heatmap (see below) forced the
+               card wider than its track and off a narrow screen. */
+            min-width: 0;
         }
 
         .chart-card h3 {
@@ -502,14 +506,22 @@
 
         .heatmap-grid {
             display: grid;
-            grid-template-rows: repeat(7, 1fr);
+            grid-template-rows: repeat(7, auto);
             grid-auto-flow: column;
+            /* One column per week. minmax(0, 16px) caps a cell at 16px but lets the
+               whole grid scale down uniformly when the epoch is too long to fit -
+               a 15-week Epoch 5 shrinks its cells rather than overflowing or
+               scrolling, while a short epoch stays at full 16px. */
+            grid-auto-columns: minmax(0, 16px);
             gap: 3px;
+            width: 100%;
         }
 
         .heatmap-day {
-            width: 16px;
-            height: 16px;
+            /* No fixed width: the cell fills its (flexible) column, and aspect-ratio
+               keeps it square as the column shrinks. */
+            aspect-ratio: 1;
+            min-width: 0;
             border-radius: 2px;
             background: var(--bg-secondary);
             cursor: pointer;
