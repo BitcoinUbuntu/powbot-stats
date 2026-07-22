@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 71,
+    "all_payments": 80,
     "by_type": {
       "merchant": {
-        "count": 24
+        "count": 27
       },
       "project": {
-        "count": 24
+        "count": 27
       },
       "reviewer": {
-        "count": 23
+        "count": 26
       }
     }
   },
   "today": {
     "date": "2026-07-22",
-    "payments": 36,
+    "payments": 45,
     "by_type": {
       "merchant": {
-        "count": 12
+        "count": 15
       },
       "project": {
-        "count": 12
+        "count": 15
       },
       "reviewer": {
-        "count": 12
+        "count": 15
       }
     },
-    "approved": 12,
+    "approved": 15,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2079981749568680009",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Catherine Mbao Greens",
+        "platform": "X",
+        "time": "18:16"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsxst5tuctfpak3hk2y2c7ql6pc3uh6djuhtt3m94w6sc288qqq0tgmxqtvl",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Preso's Food and Drinks",
+        "platform": "Nostr",
+        "time": "13:09"
+      },
+      {
+        "url": "https://x.com/i/status/2079880576299839952",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Preso's Food and Drinks",
+        "platform": "X",
+        "time": "12:15"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsrq6j96d99gzlqrycmfx28wcnrf8cuy5ey0hqvqzj603f4q9rpz4c0dk854",
         "project": "Bitcoin Chama 🇰🇪",
@@ -119,6 +140,15 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
         "project": "Bitcoin Chama 🇰🇪"
       },
       {
@@ -153,24 +183,6 @@
       },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Ikorodu 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Karoo 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Tofo 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Tofo 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Famba 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Famba 🇲🇿"
       }
     ]
   },
@@ -409,16 +421,16 @@
     },
     {
       "date": "2026-07-22",
-      "project_count": 12,
-      "merchant_count": 12,
-      "reviewer_count": 12,
-      "approved": 12,
+      "project_count": 15,
+      "merchant_count": 15,
+      "reviewer_count": 15,
+      "approved": 15,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 25,
-    "approved": 23,
+    "total_reviewed": 28,
+    "approved": 26,
     "rejected": 2
   },
   "top_projects": [
@@ -481,6 +493,32 @@
           "url": "https://primal.net/e/nevent1qqsftu69zfk2zgq340a4k8tq2uzpu2a9zv2cksvvnx7xlrjly9gha7sfzw7wd",
           "date": "2026-07-20",
           "merchant": "Mary Shop"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Dua 🇬🇭",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxst5tuctfpak3hk2y2c7ql6pc3uh6djuhtt3m94w6sc288qqq0tgmxqtvl",
+          "date": "2026-07-22",
+          "merchant": "Preso's Food and Drinks"
+        },
+        {
+          "url": "https://x.com/i/status/2079880576299839952",
+          "date": "2026-07-22",
+          "merchant": "Preso's Food and Drinks"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0spf79kkg0fk9y2tjerzq9emgkh79zgh5m6xknhek9vuy9l4t3xcwk8ta6",
+          "date": "2026-07-22",
+          "merchant": "Aliasadex Provisions And More"
+        },
+        {
+          "url": "https://x.com/i/status/2079682242008305979",
+          "date": "2026-07-22",
+          "merchant": "Aliasadex Provisions And More"
         }
       ]
     },
@@ -570,22 +608,6 @@
       ]
     },
     {
-      "name": "Bitcoin Dua 🇬🇭",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs0spf79kkg0fk9y2tjerzq9emgkh79zgh5m6xknhek9vuy9l4t3xcwk8ta6",
-          "date": "2026-07-22",
-          "merchant": "Aliasadex Provisions And More"
-        },
-        {
-          "url": "https://x.com/i/status/2079682242008305979",
-          "date": "2026-07-22",
-          "merchant": "Aliasadex Provisions And More"
-        }
-      ]
-    },
-    {
       "name": "Bitcoin Karoo 🇿🇦",
       "count": 1,
       "posts": [
@@ -593,6 +615,17 @@
           "url": "https://x.com/i/status/2079529948348289400",
           "date": "2026-07-21",
           "merchant": "Ray’s Coffee Shop"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Victoria Falls 🇿🇲",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2079981749568680009",
+          "date": "2026-07-22",
+          "merchant": "Catherine Mbao Greens"
         }
       ]
     }
@@ -775,6 +808,22 @@
       ]
     },
     {
+      "name": "Preso's Food and Drinks",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxst5tuctfpak3hk2y2c7ql6pc3uh6djuhtt3m94w6sc288qqq0tgmxqtvl",
+          "date": "2026-07-22",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2079880576299839952",
+          "date": "2026-07-22",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Ray’s Coffee Shop",
       "count": 1,
       "posts": [
@@ -795,22 +844,33 @@
           "project": "Bitcoin Ikorodu 🇳🇬"
         }
       ]
+    },
+    {
+      "name": "Catherine Mbao Greens",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2079981749568680009",
+          "date": "2026-07-22",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 2,
-    "daily_average_payments": 35
+    "days_active": 3,
+    "daily_average_payments": 26
   },
   "burn_rate": {
-    "percentage": 110,
+    "percentage": 84,
     "status": "on_target",
-    "days_active": 2
+    "days_active": 3
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 71
+      "count": 80
     }
   ],
   "countries": [
@@ -838,18 +898,23 @@
       "flag": "🇬🇭",
       "country": "Ghana",
       "count": 1
+    },
+    {
+      "flag": "🇿🇲",
+      "country": "Zambia",
+      "count": 1
     }
   ],
   "platforms": [
     {
       "platform": "X",
-      "count": 39
+      "count": 45
     },
     {
       "platform": "Nostr",
-      "count": 32
+      "count": 35
     }
   ],
-  "generated_at": "2026-07-22T07:05:01.161016+00:00",
+  "generated_at": "2026-07-22T19:05:01.533391+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
