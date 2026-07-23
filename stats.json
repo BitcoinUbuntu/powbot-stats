@@ -1,36 +1,88 @@
 {
   "totals": {
-    "all_payments": 80,
+    "all_payments": 95,
     "by_type": {
       "merchant": {
-        "count": 27
+        "count": 32
       },
       "project": {
-        "count": 27
+        "count": 32
       },
       "reviewer": {
-        "count": 26
+        "count": 31
       }
     }
   },
   "today": {
     "date": "2026-07-23",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 15,
+    "by_type": {
+      "merchant": {
+        "count": 5
+      },
+      "project": {
+        "count": 5
+      },
+      "reviewer": {
+        "count": 5
+      }
+    },
+    "approved": 5,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsgv4z6tmwrmnuq29h5je65j9lxz9zttk94qj70vhmcmsprnv2zd3qnuy300",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Aqua Selim",
+        "platform": "Nostr",
+        "time": "17:55"
+      },
+      {
+        "url": "https://x.com/i/status/2080343524411588719",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Aqua Selim",
+        "platform": "X",
+        "time": "17:55"
+      },
+      {
+        "url": "https://x.com/i/status/2080313878404034811",
+        "project": "Bitcoin Victoria Falls 🇿🇲",
+        "merchant": "Obrien Shop",
+        "platform": "X",
+        "time": "15:36"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsdywz4d2qwh79htpk7r5a43dpw8yewgy9fawphmx9v2gg8c4zaknqwem4fd",
+        "project": "Bitcoin Tofo 🇲🇿",
+        "merchant": "Rafal Happy Groceries Tofo Shop",
+        "platform": "Nostr",
+        "time": "13:35"
+      },
+      {
+        "url": "https://x.com/i/status/2080248603860463867",
+        "project": "Bitcoin Tofo 🇲🇿",
+        "merchant": "Rafal Happy Groceries Tofo Shop",
+        "platform": "X",
+        "time": "13:31"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
         "project": "Bitcoin Victoria Falls 🇿🇲"
       },
       {
-        "project": "Bitcoin Dua 🇬🇭"
+        "project": "Bitcoin Tofo 🇲🇿"
       },
       {
-        "project": "Bitcoin Dua 🇬🇭"
+        "project": "Bitcoin Tofo 🇲🇿"
       }
     ]
   },
@@ -269,16 +321,16 @@
     },
     {
       "date": "2026-07-23",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 5,
+      "merchant_count": 5,
+      "reviewer_count": 5,
+      "approved": 5,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 28,
-    "approved": 26,
+    "total_reviewed": 33,
+    "approved": 31,
     "rejected": 2
   },
   "top_projects": [
@@ -371,6 +423,58 @@
       ]
     },
     {
+      "name": "Bitcoin Tofo 🇲🇿",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdywz4d2qwh79htpk7r5a43dpw8yewgy9fawphmx9v2gg8c4zaknqwem4fd",
+          "date": "2026-07-23",
+          "merchant": "Rafal Happy Groceries Tofo Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2080248603860463867",
+          "date": "2026-07-23",
+          "merchant": "Rafal Happy Groceries Tofo Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdextrfd3rhwuvv6pxh0x7dfa59s9auqn5z3x4qshg2a6mf6d0v8gwqlzw9",
+          "date": "2026-07-21",
+          "merchant": "Nhampossa Blue Clothes Tofo Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2079218043998322991",
+          "date": "2026-07-21",
+          "merchant": "Nhampossa Blue Clothes Tofo Shop"
+        }
+      ]
+    },
+    {
+      "name": "Bitbiashara 🇰🇪",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgv4z6tmwrmnuq29h5je65j9lxz9zttk94qj70vhmcmsprnv2zd3qnuy300",
+          "date": "2026-07-23",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2080343524411588719",
+          "date": "2026-07-23",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2079145001175457854",
+          "date": "2026-07-20",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspdl2a9qd3yh2uaknmhx79zdzwc0826dxlgqnlgkwtapkgmwcsh8chyardx",
+          "date": "2026-07-20",
+          "merchant": "Bliss beauty Salon"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Ikorodu 🇳🇬",
       "count": 3,
       "posts": [
@@ -388,22 +492,6 @@
           "url": "https://x.com/i/status/2079547986967679039",
           "date": "2026-07-21",
           "merchant": "AB Starry Communication"
-        }
-      ]
-    },
-    {
-      "name": "Bitbiashara 🇰🇪",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2079145001175457854",
-          "date": "2026-07-20",
-          "merchant": "Bliss beauty Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspdl2a9qd3yh2uaknmhx79zdzwc0826dxlgqnlgkwtapkgmwcsh8chyardx",
-          "date": "2026-07-20",
-          "merchant": "Bliss beauty Salon"
         }
       ]
     },
@@ -440,18 +528,18 @@
       ]
     },
     {
-      "name": "Bitcoin Tofo 🇲🇿",
+      "name": "Bitcoin Victoria Falls 🇿🇲",
       "count": 2,
       "posts": [
         {
-          "url": "https://primal.net/e/nevent1qqsdextrfd3rhwuvv6pxh0x7dfa59s9auqn5z3x4qshg2a6mf6d0v8gwqlzw9",
-          "date": "2026-07-21",
-          "merchant": "Nhampossa Blue Clothes Tofo Shop"
+          "url": "https://x.com/i/status/2080313878404034811",
+          "date": "2026-07-23",
+          "merchant": "Obrien Shop"
         },
         {
-          "url": "https://x.com/i/status/2079218043998322991",
-          "date": "2026-07-21",
-          "merchant": "Nhampossa Blue Clothes Tofo Shop"
+          "url": "https://x.com/i/status/2079981749568680009",
+          "date": "2026-07-22",
+          "merchant": "Catherine Mbao Greens"
         }
       ]
     },
@@ -463,17 +551,6 @@
           "url": "https://x.com/i/status/2079529948348289400",
           "date": "2026-07-21",
           "merchant": "Ray’s Coffee Shop"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2079981749568680009",
-          "date": "2026-07-22",
-          "merchant": "Catherine Mbao Greens"
         }
       ]
     }
@@ -672,6 +749,38 @@
       ]
     },
     {
+      "name": "Rafal Happy Groceries Tofo Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdywz4d2qwh79htpk7r5a43dpw8yewgy9fawphmx9v2gg8c4zaknqwem4fd",
+          "date": "2026-07-23",
+          "project": "Bitcoin Tofo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2080248603860463867",
+          "date": "2026-07-23",
+          "project": "Bitcoin Tofo 🇲🇿"
+        }
+      ]
+    },
+    {
+      "name": "Aqua Selim",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgv4z6tmwrmnuq29h5je65j9lxz9zttk94qj70vhmcmsprnv2zd3qnuy300",
+          "date": "2026-07-23",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2080343524411588719",
+          "date": "2026-07-23",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Ray’s Coffee Shop",
       "count": 1,
       "posts": [
@@ -703,22 +812,33 @@
           "project": "Bitcoin Victoria Falls 🇿🇲"
         }
       ]
+    },
+    {
+      "name": "Obrien Shop",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2080313878404034811",
+          "date": "2026-07-23",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 3,
-    "daily_average_payments": 26
+    "days_active": 4,
+    "daily_average_payments": 23
   },
   "burn_rate": {
-    "percentage": 84,
-    "status": "on_target",
-    "days_active": 3
+    "percentage": 75,
+    "status": "cold",
+    "days_active": 4
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 80
+      "count": 95
     }
   ],
   "countries": [
@@ -756,13 +876,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 45
+      "count": 54
     },
     {
       "platform": "Nostr",
-      "count": 35
+      "count": 41
     }
   ],
-  "generated_at": "2026-07-23T07:05:01.261929+00:00",
+  "generated_at": "2026-07-23T19:05:01.830815+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
