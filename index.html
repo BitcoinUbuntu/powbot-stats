@@ -480,6 +480,19 @@
             margin-top: auto;
         }
 
+        /* Approval Rate has a big number above its rows, unlike the other stat cards.
+           Without this its rows floated below the number and their dividers missed the
+           shared grid the sibling cards sit on. Flex column + margin-top:auto drops
+           the rows to the card bottom, so every card's hairlines line up across the row. */
+        .approval-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .approval-card .stat-rows-bottom {
+            margin-top: auto;
+        }
+
         .big-number, .burn-status {
             font-size: 2.5rem;
             font-weight: 700;
@@ -1188,10 +1201,10 @@
                         </div>
                     </div>
 
-                    <div class="card">
+                    <div class="card approval-card">
                         <h2>Approval Rate</h2>
                         <div class="big-number">${stats.reviewer?.total_reviewed > 0 ? Math.round((stats.reviewer.approved / stats.reviewer.total_reviewed) * 100) : 0}<span class="unit">%</span></div>
-                        <div style="margin-top: 15px;">
+                        <div class="stat-rows-bottom">
                             <div class="stat-row">
                                 <span class="stat-label">Approved</span>
                                 <span class="stat-value" style="color: var(--accent-green);">${formatNumber(stats.reviewer?.approved || 0)}</span>
