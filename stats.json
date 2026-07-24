@@ -1,74 +1,62 @@
 {
   "totals": {
-    "all_payments": 95,
+    "all_payments": 104,
     "by_type": {
       "merchant": {
-        "count": 32
+        "count": 35
       },
       "project": {
-        "count": 32
+        "count": 35
       },
       "reviewer": {
-        "count": 31
+        "count": 34
       }
     }
   },
   "today": {
-    "date": "2026-07-23",
-    "payments": 15,
+    "date": "2026-07-24",
+    "payments": 6,
     "by_type": {
       "merchant": {
-        "count": 5
+        "count": 2
       },
       "project": {
-        "count": 5
+        "count": 2
       },
       "reviewer": {
-        "count": 5
+        "count": 2
       }
     },
-    "approved": 5,
+    "approved": 2,
     "rejected": 0,
     "videos": [
       {
-        "url": "https://primal.net/e/nevent1qqsgv4z6tmwrmnuq29h5je65j9lxz9zttk94qj70vhmcmsprnv2zd3qnuy300",
-        "project": "Bitbiashara 🇰🇪",
-        "merchant": "Aqua Selim",
+        "url": "https://primal.net/e/nevent1qqsfleh4n92tgvs07y0dp8t4vvnxhvstzn4e9aa4qy6cc3stckmrx5qnzr03y",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
         "platform": "Nostr",
-        "time": "17:55"
+        "time": "06:46"
       },
       {
-        "url": "https://x.com/i/status/2080343524411588719",
-        "project": "Bitbiashara 🇰🇪",
-        "merchant": "Aqua Selim",
+        "url": "https://x.com/i/status/2080507097137963357",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Orero shop",
         "platform": "X",
-        "time": "17:55"
-      },
-      {
-        "url": "https://x.com/i/status/2080313878404034811",
-        "project": "Bitcoin Victoria Falls 🇿🇲",
-        "merchant": "Obrien Shop",
-        "platform": "X",
-        "time": "15:36"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsdywz4d2qwh79htpk7r5a43dpw8yewgy9fawphmx9v2gg8c4zaknqwem4fd",
-        "project": "Bitcoin Tofo 🇲🇿",
-        "merchant": "Rafal Happy Groceries Tofo Shop",
-        "platform": "Nostr",
-        "time": "13:35"
-      },
-      {
-        "url": "https://x.com/i/status/2080248603860463867",
-        "project": "Bitcoin Tofo 🇲🇿",
-        "merchant": "Rafal Happy Groceries Tofo Shop",
-        "platform": "X",
-        "time": "13:31"
+        "time": "06:45"
       }
     ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "BitJR Academy 🇿🇲"
+      },
       {
         "project": "Bitbiashara 🇰🇪"
       },
@@ -87,14 +75,6 @@
     ]
   },
   "daily": [
-    {
-      "date": "2026-06-24",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
-      "rejected": 0
-    },
     {
       "date": "2026-06-25",
       "project_count": 0,
@@ -321,16 +301,24 @@
     },
     {
       "date": "2026-07-23",
-      "project_count": 5,
-      "merchant_count": 5,
-      "reviewer_count": 5,
-      "approved": 5,
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 6,
+      "approved": 6,
+      "rejected": 0
+    },
+    {
+      "date": "2026-07-24",
+      "project_count": 2,
+      "merchant_count": 2,
+      "reviewer_count": 2,
+      "approved": 2,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 33,
-    "approved": 31,
+    "total_reviewed": 36,
+    "approved": 34,
     "rejected": 2
   },
   "top_projects": [
@@ -372,8 +360,18 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 4,
+      "count": 6,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfleh4n92tgvs07y0dp8t4vvnxhvstzn4e9aa4qy6cc3stckmrx5qnzr03y",
+          "date": "2026-07-24",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2080507097137963357",
+          "date": "2026-07-24",
+          "merchant": "Orero shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrq6j96d99gzlqrycmfx28wcnrf8cuy5ey0hqvqzj603f4q9rpz4c0dk854",
           "date": "2026-07-22",
@@ -551,6 +549,17 @@
           "url": "https://x.com/i/status/2079529948348289400",
           "date": "2026-07-21",
           "merchant": "Ray’s Coffee Shop"
+        }
+      ]
+    },
+    {
+      "name": "BitJR Academy 🇿🇲",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2080365380866834626",
+          "date": "2026-07-23",
+          "merchant": "Liberty trading point"
         }
       ]
     }
@@ -781,6 +790,22 @@
       ]
     },
     {
+      "name": "Orero shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfleh4n92tgvs07y0dp8t4vvnxhvstzn4e9aa4qy6cc3stckmrx5qnzr03y",
+          "date": "2026-07-24",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2080507097137963357",
+          "date": "2026-07-24",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Ray’s Coffee Shop",
       "count": 1,
       "posts": [
@@ -823,22 +848,37 @@
           "project": "Bitcoin Victoria Falls 🇿🇲"
         }
       ]
+    },
+    {
+      "name": "Liberty trading point",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2080365380866834626",
+          "date": "2026-07-23",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Jul 20",
     "days_active": 4,
-    "daily_average_payments": 23
+    "daily_average_payments": 26
   },
   "burn_rate": {
-    "percentage": 75,
-    "status": "cold",
+    "percentage": 83,
+    "status": "on_target",
     "days_active": 4
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 95
+      "count": 102
+    },
+    {
+      "domain": "8333.mobi",
+      "count": 2
     }
   ],
   "countries": [
@@ -858,6 +898,11 @@
       "count": 2
     },
     {
+      "flag": "🇿🇲",
+      "country": "Zambia",
+      "count": 2
+    },
+    {
       "flag": "🇿🇦",
       "country": "South Africa",
       "count": 1
@@ -866,23 +911,18 @@
       "flag": "🇬🇭",
       "country": "Ghana",
       "count": 1
-    },
-    {
-      "flag": "🇿🇲",
-      "country": "Zambia",
-      "count": 1
     }
   ],
   "platforms": [
     {
       "platform": "X",
-      "count": 54
+      "count": 60
     },
     {
       "platform": "Nostr",
-      "count": 41
+      "count": 44
     }
   ],
-  "generated_at": "2026-07-23T19:05:01.830815+00:00",
+  "generated_at": "2026-07-24T07:05:01.411232+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
