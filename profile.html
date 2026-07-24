@@ -1537,8 +1537,13 @@
                 renderTimeline('timeline-epoch5', epoch5Posts, '2026-03-24');
             }
 
-            // Initialize gallery drag-to-scroll
-            initGalleryDragScroll();
+            // NOTE: the gallery is initialised by loadGalleryImages() above, right
+            // after it injects the markup. A second initGalleryDragScroll() call
+            // used to sit here and it compounded: each call clones every slide it
+            // finds (one set prepended, one appended) for the infinite carousel, so
+            // 9 real images became 27, then 81. It also bound all eight drag/touch
+            // listeners twice and left galleryRealSlideCount at 27 instead of 9,
+            // which put the infinite-scroll wrap point at the wrong offset.
 
             // Show edit link
             showEditLink(member.id);
@@ -2084,6 +2089,17 @@
         function startGalleryAutoRotate() {
             const track = document.getElementById('gallery-track');
             if (!track || galleryRealSlideCount <= 3) return;
+
+            // Idempotent: without this, a second call overwrites the rAF handle and
+            // orphans the first loop, which then runs forever and cannot be
+            // cancelled - the carousel scrolls at double speed and ignores the
+            // hover-to-pause. It is called from five places (init, drag end, touch
+            // end, mouseleave, and loadGalleryImages), so guard here rather than
+            // trying to keep every call site paired with a stop.
+            if (galleryAutoRotate) {
+                cancelAnimationFrame(galleryAutoRotate);
+                galleryAutoRotate = null;
+            }
 
             // Disable CSS transition for smooth constant scroll
             track.classList.add('dragging');
