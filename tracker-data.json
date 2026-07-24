@@ -1,7 +1,132 @@
 {
-  "last_updated": "2026-07-24T07:05:01.464774+00:00",
-  "total_submissions": 37,
+  "last_updated": "2026-07-24T19:05:01.679079+00:00",
+  "total_submissions": 41,
   "submissions": [
+    {
+      "id": 2118,
+      "timestamp": "2026-07-24 17:19:30 UTC",
+      "project_name": "EcoBitz (Kenya) 🇰🇪",
+      "project_flag": "🇰🇪",
+      "merchant_name": "MunguMbele Grocery(Garage)",
+      "lightning_address": "mungumbelegrocery@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "Nostr",
+      "post_url": "https://primal.net/e/nevent1qqs967snpx8ec3s87c3lwp4xvpq60nrjklh0k6k78rc6s634xs477psvmqumy",
+      "telegram_link": "https://t.me/c/2378392967/18685",
+      "btcmap_link": "https://btcmap.org/merchant/41000",
+      "note": "⚠️ Multiple Lightning addresses detected (2)",
+      "status": "Pending Review",
+      "classification": "primary",
+      "payments": []
+    },
+    {
+      "id": 2116,
+      "timestamp": "2026-07-24 08:50:16 UTC",
+      "project_name": "Bitcoin Ekasi (South Africa) 🇿🇦",
+      "project_flag": "🇿🇦",
+      "merchant_name": "The Meat Station TakeAway & Groceries",
+      "lightning_address": "beta1@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "X",
+      "post_url": "https://x.com/i/status/2063969291985387793",
+      "telegram_link": "https://t.me/c/2378392967/18676",
+      "btcmap_link": "https://btcmap.org/merchant/24971",
+      "note": "👍 Video reviewed",
+      "status": "Processed",
+      "classification": "primary",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6a633439548b27edecab6a69",
+          "timestamp": "2026-07-24T09:45:29.597516+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "The Meat Station TakeAway & Groceries",
+          "tx_id": "6a63343a548b27edecab6be4",
+          "timestamp": "2026-07-24T09:45:30.520120+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Ekasi (South Africa) 🇿🇦",
+          "tx_id": "6a63343b548b27edecab6cd3",
+          "timestamp": "2026-07-24T09:45:31.424214+00:00"
+        }
+      ]
+    },
+    {
+      "id": 2115,
+      "timestamp": "2026-07-24 08:05:20 UTC",
+      "project_name": "Bitcoin Dua (Ghana) 🇬🇭",
+      "project_flag": "🇬🇭",
+      "merchant_name": "Sena Store",
+      "lightning_address": "senanustore@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "Nostr",
+      "post_url": "https://primal.net/e/nevent1qqsyz5zre5r54hu5lypdp9unvp58ngq6vpsrm6fmy4s7yaszlf5975snaksum",
+      "telegram_link": "https://t.me/c/2378392967/18671",
+      "btcmap_link": "https://btcmap.org/merchant/36422",
+      "note": "👍 Video reviewed | 🔀 Cross-post",
+      "status": "Processed",
+      "classification": "duplicate",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6a631e78548b27edeca37403",
+          "timestamp": "2026-07-24T08:12:40.768949+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Sena Store",
+          "tx_id": "6a631e79548b27edeca374be",
+          "timestamp": "2026-07-24T08:12:41.661429+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dua (Ghana) 🇬🇭",
+          "tx_id": "6a631e7a548b27edeca37573",
+          "timestamp": "2026-07-24T08:12:42.585172+00:00"
+        }
+      ]
+    },
+    {
+      "id": 2114,
+      "timestamp": "2026-07-24 07:58:35 UTC",
+      "project_name": "Bitcoin Dua (Ghana) 🇬🇭",
+      "project_flag": "🇬🇭",
+      "merchant_name": "Sena Store",
+      "lightning_address": "senanustore@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "X",
+      "post_url": "https://x.com/i/status/2080563148977820146",
+      "telegram_link": "https://t.me/c/2378392967/18668",
+      "btcmap_link": "https://btcmap.org/merchant/36422",
+      "note": "👍 Video reviewed",
+      "status": "Processed",
+      "classification": "primary",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6a631e37548b27edeca35b43",
+          "timestamp": "2026-07-24T08:11:35.982168+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Sena Store",
+          "tx_id": "6a631e38548b27edeca35c01",
+          "timestamp": "2026-07-24T08:11:36.894159+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Dua (Ghana) 🇬🇭",
+          "tx_id": "6a631e39548b27edeca35cb6",
+          "timestamp": "2026-07-24T08:11:38.005355+00:00"
+        }
+      ]
+    },
     {
       "id": 2113,
       "timestamp": "2026-07-24 04:16:13 UTC",

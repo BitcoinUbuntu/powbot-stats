@@ -1,35 +1,56 @@
 {
   "totals": {
-    "all_payments": 104,
+    "all_payments": 113,
     "by_type": {
       "merchant": {
-        "count": 35
+        "count": 38
       },
       "project": {
-        "count": 35
+        "count": 38
       },
       "reviewer": {
-        "count": 34
+        "count": 37
       }
     }
   },
   "today": {
     "date": "2026-07-24",
-    "payments": 6,
+    "payments": 15,
     "by_type": {
       "merchant": {
-        "count": 2
+        "count": 5
       },
       "project": {
-        "count": 2
+        "count": 5
       },
       "reviewer": {
-        "count": 2
+        "count": 5
       }
     },
-    "approved": 2,
+    "approved": 5,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2063969291985387793",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "The Meat Station TakeAway & Groceries",
+        "platform": "X",
+        "time": "09:45"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsyz5zre5r54hu5lypdp9unvp58ngq6vpsrm6fmy4s7yaszlf5975snaksum",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Sena Store",
+        "platform": "Nostr",
+        "time": "08:12"
+      },
+      {
+        "url": "https://x.com/i/status/2080563148977820146",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Sena Store",
+        "platform": "X",
+        "time": "08:11"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsfleh4n92tgvs07y0dp8t4vvnxhvstzn4e9aa4qy6cc3stckmrx5qnzr03y",
         "project": "Bitcoin Chama 🇰🇪",
@@ -49,6 +70,15 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
         "project": "Bitcoin Chama 🇰🇪"
       },
       {
@@ -56,21 +86,6 @@
       },
       {
         "project": "BitJR Academy 🇿🇲"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Tofo 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Tofo 🇲🇿"
       }
     ]
   },
@@ -309,16 +324,16 @@
     },
     {
       "date": "2026-07-24",
-      "project_count": 2,
-      "merchant_count": 2,
-      "reviewer_count": 2,
-      "approved": 2,
+      "project_count": 5,
+      "merchant_count": 5,
+      "reviewer_count": 5,
+      "approved": 5,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 36,
-    "approved": 34,
+    "total_reviewed": 39,
+    "approved": 37,
     "rejected": 2
   },
   "top_projects": [
@@ -396,8 +411,18 @@
     },
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 4,
+      "count": 6,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyz5zre5r54hu5lypdp9unvp58ngq6vpsrm6fmy4s7yaszlf5975snaksum",
+          "date": "2026-07-24",
+          "merchant": "Sena Store"
+        },
+        {
+          "url": "https://x.com/i/status/2080563148977820146",
+          "date": "2026-07-24",
+          "merchant": "Sena Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsxst5tuctfpak3hk2y2c7ql6pc3uh6djuhtt3m94w6sc288qqq0tgmxqtvl",
           "date": "2026-07-22",
@@ -560,6 +585,17 @@
           "url": "https://x.com/i/status/2080365380866834626",
           "date": "2026-07-23",
           "merchant": "Liberty trading point"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Ekasi 🇿🇦",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2063969291985387793",
+          "date": "2026-07-24",
+          "merchant": "The Meat Station TakeAway & Groceries"
         }
       ]
     }
@@ -806,6 +842,22 @@
       ]
     },
     {
+      "name": "Sena Store",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyz5zre5r54hu5lypdp9unvp58ngq6vpsrm6fmy4s7yaszlf5975snaksum",
+          "date": "2026-07-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2080563148977820146",
+          "date": "2026-07-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Ray’s Coffee Shop",
       "count": 1,
       "posts": [
@@ -859,22 +911,33 @@
           "project": "BitJR Academy 🇿🇲"
         }
       ]
+    },
+    {
+      "name": "The Meat Station TakeAway & Groceries",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2063969291985387793",
+          "date": "2026-07-24",
+          "project": "Bitcoin Ekasi 🇿🇦"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 4,
-    "daily_average_payments": 26
+    "days_active": 5,
+    "daily_average_payments": 22
   },
   "burn_rate": {
-    "percentage": 83,
-    "status": "on_target",
-    "days_active": 4
+    "percentage": 73,
+    "status": "cold",
+    "days_active": 5
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 102
+      "count": 111
     },
     {
       "domain": "8333.mobi",
@@ -898,14 +961,14 @@
       "count": 2
     },
     {
-      "flag": "🇿🇲",
-      "country": "Zambia",
+      "flag": "🇿🇦",
+      "country": "South Africa",
       "count": 2
     },
     {
-      "flag": "🇿🇦",
-      "country": "South Africa",
-      "count": 1
+      "flag": "🇿🇲",
+      "country": "Zambia",
+      "count": 2
     },
     {
       "flag": "🇬🇭",
@@ -916,13 +979,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 60
+      "count": 66
     },
     {
       "platform": "Nostr",
-      "count": 44
+      "count": 47
     }
   ],
-  "generated_at": "2026-07-24T07:05:01.411232+00:00",
+  "generated_at": "2026-07-24T19:05:01.633312+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
