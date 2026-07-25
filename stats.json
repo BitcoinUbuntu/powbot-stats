@@ -1,36 +1,78 @@
 {
   "totals": {
-    "all_payments": 113,
+    "all_payments": 125,
     "by_type": {
       "merchant": {
-        "count": 38
+        "count": 42
       },
       "project": {
-        "count": 38
+        "count": 42
       },
       "reviewer": {
-        "count": 37
+        "count": 41
       }
     }
   },
   "today": {
     "date": "2026-07-25",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 12,
+    "by_type": {
+      "merchant": {
+        "count": 4
+      },
+      "project": {
+        "count": 4
+      },
+      "reviewer": {
+        "count": 4
+      }
+    },
+    "approved": 4,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2080956184073212072",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "X",
+        "time": "12:58"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsfz5e72seaagwawpua0vw46l6cexw30znww5wfmdm680mlt0mmxqgevhm08",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "Nostr",
+        "time": "12:57"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs967snpx8ec3s87c3lwp4xvpq60nrjklh0k6k78rc6s634xs477psvmqumy",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "MunguMbele Grocery(Garage)",
+        "platform": "Nostr",
+        "time": "08:13"
+      },
+      {
+        "url": "https://x.com/i/status/2080757839602081793",
+        "project": "BitJR Academy 🇿🇲",
+        "merchant": "Stop Shop",
+        "platform": "X",
+        "time": "07:46"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
-        "project": "Bitcoin Ekasi 🇿🇦"
+        "project": "Bitbiashara 🇰🇪"
       },
       {
-        "project": "Bitcoin Dua 🇬🇭"
+        "project": "Bitbiashara 🇰🇪"
       },
       {
-        "project": "Bitcoin Dua 🇬🇭"
+        "project": "EcoBitz 🇰🇪"
+      },
+      {
+        "project": "BitJR Academy 🇿🇲"
       }
     ]
   },
@@ -269,16 +311,16 @@
     },
     {
       "date": "2026-07-25",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4,
+      "approved": 4,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 39,
-    "approved": 37,
+    "total_reviewed": 43,
+    "approved": 41,
     "rejected": 2
   },
   "top_projects": [
@@ -391,6 +433,42 @@
       ]
     },
     {
+      "name": "Bitbiashara 🇰🇪",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2080956184073212072",
+          "date": "2026-07-25",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfz5e72seaagwawpua0vw46l6cexw30znww5wfmdm680mlt0mmxqgevhm08",
+          "date": "2026-07-25",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgv4z6tmwrmnuq29h5je65j9lxz9zttk94qj70vhmcmsprnv2zd3qnuy300",
+          "date": "2026-07-23",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2080343524411588719",
+          "date": "2026-07-23",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2079145001175457854",
+          "date": "2026-07-20",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspdl2a9qd3yh2uaknmhx79zdzwc0826dxlgqnlgkwtapkgmwcsh8chyardx",
+          "date": "2026-07-20",
+          "merchant": "Bliss beauty Salon"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Tofo 🇲🇿",
       "count": 4,
       "posts": [
@@ -413,32 +491,6 @@
           "url": "https://x.com/i/status/2079218043998322991",
           "date": "2026-07-21",
           "merchant": "Nhampossa Blue Clothes Tofo Shop"
-        }
-      ]
-    },
-    {
-      "name": "Bitbiashara 🇰🇪",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsgv4z6tmwrmnuq29h5je65j9lxz9zttk94qj70vhmcmsprnv2zd3qnuy300",
-          "date": "2026-07-23",
-          "merchant": "Aqua Selim"
-        },
-        {
-          "url": "https://x.com/i/status/2080343524411588719",
-          "date": "2026-07-23",
-          "merchant": "Aqua Selim"
-        },
-        {
-          "url": "https://x.com/i/status/2079145001175457854",
-          "date": "2026-07-20",
-          "merchant": "Bliss beauty Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspdl2a9qd3yh2uaknmhx79zdzwc0826dxlgqnlgkwtapkgmwcsh8chyardx",
-          "date": "2026-07-20",
-          "merchant": "Bliss beauty Salon"
         }
       ]
     },
@@ -512,6 +564,22 @@
       ]
     },
     {
+      "name": "BitJR Academy 🇿🇲",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2080757839602081793",
+          "date": "2026-07-25",
+          "merchant": "Stop Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2080365380866834626",
+          "date": "2026-07-23",
+          "merchant": "Liberty trading point"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Karoo 🇿🇦",
       "count": 1,
       "posts": [
@@ -523,17 +591,6 @@
       ]
     },
     {
-      "name": "BitJR Academy 🇿🇲",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2080365380866834626",
-          "date": "2026-07-23",
-          "merchant": "Liberty trading point"
-        }
-      ]
-    },
-    {
       "name": "Bitcoin Ekasi 🇿🇦",
       "count": 1,
       "posts": [
@@ -541,6 +598,17 @@
           "url": "https://x.com/i/status/2063969291985387793",
           "date": "2026-07-24",
           "merchant": "The Meat Station TakeAway & Groceries"
+        }
+      ]
+    },
+    {
+      "name": "EcoBitz 🇰🇪",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs967snpx8ec3s87c3lwp4xvpq60nrjklh0k6k78rc6s634xs477psvmqumy",
+          "date": "2026-07-25",
+          "merchant": "MunguMbele Grocery(Garage)"
         }
       ]
     }
@@ -803,6 +871,22 @@
       ]
     },
     {
+      "name": "Grandsmatt",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2080956184073212072",
+          "date": "2026-07-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfz5e72seaagwawpua0vw46l6cexw30znww5wfmdm680mlt0mmxqgevhm08",
+          "date": "2026-07-25",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Ray’s Coffee Shop",
       "count": 1,
       "posts": [
@@ -867,22 +951,44 @@
           "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
+    },
+    {
+      "name": "Stop Shop",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2080757839602081793",
+          "date": "2026-07-25",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
+    },
+    {
+      "name": "MunguMbele Grocery(Garage)",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs967snpx8ec3s87c3lwp4xvpq60nrjklh0k6k78rc6s634xs477psvmqumy",
+          "date": "2026-07-25",
+          "project": "EcoBitz 🇰🇪"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 5,
-    "daily_average_payments": 22
+    "days_active": 6,
+    "daily_average_payments": 20
   },
   "burn_rate": {
-    "percentage": 73,
+    "percentage": 68,
     "status": "cold",
-    "days_active": 5
+    "days_active": 6
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 111
+      "count": 123
     },
     {
       "domain": "8333.mobi",
@@ -891,14 +997,14 @@
   ],
   "countries": [
     {
-      "flag": "🇲🇿",
-      "country": "Mozambique",
+      "flag": "🇰🇪",
+      "country": "Kenya",
       "count": 3
     },
     {
-      "flag": "🇰🇪",
-      "country": "Kenya",
-      "count": 2
+      "flag": "🇲🇿",
+      "country": "Mozambique",
+      "count": 3
     },
     {
       "flag": "🇳🇬",
@@ -924,13 +1030,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 66
+      "count": 72
     },
     {
       "platform": "Nostr",
-      "count": 47
+      "count": 53
     }
   ],
-  "generated_at": "2026-07-25T07:05:01.625286+00:00",
+  "generated_at": "2026-07-25T19:05:01.258143+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
