@@ -1,35 +1,105 @@
 {
   "totals": {
-    "all_payments": 158,
+    "all_payments": 188,
     "by_type": {
       "merchant": {
-        "count": 53
+        "count": 63
       },
       "project": {
-        "count": 53
+        "count": 63
       },
       "reviewer": {
-        "count": 52
+        "count": 62
       }
     }
   },
   "today": {
     "date": "2026-07-27",
-    "payments": 27,
+    "payments": 57,
     "by_type": {
       "merchant": {
-        "count": 9
+        "count": 19
       },
       "project": {
-        "count": 9
+        "count": 19
       },
       "reviewer": {
-        "count": 9
+        "count": 19
       }
     },
-    "approved": 9,
+    "approved": 19,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2081730227063996473",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Malegah Shop",
+        "platform": "X",
+        "time": "13:39"
+      },
+      {
+        "url": "https://x.com/i/status/2081694764999512353",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "X",
+        "time": "12:06"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs02gj42kgg8lsru4lprzafat24aa6mthhu4kjztse5evs8r9mntac6z4pt9",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Bliss beauty Salon",
+        "platform": "Nostr",
+        "time": "12:06"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsd9jxdppzdmy7jk9dtt80jp7ehwqpeyc89280vnyvsrgh09gyzfgqnuxkwj",
+        "project": "Bitcoin Tofo 🇲🇿",
+        "merchant": "Sifoianatunu Atelier",
+        "platform": "Nostr",
+        "time": "12:06"
+      },
+      {
+        "url": "https://x.com/i/status/2081667798112342246",
+        "project": "Bitcoin Tofo 🇲🇿",
+        "merchant": "Sifoianatunu Atelier",
+        "platform": "X",
+        "time": "12:06"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsfmtj4k5hn7s2chsr58g9qyw94fhpcrs083nrk0u8evsrtle8fxaqpzq2st",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Mercearia Abençoada",
+        "platform": "Nostr",
+        "time": "10:21"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqspd2qhlv8d9dmhy0er7ss23s904avq8fr0wwtc56dl53tzh08zmnqarmwd8",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Dona Marta Stand Shop",
+        "platform": "Nostr",
+        "time": "10:12"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsx5u0k7d0527yzm56g2cdyx8jds9lf50m9eqsvl6wmsemty564usg6pekdg",
+        "project": "Bitcoin Dombo 🇲🇿",
+        "merchant": "Nelton Services Shop",
+        "platform": "Nostr",
+        "time": "10:07"
+      },
+      {
+        "url": "https://x.com/i/status/2067578073290346611",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Jabulani Shop 3",
+        "platform": "X",
+        "time": "10:04"
+      },
+      {
+        "url": "https://x.com/i/status/2071617185282449846",
+        "project": "Bitcoin Ekasi 🇿🇦",
+        "merchant": "Urban Kota Bites/Chips",
+        "platform": "X",
+        "time": "10:03"
+      },
       {
         "url": "https://x.com/i/status/2080306885509390427",
         "project": "Bitcoin Dombo 🇲🇿",
@@ -98,6 +168,36 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Afribit Kibera 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Tofo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Tofo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Ekasi 🇿🇦"
+      },
+      {
         "project": "Bitcoin Dombo 🇲🇿"
       },
       {
@@ -123,12 +223,6 @@
       },
       {
         "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Karoo 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Karoo 🇿🇦"
       }
     ]
   },
@@ -367,23 +461,38 @@
     },
     {
       "date": "2026-07-27",
-      "project_count": 9,
-      "merchant_count": 9,
-      "reviewer_count": 9,
-      "approved": 9,
+      "project_count": 19,
+      "merchant_count": 19,
+      "reviewer_count": 19,
+      "approved": 19,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 54,
-    "approved": 52,
+    "total_reviewed": 64,
+    "approved": 62,
     "rejected": 2
   },
   "top_projects": [
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 9,
+      "count": 12,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfmtj4k5hn7s2chsr58g9qyw94fhpcrs083nrk0u8evsrtle8fxaqpzq2st",
+          "date": "2026-07-27",
+          "merchant": "Mercearia Abençoada"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspd2qhlv8d9dmhy0er7ss23s904avq8fr0wwtc56dl53tzh08zmnqarmwd8",
+          "date": "2026-07-27",
+          "merchant": "Dona Marta Stand Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsx5u0k7d0527yzm56g2cdyx8jds9lf50m9eqsvl6wmsemty564usg6pekdg",
+          "date": "2026-07-27",
+          "merchant": "Nelton Services Shop"
+        },
         {
           "url": "https://x.com/i/status/2080306885509390427",
           "date": "2026-07-27",
@@ -478,6 +587,52 @@
       ]
     },
     {
+      "name": "Bitbiashara 🇰🇪",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2081694764999512353",
+          "date": "2026-07-27",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs02gj42kgg8lsru4lprzafat24aa6mthhu4kjztse5evs8r9mntac6z4pt9",
+          "date": "2026-07-27",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2080956184073212072",
+          "date": "2026-07-25",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfz5e72seaagwawpua0vw46l6cexw30znww5wfmdm680mlt0mmxqgevhm08",
+          "date": "2026-07-25",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgv4z6tmwrmnuq29h5je65j9lxz9zttk94qj70vhmcmsprnv2zd3qnuy300",
+          "date": "2026-07-23",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2080343524411588719",
+          "date": "2026-07-23",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2079145001175457854",
+          "date": "2026-07-20",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspdl2a9qd3yh2uaknmhx79zdzwc0826dxlgqnlgkwtapkgmwcsh8chyardx",
+          "date": "2026-07-20",
+          "merchant": "Bliss beauty Salon"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Dua 🇬🇭",
       "count": 6,
       "posts": [
@@ -514,45 +669,19 @@
       ]
     },
     {
-      "name": "Bitbiashara 🇰🇪",
+      "name": "Bitcoin Tofo 🇲🇿",
       "count": 6,
       "posts": [
         {
-          "url": "https://x.com/i/status/2080956184073212072",
-          "date": "2026-07-25",
-          "merchant": "Grandsmatt"
+          "url": "https://primal.net/e/nevent1qqsd9jxdppzdmy7jk9dtt80jp7ehwqpeyc89280vnyvsrgh09gyzfgqnuxkwj",
+          "date": "2026-07-27",
+          "merchant": "Sifoianatunu Atelier"
         },
         {
-          "url": "https://primal.net/e/nevent1qqsfz5e72seaagwawpua0vw46l6cexw30znww5wfmdm680mlt0mmxqgevhm08",
-          "date": "2026-07-25",
-          "merchant": "Grandsmatt"
+          "url": "https://x.com/i/status/2081667798112342246",
+          "date": "2026-07-27",
+          "merchant": "Sifoianatunu Atelier"
         },
-        {
-          "url": "https://primal.net/e/nevent1qqsgv4z6tmwrmnuq29h5je65j9lxz9zttk94qj70vhmcmsprnv2zd3qnuy300",
-          "date": "2026-07-23",
-          "merchant": "Aqua Selim"
-        },
-        {
-          "url": "https://x.com/i/status/2080343524411588719",
-          "date": "2026-07-23",
-          "merchant": "Aqua Selim"
-        },
-        {
-          "url": "https://x.com/i/status/2079145001175457854",
-          "date": "2026-07-20",
-          "merchant": "Bliss beauty Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspdl2a9qd3yh2uaknmhx79zdzwc0826dxlgqnlgkwtapkgmwcsh8chyardx",
-          "date": "2026-07-20",
-          "merchant": "Bliss beauty Salon"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Tofo 🇲🇿",
-      "count": 4,
-      "posts": [
         {
           "url": "https://primal.net/e/nevent1qqsdywz4d2qwh79htpk7r5a43dpw8yewgy9fawphmx9v2gg8c4zaknqwem4fd",
           "date": "2026-07-23",
@@ -660,6 +789,27 @@
       ]
     },
     {
+      "name": "Bitcoin Ekasi 🇿🇦",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2067578073290346611",
+          "date": "2026-07-27",
+          "merchant": "Jabulani Shop 3"
+        },
+        {
+          "url": "https://x.com/i/status/2071617185282449846",
+          "date": "2026-07-27",
+          "merchant": "Urban Kota Bites/Chips"
+        },
+        {
+          "url": "https://x.com/i/status/2063969291985387793",
+          "date": "2026-07-24",
+          "merchant": "The Meat Station TakeAway & Groceries"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Ekiti 🇳🇬",
       "count": 2,
       "posts": [
@@ -708,17 +858,6 @@
       ]
     },
     {
-      "name": "Bitcoin Ekasi 🇿🇦",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2063969291985387793",
-          "date": "2026-07-24",
-          "merchant": "The Meat Station TakeAway & Groceries"
-        }
-      ]
-    },
-    {
       "name": "EcoBitz 🇰🇪",
       "count": 1,
       "posts": [
@@ -726,6 +865,17 @@
           "url": "https://primal.net/e/nevent1qqs967snpx8ec3s87c3lwp4xvpq60nrjklh0k6k78rc6s634xs477psvmqumy",
           "date": "2026-07-25",
           "merchant": "MunguMbele Grocery(Garage)"
+        }
+      ]
+    },
+    {
+      "name": "Afribit Kibera 🇰🇪",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2081730227063996473",
+          "date": "2026-07-27",
+          "merchant": "Malegah Shop"
         }
       ]
     }
@@ -759,8 +909,18 @@
     },
     {
       "name": "Bliss beauty Salon",
-      "count": 2,
+      "count": 4,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2081694764999512353",
+          "date": "2026-07-27",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs02gj42kgg8lsru4lprzafat24aa6mthhu4kjztse5evs8r9mntac6z4pt9",
+          "date": "2026-07-27",
+          "project": "Bitbiashara 🇰🇪"
+        },
         {
           "url": "https://x.com/i/status/2079145001175457854",
           "date": "2026-07-20",
@@ -1046,6 +1206,70 @@
       ]
     },
     {
+      "name": "Nelton Services Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsx5u0k7d0527yzm56g2cdyx8jds9lf50m9eqsvl6wmsemty564usg6pekdg",
+          "date": "2026-07-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2080321919153295668",
+          "date": "2026-07-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
+      "name": "Dona Marta Stand Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspd2qhlv8d9dmhy0er7ss23s904avq8fr0wwtc56dl53tzh08zmnqarmwd8",
+          "date": "2026-07-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2080317557752426756",
+          "date": "2026-07-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
+      "name": "Mercearia Abençoada",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfmtj4k5hn7s2chsr58g9qyw94fhpcrs083nrk0u8evsrtle8fxaqpzq2st",
+          "date": "2026-07-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2080306885509390427",
+          "date": "2026-07-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
+      "name": "Sifoianatunu Atelier",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsd9jxdppzdmy7jk9dtt80jp7ehwqpeyc89280vnyvsrgh09gyzfgqnuxkwj",
+          "date": "2026-07-27",
+          "project": "Bitcoin Tofo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2081667798112342246",
+          "date": "2026-07-27",
+          "project": "Bitcoin Tofo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Ray’s Coffee Shop",
       "count": 1,
       "posts": [
@@ -1156,53 +1380,53 @@
       ]
     },
     {
-      "name": "Nelton Services Shop",
+      "name": "Urban Kota Bites/Chips",
       "count": 1,
       "posts": [
         {
-          "url": "https://x.com/i/status/2080321919153295668",
+          "url": "https://x.com/i/status/2071617185282449846",
           "date": "2026-07-27",
-          "project": "Bitcoin Dombo 🇲🇿"
+          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
     {
-      "name": "Dona Marta Stand Shop",
+      "name": "Jabulani Shop 3",
       "count": 1,
       "posts": [
         {
-          "url": "https://x.com/i/status/2080317557752426756",
+          "url": "https://x.com/i/status/2067578073290346611",
           "date": "2026-07-27",
-          "project": "Bitcoin Dombo 🇲🇿"
+          "project": "Bitcoin Ekasi 🇿🇦"
         }
       ]
     },
     {
-      "name": "Mercearia Abençoada",
+      "name": "Malegah Shop",
       "count": 1,
       "posts": [
         {
-          "url": "https://x.com/i/status/2080306885509390427",
+          "url": "https://x.com/i/status/2081730227063996473",
           "date": "2026-07-27",
-          "project": "Bitcoin Dombo 🇲🇿"
+          "project": "Afribit Kibera 🇰🇪"
         }
       ]
     }
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 7,
-    "daily_average_payments": 22
+    "days_active": 8,
+    "daily_average_payments": 23
   },
   "burn_rate": {
-    "percentage": 76,
+    "percentage": 77,
     "status": "cold",
-    "days_active": 7
+    "days_active": 8
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 156
+      "count": 186
     },
     {
       "domain": "8333.mobi",
@@ -1213,7 +1437,7 @@
     {
       "flag": "🇰🇪",
       "country": "Kenya",
-      "count": 3
+      "count": 4
     },
     {
       "flag": "🇿🇦",
@@ -1244,13 +1468,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 96
+      "count": 111
     },
     {
       "platform": "Nostr",
-      "count": 62
+      "count": 77
     }
   ],
-  "generated_at": "2026-07-27T07:05:01.137368+00:00",
+  "generated_at": "2026-07-27T19:05:01.763339+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
