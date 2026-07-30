@@ -1,109 +1,31 @@
 {
   "totals": {
-    "all_payments": 257,
+    "all_payments": 260,
     "by_type": {
       "merchant": {
-        "count": 86
+        "count": 87
       },
       "project": {
-        "count": 86
+        "count": 87
       },
       "reviewer": {
-        "count": 85
+        "count": 86
       }
     }
   },
   "today": {
-    "date": "2026-07-29",
-    "payments": 30,
-    "by_type": {
-      "merchant": {
-        "count": 10
-      },
-      "project": {
-        "count": 10
-      },
-      "reviewer": {
-        "count": 10
-      }
-    },
-    "approved": 10,
+    "date": "2026-07-30",
+    "payments": 0,
+    "by_type": {},
+    "approved": 0,
     "rejected": 0,
-    "videos": [
-      {
-        "url": "https://x.com/i/status/2082517053592768576",
-        "project": "Bitcoin Victoria Falls 🇿🇲",
-        "merchant": "Andrews Grocery",
-        "platform": "X",
-        "time": "17:43"
-      },
-      {
-        "url": "https://x.com/i/status/2082499030563602941",
-        "project": "Bitbiashara 🇰🇪",
-        "merchant": "Grandsmatt",
-        "platform": "X",
-        "time": "16:31"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsr8ttp3mh7a3vuezm3cx6n84sr4nwg60hzqsz7xyzgm7k63uzjs6s0jm43e",
-        "project": "Bitbiashara 🇰🇪",
-        "merchant": "Grandsmatt",
-        "platform": "Nostr",
-        "time": "16:31"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsy8p0rmaavnxrhylgxspc7thf6nssjlm0j3hcgqpau5v6t2glzqlch8uw87",
-        "project": "Bitcoin Karoo 🇿🇦",
-        "merchant": "Ray’s Coffee Shop",
-        "platform": "Nostr",
-        "time": "11:13"
-      },
-      {
-        "url": "https://x.com/i/status/2082361485318070483",
-        "project": "Bitcoin Karoo 🇿🇦",
-        "merchant": "Ray’s Coffee Shop",
-        "platform": "X",
-        "time": "08:35"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsr677wq280ep9x9pkwmvl0dw4dhtta2p8ndsdp5yct3qyyk2l2jjggls39g",
-        "project": "Bitcoin Dua 🇬🇭",
-        "merchant": "Sena Store",
-        "platform": "Nostr",
-        "time": "08:35"
-      },
-      {
-        "url": "https://x.com/i/status/2082348336590311509",
-        "project": "Bitcoin Dua 🇬🇭",
-        "merchant": "Sena Store",
-        "platform": "X",
-        "time": "08:34"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqs8jtp3pydgvp4e8ytkj0kj07hl9l4l4ngm9uppk60v9esx6r0jmngm2sxap",
-        "project": "Bitcoin NextGen 🇳🇬",
-        "merchant": "Emmy Store",
-        "platform": "Nostr",
-        "time": "08:34"
-      },
-      {
-        "url": "https://x.com/i/status/2082329336124731805",
-        "project": "Bitcoin Sisonke 🇿🇦",
-        "merchant": "Mkambi",
-        "platform": "X",
-        "time": "08:34"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqs025kh3h6ja8j340qjlqp6ngv9gzsuyvetvemtzuqvu22nzqu8yjqt8c669",
-        "project": "Bitcoin Sisonke 🇿🇦",
-        "merchant": "Mkambi",
-        "platform": "Nostr",
-        "time": "06:23"
-      }
-    ]
+    "videos": []
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "BitJR Academy 🇿🇲"
+      },
       {
         "project": "Bitcoin Victoria Falls 🇿🇲"
       },
@@ -130,21 +52,10 @@
       },
       {
         "project": "Bitcoin Sisonke 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Sisonke 🇿🇦"
       }
     ]
   },
   "daily": [
-    {
-      "date": "2026-06-30",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
-      "rejected": 0
-    },
     {
       "date": "2026-07-01",
       "project_count": 0,
@@ -371,16 +282,24 @@
     },
     {
       "date": "2026-07-29",
-      "project_count": 10,
-      "merchant_count": 10,
-      "reviewer_count": 10,
-      "approved": 10,
+      "project_count": 11,
+      "merchant_count": 11,
+      "reviewer_count": 11,
+      "approved": 11,
+      "rejected": 0
+    },
+    {
+      "date": "2026-07-30",
+      "project_count": 0,
+      "merchant_count": 0,
+      "reviewer_count": 0,
+      "approved": 0,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 87,
-    "approved": 85,
+    "total_reviewed": 88,
+    "approved": 86,
     "rejected": 2
   },
   "top_projects": [
@@ -806,8 +725,13 @@
     },
     {
       "name": "BitJR Academy 🇿🇲",
-      "count": 3,
+      "count": 4,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2082523482634572161",
+          "date": "2026-07-29",
+          "merchant": "Phillard Shop"
+        },
         {
           "url": "https://x.com/i/status/2081440817755877517",
           "date": "2026-07-27",
@@ -1617,22 +1541,33 @@
           "project": "Bitcoin Victoria Falls 🇿🇲"
         }
       ]
+    },
+    {
+      "name": "Phillard Shop",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2082523482634572161",
+          "date": "2026-07-29",
+          "project": "BitJR Academy 🇿🇲"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Jul 20",
     "days_active": 10,
-    "daily_average_payments": 25
+    "daily_average_payments": 26
   },
   "burn_rate": {
-    "percentage": 85,
+    "percentage": 86,
     "status": "on_target",
     "days_active": 10
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 253
+      "count": 256
     },
     {
       "domain": "8333.mobi",
@@ -1674,13 +1609,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 150
+      "count": 153
     },
     {
       "platform": "Nostr",
       "count": 107
     }
   ],
-  "generated_at": "2026-07-29T19:05:01.419119+00:00",
+  "generated_at": "2026-07-30T07:05:01.925600+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
