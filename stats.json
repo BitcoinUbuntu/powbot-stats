@@ -1,57 +1,91 @@
 {
   "totals": {
-    "all_payments": 260,
+    "all_payments": 277,
     "by_type": {
       "merchant": {
-        "count": 87
+        "count": 92
       },
       "project": {
-        "count": 87
+        "count": 92
       },
       "reviewer": {
-        "count": 86
+        "count": 93
       }
     }
   },
   "today": {
     "date": "2026-07-30",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
-    "rejected": 0,
-    "videos": []
+    "payments": 17,
+    "by_type": {
+      "merchant": {
+        "count": 5
+      },
+      "project": {
+        "count": 5
+      },
+      "reviewer": {
+        "count": 7
+      }
+    },
+    "approved": 5,
+    "rejected": 2,
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2082752721803792599",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Bella Entertainment",
+        "platform": "X",
+        "time": "12:11"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqspndhaw9dfcs8vtek5jxjc4l236hp8686tav6074tl0ctymsp3auq928477",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Chicken farm",
+        "platform": "Nostr",
+        "time": "07:58"
+      },
+      {
+        "url": "https://x.com/i/status/2082703095616664048",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Chicken farm",
+        "platform": "X",
+        "time": "07:57"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsg9f48966df8f3pwsxft40tduzd80czcqtujv0real997xx2jjysqmyjw70",
+        "project": "Calabar Bitcoin Club 🇳🇬",
+        "merchant": "Food and Wine Shop",
+        "platform": "Nostr",
+        "time": "07:54"
+      },
+      {
+        "url": "https://x.com/i/status/2082594357404664168",
+        "project": "Calabar Bitcoin Club 🇳🇬",
+        "merchant": "Food and Wine Shop",
+        "platform": "X",
+        "time": "07:54"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Calabar Bitcoin Club 🇳🇬"
+      },
+      {
+        "project": "Calabar Bitcoin Club 🇳🇬"
+      },
+      {
         "project": "BitJR Academy 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Karoo 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Karoo 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Dua 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Dua 🇬🇭"
-      },
-      {
-        "project": "Bitcoin NextGen 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Sisonke 🇿🇦"
       }
     ]
   },
@@ -290,17 +324,17 @@
     },
     {
       "date": "2026-07-30",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
-      "rejected": 0
+      "project_count": 5,
+      "merchant_count": 5,
+      "reviewer_count": 7,
+      "approved": 5,
+      "rejected": 2
     }
   ],
   "reviewer": {
-    "total_reviewed": 88,
-    "approved": 86,
-    "rejected": 2
+    "total_reviewed": 95,
+    "approved": 91,
+    "rejected": 4
   },
   "top_projects": [
     {
@@ -371,8 +405,18 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 10,
+      "count": 12,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspndhaw9dfcs8vtek5jxjc4l236hp8686tav6074tl0ctymsp3auq928477",
+          "date": "2026-07-30",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://x.com/i/status/2082703095616664048",
+          "date": "2026-07-30",
+          "merchant": "Chicken farm"
+        },
         {
           "url": "https://x.com/i/status/2082155914371514792",
           "date": "2026-07-28",
@@ -750,6 +794,27 @@
       ]
     },
     {
+      "name": "Bitcoin Githurai 🇰🇪",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2082752721803792599",
+          "date": "2026-07-30",
+          "merchant": "Bella Entertainment"
+        },
+        {
+          "url": "https://x.com/i/status/2082076973765927316",
+          "date": "2026-07-28",
+          "merchant": "Mercy Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2081999334694846851",
+          "date": "2026-07-28",
+          "merchant": "Niel's Nails and Perfume Refill"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Ekiti 🇳🇬",
       "count": 2,
       "posts": [
@@ -782,22 +847,6 @@
       ]
     },
     {
-      "name": "Bitcoin Githurai 🇰🇪",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2082076973765927316",
-          "date": "2026-07-28",
-          "merchant": "Mercy Groceries"
-        },
-        {
-          "url": "https://x.com/i/status/2081999334694846851",
-          "date": "2026-07-28",
-          "merchant": "Niel's Nails and Perfume Refill"
-        }
-      ]
-    },
-    {
       "name": "EcoBitz 🇰🇪",
       "count": 2,
       "posts": [
@@ -826,6 +875,22 @@
           "url": "https://x.com/i/status/2082002522424607176",
           "date": "2026-07-28",
           "merchant": "Emmy Store"
+        }
+      ]
+    },
+    {
+      "name": "Calabar Bitcoin Club 🇳🇬",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsg9f48966df8f3pwsxft40tduzd80czcqtujv0real997xx2jjysqmyjw70",
+          "date": "2026-07-30",
+          "merchant": "Food and Wine Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2082594357404664168",
+          "date": "2026-07-30",
+          "merchant": "Food and Wine Shop"
         }
       ]
     },
@@ -1356,6 +1421,38 @@
       ]
     },
     {
+      "name": "Food and Wine Shop",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsg9f48966df8f3pwsxft40tduzd80czcqtujv0real997xx2jjysqmyjw70",
+          "date": "2026-07-30",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2082594357404664168",
+          "date": "2026-07-30",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        }
+      ]
+    },
+    {
+      "name": "Chicken farm",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspndhaw9dfcs8vtek5jxjc4l236hp8686tav6074tl0ctymsp3auq928477",
+          "date": "2026-07-30",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2082703095616664048",
+          "date": "2026-07-30",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Omega Cut",
       "count": 1,
       "posts": [
@@ -1552,26 +1649,37 @@
           "project": "BitJR Academy 🇿🇲"
         }
       ]
+    },
+    {
+      "name": "Bella Entertainment",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2082752721803792599",
+          "date": "2026-07-30",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 10,
-    "daily_average_payments": 26
+    "days_active": 11,
+    "daily_average_payments": 25
   },
   "burn_rate": {
-    "percentage": 86,
+    "percentage": 83,
     "status": "on_target",
-    "days_active": 10
+    "days_active": 11
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 256
+      "count": 271
     },
     {
       "domain": "8333.mobi",
-      "count": 4
+      "count": 6
     }
   ],
   "countries": [
@@ -1583,7 +1691,7 @@
     {
       "flag": "🇳🇬",
       "country": "Nigeria",
-      "count": 3
+      "count": 4
     },
     {
       "flag": "🇿🇦",
@@ -1609,13 +1717,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 153
+      "count": 163
     },
     {
       "platform": "Nostr",
-      "count": 107
+      "count": 114
     }
   ],
-  "generated_at": "2026-07-30T07:05:01.925600+00:00",
+  "generated_at": "2026-07-30T19:05:01.182313+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
