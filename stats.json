@@ -1,48 +1,64 @@
 {
   "totals": {
-    "all_payments": 283,
+    "all_payments": 289,
     "by_type": {
       "merchant": {
-        "count": 94
+        "count": 96
       },
       "project": {
-        "count": 94
+        "count": 96
       },
       "reviewer": {
-        "count": 95
+        "count": 97
       }
     }
   },
   "today": {
     "date": "2026-07-31",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 6,
+    "by_type": {
+      "merchant": {
+        "count": 2
+      },
+      "project": {
+        "count": 2
+      },
+      "reviewer": {
+        "count": 2
+      }
+    },
+    "approved": 2,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsrxt6pkjxxj0q0dadud79pw0t7vpkysr6ff37jy0f36wrxmeleqrsgrdfu5",
+        "project": "Calabar Bitcoin Club 🇳🇬",
+        "merchant": "Chef Green Signature Local Cusine Hub",
+        "platform": "Nostr",
+        "time": "08:30"
+      },
+      {
+        "url": "https://x.com/i/status/2083104221105185102",
+        "project": "Calabar Bitcoin Club 🇳🇬",
+        "merchant": "Chef Green Signature Local Cusine Hub",
+        "platform": "X",
+        "time": "08:30"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
-        "project": "Bitcoin Tofo 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Tofo 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
         "project": "Calabar Bitcoin Club 🇳🇬"
       },
       {
         "project": "Calabar Bitcoin Club 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Tofo 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Tofo 🇲🇿"
       }
     ]
   },
@@ -281,16 +297,16 @@
     },
     {
       "date": "2026-07-31",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 2,
+      "merchant_count": 2,
+      "reviewer_count": 2,
+      "approved": 2,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 97,
-    "approved": 93,
+    "total_reviewed": 99,
+    "approved": 95,
     "rejected": 4
   },
   "top_projects": [
@@ -761,6 +777,32 @@
       ]
     },
     {
+      "name": "Calabar Bitcoin Club 🇳🇬",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrxt6pkjxxj0q0dadud79pw0t7vpkysr6ff37jy0f36wrxmeleqrsgrdfu5",
+          "date": "2026-07-31",
+          "merchant": "Chef Green Signature Local Cusine Hub"
+        },
+        {
+          "url": "https://x.com/i/status/2083104221105185102",
+          "date": "2026-07-31",
+          "merchant": "Chef Green Signature Local Cusine Hub"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg9f48966df8f3pwsxft40tduzd80czcqtujv0real997xx2jjysqmyjw70",
+          "date": "2026-07-30",
+          "merchant": "Food and Wine Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2082594357404664168",
+          "date": "2026-07-30",
+          "merchant": "Food and Wine Shop"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Githurai 🇰🇪",
       "count": 3,
       "posts": [
@@ -842,22 +884,6 @@
           "url": "https://x.com/i/status/2082002522424607176",
           "date": "2026-07-28",
           "merchant": "Emmy Store"
-        }
-      ]
-    },
-    {
-      "name": "Calabar Bitcoin Club 🇳🇬",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsg9f48966df8f3pwsxft40tduzd80czcqtujv0real997xx2jjysqmyjw70",
-          "date": "2026-07-30",
-          "merchant": "Food and Wine Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2082594357404664168",
-          "date": "2026-07-30",
-          "merchant": "Food and Wine Shop"
         }
       ]
     },
@@ -1436,6 +1462,22 @@
       ]
     },
     {
+      "name": "Chef Green Signature Local Cusine Hub",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrxt6pkjxxj0q0dadud79pw0t7vpkysr6ff37jy0f36wrxmeleqrsgrdfu5",
+          "date": "2026-07-31",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2083104221105185102",
+          "date": "2026-07-31",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Omega Cut",
       "count": 1,
       "posts": [
@@ -1647,18 +1689,18 @@
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 11,
-    "daily_average_payments": 25
+    "days_active": 12,
+    "daily_average_payments": 24
   },
   "burn_rate": {
-    "percentage": 84,
-    "status": "on_target",
-    "days_active": 11
+    "percentage": 79,
+    "status": "cold",
+    "days_active": 12
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 277
+      "count": 283
     },
     {
       "domain": "8333.mobi",
@@ -1700,13 +1742,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 166
+      "count": 169
     },
     {
       "platform": "Nostr",
-      "count": 117
+      "count": 120
     }
   ],
-  "generated_at": "2026-07-31T07:05:01.581939+00:00",
+  "generated_at": "2026-07-31T19:05:02.024345+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
