@@ -1,29 +1,90 @@
 {
   "totals": {
-    "all_payments": 448,
+    "all_payments": 463,
     "by_type": {
       "merchant": {
-        "count": 149
+        "count": 154
       },
       "project": {
-        "count": 149
+        "count": 154
       },
       "reviewer": {
-        "count": 150
+        "count": 155
       }
     }
   },
   "today": {
     "date": "2026-08-05",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 15,
+    "by_type": {
+      "merchant": {
+        "count": 5
+      },
+      "project": {
+        "count": 5
+      },
+      "reviewer": {
+        "count": 5
+      }
+    },
+    "approved": 5,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqstg92srcyd37hy6wv5z29krhqx3ug3sna86f9xjduds7g5a95jgmqhl8sy6",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Aqua Selim",
+        "platform": "Nostr",
+        "time": "16:13"
+      },
+      {
+        "url": "https://x.com/i/status/2085027632907764162",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Aqua Selim",
+        "platform": "X",
+        "time": "16:13"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsx0gwq8aqa322krpf4l8tn343u00dujjz5j9qw77nyqvtlauz75ac2et3ad",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "Nostr",
+        "time": "13:47"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsd34y03kxhs0exljm94q40mrz02447z0jm53n9n0n9z83fkx0mltg2p6nv7",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "Mkambi",
+        "platform": "Nostr",
+        "time": "11:35"
+      },
+      {
+        "url": "https://x.com/i/status/2084945136857829698",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "Mkambi",
+        "platform": "X",
+        "time": "11:35"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
+      {
         "project": "Bitcoin Dombo 🇲🇿"
       },
       {
@@ -40,39 +101,6 @@
       },
       {
         "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Ikorodu 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Ikorodu 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Dua 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Dua 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Tofo 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Tofo 🇲🇿"
-      },
-      {
-        "project": "Calabar Bitcoin Club 🇳🇬"
-      },
-      {
-        "project": "Calabar Bitcoin Club 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Ekiti 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Ekiti 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Dombo 🇲🇿"
       }
     ]
   },
@@ -311,16 +339,16 @@
     },
     {
       "date": "2026-08-05",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 5,
+      "merchant_count": 5,
+      "reviewer_count": 5,
+      "approved": 5,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 152,
-    "approved": 148,
+    "total_reviewed": 157,
+    "approved": 153,
     "rejected": 4
   },
   "top_projects": [
@@ -508,8 +536,18 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 14,
+      "count": 16,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstg92srcyd37hy6wv5z29krhqx3ug3sna86f9xjduds7g5a95jgmqhl8sy6",
+          "date": "2026-08-05",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2085027632907764162",
+          "date": "2026-08-05",
+          "merchant": "Aqua Selim"
+        },
         {
           "url": "https://x.com/i/status/2084266877677625787",
           "date": "2026-08-03",
@@ -832,6 +870,52 @@
       ]
     },
     {
+      "name": "Bitcoin Sisonke 🇿🇦",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsd34y03kxhs0exljm94q40mrz02447z0jm53n9n0n9z83fkx0mltg2p6nv7",
+          "date": "2026-08-05",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://x.com/i/status/2084945136857829698",
+          "date": "2026-08-05",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://x.com/i/status/2083444793116446970",
+          "date": "2026-08-01",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2qe3gt4mfqf7vy3jk5834dcp75303t8nquzzkw4q02md3g3k7qvcelfezc",
+          "date": "2026-08-01",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2082329336124731805",
+          "date": "2026-07-29",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs025kh3h6ja8j340qjlqp6ngv9gzsuyvetvemtzuqvu22nzqu8yjqt8c669",
+          "date": "2026-07-29",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0ame7uslhnsqaccz0p4pem0ygc58avrkj62nejngjge06z7799hgq78c7x",
+          "date": "2026-07-27",
+          "merchant": "P.S Takeaways"
+        },
+        {
+          "url": "https://x.com/i/status/2081564117270217134",
+          "date": "2026-07-27",
+          "merchant": "P.S Takeaways"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Ikorodu 🇳🇬",
       "count": 7,
       "posts": [
@@ -869,42 +953,6 @@
           "url": "https://x.com/i/status/2079547986967679039",
           "date": "2026-07-21",
           "merchant": "AB Starry Communication"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Sisonke 🇿🇦",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2083444793116446970",
-          "date": "2026-08-01",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2qe3gt4mfqf7vy3jk5834dcp75303t8nquzzkw4q02md3g3k7qvcelfezc",
-          "date": "2026-08-01",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2082329336124731805",
-          "date": "2026-07-29",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs025kh3h6ja8j340qjlqp6ngv9gzsuyvetvemtzuqvu22nzqu8yjqt8c669",
-          "date": "2026-07-29",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0ame7uslhnsqaccz0p4pem0ygc58avrkj62nejngjge06z7799hgq78c7x",
-          "date": "2026-07-27",
-          "merchant": "P.S Takeaways"
-        },
-        {
-          "url": "https://x.com/i/status/2081564117270217134",
-          "date": "2026-07-27",
-          "merchant": "P.S Takeaways"
         }
       ]
     },
@@ -1106,8 +1154,13 @@
     },
     {
       "name": "Bitcoin NextGen 🇳🇬",
-      "count": 3,
+      "count": 4,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsx0gwq8aqa322krpf4l8tn343u00dujjz5j9qw77nyqvtlauz75ac2et3ad",
+          "date": "2026-08-05",
+          "merchant": "Emmy Store"
+        },
         {
           "url": "https://x.com/i/status/2084189352712642664",
           "date": "2026-08-03",
@@ -1456,6 +1509,84 @@
       ]
     },
     {
+      "name": "Mkambi",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsd34y03kxhs0exljm94q40mrz02447z0jm53n9n0n9z83fkx0mltg2p6nv7",
+          "date": "2026-08-05",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2084945136857829698",
+          "date": "2026-08-05",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2082329336124731805",
+          "date": "2026-07-29",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs025kh3h6ja8j340qjlqp6ngv9gzsuyvetvemtzuqvu22nzqu8yjqt8c669",
+          "date": "2026-07-29",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        }
+      ]
+    },
+    {
+      "name": "Emmy Store",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsx0gwq8aqa322krpf4l8tn343u00dujjz5j9qw77nyqvtlauz75ac2et3ad",
+          "date": "2026-08-05",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2084189352712642664",
+          "date": "2026-08-03",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8jtp3pydgvp4e8ytkj0kj07hl9l4l4ngm9uppk60v9esx6r0jmngm2sxap",
+          "date": "2026-07-29",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2082002522424607176",
+          "date": "2026-07-28",
+          "project": "Bitcoin NextGen 🇳🇬"
+        }
+      ]
+    },
+    {
+      "name": "Aqua Selim",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstg92srcyd37hy6wv5z29krhqx3ug3sna86f9xjduds7g5a95jgmqhl8sy6",
+          "date": "2026-08-05",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2085027632907764162",
+          "date": "2026-08-05",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgv4z6tmwrmnuq29h5je65j9lxz9zttk94qj70vhmcmsprnv2zd3qnuy300",
+          "date": "2026-07-23",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2080343524411588719",
+          "date": "2026-07-23",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Ray’s Coffee Shop",
       "count": 3,
       "posts": [
@@ -1473,27 +1604,6 @@
           "url": "https://x.com/i/status/2079529948348289400",
           "date": "2026-07-21",
           "project": "Bitcoin Karoo 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Emmy Store",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2084189352712642664",
-          "date": "2026-08-03",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8jtp3pydgvp4e8ytkj0kj07hl9l4l4ngm9uppk60v9esx6r0jmngm2sxap",
-          "date": "2026-07-29",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2082002522424607176",
-          "date": "2026-07-28",
-          "project": "Bitcoin NextGen 🇳🇬"
         }
       ]
     },
@@ -1663,22 +1773,6 @@
       ]
     },
     {
-      "name": "Aqua Selim",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsgv4z6tmwrmnuq29h5je65j9lxz9zttk94qj70vhmcmsprnv2zd3qnuy300",
-          "date": "2026-07-23",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2080343524411588719",
-          "date": "2026-07-23",
-          "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Orero shop",
       "count": 2,
       "posts": [
@@ -1787,22 +1881,6 @@
           "url": "https://x.com/i/status/2082140485603180953",
           "date": "2026-07-28",
           "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Mkambi",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2082329336124731805",
-          "date": "2026-07-29",
-          "project": "Bitcoin Sisonke 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs025kh3h6ja8j340qjlqp6ngv9gzsuyvetvemtzuqvu22nzqu8yjqt8c669",
-          "date": "2026-07-29",
-          "project": "Bitcoin Sisonke 🇿🇦"
         }
       ]
     },
@@ -2377,22 +2455,22 @@
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 16,
-    "daily_average_payments": 28
+    "days_active": 17,
+    "daily_average_payments": 27
   },
   "burn_rate": {
-    "percentage": 92,
+    "percentage": 89,
     "status": "on_target",
-    "days_active": 16
+    "days_active": 17
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 441
+      "count": 455
     },
     {
       "domain": "8333.mobi",
-      "count": 7
+      "count": 8
     }
   ],
   "countries": [
@@ -2435,13 +2513,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 256
+      "count": 262
     },
     {
       "platform": "Nostr",
-      "count": 192
+      "count": 201
     }
   ],
-  "generated_at": "2026-08-05T07:05:01.210591+00:00",
+  "generated_at": "2026-08-05T19:05:01.813125+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
