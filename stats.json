@@ -1,42 +1,98 @@
 {
   "totals": {
-    "all_payments": 463,
+    "all_payments": 481,
     "by_type": {
       "merchant": {
-        "count": 154
+        "count": 160
       },
       "project": {
-        "count": 154
+        "count": 160
       },
       "reviewer": {
-        "count": 155
+        "count": 161
       }
     }
   },
   "today": {
     "date": "2026-08-06",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 18,
+    "by_type": {
+      "merchant": {
+        "count": 6
+      },
+      "project": {
+        "count": 6
+      },
+      "reviewer": {
+        "count": 6
+      }
+    },
+    "approved": 6,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqspqmp0454nmchyktlkej3wasctmacddty4q5aaf6h9kaesn3wr6rgjg4w8s",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Ebonydud",
+        "platform": "Nostr",
+        "time": "17:13"
+      },
+      {
+        "url": "https://x.com/i/status/2085398851574280521",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "Ebonydud",
+        "platform": "X",
+        "time": "17:10"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs0purt7dnhfpnu5qy4kna69ewgg4p82cnwvu7lgum0y8ktq0a566c049efh",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Preso's Food and Drinks",
+        "platform": "Nostr",
+        "time": "16:11"
+      },
+      {
+        "url": "https://x.com/i/status/2085383720014348459",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Preso's Food and Drinks",
+        "platform": "X",
+        "time": "16:11"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsp8uwxhtaq8g2zp4s5nj7c6qz380qre0crfq74xf8jcuewsas2uhg73z0ss",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Flo Salon",
+        "platform": "Nostr",
+        "time": "08:01"
+      },
+      {
+        "url": "https://x.com/i/status/2085222899128930324",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Flo Salon",
+        "platform": "X",
+        "time": "08:01"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
-        "project": "Bitbiashara 🇰🇪"
+        "project": "Bitcoin Ekiti 🇳🇬"
       },
       {
-        "project": "Bitbiashara 🇰🇪"
+        "project": "Bitcoin Ekiti 🇳🇬"
       },
       {
-        "project": "Bitcoin NextGen 🇳🇬"
+        "project": "Bitcoin Dua 🇬🇭"
       },
       {
-        "project": "Bitcoin Sisonke 🇿🇦"
+        "project": "Bitcoin Dua 🇬🇭"
       },
       {
-        "project": "Bitcoin Sisonke 🇿🇦"
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
       }
     ]
   },
@@ -275,16 +331,16 @@
     },
     {
       "date": "2026-08-06",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 6,
+      "approved": 6,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 157,
-    "approved": 153,
+    "total_reviewed": 163,
+    "approved": 159,
     "rejected": 4
   },
   "top_projects": [
@@ -386,8 +442,18 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 16,
+      "count": 18,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp8uwxhtaq8g2zp4s5nj7c6qz380qre0crfq74xf8jcuewsas2uhg73z0ss",
+          "date": "2026-08-06",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2085222899128930324",
+          "date": "2026-08-06",
+          "merchant": "Flo Salon"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs83c2m5khx88s88jfpylmkvhgnt9rj492vr3w24pxx7ezsufkzlhc4xqnah",
           "date": "2026-08-04",
@@ -558,8 +624,18 @@
     },
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 14,
+      "count": 16,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0purt7dnhfpnu5qy4kna69ewgg4p82cnwvu7lgum0y8ktq0a566c049efh",
+          "date": "2026-08-06",
+          "merchant": "Preso's Food and Drinks"
+        },
+        {
+          "url": "https://x.com/i/status/2085383720014348459",
+          "date": "2026-08-06",
+          "merchant": "Preso's Food and Drinks"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs2hvjhmksdjq4jcg0vp8f0me8cl9dntl7w8dv8ttdn0vvyjj0mjhqvdxncq",
           "date": "2026-08-04",
@@ -852,6 +928,52 @@
       ]
     },
     {
+      "name": "Bitcoin Ekiti 🇳🇬",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspqmp0454nmchyktlkej3wasctmacddty4q5aaf6h9kaesn3wr6rgjg4w8s",
+          "date": "2026-08-06",
+          "merchant": "Ebonydud"
+        },
+        {
+          "url": "https://x.com/i/status/2085398851574280521",
+          "date": "2026-08-06",
+          "merchant": "Ebonydud"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdfkksx2ys2lerqwpkcxlq49udvklrwspz8wqrharg8hzs9fvvscgsxma6y",
+          "date": "2026-08-04",
+          "merchant": "Ayoola Minimart"
+        },
+        {
+          "url": "https://x.com/i/status/2084384786307551475",
+          "date": "2026-08-04",
+          "merchant": "Ayoola Minimart"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0xz9ru5sxn9lft8xdw8v2wqng9f0h7wc8m8s7fguhnk8pyhv9lzckxsh5t",
+          "date": "2026-08-01",
+          "merchant": "KJ Mulitipurpose Store"
+        },
+        {
+          "url": "https://x.com/i/status/2083285287778590794",
+          "date": "2026-08-01",
+          "merchant": "KJ Mulitipurpose Store"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfsyrzw0mr00yjctd0aj5aaun33p9m54stmq5y3epue0m0rwyhwzqkse695",
+          "date": "2026-07-20",
+          "merchant": "Diamond Barbing Saloon"
+        },
+        {
+          "url": "https://x.com/i/status/2079152981002367315",
+          "date": "2026-07-20",
+          "merchant": "Diamond Barbing Saloon"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Ikorodu 🇳🇬",
       "count": 7,
       "posts": [
@@ -997,42 +1119,6 @@
           "url": "https://x.com/i/status/2081999334694846851",
           "date": "2026-07-28",
           "merchant": "Niel's Nails and Perfume Refill"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsdfkksx2ys2lerqwpkcxlq49udvklrwspz8wqrharg8hzs9fvvscgsxma6y",
-          "date": "2026-08-04",
-          "merchant": "Ayoola Minimart"
-        },
-        {
-          "url": "https://x.com/i/status/2084384786307551475",
-          "date": "2026-08-04",
-          "merchant": "Ayoola Minimart"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0xz9ru5sxn9lft8xdw8v2wqng9f0h7wc8m8s7fguhnk8pyhv9lzckxsh5t",
-          "date": "2026-08-01",
-          "merchant": "KJ Mulitipurpose Store"
-        },
-        {
-          "url": "https://x.com/i/status/2083285287778590794",
-          "date": "2026-08-01",
-          "merchant": "KJ Mulitipurpose Store"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfsyrzw0mr00yjctd0aj5aaun33p9m54stmq5y3epue0m0rwyhwzqkse695",
-          "date": "2026-07-20",
-          "merchant": "Diamond Barbing Saloon"
-        },
-        {
-          "url": "https://x.com/i/status/2079152981002367315",
-          "date": "2026-07-20",
-          "merchant": "Diamond Barbing Saloon"
         }
       ]
     },
@@ -1523,6 +1609,32 @@
       ]
     },
     {
+      "name": "Preso's Food and Drinks",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0purt7dnhfpnu5qy4kna69ewgg4p82cnwvu7lgum0y8ktq0a566c049efh",
+          "date": "2026-08-06",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2085383720014348459",
+          "date": "2026-08-06",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxst5tuctfpak3hk2y2c7ql6pc3uh6djuhtt3m94w6sc288qqq0tgmxqtvl",
+          "date": "2026-07-22",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2079880576299839952",
+          "date": "2026-07-22",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Ray’s Coffee Shop",
       "count": 3,
       "posts": [
@@ -1673,22 +1785,6 @@
           "url": "https://primal.net/e/nevent1qqsw0egfzr0k4320rhcxs009vvhu320mtrtln6xft8h55v7qu3zpetsw4mhd5",
           "date": "2026-07-22",
           "project": "Bitcoin Dombo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Preso's Food and Drinks",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsxst5tuctfpak3hk2y2c7ql6pc3uh6djuhtt3m94w6sc288qqq0tgmxqtvl",
-          "date": "2026-07-22",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2079880576299839952",
-          "date": "2026-07-22",
-          "project": "Bitcoin Dua 🇬🇭"
         }
       ]
     },
@@ -2125,6 +2221,38 @@
       ]
     },
     {
+      "name": "Flo Salon",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp8uwxhtaq8g2zp4s5nj7c6qz380qre0crfq74xf8jcuewsas2uhg73z0ss",
+          "date": "2026-08-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2085222899128930324",
+          "date": "2026-08-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Ebonydud",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqspqmp0454nmchyktlkej3wasctmacddty4q5aaf6h9kaesn3wr6rgjg4w8s",
+          "date": "2026-08-06",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2085398851574280521",
+          "date": "2026-08-06",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Catherine Mbao Greens",
       "count": 1,
       "posts": [
@@ -2391,18 +2519,18 @@
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 17,
-    "daily_average_payments": 27
+    "days_active": 18,
+    "daily_average_payments": 26
   },
   "burn_rate": {
-    "percentage": 89,
+    "percentage": 87,
     "status": "on_target",
-    "days_active": 17
+    "days_active": 18
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 455
+      "count": 473
     },
     {
       "domain": "8333.mobi",
@@ -2449,13 +2577,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 262
+      "count": 271
     },
     {
       "platform": "Nostr",
-      "count": 201
+      "count": 210
     }
   ],
-  "generated_at": "2026-08-06T07:05:01.729888+00:00",
+  "generated_at": "2026-08-06T19:05:01.255766+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
