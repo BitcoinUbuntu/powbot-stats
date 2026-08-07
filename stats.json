@@ -1,51 +1,94 @@
 {
   "totals": {
-    "all_payments": 487,
+    "all_payments": 502,
     "by_type": {
       "merchant": {
-        "count": 162
+        "count": 167
       },
       "project": {
-        "count": 162
+        "count": 167
       },
       "reviewer": {
-        "count": 163
+        "count": 168
       }
     }
   },
   "today": {
     "date": "2026-08-07",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 15,
+    "by_type": {
+      "merchant": {
+        "count": 5
+      },
+      "project": {
+        "count": 5
+      },
+      "reviewer": {
+        "count": 5
+      }
+    },
+    "approved": 5,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqswvcf30de2c22tap5vtsgca2dfa8t95llw66ex2hy0m54fqqf3dacg3tsyu",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "Nostr",
+        "time": "12:16"
+      },
+      {
+        "url": "https://x.com/i/status/2085681536121139340",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "X",
+        "time": "12:16"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs9wvslq3zmvexpa8qk29gs5e0pdpx582xeq9mpz0dvqzyrwaqh7kgcc7dcs",
+        "project": "Soweto BTC 🇿🇦",
+        "merchant": "Matsogo Maatle Projects",
+        "platform": "Nostr",
+        "time": "08:47"
+      },
+      {
+        "url": "https://x.com/i/status/2085510599522353268",
+        "project": "Soweto BTC 🇿🇦",
+        "merchant": "Matsogo Maatle Projects",
+        "platform": "X",
+        "time": "08:07"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsx7e980459afj8rfctcg3chsr3nakj0vr3m23sj2jegte0defhgxg4gyeta",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "Mrefu Groceries",
+        "platform": "Nostr",
+        "time": "08:04"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Bitbiashara 🇰🇪"
+      },
+      {
+        "project": "Soweto BTC 🇿🇦"
+      },
+      {
+        "project": "Soweto BTC 🇿🇦"
+      },
+      {
+        "project": "EcoBitz 🇰🇪"
+      },
       {
         "project": "Bitcoin Karoo 🇿🇦"
       },
       {
         "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Ekiti 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Ekiti 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Dua 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Dua 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
       }
     ]
   },
@@ -284,16 +327,16 @@
     },
     {
       "date": "2026-08-07",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 5,
+      "merchant_count": 5,
+      "reviewer_count": 5,
+      "approved": 5,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 165,
-    "approved": 161,
+    "total_reviewed": 170,
+    "approved": 166,
     "rejected": 4
   },
   "top_projects": [
@@ -491,8 +534,18 @@
     },
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 16,
+      "count": 18,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswvcf30de2c22tap5vtsgca2dfa8t95llw66ex2hy0m54fqqf3dacg3tsyu",
+          "date": "2026-08-07",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2085681536121139340",
+          "date": "2026-08-07",
+          "merchant": "Haven food court"
+        },
         {
           "url": "https://primal.net/e/nevent1qqstg92srcyd37hy6wv5z29krhqx3ug3sna86f9xjduds7g5a95jgmqhl8sy6",
           "date": "2026-08-05",
@@ -1086,6 +1139,37 @@
       ]
     },
     {
+      "name": "EcoBitz 🇰🇪",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsx7e980459afj8rfctcg3chsr3nakj0vr3m23sj2jegte0defhgxg4gyeta",
+          "date": "2026-08-07",
+          "merchant": "Mrefu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdfl85948mev3avqd3zq5vsh73n8fypjpc0tn6egldtm5ls5pvsaqdf7uun",
+          "date": "2026-08-02",
+          "merchant": "Rehoboth freshmilk diary"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9x25r7l69qpj8kurkpc8kpy6e33dfdva5m8cu8g5ued9z0enw86cehhcdh",
+          "date": "2026-08-01",
+          "merchant": "Mrefu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrvkp8qsnw2luk3hj06wmj9ljgvztefa5fxags9xvmq8hky7wdswqrzy36n",
+          "date": "2026-07-28",
+          "merchant": "Koma Beauty Palour"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs967snpx8ec3s87c3lwp4xvpq60nrjklh0k6k78rc6s634xs477psvmqumy",
+          "date": "2026-07-25",
+          "merchant": "MunguMbele Grocery(Garage)"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Ekasi 🇿🇦",
       "count": 4,
       "posts": [
@@ -1112,32 +1196,6 @@
       ]
     },
     {
-      "name": "EcoBitz 🇰🇪",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsdfl85948mev3avqd3zq5vsh73n8fypjpc0tn6egldtm5ls5pvsaqdf7uun",
-          "date": "2026-08-02",
-          "merchant": "Rehoboth freshmilk diary"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9x25r7l69qpj8kurkpc8kpy6e33dfdva5m8cu8g5ued9z0enw86cehhcdh",
-          "date": "2026-08-01",
-          "merchant": "Mrefu Groceries"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrvkp8qsnw2luk3hj06wmj9ljgvztefa5fxags9xvmq8hky7wdswqrzy36n",
-          "date": "2026-07-28",
-          "merchant": "Koma Beauty Palour"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs967snpx8ec3s87c3lwp4xvpq60nrjklh0k6k78rc6s634xs477psvmqumy",
-          "date": "2026-07-25",
-          "merchant": "MunguMbele Grocery(Garage)"
-        }
-      ]
-    },
-    {
       "name": "Bitcoin NextGen 🇳🇬",
       "count": 4,
       "posts": [
@@ -1160,6 +1218,32 @@
           "url": "https://x.com/i/status/2082002522424607176",
           "date": "2026-07-28",
           "merchant": "Emmy Store"
+        }
+      ]
+    },
+    {
+      "name": "Soweto BTC 🇿🇦",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs9wvslq3zmvexpa8qk29gs5e0pdpx582xeq9mpz0dvqzyrwaqh7kgcc7dcs",
+          "date": "2026-08-07",
+          "merchant": "Matsogo Maatle Projects"
+        },
+        {
+          "url": "https://x.com/i/status/2085510599522353268",
+          "date": "2026-08-07",
+          "merchant": "Matsogo Maatle Projects"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg9pgemetd5zycjqw5qdqzsf7mg8llech73yu2kukuag7jx6vaxeqacwrmg",
+          "date": "2026-08-03",
+          "merchant": "Zwakala Cafe"
+        },
+        {
+          "url": "https://x.com/i/status/2084302250206261446",
+          "date": "2026-08-03",
+          "merchant": "Zwakala Cafe"
         }
       ]
     },
@@ -1197,22 +1281,6 @@
           "url": "https://x.com/i/status/2079294853330899136",
           "date": "2026-07-21",
           "merchant": "Milofa Skate Shop"
-        }
-      ]
-    },
-    {
-      "name": "Soweto BTC 🇿🇦",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsg9pgemetd5zycjqw5qdqzsf7mg8llech73yu2kukuag7jx6vaxeqacwrmg",
-          "date": "2026-08-03",
-          "merchant": "Zwakala Cafe"
-        },
-        {
-          "url": "https://x.com/i/status/2084302250206261446",
-          "date": "2026-08-03",
-          "merchant": "Zwakala Cafe"
         }
       ]
     },
@@ -2221,6 +2289,54 @@
       ]
     },
     {
+      "name": "Mrefu Groceries",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsx7e980459afj8rfctcg3chsr3nakj0vr3m23sj2jegte0defhgxg4gyeta",
+          "date": "2026-08-07",
+          "project": "EcoBitz 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9x25r7l69qpj8kurkpc8kpy6e33dfdva5m8cu8g5ued9z0enw86cehhcdh",
+          "date": "2026-08-01",
+          "project": "EcoBitz 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Matsogo Maatle Projects",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs9wvslq3zmvexpa8qk29gs5e0pdpx582xeq9mpz0dvqzyrwaqh7kgcc7dcs",
+          "date": "2026-08-07",
+          "project": "Soweto BTC 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2085510599522353268",
+          "date": "2026-08-07",
+          "project": "Soweto BTC 🇿🇦"
+        }
+      ]
+    },
+    {
+      "name": "Haven food court",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswvcf30de2c22tap5vtsgca2dfa8t95llw66ex2hy0m54fqqf3dacg3tsyu",
+          "date": "2026-08-07",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2085681536121139340",
+          "date": "2026-08-07",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Catherine Mbao Greens",
       "count": 1,
       "posts": [
@@ -2397,17 +2513,6 @@
       ]
     },
     {
-      "name": "Mrefu Groceries",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs9x25r7l69qpj8kurkpc8kpy6e33dfdva5m8cu8g5ued9z0enw86cehhcdh",
-          "date": "2026-08-01",
-          "project": "EcoBitz 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Kwa Innocent",
       "count": 1,
       "posts": [
@@ -2498,18 +2603,18 @@
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 18,
-    "daily_average_payments": 27
+    "days_active": 19,
+    "daily_average_payments": 26
   },
   "burn_rate": {
-    "percentage": 89,
+    "percentage": 86,
     "status": "on_target",
-    "days_active": 18
+    "days_active": 19
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 479
+      "count": 494
     },
     {
       "domain": "8333.mobi",
@@ -2556,13 +2661,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 277
+      "count": 283
     },
     {
       "platform": "Nostr",
-      "count": 210
+      "count": 219
     }
   ],
-  "generated_at": "2026-08-07T07:05:01.204754+00:00",
+  "generated_at": "2026-08-07T19:05:01.360248+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
