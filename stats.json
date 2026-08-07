@@ -1,81 +1,34 @@
 {
   "totals": {
-    "all_payments": 481,
+    "all_payments": 487,
     "by_type": {
       "merchant": {
-        "count": 160
+        "count": 162
       },
       "project": {
-        "count": 160
+        "count": 162
       },
       "reviewer": {
-        "count": 161
+        "count": 163
       }
     }
   },
   "today": {
-    "date": "2026-08-06",
-    "payments": 18,
-    "by_type": {
-      "merchant": {
-        "count": 6
-      },
-      "project": {
-        "count": 6
-      },
-      "reviewer": {
-        "count": 6
-      }
-    },
-    "approved": 6,
+    "date": "2026-08-07",
+    "payments": 0,
+    "by_type": {},
+    "approved": 0,
     "rejected": 0,
-    "videos": [
-      {
-        "url": "https://primal.net/e/nevent1qqspqmp0454nmchyktlkej3wasctmacddty4q5aaf6h9kaesn3wr6rgjg4w8s",
-        "project": "Bitcoin Ekiti 🇳🇬",
-        "merchant": "Ebonydud",
-        "platform": "Nostr",
-        "time": "17:13"
-      },
-      {
-        "url": "https://x.com/i/status/2085398851574280521",
-        "project": "Bitcoin Ekiti 🇳🇬",
-        "merchant": "Ebonydud",
-        "platform": "X",
-        "time": "17:10"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqs0purt7dnhfpnu5qy4kna69ewgg4p82cnwvu7lgum0y8ktq0a566c049efh",
-        "project": "Bitcoin Dua 🇬🇭",
-        "merchant": "Preso's Food and Drinks",
-        "platform": "Nostr",
-        "time": "16:11"
-      },
-      {
-        "url": "https://x.com/i/status/2085383720014348459",
-        "project": "Bitcoin Dua 🇬🇭",
-        "merchant": "Preso's Food and Drinks",
-        "platform": "X",
-        "time": "16:11"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsp8uwxhtaq8g2zp4s5nj7c6qz380qre0crfq74xf8jcuewsas2uhg73z0ss",
-        "project": "Bitcoin Chama 🇰🇪",
-        "merchant": "Flo Salon",
-        "platform": "Nostr",
-        "time": "08:01"
-      },
-      {
-        "url": "https://x.com/i/status/2085222899128930324",
-        "project": "Bitcoin Chama 🇰🇪",
-        "merchant": "Flo Salon",
-        "platform": "X",
-        "time": "08:01"
-      }
-    ]
+    "videos": []
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Karoo 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Victoria Falls 🇿🇲"
+      },
       {
         "project": "Bitcoin Ekiti 🇳🇬"
       },
@@ -97,14 +50,6 @@
     ]
   },
   "daily": [
-    {
-      "date": "2026-07-08",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
-      "rejected": 0
-    },
     {
       "date": "2026-07-09",
       "project_count": 0,
@@ -331,16 +276,24 @@
     },
     {
       "date": "2026-08-06",
-      "project_count": 6,
-      "merchant_count": 6,
-      "reviewer_count": 6,
-      "approved": 6,
+      "project_count": 8,
+      "merchant_count": 8,
+      "reviewer_count": 8,
+      "approved": 8,
+      "rejected": 0
+    },
+    {
+      "date": "2026-08-07",
+      "project_count": 0,
+      "merchant_count": 0,
+      "reviewer_count": 0,
+      "approved": 0,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 163,
-    "approved": 159,
+    "total_reviewed": 165,
+    "approved": 161,
     "rejected": 4
   },
   "top_projects": [
@@ -776,8 +729,13 @@
     },
     {
       "name": "Bitcoin Karoo 🇿🇦",
-      "count": 11,
+      "count": 12,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2085449692133912823",
+          "date": "2026-08-06",
+          "merchant": "Beans about Coffee Oudtshoorn"
+        },
         {
           "url": "https://primal.net/e/nevent1qqstkf645gj6l4uu0xvlf7v5ncl59gc08zq5h808zl0kn4jm4m9r2fg0zdzfz",
           "date": "2026-08-03",
@@ -1016,8 +974,13 @@
     },
     {
       "name": "Bitcoin Victoria Falls 🇿🇲",
-      "count": 6,
+      "count": 7,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2085432932466934012",
+          "date": "2026-08-06",
+          "merchant": "Daily Need Groceries"
+        },
         {
           "url": "https://x.com/i/status/2084002461971251549",
           "date": "2026-08-02",
@@ -1677,6 +1640,27 @@
       ]
     },
     {
+      "name": "Beans about Coffee Oudtshoorn",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2085449692133912823",
+          "date": "2026-08-06",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswz3200vntmf6pg7dqs2985u4zgvetz8e3d3jl5lm4tmprtkwf37gs9mj7r",
+          "date": "2026-08-01",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2083556623658729482",
+          "date": "2026-08-01",
+          "project": "Bitcoin Karoo 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Diamond Barbing Saloon",
       "count": 2,
       "posts": [
@@ -2009,22 +1993,6 @@
           "url": "https://primal.net/e/nevent1qqs9m3t5xzfdy8xh0z82f7j4zynatvtmhyfpj0a9du3458w5ffzt26g486pw9",
           "date": "2026-08-01",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Beans about Coffee Oudtshoorn",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqswz3200vntmf6pg7dqs2985u4zgvetz8e3d3jl5lm4tmprtkwf37gs9mj7r",
-          "date": "2026-08-01",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2083556623658729482",
-          "date": "2026-08-01",
-          "project": "Bitcoin Karoo 🇿🇦"
         }
       ]
     },
@@ -2515,22 +2483,33 @@
           "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
+    },
+    {
+      "name": "Daily Need Groceries",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2085432932466934012",
+          "date": "2026-08-06",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Jul 20",
     "days_active": 18,
-    "daily_average_payments": 26
+    "daily_average_payments": 27
   },
   "burn_rate": {
-    "percentage": 87,
+    "percentage": 89,
     "status": "on_target",
     "days_active": 18
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 473
+      "count": 479
     },
     {
       "domain": "8333.mobi",
@@ -2577,13 +2556,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 271
+      "count": 277
     },
     {
       "platform": "Nostr",
       "count": 210
     }
   ],
-  "generated_at": "2026-08-06T19:05:01.255766+00:00",
+  "generated_at": "2026-08-07T07:05:01.204754+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
