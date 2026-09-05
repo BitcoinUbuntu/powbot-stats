@@ -1,49 +1,100 @@
 {
   "totals": {
-    "all_payments": 1443,
+    "all_payments": 1458,
     "by_type": {
       "merchant": {
-        "count": 480
+        "count": 485
       },
       "project": {
-        "count": 480
+        "count": 485
       },
       "reviewer": {
-        "count": 483
+        "count": 488
       }
     }
   },
   "today": {
     "date": "2026-09-05",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 15,
+    "by_type": {
+      "merchant": {
+        "count": 5
+      },
+      "project": {
+        "count": 5
+      },
+      "reviewer": {
+        "count": 5
+      }
+    },
+    "approved": 5,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2096296009332629999",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Alvin Game House",
+        "platform": "X",
+        "time": "18:38"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsxlxstgsk38n8g6pmccl3rfcsraecr9x6fwk847texmrqrm8tp2cq4cts52",
+        "project": "Bitcoin Anambra 🇳🇬",
+        "merchant": "The Sario Eventers",
+        "platform": "Nostr",
+        "time": "11:02"
+      },
+      {
+        "url": "https://x.com/i/status/2096167636627239096",
+        "project": "Bitcoin Anambra 🇳🇬",
+        "merchant": "The Sario Eventers",
+        "platform": "X",
+        "time": "11:02"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs0x3aaqm035c2wjree88k8v83cfslka226x3sucme48upvf6v29jsn8kmyf",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "Nostr",
+        "time": "11:02"
+      },
+      {
+        "url": "https://x.com/i/status/2095903402412630080",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "X",
+        "time": "11:02"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
-        "project": "Calabar Bitcoin Club 🇳🇬"
+        "project": "Bitcoin Ikorodu 🇳🇬"
       },
       {
-        "project": "Calabar Bitcoin Club 🇳🇬"
+        "project": "Bitcoin Anambra 🇳🇬"
       },
       {
-        "project": "Bitcoin Dua 🇬🇭"
+        "project": "Bitcoin Anambra 🇳🇬"
       },
       {
-        "project": "Bitcoin Dua 🇬🇭"
+        "project": "BTC Shule 🇧🇮"
       },
       {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
+        "project": "BTC Shule 🇧🇮"
       }
     ]
   },
   "daily": [
+    {
+      "date": "2026-07-20",
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 5,
+      "approved": 5,
+      "rejected": 2
+    },
     {
       "date": "2026-07-21",
       "project_count": 6,
@@ -414,16 +465,16 @@
     },
     {
       "date": "2026-09-05",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 5,
+      "merchant_count": 5,
+      "reviewer_count": 5,
+      "approved": 5,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 484,
-    "approved": 479,
+    "total_reviewed": 489,
+    "approved": 484,
     "rejected": 5
   },
   "top_projects": [
@@ -1876,6 +1927,248 @@
       ]
     },
     {
+      "name": "BTC Shule 🇧🇮",
+      "count": 23,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0x3aaqm035c2wjree88k8v83cfslka226x3sucme48upvf6v29jsn8kmyf",
+          "date": "2026-09-05",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2095903402412630080",
+          "date": "2026-09-05",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2094494875538305130",
+          "date": "2026-09-01",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs288lgfqr6d5lke38e6pspvk6udqlu7892e5n2jx6uvs9qmt0zldsc6hyeh",
+          "date": "2026-09-01",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf4j6sstst0ezm00v4pl4eqswmyrvlgkd3shvr2gj34zy846fmwkg965jmm",
+          "date": "2026-08-31",
+          "merchant": "Kwa Yanusi"
+        },
+        {
+          "url": "https://x.com/i/status/2093803511704113655",
+          "date": "2026-08-31",
+          "merchant": "Kwa Yanusi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdvgd25yp3afkqwa2xt9md7dlh2qpaswfxzn3qu2edhrpl4yh5k9qscet9k",
+          "date": "2026-08-27",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://x.com/i/status/2092683579541102774",
+          "date": "2026-08-27",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst54zcg7k4wvddxsaxnu3a2m55l2m7vnxaye862fv77w5u0d53qgspc8lp2",
+          "date": "2026-08-25",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2091932225126228239",
+          "date": "2026-08-25",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2091271998483677633",
+          "date": "2026-08-23",
+          "merchant": "Kwa Yanusi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2fza7gceqg7jfxxn09q5xgw9m63arjvyv5kq7v78g2elc9j7dxqchghp60",
+          "date": "2026-08-20",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://x.com/i/status/2090152410559754619",
+          "date": "2026-08-20",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsffr2dj9a7wesy7ve5nu5ftk4saqspwellh8707mxuc4qhtmfqx5qzqlyp3",
+          "date": "2026-08-18",
+          "merchant": "Kwa Yanusi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyh2lhppr0gjvwdmga9nmc5yhkms685dywrnry9pytc09866llrfc4j5tdx",
+          "date": "2026-08-15",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2088354579205300457",
+          "date": "2026-08-15",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2087461032864161991",
+          "date": "2026-08-12",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsx8tecn0ntjx4szr7x7zz0qhlzrxxvfrwh5nr8366kglnjs3wz9zsmm8vds",
+          "date": "2026-08-12",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://x.com/i/status/2086496919312814126",
+          "date": "2026-08-09",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd0hctd3u69gjan8f6y5cfcm0a44fg2rcpxk9pty3t266hp902wvgq9t9pu",
+          "date": "2026-08-09",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2084707287571025924",
+          "date": "2026-08-04",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd4ulull09fsv93efxxyevjutxw78cwftslxamsp3uwl0n8fxf9wsznes8y",
+          "date": "2026-08-04",
+          "merchant": "Kwa Jiyeve"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsps6wea0aj0p523prdwyjzkvv9wcg9uk26n9mv4ruyz7fjn2yr4vcemzcfq",
+          "date": "2026-08-01",
+          "merchant": "Kwa Innocent"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Ikorodu 🇳🇬",
+      "count": 23,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2096296009332629999",
+          "date": "2026-09-05",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://x.com/i/status/2095523143884460138",
+          "date": "2026-09-03",
+          "merchant": "SMG Electronics Store"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszw5rea2ganqscm33z2tt2dvgkclv3p7zcy29jcnklvp4fex2s2zqrjewkd",
+          "date": "2026-09-02",
+          "merchant": "AB Starry Communication"
+        },
+        {
+          "url": "https://x.com/i/status/2094813230979817641",
+          "date": "2026-09-01",
+          "merchant": "AB Starry Communication"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsx3gp70tqw2lk8vdx4d93dysw6yg4245zvx38f4sk83dq6hv67sns77azjy",
+          "date": "2026-08-26",
+          "merchant": "Omega Cut"
+        },
+        {
+          "url": "https://x.com/i/status/2092600471911317521",
+          "date": "2026-08-26",
+          "merchant": "Omega Cut"
+        },
+        {
+          "url": "https://x.com/i/status/2091940198481359273",
+          "date": "2026-08-24",
+          "merchant": "AB Starry Communication"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9wfuxp5crq9spyygrt7uqks88up9ekq88j80rgjtm55p54uxshlqf4lc5f",
+          "date": "2026-08-19",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://x.com/i/status/2089919474761638196",
+          "date": "2026-08-19",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8j4fse67whj7yee6skx2janwg79e0tmyhrxgj8fmwezgvlch2s5smww8g0",
+          "date": "2026-08-17",
+          "merchant": "Omega Cut"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrt3sty4v8w8y2ecpmxdmhngchctd8xxmn6jucksj7vq9g6aq6xgq0psd33",
+          "date": "2026-08-14",
+          "merchant": "SMG Electronics Store"
+        },
+        {
+          "url": "https://x.com/i/status/2088270706005909628",
+          "date": "2026-08-14",
+          "merchant": "SMG Electronics Store"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspq4gzstq6gg697ktyul353yw3denjc8p4usmndj3pnpmw2vzta4qt4qmax",
+          "date": "2026-08-11",
+          "merchant": "AB Starry Communication"
+        },
+        {
+          "url": "https://x.com/i/status/2087120218266955964",
+          "date": "2026-08-11",
+          "merchant": "AB Starry Communication"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdqcaepuzh09laqkcjl9gy80hvrfm8jh22ackkljvvuxjm02m2u3grpqhsr",
+          "date": "2026-08-08",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://x.com/i/status/2086060556906111368",
+          "date": "2026-08-08",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsytwsthsp36hd5l5430t2fmlcf2rdz6s59dknz59gnt7gvp8wnkjg0ys2f2",
+          "date": "2026-08-04",
+          "merchant": "Omega Cut"
+        },
+        {
+          "url": "https://x.com/i/status/2084682792982483112",
+          "date": "2026-08-04",
+          "merchant": "Omega Cut"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2fvhnusl2qgu47wkvtud4y29mq4fn623gxrge8g0f2heejzswgmg9a5mgc",
+          "date": "2026-07-28",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://x.com/i/status/2082140485603180953",
+          "date": "2026-07-28",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://x.com/i/status/2079627961150382159",
+          "date": "2026-07-22",
+          "merchant": "Omega Cut"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszmkraa9udw5m7ud3n9emmwqf3z6u7zhvf3chny4splkyr2jk7wygsvfl8r",
+          "date": "2026-07-22",
+          "merchant": "AB Starry Communication"
+        },
+        {
+          "url": "https://x.com/i/status/2079547986967679039",
+          "date": "2026-07-21",
+          "merchant": "AB Starry Communication"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Tofo 🇲🇿",
       "count": 22,
       "posts": [
@@ -2220,233 +2513,6 @@
           "url": "https://x.com/i/status/2086737608902623280",
           "date": "2026-08-10",
           "merchant": "Dora's Joint"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 22,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2095523143884460138",
-          "date": "2026-09-03",
-          "merchant": "SMG Electronics Store"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszw5rea2ganqscm33z2tt2dvgkclv3p7zcy29jcnklvp4fex2s2zqrjewkd",
-          "date": "2026-09-02",
-          "merchant": "AB Starry Communication"
-        },
-        {
-          "url": "https://x.com/i/status/2094813230979817641",
-          "date": "2026-09-01",
-          "merchant": "AB Starry Communication"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsx3gp70tqw2lk8vdx4d93dysw6yg4245zvx38f4sk83dq6hv67sns77azjy",
-          "date": "2026-08-26",
-          "merchant": "Omega Cut"
-        },
-        {
-          "url": "https://x.com/i/status/2092600471911317521",
-          "date": "2026-08-26",
-          "merchant": "Omega Cut"
-        },
-        {
-          "url": "https://x.com/i/status/2091940198481359273",
-          "date": "2026-08-24",
-          "merchant": "AB Starry Communication"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9wfuxp5crq9spyygrt7uqks88up9ekq88j80rgjtm55p54uxshlqf4lc5f",
-          "date": "2026-08-19",
-          "merchant": "Alvin Game House"
-        },
-        {
-          "url": "https://x.com/i/status/2089919474761638196",
-          "date": "2026-08-19",
-          "merchant": "Alvin Game House"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8j4fse67whj7yee6skx2janwg79e0tmyhrxgj8fmwezgvlch2s5smww8g0",
-          "date": "2026-08-17",
-          "merchant": "Omega Cut"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrt3sty4v8w8y2ecpmxdmhngchctd8xxmn6jucksj7vq9g6aq6xgq0psd33",
-          "date": "2026-08-14",
-          "merchant": "SMG Electronics Store"
-        },
-        {
-          "url": "https://x.com/i/status/2088270706005909628",
-          "date": "2026-08-14",
-          "merchant": "SMG Electronics Store"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspq4gzstq6gg697ktyul353yw3denjc8p4usmndj3pnpmw2vzta4qt4qmax",
-          "date": "2026-08-11",
-          "merchant": "AB Starry Communication"
-        },
-        {
-          "url": "https://x.com/i/status/2087120218266955964",
-          "date": "2026-08-11",
-          "merchant": "AB Starry Communication"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdqcaepuzh09laqkcjl9gy80hvrfm8jh22ackkljvvuxjm02m2u3grpqhsr",
-          "date": "2026-08-08",
-          "merchant": "Alvin Game House"
-        },
-        {
-          "url": "https://x.com/i/status/2086060556906111368",
-          "date": "2026-08-08",
-          "merchant": "Alvin Game House"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsytwsthsp36hd5l5430t2fmlcf2rdz6s59dknz59gnt7gvp8wnkjg0ys2f2",
-          "date": "2026-08-04",
-          "merchant": "Omega Cut"
-        },
-        {
-          "url": "https://x.com/i/status/2084682792982483112",
-          "date": "2026-08-04",
-          "merchant": "Omega Cut"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2fvhnusl2qgu47wkvtud4y29mq4fn623gxrge8g0f2heejzswgmg9a5mgc",
-          "date": "2026-07-28",
-          "merchant": "Alvin Game House"
-        },
-        {
-          "url": "https://x.com/i/status/2082140485603180953",
-          "date": "2026-07-28",
-          "merchant": "Alvin Game House"
-        },
-        {
-          "url": "https://x.com/i/status/2079627961150382159",
-          "date": "2026-07-22",
-          "merchant": "Omega Cut"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszmkraa9udw5m7ud3n9emmwqf3z6u7zhvf3chny4splkyr2jk7wygsvfl8r",
-          "date": "2026-07-22",
-          "merchant": "AB Starry Communication"
-        },
-        {
-          "url": "https://x.com/i/status/2079547986967679039",
-          "date": "2026-07-21",
-          "merchant": "AB Starry Communication"
-        }
-      ]
-    },
-    {
-      "name": "BTC Shule 🇧🇮",
-      "count": 21,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2094494875538305130",
-          "date": "2026-09-01",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs288lgfqr6d5lke38e6pspvk6udqlu7892e5n2jx6uvs9qmt0zldsc6hyeh",
-          "date": "2026-09-01",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf4j6sstst0ezm00v4pl4eqswmyrvlgkd3shvr2gj34zy846fmwkg965jmm",
-          "date": "2026-08-31",
-          "merchant": "Kwa Yanusi"
-        },
-        {
-          "url": "https://x.com/i/status/2093803511704113655",
-          "date": "2026-08-31",
-          "merchant": "Kwa Yanusi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdvgd25yp3afkqwa2xt9md7dlh2qpaswfxzn3qu2edhrpl4yh5k9qscet9k",
-          "date": "2026-08-27",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://x.com/i/status/2092683579541102774",
-          "date": "2026-08-27",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst54zcg7k4wvddxsaxnu3a2m55l2m7vnxaye862fv77w5u0d53qgspc8lp2",
-          "date": "2026-08-25",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://x.com/i/status/2091932225126228239",
-          "date": "2026-08-25",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://x.com/i/status/2091271998483677633",
-          "date": "2026-08-23",
-          "merchant": "Kwa Yanusi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2fza7gceqg7jfxxn09q5xgw9m63arjvyv5kq7v78g2elc9j7dxqchghp60",
-          "date": "2026-08-20",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://x.com/i/status/2090152410559754619",
-          "date": "2026-08-20",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsffr2dj9a7wesy7ve5nu5ftk4saqspwellh8707mxuc4qhtmfqx5qzqlyp3",
-          "date": "2026-08-18",
-          "merchant": "Kwa Yanusi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyh2lhppr0gjvwdmga9nmc5yhkms685dywrnry9pytc09866llrfc4j5tdx",
-          "date": "2026-08-15",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://x.com/i/status/2088354579205300457",
-          "date": "2026-08-15",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://x.com/i/status/2087461032864161991",
-          "date": "2026-08-12",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsx8tecn0ntjx4szr7x7zz0qhlzrxxvfrwh5nr8366kglnjs3wz9zsmm8vds",
-          "date": "2026-08-12",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://x.com/i/status/2086496919312814126",
-          "date": "2026-08-09",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd0hctd3u69gjan8f6y5cfcm0a44fg2rcpxk9pty3t266hp902wvgq9t9pu",
-          "date": "2026-08-09",
-          "merchant": "Kwa Innocent"
-        },
-        {
-          "url": "https://x.com/i/status/2084707287571025924",
-          "date": "2026-08-04",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd4ulull09fsv93efxxyevjutxw78cwftslxamsp3uwl0n8fxf9wsznes8y",
-          "date": "2026-08-04",
-          "merchant": "Kwa Jiyeve"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsps6wea0aj0p523prdwyjzkvv9wcg9uk26n9mv4ruyz7fjn2yr4vcemzcfq",
-          "date": "2026-08-01",
-          "merchant": "Kwa Innocent"
         }
       ]
     },
@@ -2863,8 +2929,18 @@
     },
     {
       "name": "Bitcoin Anambra 🇳🇬",
-      "count": 6,
+      "count": 8,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxlxstgsk38n8g6pmccl3rfcsraecr9x6fwk847texmrqrm8tp2cq4cts52",
+          "date": "2026-09-05",
+          "merchant": "The Sario Eventers"
+        },
+        {
+          "url": "https://x.com/i/status/2096167636627239096",
+          "date": "2026-09-05",
+          "merchant": "The Sario Eventers"
+        },
         {
           "url": "https://primal.net/e/nevent1qqst4qg3254hsccpegj0vkhkqlcn4jlwn7k884xn4qnexe7fgkvvhncex3h3q",
           "date": "2026-08-24",
@@ -3416,6 +3492,57 @@
       ]
     },
     {
+      "name": "Kwa Innocent",
+      "count": 9,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0x3aaqm035c2wjree88k8v83cfslka226x3sucme48upvf6v29jsn8kmyf",
+          "date": "2026-09-05",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2095903402412630080",
+          "date": "2026-09-05",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst54zcg7k4wvddxsaxnu3a2m55l2m7vnxaye862fv77w5u0d53qgspc8lp2",
+          "date": "2026-08-25",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2091932225126228239",
+          "date": "2026-08-25",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyh2lhppr0gjvwdmga9nmc5yhkms685dywrnry9pytc09866llrfc4j5tdx",
+          "date": "2026-08-15",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2088354579205300457",
+          "date": "2026-08-15",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2086496919312814126",
+          "date": "2026-08-09",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd0hctd3u69gjan8f6y5cfcm0a44fg2rcpxk9pty3t266hp902wvgq9t9pu",
+          "date": "2026-08-09",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsps6wea0aj0p523prdwyjzkvv9wcg9uk26n9mv4ruyz7fjn2yr4vcemzcfq",
+          "date": "2026-08-01",
+          "project": "BTC Shule 🇧🇮"
+        }
+      ]
+    },
+    {
       "name": "Mkambi",
       "count": 8,
       "posts": [
@@ -3646,43 +3773,48 @@
       ]
     },
     {
-      "name": "Kwa Innocent",
-      "count": 7,
+      "name": "The Sario Eventers",
+      "count": 8,
       "posts": [
         {
-          "url": "https://primal.net/e/nevent1qqst54zcg7k4wvddxsaxnu3a2m55l2m7vnxaye862fv77w5u0d53qgspc8lp2",
-          "date": "2026-08-25",
-          "project": "BTC Shule 🇧🇮"
+          "url": "https://primal.net/e/nevent1qqsxlxstgsk38n8g6pmccl3rfcsraecr9x6fwk847texmrqrm8tp2cq4cts52",
+          "date": "2026-09-05",
+          "project": "Bitcoin Anambra 🇳🇬"
         },
         {
-          "url": "https://x.com/i/status/2091932225126228239",
-          "date": "2026-08-25",
-          "project": "BTC Shule 🇧🇮"
+          "url": "https://x.com/i/status/2096167636627239096",
+          "date": "2026-09-05",
+          "project": "Bitcoin Anambra 🇳🇬"
         },
         {
-          "url": "https://primal.net/e/nevent1qqsyh2lhppr0gjvwdmga9nmc5yhkms685dywrnry9pytc09866llrfc4j5tdx",
-          "date": "2026-08-15",
-          "project": "BTC Shule 🇧🇮"
+          "url": "https://primal.net/e/nevent1qqst4qg3254hsccpegj0vkhkqlcn4jlwn7k884xn4qnexe7fgkvvhncex3h3q",
+          "date": "2026-08-24",
+          "project": "Bitcoin Anambra 🇳🇬"
         },
         {
-          "url": "https://x.com/i/status/2088354579205300457",
-          "date": "2026-08-15",
-          "project": "BTC Shule 🇧🇮"
+          "url": "https://x.com/i/status/2091819118781431994",
+          "date": "2026-08-24",
+          "project": "Bitcoin Anambra 🇳🇬"
         },
         {
-          "url": "https://x.com/i/status/2086496919312814126",
-          "date": "2026-08-09",
-          "project": "BTC Shule 🇧🇮"
+          "url": "https://primal.net/e/nevent1qqsg9qkx4rlp64qg9qkjla3ek2el5jafxd3uszaleyyldyr2hwprhysscpnja",
+          "date": "2026-08-18",
+          "project": "Bitcoin Anambra 🇳🇬"
         },
         {
-          "url": "https://primal.net/e/nevent1qqsd0hctd3u69gjan8f6y5cfcm0a44fg2rcpxk9pty3t266hp902wvgq9t9pu",
-          "date": "2026-08-09",
-          "project": "BTC Shule 🇧🇮"
+          "url": "https://x.com/i/status/2089230744728281249",
+          "date": "2026-08-18",
+          "project": "Bitcoin Anambra 🇳🇬"
         },
         {
-          "url": "https://primal.net/e/nevent1qqsps6wea0aj0p523prdwyjzkvv9wcg9uk26n9mv4ruyz7fjn2yr4vcemzcfq",
-          "date": "2026-08-01",
-          "project": "BTC Shule 🇧🇮"
+          "url": "https://primal.net/e/nevent1qqsw0qjtxnc06q5upap8zqq3c7fnl6t524da56zkmml0wcsevhmgkrsp3yrk8",
+          "date": "2026-08-11",
+          "project": "Bitcoin Anambra 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2087143384083255310",
+          "date": "2026-08-11",
+          "project": "Bitcoin Anambra 🇳🇬"
         }
       ]
     },
@@ -3810,6 +3942,47 @@
       ]
     },
     {
+      "name": "Alvin Game House",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2096296009332629999",
+          "date": "2026-09-05",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9wfuxp5crq9spyygrt7uqks88up9ekq88j80rgjtm55p54uxshlqf4lc5f",
+          "date": "2026-08-19",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2089919474761638196",
+          "date": "2026-08-19",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdqcaepuzh09laqkcjl9gy80hvrfm8jh22ackkljvvuxjm02m2u3grpqhsr",
+          "date": "2026-08-08",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2086060556906111368",
+          "date": "2026-08-08",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2fvhnusl2qgu47wkvtud4y29mq4fn623gxrge8g0f2heejzswgmg9a5mgc",
+          "date": "2026-07-28",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2082140485603180953",
+          "date": "2026-07-28",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Pluim Eatery",
       "count": 6,
       "posts": [
@@ -3918,42 +4091,6 @@
       ]
     },
     {
-      "name": "Alvin Game House",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs9wfuxp5crq9spyygrt7uqks88up9ekq88j80rgjtm55p54uxshlqf4lc5f",
-          "date": "2026-08-19",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2089919474761638196",
-          "date": "2026-08-19",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdqcaepuzh09laqkcjl9gy80hvrfm8jh22ackkljvvuxjm02m2u3grpqhsr",
-          "date": "2026-08-08",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2086060556906111368",
-          "date": "2026-08-08",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2fvhnusl2qgu47wkvtud4y29mq4fn623gxrge8g0f2heejzswgmg9a5mgc",
-          "date": "2026-07-28",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2082140485603180953",
-          "date": "2026-07-28",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
-    },
-    {
       "name": "Tenorio Baber Shop",
       "count": 6,
       "posts": [
@@ -4022,42 +4159,6 @@
           "url": "https://x.com/i/status/2083556623658729482",
           "date": "2026-08-01",
           "project": "Bitcoin Karoo 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "The Sario Eventers",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqst4qg3254hsccpegj0vkhkqlcn4jlwn7k884xn4qnexe7fgkvvhncex3h3q",
-          "date": "2026-08-24",
-          "project": "Bitcoin Anambra 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2091819118781431994",
-          "date": "2026-08-24",
-          "project": "Bitcoin Anambra 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsg9qkx4rlp64qg9qkjla3ek2el5jafxd3uszaleyyldyr2hwprhysscpnja",
-          "date": "2026-08-18",
-          "project": "Bitcoin Anambra 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2089230744728281249",
-          "date": "2026-08-18",
-          "project": "Bitcoin Anambra 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsw0qjtxnc06q5upap8zqq3c7fnl6t524da56zkmml0wcsevhmgkrsp3yrk8",
-          "date": "2026-08-11",
-          "project": "Bitcoin Anambra 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2087143384083255310",
-          "date": "2026-08-11",
-          "project": "Bitcoin Anambra 🇳🇬"
         }
       ]
     },
@@ -6132,18 +6233,18 @@
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 47,
+    "days_active": 48,
     "daily_average_payments": 30
   },
   "burn_rate": {
-    "percentage": 97,
+    "percentage": 96,
     "status": "on_target",
-    "days_active": 47
+    "days_active": 48
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1421
+      "count": 1436
     },
     {
       "domain": "8333.mobi",
@@ -6190,13 +6291,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 783
+      "count": 792
     },
     {
       "platform": "Nostr",
-      "count": 660
+      "count": 666
     }
   ],
-  "generated_at": "2026-09-05T07:05:01.161990+00:00",
+  "generated_at": "2026-09-05T19:05:01.484421+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
