@@ -1,0 +1,35 @@
+__pycache__/
+*.pyc
+.env
+export_stats.py
+update_stats.bat
+BU stats.json
+
+# Migration/utility scripts (one-time use)
+process_historical_data.py
+split_vision_mission.py
+convert_telegram_ids.py
+
+# Private payment data - NEVER commit
+Historical stats/
+*payment*
+*ledger*
+
+# Epoch 5 analysis - internal only
+epoch5-report.html
+epoch5-report-data.json
+epoch5-announcement.txt
+docs/EPOCH_5_ANALYSIS.md
+scenario-planner.html
+
+# Claude Code
+.claude/
+CLAUDE.md
+MEMBERS_README.md
+node_modules/
+
+# Project leader Telegram user IDs. The profile API reads its own copy under
+# /opt/powbot-profile-api; the site never fetches these. Kept locally for the
+# sync script only. Untracked 2026-09-05.
+telegram_ids.json
+telegram_ids_by_name.json

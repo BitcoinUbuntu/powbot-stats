@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBAF Members | PoWBoT Directory</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
+
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bitcoinubuntu.github.io/powbot-stats/members">
+    <meta property="og:title" content="CBAF Members Directory">
+    <meta property="og:description" content="Discover Bitcoin circular economy projects across Africa. Support them directly with Lightning donations.">
+    <meta property="og:image" content="https://bitcoinubuntu.github.io/powbot-stats/images/PoWBoT_preview.jpg">
+
+    <script src="qrcode.min.js"></script>
+    <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Loaded here in
+         the head because this page's inline script runs before inject.js. -->
+    <script src="data-source.js"></script>
+
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-card: #21262d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent-orange: #f7931a;
+            --accent-green: #3fb950;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--accent-orange);
+            margin-bottom: 8px;
+        }
+
+        header .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Stats Summary */
+        .stats-summary {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-pill {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .stat-pill strong {
+            color: var(--text-primary);
+            margin-left: 4px;
+        }
+
+        /* Filters & Search */
+        .controls {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .controls-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .search-box input {
+            width: 100%;
+            background: #e8eaed;
+            border: 1px solid #c1c5cc;
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: #1a1d22;
+            font-size: 0.95rem;
+        }
+
+        .search-box input::placeholder {
+            color: #5f6368;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            background: #f0f2f5;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 14px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent-blue);
+            color: var(--text-primary);
+        }
+
+        .filter-btn.active {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: white;
+        }
+
+        select.filter-btn {
+            cursor: pointer;
+        }
+
+        select.filter-btn.active {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: white;
+        }
+
+        select.filter-btn.active option {
+            background: var(--bg-card);
+            color: var(--text-primary);
+        }
+
+        /* Member Grid */
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .member-card {
+            background: transparent;
+            border: none;
+            border-radius: 12px;
+            overflow: visible;
+            cursor: pointer;
+            position: relative;
+            perspective: 1000px;
+            height: 360px;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .member-card.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+        }
+
+        .card-front {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .member-card:not(.flipped) .card-front:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            border-color: var(--accent-orange);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-back-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s;
+        }
+
+        .card-back.show-onchain .card-back-inner {
+            transform: translateX(-100%);
+        }
+
+        .card-back-side {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+            gap: 12px;
+        }
+
+        .card-back-lightning {
+            left: 0;
+        }
+
+        .card-back-onchain {
+            left: 100%;
+        }
+
+        .card-header {
+            position: relative;
+            height: 120px;
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--bg-card);
+            background: var(--bg-secondary);
+        }
+
+        .card-logo-placeholder {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 3px solid var(--bg-card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .card-title h3 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        .card-title .flag {
+            font-size: 1.5rem;
+        }
+
+        .card-tagline {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            min-height: 60px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+
+        .card-footer {
+            margin-top: auto;
+        }
+
+        .post-count {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .badge-emojis {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .emoji-badge {
+            font-size: 1.05rem;
+            line-height: 1;
+            opacity: 0.9;
+            transition: transform 0.2s;
+        }
+
+        .emoji-badge:hover {
+            transform: scale(1.15);
+            opacity: 1;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent-orange);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #e08416;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .lightning-address {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            font-family: monospace;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Card Back Styles */
+        .card-back h3 {
+            font-size: 1rem;
+            color: var(--accent-orange);
+            text-align: center;
+            margin: 0;
+        }
+
+        .card-back .qr-container {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .card-back .qr-container canvas {
+            display: block;
+        }
+
+        .card-back .lightning-address-display {
+            font-family: monospace;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            background: var(--bg-secondary);
+            padding: 6px 10px;
+            border-radius: 6px;
+            word-break: break-all;
+            text-align: center;
+            max-width: 100%;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .card-back .lightning-address-display:hover {
+            background: rgba(88, 166, 255, 0.1);
+            border-color: var(--accent-blue);
+        }
+
+        .card-back .lightning-address-display.copied {
+            background: rgba(63, 185, 80, 0.2);
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .card-back .back-actions {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .card-back .btn-back {
+            flex: 1;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .card-back .btn-back:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+        }
+
+        .empty-state h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            nav .container {
+                justify-content: center;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .controls-row {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .filter-group {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .filter-btn {
+                padding: 8px 6px;
+                font-size: 0.75rem;
+                flex: 1;
+                min-width: 0;
+                white-space: normal;
+                line-height: 1.2;
+                text-align: center;
+                min-height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            select.filter-btn {
+                width: 100%;
+                white-space: nowrap;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
+
+    <div class="container">
+        <header>
+            <h1>CBAF Members</h1>
+            <p class="subtitle">Support Bitcoin circular economy projects across Africa</p>
+
+            <div class="stats-summary">
+                <div class="stat-pill">
+                    <span>Total Projects:</span>
+                    <strong id="total-count">-</strong>
+                </div>
+                <div class="stat-pill">
+                    <span>Active on PoWBoT:</span>
+                    <strong id="active-count">-</strong>
+                </div>
+                <div class="stat-pill">
+                    <span>Countries:</span>
+                    <strong id="country-count">-</strong>
+                </div>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div class="controls-row">
+                <div class="search-box">
+                    <input type="text" id="search" placeholder="Search projects by name, country, or city...">
+                </div>
+            </div>
+            <div class="controls-row" style="margin-top: 12px;">
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="active">Active on PoWBoT</button>
+                    <button class="filter-btn" data-filter="epoch6">Active this Epoch</button>
+                    <button class="filter-btn" data-filter="top">Top Performers</button>
+                </div>
+                <select id="country-filter" class="filter-btn">
+                    <option value="">All Countries</option>
+                </select>
+                <select id="sort" class="filter-btn">
+                    <option value="activity">Sort: Most Active</option>
+                    <option value="name">Sort: Name A-Z</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="members-grid" id="members-grid">
+            <div class="loading">Loading members...</div>
+        </div>
+
+        <!-- Footer (loaded from includes/footer.html) -->
+        <div id="site-footer"></div>
+    </div>
+
+    <script>
+        let allMembers = [];
+        let allStats = {};
+        let currentFilter = 'all';
+        let currentCountry = '';
+        let currentSort = 'activity';
+        let searchQuery = '';
+
+        // Load members data and stats
+        Promise.all([
+            fetch('members.json').then(res => res.json()),
+            fetch('stats-epoch4.json').then(res => res.json()),
+            fetch('stats-historical.json').then(res => res.json()),
+            fetch('stats-epoch5.json').then(res => res.json()),
+            // Live epoch (currently Epoch 6), from the VPS with this repo as
+            // fallback. Tolerate failure of BOTH so the directory still renders
+            // from the frozen archives if live data is unavailable entirely.
+            fetchLiveData('stats.json').catch(() => null)
+        ])
+            .then(([membersData, epoch4Data, historicalData, epoch5Data, liveData]) => {
+                allMembers = membersData.members;
+                allStats = {
+                    epoch4: epoch4Data,
+                    historical: historicalData,
+                    epoch5: epoch5Data,
+                    live: liveData
+                };
+
+                // Update footer timestamp (prefer the live epoch, fall back through the archives)
+                const statsForTimestamp = liveData || epoch5Data || epoch4Data;
+                if (statsForTimestamp && statsForTimestamp.generated_at) {
+                    const updatedElement = document.getElementById('updated');
+                    if (updatedElement) {
+                        updatedElement.textContent = new Date(statsForTimestamp.generated_at).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
+                    }
+                }
+
+                initializeFilters();
+                applyURLFilters();
+                updateStats();
+                renderMembers();
+            })
+            .catch(err => {
+                console.error('Error loading members:', err);
+                document.getElementById('members-grid').innerHTML = `
+                    <div class="empty-state">
+                        <h3>Error loading members</h3>
+                        <p>Please try refreshing the page</p>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;">${err.message}</p>
+                    </div>
+                `;
+            });
+
+        function initializeFilters() {
+            // Populate country filter
+            const countries = [...new Set(allMembers.map(m => m.flag + ' ' + m.name_with_flag.match(/\(([^)]+)\)/)?.[1] || '').filter(Boolean))];
+            const countrySelect = document.getElementById('country-filter');
+            countries.sort().forEach(country => {
+                const option = document.createElement('option');
+                option.value = country;
+                option.textContent = country;
+                countrySelect.appendChild(option);
+            });
+        }
+
+        function applyURLFilters() {
+            // Check for URL parameters and apply filters
+            const urlParams = new URLSearchParams(window.location.search);
+            const countryParam = urlParams.get('country');
+            const filterParam = urlParams.get('filter');
+
+            if (countryParam) {
+                currentCountry = countryParam;
+                const countrySelect = document.getElementById('country-filter');
+                countrySelect.value = countryParam;
+                countrySelect.classList.add('active');
+            }
+
+            if (filterParam) {
+                currentFilter = filterParam;
+                // Update button states
+                document.querySelectorAll('[data-filter]').forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.filter === filterParam) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+        }
+
+        function getCurrentEpochPostCount(member) {
+            // Count posts only from the live epoch (currently Epoch 6)
+            const statsName = `${member.name} ${member.flag || ''}`.trim();
+
+            if (allStats.live && allStats.live.top_projects) {
+                const liveProject = allStats.live.top_projects.find(p => p.name === statsName);
+                if (liveProject && liveProject.posts) {
+                    return liveProject.posts.length;
+                }
+            }
+
+            return 0;
+        }
+
+        function getRecentEpochPostCount(member) {
+            // Count posts from Epoch 4 testing, Epoch 4, Epoch 5 and the live epoch
+            const statsName = `${member.name} ${member.flag || ''}`.trim();
+            let totalPosts = 0;
+
+            // Get live epoch posts (currently Epoch 6)
+            if (allStats.live && allStats.live.top_projects) {
+                const liveProject = allStats.live.top_projects.find(p => p.name === statsName);
+                if (liveProject && liveProject.posts) {
+                    totalPosts += liveProject.posts.length;
+                }
+            }
+
+            // Get Epoch 4 posts
+            if (allStats.epoch4 && allStats.epoch4.top_projects) {
+                const epoch4Project = allStats.epoch4.top_projects.find(p => p.name === statsName);
+                if (epoch4Project && epoch4Project.posts) {
+                    totalPosts += epoch4Project.posts.length;
+                }
+            }
+
+            // Get Epoch 5 posts
+            if (allStats.epoch5 && allStats.epoch5.top_projects) {
+                const epoch5Project = allStats.epoch5.top_projects.find(p => p.name === statsName);
+                if (epoch5Project && epoch5Project.posts) {
+                    totalPosts += epoch5Project.posts.length;
+                }
+            }
+
+            // Get Epoch 4 testing posts only (exclude epochs 1-3)
+            if (allStats.historical && allStats.historical.epochs && allStats.historical.epochs.epoch4_testing) {
+                const epoch = allStats.historical.epochs.epoch4_testing;
+                if (epoch && epoch.top_projects) {
+                    const project = epoch.top_projects.find(p => p.name === statsName);
+                    if (project && project.posts && project.posts.length > 0) {
+                        totalPosts += project.posts.length;
+                    }
+                }
+            }
+
+            return totalPosts;
+        }
+
+        function updateStats() {
+            document.getElementById('total-count').textContent = allMembers.length;
+            document.getElementById('active-count').textContent = allMembers.filter(m => getRecentEpochPostCount(m) > 0).length;
+
+            const countries = new Set(allMembers.map(m => m.name_with_flag.match(/\(([^)]+)\)/)?.[1]).filter(Boolean));
+            document.getElementById('country-count').textContent = countries.size;
+        }
+
+        function filterMembers() {
+            let filtered = [...allMembers];
+
+            // Apply activity filter
+            if (currentFilter === 'active') {
+                filtered = filtered.filter(m => getRecentEpochPostCount(m) > 0);
+            } else if (currentFilter === 'epoch6') {
+                filtered = filtered.filter(m => getCurrentEpochPostCount(m) > 0);
+            } else if (currentFilter === 'top') {
+                // Show only top 10 projects by all-time post count
+                filtered = filtered
+                    .filter(m => getTotalPostCount(m) > 0)
+                    .sort((a, b) => getTotalPostCount(b) - getTotalPostCount(a))
+                    .slice(0, 10);
+            }
+
+            // Apply country filter
+            if (currentCountry) {
+                filtered = filtered.filter(m => {
+                    const memberCountry = m.flag + ' ' + (m.name_with_flag.match(/\(([^)]+)\)/)?.[1] || '');
+                    return memberCountry === currentCountry;
+                });
+            }
+
+            // Apply search
+            if (searchQuery) {
+                const query = searchQuery.toLowerCase();
+                filtered = filtered.filter(m =>
+                    m.name.toLowerCase().includes(query) ||
+                    m.country.toLowerCase().includes(query) ||
+                    m.city.toLowerCase().includes(query) ||
+                    m.tagline.toLowerCase().includes(query)
+                );
+            }
+
+            // Apply sort
+            if (currentSort === 'activity') {
+                filtered.sort((a, b) => getTotalPostCount(b) - getTotalPostCount(a));
+            } else if (currentSort === 'name') {
+                filtered.sort((a, b) => a.name.localeCompare(b.name));
+            }
+
+            return filtered;
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function getTotalPostCount(member) {
+            // Calculate total posts across all epochs for a member
+            const statsName = `${member.name} ${member.flag || ''}`.trim();
+
+            // Get Epoch 4 data
+            let epoch4Posts = [];
+            if (allStats.epoch4 && allStats.epoch4.top_projects) {
+                const epoch4Project = allStats.epoch4.top_projects.find(p => p.name === statsName);
+                if (epoch4Project && epoch4Project.posts) {
+                    epoch4Posts = epoch4Project.posts;
+                }
+            }
+
+            // Get Epoch 5 data (when available)
+            let epoch5Posts = [];
+            if (allStats.epoch5 && allStats.epoch5.top_projects) {
+                const epoch5Project = allStats.epoch5.top_projects.find(p => p.name === statsName);
+                if (epoch5Project && epoch5Project.posts) {
+                    epoch5Posts = epoch5Project.posts;
+                }
+            }
+
+            // Get live epoch data (currently Epoch 6)
+            let livePosts = [];
+            if (allStats.live && allStats.live.top_projects) {
+                const liveProject = allStats.live.top_projects.find(p => p.name === statsName);
+                if (liveProject && liveProject.posts) {
+                    livePosts = liveProject.posts;
+                }
+            }
+
+            // Get historical data
+            let historicalPosts = [];
+            if (allStats.historical && allStats.historical.epochs) {
+                const epochs = allStats.historical.epochs;
+                ['epoch1', 'epoch2', 'epoch3', 'epoch4_testing'].forEach(epochKey => {
+                    const epoch = epochs[epochKey];
+                    if (epoch && epoch.top_projects) {
+                        const project = epoch.top_projects.find(p => p.name === statsName);
+                        if (project && project.posts && project.posts.length > 0) {
+                            historicalPosts.push(...project.posts);
+                        }
+                    }
+                });
+            }
+
+            return epoch4Posts.length + epoch5Posts.length + livePosts.length + historicalPosts.length;
+        }
+
+        function getMemberBadgeEmojis(member) {
+            // Calculate all badges for directory cards (emoji only)
+            const badges = [];
+            const totalPosts = getTotalPostCount(member);
+            const statsName = `${member.name} ${member.flag || ''}`.trim();
+
+            // Get Epoch 4 data for badge-specific calculations
+            let epoch4Posts = [];
+            if (allStats.epoch4 && allStats.epoch4.top_projects) {
+                const epoch4Project = allStats.epoch4.top_projects.find(p => p.name === statsName);
+                if (epoch4Project && epoch4Project.posts) {
+                    epoch4Posts = epoch4Project.posts;
+                }
+            }
+
+            // Get Epoch 5 data (when available)
+            let epoch5Posts = [];
+            if (allStats.epoch5 && allStats.epoch5.top_projects) {
+                const epoch5Project = allStats.epoch5.top_projects.find(p => p.name === statsName);
+                if (epoch5Project && epoch5Project.posts) {
+                    epoch5Posts = epoch5Project.posts;
+                }
+            }
+
+            // Get live epoch data (currently Epoch 6)
+            let livePosts = [];
+            if (allStats.live && allStats.live.top_projects) {
+                const liveProject = allStats.live.top_projects.find(p => p.name === statsName);
+                if (liveProject && liveProject.posts) {
+                    livePosts = liveProject.posts;
+                }
+            }
+
+            // Get historical data
+            let historicalPosts = [];
+            let epochNames = new Set();
+            if (allStats.historical && allStats.historical.epochs) {
+                const epochs = allStats.historical.epochs;
+                ['epoch1', 'epoch2', 'epoch3', 'epoch4_testing'].forEach(epochKey => {
+                    const epoch = epochs[epochKey];
+                    if (epoch && epoch.top_projects) {
+                        const project = epoch.top_projects.find(p => p.name === statsName);
+                        if (project && project.posts && project.posts.length > 0) {
+                            historicalPosts.push(...project.posts);
+                            epochNames.add(epoch.name);
+                        }
+                    }
+                });
+            }
+
+            // Excellence badges (highest priority) - based on best ranking across Epoch 4 and 5
+            const epoch4Ranking = allStats.epoch4?.top_projects?.findIndex(p => p.name === statsName) ?? -1;
+            const epoch5Ranking = allStats.epoch5?.top_projects?.findIndex(p => p.name === statsName) ?? -1;
+            const bestRanking = epoch4Ranking >= 0 && epoch5Ranking >= 0
+                ? Math.min(epoch4Ranking, epoch5Ranking)
+                : epoch4Ranking >= 0 ? epoch4Ranking : epoch5Ranking;
+
+            if (bestRanking === 0) badges.push('🥇');
+            else if (bestRanking === 1) badges.push('🥈');
+            else if (bestRanking === 2) badges.push('🥉');
+            else if (bestRanking >= 0 && bestRanking < 10) badges.push('🏅');
+
+            // Activity milestones
+            if (totalPosts >= 500) {
+                badges.push('💎');
+            } else if (totalPosts >= 100) {
+                badges.push('⭐');
+            } else if (totalPosts >= 50) {
+                badges.push('🚀');
+            } else if (totalPosts >= 10) {
+                badges.push('🌱');
+            } else if (totalPosts >= 1) {
+                badges.push('👋');
+            }
+
+            // Community impact - all tiers (across Epoch 4 and 5)
+            const powbotPosts = [...epoch4Posts, ...epoch5Posts, ...livePosts];
+            if (powbotPosts.length > 0) {
+                const uniqueMerchants = new Set(powbotPosts.map(p => p.merchant)).size;
+                if (uniqueMerchants >= 25) {
+                    badges.push('🌍');
+                } else if (uniqueMerchants >= 15) {
+                    badges.push('🏪');
+                } else if (uniqueMerchants >= 5) {
+                    badges.push('🤝');
+                }
+            }
+
+            // Platform diversity (across Epoch 4 and 5)
+            if (powbotPosts.length > 0) {
+                const hasXPosts = powbotPosts.some(p => {
+                    const url = p.url ? p.url.toLowerCase() : '';
+                    return url.includes('twitter.com') || url.includes('x.com');
+                });
+                const hasNostrPosts = powbotPosts.some(p => {
+                    const url = p.url ? p.url.toLowerCase() : '';
+                    return url.includes('primal.net') || url.includes('njump') || (!url.includes('twitter.com') && !url.includes('x.com'));
+                });
+                if (hasXPosts && hasNostrPosts) {
+                    badges.push('🎯');
+                }
+            }
+
+            // Daily streaks - best streak across Epoch 4 and 5
+            const calculateStreak = (posts) => {
+                if (posts.length === 0) return 0;
+                const dates = posts.map(p => p.date.split('T')[0]).sort();
+                const uniqueDates = [...new Set(dates)];
+                let maxStreak = 1;
+                let currentStreak = 1;
+
+                for (let i = 1; i < uniqueDates.length; i++) {
+                    const prevDate = new Date(uniqueDates[i - 1]);
+                    const currDate = new Date(uniqueDates[i]);
+                    const dayDiff = Math.floor((currDate - prevDate) / (1000 * 60 * 60 * 24));
+                    if (dayDiff === 1) {
+                        currentStreak++;
+                        maxStreak = Math.max(maxStreak, currentStreak);
+                    } else {
+                        currentStreak = 1;
+                    }
+                }
+                return maxStreak;
+            };
+
+            const epoch4Streak = calculateStreak(epoch4Posts);
+            const epoch5Streak = calculateStreak(epoch5Posts);
+            const bestStreak = Math.max(epoch4Streak, epoch5Streak);
+
+            if (bestStreak >= 21) {
+                badges.push('💪');
+            } else if (bestStreak >= 14) {
+                badges.push('⚡');
+            } else if (bestStreak >= 7) {
+                badges.push('🔥');
+            }
+
+            // Legacy badges
+            if (historicalPosts.length > 0) {
+                const historicalEpochs = epochNames.size;
+
+                // Founding Member
+                if (epochNames.has('Epoch 1')) {
+                    badges.push('👑');
+                }
+
+                // Early Adopter
+                if (epochNames.has('Epoch 2') || epochNames.has('Epoch 3')) {
+                    badges.push('🏆');
+                }
+
+                // Beta Tester
+                if (epochNames.has('Epoch 4 Testing')) {
+                    badges.push('🧪');
+                }
+
+                // Multi-Epoch Veteran
+                if (historicalEpochs >= 3 || (historicalEpochs > 0 && epoch4Posts.length > 0 && epoch5Posts.length > 0)) {
+                    badges.push('🛡️');
+                }
+            }
+
+            return badges;
+        }
+
+        function renderMembers() {
+            const grid = document.getElementById('members-grid');
+            const members = filterMembers();
+
+            if (members.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-state">
+                        <h3>No projects found</h3>
+                        <p>Try adjusting your filters or search query</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = members.map((member, index) => {
+                const videoCount = getTotalPostCount(member);
+                const logoUrl = member.logo_url || '';
+                const emoji = member.flag || member.name.charAt(0);
+                const cardId = `card-${index}`;
+
+                return `
+                    <div class="member-card" id="${cardId}" data-member-id="${member.id}">
+                        <div class="card-inner">
+                            <!-- Front of Card -->
+                            <div class="card-front" onclick="viewProfile('${member.id}', event)">
+                                <div class="card-header">
+                                    ${logoUrl ?
+                                        `<img src="${logoUrl}" alt="${escapeHtml(member.name)}" class="card-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                         <div class="card-logo-placeholder" style="display:none;">${emoji}</div>`
+                                        :
+                                        `<div class="card-logo-placeholder">${emoji}</div>`
+                                    }
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3>${escapeHtml(member.name)}</h3>
+                                        <span class="flag">${member.flag || ''}</span>
+                                    </div>
+                                    <div class="card-tagline">${(() => {
+                                        const tagline = member.tagline || 'Bitcoin circular economy project';
+                                        const escaped = escapeHtml(tagline);
+                                        return escaped.endsWith('.') || escaped.endsWith('!') || escaped.endsWith('?') ? escaped : escaped + '.';
+                                    })()}</div>
+
+                                    <div class="card-footer">
+                                        ${videoCount > 0 ? `
+                                            <div class="post-count">
+                                                ${videoCount} ${videoCount === 1 ? 'post' : 'posts'}
+                                            </div>
+                                        ` : ''}
+
+                                        ${(() => {
+                                            const badgeEmojis = getMemberBadgeEmojis(member);
+                                            if (badgeEmojis.length > 0) {
+                                                return `<div class="badge-emojis">${badgeEmojis.map(emoji => `<span class="emoji-badge">${emoji}</span>`).join('')}</div>`;
+                                            }
+                                            return '';
+                                        })()}
+
+                                        <div class="card-actions">
+                                            ${member.lightning_address ? `
+                                            <button class="btn btn-primary" onclick="event.stopPropagation(); flipCard('${cardId}', '${escapeHtml(member.lightning_address)}', '${escapeHtml(member.onchain_address || '')}')">
+                                                Donate
+                                            </button>
+                                            ` : ''}
+                                            <a href="profile.html?id=${member.id}" class="btn btn-secondary" onclick="event.stopPropagation();">
+                                                View Profile
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Back of Card -->
+                            <div class="card-back" id="back-${cardId}">
+                                <div class="card-back-inner">
+                                    <!-- Lightning Side -->
+                                    <div class="card-back-side card-back-lightning">
+                                        <h3>Donate to ${escapeHtml(member.name)}</h3>
+                                        <div class="qr-container" id="qr-lightning-${cardId}"></div>
+                                        <div class="lightning-address-display" id="address-lightning-${cardId}" onclick="event.stopPropagation(); copyAddressWithFeedback('${escapeHtml(member.lightning_address)}', 'address-lightning-${cardId}')" title="Click to copy">${escapeHtml(member.lightning_address || 'No Lightning address available')}</div>
+                                        <div class="back-actions">
+                                            <button class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">
+                                                ← Back
+                                            </button>
+                                            ${member.onchain_address ? `<button class="btn btn-back" onclick="event.stopPropagation(); switchPaymentMethod('${cardId}')">Switch to Onchain</button>` : ''}
+                                        </div>
+                                    </div>
+
+                                    <!-- Onchain Side -->
+                                    ${member.onchain_address ? `
+                                    <div class="card-back-side card-back-onchain">
+                                        <h3>Donate to ${escapeHtml(member.name)}</h3>
+                                        <div class="qr-container" id="qr-onchain-${cardId}"></div>
+                                        <div class="lightning-address-display" id="address-onchain-${cardId}" onclick="event.stopPropagation(); copyAddressWithFeedback('${escapeHtml(member.onchain_address)}', 'address-onchain-${cardId}')" title="Click to copy">${escapeHtml(member.onchain_address)}</div>
+                                        <div class="back-actions">
+                                            <button class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">
+                                                ← Back
+                                            </button>
+                                            <button class="btn btn-back" onclick="event.stopPropagation(); switchPaymentMethod('${cardId}')">Switch to Lightning</button>
+                                        </div>
+                                    </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function flipCard(cardId, lightningAddress = null, onchainAddress = null) {
+            const card = document.getElementById(cardId);
+            const isFlipped = card.classList.contains('flipped');
+
+            if (!isFlipped && lightningAddress) {
+                // Flipping to back - generate QR codes
+                card.classList.add('flipped');
+
+                // Generate QR codes after a short delay to ensure the back is visible
+                setTimeout(() => {
+                    // Generate Lightning QR code
+                    const qrLightningContainer = document.getElementById(`qr-lightning-${cardId}`);
+                    if (qrLightningContainer && qrLightningContainer.children.length === 0) {
+                        QRCode.toCanvas(
+                            `lightning:${lightningAddress}`,
+                            { width: 160, margin: 1 },
+                            (error, canvas) => {
+                                if (!error) {
+                                    qrLightningContainer.appendChild(canvas);
+                                }
+                            }
+                        );
+                    }
+
+                    // Generate Onchain QR code if address exists
+                    if (onchainAddress) {
+                        const qrOnchainContainer = document.getElementById(`qr-onchain-${cardId}`);
+                        if (qrOnchainContainer && qrOnchainContainer.children.length === 0) {
+                            QRCode.toCanvas(
+                                `bitcoin:${onchainAddress}`,
+                                { width: 160, margin: 1 },
+                                (error, canvas) => {
+                                    if (!error) {
+                                        qrOnchainContainer.appendChild(canvas);
+                                    }
+                                }
+                            );
+                        }
+                    }
+                }, 300);
+            } else {
+                // Flipping back to front
+                card.classList.remove('flipped');
+            }
+        }
+
+        function switchPaymentMethod(cardId) {
+            const cardBack = document.getElementById(`back-${cardId}`);
+            cardBack.classList.toggle('show-onchain');
+        }
+
+        function viewProfile(memberId, event) {
+            // Only navigate if clicking the card itself, not the buttons
+            if (event.target.tagName !== 'BUTTON' && event.target.tagName !== 'A') {
+                window.location.href = `profile.html?id=${memberId}`;
+            }
+        }
+
+        function copyLightningAddress(address) {
+            if (!address) return;
+
+            navigator.clipboard.writeText(address).then(() => {
+                alert(`Lightning address copied: ${address}\n\nPaste this in your Lightning wallet to send sats!`);
+            });
+        }
+
+        function copyAddressWithFeedback(address, elementId) {
+            if (!address) return;
+
+            const addressElement = document.getElementById(elementId);
+            const originalText = addressElement.textContent;
+
+            navigator.clipboard.writeText(address).then(() => {
+                // Add copied class for visual feedback
+                addressElement.classList.add('copied');
+                addressElement.textContent = 'Copied to clipboard!';
+
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    addressElement.classList.remove('copied');
+                    addressElement.textContent = originalText;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy address');
+            });
+        }
+
+        // Event listeners
+        document.querySelectorAll('[data-filter]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                renderMembers();
+            });
+        });
+
+        document.getElementById('country-filter').addEventListener('change', (e) => {
+            currentCountry = e.target.value;
+            // Highlight dropdown when a country is selected
+            if (currentCountry) {
+                e.target.classList.add('active');
+            } else {
+                e.target.classList.remove('active');
+            }
+            renderMembers();
+        });
+
+        document.getElementById('sort').addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            renderMembers();
+        });
+
+        document.getElementById('search').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderMembers();
+        });
+    </script>
+
+    <!-- Shared nav/footer injection -->
+    <script src="includes/inject.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<style>
+    footer {
+        text-align: center;
+        padding: 20px;
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+    }
+
+    footer a {
+        color: var(--accent-blue);
+    }
+
+    /* Partner logo strip. Full colour deliberately: these marks are dark or
+       low-contrast against --bg-primary, and a greyscale-at-rest treatment
+       renders them unreadable. Restraint comes from the size, not the saturation. */
+    .footer-partners {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 28px;
+        flex-wrap: wrap;
+        margin-bottom: 12px;
+    }
+
+    /* Logo above, org name below. The name inherits the footer's own type and
+       link colour so the strip reads as part of the footer, not a separate widget. */
+    .footer-partners a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 7px;
+        transition: transform 0.18s ease;
+    }
+
+    .footer-partners a:hover {
+        transform: translateY(-2px);
+    }
+
+    .footer-partners img {
+        display: block;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 1px solid var(--border);
+        transition: border-color 0.18s ease;
+    }
+
+    .footer-partners a:hover img {
+        border-color: var(--accent-orange);
+    }
+
+    .footer-partners-label {
+        display: block;
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-secondary);
+        opacity: 0.6;
+        margin-bottom: 9px;
+    }
+
+    .footer-divider {
+        border-top: 1px solid var(--border);
+        margin: 0 20px 14px;
+        padding-top: 14px;
+    }
+</style>
+
+<footer>
+    <span class="footer-partners-label">In partnership with</span>
+    <div class="footer-partners">
+        <a href="https://bitcoinekasi.com/" target="_blank" rel="noopener">
+            <img src="images/footer/bitcoin-ekasi.webp" alt="" width="48" height="48" loading="lazy">
+            <span>Bitcoin Ekasi</span>
+        </a>
+        <a href="https://bitcoinubuntu.org/" target="_blank" rel="noopener">
+            <img src="images/footer/bitcoin-ubuntu.webp" alt="" width="48" height="48" loading="lazy">
+            <span>Bitcoin Ubuntu</span>
+        </a>
+        <a href="https://fbce.io/" target="_blank" rel="noopener">
+            <img src="images/footer/fbce.webp" alt="" width="48" height="48" loading="lazy">
+            <span>FBCE</span>
+        </a>
+    </div>
+    <div class="footer-divider"></div>
+    <p>Made possible by <a href="https://www.bitcoinbeach.com/" target="_blank">Bitcoin Beach</a> 🧡 Built by Lab21 | Powered by <a href="https://blink.sv" target="_blank">Blink</a> | Data updated: <span id="updated">--</span> | <a href="about.html">About</a> | <a href="https://t.me/bitcoinubuntu" target="_blank">Contact</a> | <a href="disclaimer.html">Disclaimer</a></p>
+</footer>
