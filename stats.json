@@ -1,74 +1,59 @@
 {
   "totals": {
-    "all_payments": 1458,
+    "all_payments": 1464,
     "by_type": {
       "merchant": {
-        "count": 485
+        "count": 487
       },
       "project": {
-        "count": 485
+        "count": 487
       },
       "reviewer": {
-        "count": 488
+        "count": 490
       }
     }
   },
   "today": {
-    "date": "2026-09-05",
-    "payments": 15,
+    "date": "2026-09-06",
+    "payments": 6,
     "by_type": {
       "merchant": {
-        "count": 5
+        "count": 2
       },
       "project": {
-        "count": 5
+        "count": 2
       },
       "reviewer": {
-        "count": 5
+        "count": 2
       }
     },
-    "approved": 5,
+    "approved": 2,
     "rejected": 0,
     "videos": [
       {
-        "url": "https://x.com/i/status/2096296009332629999",
+        "url": "https://x.com/i/status/2096341753515196810",
+        "project": "BitJR Academy 🇿🇲",
+        "merchant": "IT Enterprise",
+        "platform": "X",
+        "time": "04:17"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs08xmz5uml0uyxkhfnczr38dsqgqeadl70g0hda3x6a2z42dy44jsdmv0n9",
         "project": "Bitcoin Ikorodu 🇳🇬",
         "merchant": "Alvin Game House",
-        "platform": "X",
-        "time": "18:38"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsxlxstgsk38n8g6pmccl3rfcsraecr9x6fwk847texmrqrm8tp2cq4cts52",
-        "project": "Bitcoin Anambra 🇳🇬",
-        "merchant": "The Sario Eventers",
         "platform": "Nostr",
-        "time": "11:02"
-      },
-      {
-        "url": "https://x.com/i/status/2096167636627239096",
-        "project": "Bitcoin Anambra 🇳🇬",
-        "merchant": "The Sario Eventers",
-        "platform": "X",
-        "time": "11:02"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqs0x3aaqm035c2wjree88k8v83cfslka226x3sucme48upvf6v29jsn8kmyf",
-        "project": "BTC Shule 🇧🇮",
-        "merchant": "Kwa Innocent",
-        "platform": "Nostr",
-        "time": "11:02"
-      },
-      {
-        "url": "https://x.com/i/status/2095903402412630080",
-        "project": "BTC Shule 🇧🇮",
-        "merchant": "Kwa Innocent",
-        "platform": "X",
-        "time": "11:02"
+        "time": "04:17"
       }
     ]
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "BitJR Academy 🇿🇲"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
@@ -87,14 +72,6 @@
     ]
   },
   "daily": [
-    {
-      "date": "2026-07-20",
-      "project_count": 6,
-      "merchant_count": 6,
-      "reviewer_count": 5,
-      "approved": 5,
-      "rejected": 2
-    },
     {
       "date": "2026-07-21",
       "project_count": 6,
@@ -470,11 +447,19 @@
       "reviewer_count": 5,
       "approved": 5,
       "rejected": 0
+    },
+    {
+      "date": "2026-09-06",
+      "project_count": 2,
+      "merchant_count": 2,
+      "reviewer_count": 2,
+      "approved": 2,
+      "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 489,
-    "approved": 484,
+    "total_reviewed": 491,
+    "approved": 486,
     "rejected": 5
   },
   "top_projects": [
@@ -1806,6 +1791,132 @@
       ]
     },
     {
+      "name": "Bitcoin Ikorodu 🇳🇬",
+      "count": 24,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs08xmz5uml0uyxkhfnczr38dsqgqeadl70g0hda3x6a2z42dy44jsdmv0n9",
+          "date": "2026-09-06",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://x.com/i/status/2096296009332629999",
+          "date": "2026-09-05",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://x.com/i/status/2095523143884460138",
+          "date": "2026-09-03",
+          "merchant": "SMG Electronics Store"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszw5rea2ganqscm33z2tt2dvgkclv3p7zcy29jcnklvp4fex2s2zqrjewkd",
+          "date": "2026-09-02",
+          "merchant": "AB Starry Communication"
+        },
+        {
+          "url": "https://x.com/i/status/2094813230979817641",
+          "date": "2026-09-01",
+          "merchant": "AB Starry Communication"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsx3gp70tqw2lk8vdx4d93dysw6yg4245zvx38f4sk83dq6hv67sns77azjy",
+          "date": "2026-08-26",
+          "merchant": "Omega Cut"
+        },
+        {
+          "url": "https://x.com/i/status/2092600471911317521",
+          "date": "2026-08-26",
+          "merchant": "Omega Cut"
+        },
+        {
+          "url": "https://x.com/i/status/2091940198481359273",
+          "date": "2026-08-24",
+          "merchant": "AB Starry Communication"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9wfuxp5crq9spyygrt7uqks88up9ekq88j80rgjtm55p54uxshlqf4lc5f",
+          "date": "2026-08-19",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://x.com/i/status/2089919474761638196",
+          "date": "2026-08-19",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8j4fse67whj7yee6skx2janwg79e0tmyhrxgj8fmwezgvlch2s5smww8g0",
+          "date": "2026-08-17",
+          "merchant": "Omega Cut"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrt3sty4v8w8y2ecpmxdmhngchctd8xxmn6jucksj7vq9g6aq6xgq0psd33",
+          "date": "2026-08-14",
+          "merchant": "SMG Electronics Store"
+        },
+        {
+          "url": "https://x.com/i/status/2088270706005909628",
+          "date": "2026-08-14",
+          "merchant": "SMG Electronics Store"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspq4gzstq6gg697ktyul353yw3denjc8p4usmndj3pnpmw2vzta4qt4qmax",
+          "date": "2026-08-11",
+          "merchant": "AB Starry Communication"
+        },
+        {
+          "url": "https://x.com/i/status/2087120218266955964",
+          "date": "2026-08-11",
+          "merchant": "AB Starry Communication"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdqcaepuzh09laqkcjl9gy80hvrfm8jh22ackkljvvuxjm02m2u3grpqhsr",
+          "date": "2026-08-08",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://x.com/i/status/2086060556906111368",
+          "date": "2026-08-08",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsytwsthsp36hd5l5430t2fmlcf2rdz6s59dknz59gnt7gvp8wnkjg0ys2f2",
+          "date": "2026-08-04",
+          "merchant": "Omega Cut"
+        },
+        {
+          "url": "https://x.com/i/status/2084682792982483112",
+          "date": "2026-08-04",
+          "merchant": "Omega Cut"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2fvhnusl2qgu47wkvtud4y29mq4fn623gxrge8g0f2heejzswgmg9a5mgc",
+          "date": "2026-07-28",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://x.com/i/status/2082140485603180953",
+          "date": "2026-07-28",
+          "merchant": "Alvin Game House"
+        },
+        {
+          "url": "https://x.com/i/status/2079627961150382159",
+          "date": "2026-07-22",
+          "merchant": "Omega Cut"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszmkraa9udw5m7ud3n9emmwqf3z6u7zhvf3chny4splkyr2jk7wygsvfl8r",
+          "date": "2026-07-22",
+          "merchant": "AB Starry Communication"
+        },
+        {
+          "url": "https://x.com/i/status/2079547986967679039",
+          "date": "2026-07-21",
+          "merchant": "AB Starry Communication"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Sisonke 🇿🇦",
       "count": 23,
       "posts": [
@@ -2044,127 +2155,6 @@
           "url": "https://primal.net/e/nevent1qqsps6wea0aj0p523prdwyjzkvv9wcg9uk26n9mv4ruyz7fjn2yr4vcemzcfq",
           "date": "2026-08-01",
           "merchant": "Kwa Innocent"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 23,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2096296009332629999",
-          "date": "2026-09-05",
-          "merchant": "Alvin Game House"
-        },
-        {
-          "url": "https://x.com/i/status/2095523143884460138",
-          "date": "2026-09-03",
-          "merchant": "SMG Electronics Store"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszw5rea2ganqscm33z2tt2dvgkclv3p7zcy29jcnklvp4fex2s2zqrjewkd",
-          "date": "2026-09-02",
-          "merchant": "AB Starry Communication"
-        },
-        {
-          "url": "https://x.com/i/status/2094813230979817641",
-          "date": "2026-09-01",
-          "merchant": "AB Starry Communication"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsx3gp70tqw2lk8vdx4d93dysw6yg4245zvx38f4sk83dq6hv67sns77azjy",
-          "date": "2026-08-26",
-          "merchant": "Omega Cut"
-        },
-        {
-          "url": "https://x.com/i/status/2092600471911317521",
-          "date": "2026-08-26",
-          "merchant": "Omega Cut"
-        },
-        {
-          "url": "https://x.com/i/status/2091940198481359273",
-          "date": "2026-08-24",
-          "merchant": "AB Starry Communication"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9wfuxp5crq9spyygrt7uqks88up9ekq88j80rgjtm55p54uxshlqf4lc5f",
-          "date": "2026-08-19",
-          "merchant": "Alvin Game House"
-        },
-        {
-          "url": "https://x.com/i/status/2089919474761638196",
-          "date": "2026-08-19",
-          "merchant": "Alvin Game House"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8j4fse67whj7yee6skx2janwg79e0tmyhrxgj8fmwezgvlch2s5smww8g0",
-          "date": "2026-08-17",
-          "merchant": "Omega Cut"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrt3sty4v8w8y2ecpmxdmhngchctd8xxmn6jucksj7vq9g6aq6xgq0psd33",
-          "date": "2026-08-14",
-          "merchant": "SMG Electronics Store"
-        },
-        {
-          "url": "https://x.com/i/status/2088270706005909628",
-          "date": "2026-08-14",
-          "merchant": "SMG Electronics Store"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspq4gzstq6gg697ktyul353yw3denjc8p4usmndj3pnpmw2vzta4qt4qmax",
-          "date": "2026-08-11",
-          "merchant": "AB Starry Communication"
-        },
-        {
-          "url": "https://x.com/i/status/2087120218266955964",
-          "date": "2026-08-11",
-          "merchant": "AB Starry Communication"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdqcaepuzh09laqkcjl9gy80hvrfm8jh22ackkljvvuxjm02m2u3grpqhsr",
-          "date": "2026-08-08",
-          "merchant": "Alvin Game House"
-        },
-        {
-          "url": "https://x.com/i/status/2086060556906111368",
-          "date": "2026-08-08",
-          "merchant": "Alvin Game House"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsytwsthsp36hd5l5430t2fmlcf2rdz6s59dknz59gnt7gvp8wnkjg0ys2f2",
-          "date": "2026-08-04",
-          "merchant": "Omega Cut"
-        },
-        {
-          "url": "https://x.com/i/status/2084682792982483112",
-          "date": "2026-08-04",
-          "merchant": "Omega Cut"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2fvhnusl2qgu47wkvtud4y29mq4fn623gxrge8g0f2heejzswgmg9a5mgc",
-          "date": "2026-07-28",
-          "merchant": "Alvin Game House"
-        },
-        {
-          "url": "https://x.com/i/status/2082140485603180953",
-          "date": "2026-07-28",
-          "merchant": "Alvin Game House"
-        },
-        {
-          "url": "https://x.com/i/status/2079627961150382159",
-          "date": "2026-07-22",
-          "merchant": "Omega Cut"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszmkraa9udw5m7ud3n9emmwqf3z6u7zhvf3chny4splkyr2jk7wygsvfl8r",
-          "date": "2026-07-22",
-          "merchant": "AB Starry Communication"
-        },
-        {
-          "url": "https://x.com/i/status/2079547986967679039",
-          "date": "2026-07-21",
-          "merchant": "AB Starry Communication"
         }
       ]
     },
@@ -2609,8 +2599,13 @@
     },
     {
       "name": "BitJR Academy 🇿🇲",
-      "count": 15,
+      "count": 16,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2096341753515196810",
+          "date": "2026-09-06",
+          "merchant": "IT Enterprise"
+        },
         {
           "url": "https://x.com/i/status/2094152154034344362",
           "date": "2026-08-31",
@@ -3819,6 +3814,52 @@
       ]
     },
     {
+      "name": "Alvin Game House",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs08xmz5uml0uyxkhfnczr38dsqgqeadl70g0hda3x6a2z42dy44jsdmv0n9",
+          "date": "2026-09-06",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2096296009332629999",
+          "date": "2026-09-05",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9wfuxp5crq9spyygrt7uqks88up9ekq88j80rgjtm55p54uxshlqf4lc5f",
+          "date": "2026-08-19",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2089919474761638196",
+          "date": "2026-08-19",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdqcaepuzh09laqkcjl9gy80hvrfm8jh22ackkljvvuxjm02m2u3grpqhsr",
+          "date": "2026-08-08",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2086060556906111368",
+          "date": "2026-08-08",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2fvhnusl2qgu47wkvtud4y29mq4fn623gxrge8g0f2heejzswgmg9a5mgc",
+          "date": "2026-07-28",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2082140485603180953",
+          "date": "2026-07-28",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Orero shop",
       "count": 7,
       "posts": [
@@ -3938,47 +3979,6 @@
           "url": "https://x.com/i/status/2086080748868477267",
           "date": "2026-08-08",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Alvin Game House",
-      "count": 7,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2096296009332629999",
-          "date": "2026-09-05",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9wfuxp5crq9spyygrt7uqks88up9ekq88j80rgjtm55p54uxshlqf4lc5f",
-          "date": "2026-08-19",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2089919474761638196",
-          "date": "2026-08-19",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdqcaepuzh09laqkcjl9gy80hvrfm8jh22ackkljvvuxjm02m2u3grpqhsr",
-          "date": "2026-08-08",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2086060556906111368",
-          "date": "2026-08-08",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2fvhnusl2qgu47wkvtud4y29mq4fn623gxrge8g0f2heejzswgmg9a5mgc",
-          "date": "2026-07-28",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2082140485603180953",
-          "date": "2026-07-28",
-          "project": "Bitcoin Ikorodu 🇳🇬"
         }
       ]
     },
@@ -5978,6 +5978,22 @@
       ]
     },
     {
+      "name": "IT Enterprise",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2096341753515196810",
+          "date": "2026-09-06",
+          "project": "BitJR Academy 🇿🇲"
+        },
+        {
+          "url": "https://x.com/i/status/2084002461971251549",
+          "date": "2026-08-02",
+          "project": "Bitcoin Victoria Falls 🇿🇲"
+        }
+      ]
+    },
+    {
       "name": "Catherine Mbao Greens",
       "count": 1,
       "posts": [
@@ -6084,17 +6100,6 @@
           "url": "https://primal.net/e/nevent1qqsdfl85948mev3avqd3zq5vsh73n8fypjpc0tn6egldtm5ls5pvsaqdf7uun",
           "date": "2026-08-02",
           "project": "EcoBitz 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "IT Enterprise",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2084002461971251549",
-          "date": "2026-08-02",
-          "project": "Bitcoin Victoria Falls 🇿🇲"
         }
       ]
     },
@@ -6244,7 +6249,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1436
+      "count": 1442
     },
     {
       "domain": "8333.mobi",
@@ -6291,13 +6296,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 792
+      "count": 795
     },
     {
       "platform": "Nostr",
-      "count": 666
+      "count": 669
     }
   ],
-  "generated_at": "2026-09-05T19:05:01.484421+00:00",
+  "generated_at": "2026-09-06T07:05:01.521400+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
