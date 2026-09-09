@@ -1,64 +1,80 @@
 {
   "totals": {
-    "all_payments": 1552,
+    "all_payments": 1561,
     "by_type": {
       "merchant": {
-        "count": 516
+        "count": 519
       },
       "project": {
-        "count": 516
+        "count": 519
       },
       "reviewer": {
-        "count": 520
+        "count": 523
       }
     }
   },
   "today": {
     "date": "2026-09-09",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 9,
+    "by_type": {
+      "merchant": {
+        "count": 3
+      },
+      "project": {
+        "count": 3
+      },
+      "reviewer": {
+        "count": 3
+      }
+    },
+    "approved": 3,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqstztlsucxl3h3lspxvp3cm2wwqn2ltaef30hcazcrvzqvuf467h2cc5m9dk",
+        "project": "Bitcoin Ekiti 🇳🇬",
+        "merchant": "T-S food stuff",
+        "platform": "Nostr",
+        "time": "17:00"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsr9c72pyyde5urwwdq30dgkytmr4j9nd7xfahng8g2p404zyapqeq4x60ut",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "Nostr",
+        "time": "15:51"
+      },
+      {
+        "url": "https://x.com/i/status/2097397472784232451",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Manu Groceries",
+        "platform": "X",
+        "time": "15:51"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
         "project": "Bitcoin Ekiti 🇳🇬"
       },
       {
-        "project": "Bitcoin NextGen 🇳🇬"
+        "project": "Bitbiashara 🇰🇪"
       },
       {
-        "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Ekasi 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Ekasi 🇿🇦"
-      },
-      {
-        "project": "BTC Shule 🇧🇮"
-      },
-      {
-        "project": "BTC Shule 🇧🇮"
+        "project": "Bitbiashara 🇰🇪"
       }
     ]
   },
   "daily": [
+    {
+      "date": "2026-07-20",
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 5,
+      "approved": 5,
+      "rejected": 2
+    },
     {
       "date": "2026-07-21",
       "project_count": 6,
@@ -461,23 +477,33 @@
     },
     {
       "date": "2026-09-09",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 3,
+      "merchant_count": 3,
+      "reviewer_count": 3,
+      "approved": 3,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 520,
-    "approved": 515,
+    "total_reviewed": 523,
+    "approved": 518,
     "rejected": 5
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 42,
+      "count": 44,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsr9c72pyyde5urwwdq30dgkytmr4j9nd7xfahng8g2p404zyapqeq4x60ut",
+          "date": "2026-09-09",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2097397472784232451",
+          "date": "2026-09-09",
+          "merchant": "Manu Groceries"
+        },
         {
           "url": "https://primal.net/e/nevent1qqswwnj78dhp060mpz47kwj0a9kn503d20hcjxwn8r9n90m69cfgz0s88m4tm",
           "date": "2026-09-06",
@@ -2372,8 +2398,13 @@
     },
     {
       "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 23,
+      "count": 24,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstztlsucxl3h3lspxvp3cm2wwqn2ltaef30hcazcrvzqvuf467h2cc5m9dk",
+          "date": "2026-09-09",
+          "merchant": "T-S food stuff"
+        },
         {
           "url": "https://x.com/i/status/2097289202828186020",
           "date": "2026-09-08",
@@ -5586,6 +5617,32 @@
       ]
     },
     {
+      "name": "T-S food stuff",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqstztlsucxl3h3lspxvp3cm2wwqn2ltaef30hcazcrvzqvuf467h2cc5m9dk",
+          "date": "2026-09-09",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2097289202828186020",
+          "date": "2026-09-08",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdl98qa4x3hsc9agc9gglenl5uzz0j2gtfddu3dgtedm5we6dhxusa9rrmy",
+          "date": "2026-08-10",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2086888889520640007",
+          "date": "2026-08-10",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Ray’s Coffee Shop",
       "count": 3,
       "posts": [
@@ -5729,27 +5786,6 @@
           "url": "https://x.com/i/status/2063969291985387793",
           "date": "2026-07-24",
           "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "T-S food stuff",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2097289202828186020",
-          "date": "2026-09-08",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdl98qa4x3hsc9agc9gglenl5uzz0j2gtfddu3dgtedm5we6dhxusa9rrmy",
-          "date": "2026-08-10",
-          "project": "Bitcoin Ekiti 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2086888889520640007",
-          "date": "2026-08-10",
-          "project": "Bitcoin Ekiti 🇳🇬"
         }
       ]
     },
@@ -6362,6 +6398,22 @@
       ]
     },
     {
+      "name": "Manu Groceries",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsr9c72pyyde5urwwdq30dgkytmr4j9nd7xfahng8g2p404zyapqeq4x60ut",
+          "date": "2026-09-09",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2097397472784232451",
+          "date": "2026-09-09",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Catherine Mbao Greens",
       "count": 1,
       "posts": [
@@ -6551,18 +6603,18 @@
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 51,
+    "days_active": 52,
     "daily_average_payments": 30
   },
   "burn_rate": {
-    "percentage": 96,
+    "percentage": 95,
     "status": "on_target",
-    "days_active": 51
+    "days_active": 52
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1527
+      "count": 1536
     },
     {
       "domain": "8333.mobi",
@@ -6609,13 +6661,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 850
+      "count": 853
     },
     {
       "platform": "Nostr",
-      "count": 702
+      "count": 708
     }
   ],
-  "generated_at": "2026-09-09T07:05:01.176396+00:00",
+  "generated_at": "2026-09-09T19:05:01.945534+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
