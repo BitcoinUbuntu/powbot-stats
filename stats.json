@@ -1,29 +1,60 @@
 {
   "totals": {
-    "all_payments": 1915,
+    "all_payments": 1921,
     "by_type": {
       "merchant": {
-        "count": 636
+        "count": 638
       },
       "project": {
-        "count": 636
+        "count": 638
       },
       "reviewer": {
-        "count": 643
+        "count": 645
       }
     }
   },
   "today": {
     "date": "2026-09-18",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 6,
+    "by_type": {
+      "merchant": {
+        "count": 2
+      },
+      "project": {
+        "count": 2
+      },
+      "reviewer": {
+        "count": 2
+      }
+    },
+    "approved": 2,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsgn0m46028cklc2plsqm0ppw3qkrx2xhst36c2yes87ca22c0s6lce3lxw3",
+        "project": "Bitcoin Tofo 🇲🇿",
+        "merchant": "Sifoianatunu Atelier",
+        "platform": "Nostr",
+        "time": "14:43"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsdtw46xmt2vauj538djjtp4wep8zf2ms33vdhc2vy2qls9ye6flpgd60xvs",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "Ozone Cyber",
+        "platform": "Nostr",
+        "time": "07:28"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin Tofo 🇲🇿"
+      },
+      {
+        "project": "EcoBitz 🇰🇪"
+      },
+      {
         "project": "Lwandi Bitcoin 🇲🇿"
       },
       {
@@ -31,49 +62,18 @@
       },
       {
         "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Karoo 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "BTC Shule 🇧🇮"
-      },
-      {
-        "project": "BTC Shule 🇧🇮"
-      },
-      {
-        "project": "Bitcoin Ikorodu 🇳🇬"
       }
     ]
   },
   "daily": [
+    {
+      "date": "2026-07-20",
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 5,
+      "approved": 5,
+      "rejected": 2
+    },
     {
       "date": "2026-07-21",
       "project_count": 6,
@@ -548,16 +548,16 @@
     },
     {
       "date": "2026-09-18",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 2,
+      "merchant_count": 2,
+      "reviewer_count": 2,
+      "approved": 2,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 645,
-    "approved": 634,
+    "total_reviewed": 647,
+    "approved": 636,
     "rejected": 11
   },
   "top_projects": [
@@ -3035,8 +3035,13 @@
     },
     {
       "name": "Bitcoin Tofo 🇲🇿",
-      "count": 26,
+      "count": 27,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgn0m46028cklc2plsqm0ppw3qkrx2xhst36c2yes87ca22c0s6lce3lxw3",
+          "date": "2026-09-18",
+          "merchant": "Sifoianatunu Atelier"
+        },
         {
           "url": "https://x.com/i/status/2098064558535397527",
           "date": "2026-09-10",
@@ -3585,8 +3590,13 @@
     },
     {
       "name": "EcoBitz 🇰🇪",
-      "count": 12,
+      "count": 13,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdtw46xmt2vauj538djjtp4wep8zf2ms33vdhc2vy2qls9ye6flpgd60xvs",
+          "date": "2026-09-18",
+          "merchant": "Ozone Cyber"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsfnejy2jjunheean5kkd2ey3438ea4hrgwl38h6rrufhpz83x2qts9gfxmf",
           "date": "2026-09-11",
@@ -5492,6 +5502,47 @@
       ]
     },
     {
+      "name": "Sifoianatunu Atelier",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgn0m46028cklc2plsqm0ppw3qkrx2xhst36c2yes87ca22c0s6lce3lxw3",
+          "date": "2026-09-18",
+          "project": "Bitcoin Tofo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvcveh8tpttjjs436zk3ckppflw506nfxtz99y0phdueln7ctatdcm3hfj5",
+          "date": "2026-08-28",
+          "project": "Bitcoin Tofo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2093333126881615982",
+          "date": "2026-08-28",
+          "project": "Bitcoin Tofo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstrwlxctk6fc7fvwk0flhjhhtymy72j599jdrz04cpcqjj70g9a4c4ws947",
+          "date": "2026-08-04",
+          "project": "Bitcoin Tofo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2084546744063267036",
+          "date": "2026-08-04",
+          "project": "Bitcoin Tofo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd9jxdppzdmy7jk9dtt80jp7ehwqpeyc89280vnyvsrgh09gyzfgqnuxkwj",
+          "date": "2026-07-27",
+          "project": "Bitcoin Tofo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2081667798112342246",
+          "date": "2026-07-27",
+          "project": "Bitcoin Tofo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Pluim Eatery",
       "count": 6,
       "posts": [
@@ -5668,42 +5719,6 @@
           "url": "https://x.com/i/status/2080343524411588719",
           "date": "2026-07-23",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Sifoianatunu Atelier",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsvcveh8tpttjjs436zk3ckppflw506nfxtz99y0phdueln7ctatdcm3hfj5",
-          "date": "2026-08-28",
-          "project": "Bitcoin Tofo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2093333126881615982",
-          "date": "2026-08-28",
-          "project": "Bitcoin Tofo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstrwlxctk6fc7fvwk0flhjhhtymy72j599jdrz04cpcqjj70g9a4c4ws947",
-          "date": "2026-08-04",
-          "project": "Bitcoin Tofo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2084546744063267036",
-          "date": "2026-08-04",
-          "project": "Bitcoin Tofo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd9jxdppzdmy7jk9dtt80jp7ehwqpeyc89280vnyvsrgh09gyzfgqnuxkwj",
-          "date": "2026-07-27",
-          "project": "Bitcoin Tofo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2081667798112342246",
-          "date": "2026-07-27",
-          "project": "Bitcoin Tofo 🇲🇿"
         }
       ]
     },
@@ -7906,22 +7921,33 @@
           "project": "EcoBitz 🇰🇪"
         }
       ]
+    },
+    {
+      "name": "Ozone Cyber",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdtw46xmt2vauj538djjtp4wep8zf2ms33vdhc2vy2qls9ye6flpgd60xvs",
+          "date": "2026-09-18",
+          "project": "EcoBitz 🇰🇪"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 60,
+    "days_active": 61,
     "daily_average_payments": 31
   },
   "burn_rate": {
-    "percentage": 100,
+    "percentage": 99,
     "status": "on_target",
-    "days_active": 60
+    "days_active": 61
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1881
+      "count": 1887
     },
     {
       "domain": "8333.mobi",
@@ -7976,9 +8002,9 @@
     },
     {
       "platform": "Nostr",
-      "count": 880
+      "count": 886
     }
   ],
-  "generated_at": "2026-09-18T07:05:02.007873+00:00",
+  "generated_at": "2026-09-18T19:05:01.567462+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
