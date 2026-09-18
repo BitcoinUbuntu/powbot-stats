@@ -1,130 +1,37 @@
 {
   "totals": {
-    "all_payments": 1906,
+    "all_payments": 1915,
     "by_type": {
       "merchant": {
-        "count": 633
+        "count": 636
       },
       "project": {
-        "count": 633
+        "count": 636
       },
       "reviewer": {
-        "count": 640
+        "count": 643
       }
     }
   },
   "today": {
-    "date": "2026-09-17",
-    "payments": 39,
-    "by_type": {
-      "merchant": {
-        "count": 13
-      },
-      "project": {
-        "count": 13
-      },
-      "reviewer": {
-        "count": 13
-      }
-    },
-    "approved": 13,
+    "date": "2026-09-18",
+    "payments": 0,
+    "by_type": {},
+    "approved": 0,
     "rejected": 0,
-    "videos": [
-      {
-        "url": "https://x.com/i/status/2100551689262547374",
-        "project": "Bitcoin Aves 🇬🇭",
-        "merchant": "Topic's Pub",
-        "platform": "X",
-        "time": "17:42"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsfw7yjvmzwgqqtcrecc5fxtge0vrv8px8wghxmu6u5ekq3twza2pq54rfny",
-        "project": "Bitcoin Karoo 🇿🇦",
-        "merchant": "Rasal MD Cafe",
-        "platform": "Nostr",
-        "time": "09:36"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsts2vvrre5gxlaznq6c5r9fz7jnadt4caslyzr25dlwy8ngl2yuxclpez89",
-        "project": "Bitcoin Victoria Falls 🇿🇲",
-        "merchant": "Sombo Groceries",
-        "platform": "Nostr",
-        "time": "09:36"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsfj5pqr9xs73mztu60magwntpvfatga28euy760aax4wyld369mdge7c3hr",
-        "project": "Bitcoin Victoria Falls 🇿🇲",
-        "merchant": "Cyber Tech General Dealer",
-        "platform": "Nostr",
-        "time": "09:35"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsyshd4sl6zvx4rhhku38tfjn4afsvptkrd9p5yuyr0a3mnddn3vwqfp8zv4",
-        "project": "Bitcoin Victoria Falls 🇿🇲",
-        "merchant": "D Hardware Store",
-        "platform": "Nostr",
-        "time": "09:35"
-      },
-      {
-        "url": "https://x.com/i/status/2100472047142941101",
-        "project": "Bitbiashara 🇰🇪",
-        "merchant": "Manu Groceries",
-        "platform": "X",
-        "time": "09:12"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsvrq7h2y0gmpgnqc7h5qcd57qycqwule4pa6zdfg3k9cw9hkw3qsgts0efn",
-        "project": "Bitbiashara 🇰🇪",
-        "merchant": "Manu Groceries",
-        "platform": "Nostr",
-        "time": "09:12"
-      },
-      {
-        "url": "https://x.com/i/status/2100472103531090114",
-        "project": "Bitcoin Victoria Falls 🇿🇲",
-        "merchant": "Cyber Tech General Dealer",
-        "platform": "X",
-        "time": "09:09"
-      },
-      {
-        "url": "https://x.com/i/status/2100472106458735013",
-        "project": "Bitcoin Victoria Falls 🇿🇲",
-        "merchant": "Sombo Groceries",
-        "platform": "X",
-        "time": "09:09"
-      },
-      {
-        "url": "https://x.com/i/status/2100472109021499636",
-        "project": "Bitcoin Victoria Falls 🇿🇲",
-        "merchant": "D Hardware Store",
-        "platform": "X",
-        "time": "09:07"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqs92p7ymxq032u08e6leecfyj0xd24qkjpgqg5fhm0q40hgj7kj0ecr6qkzp",
-        "project": "BTC Shule 🇧🇮",
-        "merchant": "Kwa Innocent",
-        "platform": "Nostr",
-        "time": "09:07"
-      },
-      {
-        "url": "https://x.com/i/status/2100273170611613758",
-        "project": "BTC Shule 🇧🇮",
-        "merchant": "Kwa Innocent",
-        "platform": "X",
-        "time": "09:02"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsx3wvdwaj8rrdd8c5ptkury6a4qpsxhtmjuuufefxttz7ey72f4gc706pct",
-        "project": "Bitcoin Ikorodu 🇳🇬",
-        "merchant": "Alvin Game House",
-        "platform": "Nostr",
-        "time": "08:52"
-      }
-    ]
+    "videos": []
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Lwandi Bitcoin 🇲🇿"
+      },
+      {
+        "project": "Lwandi Bitcoin 🇲🇿"
+      },
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
       {
         "project": "Bitcoin Aves 🇬🇭"
       },
@@ -167,14 +74,6 @@
     ]
   },
   "daily": [
-    {
-      "date": "2026-07-20",
-      "project_count": 6,
-      "merchant_count": 6,
-      "reviewer_count": 5,
-      "approved": 5,
-      "rejected": 2
-    },
     {
       "date": "2026-07-21",
       "project_count": 6,
@@ -641,16 +540,24 @@
     },
     {
       "date": "2026-09-17",
-      "project_count": 13,
-      "merchant_count": 13,
-      "reviewer_count": 13,
-      "approved": 13,
+      "project_count": 16,
+      "merchant_count": 16,
+      "reviewer_count": 16,
+      "approved": 16,
+      "rejected": 0
+    },
+    {
+      "date": "2026-09-18",
+      "project_count": 0,
+      "merchant_count": 0,
+      "reviewer_count": 0,
+      "approved": 0,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 642,
-    "approved": 631,
+    "total_reviewed": 645,
+    "approved": 634,
     "rejected": 11
   },
   "top_projects": [
@@ -2514,8 +2421,13 @@
     },
     {
       "name": "Bitcoin Aves 🇬🇭",
-      "count": 32,
+      "count": 33,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfvphhamrz9qazncv3ch0uprd5jsqret6xke7qp4hjzu8n7f3jz8q78zcdr",
+          "date": "2026-09-17",
+          "merchant": "Topic's Pub"
+        },
         {
           "url": "https://x.com/i/status/2100551689262547374",
           "date": "2026-09-17",
@@ -3794,6 +3706,62 @@
       ]
     },
     {
+      "name": "Lwandi Bitcoin 🇲🇿",
+      "count": 10,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsplet6td7chw54jdvj7znydhzlwxah2susw9jmvx4hc7vjnr66aus4qq0q9",
+          "date": "2026-09-17",
+          "merchant": "Dino Printer Services"
+        },
+        {
+          "url": "https://x.com/i/status/2100633111595802989",
+          "date": "2026-09-17",
+          "merchant": "Dino Printer Services"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv2d4sj5xp5ssvmgfr68apfuw8yksggz4e3rdvkf5nknuy587rsxqeyg3n2",
+          "date": "2026-09-16",
+          "merchant": "Dina Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2100294161668731302",
+          "date": "2026-09-16",
+          "merchant": "Dina Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9zldkfe3dhvxatfv5rs36zfl26fhntqz2ju4jv2ckavtrd5h4jcqnza5ex",
+          "date": "2026-09-13",
+          "merchant": "Chichava Surf Shorts"
+        },
+        {
+          "url": "https://x.com/i/status/2098790000515010726",
+          "date": "2026-09-13",
+          "merchant": "Chichava Surf Shorts"
+        },
+        {
+          "url": "https://x.com/i/status/2098078342033317909",
+          "date": "2026-09-10",
+          "merchant": "King Beach Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqu08ew86k3qg3xjltmkquf20q8sn2908p66ehnupwzkuyn6n9ppsjddmg2",
+          "date": "2026-09-10",
+          "merchant": "King Beach Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqw556h66z6xprkyau0pg7fclkapg6p7s369mnw9cm64pldmh20eg74n3p4",
+          "date": "2026-09-10",
+          "merchant": "Dina Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2097707372873462056",
+          "date": "2026-09-10",
+          "merchant": "Dina Shop"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Anambra 🇳🇬",
       "count": 8,
       "posts": [
@@ -3836,52 +3804,6 @@
           "url": "https://x.com/i/status/2087143384083255310",
           "date": "2026-08-11",
           "merchant": "The Sario Eventers"
-        }
-      ]
-    },
-    {
-      "name": "Lwandi Bitcoin 🇲🇿",
-      "count": 8,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsv2d4sj5xp5ssvmgfr68apfuw8yksggz4e3rdvkf5nknuy587rsxqeyg3n2",
-          "date": "2026-09-16",
-          "merchant": "Dina Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2100294161668731302",
-          "date": "2026-09-16",
-          "merchant": "Dina Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9zldkfe3dhvxatfv5rs36zfl26fhntqz2ju4jv2ckavtrd5h4jcqnza5ex",
-          "date": "2026-09-13",
-          "merchant": "Chichava Surf Shorts"
-        },
-        {
-          "url": "https://x.com/i/status/2098790000515010726",
-          "date": "2026-09-13",
-          "merchant": "Chichava Surf Shorts"
-        },
-        {
-          "url": "https://x.com/i/status/2098078342033317909",
-          "date": "2026-09-10",
-          "merchant": "King Beach Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqu08ew86k3qg3xjltmkquf20q8sn2908p66ehnupwzkuyn6n9ppsjddmg2",
-          "date": "2026-09-10",
-          "merchant": "King Beach Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqw556h66z6xprkyau0pg7fclkapg6p7s369mnw9cm64pldmh20eg74n3p4",
-          "date": "2026-09-10",
-          "merchant": "Dina Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2097707372873462056",
-          "date": "2026-09-10",
-          "merchant": "Dina Shop"
         }
       ]
     },
@@ -5401,6 +5323,52 @@
       ]
     },
     {
+      "name": "Topic's Pub",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsfvphhamrz9qazncv3ch0uprd5jsqret6xke7qp4hjzu8n7f3jz8q78zcdr",
+          "date": "2026-09-17",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2100551689262547374",
+          "date": "2026-09-17",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2097939046286705053",
+          "date": "2026-09-10",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxpc0catx0uxs0d4x2r3x9q0plrqja2t3sgl9n4uqdzyhla86l8ksx7arzk",
+          "date": "2026-09-10",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstflq3kmmy67pahqtpylfxxxhndhykaud58f0gfp0e7qykmsrzhxc87e5nc",
+          "date": "2026-08-31",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2094130316789113240",
+          "date": "2026-08-31",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2087487870831378557",
+          "date": "2026-08-12",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2dkeqcj0fvektr547wgfv7c26g3pxrntp9xv3qanr9cnn2zx3rhcqlgfxc",
+          "date": "2026-08-12",
+          "project": "Bitcoin Aves 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "AB Starry Communication",
       "count": 7,
       "posts": [
@@ -5520,47 +5488,6 @@
           "url": "https://x.com/i/status/2067578073290346611",
           "date": "2026-07-27",
           "project": "Bitcoin Ekasi 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Topic's Pub",
-      "count": 7,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2100551689262547374",
-          "date": "2026-09-17",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2097939046286705053",
-          "date": "2026-09-10",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxpc0catx0uxs0d4x2r3x9q0plrqja2t3sgl9n4uqdzyhla86l8ksx7arzk",
-          "date": "2026-09-10",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstflq3kmmy67pahqtpylfxxxhndhykaud58f0gfp0e7qykmsrzhxc87e5nc",
-          "date": "2026-08-31",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2094130316789113240",
-          "date": "2026-08-31",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2087487870831378557",
-          "date": "2026-08-12",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2dkeqcj0fvektr547wgfv7c26g3pxrntp9xv3qanr9cnn2zx3rhcqlgfxc",
-          "date": "2026-08-12",
-          "project": "Bitcoin Aves 🇬🇭"
         }
       ]
     },
@@ -7778,6 +7705,22 @@
       ]
     },
     {
+      "name": "Dino Printer Services",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsplet6td7chw54jdvj7znydhzlwxah2susw9jmvx4hc7vjnr66aus4qq0q9",
+          "date": "2026-09-17",
+          "project": "Lwandi Bitcoin 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2100633111595802989",
+          "date": "2026-09-17",
+          "project": "Lwandi Bitcoin 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Catherine Mbao Greens",
       "count": 1,
       "posts": [
@@ -7978,7 +7921,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1872
+      "count": 1881
     },
     {
       "domain": "8333.mobi",
@@ -8029,13 +7972,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1032
+      "count": 1035
     },
     {
       "platform": "Nostr",
-      "count": 874
+      "count": 880
     }
   ],
-  "generated_at": "2026-09-17T19:05:01.804720+00:00",
+  "generated_at": "2026-09-18T07:05:02.007873+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
