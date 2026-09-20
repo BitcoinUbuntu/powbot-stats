@@ -1,35 +1,91 @@
 {
   "totals": {
-    "all_payments": 1974,
+    "all_payments": 1998,
     "by_type": {
       "merchant": {
-        "count": 655
+        "count": 663
       },
       "project": {
-        "count": 655
+        "count": 663
       },
       "reviewer": {
-        "count": 664
+        "count": 672
       }
     }
   },
   "today": {
     "date": "2026-09-20",
-    "payments": 26,
+    "payments": 50,
     "by_type": {
       "merchant": {
-        "count": 8
+        "count": 16
       },
       "project": {
-        "count": 8
+        "count": 16
       },
       "reviewer": {
-        "count": 10
+        "count": 18
       }
     },
-    "approved": 8,
+    "approved": 16,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqs8qe5r90w3pg52ly46k7hq2txwev8cje345g03p6uycl7a38s55ag5wdlp8",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "Vision City Bakers",
+        "platform": "Nostr",
+        "time": "18:49"
+      },
+      {
+        "url": "https://x.com/i/status/2101699904263336288",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Speare Electricals",
+        "platform": "X",
+        "time": "16:03"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswghm4pps5t9k803x5ue0jyxtqzxyxafj57qfc7cy06dfqpp43q3gvts0fy",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Speare Electricals",
+        "platform": "Nostr",
+        "time": "16:03"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswk2jxw835lqrxwqa0cuh9eevssq5ha4t4z2kfj8n0y872493ztssg93u0v",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "Nostr",
+        "time": "15:06"
+      },
+      {
+        "url": "https://x.com/i/status/2101673385134633033",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "X",
+        "time": "15:06"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsxvpmu630jakadk3jajq7q2sxseucckrt5pgncmre0qgwwuj2xawg6wsw5g",
+        "project": "Lwandi Bitcoin 🇲🇿",
+        "merchant": "First and Last",
+        "platform": "Nostr",
+        "time": "13:58"
+      },
+      {
+        "url": "https://x.com/i/status/2101641272490414321",
+        "project": "Lwandi Bitcoin 🇲🇿",
+        "merchant": "First and Last",
+        "platform": "X",
+        "time": "13:24"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqswzcjzueg8wrhcndzg7p69c35t3wguhar2uycg28hwl5ukc8na7fs932cuj",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Kings Shop",
+        "platform": "Nostr",
+        "time": "13:23"
+      },
       {
         "url": "https://primal.net/e/nevent1qqsw4nw23y58uwsujpngve3kr52k66eqe9way7dyenfj456d2qxvklshu0d7j",
         "project": "Bitcoin Dua 🇬🇭",
@@ -91,13 +147,34 @@
   "last_24h": {
     "videos": [
       {
-        "project": "Bitcoin Dua 🇬🇭"
+        "project": "EcoBitz 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Lwandi Bitcoin 🇲🇿"
+      },
+      {
+        "project": "Lwandi Bitcoin 🇲🇿"
+      },
+      {
+        "project": "Afribit Kibera 🇰🇪"
       },
       {
         "project": "Bitcoin Dua 🇬🇭"
       },
       {
-        "project": "Bitcoin Githurai 🇰🇪"
+        "project": "Bitcoin Dua 🇬🇭"
       },
       {
         "project": "Bitcoin Githurai 🇰🇪"
@@ -115,14 +192,19 @@
         "project": "Bitcoin Githurai 🇰🇪"
       },
       {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
+        "project": "Bitcoin Githurai 🇰🇪"
       }
     ]
   },
   "daily": [
+    {
+      "date": "2026-07-20",
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 5,
+      "approved": 5,
+      "rejected": 2
+    },
     {
       "date": "2026-07-21",
       "project_count": 6,
@@ -613,16 +695,16 @@
     },
     {
       "date": "2026-09-20",
-      "project_count": 8,
-      "merchant_count": 8,
-      "reviewer_count": 10,
-      "approved": 8,
+      "project_count": 16,
+      "merchant_count": 16,
+      "reviewer_count": 18,
+      "approved": 16,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 666,
-    "approved": 653,
+    "total_reviewed": 674,
+    "approved": 661,
     "rejected": 13
   },
   "top_projects": [
@@ -2546,8 +2628,18 @@
     },
     {
       "name": "Bitcoin Aves 🇬🇭",
-      "count": 33,
+      "count": 35,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2101699904263336288",
+          "date": "2026-09-20",
+          "merchant": "Speare Electricals"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswghm4pps5t9k803x5ue0jyxtqzxyxafj57qfc7cy06dfqpp43q3gvts0fy",
+          "date": "2026-09-20",
+          "merchant": "Speare Electricals"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsfvphhamrz9qazncv3ch0uprd5jsqret6xke7qp4hjzu8n7f3jz8q78zcdr",
           "date": "2026-09-17",
@@ -3664,8 +3756,18 @@
     },
     {
       "name": "Bitcoin NextGen 🇳🇬",
-      "count": 14,
+      "count": 16,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswk2jxw835lqrxwqa0cuh9eevssq5ha4t4z2kfj8n0y872493ztssg93u0v",
+          "date": "2026-09-20",
+          "merchant": "Emmy Store"
+        },
+        {
+          "url": "https://x.com/i/status/2101673385134633033",
+          "date": "2026-09-20",
+          "merchant": "Emmy Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs0m3zdya5m0j9e83320y64rdd4scsgfj47gts2zmc2e93p4tnu33cyuh4uf",
           "date": "2026-09-08",
@@ -3740,8 +3842,13 @@
     },
     {
       "name": "EcoBitz 🇰🇪",
-      "count": 13,
+      "count": 14,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8qe5r90w3pg52ly46k7hq2txwev8cje345g03p6uycl7a38s55ag5wdlp8",
+          "date": "2026-09-20",
+          "merchant": "Vision City Bakers"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsdtw46xmt2vauj538djjtp4wep8zf2ms33vdhc2vy2qls9ye6flpgd60xvs",
           "date": "2026-09-18",
@@ -3810,6 +3917,72 @@
       ]
     },
     {
+      "name": "Lwandi Bitcoin 🇲🇿",
+      "count": 12,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxvpmu630jakadk3jajq7q2sxseucckrt5pgncmre0qgwwuj2xawg6wsw5g",
+          "date": "2026-09-20",
+          "merchant": "First and Last"
+        },
+        {
+          "url": "https://x.com/i/status/2101641272490414321",
+          "date": "2026-09-20",
+          "merchant": "First and Last"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsplet6td7chw54jdvj7znydhzlwxah2susw9jmvx4hc7vjnr66aus4qq0q9",
+          "date": "2026-09-17",
+          "merchant": "Dino Printer Services"
+        },
+        {
+          "url": "https://x.com/i/status/2100633111595802989",
+          "date": "2026-09-17",
+          "merchant": "Dino Printer Services"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv2d4sj5xp5ssvmgfr68apfuw8yksggz4e3rdvkf5nknuy587rsxqeyg3n2",
+          "date": "2026-09-16",
+          "merchant": "Dina Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2100294161668731302",
+          "date": "2026-09-16",
+          "merchant": "Dina Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9zldkfe3dhvxatfv5rs36zfl26fhntqz2ju4jv2ckavtrd5h4jcqnza5ex",
+          "date": "2026-09-13",
+          "merchant": "Chichava Surf Shorts"
+        },
+        {
+          "url": "https://x.com/i/status/2098790000515010726",
+          "date": "2026-09-13",
+          "merchant": "Chichava Surf Shorts"
+        },
+        {
+          "url": "https://x.com/i/status/2098078342033317909",
+          "date": "2026-09-10",
+          "merchant": "King Beach Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqu08ew86k3qg3xjltmkquf20q8sn2908p66ehnupwzkuyn6n9ppsjddmg2",
+          "date": "2026-09-10",
+          "merchant": "King Beach Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqw556h66z6xprkyau0pg7fclkapg6p7s369mnw9cm64pldmh20eg74n3p4",
+          "date": "2026-09-10",
+          "merchant": "Dina Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2097707372873462056",
+          "date": "2026-09-10",
+          "merchant": "Dina Shop"
+        }
+      ]
+    },
+    {
       "name": "Bit-Fitness 🇿🇦",
       "count": 10,
       "posts": [
@@ -3862,62 +4035,6 @@
           "url": "https://x.com/i/status/2087872036894818400",
           "date": "2026-08-13",
           "merchant": "Jennymira Africa Food and Spices"
-        }
-      ]
-    },
-    {
-      "name": "Lwandi Bitcoin 🇲🇿",
-      "count": 10,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsplet6td7chw54jdvj7znydhzlwxah2susw9jmvx4hc7vjnr66aus4qq0q9",
-          "date": "2026-09-17",
-          "merchant": "Dino Printer Services"
-        },
-        {
-          "url": "https://x.com/i/status/2100633111595802989",
-          "date": "2026-09-17",
-          "merchant": "Dino Printer Services"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsv2d4sj5xp5ssvmgfr68apfuw8yksggz4e3rdvkf5nknuy587rsxqeyg3n2",
-          "date": "2026-09-16",
-          "merchant": "Dina Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2100294161668731302",
-          "date": "2026-09-16",
-          "merchant": "Dina Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9zldkfe3dhvxatfv5rs36zfl26fhntqz2ju4jv2ckavtrd5h4jcqnza5ex",
-          "date": "2026-09-13",
-          "merchant": "Chichava Surf Shorts"
-        },
-        {
-          "url": "https://x.com/i/status/2098790000515010726",
-          "date": "2026-09-13",
-          "merchant": "Chichava Surf Shorts"
-        },
-        {
-          "url": "https://x.com/i/status/2098078342033317909",
-          "date": "2026-09-10",
-          "merchant": "King Beach Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqu08ew86k3qg3xjltmkquf20q8sn2908p66ehnupwzkuyn6n9ppsjddmg2",
-          "date": "2026-09-10",
-          "merchant": "King Beach Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqw556h66z6xprkyau0pg7fclkapg6p7s369mnw9cm64pldmh20eg74n3p4",
-          "date": "2026-09-10",
-          "merchant": "Dina Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2097707372873462056",
-          "date": "2026-09-10",
-          "merchant": "Dina Shop"
         }
       ]
     },
@@ -4031,8 +4148,13 @@
     },
     {
       "name": "Afribit Kibera 🇰🇪",
-      "count": 1,
+      "count": 2,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswzcjzueg8wrhcndzg7p69c35t3wguhar2uycg28hwl5ukc8na7fs932cuj",
+          "date": "2026-09-20",
+          "merchant": "Kings Shop"
+        },
         {
           "url": "https://x.com/i/status/2081730227063996473",
           "date": "2026-07-27",
@@ -4151,8 +4273,18 @@
     },
     {
       "name": "Emmy Store",
-      "count": 14,
+      "count": 16,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswk2jxw835lqrxwqa0cuh9eevssq5ha4t4z2kfj8n0y872493ztssg93u0v",
+          "date": "2026-09-20",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2101673385134633033",
+          "date": "2026-09-20",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs0m3zdya5m0j9e83320y64rdd4scsgfj47gts2zmc2e93p4tnu33cyuh4uf",
           "date": "2026-09-08",
@@ -6411,6 +6543,42 @@
       ]
     },
     {
+      "name": "Speare Electricals",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2101699904263336288",
+          "date": "2026-09-20",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswghm4pps5t9k803x5ue0jyxtqzxyxafj57qfc7cy06dfqpp43q3gvts0fy",
+          "date": "2026-09-20",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2096490216080974190",
+          "date": "2026-09-06",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxc8utsrtewtt2huarwp3v5hxvshn79psp7gfep5nfczltj9rp94sqm50d5",
+          "date": "2026-09-06",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2091223238638436659",
+          "date": "2026-08-22",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyat4evh84dr0mxec6dk8sd2stlfuajw2n5awvse57pk8mz97yr2cju3vgg",
+          "date": "2026-08-22",
+          "project": "Bitcoin Aves 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Paulo Take Away",
       "count": 5,
       "posts": [
@@ -6895,32 +7063,6 @@
           "url": "https://x.com/i/status/2084302250206261446",
           "date": "2026-08-03",
           "project": "Soweto BTC 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Speare Electricals",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2096490216080974190",
-          "date": "2026-09-06",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxc8utsrtewtt2huarwp3v5hxvshn79psp7gfep5nfczltj9rp94sqm50d5",
-          "date": "2026-09-06",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2091223238638436659",
-          "date": "2026-08-22",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyat4evh84dr0mxec6dk8sd2stlfuajw2n5awvse57pk8mz97yr2cju3vgg",
-          "date": "2026-08-22",
-          "project": "Bitcoin Aves 🇬🇭"
         }
       ]
     },
@@ -7971,6 +8113,38 @@
       ]
     },
     {
+      "name": "First and Last",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsxvpmu630jakadk3jajq7q2sxseucckrt5pgncmre0qgwwuj2xawg6wsw5g",
+          "date": "2026-09-20",
+          "project": "Lwandi Bitcoin 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2101641272490414321",
+          "date": "2026-09-20",
+          "project": "Lwandi Bitcoin 🇲🇿"
+        }
+      ]
+    },
+    {
+      "name": "Vision City Bakers",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8qe5r90w3pg52ly46k7hq2txwev8cje345g03p6uycl7a38s55ag5wdlp8",
+          "date": "2026-09-20",
+          "project": "EcoBitz 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfnejy2jjunheean5kkd2ey3438ea4hrgwl38h6rrufhpz83x2qts9gfxmf",
+          "date": "2026-09-11",
+          "project": "EcoBitz 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Catherine Mbao Greens",
       "count": 1,
       "posts": [
@@ -8147,17 +8321,6 @@
       ]
     },
     {
-      "name": "Vision City Bakers",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsfnejy2jjunheean5kkd2ey3438ea4hrgwl38h6rrufhpz83x2qts9gfxmf",
-          "date": "2026-09-11",
-          "project": "EcoBitz 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Ozone Cyber",
       "count": 1,
       "posts": [
@@ -8167,26 +8330,37 @@
           "project": "EcoBitz 🇰🇪"
         }
       ]
+    },
+    {
+      "name": "Kings Shop",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqswzcjzueg8wrhcndzg7p69c35t3wguhar2uycg28hwl5ukc8na7fs932cuj",
+          "date": "2026-09-20",
+          "project": "Afribit Kibera 🇰🇪"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 62,
+    "days_active": 63,
     "daily_average_payments": 31
   },
   "burn_rate": {
-    "percentage": 100,
+    "percentage": 99,
     "status": "on_target",
-    "days_active": 62
+    "days_active": 63
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 1938
+      "count": 1960
     },
     {
       "domain": "8333.mobi",
-      "count": 29
+      "count": 31
     },
     {
       "domain": "rurbit.com",
@@ -8233,13 +8407,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1063
+      "count": 1072
     },
     {
       "platform": "Nostr",
-      "count": 911
+      "count": 926
     }
   ],
-  "generated_at": "2026-09-20T07:05:01.169744+00:00",
+  "generated_at": "2026-09-20T19:05:01.925772+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
