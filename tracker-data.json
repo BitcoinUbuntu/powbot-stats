@@ -1,7 +1,384 @@
 {
-  "last_updated": "2026-09-22T07:05:02.590963+00:00",
-  "total_submissions": 705,
+  "last_updated": "2026-09-22T19:05:03.111577+00:00",
+  "total_submissions": 716,
   "submissions": [
+    {
+      "id": 2797,
+      "timestamp": "2026-09-22 17:22:07 UTC",
+      "project_name": "Bitcoin Karoo (South Africa) 🇿🇦",
+      "project_flag": "🇿🇦",
+      "merchant_name": "Rasal MD Cafe",
+      "lightning_address": "Not found",
+      "merchant_tip_status": "",
+      "platform": "X",
+      "post_url": "https://x.com/i/status/2102445009152938489",
+      "telegram_link": "https://t.me/c/2378392967/21007",
+      "btcmap_link": "https://btcmap.org/merchant/node:14137017769",
+      "note": "❌ Post rejected via data quality alert | Reason: Missing PoW elements: lightning address",
+      "status": "Rejected",
+      "classification": "",
+      "payments": []
+    },
+    {
+      "id": 2796,
+      "timestamp": "2026-09-22 17:11:45 UTC",
+      "project_name": "Bitcoin Karoo (South Africa) 🇿🇦",
+      "project_flag": "🇿🇦",
+      "merchant_name": "Rasal MD Cafe",
+      "lightning_address": "rasalmdcafe@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "X",
+      "post_url": "https://x.com/i/status/2102445646552633832",
+      "telegram_link": "https://t.me/c/2378392967/21010",
+      "btcmap_link": "https://btcmap.org/merchant/node:14137017769",
+      "note": "👍 Video reviewed",
+      "status": "Processed",
+      "classification": "primary",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6ab2b9440ae68aa97c2963a6",
+          "timestamp": "2026-09-22T17:22:12.712376+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Rasal MD Cafe",
+          "tx_id": "6ab2b9450ae68aa97c2964b2",
+          "timestamp": "2026-09-22T17:22:19.007052+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Karoo (South Africa) 🇿🇦",
+          "tx_id": "6ab2b94b0ae68aa97c296a83",
+          "timestamp": "2026-09-22T17:22:22.146539+00:00"
+        }
+      ]
+    },
+    {
+      "id": 2795,
+      "timestamp": "2026-09-22 14:15:25 UTC",
+      "project_name": "Bitcoin NextGen (Nigeria) 🇳🇬",
+      "project_flag": "🇳🇬",
+      "merchant_name": "Emmy Store",
+      "lightning_address": "emmystore@8333.mobi",
+      "merchant_tip_status": "✅",
+      "platform": "Nostr",
+      "post_url": "https://primal.net/e/nevent1qqsgqt4e42e3rr2mkjuxms4md44wf6l2gz7j7ec0fv662kxuyfsth8qnuywun",
+      "telegram_link": "https://t.me/c/2378392967/21004",
+      "btcmap_link": "https://btcmap.org/merchant/node:13470987557",
+      "note": "👍 Video reviewed | 🔀 Cross-post | ⚠️ Multiple Lightning addresses detected (2)",
+      "status": "Processed",
+      "classification": "duplicate",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6ab2b3200ae68aa97c254ada",
+          "timestamp": "2026-09-22T16:56:00.460184+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Emmy Store",
+          "tx_id": "6ab2b3230ae68aa97c254d2a",
+          "timestamp": "2026-09-22T16:56:04.331771+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin NextGen (Nigeria) 🇳🇬",
+          "tx_id": "6ab2b3250ae68aa97c254f4d",
+          "timestamp": "2026-09-22T16:56:05.353850+00:00"
+        }
+      ]
+    },
+    {
+      "id": 2794,
+      "timestamp": "2026-09-22 13:30:25 UTC",
+      "project_name": "Bitcoin NextGen (Nigeria) 🇳🇬",
+      "project_flag": "🇳🇬",
+      "merchant_name": "Emmy Store",
+      "lightning_address": "emmystore@8333.mobi",
+      "merchant_tip_status": "✅",
+      "platform": "X",
+      "post_url": "https://x.com/i/status/2102389347249008990",
+      "telegram_link": "https://t.me/c/2378392967/21001",
+      "btcmap_link": "https://btcmap.org/merchant/node:13470987557",
+      "note": "👍 Video reviewed | ⚠️ Multiple Lightning addresses detected (2)",
+      "status": "Processed",
+      "classification": "primary",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6ab2b3150ae68aa97c25429e",
+          "timestamp": "2026-09-22T16:55:49.814141+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Emmy Store",
+          "tx_id": "6ab2b3190ae68aa97c254560",
+          "timestamp": "2026-09-22T16:55:55.332446+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin NextGen (Nigeria) 🇳🇬",
+          "tx_id": "6ab2b31c0ae68aa97c25476e",
+          "timestamp": "2026-09-22T16:55:56.461664+00:00"
+        }
+      ]
+    },
+    {
+      "id": 2793,
+      "timestamp": "2026-09-22 12:17:12 UTC",
+      "project_name": "Bitcoin Tofo (Mozambique) 🇲🇿",
+      "project_flag": "🇲🇿",
+      "merchant_name": "Rafael Maria Fruits & Vegetables Shop",
+      "lightning_address": "rafaelmaria@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "Nostr",
+      "post_url": "https://primal.net/e/nevent1qqspjrhgj20qpjttqqw44jjf0zzqaghl0arf2k8lxph8lyjf7vqxxzskkzxxy",
+      "telegram_link": "https://t.me/c/2378392967/20998",
+      "btcmap_link": "https://btcmap.org/merchant/32150",
+      "note": "👍 Video reviewed | 🔀 Cross-post",
+      "status": "Processed",
+      "classification": "duplicate",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6ab2b30e0ae68aa97c253bd1",
+          "timestamp": "2026-09-22T16:55:42.423909+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Rafael Maria Fruits & Vegetables Shop",
+          "tx_id": "6ab2b30f0ae68aa97c253d1d",
+          "timestamp": "2026-09-22T16:55:43.579313+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Tofo (Mozambique) 🇲🇿",
+          "tx_id": "6ab2b3100ae68aa97c253e66",
+          "timestamp": "2026-09-22T16:55:44.509127+00:00"
+        }
+      ]
+    },
+    {
+      "id": 2792,
+      "timestamp": "2026-09-22 12:16:18 UTC",
+      "project_name": "Bitcoin Tofo (Mozambique) 🇲🇿",
+      "project_flag": "🇲🇿",
+      "merchant_name": "Rafael Maria Fruits & Vegetables Shop",
+      "lightning_address": "rafaelmaria@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "X",
+      "post_url": "https://x.com/i/status/2102365475283804518",
+      "telegram_link": "https://t.me/c/2378392967/20995",
+      "btcmap_link": "https://btcmap.org/merchant/32150",
+      "note": "👍 Video reviewed",
+      "status": "Processed",
+      "classification": "primary",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6ab283790ae68aa97c07cae8",
+          "timestamp": "2026-09-22T13:32:41.936918+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Rafael Maria Fruits & Vegetables Shop",
+          "tx_id": "6ab2837a0ae68aa97c07cbb8",
+          "timestamp": "2026-09-22T13:32:42.818548+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Tofo (Mozambique) 🇲🇿",
+          "tx_id": "6ab2837b0ae68aa97c07ccca",
+          "timestamp": "2026-09-22T13:32:43.853203+00:00"
+        }
+      ]
+    },
+    {
+      "id": 2791,
+      "timestamp": "2026-09-22 12:14:25 UTC",
+      "project_name": "Bitcoin Tofo (Mozambique) 🇲🇿",
+      "project_flag": "🇲🇿",
+      "merchant_name": "Nhampossa Blue Clothes Tofo Shop",
+      "lightning_address": "nhampossa12@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "Nostr",
+      "post_url": "https://primal.net/e/nevent1qqs87s4vwntkw3px2kpju0f59zltqaw90n8qnv9umle73pgux6wejlchdm9al",
+      "telegram_link": "https://t.me/c/2378392967/20992",
+      "btcmap_link": "https://btcmap.org/merchant/32207",
+      "note": "👍 Video reviewed | 🔀 Cross-post",
+      "status": "Processed",
+      "classification": "duplicate",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6ab2832f0ae68aa97c079d9a",
+          "timestamp": "2026-09-22T13:31:28.144590+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Nhampossa Blue Clothes Tofo Shop",
+          "tx_id": "6ab283310ae68aa97c079f13",
+          "timestamp": "2026-09-22T13:31:29.273240+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Tofo (Mozambique) 🇲🇿",
+          "tx_id": "6ab283320ae68aa97c07a021",
+          "timestamp": "2026-09-22T13:31:30.217688+00:00"
+        }
+      ]
+    },
+    {
+      "id": 2790,
+      "timestamp": "2026-09-22 12:13:06 UTC",
+      "project_name": "Bitcoin Tofo (Mozambique) 🇲🇿",
+      "project_flag": "🇲🇿",
+      "merchant_name": "Nhampossa Blue Clothes Tofo Shop",
+      "lightning_address": "nhampossa12@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "X",
+      "post_url": "https://x.com/i/status/2102366974164550095",
+      "telegram_link": "https://t.me/c/2378392967/20989",
+      "btcmap_link": "https://btcmap.org/merchant/32207",
+      "note": "👍 Video reviewed",
+      "status": "Processed",
+      "classification": "primary",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6ab283140ae68aa97c078b62",
+          "timestamp": "2026-09-22T13:31:00.292436+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Nhampossa Blue Clothes Tofo Shop",
+          "tx_id": "6ab283150ae68aa97c078d10",
+          "timestamp": "2026-09-22T13:31:01.432647+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Tofo (Mozambique) 🇲🇿",
+          "tx_id": "6ab283160ae68aa97c078e79",
+          "timestamp": "2026-09-22T13:31:02.415539+00:00"
+        }
+      ]
+    },
+    {
+      "id": 2789,
+      "timestamp": "2026-09-22 10:16:27 UTC",
+      "project_name": "Bitcoin Karoo (South Africa) 🇿🇦",
+      "project_flag": "🇿🇦",
+      "merchant_name": "De Rust TennisKlub",
+      "lightning_address": "derusttennisklub@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "Nostr",
+      "post_url": "https://primal.net/e/nevent1qqs0wmkpl29ak72yzhdmnpz4uaxts0dwewjlv02qnkqjtdk5wt0x66csj2uq6",
+      "telegram_link": "https://t.me/c/2378392967/20986",
+      "btcmap_link": "https://btcmap.org/merchant/node:14137026160",
+      "note": "👍 Video reviewed | 🔀 Cross-post",
+      "status": "Processed",
+      "classification": "duplicate",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6ab268a60ae68aa97cf730e8",
+          "timestamp": "2026-09-22T11:38:14.705239+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "De Rust TennisKlub",
+          "tx_id": "6ab268a70ae68aa97cf73220",
+          "timestamp": "2026-09-22T11:38:20.279092+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Karoo (South Africa) 🇿🇦",
+          "tx_id": "6ab268ad0ae68aa97cf7374c",
+          "timestamp": "2026-09-22T11:38:24.454645+00:00"
+        }
+      ]
+    },
+    {
+      "id": 2788,
+      "timestamp": "2026-09-22 08:37:14 UTC",
+      "project_name": "Bitcoin Aves (Ghana) 🇬🇭",
+      "project_flag": "🇬🇭",
+      "merchant_name": "Peace Pot",
+      "lightning_address": "peacepot@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "X",
+      "post_url": "https://x.com/i/status/2102315615327260765",
+      "telegram_link": "https://t.me/c/2378392967/20983",
+      "btcmap_link": "https://btcmap.org/merchant/node:13042099757",
+      "note": "👍 Video reviewed | 🔀 Cross-post",
+      "status": "Processed",
+      "classification": "duplicate",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6ab24cdd0ae68aa97ce58bd3",
+          "timestamp": "2026-09-22T09:39:41.246240+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Peace Pot",
+          "tx_id": "6ab24cdd0ae68aa97ce58cbf",
+          "timestamp": "2026-09-22T09:39:42.125463+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Aves (Ghana) 🇬🇭",
+          "tx_id": "6ab24cde0ae68aa97ce58db5",
+          "timestamp": "2026-09-22T09:39:43.085852+00:00"
+        }
+      ]
+    },
+    {
+      "id": 2787,
+      "timestamp": "2026-09-22 08:37:10 UTC",
+      "project_name": "Bitcoin Aves (Ghana) 🇬🇭",
+      "project_flag": "🇬🇭",
+      "merchant_name": "Peace Pot",
+      "lightning_address": "peacepot@blink.sv",
+      "merchant_tip_status": "✅",
+      "platform": "Nostr",
+      "post_url": "https://primal.net/e/nevent1qqsvs5vn8am09d2wp47tn39n4v89sp7y8xftfxwcyfffr4sa78h7rvg4c09dw",
+      "telegram_link": "https://t.me/c/2378392967/20980",
+      "btcmap_link": "https://btcmap.org/merchant/node:13042099757",
+      "note": "👍 Video reviewed",
+      "status": "Processed",
+      "classification": "primary",
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6ab24c820ae68aa97ce55840",
+          "timestamp": "2026-09-22T09:38:10.570512+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Peace Pot",
+          "tx_id": "6ab24c830ae68aa97ce5592a",
+          "timestamp": "2026-09-22T09:38:11.599663+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Aves (Ghana) 🇬🇭",
+          "tx_id": "6ab24c840ae68aa97ce55a2a",
+          "timestamp": "2026-09-22T09:38:12.596978+00:00"
+        }
+      ]
+    },
     {
       "id": 2786,
       "timestamp": "2026-09-22 07:03:56 UTC",
@@ -14,10 +391,29 @@
       "post_url": "https://primal.net/e/nevent1qqsqghxytvnszqshnu8guakds6vzhg4sdg008g6ghja9qk6a6g374ds9fx8et",
       "telegram_link": "https://t.me/c/2378392967/20977",
       "btcmap_link": "https://btcmap.org/merchant/31451",
-      "note": "🔀 Cross-post | 🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "👍 Video reviewed | 🔀 Cross-post",
+      "status": "Processed",
       "classification": "duplicate",
-      "payments": []
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6ab24c2f0ae68aa97ce523f3",
+          "timestamp": "2026-09-22T09:36:47.628367+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "T and N Gas Station",
+          "tx_id": "6ab24c300ae68aa97ce524d9",
+          "timestamp": "2026-09-22T09:36:48.521717+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Ekiti (Nigeria) 🇳🇬",
+          "tx_id": "6ab24c310ae68aa97ce525c0",
+          "timestamp": "2026-09-22T09:36:52.151578+00:00"
+        }
+      ]
     },
     {
       "id": 2785,
@@ -31,10 +427,29 @@
       "post_url": "https://x.com/i/status/2102291587925529021",
       "telegram_link": "https://t.me/c/2378392967/20974",
       "btcmap_link": "https://btcmap.org/merchant/31451",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "👍 Video reviewed",
+      "status": "Processed",
       "classification": "primary",
-      "payments": []
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6ab24bc20ae68aa97ce4e2c9",
+          "timestamp": "2026-09-22T09:34:59.045351+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "T and N Gas Station",
+          "tx_id": "6ab24bc30ae68aa97ce4e3bf",
+          "timestamp": "2026-09-22T09:34:59.957932+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Bitcoin Ekiti (Nigeria) 🇳🇬",
+          "tx_id": "6ab24bc40ae68aa97ce4e4fb",
+          "timestamp": "2026-09-22T09:35:03.178884+00:00"
+        }
+      ]
     },
     {
       "id": 2784,
@@ -48,10 +463,29 @@
       "post_url": "https://primal.net/e/nevent1qqsvx2gq5rq6lr3nm6kxfrdjny54khx5nxumyppq8dtmmjaf0nckrqcjavml9",
       "telegram_link": "https://t.me/c/2378392967/20969",
       "btcmap_link": "https://btcmap.org/merchant/32012",
-      "note": "🤖 Video requires human review",
-      "status": "Pending Review",
+      "note": "👍 Video reviewed",
+      "status": "Processed",
       "classification": "primary",
-      "payments": []
+      "payments": [
+        {
+          "type": "reviewer",
+          "recipient": "@jaygallardo2376",
+          "tx_id": "6ab24b8d0ae68aa97ce4c482",
+          "timestamp": "2026-09-22T09:34:05.537468+00:00"
+        },
+        {
+          "type": "merchant",
+          "recipient": "Ruth Shop",
+          "tx_id": "6ab24b8e0ae68aa97ce4c59d",
+          "timestamp": "2026-09-22T09:34:06.841934+00:00"
+        },
+        {
+          "type": "project",
+          "recipient": "Afribit Kibera (Kenya) 🇰🇪",
+          "tx_id": "6ab24b8f0ae68aa97ce4c677",
+          "timestamp": "2026-09-22T09:34:10.277376+00:00"
+        }
+      ]
     },
     {
       "id": 2783,
