@@ -1,70 +1,130 @@
 {
   "totals": {
-    "all_payments": 2209,
+    "all_payments": 2233,
     "by_type": {
       "merchant": {
-        "count": 734
+        "count": 742
       },
       "project": {
-        "count": 734
+        "count": 742
       },
       "reviewer": {
-        "count": 741
+        "count": 749
       }
     }
   },
   "today": {
     "date": "2026-09-25",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 24,
+    "by_type": {
+      "merchant": {
+        "count": 8
+      },
+      "project": {
+        "count": 8
+      },
+      "reviewer": {
+        "count": 8
+      }
+    },
+    "approved": 8,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsq6ltfsxhp6fem59hgkmz2nv4r0vnga3kumz83my2rqfnxakx668sv0q8gq",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Anselim Diapers",
+        "platform": "Nostr",
+        "time": "16:41"
+      },
+      {
+        "url": "https://x.com/i/status/2103492914051416476",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Anselim Diapers",
+        "platform": "X",
+        "time": "16:41"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsp98emfhth98u03ku38euxzdxtfmf47x6nms6pn56737lhfkd0k3qlp3zu4",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Preso's Food and Drinks",
+        "platform": "Nostr",
+        "time": "09:08"
+      },
+      {
+        "url": "https://x.com/i/status/2103408487573115176",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Preso's Food and Drinks",
+        "platform": "X",
+        "time": "09:08"
+      },
+      {
+        "url": "https://x.com/i/status/2102781764347564093",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Mercy Groceries",
+        "platform": "X",
+        "time": "07:56"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsgnzm7kw9vlea9aem8zxv69hthwxgjydt00g2en3zhy7zuv9z75ysndrpm4",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Dama shop",
+        "platform": "Nostr",
+        "time": "07:36"
+      },
+      {
+        "url": "https://x.com/i/status/2103372993149771840",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Dama shop",
+        "platform": "X",
+        "time": "07:36"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs22n5xja0dhh2ezhpxe6vpyd3h2d8qnxh8e9zezte3enwfj4qkdjqyer2qg",
+        "project": "Afribit Kibera 🇰🇪",
+        "merchant": "Night Salon",
+        "platform": "Nostr",
+        "time": "07:36"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
-        "project": "EcoBitz 🇰🇪"
+        "project": "Bitbiashara 🇰🇪"
       },
       {
-        "project": "Bitsavers Eduhub 🇰🇪"
+        "project": "Bitbiashara 🇰🇪"
       },
       {
-        "project": "Bitcoin Sisonke 🇿🇦"
+        "project": "Bitcoin Dua 🇬🇭"
       },
       {
-        "project": "Bitcoin Sisonke 🇿🇦"
+        "project": "Bitcoin Dua 🇬🇭"
       },
       {
-        "project": "Lwandi Bitcoin 🇲🇿"
+        "project": "Bitcoin Githurai 🇰🇪"
       },
       {
-        "project": "Lwandi Bitcoin 🇲🇿"
+        "project": "Bitcoin Chama 🇰🇪"
       },
       {
-        "project": "Bitsavers Eduhub 🇰🇪"
+        "project": "Bitcoin Chama 🇰🇪"
       },
       {
-        "project": "Bitsavers Eduhub 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Ekiti 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Ekiti 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
+        "project": "Afribit Kibera 🇰🇪"
       }
     ]
   },
   "daily": [
+    {
+      "date": "2026-07-20",
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 5,
+      "approved": 5,
+      "rejected": 2
+    },
     {
       "date": "2026-07-21",
       "project_count": 6,
@@ -595,23 +655,33 @@
     },
     {
       "date": "2026-09-25",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 8,
+      "merchant_count": 8,
+      "reviewer_count": 8,
+      "approved": 8,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 748,
-    "approved": 730,
+    "total_reviewed": 756,
+    "approved": 738,
     "rejected": 18
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 58,
+      "count": 60,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsq6ltfsxhp6fem59hgkmz2nv4r0vnga3kumz83my2rqfnxakx668sv0q8gq",
+          "date": "2026-09-25",
+          "merchant": "Anselim Diapers"
+        },
+        {
+          "url": "https://x.com/i/status/2103492914051416476",
+          "date": "2026-09-25",
+          "merchant": "Anselim Diapers"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs2lkxhel9vkhlgla9a53astl73a7wg2pn3e8l2dpxcwlh9crvvyxsjycxgx",
           "date": "2026-09-23",
@@ -906,8 +976,18 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 57,
+      "count": 59,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgnzm7kw9vlea9aem8zxv69hthwxgjydt00g2en3zhy7zuv9z75ysndrpm4",
+          "date": "2026-09-25",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://x.com/i/status/2103372993149771840",
+          "date": "2026-09-25",
+          "merchant": "Dama shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrtus273c3r7xhs20mjquev4y2mxxpcv7y8jm33vl7vcgunfef7gc2ezsac",
           "date": "2026-09-23",
@@ -1197,8 +1277,18 @@
     },
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 53,
+      "count": 55,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp98emfhth98u03ku38euxzdxtfmf47x6nms6pn56737lhfkd0k3qlp3zu4",
+          "date": "2026-09-25",
+          "merchant": "Preso's Food and Drinks"
+        },
+        {
+          "url": "https://x.com/i/status/2103408487573115176",
+          "date": "2026-09-25",
+          "merchant": "Preso's Food and Drinks"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsw4nw23y58uwsujpngve3kr52k66eqe9way7dyenfj456d2qxvklshu0d7j",
           "date": "2026-09-20",
@@ -2000,8 +2090,13 @@
     },
     {
       "name": "Bitcoin Githurai 🇰🇪",
-      "count": 46,
+      "count": 47,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2102781764347564093",
+          "date": "2026-09-25",
+          "merchant": "Mercy Groceries"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs8m3zdzx2lawcu2tumv2regyhsl9qhatguwc3t5x7j3r5tk3l80dqcl37f7",
           "date": "2026-09-23",
@@ -4383,8 +4478,13 @@
     },
     {
       "name": "Afribit Kibera 🇰🇪",
-      "count": 3,
+      "count": 4,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs22n5xja0dhh2ezhpxe6vpyd3h2d8qnxh8e9zezte3enwfj4qkdjqyer2qg",
+          "date": "2026-09-25",
+          "merchant": "Night Salon"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsvx2gq5rq6lr3nm6kxfrdjny54khx5nxumyppq8dtmmjaf0nckrqcjavml9",
           "date": "2026-09-22",
@@ -4438,8 +4538,18 @@
   "top_merchants": [
     {
       "name": "Dama shop",
-      "count": 18,
+      "count": 20,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgnzm7kw9vlea9aem8zxv69hthwxgjydt00g2en3zhy7zuv9z75ysndrpm4",
+          "date": "2026-09-25",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2103372993149771840",
+          "date": "2026-09-25",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsfuttr0msf8fdfpvrmsvh9vtd5v3nhawwh2payks7upkrseqg60fcnqpm0g",
           "date": "2026-09-16",
@@ -5664,6 +5774,62 @@
       ]
     },
     {
+      "name": "Preso's Food and Drinks",
+      "count": 10,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp98emfhth98u03ku38euxzdxtfmf47x6nms6pn56737lhfkd0k3qlp3zu4",
+          "date": "2026-09-25",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2103408487573115176",
+          "date": "2026-09-25",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2099743436777635845",
+          "date": "2026-09-16",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszp47svj7vnkkvfm7m58276vrf9w8t3dhpdnfj3t6kw9dqnwfma0qgjecj6",
+          "date": "2026-09-15",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0fpyuzmwknvwrcse3trd9p7pmszp5e2q35x9jvgw6kjkfndl8mqgq29rpj",
+          "date": "2026-08-13",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2087654156081225954",
+          "date": "2026-08-13",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0purt7dnhfpnu5qy4kna69ewgg4p82cnwvu7lgum0y8ktq0a566c049efh",
+          "date": "2026-08-06",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2085383720014348459",
+          "date": "2026-08-06",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxst5tuctfpak3hk2y2c7ql6pc3uh6djuhtt3m94w6sc288qqq0tgmxqtvl",
+          "date": "2026-07-22",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2079880576299839952",
+          "date": "2026-07-22",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Unical Groceries",
       "count": 9,
       "posts": [
@@ -5813,6 +5979,57 @@
           "url": "https://x.com/i/status/2080507097137963357",
           "date": "2026-07-24",
           "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Mercy Groceries",
+      "count": 9,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2102781764347564093",
+          "date": "2026-09-25",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf92svv8lgerftp8mvnphj5rce78t9p04a8h7x3ud0rx69kjvvqmgkgu6ac",
+          "date": "2026-09-20",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2101293511978987637",
+          "date": "2026-09-20",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw5n59qk8hegyqdadefql8zz93vjhhkdc5ntv67juz5gwtsz7x2kcg2nvyh",
+          "date": "2026-09-11",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2098412578611380619",
+          "date": "2026-09-11",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswgqcy5mysq3kn9wewuzzk06ly75nf5gchf3hqasudjzr7lk74aeq3yhtkh",
+          "date": "2026-08-26",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2091781042512314622",
+          "date": "2026-08-24",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2084167833009721698",
+          "date": "2026-08-03",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2082076973765927316",
+          "date": "2026-07-28",
+          "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
     },
@@ -6001,52 +6218,6 @@
       ]
     },
     {
-      "name": "Preso's Food and Drinks",
-      "count": 8,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2099743436777635845",
-          "date": "2026-09-16",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszp47svj7vnkkvfm7m58276vrf9w8t3dhpdnfj3t6kw9dqnwfma0qgjecj6",
-          "date": "2026-09-15",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0fpyuzmwknvwrcse3trd9p7pmszp5e2q35x9jvgw6kjkfndl8mqgq29rpj",
-          "date": "2026-08-13",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2087654156081225954",
-          "date": "2026-08-13",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0purt7dnhfpnu5qy4kna69ewgg4p82cnwvu7lgum0y8ktq0a566c049efh",
-          "date": "2026-08-06",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2085383720014348459",
-          "date": "2026-08-06",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxst5tuctfpak3hk2y2c7ql6pc3uh6djuhtt3m94w6sc288qqq0tgmxqtvl",
-          "date": "2026-07-22",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2079880576299839952",
-          "date": "2026-07-22",
-          "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
       "name": "Topic's Pub",
       "count": 8,
       "posts": [
@@ -6227,52 +6398,6 @@
           "url": "https://primal.net/e/nevent1qqsfz5e72seaagwawpua0vw46l6cexw30znww5wfmdm680mlt0mmxqgevhm08",
           "date": "2026-07-25",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Mercy Groceries",
-      "count": 8,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsf92svv8lgerftp8mvnphj5rce78t9p04a8h7x3ud0rx69kjvvqmgkgu6ac",
-          "date": "2026-09-20",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2101293511978987637",
-          "date": "2026-09-20",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsw5n59qk8hegyqdadefql8zz93vjhhkdc5ntv67juz5gwtsz7x2kcg2nvyh",
-          "date": "2026-09-11",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2098412578611380619",
-          "date": "2026-09-11",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswgqcy5mysq3kn9wewuzzk06ly75nf5gchf3hqasudjzr7lk74aeq3yhtkh",
-          "date": "2026-08-26",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2091781042512314622",
-          "date": "2026-08-24",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2084167833009721698",
-          "date": "2026-08-03",
-          "project": "Bitcoin Githurai 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2082076973765927316",
-          "date": "2026-07-28",
-          "project": "Bitcoin Githurai 🇰🇪"
         }
       ]
     },
@@ -8788,6 +8913,22 @@
       ]
     },
     {
+      "name": "Anselim Diapers",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsq6ltfsxhp6fem59hgkmz2nv4r0vnga3kumz83my2rqfnxakx668sv0q8gq",
+          "date": "2026-09-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2103492914051416476",
+          "date": "2026-09-25",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Catherine Mbao Greens",
       "count": 1,
       "posts": [
@@ -9017,22 +9158,33 @@
           "project": "EcoBitz 🇰🇪"
         }
       ]
+    },
+    {
+      "name": "Night Salon",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs22n5xja0dhh2ezhpxe6vpyd3h2d8qnxh8e9zezte3enwfj4qkdjqyer2qg",
+          "date": "2026-09-25",
+          "project": "Afribit Kibera 🇰🇪"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 67,
+    "days_active": 68,
     "daily_average_payments": 32
   },
   "burn_rate": {
     "percentage": 103,
     "status": "on_target",
-    "days_active": 67
+    "days_active": 68
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2165
+      "count": 2189
     },
     {
       "domain": "8333.mobi",
@@ -9083,13 +9235,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1176
+      "count": 1188
     },
     {
       "platform": "Nostr",
-      "count": 1033
+      "count": 1045
     }
   ],
-  "generated_at": "2026-09-25T07:05:01.529637+00:00",
+  "generated_at": "2026-09-25T19:05:02.025872+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
