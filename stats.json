@@ -1,39 +1,72 @@
 {
   "totals": {
-    "all_payments": 2239,
+    "all_payments": 2251,
     "by_type": {
       "merchant": {
-        "count": 744
+        "count": 748
       },
       "project": {
-        "count": 744
+        "count": 748
       },
       "reviewer": {
-        "count": 751
+        "count": 755
       }
     }
   },
   "today": {
     "date": "2026-09-26",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 12,
+    "by_type": {
+      "merchant": {
+        "count": 4
+      },
+      "project": {
+        "count": 4
+      },
+      "reviewer": {
+        "count": 4
+      }
+    },
+    "approved": 4,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2103848364781482450",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Padis Eatery",
+        "platform": "X",
+        "time": "14:52"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsy00yyw03d2nda70r8m5n9dzne95q3tv0kjgslx7ucdwh7eckvk3sr7adfj",
+        "project": "Bitcoin Aves 🇬🇭",
+        "merchant": "Padis Eatery",
+        "platform": "Nostr",
+        "time": "14:52"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsyrs2uagm9fcvq34nmxcyl2yjzpa80tzhmg02nevx2rf5ggwpq84cq0yxz9",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Leni Boutique",
+        "platform": "Nostr",
+        "time": "10:15"
+      },
+      {
+        "url": "https://x.com/i/status/2103735412145496553",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Leni Boutique",
+        "platform": "X",
+        "time": "10:15"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
-        "project": "BTC Shule 🇧🇮"
+        "project": "Bitcoin Aves 🇬🇭"
       },
       {
-        "project": "BTC Shule 🇧🇮"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
+        "project": "Bitcoin Aves 🇬🇭"
       },
       {
         "project": "Bitcoin Dua 🇬🇭"
@@ -42,20 +75,22 @@
         "project": "Bitcoin Dua 🇬🇭"
       },
       {
-        "project": "Bitcoin Githurai 🇰🇪"
+        "project": "BTC Shule 🇧🇮"
       },
       {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Afribit Kibera 🇰🇪"
+        "project": "BTC Shule 🇧🇮"
       }
     ]
   },
   "daily": [
+    {
+      "date": "2026-07-20",
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 5,
+      "approved": 5,
+      "rejected": 2
+    },
     {
       "date": "2026-07-21",
       "project_count": 6,
@@ -594,16 +629,16 @@
     },
     {
       "date": "2026-09-26",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4,
+      "approved": 4,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 758,
-    "approved": 740,
+    "total_reviewed": 762,
+    "approved": 744,
     "rejected": 18
   },
   "top_projects": [
@@ -1216,8 +1251,18 @@
     },
     {
       "name": "Bitcoin Dua 🇬🇭",
-      "count": 55,
+      "count": 57,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyrs2uagm9fcvq34nmxcyl2yjzpa80tzhmg02nevx2rf5ggwpq84cq0yxz9",
+          "date": "2026-09-26",
+          "merchant": "Leni Boutique"
+        },
+        {
+          "url": "https://x.com/i/status/2103735412145496553",
+          "date": "2026-09-26",
+          "merchant": "Leni Boutique"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsp98emfhth98u03ku38euxzdxtfmf47x6nms6pn56737lhfkd0k3qlp3zu4",
           "date": "2026-09-25",
@@ -2692,8 +2737,18 @@
     },
     {
       "name": "Bitcoin Aves 🇬🇭",
-      "count": 37,
+      "count": 39,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2103848364781482450",
+          "date": "2026-09-26",
+          "merchant": "Padis Eatery"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy00yyw03d2nda70r8m5n9dzne95q3tv0kjgslx7ucdwh7eckvk3sr7adfj",
+          "date": "2026-09-26",
+          "merchant": "Padis Eatery"
+        },
         {
           "url": "https://x.com/i/status/2102315615327260765",
           "date": "2026-09-22",
@@ -5789,6 +5844,62 @@
       ]
     },
     {
+      "name": "Leni Boutique",
+      "count": 10,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsyrs2uagm9fcvq34nmxcyl2yjzpa80tzhmg02nevx2rf5ggwpq84cq0yxz9",
+          "date": "2026-09-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2103735412145496553",
+          "date": "2026-09-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw4nw23y58uwsujpngve3kr52k66eqe9way7dyenfj456d2qxvklshu0d7j",
+          "date": "2026-09-20",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2101385511503896783",
+          "date": "2026-09-20",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2098283493369295029",
+          "date": "2026-09-11",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp2rfu4wa3nrfhq7v383ll0mymdr9dr6f0r3nk892aazekckud2csdfdv37",
+          "date": "2026-09-11",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2095395867062591866",
+          "date": "2026-09-03",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgys0sgpevnq3gmacw36dqxx92d60sz8ddfnre6mgz6wmexhjamtg7576h7",
+          "date": "2026-09-03",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxja842lmp20ghdu97rgj0c23hyfc54e7wr7rdksucwc3u4cyw8nq9ktfss",
+          "date": "2026-08-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2091642972521599463",
+          "date": "2026-08-24",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Unical Groceries",
       "count": 9,
       "posts": [
@@ -6357,52 +6468,6 @@
           "url": "https://primal.net/e/nevent1qqsfz5e72seaagwawpua0vw46l6cexw30znww5wfmdm680mlt0mmxqgevhm08",
           "date": "2026-07-25",
           "project": "Bitbiashara 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Leni Boutique",
-      "count": 8,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsw4nw23y58uwsujpngve3kr52k66eqe9way7dyenfj456d2qxvklshu0d7j",
-          "date": "2026-09-20",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2101385511503896783",
-          "date": "2026-09-20",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2098283493369295029",
-          "date": "2026-09-11",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp2rfu4wa3nrfhq7v383ll0mymdr9dr6f0r3nk892aazekckud2csdfdv37",
-          "date": "2026-09-11",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2095395867062591866",
-          "date": "2026-09-03",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgys0sgpevnq3gmacw36dqxx92d60sz8ddfnre6mgz6wmexhjamtg7576h7",
-          "date": "2026-09-03",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxja842lmp20ghdu97rgj0c23hyfc54e7wr7rdksucwc3u4cyw8nq9ktfss",
-          "date": "2026-08-24",
-          "project": "Bitcoin Dua 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2091642972521599463",
-          "date": "2026-08-24",
-          "project": "Bitcoin Dua 🇬🇭"
         }
       ]
     },
@@ -7465,6 +7530,37 @@
       ]
     },
     {
+      "name": "Padis Eatery",
+      "count": 5,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2103848364781482450",
+          "date": "2026-09-26",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy00yyw03d2nda70r8m5n9dzne95q3tv0kjgslx7ucdwh7eckvk3sr7adfj",
+          "date": "2026-09-26",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2099138242394120529",
+          "date": "2026-09-14",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2091862339226144942",
+          "date": "2026-08-24",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxfaf4w6q3yzyqjeyec0e0p6glq2y6xm9mfk8shf2dqh7laaufm7qxr69fs",
+          "date": "2026-08-24",
+          "project": "Bitcoin Aves 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Bliss beauty Salon",
       "count": 4,
       "posts": [
@@ -8112,27 +8208,6 @@
           "url": "https://x.com/i/status/2088270706005909628",
           "date": "2026-08-14",
           "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
-    },
-    {
-      "name": "Padis Eatery",
-      "count": 3,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2099138242394120529",
-          "date": "2026-09-14",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://x.com/i/status/2091862339226144942",
-          "date": "2026-08-24",
-          "project": "Bitcoin Aves 🇬🇭"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxfaf4w6q3yzyqjeyec0e0p6glq2y6xm9mfk8shf2dqh7laaufm7qxr69fs",
-          "date": "2026-08-24",
-          "project": "Bitcoin Aves 🇬🇭"
         }
       ]
     },
@@ -9132,18 +9207,18 @@
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 68,
+    "days_active": 69,
     "daily_average_payments": 32
   },
   "burn_rate": {
-    "percentage": 103,
+    "percentage": 102,
     "status": "on_target",
-    "days_active": 68
+    "days_active": 69
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2193
+      "count": 2205
     },
     {
       "domain": "8333.mobi",
@@ -9194,13 +9269,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1191
+      "count": 1197
     },
     {
       "platform": "Nostr",
-      "count": 1048
+      "count": 1054
     }
   ],
-  "generated_at": "2026-09-26T07:05:01.373730+00:00",
+  "generated_at": "2026-09-26T19:05:01.772524+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
