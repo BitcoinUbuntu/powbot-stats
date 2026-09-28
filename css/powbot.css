@@ -351,9 +351,9 @@ a.visit-link:hover { border-color: var(--phosphor); background: rgba(var(--phosp
 .board-empty p:first-child { font: 700 var(--fs-md)/1.4 var(--font-text); }
 
 /* --------------------------------------------------------------- Flags -- */
-/* SVG flags from flags.js, sized to the text around them. The hairline keeps
-   white-edged flags visible on dark panels and on the amber leader row. */
-.flag-img { display: inline-block; width: auto; height: 0.75em; aspect-ratio: 4 / 3; vertical-align: 0; border-radius: 1px; box-shadow: 0 0 0 1px rgba(var(--muted-rgb), 0.35); }
+/* SVG flags from flags.js, sized to the text around them. No outline or
+   rounding, to match the flags drawn after names (.name-flag). */
+.flag-img { display: inline-block; width: auto; height: 0.75em; aspect-ratio: 4 / 3; vertical-align: 0; }
 /* A name with its flag (nameWithFlag): the flag sits in the padding after the
    name, cap height, so it never wraps away from the last word */
 .name-flag { padding-right: 1.35em; background: no-repeat right 0 top 55% / auto 0.75em; }
