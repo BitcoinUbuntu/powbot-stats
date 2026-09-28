@@ -355,14 +355,21 @@ function clearFormState() {
         uploadPreviewGrid.classList.add('hidden');
     }
 
-    // Clear new gallery files array (defined in profile-edit.html)
-    if (typeof window.newGalleryFiles !== 'undefined') {
-        window.newGalleryFiles = [];
+    // Gallery state lives in profile-edit.html as top-level `let` bindings.
+    // Those are shared between scripts by name but are NOT properties of
+    // window, so the old `window.newGalleryFiles = []` never reset anything.
+
+    // Uploads that were just submitted: forget them so they are never re-sent
+    if (typeof newGalleryFiles !== 'undefined') {
+        newGalleryFiles = [];
     }
 
-    // Clear gallery to keep array
-    if (typeof window.galleryToKeep !== 'undefined') {
-        window.galleryToKeep = [];
+    // Existing images: back to "keep all", the state the page loaded in.
+    // (An empty keep-list would tell the next submit to remove every image.)
+    if (typeof galleryToKeep !== 'undefined' && typeof currentGalleryImages !== 'undefined') {
+        galleryToKeep = [...currentGalleryImages];
+        if (typeof renderGallery === 'function') renderGallery();          // also syncs #keep-gallery-images
+        if (typeof updateGalleryCounter === 'function') updateGalleryCounter();
     }
 }
 
@@ -789,11 +796,51 @@ function initTelegramVerification() {
 
 /**
  * Show OTP input modal
+ *
+ * A modal dialog: the page behind it is made inert, Tab stays inside it,
+ * Escape closes it like Cancel, and focus goes back to whatever opened it.
  */
+let otpModalReturnFocus = null;
+
+function otpModalBackground(modal) {
+    return Array.from(document.body.children).filter(el => el !== modal && el.tagName !== 'SCRIPT');
+}
+
+function otpModalKeydown(event) {
+    const modal = document.getElementById('otp-modal');
+    if (!modal || modal.classList.contains('hidden')) return;
+
+    if (event.key === 'Escape') {
+        event.preventDefault();
+        hideOTPModal();
+        return;
+    }
+
+    // Keep Tab inside the dialog (fallback for browsers without `inert`)
+    if (event.key === 'Tab') {
+        const focusable = Array.from(modal.querySelectorAll(
+            'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )).filter(el => el.offsetParent !== null);
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+        }
+    }
+}
+
 function showOTPModal() {
     const modal = document.getElementById('otp-modal');
     if (modal) {
+        otpModalReturnFocus = document.activeElement;
         modal.classList.remove('hidden');
+        otpModalBackground(modal).forEach(el => el.setAttribute('inert', ''));
+        document.addEventListener('keydown', otpModalKeydown);
         // Focus on OTP input
         const otpInput = document.getElementById('otp-input');
         if (otpInput) {
@@ -810,6 +857,13 @@ function hideOTPModal() {
     const modal = document.getElementById('otp-modal');
     if (modal) {
         modal.classList.add('hidden');
+        otpModalBackground(modal).forEach(el => el.removeAttribute('inert'));
+        document.removeEventListener('keydown', otpModalKeydown);
+        // Back to where the person was, if that control is still on the page
+        if (otpModalReturnFocus && document.contains(otpModalReturnFocus) && typeof otpModalReturnFocus.focus === 'function') {
+            otpModalReturnFocus.focus();
+        }
+        otpModalReturnFocus = null;
     }
 }
 
