@@ -143,10 +143,7 @@ html:has(body.pb) { color-scheme: dark; background: var(--night); }
 /* Pages not yet rebuilt pad <body> by 20px; pull the nav out to the edges. */
 body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 
-/* Flat highlight: a narrow band just inside the bottom edge, a step lighter
- * than whatever it sits on (bar, hovered link, current link). No gradient,
- * blur or shadow. */
-.site-nav { --band: 4px; position: relative; border-bottom: 1px solid var(--line); background: var(--night); box-shadow: inset 0 calc(var(--band) * -1) 0 var(--panel-hi); }
+.site-nav { position: relative; border-bottom: 1px solid var(--line); background: var(--night); }
 .site-nav .wrap { display: flex; align-items: stretch; gap: var(--s4); height: 60px; }
 .site-nav .brand { display: flex; align-items: center; align-self: center; gap: 10px; color: var(--heading); text-decoration: none; font: 700 var(--fs-md)/1 var(--font-mono); letter-spacing: -0.02em; min-height: var(--tap); }
 .site-nav .brand img { width: 34px; height: 34px; }
@@ -157,8 +154,8 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
     color: var(--muted); text-decoration: none; font: 700 var(--fs-base)/1 var(--font-text);
     border-radius: 0;
 }
-.site-nav .nav-links a:hover { color: var(--text); background: var(--panel); box-shadow: inset 0 calc(var(--band) * -1) 0 var(--panel-hi); }
-.site-nav .nav-links a.current { background: var(--amber); color: var(--night); box-shadow: inset 0 calc(var(--band) * -1) 0 var(--amber-hi); }
+.site-nav .nav-links a:hover { color: var(--text); background: var(--panel); }
+.site-nav .nav-links a.current { background: var(--amber); color: var(--night); }
 .site-nav .nav-links a:focus-visible { outline-offset: -3px; border-radius: 0; }
 .site-nav .nav-links a.current:focus-visible { outline-color: var(--night); }
 
@@ -169,8 +166,8 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
     background: none; border: 0; border-left: 1px solid var(--line);
     color: var(--heading); cursor: pointer;
 }
-.site-nav .nav-toggle:hover,
-.site-nav .nav-toggle[aria-expanded="true"] { background: var(--panel); box-shadow: inset 0 calc(var(--band) * -1) 0 var(--panel-hi); }
+.site-nav .nav-toggle:hover { background: var(--panel); }
+.site-nav .nav-toggle[aria-expanded="true"] { background: var(--panel); }
 .site-nav .nav-toggle:focus-visible { outline-offset: -3px; border-radius: 0; }
 .nav-toggle-bars { position: relative; display: block; width: 22px; height: 16px; }
 .nav-toggle-bars i {
@@ -217,8 +214,6 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
     .site-nav.no-anim .nav-links { transition: none; }
     .site-nav .nav-links li { display: block; border-top: 1px solid var(--line); }
     .site-nav .nav-links a { min-height: 52px; padding: 0 var(--gutter); font-size: var(--fs-md); }
-    /* The band belongs to the bar, not the rows of the open menu */
-    .site-nav .nav-links a, .site-nav .nav-links a:hover, .site-nav .nav-links a.current { box-shadow: none; }
 }
 
 /* --------------------------------------------------------------- Motion -- */
