@@ -34,7 +34,6 @@
     --amber: #E9AC49;          --amber-rgb: 233, 172, 73;      /* the one highlight */
     --amber-hi: #EEBB68;       /* amber hover */
     --phosphor: #5CCC85;       --phosphor-rgb: 92, 204, 133;   /* links, data marks, focus */
-    --lede: #39A564;           /* the line under a page title: deep terminal green, 6.2:1 */
     --coin: #F7931A;           /* the mascot's coin; large marks only */
     --danger: #FF8A8A;         /* errors, rejected */
     --line: rgba(var(--muted-rgb), 0.22);
@@ -431,7 +430,7 @@ a.hb-row:hover .hb-name { text-decoration: underline; }
  */
 .page-head { padding: var(--s7) 0 var(--s5); border-bottom: 1px solid var(--line); }
 .page-head h1 { margin: 0; font-size: clamp(1.75rem, 4vw, 2.75rem); letter-spacing: -0.035em; }
-.page-head .lede { margin: var(--s3) 0 0; color: var(--lede); font-size: var(--fs-md); max-width: 60ch; }
+.page-head .lede { margin: var(--s3) 0 0; color: var(--muted); font-size: var(--fs-md); max-width: 60ch; }
 .page-head .facts { margin-top: var(--s5); }
 
 /* -------------------------------------------------------------- Prose --
