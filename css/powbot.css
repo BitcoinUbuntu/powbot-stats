@@ -289,6 +289,10 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 /* Inline so a wrapped name keeps its flag and arrow right after the last word */
 .row-toggle .chev { display: inline-block; margin-left: var(--s2); vertical-align: 0.15em; }
 .row-toggle:hover .proj-name { text-decoration: underline; }
+/* The whole row opens it (includes/inject.js), so the whole row answers the pointer */
+.lb tr.lb-row:has(.row-toggle) { cursor: pointer; }
+.lb tr.lb-row:has(.row-toggle):hover .proj-name { text-decoration: underline; }
+.lb tr.lb-row:not(.leader):has(.row-toggle):hover > * { background: var(--panel-hi); }
 .chev { width: 9px; height: 9px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translate(-2px, -2px); transition: transform var(--t-ui) var(--ease-out); opacity: 0.7; flex: none; }
 .row-toggle[aria-expanded="true"] .chev { transform: rotate(225deg) translate(-2px, -2px); }
 .lb tr.detail > td { background: var(--night); padding: var(--s4) var(--s4) var(--s5); }

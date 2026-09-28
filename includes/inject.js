@@ -195,6 +195,21 @@
     });
 
     /**
+     * Leaderboard rows open from anywhere on the row, not only the name. The
+     * name stays the real control (a button, for keyboards and screen
+     * readers); a click elsewhere on the row presses it. Links and other
+     * controls inside the row keep their own clicks, and selecting text in
+     * the row doesn't toggle it.
+     */
+    document.addEventListener('click', (event) => {
+        const row = event.target.closest && event.target.closest('.lb tr.lb-row');
+        if (!row || event.target.closest('a, button, input, select, textarea, label')) return;
+        if (String(window.getSelection && window.getSelection())) return;
+        const toggle = row.querySelector('.row-toggle');
+        if (toggle) toggle.click();
+    });
+
+    /**
      * Bar charts (.bars) read out one day at a time in the line above them
      * (.bars-readout): hover or drag, tap, or focus the chart and use the arrow
      * keys, Home and End. Each bar carries its text in data-label. The day is
