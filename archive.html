@@ -40,6 +40,7 @@
         /* Panels inside an epoch: two side by side, a wide one on its own row */
         .cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s7); margin-top: var(--s7); }
         .panel-wide { margin-top: var(--s7); }
+        .epoch-more { margin: var(--s6) 0 0; }
         .panel { min-width: 0; }
         .panel > h3 { margin: 0 0 var(--s2); font-size: var(--fs-md); }
         .panel > .section-note { margin-bottom: var(--s4); }
@@ -208,7 +209,8 @@
                     <p class="section-note">${e.note}</p>
                     ${factsHtml(e.facts)}
                     ${notesHtml(e.notes || [])}
-                    ${panelsHtml(e.panels)}
+                    ${panelsHtml(e.panels || [])}
+                    ${e.after || ''}
                 </section>`;
         }
 
@@ -269,7 +271,7 @@
             return window.renderEpochBars({
                 id: 'every-title',
                 title: 'Every epoch',
-                intro: `<strong class="num">${formatNumber(window.epochsTotal())}</strong> posts approved across five epochs, May 2025 to July 2026. Epoch 5 has its own page: <a href="epoch5.html">Epoch 5 final results</a>.`
+                intro: `<strong class="num">${formatNumber(window.epochsTotal())}</strong> posts approved across five epochs, May 2025 to July 2026.`
             });
         }
 
@@ -280,6 +282,31 @@
             if (updatedElement) {
                 updatedElement.textContent = new Date(epoch4Live.generated_at).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
             }
+
+            // Epoch 5 has its own page with the full standings. Its numbers are
+            // frozen, so they are written here rather than loading its 780 KB
+            // stats file for six figures (from stats-epoch5.json, as that page
+            // computes them).
+            const epoch5 = {
+                id: 'epoch-5',
+                title: 'Epoch 5',
+                note: '24 March to 3 July 2026.',
+                facts: [
+                    [formatNumber(1985), 'posts approved'],
+                    ['22', 'projects'],
+                    ['156', 'merchants'],
+                    ['7', 'countries'],
+                    ['96%', 'approval rate'],
+                    ['103', 'days']
+                ],
+                notes: [
+                    `<strong>${formatNumber(2068)}</strong> posts reviewed, 83 rejected`,
+                    'Posted on <strong>X 50%</strong>, <strong>Nostr 50%</strong>',
+                    `Most approved in a day: <strong>40</strong>, on ${formatDate('2026-03-27')}`,
+                    '<strong>19</strong> posts a day on average'
+                ],
+                after: '<p class="epoch-more"><a class="btn" href="epoch5.html">See the Epoch 5 final results</a></p>'
+            };
 
             const e4 = epoch4Live;
             const ep = historical.epochs;
@@ -358,7 +385,7 @@
 
             content.innerHTML =
                 renderEveryEpoch(epoch4Live, historical) +
-                [epoch4, testing, early('epoch3', 3, 'November 2025'), early('epoch2', 2, 'August 2025'), early('epoch1', 1, 'May 2025')]
+                [epoch5, epoch4, testing, early('epoch3', 3, 'November 2025'), early('epoch2', 2, 'August 2025'), early('epoch1', 1, 'May 2025')]
                     .map(epochSectionHtml).join('');
 
             // Render leaderboards
