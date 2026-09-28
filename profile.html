@@ -84,49 +84,6 @@
         .detail-links .posts-more { margin-top: 0; }
         .post-hidden { display: none !important; }
 
-        .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); margin-top: var(--s5); }
-        .charts-grid-single { grid-template-columns: 1fr; }
-        .chart-card {
-            /* min-width:0 lets the card shrink below the heatmap's content width */
-            min-width: 0;
-            display: flex; flex-direction: column;
-            padding: var(--s4);
-            background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
-        }
-        .chart-card h3 { margin: 0 0 var(--s3); font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--muted); letter-spacing: 0; }
-        /* The renderer's wrapper div fills the stretched card, so the timeline's
-           baseline lines up with the calendar beside it. */
-        .chart-card > [id^="heatmap-"], .chart-card > [id^="timeline-"] { flex: 1; display: flex; flex-direction: column; min-height: 0; }
-
-        .heatmap-grid { display: grid; grid-template-rows: repeat(7, auto); grid-auto-flow: column; grid-auto-columns: 1fr; gap: 3px; width: 100%; }
-        .heatmap-day { aspect-ratio: 1; min-width: 0; border-radius: 1px; background: rgba(var(--muted-rgb), 0.14); position: relative; }
-        .heatmap-pad { visibility: hidden; }
-        /* Levels are --phosphor at rising strength */
-        .heatmap-day.level-1 { background: rgba(var(--phosphor-rgb), 0.3); }
-        .heatmap-day.level-2 { background: rgba(var(--phosphor-rgb), 0.5); }
-        .heatmap-day.level-3 { background: rgba(var(--phosphor-rgb), 0.75); }
-        .heatmap-day.level-4 { background: var(--phosphor); }
-        @media (hover: hover) {
-            .heatmap-day:hover::after {
-                content: attr(data-date) ': ' attr(data-count) ' posts';
-                position: absolute; bottom: calc(100% + 4px); left: 50%; transform: translateX(-50%); z-index: 10;
-                padding: 4px 8px; white-space: nowrap;
-                background: var(--night); color: var(--text); border: 1px solid var(--line-strong); border-radius: var(--radius);
-                font: 400 var(--fs-xs)/1.2 var(--font-mono);
-            }
-        }
-        .heatmap-scale { display: flex; align-items: center; gap: 3px; margin-top: var(--s3); font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--muted); }
-        .heatmap-scale i { width: 11px; height: 11px; border-radius: 1px; }
-        .heatmap-scale span:first-child { margin-right: var(--s1); }
-        .heatmap-scale span:last-child { margin-left: var(--s1); }
-
-        .timeline-container { position: relative; width: 100%; flex: 1; min-height: 120px; }
-        .charts-grid-single .timeline-container { min-height: 160px; }
-        .timeline-svg { position: absolute; top: 0; left: 0; width: 100%; height: calc(100% - 22px); }
-        .timeline-dates { position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--muted); }
-        .timeline-line { fill: none; stroke: var(--phosphor); stroke-width: 2; }
-        .timeline-area { fill: var(--phosphor); opacity: 0.12; }
-
         /* ------------------------------------------------------ Achievements -- */
         .badges-grid { display: flex; flex-wrap: wrap; gap: var(--s2); margin: 0; padding: 0; list-style: none; }
         .badge {
@@ -172,7 +129,6 @@
             .profile-head .wrap { grid-template-columns: 72px minmax(0, 1fr); gap: var(--s4); align-items: start; padding-top: var(--s6); padding-bottom: var(--s5); }
             .hero-logo, .hero-logo-placeholder { width: 72px; height: 72px; font-size: var(--fs-xl); }
             .intro { grid-template-columns: minmax(0, 1fr); }
-            .charts-grid { grid-template-columns: 1fr; }
             .gallery-strip { --gal-h: 200px; }
             .section { padding: var(--s6) 0; }
         }
@@ -398,9 +354,8 @@
             // differences. The old exact-string match (`name + flag`) broke
             // silently whenever a project's flag or name text was corrected
             // in members.json after an epoch's stats were generated - the
-            // project simply vanished from that epoch's card (Epoch 5's
-            // heatmap/timeline never render below 20 posts, so the card
-            // looked "empty" rather than erroring). Stripping the flag and
+            // project simply vanished from that epoch's card, which looked
+            // "empty" rather than erroring. Stripping the flag and
             // normalizing whitespace/case makes the join resilient to that.
             const normalizeProjectName = (name) => (name || '')
                 .replace(/[\u{1F1E6}-\u{1F1FF}]/gu, '') // strip regional-indicator flag chars
@@ -533,19 +488,6 @@
                     html += `<p>No approved posts yet this epoch.</p></section>`;
                 } else {
                     html += factsRow(currentPosts);
-                    if (currentPosts.length >= 20) {
-                        html += `
-                        <div class="charts-grid">
-                            <div class="chart-card">
-                                <h3>Activity calendar</h3>
-                                <div id="heatmap-current"></div>
-                            </div>
-                            <div class="chart-card">
-                                <h3>Posts per day</h3>
-                                <div id="timeline-current"></div>
-                            </div>
-                        </div>`;
-                    }
                     html += `
                         <h3>Merchant posts, newest first</h3>
                         <p class="section-note">A visit posted on both X and Nostr shows once, with a link to each.</p>
@@ -565,6 +507,10 @@
                 }
             }
 
+            // Gallery (full-width, between the current epoch and Epoch 5)
+            html += '<div id="gallery-placeholder"></div>';
+            window.galleryMember = member;
+
             // Display Epoch 5 section
             if (epoch5Posts.length > 0) {
                 epoch5Posts.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -577,22 +523,6 @@
                         <p class="section-note">24 March – 3 July 2026</p>
                         ${factsRow(epoch5Posts)}
                 `;
-
-                // Add activity visualizations for projects with 20+ posts
-                if (epoch5Posts.length >= 20) {
-                    html += `
-                        <div class="charts-grid">
-                            <div class="chart-card">
-                                <h3>Activity calendar</h3>
-                                <div id="heatmap-epoch5"></div>
-                            </div>
-                            <div class="chart-card">
-                                <h3>Posts per day</h3>
-                                <div id="timeline-epoch5"></div>
-                            </div>
-                        </div>
-                    `;
-                }
 
                 html += `
                         <h3>Merchant posts, newest first</h3>
@@ -612,10 +542,6 @@
                 html += `</section>`;
             }
 
-            // Gallery (full-width, between Epoch 5 and Epoch 4)
-            html += '<div id="gallery-placeholder"></div>';
-            window.galleryMember = member;
-
             // Display Epoch 4 section
             if (epoch4Posts.length > 0) {
                 epoch4Posts.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -628,21 +554,6 @@
                         <p class="section-note">13 January – 4 March 2026</p>
                         ${factsRow(epoch4Posts)}
                 `;
-
-                // Add activity visualization for projects with 20+ posts.
-                // Timeline only - the Epoch 4 calendar was dropped: at 7 weeks its
-                // fill-the-width cells rendered chunky and left the card mismatched in
-                // height beside the timeline. Epoch 5 (~15 weeks) keeps both.
-                if (epoch4Posts.length >= 20) {
-                    html += `
-                        <div class="charts-grid charts-grid-single">
-                            <div class="chart-card">
-                                <h3>Posts per day</h3>
-                                <div id="timeline-epoch4"></div>
-                            </div>
-                        </div>
-                    `;
-                }
 
                 html += `
                         <h3>Merchant posts, newest first</h3>
@@ -734,25 +645,6 @@
 
             // Draw the donation QR codes
             donateDrawQr(document.getElementById('donate'));
-
-            // Render activity visualization for Epoch 4 (timeline only - see the
-            // charts markup above for why the calendar was dropped).
-            if (epoch4Posts && epoch4Posts.length >= 20) {
-                renderTimeline('timeline-epoch4', epoch4Posts, '2026-01-13');
-            }
-
-            // Render activity visualizations for the current epoch
-            if (currentPosts.length >= 20) {
-                const start = String((window.POWBOT_EPOCH || {}).start || '2026-07-20').slice(0, 10);
-                renderHeatmap('heatmap-current', currentPosts, start);
-                renderTimeline('timeline-current', currentPosts, start);
-            }
-
-            // Render activity visualizations for Epoch 5
-            if (epoch5Posts && epoch5Posts.length >= 20) {
-                renderHeatmap('heatmap-epoch5', epoch5Posts, '2026-03-24');
-                renderTimeline('timeline-epoch5', epoch5Posts, '2026-03-24');
-            }
 
             // Show edit link
             showEditLink(member.id);
@@ -940,147 +832,6 @@
 
             setPaused(paused);
             measure();
-        }
-
-        function renderHeatmap(elementId, posts, epochStartDate) {
-            const container = document.getElementById(elementId);
-            if (!container || posts.length === 0) return;
-
-            // Use provided start date or default to Epoch 4
-            const startDate = epochStartDate ? new Date(epochStartDate) : new Date('2026-01-13');
-
-            // Find the last post date dynamically
-            const postDates = posts.map(p => p.date.split('T')[0]).sort();
-            const endDate = new Date(postDates[postDates.length - 1]);
-
-            // Count posts per day
-            const postsByDay = {};
-            posts.forEach(post => {
-                const dateKey = post.date.split('T')[0]; // YYYY-MM-DD
-                postsByDay[dateKey] = (postsByDay[dateKey] || 0) + 1;
-            });
-
-            // Get max count for color scaling
-            const maxCount = Math.max(...Object.values(postsByDay));
-
-            // Align grid to Sunday before Jan 13 for proper weekday rows
-            const gridStartDate = new Date(startDate);
-            gridStartDate.setDate(gridStartDate.getDate() - gridStartDate.getDay());
-
-            // Colours come from CSS (.heatmap-day.level-*), which reads --phosphor.
-            const activeDays = Object.keys(postsByDay).length;
-            const fmt = d => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
-            let html = `<div class="heatmap-container"><div class="heatmap-grid" role="img" aria-label="One square per UTC day from ${fmt(startDate)} to ${fmt(endDate)}, weeks in columns. Posted on ${activeDays} days; busiest day ${maxCount} posts.">`;
-
-            const currentDate = new Date(gridStartDate);
-
-            while (currentDate <= endDate) {
-                const dateKey = currentDate.toISOString().split('T')[0];
-                const count = postsByDay[dateKey] || 0;
-                const isBeforeEpoch = currentDate < startDate;
-
-                // Determine color level (0-4)
-                let level = 0;
-                if (count > 0) {
-                    if (maxCount <= 4) {
-                        level = count;
-                    } else {
-                        level = Math.min(4, Math.ceil((count / maxCount) * 4));
-                    }
-                }
-
-                const formattedDate = currentDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
-
-                // Make days before epoch start invisible
-                if (isBeforeEpoch) {
-                    html += `<div class="heatmap-day heatmap-pad"></div>`;
-                } else {
-                    html += `<div class="heatmap-day level-${level}" data-date="${formattedDate}" data-count="${count}"></div>`;
-                }
-
-                currentDate.setDate(currentDate.getDate() + 1);
-            }
-
-            html += `</div>
-                <div class="heatmap-scale" aria-hidden="true"><span>Fewer</span><i class="heatmap-day"></i><i class="heatmap-day level-1"></i><i class="heatmap-day level-2"></i><i class="heatmap-day level-3"></i><i class="heatmap-day level-4"></i><span>More</span></div>
-            </div>`;
-            container.innerHTML = html;
-        }
-
-        function renderTimeline(elementId, posts, epochStartDate) {
-            const container = document.getElementById(elementId);
-            if (!container || posts.length === 0) return;
-
-            // Use provided start date or default to Epoch 4
-            const startDate = epochStartDate ? new Date(epochStartDate) : new Date('2026-01-13');
-
-            // Find the last post date dynamically
-            const postDates = posts.map(p => p.date.split('T')[0]).sort();
-            const endDate = new Date(postDates[postDates.length - 1]);
-
-            // Count posts by day
-            const postsByDay = {};
-            posts.forEach(post => {
-                const dateKey = post.date.split('T')[0];
-                postsByDay[dateKey] = (postsByDay[dateKey] || 0) + 1;
-            });
-
-            // Create daily data points for entire range
-            const dataPoints = [];
-            const currentDate = new Date(startDate);
-            while (currentDate <= endDate) {
-                const dateKey = currentDate.toISOString().split('T')[0];
-                dataPoints.push({
-                    date: new Date(currentDate),
-                    count: postsByDay[dateKey] || 0
-                });
-                currentDate.setDate(currentDate.getDate() + 1);
-            }
-
-            // Get max count for scaling
-            const maxCount = Math.max(...dataPoints.map(d => d.count), 1);
-
-            // SVG dimensions
-            const width = 100; // percentage
-            const height = 100;
-            const padding = { top: 10, right: 5, bottom: 5, left: 5 };
-            const chartWidth = 100 - padding.left - padding.right;
-            const chartHeight = 100 - padding.top - padding.bottom;
-
-            // Generate line path
-            const points = dataPoints.map((d, i) => {
-                const x = padding.left + (i / (dataPoints.length - 1)) * chartWidth;
-                const y = padding.top + chartHeight - (d.count / maxCount) * chartHeight;
-                return { x, y, count: d.count };
-            });
-
-            const linePath = points.map((p, i) =>
-                `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`
-            ).join(' ');
-
-            // Area path (for fill under line)
-            const areaPath = `M ${padding.left} ${padding.top + chartHeight} ` +
-                points.map(p => `L ${p.x} ${p.y}`).join(' ') +
-                ` L ${padding.left + chartWidth} ${padding.top + chartHeight} Z`;
-
-            // Format dates for labels
-            const startLabel = startDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
-            const endLabel = endDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
-
-            // Render SVG
-            container.innerHTML = `
-                <div class="timeline-container">
-                    <!-- Stroke and fill come from CSS (.timeline-line, .timeline-area), which read --phosphor -->
-                    <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="timeline-svg" role="img" aria-label="Line of posts per UTC day from ${startLabel} to ${endLabel}; peak ${maxCount} in a day.">
-                        <path class="timeline-area" d="${areaPath}" />
-                        <path class="timeline-line" d="${linePath}" vector-effect="non-scaling-stroke" />
-                    </svg>
-                    <div class="timeline-dates" aria-hidden="true">
-                        <span>${startLabel}</span>
-                        <span>${endLabel}</span>
-                    </div>
-                </div>
-            `;
         }
 
         function calculateBadges(epoch4Posts, epoch5Posts, historicalPosts, allStats, statsName) {
