@@ -3,437 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Merchant Profile | CBAF</title>
+    <title id="page-title">Merchant profile | PoWBoT</title>
+    <meta name="description" content="A Bitcoin circular economy merchant in Africa: its proof of work on PoWBoT, and how to tip it directly over Lightning.">
+    <meta name="theme-color" content="#070F0B">
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
     <script src="qrcode.min.js"></script>
+    <!-- The donation panel, shared with the directory and project profiles -->
+    <script src="donate.js"></script>
+    <script src="flags.js"></script>
+    <script src="visits.js"></script>
+    <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Loaded in the
+         head because the page's inline script runs before the end of <body>;
+         loaded at the bottom, it was never defined in time and the page always
+         read the twice-daily repo copy instead of the live feed. -->
+    <script src="data-source.js"></script>
 
+    <link rel="stylesheet" href="css/powbot.css">
     <style>
-        :root {
-            --bg-primary: #0d1117;
-            --bg-secondary: #161b22;
-            --bg-card: #21262d;
-            --text-primary: #f0f6fc;
-            --text-secondary: #8b949e;
-            --accent-orange: #f7931a;
-            --accent-green: #3fb950;
-            --accent-blue: #58a6ff;
-            --accent-purple: #a371f7;
-            --border: #30363d;
-        }
+        /* Merchant page layout only. Colours, type and components: css/powbot.css */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Navigation */
-        nav {
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 20px;
-            position: sticky;
-            top: 0;
-            margin: -20px -20px 20px -20px;
-            z-index: 100;
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        nav a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
-            border-radius: 12px;
-            padding: 40px 30px;
-            margin-bottom: 24px;
-            text-align: center;
-        }
-
-        .merchant-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 16px;
-            background: var(--bg-secondary);
-            border: 4px solid var(--bg-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-        }
-
-        .merchant-name {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--accent-green);
-        }
-
-        .merchant-subtitle {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Stats Section - Two Column Layout */
-        .stats-grid {
+        /* ---------------------------------------------------------- Header -- */
+        .profile-head { border-bottom: 1px solid var(--line); }
+        .profile-head .wrap {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 24px;
-        }
-
-        /* Support Card */
-        .support-card {
-            background: var(--bg-card);
-            border: 1px solid var(--accent-orange);
-            border-radius: 12px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
+            grid-template-columns: auto minmax(0, 1fr) auto;
+            gap: var(--s5) var(--s6);
             align-items: center;
-            justify-content: flex-start;
-            gap: 12px;
+            padding-top: var(--s7);
+            padding-bottom: var(--s6);
         }
-
-        .support-card h2 {
-            color: var(--accent-orange);
-            font-size: 1.3rem;
-            margin: 0;
-            text-align: center;
+        .merchant-icon {
+            display: flex; align-items: center; justify-content: center;
+            width: 112px; height: 112px;
+            border: 1px solid var(--line); border-radius: 50%;
+            background: var(--panel); color: var(--phosphor);
+            font: 700 var(--fs-2xl)/1 var(--font-mono);
         }
+        .hero-text { min-width: 0; }
+        .hero-text h1 { margin: 0; font-size: clamp(1.75rem, 4.5vw, 2.75rem); letter-spacing: -0.035em; overflow-wrap: anywhere; }
+        .merchant-subtitle { margin: var(--s2) 0 0; color: var(--muted); }
+        .merchant-subtitle .flag { margin-right: var(--s1); }
 
-        .support-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin: 0;
-            text-align: center;
-        }
+        /* ------------------------------------------------ Record and support -- */
+        .intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 340px); gap: var(--s6) var(--s7); align-items: start; }
+        .intro h2 { margin: 0 0 var(--s5); font-size: var(--fs-lg); }
+        /* Places and dates are words, not figures: a size down from the counts */
+        .facts b.fact-text { font-size: var(--fs-lg); letter-spacing: -0.02em; }
+        .record .facts { display: grid; grid-template-columns: repeat(2, max-content); gap: var(--s5) var(--s7); }
+        .record .facts li { flex-direction: column; gap: 4px; }
+        /* Projects span the row; each name is its own full-height link */
+        .record .facts li.fact-projects { grid-column: 1 / -1; gap: 0; }
+        .fact-projects b a, .fact-projects b em { display: flex; align-items: center; min-height: var(--tap); width: fit-content; font-style: normal; }
+        .fact-projects b i { font-style: normal; }
+        /* Underline the name only, not the space and flag after it */
+        .fact-projects b a { text-decoration: none; }
+        .fact-projects b a .pn { color: inherit; text-decoration: underline; text-underline-offset: 0.15em; }
+        /* The support panel's styles are shared: .donate* in css/powbot.css */
+        .support-box h2 { margin: 0 0 var(--s3); font-size: var(--fs-md); overflow-wrap: anywhere; }
+        .support-box .none { margin: 0; color: var(--muted); }
 
-        .qr-container {
-            margin: 8px auto;
-            padding: 10px;
-            background: white;
-            border-radius: 8px;
-            display: inline-block;
-        }
+        /* ------------------------------------------------------------ Posts -- */
+        .posts-more { margin-top: var(--s3); }
+        .detail-links .posts-more { margin-top: 0; }
+        .post-hidden { display: none !important; }
+        /* Dates here carry the year: "23 Sept 2026, 16:12 UTC" */
+        #merchant-posts { --visit-when: 23ch; }
+        .empty-note { margin: 0; color: var(--muted); }
 
-        .qr-container canvas {
-            display: block;
-        }
+        /* ---------------------------------------------------------- BTC Map -- */
 
-        .address {
-            font-family: monospace;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            background: var(--bg-secondary);
-            padding: 6px 10px;
-            border-radius: 6px;
-            word-break: break-all;
-            text-align: center;
-            max-width: 100%;
-            margin: 0;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: 1px solid transparent;
-        }
+        /* -------------------------------------------------- States and notes -- */
+        .loading { margin: 0; padding: var(--s7) 0; color: var(--muted); }
+        .page-error { padding-top: var(--s7); padding-bottom: var(--s7); }
+        .page-error h1 { margin: 0 0 var(--s3); font-size: var(--fs-xl); }
+        .page-error p { margin: 0; max-width: 60ch; }
 
-        .address:hover {
-            background: rgba(88, 166, 255, 0.1);
-            border-color: var(--accent-blue);
-        }
-
-        .address.copied {
-            background: rgba(63, 185, 80, 0.2);
-            color: var(--accent-green);
-            border-color: var(--accent-green);
-        }
-
-        /* PoWBoT Overview Card */
-        .overview-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
-        }
-
-        .overview-card h2 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            letter-spacing: 0.5px;
-        }
-
-        .stat-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border);
-            gap: 12px;
-        }
-
-        .stat-row:last-child {
-            border-bottom: none;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            flex: 1;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .stat-value {
-            font-weight: 600;
-            white-space: nowrap;
-            text-align: right;
-        }
-
-        .big-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent-orange);
-            margin: 16px 0;
-        }
-
-        .big-number .unit {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
-
-        /* Activity Section */
-        .section {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 24px;
-        }
-
-        .section h2 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            letter-spacing: 0.5px;
-        }
-
-        .posts-list {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .post-item {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            padding: 10px 12px;
-            margin-top: 8px;
-            background: var(--bg-primary);
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: background 0.2s ease;
-            color: inherit;
-        }
-
-        .post-item:hover {
-            background: var(--bg-card);
-        }
-
-        .post-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .post-platform {
-            color: var(--accent-blue);
-            font-weight: 600;
-        }
-
-        .post-project {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-        }
-
-        .post-date {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            flex-shrink: 0;
-        }
-
-        .post-hidden {
-            display: none;
-        }
-
-        .show-more-button {
-            margin-top: 12px;
-            padding: 10px 16px;
-            background: var(--bg-primary);
-            color: var(--accent-blue);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-            width: 100%;
-        }
-
-        .show-more-button:hover {
-            background: var(--bg-secondary);
-            border-color: var(--accent-blue);
-        }
-
-        .empty-state {
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--text-secondary);
-        }
-
-        @media (max-width: 768px) {
-            nav .container {
-                justify-content: center;
-            }
-
-            .hero {
-                padding: 30px 20px;
-            }
-
-            .merchant-name {
-                font-size: 1.5rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .support-card h2 {
-                font-size: 1.1rem;
-            }
-
-            .stat-value {
-                font-size: 0.9rem;
-            }
-
-            .big-number {
-                font-size: 2rem;
-            }
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
-
-        footer a {
-            color: var(--accent-blue);
+        @media (max-width: 720px) {
+            .profile-head .wrap { grid-template-columns: 72px minmax(0, 1fr); gap: var(--s4); padding-top: var(--s6); padding-bottom: var(--s5); }
+            /* Phones: the BTC Map link drops under the name, like a project's links */
+            .btcmap-link { grid-column: 1 / -1; justify-self: start; }
+            .merchant-icon { width: 72px; height: 72px; font-size: var(--fs-xl); }
+            .intro { grid-template-columns: minmax(0, 1fr); }
+            .record .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s5) var(--s4); }
+            .facts b.fact-text { font-size: var(--fs-md); }
+            .section { padding: var(--s6) 0; }
         }
     </style>
 </head>
-<body>
-    <nav>
-        <div class="container">
-            <div class="nav-links">
-                <a href="index.html">Stats</a>
-                <span style="color: var(--text-secondary);">|</span>
-                <a href="members.html">Directory</a>
-                <span style="color: var(--text-secondary);">|</span>
-                <a href="archive.html">Archive</a>
-            </div>
-        </div>
-    </nav>
+<body class="pb">
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
 
-    <div class="container">
-        <div class="hero">
-            <div class="merchant-icon">🏪</div>
-            <h1 class="merchant-name" id="merchant-name">Loading...</h1>
-            <p class="merchant-subtitle" id="merchant-subtitle">Merchant Profile</p>
+    <main id="main">
+        <!-- Loading and error states. The script empties this once the merchant renders. -->
+        <div class="wrap" id="merchant-state" aria-live="polite">
+            <p class="loading">Loading the merchant…</p>
         </div>
 
-        <div class="stats-grid" id="stats-grid">
-            <!-- Stats will be inserted here -->
-        </div>
+        <div id="merchant-body" hidden>
+            <header class="profile-head">
+                <div class="wrap">
+                    <div class="merchant-icon" id="merchant-icon" aria-hidden="true"></div>
+                    <div class="hero-text">
+                        <h1 id="merchant-name">Merchant</h1>
+                        <p class="merchant-subtitle" id="merchant-subtitle">Circular economy merchant</p>
+                    </div>
+                    <!-- The emoji is decoration: the text names the link -->
+                    <a class="hero-link btcmap-link" id="btcmap-link" href="#" target="_blank" rel="noopener" hidden><span aria-hidden="true">🗺️</span><span id="btcmap-link-text">View on BTC Map</span></a>
+                </div>
+            </header>
 
-        <div class="section">
-            <h2>PoWBoT Activity</h2>
-            <div class="posts-list" id="posts-list">
-                <!-- Posts will be inserted here -->
-            </div>
-        </div>
+            <div class="wrap">
+                <div class="section intro" id="stats-grid">
+                    <!-- Record and support box are inserted here -->
+                </div>
 
-        <div class="section" id="btcmap-section" style="display: none;">
-            <h2>Profile on BTC Map</h2>
-            <div id="btcmap-container">
-                <iframe
-                    id="btcmap-embed"
-                    src=""
-                    width="100%"
-                    height="450px"
-                    style="border: 1px solid var(--border); border-radius: 8px;"
-                    allowfullscreen>
-                </iframe>
-                <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-secondary);">
-                    <a href="" id="btcmap-link" target="_blank" rel="noopener" style="color: var(--accent-blue);">View on BTC Map ↗</a>
-                </p>
-            </div>
-            <div id="btcmap-fallback" style="display: none; text-align: center; padding: 40px 20px; color: var(--text-secondary);">
-                <p style="margin-bottom: 12px;">This merchant may be listed on BTC Map</p>
-                <a href="" id="btcmap-search-link" target="_blank" rel="noopener"
-                   style="display: inline-block; padding: 10px 20px; background: var(--bg-primary); color: var(--accent-blue); border: 1px solid var(--border); border-radius: 6px; text-decoration: none; transition: all 0.2s;">
-                    Search on BTC Map ↗
-                </a>
+                <section class="section" aria-labelledby="posts-title">
+                    <h2 id="posts-title">PoWBoT posts</h2>
+                    <p class="section-note">Accepted proof-of-work visits that feature this merchant, across every epoch, newest first. A visit posted on both X and Nostr shows once, with a link to each.</p>
+                    <div id="posts-list">
+                        <!-- Posts are inserted here -->
+                    </div>
+                </section>
+
             </div>
         </div>
-    </div>
+    </main>
 
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const merchantParam = urlParams.get('id');
 
+        // Loading, not-found and error states replace the placeholder above the
+        // (still hidden) merchant body. Each one says where to go next.
+        const DIRECTORY_LINKS = 'Find merchants through the <a href="index.html">leaderboard</a> or the <a href="members.html">project directory</a>.';
+        function showState(title, detail) {
+            document.getElementById('merchant-state').innerHTML = `
+                <div class="page-error">
+                    <h1>${title}</h1>
+                    <p>${detail}</p>
+                </div>
+            `;
+        }
+
         if (!merchantParam) {
-            document.getElementById('merchant-name').textContent = 'Merchant Not Found';
-            document.getElementById('merchant-subtitle').textContent = 'No merchant ID provided';
+            showState('No merchant chosen', `This link does not name a merchant. ${DIRECTORY_LINKS}`);
         } else {
             loadMerchantData(merchantParam);
         }
@@ -445,12 +161,10 @@
             return { name: 'Nostr', icon: '🟣' };
         }
 
+        // "2026-07-03" -> "3 Jul 2026", read as a UTC date
         function formatDate(dateStr) {
             const date = new Date(dateStr);
-            const day = date.getDate();
-            const month = date.toLocaleDateString('en-US', { month: 'short' });
-            const year = date.getFullYear();
-            return `${day} ${month} ${year}`;
+            return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
         }
 
         function normalizeId(name) {
@@ -527,9 +241,12 @@
                     ? fetchLiveData(f).catch(() => null)
                     : fetch(f).then(r => r.ok ? r.json() : null).catch(() => null);
 
-                const [trackerFiles, statsArchives] = await Promise.all([
+                // members.json names each project's profile page. Optional: without
+                // it the projects list still shows, just without links.
+                const [trackerFiles, statsArchives, membersData] = await Promise.all([
                     Promise.all(TRACKER_FILES.map(loadJson)),
-                    Promise.all(STATS_ARCHIVES.map(loadJson))
+                    Promise.all(STATS_ARCHIVES.map(loadJson)),
+                    loadJson('members.json')
                 ]);
 
                 // Normalize the URL parameter for comparison
@@ -592,35 +309,57 @@
                     }
                 }
 
-                // Update page title and header
-                document.getElementById('page-title').textContent = `${merchantDisplayName} | CBAF`;
-                document.getElementById('merchant-name').textContent = merchantDisplayName;
-                document.getElementById('merchant-subtitle').textContent = `Circular Economy Merchant${countryInfo}`;
+                // Nothing found under this id: say so instead of an empty profile
+                if (totalCount === 0) {
+                    // Every file failed (each fails to null): that is a load error, not an unknown merchant
+                    if (![...trackerFiles, ...statsArchives].some(Boolean)) {
+                        throw new Error('No merchant data could be loaded');
+                    }
+                    showState('Merchant not found', `No PoWBoT posts feature a merchant called “${escapeHtml(merchantName)}”. Check the link. ${DIRECTORY_LINKS}`);
+                    return;
+                }
 
-                // Render stats
-                renderStats(totalCount, allPosts, merchantDisplayName, lightningAddress, countryFlag);
+                // Update page title and header
+                document.getElementById('page-title').textContent = `${merchantDisplayName} | PoWBoT`;
+                document.getElementById('merchant-name').textContent = merchantDisplayName;
+                document.getElementById('merchant-icon').textContent = merchantDisplayName.trim().charAt(0).toUpperCase();
+                // Flag carries the country as its name; the country is also written out
+                document.getElementById('merchant-subtitle').innerHTML = countryFlag
+                    ? `${flagHtml(countryFlag, getCountryName(countryFlag), 'flag')} Circular economy merchant${escapeHtml(countryInfo)}`
+                    : 'Circular economy merchant';
+
+                // Swap the loading state for the merchant
+                document.getElementById('merchant-state').innerHTML = '';
+                document.getElementById('merchant-body').hidden = false;
+
+                // Render stats, with the projects that post here
+                renderStats(totalCount, allPosts, merchantDisplayName, lightningAddress, countryFlag, projectsOf(allPosts, membersData));
 
                 // Render posts
-                renderPosts(allPosts);
+                renderPosts(merchantVisits(merchantSubmissions, archivedPosts), membersData, merchantDisplayName);
 
                 // Handle BTC Map section
-                renderBtcMapSection(merchantDisplayName, allPosts);
+                renderBtcMapLink(merchantDisplayName, allPosts);
 
                 // Update footer timestamp - from the LIVE file (index 0), not an
                 // archive, since archives are frozen and their stamps never move.
                 const liveTracker = trackerFiles[0];
-                if (liveTracker && liveTracker.last_updated) {
-                    document.getElementById('updated').textContent = new Date(liveTracker.last_updated).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
+                // The footer is injected asynchronously and may not exist yet. Writing
+                // to a missing #updated threw, and the catch below then replaced a
+                // fully rendered page with "Error Loading Data".
+                const updatedEl = document.getElementById('updated');
+                if (liveTracker && liveTracker.last_updated && updatedEl) {
+                    updatedEl.textContent = new Date(liveTracker.last_updated).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
                 }
 
             } catch (error) {
                 console.error('Error loading merchant data:', error);
-                document.getElementById('merchant-name').textContent = 'Error Loading Data';
-                document.getElementById('merchant-subtitle').textContent = 'Please try again later';
+                document.getElementById('merchant-body').hidden = true;
+                showState('This merchant could not load', `Check your connection and reload the page. ${DIRECTORY_LINKS}`);
             }
         }
 
-        function renderStats(totalCount, posts, merchantName, lightningAddress, countryFlag) {
+        function renderStats(totalCount, posts, merchantName, lightningAddress, countryFlag, projects) {
             const statsGrid = document.getElementById('stats-grid');
 
             // Calculate first and last post dates
@@ -628,74 +367,41 @@
             const firstPost = dates.length > 0 ? dates[0] : null;
             const lastPost = dates.length > 0 ? dates[dates.length - 1] : null;
 
-            // Support Card
+            // Support panel: the same as a project's donation box, Lightning only
             let supportCardHTML = '';
             if (lightningAddress) {
                 supportCardHTML = `
-                    <div class="support-card">
-                        <h2>Support ${escapeHtml(merchantName)}</h2>
-                        <p>Lightning Network</p>
-                        <div class="qr-container" id="qr-lightning"></div>
-                        <div class="address" id="lightning-address" onclick="copyAddressWithFeedback('${escapeHtml(lightningAddress)}', 'lightning-address')" title="Click to copy">${escapeHtml(lightningAddress)}</div>
-                    </div>
+                    <aside class="support" aria-labelledby="support-lightning-title">
+                        ${donatePanelHtml({ id: 'support', name: merchantName, lightning: lightningAddress, level: 2, title: 'Support', showLabel: false })}
+                    </aside>
                 `;
             } else {
                 supportCardHTML = `
-                    <div class="support-card">
-                        <h2>Support ${escapeHtml(merchantName)}</h2>
-                        <p style="text-align: center; color: var(--text-secondary); margin-top: 20px;">Lightning address not available</p>
-                    </div>
+                    <aside class="box support-box" aria-labelledby="support-title">
+                        <h2 id="support-title">Support ${escapeHtml(merchantName)}</h2>
+                        <p class="none">No Lightning address is on record for this merchant yet.</p>
+                    </aside>
                 `;
             }
 
-            // Overview Card
+            // PoWBoT record: counts in figures, places and dates as words
             const overviewCardHTML = `
-                <div class="overview-card">
-                    <h2>PoWBoT Overview</h2>
-                    <div class="big-number">${totalCount}<span class="unit"> ${totalCount === 1 ? 'post' : 'posts'}</span></div>
-                    <div style="margin-top: 15px;">
-                        ${countryFlag ? `
-                        <div class="stat-row">
-                            <span class="stat-label">Location</span>
-                            <span class="stat-value" style="color: var(--accent-orange);">${escapeHtml(getCountryName(countryFlag))}</span>
-                        </div>
-                        ` : ''}
-                        ${firstPost ? `
-                        <div class="stat-row">
-                            <span class="stat-label">First Post</span>
-                            <span class="stat-value" style="color: var(--accent-orange);">${formatDate(firstPost)}</span>
-                        </div>
-                        ` : ''}
-                        ${lastPost ? `
-                        <div class="stat-row">
-                            <span class="stat-label">Latest Post</span>
-                            <span class="stat-value" style="color: var(--accent-orange);">${formatDate(lastPost)}</span>
-                        </div>
-                        ` : ''}
-                    </div>
-                </div>
+                <section class="record" aria-labelledby="record-title">
+                    <h2 id="record-title">PoWBoT record</h2>
+                    <ul class="facts">
+                        <li><b class="num">${totalCount}</b><span>${totalCount === 1 ? 'post' : 'posts'}</span></li>
+                        ${countryFlag ? `<li><b class="fact-text">${escapeHtml(getCountryName(countryFlag))}</b><span>location</span></li>` : ''}
+                        ${firstPost ? `<li><b class="fact-text num">${formatDate(firstPost)}</b><span>first post</span></li>` : ''}
+                        ${lastPost ? `<li><b class="fact-text num">${formatDate(lastPost)}</b><span>latest post</span></li>` : ''}
+                        ${projects.length ? `<li class="fact-projects"><b class="fact-text">${projects.map(projectLink).join('')}</b><span>${projects.length === 1 ? 'project' : 'projects'} that spent bitcoin here on camera</span></li>` : ''}
+                    </ul>
+                </section>
             `;
 
-            statsGrid.innerHTML = supportCardHTML + overviewCardHTML;
+            statsGrid.innerHTML = overviewCardHTML + supportCardHTML;
 
-            // Generate QR code if lightning address exists
-            if (lightningAddress) {
-                setTimeout(() => {
-                    const canvas = document.createElement('canvas');
-                    QRCode.toCanvas(
-                        canvas,
-                        `lightning:${lightningAddress}`,
-                        { width: 200, margin: 1 },
-                        (error) => {
-                            if (error) {
-                                console.error('QR generation failed:', error);
-                            } else {
-                                document.getElementById('qr-lightning').appendChild(canvas);
-                            }
-                        }
-                    );
-                }, 100);
-            }
+            // Draw the QR code
+            donateDrawQr(document.getElementById('support'));
         }
 
         function escapeHtml(text) {
@@ -709,118 +415,113 @@
             return text.replace(/[&<>"']/g, m => map[m]);
         }
 
-        function copyAddressWithFeedback(address, elementId) {
-            const addressElement = document.getElementById(elementId);
-            const originalText = addressElement.textContent;
-
-            navigator.clipboard.writeText(address).then(() => {
-                // Add copied class for visual feedback
-                addressElement.classList.add('copied');
-                addressElement.textContent = 'Copied to clipboard!';
-
-                // Reset after 2 seconds
-                setTimeout(() => {
-                    addressElement.classList.remove('copied');
-                    addressElement.textContent = originalText;
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
-                alert('Failed to copy address');
-            });
+        // Project names come as "Bitbiashara (Kenya) 🇰🇪" (tracker) or
+        // "Bitbiashara 🇰🇪" (older archives): compare without country or flag
+        function projectKey(name) {
+            return String(name || '')
+                .replace(/\s*\([^)]*\)/g, '')
+                .replace(/[\u{1F1E6}-\u{1F1FF}]/gu, '')
+                .replace(/\s+/g, ' ')
+                .trim()
+                .toLowerCase();
         }
 
-        function renderPosts(allPosts) {
+        // Every project that posted here, most posts first (usually one, sometimes two)
+        function projectsOf(allPosts, membersData) {
+            const members = {};
+            (membersData?.members || []).forEach(m => { members[projectKey(m.name)] = m; });
+
+            const byProject = new Map();
+            allPosts.forEach(post => {
+                const key = projectKey(post.project);
+                if (!key) return;
+                const entry = byProject.get(key) || { name: post.project, member: members[key], count: 0, latest: '' };
+                entry.count += 1;
+                if (String(post.date) > entry.latest) entry.latest = String(post.date);
+                byProject.set(key, entry);
+            });
+            return [...byProject.values()].sort((a, b) => b.count - a.count || b.latest.localeCompare(a.latest));
+        }
+
+        function projectLink({ name: raw, member }) {
+            const name = member?.name || String(raw).replace(/\s*\([^)]*\)/g, '').replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
+            const flagMatch = String(raw).match(/[\u{1F1E6}-\u{1F1FF}]{2}/u);
+            const flag = member?.flag || (flagMatch ? flagMatch[0] : '');
+            const country = member?.country || (flag ? getCountryName(flag) : '');
+            return member
+                ? `<a href="profile.html?id=${encodeURIComponent(member.id)}"><span class="pn">${nameWithFlag(name, flag, country)}</span></a>`
+                : `<em>${nameWithFlag(name, flag, country)}</em>`;
+        }
+
+        // One row per visit (visits.js): an X post and its Nostr cross-post share
+        // a row, in every epoch. Epoch 4 and older carry only a date, so those
+        // pair on the same or next day and show without a time.
+        function merchantVisits(submissions, archivedPosts) {
+            const archived = archivedPosts.map(post => ({
+                project_name: post.project, post_url: post.url,
+                timestamp: `${post.date} 00:00:00 UTC`, classification: '', dateOnly: true
+            }));
+            return groupVisits([...submissions, ...archived]);
+        }
+
+        function visitWhen(visit) {
+            const date = new Date(String(visit.first).replace(' UTC', 'Z').replace(' ', 'T'));
+            if (isNaN(date)) return '';
+            const day = formatDate(date);
+            if (visit.posts.every(x => x.dateOnly)) return day;
+            const time = date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
+            return `${day}, ${time} UTC`;
+        }
+
+        function renderPosts(visits, membersData, merchantName) {
             const postsContainer = document.getElementById('posts-list');
             const initialCount = 5;
 
-            if (allPosts.length === 0) {
-                postsContainer.innerHTML = '<div class="empty-state">No posts found</div>';
+            if (visits.length === 0) {
+                postsContainer.innerHTML = '<p class="empty-note">No accepted posts yet.</p>';
                 return;
             }
 
-            let html = '';
-            allPosts.forEach((post, index) => {
-                const platform = getPlatform(post.url);
-                const isHidden = index >= initialCount;
+            const members = {};
+            (membersData?.members || []).forEach(m => { members[projectKey(m.name)] = m; });
+
+            let html = '<ul class="visits" id="merchant-posts">';
+            visits.forEach((visit, index) => {
+                const member = members[projectKey(visit.project)];
+                const name = member?.name || projectKey(visit.project) || 'Unknown project';
                 html += `
-                    <a href="${escapeHtml(post.url)}" target="_blank" rel="noopener" class="post-item ${isHidden ? 'post-hidden' : ''}" data-index="${index}">
-                        <span class="post-info">
-                            <span class="post-platform">${escapeHtml(platform.name)}</span>
-                            <span class="post-project">${escapeHtml(post.project || 'Unknown Project')}</span>
-                        </span>
-                        <span class="post-date">${formatDate(post.date)}</span>
-                    </a>
+                    <li class="post-item ${index >= initialCount ? 'post-hidden' : ''}" data-index="${index}">
+                        <div class="visit">
+                            <span class="visit-main"><span class="visit-project">${projectLink({ name: visit.project || 'Unknown project', member })}</span></span>
+                            ${visitLinks(visit, `${name} at ${merchantName}`)}
+                            <span class="visit-when">${visitWhen(visit)}</span>
+                        </div>
+                    </li>
                 `;
             });
+            html += '</ul>';
 
-            if (allPosts.length > initialCount) {
-                html += `
-                    <button class="show-more-button" onclick="toggleShowMore(this, ${allPosts.length})">
-                        Show ${allPosts.length - initialCount} more
-                    </button>
-                `;
+            if (visits.length > initialCount) {
+                html += `<div class="detail-links">${postsMoreButtons('merchant-posts', visits.length - initialCount)}</div>`;
             }
 
             postsContainer.innerHTML = html;
         }
 
-        function toggleShowMore(button, totalCount) {
-            const posts = document.querySelectorAll('.post-item');
-            const hiddenPosts = document.querySelectorAll('.post-hidden');
-            const initialCount = 5;
-
-            if (hiddenPosts.length > 0) {
-                // Show all
-                hiddenPosts.forEach(post => post.classList.remove('post-hidden'));
-                button.textContent = 'Show less';
-            } else {
-                // Hide extra posts
-                posts.forEach((post, index) => {
-                    if (index >= initialCount) {
-                        post.classList.add('post-hidden');
-                    }
-                });
-                button.textContent = `Show ${totalCount - initialCount} more`;
-            }
-        }
-
-        function renderBtcMapSection(merchantName, posts) {
-            const section = document.getElementById('btcmap-section');
-            const embedContainer = document.getElementById('btcmap-container');
-            const fallbackContainer = document.getElementById('btcmap-fallback');
-            const embed = document.getElementById('btcmap-embed');
+        // A link to the merchant on BTC Map, top right of the header. Current-epoch
+        // submissions carry the exact BTC Map link; older ones don't, so those
+        // search BTC Map by name instead.
+        function renderBtcMapLink(merchantName, posts) {
             const link = document.getElementById('btcmap-link');
-            const searchLink = document.getElementById('btcmap-search-link');
-
-            // If no posts, don't show the section
-            if (!posts || posts.length === 0) {
-                section.style.display = 'none';
-                return;
-            }
-
-            // Show the section
-            section.style.display = 'block';
-
-            // Look for btcmap_link in the posts (available for current epoch submissions)
-            const postWithBtcMap = posts.find(p => p.btcmap_link);
-
-            if (postWithBtcMap && postWithBtcMap.btcmap_link) {
-                // Use the btcmap_link directly from the submission data
-                const btcmapUrl = postWithBtcMap.btcmap_link;
-
-                console.log('Using BTC Map link from submission:', btcmapUrl);
-
-                embed.src = btcmapUrl;
-                link.href = btcmapUrl;
-                embedContainer.style.display = 'block';
-                fallbackContainer.style.display = 'none';
+            const withLink = (posts || []).find(p => p.btcmap_link);
+            if (withLink) {
+                link.href = withLink.btcmap_link;
+                document.getElementById('btcmap-link-text').textContent = 'View on BTC Map';
             } else {
-                // No btcmap_link found (historical data) - show search fallback
-                const searchUrl = `https://btcmap.org/?search=${encodeURIComponent(merchantName)}`;
-                searchLink.href = searchUrl;
-                embedContainer.style.display = 'none';
-                fallbackContainer.style.display = 'block';
+                link.href = `https://btcmap.org/?search=${encodeURIComponent(merchantName)}`;
+                document.getElementById('btcmap-link-text').textContent = 'Search BTC Map';
             }
+            link.hidden = false;
         }
     </script>
 
@@ -828,8 +529,6 @@
     <div id="site-footer"></div>
 
     <!-- Shared nav/footer injection -->
-    <!-- Defines fetchLiveData(): VPS first, this repo as fallback. -->
-    <script src="data-source.js"></script>
     <script src="includes/inject.js"></script>
 </body>
 </html>

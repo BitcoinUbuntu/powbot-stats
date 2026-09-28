@@ -22,6 +22,9 @@
 
             // Highlight current page
             highlightCurrentPage();
+
+            // Phone menu button
+            setupMenu(navContainer.querySelector('.site-nav'));
         } catch (error) {
             console.error('Failed to load navigation:', error);
         }
@@ -95,8 +98,55 @@
             const page = link.getAttribute('data-page');
             if (page === currentPage) {
                 link.classList.add('current');
+                link.setAttribute('aria-current', 'page');
             }
         });
+    }
+
+    /**
+     * Phone menu: the nav links fold behind a button below 720px.
+     * A disclosure (button + aria-expanded), not an ARIA menu: the links stay
+     * ordinary links in the tab order once the panel is open.
+     */
+    function setupMenu(nav) {
+        if (!nav) return;
+        const button = nav.querySelector('.nav-toggle');
+        const panel = nav.querySelector('.nav-links');
+        if (!button || !panel) return;
+
+        function setOpen(open, { returnFocus = false } = {}) {
+            nav.classList.toggle('is-open', open);
+            button.setAttribute('aria-expanded', String(open));
+            if (!open && returnFocus) button.focus();
+        }
+
+        button.addEventListener('click', (event) => {
+            // detail is 0 when Enter or Space fired the click. Keyboard opens
+            // skip the animation; it would only delay the next key press.
+            nav.classList.toggle('no-anim', event.detail === 0);
+            setOpen(!nav.classList.contains('is-open'));
+        });
+
+        // Choosing a link closes the panel (matters for same-page links)
+        panel.addEventListener('click', (event) => {
+            if (event.target.closest('a')) setOpen(false);
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+                setOpen(false, { returnFocus: true });
+            }
+        });
+
+        // A tap anywhere outside the nav closes it
+        document.addEventListener('click', (event) => {
+            if (nav.classList.contains('is-open') && !nav.contains(event.target)) setOpen(false);
+        });
+
+        // Widening past phone size shows the links inline; reset the state
+        const wide = window.matchMedia('(min-width: 721px)');
+        const reset = () => { if (wide.matches) setOpen(false); };
+        if (wide.addEventListener) wide.addEventListener('change', reset);
     }
 
     /**
@@ -111,10 +161,122 @@
         if (filename.startsWith('members')) return 'members';
         if (filename.startsWith('profile')) return 'members'; // Profile pages highlight Directory
         if (filename.startsWith('archive')) return 'archive';
+        if (filename.startsWith('tracker')) return 'tracker';
 
         return null;
     }
 
+
+    /**
+     * Collapsing a long list ("Show fewer", "Show top 10") removes rows above
+     * the button, which would leave the reader floating far down the page.
+     * Keep the button at the same place on screen instead: note where it is
+     * before the page's own handler runs (capture phase, first) and scroll by
+     * however far it moved once every handler has run (window bubble, last).
+     * Expanding needs nothing: new rows appear below where you are reading.
+     */
+    const COLLAPSE_BUTTONS = '#lb-all, .list-more, .lb-more, .posts-more';
+    let keepPlace = null;
+
+    window.addEventListener('click', (event) => {
+        const button = event.target.closest && event.target.closest(COLLAPSE_BUTTONS);
+        keepPlace = (button && button.getAttribute('aria-expanded') === 'true')
+            ? { button, top: button.getBoundingClientRect().top }
+            : null;
+    }, true);
+
+    window.addEventListener('click', () => {
+        if (!keepPlace) return;
+        const { button, top } = keepPlace;
+        keepPlace = null;
+        if (!document.contains(button)) return;
+        const moved = button.getBoundingClientRect().top - top;
+        if (Math.abs(moved) > 1) window.scrollBy({ top: moved, left: 0, behavior: 'instant' });
+    });
+
+    /**
+     * Leaderboard rows open from anywhere on the row, not only the name. The
+     * name stays the real control (a button, for keyboards and screen
+     * readers); a click elsewhere on the row presses it. Links and other
+     * controls inside the row keep their own clicks, and selecting text in
+     * the row doesn't toggle it.
+     */
+    document.addEventListener('click', (event) => {
+        const row = event.target.closest && event.target.closest('.lb tr.lb-row');
+        if (!row || event.target.closest('a, button, input, select, textarea, label')) return;
+        if (String(window.getSelection && window.getSelection())) return;
+        const toggle = row.querySelector('.row-toggle');
+        if (toggle) toggle.click();
+    });
+
+    /**
+     * Bar charts (.bars) read out one day at a time in the line above them
+     * (.bars-readout): hover or drag, tap, or focus the chart and use the arrow
+     * keys, Home and End. Each bar carries its text in data-label. The day is
+     * picked by horizontal position, so thin bars on a phone are easy to hit.
+     * Delegated from the document: charts are drawn after the data loads.
+     */
+    function barsParts(chart) {
+        const bars = Array.from(chart.querySelectorAll('i[data-label]'));
+        const readout = chart.previousElementSibling && chart.previousElementSibling.classList.contains('bars-readout')
+            ? chart.previousElementSibling : null;
+        if (readout && readout.dataset.initial === undefined) readout.dataset.initial = readout.textContent;
+        return { bars, readout };
+    }
+
+    function selectBar(chart, index) {
+        const { bars, readout } = barsParts(chart);
+        if (!bars.length) return;
+        const i = Math.max(0, Math.min(bars.length - 1, index));
+        bars.forEach((bar, n) => bar.classList.toggle('sel', n === i));
+        chart.dataset.sel = String(i);
+        if (readout) readout.textContent = bars[i].dataset.label;
+    }
+
+    function clearBar(chart) {
+        const { bars, readout } = barsParts(chart);
+        bars.forEach(bar => bar.classList.remove('sel'));
+        delete chart.dataset.sel;
+        if (readout) readout.textContent = readout.dataset.initial;
+    }
+
+    function barAt(chart, clientX) {
+        const { bars } = barsParts(chart);
+        const box = chart.getBoundingClientRect();
+        return Math.floor((clientX - box.left) / box.width * bars.length);
+    }
+
+    document.addEventListener('pointermove', (event) => {
+        const chart = event.target.closest && event.target.closest('.bars');
+        if (chart) selectBar(chart, barAt(chart, event.clientX));
+    });
+    document.addEventListener('pointerdown', (event) => {
+        const chart = event.target.closest && event.target.closest('.bars');
+        if (chart) selectBar(chart, barAt(chart, event.clientX));
+        // Tapping anywhere else puts other charts back to their first line
+        document.querySelectorAll('.bars[data-sel]').forEach(other => { if (other !== chart) clearBar(other); });
+    });
+    document.addEventListener('pointerout', (event) => {
+        // A finger lifting also counts as "leaving": keep a tapped day on screen
+        if (event.pointerType === 'touch') return;
+        const chart = event.target.closest && event.target.closest('.bars');
+        // Only when the pointer really leaves the chart, and not while it has keyboard focus
+        if (chart && !chart.contains(event.relatedTarget) && document.activeElement !== chart) clearBar(chart);
+    });
+    document.addEventListener('keydown', (event) => {
+        const chart = event.target.closest && event.target.closest('.bars');
+        if (!chart) return;
+        const { bars } = barsParts(chart);
+        const current = chart.dataset.sel !== undefined ? Number(chart.dataset.sel) : bars.length - 1;
+        const next = { ArrowLeft: current - 1, ArrowRight: current + 1, Home: 0, End: bars.length - 1 }[event.key];
+        if (next === undefined) return;
+        event.preventDefault();
+        selectBar(chart, next);
+    });
+    document.addEventListener('focusout', (event) => {
+        const chart = event.target.closest && event.target.closest('.bars');
+        if (chart) clearBar(chart);
+    });
 
     // Export support URL for use in other scripts
     window.SUPPORT_URL = SUPPORT_URL;

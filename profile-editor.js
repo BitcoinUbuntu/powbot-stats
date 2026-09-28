@@ -78,12 +78,12 @@ function initProfileEditor(projectName, projectData) {
  */
 async function startOTPAuth() {
     if (!currentProject) {
-        showError('No project selected');
+        showError('No project selected. Open the editor from your project’s profile page.');
         return;
     }
 
     try {
-        showMessage('Sending OTP to your Telegram...', 'info');
+        showMessage('Sending a code to your Telegram…', 'info');
 
         const response = await fetch(`${API_BASE}/auth/otp/init`, {
             method: 'POST',
@@ -104,7 +104,7 @@ async function startOTPAuth() {
 
     } catch (error) {
         console.error('OTP init error:', error);
-        showError('Failed to send OTP: ' + error.message);
+        showError('Could not send the code (' + error.message + '). Try again in a moment.');
     }
 }
 
@@ -113,7 +113,7 @@ async function startOTPAuth() {
  */
 async function verifyOTP(otpCode) {
     if (!currentSessionId) {
-        showError('No session found');
+        showError('No sign-in in progress. Send a new code first.');
         return;
     }
 
@@ -130,7 +130,7 @@ async function verifyOTP(otpCode) {
         const data = await response.json();
 
         if (!response.ok || !data.verified) {
-            showError(data.message || 'Verification failed');
+            showError(data.message || 'That code did not work. Check it and try again.');
             return false;
         }
 
@@ -140,7 +140,7 @@ async function verifyOTP(otpCode) {
         sessionStorage.setItem(SESSION_EXPIRY_KEY, sessionExpiryTime.toISOString());
         sessionStorage.setItem(SESSION_PROJECT_KEY, currentProject);
 
-        showMessage('Authenticated successfully!', 'success');
+        showMessage('Signed in. You can edit your profile now.', 'success');
         hideOTPModal();
 
         // Check if profile needs claiming
@@ -159,7 +159,7 @@ async function verifyOTP(otpCode) {
 
     } catch (error) {
         console.error('OTP verify error:', error);
-        showError('Verification failed: ' + error.message);
+        showError('Could not check the code (' + error.message + '). Try again in a moment.');
         return false;
     }
 }
@@ -242,9 +242,6 @@ function populateFormWithMemberData(member) {
         'description': member.description || '',
         'city': member.city || '',
         'country': member.country || '',
-        'vision': member.vision || '',
-        'mission': member.mission || '',
-        'how_started': member.how_started || '',
         'website': member.website || '',
         'email': member.email || '',
         'x_username': (member.x_profile || '').replace(/^@/, ''), // Remove @ prefix if present
@@ -311,7 +308,7 @@ function restoreDraft() {
         // Only show restoration message if user is authenticated
         if (currentSessionId && sessionExpiryTime && new Date() < sessionExpiryTime) {
             showMessage(
-                `Draft restored from ${draftSavedAt.toLocaleString()}`,
+                `Draft restored from ${draftSavedAt.toLocaleString('en-GB', { timeZone: 'UTC', dateStyle: 'medium', timeStyle: 'short' })} UTC`,
                 'info',
                 5000
             );
@@ -355,14 +352,21 @@ function clearFormState() {
         uploadPreviewGrid.classList.add('hidden');
     }
 
-    // Clear new gallery files array (defined in profile-edit.html)
-    if (typeof window.newGalleryFiles !== 'undefined') {
-        window.newGalleryFiles = [];
+    // Gallery state lives in profile-edit.html as top-level `let` bindings.
+    // Those are shared between scripts by name but are NOT properties of
+    // window, so the old `window.newGalleryFiles = []` never reset anything.
+
+    // Uploads that were just submitted: forget them so they are never re-sent
+    if (typeof newGalleryFiles !== 'undefined') {
+        newGalleryFiles = [];
     }
 
-    // Clear gallery to keep array
-    if (typeof window.galleryToKeep !== 'undefined') {
-        window.galleryToKeep = [];
+    // Existing images: back to "keep all", the state the page loaded in.
+    // (An empty keep-list would tell the next submit to remove every image.)
+    if (typeof galleryToKeep !== 'undefined' && typeof currentGalleryImages !== 'undefined') {
+        galleryToKeep = [...currentGalleryImages];
+        if (typeof renderGallery === 'function') renderGallery();          // also syncs #keep-gallery-images
+        if (typeof updateGalleryCounter === 'function') updateGalleryCounter();
     }
 }
 
@@ -428,7 +432,7 @@ function handleSessionExpiry() {
     stopAutoSave();
 
     showMessage(
-        'Your session has expired. Your work has been saved. Please re-authenticate to continue.',
+        'Your session ended. Your draft is saved in this browser. Sign in again to continue.',
         'warning',
         0 // Don't auto-hide
     );
@@ -443,8 +447,8 @@ function showExpiryWarning(minutesRemaining) {
     const warningDiv = document.getElementById('session-warning');
     if (warningDiv) {
         warningDiv.innerHTML = `
-            ⚠️ Session expires in ${minutesRemaining} minute${minutesRemaining !== 1 ? 's' : ''}
-            <button onclick="startOTPAuth()" class="btn-small">Get New OTP</button>
+            <p>Your session ends in ${minutesRemaining} minute${minutesRemaining !== 1 ? 's' : ''}. Get a new code to keep editing.</p>
+            <p><button type="button" onclick="startOTPAuth()" class="btn">Get a new code</button></p>
         `;
         warningDiv.classList.remove('hidden');
     }
@@ -473,14 +477,14 @@ async function submitProfileEdits(event) {
     event.preventDefault();
 
     if (!currentSessionId) {
-        showError('Not authenticated. Please sign in first.');
+        showError('You are not signed in. Sign in first.');
         startOTPAuth();
         return;
     }
 
     // Check session not expired
     if (sessionExpiryTime && new Date() > sessionExpiryTime) {
-        showError('Session expired. Please re-authenticate.');
+        showError('Your session ended. Sign in again.');
         handleSessionExpiry();
         return;
     }
@@ -493,7 +497,9 @@ async function submitProfileEdits(event) {
 
     // Add all text fields from form (excluding file inputs)
     const textFields = [
-        'tagline', 'description', 'vision', 'mission', 'how_started', 'milestones',
+        // Vision, mission, origin story and highlights are no longer shown on
+        // profiles, so the form no longer asks for them (members.json keeps them)
+        'tagline', 'description',
         'contact_person', 'email', 'website', 'x_username', 'npub',
         'lightning_address', 'btcmap_url', 'btcpay_campaign', 'geyser_campaign', 'onchain_address',
         'city', 'country'
@@ -540,13 +546,13 @@ async function submitProfileEdits(event) {
     if (typeof galleryToKeep !== 'undefined' && typeof newGalleryFiles !== 'undefined') {
         const totalGalleryCount = galleryToKeep.length + newGalleryFiles.length;
         if (totalGalleryCount > 12) {
-            showError(`Too many gallery images. You have ${totalGalleryCount} total (max 12). Please delete ${totalGalleryCount - 12} more images.`);
+            showError(`Too many gallery images: you have ${totalGalleryCount} and the limit is 12. Remove ${totalGalleryCount - 12} more.`);
             return;
         }
     }
 
     if (!hasChanges) {
-        showError('No changes to submit');
+        showError('There are no changes to submit.');
         return;
     }
 
@@ -558,7 +564,7 @@ async function submitProfileEdits(event) {
     const statusText = document.getElementById('upload-status-text');
 
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Preparing...';
+    submitBtn.textContent = 'Preparing…';
 
     try {
         // Show progress container
@@ -577,7 +583,7 @@ async function submitProfileEdits(event) {
                             statusText.textContent = `Submitting changes ${percentComplete}%`;
                             statusText.classList.remove('pulse');
                         } else {
-                            statusText.textContent = 'Creating pull request... Please wait.';
+                            statusText.textContent = 'Creating the pull request… this can take a minute.';
                             statusText.classList.add('pulse');
                         }
                     }
@@ -585,7 +591,7 @@ async function submitProfileEdits(event) {
                         if (percentComplete < 100) {
                             submitBtn.textContent = `Uploading ${percentComplete}%`;
                         } else {
-                            submitBtn.textContent = 'Please wait...';
+                            submitBtn.textContent = 'Please wait…';
                         }
                     }
                 }
@@ -651,19 +657,11 @@ async function submitProfileEdits(event) {
         if (statusText) {
             statusText.classList.remove('pulse');
             statusText.innerHTML = `
-                <div style="color: var(--accent-green); font-weight: 600; margin-bottom: 16px;">
-                    ✅ Profile changes submitted successfully for review!
-                </div>
-                <div style="margin-bottom: 12px;">
-                    <a href="${data.pr_url}" target="_blank" style="color: white; font-weight: 600; text-decoration: underline;">
-                        View Pull Request →
-                    </a>
-                </div>
-                <div>
-                    <a href="profile.html?id=${encodeURIComponent(currentProjectId)}" style="color: var(--accent-blue); text-decoration: underline;">
-                        ← Back to Profile
-                    </a>
-                </div>
+                <p class="submit-done"><span aria-hidden="true">✅</span> Your changes are submitted for review.</p>
+                <ul class="chips">
+                    <li><a class="chip" href="${data.pr_url}" target="_blank" rel="noopener">View the pull request<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+                    <li><a class="chip" href="profile.html?id=${encodeURIComponent(currentProjectId)}">Back to profile</a></li>
+                </ul>
             `;
         }
 
@@ -688,10 +686,10 @@ async function submitProfileEdits(event) {
         if (error.message.includes('Invalid or unverified session') || error.message.includes('Unauthorized')) {
             clearSession();
             updateEditorUI();
-            showError('Your session has expired. Please click "Authenticate" to sign in again.');
+            showError('Your session ended. Choose "Send code" to sign in again.');
             setTimeout(() => startOTPAuth(), 1500);
         } else {
-            showError('Failed to submit: ' + error.message);
+            showError('Could not submit your changes (' + error.message + '). Try again in a moment.');
         }
     }
     // No finally block - button stays disabled on success until redirect
@@ -739,8 +737,8 @@ function initTelegramVerification() {
     if (!expectedUsername) {
         // No Telegram username configured for this project
         if (feedback) {
-            feedback.innerHTML = `This project does not have a Telegram username configured. Please <a href="${supportUrl}" target="_blank" style="color: var(--accent-blue); text-decoration: underline;">contact support</a>.`;
-            feedback.style.color = '#f85149';
+            feedback.innerHTML = `This project does not have a Telegram username configured. Please <a href="${supportUrl}" target="_blank" rel="noopener">contact support</a>.`;
+            feedback.style.color = 'var(--danger)';
         }
         if (claimBtn) {
             claimBtn.disabled = true;
@@ -769,17 +767,23 @@ function initTelegramVerification() {
             if (inputValue === expectedValue) {
                 // Match! Enable button
                 claimBtn.disabled = false;
+                usernameInput.removeAttribute('aria-invalid');
                 if (feedback) {
-                    feedback.textContent = '✓ Username verified. You can now authenticate.';
-                    feedback.style.color = 'var(--accent-green)';
+                    feedback.textContent = '✓ Username matches. You can send the code now.';
+                    feedback.style.color = 'var(--phosphor)';
                 }
             } else {
                 // No match - disable button
                 claimBtn.disabled = true;
+                if (inputValue.length > 0) {
+                    usernameInput.setAttribute('aria-invalid', 'true');
+                } else {
+                    usernameInput.removeAttribute('aria-invalid');
+                }
                 if (feedback) {
                     if (inputValue.length > 0) {
-                        feedback.textContent = 'Username does not match. Please check and try again.';
-                        feedback.style.color = '#f85149';
+                        feedback.textContent = 'That username does not match the one we have for this project. Check it and try again.';
+                        feedback.style.color = 'var(--danger)';
                     } else {
                         feedback.textContent = '';
                     }
@@ -791,11 +795,51 @@ function initTelegramVerification() {
 
 /**
  * Show OTP input modal
+ *
+ * A modal dialog: the page behind it is made inert, Tab stays inside it,
+ * Escape closes it like Cancel, and focus goes back to whatever opened it.
  */
+let otpModalReturnFocus = null;
+
+function otpModalBackground(modal) {
+    return Array.from(document.body.children).filter(el => el !== modal && el.tagName !== 'SCRIPT');
+}
+
+function otpModalKeydown(event) {
+    const modal = document.getElementById('otp-modal');
+    if (!modal || modal.classList.contains('hidden')) return;
+
+    if (event.key === 'Escape') {
+        event.preventDefault();
+        hideOTPModal();
+        return;
+    }
+
+    // Keep Tab inside the dialog (fallback for browsers without `inert`)
+    if (event.key === 'Tab') {
+        const focusable = Array.from(modal.querySelectorAll(
+            'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )).filter(el => el.offsetParent !== null);
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+        }
+    }
+}
+
 function showOTPModal() {
     const modal = document.getElementById('otp-modal');
     if (modal) {
+        otpModalReturnFocus = document.activeElement;
         modal.classList.remove('hidden');
+        otpModalBackground(modal).forEach(el => el.setAttribute('inert', ''));
+        document.addEventListener('keydown', otpModalKeydown);
         // Focus on OTP input
         const otpInput = document.getElementById('otp-input');
         if (otpInput) {
@@ -812,6 +856,13 @@ function hideOTPModal() {
     const modal = document.getElementById('otp-modal');
     if (modal) {
         modal.classList.add('hidden');
+        otpModalBackground(modal).forEach(el => el.removeAttribute('inert'));
+        document.removeEventListener('keydown', otpModalKeydown);
+        // Back to where the person was, if that control is still on the page
+        if (otpModalReturnFocus && document.contains(otpModalReturnFocus) && typeof otpModalReturnFocus.focus === 'function') {
+            otpModalReturnFocus.focus();
+        }
+        otpModalReturnFocus = null;
     }
 }
 
@@ -833,7 +884,7 @@ function showSaveIndicator() {
     const indicator = document.getElementById('save-indicator');
     if (indicator) {
         const now = new Date();
-        indicator.textContent = `Draft saved at ${now.toLocaleTimeString()} (autosaved every 30s)`;
+        indicator.textContent = `Draft saved in this browser at ${now.toLocaleTimeString('en-GB', { timeZone: 'UTC' })} UTC. It saves every 30 seconds.`;
         indicator.classList.remove('hidden');
     }
 }
@@ -852,7 +903,7 @@ function showMessage(message, type = 'info', duration = 5000) {
     }
 
     messageDiv.innerHTML = message;
-    messageDiv.className = `message message-${type}`;
+    messageDiv.className = `callout message message-${type}`;
     messageDiv.classList.remove('hidden');
 
     if (duration > 0) {

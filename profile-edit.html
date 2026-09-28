@@ -3,757 +3,379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Edit Profile | CBAF</title>
+    <title id="page-title">Edit profile | PoWBoT</title>
+    <meta name="theme-color" content="#070F0B">
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
 
+    <link rel="stylesheet" href="css/powbot.css">
     <style>
-        :root {
-            --bg-primary: #0d1117;
-            --bg-secondary: #161b22;
-            --bg-card: #21262d;
-            --text-primary: #f0f6fc;
-            --text-secondary: #8b949e;
-            --accent-orange: #f7931a;
-            --accent-green: #3fb950;
-            --accent-blue: #58a6ff;
-            --accent-purple: #a371f7;
-            --border: #30363d;
-        }
+        /* Profile editor layout only. Colours, type and components: css/powbot.css */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* profile-editor.js and the script below show and hide panels with this class */
+        .hidden { display: none !important; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            padding: 20px;
+        /* ----------------------------------------------------------- Header -- */
+        .back-row { margin: var(--s4) 0 0; }
+        .back-row a { display: inline-flex; align-items: center; min-height: var(--tap); }
+        .project-header { display: flex; align-items: center; gap: var(--s5); padding-top: var(--s4); }
+        #project-logo { flex: none; }
+        #project-logo:empty { display: none; }
+        .project-logo, .project-logo-placeholder {
+            display: block; flex: none; width: 72px; height: 72px;
+            border-radius: 50%; border: 1px solid var(--line); background: var(--panel); object-fit: cover;
         }
+        .project-logo-placeholder { display: flex; align-items: center; justify-content: center; font-size: var(--fs-xl); }
+        .project-info { min-width: 0; }
+        .project-info h1 { overflow-wrap: anywhere; }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        /* ------------------------------------------------------------- Body -- */
+        .editor-body { display: grid; gap: var(--s5); max-width: 46rem; padding: var(--s6) 0 var(--s7); }
+        .editor-body p { margin: 0; }
+        #edit-section { display: grid; gap: var(--s5); }
 
-        /* Navigation */
-        nav {
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 20px;
-            position: sticky;
-            top: 0;
-            margin: -20px -20px 20px -20px;
-            z-index: 100;
-        }
+        /* Messages from profile-editor.js: a callout whose rule says what kind */
+        .message-warning { border-left-color: var(--amber); }
+        .message-error { border-left-color: var(--danger); }
+        .save-indicator { color: var(--muted); font-size: var(--fs-sm); }
+        #session-warning { display: grid; gap: var(--s3); }
 
-        nav .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        /* ------------------------------------------------------------- Form -- */
+        #profile-edit-form { display: grid; gap: var(--s5); }
+        .form-box { display: grid; gap: var(--s5); }
+        .form-box > h2 { margin: 0; }
+        .char-counter { margin: 0; font: 400 var(--fs-xs)/1.2 var(--font-mono); color: var(--muted); text-align: right; }
+        .char-counter.warning { color: var(--text); }
+        .char-counter.error { color: var(--danger); }
 
-        nav a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        /* Project Header */
-        .project-header {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px 24px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .project-logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            object-fit: cover;
-            background: var(--bg-secondary);
-        }
-
-        .project-logo-placeholder {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            background: var(--bg-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-        }
-
-        .project-info h1 {
-            font-size: 1.5rem;
-            margin-bottom: 4px;
-        }
-
-        .project-info p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Messages */
-        .message {
-            padding: 12px 16px;
-            border-radius: 8px;
-            margin-bottom: 16px;
-            font-size: 0.9rem;
-        }
-
-        .message-error {
-            background: rgba(248, 81, 73, 0.15);
-            border: 1px solid #f85149;
-            color: #f85149;
-        }
-
-        .message-success {
-            background: rgba(63, 185, 80, 0.15);
-            border: 1px solid var(--accent-green);
-            color: var(--accent-green);
-        }
-
-        .message-info {
-            background: rgba(87, 171, 255, 0.15);
-            border: 1px solid var(--accent-blue);
-            color: var(--accent-blue);
-        }
-
-        .message-warning {
-            background: rgba(247, 147, 26, 0.15);
-            border: 1px solid var(--accent-orange);
-            color: var(--accent-orange);
-        }
-
-        .message a {
-            color: inherit;
-            text-decoration: underline;
-        }
-
-        .hidden {
-            display: none !important;
-        }
-
-        /* Section */
-        .section {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 20px;
-        }
-
-        .section h2 {
-            font-size: 1.3rem;
-            margin-bottom: 16px;
-            color: var(--accent-blue);
-        }
-
-        /* Form Styles */
-        #profile-edit-form {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 6px;
-            display: block;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px 12px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 0.95rem;
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-        }
-
-        .form-help {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-top: 2px;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        /* Form section headers */
-        #profile-edit-form h3 {
-            font-size: 1rem;
-            color: var(--accent-orange);
-            margin-top: 24px;
-            margin-bottom: 12px;
-            padding-top: 16px;
-            border-top: 1px solid var(--border);
-            text-transform: uppercase;
-        }
-
-        #profile-edit-form h3:first-child {
-            margin-top: 0;
-            padding-top: 0;
-            border-top: none;
-        }
-
-        /* Character counter */
-        .char-counter {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            text-align: right;
-            margin-top: 4px;
-        }
-
-        .char-counter.warning {
-            color: var(--accent-orange);
-        }
-
-        .char-counter.error {
-            color: #f85149;
-        }
-
-        /* Gallery grid */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-
-        .gallery-item {
-            position: relative;
-            aspect-ratio: 1;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 2px solid var(--border);
-            background: var(--bg-secondary);
-        }
-
-        .gallery-item.deleted {
-            opacity: 0.3;
-            filter: grayscale(100%);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .gallery-delete {
-            position: absolute;
-            top: 2px;
-            right: 2px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 22px;
-            line-height: 1;
-            transition: transform 0.2s;
-            filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.8));
-        }
-
-        .gallery-delete:hover {
-            transform: scale(1.2);
-        }
-
-        .gallery-counter {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-        }
-
-        .gallery-counter.warning {
-            color: var(--accent-orange);
-            font-weight: 600;
-        }
-
-        /* Twitter username prefix */
-        .input-with-prefix {
-            display: flex;
-            align-items: center;
-        }
-
+        .input-with-prefix { display: flex; }
         .input-prefix {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-right: none;
-            border-radius: 6px 0 0 6px;
-            padding: 10px 8px 10px 12px;
-            color: var(--text-primary);
-            font-weight: 600;
+            display: flex; align-items: center; padding: 0 var(--s3);
+            border: 1px solid var(--line-strong); border-right: 0; border-radius: var(--radius) 0 0 var(--radius);
+            background: var(--night); color: var(--muted); font-family: var(--font-mono);
         }
+        .input-with-prefix .input { border-radius: 0 var(--radius) var(--radius) 0; }
 
-        .input-with-prefix input {
-            border-radius: 0 6px 6px 0 !important;
+        /* File pickers: the native input, its button drawn like .btn */
+        .file-input { padding: 3px; cursor: pointer; line-height: 36px; }
+        .file-input::file-selector-button {
+            min-height: 36px; margin-right: var(--s3); padding: 0 var(--s4);
+            background: none; color: var(--phosphor);
+            border: 1px solid var(--phosphor); border-radius: var(--radius);
+            font: 700 var(--fs-sm)/1 var(--font-text); cursor: pointer;
         }
+        .file-input:hover::file-selector-button { background: rgba(var(--phosphor-rgb), 0.12); }
 
-        /* Buttons */
-        .btn-primary {
-            background: var(--accent-orange);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 24px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            margin: 20px auto;
-            display: block;
+        .thumb {
+            display: block; width: 120px; height: 120px; object-fit: cover;
+            border: 1px solid var(--line); border-radius: var(--radius); background: var(--night);
         }
+        .current-logo, .logo-preview { display: grid; gap: var(--s2); justify-items: start; }
+        .logo-preview .thumb { border-color: var(--phosphor); }
+        .logo-preview .btn { margin-top: var(--s1); }
 
-        .btn-primary:hover {
-            background: #e08416;
-            transform: translateY(-2px);
+        .gallery-block { display: grid; gap: var(--s3); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: var(--s3); }
+        .gallery-item { display: grid; gap: var(--s2); align-content: start; min-width: 0; }
+        .gallery-item img {
+            display: block; width: 100%; aspect-ratio: 1; object-fit: cover;
+            border: 1px solid var(--line); border-radius: var(--radius); background: var(--night);
         }
+        .gallery-item.deleted img { opacity: 0.3; filter: grayscale(1); }
+        .gallery-item.is-new img { border-color: var(--phosphor); }
+        .gallery-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted); font-size: var(--fs-xs); }
+        .gallery-delete { width: 100%; }
+        .gallery-counter { color: var(--muted); font-size: var(--fs-sm); }
+        .gallery-counter:empty { display: none; }
+        .gallery-counter.warning { color: var(--danger); font-weight: 700; }
 
-        .btn-primary:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
+        .confirm .check { align-items: flex-start; }
+        .confirm .check input { flex: none; margin: 2px 0 0; }
 
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 12px 24px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
+        /* status text is toggled by profile-editor.js; .pulse is its busy hook
+           and stays unstyled: the text itself says the upload is under way */
+        .upload-progress { padding: var(--s4) var(--s5); background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+        .upload-progress:has(> #upload-status-text:empty) { display: none; }
+        .submit-done { margin: 0 0 var(--s3); color: var(--heading); font-weight: 700; }
 
-        .btn-secondary:hover {
-            color: var(--text-primary);
-            border-color: var(--text-secondary);
-            background: var(--bg-secondary);
-        }
+        .form-actions { display: flex; flex-wrap: wrap; gap: var(--s3); }
 
-        .form-actions {
-            display: flex;
-            gap: 12px;
-            margin: 20px auto;
-            justify-content: center;
-        }
+        /* ---------------------------------------------------------- Sign in -- */
+        .verify { display: grid; gap: var(--s4); }
+        .verify > h2 { margin: 0; }
+        .verify .btn { justify-self: start; }
 
-        .form-actions button {
-            margin: 0;
-        }
-
-        .btn-small {
-            background: var(--accent-blue);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 6px 12px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            margin-left: 12px;
-        }
-
-        /* Modal */
+        /* --------------------------------------------------------- Code box -- */
         .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
+            position: fixed; inset: 0; z-index: 1000;
+            display: flex; align-items: center; justify-content: center;
+            padding: var(--s4); overflow-y: auto;
+            background: color-mix(in srgb, var(--night) 90%, transparent);
         }
+        .modal-content { display: grid; gap: var(--s4); width: 100%; max-width: 26rem; margin: auto; }
+        .modal-content > h2 { margin: 0; }
+        .modal-content p { margin: 0; }
+        .modal-content form { display: grid; gap: var(--s4); }
+        .otp-input { font: 700 var(--fs-xl)/1 var(--font-mono); letter-spacing: 0.4em; text-align: center; }
+        .modal-actions { display: flex; flex-wrap: wrap; gap: var(--s3); }
+        .modal-actions .btn { flex: 1 1 8rem; }
 
-        .modal-content {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px;
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-        }
-
-        .modal-content h3 {
-            color: var(--accent-orange);
-            margin-bottom: 12px;
-        }
-
-
-        @media (max-width: 768px) {
-            nav .container {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .project-header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            }
-        }
-
-        /* Pulse animation for status indicator */
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-        }
-
-        .pulse {
-            animation: pulse 1.5s ease-in-out infinite;
+        @media (max-width: 720px) {
+            .project-header { gap: var(--s4); }
+            .project-logo, .project-logo-placeholder { width: 56px; height: 56px; }
+            .form-box { padding: var(--s4); }
+            .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s2); }
+            .form-actions .btn { flex: 1 1 100%; }
         }
     </style>
 </head>
-<body>
-    <nav>
-        <div class="container">
-            <a href="profile.html" id="back-link">← Back to Profile</a>
-        </div>
-    </nav>
+<body class="pb">
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
 
-    <div class="container">
-        <!-- Project Context Header -->
-        <div id="project-header" class="project-header hidden">
+    <main id="main">
+    <div class="wrap">
+        <p class="back-row"><a href="profile.html" id="back-link">Back to profile</a></p>
+
+        <!-- Project context: the script fills in the logo and name -->
+        <header id="project-header" class="page-head project-header">
             <div id="project-logo"></div>
             <div class="project-info">
-                <h1 id="project-name">Project Name</h1>
-                <p>Editing your profile</p>
+                <h1 id="project-name">Edit profile</h1>
+                <p class="lede">Changes you submit are reviewed before they appear on your profile.</p>
             </div>
-        </div>
+        </header>
 
-        <!-- Session Warning -->
-        <div id="session-warning" class="message message-warning hidden"></div>
+        <div class="editor-body">
+        <!-- Session warning (filled in by profile-editor.js) -->
+        <div id="session-warning" class="callout warn hidden" role="status"></div>
 
-        <!-- Editor Messages -->
-        <div id="editor-message" class="hidden"></div>
+        <!-- Editor messages (profile-editor.js sets the class list) -->
+        <div id="editor-message" class="hidden" role="status" aria-live="polite"></div>
 
-        <!-- Edit Form -->
+        <!-- Edit form -->
         <div id="edit-section" class="hidden">
-            <div class="section">
-                <h2>Edit Your Profile</h2>
+            <div class="callout">
+                <p>If your project already has a <a href="https://github.com/BitcoinUbuntu/powbot-stats/pulls" target="_blank" rel="noopener">pending pull request<span class="visually-hidden"> (opens in a new tab)</span></a>, wait for it to be reviewed before you submit new changes.</p>
+            </div>
 
-                <!-- Pending PR Note -->
-                <div class="info-note" style="background: var(--bg-secondary); border-left: 3px solid var(--accent-blue); padding: 12px 16px; margin-bottom: 20px; border-radius: 4px;">
-                    <p style="margin: 0; font-size: 14px; color: var(--text-primary);">
-                        <strong>Note:</strong> If your project already has a <a href="https://github.com/BitcoinUbuntu/powbot-stats/pulls" target="_blank" style="color: var(--accent-blue); text-decoration: underline;">pending pull request</a>, please wait for it to be reviewed before submitting new changes.
-                    </p>
-                </div>
+            <!-- Save indicator -->
+            <p id="save-indicator" class="save-indicator hidden"></p>
 
-                <!-- Save Indicator -->
-                <div id="save-indicator" class="hidden" style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 12px; font-style: italic;"></div>
+            <form id="profile-edit-form" onsubmit="submitProfileEdits(event)">
+                <section class="box form-box" aria-labelledby="h-basic">
+                    <h2 id="h-basic">Basic information</h2>
 
-                <p style="color: var(--text-secondary); margin-bottom: 20px;">
-                    Submit changes to your project profile. All edits will be reviewed before being published.
-                </p>
-
-                <form id="profile-edit-form" onsubmit="submitProfileEdits(event)">
-                    <!-- Basic Info -->
-                    <h3>Basic Information</h3>
-
-                    <div class="form-group">
-                        <label for="edit-tagline">Profile Description</label>
-                        <span class="form-help">Appears on your profile card across the site (max 125 characters)</span>
-                        <input type="text" id="edit-tagline" name="tagline" maxlength="125" placeholder="A compelling one-sentence summary of your project">
-                        <div class="char-counter" id="tagline-counter">0 / 125</div>
+                    <div class="field">
+                        <label class="field-label" for="edit-tagline">Profile description</label>
+                        <p class="field-hint" id="edit-tagline-hint">Appears on your profile card across the site. Up to 125 characters.</p>
+                        <input class="input" type="text" id="edit-tagline" name="tagline" maxlength="125" placeholder="A one-sentence summary of your project" autocomplete="off" aria-describedby="edit-tagline-hint tagline-counter">
+                        <p class="char-counter" id="tagline-counter">0 / 125</p>
                     </div>
 
-                    <div class="form-group">
-                        <label for="edit-description">About</label>
-                        <span class="form-help">A short paragraph describing what your project does</span>
-                        <textarea id="edit-description" name="description" maxlength="600" placeholder="Tell us about your project..."></textarea>
-                        <div class="char-counter" id="description-counter">0 / 600</div>
+                    <div class="field">
+                        <label class="field-label" for="edit-description">About</label>
+                        <p class="field-hint" id="edit-description-hint">A short paragraph about what your project does.</p>
+                        <textarea class="input" id="edit-description" name="description" maxlength="600" placeholder="Tell us about your project…" autocomplete="off" aria-describedby="edit-description-hint description-counter"></textarea>
+                        <p class="char-counter" id="description-counter">0 / 600</p>
                     </div>
 
-                    <div class="form-group">
-                        <label for="edit-city">City</label>
-                        <span class="form-help">The city where your project is based</span>
-                        <input type="text" id="edit-city" name="city" maxlength="50" placeholder="City name">
+                    <div class="field">
+                        <label class="field-label" for="edit-city">City</label>
+                        <p class="field-hint" id="edit-city-hint">The city where your project is based.</p>
+                        <input class="input" type="text" id="edit-city" name="city" maxlength="50" placeholder="City" autocomplete="address-level2" aria-describedby="edit-city-hint">
                     </div>
 
-                    <div class="form-group">
-                        <label for="edit-country">Country</label>
-                        <span class="form-help">The country where your project is based</span>
-                        <input type="text" id="edit-country" name="country" maxlength="50" placeholder="Country name">
+                    <div class="field">
+                        <label class="field-label" for="edit-country">Country</label>
+                        <p class="field-hint" id="edit-country-hint">The country where your project is based.</p>
+                        <input class="input" type="text" id="edit-country" name="country" maxlength="50" placeholder="Country" autocomplete="country-name" aria-describedby="edit-country-hint">
+                    </div>
+                </section>
+
+                <section class="box form-box" aria-labelledby="h-contact">
+                    <h2 id="h-contact">Contact and links</h2>
+
+                    <div class="field">
+                        <label class="field-label" for="edit-website">Website</label>
+                        <p class="field-hint" id="edit-website-hint">Your project's website address.</p>
+                        <input class="input" type="url" id="edit-website" name="website" maxlength="100" placeholder="https://example.com" autocomplete="url" aria-describedby="edit-website-hint">
                     </div>
 
-                    <!-- Vision & Mission -->
-                    <h3>Vision & Mission</h3>
-
-                    <div class="form-group">
-                        <label for="edit-vision">Vision</label>
-                        <span class="form-help">Where do you see your project going in the future?</span>
-                        <textarea id="edit-vision" name="vision" maxlength="400" placeholder="Your long-term vision..."></textarea>
-                        <div class="char-counter" id="vision-counter">0 / 400</div>
+                    <div class="field">
+                        <label class="field-label" for="edit-email">Email</label>
+                        <p class="field-hint" id="edit-email-hint">A contact email for your project.</p>
+                        <input class="input" type="email" id="edit-email" name="email" maxlength="75" placeholder="contact@example.com" autocomplete="email" aria-describedby="edit-email-hint">
                     </div>
 
-                    <div class="form-group">
-                        <label for="edit-mission">Mission</label>
-                        <span class="form-help">What drives your project day-to-day?</span>
-                        <textarea id="edit-mission" name="mission" maxlength="400" placeholder="Your mission statement..."></textarea>
-                        <div class="char-counter" id="mission-counter">0 / 400</div>
-                    </div>
-
-                    <!-- Story -->
-                    <h3>Your Story</h3>
-
-                    <div class="form-group">
-                        <label for="edit-how-started">Origin Story</label>
-                        <span class="form-help">Tell the story of how your project came to be</span>
-                        <textarea id="edit-how-started" name="how_started" maxlength="1000" placeholder="How did your project begin?"></textarea>
-                        <div class="char-counter" id="how-started-counter">0 / 1000</div>
-                    </div>
-
-                    <!-- Contact & Links -->
-                    <h3>Contact & Links</h3>
-
-                    <div class="form-group">
-                        <label for="edit-website">Website</label>
-                        <span class="form-help">Your project's website URL</span>
-                        <input type="url" id="edit-website" name="website" maxlength="100" placeholder="https://example.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="edit-email">Email</label>
-                        <span class="form-help">Contact email for your project</span>
-                        <input type="email" id="edit-email" name="email" maxlength="75" placeholder="contact@example.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="edit-x-username">X Username</label>
-                        <span class="form-help">Your X username without the @ symbol</span>
+                    <div class="field">
+                        <label class="field-label" for="edit-x-username">X username</label>
+                        <p class="field-hint" id="edit-x-username-hint">Letters, numbers and underscores, without the @.</p>
                         <div class="input-with-prefix">
-                            <span class="input-prefix">@</span>
-                            <input type="text" id="edit-x-username" name="x_username" maxlength="15" placeholder="yourproject" pattern="[A-Za-z0-9_]+" title="Username can only contain letters, numbers, and underscores">
+                            <span class="input-prefix" aria-hidden="true">@</span>
+                            <input class="input" type="text" id="edit-x-username" name="x_username" maxlength="15" placeholder="yourproject" pattern="[A-Za-z0-9_]+" title="Username can only contain letters, numbers, and underscores" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="edit-x-username-hint">
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="edit-npub">Nostr npub</label>
-                        <span class="form-help">Your Nostr public key (npub format, 63 characters)</span>
-                        <input type="text" id="edit-npub" name="npub" maxlength="63" placeholder="npub1..." pattern="npub[a-z0-9]{59}" title="Must be a valid npub (63 characters)">
+                    <div class="field">
+                        <label class="field-label" for="edit-npub">Nostr npub</label>
+                        <p class="field-hint" id="edit-npub-hint">Your Nostr public key: starts with npub, 63 characters.</p>
+                        <input class="input" type="text" id="edit-npub" name="npub" maxlength="63" placeholder="npub1…" pattern="npub[a-z0-9]{59}" title="Must be a valid npub (63 characters)" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="edit-npub-hint">
                     </div>
 
-                    <div class="form-group">
-                        <label for="edit-btcmap-url">BTCMap URL</label>
-                        <span class="form-help">Your BTCMap profile or area URL</span>
-                        <input type="url" id="edit-btcmap-url" name="btcmap_url" maxlength="100" placeholder="https://btcmap.org/...">
+                    <div class="field">
+                        <label class="field-label" for="edit-btcmap-url">BTCMap URL</label>
+                        <p class="field-hint" id="edit-btcmap-url-hint">Your BTCMap profile or area page.</p>
+                        <input class="input" type="url" id="edit-btcmap-url" name="btcmap_url" maxlength="100" placeholder="https://btcmap.org/…" autocomplete="off" aria-describedby="edit-btcmap-url-hint">
+                    </div>
+                </section>
+
+                <section class="box form-box" aria-labelledby="h-addresses">
+                    <h2 id="h-addresses">Bitcoin addresses</h2>
+
+                    <div class="field">
+                        <label class="field-label" for="edit-lightning-address">Lightning address</label>
+                        <p class="field-hint" id="edit-lightning-address-hint">Where your project receives donations over Lightning.</p>
+                        <input class="input" type="text" id="edit-lightning-address" name="lightning_address" maxlength="75" placeholder="you@yourdomain.com" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="edit-lightning-address-hint">
                     </div>
 
-                    <!-- Bitcoin Addresses -->
-                    <h3>Bitcoin Addresses</h3>
+                    <div class="field">
+                        <label class="field-label" for="edit-onchain-address">Onchain address</label>
+                        <p class="field-hint" id="edit-onchain-address-hint">A Bitcoin onchain address. Rotate it regularly.</p>
+                        <input class="input" type="text" id="edit-onchain-address" name="onchain_address" maxlength="62" placeholder="bc1…" pattern="[a-zA-Z0-9]+" title="Valid Bitcoin address" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="edit-onchain-address-hint">
+                    </div>
+                </section>
 
-                    <div class="form-group">
-                        <label for="edit-lightning-address">Lightning Address</label>
-                        <span class="form-help">Lightning address for receiving donations</span>
-                        <input type="text" id="edit-lightning-address" name="lightning_address" maxlength="75" placeholder="you@yourdomain.com">
+                <section class="box form-box" aria-labelledby="h-campaigns">
+                    <h2 id="h-campaigns">Fundraising campaigns</h2>
+
+                    <div class="field">
+                        <label class="field-label" for="edit-btcpay-campaign">BTCPay campaign</label>
+                        <p class="field-hint" id="edit-btcpay-campaign-hint">Your BTCPay crowdfunding page.</p>
+                        <input class="input" type="url" id="edit-btcpay-campaign" name="btcpay_campaign" maxlength="100" placeholder="https://btcpay…" autocomplete="off" aria-describedby="edit-btcpay-campaign-hint">
                     </div>
 
-                    <div class="form-group">
-                        <label for="edit-onchain-address">Onchain Address</label>
-                        <span class="form-help">Bitcoin onchain address (advisable to rotate regularly)</span>
-                        <input type="text" id="edit-onchain-address" name="onchain_address" maxlength="62" placeholder="bc1..." pattern="[a-zA-Z0-9]+" title="Valid Bitcoin address">
+                    <div class="field">
+                        <label class="field-label" for="edit-geyser-campaign">Geyser campaign</label>
+                        <p class="field-hint" id="edit-geyser-campaign-hint">Your Geyser project page.</p>
+                        <input class="input" type="url" id="edit-geyser-campaign" name="geyser_campaign" maxlength="100" placeholder="https://geyser.fund/project/…" autocomplete="off" aria-describedby="edit-geyser-campaign-hint">
                     </div>
+                </section>
 
-                    <!-- Campaigns -->
-                    <h3>Fundraising Campaigns</h3>
+                <section class="box form-box" aria-labelledby="h-media">
+                    <h2 id="h-media">Media</h2>
 
-                    <div class="form-group">
-                        <label for="edit-btcpay-campaign">BTCPay Campaign</label>
-                        <span class="form-help">BTCPay crowdfunding campaign URL</span>
-                        <input type="url" id="edit-btcpay-campaign" name="btcpay_campaign" maxlength="100" placeholder="https://btcpay...">
-                    </div>
+                    <div class="field">
+                        <label class="field-label" for="edit-logo">Logo</label>
 
-                    <div class="form-group">
-                        <label for="edit-geyser-campaign">Geyser Campaign</label>
-                        <span class="form-help">Geyser fundraising project URL</span>
-                        <input type="url" id="edit-geyser-campaign" name="geyser_campaign" maxlength="100" placeholder="https://geyser.fund/project/...">
-                    </div>
-
-                    <!-- Media -->
-                    <h3>Media</h3>
-
-                    <div class="form-group">
-                        <label for="edit-logo">Logo</label>
-
-                        <!-- Current Logo Preview -->
-                        <div id="current-logo-preview" class="hidden" style="margin-bottom: 16px;">
-                            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 8px;">Current logo:</p>
-                            <div style="width: 120px; height: 120px; border: 2px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--bg-secondary);">
-                                <img id="current-logo-img" src="" alt="Current logo" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
+                        <!-- Current logo -->
+                        <div id="current-logo-preview" class="current-logo hidden">
+                            <p class="field-hint">Current logo</p>
+                            <img id="current-logo-img" class="thumb" src="" alt="Current logo" width="120" height="120">
                         </div>
 
-                        <span class="form-help">Upload a new project logo (JPEG or PNG, max 2MB, square recommended)</span>
+                        <p class="field-hint" id="edit-logo-hint">Upload a new logo: JPEG or PNG, up to 2 MB. Square works best.</p>
+                        <input class="input file-input" type="file" id="edit-logo" name="logo_file" accept="image/jpeg,image/jpg,image/png" aria-describedby="edit-logo-hint">
 
-                        <input type="file" id="edit-logo" name="logo_file" accept="image/jpeg,image/jpg,image/png" style="width: 100%; padding: 10px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary); cursor: pointer;">
-
-                        <!-- Preview of new logo -->
-                        <div id="logo-preview" style="display: none; margin-top: 12px; position: relative;">
-                            <p style="color: var(--accent-green); font-size: 0.85rem; margin-bottom: 8px;">New logo preview:</p>
-                            <div style="width: 120px; height: 120px; border: 2px solid var(--accent-green); border-radius: 8px; overflow: hidden; background: var(--bg-secondary); position: relative;">
-                                <img id="logo-preview-img" src="" alt="Logo preview" style="width: 100%; height: 100%; object-fit: cover;">
-                                <div id="logo-preview-delete" class="gallery-delete" onclick="clearLogoUpload()">❌</div>
-                            </div>
+                        <!-- New logo preview (the script sets style.display) -->
+                        <div id="logo-preview" class="logo-preview" style="display: none;">
+                            <p class="field-hint">New logo</p>
+                            <img id="logo-preview-img" class="thumb" src="" alt="New logo preview" width="120" height="120">
+                            <button type="button" id="logo-preview-delete" class="btn" onclick="clearLogoUpload()">Remove new logo</button>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Gallery Images</label>
-
-                        <!-- Current Gallery -->
-                        <div id="current-gallery-section" class="hidden" style="margin-bottom: 16px;">
-                            <p style="color: var(--text-secondary); margin-bottom: 12px; font-size: 0.85rem;">
-                                Current gallery images (click ❌ to remove):
-                            </p>
+                    <div class="gallery-block">
+                        <!-- Current gallery -->
+                        <div id="current-gallery-section" class="gallery-block hidden">
+                            <p class="field-label">Current gallery images</p>
+                            <p class="field-hint">Choose Remove under an image to take it out. You can undo that before you submit.</p>
                             <div id="gallery-grid" class="gallery-grid"></div>
-                            <div id="gallery-counter" class="gallery-counter"></div>
                         </div>
 
-                        <span class="form-help">Select up to 12 images (JPEG only, max 5MB each)</span>
+                        <div class="field">
+                            <label class="field-label" for="gallery-upload">Add gallery images</label>
+                            <p class="field-hint" id="gallery-upload-hint">Up to 12 images in total. JPEG only, up to 5 MB each. You can add images more than once.</p>
+                            <input class="input file-input" type="file" id="gallery-upload" name="gallery_files" accept="image/jpeg,image/jpg" multiple aria-describedby="gallery-upload-hint gallery-counter">
+                        </div>
 
-                        <!-- New Gallery Images - File Upload Only -->
-                        <p style="color: var(--text-secondary); margin-bottom: 8px; font-size: 0.85rem; margin-top: 8px;">
-                            Upload new images from your device:
-                        </p>
-                        <input type="file" id="gallery-upload" name="gallery_files" accept="image/jpeg,image/jpg" multiple style="width: 100%; padding: 10px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary); cursor: pointer;">
+                        <!-- Previews of images ready to upload -->
+                        <div id="upload-preview-grid" class="gallery-grid hidden"></div>
 
-                        <!-- Preview of uploaded files -->
-                        <div id="upload-preview-grid" class="gallery-grid hidden" style="margin-top: 12px;"></div>
+                        <p id="gallery-counter" class="gallery-counter" aria-live="polite"></p>
 
                         <!-- Hidden field for images to keep -->
                         <input type="hidden" id="keep-gallery-images" name="keep_gallery_images" value="">
                     </div>
+                </section>
 
-                    <!-- Disclaimer -->
-                    <div style="background: rgba(247, 147, 26, 0.1); border: 1px solid var(--accent-orange); border-radius: 8px; padding: 16px; margin: 24px 0;">
-                        <label style="display: flex; align-items: flex-start; gap: 12px; cursor: pointer; font-weight: normal;">
-                            <input type="checkbox" id="disclaimer-checkbox" required style="margin-top: 4px; width: 18px; height: 18px; cursor: pointer;">
-                            <span style="flex: 1; font-size: 0.9rem; line-height: 1.5;">
-                                I confirm that all information is accurate and up to date, including payment addresses, contact details, and project descriptions. I have the right to share all images included in this submission.
-                            </span>
-                        </label>
-                    </div>
-
-                    <!-- Upload Progress Indicator -->
-                    <div id="upload-progress-container" class="hidden" style="margin-bottom: 16px; text-align: center;">
-                        <span id="upload-status-text" style="color: var(--accent); font-size: 0.9rem;"></span>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="button" id="reset-form-btn" class="btn-secondary" onclick="resetForm()">
-                            Reset Form
-                        </button>
-                        <button type="submit" id="submit-edits-btn" class="btn-primary">
-                            Submit Changes
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- Telegram Verification Section (if not authenticated) -->
-        <div id="telegram-verification" class="section hidden">
-            <h2>Verify Your Identity</h2>
-            <p style="color: var(--text-secondary); margin-bottom: 20px;">
-                To prevent unauthorized access, please enter the project lead's Telegram username.
-            </p>
-
-            <div style="margin-bottom: 20px;">
-                <input
-                    type="text"
-                    id="telegram-username-input"
-                    placeholder="@username"
-                    style="width: 100%; padding: 12px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary); font-size: 1rem;"
-                />
-                <p id="telegram-verify-feedback" style="margin-top: 8px; font-size: 0.85rem; color: var(--text-secondary);"></p>
-            </div>
-
-            <button id="claim-profile-btn" class="btn-primary" disabled>
-                Authenticate
-            </button>
-        </div>
-    </div>
-
-    <!-- OTP Modal -->
-    <div id="otp-modal" class="modal hidden">
-        <div class="modal-content">
-            <h3>Enter Verification Code</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 16px;">
-                Check your Telegram for a 6-digit code
-            </p>
-            <form onsubmit="handleOTPSubmit(event)">
-                <input
-                    type="text"
-                    id="otp-input"
-                    placeholder="000000"
-                    maxlength="6"
-                    pattern="[0-9]{6}"
-                    required
-                    style="width: 100%; padding: 12px; text-align: center; font-size: 1.5rem; letter-spacing: 0.5rem; font-weight: bold; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-secondary); color: var(--text-primary); margin-bottom: 8px;"
-                />
-
-                <!-- Help text for users who don't receive code -->
-                <div style="padding: 12px; background: var(--bg-secondary); border-radius: 6px; border: 1px solid var(--border); margin-bottom: 16px;">
-                    <p style="color: var(--text-secondary); font-size: 0.85rem; margin: 0;">
-                        <strong>Didn't receive the code?</strong> <a href="https://t.me/bitcoinubuntu" target="_blank" style="color: var(--accent-blue); text-decoration: underline;">Contact support</a> for assistance.
-                    </p>
+                <!-- Disclaimer -->
+                <div class="box confirm">
+                    <label class="check" for="disclaimer-checkbox">
+                        <input type="checkbox" id="disclaimer-checkbox" required>
+                        <span>I confirm that all information is accurate and up to date, including payment addresses, contact details, and project descriptions. I have the right to share all images included in this submission.</span>
+                    </label>
                 </div>
 
-                <button type="submit" class="btn-primary" style="width: 100%; margin: 0;">
-                    Verify
-                </button>
+                <!-- Upload progress (the script fills in the status text) -->
+                <div id="upload-progress-container" class="upload-progress hidden">
+                    <div id="upload-status-text" role="status" aria-live="polite"></div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="submit-edits-btn" class="btn btn-solid">Submit changes</button>
+                    <button type="button" id="reset-form-btn" class="btn btn-danger" onclick="resetForm()">Reset form</button>
+                </div>
             </form>
-            <button
-                onclick="hideOTPModal()"
-                style="margin-top: 16px; background: transparent; color: var(--text-secondary); border: 1px solid var(--border); padding: 8px 16px; border-radius: 6px; cursor: pointer; width: 100%;"
-            >
-                Cancel
-            </button>
+        </div>
+
+        <!-- Telegram sign-in (shown when not signed in) -->
+        <section id="telegram-verification" class="box verify hidden" aria-labelledby="verify-title">
+            <h2 id="verify-title">Sign in with Telegram</h2>
+            <p>To keep your profile safe, enter the project lead's Telegram username. Then we send a 6-digit code to you on Telegram.</p>
+
+            <div class="field">
+                <label class="field-label" for="telegram-username-input">Project lead's Telegram username</label>
+                <p class="field-hint" id="telegram-username-hint">Include the @, for example @username.</p>
+                <input class="input" type="text" id="telegram-username-input" placeholder="@username" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="telegram-username-hint telegram-verify-feedback">
+                <p id="telegram-verify-feedback" class="field-hint" aria-live="polite"></p>
+            </div>
+
+            <button type="button" id="claim-profile-btn" class="btn btn-solid" disabled>Send code</button>
+        </section>
+        </div>
+    </div>
+    </main>
+
+    <!-- Code entry (shown after the code is sent) -->
+    <div id="otp-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="otp-title" aria-describedby="otp-desc">
+        <div class="box modal-content">
+            <h2 id="otp-title">Enter your code</h2>
+            <p id="otp-desc">We sent a 6-digit code to you on Telegram.</p>
+            <form onsubmit="handleOTPSubmit(event)">
+                <div class="field">
+                    <label class="field-label" for="otp-input">6-digit code</label>
+                    <input
+                        class="input otp-input"
+                        type="text"
+                        id="otp-input"
+                        placeholder="000000"
+                        maxlength="6"
+                        pattern="[0-9]{6}"
+                        inputmode="numeric"
+                        autocomplete="one-time-code"
+                        required
+                    />
+                </div>
+
+                <p class="field-hint">No code? <a href="https://t.me/bitcoinubuntu" target="_blank" rel="noopener">Contact support on Telegram<span class="visually-hidden"> (opens in a new tab)</span></a>.</p>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn btn-solid">Verify</button>
+                    <button type="button" class="btn" onclick="hideOTPModal()">Cancel</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -798,9 +420,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             updateCharCounter('edit-tagline', 'tagline-counter', 125);
             updateCharCounter('edit-description', 'description-counter', 600);
-            updateCharCounter('edit-vision', 'vision-counter', 400);
-            updateCharCounter('edit-mission', 'mission-counter', 400);
-            updateCharCounter('edit-how-started', 'how-started-counter', 1000);
         });
 
         // Gallery management
@@ -837,11 +456,20 @@
                 const img = document.createElement('img');
                 img.src = imagePath;
                 img.alt = `Gallery image ${index + 1}`;
+                img.loading = 'lazy';
 
-                const deleteBtn = document.createElement('div');
-                deleteBtn.className = 'gallery-delete';
-                deleteBtn.innerHTML = '❌';
-                deleteBtn.onclick = () => toggleGalleryImage(imagePath);
+                const isKept = galleryToKeep.includes(imagePath);
+                const deleteBtn = document.createElement('button');
+                deleteBtn.type = 'button';
+                deleteBtn.className = 'btn gallery-delete';
+                deleteBtn.textContent = isKept ? 'Remove' : 'Undo remove';
+                deleteBtn.setAttribute('aria-label', isKept ? `Remove gallery image ${index + 1}` : `Keep gallery image ${index + 1}`);
+                deleteBtn.onclick = () => {
+                    toggleGalleryImage(imagePath);
+                    // The grid is redrawn: keep keyboard focus on this image's button
+                    const again = grid.querySelectorAll('.gallery-delete')[index];
+                    if (again) again.focus();
+                };
 
                 item.appendChild(img);
                 item.appendChild(deleteBtn);
@@ -998,25 +626,30 @@
                 const reader = new FileReader();
                 reader.onload = (e) => {
                     const item = document.createElement('div');
-                    item.className = 'gallery-item';
-                    item.style.border = '2px solid var(--accent-green)';
+                    item.className = 'gallery-item is-new';
 
                     const img = document.createElement('img');
                     img.src = e.target.result;
-                    img.alt = file.name;
+                    img.alt = '';
 
-                    const deleteBtn = document.createElement('div');
-                    deleteBtn.className = 'gallery-delete';
-                    deleteBtn.innerHTML = '❌';
-                    deleteBtn.onclick = () => removeNewGalleryFile(index);
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.type = 'button';
+                    deleteBtn.className = 'btn gallery-delete';
+                    deleteBtn.textContent = 'Remove';
+                    deleteBtn.setAttribute('aria-label', `Remove ${file.name}`);
+                    deleteBtn.onclick = () => {
+                        removeNewGalleryFile(index);
+                        // The previews are redrawn: move focus back to the picker
+                        document.getElementById('gallery-upload').focus();
+                    };
 
-                    const label = document.createElement('div');
-                    label.style = 'position: absolute; bottom: 4px; left: 4px; right: 4px; background: rgba(0,0,0,0.7); color: white; font-size: 0.7rem; padding: 4px; border-radius: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;';
+                    const label = document.createElement('p');
+                    label.className = 'gallery-name';
                     label.textContent = file.name;
 
                     item.appendChild(img);
-                    item.appendChild(deleteBtn);
                     item.appendChild(label);
+                    item.appendChild(deleteBtn);
                     previewGrid.appendChild(item);
                 };
                 reader.readAsDataURL(file);
@@ -1048,7 +681,7 @@
 
             if (totalCount > 12) {
                 counter.classList.add('warning');
-                message = `⚠️ Too many images! You have ${totalCount} total (max 12). Please delete ${totalCount - 12} ${totalCount - 12 === 1 ? 'image' : 'images'}.`;
+                message = `Too many images: you have ${totalCount} and the limit is 12. Remove ${totalCount - 12} ${totalCount - 12 === 1 ? 'image' : 'images'}.`;
             } else {
                 counter.classList.remove('warning');
             }
@@ -1074,8 +707,8 @@
         const projectId = urlParams.get('id');
 
         if (!projectId) {
-            document.getElementById('editor-message').innerHTML = 'No project specified';
-            document.getElementById('editor-message').className = 'message message-error';
+            document.getElementById('editor-message').innerHTML = 'No project chosen. Open the editor from your project’s page in the <a href="members.html">directory</a>.';
+            document.getElementById('editor-message').className = 'callout message message-error';
             document.getElementById('editor-message').classList.remove('hidden');
         } else {
             // Update back link
@@ -1093,7 +726,7 @@
 
                 if (member) {
                     // Update page title
-                    document.getElementById('page-title').textContent = `Edit ${member.name} | CBAF`;
+                    document.getElementById('page-title').textContent = `Edit ${member.name} | PoWBoT`;
 
                     // Update project header
                     const projectHeader = document.getElementById('project-header');
@@ -1101,10 +734,10 @@
                     const projectName = document.getElementById('project-name');
 
                     if (member.logo_url) {
-                        projectLogo.innerHTML = `<img src="${member.logo_url}" alt="${member.name}" class="project-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="project-logo-placeholder" style="display:none;">${member.flag || member.name.charAt(0)}</div>`;
+                        projectLogo.innerHTML = `<img src="${member.logo_url}" alt="" width="72" height="72" class="project-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="project-logo-placeholder" style="display:none;" aria-hidden="true">${member.flag || member.name.charAt(0)}</div>`;
                     } else {
-                        projectLogo.innerHTML = `<div class="project-logo-placeholder">${member.flag || member.name.charAt(0)}</div>`;
+                        projectLogo.innerHTML = `<div class="project-logo-placeholder" aria-hidden="true">${member.flag || member.name.charAt(0)}</div>`;
                     }
 
                     projectName.textContent = member.name;
@@ -1125,10 +758,20 @@
 
                     // Initialize editor with member data
                     initProfileEditor(member.id, member);
+                } else {
+                    showPageError('We could not find that project. Open the editor from your project’s page in the <a href="members.html">directory</a>.');
                 }
             } catch (error) {
                 console.error('Failed to load project info:', error);
+                showPageError('The project details did not load. Check your connection and reload the page.');
             }
+        }
+
+        // Display only: a lasting error in the message area when the page cannot load
+        function showPageError(html) {
+            const messageDiv = document.getElementById('editor-message');
+            messageDiv.innerHTML = html;
+            messageDiv.className = 'callout message message-error';
         }
     </script>
 </body>

@@ -1,0 +1,580 @@
+/*
+ * PoWBoT shared styles: tokens, fonts, base and shared components.
+ *
+ * Define colour, type and spacing here once. Pages keep only the layout that is
+ * specific to them, and read every value from these tokens.
+ *
+ * Base element styles apply only inside <body class="pb">. That lets a page opt
+ * in when it is rebuilt, while pages not yet converted keep their own look and
+ * still get the shared nav and footer below.
+ */
+
+/* ---------------------------------------------------------------- Fonts --
+ * Self-hosted and subset to Latin (see fonts/). No third-party font requests.
+ * JetBrains Mono: headings, ranks and figures. Atkinson Hyperlegible: text.
+ */
+@font-face { font-family: "JetBrains Mono"; src: url("../fonts/jetbrains-mono-latin-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("../fonts/jetbrains-mono-latin-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("../fonts/atkinson-hyperlegible-latin-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("../fonts/atkinson-hyperlegible-latin-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+/* --------------------------------------------------------------- Tokens -- */
+:root {
+    /* Colour: an 80s CRT, toned down. Green-tinted glass, a muted P1 green
+       phosphor for links and data, and a soft amber for the one highlight
+       (current page, leader, today). Contrast on --night: heading 17.6, text 16.2,
+       muted 8.3, phosphor 9.6, amber 9.7, danger 8.6. Change a colour here
+       and in its -rgb twin. */
+    --night: #070F0B;          /* page: dark green glass, not neutral black */
+    --panel: #0C1913;          /* raised surfaces: tables, dialogs */
+    --panel-hi: #12241B;       /* hover on panel rows */
+    --heading: #F2F4F3;        /* headings and the wordmark: near white, barely tinted */
+    --text: #E3EDE7;           --text-rgb: 227, 237, 231;   /* body: light, only a trace of green */
+    --muted: #93B19E;          --muted-rgb: 147, 177, 158;
+    --amber: #E9AC49;          --amber-rgb: 233, 172, 73;      /* the one highlight */
+    --amber-hi: #EEBB68;       /* amber hover */
+    --phosphor: #5CCC85;       --phosphor-rgb: 92, 204, 133;   /* links, data marks, focus */
+    --coin: #F7931A;           /* the mascot's coin; large marks only */
+    --danger: #FF8A8A;         /* errors, rejected */
+    --line: rgba(var(--muted-rgb), 0.22);
+    --line-strong: rgba(var(--muted-rgb), 0.45);
+
+    /* Type */
+    --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    --font-text: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --fs-xs: 0.8125rem;   /* 13 */
+    --fs-sm: 0.875rem;    /* 14 */
+    --fs-base: 1rem;      /* 16 */
+    --fs-md: 1.125rem;    /* 18 */
+    --fs-lg: 1.3125rem;   /* 21 */
+    --fs-xl: 1.5rem;      /* 24 */
+    --fs-2xl: 2rem;       /* 32 */
+    --fs-display: clamp(1.875rem, 5vw, 3.75rem); /* 30 to 60 */
+
+    /* Space */
+    --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
+    --gutter: clamp(16px, 4vw, 48px);
+    --max: 1180px;
+    --radius: 2px;
+    --tap: 44px;
+
+    /* Motion */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --t-fast: 160ms;
+    --t-ui: 200ms;
+}
+
+/* ----------------------------------------------------------------- Base --
+ * Element rules use :where() so they carry no specificity: any component
+ * class (.btn, .tag, .section h2) overrides them without a fight.
+ */
+html:has(body.pb) { color-scheme: dark; background: var(--night); }
+.pb, .pb *, .pb *::before, .pb *::after { box-sizing: border-box; }
+/* Keep focused elements and anchor targets clear of the sticky nav */
+.pb :focus, .pb [id] { scroll-margin-top: 80px; scroll-margin-bottom: 24px; }
+.pb a, .pb button, .pb summary { -webkit-tap-highlight-color: rgba(var(--phosphor-rgb), 0.2); }
+.pb {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--night);
+    color: var(--text);
+    font: 400 var(--fs-base)/1.55 var(--font-text);
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+}
+:where(.pb) :where(h1, h2, h3) { color: var(--heading); font-family: var(--font-mono); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; text-wrap: balance; }
+:where(.pb) p { text-wrap: pretty; }
+:where(.pb) a { color: var(--phosphor); text-underline-offset: 3px; }
+:where(.pb) a:hover { color: var(--text); }
+:where(.pb) img { max-width: 100%; height: auto; }
+:where(.pb) button { font: inherit; color: inherit; touch-action: manipulation; }
+.pb ::selection { background: var(--amber); color: var(--night); }
+
+/* One focus style everywhere. Amber surfaces switch the ring to night. */
+.pb :focus-visible, .site-nav :focus-visible, .site-footer :focus-visible {
+    outline: 3px solid var(--phosphor);
+    outline-offset: 2px;
+    border-radius: var(--radius);
+}
+.pb .on-amber :focus-visible, .pb .on-amber:focus-visible { outline-color: var(--night); }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--font-mono); }
+.muted { color: var(--muted); }
+.visually-hidden {
+    position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip-link { position: absolute; left: var(--s4); top: -100px; z-index: 200; padding: var(--s3) var(--s4); background: var(--amber); color: var(--night); font-weight: 700; }
+.skip-link:focus { top: var(--s2); }
+
+/* --------------------------------------------------------------- Button -- */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: var(--s2);
+    min-height: var(--tap); padding: 0 var(--s4);
+    background: none; color: var(--phosphor);
+    border: 1px solid var(--phosphor); border-radius: var(--radius);
+    font: 700 var(--fs-sm)/1 var(--font-text); text-decoration: none;
+    cursor: pointer; touch-action: manipulation;
+    transition: transform var(--t-fast) var(--ease-out), background-color var(--t-fast) ease;
+}
+/* .btn sets display, which would otherwise override the hidden attribute */
+.btn[hidden] { display: none; }
+
+/* Link chips in a profile header (Website, X, BTC Map...) */
+.hero-link {
+    display: inline-flex; align-items: center; gap: var(--s2);
+    min-height: var(--tap); padding: 0 var(--s3);
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    color: var(--phosphor); text-decoration: none;
+    font: 700 var(--fs-sm)/1 var(--font-text);
+}
+.hero-link:hover { border-color: var(--phosphor); background: rgba(var(--phosphor-rgb), 0.12); color: var(--phosphor); }
+.hero-link[hidden] { display: none; }
+.btn:hover { background: rgba(var(--phosphor-rgb), 0.12); color: var(--phosphor); }
+.btn:active { transform: scale(0.97); }
+.btn-solid { background: var(--amber); border-color: var(--amber); color: var(--night); }
+.btn-solid:hover { background: var(--amber-hi); color: var(--night); }
+
+/* Platform label: text first, so it never relies on an icon */
+.tag {
+    display: inline-block; padding: 2px 6px;
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    font: 400 var(--fs-xs)/1.2 var(--font-mono); color: var(--muted);
+    white-space: nowrap;
+    min-width: 3.75rem; text-align: center;   /* X and Nostr line up in lists */
+}
+
+/* ------------------------------------------------------------------ Nav --
+ * Pinned to the top on every page. The wrapper the include is injected into
+ * is what sticks: a sticky element can only stick inside its parent, and the
+ * wrapper is exactly as tall as the nav, so a sticky .site-nav never moved.
+ * Links are square blocks that fill the bar from the top edge to the rule.
+ */
+#site-nav { position: sticky; top: 0; z-index: 100; }
+/* Pages not yet rebuilt pad <body> by 20px; pull the nav out to the edges. */
+body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
+
+.site-nav { position: relative; border-bottom: 1px solid var(--line); background: var(--night); }
+.site-nav .wrap { display: flex; align-items: stretch; gap: var(--s4); height: 60px; }
+.site-nav .brand { display: flex; align-items: center; align-self: center; gap: 10px; color: var(--heading); text-decoration: none; font: 700 var(--fs-md)/1 var(--font-mono); letter-spacing: -0.02em; min-height: var(--tap); }
+.site-nav .brand img { width: auto; height: 34px; }  /* the mascot is 81x100, not square */
+.site-nav .nav-links { display: flex; align-items: stretch; gap: 0; margin: 0 0 0 auto; padding: 0; list-style: none; }
+.site-nav .nav-links li { display: flex; }
+.site-nav .nav-links a {
+    display: flex; align-items: center; padding: 0 var(--s4);
+    color: var(--muted); text-decoration: none; font: 700 var(--fs-base)/1 var(--font-text);
+    border-radius: 0;
+}
+.site-nav .nav-links a:hover { color: var(--text); background: var(--panel); }
+.site-nav .nav-links a.current { background: var(--amber); color: var(--night); }
+.site-nav .nav-links a:focus-visible { outline-offset: -3px; border-radius: 0; }
+.site-nav .nav-links a.current:focus-visible { outline-color: var(--night); }
+
+/* Menu button: phones only. A square block like the links, bars turn to a cross. */
+.site-nav .nav-toggle {
+    display: none; align-items: center; justify-content: center;
+    width: 60px; margin: 0 calc(var(--gutter) * -1) 0 auto; padding: 0;
+    background: none; border: 0; border-left: 1px solid var(--line);
+    color: var(--heading); cursor: pointer;
+}
+.site-nav .nav-toggle:hover { background: var(--panel); }
+.site-nav .nav-toggle[aria-expanded="true"] { background: var(--panel); }
+.site-nav .nav-toggle:focus-visible { outline-offset: -3px; border-radius: 0; }
+.nav-toggle-bars { position: relative; display: block; width: 22px; height: 16px; }
+.nav-toggle-bars i {
+    position: absolute; left: 0; width: 100%; height: 2px; background: currentColor;
+    transition: transform var(--t-ui) var(--ease-out), opacity var(--t-fast) ease;
+}
+.nav-toggle-bars i:nth-child(1) { top: 0; }
+.nav-toggle-bars i:nth-child(2) { top: 7px; }
+.nav-toggle-bars i:nth-child(3) { top: 14px; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars i:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars i:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars i:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* --------------------------------------------------------------- Footer -- */
+.site-footer { border-top: 1px solid var(--line); padding: var(--s6) 0 var(--s7); color: var(--muted); font: 400 var(--fs-sm)/1.6 var(--font-text); text-align: center; background: var(--night); }
+.site-footer a { color: var(--phosphor); }
+.site-footer a:hover { color: var(--text); }
+.site-footer .partners-label { margin: 0 0 var(--s3); }
+/* Partner marks stay full colour: several are dark and vanish in greyscale. */
+.site-footer .partners { display: flex; justify-content: center; flex-wrap: wrap; gap: var(--s5) var(--s6); margin: 0 0 var(--s5); padding: 0; list-style: none; }
+.site-footer .partners a { display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--text); text-decoration: none; min-height: var(--tap); }
+.site-footer .partners a:hover span { text-decoration: underline; }
+.site-footer .partners img { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line); }
+.site-footer .footer-meta { margin: 0 auto; max-width: 70ch; }
+.site-footer .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 0 var(--s2); margin: var(--s2) 0 0; padding: 0; list-style: none; }
+.site-footer .footer-links a { display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 var(--s2); }
+
+@media (max-width: 720px) {
+    /* Links fold into a panel under the bar, so the wordmark always fits */
+    .site-nav .nav-toggle { display: flex; }
+    .site-nav .nav-links {
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; margin: 0;
+        background: var(--night); border-bottom: 1px solid var(--line-strong);
+        visibility: hidden; opacity: 0; transform: translateY(-6px);
+        transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out), visibility 0s linear 180ms;
+    }
+    .site-nav.is-open .nav-links {
+        visibility: visible; opacity: 1; transform: none;
+        transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out), visibility 0s;
+    }
+    /* Opened from the keyboard: no animation (it would only slow the next key) */
+    .site-nav.no-anim .nav-links { transition: none; }
+    .site-nav .nav-links li { display: block; border-top: 1px solid var(--line); }
+    .site-nav .nav-links a { min-height: 52px; padding: 0 var(--gutter); font-size: var(--fs-md); }
+}
+
+/* --------------------------------------------------------------- Motion -- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ======================================================= Shared components
+ * Use these before writing page CSS. Pages keep only their own layout.
+ */
+
+/* ---------------------------------------------------- Section heading -- */
+.section { padding: var(--s7) 0; border-bottom: 1px solid var(--line); }
+.section:last-child { border-bottom: 0; }
+.section > h2, .section-head h2 { margin: 0 0 var(--s2); font-size: var(--fs-lg); }
+/* Heading with a switch beside it; wraps under the heading on phones */
+.section-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s3); margin: 0 0 var(--s3); }
+.section-head h2 { margin: 0; }
+.section-note { margin: 0 0 var(--s5); color: var(--muted); max-width: 65ch; }
+
+/* --------------------------------------------------------- Leaderboard --
+ * Framed like a signed message: the armor lines are the page's one loud
+ * gesture. The leader row is shown in inverse video, like a terminal selection.
+ */
+.armor { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--s3) var(--s4); padding: var(--s2) 0; font: 400 var(--fs-xs)/1.4 var(--font-mono); color: var(--muted); }
+.armor-line { white-space: nowrap; }
+.lb-shell { background: var(--panel); border: 1px solid var(--line); }
+.lb { width: 100%; border-collapse: collapse; }
+.lb th, .lb td { padding: var(--s3) var(--s4); border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+.lb thead th { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--muted); }
+.lb .r { text-align: right; }
+/* Fixed columns, for boards whose ranking can be switched: the columns stay
+   put when the header labels or figures change. */
+.lb-fixed { table-layout: fixed; }
+.lb-fixed .c-rank { width: 4.5rem; }
+.lb-fixed .c-num { width: 7.5rem; }
+.lb-fixed .c-week { width: 10.5rem; }
+.lb tbody tr:last-child > * { border-bottom: 0; }
+.lb .rank { width: 4.5rem; font: 400 var(--fs-md)/1 var(--font-mono); color: var(--muted); }
+.lb .proj { font-weight: 400; }
+.lb .proj-name { font: 700 var(--fs-lg)/1.2 var(--font-text); }
+.lb .proj small { display: block; color: var(--muted); font-size: var(--fs-sm); }
+.lb .posts { font: 700 1.625rem/1 var(--font-mono); letter-spacing: -0.01em; }
+.lb .mer { font: 400 var(--fs-base)/1 var(--font-mono); color: var(--muted); }
+.lb a.proj-link { display: inline-flex; align-items: center; min-height: var(--tap); color: var(--text); text-decoration: none; }
+.lb a.proj-link:hover .proj-name { text-decoration: underline; }
+
+/* Row that opens to show its posts */
+.row-toggle {
+    display: block; min-height: var(--tap); padding: 0; background: none; border: 0;
+    color: inherit; text-align: left; cursor: pointer;
+}
+.row-toggle .row-line { display: inline; }
+/* Inline so a wrapped name keeps its flag and arrow right after the last word */
+.row-toggle .chev { display: inline-block; margin-left: var(--s2); vertical-align: 0.15em; }
+.row-toggle:hover .proj-name { text-decoration: underline; }
+/* The whole row opens it (includes/inject.js), so the whole row answers the pointer */
+.lb tr.lb-row:has(.row-toggle) { cursor: pointer; }
+.lb tr.lb-row:has(.row-toggle):hover .proj-name { text-decoration: underline; }
+.lb tr.lb-row:not(.leader):has(.row-toggle):hover > * { background: var(--panel-hi); }
+.chev { width: 9px; height: 9px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translate(-2px, -2px); transition: transform var(--t-ui) var(--ease-out); opacity: 0.7; flex: none; }
+.row-toggle[aria-expanded="true"] .chev { transform: rotate(225deg) translate(-2px, -2px); }
+.lb tr.detail > td { background: var(--night); padding: var(--s4) var(--s4) var(--s5); }
+.lb tr.is-more { display: none; }
+/* Once shown: extra rows appear; their detail rows follow their own [hidden] */
+.lb.show-all tr.is-more:not([hidden]) { display: table-row; }
+
+.lb tr.leader { background: var(--amber); color: var(--night); }
+.lb tr.leader .rank, .lb tr.leader .mer, .lb tr.leader .proj small { color: var(--night); }
+.lb tr.leader a.proj-link { color: var(--night); }
+
+/* Last 7 days: one square per UTC day, filled when a post was approved */
+.week { display: inline-flex; gap: 5px; vertical-align: middle; }
+.week i { width: 13px; height: 13px; border: 1.5px solid var(--muted); }
+.week i.on { background: var(--phosphor); border-color: var(--phosphor); }
+.lb tr.leader .week i { border-color: var(--night); }
+.lb tr.leader .week i.on { background: var(--night); }
+.week-under { display: none; margin-top: var(--s2); }
+/* The other figure, shown under the name on phones where its column is hidden */
+.sec-under { display: none; }
+
+/* Posts inside an opened row */
+.post-list { list-style: none; margin: 0 0 var(--s3); padding: 0; }
+.post-list a { display: flex; align-items: center; gap: var(--s3); min-height: var(--tap); padding: var(--s1) 0; border-bottom: 1px solid var(--line); color: var(--text); text-decoration: none; }
+.post-list a:hover .post-name { text-decoration: underline; }
+.post-list .post-name { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.post-list .post-when { color: var(--muted); font: 400 var(--fs-xs)/1 var(--font-mono); white-space: nowrap; }
+.detail-links { display: flex; flex-wrap: wrap; gap: var(--s3); }
+
+/* One row per visit (visits.js): who and where, the X / Nostr links, when.
+   The links always sit in the same two slots so they line up down a list. */
+.visits { list-style: none; margin: 0 0 var(--s3); padding: 0; }
+.visits li { border-bottom: 1px solid var(--line); }
+.visit { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: var(--s2) var(--s4); min-height: var(--tap); padding: var(--s2) 0; }
+.visit-main { min-width: 0; overflow-wrap: anywhere; color: var(--muted); }
+.visit-main a { color: var(--text); text-decoration: none; }
+.visit-main a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.visit-main .visit-project { font-weight: 700; }
+.visit-links { display: flex; gap: var(--s2); }
+.visit-link {
+    position: relative; display: inline-flex; align-items: center; justify-content: center;
+    min-width: 4.25rem; height: 28px; padding: 0 var(--s2);
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--phosphor); text-decoration: none;
+}
+.visit-link::after { content: ""; position: absolute; inset: -9px 0; }   /* 46px tall touch target */
+a.visit-link:hover { border-color: var(--phosphor); background: rgba(var(--phosphor-rgb), 0.12); }
+.visit-link.is-empty { border-color: transparent; }
+.visit-when { color: var(--muted); font: 400 var(--fs-xs)/1 var(--font-mono); white-space: nowrap; min-width: var(--visit-when, 18ch); text-align: right; }   /* fixed, so the links line up */
+/* Dates with a year ("27 Jan 2026") and no time need less room */
+.visits.dated { --visit-when: 11ch; }
+
+/* Period switch above the board */
+.seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: var(--radius); }
+.seg button { min-height: var(--tap); padding: 0 var(--s4); background: none; border: 0; color: var(--muted); font: 700 var(--fs-sm)/1 var(--font-text); cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line-strong); }
+.seg button[aria-pressed="true"] { background: var(--text); color: var(--night); }
+.seg button:hover:not([aria-pressed="true"]) { color: var(--text); }
+
+.board-empty { padding: var(--s6) var(--s5); max-width: 60ch; }
+.board-empty p { margin: 0 0 var(--s3); }
+.board-empty p:first-child { font: 700 var(--fs-md)/1.4 var(--font-text); }
+
+/* --------------------------------------------------------------- Flags -- */
+/* SVG flags from flags.js, sized to the text around them. No outline or
+   rounding, to match the flags drawn after names (.name-flag). */
+.flag-img { display: inline-block; width: auto; height: 0.75em; aspect-ratio: 4 / 3; vertical-align: 0; }
+/* A name with its flag (nameWithFlag): the flag sits in the padding after the
+   name, cap height, so it never wraps away from the last word */
+.name-flag { padding-right: 1.35em; background: no-repeat right 0 top 55% / auto 0.75em; }
+
+/* ----------------------------------------------------------- Facts row -- */
+.facts { display: flex; flex-wrap: wrap; gap: var(--s4) var(--s7); margin: 0; padding: 0; list-style: none; }
+.facts li { display: flex; align-items: baseline; gap: 10px; }
+.facts b { font: 700 var(--fs-2xl)/1 var(--font-mono); letter-spacing: -0.02em; }
+.facts li > span { color: var(--muted); }   /* the label, not spans inside a figure */
+.notes { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s6); margin: var(--s4) 0 0; padding: 0; list-style: none; color: var(--muted); }
+.notes strong { color: var(--text); font-weight: 700; }
+
+/* ---------------------------------------------------------- Plain list -- */
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { border-bottom: 1px solid var(--line); }
+.list li > a, .list li > .row { display: flex; justify-content: space-between; align-items: center; gap: var(--s4); min-height: var(--tap); padding: var(--s2) 0; color: var(--text); text-decoration: none; }
+.list li > a:hover .li-main { text-decoration: underline; }
+.list .li-main { min-width: 0; overflow-wrap: anywhere; }
+.list .li-main .tag { margin-right: var(--s2); }
+.list .li-side { color: var(--muted); white-space: nowrap; }
+/* Times and dates in mono: the same size as dates in the post lists */
+.list .li-side.mono { font-size: var(--fs-xs); }
+.list .li-name { display: block; }
+.list .li-sub { display: block; color: var(--muted); font-size: var(--fs-sm); }
+.list li.is-more { display: none; }
+.list.show-all li.is-more { display: block; }
+.list-more { margin-top: var(--s4); }
+
+/* ------------------------------------------------------ Bars over time -- */
+.bars { position: relative; display: flex; align-items: flex-end; gap: 3px; height: 140px; border-bottom: 1px solid var(--muted); }
+.bars i { flex: 1; min-height: 1px; background: var(--phosphor); opacity: 0.8; }
+.bars i.today { background: var(--amber); opacity: 1; }
+.bars-scale { position: absolute; left: 0; top: 0; font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--muted); background: var(--night); padding: 0 6px 2px 0; }
+.bars-axis { display: flex; justify-content: space-between; padding-top: var(--s2); font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--muted); }
+/* Readout above a bar chart: one line, updated by hover, tap or arrow keys
+   (includes/inject.js). Replaces per-bar tooltips, which phones can't show. */
+.bars-readout { margin: 0 0 var(--s2); min-height: 1.5em; font: 400 var(--fs-sm)/1.5 var(--font-mono); color: var(--text); }
+.bars { cursor: crosshair; touch-action: pan-y; }
+.bars i.sel { background: var(--heading); opacity: 1; }
+.bars i.today.sel { background: var(--amber-hi); }
+.bars:focus-visible { outline-offset: 4px; }
+
+/* ------------------------------------------------ Horizontal bar rows --
+ * Same family as the per-day bars: thin phosphor bars, the current or live
+ * one amber. One compact row each: label (name, date under it), bar, value
+ * in a right-hand column. A row can be a link (a.hb-row) or plain (div).
+ */
+.hbars { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.hb-row {
+    display: grid; grid-template-columns: 10rem minmax(0, 1fr); align-items: center; column-gap: var(--s4);
+    min-height: var(--tap); padding: 3px 0; color: var(--text); text-decoration: none;
+}
+a.hb-row:hover { background: rgba(var(--phosphor-rgb), 0.06); color: var(--text); }
+a.hb-row:hover .hb-name { text-decoration: underline; }
+.hb-label { display: block; min-width: 0; line-height: 1.25; }
+.hb-name { display: block; font-weight: 700; white-space: nowrap; }
+.hb-when { display: block; color: var(--muted); font-size: var(--fs-xs); white-space: nowrap; }
+/* Bar then its value. --w is the bar's share (0 to 1) of the room left once
+   the value has its space, so the longest bar and its value always fit. */
+.hb-track { display: flex; align-items: center; gap: var(--s3); min-width: 0; }
+.hb-bar { flex: none; width: calc((100% - 5.5rem) * var(--w, 0)); min-width: 2px; height: 14px; background: var(--phosphor); opacity: 0.8; }
+.hb.current .hb-bar { background: var(--amber); opacity: 1; }
+.hb-val { font: 700 var(--fs-base)/1 var(--font-mono); white-space: nowrap; }
+/* Context line under a row, lined up with the bars */
+.hb-note { margin: -4px 0 var(--s2) calc(10rem + var(--s4)); color: var(--muted); font: 400 var(--fs-sm)/1.45 var(--font-text); }
+
+/* ---------------------------------------------------------- Page head --
+ * Inner pages: a heading and one plain sentence. Not a hero.
+ */
+.page-head { padding: var(--s7) 0 var(--s5); border-bottom: 1px solid var(--line); }
+.page-head h1 { margin: 0; font-size: clamp(1.75rem, 4vw, 2.75rem); letter-spacing: -0.035em; }
+.page-head .lede { margin: var(--s3) 0 0; color: var(--muted); font-size: var(--fs-md); max-width: 60ch; }
+.page-head .facts { margin-top: var(--s5); }
+
+/* -------------------------------------------------------------- Prose --
+ * Long text (about, guidelines, disclaimer, stories): readable measure.
+ */
+.prose { max-width: 70ch; }
+.prose p, .prose ul, .prose ol { margin: 0 0 var(--s4); }
+.prose > :last-child { margin-bottom: 0; }
+.prose h2 { margin: var(--s7) 0 var(--s3); font-size: var(--fs-lg); }
+.prose h3 { margin: var(--s5) 0 var(--s2); font-size: var(--fs-md); }
+.prose > h2:first-child, .prose > h3:first-child { margin-top: 0; }
+.prose ul, .prose ol { padding-left: 1.25em; }
+.prose li { margin: 0 0 var(--s2); }
+.prose li::marker { color: var(--muted); }
+.prose strong { color: var(--heading); }
+.prose code { font: 400 0.92em var(--font-mono); background: var(--panel); padding: 1px 5px; border-radius: var(--radius); }
+
+/* ----------------------------------------------------------- Surfaces -- */
+.box { padding: var(--s5); background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+.box > h2, .box > h3 { margin: 0 0 var(--s3); font-size: var(--fs-md); }
+.box-label { margin: 0 0 var(--s3); font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--muted); letter-spacing: 0; }
+/* A note that needs attention: left rule, text says what kind */
+.callout { padding: var(--s4) var(--s5); border-left: 3px solid var(--phosphor); background: var(--panel); max-width: 70ch; }
+.callout.warn { border-left-color: var(--amber); }
+.callout.danger { border-left-color: var(--danger); }
+.callout > :first-child { margin-top: 0; }
+.callout > :last-child { margin-bottom: 0; }
+
+/* ---------------------------------------------------- More buttons -- */
+.btn-amber { border-color: var(--amber); color: var(--amber); }
+.btn-amber:hover { background: rgba(var(--amber-rgb), 0.12); color: var(--amber); }
+.btn-danger { border-color: var(--danger); color: var(--danger); }
+.btn-danger:hover { background: rgba(255, 138, 138, 0.12); color: var(--danger); }
+.btn[disabled], .btn[aria-disabled="true"] { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* Outline link chip: a row of external links (website, X, Nostr...) */
+.chips { display: flex; flex-wrap: wrap; gap: var(--s2); margin: 0; padding: 0; list-style: none; }
+.chip {
+    display: inline-flex; align-items: center; gap: var(--s2);
+    min-height: var(--tap); padding: 0 var(--s3);
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    color: var(--phosphor); text-decoration: none; font: 700 var(--fs-sm)/1 var(--font-text);
+}
+.chip:hover { border-color: var(--phosphor); background: rgba(var(--phosphor-rgb), 0.12); color: var(--phosphor); }
+
+/* Badge: emoji + label + note. The emoji is decorative; the label says it. */
+.badges { display: flex; flex-wrap: wrap; gap: var(--s2); margin: 0; padding: 0; list-style: none; }
+.badge { display: inline-flex; align-items: center; gap: var(--s2); min-height: var(--tap); padding: var(--s1) var(--s3); border: 1px solid var(--line-strong); border-radius: var(--radius); }
+.badge-label { font-weight: 700; }
+.badge-note { color: var(--muted); font-size: var(--fs-sm); }
+
+/* Review status: always text, colour only reinforces it */
+.status { display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border: 1px solid currentColor; border-radius: var(--radius); font: 700 var(--fs-xs)/1.3 var(--font-text); white-space: nowrap; }
+.status::before { content: ""; width: 7px; height: 7px; background: currentColor; }
+.status-approved { color: var(--phosphor); }
+.status-pending { color: var(--amber); }
+.status-rejected { color: var(--danger); }
+.status-neutral { color: var(--muted); }
+
+/* --------------------------------------------------------------- Forms -- */
+.field { display: grid; gap: 6px; min-width: 0; }
+.field-label { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--muted); }
+.field-hint { margin: 0; font-size: var(--fs-sm); color: var(--muted); }
+.field-error { margin: 0; font-size: var(--fs-sm); color: var(--danger); }
+.input, .select {
+    width: 100%; min-height: var(--tap); padding: 0 var(--s3);
+    background: var(--panel); color: var(--text);
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    font: 400 var(--fs-base)/1.2 var(--font-text);
+}
+textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize: vertical; }
+.input::placeholder { color: var(--muted); opacity: 1; }
+.input:hover, .select:hover { border-color: var(--muted); }
+.input[aria-invalid="true"] { border-color: var(--danger); }
+.select { appearance: none; -webkit-appearance: none; padding-right: 40px; cursor: pointer; color-scheme: dark; }
+.select option { background: var(--panel); color: var(--text); }
+.select-wrap { position: relative; }
+.select-wrap::after {
+    content: ""; position: absolute; right: 16px; top: 50%; width: 8px; height: 8px; margin-top: -6px;
+    border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+    transform: rotate(45deg); pointer-events: none;
+}
+.check { display: flex; align-items: center; gap: var(--s3); min-height: var(--tap); cursor: pointer; }
+.check input { width: 20px; height: 20px; accent-color: var(--phosphor); }
+
+/* ------------------------------------------------------ Donation panel --
+ * Directory card backs and project and merchant profiles (markup: donate.js).
+ * Lightning and onchain sit side by side and slide. Both sides stretch to the
+ * taller one, so switching never changes the panel's size; a directory card
+ * back fills the card instead.
+ */
+.donate { position: relative; overflow: hidden; background: var(--panel); border: 1px solid rgba(var(--amber-rgb), 0.55); border-radius: var(--radius); }
+.donate-slides { display: flex; height: 100%; transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+.donate.show-onchain .donate-slides { transform: translateX(-100%); }
+.donate-side { flex: 0 0 100%; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: var(--s2); padding: var(--s4); }
+.donate .donate-title {
+    align-self: stretch; margin: 0; text-align: center;
+    font: 700 var(--fs-base)/1.25 var(--font-text); letter-spacing: 0; color: var(--heading);
+    overflow-wrap: anywhere;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.donate-title:focus { outline: none; }
+.donate-title:focus-visible { outline: 2px solid var(--phosphor); outline-offset: 2px; }
+.donate-label { margin: 0; color: var(--amber); font: 700 var(--fs-sm)/1.2 var(--font-text); }
+/* The QR needs a white quiet zone to scan: white here is functional */
+.qr-box { flex: none; width: 176px; height: 176px; padding: var(--s2); background: #fff; line-height: 0; }
+.qr-box canvas { display: block; width: 160px !important; height: 160px !important; }
+.addr-copy {
+    width: 100%; min-height: var(--tap); padding: var(--s2) var(--s3);
+    background: var(--night); color: var(--text);
+    border: 1px solid var(--line); border-radius: var(--radius);
+    font: 400 0.75rem/1.4 var(--font-mono); text-align: center; overflow-wrap: anywhere;
+    cursor: pointer;
+}
+.addr-copy:hover { border-color: var(--phosphor); }
+.addr-copy.copied { border-color: var(--phosphor); color: var(--phosphor); }
+.donate-actions { display: flex; gap: var(--s2); width: 100%; margin-top: auto; }
+.donate-actions .btn { flex: 1; min-width: 0; }
+/* .pb button resets font and colour, which would override .btn on <button> */
+.pb .donate-actions button.btn { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--phosphor); }
+
+@media (max-width: 720px) {
+    .lb th, .lb td { padding: var(--s3) 10px; }
+    .lb .rank { width: 2.75rem; font-size: var(--fs-base); }
+    .lb-fixed .c-rank { width: 2.75rem; }
+    .lb-fixed .c-num { width: 6.25rem; }
+    .lb .proj-name { font-size: var(--fs-md); }
+    .lb .posts { font-size: 1.375rem; }
+    .lb .col-wide { display: none; }
+    /* Fixed-layout boards keep those columns at zero width instead of removing
+       them: an opened row spans every column, and removed ones came back as
+       empty space that squeezed the project name. */
+    .lb-fixed .col-wide { display: table-cell; width: 0; padding: 0; border: 0; overflow: hidden; visibility: hidden; }
+    .week-under { display: flex; }
+    .sec-under { display: inline; }
+    /* Visits: names on their own line, links and time underneath */
+    .visit { display: flex; flex-wrap: wrap; align-items: center; }
+    .visit-main { flex: 1 0 100%; }
+    /* Right-aligned; drops to its own line when the links leave no room */
+    .visit-when { min-width: 0; margin-left: auto; }
+    .armor { font-size: 10px; }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s5) var(--s4); }
+    .facts li { flex-direction: column; gap: 4px; }
+    .facts b { font-size: 1.625rem; }
+    .hb-row { grid-template-columns: 8.5rem minmax(0, 1fr); column-gap: var(--s3); }
+    .hb-note { margin-left: calc(8.5rem + var(--s3)); }
+}

@@ -65,22 +65,28 @@ async function loadTrackerData() {
         // Load archived epochs alongside the live one. Each fails to null
         // independently: a missing archive must not take the whole tracker down,
         // it just means that epoch is absent from the list.
+        // Each submission is tagged with its epoch: the archive's number comes
+        // from its file name, the live file is the current epoch (epoch-config.js).
         const archives = (await Promise.all(
             TRACKER_ARCHIVES.map(f =>
                 fetch(f).then(r => r.ok ? r.json() : null).catch(() => null)
+                    .then(a => a && { ...a, epoch: Number((f.match(/epoch(\d+)/) || [])[1]) || null })
             )
         )).filter(Boolean);
 
-        const archivedSubmissions = archives.flatMap(a => a.submissions || []);
+        const tag = (subs, epoch) => (subs || []).map(s => ({ ...s, epoch }));
+        const archivedSubmissions = archives.flatMap(a => tag(a.submissions, a.epoch));
+        const currentEpoch = window.POWBOT_EPOCH?.number ?? null;
 
         // Live epoch first, then archives, newest-first overall.
-        allSubmissions = [...(data.submissions || []), ...archivedSubmissions]
+        allSubmissions = [...tag(data.submissions, currentEpoch), ...archivedSubmissions]
             .sort((a, b) => (b.timestamp || '').localeCompare(a.timestamp || ''));
 
         // Update footer timestamp (with retry in case footer loads after data)
         updateFooterTimestamp(data.last_updated);
 
-        // Populate project dropdown
+        // Populate dropdowns
+        populateEpochFilter();
         populateProjectFilter();
 
         // Apply URL parameters if present
@@ -91,13 +97,25 @@ async function loadTrackerData() {
 
     } catch (error) {
         console.error('Error loading tracker data:', error);
-        showError('Failed to load submission data. Please try again later.');
+        showError('The submissions could not load.');
     }
 }
 
 // ============================================================================
 // Filter Population
 // ============================================================================
+
+function populateEpochFilter() {
+    const epochSelect = document.getElementById('filter-epoch');
+    const epochs = [...new Set(allSubmissions.map(s => s.epoch).filter(e => e != null))]
+        .sort((a, b) => b - a);
+    epochs.forEach(epoch => {
+        const option = document.createElement('option');
+        option.value = String(epoch);
+        option.textContent = `Epoch ${epoch}`;
+        epochSelect.appendChild(option);
+    });
+}
 
 function populateProjectFilter() {
     const projectSelect = document.getElementById('filter-project');
@@ -156,6 +174,12 @@ function updateFooterTimestamp(lastUpdated) {
 function applyURLFilters() {
     const urlParams = new URLSearchParams(window.location.search);
 
+    // Apply epoch filter (a number, e.g. ?epoch=6)
+    const epochParam = urlParams.get('epoch');
+    if (epochParam) {
+        document.getElementById('filter-epoch').value = epochParam;
+    }
+
     // Apply status filter
     const statusParam = urlParams.get('status');
     if (statusParam) {
@@ -165,15 +189,14 @@ function applyURLFilters() {
     // Apply project filter
     const projectParam = urlParams.get('project');
     if (projectParam) {
-        // Find the full project name that matches (case-insensitive)
+        // Find the full project name that matches (case-insensitive). An exact
+        // name wins, so "Bitcoin Dua" can never select a longer name containing it.
         const projectSelect = document.getElementById('filter-project');
-        for (let option of projectSelect.options) {
-            if (option.value.toLowerCase().includes(projectParam.toLowerCase()) ||
-                option.textContent.toLowerCase().includes(projectParam.toLowerCase())) {
-                projectSelect.value = option.value;
-                break;
-            }
-        }
+        const wanted = projectParam.toLowerCase();
+        const options = [...projectSelect.options].filter(o => o.value);
+        const match = options.find(o => extractProjectNameOnly(o.value).toLowerCase() === wanted)
+            || options.find(o => o.value.toLowerCase().includes(wanted) || o.textContent.toLowerCase().includes(wanted));
+        if (match) projectSelect.value = match.value;
     }
 
     // Apply date filter
@@ -210,16 +233,23 @@ function extractProjectNameOnly(name) {
 // ============================================================================
 
 function applyFilters() {
+    const epochFilter = document.getElementById('filter-epoch').value;
     const statusFilter = document.getElementById('filter-status').value;
     const projectFilter = document.getElementById('filter-project').value;
     const dateFilter = document.getElementById('filter-date').value;
     const searchQuery = document.getElementById('filter-search').value.toLowerCase();
 
     // Update active filter styling
+    document.getElementById('filter-epoch').classList.toggle('active', epochFilter !== '');
     updateFilterActiveStates(statusFilter, projectFilter, dateFilter, searchQuery);
 
     // Start with all submissions
     filteredSubmissions = allSubmissions.filter(submission => {
+        // Epoch filter
+        if (epochFilter && String(submission.epoch) !== epochFilter) {
+            return false;
+        }
+
         // Status filter
         if (statusFilter && submission.status !== statusFilter) {
             return false;
@@ -254,17 +284,18 @@ function applyFilters() {
     currentPage = 1;
 
     // Update URL with current filters
-    updateURL(statusFilter, projectFilter, dateFilter, searchQuery);
+    updateURL(epochFilter, statusFilter, projectFilter, dateFilter, searchQuery);
 
     // Render
     renderSubmissions();
     updatePagination();
 }
 
-function updateURL(statusFilter, projectFilter, dateFilter, searchQuery) {
+function updateURL(epochFilter, statusFilter, projectFilter, dateFilter, searchQuery) {
     const params = new URLSearchParams();
 
     // Only add non-empty filters to URL
+    if (epochFilter) params.set('epoch', epochFilter);
     if (statusFilter) params.set('status', statusFilter);
     if (projectFilter) {
         // Use project name without flag/country for cleaner URL
@@ -306,36 +337,34 @@ function updateFilterActiveStates(statusFilter, projectFilter, dateFilter, searc
     searchInput.classList.toggle('active', searchQuery !== '');
 }
 
+// Tracker timestamps look like "2026-09-28 00:52:06 UTC". Rewrite to ISO
+// ("2026-09-28T00:52:06Z") before parsing: Chrome accepts the original form,
+// but Safari returns Invalid Date for it, which emptied every date filter.
+function parseTrackerTime(timestamp) {
+    return new Date(String(timestamp || '').replace(' UTC', 'Z').replace(' ', 'T'));
+}
+
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+// Date filters work in UTC days, like every date shown on the site.
 function passesDateFilter(submission, dateFilter) {
     if (dateFilter === 'all') return true;
 
-    const submissionDate = new Date(submission.timestamp);
-    const now = new Date();
-
-    // Reset time parts for accurate day comparison
-    const resetTime = (date) => {
-        date.setHours(0, 0, 0, 0);
-        return date;
-    };
+    const submissionDate = parseTrackerTime(submission.timestamp);
+    if (isNaN(submissionDate)) return false;
+    const now = Date.now();
 
     switch (dateFilter) {
         case 'today': {
-            const today = resetTime(new Date());
-            const subDate = resetTime(new Date(submissionDate));
-            return subDate.getTime() === today.getTime();
+            // Same UTC calendar day as now
+            return submissionDate.toISOString().slice(0, 10) === new Date(now).toISOString().slice(0, 10);
         }
 
-        case '7days': {
-            const sevenDaysAgo = new Date(now);
-            sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-            return submissionDate >= sevenDaysAgo;
-        }
+        case '7days':
+            return submissionDate.getTime() >= now - 7 * DAY_MS;
 
-        case '30days': {
-            const thirtyDaysAgo = new Date(now);
-            thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-            return submissionDate >= thirtyDaysAgo;
-        }
+        case '30days':
+            return submissionDate.getTime() >= now - 30 * DAY_MS;
 
         case 'custom': {
             const fromDate = document.getElementById('filter-date-from').value;
@@ -343,15 +372,15 @@ function passesDateFilter(submission, dateFilter) {
 
             if (!fromDate && !toDate) return true;
 
+            // Date inputs give "YYYY-MM-DD"; treat them as whole UTC days
             if (fromDate) {
-                const from = new Date(fromDate);
-                if (submissionDate < from) return false;
+                const from = Date.parse(fromDate + 'T00:00:00Z');
+                if (submissionDate.getTime() < from) return false;
             }
 
             if (toDate) {
-                const to = new Date(toDate);
-                to.setHours(23, 59, 59, 999); // End of day
-                if (submissionDate > to) return false;
+                const to = Date.parse(toDate + 'T23:59:59.999Z');
+                if (submissionDate.getTime() > to) return false;
             }
 
             return true;
@@ -378,138 +407,141 @@ function renderSubmissions() {
     const resultsCount = document.getElementById('results-count');
     if (filteredSubmissions.length === 0) {
         container.innerHTML = `
-            <div class="empty-state">
-                <div class="empty-state-icon">🔍</div>
-                <p>No submissions found matching your filters.</p>
-                <p style="margin-top: 8px; font-size: 0.9rem;">Try adjusting your search criteria.</p>
+            <div class="list-state">
+                <p>No submissions match these filters.</p>
+                <p>Try a shorter search, or set status, project and date range back to all.</p>
             </div>
         `;
-        resultsCount.textContent = 'No submissions found';
+        resultsCount.textContent = 'No submissions match';
         return;
     }
 
-    resultsCount.textContent = `Showing ${startIndex + 1}-${Math.min(endIndex, filteredSubmissions.length)} of ${filteredSubmissions.length} submissions`;
+    resultsCount.textContent = resultsText(startIndex, endIndex);
 
     // Render submission cards
     const submissionsHTML = pageSubmissions.map(submission => renderSubmissionCard(submission)).join('');
 
-    container.innerHTML = `<div class="submissions-list">${submissionsHTML}</div>`;
+    container.innerHTML = `<ul class="submissions-list">${submissionsHTML}</ul>`;
 
     // Attach event listeners
     attachCardListeners();
 }
 
-function renderSubmissionCard(submission) {
-    const statusClass = `status-${escapeHtml(String(submission.status || '').toLowerCase().replace(' ', '-'))}`;
+// Review status as a text label; colour only reinforces it.
+// Processed means approved and paid, so it reads "Approved".
+const STATUS_LABELS = {
+    'processed': { cls: 'status-approved', label: 'Approved' },
+    'rejected': { cls: 'status-rejected', label: 'Rejected' },
+    'pending review': { cls: 'status-pending', label: 'Pending review' },
+    'approved': { cls: 'status-pending', label: 'Approved, payment pending' }
+};
 
-    // Format timestamp for display
-    const timestamp = new Date(submission.timestamp);
-    const dateStr = timestamp.toLocaleDateString('en-US', {
+function renderStatus(status) {
+    const known = STATUS_LABELS[String(status || '').trim().toLowerCase()];
+    const cls = known ? known.cls : 'status-neutral';
+    const label = known ? known.label : (status || 'Unknown');
+    return `<span class="status ${cls}">${escapeHtml(label)}</span>`;
+}
+
+// "Bitbiashara (Kenya) 🇰🇪" -> "Kenya", or '' when the name has no country
+function extractCountry(name) {
+    const match = String(name || '').match(/\(([^)]+)\)/);
+    return match ? match[1].trim() : '';
+}
+
+function resultsText(startIndex, endIndex) {
+    const total = filteredSubmissions.length;
+    return `Showing ${(startIndex + 1).toLocaleString('en-GB')}–${Math.min(endIndex, total).toLocaleString('en-GB')} of ${total.toLocaleString('en-GB')} ${total === 1 ? 'submission' : 'submissions'}`;
+}
+
+function renderSubmissionCard(submission) {
+    // Format timestamp for display, in UTC like the rest of the site
+    const timestamp = parseTrackerTime(submission.timestamp);
+    const dateStr = timestamp.toLocaleDateString('en-GB', {
         year: 'numeric',
         month: 'short',
-        day: 'numeric'
+        day: 'numeric',
+        timeZone: 'UTC'
     });
-    const timeStr = timestamp.toLocaleTimeString('en-US', {
+    const timeStr = timestamp.toLocaleTimeString('en-GB', {
         hour: '2-digit',
-        minute: '2-digit'
-    });
+        minute: '2-digit',
+        timeZone: 'UTC'
+    }) + ' UTC';
+    const isoStr = isNaN(timestamp) ? '' : timestamp.toISOString();
 
-    // Merchant tip status indicator
-    const tipStatus = submission.merchant_tip_status === '✅' ? '✓' :
-                     submission.merchant_tip_status === '❌' ? '✗' : '';
-    const tipColor = submission.merchant_tip_status === '✅' ? 'var(--accent-green)' : 'var(--accent-red)';
+
+    // Flag carries the country as its name; the country is also written out
+    const country = extractCountry(submission.project_name);
+    const flag = flagHtml(submission.project_flag, country, 'flag');
+    const detailsId = `sub-${String(submission.id ?? '').replace(/[^\w-]/g, '')}-details`;
 
     return `
-        <div class="submission-card" data-id="${escapeHtml(submission.id)}">
-            <div class="card-header">
-                <div class="card-summary">
-                    <div class="card-summary-row">
-                        <span class="project-name">${escapeHtml(submission.project_flag)} ${escapeHtml(extractProjectNameOnly(submission.project_name))}</span>
-                        <span class="status-badge ${statusClass}">${escapeHtml(submission.status)}</span>
-                    </div>
-                    <div class="merchant-platform">${escapeHtml(submission.merchant_name)} on ${escapeHtml(submission.platform)}</div>
-                    <div class="timestamp">${dateStr} at ${timeStr}</div>
-                </div>
-                <div class="expand-icon">▼</div>
-            </div>
+        <li class="submission-card" data-id="${escapeHtml(submission.id)}">
+            <button type="button" class="card-header" aria-expanded="false" aria-controls="${detailsId}">
+                <span class="card-main">
+                    <span class="card-title">
+                        <span class="project-name">${flag} <span class="pn">${escapeHtml(extractProjectNameOnly(submission.project_name))}</span></span>
+                        ${country ? `<span class="card-country">${escapeHtml(country)}</span>` : ''}
+                    </span>
+                    <span class="card-meta">
+                        <span class="merchant-name">${escapeHtml(submission.merchant_name)} <span class="card-platform">on ${escapeHtml(submission.platform)}</span></span>
+                        <time datetime="${isoStr}">${dateStr}, ${timeStr}</time>
+                    </span>
+                </span>
+                ${renderStatus(submission.status)}
+                <span class="chev" aria-hidden="true"></span>
+            </button>
 
-            <div class="card-details">
-                ${renderCardDetails(submission, tipStatus, tipColor)}
+            <div class="card-details" id="${detailsId}" hidden>
+                ${renderCardDetails(submission)}
             </div>
-        </div>
+        </li>
     `;
 }
 
-function renderCardDetails(submission, tipStatus, tipColor) {
-    let html = '';
+function renderCardDetails(submission) {
+    let html = '<dl class="details">';
 
-    // Post URL
+    // The post, who took part (never how much anyone was paid) and the notes,
+    // as one table of label and value. The rows name themselves, so the
+    // list's own label is for screen readers only.
+    const postHref = safeUrl(submission.post_url);
+    const postRow = `
+        <li class="payment-item">
+            <span class="payment-type">Post</span>
+            <span class="payment-recipient">${postHref
+                ? `<a href="${postHref}" target="_blank" rel="noopener">${escapeHtml(submission.post_url)}</a>`
+                : escapeHtml(submission.post_url || 'No post link')}</span>
+        </li>`;
     html += `
-        <div class="detail-section">
-            <div class="detail-label">Post URL</div>
-            <div class="detail-value">
-                <a href="${safeUrl(submission.post_url)}" target="_blank" rel="noopener">${escapeHtml(submission.post_url)}</a>
-            </div>
+        <div>
+            <dt class="visually-hidden">Submission details</dt>
+            <dd>
+                <ul class="payment-list">
+                    ${postRow}
+                    ${(submission.payments || []).map(payment => renderPayment(payment)).join('')}
+                    ${submission.note ? `
+                    <li class="payment-item">
+                        <span class="payment-type">Notes</span>
+                        <span class="payment-recipient">${escapeHtml(submission.note)}</span>
+                    </li>` : ''}
+                </ul>
+            </dd>
         </div>
     `;
 
-    // Telegram Link
-    if (submission.telegram_link) {
-        html += `
-            <div class="detail-section">
-                <div class="detail-label">Telegram Discussion</div>
-                <div class="detail-value">
-                    <a href="${safeUrl(submission.telegram_link)}" target="_blank" rel="noopener">View Discussion →</a>
-                </div>
-            </div>
-        `;
-    }
+    html += '</dl>';
 
-    // BTC Map Link
-    if (submission.btcmap_link) {
+    // Telegram and BTC Map links
+    const telegram = safeUrl(submission.telegram_link);
+    const btcmap = safeUrl(submission.btcmap_link);
+    if (telegram || btcmap) {
         html += `
-            <div class="detail-section">
-                <div class="detail-label">BTC Map</div>
-                <div class="detail-value">
-                    <a href="${safeUrl(submission.btcmap_link)}" target="_blank" rel="noopener">View on BTC Map →</a>
-                </div>
-            </div>
-        `;
-    }
-
-    // Lightning Address & Tip Status
-    if (submission.lightning_address) {
-        const tipIcon = tipStatus ? `<span style="margin-left: 8px; color: ${tipColor}; font-weight: 600; font-size: 1.1rem;">${tipStatus}</span>` : '';
-        html += `
-            <div class="detail-section">
-                <div class="detail-label">Merchant Lightning Address</div>
-                <div class="detail-value">
-                    <span>${escapeHtml(submission.lightning_address)}</span>
-                    ${tipIcon}
-                </div>
-            </div>
-        `;
-    }
-
-    // Admin Notes
-    if (submission.note) {
-        html += `
-            <div class="detail-section">
-                <div class="detail-label">Notes</div>
-                <div class="detail-value">${escapeHtml(submission.note)}</div>
-            </div>
-        `;
-    }
-
-    // Payment Status
-    if (submission.payments && submission.payments.length > 0) {
-        html += `
-            <div class="detail-section">
-                <div class="detail-label">CBAF Payments</div>
-                <div class="payment-list">
-                    ${submission.payments.map(payment => renderPayment(payment)).join('')}
-                </div>
-            </div>
+            <ul class="chips">
+                ${telegram ? `<li><a class="chip" href="${telegram}" target="_blank" rel="noopener">Telegram discussion</a></li>` : ''}
+                ${btcmap ? `<li><a class="chip" href="${btcmap}" target="_blank" rel="noopener">Merchant on BTC Map</a></li>` : ''}
+            </ul>
         `;
     }
 
@@ -524,13 +556,22 @@ function renderPayment(payment) {
     };
 
     const typeLabel = typeLabels[payment.type] || payment.type;
+    // The card title already shows the project's flag and country
+    const recipient = payment.type === 'project' ? extractProjectNameOnly(payment.recipient) : payment.recipient;
+    // Merchants and projects link to their profiles. Profile ids are the name
+    // as a slug ("Bitcoin Chama" -> bitcoin-chama), which holds for every
+    // member today; merchant pages are addressed the same way.
+    const slug = name => String(name || '').replace(/[^\w\s-]/g, '').trim().toLowerCase().replace(/\s+/g, '-');
+    const page = { merchant: 'merchant-profile.html', project: 'profile.html' }[payment.type];
+    const name = page && recipient
+        ? `<a href="${page}?id=${encodeURIComponent(slug(recipient))}">${escapeHtml(recipient)}</a>`
+        : escapeHtml(recipient);
 
     return `
-        <div class="payment-item">
-            <span class="payment-icon">⚡</span>
-            <span class="payment-type">${escapeHtml(typeLabel)}:</span>
-            <span class="payment-recipient">${escapeHtml(payment.recipient)}</span>
-        </div>
+        <li class="payment-item">
+            <span class="payment-type">${escapeHtml(typeLabel)}</span>
+            <span class="payment-recipient">${name}</span>
+        </li>
     `;
 }
 
@@ -553,14 +594,16 @@ function updatePagination() {
     document.getElementById('btn-prev-page-bottom').disabled = currentPage === 1;
     document.getElementById('btn-next-page-bottom').disabled = currentPage === totalPages;
 
-    // Show bottom pagination
-    document.getElementById('bottom-pagination').style.display = 'flex';
+    // Page buttons only when there is more than one page; the bottom bar
+    // only then too (with one page the top count says it all)
+    const manyPages = totalPages > 1;
+    document.getElementById('pager-top').hidden = !manyPages;
+    document.getElementById('bottom-pagination').style.display = manyPages ? 'flex' : 'none';
 
     // Update results count on bottom
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const endIndex = startIndex + ITEMS_PER_PAGE;
-    document.getElementById('results-count-bottom').textContent =
-        `Showing ${startIndex + 1}-${Math.min(endIndex, filteredSubmissions.length)} of ${filteredSubmissions.length} submissions`;
+    document.getElementById('results-count-bottom').textContent = resultsText(startIndex, endIndex);
 }
 
 function goToPage(page) {
@@ -585,13 +628,16 @@ function attachCardListeners() {
     document.querySelectorAll('.card-header').forEach(header => {
         header.addEventListener('click', () => {
             const card = header.closest('.submission-card');
-            card.classList.toggle('expanded');
+            const expanded = card.classList.toggle('expanded');
+            header.setAttribute('aria-expanded', String(expanded));
+            document.getElementById(header.getAttribute('aria-controls')).hidden = !expanded;
         });
     });
 }
 
 function attachFilterListeners() {
     // Filter changes
+    document.getElementById('filter-epoch').addEventListener('change', applyFilters);
     document.getElementById('filter-status').addEventListener('change', applyFilters);
     document.getElementById('filter-project').addEventListener('change', applyFilters);
     document.getElementById('filter-date').addEventListener('change', (e) => {
@@ -618,11 +664,13 @@ function attachFilterListeners() {
 function showError(message) {
     const container = document.getElementById('submissions-container');
     container.innerHTML = `
-        <div class="empty-state">
-            <div class="empty-state-icon">⚠️</div>
+        <div class="list-state" role="alert">
             <p>${message}</p>
+            <p>Check your connection and reload the page to try again.</p>
         </div>
     `;
+    document.getElementById('results-count').textContent = 'Submissions unavailable';
+    document.getElementById('pager-top').hidden = true;
 }
 
 // ============================================================================

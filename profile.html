@@ -3,950 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Project Profile | CBAF</title>
+    <title id="page-title">Project profile | PoWBoT</title>
+    <meta name="description" id="page-description" content="A Bitcoin circular economy project in Africa: its story, its proof of work on PoWBoT, and how to donate to it directly over Lightning.">
+    <link rel="canonical" id="page-canonical" href="https://powbot.africa/profile.html">
+    <meta name="theme-color" content="#070F0B">
+
+    <!-- Open Graph / Social Preview (crawlers don't run JS, so these stay generic) -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="CBAF project profile | PoWBoT">
+    <meta property="og:description" content="A Bitcoin circular economy project in Africa and its proof of work on PoWBoT.">
+    <meta property="og:image" content="https://powbot.africa/images/PoWBoT_preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
 
     <script src="qrcode.min.js"></script>
+    <!-- The donation panel, shared with the directory card backs -->
+    <script src="donate.js"></script>
+    <script src="flags.js"></script>
+    <!-- The current epoch's posts: live tracker data, grouped into visits -->
+    <script src="epoch-config.js"></script>
+    <script src="data-source.js"></script>
+    <script src="visits.js"></script>
 
+    <link rel="stylesheet" href="css/powbot.css">
     <style>
-        :root {
-            --bg-primary: #0d1117;
-            --bg-secondary: #161b22;
-            --bg-card: #21262d;
-            --text-primary: #f0f6fc;
-            --text-secondary: #8b949e;
-            --accent-orange: #f7931a;
-            --accent-green: #3fb950;
-            --accent-blue: #58a6ff;
-            --accent-purple: #a371f7;
-            --border: #30363d;
-        }
+        /* Profile page layout only. Colours, type and components: css/powbot.css */
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* ---------------------------------------------------------- Header -- */
+        .profile-head { border-bottom: 1px solid var(--line); }
+        .profile-head .wrap {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            gap: var(--s5) var(--s6);
+            align-items: center;
+            padding-top: var(--s7);
+            padding-bottom: var(--s6);
         }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            min-height: 250px;
-            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
-            margin: -20px -20px 20px -20px;
-        }
-
-        .hero-overlay {
-            padding: 40px 20px 20px;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            align-items: flex-end;
-            gap: 24px;
-        }
-
-        .hero-logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 16px;
+        .hero-logo, .hero-logo-placeholder {
+            display: block;
+            width: 112px;
+            height: 112px;
+            border-radius: 50%;
+            border: 1px solid var(--line);
+            background: var(--panel);
             object-fit: cover;
-            border: 4px solid var(--bg-primary);
-            background: var(--bg-secondary);
         }
-
-        .hero-logo-placeholder {
-            width: 120px;
-            height: 120px;
-            border-radius: 16px;
-            background: var(--bg-secondary);
-            border: 4px solid var(--bg-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-        }
-
-        .hero-text {
-            flex: 1;
-            padding-bottom: 8px;
-        }
-
-        .hero-text h1 {
-            font-size: 2rem;
-            margin-bottom: 4px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .hero-text .flag {
-            font-size: 2rem;
-        }
-
-        .hero-text .tagline {
-            color: var(--accent-orange);
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-
-        .hero-text .location {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .hero-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
-
-        .hero-link {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 6px 12px;
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: all 0.2s;
-        }
-
-        .hero-link:hover {
-            border-color: var(--accent-blue);
-            background: rgba(88, 166, 255, 0.1);
-        }
-
-        /* Content */
-        .content {
-            padding: 30px 20px 0 20px;
-        }
-
-        .section {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 20px;
-        }
-
-        .section h2 {
-            font-size: 1.3rem;
-            margin-bottom: 16px;
-            color: var(--accent-blue);
-        }
-
-        .section h3 {
-            font-size: 1.1rem;
-            margin-top: 20px;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-
-        .section p, .section li {
-            line-height: 1.6;
-            color: var(--text-secondary);
-        }
-
-        .section strong {
-            color: var(--text-primary);
-        }
-
-        /* Donate Section */
-        .donate-section {
-            background: linear-gradient(135deg, rgba(247, 147, 26, 0.15), rgba(247, 147, 26, 0.05));
-            border: 2px solid var(--accent-orange);
-        }
-
-        .donate-section h2 {
-            color: var(--accent-orange);
-        }
-
-        .donate-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .donate-method {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 16px;
-            text-align: center;
-        }
-
-        .donate-method h3 {
-            font-size: 1rem;
-            margin: 0 0 12px 0;
-        }
-
-        /* Two Column Layout */
-        .top-cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-            align-items: stretch;
-        }
-
-        .top-cards > .section {
-            height: 100%;
-        }
-
-        .top-cards > .support-card {
-            height: 100%;
-        }
-
-        /* No support card (project has no Lightning address): About spans the row on
-           its own. The height:100% above exists only to match the two cards to each
-           other, and left on would stretch About past its content. Must stay after
-           the rules it overrides - equal specificity, so source order decides. */
-        .top-cards-single {
-            grid-template-columns: 1fr;
-        }
-
-        .top-cards-single > .section {
-            height: auto;
-            /* .top-cards already supplies the 20px below. In the two-column layout the
-               stretch absorbs this margin; with height:auto it does not, and the two
-               would stack into a 40px gap that no other card pair has. */
-            margin-bottom: 0;
-        }
-
-        @media (max-width: 768px) {
-            .top-cards {
-                grid-template-columns: 1fr;
-                gap: 0;
-                margin-bottom: 0;
-            }
-
-            .top-cards > .section {
-                height: auto;
-                margin-bottom: 20px;
-            }
-
-            .top-cards > .support-card {
-                height: auto;
-                margin-bottom: 20px;
-            }
-        }
-
-        /* Support Card with Flip */
-        .support-card {
-            perspective: 1000px;
-        }
-
-        .support-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-
-        .support-card.flipped .support-card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .support-front,
-        .support-back {
-            width: 100%;
-            min-height: 100%;
-            backface-visibility: hidden;
-            background: var(--bg-card);
-            border: 1px solid var(--accent-orange);
-            border-radius: 12px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            gap: 12px;
-        }
-
-        .support-front {
-            position: relative;
-        }
-
-        .support-back {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .support-front h2,
-        .support-back h2 {
-            color: var(--accent-orange);
-            font-size: 1.3rem;
-            margin: 0;
-            text-align: center;
-        }
-
-        .support-front p,
-        .support-back p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin: 0;
-            text-align: center;
-        }
-
-        .support-back {
-            transform: rotateY(180deg);
-        }
-
-        .support-front .qr-container,
-        .support-back .qr-container {
-            background: white;
-            padding: 10px;
-            border-radius: 8px;
-            display: inline-block;
-        }
-
-        .support-front .qr-container canvas,
-        .support-back .qr-container canvas {
-            display: block;
-        }
-
-
-        #qr-lightning, #qr-onchain {
-            margin: 8px auto;
-            padding: 8px;
-            background: white;
-            border-radius: 8px;
-            display: inline-block;
-        }
-
-        #qr-lightning canvas,
-        #qr-onchain canvas {
-            display: block;
-        }
-
-        .address {
-            font-family: monospace;
-            font-size: 0.8rem;
-            word-break: break-all;
-            color: var(--text-secondary);
-            background: var(--bg-primary);
-            padding: 8px;
-            border-radius: 6px;
-            margin-top: 6px;
-        }
-
-        .support-front .address,
-        .support-back .address {
-            font-family: monospace;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            background: var(--bg-secondary);
-            padding: 6px 10px;
-            border-radius: 6px;
-            word-break: break-all;
-            text-align: center;
-            max-width: 100%;
-            margin: 0;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: 1px solid transparent;
-        }
-
-        .support-front .address:hover,
-        .support-back .address:hover {
-            background: rgba(88, 166, 255, 0.1);
-            border-color: var(--accent-blue);
-        }
-
-        .support-front .address.copied,
-        .support-back .address.copied {
-            background: rgba(63, 185, 80, 0.2);
-            color: var(--accent-green);
-            border-color: var(--accent-green);
-        }
-
-        .support-actions {
-            display: flex;
-            gap: 8px;
-            width: 100%;
-            margin-top: auto;
-        }
-
-        .support-actions .btn-back {
-            flex: 1;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .support-actions .btn-back:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
-        }
-
-        .copy-btn {
-            background: var(--accent-orange);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            padding: 8px 16px;
-            margin-top: 8px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .copy-btn:hover {
-            background: #e08416;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 12px;
-            margin-top: 16px;
-        }
-
-        .stat-box {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 16px;
-            text-align: center;
-        }
-
-        .stat-box .value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent-purple);
-        }
-
-        .stat-box .label {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-top: 4px;
-        }
-
-        /* Activity Charts */
-        .charts-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .charts-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* One chart in the row (Epoch 4 keeps only its timeline) - span full width
-           rather than sit half-width with an empty column beside it. */
-        .charts-grid-single {
-            grid-template-columns: 1fr;
-        }
-
-        .chart-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 12px 20px 32px 20px;
-            /* A grid item defaults to min-width:auto and refuses to shrink below its
-               content. Without this a long epoch's heatmap (see below) forced the
-               card wider than its track and off a narrow screen. */
-            min-width: 0;
-            /* Flex column so the timeline can grow to the card's full height. The two
-               cards in a row stretch to equal height, but the heatmap is taller than
-               a fixed timeline, which left the line graph floating with empty space
-               below it. Letting the timeline fill drops its baseline to match. */
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* The chart body is the renderer's wrapper div (#heatmap-* / #timeline-*),
-           which is the actual flex child of the card - so the fill has to start here,
-           not on the container inside it. flex:1 makes it take the stretched card's
-           full height; the heatmap sits at its natural size at the top, the timeline
-           (flex:1 again inside) grows to the bottom. */
-        .chart-card > [id^="heatmap-"],
-        .chart-card > [id^="timeline-"] {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            min-height: 0;
-        }
-
-        .chart-card h3 {
-            font-size: 1rem;
-            margin: 0 0 16px 0;
-            color: var(--text-primary);
-        }
-
-        /* Heatmap */
-        .heatmap-container {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .heatmap-months {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 8px;
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-        }
-
-        .heatmap-month {
-            flex: 1;
-            text-align: center;
-        }
-
-        .heatmap-grid {
-            display: grid;
-            grid-template-rows: repeat(7, auto);
-            grid-auto-flow: column;
-            /* One column per week, each an equal fraction of the width, so the weeks
-               fill the card edge to edge however long the epoch is. A short epoch
-               gets larger cells, a long one smaller - both justified left and right.
-               aspect-ratio:1 on the cell keeps them square at whatever size. */
-            grid-auto-columns: 1fr;
-            gap: 3px;
-            width: 100%;
-        }
-
-        .heatmap-day {
-            /* No fixed width: the cell fills its (flexible) column, and aspect-ratio
-               keeps it square as the column shrinks. */
-            aspect-ratio: 1;
-            min-width: 0;
-            border-radius: 2px;
-            background: var(--bg-secondary);
-            cursor: pointer;
-            position: relative;
-        }
-
-        .heatmap-day.level-0 { background: var(--bg-secondary); }
-        .heatmap-day.level-1 { background: rgba(163, 113, 247, 0.3); }
-        .heatmap-day.level-2 { background: rgba(163, 113, 247, 0.5); }
-        .heatmap-day.level-3 { background: rgba(163, 113, 247, 0.7); }
-        .heatmap-day.level-4 { background: rgba(163, 113, 247, 1); }
-
-        .heatmap-day:hover::after {
-            content: attr(data-date) ': ' attr(data-count) ' posts';
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            white-space: nowrap;
-            z-index: 10;
-            border: 1px solid var(--border);
-        }
-
-        /* Timeline */
-        .timeline-container {
-            position: relative;
-            width: 100%;
-            /* Grows to fill the card (see .chart-card) so the graph's baseline lines
-               up with the heatmap beside it, with a floor so it never collapses.
-               The SVG and labels inside are absolutely positioned, so this container
-               contributes only its min-height to the card's height - that is what
-               stops the SVG's square viewBox from blowing the row out. */
-            flex: 1;
-            min-height: 120px;
-        }
-
-        .timeline-svg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            /* Fills the container above the date-label row (~18px). */
-            height: calc(100% - 18px);
-        }
-
-        /* The date labels (an inline-styled div the renderer appends) pinned to the
-           bottom of the container, below the absolutely-filled SVG. */
-        .timeline-container > div:last-child {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
-
-        .timeline-line {
-            fill: none;
-            stroke: var(--accent-purple);
-            stroke-width: 2;
-        }
-
-        .timeline-area {
-            fill: var(--accent-purple);
-            opacity: 0.15;
-        }
-
-        .timeline-dot {
-            fill: var(--accent-purple);
-            cursor: pointer;
-        }
-
-        .timeline-dot:hover {
-            r: 4;
-        }
-
-        .timeline-axis {
-            stroke: var(--border);
-            stroke-width: 1;
-        }
-
-        .timeline-label {
-            font-size: 0.7rem;
-            fill: var(--text-secondary);
-        }
-
-        /* Badges */
-        .badges-section {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 20px;
-        }
-
-        .badges-section h2 {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            letter-spacing: 0.5px;
-        }
-
-        .badges-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
+        .hero-logo-placeholder { display: flex; align-items: center; justify-content: center; font-size: var(--fs-2xl); }
+        .hero-logo[hidden], .hero-logo-placeholder[hidden] { display: none; }
+        .hero-text { min-width: 0; }
+        .hero-text h1 { margin: 0; font-size: clamp(1.75rem, 4.5vw, 2.75rem); letter-spacing: -0.035em; overflow-wrap: anywhere; }
+        .location { margin: var(--s2) 0 0; }
+        .location .flag { margin-right: var(--s1); }
+        .tagline { margin: var(--s3) 0 0; color: var(--muted); max-width: 70ch; }
+        .hero-links { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: var(--s2); margin: 0; padding: 0; list-style: none; }
+
+        /* ------------------------------------------------ About and support -- */
+        .intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 340px); gap: var(--s6) var(--s7); align-items: start; }
+        .intro-single { grid-template-columns: minmax(0, 1fr); }
+        .intro h2 { margin: 0 0 var(--s3); font-size: var(--fs-lg); }
+        .prose p { margin: 0 0 var(--s4); max-width: 70ch; }
+        .prose p:last-child { margin-bottom: 0; }
+
+        /* The donation panel's styles are shared: .donate* in css/powbot.css */
+
+        /* ----------------------------------------------------------- Epochs -- */
+        .section h3 { margin: var(--s6) 0 var(--s2); font-size: var(--fs-base); }
+        .section > h2 + h3 { margin-top: var(--s4); }
+        .posts-more { margin-top: var(--s3); }
+        /* Beside the tracker link, the row sets the spacing */
+        .detail-links .posts-more { margin-top: 0; }
+        .post-hidden { display: none !important; }
+
+        /* ------------------------------------------------------ Achievements -- */
+        .badges-grid { display: flex; flex-wrap: wrap; gap: var(--s2); margin: 0; padding: 0; list-style: none; }
         .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 14px;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            position: relative;
+            display: inline-flex; align-items: center; gap: var(--s2);
+            min-height: var(--tap); padding: var(--s1) var(--s3);
+            border: 1px solid var(--line-strong); border-radius: var(--radius);
         }
+        .badge-icon { font-size: var(--fs-md); line-height: 1; }
+        .badge-text { min-width: 0; line-height: 1.35; }
+        .badge-label { font-weight: 700; margin-right: var(--s1); }
+        .badge-note { color: var(--muted); font-size: var(--fs-sm); }
 
-        .badge:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent-purple);
+        /* ----------------------------------------------------------- Gallery -- */
+        /* A film strip: every photo whole, at one height, so portrait and
+           landscape shots both show uncropped. It drifts slowly and loops
+           (gallery script below); drag, swipe or scroll it sideways. */
+        .gallery-strip { --gal-h: 300px; position: relative; overflow: hidden; touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; }
+        .gallery-strip.dragging { cursor: grabbing; }
+        .gallery-track { display: flex; gap: var(--s3); width: max-content; }
+        .gallery-set { display: flex; gap: var(--s3); margin: 0; padding: 0; list-style: none; }
+        .gallery-set li { flex: none; }
+        .gallery-set a { display: block; height: var(--gal-h); border-radius: var(--radius); }
+        .gallery-set a:focus-visible { outline-offset: -3px; }
+        .gallery-set img {
+            display: block; height: 100%; width: auto; min-width: calc(var(--gal-h) * 0.5); max-width: none;
+            background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+            user-select: none; -webkit-user-drag: none;
+            transition: opacity var(--t-fast) ease;
         }
+        .gallery-set a:hover img { opacity: 0.85; }
+        .gallery-strip.dragging a { pointer-events: none; }
+        .gallery-toggle[hidden] { display: none; }
 
-        .badge:hover::after {
-            content: attr(data-title);
-            position: absolute;
-            bottom: calc(100% + 8px);
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            white-space: nowrap;
-            z-index: 10;
-            border: 1px solid var(--border);
-        }
+        /* -------------------------------------------------- States and notes -- */
+        .loading { margin: 0; padding: var(--s7) 0; color: var(--muted); }
+        .page-error { padding-top: var(--s7); padding-bottom: var(--s7); }
+        .page-error h1 { margin: 0 0 var(--s3); font-size: var(--fs-xl); }
+        .page-error p { margin: 0; max-width: 60ch; }
+        .page-error .muted { margin-top: var(--s2); }
+        /* The rule runs the full width like the sections above; only the text is kept to a readable line length */
+        .profile-footnote { padding: var(--s5) 0 var(--s6); border-top: 1px solid var(--line); color: var(--muted); font-size: var(--fs-sm); }
+        .profile-footnote p { margin: 0; max-width: 70ch; }
 
-        .badge-icon {
-            font-size: 1.1rem;
-            line-height: 1;
-        }
-
-        .badge-label {
-            color: var(--text-primary);
-        }
-
-        /* Badge color variations */
-        .badge.activity { border-color: var(--accent-blue); }
-        .badge.activity:hover { border-color: var(--accent-blue); background: rgba(88, 166, 255, 0.1); }
-
-        .badge.community { border-color: var(--accent-green); }
-        .badge.community:hover { border-color: var(--accent-green); background: rgba(63, 185, 80, 0.1); }
-
-        .badge.consistency { border-color: var(--accent-purple); }
-        .badge.consistency:hover { border-color: var(--accent-purple); background: rgba(163, 113, 247, 0.1); }
-
-        .badge.legacy { border-color: var(--accent-orange); }
-        .badge.legacy:hover { border-color: var(--accent-orange); background: rgba(247, 147, 26, 0.1); }
-
-        .badge.excellence { border-color: #ffd700; }
-        .badge.excellence:hover { border-color: #ffd700; background: rgba(255, 215, 0, 0.1); }
-
-        /* Recent Posts */
-        .posts-list {
-            display: flex;
-            flex-direction: column;
-            margin-top: 16px;
-        }
-
-        .post-item {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            padding: 10px 12px;
-            margin-top: 8px;
-            background: var(--bg-primary);
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: background 0.2s ease;
-            color: inherit;
-        }
-
-        .post-item:hover {
-            background: var(--bg-card);
-        }
-
-        .post-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .post-platform {
-            color: var(--accent-blue);
-            font-weight: 600;
-        }
-
-        .post-merchant {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-        }
-
-        .post-date {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            flex-shrink: 0;
-        }
-
-        .post-hidden {
-            display: none !important;
-        }
-
-        .posts-more {
-            width: 100%;
-            padding: 12px;
-            margin-top: 8px;
-            background: var(--bg-secondary);
-            border: 1px dashed var(--border);
-            border-radius: 8px;
-            color: var(--accent-blue);
-            font-size: 0.9rem;
-            cursor: pointer;
-            outline: none;
-            -webkit-tap-highlight-color: transparent;
-            user-select: none;
-        }
-
-        @media (hover: hover) {
-            .posts-more:hover {
-                background: var(--bg-card);
-                border-color: var(--accent-blue);
-            }
-        }
-
-        /* Gallery Carousel */
-        .gallery-carousel {
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .gallery-track-container {
-            overflow: hidden;
-            position: relative;
-            cursor: grab;
-            border-radius: 12px;
-        }
-
-        .gallery-track-container:active {
-            cursor: grabbing;
-        }
-
-        .gallery-track {
-            display: flex;
-            gap: 12px;
-            transition: transform 0.3s ease;
-            user-select: none;
-        }
-
-        .gallery-track.dragging {
-            transition: none;
-        }
-
-        .gallery-slide {
-            flex-shrink: 0;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--bg-secondary);
-            border-radius: 8px;
-        }
-
-        .gallery-slide img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: opacity 0.2s;
-            pointer-events: none;
-        }
-
-        .gallery-slide img:hover {
-            opacity: 0.85;
-        }
-
-        @media (max-width: 768px) {
-            .gallery-slide {
-                height: 200px;
-            }
-        }
-
-        /* Contact Links */
-        .contact-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 16px;
-        }
-
-        .contact-link {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 10px 16px;
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-        }
-
-        .contact-link:hover {
-            border-color: var(--accent-blue);
-            background: rgba(88, 166, 255, 0.1);
-        }
-
-        /* Loading & Error */
-        .loading, .error {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-secondary);
-        }
-
-        .error {
-            color: #f85149;
-        }
-
-        @media (max-width: 768px) {
-            nav .container {
-                justify-content: center;
-            }
-
-            .hero-content {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                justify-content: center;
-            }
-
-            .hero-links {
-                justify-content: center;
-            }
-
-            .donate-methods {
-                grid-template-columns: 1fr;
-            }
-        }
-
-
-        /* Profile Footnote */
-        .profile-footnote {
-            text-align: center;
-            padding: 15px 20px;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            font-style: italic;
-            line-height: 1.5;
-        }
-
-        .profile-footnote a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-style: normal;
-        }
-
-        .profile-footnote a:hover {
-            text-decoration: underline;
+        @media (max-width: 720px) {
+            .profile-head .wrap { grid-template-columns: 72px minmax(0, 1fr); gap: var(--s4); align-items: start; padding-top: var(--s6); padding-bottom: var(--s5); }
+            .hero-logo, .hero-logo-placeholder { width: 72px; height: 72px; font-size: var(--fs-xl); }
+            .intro { grid-template-columns: minmax(0, 1fr); }
+            .gallery-strip { --gal-h: 200px; }
+            .section { padding: var(--s6) 0; }
         }
     </style>
 </head>
-<body>
+<body class="pb">
     <!-- Navigation (loaded from includes/nav.html) -->
     <div id="site-nav"></div>
 
-    <div id="profile-content">
-        <div class="loading">Loading profile...</div>
-    </div>
+    <main id="main">
+        <div id="profile-content">
+            <div class="wrap"><p class="loading">Loading the profile…</p></div>
+        </div>
 
-    <!-- Profile Footnote -->
-    <div class="profile-footnote" id="profile-footnote" style="display: none;">
-        Please report inaccuracies to the <a href="https://t.me/bitcoinubuntu" target="_blank" id="contact-admin-link">administrators</a>. Registered project leads can <a href="#" id="edit-profile-link">sign in</a> to request changes.
-    </div>
+        <div class="wrap">
+            <div class="profile-footnote" id="profile-footnote" hidden><p>
+                Spot something wrong? Tell the <a href="https://t.me/bitcoinubuntu" target="_blank" rel="noopener" id="contact-admin-link">administrators on Telegram</a>. Registered project leads can <a href="#" id="edit-profile-link">sign in</a> to request changes.
+            </p></div>
+        </div>
+    </main>
 
     <!-- Footer (loaded from includes/footer.html) -->
-        <div id="site-footer"></div>
+    <div id="site-footer"></div>
 
     <!-- Shared nav/footer injection - load first -->
     <script src="includes/inject.js"></script>
@@ -970,9 +169,9 @@
 
         if (!memberId) {
             document.getElementById('profile-content').innerHTML = `
-                <div class="error">
-                    <h2>Invalid Profile</h2>
-                    <p>No project ID specified. <a href="members.html" style="color: var(--accent-blue);">Return to directory</a></p>
+                <div class="wrap page-error">
+                    <h1>No project chosen</h1>
+                    <p>This link does not name a project. Pick one from the <a href="members.html">project directory</a>.</p>
                 </div>
             `;
         } else {
@@ -982,11 +181,13 @@
         async function loadProfile() {
             try {
                 // Load member data and stats in parallel
-                const [membersData, statsEpoch4, statsEpoch5, statsHistorical] = await Promise.all([
+                const [membersData, statsEpoch4, statsEpoch5, statsHistorical, trackerLive] = await Promise.all([
                     fetch('members.json').then(r => r.json()),
                     fetch('stats-epoch4.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
                     fetch('stats-epoch5.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
-                    fetch('stats-historical.json?t=' + Date.now()).then(r => r.json()).catch(() => null)
+                    fetch('stats-historical.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
+                    // The current epoch, live from the VPS with the repo copy as fallback
+                    fetchLiveData('tracker-data.json').catch(() => null)
                 ]);
 
                 const member = membersData.members.find(m => m.id === memberId);
@@ -998,24 +199,26 @@
                 const allStats = {
                     epoch4: statsEpoch4,
                     epoch5: statsEpoch5,
-                    historical: statsHistorical
+                    historical: statsHistorical,
+                    tracker: trackerLive
                 };
 
-                // Update timestamp (use epoch5 stats if available, otherwise epoch4)
-                const statsForTimestamp = statsEpoch5 || statsEpoch4;
-                if (statsForTimestamp && statsForTimestamp.generated_at) {
+                // Update timestamp: the live tracker's, else the newest frozen epoch's
+                const updatedAt = trackerLive?.last_updated || (statsEpoch5 || statsEpoch4)?.generated_at;
+                if (updatedAt) {
                     const updatedElement = document.getElementById('updated');
                     if (updatedElement) {
-                        updatedElement.textContent = new Date(statsForTimestamp.generated_at).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
+                        updatedElement.textContent = new Date(updatedAt).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
                     }
                 }
 
                 renderProfile(member, allStats);
             } catch (err) {
                 document.getElementById('profile-content').innerHTML = `
-                    <div class="error">
-                        <h2>Error Loading Profile</h2>
-                        <p>${err.message}. <a href="members.html" style="color: var(--accent-blue);">Return to directory</a></p>
+                    <div class="wrap page-error">
+                        <h1>This profile could not load</h1>
+                        <p>Check the link, or find the project in the <a href="members.html">project directory</a>.</p>
+                        <p class="muted mono">${escapeHtml(err.message)}</p>
                     </div>
                 `;
             }
@@ -1030,141 +233,111 @@
         }
 
         function renderProfile(member, allStats) {
-            document.getElementById('page-title').textContent = `${member.name} | CBAF`;
+            document.getElementById('page-title').textContent = `${member.name}${member.country ? ` – Bitcoin project in ${member.country}` : ''} | PoWBoT`;
+            // Search engines render this page, so give each profile its own
+            // description and canonical URL.
+            if (member.tagline) document.getElementById('page-description').setAttribute('content', member.tagline.trim());
+            document.getElementById('page-canonical').setAttribute('href', `https://powbot.africa/profile.html?id=${encodeURIComponent(member.id)}`);
 
             // Use logo from members.json, fallback to placeholder
             const logoUrl = member.logo_url || `images/members/${member.id}/logo.jpg`;
             const logoHtml = `
-                <img src="${logoUrl}" alt="${escapeHtml(member.name)}" class="hero-logo"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="hero-logo-placeholder" style="display:none;">${member.flag || escapeHtml(member.name.charAt(0))}</div>
+                <img src="${logoUrl}" alt="${escapeHtml(member.name)} logo" class="hero-logo" width="112" height="112"
+                     onerror="this.hidden = true; this.nextElementSibling.hidden = false;">
+                <div class="hero-logo-placeholder" aria-hidden="true" hidden>${member.flag || escapeHtml(member.name.charAt(0))}</div>
             `;
+
+            // Flag carries the country as its name; the country is also written out.
+            const flagMarkup = flagHtml(member.flag, member.country, 'flag');
+            const place = [member.city, member.country].filter(Boolean).join(', ');
 
             let html = `
-                <div class="hero">
-                    <div class="hero-overlay">
-                        <div class="hero-content">
-                            ${logoHtml}
-                            <div class="hero-text">
-                                <h1>
-                                    ${escapeHtml(member.name)}
-                                    <span class="flag">${member.flag || ''}</span>
-                                </h1>
-                                ${member.tagline ? `<div class="tagline">${escapeHtml(member.tagline)}</div>` : ''}
-                                ${member.city || member.country ? `<div class="location">${escapeHtml([member.city, member.country].filter(Boolean).join(', '))}</div>` : ''}
-                            </div>
+                <header class="profile-head">
+                    <div class="wrap">
+                        ${logoHtml}
+                        <div class="hero-text">
+                            <h1>${escapeHtml(member.name)}</h1>
+                            ${place || member.flag ? `<p class="location">${flagMarkup} ${escapeHtml(place)}</p>` : ''}
+                            ${member.tagline ? `<p class="tagline">${escapeHtml(member.tagline)}</p>` : ''}
                         </div>
-                        <div class="hero-links container">
+                        <ul class="hero-links" aria-label="${escapeHtml(member.name)} elsewhere">
             `;
 
+            // Link chips. The emoji is decoration: each chip's text names it.
+            const chip = (href, emoji, label, external = true) =>
+                `<li><a href="${href}"${external ? ' target="_blank" rel="noopener"' : ''} class="hero-link"><span aria-hidden="true">${emoji}</span>${label}</a></li>`;
+
+            if (member.website) {
+                html += chip(escapeHtml(member.website), '🌐', 'Website');
+            }
+
             if (member.x_profile) {
-                html += `<a href="https://x.com/${member.x_profile}" target="_blank" class="hero-link">🐦 X</a>`;
+                html += chip(`https://x.com/${member.x_profile}`, '🐦', 'X');
             }
 
             if (member.npub && member.npub !== 'n/a') {
-                html += `<a href="https://primal.net/p/${escapeHtml(member.npub)}" target="_blank" class="hero-link">⚡ Nostr</a>`;
+                html += chip(`https://primal.net/p/${escapeHtml(member.npub)}`, '⚡', 'Nostr');
             }
 
             if (member.email) {
-                html += `<a href="mailto:${escapeHtml(member.email)}" class="hero-link">📧 Email</a>`;
-            }
-
-            if (member.website) {
-                html += `<a href="${escapeHtml(member.website)}" target="_blank" class="hero-link">🌐 Website</a>`;
+                html += chip(`mailto:${escapeHtml(member.email)}`, '📧', 'Email', false);
             }
 
             if (member.btcmap_url) {
-                html += `<a href="${escapeHtml(member.btcmap_url)}" target="_blank" class="hero-link">🗺️ BTCMap</a>`;
+                html += chip(escapeHtml(member.btcmap_url), '🗺️', 'BTCMap');
             }
 
             if (member.btcpay_campaign) {
-                html += `<a href="${escapeHtml(member.btcpay_campaign)}" target="_blank" class="hero-link">💰 Crowdfund</a>`;
+                html += chip(escapeHtml(member.btcpay_campaign), '💰', 'Crowdfund');
             }
 
             if (member.geyser_campaign) {
-                html += `<a href="${escapeHtml(member.geyser_campaign)}" target="_blank" class="hero-link">🌊 Geyser</a>`;
+                html += chip(escapeHtml(member.geyser_campaign), '🌊', 'Geyser');
             }
 
             html += `
-                        </div>
+                        </ul>
                     </div>
-                </div>
+                </header>
 
-                <div class="content container">
+                <div class="wrap">
             `;
 
-            // Two Column Layout: Support + About
+            // About, with the support box beside it.
             // No Lightning address means nothing to show: the onchain side is only
-            // reachable from the Lightning front, so the card would render as an empty
-            // box under a "Lightning Network" heading. Drop it and let About span.
+            // reachable from the Lightning side, so the box would render empty.
+            // Drop it and let About span.
             const hasSupport = !!member.lightning_address;
 
-            html += `<div class="top-cards${hasSupport ? '' : ' top-cards-single'}">`;
+            html += `<div class="section intro${hasSupport ? '' : ' intro-single'}">`;
 
-            // Support Card (left) with flip functionality
-            if (hasSupport) {
+            // About (first in reading order) - always show
             html += `
-                <div class="support-card" id="support-card">
-                    <div class="support-card-inner">
-                        <!-- Front: Lightning -->
-                        <div class="support-front">
-                            <h2>Support ${escapeHtml(member.name)}</h2>
-                            <p>Lightning Network</p>
-            `;
-
-            if (member.lightning_address) {
-                html += `
-                                <div class="qr-container" id="qr-lightning"></div>
-                                <div class="address" id="lightning-address" onclick="copyAddressWithFeedback('${escapeHtml(member.lightning_address)}', 'lightning-address')" title="Click to copy">${escapeHtml(member.lightning_address)}</div>
-                `;
-                if (member.onchain_address) {
-                    html += `
-                                <div class="support-actions">
-                                    <button class="btn btn-back" onclick="flipSupportCard()">
-                                        Switch to Onchain
-                                    </button>
-                                </div>
-                    `;
-                }
-            }
-
-            html += `
-                        </div>
-            `;
-
-            // Back: Onchain (if available)
-            if (member.onchain_address) {
-                html += `
-                        <!-- Back: Onchain -->
-                        <div class="support-back">
-                            <h2>Support ${escapeHtml(member.name)}</h2>
-                            <p>Onchain</p>
-                            <div class="qr-container" id="qr-onchain"></div>
-                            <div class="address" id="onchain-address" onclick="copyAddressWithFeedback('${escapeHtml(member.onchain_address)}', 'onchain-address')" title="Click to copy">${escapeHtml(member.onchain_address)}</div>
-                            <div class="support-actions">
-                                <button class="btn btn-back" onclick="flipSupportCard()">
-                                    Switch to Lightning
-                                </button>
-                            </div>
-                        </div>
-                `;
-            }
-
-            html += `
+                <section aria-labelledby="about-title">
+                    <h2 id="about-title">About</h2>
+                    <div class="prose">
+                        <p>${member.description ? escapeHtml(member.description) : 'Building a Bitcoin circular economy in ' + (member.city || member.country || 'Africa') + '.'}</p>
                     </div>
-                </div>
-            `;
-            } // end if (hasSupport)
-
-            // About Card (right) - always show
-            html += `
-                <div class="section">
-                    <h2>About</h2>
-                    <p>${member.description ? escapeHtml(member.description) : 'Building a Bitcoin circular economy in ' + (member.city || member.country || 'Africa') + '.'}</p>
-                </div>
+                </section>
             `;
 
-            html += `</div>`; // Close top-cards
+            // Donation panel: the same as the back of a directory card
+            if (hasSupport) {
+                html += `
+                <aside class="support" aria-labelledby="donate-lightning-title">
+                    ${donatePanelHtml({
+                        id: 'donate',
+                        name: member.name,
+                        lightning: member.lightning_address,
+                        onchain: member.onchain_address || '',
+                        level: 2,
+                        // The page is already about this project
+                        title: 'Donate'
+                    })}
+                </aside>`;
+            }
+
+            html += `</div>`; // Close intro
 
             // PoWBoT Stats - collect posts separately by epoch
             const epoch5Posts = [];
@@ -1175,9 +348,8 @@
             // differences. The old exact-string match (`name + flag`) broke
             // silently whenever a project's flag or name text was corrected
             // in members.json after an epoch's stats were generated - the
-            // project simply vanished from that epoch's card (Epoch 5's
-            // heatmap/timeline never render below 20 posts, so the card
-            // looked "empty" rather than erroring). Stripping the flag and
+            // project simply vanished from that epoch's card, which looked
+            // "empty" rather than erroring. Stripping the flag and
             // normalizing whitespace/case makes the join resilient to that.
             const normalizeProjectName = (name) => (name || '')
                 .replace(/[\u{1F1E6}-\u{1F1FF}]/gu, '') // strip regional-indicator flag chars
@@ -1223,177 +395,179 @@
                 });
             }
 
+            // The current epoch, from the live tracker: approved posts only. The
+            // tracker names projects "Bitbiashara (Kenya) 🇰🇪", so drop the country
+            // before matching.
+            const EPOCH = window.POWBOT_EPOCH || { number: 6, name: 'Epoch 6', start: '2026-07-20T06:00:00Z' };
+            const currentSubs = allStats.tracker
+                ? (allStats.tracker.submissions || []).filter(sub =>
+                    sub.status === 'Processed'
+                    && normalizeProjectName(String(sub.project_name).replace(/\s*\([^)]*\)/g, '')) === statsName)
+                : null;
+            const currentPosts = (currentSubs || []).map(sub => ({
+                date: String(sub.timestamp).slice(0, 10), merchant: sub.merchant_name, url: sub.post_url
+            }));
+
             // Calculate badges
-            const badges = calculateBadges(epoch4Posts, epoch5Posts, historicalPosts, allStats, statsName);
+            const badges = calculateBadges(epoch4Posts, epoch5Posts, historicalPosts, allStats, statsName, currentPosts);
+
+            // Presentation helpers for the sections below
+            const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+            const factsRow = (posts) => {
+                const merchants = new Set(posts.map(p => p.merchant)).size;
+                return `
+                        <ul class="facts">
+                            <li><b class="num">${posts.length}</b><span>${posts.length === 1 ? 'post' : 'posts'}</span></li>
+                            <li><b class="num">${merchants}</b><span>${merchants === 1 ? 'merchant' : 'merchants'}</span></li>
+                        </ul>`;
+            };
+            // Posts as visits (visits.js): an X post and its Nostr cross-post
+            // share a row. Five show; the rest wait behind "Show N more".
+            const merchantLink = name => name
+                ? `<a href="merchant-profile.html?id=${encodeURIComponent(String(name).replace(/[^\w\s-]/g, '').trim().toLowerCase().replace(/\s+/g, '-'))}">${escapeHtml(name)}</a>`
+                : 'A merchant';
+            const visitItems = (visits, when) => visits.map((v, i) => `
+                            <li class="post-item${i >= 5 ? ' post-hidden' : ''}"><div class="visit">
+                                <span class="visit-main">${merchantLink(v.merchant)}</span>
+                                ${visitLinks(v, `${member.name} at ${v.merchant || 'a merchant'}`)}
+                                <span class="visit-when">${when(v)}</span>
+                            </div></li>`).join('');
+            // Frozen epochs carry a date per post, no time: they pair on the same or next day
+            const datedVisits = posts => groupVisits(posts.map(post => ({
+                project_name: member.name, merchant_name: post.merchant, post_url: post.url,
+                timestamp: `${String(post.date).slice(0, 10)} 00:00:00 UTC`, classification: ''
+            })));
+            const dayOf = v => formatDate(String(v.first).slice(0, 10));
+
+            // One post: platform as a text tag, then what, then when
+            const postItem = (post, isHidden, name, when) => `
+                            <li class="post-item${isHidden ? ' post-hidden' : ''}">
+                                <a href="${escapeHtml(post.url)}" target="_blank" rel="noopener">
+                                    <span class="tag">${escapeHtml(getPlatform(post.url).name)}</span>
+                                    <span class="post-name">${escapeHtml(name)}</span>
+                                    <span class="post-when">${escapeHtml(when)}</span>
+                                </a>
+                            </li>`;
+            // "Show more" / "Show fewer" for the post lists, shared (visits.js)
+            const moreButton = postsMoreButtons;
 
             // Render badges section if there are any badges
             if (badges.length > 0) {
                 html += `
-                    <div class="badges-section">
-                        <h2>PoWBoT Achievements</h2>
-                        <div class="badges-grid">
+                    <section class="section" aria-labelledby="badges-title">
+                        <h2 id="badges-title">Achievements</h2>
+                        <p class="section-note">Earned across every PoWBoT epoch.</p>
+                        <ul class="badges-grid">
                 `;
 
+                // The emoji is decoration: the label says the same thing.
                 badges.forEach(badge => {
                     html += `
-                        <div class="badge ${badge.type}" data-title="${badge.title}">
-                            <span class="badge-icon">${badge.icon}</span>
-                            <span class="badge-label">${badge.label}</span>
-                        </div>
+                            <li class="badge ${badge.type}">
+                                <span class="badge-icon" aria-hidden="true">${badge.icon}</span>
+                                <span class="badge-text"><span class="badge-label">${badge.label}</span>${badge.title ? ` <span class="badge-note">${escapeHtml(badge.title)}</span>` : ''}</span>
+                            </li>
                     `;
                 });
 
                 html += `
-                        </div>
-                    </div>
+                        </ul>
+                    </section>
                 `;
             }
+
+            // The current epoch: one row per visit (visits.js), X and Nostr side by side
+            if (currentSubs) {
+                const visits = groupVisits(currentSubs);
+                const initialCount = 5;
+                const epochStart = new Date(EPOCH.start);
+                const startLabel = epochStart.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+                const when = ts => {
+                    const d = new Date(String(ts).replace(' UTC', 'Z').replace(' ', 'T'));
+                    if (isNaN(d)) return '';
+                    return `${d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' })}, ${d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })} UTC`;
+                };
+                const trackerHref = `tracker.html?${new URLSearchParams({ epoch: String(EPOCH.number), project: member.name, status: 'Processed' })}`;
+
+                html += `
+                    <section class="section" aria-labelledby="current-title">
+                        <h2 id="current-title">${escapeHtml(EPOCH.name)}</h2>
+                        <p class="section-note">The current epoch, since ${startLabel}. Live: approved posts appear here within minutes.</p>
+                `;
+
+                if (visits.length === 0) {
+                    html += `<p>No approved posts yet this epoch.</p></section>`;
+                } else {
+                    html += factsRow(currentPosts);
+                    html += `
+                        <h3>Merchant posts, newest first</h3>
+                        <p class="section-note">A visit posted on both X and Nostr shows once, with a link to each.</p>
+                        <ul class="visits" id="posts-list-current">${visitItems(visits, v => when(v.first))}
+                        </ul>
+                        <div class="detail-links">
+                            ${visits.length > initialCount ? moreButton('posts-list-current', visits.length - initialCount) : ''}
+                            <a class="btn" href="${escapeHtml(trackerHref)}">All ${currentPosts.length} posts in the tracker</a>
+                        </div>
+                    </section>`;
+                }
+            }
+
+            // Gallery (full-width, between the current epoch and Epoch 5)
+            html += '<div id="gallery-placeholder"></div>';
+            window.galleryMember = member;
 
             // Display Epoch 5 section
             if (epoch5Posts.length > 0) {
                 epoch5Posts.sort((a, b) => new Date(b.date) - new Date(a.date));
                 const initialCount = 5;
-                const hasMore = epoch5Posts.length > initialCount;
 
                 html += `
-                    <div class="section">
-                        <h2>Epoch 5</h2>
-                        <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 0.9rem;">
-                            24 March – 3 July 2026
-                        </p>
-                        <div class="stats-grid">
-                            <div class="stat-box">
-                                <div class="value">${epoch5Posts.length}</div>
-                                <div class="label">${epoch5Posts.length === 1 ? 'Post' : 'Posts'}</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="value">${new Set(epoch5Posts.map(p => p.merchant)).size}</div>
-                                <div class="label">${new Set(epoch5Posts.map(p => p.merchant)).size === 1 ? 'Merchant' : 'Merchants'}</div>
-                            </div>
-                        </div>
+                    <section class="section" aria-labelledby="epoch5-title">
+                        <h2 id="epoch5-title">Epoch 5</h2>
+                        <p class="section-note">24 March – 3 July 2026</p>
+                        ${factsRow(epoch5Posts)}
                 `;
 
-                // Add activity visualizations for projects with 20+ posts
-                if (epoch5Posts.length >= 20) {
-                    html += `
-                        <div class="charts-grid">
-                            <div class="chart-card">
-                                <h3>Activity Calendar</h3>
-                                <div id="heatmap-epoch5"></div>
-                            </div>
-                            <div class="chart-card">
-                                <h3>Activity Timeline</h3>
-                                <div id="timeline-epoch5"></div>
-                            </div>
-                        </div>
-                    `;
-                }
-
+                const visits5 = datedVisits(epoch5Posts);
                 html += `
-                        <h3>Merchant ${epoch5Posts.length === 1 ? 'Post' : 'Posts'} (${epoch5Posts.length})</h3>
-                        <div class="posts-list" id="posts-list-epoch5">
-                `;
+                        <h3>Merchant posts, newest first</h3>
+                        <ul class="visits dated" id="posts-list-epoch5">${visitItems(visits5, dayOf)}
+                        </ul>`;
 
-                epoch5Posts.forEach((post, index) => {
-                    const platform = getPlatform(post.url);
-                    const isHidden = index >= initialCount;
-                    html += `
-                        <a href="${escapeHtml(post.url)}" target="_blank" rel="noopener" class="post-item ${isHidden ? 'post-hidden' : ''}">
-                            <span class="post-info">
-                                <span class="post-platform">${escapeHtml(platform.name)}</span>
-                                <span class="post-merchant">${escapeHtml(post.merchant)}</span>
-                            </span>
-                            <span class="post-date">${formatDate(post.date)}</span>
-                        </a>
-                    `;
-                });
+                // Epoch 5 is in the tracker as an archive (Epoch 4 and older are not)
+                const tracker5 = `tracker.html?${new URLSearchParams({ epoch: '5', project: member.name, status: 'Processed' })}`;
+                html += `
+                        <div class="detail-links">
+                            ${visits5.length > initialCount ? moreButton('posts-list-epoch5', visits5.length - initialCount) : ''}
+                            <a class="btn" href="${escapeHtml(tracker5)}">All ${epoch5Posts.length} posts in the tracker</a>
+                        </div>`;
 
-                html += `</div>`;
-
-                if (hasMore) {
-                    html += `
-                        <button class="posts-more" onclick="toggleEpoch5Posts(this)" data-count="${epoch5Posts.length - initialCount}">
-                            Show ${epoch5Posts.length - initialCount} more
-                        </button>
-                    `;
-                }
-
-                html += `</div>`;
+                html += `</section>`;
             }
-
-            // Gallery (full-width, between Epoch 5 and Epoch 4)
-            html += '<div id="gallery-placeholder"></div>';
-            window.galleryMember = member;
 
             // Display Epoch 4 section
             if (epoch4Posts.length > 0) {
                 epoch4Posts.sort((a, b) => new Date(b.date) - new Date(a.date));
                 const initialCount = 5;
-                const hasMore = epoch4Posts.length > initialCount;
 
                 html += `
-                    <div class="section">
-                        <h2>Epoch 4</h2>
-                        <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 0.9rem;">
-                            13 January – 4 March 2026
-                        </p>
-                        <div class="stats-grid">
-                            <div class="stat-box">
-                                <div class="value">${epoch4Posts.length}</div>
-                                <div class="label">${epoch4Posts.length === 1 ? 'Post' : 'Posts'}</div>
-                            </div>
-                            <div class="stat-box">
-                                <div class="value">${new Set(epoch4Posts.map(p => p.merchant)).size}</div>
-                                <div class="label">${new Set(epoch4Posts.map(p => p.merchant)).size === 1 ? 'Merchant' : 'Merchants'}</div>
-                            </div>
-                        </div>
+                    <section class="section" aria-labelledby="epoch4-title">
+                        <h2 id="epoch4-title">Epoch 4</h2>
+                        <p class="section-note">13 January – 4 March 2026</p>
+                        ${factsRow(epoch4Posts)}
                 `;
 
-                // Add activity visualization for projects with 20+ posts.
-                // Timeline only - the Epoch 4 calendar was dropped: at 7 weeks its
-                // fill-the-width cells rendered chunky and left the card mismatched in
-                // height beside the timeline. Epoch 5 (~15 weeks) keeps both.
-                if (epoch4Posts.length >= 20) {
-                    html += `
-                        <div class="charts-grid charts-grid-single">
-                            <div class="chart-card">
-                                <h3>Activity Timeline</h3>
-                                <div id="timeline-epoch4"></div>
-                            </div>
-                        </div>
-                    `;
-                }
-
+                const visits4 = datedVisits(epoch4Posts);
                 html += `
-                        <h3>Merchant ${epoch4Posts.length === 1 ? 'Post' : 'Posts'} (${epoch4Posts.length})</h3>
-                        <div class="posts-list" id="posts-list-epoch4">
-                `;
+                        <h3>Merchant posts, newest first</h3>
+                        <ul class="visits dated" id="posts-list-epoch4">${visitItems(visits4, dayOf)}
+                        </ul>`;
 
-                epoch4Posts.forEach((post, index) => {
-                    const platform = getPlatform(post.url);
-                    const isHidden = index >= initialCount;
-                    html += `
-                        <a href="${escapeHtml(post.url)}" target="_blank" rel="noopener" class="post-item ${isHidden ? 'post-hidden' : ''}">
-                            <span class="post-info">
-                                <span class="post-platform">${escapeHtml(platform.name)}</span>
-                                <span class="post-merchant">${escapeHtml(post.merchant)}</span>
-                            </span>
-                            <span class="post-date">${formatDate(post.date)}</span>
-                        </a>
-                    `;
-                });
-
-                html += `</div>`;
-
-                if (hasMore) {
-                    html += `
-                        <button class="posts-more" onclick="toggleEpoch4Posts(this)" data-count="${epoch4Posts.length - initialCount}">
-                            Show ${epoch4Posts.length - initialCount} more
-                        </button>
-                    `;
+                if (visits4.length > initialCount) {
+                    html += `<div class="detail-links">${moreButton('posts-list-epoch4', visits4.length - initialCount)}</div>`;
                 }
 
-                html += `</div>`;
+                html += `</section>`;
             }
 
             // Pre-PoWBoT History (Epochs 1-3 + Epoch 4 Testing)
@@ -1404,146 +578,35 @@
                     const hasMoreHistorical = historicalPosts.length > initialHistoricalCount;
 
                     html += `
-                        <div class="section">
-                            <h2>Pre-PoWBoT History</h2>
-                            <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 0.9rem;">
-                                Posts from Epochs 1–3 and Epoch 4 Testing Phase (${historicalPosts.length} ${historicalPosts.length === 1 ? 'post' : 'posts'})
-                            </p>
-                            <div class="posts-list" id="posts-list-historical">
+                        <section class="section" aria-labelledby="history-title">
+                            <h2 id="history-title">Before PoWBoT</h2>
+                            <p class="section-note">${plural(historicalPosts.length, 'post', 'posts')} from Epochs 1–3 and the Epoch 4 testing phase, newest first.</p>
+                            <ul class="post-list" id="posts-list-historical">
                     `;
 
                     historicalPosts.forEach((post, index) => {
-                        const platform = getPlatform(post.url);
-                        const isHidden = index >= initialHistoricalCount;
-                        html += `
-                            <a href="${escapeHtml(post.url)}" target="_blank" rel="noopener" class="post-item ${isHidden ? 'post-hidden' : ''}">
-                                <span class="post-info">
-                                    <span class="post-platform">${escapeHtml(platform.name)}</span>
-                                    <span class="post-merchant">${escapeHtml(post.epoch)} (${escapeHtml(post.period)})</span>
-                                </span>
-                                <span class="post-date">→</span>
-                            </a>
-                        `;
+                        html += postItem(post, index >= initialHistoricalCount, post.epoch, post.period);
                     });
 
-                    html += `</div>`;
+                    html += `</ul>`;
 
                     // Add "Show more" button if there are more than 5 posts
                     if (hasMoreHistorical) {
-                        html += `
-                            <button class="posts-more" onclick="toggleHistoricalPosts(this)" data-count="${historicalPosts.length - initialHistoricalCount}">
-                                Show ${historicalPosts.length - initialHistoricalCount} more
-                            </button>
-                        `;
+                        html += `<div class="detail-links">${moreButton('posts-list-historical', historicalPosts.length - initialHistoricalCount)}</div>`;
                     }
 
-                    html += `</div>`;
+                    html += `</section>`;
             }
 
-            // How Started
-            if (member.how_started) {
-                html += `
-                    <div class="section">
-                        <h2>Origin Story</h2>
-                        <p>${escapeHtml(member.how_started)}</p>
-                    </div>
-                `;
-            }
-
-            // Milestones
-            if (member.milestones) {
-                html += `
-                    <div class="section">
-                        <h2>Key Highlights</h2>
-                        <p>${escapeHtml(member.milestones)}</p>
-                    </div>
-                `;
-            }
-
-            // Vision & Mission (at the bottom)
-            if (member.vision || member.mission) {
-                html += `<div class="section"><h2>Vision & Mission</h2>`;
-
-                if (member.vision) {
-                    html += `<h3>Our Vision</h3><p>${escapeHtml(member.vision)}</p>`;
-                }
-
-                if (member.mission) {
-                    html += `<h3>Our Mission</h3><p>${escapeHtml(member.mission)}</p>`;
-                }
-
-                html += `</div>`;
-            }
-
-            html += `</div>`; // Close content container
+            html += `</div>`; // Close content wrap
 
             document.getElementById('profile-content').innerHTML = html;
 
             // Load gallery images (reads from gallery array)
             loadGalleryImages(member);
 
-            // Generate QR codes
-            if (member.lightning_address) {
-                const qrLightning = document.getElementById('qr-lightning');
-                if (qrLightning) {
-                    QRCode.toCanvas(
-                        `lightning:${member.lightning_address}`,
-                        { width: 180, margin: 1 },
-                        (error, canvas) => {
-                            if (!error) {
-                                qrLightning.appendChild(canvas);
-                            }
-                        }
-                    );
-                }
-            }
-
-            if (member.onchain_address) {
-                const qrOnchain = document.getElementById('qr-onchain');
-                if (qrOnchain) {
-                    QRCode.toCanvas(
-                        `bitcoin:${member.onchain_address}`,
-                        { width: 180, margin: 1 },
-                        (error, canvas) => {
-                            if (!error) {
-                                qrOnchain.appendChild(canvas);
-                            }
-                        }
-                    );
-                }
-            }
-
-            // Initialize support card height
-            setTimeout(() => {
-                const card = document.getElementById('support-card');
-                if (card) {
-                    const inner = card.querySelector('.support-card-inner');
-                    const front = card.querySelector('.support-front');
-                    if (inner && front) {
-                        inner.style.height = front.scrollHeight + 'px';
-                    }
-                }
-            }, 100);
-
-            // Render activity visualization for Epoch 4 (timeline only - see the
-            // charts markup above for why the calendar was dropped).
-            if (epoch4Posts && epoch4Posts.length >= 20) {
-                renderTimeline('timeline-epoch4', epoch4Posts, '2026-01-13');
-            }
-
-            // Render activity visualizations for Epoch 5
-            if (epoch5Posts && epoch5Posts.length >= 20) {
-                renderHeatmap('heatmap-epoch5', epoch5Posts, '2026-03-24');
-                renderTimeline('timeline-epoch5', epoch5Posts, '2026-03-24');
-            }
-
-            // NOTE: the gallery is initialised by loadGalleryImages() above, right
-            // after it injects the markup. A second initGalleryDragScroll() call
-            // used to sit here and it compounded: each call clones every slide it
-            // finds (one set prepended, one appended) for the infinite carousel, so
-            // 9 real images became 27, then 81. It also bound all eight drag/touch
-            // listeners twice and left galleryRealSlideCount at 27 instead of 9,
-            // which put the infinite-scroll wrap point at the wrong offset.
+            // Draw the donation QR codes
+            donateDrawQr(document.getElementById('donate'));
 
             // Show edit link
             showEditLink(member.id);
@@ -1561,170 +624,182 @@
                 return;
             }
 
-            // Build gallery HTML from array
+            // A strip of photos, each a link that opens the full image in a new
+            // tab. initGallery() adds the drift, the loop and the controls.
+            const count = galleryImages.length;
             let galleryHtml = `
-                <div class="gallery-carousel" id="gallery-carousel">
-                    <div class="gallery-track-container" id="gallery-container">
+                <section class="section" aria-labelledby="gallery-title">
+                    <div class="section-head">
+                        <h2 id="gallery-title">Gallery</h2>
+                        <button type="button" class="btn gallery-toggle" id="gallery-toggle" hidden>Pause<span class="visually-hidden"> gallery</span></button>
+                    </div>
+                    <div class="gallery-strip" id="gallery-strip">
                         <div class="gallery-track" id="gallery-track">
+                            <ul class="gallery-set">
             `;
 
-            galleryImages.forEach(imgPath => {
+            galleryImages.forEach((imgPath, i) => {
                 galleryHtml += `
-                    <div class="gallery-slide">
-                        <img src="${imgPath}" alt="${escapeHtml(member.name)} photo" data-url="${imgPath}">
-                    </div>
+                                <li>
+                                    <a href="${imgPath}" target="_blank" rel="noopener" draggable="false">
+                                        <img src="${imgPath}" alt="${escapeHtml(member.name)}, photo ${i + 1} of ${count}" draggable="false" decoding="async">
+                                        <span class="visually-hidden">(opens full size in a new tab)</span>
+                                    </a>
+                                </li>
                 `;
             });
 
             galleryHtml += `
+                            </ul>
                         </div>
                     </div>
-                </div>
+                </section>
             `;
 
             placeholder.outerHTML = galleryHtml;
-
-            // Initialize gallery interactions
-            initGalleryDragScroll();
-            startGalleryAutoRotate();
+            initGallery();
         }
 
-        function renderHeatmap(elementId, posts, epochStartDate) {
-            const container = document.getElementById(elementId);
-            if (!container || posts.length === 0) return;
+        /**
+         * The gallery strip drifts slowly to the left and loops: a copy of the
+         * photos follows the originals, and the position wraps by one set's
+         * width. The copy is inert, so keyboard and screen reader users meet
+         * each photo once.
+         *
+         * It stops while hovered, dragged, holding keyboard focus, off screen or
+         * in a background tab, and whenever Pause is on. Pause is on from the
+         * start when the reader prefers reduced motion. Photos that all fit on
+         * screen stay still, with no copy and no button.
+         */
+        function initGallery() {
+            const strip = document.getElementById('gallery-strip');
+            const track = document.getElementById('gallery-track');
+            const set = track?.querySelector('.gallery-set');
+            const toggle = document.getElementById('gallery-toggle');
+            if (!strip || !set || !toggle) return;
 
-            // Use provided start date or default to Epoch 4
-            const startDate = epochStartDate ? new Date(epochStartDate) : new Date('2026-01-13');
+            const SPEED = 10; // pixels per second
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            let copy = null, width = 0, pos = 0;
+            let paused = reduceMotion.matches, hovered = false, focused = false, onScreen = true;
+            let drag = null, suppressClick = false, frame = 0, last = 0;
 
-            // Find the last post date dynamically
-            const postDates = posts.map(p => p.date.split('T')[0]).sort();
-            const endDate = new Date(postDates[postDates.length - 1]);
+            const wrap = () => { if (copy && width > 0) pos = ((pos % width) + width) % width; };
+            const draw = () => { track.style.transform = `translate3d(${-pos}px, 0, 0)`; };
+            const running = () => copy && !paused && !hovered && !focused && !drag && onScreen && !document.hidden;
 
-            // Count posts per day
-            const postsByDay = {};
-            posts.forEach(post => {
-                const dateKey = post.date.split('T')[0]; // YYYY-MM-DD
-                postsByDay[dateKey] = (postsByDay[dateKey] || 0) + 1;
-            });
-
-            // Get max count for color scaling
-            const maxCount = Math.max(...Object.values(postsByDay));
-
-            // Align grid to Sunday before Jan 13 for proper weekday rows
-            const gridStartDate = new Date(startDate);
-            gridStartDate.setDate(gridStartDate.getDate() - gridStartDate.getDay());
-
-            let html = '<div class="heatmap-container"><div class="heatmap-grid">';
-
-            const currentDate = new Date(gridStartDate);
-
-            while (currentDate <= endDate) {
-                const dateKey = currentDate.toISOString().split('T')[0];
-                const count = postsByDay[dateKey] || 0;
-                const isBeforeEpoch = currentDate < startDate;
-
-                // Determine color level (0-4)
-                let level = 0;
-                if (count > 0) {
-                    if (maxCount <= 4) {
-                        level = count;
-                    } else {
-                        level = Math.min(4, Math.ceil((count / maxCount) * 4));
-                    }
-                }
-
-                const formattedDate = currentDate.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-
-                // Make days before epoch start invisible
-                if (isBeforeEpoch) {
-                    html += `<div class="heatmap-day" style="opacity: 0; pointer-events: none;"></div>`;
-                } else {
-                    html += `<div class="heatmap-day level-${level}" data-date="${formattedDate}" data-count="${count}"></div>`;
-                }
-
-                currentDate.setDate(currentDate.getDate() + 1);
+            function step(now) {
+                pos += SPEED * Math.min(now - last, 100) / 1000;
+                last = now;
+                wrap(); draw();
+                frame = requestAnimationFrame(step);
+            }
+            function update() {
+                if (running() && !frame) { last = performance.now(); frame = requestAnimationFrame(step); }
+                if (!running() && frame) { cancelAnimationFrame(frame); frame = 0; }
+            }
+            function setPaused(value) {
+                paused = value;
+                toggle.firstChild.textContent = paused ? 'Play' : 'Pause';
+                update();
             }
 
-            html += '</div></div>';
-            container.innerHTML = html;
-        }
-
-        function renderTimeline(elementId, posts, epochStartDate) {
-            const container = document.getElementById(elementId);
-            if (!container || posts.length === 0) return;
-
-            // Use provided start date or default to Epoch 4
-            const startDate = epochStartDate ? new Date(epochStartDate) : new Date('2026-01-13');
-
-            // Find the last post date dynamically
-            const postDates = posts.map(p => p.date.split('T')[0]).sort();
-            const endDate = new Date(postDates[postDates.length - 1]);
-
-            // Count posts by day
-            const postsByDay = {};
-            posts.forEach(post => {
-                const dateKey = post.date.split('T')[0];
-                postsByDay[dateKey] = (postsByDay[dateKey] || 0) + 1;
-            });
-
-            // Create daily data points for entire range
-            const dataPoints = [];
-            const currentDate = new Date(startDate);
-            while (currentDate <= endDate) {
-                const dateKey = currentDate.toISOString().split('T')[0];
-                dataPoints.push({
-                    date: new Date(currentDate),
-                    count: postsByDay[dateKey] || 0
-                });
-                currentDate.setDate(currentDate.getDate() + 1);
+            // Loop only when the photos are wider than the strip
+            function measure() {
+                const loops = set.scrollWidth > strip.clientWidth + 1;
+                if (loops && !copy) {
+                    copy = set.cloneNode(true);
+                    copy.inert = true;
+                    copy.setAttribute('aria-hidden', 'true');
+                    track.appendChild(copy);
+                } else if (!loops && copy) {
+                    copy.remove(); copy = null; pos = 0;
+                }
+                width = copy ? copy.offsetLeft - set.offsetLeft : 0;
+                toggle.hidden = !copy;
+                wrap(); draw(); update();
             }
 
-            // Get max count for scaling
-            const maxCount = Math.max(...dataPoints.map(d => d.count), 1);
+            toggle.addEventListener('click', () => setPaused(!paused));
+            reduceMotion.addEventListener?.('change', e => { if (e.matches) setPaused(true); });
 
-            // SVG dimensions
-            const width = 100; // percentage
-            const height = 100;
-            const padding = { top: 10, right: 5, bottom: 5, left: 5 };
-            const chartWidth = 100 - padding.left - padding.right;
-            const chartHeight = 100 - padding.top - padding.bottom;
+            strip.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hovered = true; update(); } });
+            strip.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { hovered = false; update(); } });
 
-            // Generate line path
-            const points = dataPoints.map((d, i) => {
-                const x = padding.left + (i / (dataPoints.length - 1)) * chartWidth;
-                const y = padding.top + chartHeight - (d.count / maxCount) * chartHeight;
-                return { x, y, count: d.count };
+            // Keyboard: pause, and bring the focused photo fully into view
+            strip.addEventListener('focusin', e => {
+                focused = true;
+                const link = e.target.closest('a');
+                if (link && !copy?.contains(link)) {
+                    // Positions within the original set, before the drift's transform
+                    const x = link.offsetLeft - set.offsetLeft;
+                    const w = link.offsetWidth, fit = strip.clientWidth;
+                    if (x < pos) pos = x;                                          // cut off on the left
+                    else if (x + w > pos + fit) pos = Math.min(x, x + w - fit);    // cut off on the right
+                    draw();
+                    strip.scrollLeft = 0;
+                }
+                update();
             });
+            strip.addEventListener('focusout', e => { if (!strip.contains(e.relatedTarget)) { focused = false; update(); } });
+            // Focusing a photo also makes the browser scroll the strip itself, on
+            // top of the transform above. The strip only ever moves by transform.
+            strip.addEventListener('scroll', () => { if (strip.scrollLeft) strip.scrollLeft = 0; });
 
-            const linePath = points.map((p, i) =>
-                `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`
-            ).join(' ');
+            // Drag with a mouse, or swipe sideways; vertical swipes still scroll the page
+            strip.addEventListener('pointerdown', e => {
+                if (!copy || e.button !== 0) return;
+                drag = { id: e.pointerId, x: e.clientX, pos, moved: false };
+                update();
+            });
+            strip.addEventListener('pointermove', e => {
+                if (!drag || e.pointerId !== drag.id) return;
+                const dx = e.clientX - drag.x;
+                if (!drag.moved && Math.abs(dx) > 5) {
+                    drag.moved = true;
+                    strip.setPointerCapture(e.pointerId);
+                    strip.classList.add('dragging');
+                }
+                if (drag.moved) { pos = drag.pos - dx; wrap(); draw(); }
+            });
+            const endDrag = e => {
+                if (!drag || e.pointerId !== drag.id) return;
+                if (drag.moved) { suppressClick = true; setTimeout(() => { suppressClick = false; }, 0); }
+                strip.classList.remove('dragging');
+                drag = null;
+                update();
+            };
+            strip.addEventListener('pointerup', endDrag);
+            strip.addEventListener('pointercancel', endDrag);
+            // On a desktop, pressing on a link and moving starts the browser's own
+            // drag-and-drop of the link, which cancels ours. Links in the strip
+            // are not draggable (draggable="false"), and this catches any other.
+            strip.addEventListener('dragstart', e => e.preventDefault());
+            // A drag that ends over a photo is not a click on it
+            strip.addEventListener('click', e => { if (suppressClick) { e.preventDefault(); e.stopPropagation(); } }, true);
 
-            // Area path (for fill under line)
-            const areaPath = `M ${padding.left} ${padding.top + chartHeight} ` +
-                points.map(p => `L ${p.x} ${p.y}`).join(' ') +
-                ` L ${padding.left + chartWidth} ${padding.top + chartHeight} Z`;
+            // Sideways scrolling on a trackpad moves the strip too
+            strip.addEventListener('wheel', e => {
+                if (!copy || Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+                e.preventDefault();
+                pos += e.deltaX; wrap(); draw();
+            }, { passive: false });
 
-            // Format dates for labels
-            const startLabel = startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-            const endLabel = endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(entries => { onScreen = entries[0].isIntersecting; update(); }).observe(strip);
+            }
+            document.addEventListener('visibilitychange', update);
+            if ('ResizeObserver' in window) new ResizeObserver(measure).observe(strip);
+            set.querySelectorAll('img').forEach(img => { if (!img.complete) img.addEventListener('load', measure, { once: true }); });
 
-            // Render SVG
-            container.innerHTML = `
-                <div class="timeline-container">
-                    <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="timeline-svg">
-                        <path class="timeline-area" d="${areaPath}" />
-                        <path class="timeline-line" d="${linePath}" vector-effect="non-scaling-stroke" />
-                    </svg>
-                    <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-secondary); margin-top: 4px;">
-                        <span>${startLabel}</span>
-                        <span>${endLabel}</span>
-                    </div>
-                </div>
-            `;
+            setPaused(paused);
+            measure();
         }
 
-        function calculateBadges(epoch4Posts, epoch5Posts, historicalPosts, allStats, statsName) {
+        // currentPosts: the live epoch's approved posts ({date, merchant, url}).
+        // They count towards every badge except the rankings, which use
+        // finished epochs only: a live ranking changes by the day.
+        function calculateBadges(epoch4Posts, epoch5Posts, historicalPosts, allStats, statsName, currentPosts = []) {
             // Mirrors normalizeProjectName() above (flag-agnostic name match),
             // duplicated here since this function has its own scope.
             const normalizeProjectName = (name) => (name || '')
@@ -1736,37 +811,37 @@
             const badges = [];
 
             // Total posts across all epochs
-            const totalPosts = epoch4Posts.length + epoch5Posts.length + historicalPosts.length;
+            const totalPosts = epoch4Posts.length + epoch5Posts.length + currentPosts.length + historicalPosts.length;
 
             // Activity Milestones
             if (totalPosts >= 500) {
-                badges.push({ icon: '💎', label: 'Diamond Status', type: 'activity', title: '500+ posts' });
+                badges.push({ icon: '💎', label: 'Diamond status', type: 'activity', title: '500+ posts' });
             } else if (totalPosts >= 100) {
-                badges.push({ icon: '⭐', label: 'Rising Star', type: 'activity', title: '100+ posts' });
+                badges.push({ icon: '⭐', label: 'Rising star', type: 'activity', title: '100+ posts' });
             } else if (totalPosts >= 50) {
-                badges.push({ icon: '🚀', label: 'On Fire', type: 'activity', title: '50+ posts' });
+                badges.push({ icon: '🚀', label: 'On fire', type: 'activity', title: '50+ posts' });
             } else if (totalPosts >= 10) {
-                badges.push({ icon: '🌱', label: 'First Steps', type: 'activity', title: '10+ posts' });
+                badges.push({ icon: '🌱', label: 'First steps', type: 'activity', title: '10+ posts' });
             } else if (totalPosts >= 1) {
-                badges.push({ icon: '👋', label: 'First Post', type: 'activity', title: 'Made your first post' });
+                badges.push({ icon: '👋', label: 'First post', type: 'activity', title: 'First approved post' });
             }
 
-            // Community Impact - based on unique merchants across Epoch 4 and 5
-            const powbotPosts = [...epoch4Posts, ...epoch5Posts];
+            // Community Impact - unique merchants across the PoWBoT epochs (4 onwards)
+            const powbotPosts = [...epoch4Posts, ...epoch5Posts, ...currentPosts];
             if (powbotPosts.length > 0) {
                 const uniqueMerchants = new Set(powbotPosts.map(p => p.merchant)).size;
 
                 if (uniqueMerchants >= 25) {
-                    badges.push({ icon: '🌍', label: 'Network Connector', type: 'community', title: '25+ unique merchants' });
+                    badges.push({ icon: '🌍', label: 'Network connector', type: 'community', title: '25+ unique merchants' });
                 } else if (uniqueMerchants >= 15) {
-                    badges.push({ icon: '🏪', label: 'Merchant Champion', type: 'community', title: '15+ unique merchants' });
+                    badges.push({ icon: '🏪', label: 'Merchant champion', type: 'community', title: '15+ unique merchants' });
                 } else if (uniqueMerchants >= 5) {
-                    badges.push({ icon: '🤝', label: 'Community Builder', type: 'community', title: '5+ unique merchants' });
+                    badges.push({ icon: '🤝', label: 'Community builder', type: 'community', title: '5+ unique merchants' });
                 }
             }
 
             // Platform Diversity - active on both X and Nostr
-            const allPosts = [...epoch4Posts, ...epoch5Posts];
+            const allPosts = powbotPosts;
             if (allPosts.length > 0) {
                 const hasXPosts = allPosts.some(p => {
                     const url = p.url ? p.url.toLowerCase() : '';
@@ -1778,7 +853,7 @@
                 });
 
                 if (hasXPosts && hasNostrPosts) {
-                    badges.push({ icon: '🎯', label: 'All-Rounder', type: 'consistency', title: 'Active on X and Nostr' });
+                    badges.push({ icon: '🎯', label: 'All-rounder', type: 'consistency', title: 'Active on X and Nostr' });
                 }
             }
 
@@ -1811,42 +886,46 @@
             // Calculate best streak from each epoch
             const epoch4Streak = calculateStreak(epoch4Posts);
             const epoch5Streak = calculateStreak(epoch5Posts);
-            const bestStreak = Math.max(epoch4Streak, epoch5Streak);
+            const currentStreak = calculateStreak(currentPosts);
+            const bestStreak = Math.max(epoch4Streak, epoch5Streak, currentStreak);
 
             // Award streak badges based on best achievement
             if (bestStreak >= 21) {
-                badges.push({ icon: '💪', label: '21-Day Streak', type: 'activity', title: 'Posted for 21+ consecutive days' });
+                badges.push({ icon: '💪', label: '21-day streak', type: 'activity', title: 'Posted for 21+ consecutive days' });
             } else if (bestStreak >= 14) {
-                badges.push({ icon: '⚡', label: '14-Day Streak', type: 'activity', title: 'Posted for 14+ consecutive days' });
+                badges.push({ icon: '⚡', label: '14-day streak', type: 'activity', title: 'Posted for 14+ consecutive days' });
             } else if (bestStreak >= 7) {
-                badges.push({ icon: '🔥', label: '7-Day Streak', type: 'activity', title: 'Posted for 7+ consecutive days' });
+                badges.push({ icon: '🔥', label: '7-day streak', type: 'activity', title: 'Posted for 7+ consecutive days' });
             }
 
             // Legacy & Tenure
             if (historicalPosts.length > 0) {
                 // Get unique epoch names
                 const epochNames = new Set(historicalPosts.map(p => p.epoch));
-                const historicalEpochs = epochNames.size;
 
                 // Founding Member - participated in Epoch 1 (May 2025, the very first)
                 if (epochNames.has('Epoch 1')) {
-                    badges.push({ icon: '👑', label: 'Founding Member', type: 'excellence', title: 'Participated in Epoch 1' });
+                    badges.push({ icon: '👑', label: 'Founding member', type: 'excellence', title: 'Participated in Epoch 1' });
                 }
 
                 // Early Adopter - participated in Epoch 2 or 3 (Aug/Nov 2025)
                 if (epochNames.has('Epoch 2') || epochNames.has('Epoch 3')) {
-                    badges.push({ icon: '🏆', label: 'Early Adopter', type: 'legacy', title: 'Participated before PoWBoT' });
+                    badges.push({ icon: '🏆', label: 'Early adopter', type: 'legacy', title: 'Participated before PoWBoT' });
                 }
 
                 // Beta Tester - participated in Epoch 4 Testing
                 if (epochNames.has('Epoch 4 Testing')) {
-                    badges.push({ icon: '🧪', label: 'Beta Tester', type: 'activity', title: 'Helped test PoWBoT' });
+                    badges.push({ icon: '🧪', label: 'Beta tester', type: 'activity', title: 'Helped test PoWBoT' });
                 }
 
-                // Multi-Epoch Veteran - active across many epochs (purple - consistency)
-                if (historicalEpochs >= 3 || (historicalEpochs > 0 && epoch4Posts.length > 0 && epoch5Posts.length > 0)) {
-                    badges.push({ icon: '🛡️', label: 'Multi-Epoch Veteran', type: 'consistency', title: 'Active across 3+ epochs' });
-                }
+            }
+
+            // Multi-Epoch Veteran - active in 3+ epochs, counting the live one
+            // (the Epoch 4 testing phase counts as its own, as it always has)
+            const epochsActive = new Set(historicalPosts.map(p => p.epoch)).size
+                + [epoch4Posts, epoch5Posts, currentPosts].filter(posts => posts.length > 0).length;
+            if (epochsActive >= 3) {
+                badges.push({ icon: '🛡️', label: 'Multi-epoch veteran', type: 'consistency', title: 'Active across 3+ epochs' });
             }
 
             // Excellence - ranking based on Epoch 4 and 5 data
@@ -1876,11 +955,11 @@
             };
 
             if (bestRanking === 0) {
-                badges.push({ icon: '🥇', label: 'Top Performer', type: 'excellence', title: buildTitle() });
+                badges.push({ icon: '🥇', label: 'Top performer', type: 'excellence', title: buildTitle() });
             } else if (bestRanking === 1) {
-                badges.push({ icon: '🥈', label: '2nd Place', type: 'excellence', title: buildTitle() });
+                badges.push({ icon: '🥈', label: '2nd place', type: 'excellence', title: buildTitle() });
             } else if (bestRanking === 2) {
-                badges.push({ icon: '🥉', label: '3rd Place', type: 'excellence', title: buildTitle() });
+                badges.push({ icon: '🥉', label: '3rd place', type: 'excellence', title: buildTitle() });
             } else if (bestRanking >= 0 && bestRanking < 10) {
                 badges.push({ icon: '🏅', label: 'Top 10', type: 'excellence', title: buildTitle() });
             }
@@ -1896,331 +975,10 @@
             return { name: 'Nostr', icon: '🟣' };
         }
 
+        // "2026-07-03" -> "3 Jul 2026", read as a UTC date
         function formatDate(dateStr) {
             const date = new Date(dateStr);
-            const day = date.getDate();
-            const month = date.toLocaleDateString('en-US', { month: 'short' });
-            const year = date.getFullYear();
-            return `${day} ${month} ${year}`;
-        }
-
-        // Gallery infinite carousel functionality
-        let galleryAutoRotate = null;
-        let galleryScrollPosition = 0;
-        let galleryRealSlideCount = 0;
-        let gallerySingleSlideWidth = 0;
-        let isDragging = false;
-        let startX = 0;
-        let scrollLeft = 0;
-
-        function initGalleryDragScroll() {
-            const container = document.getElementById('gallery-container');
-            const track = document.getElementById('gallery-track');
-            if (!container || !track) return;
-
-            const originalSlides = Array.from(track.querySelectorAll('.gallery-slide'));
-            galleryRealSlideCount = originalSlides.length;
-
-            if (galleryRealSlideCount <= 3) return; // No scrolling needed
-
-            // Clone slides for infinite effect (clone all slides and append/prepend)
-            const clonedSlidesStart = originalSlides.map(slide => slide.cloneNode(true));
-            const clonedSlidesEnd = originalSlides.map(slide => slide.cloneNode(true));
-
-            // Prepend clones at start
-            clonedSlidesStart.reverse().forEach(clone => {
-                track.insertBefore(clone, track.firstChild);
-            });
-
-            // Append clones at end
-            clonedSlidesEnd.forEach(clone => {
-                track.appendChild(clone);
-            });
-
-            // Calculate slide width
-            const containerWidth = container.offsetWidth;
-            gallerySingleSlideWidth = (containerWidth - 24) / 3 + 12;
-
-            // Start at first real slide (after prepended clones)
-            galleryScrollPosition = galleryRealSlideCount * gallerySingleSlideWidth;
-            track.style.transform = `translateX(-${galleryScrollPosition}px)`;
-
-            // Mouse events
-            container.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                startX = e.pageX - container.offsetLeft;
-                scrollLeft = galleryScrollPosition;
-                stopGalleryAutoRotate();
-                track.classList.add('dragging');
-            });
-
-            container.addEventListener('mouseleave', () => {
-                if (isDragging) {
-                    isDragging = false;
-                    track.classList.remove('dragging');
-                    checkGalleryLoop();
-                    startGalleryAutoRotate();
-                }
-            });
-
-            container.addEventListener('mouseup', (e) => {
-                if (isDragging) {
-                    isDragging = false;
-                    track.classList.remove('dragging');
-
-                    // Check if it was a click (minimal movement)
-                    const x = e.pageX - container.offsetLeft;
-                    const walk = Math.abs(x - startX);
-
-                    if (walk < 5) {
-                        // It's a click - open image
-                        const img = e.target.closest('.gallery-slide')?.querySelector('img');
-                        if (img) {
-                            window.open(img.dataset.url, '_blank');
-                        }
-                    }
-
-                    checkGalleryLoop();
-                    startGalleryAutoRotate();
-                }
-            });
-
-            container.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-                e.preventDefault();
-                const x = e.pageX - container.offsetLeft;
-                const walk = (x - startX) * 1.5;
-                updateGalleryPosition(scrollLeft - walk);
-            });
-
-            // Touch events
-            container.addEventListener('touchstart', (e) => {
-                isDragging = true;
-                startX = e.touches[0].pageX - container.offsetLeft;
-                scrollLeft = galleryScrollPosition;
-                stopGalleryAutoRotate();
-                track.classList.add('dragging');
-            });
-
-            container.addEventListener('touchend', (e) => {
-                isDragging = false;
-                track.classList.remove('dragging');
-
-                // Check if it was a tap
-                if (e.changedTouches.length > 0) {
-                    const touch = e.changedTouches[0];
-                    const x = touch.pageX - container.offsetLeft;
-                    const walk = Math.abs(x - startX);
-
-                    if (walk < 5) {
-                        const img = e.target.closest('.gallery-slide')?.querySelector('img');
-                        if (img) {
-                            window.open(img.dataset.url, '_blank');
-                        }
-                    }
-                }
-
-                checkGalleryLoop();
-                startGalleryAutoRotate();
-            });
-
-            container.addEventListener('touchmove', (e) => {
-                if (!isDragging) return;
-                const x = e.touches[0].pageX - container.offsetLeft;
-                const walk = (x - startX) * 1.5;
-                updateGalleryPosition(scrollLeft - walk);
-            });
-
-            // Pause on hover
-            container.addEventListener('mouseenter', stopGalleryAutoRotate);
-            container.addEventListener('mouseleave', () => {
-                if (!isDragging) startGalleryAutoRotate();
-            });
-
-            // Start auto-scroll immediately
-            startGalleryAutoRotate();
-        }
-
-        function updateGalleryPosition(position) {
-            const track = document.getElementById('gallery-track');
-            if (!track) return;
-
-            galleryScrollPosition = position;
-            track.style.transform = `translateX(-${galleryScrollPosition}px)`;
-        }
-
-        function checkGalleryLoop() {
-            const track = document.getElementById('gallery-track');
-            if (!track) return;
-
-            const totalWidth = galleryRealSlideCount * gallerySingleSlideWidth;
-            const startCloneEnd = totalWidth;
-            const endCloneStart = totalWidth * 2;
-
-            // If scrolled past end clones, jump to equivalent position in real slides
-            if (galleryScrollPosition >= endCloneStart) {
-                const offset = galleryScrollPosition - endCloneStart;
-                galleryScrollPosition = totalWidth + offset;
-                track.style.transform = `translateX(-${galleryScrollPosition}px)`;
-            }
-
-            // If scrolled before start clones, jump to equivalent position in real slides
-            if (galleryScrollPosition <= 0) {
-                const offset = -galleryScrollPosition;
-                galleryScrollPosition = startCloneEnd - offset;
-                track.style.transform = `translateX(-${galleryScrollPosition}px)`;
-            }
-        }
-
-        function autoScrollGallery() {
-            const track = document.getElementById('gallery-track');
-            if (!track || !galleryAutoRotate) return;
-
-            // Constant subtle scroll - move 0.15px per frame at 60fps (~9px per second)
-            galleryScrollPosition += 0.15;
-            track.style.transform = `translateX(-${galleryScrollPosition}px)`;
-
-            checkGalleryLoop();
-
-            // Continue animation
-            galleryAutoRotate = requestAnimationFrame(autoScrollGallery);
-        }
-
-        function startGalleryAutoRotate() {
-            const track = document.getElementById('gallery-track');
-            if (!track || galleryRealSlideCount <= 3) return;
-
-            // Idempotent: without this, a second call overwrites the rAF handle and
-            // orphans the first loop, which then runs forever and cannot be
-            // cancelled - the carousel scrolls at double speed and ignores the
-            // hover-to-pause. It is called from five places (init, drag end, touch
-            // end, mouseleave, and loadGalleryImages), so guard here rather than
-            // trying to keep every call site paired with a stop.
-            if (galleryAutoRotate) {
-                cancelAnimationFrame(galleryAutoRotate);
-                galleryAutoRotate = null;
-            }
-
-            // Disable CSS transition for smooth constant scroll
-            track.classList.add('dragging');
-
-            galleryAutoRotate = requestAnimationFrame(autoScrollGallery);
-        }
-
-        function stopGalleryAutoRotate() {
-            if (galleryAutoRotate) {
-                cancelAnimationFrame(galleryAutoRotate);
-                galleryAutoRotate = null;
-            }
-
-            // Re-enable CSS transitions when stopped
-            const track = document.getElementById('gallery-track');
-            if (track) {
-                track.classList.remove('dragging');
-            }
-        }
-
-        function flipSupportCard() {
-            const card = document.getElementById('support-card');
-            const isFlipped = card.classList.contains('flipped');
-
-            // Toggle the flip
-            card.classList.toggle('flipped');
-
-            // Update height to match the now-visible side
-            const inner = card.querySelector('.support-card-inner');
-            const front = card.querySelector('.support-front');
-            const back = card.querySelector('.support-back');
-
-            // Set height based on which side will be visible
-            const newHeight = isFlipped ? front.scrollHeight : back.scrollHeight;
-            inner.style.height = newHeight + 'px';
-        }
-
-        function toggleEpoch5Posts(button) {
-            const count = parseInt(button.dataset.count);
-            const isExpanded = button.classList.contains('expanded');
-            const container = document.getElementById('posts-list-epoch5');
-
-            if (isExpanded) {
-                // Collapse - hide posts after 5th
-                container.querySelectorAll('.post-item').forEach((el, index) => {
-                    if (index >= 5) el.classList.add('post-hidden');
-                });
-                button.textContent = `Show ${count} more`;
-                button.classList.remove('expanded');
-            } else {
-                // Expand - show all posts
-                container.querySelectorAll('.post-hidden').forEach(el => {
-                    el.classList.remove('post-hidden');
-                });
-                button.textContent = 'Show less';
-                button.classList.add('expanded');
-            }
-        }
-
-        function toggleEpoch4Posts(button) {
-            const count = parseInt(button.dataset.count);
-            const isExpanded = button.classList.contains('expanded');
-            const container = document.getElementById('posts-list-epoch4');
-
-            if (isExpanded) {
-                // Collapse - hide posts after 5th
-                container.querySelectorAll('.post-item').forEach((el, index) => {
-                    if (index >= 5) el.classList.add('post-hidden');
-                });
-                button.textContent = `Show ${count} more`;
-                button.classList.remove('expanded');
-            } else {
-                // Expand - show all posts
-                container.querySelectorAll('.post-hidden').forEach(el => {
-                    el.classList.remove('post-hidden');
-                });
-                button.textContent = 'Show less';
-                button.classList.add('expanded');
-            }
-        }
-
-        function toggleHistoricalPosts(button) {
-            const count = parseInt(button.dataset.count);
-            const isExpanded = button.classList.contains('expanded');
-            const container = document.getElementById('posts-list-historical');
-
-            if (isExpanded) {
-                // Collapse - hide posts after 5th
-                container.querySelectorAll('.post-item').forEach((el, index) => {
-                    if (index >= 5) el.classList.add('post-hidden');
-                });
-                button.textContent = `Show ${count} more`;
-                button.classList.remove('expanded');
-            } else {
-                // Expand - show all posts
-                container.querySelectorAll('.post-hidden').forEach(el => {
-                    el.classList.remove('post-hidden');
-                });
-                button.textContent = 'Show less';
-                button.classList.add('expanded');
-            }
-        }
-
-        function copyAddressWithFeedback(address, elementId) {
-            const addressElement = document.getElementById(elementId);
-            const originalText = addressElement.textContent;
-
-            navigator.clipboard.writeText(address).then(() => {
-                // Add copied class for visual feedback
-                addressElement.classList.add('copied');
-                addressElement.textContent = 'Copied to clipboard!';
-
-                // Reset after 2 seconds
-                setTimeout(() => {
-                    addressElement.classList.remove('copied');
-                    addressElement.textContent = originalText;
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
-                alert('Failed to copy address');
-            });
+            return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
         }
 
         function copyToClipboard(text, label) {

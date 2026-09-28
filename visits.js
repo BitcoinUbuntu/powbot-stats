@@ -1,0 +1,152 @@
+// Visits: one row per proof-of-work visit instead of one per post.
+//
+// Epoch 6 rule (telegram-bot bot.py, classify_post): a project's first post at
+// a merchant in an ISO week (UTC) is the "primary"; the same visit posted on
+// the other platform that week is a "duplicate". So project + merchant + ISO
+// week identifies one visit, holding at most one post per platform.
+//
+// Epoch 5 and older carry no classification, so their pairs are inferred: the
+// nearest X and Nostr posts by the same project at the same merchant, at most
+// PAIR_WINDOW_HOURS apart, each post used once, closest pairs first. Most are
+// minutes apart, but some cross-posts went up the next day (Epoch 5: 908
+// pairs within 12 hours, 937 within 36, only 942 within a week). Closest-first
+// means a project visiting the same merchant daily still pairs within each day.
+// Posts with a date only (read as midnight) pair on the same or the next day:
+// 0 or 24 hours apart, inside the window; two days is 48, outside it.
+(function () {
+    const PLATFORMS = ['X', 'Nostr'];
+    const PAIR_WINDOW_HOURS = 36;
+
+    function platformOf(sub) {
+        const p = String(sub.platform || '').toLowerCase();
+        if (p === 'x' || p === 'twitter') return 'X';
+        if (p === 'nostr') return 'Nostr';
+        const url = String(sub.post_url || '').toLowerCase();
+        return url.includes('x.com') || url.includes('twitter.com') ? 'X' : 'Nostr';
+    }
+
+    // "2026-09-28 18:35:12 UTC" -> "2026-W39"
+    function isoWeek(ts) {
+        const d = new Date(String(ts).slice(0, 10) + 'T00:00:00Z');
+        const day = d.getUTCDay() || 7;
+        d.setUTCDate(d.getUTCDate() + 4 - day);           // Thursday of this week
+        const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+        const week = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
+        return `${d.getUTCFullYear()}-W${week}`;
+    }
+
+    // Tracker submissions -> visits, newest first. Pass approved posts only.
+    // Each visit: { project, merchant, first (earliest timestamp), links: {X, Nostr}, posts }
+    const merchantKey = sub => String(sub.merchant_name || '').trim().toLowerCase();
+    const timeOf = sub => new Date(String(sub.timestamp).replace(' UTC', 'Z').replace(' ', 'T')).getTime();
+
+    function newVisit(sub) {
+        return { project: sub.project_name, merchant: sub.merchant_name, first: sub.timestamp, links: {}, posts: [] };
+    }
+
+    function addPost(visit, sub) {
+        const platform = platformOf(sub);
+        if (!visit.links[platform]) visit.links[platform] = sub.post_url;
+        visit.posts.push(sub);
+        if (String(sub.timestamp) < String(visit.first)) visit.first = sub.timestamp;
+    }
+
+    window.groupVisits = function (submissions) {
+        const byKey = new Map();
+        const visits = [];
+        const unlabelled = new Map();   // project|merchant -> posts, paired by time below
+
+        (submissions || []).forEach(sub => {
+            if (sub.classification === 'primary' || sub.classification === 'duplicate') {
+                const key = [sub.project_name, merchantKey(sub), isoWeek(sub.timestamp)].join('|');
+                let visit = byKey.get(key);
+                if (!visit) { visit = newVisit(sub); byKey.set(key, visit); visits.push(visit); }
+                addPost(visit, sub);
+            } else {
+                const key = [sub.project_name, merchantKey(sub)].join('|');
+                (unlabelled.get(key) || unlabelled.set(key, []).get(key)).push(sub);
+            }
+        });
+
+        // Closest X-Nostr pairs first, so each post joins its nearest partner
+        const limit = PAIR_WINDOW_HOURS * 60 * 60 * 1000;
+        unlabelled.forEach(posts => {
+            const xs = posts.filter(s => platformOf(s) === 'X');
+            const ns = posts.filter(s => platformOf(s) === 'Nostr');
+            const candidates = [];
+            xs.forEach((x, i) => ns.forEach((n, j) => {
+                const gap = Math.abs(timeOf(x) - timeOf(n));
+                if (gap <= limit) candidates.push([gap, i, j]);
+            }));
+            candidates.sort((a, b) => a[0] - b[0]);
+            const usedX = new Set(), usedN = new Set();
+            candidates.forEach(([, i, j]) => {
+                if (usedX.has(i) || usedN.has(j)) return;
+                usedX.add(i); usedN.add(j);
+                const visit = newVisit(xs[i]);
+                addPost(visit, xs[i]); addPost(visit, ns[j]);
+                visits.push(visit);
+            });
+            xs.forEach((x, i) => { if (!usedX.has(i)) { const v = newVisit(x); addPost(v, x); visits.push(v); } });
+            ns.forEach((n, j) => { if (!usedN.has(j)) { const v = newVisit(n); addPost(v, n); visits.push(v); } });
+        });
+
+        return visits.sort((a, b) => String(b.first).localeCompare(String(a.first)));
+    };
+
+    const attr = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+
+    // The X and Nostr links for a visit, always in the same two slots so they
+    // line up down a list. `context` names the visit for screen readers
+    // ("Bitbiashara at Flo Salon"), since the visible text is only "X".
+    window.visitLinks = function (visit, context) {
+        const slots = PLATFORMS.map(p => visit.links[p]
+            ? `<a class="visit-link" href="${attr(visit.links[p])}" target="_blank" rel="noopener" aria-label="Watch on ${p}${context ? ': ' + attr(context) : ''}">${p}</a>`
+            : '<span class="visit-link is-empty" aria-hidden="true"></span>');
+        return `<span class="visit-links">${slots.join('')}</span>`;
+    };
+
+    // Long post lists (project and merchant profiles) show POSTS_INITIAL rows,
+    // then POSTS_STEP more per press of "Show N more". Once the list is open,
+    // "Show fewer" sits beside it, so folding back never waits until the end.
+    // Rows are .post-item (hidden ones .post-hidden); both buttons name their
+    // list with aria-controls. Pages add the pair with postsMoreButtons().
+    const POSTS_INITIAL = 5;
+    const POSTS_STEP = 10;
+    const rowsOf = button => [...document.getElementById(button.getAttribute('aria-controls')).querySelectorAll('.post-item')];
+
+    window.postsMoreButtons = function (listId, hiddenCount) {
+        return `<button type="button" class="btn posts-more" onclick="showMorePosts(this)" aria-controls="${attr(listId)}">Show ${Math.min(POSTS_STEP, hiddenCount)} more</button>`
+            + `<button type="button" class="btn posts-fewer" onclick="showFewerPosts(this)" aria-controls="${attr(listId)}" hidden>Show fewer</button>`;
+    };
+
+    window.showMorePosts = function (button) {
+        const hidden = rowsOf(button).filter(el => el.classList.contains('post-hidden'));
+        hidden.slice(0, POSTS_STEP).forEach(el => el.classList.remove('post-hidden'));
+        const left = hidden.length - Math.min(POSTS_STEP, hidden.length);
+        const fewer = button.parentElement.querySelector('.posts-fewer');
+        fewer.hidden = false;
+        if (left > 0) {
+            button.textContent = `Show ${Math.min(POSTS_STEP, left)} more`;
+        } else {
+            // Everything shows: only "Show fewer" is left, and focus moves to it
+            button.hidden = true;
+            fewer.focus();
+        }
+    };
+
+    window.showFewerPosts = function (button) {
+        const more = button.parentElement.querySelector('.posts-more');
+        const before = button.getBoundingClientRect().top;
+        const rows = rowsOf(button);
+        rows.forEach((el, i) => { if (i >= POSTS_INITIAL) el.classList.add('post-hidden'); });
+        more.textContent = `Show ${Math.min(POSTS_STEP, rows.length - POSTS_INITIAL)} more`;
+        more.hidden = false;
+        button.hidden = true;
+        more.focus({ preventScroll: true });
+        // Rows vanished above the buttons: scroll so they stay where they were
+        // on screen, rather than leaving the reader far below the list
+        const moved = more.getBoundingClientRect().top - before;
+        if (Math.abs(moved) > 1) window.scrollBy({ top: moved, left: 0, behavior: 'instant' });
+    };
+})();
