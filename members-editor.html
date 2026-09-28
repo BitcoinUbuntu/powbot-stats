@@ -325,8 +325,8 @@
                 </form>
 
                 <div class="form-actions">
-                    <button class="btn" onclick="cancelEdit()">Cancel</button>
-                    <button class="btn btn-solid" onclick="saveChanges()">Save changes</button>
+                    <button type="button" class="btn" onclick="cancelEdit()">Cancel</button>
+                    <button type="button" class="btn btn-solid" onclick="saveChanges()">Save changes</button>
                 </div>
             `;
 
@@ -341,10 +341,10 @@
                     ${items.map((item, index) => `
                         <div class="array-item">
                             <input class="input" type="${type}" value="${item}" data-array-index="${index}" aria-label="Gallery image ${index + 1}" autocomplete="off">
-                            <button class="btn btn-danger" onclick="removeArrayItem('${containerId}', ${index})" aria-label="Remove gallery image ${index + 1}">Remove</button>
+                            <button type="button" class="btn btn-danger" onclick="removeArrayItem('${containerId}', ${index})" aria-label="Remove gallery image ${index + 1}">Remove</button>
                         </div>
                     `).join('')}
-                    <button class="btn add-array-btn" onclick="addArrayItem('${containerId}', '${type}')">Add image</button>
+                    <button type="button" class="btn add-array-btn" onclick="addArrayItem('${containerId}', '${type}')">Add image</button>
                 </div>
             `;
         }
