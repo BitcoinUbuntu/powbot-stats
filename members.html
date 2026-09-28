@@ -6,7 +6,7 @@
     <title>CBAF members – Bitcoin projects across Africa | PoWBoT</title>
     <meta name="description" content="Directory of grassroots Bitcoin circular economy projects across Africa. See each project’s proof of work on PoWBoT and donate to it directly over Lightning.">
     <link rel="canonical" href="https://powbot.africa/members.html">
-    <meta name="theme-color" content="#12152E">
+    <meta name="theme-color" content="#0A1611">
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
@@ -53,7 +53,7 @@
         .input:hover, .select:hover { border-color: var(--muted); }
         .select { appearance: none; -webkit-appearance: none; padding-right: 40px; cursor: pointer; color-scheme: dark; }
         .select option { background: var(--panel); color: var(--text); }
-        .select.active { border-color: var(--cyan); }
+        .select.active { border-color: var(--phosphor); }
         .select-wrap { position: relative; }
         .select-wrap::after {
             content: ""; position: absolute; right: 16px; top: 50%; width: 8px; height: 8px; margin-top: -6px;
@@ -106,9 +106,9 @@
         .card-actions { display: flex; gap: var(--s2); }
         .card-actions .btn, .back-actions .btn { flex: 1; min-width: 0; }
         /* .pb button resets font and colour, which would override .btn on <button> */
-        .pb button.btn { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--cyan); }
+        .pb button.btn { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--phosphor); }
         .pb .btn-donate { border-color: var(--amber); color: var(--amber); }
-        .pb .btn-donate:hover { background: rgba(255, 178, 63, 0.12); color: var(--amber); }
+        .pb .btn-donate:hover { background: rgba(var(--amber-rgb), 0.12); color: var(--amber); }
 
         /* Back of card: donation details */
         .card-back-inner { display: grid; height: 100%; }
@@ -128,8 +128,8 @@
             font: 400 var(--fs-xs)/1.4 var(--font-mono); text-align: center; overflow-wrap: anywhere;
             cursor: pointer;
         }
-        .lightning-address-display:hover { border-color: var(--cyan); }
-        .lightning-address-display.copied { border-color: var(--cyan); color: var(--cyan); }
+        .lightning-address-display:hover { border-color: var(--phosphor); }
+        .lightning-address-display.copied { border-color: var(--phosphor); color: var(--phosphor); }
         .back-actions { display: flex; gap: var(--s2); width: 100%; margin-top: auto; }
 
         /* States */

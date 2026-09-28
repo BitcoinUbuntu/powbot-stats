@@ -6,7 +6,7 @@
     <title id="page-title">Project profile | PoWBoT</title>
     <meta name="description" id="page-description" content="A Bitcoin circular economy project in Africa: its story, its proof of work on PoWBoT, and how to donate to it directly over Lightning.">
     <link rel="canonical" id="page-canonical" href="https://powbot.africa/profile.html">
-    <meta name="theme-color" content="#12152E">
+    <meta name="theme-color" content="#0A1611">
 
     <!-- Open Graph / Social Preview (crawlers don't run JS, so these stay generic) -->
     <meta property="og:type" content="profile">
@@ -55,10 +55,10 @@
             display: inline-flex; align-items: center; gap: var(--s2);
             min-height: var(--tap); padding: 0 var(--s3);
             border: 1px solid var(--line-strong); border-radius: var(--radius);
-            color: var(--cyan); text-decoration: none;
+            color: var(--phosphor); text-decoration: none;
             font: 700 var(--fs-sm)/1 var(--font-text);
         }
-        .hero-link:hover { border-color: var(--cyan); background: rgba(95, 216, 224, 0.12); color: var(--cyan); }
+        .hero-link:hover { border-color: var(--phosphor); background: rgba(var(--phosphor-rgb), 0.12); color: var(--phosphor); }
 
         /* ------------------------------------------------ About and support -- */
         .intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 340px); gap: var(--s6) var(--s7); align-items: start; }
@@ -83,7 +83,7 @@
         .address { margin: 0 0 var(--s3); font: 400 var(--fs-xs)/1.6 var(--font-mono); text-align: center; overflow-wrap: anywhere; word-break: break-all; }
         .support-actions { display: flex; flex-wrap: wrap; gap: var(--s2); }
         .support-actions .btn { flex: 1 1 auto; }
-        .copy-btn.copied { background: rgba(95, 216, 224, 0.12); }
+        .copy-btn.copied { background: rgba(var(--phosphor-rgb), 0.12); }
 
         /* ----------------------------------------------------------- Epochs -- */
         .section h3 { margin: var(--s6) 0 var(--s2); font-size: var(--fs-base); }
@@ -106,13 +106,13 @@
         .chart-card > [id^="heatmap-"], .chart-card > [id^="timeline-"] { flex: 1; display: flex; flex-direction: column; min-height: 0; }
 
         .heatmap-grid { display: grid; grid-template-rows: repeat(7, auto); grid-auto-flow: column; grid-auto-columns: 1fr; gap: 3px; width: 100%; }
-        .heatmap-day { aspect-ratio: 1; min-width: 0; border-radius: 1px; background: rgba(152, 160, 196, 0.14); position: relative; }
+        .heatmap-day { aspect-ratio: 1; min-width: 0; border-radius: 1px; background: rgba(var(--muted-rgb), 0.14); position: relative; }
         .heatmap-pad { visibility: hidden; }
-        /* Levels are --cyan at rising strength */
-        .heatmap-day.level-1 { background: rgba(95, 216, 224, 0.3); }
-        .heatmap-day.level-2 { background: rgba(95, 216, 224, 0.5); }
-        .heatmap-day.level-3 { background: rgba(95, 216, 224, 0.75); }
-        .heatmap-day.level-4 { background: var(--cyan); }
+        /* Levels are --phosphor at rising strength */
+        .heatmap-day.level-1 { background: rgba(var(--phosphor-rgb), 0.3); }
+        .heatmap-day.level-2 { background: rgba(var(--phosphor-rgb), 0.5); }
+        .heatmap-day.level-3 { background: rgba(var(--phosphor-rgb), 0.75); }
+        .heatmap-day.level-4 { background: var(--phosphor); }
         @media (hover: hover) {
             .heatmap-day:hover::after {
                 content: attr(data-date) ': ' attr(data-count) ' posts';
@@ -131,8 +131,8 @@
         .charts-grid-single .timeline-container { min-height: 160px; }
         .timeline-svg { position: absolute; top: 0; left: 0; width: 100%; height: calc(100% - 22px); }
         .timeline-dates { position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--muted); }
-        .timeline-line { fill: none; stroke: var(--cyan); stroke-width: 2; }
-        .timeline-area { fill: var(--cyan); opacity: 0.12; }
+        .timeline-line { fill: none; stroke: var(--phosphor); stroke-width: 2; }
+        .timeline-area { fill: var(--phosphor); opacity: 0.12; }
 
         /* ------------------------------------------------------ Achievements -- */
         .badges-grid { display: flex; flex-wrap: wrap; gap: var(--s2); margin: 0; padding: 0; list-style: none; }
@@ -822,7 +822,7 @@
             const gridStartDate = new Date(startDate);
             gridStartDate.setDate(gridStartDate.getDate() - gridStartDate.getDay());
 
-            // Colours come from CSS (.heatmap-day.level-*), which reads --cyan.
+            // Colours come from CSS (.heatmap-day.level-*), which reads --phosphor.
             const activeDays = Object.keys(postsByDay).length;
             const fmt = d => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
             let html = `<div class="heatmap-container"><div class="heatmap-grid" role="img" aria-label="One square per UTC day from ${fmt(startDate)} to ${fmt(endDate)}, weeks in columns. Posted on ${activeDays} days; busiest day ${maxCount} posts.">`;
@@ -925,7 +925,7 @@
             // Render SVG
             container.innerHTML = `
                 <div class="timeline-container">
-                    <!-- Stroke and fill come from CSS (.timeline-line, .timeline-area), which read --cyan -->
+                    <!-- Stroke and fill come from CSS (.timeline-line, .timeline-area), which read --phosphor -->
                     <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="timeline-svg" role="img" aria-label="Line of posts per UTC day from ${startLabel} to ${endLabel}; peak ${maxCount} in a day.">
                         <path class="timeline-area" d="${areaPath}" />
                         <path class="timeline-line" d="${linePath}" vector-effect="non-scaling-stroke" />
