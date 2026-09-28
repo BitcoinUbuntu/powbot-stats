@@ -516,16 +516,6 @@ function renderCardDetails(submission) {
         </div>
     `;
 
-    // Lightning address
-    if (submission.lightning_address) {
-        html += `
-            <div>
-                <dt>Merchant Lightning address</dt>
-                <dd><span class="mono">${escapeHtml(submission.lightning_address)}</span></dd>
-            </div>
-        `;
-    }
-
     // Who took part, never how much anyone was paid. The rows name
     // themselves, so the label is for screen readers only.
     if (submission.payments && submission.payments.length > 0) {
@@ -578,11 +568,19 @@ function renderPayment(payment) {
     const typeLabel = typeLabels[payment.type] || payment.type;
     // The card title already shows the project's flag and country
     const recipient = payment.type === 'project' ? extractProjectNameOnly(payment.recipient) : payment.recipient;
+    // Merchants and projects link to their profiles. Profile ids are the name
+    // as a slug ("Bitcoin Chama" -> bitcoin-chama), which holds for every
+    // member today; merchant pages are addressed the same way.
+    const slug = name => String(name || '').replace(/[^\w\s-]/g, '').trim().toLowerCase().replace(/\s+/g, '-');
+    const page = { merchant: 'merchant-profile.html', project: 'profile.html' }[payment.type];
+    const name = page && recipient
+        ? `<a href="${page}?id=${encodeURIComponent(slug(recipient))}">${escapeHtml(recipient)}</a>`
+        : escapeHtml(recipient);
 
     return `
         <li class="payment-item">
             <span class="payment-type">${escapeHtml(typeLabel)}</span>
-            <span class="payment-recipient">${escapeHtml(recipient)}</span>
+            <span class="payment-recipient">${name}</span>
         </li>
     `;
 }
