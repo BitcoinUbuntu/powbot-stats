@@ -3,605 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBAF Members | PoWBoT Directory</title>
+    <title>CBAF members – Bitcoin projects across Africa | PoWBoT</title>
+    <meta name="description" content="Directory of grassroots Bitcoin circular economy projects across Africa. See each project’s proof of work on PoWBoT and donate to it directly over Lightning.">
+    <link rel="canonical" href="https://powbot.africa/members.html">
+    <meta name="theme-color" content="#12152E">
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
 
     <!-- Open Graph / Social Preview -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bitcoinubuntu.github.io/powbot-stats/members">
+    <meta property="og:url" content="https://powbot.africa/members.html">
     <meta property="og:title" content="CBAF Members Directory">
     <meta property="og:description" content="Discover Bitcoin circular economy projects across Africa. Support them directly with Lightning donations.">
-    <meta property="og:image" content="https://bitcoinubuntu.github.io/powbot-stats/images/PoWBoT_preview.jpg">
+    <meta property="og:image" content="https://powbot.africa/images/PoWBoT_preview.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CBAF Members Directory">
+    <meta name="twitter:description" content="Discover Bitcoin circular economy projects across Africa. Support them directly with Lightning donations.">
+    <meta name="twitter:image" content="https://powbot.africa/images/PoWBoT_preview.jpg">
 
     <script src="qrcode.min.js"></script>
     <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Loaded here in
          the head because this page's inline script runs before inject.js. -->
     <script src="data-source.js"></script>
 
+    <link rel="stylesheet" href="css/powbot.css">
     <style>
-        :root {
-            --bg-primary: #0d1117;
-            --bg-secondary: #161b22;
-            --bg-card: #21262d;
-            --text-primary: #f0f6fc;
-            --text-secondary: #8b949e;
-            --accent-orange: #f7931a;
-            --accent-green: #3fb950;
-            --accent-blue: #58a6ff;
-            --accent-purple: #a371f7;
-            --border: #30363d;
+        /* Directory layout only. Colours, type and components: css/powbot.css */
+        .page-head { padding: var(--s7) 0 var(--s6); border-bottom: 1px solid var(--line); }
+        .page-head h1 { margin: 0; font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        .page-head .lede { margin: var(--s3) 0 var(--s5); color: var(--muted); max-width: 60ch; font-size: var(--fs-md); }
+
+        /* Controls */
+        .controls { display: grid; gap: var(--s4); padding: var(--s5) 0; }
+        .controls-row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--s4); }
+        .field { display: grid; gap: 6px; min-width: 0; }
+        .field-label { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--muted); }
+        .field-search { flex: 1 1 100%; max-width: 40rem; }
+        .field-select { flex: 1 1 11rem; max-width: 16rem; }
+        .input, .select {
+            width: 100%; min-height: var(--tap); padding: 0 var(--s3);
+            background: var(--panel); color: var(--text);
+            border: 1px solid var(--line-strong); border-radius: var(--radius);
+            font: 400 var(--fs-base)/1.2 var(--font-text);
+        }
+        .input::placeholder { color: var(--muted); opacity: 1; }
+        .input:hover, .select:hover { border-color: var(--muted); }
+        .select { appearance: none; -webkit-appearance: none; padding-right: 40px; cursor: pointer; color-scheme: dark; }
+        .select option { background: var(--panel); color: var(--text); }
+        .select.active { border-color: var(--cyan); }
+        .select-wrap { position: relative; }
+        .select-wrap::after {
+            content: ""; position: absolute; right: 16px; top: 50%; width: 8px; height: 8px; margin-top: -6px;
+            border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+            transform: rotate(45deg); pointer-events: none;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* Filter buttons: the shared .seg, laid out as a grid so it can wrap to 2 x 2 */
+        .filters.seg { display: inline-grid; grid-auto-flow: column; gap: 1px; background: var(--line-strong); }
+        .filters.seg button { border: 0; }
+        .filters.seg button:not([aria-pressed="true"]) { background: var(--night); }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        /* Header */
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            color: var(--accent-orange);
-            margin-bottom: 8px;
-        }
-
-        header .subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-        }
-
-        /* Stats Summary */
-        .stats-summary {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            margin: 20px 0;
-            flex-wrap: wrap;
-        }
-
-        .stat-pill {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 8px 16px;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-
-        .stat-pill strong {
-            color: var(--text-primary);
-            margin-left: 4px;
-        }
-
-        /* Filters & Search */
-        .controls {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
-
-        .controls-row {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .search-box {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .search-box input {
-            width: 100%;
-            background: #e8eaed;
-            border: 1px solid #c1c5cc;
-            border-radius: 8px;
-            padding: 10px 14px;
-            color: #1a1d22;
-            font-size: 0.95rem;
-        }
-
-        .search-box input::placeholder {
-            color: #5f6368;
-        }
-
-        .search-box input:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-            background: #f0f2f5;
-        }
-
-        .filter-group {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 8px 14px;
-            color: var(--text-secondary);
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-        }
-
-        .filter-btn:hover {
-            border-color: var(--accent-blue);
-            color: var(--text-primary);
-        }
-
-        .filter-btn.active {
-            background: var(--accent-blue);
-            border-color: var(--accent-blue);
-            color: white;
-        }
-
-        select.filter-btn {
-            cursor: pointer;
-        }
-
-        select.filter-btn.active {
-            background: var(--accent-blue);
-            border-color: var(--accent-blue);
-            color: white;
-        }
-
-        select.filter-btn.active option {
-            background: var(--bg-card);
-            color: var(--text-primary);
-        }
-
-        /* Member Grid */
+        /* Member grid */
         .members-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 20px;
-            margin-bottom: 20px;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+            gap: var(--s4); padding-bottom: var(--s7);
         }
+        .member-card { min-width: 0; }
+        /* One face at a time: Donate swaps the front for the donation details, with no animation */
+        .card-inner { height: 100%; }
+        .card-front, .card-back { height: 100%; min-width: 0; background: var(--panel); border-radius: var(--radius); }
+        .card-front { display: flex; flex-direction: column; gap: var(--s4); padding: var(--s4); border: 1px solid var(--line); cursor: pointer; }
+        .card-front:hover { border-color: var(--line-strong); }
+        .card-back { display: none; border: 1px solid var(--line-strong); }
+        .member-card.flipped .card-front { display: none; }
+        .member-card.flipped .card-back { display: block; }
 
-        .member-card {
-            background: transparent;
-            border: none;
-            border-radius: 12px;
-            overflow: visible;
-            cursor: pointer;
-            position: relative;
-            perspective: 1000px;
-            height: 360px;
+        .card-header { display: flex; align-items: center; gap: var(--s3); min-width: 0; }
+        .card-logo, .card-logo-placeholder {
+            flex: none; width: 64px; height: 64px; border-radius: 50%;
+            border: 1px solid var(--line); background: var(--night);
         }
-
-        .card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-
-        .member-card.flipped .card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .card-front,
-        .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            border-radius: 12px;
-            overflow: hidden;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-        }
-
-        .card-front {
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-
-        .member-card:not(.flipped) .card-front:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-blue);
-        }
-
-        .card-back {
-            transform: rotateY(180deg);
-            border-color: var(--accent-orange);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-back-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.4s;
-        }
-
-        .card-back.show-onchain .card-back-inner {
-            transform: translateX(-100%);
-        }
-
-        .card-back-side {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 20px;
-            gap: 12px;
-        }
-
-        .card-back-lightning {
-            left: 0;
-        }
-
-        .card-back-onchain {
-            left: 100%;
-        }
-
-        .card-header {
-            position: relative;
-            height: 120px;
-            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .card-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--bg-card);
-            background: var(--bg-secondary);
-        }
-
-        .card-logo-placeholder {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--bg-secondary);
-            border: 3px solid var(--bg-card);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-        }
-
-        .card-body {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .card-title {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 8px;
-        }
-
-        .card-title h3 {
-            font-size: 1.1rem;
-            color: var(--text-primary);
-            flex: 1;
-        }
-
-        .card-title .flag {
-            font-size: 1.5rem;
-        }
-
+        .card-logo { object-fit: cover; }
+        .card-logo-placeholder { display: flex; align-items: center; justify-content: center; font-size: 1.75rem; }
+        .card-logo-placeholder[hidden] { display: none; }
+        .card-title { min-width: 0; }
+        .member-card h3 { margin: 0; font: 700 var(--fs-md)/1.25 var(--font-text); letter-spacing: 0; overflow-wrap: anywhere; }
+        .card-place { margin: 2px 0 0; color: var(--muted); font-size: var(--fs-sm); }
+        .card-place .flag { margin-right: 4px; }
         .card-tagline {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin-bottom: 12px;
-            min-height: 60px;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            line-height: 1.4;
+            margin: 0; color: var(--muted); font-size: var(--fs-sm); line-height: 1.5;
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
         }
+        .card-footer { display: grid; gap: var(--s3); margin-top: auto; }
+        .card-stats { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s2) var(--s3); }
+        .card-stats:empty { display: none; }
+        .post-count { margin: 0; color: var(--muted); font-size: var(--fs-sm); }
+        .post-count b { font: 700 var(--fs-md)/1 var(--font-mono); color: var(--text); letter-spacing: -0.02em; margin-right: 4px; }
+        .badge-emojis { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; font-size: 1.05rem; line-height: 1; }
+        .card-actions { display: flex; gap: var(--s2); }
+        .card-actions .btn, .back-actions .btn { flex: 1; min-width: 0; }
+        /* .pb button resets font and colour, which would override .btn on <button> */
+        .pb button.btn { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--cyan); }
+        .pb .btn-donate { border-color: var(--amber); color: var(--amber); }
+        .pb .btn-donate:hover { background: rgba(255, 178, 63, 0.12); color: var(--amber); }
 
-        .card-footer {
-            margin-top: auto;
-        }
-
-        .post-count {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 8px;
-        }
-
-        .badge-emojis {
-            display: flex;
-            gap: 6px;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
-        }
-
-        .emoji-badge {
-            font-size: 1.05rem;
-            line-height: 1;
-            opacity: 0.9;
-            transition: transform 0.2s;
-        }
-
-        .emoji-badge:hover {
-            transform: scale(1.15);
-            opacity: 1;
-        }
-
-        .card-actions {
-            display: flex;
-            gap: 8px;
-        }
-
-        .btn {
-            flex: 1;
-            padding: 8px 12px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-align: center;
-            text-decoration: none;
+        /* Back of card: donation details */
+        .card-back-inner { display: grid; height: 100%; }
+        .card-back-side { grid-area: 1 / 1; display: flex; flex-direction: column; align-items: center; gap: var(--s3); padding: var(--s4); min-width: 0; }
+        .card-back-onchain { visibility: hidden; }
+        .card-back.show-onchain .card-back-lightning { visibility: hidden; }
+        .member-card.flipped .card-back.show-onchain .card-back-onchain { visibility: visible; }
+        .card-back h3 { align-self: stretch; text-align: center; }
+        .qr-container { background: var(--text); padding: var(--s2); line-height: 0; }
+        .qr-container:empty { width: 176px; height: 176px; }
+        .qr-container canvas { display: block; }
+        .addr-label { margin: 0; color: var(--muted); font-size: var(--fs-xs); }
+        .lightning-address-display {
+            width: 100%; min-height: var(--tap); padding: var(--s2) var(--s3);
+            background: var(--night); color: var(--text);
+            border: 1px solid var(--line); border-radius: var(--radius);
+            font: 400 var(--fs-xs)/1.4 var(--font-mono); text-align: center; overflow-wrap: anywhere;
             cursor: pointer;
-            transition: all 0.2s;
-            border: none;
         }
+        .lightning-address-display:hover { border-color: var(--cyan); }
+        .lightning-address-display.copied { border-color: var(--cyan); color: var(--cyan); }
+        .back-actions { display: flex; gap: var(--s2); width: 100%; margin-top: auto; }
 
-        .btn-primary {
-            background: var(--accent-orange);
-            color: white;
+        /* States */
+        .loading, .empty-state { grid-column: 1 / -1; padding: var(--s7) 0; color: var(--muted); }
+        .empty-state h3 { margin: 0 0 var(--s2); color: var(--text); font: 700 var(--fs-md)/1.4 var(--font-text); }
+        .empty-state p { margin: 0; }
+        .empty-state .err-detail { margin-top: var(--s2); font: 400 var(--fs-xs)/1.4 var(--font-mono); }
+
+        @media (max-width: 720px) {
+            .page-head { padding: var(--s6) 0 var(--s5); }
+            .page-head .lede { font-size: var(--fs-base); }
+            .page-head .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); }
+            .field-filter, .filters.seg { width: 100%; }
+            .filters.seg { grid-auto-flow: row; grid-template-columns: 1fr 1fr; }
+            .filters.seg button { padding: var(--s2) var(--s3); line-height: 1.2; }
+            .field-select { max-width: none; }
         }
-
-        .btn-primary:hover {
-            background: #e08416;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
-        }
-
-        .lightning-address {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            margin-top: 8px;
-            font-family: monospace;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        /* Card Back Styles */
-        .card-back h3 {
-            font-size: 1rem;
-            color: var(--accent-orange);
-            text-align: center;
-            margin: 0;
-        }
-
-        .card-back .qr-container {
-            background: white;
-            padding: 10px;
-            border-radius: 8px;
-            display: inline-block;
-        }
-
-        .card-back .qr-container canvas {
-            display: block;
-        }
-
-        .card-back .lightning-address-display {
-            font-family: monospace;
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            background: var(--bg-secondary);
-            padding: 6px 10px;
-            border-radius: 6px;
-            word-break: break-all;
-            text-align: center;
-            max-width: 100%;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: 1px solid transparent;
-        }
-
-        .card-back .lightning-address-display:hover {
-            background: rgba(88, 166, 255, 0.1);
-            border-color: var(--accent-blue);
-        }
-
-        .card-back .lightning-address-display.copied {
-            background: rgba(63, 185, 80, 0.2);
-            color: var(--accent-green);
-            border-color: var(--accent-green);
-        }
-
-        .card-back .back-actions {
-            display: flex;
-            gap: 8px;
-            width: 100%;
-            margin-top: auto;
-        }
-
-        .card-back .btn-back {
-            flex: 1;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-        }
-
-        .card-back .btn-back:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
-        }
-
-        /* Empty State */
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-secondary);
-        }
-
-        .empty-state h3 {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-        }
-
-        /* Loading */
-        .loading {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-secondary);
-        }
-
-        @media (max-width: 768px) {
-            nav .container {
-                justify-content: center;
-            }
-
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .members-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .controls-row {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .search-box {
-                width: 100%;
-            }
-
-            .filter-group {
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .filter-btn {
-                padding: 8px 6px;
-                font-size: 0.75rem;
-                flex: 1;
-                min-width: 0;
-                white-space: normal;
-                line-height: 1.2;
-                text-align: center;
-                min-height: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            select.filter-btn {
-                width: 100%;
-                white-space: nowrap;
-            }
-        }
-
     </style>
 </head>
-<body>
+<body class="pb">
     <!-- Navigation (loaded from includes/nav.html) -->
     <div id="site-nav"></div>
 
-    <div class="container">
-        <header>
-            <h1>CBAF Members</h1>
-            <p class="subtitle">Support Bitcoin circular economy projects across Africa</p>
+    <main id="main">
+        <div class="wrap">
+            <header class="page-head">
+                <h1>CBAF members</h1>
+                <p class="lede">Find a Bitcoin circular economy project in Africa and support it directly.</p>
+                <ul class="facts">
+                    <li><b class="num" id="total-count">–</b><span>projects</span></li>
+                    <li><b class="num" id="active-count">–</b><span>active on PoWBoT</span></li>
+                    <li><b class="num" id="country-count">–</b><span>countries</span></li>
+                </ul>
+            </header>
 
-            <div class="stats-summary">
-                <div class="stat-pill">
-                    <span>Total Projects:</span>
-                    <strong id="total-count">-</strong>
+            <div class="controls">
+                <div class="controls-row">
+                    <div class="field field-search">
+                        <label class="field-label" for="search">Search projects</label>
+                        <input class="input" type="search" id="search" placeholder="Name, country or city" autocomplete="off">
+                    </div>
                 </div>
-                <div class="stat-pill">
-                    <span>Active on PoWBoT:</span>
-                    <strong id="active-count">-</strong>
-                </div>
-                <div class="stat-pill">
-                    <span>Countries:</span>
-                    <strong id="country-count">-</strong>
+                <div class="controls-row">
+                    <div class="field field-filter">
+                        <span class="field-label" id="filter-label">Show</span>
+                        <div class="seg filters" role="group" aria-labelledby="filter-label">
+                            <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All projects</button>
+                            <button type="button" class="filter-btn" data-filter="active" aria-pressed="false">Active on PoWBoT</button>
+                            <button type="button" class="filter-btn" data-filter="epoch6" aria-pressed="false">Active this epoch</button>
+                            <button type="button" class="filter-btn" data-filter="top" aria-pressed="false">Top performers</button>
+                        </div>
+                    </div>
+                    <div class="field field-select">
+                        <label class="field-label" for="country-filter">Country</label>
+                        <div class="select-wrap">
+                            <select id="country-filter" class="select">
+                                <option value="">All countries</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field field-select">
+                        <label class="field-label" for="sort">Sort by</label>
+                        <div class="select-wrap">
+                            <select id="sort" class="select">
+                                <option value="activity">Most active</option>
+                                <option value="name">Name, A–Z</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </header>
 
-        <div class="controls">
-            <div class="controls-row">
-                <div class="search-box">
-                    <input type="text" id="search" placeholder="Search projects by name, country, or city...">
-                </div>
-            </div>
-            <div class="controls-row" style="margin-top: 12px;">
-                <div class="filter-group">
-                    <button class="filter-btn active" data-filter="all">All Projects</button>
-                    <button class="filter-btn" data-filter="active">Active on PoWBoT</button>
-                    <button class="filter-btn" data-filter="epoch6">Active this Epoch</button>
-                    <button class="filter-btn" data-filter="top">Top Performers</button>
-                </div>
-                <select id="country-filter" class="filter-btn">
-                    <option value="">All Countries</option>
-                </select>
-                <select id="sort" class="filter-btn">
-                    <option value="activity">Sort: Most Active</option>
-                    <option value="name">Sort: Name A-Z</option>
-                </select>
+            <h2 class="visually-hidden">Projects</h2>
+            <div class="members-grid" id="members-grid">
+                <p class="loading">Loading projects…</p>
             </div>
         </div>
+    </main>
 
-        <div class="members-grid" id="members-grid">
-            <div class="loading">Loading members...</div>
-        </div>
-
-        <!-- Footer (loaded from includes/footer.html) -->
-        <div id="site-footer"></div>
-    </div>
-
+    <!-- Footer (loaded from includes/footer.html) -->
+    <div id="site-footer"></div>
     <script>
         let allMembers = [];
         let allStats = {};
@@ -647,10 +256,10 @@
             .catch(err => {
                 console.error('Error loading members:', err);
                 document.getElementById('members-grid').innerHTML = `
-                    <div class="empty-state">
-                        <h3>Error loading members</h3>
-                        <p>Please try refreshing the page</p>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;">${err.message}</p>
+                    <div class="empty-state" role="alert">
+                        <h3>The directory did not load</h3>
+                        <p>Refresh the page to try again.</p>
+                        <p class="err-detail">${escapeHtml(err.message)}</p>
                     </div>
                 `;
             });
@@ -688,6 +297,7 @@
                     if (btn.dataset.filter === filterParam) {
                         btn.classList.add('active');
                     }
+                    btn.setAttribute('aria-pressed', btn.classList.contains('active'));
                 });
             }
         }
@@ -1023,6 +633,30 @@
             return badges;
         }
 
+        // Accessible names for the badge emojis. Wording follows the badges on profile.html.
+        const BADGE_LABELS = {
+            '🥇': 'Top performer: ranked first in epoch 4 or 5',
+            '🥈': 'Second place in epoch 4 or 5',
+            '🥉': 'Third place in epoch 4 or 5',
+            '🏅': 'Top 10 in epoch 4 or 5',
+            '💎': 'Diamond status: 500 or more posts',
+            '⭐': 'Rising star: 100 or more posts',
+            '🚀': 'On fire: 50 or more posts',
+            '🌱': 'First steps: 10 or more posts',
+            '👋': 'First post',
+            '🌍': 'Network connector: 25 or more merchants',
+            '🏪': 'Merchant champion: 15 or more merchants',
+            '🤝': 'Community builder: 5 or more merchants',
+            '🎯': 'All-rounder: active on X and Nostr',
+            '💪': '21-day posting streak',
+            '⚡': '14-day posting streak',
+            '🔥': '7-day posting streak',
+            '👑': 'Founding member: took part in epoch 1',
+            '🏆': 'Early adopter: took part in epoch 2 or 3',
+            '🧪': 'Beta tester: helped test PoWBoT',
+            '🛡️': 'Multi-epoch veteran'
+        };
+
         function renderMembers() {
             const grid = document.getElementById('members-grid');
             const members = filterMembers();
@@ -1030,8 +664,8 @@
             if (members.length === 0) {
                 grid.innerHTML = `
                     <div class="empty-state">
-                        <h3>No projects found</h3>
-                        <p>Try adjusting your filters or search query</p>
+                        <h3>No projects match</h3>
+                        <p>Change the filters or clear the search.</p>
                     </div>
                 `;
                 return;
@@ -1042,94 +676,86 @@
                 const logoUrl = member.logo_url || '';
                 const emoji = member.flag || member.name.charAt(0);
                 const cardId = `card-${index}`;
+                const name = escapeHtml(member.name);
+                const country = escapeHtml(member.country || '');
+                const place = [member.city, member.country].filter(Boolean).map(escapeHtml).join(', ');
 
                 return `
-                    <div class="member-card" id="${cardId}" data-member-id="${member.id}">
+                    <article class="member-card" id="${cardId}" data-member-id="${member.id}" aria-labelledby="name-${cardId}">
                         <div class="card-inner">
                             <!-- Front of Card -->
                             <div class="card-front" onclick="viewProfile('${member.id}', event)">
                                 <div class="card-header">
                                     ${logoUrl ?
-                                        `<img src="${logoUrl}" alt="${escapeHtml(member.name)}" class="card-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                                         <div class="card-logo-placeholder" style="display:none;">${emoji}</div>`
+                                        `<img src="${logoUrl}" alt="" class="card-logo" width="64" height="64" loading="lazy" decoding="async" onerror="this.hidden = true; this.nextElementSibling.hidden = false;">
+                                         <div class="card-logo-placeholder" aria-hidden="true" hidden>${emoji}</div>`
                                         :
-                                        `<div class="card-logo-placeholder">${emoji}</div>`
+                                        `<div class="card-logo-placeholder" aria-hidden="true">${emoji}</div>`
                                     }
-                                </div>
-                                <div class="card-body">
                                     <div class="card-title">
-                                        <h3>${escapeHtml(member.name)}</h3>
-                                        <span class="flag">${member.flag || ''}</span>
+                                        <h3 id="name-${cardId}">${name}</h3>
+                                        <p class="card-place">${member.flag ? `<span class="flag" role="img" aria-label="${country}">${member.flag}</span>` : ''}${place}</p>
                                     </div>
-                                    <div class="card-tagline">${(() => {
-                                        const tagline = member.tagline || 'Bitcoin circular economy project';
-                                        const escaped = escapeHtml(tagline);
-                                        return escaped.endsWith('.') || escaped.endsWith('!') || escaped.endsWith('?') ? escaped : escaped + '.';
+                                </div>
+                                <p class="card-tagline">${(() => {
+                                    const tagline = member.tagline || 'Bitcoin circular economy project';
+                                    const escaped = escapeHtml(tagline);
+                                    return escaped.endsWith('.') || escaped.endsWith('!') || escaped.endsWith('?') ? escaped : escaped + '.';
+                                })()}</p>
+
+                                <div class="card-footer">
+                                    <div class="card-stats">${videoCount > 0 ? `<p class="post-count"><b class="num">${videoCount}</b>${videoCount === 1 ? 'post' : 'posts'}</p>` : ''}${(() => {
+                                        const badgeEmojis = getMemberBadgeEmojis(member);
+                                        if (badgeEmojis.length > 0) {
+                                            return `<p class="badge-emojis"><span class="visually-hidden">Badges: </span>${badgeEmojis.map(emoji => {
+                                                const label = BADGE_LABELS[emoji] || 'Badge';
+                                                return `<span class="emoji-badge" role="img" aria-label="${label}" title="${label}">${emoji}</span>`;
+                                            }).join('')}</p>`;
+                                        }
+                                        return '';
                                     })()}</div>
 
-                                    <div class="card-footer">
-                                        ${videoCount > 0 ? `
-                                            <div class="post-count">
-                                                ${videoCount} ${videoCount === 1 ? 'post' : 'posts'}
-                                            </div>
+                                    <div class="card-actions">
+                                        ${member.lightning_address ? `
+                                        <button type="button" class="btn btn-donate" onclick="event.stopPropagation(); flipCard('${cardId}', '${escapeHtml(member.lightning_address)}', '${escapeHtml(member.onchain_address || '')}')">Donate<span class="visually-hidden"> to ${name}</span></button>
                                         ` : ''}
-
-                                        ${(() => {
-                                            const badgeEmojis = getMemberBadgeEmojis(member);
-                                            if (badgeEmojis.length > 0) {
-                                                return `<div class="badge-emojis">${badgeEmojis.map(emoji => `<span class="emoji-badge">${emoji}</span>`).join('')}</div>`;
-                                            }
-                                            return '';
-                                        })()}
-
-                                        <div class="card-actions">
-                                            ${member.lightning_address ? `
-                                            <button class="btn btn-primary" onclick="event.stopPropagation(); flipCard('${cardId}', '${escapeHtml(member.lightning_address)}', '${escapeHtml(member.onchain_address || '')}')">
-                                                Donate
-                                            </button>
-                                            ` : ''}
-                                            <a href="profile.html?id=${member.id}" class="btn btn-secondary" onclick="event.stopPropagation();">
-                                                View Profile
-                                            </a>
-                                        </div>
+                                        <a href="profile.html?id=${member.id}" class="btn" onclick="event.stopPropagation();">View profile<span class="visually-hidden"> of ${name}</span></a>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Back of Card -->
+                            <!-- Back of Card: donation details -->
                             <div class="card-back" id="back-${cardId}">
                                 <div class="card-back-inner">
                                     <!-- Lightning Side -->
-                                    <div class="card-back-side card-back-lightning">
-                                        <h3>Donate to ${escapeHtml(member.name)}</h3>
+                                    <section class="card-back-side card-back-lightning" aria-labelledby="ln-title-${cardId}">
+                                        <h3 id="ln-title-${cardId}">Donate to ${name} over Lightning</h3>
                                         <div class="qr-container" id="qr-lightning-${cardId}"></div>
-                                        <div class="lightning-address-display" id="address-lightning-${cardId}" onclick="event.stopPropagation(); copyAddressWithFeedback('${escapeHtml(member.lightning_address)}', 'address-lightning-${cardId}')" title="Click to copy">${escapeHtml(member.lightning_address || 'No Lightning address available')}</div>
+                                        <p class="addr-label">Lightning address. Select it to copy.</p>
+                                        <button type="button" class="lightning-address-display" id="address-lightning-${cardId}" onclick="event.stopPropagation(); copyAddressWithFeedback('${escapeHtml(member.lightning_address)}', 'address-lightning-${cardId}')" title="Copy address" aria-live="polite">${escapeHtml(member.lightning_address || 'No Lightning address available')}</button>
                                         <div class="back-actions">
-                                            <button class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">
-                                                ← Back
-                                            </button>
-                                            ${member.onchain_address ? `<button class="btn btn-back" onclick="event.stopPropagation(); switchPaymentMethod('${cardId}')">Switch to Onchain</button>` : ''}
+                                            <button type="button" class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">Back<span class="visually-hidden"> to ${name}</span></button>
+                                            ${member.onchain_address ? `<button type="button" class="btn btn-back" onclick="event.stopPropagation(); switchPaymentMethod('${cardId}')">Use onchain</button>` : ''}
                                         </div>
-                                    </div>
+                                    </section>
 
                                     <!-- Onchain Side -->
                                     ${member.onchain_address ? `
-                                    <div class="card-back-side card-back-onchain">
-                                        <h3>Donate to ${escapeHtml(member.name)}</h3>
+                                    <section class="card-back-side card-back-onchain" aria-labelledby="oc-title-${cardId}">
+                                        <h3 id="oc-title-${cardId}">Donate to ${name} onchain</h3>
                                         <div class="qr-container" id="qr-onchain-${cardId}"></div>
-                                        <div class="lightning-address-display" id="address-onchain-${cardId}" onclick="event.stopPropagation(); copyAddressWithFeedback('${escapeHtml(member.onchain_address)}', 'address-onchain-${cardId}')" title="Click to copy">${escapeHtml(member.onchain_address)}</div>
+                                        <p class="addr-label">Bitcoin address. Select it to copy.</p>
+                                        <button type="button" class="lightning-address-display" id="address-onchain-${cardId}" onclick="event.stopPropagation(); copyAddressWithFeedback('${escapeHtml(member.onchain_address)}', 'address-onchain-${cardId}')" title="Copy address" aria-live="polite">${escapeHtml(member.onchain_address)}</button>
                                         <div class="back-actions">
-                                            <button class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">
-                                                ← Back
-                                            </button>
-                                            <button class="btn btn-back" onclick="event.stopPropagation(); switchPaymentMethod('${cardId}')">Switch to Lightning</button>
+                                            <button type="button" class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">Back<span class="visually-hidden"> to ${name}</span></button>
+                                            <button type="button" class="btn btn-back" onclick="event.stopPropagation(); switchPaymentMethod('${cardId}')">Use Lightning</button>
                                         </div>
-                                    </div>
+                                    </section>
                                     ` : ''}
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
                 `;
             }).join('');
         }
@@ -1225,8 +851,9 @@
         // Event listeners
         document.querySelectorAll('[data-filter]').forEach(btn => {
             btn.addEventListener('click', () => {
-                document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('[data-filter]').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
                 btn.classList.add('active');
+                btn.setAttribute('aria-pressed', 'true');
                 currentFilter = btn.dataset.filter;
                 renderMembers();
             });

@@ -58,7 +58,10 @@
     --t-ui: 200ms;
 }
 
-/* ----------------------------------------------------------------- Base -- */
+/* ----------------------------------------------------------------- Base --
+ * Element rules use :where() so they carry no specificity: any component
+ * class (.btn, .tag, .section h2) overrides them without a fight.
+ */
 html:has(body.pb) { color-scheme: dark; background: var(--night); }
 .pb, .pb *, .pb *::before, .pb *::after { box-sizing: border-box; }
 /* Keep focused elements and anchor targets clear of the sticky nav */
@@ -73,12 +76,12 @@ html:has(body.pb) { color-scheme: dark; background: var(--night); }
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
 }
-.pb h1, .pb h2, .pb h3 { font-family: var(--font-mono); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; text-wrap: balance; }
-.pb p { text-wrap: pretty; }
-.pb a { color: var(--cyan); text-underline-offset: 3px; }
-.pb a:hover { color: var(--text); }
-.pb img { max-width: 100%; height: auto; }
-.pb button { font: inherit; color: inherit; touch-action: manipulation; }
+:where(.pb) :where(h1, h2, h3) { font-family: var(--font-mono); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; text-wrap: balance; }
+:where(.pb) p { text-wrap: pretty; }
+:where(.pb) a { color: var(--cyan); text-underline-offset: 3px; }
+:where(.pb) a:hover { color: var(--text); }
+:where(.pb) img { max-width: 100%; height: auto; }
+:where(.pb) button { font: inherit; color: inherit; touch-action: manipulation; }
 .pb ::selection { background: var(--amber); color: var(--night); }
 
 /* One focus style everywhere. Amber surfaces switch the ring to night. */
