@@ -314,7 +314,7 @@
             // The title stays put; one short line says what the current view ranks,
             // so switching views never changes the board's height or columns.
             if (boardView === 'recent') {
-                note.textContent = `Posts approved in the last ${ACTIVITY_WINDOW_HOURS} hours. Level projects: first to get there ranks higher.`;
+                note.textContent = `Posts approved in the last ${ACTIVITY_WINDOW_HOURS} hours.`;
                 renderRecentBoard(stats, body, foot);
             } else if (boardView === 'posts') {
                 note.textContent = `Posts approved this epoch.`;
@@ -536,7 +536,7 @@
 
             body.innerHTML = `
                 <table class="lb lb-fixed" id="lb-table">
-                    <caption class="visually-hidden">Projects ranked by posts approved in the last ${ACTIVITY_WINDOW_HOURS} hours. Ties go to the project that got there first. Open a project to see those posts.</caption>
+                    <caption class="visually-hidden">Projects ranked by posts approved in the last ${ACTIVITY_WINDOW_HOURS} hours. Open a project to see those posts.</caption>
                     <thead><tr>
                         <th scope="col" class="c-rank">Rank</th>
                         <th scope="col">Project</th>
