@@ -62,7 +62,7 @@
 
         .pulse { margin: var(--s5) 0 0; color: var(--muted); }
         .pulse strong { color: var(--text); }
-        .cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s7); }
+        .cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s7); }
         .cols .section { border-bottom: 0; padding: 0; }
         /* One line per merchant in both views, so switching never changes the
            list's height. A long name is cut short on screen only; the link
@@ -77,7 +77,7 @@
             .mascot { width: 84px; }
             .hero-meta { grid-column: 1 / -1; }
             .summary { font-size: var(--fs-base); }
-            .cols { grid-template-columns: 1fr; gap: var(--s7); }
+            .cols { grid-template-columns: minmax(0, 1fr); gap: var(--s7); }
             .board-note { min-height: 3.1em; }
             #latest-list li > a { flex-direction: column; align-items: flex-start; gap: 2px; padding: var(--s3) 0; }
         }
