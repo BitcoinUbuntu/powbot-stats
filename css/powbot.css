@@ -343,11 +343,13 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .bars i.today { background: var(--amber); opacity: 1; }
 .bars-scale { position: absolute; left: 0; top: 0; font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--muted); background: var(--night); padding: 0 6px 2px 0; }
 .bars-axis { display: flex; justify-content: space-between; padding-top: var(--s2); font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--muted); }
-.data-table { margin-top: var(--s4); }
-.data-table summary { display: inline-flex; align-items: center; min-height: var(--tap); color: var(--phosphor); cursor: pointer; }
-.data-table table { border-collapse: collapse; margin-top: var(--s2); font-size: var(--fs-sm); }
-.data-table th, .data-table td { padding: 4px var(--s4) 4px 0; text-align: left; border-bottom: 1px solid var(--line); }
-.data-table td { font-family: var(--font-mono); }
+/* Readout above a bar chart: one line, updated by hover, tap or arrow keys
+   (includes/inject.js). Replaces per-bar tooltips, which phones can't show. */
+.bars-readout { margin: 0 0 var(--s2); min-height: 1.5em; font: 400 var(--fs-sm)/1.5 var(--font-mono); color: var(--text); }
+.bars { cursor: crosshair; touch-action: pan-y; }
+.bars i.sel { background: var(--heading); opacity: 1; }
+.bars i.today.sel { background: var(--amber-hi); }
+.bars:focus-visible { outline-offset: 4px; }
 
 /* ------------------------------------------------ Horizontal bar rows -- */
 .hbars { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); }

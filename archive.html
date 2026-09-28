@@ -236,24 +236,18 @@
 
             const max = Math.max(1, ...displayData.map(d => d.project_count || 0));
             const peak = displayData.find(d => (d.project_count || 0) === max);
-            const bars = displayData.map(d => `<i style="height:${(d.project_count || 0) / max * 100}%" title="${formatDay(d.date)}: ${d.project_count || 0} approved"></i>`).join('');
-            const rows = displayData.map(d => `<tr><th scope="row">${formatDate(d.date)}</th><td>${d.project_count || 0}</td><td>${formatNumber((d.project_count || 0) + (d.merchant_count || 0) + (d.reviewer_count || 0))}</td></tr>`).join('');
+            const label = d => `${formatDay(d.date)}: ${formatNumber(d.project_count || 0)} ${(d.project_count || 0) === 1 ? 'post' : 'posts'} approved`;
+            const bars = displayData.map(d => `<i style="height:${(d.project_count || 0) / max * 100}%" data-label="${label(d)}"></i>`).join('');
             const first = displayData[0].date;
             const last = displayData[displayData.length - 1].date;
 
             return `
-                <div class="bars" role="img" aria-label="Approved posts per day over ${displayData.length} days, ${formatDay(first)} to ${formatDate(last)}. Peak ${max} on ${formatDate(peak?.date)}.">
+                <p class="bars-readout" aria-live="polite">Busiest day, ${label(peak)}</p>
+                <div class="bars" tabindex="0" role="group" aria-label="Approved posts per day over ${displayData.length} days, ${formatDay(first)} to ${formatDate(last)}. Peak ${max} on ${formatDate(peak?.date)}. Use the left and right arrow keys to read each day.">
                     <span class="bars-scale" aria-hidden="true">${max}</span>
                     ${bars}
                 </div>
-                <div class="bars-axis" aria-hidden="true"><span>${formatDay(first)}</span><span>${formatDay(last)}</span></div>
-                <details class="data-table">
-                    <summary>Show the numbers</summary>
-                    <table>
-                        <thead><tr><th scope="col">Day (UTC)</th><th scope="col">Approved posts</th><th scope="col">Payments</th></tr></thead>
-                        <tbody>${rows}</tbody>
-                    </table>
-                </details>`;
+                <div class="bars-axis" aria-hidden="true"><span>${formatDay(first)}</span><span>${formatDay(last)}</span></div>`;
         }
 
         // Lightning providers by number of payments (counts only)
@@ -343,7 +337,7 @@
                 panels: [
                     { id: 'e4-projects', title: 'Projects by approved posts', html: '<div id="top-projects"></div>' },
                     { id: 'e4-merchants', title: 'Merchants by approved posts', html: '<div id="top-merchants"></div>' },
-                    { id: 'e4-daily', title: 'Approved posts per day', note: 'One bar per UTC day with activity.', html: renderDaily(e4.daily), wide: true },
+                    { id: 'e4-daily', title: 'Approved posts per day', note: 'One bar per UTC day with activity. Hover, tap or use the arrow keys to read a day.', html: renderDaily(e4.daily), wide: true },
                     { id: 'e4-countries', title: 'Countries', note: 'Open one to see its projects in the directory.', html: countriesHtml(e4.countries, true) },
                     { id: 'e4-lightning', title: 'Lightning providers', note: 'Payments by the Lightning service that received them.', html: renderLightning(e4.lightning_providers || []) }
                 ]

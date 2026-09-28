@@ -770,25 +770,20 @@
             }
             const max = Math.max(1, ...daily.map(d => d.approved || 0));
             const peak = daily.find(d => d.approved === max);
-            const bars = daily.map((d, i) => `<i class="${i === daily.length - 1 ? 'today' : ''}" style="height:${(d.approved || 0) / max * 100}%" title="${formatDay(d.date)}: ${d.approved || 0} approved"></i>`).join('');
-            const rows = daily.slice().reverse().map(d => `<tr><th scope="row">${formatDay(d.date)}</th><td>${d.approved || 0}</td><td>${d.rejected || 0}</td></tr>`).join('');
+            const label = d => `${formatDay(d.date)}: ${plural(d.approved || 0, 'post', 'posts')} approved`;
+            const bars = daily.map((d, i) => `<i class="${i === daily.length - 1 ? 'today' : ''}" style="height:${(d.approved || 0) / max * 100}%" data-label="${attrSafe(label(d))}"></i>`).join('');
+            const today = daily[daily.length - 1];
 
             return `
                 <section class="section" aria-labelledby="daily-title">
                     <h2 id="daily-title">Approved posts per day</h2>
-                    <p class="section-note">One bar per UTC day since ${escapeHtml(EPOCH.name)} opened. Today is amber.</p>
-                    <div class="bars" role="img" aria-label="Approved posts per day over ${daily.length} days. Peak ${max} on ${formatDay(peak?.date)}; today ${daily[daily.length - 1].approved || 0} so far.">
+                    <p class="section-note">One bar per UTC day since ${escapeHtml(EPOCH.name)} opened. Today is amber. Hover, tap or use the arrow keys to read a day.</p>
+                    <p class="bars-readout" aria-live="polite">Today, ${escapeHtml(label(today))}</p>
+                    <div class="bars" tabindex="0" role="group" aria-label="Approved posts per day over ${daily.length} days. Peak ${max} on ${formatDay(peak?.date)}. Use the left and right arrow keys to read each day.">
                         <span class="bars-scale" aria-hidden="true">${max}</span>
                         ${bars}
                     </div>
                     <div class="bars-axis" aria-hidden="true"><span>${formatDay(daily[0].date)}</span><span>Today</span></div>
-                    <details class="data-table">
-                        <summary>Show the numbers</summary>
-                        <table>
-                            <thead><tr><th scope="col">Day (UTC)</th><th scope="col">Approved</th><th scope="col">Rejected</th></tr></thead>
-                            <tbody>${rows}</tbody>
-                        </table>
-                    </details>
                 </section>`;
         }
 

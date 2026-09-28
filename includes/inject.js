@@ -193,6 +193,75 @@
         if (Math.abs(moved) > 1) window.scrollBy({ top: moved, left: 0, behavior: 'instant' });
     });
 
+    /**
+     * Bar charts (.bars) read out one day at a time in the line above them
+     * (.bars-readout): hover or drag, tap, or focus the chart and use the arrow
+     * keys, Home and End. Each bar carries its text in data-label. The day is
+     * picked by horizontal position, so thin bars on a phone are easy to hit.
+     * Delegated from the document: charts are drawn after the data loads.
+     */
+    function barsParts(chart) {
+        const bars = Array.from(chart.querySelectorAll('i[data-label]'));
+        const readout = chart.previousElementSibling && chart.previousElementSibling.classList.contains('bars-readout')
+            ? chart.previousElementSibling : null;
+        if (readout && readout.dataset.initial === undefined) readout.dataset.initial = readout.textContent;
+        return { bars, readout };
+    }
+
+    function selectBar(chart, index) {
+        const { bars, readout } = barsParts(chart);
+        if (!bars.length) return;
+        const i = Math.max(0, Math.min(bars.length - 1, index));
+        bars.forEach((bar, n) => bar.classList.toggle('sel', n === i));
+        chart.dataset.sel = String(i);
+        if (readout) readout.textContent = bars[i].dataset.label;
+    }
+
+    function clearBar(chart) {
+        const { bars, readout } = barsParts(chart);
+        bars.forEach(bar => bar.classList.remove('sel'));
+        delete chart.dataset.sel;
+        if (readout) readout.textContent = readout.dataset.initial;
+    }
+
+    function barAt(chart, clientX) {
+        const { bars } = barsParts(chart);
+        const box = chart.getBoundingClientRect();
+        return Math.floor((clientX - box.left) / box.width * bars.length);
+    }
+
+    document.addEventListener('pointermove', (event) => {
+        const chart = event.target.closest && event.target.closest('.bars');
+        if (chart) selectBar(chart, barAt(chart, event.clientX));
+    });
+    document.addEventListener('pointerdown', (event) => {
+        const chart = event.target.closest && event.target.closest('.bars');
+        if (chart) selectBar(chart, barAt(chart, event.clientX));
+        // Tapping anywhere else puts other charts back to their first line
+        document.querySelectorAll('.bars[data-sel]').forEach(other => { if (other !== chart) clearBar(other); });
+    });
+    document.addEventListener('pointerout', (event) => {
+        // A finger lifting also counts as "leaving": keep a tapped day on screen
+        if (event.pointerType === 'touch') return;
+        const chart = event.target.closest && event.target.closest('.bars');
+        // Only when the pointer really leaves the chart, and not while it has keyboard focus
+        if (chart && !chart.contains(event.relatedTarget) && document.activeElement !== chart) clearBar(chart);
+    });
+    document.addEventListener('keydown', (event) => {
+        const chart = event.target.closest && event.target.closest('.bars');
+        if (!chart) return;
+        const { bars } = barsParts(chart);
+        const current = chart.dataset.sel !== undefined ? Number(chart.dataset.sel) : bars.length - 1;
+        const next = { ArrowLeft: current - 1, ArrowRight: current + 1, Home: 0, End: bars.length - 1 }[event.key];
+        if (next === undefined) return;
+        event.preventDefault();
+        selectBar(chart, next);
+    });
+    document.addEventListener('focusout', (event) => {
+        const chart = event.target.closest && event.target.closest('.bars');
+        if (chart) clearBar(chart);
+    });
+
     // Export support URL for use in other scripts
     window.SUPPORT_URL = SUPPORT_URL;
 
