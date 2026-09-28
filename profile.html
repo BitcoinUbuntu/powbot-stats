@@ -115,7 +115,9 @@
         .page-error h1 { margin: 0 0 var(--s3); font-size: var(--fs-xl); }
         .page-error p { margin: 0; max-width: 60ch; }
         .page-error .muted { margin-top: var(--s2); }
-        .profile-footnote { margin: 0; padding: var(--s5) 0 var(--s6); border-top: 1px solid var(--line); color: var(--muted); font-size: var(--fs-sm); max-width: 70ch; }
+        /* The rule runs the full width like the sections above; only the text is kept to a readable line length */
+        .profile-footnote { padding: var(--s5) 0 var(--s6); border-top: 1px solid var(--line); color: var(--muted); font-size: var(--fs-sm); }
+        .profile-footnote p { margin: 0; max-width: 70ch; }
 
         @media (max-width: 720px) {
             .profile-head .wrap { grid-template-columns: 72px minmax(0, 1fr); gap: var(--s4); align-items: start; padding-top: var(--s6); padding-bottom: var(--s5); }
@@ -136,9 +138,9 @@
         </div>
 
         <div class="wrap">
-            <p class="profile-footnote" id="profile-footnote" hidden>
+            <div class="profile-footnote" id="profile-footnote" hidden><p>
                 Spot something wrong? Tell the <a href="https://t.me/bitcoinubuntu" target="_blank" rel="noopener" id="contact-admin-link">administrators on Telegram</a>. Registered project leads can <a href="#" id="edit-profile-link">sign in</a> to request changes.
-            </p>
+            </p></div>
         </div>
     </main>
 
