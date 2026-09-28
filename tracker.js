@@ -470,9 +470,12 @@ function renderSubmissionCard(submission) {
     }) + ' UTC';
     const isoStr = isNaN(timestamp) ? '' : timestamp.toISOString();
 
-    // Merchant tip status, as text
-    const tip = submission.merchant_tip_status === '✅' ? { cls: 'status-approved', label: 'Tip sent' } :
-                submission.merchant_tip_status === '❌' ? { cls: 'status-rejected', label: 'Tip failed' } : null;
+    // The merchant's Lightning address status, as text. The export still calls
+    // it merchant_tip_status, but merchants were only tipped per post up to
+    // Epoch 5; from Epoch 6 it records whether the address checked out.
+    const tipped = submission.epoch != null && submission.epoch <= 5;
+    const tip = submission.merchant_tip_status === '✅' ? { cls: 'status-approved', label: tipped ? 'Tip sent' : 'Address verified' } :
+                submission.merchant_tip_status === '❌' ? { cls: 'status-rejected', label: tipped ? 'Tip failed' : 'Address check failed' } : null;
 
     // Flag carries the country as its name; the country is also written out
     const country = extractCountry(submission.project_name);
