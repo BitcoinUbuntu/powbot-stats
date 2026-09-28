@@ -133,14 +133,25 @@
         .badge-note { color: var(--muted); font-size: var(--fs-sm); }
 
         /* ----------------------------------------------------------- Gallery -- */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: var(--s3); margin: 0; padding: 0; list-style: none; }
-        .gallery-grid a { display: block; border-radius: var(--radius); }
-        .gallery-grid img {
-            display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+        /* A film strip: every photo whole, at one height, so portrait and
+           landscape shots both show uncropped. It drifts slowly and loops
+           (gallery script below); drag, swipe or scroll it sideways. */
+        .gallery-strip { --gal-h: 300px; position: relative; overflow: hidden; touch-action: pan-y; cursor: grab; }
+        .gallery-strip.dragging { cursor: grabbing; }
+        .gallery-track { display: flex; gap: var(--s3); width: max-content; }
+        .gallery-set { display: flex; gap: var(--s3); margin: 0; padding: 0; list-style: none; }
+        .gallery-set li { flex: none; }
+        .gallery-set a { display: block; height: var(--gal-h); border-radius: var(--radius); }
+        .gallery-set a:focus-visible { outline-offset: -3px; }
+        .gallery-set img {
+            display: block; height: 100%; width: auto; min-width: calc(var(--gal-h) * 0.5); max-width: none;
             background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+            user-select: none; -webkit-user-drag: none;
             transition: opacity var(--t-fast) ease;
         }
-        .gallery-grid a:hover img { opacity: 0.85; }
+        .gallery-set a:hover img { opacity: 0.85; }
+        .gallery-strip.dragging a { pointer-events: none; }
+        .gallery-toggle[hidden] { display: none; }
 
         /* -------------------------------------------------- States and notes -- */
         .loading { margin: 0; padding: var(--s7) 0; color: var(--muted); }
@@ -155,7 +166,7 @@
             .hero-logo, .hero-logo-placeholder { width: 72px; height: 72px; font-size: var(--fs-xl); }
             .intro { grid-template-columns: minmax(0, 1fr); }
             .charts-grid { grid-template-columns: 1fr; }
-            .gallery-grid { grid-template-columns: 1fr 1fr; gap: var(--s2); }
+            .gallery-strip { --gal-h: 200px; }
             .section { padding: var(--s6) 0; }
         }
     </style>
@@ -677,32 +688,172 @@
                 return;
             }
 
-            // Build gallery HTML from array. A plain grid: each photo is a link
-            // that opens the full image in a new tab, as a click on the old
-            // carousel did, and now works from the keyboard too.
+            // A strip of photos, each a link that opens the full image in a new
+            // tab. initGallery() adds the drift, the loop and the controls.
+            const count = galleryImages.length;
             let galleryHtml = `
                 <section class="section" aria-labelledby="gallery-title">
-                    <h2 id="gallery-title">Gallery</h2>
-                    <ul class="gallery-grid">
+                    <div class="section-head">
+                        <h2 id="gallery-title">Gallery</h2>
+                        <button type="button" class="btn gallery-toggle" id="gallery-toggle" hidden>Pause<span class="visually-hidden"> gallery</span></button>
+                    </div>
+                    <div class="gallery-strip" id="gallery-strip">
+                        <div class="gallery-track" id="gallery-track">
+                            <ul class="gallery-set">
             `;
 
-            galleryImages.forEach(imgPath => {
+            galleryImages.forEach((imgPath, i) => {
                 galleryHtml += `
-                        <li>
-                            <a href="${imgPath}" target="_blank" rel="noopener">
-                                <img src="${imgPath}" alt="${escapeHtml(member.name)} photo" data-url="${imgPath}" width="400" height="300" loading="lazy" decoding="async">
-                                <span class="visually-hidden">(opens full size in a new tab)</span>
-                            </a>
-                        </li>
+                                <li>
+                                    <a href="${imgPath}" target="_blank" rel="noopener">
+                                        <img src="${imgPath}" alt="${escapeHtml(member.name)}, photo ${i + 1} of ${count}" draggable="false" decoding="async">
+                                        <span class="visually-hidden">(opens full size in a new tab)</span>
+                                    </a>
+                                </li>
                 `;
             });
 
             galleryHtml += `
-                    </ul>
+                            </ul>
+                        </div>
+                    </div>
                 </section>
             `;
 
             placeholder.outerHTML = galleryHtml;
+            initGallery();
+        }
+
+        /**
+         * The gallery strip drifts slowly to the left and loops: a copy of the
+         * photos follows the originals, and the position wraps by one set's
+         * width. The copy is inert, so keyboard and screen reader users meet
+         * each photo once.
+         *
+         * It stops while hovered, dragged, holding keyboard focus, off screen or
+         * in a background tab, and whenever Pause is on. Pause is on from the
+         * start when the reader prefers reduced motion. Photos that all fit on
+         * screen stay still, with no copy and no button.
+         */
+        function initGallery() {
+            const strip = document.getElementById('gallery-strip');
+            const track = document.getElementById('gallery-track');
+            const set = track?.querySelector('.gallery-set');
+            const toggle = document.getElementById('gallery-toggle');
+            if (!strip || !set || !toggle) return;
+
+            const SPEED = 10; // pixels per second
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            let copy = null, width = 0, pos = 0;
+            let paused = reduceMotion.matches, hovered = false, focused = false, onScreen = true;
+            let drag = null, suppressClick = false, frame = 0, last = 0;
+
+            const wrap = () => { if (copy && width > 0) pos = ((pos % width) + width) % width; };
+            const draw = () => { track.style.transform = `translate3d(${-pos}px, 0, 0)`; };
+            const running = () => copy && !paused && !hovered && !focused && !drag && onScreen && !document.hidden;
+
+            function step(now) {
+                pos += SPEED * Math.min(now - last, 100) / 1000;
+                last = now;
+                wrap(); draw();
+                frame = requestAnimationFrame(step);
+            }
+            function update() {
+                if (running() && !frame) { last = performance.now(); frame = requestAnimationFrame(step); }
+                if (!running() && frame) { cancelAnimationFrame(frame); frame = 0; }
+            }
+            function setPaused(value) {
+                paused = value;
+                toggle.firstChild.textContent = paused ? 'Play' : 'Pause';
+                update();
+            }
+
+            // Loop only when the photos are wider than the strip
+            function measure() {
+                const loops = set.scrollWidth > strip.clientWidth + 1;
+                if (loops && !copy) {
+                    copy = set.cloneNode(true);
+                    copy.inert = true;
+                    copy.setAttribute('aria-hidden', 'true');
+                    track.appendChild(copy);
+                } else if (!loops && copy) {
+                    copy.remove(); copy = null; pos = 0;
+                }
+                width = copy ? copy.offsetLeft - set.offsetLeft : 0;
+                toggle.hidden = !copy;
+                wrap(); draw(); update();
+            }
+
+            toggle.addEventListener('click', () => setPaused(!paused));
+            reduceMotion.addEventListener?.('change', e => { if (e.matches) setPaused(true); });
+
+            strip.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') { hovered = true; update(); } });
+            strip.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') { hovered = false; update(); } });
+
+            // Keyboard: pause, and bring the focused photo fully into view
+            strip.addEventListener('focusin', e => {
+                focused = true;
+                const link = e.target.closest('a');
+                if (link && !copy?.contains(link)) {
+                    // Positions within the original set, before the drift's transform
+                    const x = link.offsetLeft - set.offsetLeft;
+                    const w = link.offsetWidth, fit = strip.clientWidth;
+                    if (x < pos) pos = x;                                          // cut off on the left
+                    else if (x + w > pos + fit) pos = Math.min(x, x + w - fit);    // cut off on the right
+                    draw();
+                    strip.scrollLeft = 0;
+                }
+                update();
+            });
+            strip.addEventListener('focusout', e => { if (!strip.contains(e.relatedTarget)) { focused = false; update(); } });
+            // Focusing a photo also makes the browser scroll the strip itself, on
+            // top of the transform above. The strip only ever moves by transform.
+            strip.addEventListener('scroll', () => { if (strip.scrollLeft) strip.scrollLeft = 0; });
+
+            // Drag with a mouse, or swipe sideways; vertical swipes still scroll the page
+            strip.addEventListener('pointerdown', e => {
+                if (!copy || e.button !== 0) return;
+                drag = { id: e.pointerId, x: e.clientX, pos, moved: false };
+                update();
+            });
+            strip.addEventListener('pointermove', e => {
+                if (!drag || e.pointerId !== drag.id) return;
+                const dx = e.clientX - drag.x;
+                if (!drag.moved && Math.abs(dx) > 5) {
+                    drag.moved = true;
+                    strip.setPointerCapture(e.pointerId);
+                    strip.classList.add('dragging');
+                }
+                if (drag.moved) { pos = drag.pos - dx; wrap(); draw(); }
+            });
+            const endDrag = e => {
+                if (!drag || e.pointerId !== drag.id) return;
+                if (drag.moved) { suppressClick = true; setTimeout(() => { suppressClick = false; }, 0); }
+                strip.classList.remove('dragging');
+                drag = null;
+                update();
+            };
+            strip.addEventListener('pointerup', endDrag);
+            strip.addEventListener('pointercancel', endDrag);
+            // A drag that ends over a photo is not a click on it
+            strip.addEventListener('click', e => { if (suppressClick) { e.preventDefault(); e.stopPropagation(); } }, true);
+
+            // Sideways scrolling on a trackpad moves the strip too
+            strip.addEventListener('wheel', e => {
+                if (!copy || Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+                e.preventDefault();
+                pos += e.deltaX; wrap(); draw();
+            }, { passive: false });
+
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(entries => { onScreen = entries[0].isIntersecting; update(); }).observe(strip);
+            }
+            document.addEventListener('visibilitychange', update);
+            if ('ResizeObserver' in window) new ResizeObserver(measure).observe(strip);
+            set.querySelectorAll('img').forEach(img => { if (!img.complete) img.addEventListener('load', measure, { once: true }); });
+
+            setPaused(paused);
+            measure();
         }
 
         function renderHeatmap(elementId, posts, epochStartDate) {
