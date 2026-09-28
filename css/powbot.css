@@ -305,6 +305,27 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .post-list .post-when { color: var(--muted); font: 400 var(--fs-xs)/1 var(--font-mono); white-space: nowrap; }
 .detail-links { display: flex; flex-wrap: wrap; gap: var(--s3); }
 
+/* One row per visit (visits.js): who and where, the X / Nostr links, when.
+   The links always sit in the same two slots so they line up down a list. */
+.visits { list-style: none; margin: 0 0 var(--s3); padding: 0; }
+.visits li { border-bottom: 1px solid var(--line); }
+.visit { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: var(--s2) var(--s4); min-height: var(--tap); padding: var(--s2) 0; }
+.visit-main { min-width: 0; overflow-wrap: anywhere; color: var(--muted); }
+.visit-main a { color: var(--text); text-decoration: none; }
+.visit-main a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+.visit-main .visit-project { font-weight: 700; }
+.visit-links { display: flex; gap: var(--s2); }
+.visit-link {
+    position: relative; display: inline-flex; align-items: center; justify-content: center;
+    min-width: 4.25rem; height: 28px; padding: 0 var(--s2);
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--phosphor); text-decoration: none;
+}
+.visit-link::after { content: ""; position: absolute; inset: -9px 0; }   /* 46px tall touch target */
+a.visit-link:hover { border-color: var(--phosphor); background: rgba(var(--phosphor-rgb), 0.12); }
+.visit-link.is-empty { border-color: transparent; }
+.visit-when { color: var(--muted); font: 400 var(--fs-xs)/1 var(--font-mono); white-space: nowrap; min-width: var(--visit-when, 18ch); text-align: right; }   /* fixed, so the links line up */
+
 /* Period switch above the board */
 .seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: var(--radius); }
 .seg button { min-height: var(--tap); padding: 0 var(--s4); background: none; border: 0; color: var(--muted); font: 700 var(--fs-sm)/1 var(--font-text); cursor: pointer; }
@@ -327,7 +348,7 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .facts { display: flex; flex-wrap: wrap; gap: var(--s4) var(--s7); margin: 0; padding: 0; list-style: none; }
 .facts li { display: flex; align-items: baseline; gap: 10px; }
 .facts b { font: 700 var(--fs-2xl)/1 var(--font-mono); letter-spacing: -0.04em; }
-.facts span { color: var(--muted); }
+.facts li > span { color: var(--muted); }   /* the label, not spans inside a figure */
 .notes { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s6); margin: var(--s4) 0 0; padding: 0; list-style: none; color: var(--muted); }
 .notes strong { color: var(--text); font-weight: 700; }
 
@@ -520,8 +541,17 @@ textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize:
     .lb .proj-name { font-size: var(--fs-md); }
     .lb .posts { font-size: 1.375rem; }
     .lb .col-wide { display: none; }
+    /* Fixed-layout boards keep those columns at zero width instead of removing
+       them: an opened row spans every column, and removed ones came back as
+       empty space that squeezed the project name. */
+    .lb-fixed .col-wide { display: table-cell; width: 0; padding: 0; border: 0; overflow: hidden; visibility: hidden; }
     .week-under { display: flex; }
     .sec-under { display: inline; }
+    /* Visits: names on their own line, links and time underneath */
+    .visit { display: flex; flex-wrap: wrap; align-items: center; }
+    .visit-main { flex: 1 0 100%; }
+    /* Right-aligned; drops to its own line when the links leave no room */
+    .visit-when { min-width: 0; margin-left: auto; }
     .armor { font-size: 10px; }
     .facts { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s5) var(--s4); }
     .facts li { flex-direction: column; gap: 4px; }

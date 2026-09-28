@@ -13,6 +13,7 @@
     <!-- The donation panel, shared with the directory and project profiles -->
     <script src="donate.js"></script>
     <script src="flags.js"></script>
+    <script src="visits.js"></script>
     <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Loaded in the
          head because the page's inline script runs before the end of <body>;
          loaded at the bottom, it was never defined in time and the page always
@@ -66,6 +67,8 @@
         /* ------------------------------------------------------------ Posts -- */
         .posts-more { margin-top: var(--s3); }
         .post-hidden { display: none !important; }
+        /* Dates here carry the year: "23 Sept 2026, 16:12 UTC" */
+        #merchant-posts { --visit-when: 23ch; }
         .empty-note { margin: 0; color: var(--muted); }
 
         /* ---------------------------------------------------------- BTC Map -- */
@@ -118,7 +121,7 @@
 
                 <section class="section" aria-labelledby="posts-title">
                     <h2 id="posts-title">PoWBoT posts</h2>
-                    <p class="section-note">Accepted proof-of-work posts that feature this merchant, across every epoch, newest first.</p>
+                    <p class="section-note">Accepted proof-of-work visits that feature this merchant, across every epoch, newest first. A visit posted on both X and Nostr shows once, with a link to each.</p>
                     <div id="posts-list">
                         <!-- Posts are inserted here -->
                     </div>
@@ -345,7 +348,7 @@
                 renderStats(totalCount, allPosts, merchantDisplayName, lightningAddress, countryFlag, projectsOf(allPosts, membersData));
 
                 // Render posts
-                renderPosts(allPosts);
+                renderPosts(merchantVisits(merchantSubmissions, archivedPosts), membersData, merchantDisplayName);
 
                 // Handle BTC Map section
                 renderBtcMapSection(merchantDisplayName, allPosts);
@@ -462,36 +465,57 @@
                 : `<em>${nameWithFlag(name, flag, country)}</em>`;
         }
 
-        function renderPosts(allPosts) {
+        // One row per visit (visits.js): an X post and its Nostr cross-post share
+        // a row. Epoch 4 and older never paired and carry only a date, so each of
+        // those posts is its own visit, shown without a time.
+        function merchantVisits(submissions, archivedPosts) {
+            const archived = archivedPosts.map(post => ({
+                project_name: post.project, post_url: post.url,
+                timestamp: `${post.date} 00:00:00 UTC`, classification: '', dateOnly: true
+            }));
+            return groupVisits([...submissions, ...archived]);
+        }
+
+        function visitWhen(visit) {
+            const date = new Date(String(visit.first).replace(' UTC', 'Z').replace(' ', 'T'));
+            if (isNaN(date)) return '';
+            const day = formatDate(date);
+            if (visit.posts.every(x => x.dateOnly)) return day;
+            const time = date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
+            return `${day}, ${time} UTC`;
+        }
+
+        function renderPosts(visits, membersData, merchantName) {
             const postsContainer = document.getElementById('posts-list');
             const initialCount = 5;
 
-            if (allPosts.length === 0) {
+            if (visits.length === 0) {
                 postsContainer.innerHTML = '<p class="empty-note">No accepted posts yet.</p>';
                 return;
             }
 
-            // One post: platform as a text tag, then the project, then when
-            let html = '<ul class="post-list" id="merchant-posts">';
-            allPosts.forEach((post, index) => {
-                const platform = getPlatform(post.url);
-                const isHidden = index >= initialCount;
-                const project = (post.project || 'Unknown project').replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
+            const members = {};
+            (membersData?.members || []).forEach(m => { members[projectKey(m.name)] = m; });
+
+            let html = '<ul class="visits" id="merchant-posts">';
+            visits.forEach((visit, index) => {
+                const member = members[projectKey(visit.project)];
+                const name = member?.name || projectKey(visit.project) || 'Unknown project';
                 html += `
-                    <li class="post-item ${isHidden ? 'post-hidden' : ''}" data-index="${index}">
-                        <a href="${escapeHtml(post.url)}" target="_blank" rel="noopener">
-                            <span class="tag">${escapeHtml(platform.name)}</span>
-                            <span class="post-name">${escapeHtml(project)}</span>
-                            <span class="post-when">${formatDate(post.date)}</span>
-                        </a>
+                    <li class="post-item ${index >= initialCount ? 'post-hidden' : ''}" data-index="${index}">
+                        <div class="visit">
+                            <span class="visit-main"><span class="visit-project">${projectLink({ name: visit.project || 'Unknown project', member })}</span></span>
+                            ${visitLinks(visit, `${name} at ${merchantName}`)}
+                            <span class="visit-when">${visitWhen(visit)}</span>
+                        </div>
                     </li>
                 `;
             });
             html += '</ul>';
 
-            if (allPosts.length > initialCount) {
+            if (visits.length > initialCount) {
                 html += `
-                    <button type="button" class="btn posts-more" onclick="toggleShowMore(this, ${allPosts.length})" aria-controls="merchant-posts" aria-expanded="false">Show ${allPosts.length - initialCount} more</button>
+                    <button type="button" class="btn posts-more" onclick="toggleShowMore(this, ${visits.length})" aria-controls="merchant-posts" aria-expanded="false">Show ${visits.length - initialCount} more</button>
                 `;
             }
 

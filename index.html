@@ -133,6 +133,7 @@
     <!-- Finished epochs and the shared "Every epoch" block -->
     <script src="epochs.js"></script>
     <script src="flags.js"></script>
+    <script src="visits.js"></script>
     <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Must load
          before any script that fetches live data. -->
     <script src="data-source.js"></script>
@@ -141,6 +142,11 @@
     <script>
         // Global project metadata
         let projectMetadata = {};
+
+        // Approved tracker posts grouped into visits (visits.js): an X post and
+        // its Nostr cross-post become one row. null when the tracker could not
+        // load, and the post lists fall back to the stats.json posts.
+        let allVisits = null;
 
         // How far back the "recent activity" surfaces look: the Last 48 hours
         // leaderboard, the activity line, and the latest posts list. Widened from
@@ -154,6 +160,7 @@
         // Rows shown before "Show all".
         const BOARD_ROWS = 10;
         const LIST_ROWS = 8;
+        const DETAIL_ROWS = 5;   // visits shown in an opened leaderboard row
 
         // Finished epochs (totals and notes) live in epochs.js, shared with the
         // Epoch 5 page and the archive.
@@ -224,6 +231,26 @@
             const meta = projectMetadata[name];
             if (type === 'project' && meta?.info_url) return meta.info_url;
             return `${type === 'merchant' ? 'merchant-profile.html' : 'profile.html'}?id=${profileId(name)}`;
+        }
+
+        // Visits with a post inside the recent-activity window. Any post counts,
+        // so a visit whose two posts straddle the edge still shows both links.
+        function recentVisits() {
+            const start = Date.now() - ACTIVITY_WINDOW_HOURS * 60 * 60 * 1000;
+            return (allVisits || []).filter(v => v.posts.some(x => parseTrackerTime(x.timestamp) >= start));
+        }
+
+        // One visit as a row. Inside a project's own list the project is known,
+        // so the row names only the merchant.
+        function visitRow(v, withProject = true) {
+            const name = displayName(v.project);
+            const merchant = v.merchant
+                ? `<a href="${attrSafe(profileUrl(v.merchant, 'merchant'))}">${escapeHtml(v.merchant)}</a>`
+                : 'a merchant';
+            const main = withProject
+                ? `<a class="visit-project" href="${attrSafe(profileUrl(v.project, 'project'))}">${nameWithFlag(name, flagOf(v.project))}</a> at ${merchant}`
+                : merchant;
+            return `<div class="visit"><span class="visit-main">${main}</span>${visitLinks(v, `${name} at ${v.merchant || 'a merchant'}`)}<span class="visit-when">${formatDateTimeUTC(parseTrackerTime(v.first))}</span></div>`;
         }
 
         function getPlatform(url) {
@@ -362,6 +389,10 @@
             (stats.countries || []).forEach(c => { countryByFlag[c.flag] = c.country; });
             const days = lastSevenDays(stats);
 
+            // The epoch file names "Bitbiashara 🇰🇪", the tracker "Bitbiashara (Kenya) 🇰🇪"
+            const visitsByName = {};
+            (allVisits || []).forEach(v => (visitsByName[displayName(v.project)] || (visitsByName[displayName(v.project)] = [])).push(v));
+
             const ranked = projectRows(stats);
             if (by === 'merchants') {
                 // Most merchants first; level projects by posts, then by who got there first
@@ -382,7 +413,10 @@
                 const leader = i === 0 ? ' leader on-amber' : '';
                 const detailId = `lb-detail-${i}`;
 
-                const postItems = posts.slice(0, 10).map(post => `
+                const visits = allVisits ? (visitsByName[stripFlags(p.name)] || []) : null;
+                const postItems = visits
+                    ? visits.slice(0, DETAIL_ROWS).map(v => `<li>${visitRow(v, false)}</li>`).join('')
+                    : posts.slice(0, DETAIL_ROWS).map(post => `
                     <li><a href="${attrSafe(post.url)}" target="_blank" rel="noopener">
                         <span class="tag">${getPlatform(post.url)}</span>
                         <span class="post-name">${escapeHtml(post.merchant || stripFlags(p.name))}</span>
@@ -406,10 +440,10 @@
                     </tr>
                     <tr class="detail${more}" id="${detailId}" hidden>
                         <td colspan="5">
-                            ${postItems ? `<ul class="post-list" aria-label="Latest posts by ${attrSafe(stripFlags(p.name))}">${postItems}</ul>` : ''}
+                            ${postItems ? `<ul class="${visits ? 'visits' : 'post-list'}" aria-label="Latest posts by ${attrSafe(stripFlags(p.name))}">${postItems}</ul>` : ''}
                             <div class="detail-links">
                                 <a class="btn" href="${attrSafe(profileUrl(p.name, 'project'))}">View ${escapeHtml(stripFlags(p.name))}’s profile</a>
-                                ${posts.length > 10 ? `<a class="btn" href="tracker.html">All ${formatNumber(posts.length)} posts in the tracker</a>` : ''}
+                                ${(visits || posts).length > DETAIL_ROWS ? `<a class="btn" href="tracker.html">All ${formatNumber(posts.length)} posts in the tracker</a>` : ''}
                             </div>
                         </td>
                     </tr>`;
@@ -497,14 +531,9 @@
                 const detailId = `lb-detail-${i}`;
                 const merchants = entry.merchants.size;
 
-                const postItems = entry.videos
-                    .slice().sort((a, b) => String(b.timestamp).localeCompare(String(a.timestamp)))
-                    .map(v => `
-                        <li><a href="${attrSafe(v.url)}" target="_blank" rel="noopener">
-                            <span class="tag">${escapeHtml(v.platform || getPlatform(v.url))}</span>
-                            <span class="post-name">${escapeHtml(v.merchant || name)}</span>
-                            <span class="post-when">${formatDateTimeUTC(parseTrackerTime(v.timestamp))}</span>
-                        </a></li>`).join('');
+                const projectVisits = recentVisits().filter(v => v.project === project);
+                const postItems = projectVisits.slice(0, DETAIL_ROWS)
+                    .map(v => `<li>${visitRow(v, false)}</li>`).join('');
 
                 return `
                     <tr class="lb-row${leader}${more}">
@@ -523,9 +552,10 @@
                     </tr>
                     <tr class="detail${more}" id="${detailId}" hidden>
                         <td colspan="5">
-                            <ul class="post-list" aria-label="Posts by ${attrSafe(name)} in the last ${ACTIVITY_WINDOW_HOURS} hours">${postItems}</ul>
+                            <ul class="visits" aria-label="Posts by ${attrSafe(name)} in the last ${ACTIVITY_WINDOW_HOURS} hours">${postItems}</ul>
                             <div class="detail-links">
                                 <a class="btn" href="${attrSafe(profileUrl(epochProject?.name || project, 'project'))}">View ${escapeHtml(name)}’s profile</a>
+                                ${projectVisits.length > DETAIL_ROWS ? `<a class="btn" href="tracker.html">All ${formatNumber(entry.count)} posts in the tracker</a>` : ''}
                             </div>
                         </td>
                     </tr>`;
@@ -639,6 +669,21 @@
         }
 
         function renderLatest(stats) {
+            if (allVisits) {
+                const visits = recentVisits();
+                const rows = visits.map((v, i) => `<li class="${i >= LIST_ROWS ? 'is-more' : ''}">${visitRow(v)}</li>`).join('');
+                return `
+                <section class="section" aria-labelledby="latest-title">
+                    <h2 id="latest-title">Latest approved posts</h2>
+                    <p class="section-note">Proof-of-work visits approved in the last ${ACTIVITY_WINDOW_HOURS} hours, newest first. A visit posted on both X and Nostr shows once, with a link to each.</p>
+                    ${visits.length
+                        ? `<ul class="list visits" id="latest-list">${rows}</ul>
+                           ${visits.length > LIST_ROWS ? `<button type="button" class="btn list-more" data-list="latest-list" data-label="Show all ${visits.length}" aria-controls="latest-list" aria-expanded="false">Show all ${visits.length}</button>` : ''}`
+                        : `<p>No posts approved in the last ${ACTIVITY_WINDOW_HOURS} hours yet.</p>`}
+                </section>`;
+            }
+
+            // Fallback without the tracker: one row per post
             const videos = (stats.recent_activity?.videos || []).slice()
                 .sort((a, b) => String(b.timestamp).localeCompare(String(a.timestamp)));
             const items = videos.map((v, i) => `
@@ -898,6 +943,8 @@
 
                 // Process tracker data for the recent-activity window and last 7d stats
                 if (trackerData) {
+                    allVisits = groupVisits((trackerData.submissions || []).filter(sub => sub.status === 'Processed'));
+
                     const now = new Date();
                     const windowStart = new Date(now.getTime() - ACTIVITY_WINDOW_HOURS * 60 * 60 * 1000);
                     const last7d = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
