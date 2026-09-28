@@ -414,7 +414,7 @@ a.hb-row:hover .hb-name { text-decoration: underline; }
 /* Bar then its value. --w is the bar's share (0 to 1) of the room left once
    the value has its space, so the longest bar and its value always fit. */
 .hb-track { display: flex; align-items: center; gap: var(--s3); min-width: 0; }
-.hb-bar { flex: none; width: calc((100% - 5.5rem) * var(--w, 0)); min-width: 2px; height: 10px; background: var(--phosphor); opacity: 0.8; }
+.hb-bar { flex: none; width: calc((100% - 5.5rem) * var(--w, 0)); min-width: 2px; height: 14px; background: var(--phosphor); opacity: 0.8; }
 .hb.current .hb-bar { background: var(--amber); opacity: 1; }
 .hb-val { font: 700 var(--fs-base)/1 var(--font-mono); white-space: nowrap; }
 /* Context line under a row, lined up with the bars */
