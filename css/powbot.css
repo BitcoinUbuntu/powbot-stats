@@ -22,21 +22,21 @@
 :root {
     /* Colour: an 80s CRT, toned down. Green-tinted glass, a muted P1 green
        phosphor for links and data, and a soft amber for the one highlight
-       (current page, leader, today). Contrast on --night: heading 17.6, text 15.5,
-       muted 7.7, phosphor 9.6, amber 9.7, danger 8.6. Change a colour here
+       (current page, leader, today). Contrast on --night: heading 17.6, text 16.2,
+       muted 8.3, phosphor 9.6, amber 9.7, danger 8.6. Change a colour here
        and in its -rgb twin. */
     --night: #070F0B;          /* page: dark green glass, not neutral black */
     --panel: #0C1913;          /* raised surfaces: tables, dialogs */
     --panel-hi: #12241B;       /* hover on panel rows */
     --heading: #F2F4F3;        /* headings and the wordmark: near white, barely tinted */
-    --text: #D6EBDD;           --text-rgb: 214, 235, 221;
-    --muted: #87AB93;          --muted-rgb: 135, 171, 147;
+    --text: #E3EDE7;           --text-rgb: 227, 237, 231;   /* body: light, only a trace of green */
+    --muted: #93B19E;          --muted-rgb: 147, 177, 158;
     --amber: #E9AC49;          --amber-rgb: 233, 172, 73;      /* the one highlight */
     --amber-hi: #EEBB68;       /* amber hover */
     --phosphor: #5CCC85;       --phosphor-rgb: 92, 204, 133;   /* links, data marks, focus */
     --coin: #F7931A;           /* the mascot's coin; large marks only */
     --danger: #FF8A8A;         /* errors, rejected */
-    --line: rgba(var(--muted-rgb), 0.24);
+    --line: rgba(var(--muted-rgb), 0.22);
     --line-strong: rgba(var(--muted-rgb), 0.45);
 
     /* Type */
