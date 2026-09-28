@@ -10,6 +10,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
     <script src="qrcode.min.js"></script>
+    <!-- The donation panel, shared with the directory and project profiles -->
+    <script src="donate.js"></script>
     <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Loaded in the
          head because the page's inline script runs before the end of <body>;
          loaded at the bottom, it was never defined in time and the page always
@@ -56,15 +58,8 @@
         /* Underline the name only, not the space and flag after it */
         .fact-projects b a { text-decoration: none; }
         .fact-projects b a .pn { color: inherit; text-decoration: underline; text-underline-offset: 0.15em; }
+        /* The support panel's styles are shared: .donate* in css/powbot.css */
         .support-box h2 { margin: 0 0 var(--s3); font-size: var(--fs-md); overflow-wrap: anywhere; }
-        /* The QR needs a white quiet zone to scan, so white here is functional,
-           not a theme colour. */
-        .qr-container { width: fit-content; margin: 0 auto var(--s4); padding: var(--s3); background: #fff; border-radius: var(--radius); }
-        .qr-container canvas { display: block; max-width: 100%; height: auto !important; }
-        .address { margin: 0 0 var(--s3); font: 400 var(--fs-xs)/1.6 var(--font-mono); text-align: center; overflow-wrap: anywhere; word-break: break-all; }
-        .support-actions { display: flex; }
-        .support-actions .btn { flex: 1 1 auto; }
-        .copy-btn.copied { background: rgba(var(--phosphor-rgb), 0.12); }
         .support-box .none { margin: 0; color: var(--muted); }
 
         /* ------------------------------------------------------------ Posts -- */
@@ -380,18 +375,12 @@
             const firstPost = dates.length > 0 ? dates[0] : null;
             const lastPost = dates.length > 0 ? dates[dates.length - 1] : null;
 
-            // Support box
+            // Support panel: the same as a project's donation box, Lightning only
             let supportCardHTML = '';
             if (lightningAddress) {
                 supportCardHTML = `
-                    <aside class="box support-box" aria-labelledby="support-title">
-                        <h2 id="support-title">Support ${escapeHtml(merchantName)}</h2>
-                        <p class="box-label">Lightning</p>
-                        <div class="qr-container" id="qr-lightning" role="img" aria-label="QR code for the Lightning address"></div>
-                        <p class="address">${escapeHtml(lightningAddress)}</p>
-                        <div class="support-actions" aria-live="polite">
-                            <button type="button" class="btn copy-btn" id="lightning-address" onclick="copyAddressWithFeedback('${escapeHtml(lightningAddress)}', 'lightning-address')">Copy address</button>
-                        </div>
+                    <aside class="support" aria-labelledby="support-lightning-title">
+                        ${donatePanelHtml({ id: 'support', name: merchantName, lightning: lightningAddress, level: 2, title: 'Support' })}
                     </aside>
                 `;
             } else {
@@ -419,24 +408,8 @@
 
             statsGrid.innerHTML = overviewCardHTML + supportCardHTML;
 
-            // Generate QR code if lightning address exists
-            if (lightningAddress) {
-                setTimeout(() => {
-                    const canvas = document.createElement('canvas');
-                    QRCode.toCanvas(
-                        canvas,
-                        `lightning:${lightningAddress}`,
-                        { width: 200, margin: 1 },
-                        (error) => {
-                            if (error) {
-                                console.error('QR generation failed:', error);
-                            } else {
-                                document.getElementById('qr-lightning').appendChild(canvas);
-                            }
-                        }
-                    );
-                }, 100);
-            }
+            // Draw the QR code
+            donateDrawQr(document.getElementById('support'));
         }
 
         function escapeHtml(text) {
@@ -448,26 +421,6 @@
                 "'": '&#039;'
             };
             return text.replace(/[&<>"']/g, m => map[m]);
-        }
-
-        function copyAddressWithFeedback(address, elementId) {
-            const addressElement = document.getElementById(elementId);
-            const originalText = addressElement.textContent;
-
-            navigator.clipboard.writeText(address).then(() => {
-                // Add copied class for visual feedback
-                addressElement.classList.add('copied');
-                addressElement.textContent = 'Copied to clipboard!';
-
-                // Reset after 2 seconds
-                setTimeout(() => {
-                    addressElement.classList.remove('copied');
-                    addressElement.textContent = originalText;
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
-                alert('Failed to copy address');
-            });
         }
 
         // Project names come as "Bitbiashara (Kenya) 🇰🇪" (tracker) or

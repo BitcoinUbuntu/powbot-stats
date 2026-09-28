@@ -35,14 +35,14 @@
                 <button type="button" class="addr-copy" data-copy="${esc(address)}" onclick="event.stopPropagation(); donateCopy(this)">
                     <span class="visually-hidden">Copy ${label === 'Lightning' ? 'Lightning' : 'Bitcoin'} address: </span><span class="addr-text" aria-live="polite">${esc(address)}</span>
                 </button>
-                <div class="donate-actions">
+                ${back || onchain ? `<div class="donate-actions">
                     ${back}
                     ${onchain ? `<button type="button" class="btn donate-switch" onclick="event.stopPropagation(); donateSwitch(this)">${switchLabel}</button>` : ''}
-                </div>
+                </div>` : ''}
             </section>`;
 
         return `
-            <div class="donate" id="${id}">
+            <div class="donate${onchain ? '' : ' donate-single'}" id="${id}">
                 <div class="donate-slides">
                     ${side('lightning', 'Lightning', lightning, `lightning:${lightning}`, 'Use onchain', false)}
                     ${onchain ? side('onchain', 'Onchain', onchain, `bitcoin:${onchain}`, 'Use Lightning', true) : ''}
