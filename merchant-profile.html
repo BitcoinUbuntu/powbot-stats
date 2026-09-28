@@ -10,6 +10,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
     <script src="qrcode.min.js"></script>
+    <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Loaded in the
+         head because the page's inline script runs before the end of <body>;
+         loaded at the bottom, it was never defined in time and the page always
+         read the twice-daily repo copy instead of the live feed. -->
+    <script src="data-source.js"></script>
 
     <link rel="stylesheet" href="css/powbot.css">
     <style>
@@ -556,8 +561,6 @@
     <div id="site-footer"></div>
 
     <!-- Shared nav/footer injection -->
-    <!-- Defines fetchLiveData(): VPS first, this repo as fallback. -->
-    <script src="data-source.js"></script>
     <script src="includes/inject.js"></script>
 </body>
 </html>
