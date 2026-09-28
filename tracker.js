@@ -402,17 +402,21 @@ function renderSubmissions() {
 function renderSubmissionCard(submission) {
     const statusClass = `status-${escapeHtml(String(submission.status || '').toLowerCase().replace(' ', '-'))}`;
 
-    // Format timestamp for display
-    const timestamp = new Date(submission.timestamp);
-    const dateStr = timestamp.toLocaleDateString('en-US', {
+    // Format timestamp for display, in UTC like the rest of the site.
+    // Timestamps arrive as "2026-09-28 00:52:06 UTC"; rewrite to ISO first,
+    // because not every browser parses the space-separated form.
+    const timestamp = new Date(String(submission.timestamp || '').replace(' UTC', 'Z').replace(' ', 'T'));
+    const dateStr = timestamp.toLocaleDateString('en-GB', {
         year: 'numeric',
         month: 'short',
-        day: 'numeric'
+        day: 'numeric',
+        timeZone: 'UTC'
     });
-    const timeStr = timestamp.toLocaleTimeString('en-US', {
+    const timeStr = timestamp.toLocaleTimeString('en-GB', {
         hour: '2-digit',
-        minute: '2-digit'
-    });
+        minute: '2-digit',
+        timeZone: 'UTC'
+    }) + ' UTC';
 
     // Merchant tip status indicator
     const tipStatus = submission.merchant_tip_status === '✅' ? '✓' :

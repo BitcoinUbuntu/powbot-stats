@@ -9,6 +9,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
     <script src="qrcode.min.js"></script>
 
+    <link rel="stylesheet" href="css/powbot.css">
     <style>
         :root {
             --bg-primary: #0d1117;
@@ -609,8 +610,12 @@
                 // Update footer timestamp - from the LIVE file (index 0), not an
                 // archive, since archives are frozen and their stamps never move.
                 const liveTracker = trackerFiles[0];
-                if (liveTracker && liveTracker.last_updated) {
-                    document.getElementById('updated').textContent = new Date(liveTracker.last_updated).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
+                // The footer is injected asynchronously and may not exist yet. Writing
+                // to a missing #updated threw, and the catch below then replaced a
+                // fully rendered page with "Error Loading Data".
+                const updatedEl = document.getElementById('updated');
+                if (liveTracker && liveTracker.last_updated && updatedEl) {
+                    updatedEl.textContent = new Date(liveTracker.last_updated).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
                 }
 
             } catch (error) {
