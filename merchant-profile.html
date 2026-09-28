@@ -66,6 +66,7 @@
 
         /* ------------------------------------------------------------ Posts -- */
         .posts-more { margin-top: var(--s3); }
+        .detail-links .posts-more { margin-top: 0; }
         .post-hidden { display: none !important; }
         /* Dates here carry the year: "23 Sept 2026, 16:12 UTC" */
         #merchant-posts { --visit-when: 23ch; }
@@ -514,34 +515,10 @@
             html += '</ul>';
 
             if (visits.length > initialCount) {
-                html += `
-                    <button type="button" class="btn posts-more" onclick="toggleShowMore(this, ${visits.length})" aria-controls="merchant-posts" aria-expanded="false">Show ${visits.length - initialCount} more</button>
-                `;
+                html += `<div class="detail-links">${postsMoreButtons('merchant-posts', visits.length - initialCount)}</div>`;
             }
 
             postsContainer.innerHTML = html;
-        }
-
-        function toggleShowMore(button, totalCount) {
-            const posts = document.querySelectorAll('.post-item');
-            const hiddenPosts = document.querySelectorAll('.post-hidden');
-            const initialCount = 5;
-
-            if (hiddenPosts.length > 0) {
-                // Show all
-                hiddenPosts.forEach(post => post.classList.remove('post-hidden'));
-                button.textContent = 'Show fewer';
-                button.setAttribute('aria-expanded', 'true');
-            } else {
-                // Hide extra posts
-                posts.forEach((post, index) => {
-                    if (index >= initialCount) {
-                        post.classList.add('post-hidden');
-                    }
-                });
-                button.textContent = `Show ${totalCount - initialCount} more`;
-                button.setAttribute('aria-expanded', 'false');
-            }
         }
 
         function renderBtcMapSection(merchantName, posts) {

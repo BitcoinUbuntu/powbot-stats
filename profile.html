@@ -455,11 +455,8 @@
                                     <span class="post-when">${escapeHtml(when)}</span>
                                 </a>
                             </li>`;
-            // "Show more" reveals the list in steps of POSTS_STEP; "Show fewer"
-            // appears beside it once the list is open (see showMorePosts)
-            const moreButton = (listId, count) => `
-                        <button type="button" class="btn posts-more" onclick="showMorePosts(this)" aria-controls="${listId}">Show ${Math.min(POSTS_STEP, count)} more</button>
-                        <button type="button" class="btn posts-fewer" onclick="showFewerPosts(this)" aria-controls="${listId}" hidden>Show fewer</button>`;
+            // "Show more" / "Show fewer" for the post lists, shared (visits.js)
+            const moreButton = postsMoreButtons;
 
             // Render badges section if there are any badges
             if (badges.length > 0) {
@@ -982,40 +979,6 @@
         function formatDate(dateStr) {
             const date = new Date(dateStr);
             return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
-        }
-
-        // Post lists open five at a time, then POSTS_STEP more per press, so a
-        // long epoch never dumps hundreds of rows at once. "Show fewer" sits
-        // beside "Show more" as soon as the list is open, so folding it back
-        // never waits until the end.
-        const POSTS_STEP = 10;
-        const listItems = button => [...document.getElementById(button.getAttribute('aria-controls')).querySelectorAll('.post-item')];
-
-        function showMorePosts(button) {
-            const hidden = listItems(button).filter(el => el.classList.contains('post-hidden'));
-            hidden.slice(0, POSTS_STEP).forEach(el => el.classList.remove('post-hidden'));
-            const left = hidden.length - Math.min(POSTS_STEP, hidden.length);
-            const fewer = button.parentElement.querySelector('.posts-fewer');
-            fewer.hidden = false;
-            if (left > 0) {
-                button.textContent = `Show ${Math.min(POSTS_STEP, left)} more`;
-            } else {
-                // Everything shows: only "Show fewer" is left, and focus moves to it
-                button.hidden = true;
-                fewer.focus();
-            }
-        }
-
-        function showFewerPosts(button) {
-            const items = listItems(button);
-            items.forEach((el, i) => { if (i >= 5) el.classList.add('post-hidden'); });
-            const more = button.parentElement.querySelector('.posts-more');
-            more.textContent = `Show ${Math.min(POSTS_STEP, items.length - 5)} more`;
-            more.hidden = false;
-            button.hidden = true;
-            more.focus();
-            // Folding back can leave the reader far below the list
-            more.scrollIntoView({ block: 'nearest' });
         }
 
         function copyToClipboard(text, label) {

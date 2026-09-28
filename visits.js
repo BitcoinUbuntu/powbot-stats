@@ -105,4 +105,48 @@
             : '<span class="visit-link is-empty" aria-hidden="true"></span>');
         return `<span class="visit-links">${slots.join('')}</span>`;
     };
+
+    // Long post lists (project and merchant profiles) show POSTS_INITIAL rows,
+    // then POSTS_STEP more per press of "Show N more". Once the list is open,
+    // "Show fewer" sits beside it, so folding back never waits until the end.
+    // Rows are .post-item (hidden ones .post-hidden); both buttons name their
+    // list with aria-controls. Pages add the pair with postsMoreButtons().
+    const POSTS_INITIAL = 5;
+    const POSTS_STEP = 10;
+    const rowsOf = button => [...document.getElementById(button.getAttribute('aria-controls')).querySelectorAll('.post-item')];
+
+    window.postsMoreButtons = function (listId, hiddenCount) {
+        return `<button type="button" class="btn posts-more" onclick="showMorePosts(this)" aria-controls="${attr(listId)}">Show ${Math.min(POSTS_STEP, hiddenCount)} more</button>`
+            + `<button type="button" class="btn posts-fewer" onclick="showFewerPosts(this)" aria-controls="${attr(listId)}" hidden>Show fewer</button>`;
+    };
+
+    window.showMorePosts = function (button) {
+        const hidden = rowsOf(button).filter(el => el.classList.contains('post-hidden'));
+        hidden.slice(0, POSTS_STEP).forEach(el => el.classList.remove('post-hidden'));
+        const left = hidden.length - Math.min(POSTS_STEP, hidden.length);
+        const fewer = button.parentElement.querySelector('.posts-fewer');
+        fewer.hidden = false;
+        if (left > 0) {
+            button.textContent = `Show ${Math.min(POSTS_STEP, left)} more`;
+        } else {
+            // Everything shows: only "Show fewer" is left, and focus moves to it
+            button.hidden = true;
+            fewer.focus();
+        }
+    };
+
+    window.showFewerPosts = function (button) {
+        const more = button.parentElement.querySelector('.posts-more');
+        const before = button.getBoundingClientRect().top;
+        const rows = rowsOf(button);
+        rows.forEach((el, i) => { if (i >= POSTS_INITIAL) el.classList.add('post-hidden'); });
+        more.textContent = `Show ${Math.min(POSTS_STEP, rows.length - POSTS_INITIAL)} more`;
+        more.hidden = false;
+        button.hidden = true;
+        more.focus({ preventScroll: true });
+        // Rows vanished above the buttons: scroll so they stay where they were
+        // on screen, rather than leaving the reader far below the list
+        const moved = more.getBoundingClientRect().top - before;
+        if (Math.abs(moved) > 1) window.scrollBy({ top: moved, left: 0, behavior: 'instant' });
+    };
 })();
