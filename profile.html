@@ -439,7 +439,7 @@
                                 ${visitLinks(v, `${member.name} at ${v.merchant || 'a merchant'}`)}
                                 <span class="visit-when">${when(v)}</span>
                             </div></li>`).join('');
-            // Frozen epochs carry a date per post, no time, so they pair by day
+            // Frozen epochs carry a date per post, no time: they pair on the same or next day
             const datedVisits = posts => groupVisits(posts.map(post => ({
                 project_name: member.name, merchant_name: post.merchant, post_url: post.url,
                 timestamp: `${String(post.date).slice(0, 10)} 00:00:00 UTC`, classification: ''

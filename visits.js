@@ -7,13 +7,15 @@
 //
 // Epoch 5 and older carry no classification, so their pairs are inferred: the
 // nearest X and Nostr posts by the same project at the same merchant, at most
-// PAIR_WINDOW_HOURS apart, each post used once. Most real pairs are minutes
-// apart; the window stops a project's next-day visit from being folded in.
-// Epoch 4 posts have a date only (read as midnight), so the same rule pairs
-// them by day: same day is 0 hours apart, any other day at least 24.
+// PAIR_WINDOW_HOURS apart, each post used once, closest pairs first. Most are
+// minutes apart, but some cross-posts went up the next day (Epoch 5: 908
+// pairs within 12 hours, 937 within 36, only 942 within a week). Closest-first
+// means a project visiting the same merchant daily still pairs within each day.
+// Posts with a date only (read as midnight) pair on the same or the next day:
+// 0 or 24 hours apart, inside the window; two days is 48, outside it.
 (function () {
     const PLATFORMS = ['X', 'Nostr'];
-    const PAIR_WINDOW_HOURS = 12;
+    const PAIR_WINDOW_HOURS = 36;
 
     function platformOf(sub) {
         const p = String(sub.platform || '').toLowerCase();

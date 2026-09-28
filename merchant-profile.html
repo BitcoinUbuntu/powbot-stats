@@ -467,7 +467,7 @@
 
         // One row per visit (visits.js): an X post and its Nostr cross-post share
         // a row, in every epoch. Epoch 4 and older carry only a date, so those
-        // pair by day and show without a time.
+        // pair on the same or next day and show without a time.
         function merchantVisits(submissions, archivedPosts) {
             const archived = archivedPosts.map(post => ({
                 project_name: post.project, post_url: post.url,

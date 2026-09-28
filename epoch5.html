@@ -255,7 +255,7 @@
                 const secondaryText = by === 'merchants' ? plural(count, 'post', 'posts') : plural(merchants, 'merchant', 'merchants');
 
                 // One row per visit (visits.js). These posts carry a date only, so
-                // an X post and its Nostr cross-post pair by day.
+                // an X post and its Nostr cross-post pair on the same or next day.
                 const visits = groupVisits(posts.map(post => ({
                     project_name: item.name, merchant_name: post.merchant, post_url: post.url,
                     timestamp: `${post.date} 00:00:00 UTC`, classification: ''
