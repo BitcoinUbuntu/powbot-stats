@@ -22,15 +22,17 @@
      *   onchain    Bitcoin address (optional)
      *   level      heading level, 2 or 3
      *   back       optional HTML for a button placed before the switch
- *   title      heading text (defaults to "Donate to <name>")
+     *   title      heading text (defaults to "Donate to <name>")
+     *   showLabel  false hides the Lightning / Onchain line (merchant pages,
+     *              which only ever have Lightning)
      */
-    window.donatePanelHtml = function ({ id, name, lightning, onchain = '', level = 3, back = '', title = '' }) {
+    window.donatePanelHtml = function ({ id, name, lightning, onchain = '', level = 3, back = '', title = '', showLabel = true }) {
         const h = `h${level}`;
         const heading = esc(title || `Donate to ${name}`);
         const side = (kind, label, address, uri, switchLabel, hidden) => `
             <section class="donate-side donate-${kind}" aria-labelledby="${id}-${kind}-title"${hidden ? ' inert' : ''}>
                 <${h} class="donate-title" id="${id}-${kind}-title" tabindex="-1">${heading}</${h}>
-                <p class="donate-label">${label}</p>
+                ${showLabel ? `<p class="donate-label">${label}</p>` : ''}
                 <div class="qr-box" role="img" aria-label="QR code for the ${label === 'Lightning' ? 'Lightning' : 'Bitcoin'} address" data-qr="${esc(uri)}"></div>
                 <button type="button" class="addr-copy" data-copy="${esc(address)}" onclick="event.stopPropagation(); donateCopy(this)">
                     <span class="visually-hidden">Copy ${label === 'Lightning' ? 'Lightning' : 'Bitcoin'} address: </span><span class="addr-text" aria-live="polite">${esc(address)}</span>
