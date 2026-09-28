@@ -166,6 +166,33 @@
     }
 
 
+    /**
+     * Collapsing a long list ("Show fewer", "Show top 10") removes rows above
+     * the button, which would leave the reader floating far down the page.
+     * Keep the button at the same place on screen instead: note where it is
+     * before the page's own handler runs (capture phase, first) and scroll by
+     * however far it moved once every handler has run (window bubble, last).
+     * Expanding needs nothing: new rows appear below where you are reading.
+     */
+    const COLLAPSE_BUTTONS = '#lb-all, .list-more, .lb-more, .posts-more';
+    let keepPlace = null;
+
+    window.addEventListener('click', (event) => {
+        const button = event.target.closest && event.target.closest(COLLAPSE_BUTTONS);
+        keepPlace = (button && button.getAttribute('aria-expanded') === 'true')
+            ? { button, top: button.getBoundingClientRect().top }
+            : null;
+    }, true);
+
+    window.addEventListener('click', () => {
+        if (!keepPlace) return;
+        const { button, top } = keepPlace;
+        keepPlace = null;
+        if (!document.contains(button)) return;
+        const moved = button.getBoundingClientRect().top - top;
+        if (Math.abs(moved) > 1) window.scrollBy({ top: moved, left: 0, behavior: 'instant' });
+    });
+
     // Export support URL for use in other scripts
     window.SUPPORT_URL = SUPPORT_URL;
 
