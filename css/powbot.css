@@ -120,6 +120,8 @@ html:has(body.pb) { color-scheme: dark; background: var(--night); }
     cursor: pointer; touch-action: manipulation;
     transition: transform var(--t-fast) var(--ease-out), background-color var(--t-fast) ease;
 }
+/* .btn sets display, which would otherwise override the hidden attribute */
+.btn[hidden] { display: none; }
 .btn:hover { background: rgba(var(--phosphor-rgb), 0.12); color: var(--phosphor); }
 .btn:active { transform: scale(0.97); }
 .btn-solid { background: var(--amber); border-color: var(--amber); color: var(--night); }

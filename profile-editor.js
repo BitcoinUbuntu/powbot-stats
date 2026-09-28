@@ -242,9 +242,6 @@ function populateFormWithMemberData(member) {
         'description': member.description || '',
         'city': member.city || '',
         'country': member.country || '',
-        'vision': member.vision || '',
-        'mission': member.mission || '',
-        'how_started': member.how_started || '',
         'website': member.website || '',
         'email': member.email || '',
         'x_username': (member.x_profile || '').replace(/^@/, ''), // Remove @ prefix if present
@@ -500,7 +497,9 @@ async function submitProfileEdits(event) {
 
     // Add all text fields from form (excluding file inputs)
     const textFields = [
-        'tagline', 'description', 'vision', 'mission', 'how_started', 'milestones',
+        // Vision, mission, origin story and highlights are no longer shown on
+        // profiles, so the form no longer asks for them (members.json keeps them)
+        'tagline', 'description',
         'contact_person', 'email', 'website', 'x_username', 'npub',
         'lightning_address', 'btcmap_url', 'btcpay_campaign', 'geyser_campaign', 'onchain_address',
         'city', 'country'

@@ -194,35 +194,6 @@
                     </div>
                 </section>
 
-                <section class="box form-box" aria-labelledby="h-vision">
-                    <h2 id="h-vision">Vision and mission</h2>
-
-                    <div class="field">
-                        <label class="field-label" for="edit-vision">Vision</label>
-                        <p class="field-hint" id="edit-vision-hint">Where do you see your project going?</p>
-                        <textarea class="input" id="edit-vision" name="vision" maxlength="400" placeholder="Your long-term vision…" autocomplete="off" aria-describedby="edit-vision-hint vision-counter"></textarea>
-                        <p class="char-counter" id="vision-counter">0 / 400</p>
-                    </div>
-
-                    <div class="field">
-                        <label class="field-label" for="edit-mission">Mission</label>
-                        <p class="field-hint" id="edit-mission-hint">What drives your project day to day?</p>
-                        <textarea class="input" id="edit-mission" name="mission" maxlength="400" placeholder="Your mission…" autocomplete="off" aria-describedby="edit-mission-hint mission-counter"></textarea>
-                        <p class="char-counter" id="mission-counter">0 / 400</p>
-                    </div>
-                </section>
-
-                <section class="box form-box" aria-labelledby="h-story">
-                    <h2 id="h-story">Your story</h2>
-
-                    <div class="field">
-                        <label class="field-label" for="edit-how-started">Origin story</label>
-                        <p class="field-hint" id="edit-how-started-hint">How your project came to be.</p>
-                        <textarea class="input" id="edit-how-started" name="how_started" maxlength="1000" placeholder="How did your project begin?" autocomplete="off" aria-describedby="edit-how-started-hint how-started-counter"></textarea>
-                        <p class="char-counter" id="how-started-counter">0 / 1000</p>
-                    </div>
-                </section>
-
                 <section class="box form-box" aria-labelledby="h-contact">
                     <h2 id="h-contact">Contact and links</h2>
 
@@ -449,9 +420,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             updateCharCounter('edit-tagline', 'tagline-counter', 125);
             updateCharCounter('edit-description', 'description-counter', 600);
-            updateCharCounter('edit-vision', 'vision-counter', 400);
-            updateCharCounter('edit-mission', 'mission-counter', 400);
-            updateCharCounter('edit-how-started', 'how-started-counter', 1000);
         });
 
         // Gallery management
