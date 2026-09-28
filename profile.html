@@ -541,9 +541,13 @@
                         <ul class="visits dated" id="posts-list-epoch5">${visitItems(visits5, dayOf)}
                         </ul>`;
 
-                if (visits5.length > initialCount) {
-                    html += moreButton('toggleEpoch5Posts', 'posts-list-epoch5', visits5.length - initialCount);
-                }
+                // Epoch 5 is in the tracker as an archive (Epoch 4 and older are not)
+                const tracker5 = `tracker.html?${new URLSearchParams({ epoch: '5', project: member.name, status: 'Processed' })}`;
+                html += `
+                        <div class="detail-links">
+                            ${visits5.length > initialCount ? moreButton('toggleEpoch5Posts', 'posts-list-epoch5', visits5.length - initialCount) : ''}
+                            <a class="btn" href="${escapeHtml(tracker5)}">All ${epoch5Posts.length} posts in the tracker</a>
+                        </div>`;
 
                 html += `</section>`;
             }
