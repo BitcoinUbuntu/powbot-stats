@@ -416,7 +416,7 @@
             }));
 
             // Calculate badges
-            const badges = calculateBadges(epoch4Posts, epoch5Posts, historicalPosts, allStats, statsName);
+            const badges = calculateBadges(epoch4Posts, epoch5Posts, historicalPosts, allStats, statsName, currentPosts);
 
             // Presentation helpers for the sections below
             const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
@@ -803,7 +803,10 @@
             measure();
         }
 
-        function calculateBadges(epoch4Posts, epoch5Posts, historicalPosts, allStats, statsName) {
+        // currentPosts: the live epoch's approved posts ({date, merchant, url}).
+        // They count towards every badge except the rankings, which use
+        // finished epochs only: a live ranking changes by the day.
+        function calculateBadges(epoch4Posts, epoch5Posts, historicalPosts, allStats, statsName, currentPosts = []) {
             // Mirrors normalizeProjectName() above (flag-agnostic name match),
             // duplicated here since this function has its own scope.
             const normalizeProjectName = (name) => (name || '')
@@ -815,7 +818,7 @@
             const badges = [];
 
             // Total posts across all epochs
-            const totalPosts = epoch4Posts.length + epoch5Posts.length + historicalPosts.length;
+            const totalPosts = epoch4Posts.length + epoch5Posts.length + currentPosts.length + historicalPosts.length;
 
             // Activity Milestones
             if (totalPosts >= 500) {
@@ -830,8 +833,8 @@
                 badges.push({ icon: '👋', label: 'First post', type: 'activity', title: 'First approved post' });
             }
 
-            // Community Impact - based on unique merchants across Epoch 4 and 5
-            const powbotPosts = [...epoch4Posts, ...epoch5Posts];
+            // Community Impact - unique merchants across the PoWBoT epochs (4 onwards)
+            const powbotPosts = [...epoch4Posts, ...epoch5Posts, ...currentPosts];
             if (powbotPosts.length > 0) {
                 const uniqueMerchants = new Set(powbotPosts.map(p => p.merchant)).size;
 
@@ -845,7 +848,7 @@
             }
 
             // Platform Diversity - active on both X and Nostr
-            const allPosts = [...epoch4Posts, ...epoch5Posts];
+            const allPosts = powbotPosts;
             if (allPosts.length > 0) {
                 const hasXPosts = allPosts.some(p => {
                     const url = p.url ? p.url.toLowerCase() : '';
@@ -890,7 +893,8 @@
             // Calculate best streak from each epoch
             const epoch4Streak = calculateStreak(epoch4Posts);
             const epoch5Streak = calculateStreak(epoch5Posts);
-            const bestStreak = Math.max(epoch4Streak, epoch5Streak);
+            const currentStreak = calculateStreak(currentPosts);
+            const bestStreak = Math.max(epoch4Streak, epoch5Streak, currentStreak);
 
             // Award streak badges based on best achievement
             if (bestStreak >= 21) {
@@ -905,7 +909,6 @@
             if (historicalPosts.length > 0) {
                 // Get unique epoch names
                 const epochNames = new Set(historicalPosts.map(p => p.epoch));
-                const historicalEpochs = epochNames.size;
 
                 // Founding Member - participated in Epoch 1 (May 2025, the very first)
                 if (epochNames.has('Epoch 1')) {
@@ -922,10 +925,14 @@
                     badges.push({ icon: '🧪', label: 'Beta tester', type: 'activity', title: 'Helped test PoWBoT' });
                 }
 
-                // Multi-Epoch Veteran - active across many epochs (purple - consistency)
-                if (historicalEpochs >= 3 || (historicalEpochs > 0 && epoch4Posts.length > 0 && epoch5Posts.length > 0)) {
-                    badges.push({ icon: '🛡️', label: 'Multi-epoch veteran', type: 'consistency', title: 'Active across 3+ epochs' });
-                }
+            }
+
+            // Multi-Epoch Veteran - active in 3+ epochs, counting the live one
+            // (the Epoch 4 testing phase counts as its own, as it always has)
+            const epochsActive = new Set(historicalPosts.map(p => p.epoch)).size
+                + [epoch4Posts, epoch5Posts, currentPosts].filter(posts => posts.length > 0).length;
+            if (epochsActive >= 3) {
+                badges.push({ icon: '🛡️', label: 'Multi-epoch veteran', type: 'consistency', title: 'Active across 3+ epochs' });
             }
 
             // Excellence - ranking based on Epoch 4 and 5 data
