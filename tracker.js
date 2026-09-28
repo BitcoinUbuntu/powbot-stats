@@ -503,9 +503,9 @@ function renderSubmissionCard(submission) {
 function renderCardDetails(submission) {
     let html = '<dl class="details">';
 
-    // The post, then who took part (never how much anyone was paid), as one
-    // table of label and value. The rows name themselves, so the list's own
-    // label is for screen readers only.
+    // The post, who took part (never how much anyone was paid) and the notes,
+    // as one table of label and value. The rows name themselves, so the
+    // list's own label is for screen readers only.
     const postHref = safeUrl(submission.post_url);
     const postRow = `
         <li class="payment-item">
@@ -516,25 +516,20 @@ function renderCardDetails(submission) {
         </li>`;
     html += `
         <div>
-            <dt class="visually-hidden">Post and participants</dt>
+            <dt class="visually-hidden">Submission details</dt>
             <dd>
                 <ul class="payment-list">
                     ${postRow}
                     ${(submission.payments || []).map(payment => renderPayment(payment)).join('')}
+                    ${submission.note ? `
+                    <li class="payment-item">
+                        <span class="payment-type">Notes</span>
+                        <span class="payment-recipient">${escapeHtml(submission.note)}</span>
+                    </li>` : ''}
                 </ul>
             </dd>
         </div>
     `;
-
-    // Admin notes, last
-    if (submission.note) {
-        html += `
-            <div>
-                <dt>Notes</dt>
-                <dd>${escapeHtml(submission.note)}</dd>
-            </div>
-        `;
-    }
 
     html += '</dl>';
 
