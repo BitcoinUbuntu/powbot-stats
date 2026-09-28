@@ -470,12 +470,6 @@ function renderSubmissionCard(submission) {
     }) + ' UTC';
     const isoStr = isNaN(timestamp) ? '' : timestamp.toISOString();
 
-    // The merchant's Lightning address status, as text. The export still calls
-    // it merchant_tip_status, but merchants were only tipped per post up to
-    // Epoch 5; from Epoch 6 it records whether the address checked out.
-    const tipped = submission.epoch != null && submission.epoch <= 5;
-    const tip = submission.merchant_tip_status === '✅' ? { cls: 'status-approved', label: tipped ? 'Tip sent' : 'Address verified' } :
-                submission.merchant_tip_status === '❌' ? { cls: 'status-rejected', label: tipped ? 'Tip failed' : 'Address check failed' } : null;
 
     // Flag carries the country as its name; the country is also written out
     const country = extractCountry(submission.project_name);
@@ -502,13 +496,13 @@ function renderSubmissionCard(submission) {
             </button>
 
             <div class="card-details" id="${detailsId}" hidden>
-                ${renderCardDetails(submission, tip)}
+                ${renderCardDetails(submission)}
             </div>
         </li>
     `;
 }
 
-function renderCardDetails(submission, tip) {
+function renderCardDetails(submission) {
     let html = '<dl class="details">';
 
     // Post URL
@@ -522,13 +516,12 @@ function renderCardDetails(submission, tip) {
         </div>
     `;
 
-    // Lightning Address & Tip Status
+    // Lightning address
     if (submission.lightning_address) {
-        const tipLabel = tip ? `<span class="status ${tip.cls}">${tip.label}</span>` : '';
         html += `
             <div>
                 <dt>Merchant Lightning address</dt>
-                <dd><span class="mono">${escapeHtml(submission.lightning_address)}</span>${tipLabel}</dd>
+                <dd><span class="mono">${escapeHtml(submission.lightning_address)}</span></dd>
             </div>
         `;
     }
