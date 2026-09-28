@@ -40,13 +40,22 @@
             : `<span class="flag-emoji${cls}" aria-hidden="true">${flag}</span>`;
     };
 
-    // A name followed by its flag, with the flag glued to the last word so a
-    // wrapping name never leaves the flag alone on the next line. Takes plain
-    // text and escapes it.
+    // A name followed by its flag. The flag is drawn as a background in the
+    // padding after the name rather than as an <img>: an image can always be
+    // wrapped onto a line of its own, and splitting the name to hold it to the
+    // last word drew its underline in two pieces with a seam between them.
+    // As padding at the end of the name, the flag stays on the name's last
+    // line, and the name keeps one unbroken underline. The country is read out
+    // from hidden text, and shown as a tooltip. Takes plain text and escapes it.
     window.nameWithFlag = function (name, flag, country) {
         const text = attr(String(name || '').trim());
         if (!flag) return text;
-        const cut = text.lastIndexOf(' ');
-        return `${text.slice(0, cut + 1)}<span class="nobr">${text.slice(cut + 1)}${window.flagHtml(flag, country, 'flag-after')}</span>`;
+        const code = flagCode(flag);
+        const spoken = country ? `<span class="visually-hidden"> (${attr(country)})</span>` : '';
+        if (AVAILABLE.has(code)) {
+            return `<span class="name-flag" style="background-image: url('images/flags/${code}.svg')"${country ? ` title="${attr(country)}"` : ''}>${text}</span>${spoken}`;
+        }
+        // No SVG: the emoji is text, so a no-break space holds it to the name
+        return `${text} ${window.flagHtml(flag, country)}`;
     };
 })();

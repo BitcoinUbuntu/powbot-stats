@@ -343,8 +343,9 @@ a.visit-link:hover { border-color: var(--phosphor); background: rgba(var(--phosp
 /* SVG flags from flags.js, sized to the text around them. The hairline keeps
    white-edged flags visible on dark panels and on the amber leader row. */
 .flag-img { display: inline-block; width: auto; height: 0.75em; aspect-ratio: 4 / 3; vertical-align: 0; border-radius: 1px; box-shadow: 0 0 0 1px rgba(var(--muted-rgb), 0.35); }
-.flag-after { margin-left: 0.35em; }
-.nobr { white-space: nowrap; }
+/* A name with its flag (nameWithFlag): the flag sits in the padding after the
+   name, cap height, so it never wraps away from the last word */
+.name-flag { padding-right: 1.35em; background: no-repeat right 0 top 55% / auto 0.75em; }
 
 /* ----------------------------------------------------------- Facts row -- */
 .facts { display: flex; flex-wrap: wrap; gap: var(--s4) var(--s7); margin: 0; padding: 0; list-style: none; }
