@@ -234,13 +234,16 @@
         }
 
         // The tracker filtered to one project's approved posts this epoch. The
-        // tracker also lists archived epochs and has no epoch filter, so a date
-        // range stands in: epoch start to today. It has no 48-hour range either,
-        // so `recent` uses whole UTC days from the start of the window.
+        // tracker has no 48-hour range, so `recent` adds the closest it has:
+        // whole UTC days from the start of the window.
         function trackerUrl(project, recent = false) {
-            const day = d => new Date(d).toISOString().slice(0, 10);
-            const from = recent ? Date.now() - ACTIVITY_WINDOW_HOURS * 60 * 60 * 1000 : EPOCH.start;
-            const params = new URLSearchParams({ project, status: 'Processed', date: 'custom', from: day(from), to: day(Date.now()) });
+            const params = new URLSearchParams({ epoch: String(EPOCH.number), project, status: 'Processed' });
+            if (recent) {
+                const day = d => new Date(d).toISOString().slice(0, 10);
+                params.set('date', 'custom');
+                params.set('from', day(Date.now() - ACTIVITY_WINDOW_HOURS * 60 * 60 * 1000));
+                params.set('to', day(Date.now()));
+            }
             return `tracker.html?${params}`;
         }
 

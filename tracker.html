@@ -26,7 +26,7 @@
         /* ---------------------------------------------------------- Filters -- */
         .filters {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: var(--s4);
             padding: var(--s5) 0;
         }
@@ -118,6 +118,16 @@
                 </div>
 
                 <div class="field">
+                    <label class="field-label" for="filter-epoch">Epoch</label>
+                    <div class="select-wrap">
+                        <select class="select" id="filter-epoch">
+                            <option value="">All epochs</option>
+                            <!-- Populated by JavaScript from the files loaded -->
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field">
                     <label class="field-label" for="filter-status">Status</label>
                     <div class="select-wrap">
                         <select class="select" id="filter-status">
@@ -201,6 +211,7 @@
     <div id="site-footer"></div>
 
     <!-- Defines fetchLiveData(). Must load BEFORE tracker.js, which calls it. -->
+    <script src="epoch-config.js"></script>
     <script src="data-source.js"></script>
     <script src="flags.js"></script>
     <script src="tracker.js"></script>

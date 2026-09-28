@@ -65,22 +65,28 @@ async function loadTrackerData() {
         // Load archived epochs alongside the live one. Each fails to null
         // independently: a missing archive must not take the whole tracker down,
         // it just means that epoch is absent from the list.
+        // Each submission is tagged with its epoch: the archive's number comes
+        // from its file name, the live file is the current epoch (epoch-config.js).
         const archives = (await Promise.all(
             TRACKER_ARCHIVES.map(f =>
                 fetch(f).then(r => r.ok ? r.json() : null).catch(() => null)
+                    .then(a => a && { ...a, epoch: Number((f.match(/epoch(\d+)/) || [])[1]) || null })
             )
         )).filter(Boolean);
 
-        const archivedSubmissions = archives.flatMap(a => a.submissions || []);
+        const tag = (subs, epoch) => (subs || []).map(s => ({ ...s, epoch }));
+        const archivedSubmissions = archives.flatMap(a => tag(a.submissions, a.epoch));
+        const currentEpoch = window.POWBOT_EPOCH?.number ?? null;
 
         // Live epoch first, then archives, newest-first overall.
-        allSubmissions = [...(data.submissions || []), ...archivedSubmissions]
+        allSubmissions = [...tag(data.submissions, currentEpoch), ...archivedSubmissions]
             .sort((a, b) => (b.timestamp || '').localeCompare(a.timestamp || ''));
 
         // Update footer timestamp (with retry in case footer loads after data)
         updateFooterTimestamp(data.last_updated);
 
-        // Populate project dropdown
+        // Populate dropdowns
+        populateEpochFilter();
         populateProjectFilter();
 
         // Apply URL parameters if present
@@ -98,6 +104,18 @@ async function loadTrackerData() {
 // ============================================================================
 // Filter Population
 // ============================================================================
+
+function populateEpochFilter() {
+    const epochSelect = document.getElementById('filter-epoch');
+    const epochs = [...new Set(allSubmissions.map(s => s.epoch).filter(e => e != null))]
+        .sort((a, b) => b - a);
+    epochs.forEach(epoch => {
+        const option = document.createElement('option');
+        option.value = String(epoch);
+        option.textContent = `Epoch ${epoch}`;
+        epochSelect.appendChild(option);
+    });
+}
 
 function populateProjectFilter() {
     const projectSelect = document.getElementById('filter-project');
@@ -156,6 +174,12 @@ function updateFooterTimestamp(lastUpdated) {
 function applyURLFilters() {
     const urlParams = new URLSearchParams(window.location.search);
 
+    // Apply epoch filter (a number, e.g. ?epoch=6)
+    const epochParam = urlParams.get('epoch');
+    if (epochParam) {
+        document.getElementById('filter-epoch').value = epochParam;
+    }
+
     // Apply status filter
     const statusParam = urlParams.get('status');
     if (statusParam) {
@@ -209,16 +233,23 @@ function extractProjectNameOnly(name) {
 // ============================================================================
 
 function applyFilters() {
+    const epochFilter = document.getElementById('filter-epoch').value;
     const statusFilter = document.getElementById('filter-status').value;
     const projectFilter = document.getElementById('filter-project').value;
     const dateFilter = document.getElementById('filter-date').value;
     const searchQuery = document.getElementById('filter-search').value.toLowerCase();
 
     // Update active filter styling
+    document.getElementById('filter-epoch').classList.toggle('active', epochFilter !== '');
     updateFilterActiveStates(statusFilter, projectFilter, dateFilter, searchQuery);
 
     // Start with all submissions
     filteredSubmissions = allSubmissions.filter(submission => {
+        // Epoch filter
+        if (epochFilter && String(submission.epoch) !== epochFilter) {
+            return false;
+        }
+
         // Status filter
         if (statusFilter && submission.status !== statusFilter) {
             return false;
@@ -253,17 +284,18 @@ function applyFilters() {
     currentPage = 1;
 
     // Update URL with current filters
-    updateURL(statusFilter, projectFilter, dateFilter, searchQuery);
+    updateURL(epochFilter, statusFilter, projectFilter, dateFilter, searchQuery);
 
     // Render
     renderSubmissions();
     updatePagination();
 }
 
-function updateURL(statusFilter, projectFilter, dateFilter, searchQuery) {
+function updateURL(epochFilter, statusFilter, projectFilter, dateFilter, searchQuery) {
     const params = new URLSearchParams();
 
     // Only add non-empty filters to URL
+    if (epochFilter) params.set('epoch', epochFilter);
     if (statusFilter) params.set('status', statusFilter);
     if (projectFilter) {
         // Use project name without flag/country for cleaner URL
@@ -618,6 +650,7 @@ function attachCardListeners() {
 
 function attachFilterListeners() {
     // Filter changes
+    document.getElementById('filter-epoch').addEventListener('change', applyFilters);
     document.getElementById('filter-status').addEventListener('change', applyFilters);
     document.getElementById('filter-project').addEventListener('change', applyFilters);
     document.getElementById('filter-date').addEventListener('change', (e) => {
