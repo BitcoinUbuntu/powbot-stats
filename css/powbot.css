@@ -331,6 +331,8 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .list .li-main { min-width: 0; overflow-wrap: anywhere; }
 .list .li-main .tag { margin-right: var(--s2); }
 .list .li-side { color: var(--muted); white-space: nowrap; }
+/* Times and dates in mono: the same size as dates in the post lists */
+.list .li-side.mono { font-size: var(--fs-xs); }
 .list .li-name { display: block; }
 .list .li-sub { display: block; color: var(--muted); font-size: var(--fs-sm); }
 .list li.is-more { display: none; }
