@@ -22,6 +22,10 @@
     <!-- The donation panel, shared with the directory card backs -->
     <script src="donate.js"></script>
     <script src="flags.js"></script>
+    <!-- The current epoch's posts: live tracker data, grouped into visits -->
+    <script src="epoch-config.js"></script>
+    <script src="data-source.js"></script>
+    <script src="visits.js"></script>
 
     <link rel="stylesheet" href="css/powbot.css">
     <style>
@@ -76,6 +80,8 @@
         .section h3 { margin: var(--s6) 0 var(--s2); font-size: var(--fs-base); }
         .section > h2 + h3 { margin-top: var(--s4); }
         .posts-more { margin-top: var(--s3); }
+        /* Beside the tracker link, the row sets the spacing */
+        .detail-links .posts-more { margin-top: 0; }
         .post-hidden { display: none !important; }
 
         .charts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); margin-top: var(--s5); }
@@ -225,11 +231,13 @@
         async function loadProfile() {
             try {
                 // Load member data and stats in parallel
-                const [membersData, statsEpoch4, statsEpoch5, statsHistorical] = await Promise.all([
+                const [membersData, statsEpoch4, statsEpoch5, statsHistorical, trackerLive] = await Promise.all([
                     fetch('members.json').then(r => r.json()),
                     fetch('stats-epoch4.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
                     fetch('stats-epoch5.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
-                    fetch('stats-historical.json?t=' + Date.now()).then(r => r.json()).catch(() => null)
+                    fetch('stats-historical.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
+                    // The current epoch, live from the VPS with the repo copy as fallback
+                    fetchLiveData('tracker-data.json').catch(() => null)
                 ]);
 
                 const member = membersData.members.find(m => m.id === memberId);
@@ -241,15 +249,16 @@
                 const allStats = {
                     epoch4: statsEpoch4,
                     epoch5: statsEpoch5,
-                    historical: statsHistorical
+                    historical: statsHistorical,
+                    tracker: trackerLive
                 };
 
-                // Update timestamp (use epoch5 stats if available, otherwise epoch4)
-                const statsForTimestamp = statsEpoch5 || statsEpoch4;
-                if (statsForTimestamp && statsForTimestamp.generated_at) {
+                // Update timestamp: the live tracker's, else the newest frozen epoch's
+                const updatedAt = trackerLive?.last_updated || (statsEpoch5 || statsEpoch4)?.generated_at;
+                if (updatedAt) {
                     const updatedElement = document.getElementById('updated');
                     if (updatedElement) {
-                        updatedElement.textContent = new Date(statsForTimestamp.generated_at).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
+                        updatedElement.textContent = new Date(updatedAt).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
                     }
                 }
 
@@ -437,6 +446,19 @@
                 });
             }
 
+            // The current epoch, from the live tracker: approved posts only. The
+            // tracker names projects "Bitbiashara (Kenya) 🇰🇪", so drop the country
+            // before matching.
+            const EPOCH = window.POWBOT_EPOCH || { number: 6, name: 'Epoch 6', start: '2026-07-20T06:00:00Z' };
+            const currentSubs = allStats.tracker
+                ? (allStats.tracker.submissions || []).filter(sub =>
+                    sub.status === 'Processed'
+                    && normalizeProjectName(String(sub.project_name).replace(/\s*\([^)]*\)/g, '')) === statsName)
+                : null;
+            const currentPosts = (currentSubs || []).map(sub => ({
+                date: String(sub.timestamp).slice(0, 10), merchant: sub.merchant_name, url: sub.post_url
+            }));
+
             // Calculate badges
             const badges = calculateBadges(epoch4Posts, epoch5Posts, historicalPosts, allStats, statsName);
 
@@ -485,6 +507,62 @@
                         </ul>
                     </section>
                 `;
+            }
+
+            // The current epoch: one row per visit (visits.js), X and Nostr side by side
+            if (currentSubs) {
+                const visits = groupVisits(currentSubs);
+                const initialCount = 5;
+                const epochStart = new Date(EPOCH.start);
+                const startLabel = epochStart.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+                const merchantId = name => String(name || '').replace(/[^\w\s-]/g, '').trim().toLowerCase().replace(/\s+/g, '-');
+                const when = ts => {
+                    const d = new Date(String(ts).replace(' UTC', 'Z').replace(' ', 'T'));
+                    if (isNaN(d)) return '';
+                    return `${d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' })}, ${d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })} UTC`;
+                };
+                const trackerHref = `tracker.html?${new URLSearchParams({ epoch: String(EPOCH.number), project: member.name, status: 'Processed' })}`;
+
+                html += `
+                    <section class="section" aria-labelledby="current-title">
+                        <h2 id="current-title">${escapeHtml(EPOCH.name)}</h2>
+                        <p class="section-note">The current epoch, since ${startLabel}. Live: approved posts appear here within minutes.</p>
+                `;
+
+                if (visits.length === 0) {
+                    html += `<p>No approved posts yet this epoch.</p></section>`;
+                } else {
+                    html += factsRow(currentPosts);
+                    if (currentPosts.length >= 20) {
+                        html += `
+                        <div class="charts-grid">
+                            <div class="chart-card">
+                                <h3>Activity calendar</h3>
+                                <div id="heatmap-current"></div>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Posts per day</h3>
+                                <div id="timeline-current"></div>
+                            </div>
+                        </div>`;
+                    }
+                    html += `
+                        <h3>Merchant posts, newest first</h3>
+                        <p class="section-note">A visit posted on both X and Nostr shows once, with a link to each.</p>
+                        <ul class="visits" id="posts-list-current">
+                            ${visits.map((v, i) => `
+                            <li class="post-item${i >= initialCount ? ' post-hidden' : ''}"><div class="visit">
+                                <span class="visit-main">${v.merchant ? `<a href="merchant-profile.html?id=${encodeURIComponent(merchantId(v.merchant))}">${escapeHtml(v.merchant)}</a>` : 'A merchant'}</span>
+                                ${visitLinks(v, `${member.name} at ${v.merchant || 'a merchant'}`)}
+                                <span class="visit-when">${when(v.first)}</span>
+                            </div></li>`).join('')}
+                        </ul>
+                        <div class="detail-links">
+                            ${visits.length > initialCount ? moreButton('toggleCurrentPosts', 'posts-list-current', visits.length - initialCount) : ''}
+                            <a class="btn" href="${escapeHtml(trackerHref)}">All ${currentPosts.length} posts in the tracker</a>
+                        </div>
+                    </section>`;
+                }
             }
 
             // Display Epoch 5 section
@@ -661,6 +739,13 @@
             // charts markup above for why the calendar was dropped).
             if (epoch4Posts && epoch4Posts.length >= 20) {
                 renderTimeline('timeline-epoch4', epoch4Posts, '2026-01-13');
+            }
+
+            // Render activity visualizations for the current epoch
+            if (currentPosts.length >= 20) {
+                const start = String((window.POWBOT_EPOCH || {}).start || '2026-07-20').slice(0, 10);
+                renderHeatmap('heatmap-current', currentPosts, start);
+                renderTimeline('timeline-current', currentPosts, start);
             }
 
             // Render activity visualizations for Epoch 5
@@ -1174,6 +1259,26 @@
         function formatDate(dateStr) {
             const date = new Date(dateStr);
             return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+        }
+
+        function toggleCurrentPosts(button) {
+            const count = parseInt(button.dataset.count);
+            const isExpanded = button.classList.contains('expanded');
+            const container = document.getElementById('posts-list-current');
+
+            if (isExpanded) {
+                container.querySelectorAll('.post-item').forEach((el, index) => {
+                    if (index >= 5) el.classList.add('post-hidden');
+                });
+                button.textContent = `Show ${count} more`;
+                button.classList.remove('expanded');
+                button.setAttribute('aria-expanded', 'false');
+            } else {
+                container.querySelectorAll('.post-hidden').forEach(el => el.classList.remove('post-hidden'));
+                button.textContent = 'Show fewer';
+                button.classList.add('expanded');
+                button.setAttribute('aria-expanded', 'true');
+            }
         }
 
         function toggleEpoch5Posts(button) {
