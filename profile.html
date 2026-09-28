@@ -605,16 +605,6 @@
                     html += `</section>`;
             }
 
-            // How Started
-            if (member.how_started) {
-                html += `
-                    <section class="section prose" aria-labelledby="origin-title">
-                        <h2 id="origin-title">Origin story</h2>
-                        <p>${escapeHtml(member.how_started)}</p>
-                    </section>
-                `;
-            }
-
             // Milestones
             if (member.milestones) {
                 html += `
@@ -623,21 +613,6 @@
                         <p>${escapeHtml(member.milestones)}</p>
                     </section>
                 `;
-            }
-
-            // Vision & Mission (at the bottom)
-            if (member.vision || member.mission) {
-                html += `<section class="section prose" aria-labelledby="vision-title"><h2 id="vision-title">Vision and mission</h2>`;
-
-                if (member.vision) {
-                    html += `<h3>Our vision</h3><p>${escapeHtml(member.vision)}</p>`;
-                }
-
-                if (member.mission) {
-                    html += `<h3>Our mission</h3><p>${escapeHtml(member.mission)}</p>`;
-                }
-
-                html += `</section>`;
             }
 
             html += `</div>`; // Close content wrap
