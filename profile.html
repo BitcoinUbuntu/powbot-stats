@@ -455,8 +455,9 @@
                                     <span class="post-when">${escapeHtml(when)}</span>
                                 </a>
                             </li>`;
-            const moreButton = (fn, listId, count) => `
-                        <button type="button" class="btn posts-more" onclick="${fn}(this)" data-count="${count}" aria-controls="${listId}" aria-expanded="false">Show ${count} more</button>`;
+            // Reveals the list in steps of POSTS_STEP (see showMorePosts)
+            const moreButton = (listId, count) => `
+                        <button type="button" class="btn posts-more" onclick="showMorePosts(this)" aria-controls="${listId}" aria-expanded="false">Show ${Math.min(POSTS_STEP, count)} more</button>`;
 
             // Render badges section if there are any badges
             if (badges.length > 0) {
@@ -512,7 +513,7 @@
                         <ul class="visits" id="posts-list-current">${visitItems(visits, v => when(v.first))}
                         </ul>
                         <div class="detail-links">
-                            ${visits.length > initialCount ? moreButton('toggleCurrentPosts', 'posts-list-current', visits.length - initialCount) : ''}
+                            ${visits.length > initialCount ? moreButton('posts-list-current', visits.length - initialCount) : ''}
                             <a class="btn" href="${escapeHtml(trackerHref)}">All ${currentPosts.length} posts in the tracker</a>
                         </div>
                     </section>`;
@@ -545,7 +546,7 @@
                 const tracker5 = `tracker.html?${new URLSearchParams({ epoch: '5', project: member.name, status: 'Processed' })}`;
                 html += `
                         <div class="detail-links">
-                            ${visits5.length > initialCount ? moreButton('toggleEpoch5Posts', 'posts-list-epoch5', visits5.length - initialCount) : ''}
+                            ${visits5.length > initialCount ? moreButton('posts-list-epoch5', visits5.length - initialCount) : ''}
                             <a class="btn" href="${escapeHtml(tracker5)}">All ${epoch5Posts.length} posts in the tracker</a>
                         </div>`;
 
@@ -571,7 +572,7 @@
                         </ul>`;
 
                 if (visits4.length > initialCount) {
-                    html += moreButton('toggleEpoch4Posts', 'posts-list-epoch4', visits4.length - initialCount);
+                    html += moreButton('posts-list-epoch4', visits4.length - initialCount);
                 }
 
                 html += `</section>`;
@@ -599,7 +600,7 @@
 
                     // Add "Show more" button if there are more than 5 posts
                     if (hasMoreHistorical) {
-                        html += moreButton('toggleHistoricalPosts', 'posts-list-historical', historicalPosts.length - initialHistoricalCount);
+                        html += moreButton('posts-list-historical', historicalPosts.length - initialHistoricalCount);
                     }
 
                     html += `</section>`;
@@ -991,96 +992,26 @@
             return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
         }
 
-        function toggleCurrentPosts(button) {
-            const count = parseInt(button.dataset.count);
-            const isExpanded = button.classList.contains('expanded');
-            const container = document.getElementById('posts-list-current');
+        // Post lists open five at a time, then POSTS_STEP more per press, so a
+        // long epoch never dumps hundreds of rows at once. When every row is
+        // showing, the button folds the list back to five.
+        const POSTS_STEP = 10;
+        function showMorePosts(button) {
+            const list = document.getElementById(button.getAttribute('aria-controls'));
+            const items = [...list.querySelectorAll('.post-item')];
+            const hidden = items.filter(el => el.classList.contains('post-hidden'));
 
-            if (isExpanded) {
-                container.querySelectorAll('.post-item').forEach((el, index) => {
-                    if (index >= 5) el.classList.add('post-hidden');
-                });
-                button.textContent = `Show ${count} more`;
-                button.classList.remove('expanded');
-                button.setAttribute('aria-expanded', 'false');
+            if (hidden.length === 0) {
+                items.forEach((el, i) => { if (i >= 5) el.classList.add('post-hidden'); });
+                // Folding back can leave the reader far below the list: bring the button back into view
+                button.scrollIntoView({ block: 'nearest' });
             } else {
-                container.querySelectorAll('.post-hidden').forEach(el => el.classList.remove('post-hidden'));
-                button.textContent = 'Show fewer';
-                button.classList.add('expanded');
-                button.setAttribute('aria-expanded', 'true');
+                hidden.slice(0, POSTS_STEP).forEach(el => el.classList.remove('post-hidden'));
             }
-        }
 
-        function toggleEpoch5Posts(button) {
-            const count = parseInt(button.dataset.count);
-            const isExpanded = button.classList.contains('expanded');
-            const container = document.getElementById('posts-list-epoch5');
-
-            if (isExpanded) {
-                // Collapse - hide posts after 5th
-                container.querySelectorAll('.post-item').forEach((el, index) => {
-                    if (index >= 5) el.classList.add('post-hidden');
-                });
-                button.textContent = `Show ${count} more`;
-                button.classList.remove('expanded');
-                button.setAttribute('aria-expanded', 'false');
-            } else {
-                // Expand - show all posts
-                container.querySelectorAll('.post-hidden').forEach(el => {
-                    el.classList.remove('post-hidden');
-                });
-                button.textContent = 'Show fewer';
-                button.classList.add('expanded');
-                button.setAttribute('aria-expanded', 'true');
-            }
-        }
-
-        function toggleEpoch4Posts(button) {
-            const count = parseInt(button.dataset.count);
-            const isExpanded = button.classList.contains('expanded');
-            const container = document.getElementById('posts-list-epoch4');
-
-            if (isExpanded) {
-                // Collapse - hide posts after 5th
-                container.querySelectorAll('.post-item').forEach((el, index) => {
-                    if (index >= 5) el.classList.add('post-hidden');
-                });
-                button.textContent = `Show ${count} more`;
-                button.classList.remove('expanded');
-                button.setAttribute('aria-expanded', 'false');
-            } else {
-                // Expand - show all posts
-                container.querySelectorAll('.post-hidden').forEach(el => {
-                    el.classList.remove('post-hidden');
-                });
-                button.textContent = 'Show fewer';
-                button.classList.add('expanded');
-                button.setAttribute('aria-expanded', 'true');
-            }
-        }
-
-        function toggleHistoricalPosts(button) {
-            const count = parseInt(button.dataset.count);
-            const isExpanded = button.classList.contains('expanded');
-            const container = document.getElementById('posts-list-historical');
-
-            if (isExpanded) {
-                // Collapse - hide posts after 5th
-                container.querySelectorAll('.post-item').forEach((el, index) => {
-                    if (index >= 5) el.classList.add('post-hidden');
-                });
-                button.textContent = `Show ${count} more`;
-                button.classList.remove('expanded');
-                button.setAttribute('aria-expanded', 'false');
-            } else {
-                // Expand - show all posts
-                container.querySelectorAll('.post-hidden').forEach(el => {
-                    el.classList.remove('post-hidden');
-                });
-                button.textContent = 'Show fewer';
-                button.classList.add('expanded');
-                button.setAttribute('aria-expanded', 'true');
-            }
+            const left = items.filter(el => el.classList.contains('post-hidden')).length;
+            button.textContent = left ? `Show ${Math.min(POSTS_STEP, left)} more` : 'Show fewer';
+            button.setAttribute('aria-expanded', left ? 'false' : 'true');
         }
 
         function copyToClipboard(text, label) {
