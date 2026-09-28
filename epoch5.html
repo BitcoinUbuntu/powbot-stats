@@ -34,7 +34,6 @@
         .head-link a { display: inline-flex; align-items: center; min-height: var(--tap); }
         .page-head .facts:empty, .page-head .notes:empty { display: none; }
         .loading { padding: var(--s6) 0; color: var(--muted); }
-        .board-bar h2 { margin: 0 0 var(--s3); font-size: var(--fs-lg); }
         .board-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s3); margin-top: var(--s3); }
         .board-foot p { margin: 0; color: var(--muted); }
         .cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s7); }
@@ -223,26 +222,44 @@
 
         // ----------------------------------------------------- Standings --
 
-        function renderStandings(stats) {
-            const projects = stats.top_projects || [];
-            if (projects.length === 0) {
-                return `
-                    <section class="section" aria-labelledby="board-title">
-                        <h2 id="board-title">Final standings</h2>
-                        <p>No approved posts were recorded for Epoch 5.</p>
-                    </section>`;
-            }
+        // Final standings: "Merchants" (default) ranks projects by different
+        // merchants with an approved post; "Posts" is the order in the file.
+        let standingsStats = null;
+        let standingsView = 'merchants';
 
+        function standingsRows(stats) {
+            return (stats.top_projects || []).map((item, order) => {
+                const posts = item.posts || [];
+                const firstAt = {};
+                posts.forEach(x => {
+                    if (!x.merchant) return;
+                    if (!firstAt[x.merchant] || x.date < firstAt[x.merchant]) firstAt[x.merchant] = x.date;
+                });
+                const firsts = Object.values(firstAt).sort();
+                return { item, posts, order, count: item.count ?? posts.length, merchants: firsts.length, reachedAt: firsts[firsts.length - 1] || '' };
+            });
+        }
+
+        function standingsTable(stats, by) {
+            const projects = stats.top_projects || [];
             const countryByFlag = {};
             (stats.countries || []).forEach(c => { countryByFlag[c.flag] = c.country; });
 
-            const rows = projects.map((item, index) => {
-                const posts = item.posts || [];
+            const ranked = standingsRows(stats);
+            if (by === 'merchants') {
+                // Most merchants first; level projects by posts, then by who got there first
+                ranked.sort((a, b) => b.merchants - a.merchants || b.count - a.count
+                    || a.reachedAt.localeCompare(b.reachedAt) || a.order - b.order);
+            }
+
+            const rows = ranked.map(({ item, posts, count, merchants }, index) => {
                 const flag = flagOf(item.name);
                 const country = countryByFlag[flag] || '';
-                const merchants = new Set(posts.map(x => x.merchant).filter(Boolean)).size;
                 const more = index >= BOARD_ROWS ? ' is-more' : '';
                 const detailId = `lb-detail-${index}`;
+                const primary = by === 'merchants' ? merchants : count;
+                const secondary = by === 'merchants' ? count : merchants;
+                const secondaryText = by === 'merchants' ? plural(count, 'post', 'posts') : plural(merchants, 'merchant', 'merchants');
 
                 const postItems = posts.slice(0, 10).map(post => `
                     <li><a href="${attrSafe(post.url)}" target="_blank" rel="noopener">
@@ -259,11 +276,11 @@
                                 <span class="row-line"><span class="proj-name">${escapeHtml(stripFlags(item.name))}</span> ${flagHtml(flag, country)}
                                 <span class="chev" aria-hidden="true"></span></span>
                                 ${country ? `<small>${escapeHtml(country)}</small>` : ''}
-                                <small class="mer-under">${plural(merchants, 'merchant', 'merchants')}</small>
+                                <small class="mer-under">${secondaryText}</small>
                             </button>
                         </th>
-                        <td class="r mer num col-wide">${merchants}</td>
-                        <td class="r posts num">${formatNumber(item.count)}</td>
+                        <td class="r mer num col-wide">${formatNumber(secondary)}</td>
+                        <td class="r posts num">${formatNumber(primary)}</td>
                     </tr>
                     <tr class="detail${more}" id="${detailId}" hidden>
                         <td colspan="4">
@@ -276,25 +293,52 @@
                     </tr>`;
             }).join('');
 
+            const primaryLabel = by === 'merchants' ? 'Merchants' : 'Posts';
+            const secondaryLabel = by === 'merchants' ? 'Posts' : 'Merchants';
+            return `
+                <div class="lb-shell">
+                    <table class="lb" id="lb-table">
+                        <caption class="visually-hidden">Epoch 5 projects ranked by ${by === 'merchants' ? 'the number of different merchants with an approved post' : 'approved posts'}. Open a project to see its latest posts.</caption>
+                        <thead><tr>
+                            <th scope="col">Rank</th>
+                            <th scope="col">Project</th>
+                            <th scope="col" class="r col-wide">${secondaryLabel}</th>
+                            <th scope="col" class="r">${primaryLabel}</th>
+                        </tr></thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                </div>
+                <div class="board-foot">
+                    ${by === 'merchants' ? '<p>Merchants: different shops with an approved post in Epoch 5.</p>' : ''}
+                    ${projects.length > BOARD_ROWS ? `<button type="button" class="btn" id="lb-all" aria-controls="lb-table" aria-expanded="false" data-label="Show all ${projects.length} projects">Show all ${projects.length} projects</button>` : ''}
+                </div>`;
+        }
+
+        function standingsTitle(by) {
+            return by === 'merchants' ? 'Final standings by merchants reached' : 'Final standings by approved posts';
+        }
+
+        function renderStandings(stats) {
+            const projects = stats.top_projects || [];
+            if (projects.length === 0) {
+                return `
+                    <section class="section" aria-labelledby="board-title">
+                        <h2 id="board-title">Final standings</h2>
+                        <p>No approved posts were recorded for Epoch 5.</p>
+                    </section>`;
+            }
+            standingsStats = stats;
+
             return `
                 <section class="section" aria-labelledby="board-title" id="board">
-                    <div class="board-bar"><h2 id="board-title">Final standings</h2></div>
-                    <div class="lb-shell">
-                        <table class="lb" id="lb-table">
-                            <caption class="visually-hidden">Epoch 5 projects ranked by approved posts. Open a project to see its latest posts.</caption>
-                            <thead><tr>
-                                <th scope="col">Rank</th>
-                                <th scope="col">Project</th>
-                                <th scope="col" class="r col-wide">Merchants</th>
-                                <th scope="col" class="r">Posts</th>
-                            </tr></thead>
-                            <tbody>${rows}</tbody>
-                        </table>
+                    <div class="section-head">
+                        <h2 id="board-title">${standingsTitle(standingsView)}</h2>
+                        <div class="seg" role="group" aria-label="Rank projects by" id="standings-view">
+                            <button type="button" data-view="merchants" aria-pressed="${standingsView === 'merchants'}">Merchants</button>
+                            <button type="button" data-view="posts" aria-pressed="${standingsView === 'posts'}">Posts</button>
+                        </div>
                     </div>
-                    ${projects.length > BOARD_ROWS ? `
-                    <div class="board-foot">
-                        <button type="button" class="btn" id="lb-all" aria-controls="lb-table" aria-expanded="false" data-label="Show all ${projects.length} projects">Show all ${projects.length} projects</button>
-                    </div>` : ''}
+                    <div id="standings-body" aria-live="polite">${standingsTable(stats, standingsView)}</div>
                 </section>`;
         }
 
@@ -406,6 +450,16 @@
 
         // Row toggles, "Show all" on the board and on the lists
         document.getElementById('content').addEventListener('click', (e) => {
+            const view = e.target.closest('#standings-view button');
+            if (view) {
+                if (view.dataset.view !== standingsView && standingsStats) {
+                    standingsView = view.dataset.view;
+                    document.querySelectorAll('#standings-view button').forEach(b => b.setAttribute('aria-pressed', String(b === view)));
+                    document.getElementById('board-title').textContent = standingsTitle(standingsView);
+                    document.getElementById('standings-body').innerHTML = standingsTable(standingsStats, standingsView);
+                }
+                return;
+            }
             const toggle = e.target.closest('.row-toggle');
             if (toggle) {
                 const open = toggle.getAttribute('aria-expanded') !== 'true';
