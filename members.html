@@ -66,66 +66,80 @@
         .filters.seg button { border: 0; }
         .filters.seg button:not([aria-pressed="true"]) { background: var(--night); }
 
-        /* Member grid */
+        /* Member grid. Every card is the same height on both faces, whichever
+           address is showing: the content is sized to fit it, not the other
+           way round, so flipping or switching address never moves the grid. */
         .members-grid {
             display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
             gap: var(--s4); padding-bottom: var(--s7);
         }
-        .member-card { min-width: 0; }
-        /* One face at a time: Donate swaps the front for the donation details, with no animation */
-        .card-inner { height: 100%; }
-        .card-front, .card-back { height: 100%; min-width: 0; background: var(--panel); border-radius: var(--radius); }
-        .card-front { display: flex; flex-direction: column; gap: var(--s4); padding: var(--s4); border: 1px solid var(--line); cursor: pointer; }
-        .card-front:hover { border-color: var(--line-strong); }
-        .card-back { display: none; border: 1px solid var(--line-strong); }
-        .member-card.flipped .card-front { display: none; }
-        .member-card.flipped .card-back { display: block; }
+        .member-card { --card-h: 25rem; height: var(--card-h); min-width: 0; perspective: 1200px; }
+        .card-inner {
+            position: relative; height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .member-card.flipped .card-inner { transform: rotateY(180deg); }
+        .card-front, .card-back {
+            position: absolute; inset: 0; overflow: hidden;
+            -webkit-backface-visibility: hidden; backface-visibility: hidden;
+            background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+        }
+        .card-back { transform: rotateY(180deg); border-color: rgba(var(--amber-rgb), 0.55); }
 
-        .card-header { display: flex; align-items: center; gap: var(--s3); min-width: 0; }
+        /* Front */
+        .card-front { display: flex; flex-direction: column; cursor: pointer; }
+        .card-front:hover { border-color: var(--line-strong); }
+        .card-header {
+            flex: none; display: flex; align-items: center; justify-content: center;
+            height: 6.5rem; background: var(--panel-hi); border-bottom: 1px solid var(--line);
+        }
         .card-logo, .card-logo-placeholder {
-            flex: none; width: 64px; height: 64px; border-radius: 50%;
-            border: 1px solid var(--line); background: var(--night);
+            flex: none; width: 80px; height: 80px; border-radius: 50%;
+            border: 1px solid var(--line-strong); background: var(--night);
         }
         .card-logo { object-fit: cover; }
-        .card-logo-placeholder { display: flex; align-items: center; justify-content: center; font-size: 1.75rem; }
+        .card-logo-placeholder { display: flex; align-items: center; justify-content: center; font-size: 2rem; }
         .card-logo-placeholder[hidden] { display: none; }
-        .card-title { min-width: 0; }
+        .card-body { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: var(--s3); padding: var(--s4); }
+        .card-title { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s3); min-width: 0; }
         .member-card h3 { margin: 0; font: 700 var(--fs-md)/1.25 var(--font-text); letter-spacing: 0; overflow-wrap: anywhere; }
+        .card-title .flag { flex: none; font-size: 1.5rem; line-height: 1; }
         .card-place { margin: 2px 0 0; color: var(--muted); font-size: var(--fs-sm); }
-        .card-place .flag { margin-right: 4px; }
         .card-tagline {
             margin: 0; color: var(--muted); font-size: var(--fs-sm); line-height: 1.5;
             display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
         }
-        .card-footer { display: grid; gap: var(--s3); margin-top: auto; }
-        .card-stats { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s2) var(--s3); }
-        .card-stats:empty { display: none; }
-        .post-count { margin: 0; color: var(--muted); font-size: var(--fs-sm); }
+        .card-footer { display: grid; gap: var(--s2); margin-top: auto; }
+        .post-count { margin: 0; color: var(--muted); font-size: var(--fs-sm); min-height: 1.4em; }
         .post-count b { font: 700 var(--fs-md)/1 var(--font-mono); color: var(--text); letter-spacing: -0.02em; margin-right: 4px; }
-        .badge-emojis { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; font-size: 1.05rem; line-height: 1; }
-        .card-actions { display: flex; gap: var(--s2); }
+        /* One row, always: a card never grows a line for its badges */
+        .badge-emojis { display: flex; gap: 6px; margin: 0; min-height: 1.3em; overflow: hidden; font-size: 1.05rem; line-height: 1.2; }
+        .card-actions { display: flex; gap: var(--s2); margin-top: var(--s1); }
         .card-actions .btn, .back-actions .btn { flex: 1; min-width: 0; }
         /* .pb button resets font and colour, which would override .btn on <button> */
         .pb button.btn { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--phosphor); }
-        .pb .btn-donate { border-color: var(--amber); color: var(--amber); }
-        .pb .btn-donate:hover { background: rgba(var(--amber-rgb), 0.12); color: var(--amber); }
+        .pb button.btn-donate { border-color: var(--amber); color: var(--amber); }
+        .pb button.btn-donate:hover { background: rgba(var(--amber-rgb), 0.12); color: var(--amber); }
 
-        /* Back of card: donation details */
-        .card-back-inner { display: grid; height: 100%; }
-        .card-back-side { grid-area: 1 / 1; display: flex; flex-direction: column; align-items: center; gap: var(--s3); padding: var(--s4); min-width: 0; }
-        .card-back-onchain { visibility: hidden; }
-        .card-back.show-onchain .card-back-lightning { visibility: hidden; }
-        .member-card.flipped .card-back.show-onchain .card-back-onchain { visibility: visible; }
-        .card-back h3 { align-self: stretch; text-align: center; }
-        .qr-container { background: var(--text); padding: var(--s2); line-height: 0; }
-        .qr-container:empty { width: 176px; height: 176px; }
-        .qr-container canvas { display: block; }
-        .addr-label { margin: 0; color: var(--muted); font-size: var(--fs-xs); }
+        /* Back: Lightning and onchain sit side by side and slide */
+        .card-back-inner { display: flex; height: 100%; transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .card-back.show-onchain .card-back-inner { transform: translateX(-100%); }
+        .card-back-side { flex: 0 0 100%; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: var(--s2); padding: var(--s4); }
+        .card-back h3 {
+            align-self: stretch; text-align: center; font-size: var(--fs-base);
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .card-back h3:focus { outline: none; }
+        .card-back h3:focus-visible { outline: 2px solid var(--phosphor); outline-offset: 2px; }
+        .addr-label { margin: 0; color: var(--amber); font: 700 var(--fs-sm)/1.2 var(--font-text); }
+        .qr-container { flex: none; width: 176px; height: 176px; padding: var(--s2); background: #fff; line-height: 0; }
+        .qr-container canvas { display: block; width: 160px !important; height: 160px !important; }
         .lightning-address-display {
             width: 100%; min-height: var(--tap); padding: var(--s2) var(--s3);
             background: var(--night); color: var(--text);
             border: 1px solid var(--line); border-radius: var(--radius);
-            font: 400 var(--fs-xs)/1.4 var(--font-mono); text-align: center; overflow-wrap: anywhere;
+            font: 400 0.75rem/1.4 var(--font-mono); text-align: center; overflow-wrap: anywhere;
             cursor: pointer;
         }
         .lightning-address-display:hover { border-color: var(--phosphor); }
@@ -680,6 +694,13 @@
                 const country = escapeHtml(member.country || '');
                 const place = [member.city, member.country].filter(Boolean).map(escapeHtml).join(', ');
 
+                const lnId = `ln-title-${cardId}`;
+                const ocId = `oc-title-${cardId}`;
+                const addressButton = (kind, address) => `
+                    <button type="button" class="lightning-address-display" data-copy="${escapeHtml(address)}" onclick="event.stopPropagation(); copyAddressWithFeedback(this)">
+                        <span class="visually-hidden">Copy ${kind} address: </span><span class="addr-text" aria-live="polite">${escapeHtml(address)}</span>
+                    </button>`;
+
                 return `
                     <article class="member-card" id="${cardId}" data-member-id="${member.id}" aria-labelledby="name-${cardId}">
                         <div class="card-inner">
@@ -687,128 +708,126 @@
                             <div class="card-front" onclick="viewProfile('${member.id}', event)">
                                 <div class="card-header">
                                     ${logoUrl ?
-                                        `<img src="${logoUrl}" alt="" class="card-logo" width="64" height="64" loading="lazy" decoding="async" onerror="this.hidden = true; this.nextElementSibling.hidden = false;">
+                                        `<img src="${logoUrl}" alt="" class="card-logo" width="80" height="80" loading="lazy" decoding="async" onerror="this.hidden = true; this.nextElementSibling.hidden = false;">
                                          <div class="card-logo-placeholder" aria-hidden="true" hidden>${emoji}</div>`
                                         :
                                         `<div class="card-logo-placeholder" aria-hidden="true">${emoji}</div>`
                                     }
-                                    <div class="card-title">
-                                        <h3 id="name-${cardId}">${name}</h3>
-                                        <p class="card-place">${member.flag ? `<span class="flag" role="img" aria-label="${country}">${member.flag}</span>` : ''}${place}</p>
-                                    </div>
                                 </div>
-                                <p class="card-tagline">${(() => {
-                                    const tagline = member.tagline || 'Bitcoin circular economy project';
-                                    const escaped = escapeHtml(tagline);
-                                    return escaped.endsWith('.') || escaped.endsWith('!') || escaped.endsWith('?') ? escaped : escaped + '.';
-                                })()}</p>
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <div>
+                                            <h3 id="name-${cardId}">${name}</h3>
+                                            ${place ? `<p class="card-place">${place}</p>` : ''}
+                                        </div>
+                                        ${member.flag ? `<span class="flag" role="img" aria-label="${country}">${member.flag}</span>` : ''}
+                                    </div>
+                                    <p class="card-tagline">${(() => {
+                                        const tagline = member.tagline || 'Bitcoin circular economy project';
+                                        const escaped = escapeHtml(tagline);
+                                        return escaped.endsWith('.') || escaped.endsWith('!') || escaped.endsWith('?') ? escaped : escaped + '.';
+                                    })()}</p>
 
-                                <div class="card-footer">
-                                    <div class="card-stats">${videoCount > 0 ? `<p class="post-count"><b class="num">${videoCount}</b>${videoCount === 1 ? 'post' : 'posts'}</p>` : ''}${(() => {
-                                        const badgeEmojis = getMemberBadgeEmojis(member);
-                                        if (badgeEmojis.length > 0) {
-                                            return `<p class="badge-emojis"><span class="visually-hidden">Badges: </span>${badgeEmojis.map(emoji => {
+                                    <div class="card-footer">
+                                        <p class="post-count">${videoCount > 0 ? `<b class="num">${videoCount}</b>${videoCount === 1 ? 'post' : 'posts'}` : ''}</p>
+                                        <p class="badge-emojis">${(() => {
+                                            const badgeEmojis = getMemberBadgeEmojis(member);
+                                            if (!badgeEmojis.length) return '';
+                                            return `<span class="visually-hidden">Badges: </span>${badgeEmojis.map(emoji => {
                                                 const label = BADGE_LABELS[emoji] || 'Badge';
                                                 return `<span class="emoji-badge" role="img" aria-label="${label}" title="${label}">${emoji}</span>`;
-                                            }).join('')}</p>`;
-                                        }
-                                        return '';
-                                    })()}</div>
-
-                                    <div class="card-actions">
-                                        ${member.lightning_address ? `
-                                        <button type="button" class="btn btn-donate" onclick="event.stopPropagation(); flipCard('${cardId}', '${escapeHtml(member.lightning_address)}', '${escapeHtml(member.onchain_address || '')}')">Donate<span class="visually-hidden"> to ${name}</span></button>
-                                        ` : ''}
-                                        <a href="profile.html?id=${member.id}" class="btn" onclick="event.stopPropagation();">View profile<span class="visually-hidden"> of ${name}</span></a>
+                                            }).join('')}`;
+                                        })()}</p>
+                                        <div class="card-actions">
+                                            ${member.lightning_address ? `
+                                            <button type="button" class="btn btn-donate" onclick="event.stopPropagation(); flipCard('${cardId}')">Donate<span class="visually-hidden"> to ${name}</span></button>
+                                            ` : ''}
+                                            <a href="profile.html?id=${member.id}" class="btn" onclick="event.stopPropagation();">View profile<span class="visually-hidden"> of ${name}</span></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Back of Card: donation details -->
-                            <div class="card-back" id="back-${cardId}">
+                            <!-- Back of Card: donation details. Inert until the card turns over. -->
+                            ${member.lightning_address ? `
+                            <div class="card-back" id="back-${cardId}" inert
+                                 data-lightning="${escapeHtml(member.lightning_address)}" data-onchain="${escapeHtml(member.onchain_address || '')}">
                                 <div class="card-back-inner">
-                                    <!-- Lightning Side -->
-                                    <section class="card-back-side card-back-lightning" aria-labelledby="ln-title-${cardId}">
-                                        <h3 id="ln-title-${cardId}">Donate to ${name} over Lightning</h3>
-                                        <div class="qr-container" id="qr-lightning-${cardId}"></div>
-                                        <p class="addr-label">Lightning address. Select it to copy.</p>
-                                        <button type="button" class="lightning-address-display" id="address-lightning-${cardId}" onclick="event.stopPropagation(); copyAddressWithFeedback('${escapeHtml(member.lightning_address)}', 'address-lightning-${cardId}')" title="Copy address" aria-live="polite">${escapeHtml(member.lightning_address || 'No Lightning address available')}</button>
+                                    <section class="card-back-side card-back-lightning" aria-labelledby="${lnId}">
+                                        <h3 id="${lnId}" tabindex="-1">Donate to ${name}</h3>
+                                        <p class="addr-label">Lightning</p>
+                                        <div class="qr-container" role="img" aria-label="QR code for the Lightning address"></div>
+                                        ${addressButton('Lightning', member.lightning_address)}
                                         <div class="back-actions">
                                             <button type="button" class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">Back<span class="visually-hidden"> to ${name}</span></button>
-                                            ${member.onchain_address ? `<button type="button" class="btn btn-back" onclick="event.stopPropagation(); switchPaymentMethod('${cardId}')">Use onchain</button>` : ''}
+                                            ${member.onchain_address ? `<button type="button" class="btn btn-switch" onclick="event.stopPropagation(); switchPaymentMethod('${cardId}')">Use onchain</button>` : ''}
                                         </div>
                                     </section>
-
-                                    <!-- Onchain Side -->
                                     ${member.onchain_address ? `
-                                    <section class="card-back-side card-back-onchain" aria-labelledby="oc-title-${cardId}">
-                                        <h3 id="oc-title-${cardId}">Donate to ${name} onchain</h3>
-                                        <div class="qr-container" id="qr-onchain-${cardId}"></div>
-                                        <p class="addr-label">Bitcoin address. Select it to copy.</p>
-                                        <button type="button" class="lightning-address-display" id="address-onchain-${cardId}" onclick="event.stopPropagation(); copyAddressWithFeedback('${escapeHtml(member.onchain_address)}', 'address-onchain-${cardId}')" title="Copy address" aria-live="polite">${escapeHtml(member.onchain_address)}</button>
+                                    <section class="card-back-side card-back-onchain" aria-labelledby="${ocId}" inert>
+                                        <h3 id="${ocId}" tabindex="-1">Donate to ${name}</h3>
+                                        <p class="addr-label">Onchain</p>
+                                        <div class="qr-container" role="img" aria-label="QR code for the Bitcoin address"></div>
+                                        ${addressButton('Bitcoin', member.onchain_address)}
                                         <div class="back-actions">
                                             <button type="button" class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">Back<span class="visually-hidden"> to ${name}</span></button>
-                                            <button type="button" class="btn btn-back" onclick="event.stopPropagation(); switchPaymentMethod('${cardId}')">Use Lightning</button>
+                                            <button type="button" class="btn btn-switch" onclick="event.stopPropagation(); switchPaymentMethod('${cardId}')">Use Lightning</button>
                                         </div>
                                     </section>
                                     ` : ''}
                                 </div>
                             </div>
+                            ` : ''}
                         </div>
                     </article>
                 `;
             }).join('');
         }
 
-        function flipCard(cardId, lightningAddress = null, onchainAddress = null) {
+        // Draw a QR code once, the first time its side is shown
+        function drawQr(container, text) {
+            if (!container || container.children.length) return;
+            QRCode.toCanvas(text, { width: 160, margin: 1 }, (error, canvas) => {
+                if (!error) container.appendChild(canvas);
+            });
+        }
+
+        // The face and side not showing are inert: out of the tab order and
+        // hidden from screen readers, as they are from sight.
+        function flipCard(cardId) {
             const card = document.getElementById(cardId);
-            const isFlipped = card.classList.contains('flipped');
+            const back = document.getElementById(`back-${cardId}`);
+            if (!card || !back) return;
+            const toBack = !card.classList.contains('flipped');
 
-            if (!isFlipped && lightningAddress) {
-                // Flipping to back - generate QR codes
-                card.classList.add('flipped');
+            if (toBack) {
+                back.querySelectorAll('.card-back-side').forEach(side => {
+                    const onchain = side.classList.contains('card-back-onchain');
+                    drawQr(side.querySelector('.qr-container'), onchain ? `bitcoin:${back.dataset.onchain}` : `lightning:${back.dataset.lightning}`);
+                });
+            }
 
-                // Generate QR codes after a short delay to ensure the back is visible
-                setTimeout(() => {
-                    // Generate Lightning QR code
-                    const qrLightningContainer = document.getElementById(`qr-lightning-${cardId}`);
-                    if (qrLightningContainer && qrLightningContainer.children.length === 0) {
-                        QRCode.toCanvas(
-                            `lightning:${lightningAddress}`,
-                            { width: 160, margin: 1 },
-                            (error, canvas) => {
-                                if (!error) {
-                                    qrLightningContainer.appendChild(canvas);
-                                }
-                            }
-                        );
-                    }
+            card.classList.toggle('flipped', toBack);
+            card.querySelector('.card-front').inert = toBack;
+            back.inert = !toBack;
 
-                    // Generate Onchain QR code if address exists
-                    if (onchainAddress) {
-                        const qrOnchainContainer = document.getElementById(`qr-onchain-${cardId}`);
-                        if (qrOnchainContainer && qrOnchainContainer.children.length === 0) {
-                            QRCode.toCanvas(
-                                `bitcoin:${onchainAddress}`,
-                                { width: 160, margin: 1 },
-                                (error, canvas) => {
-                                    if (!error) {
-                                        qrOnchainContainer.appendChild(canvas);
-                                    }
-                                }
-                            );
-                        }
-                    }
-                }, 300);
+            if (toBack) {
+                const side = back.querySelector(back.classList.contains('show-onchain') ? '.card-back-onchain' : '.card-back-lightning');
+                side.querySelector('h3').focus({ preventScroll: true });
             } else {
-                // Flipping back to front
-                card.classList.remove('flipped');
+                card.querySelector('.btn-donate')?.focus({ preventScroll: true });
             }
         }
 
         function switchPaymentMethod(cardId) {
-            const cardBack = document.getElementById(`back-${cardId}`);
-            cardBack.classList.toggle('show-onchain');
+            const back = document.getElementById(`back-${cardId}`);
+            const onchain = back.classList.toggle('show-onchain');
+            const lightningSide = back.querySelector('.card-back-lightning');
+            const onchainSide = back.querySelector('.card-back-onchain');
+            lightningSide.inert = onchain;
+            onchainSide.inert = !onchain;
+            // Keep focus on the switch, now on the side that is showing
+            (onchain ? onchainSide : lightningSide).querySelector('.btn-switch').focus({ preventScroll: true });
         }
 
         function viewProfile(memberId, event) {
@@ -818,33 +837,22 @@
             }
         }
 
-        function copyLightningAddress(address) {
-            if (!address) return;
+        function copyAddressWithFeedback(button) {
+            const address = button.dataset.copy;
+            const text = button.querySelector('.addr-text');
+            if (!address || !text) return;
 
             navigator.clipboard.writeText(address).then(() => {
-                alert(`Lightning address copied: ${address}\n\nPaste this in your Lightning wallet to send sats!`);
-            });
-        }
-
-        function copyAddressWithFeedback(address, elementId) {
-            if (!address) return;
-
-            const addressElement = document.getElementById(elementId);
-            const originalText = addressElement.textContent;
-
-            navigator.clipboard.writeText(address).then(() => {
-                // Add copied class for visual feedback
-                addressElement.classList.add('copied');
-                addressElement.textContent = 'Copied to clipboard!';
-
-                // Reset after 2 seconds
+                button.classList.add('copied');
+                text.textContent = 'Copied to clipboard';
                 setTimeout(() => {
-                    addressElement.classList.remove('copied');
-                    addressElement.textContent = originalText;
+                    button.classList.remove('copied');
+                    text.textContent = address;
                 }, 2000);
             }).catch(err => {
                 console.error('Failed to copy:', err);
-                alert('Failed to copy address');
+                text.textContent = 'Could not copy. Try again.';
+                setTimeout(() => { text.textContent = address; }, 3000);
             });
         }
 
