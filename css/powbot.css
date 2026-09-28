@@ -234,6 +234,9 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .section { padding: var(--s7) 0; border-bottom: 1px solid var(--line); }
 .section:last-child { border-bottom: 0; }
 .section > h2, .section-head h2 { margin: 0 0 var(--s2); font-size: var(--fs-lg); }
+/* Heading with a switch beside it; wraps under the heading on phones */
+.section-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s3); margin: 0 0 var(--s3); }
+.section-head h2 { margin: 0; }
 .section-note { margin: 0 0 var(--s5); color: var(--muted); max-width: 65ch; }
 
 /* --------------------------------------------------------- Leaderboard --
@@ -254,7 +257,7 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .lb .proj small { display: block; color: var(--muted); font-size: var(--fs-sm); }
 .lb .posts { font: 700 1.625rem/1 var(--font-mono); letter-spacing: -0.03em; }
 .lb .mer { font: 400 var(--fs-base)/1 var(--font-mono); color: var(--muted); }
-.lb a.proj-link { color: var(--text); text-decoration: none; }
+.lb a.proj-link { display: inline-flex; align-items: center; min-height: var(--tap); color: var(--text); text-decoration: none; }
 .lb a.proj-link:hover .proj-name { text-decoration: underline; }
 
 /* Row that opens to show its posts */
@@ -282,6 +285,8 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .lb tr.leader .week i { border-color: var(--night); }
 .lb tr.leader .week i.on { background: var(--night); }
 .week-under { display: none; margin-top: var(--s2); }
+/* The other figure, shown under the name on phones where its column is hidden */
+.sec-under { display: none; }
 
 /* Posts inside an opened row */
 .post-list { list-style: none; margin: 0 0 var(--s3); padding: 0; }
@@ -318,6 +323,8 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .list .li-main { min-width: 0; overflow-wrap: anywhere; }
 .list .li-main .tag { margin-right: var(--s2); }
 .list .li-side { color: var(--muted); white-space: nowrap; }
+.list .li-name { display: block; }
+.list .li-sub { display: block; color: var(--muted); font-size: var(--fs-sm); }
 .list li.is-more { display: none; }
 .list.show-all li.is-more { display: block; }
 .list-more { margin-top: var(--s4); }
@@ -444,6 +451,7 @@ textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize:
     .lb .posts { font-size: 1.375rem; }
     .lb .col-wide { display: none; }
     .week-under { display: flex; }
+    .sec-under { display: inline; }
     .armor { font-size: 10px; }
     .facts { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s5) var(--s4); }
     .facts li { flex-direction: column; gap: 4px; }

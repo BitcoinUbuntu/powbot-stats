@@ -96,10 +96,11 @@
 
                 <div class="board" id="board">
                     <div class="board-bar">
-                        <h2 id="board-title">Projects by approved posts</h2>
-                        <div class="seg" role="group" aria-label="Leaderboard period" id="period" hidden>
-                            <button type="button" data-period="epoch" aria-pressed="true">This epoch</button>
-                            <button type="button" data-period="recent" aria-pressed="false">Last 48 hours</button>
+                        <h2 id="board-title">Projects by merchants reached</h2>
+                        <div class="seg" role="group" aria-label="Rank projects by" id="period" hidden>
+                            <button type="button" data-view="merchants" aria-pressed="true">Merchants</button>
+                            <button type="button" data-view="posts" aria-pressed="false">Posts</button>
+                            <button type="button" data-view="recent" aria-pressed="false">Last 48 hours</button>
                         </div>
                     </div>
                     <div class="armor" aria-hidden="true"><span class="armor-line" id="armor-begin">-----BEGIN EPOCH 6 LEADERBOARD-----</span></div>
@@ -286,7 +287,9 @@
         // ----------------------------------------------------- Leaderboard --
 
         let boardStats = null;
-        let boardPeriod = 'epoch';
+        // Which ranking the board shows: 'merchants' (default: different
+        // merchants reached this epoch), 'posts', or 'recent' (last 48 hours).
+        let boardView = 'merchants';
 
         // UTC dates of the 7 days ending on the day the data was generated
         function lastSevenDays(stats) {
@@ -308,16 +311,41 @@
             const title = document.getElementById('board-title');
             if (!stats) return;
 
-            if (boardPeriod === 'recent') {
+            if (boardView === 'recent') {
                 title.textContent = `Projects by approved posts, last ${ACTIVITY_WINDOW_HOURS} hours`;
                 renderRecentBoard(stats, body, foot);
-            } else {
+            } else if (boardView === 'posts') {
                 title.textContent = 'Projects by approved posts';
-                renderEpochBoard(stats, body, foot);
+                renderEpochBoard(stats, body, foot, 'posts');
+            } else {
+                title.textContent = 'Projects by merchants reached';
+                renderEpochBoard(stats, body, foot, 'merchants');
             }
         }
 
-        function renderEpochBoard(stats, body, foot) {
+        // Per-project figures for the epoch board. "Merchants reached" counts
+        // different merchants with an approved post; names come from BTC Map,
+        // so an exact match identifies a shop.
+        function projectRows(stats) {
+            return (stats.top_projects || []).map((p, order) => {
+                const posts = (p.posts || []).slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
+                const firstAt = {};
+                posts.forEach(x => {
+                    if (!x.merchant) return;
+                    if (!firstAt[x.merchant] || x.date < firstAt[x.merchant]) firstAt[x.merchant] = x.date;
+                });
+                const firsts = Object.values(firstAt).sort();
+                return {
+                    p, posts, order,
+                    count: p.count ?? posts.length,
+                    merchants: firsts.length,
+                    // The day the project reached its merchant count: breaks ties by who got there first
+                    reachedAt: firsts[firsts.length - 1] || ''
+                };
+            });
+        }
+
+        function renderEpochBoard(stats, body, foot, by) {
             const projects = stats.top_projects || [];
             const endLine = foot.querySelector('#armor-end').outerHTML;
 
@@ -335,16 +363,25 @@
             (stats.countries || []).forEach(c => { countryByFlag[c.flag] = c.country; });
             const days = lastSevenDays(stats);
 
-            const rows = projects.map((p, i) => {
-                const posts = (p.posts || []).slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
+            const ranked = projectRows(stats);
+            if (by === 'merchants') {
+                // Most merchants first; level projects by posts, then by who got there first
+                ranked.sort((a, b) => b.merchants - a.merchants || b.count - a.count
+                    || a.reachedAt.localeCompare(b.reachedAt) || a.order - b.order);
+            }
+            const primaryLabel = by === 'merchants' ? 'Merchants' : 'Posts';
+            const secondaryLabel = by === 'merchants' ? 'Posts' : 'Merchants';
+
+            const rows = ranked.map(({ p, posts, count, merchants }, i) => {
                 const flag = flagOf(p.name);
                 const country = countryByFlag[flag] || projectMetadata[p.name]?.country || '';
-                const merchants = new Set(posts.map(x => x.merchant).filter(Boolean)).size;
                 const dates = new Set(posts.map(x => x.date));
+                const primary = by === 'merchants' ? merchants : count;
+                const secondary = by === 'merchants' ? count : merchants;
+                const secondaryText = by === 'merchants' ? plural(count, 'post', 'posts') : plural(merchants, 'merchant', 'merchants');
                 const more = i >= BOARD_ROWS ? ' is-more' : '';
                 const leader = i === 0 ? ' leader on-amber' : '';
                 const detailId = `lb-detail-${i}`;
-                const count = p.count ?? posts.length;
 
                 const postItems = posts.slice(0, 10).map(post => `
                     <li><a href="${attrSafe(post.url)}" target="_blank" rel="noopener">
@@ -360,13 +397,13 @@
                             <button type="button" class="row-toggle" aria-expanded="false" aria-controls="${detailId}">
                                 <span class="row-line"><span class="proj-name">${escapeHtml(stripFlags(p.name))}</span> ${flagHtml(flag, country)}
                                 <span class="chev" aria-hidden="true"></span></span>
-                                ${country ? `<small>${escapeHtml(country)}</small>` : ''}
+                                <small>${escapeHtml(country)}<span class="sec-under">${country ? ', ' : ''}${secondaryText}</span></small>
                             </button>
                             ${weekSquares(dates, days, 'week-under')}
                         </th>
-                        <td class="r mer num col-wide">${merchants}</td>
+                        <td class="r mer num col-wide">${formatNumber(secondary)}</td>
                         <td class="col-wide">${weekSquares(dates, days)}</td>
-                        <td class="r posts num">${formatNumber(count)}</td>
+                        <td class="r posts num">${formatNumber(primary)}</td>
                     </tr>
                     <tr class="detail${more}" id="${detailId}" hidden>
                         <td colspan="5">
@@ -381,20 +418,20 @@
 
             body.innerHTML = `
                 <table class="lb" id="lb-table">
-                    <caption class="visually-hidden">${escapeHtml(EPOCH.name)} projects ranked by approved posts. Open a project to see its latest posts.</caption>
+                    <caption class="visually-hidden">${escapeHtml(EPOCH.name)} projects ranked by ${by === 'merchants' ? 'the number of different merchants with an approved post' : 'approved posts'}. Open a project to see its latest posts.</caption>
                     <thead><tr>
                         <th scope="col">Rank</th>
                         <th scope="col">Project</th>
-                        <th scope="col" class="r col-wide">Merchants</th>
+                        <th scope="col" class="r col-wide">${secondaryLabel}</th>
                         <th scope="col" class="col-wide">Last 7 days</th>
-                        <th scope="col" class="r">Posts</th>
+                        <th scope="col" class="r">${primaryLabel}</th>
                     </tr></thead>
                     <tbody>${rows}</tbody>
                 </table>`;
 
             foot.innerHTML = `
                 ${endLine}
-                <span class="muted"><span class="week" aria-hidden="true"><i class="on"></i></span> day with an approved post (UTC)</span>
+                <span class="muted">${by === 'merchants' ? 'Merchants: different shops with an approved post this epoch. ' : ''}<span class="week" aria-hidden="true"><i class="on"></i></span> day with an approved post (UTC)</span>
                 ${projects.length > BOARD_ROWS ? `<button type="button" class="btn" id="lb-all" aria-controls="lb-table" aria-expanded="false">Show all ${projects.length} projects</button>` : ''}`;
         }
 
@@ -485,10 +522,10 @@
                 }
                 return;
             }
-            const period = e.target.closest('#period button');
-            if (period && period.dataset.period !== boardPeriod) {
-                boardPeriod = period.dataset.period;
-                document.querySelectorAll('#period button').forEach(b => b.setAttribute('aria-pressed', String(b === period)));
+            const view = e.target.closest('#period button');
+            if (view && view.dataset.view !== boardView) {
+                boardView = view.dataset.view;
+                document.querySelectorAll('#period button').forEach(b => b.setAttribute('aria-pressed', String(b === view)));
                 renderBoard();
             }
         });
@@ -571,21 +608,26 @@
                 </section>`;
         }
 
+        // Merchant names from finished epochs (merchants-seen.json, a few KB),
+        // so the page can celebrate merchants that are new to PoWBoT without
+        // downloading the archives. Missing file: the "New" view is left out.
+        const pastMerchantsPromise = fetch('merchants-seen.json')
+            .then(r => (r.ok ? r.json() : null))
+            .then(d => (d && Array.isArray(d.names) ? { names: new Set(d.names), through: d.through_epoch } : null))
+            .catch(() => null);
+        let pastMerchants;          // undefined while loading, null if unavailable
+        let merchantView = 'new';   // 'new' (default) or 'posts'
+        let merchantStats = null;
+
         function renderCountriesAndMerchants(stats) {
             const countries = stats.countries || [];
-            const merchants = stats.top_merchants || [];
             const filter = encodeURIComponent(EPOCH.memberFilter || '');
+            merchantStats = stats;
 
             const countryItems = countries.map(c => `
                 <li><a href="members.html?filter=${filter}&country=${encodeURIComponent(c.flag + ' ' + c.country)}">
                     <span class="li-main">${flagHtml(c.flag)} ${escapeHtml(c.country)}</span>
                     <span class="li-side">${plural(c.count, 'project', 'projects')}</span>
-                </a></li>`).join('');
-
-            const merchantItems = merchants.map((m, i) => `
-                <li class="${i >= LIST_ROWS ? 'is-more' : ''}"><a href="${attrSafe(profileUrl(m.name, 'merchant'))}">
-                    <span class="li-main">${escapeHtml(m.name)}</span>
-                    <span class="li-side num">${plural(m.count, 'post', 'posts')}</span>
                 </a></li>`).join('');
 
             return `
@@ -596,15 +638,73 @@
                         ${countries.length ? `<ul class="list">${countryItems}</ul>` : '<p>No countries yet. They appear with each project’s first approved post.</p>'}
                     </section>
                     <section class="section" aria-labelledby="merchants-title">
-                        <h2 id="merchants-title">Merchants with the most posts</h2>
-                        <p class="section-note">Shops and stalls where projects spent bitcoin on camera.</p>
-                        ${merchants.length
-                            ? `<ul class="list" id="merchant-list">${merchantItems}</ul>
-                               ${merchants.length > LIST_ROWS ? `<button type="button" class="btn list-more" data-list="merchant-list" data-label="Show all ${formatNumber(merchants.length)} merchants" aria-controls="merchant-list" aria-expanded="false">Show all ${formatNumber(merchants.length)} merchants</button>` : ''}`
-                            : '<p>No merchants yet this epoch.</p>'}
+                        <div class="section-head">
+                            <h2 id="merchants-title">Merchants</h2>
+                            <div class="seg" role="group" aria-label="Show merchants" id="merchant-view" hidden>
+                                <button type="button" data-mview="new" aria-pressed="true">New this epoch</button>
+                                <button type="button" data-mview="posts" aria-pressed="false">Most posts</button>
+                            </div>
+                        </div>
+                        <div id="merchants-body" aria-live="polite"><p class="muted">Loading merchants…</p></div>
                     </section>
                 </div></div>`;
         }
+
+        // Each merchant's first post this epoch, and the project that made it
+        function firstPostOf(m) {
+            return (m.posts || []).reduce((first, x) => (!first || String(x.date) < String(first.date) ? x : first), null);
+        }
+
+        function renderMerchantList() {
+            const body = document.getElementById('merchants-body');
+            const switcher = document.getElementById('merchant-view');
+            if (!body || !merchantStats || pastMerchants === undefined) return;
+            const merchants = merchantStats.top_merchants || [];
+
+            if (merchants.length === 0) {
+                switcher.hidden = true;
+                body.innerHTML = '<p>No merchants yet this epoch. Each shop appears here with its first approved post.</p>';
+                return;
+            }
+
+            // Without the past-merchants list there is no "new" to show
+            if (!pastMerchants) merchantView = 'posts';
+            switcher.hidden = !pastMerchants;
+            switcher.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mview === merchantView)));
+
+            let items, note, total;
+            if (merchantView === 'new') {
+                const fresh = merchants
+                    .filter(m => !pastMerchants.names.has(m.name))
+                    .map(m => ({ m, first: firstPostOf(m) }))
+                    .sort((a, b) => String(b.first?.date || '').localeCompare(String(a.first?.date || '')));
+                total = fresh.length;
+                note = `<strong>${formatNumber(fresh.length)} of ${formatNumber(merchants.length)}</strong> merchants are new to PoWBoT this epoch, with no approved post in earlier epochs. Newest first, with the project that brought them in.`;
+                items = fresh.map(({ m, first }, i) => `
+                    <li class="${i >= LIST_ROWS ? 'is-more' : ''}"><a href="${attrSafe(profileUrl(m.name, 'merchant'))}">
+                        <span class="li-main"><span class="li-name">${escapeHtml(m.name)}</span>
+                            ${first?.project ? `<span class="li-sub">via ${escapeHtml(displayName(first.project))} ${flagHtml(flagOf(first.project))}</span>` : ''}</span>
+                        <span class="li-side">${first?.date ? `first post ${formatDay(first.date)}` : ''}</span>
+                    </a></li>`).join('');
+                if (!fresh.length) note = 'Every merchant this epoch has posted before. New shops appear here with their first approved post.';
+            } else {
+                total = merchants.length;
+                note = 'Shops and stalls where projects spent bitcoin on camera.';
+                items = merchants.map((m, i) => `
+                    <li class="${i >= LIST_ROWS ? 'is-more' : ''}"><a href="${attrSafe(profileUrl(m.name, 'merchant'))}">
+                        <span class="li-main">${escapeHtml(m.name)}</span>
+                        <span class="li-side num">${plural(m.count, 'post', 'posts')}</span>
+                    </a></li>`).join('');
+            }
+
+            const label = `Show all ${formatNumber(total)} merchants`;
+            body.innerHTML = `
+                <p class="section-note">${note}</p>
+                ${total ? `<ul class="list" id="merchant-list">${items}</ul>` : ''}
+                ${total > LIST_ROWS ? `<button type="button" class="btn list-more" data-list="merchant-list" data-label="${label}" aria-controls="merchant-list" aria-expanded="false">${label}</button>` : ''}`;
+        }
+
+        pastMerchantsPromise.then(result => { pastMerchants = result; renderMerchantList(); });
 
         function renderDaily(stats) {
             const daily = stats.daily || [];
@@ -664,6 +764,14 @@
 
         // "Show all" on the plain lists
         document.getElementById('content').addEventListener('click', (e) => {
+            const mview = e.target.closest('#merchant-view button');
+            if (mview) {
+                if (mview.dataset.mview !== merchantView) {
+                    merchantView = mview.dataset.mview;
+                    renderMerchantList();
+                }
+                return;
+            }
             const btn = e.target.closest('.list-more');
             if (!btn) return;
             const list = document.getElementById(btn.dataset.list);
@@ -698,6 +806,7 @@
                 renderCountriesAndMerchants(stats) +
                 renderDaily(stats) +
                 renderEpochs(stats);
+            renderMerchantList();
         }
 
         function applyEpochLabels() {

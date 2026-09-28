@@ -3,6 +3,9 @@
  *
  * ==> AT EACH EPOCH ROLLOVER: update these values. <==
  * Edit on GitHub is fine; main deploys to powbot.africa within two minutes.
+ * Also, once the finished epoch is frozen as stats-epochN.json, run
+ * `python scripts/build_merchants_seen.py` and commit merchants-seen.json,
+ * so the homepage's "New this epoch" merchant list compares against it.
  *
  * All times are UTC. `end` is the planned end and is shown as "around <date>",
  * because an epoch closes when the maintainers close it, not on a timer.
