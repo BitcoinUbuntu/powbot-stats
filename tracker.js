@@ -485,9 +485,7 @@ function renderSubmissionCard(submission) {
                         ${country ? `<span class="card-country">${escapeHtml(country)}</span>` : ''}
                     </span>
                     <span class="card-meta">
-                        <span class="merchant-name">${escapeHtml(submission.merchant_name)}</span>
-                        <span class="visually-hidden">on</span>
-                        <span class="tag">${escapeHtml(submission.platform)}</span>
+                        <span class="merchant-name">${escapeHtml(submission.merchant_name)} <span class="card-platform">on ${escapeHtml(submission.platform)}</span></span>
                         <time datetime="${isoStr}">${dateStr}, ${timeStr}</time>
                     </span>
                 </span>
