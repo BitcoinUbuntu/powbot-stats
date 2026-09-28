@@ -481,7 +481,7 @@ function renderSubmissionCard(submission) {
             <button type="button" class="card-header" aria-expanded="false" aria-controls="${detailsId}">
                 <span class="card-main">
                     <span class="card-title">
-                        <span class="project-name">${flag} ${escapeHtml(extractProjectNameOnly(submission.project_name))}</span>
+                        <span class="project-name">${flag} <span class="pn">${escapeHtml(extractProjectNameOnly(submission.project_name))}</span></span>
                         ${country ? `<span class="card-country">${escapeHtml(country)}</span>` : ''}
                     </span>
                     <span class="card-meta">
@@ -526,26 +526,27 @@ function renderCardDetails(submission) {
         `;
     }
 
-    // Admin Notes
-    if (submission.note) {
-        html += `
-            <div>
-                <dt>Notes</dt>
-                <dd>${escapeHtml(submission.note)}</dd>
-            </div>
-        `;
-    }
-
-    // Payment Status: who was paid, never how much
+    // Who was paid, never how much. The rows name themselves, so the heading
+    // is for screen readers only.
     if (submission.payments && submission.payments.length > 0) {
         html += `
             <div>
-                <dt>CBAF payments</dt>
+                <dt class="visually-hidden">Paid</dt>
                 <dd>
                     <ul class="payment-list">
                         ${submission.payments.map(payment => renderPayment(payment)).join('')}
                     </ul>
                 </dd>
+            </div>
+        `;
+    }
+
+    // Admin notes, last
+    if (submission.note) {
+        html += `
+            <div>
+                <dt>Notes</dt>
+                <dd>${escapeHtml(submission.note)}</dd>
             </div>
         `;
     }
@@ -575,11 +576,13 @@ function renderPayment(payment) {
     };
 
     const typeLabel = typeLabels[payment.type] || payment.type;
+    // The card title already shows the project's flag and country
+    const recipient = payment.type === 'project' ? extractProjectNameOnly(payment.recipient) : payment.recipient;
 
     return `
         <li class="payment-item">
             <span class="payment-type">${escapeHtml(typeLabel)}</span>
-            <span class="payment-recipient">${escapeHtml(payment.recipient)}</span>
+            <span class="payment-recipient">${escapeHtml(recipient)}</span>
         </li>
     `;
 }

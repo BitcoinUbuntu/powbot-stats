@@ -57,7 +57,7 @@
             background: none; border: 0; color: inherit; text-align: left; cursor: pointer;
         }
         .card-header:hover { background: var(--panel-hi); }
-        .card-header:hover .project-name { text-decoration: underline; }
+        .card-header:hover .project-name .pn { text-decoration: underline; }
         .card-header[aria-expanded="true"] .chev { transform: rotate(225deg) translate(-2px, -2px); }
         .card-main { display: grid; gap: var(--s1); min-width: 0; }
         .card-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 var(--s2); }
@@ -72,7 +72,6 @@
         .details dt { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--muted); }
         .details dd { margin: var(--s1) 0 0; overflow-wrap: anywhere; }
         .details .mono { font-size: var(--fs-sm); }
-        .details dd .status { margin-left: var(--s2); vertical-align: 1px; }
         .payment-list { list-style: none; margin: var(--s1) 0 0; padding: 0; }
         .payment-item { display: flex; flex-wrap: wrap; gap: 0 var(--s3); padding: var(--s1) 0; border-bottom: 1px solid var(--line); }
         .payment-item:last-child { border-bottom: 0; }
