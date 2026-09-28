@@ -11,10 +11,10 @@
 
 /* ---------------------------------------------------------------- Fonts --
  * Self-hosted and subset to Latin (see fonts/). No third-party font requests.
- * Martian Mono: headings, ranks and figures. Atkinson Hyperlegible: text.
+ * JetBrains Mono: headings, ranks and figures. Atkinson Hyperlegible: text.
  */
-@font-face { font-family: "Martian Mono"; src: url("../fonts/martian-mono-latin-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "Martian Mono"; src: url("../fonts/martian-mono-latin-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("../fonts/jetbrains-mono-latin-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("../fonts/jetbrains-mono-latin-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 @font-face { font-family: "Atkinson Hyperlegible"; src: url("../fonts/atkinson-hyperlegible-latin-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Atkinson Hyperlegible"; src: url("../fonts/atkinson-hyperlegible-latin-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
@@ -41,7 +41,7 @@
     --line-strong: rgba(var(--muted-rgb), 0.45);
 
     /* Type */
-    --font-mono: "Martian Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
     --font-text: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     --fs-xs: 0.8125rem;   /* 13 */
     --fs-sm: 0.875rem;    /* 14 */
@@ -275,7 +275,7 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .lb .proj { font-weight: 400; }
 .lb .proj-name { font: 700 var(--fs-lg)/1.2 var(--font-text); }
 .lb .proj small { display: block; color: var(--muted); font-size: var(--fs-sm); }
-.lb .posts { font: 700 1.625rem/1 var(--font-mono); letter-spacing: -0.03em; }
+.lb .posts { font: 700 1.625rem/1 var(--font-mono); letter-spacing: -0.01em; }
 .lb .mer { font: 400 var(--fs-base)/1 var(--font-mono); color: var(--muted); }
 .lb a.proj-link { display: inline-flex; align-items: center; min-height: var(--tap); color: var(--text); text-decoration: none; }
 .lb a.proj-link:hover .proj-name { text-decoration: underline; }
@@ -367,7 +367,7 @@ a.visit-link:hover { border-color: var(--phosphor); background: rgba(var(--phosp
 /* ----------------------------------------------------------- Facts row -- */
 .facts { display: flex; flex-wrap: wrap; gap: var(--s4) var(--s7); margin: 0; padding: 0; list-style: none; }
 .facts li { display: flex; align-items: baseline; gap: 10px; }
-.facts b { font: 700 var(--fs-2xl)/1 var(--font-mono); letter-spacing: -0.04em; }
+.facts b { font: 700 var(--fs-2xl)/1 var(--font-mono); letter-spacing: -0.02em; }
 .facts li > span { color: var(--muted); }   /* the label, not spans inside a figure */
 .notes { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s6); margin: var(--s4) 0 0; padding: 0; list-style: none; color: var(--muted); }
 .notes strong { color: var(--text); font-weight: 700; }
