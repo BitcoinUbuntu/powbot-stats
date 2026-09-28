@@ -475,8 +475,16 @@
             (stats.countries || []).forEach(c => { countryByFlag[c.flag] = c.country; });
             // Tracker names read "Bitcoin Aves (Ghana) 🇬🇭", the epoch file "Bitcoin Aves 🇬🇭":
             // match on the bare name to find each project's last-7-days squares.
+            // The epoch file can list one project twice (once without its flag),
+            // so gather the post dates of every entry with that name, and keep the
+            // fuller entry for the profile link.
             const epochByName = {};
-            (stats.top_projects || []).forEach(p => { epochByName[stripFlags(p.name)] = p; });
+            const datesByName = {};
+            (stats.top_projects || []).forEach(p => {
+                const key = stripFlags(p.name);
+                if (!epochByName[key] || (p.posts || []).length > (epochByName[key].posts || []).length) epochByName[key] = p;
+                (p.posts || []).forEach(x => (datesByName[key] || (datesByName[key] = new Set())).add(x.date));
+            });
             const days = lastSevenDays(stats);
 
             // Same columns and row structure as the epoch views, so switching
@@ -486,7 +494,7 @@
                 const country = countryByFlag[flag] || '';
                 const name = displayName(project);
                 const epochProject = epochByName[name];
-                const dates = new Set((epochProject?.posts || []).map(x => x.date));
+                const dates = datesByName[name] || new Set();
                 const more = i >= BOARD_ROWS ? ' is-more' : '';
                 const leader = i === 0 ? ' leader on-amber' : '';
                 const detailId = `lb-detail-${i}`;
