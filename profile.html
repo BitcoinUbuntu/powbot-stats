@@ -136,7 +136,7 @@
         /* A film strip: every photo whole, at one height, so portrait and
            landscape shots both show uncropped. It drifts slowly and loops
            (gallery script below); drag, swipe or scroll it sideways. */
-        .gallery-strip { --gal-h: 300px; position: relative; overflow: hidden; touch-action: pan-y; cursor: grab; }
+        .gallery-strip { --gal-h: 300px; position: relative; overflow: hidden; touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; }
         .gallery-strip.dragging { cursor: grabbing; }
         .gallery-track { display: flex; gap: var(--s3); width: max-content; }
         .gallery-set { display: flex; gap: var(--s3); margin: 0; padding: 0; list-style: none; }
@@ -705,7 +705,7 @@
             galleryImages.forEach((imgPath, i) => {
                 galleryHtml += `
                                 <li>
-                                    <a href="${imgPath}" target="_blank" rel="noopener">
+                                    <a href="${imgPath}" target="_blank" rel="noopener" draggable="false">
                                         <img src="${imgPath}" alt="${escapeHtml(member.name)}, photo ${i + 1} of ${count}" draggable="false" decoding="async">
                                         <span class="visually-hidden">(opens full size in a new tab)</span>
                                     </a>
@@ -835,6 +835,10 @@
             };
             strip.addEventListener('pointerup', endDrag);
             strip.addEventListener('pointercancel', endDrag);
+            // On a desktop, pressing on a link and moving starts the browser's own
+            // drag-and-drop of the link, which cancels ours. Links in the strip
+            // are not draggable (draggable="false"), and this catches any other.
+            strip.addEventListener('dragstart', e => e.preventDefault());
             // A drag that ends over a photo is not a click on it
             strip.addEventListener('click', e => { if (suppressClick) { e.preventDefault(); e.stopPropagation(); } }, true);
 
