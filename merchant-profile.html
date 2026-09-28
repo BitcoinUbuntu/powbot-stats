@@ -49,6 +49,13 @@
         .facts b.fact-text { font-size: var(--fs-lg); letter-spacing: -0.02em; }
         .record .facts { display: grid; grid-template-columns: repeat(2, max-content); gap: var(--s5) var(--s7); }
         .record .facts li { flex-direction: column; gap: 4px; }
+        /* Projects span the row; each name is its own full-height link */
+        .record .facts li.fact-projects { grid-column: 1 / -1; gap: 0; }
+        .fact-projects b a, .fact-projects b em { display: flex; align-items: center; min-height: var(--tap); width: fit-content; font-style: normal; }
+        .fact-projects b i { font-style: normal; }
+        /* Underline the name only, not the space and flag after it */
+        .fact-projects b a { text-decoration: none; }
+        .fact-projects b a .pn { color: inherit; text-decoration: underline; text-underline-offset: 0.15em; }
         .support-box h2 { margin: 0 0 var(--s3); font-size: var(--fs-md); overflow-wrap: anywhere; }
         /* The QR needs a white quiet zone to scan, so white here is functional,
            not a theme colour. */
@@ -112,12 +119,6 @@
                 <div class="section intro" id="stats-grid">
                     <!-- Record and support box are inserted here -->
                 </div>
-
-                <section class="section" id="projects-section" aria-labelledby="projects-title" hidden>
-                    <h2 id="projects-title">Projects</h2>
-                    <p class="section-note">Projects that spent bitcoin here on camera, across every epoch, most posts first.</p>
-                    <ul class="list" id="projects-list"></ul>
-                </section>
 
                 <section class="section" aria-labelledby="posts-title">
                     <h2 id="posts-title">PoWBoT posts</h2>
@@ -344,11 +345,10 @@
                 document.getElementById('merchant-state').innerHTML = '';
                 document.getElementById('merchant-body').hidden = false;
 
-                // Render stats
-                renderStats(totalCount, allPosts, merchantDisplayName, lightningAddress, countryFlag);
+                // Render stats, with the projects that post here
+                renderStats(totalCount, allPosts, merchantDisplayName, lightningAddress, countryFlag, projectsOf(allPosts, membersData));
 
-                // Projects that post here, then the posts themselves
-                renderProjects(allPosts, membersData);
+                // Render posts
                 renderPosts(allPosts);
 
                 // Handle BTC Map section
@@ -372,7 +372,7 @@
             }
         }
 
-        function renderStats(totalCount, posts, merchantName, lightningAddress, countryFlag) {
+        function renderStats(totalCount, posts, merchantName, lightningAddress, countryFlag, projects) {
             const statsGrid = document.getElementById('stats-grid');
 
             // Calculate first and last post dates
@@ -412,6 +412,7 @@
                         ${countryFlag ? `<li><b class="fact-text">${escapeHtml(getCountryName(countryFlag))}</b><span>location</span></li>` : ''}
                         ${firstPost ? `<li><b class="fact-text num">${formatDate(firstPost)}</b><span>first post</span></li>` : ''}
                         ${lastPost ? `<li><b class="fact-text num">${formatDate(lastPost)}</b><span>latest post</span></li>` : ''}
+                        ${projects.length ? `<li class="fact-projects"><b class="fact-text">${projects.map(projectLink).join('')}</b><span>${projects.length === 1 ? 'project' : 'projects'} that spent bitcoin here on camera</span></li>` : ''}
                     </ul>
                 </section>
             `;
@@ -480,7 +481,8 @@
                 .toLowerCase();
         }
 
-        function renderProjects(allPosts, membersData) {
+        // Every project that posted here, most posts first (usually one, sometimes two)
+        function projectsOf(allPosts, membersData) {
             const members = {};
             (membersData?.members || []).forEach(m => { members[projectKey(m.name)] = m; });
 
@@ -488,31 +490,23 @@
             allPosts.forEach(post => {
                 const key = projectKey(post.project);
                 if (!key) return;
-                const entry = byProject.get(key) || { key, name: post.project, count: 0, latest: '' };
+                const entry = byProject.get(key) || { name: post.project, member: members[key], count: 0, latest: '' };
                 entry.count += 1;
                 if (String(post.date) > entry.latest) entry.latest = String(post.date);
                 byProject.set(key, entry);
             });
-            if (!byProject.size) return;
+            return [...byProject.values()].sort((a, b) => b.count - a.count || b.latest.localeCompare(a.latest));
+        }
 
-            // Most posts first; level projects by the most recent post
-            const projects = [...byProject.values()].sort((a, b) => b.count - a.count || b.latest.localeCompare(a.latest));
-
-            document.getElementById('projects-list').innerHTML = projects.map(p => {
-                const member = members[p.key];
-                const name = member?.name || String(p.name).replace(/\s*\([^)]*\)/g, '').replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
-                const flagMatch = String(p.name).match(/[\u{1F1E6}-\u{1F1FF}]{2}/u);
-                const flag = member?.flag || (flagMatch ? flagMatch[0] : '');
-                const country = member?.country || (flag ? getCountryName(flag) : '');
-                const flagHtml = flag ? `&nbsp;<span role="img" aria-label="${escapeHtml(country)}">${flag}</span>` : '';
-                const inner = `
-                    <span class="li-main">${escapeHtml(name)}${flagHtml}</span>
-                    <span class="li-side num">${p.count} ${p.count === 1 ? 'post' : 'posts'}</span>`;
-                return member
-                    ? `<li><a href="profile.html?id=${encodeURIComponent(member.id)}">${inner}</a></li>`
-                    : `<li><div class="row">${inner}</div></li>`;
-            }).join('');
-            document.getElementById('projects-section').hidden = false;
+        function projectLink({ name: raw, member }) {
+            const name = member?.name || String(raw).replace(/\s*\([^)]*\)/g, '').replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
+            const flagMatch = String(raw).match(/[\u{1F1E6}-\u{1F1FF}]{2}/u);
+            const flag = member?.flag || (flagMatch ? flagMatch[0] : '');
+            const country = member?.country || (flag ? getCountryName(flag) : '');
+            const flagHtml = flag ? `&nbsp;<i role="img" aria-label="${escapeHtml(country)}">${flag}</i>` : '';
+            return member
+                ? `<a href="profile.html?id=${encodeURIComponent(member.id)}"><span class="pn">${escapeHtml(name)}</span>${flagHtml}</a>`
+                : `<em>${escapeHtml(name)}${flagHtml}</em>`;
         }
 
         function renderPosts(allPosts) {
