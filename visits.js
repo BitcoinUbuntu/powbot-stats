@@ -5,10 +5,15 @@
 // the other platform that week is a "duplicate". So project + merchant + ISO
 // week identifies one visit, holding at most one post per platform.
 //
-// Posts with no classification (Epoch 5 and older, where every post stood on
-// its own) are never paired: each is its own visit.
+// Epoch 5 and older carry no classification, so their pairs are inferred: the
+// nearest X and Nostr posts by the same project at the same merchant, at most
+// PAIR_WINDOW_HOURS apart, each post used once. Most real pairs are minutes
+// apart; the window stops a project's next-day visit from being folded in.
+// Epoch 4 posts have a date only (read as midnight), so the same rule pairs
+// them by day: same day is 0 hours apart, any other day at least 24.
 (function () {
     const PLATFORMS = ['X', 'Nostr'];
+    const PAIR_WINDOW_HOURS = 12;
 
     function platformOf(sub) {
         const p = String(sub.platform || '').toLowerCase();
@@ -30,25 +35,60 @@
 
     // Tracker submissions -> visits, newest first. Pass approved posts only.
     // Each visit: { project, merchant, first (earliest timestamp), links: {X, Nostr}, posts }
+    const merchantKey = sub => String(sub.merchant_name || '').trim().toLowerCase();
+    const timeOf = sub => new Date(String(sub.timestamp).replace(' UTC', 'Z').replace(' ', 'T')).getTime();
+
+    function newVisit(sub) {
+        return { project: sub.project_name, merchant: sub.merchant_name, first: sub.timestamp, links: {}, posts: [] };
+    }
+
+    function addPost(visit, sub) {
+        const platform = platformOf(sub);
+        if (!visit.links[platform]) visit.links[platform] = sub.post_url;
+        visit.posts.push(sub);
+        if (String(sub.timestamp) < String(visit.first)) visit.first = sub.timestamp;
+    }
+
     window.groupVisits = function (submissions) {
         const byKey = new Map();
         const visits = [];
+        const unlabelled = new Map();   // project|merchant -> posts, paired by time below
+
         (submissions || []).forEach(sub => {
-            const paired = sub.classification === 'primary' || sub.classification === 'duplicate';
-            const key = paired
-                ? [sub.project_name, String(sub.merchant_name || '').trim().toLowerCase(), isoWeek(sub.timestamp)].join('|')
-                : null;
-            let visit = key ? byKey.get(key) : null;
-            if (!visit) {
-                visit = { project: sub.project_name, merchant: sub.merchant_name, first: sub.timestamp, links: {}, posts: [] };
-                if (key) byKey.set(key, visit);
-                visits.push(visit);
+            if (sub.classification === 'primary' || sub.classification === 'duplicate') {
+                const key = [sub.project_name, merchantKey(sub), isoWeek(sub.timestamp)].join('|');
+                let visit = byKey.get(key);
+                if (!visit) { visit = newVisit(sub); byKey.set(key, visit); visits.push(visit); }
+                addPost(visit, sub);
+            } else {
+                const key = [sub.project_name, merchantKey(sub)].join('|');
+                (unlabelled.get(key) || unlabelled.set(key, []).get(key)).push(sub);
             }
-            const platform = platformOf(sub);
-            if (!visit.links[platform]) visit.links[platform] = sub.post_url;
-            visit.posts.push(sub);
-            if (String(sub.timestamp) < String(visit.first)) visit.first = sub.timestamp;
         });
+
+        // Closest X-Nostr pairs first, so each post joins its nearest partner
+        const limit = PAIR_WINDOW_HOURS * 60 * 60 * 1000;
+        unlabelled.forEach(posts => {
+            const xs = posts.filter(s => platformOf(s) === 'X');
+            const ns = posts.filter(s => platformOf(s) === 'Nostr');
+            const candidates = [];
+            xs.forEach((x, i) => ns.forEach((n, j) => {
+                const gap = Math.abs(timeOf(x) - timeOf(n));
+                if (gap <= limit) candidates.push([gap, i, j]);
+            }));
+            candidates.sort((a, b) => a[0] - b[0]);
+            const usedX = new Set(), usedN = new Set();
+            candidates.forEach(([, i, j]) => {
+                if (usedX.has(i) || usedN.has(j)) return;
+                usedX.add(i); usedN.add(j);
+                const visit = newVisit(xs[i]);
+                addPost(visit, xs[i]); addPost(visit, ns[j]);
+                visits.push(visit);
+            });
+            xs.forEach((x, i) => { if (!usedX.has(i)) { const v = newVisit(x); addPost(v, x); visits.push(v); } });
+            ns.forEach((n, j) => { if (!usedN.has(j)) { const v = newVisit(n); addPost(v, n); visits.push(v); } });
+        });
+
         return visits.sort((a, b) => String(b.first).localeCompare(String(a.first)));
     };
 

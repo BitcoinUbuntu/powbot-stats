@@ -40,6 +40,8 @@
         .cols .section { border-bottom: 0; padding: 0; }
         /* Phones: merchants move under the country, like the homepage's week squares */
         .lb .proj small.mer-under { display: none; }
+        /* Visits here carry a date only ("27 Mar"), so the date column is narrower */
+        .lb .visits { --visit-when: 7ch; }
         .error { padding: var(--s6) 0; }
         .error p:first-child { font: 700 var(--fs-md)/1.4 var(--font-text); color: var(--danger); }
 
@@ -80,6 +82,7 @@
     <!-- Finished epochs and the shared "Every epoch" block -->
     <script src="epochs.js"></script>
     <script src="flags.js"></script>
+    <script src="visits.js"></script>
 
     <script>
         // Global project metadata
@@ -87,6 +90,7 @@
 
         // Rows shown before "Show all".
         const BOARD_ROWS = 10;
+        const DETAIL_ROWS = 5;   // visits shown in an opened leaderboard row
         const LIST_ROWS = 8;
 
         // Posts approved in the epochs before this one. Frozen; epoch 4 includes
@@ -250,12 +254,19 @@
                 const secondary = by === 'merchants' ? count : merchants;
                 const secondaryText = by === 'merchants' ? plural(count, 'post', 'posts') : plural(merchants, 'merchant', 'merchants');
 
-                const postItems = posts.slice(0, 10).map(post => `
-                    <li><a href="${attrSafe(post.url)}" target="_blank" rel="noopener">
-                        <span class="tag">${getPlatform(post.url)}</span>
-                        <span class="post-name">${escapeHtml(post.merchant || stripFlags(item.name))}</span>
-                        <span class="post-when">${formatDay(post.date)}</span>
-                    </a></li>`).join('');
+                // One row per visit (visits.js). These posts carry a date only, so
+                // an X post and its Nostr cross-post pair by day.
+                const visits = groupVisits(posts.map(post => ({
+                    project_name: item.name, merchant_name: post.merchant, post_url: post.url,
+                    timestamp: `${post.date} 00:00:00 UTC`, classification: ''
+                })));
+                const projectName = stripFlags(item.name);
+                const postItems = visits.slice(0, DETAIL_ROWS).map(v => `
+                    <li><div class="visit">
+                        <span class="visit-main">${v.merchant ? `<a href="${attrSafe(profileUrl(v.merchant, 'merchant'))}">${escapeHtml(v.merchant)}</a>` : escapeHtml(projectName)}</span>
+                        ${visitLinks(v, `${projectName} at ${v.merchant || 'a merchant'}`)}
+                        <span class="visit-when">${formatDay(String(v.first).slice(0, 10))}</span>
+                    </div></li>`).join('');
 
                 return `
                     <tr class="lb-row${more}">
@@ -272,10 +283,10 @@
                     </tr>
                     <tr class="detail${more}" id="${detailId}" hidden>
                         <td colspan="4">
-                            ${postItems ? `<ul class="post-list" aria-label="Latest posts by ${attrSafe(stripFlags(item.name))}">${postItems}</ul>` : ''}
+                            ${postItems ? `<ul class="visits" aria-label="Latest posts by ${attrSafe(projectName)}">${postItems}</ul>` : ''}
                             <div class="detail-links">
                                 <a class="btn" href="${attrSafe(profileUrl(item.name, 'project'))}">View ${escapeHtml(stripFlags(item.name))}’s profile</a>
-                                ${posts.length > 10 ? `<a class="btn" href="${attrSafe(profileUrl(item.name, 'project'))}">View all ${formatNumber(posts.length)} posts</a>` : ''}
+                                ${visits.length > DETAIL_ROWS ? `<a class="btn" href="${attrSafe(profileUrl(item.name, 'project'))}">View all ${formatNumber(posts.length)} posts</a>` : ''}
                             </div>
                         </td>
                     </tr>`;
