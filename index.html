@@ -64,6 +64,10 @@
         .pulse strong { color: var(--text); }
         .cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s7); }
         .cols .section { border-bottom: 0; padding: 0; }
+        /* One line per merchant in both views, so switching never changes the
+           list's height. A long name is cut short on screen only; the link
+           still carries it in full. */
+        #merchant-list .li-main { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .error { padding: var(--s6) 0; }
         .error p:first-child { font: 700 var(--fs-md)/1.4 var(--font-text); color: var(--danger); }
 
@@ -707,7 +711,7 @@
                 </div></div>`;
         }
 
-        // Each merchant's first post this epoch, and the project that made it
+        // Each merchant's first post this epoch
         function firstPostOf(m) {
             return (m.posts || []).reduce((first, x) => (!first || String(x.date) < String(first.date) ? x : first), null);
         }
@@ -736,11 +740,12 @@
                     .map(m => ({ m, first: firstPostOf(m) }))
                     .sort((a, b) => String(b.first?.date || '').localeCompare(String(a.first?.date || '')));
                 total = fresh.length;
-                note = `<strong>${formatNumber(fresh.length)} of ${formatNumber(merchants.length)}</strong> merchants are new to PoWBoT this epoch, with no approved post in earlier epochs. Newest first, with the project that brought them in.`;
+                note = `<strong>${formatNumber(fresh.length)} of ${formatNumber(merchants.length)}</strong> merchants are new to PoWBoT this epoch.`;
+                // One line per merchant, like "Most posts", so switching never
+                // changes the list's height. The projects are on each merchant's page.
                 items = fresh.map(({ m, first }, i) => `
                     <li class="${i >= LIST_ROWS ? 'is-more' : ''}"><a href="${attrSafe(profileUrl(m.name, 'merchant'))}">
-                        <span class="li-main"><span class="li-name">${escapeHtml(m.name)}</span>
-                            ${first?.project ? `<span class="li-sub">via ${escapeHtml(displayName(first.project))} ${flagHtml(flagOf(first.project))}</span>` : ''}</span>
+                        <span class="li-main">${escapeHtml(m.name)}</span>
                         <span class="li-side">${first?.date ? `first post ${formatDay(first.date)}` : ''}</span>
                     </a></li>`).join('');
                 if (!fresh.length) note = 'Every merchant this epoch has posted before. New shops appear here with their first approved post.';

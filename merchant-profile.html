@@ -113,6 +113,12 @@
                     <!-- Record and support box are inserted here -->
                 </div>
 
+                <section class="section" id="projects-section" aria-labelledby="projects-title" hidden>
+                    <h2 id="projects-title">Projects</h2>
+                    <p class="section-note">Projects that spent bitcoin here on camera, across every epoch, most posts first.</p>
+                    <ul class="list" id="projects-list"></ul>
+                </section>
+
                 <section class="section" aria-labelledby="posts-title">
                     <h2 id="posts-title">PoWBoT posts</h2>
                     <p class="section-note">Accepted proof-of-work posts that feature this merchant, across every epoch, newest first.</p>
@@ -247,9 +253,12 @@
                     ? fetchLiveData(f).catch(() => null)
                     : fetch(f).then(r => r.ok ? r.json() : null).catch(() => null);
 
-                const [trackerFiles, statsArchives] = await Promise.all([
+                // members.json names each project's profile page. Optional: without
+                // it the projects list still shows, just without links.
+                const [trackerFiles, statsArchives, membersData] = await Promise.all([
                     Promise.all(TRACKER_FILES.map(loadJson)),
-                    Promise.all(STATS_ARCHIVES.map(loadJson))
+                    Promise.all(STATS_ARCHIVES.map(loadJson)),
+                    loadJson('members.json')
                 ]);
 
                 // Normalize the URL parameter for comparison
@@ -338,7 +347,8 @@
                 // Render stats
                 renderStats(totalCount, allPosts, merchantDisplayName, lightningAddress, countryFlag);
 
-                // Render posts
+                // Projects that post here, then the posts themselves
+                renderProjects(allPosts, membersData);
                 renderPosts(allPosts);
 
                 // Handle BTC Map section
@@ -457,6 +467,52 @@
                 console.error('Failed to copy:', err);
                 alert('Failed to copy address');
             });
+        }
+
+        // Project names come as "Bitbiashara (Kenya) 🇰🇪" (tracker) or
+        // "Bitbiashara 🇰🇪" (older archives): compare without country or flag
+        function projectKey(name) {
+            return String(name || '')
+                .replace(/\s*\([^)]*\)/g, '')
+                .replace(/[\u{1F1E6}-\u{1F1FF}]/gu, '')
+                .replace(/\s+/g, ' ')
+                .trim()
+                .toLowerCase();
+        }
+
+        function renderProjects(allPosts, membersData) {
+            const members = {};
+            (membersData?.members || []).forEach(m => { members[projectKey(m.name)] = m; });
+
+            const byProject = new Map();
+            allPosts.forEach(post => {
+                const key = projectKey(post.project);
+                if (!key) return;
+                const entry = byProject.get(key) || { key, name: post.project, count: 0, latest: '' };
+                entry.count += 1;
+                if (String(post.date) > entry.latest) entry.latest = String(post.date);
+                byProject.set(key, entry);
+            });
+            if (!byProject.size) return;
+
+            // Most posts first; level projects by the most recent post
+            const projects = [...byProject.values()].sort((a, b) => b.count - a.count || b.latest.localeCompare(a.latest));
+
+            document.getElementById('projects-list').innerHTML = projects.map(p => {
+                const member = members[p.key];
+                const name = member?.name || String(p.name).replace(/\s*\([^)]*\)/g, '').replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
+                const flagMatch = String(p.name).match(/[\u{1F1E6}-\u{1F1FF}]{2}/u);
+                const flag = member?.flag || (flagMatch ? flagMatch[0] : '');
+                const country = member?.country || (flag ? getCountryName(flag) : '');
+                const flagHtml = flag ? `&nbsp;<span role="img" aria-label="${escapeHtml(country)}">${flag}</span>` : '';
+                const inner = `
+                    <span class="li-main">${escapeHtml(name)}${flagHtml}</span>
+                    <span class="li-side num">${p.count} ${p.count === 1 ? 'post' : 'posts'}</span>`;
+                return member
+                    ? `<li><a href="profile.html?id=${encodeURIComponent(member.id)}">${inner}</a></li>`
+                    : `<li><div class="row">${inner}</div></li>`;
+            }).join('');
+            document.getElementById('projects-section').hidden = false;
         }
 
         function renderPosts(allPosts) {
