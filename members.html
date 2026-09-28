@@ -27,6 +27,7 @@
     <script src="qrcode.min.js"></script>
     <!-- The donation panel on each card back, shared with profile.html -->
     <script src="donate.js"></script>
+    <script src="flags.js"></script>
     <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Loaded here in
          the head because this page's inline script runs before inject.js. -->
     <script src="data-source.js"></script>
@@ -693,7 +694,7 @@
                                             <h3 id="name-${cardId}">${name}</h3>
                                             ${place ? `<p class="card-place">${place}</p>` : ''}
                                         </div>
-                                        ${member.flag ? `<span class="flag" role="img" aria-label="${country}">${member.flag}</span>` : ''}
+                                        ${flagHtml(member.flag, country, 'flag')}
                                     </div>
                                     <p class="card-tagline">${(() => {
                                         const tagline = member.tagline || 'Bitcoin circular economy project';

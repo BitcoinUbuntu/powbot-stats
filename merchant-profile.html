@@ -12,6 +12,7 @@
     <script src="qrcode.min.js"></script>
     <!-- The donation panel, shared with the directory and project profiles -->
     <script src="donate.js"></script>
+    <script src="flags.js"></script>
     <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Loaded in the
          head because the page's inline script runs before the end of <body>;
          loaded at the bottom, it was never defined in time and the page always
@@ -333,7 +334,7 @@
                 document.getElementById('merchant-icon').textContent = merchantDisplayName.trim().charAt(0).toUpperCase();
                 // Flag carries the country as its name; the country is also written out
                 document.getElementById('merchant-subtitle').innerHTML = countryFlag
-                    ? `<span class="flag" role="img" aria-label="${escapeHtml(getCountryName(countryFlag))}">${countryFlag}</span> Circular economy merchant${escapeHtml(countryInfo)}`
+                    ? `${flagHtml(countryFlag, getCountryName(countryFlag), 'flag')} Circular economy merchant${escapeHtml(countryInfo)}`
                     : 'Circular economy merchant';
 
                 // Swap the loading state for the merchant
@@ -456,10 +457,9 @@
             const flagMatch = String(raw).match(/[\u{1F1E6}-\u{1F1FF}]{2}/u);
             const flag = member?.flag || (flagMatch ? flagMatch[0] : '');
             const country = member?.country || (flag ? getCountryName(flag) : '');
-            const flagHtml = flag ? `&nbsp;<i role="img" aria-label="${escapeHtml(country)}">${flag}</i>` : '';
             return member
-                ? `<a href="profile.html?id=${encodeURIComponent(member.id)}"><span class="pn">${escapeHtml(name)}</span>${flagHtml}</a>`
-                : `<em>${escapeHtml(name)}${flagHtml}</em>`;
+                ? `<a href="profile.html?id=${encodeURIComponent(member.id)}"><span class="pn">${nameWithFlag(name, flag, country)}</span></a>`
+                : `<em>${nameWithFlag(name, flag, country)}</em>`;
         }
 
         function renderPosts(allPosts) {

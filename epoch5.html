@@ -79,6 +79,7 @@
     <script src="includes/inject.js"></script>
     <!-- Finished epochs and the shared "Every epoch" block -->
     <script src="epochs.js"></script>
+    <script src="flags.js"></script>
 
     <script>
         // Global project metadata
@@ -140,14 +141,6 @@
             if (!url) return 'Nostr';
             const lower = url.toLowerCase();
             return (lower.includes('twitter.com') || lower.includes('x.com')) ? 'X' : 'Nostr';
-        }
-
-        // A flag with its country as the accessible name
-        function flagHtml(flag, country) {
-            if (!flag) return '';
-            return country
-                ? `<span role="img" aria-label="${attrSafe(country)}">${flag}</span>`
-                : `<span aria-hidden="true">${flag}</span>`;
         }
 
         // ------------------------------------------------------ Facts, notes --
@@ -269,9 +262,8 @@
                         <td class="rank num">${String(index + 1).padStart(2, '0')}</td>
                         <th scope="row" class="proj">
                             <button type="button" class="row-toggle" aria-expanded="false" aria-controls="${detailId}">
-                                <span class="row-line"><span class="proj-name">${escapeHtml(stripFlags(item.name))}</span>&nbsp;${flagHtml(flag, country)}
+                                <span class="row-line"><span class="proj-name">${nameWithFlag(stripFlags(item.name), flag, country)}</span>
                                 <span class="chev" aria-hidden="true"></span></span>
-                                ${country ? `<small>${escapeHtml(country)}</small>` : ''}
                                 <small class="mer-under">${secondaryText}</small>
                             </button>
                         </th>

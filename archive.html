@@ -82,6 +82,7 @@
     <script src="includes/inject.js"></script>
     <!-- Finished epochs and the shared "Every epoch" block -->
     <script src="epochs.js"></script>
+    <script src="flags.js"></script>
 
     <script>
         // Global project metadata
@@ -131,14 +132,6 @@
         const FLAG_RE = /[\u{1F1E6}-\u{1F1FF}]{2}/u;
         const stripFlags = (name) => String(name || '').replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
         const flagOf = (name) => (String(name || '').match(FLAG_RE) || [''])[0];
-
-        // A flag with its country as the accessible name
-        function flagHtml(flag, country) {
-            if (!flag) return '';
-            return country
-                ? `<span role="img" aria-label="${attrSafe(country)}">${flag}</span>`
-                : `<span aria-hidden="true">${flag}</span>`;
-        }
 
         const plural = (n, one, many) => `${formatNumber(n)} ${n === 1 ? one : many}`;
 
@@ -408,15 +401,13 @@
                 const detailId = `${elementId}-${index}`;
                 const flag = flagOf(item.name);
                 const country = countryByFlag[flag] || '';
-                const nameHtml = `<span class="proj-name">${escapeHtml(stripFlags(item.name))}</span>${flag ? ' ' + flagHtml(flag, country) : ''}`;
-                const small = country ? `<small>${escapeHtml(country)}</small>` : '';
+                const nameHtml = `<span class="proj-name">${nameWithFlag(stripFlags(item.name), flag, country)}</span>`;
 
                 const cell = hasPosts
                     ? `<button type="button" class="row-toggle" aria-expanded="false" aria-controls="${detailId}">
                            <span class="row-line">${nameHtml} <span class="chev" aria-hidden="true"></span></span>
-                           ${small}
                        </button>`
-                    : `${nameHtml}${small}`;
+                    : nameHtml;
 
                 const postItems = posts.slice(0, 10).map((post, i) => {
                     const platform = getPlatform(post.url);
@@ -427,7 +418,7 @@
                         postLabel = post.project;
                     }
                     const label = postLabel
-                        ? `${escapeHtml(stripFlags(postLabel))}${flagOf(postLabel) ? ' ' + flagHtml(flagOf(postLabel), countryByFlag[flagOf(postLabel)]) : ''}`
+                        ? nameWithFlag(stripFlags(postLabel), flagOf(postLabel), countryByFlag[flagOf(postLabel)])
                         : `Post ${i + 1}`;
                     return `
                         <li><a href="${attrSafe(post.url)}" target="_blank" rel="noopener">

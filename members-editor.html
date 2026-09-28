@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="stylesheet" href="css/powbot.css">
+    <script src="flags.js"></script>
     <style>
         /* Members editor layout only. Colours, type and components: css/powbot.css.
            A local admin tool: no site nav, not linked from the site. */
@@ -150,7 +151,7 @@
                 return `
                     <li class="member-item ${isActive ? 'active' : ''}" data-id="${member.id}">
                         <button type="button" onclick="selectMember('${member.id}')"${isActive ? ' aria-current="true"' : ''}>
-                            <span class="member-item-name">${member.name} ${member.flag ? `<span role="img" aria-label="${member.country || 'Flag'}">${member.flag}</span>` : ''}</span>
+                            <span class="member-item-name">${member.name} ${flagHtml(member.flag, member.country || 'Flag')}</span>
                             <span class="member-item-country">${member.country || ''}</span>
                         </button>
                     </li>

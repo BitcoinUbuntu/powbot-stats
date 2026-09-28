@@ -132,6 +132,7 @@
     <script src="epoch-config.js"></script>
     <!-- Finished epochs and the shared "Every epoch" block -->
     <script src="epochs.js"></script>
+    <script src="flags.js"></script>
     <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Must load
          before any script that fetches live data. -->
     <script src="data-source.js"></script>
@@ -229,14 +230,6 @@
             if (!url) return 'Nostr';
             const lower = url.toLowerCase();
             return (lower.includes('twitter.com') || lower.includes('x.com')) ? 'X' : 'Nostr';
-        }
-
-        // A flag with its country as the accessible name
-        function flagHtml(flag, country) {
-            if (!flag) return '';
-            return country
-                ? `<span role="img" aria-label="${attrSafe(country)}">${flag}</span>`
-                : `<span aria-hidden="true">${flag}</span>`;
         }
 
         const plural = (n, one, many) => `${formatNumber(n)} ${n === 1 ? one : many}`;
@@ -401,9 +394,9 @@
                         <td class="rank num">${String(i + 1).padStart(2, '0')}</td>
                         <th scope="row" class="proj">
                             <button type="button" class="row-toggle" aria-expanded="false" aria-controls="${detailId}">
-                                <span class="row-line"><span class="proj-name">${escapeHtml(stripFlags(p.name))}</span>&nbsp;${flagHtml(flag, country)}
+                                <span class="row-line"><span class="proj-name">${nameWithFlag(stripFlags(p.name), flag, country)}</span>
                                 <span class="chev" aria-hidden="true"></span></span>
-                                <small>${escapeHtml(country)}<span class="sec-under">${country ? ', ' : ''}${secondaryText}</span></small>
+                                <small><span class="sec-under">${secondaryText}</span></small>
                             </button>
                             ${weekSquares(dates, days, 'week-under')}
                         </th>
@@ -518,9 +511,9 @@
                         <td class="rank num">${String(i + 1).padStart(2, '0')}</td>
                         <th scope="row" class="proj">
                             <button type="button" class="row-toggle" aria-expanded="false" aria-controls="${detailId}">
-                                <span class="row-line"><span class="proj-name">${escapeHtml(name)}</span>&nbsp;${flagHtml(flag, country)}
+                                <span class="row-line"><span class="proj-name">${nameWithFlag(name, flag, country)}</span>
                                 <span class="chev" aria-hidden="true"></span></span>
-                                <small>${escapeHtml(country)}<span class="sec-under">${country ? ', ' : ''}${plural(merchants, 'merchant', 'merchants')}</span></small>
+                                <small><span class="sec-under">${plural(merchants, 'merchant', 'merchants')}</span></small>
                             </button>
                             ${weekSquares(dates, days, 'week-under')}
                         </th>
@@ -652,7 +645,7 @@
                 <li class="${i >= LIST_ROWS ? 'is-more' : ''}">
                     <a href="${attrSafe(v.url)}" target="_blank" rel="noopener">
                         <span class="li-main"><span class="tag">${escapeHtml(v.platform || getPlatform(v.url))}</span>
-                            <strong>${escapeHtml(displayName(v.project))}</strong> ${flagHtml(flagOf(v.project))}
+                            <strong>${nameWithFlag(displayName(v.project), flagOf(v.project))}</strong>
                             at ${escapeHtml(v.merchant || 'a merchant')}</span>
                         <span class="li-side mono">${formatDateTimeUTC(parseTrackerTime(v.timestamp))}</span>
                     </a>

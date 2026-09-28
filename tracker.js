@@ -445,11 +445,7 @@ function renderSubmissionCard(submission) {
 
     // Flag carries the country as its name; the country is also written out
     const country = extractCountry(submission.project_name);
-    const flag = submission.project_flag
-        ? (country
-            ? `<span class="flag" role="img" aria-label="${escapeHtml(country)}">${escapeHtml(submission.project_flag)}</span>`
-            : `<span class="flag" aria-hidden="true">${escapeHtml(submission.project_flag)}</span>`)
-        : '';
+    const flag = flagHtml(submission.project_flag, country, 'flag');
     const detailsId = `sub-${String(submission.id ?? '').replace(/[^\w-]/g, '')}-details`;
 
     return `

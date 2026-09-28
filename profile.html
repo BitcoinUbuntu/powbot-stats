@@ -21,6 +21,7 @@
     <script src="qrcode.min.js"></script>
     <!-- The donation panel, shared with the directory card backs -->
     <script src="donate.js"></script>
+    <script src="flags.js"></script>
 
     <link rel="stylesheet" href="css/powbot.css">
     <style>
@@ -288,11 +289,7 @@
             `;
 
             // Flag carries the country as its name; the country is also written out.
-            const flagHtml = member.flag
-                ? (member.country
-                    ? `<span class="flag" role="img" aria-label="${escapeHtml(member.country)}">${member.flag}</span>`
-                    : `<span class="flag" aria-hidden="true">${member.flag}</span>`)
-                : '';
+            const flagMarkup = flagHtml(member.flag, member.country, 'flag');
             const place = [member.city, member.country].filter(Boolean).join(', ');
 
             let html = `
@@ -301,7 +298,7 @@
                         ${logoHtml}
                         <div class="hero-text">
                             <h1>${escapeHtml(member.name)}</h1>
-                            ${place || member.flag ? `<p class="location">${flagHtml} ${escapeHtml(place)}</p>` : ''}
+                            ${place || member.flag ? `<p class="location">${flagMarkup} ${escapeHtml(place)}</p>` : ''}
                             ${member.tagline ? `<p class="tagline">${escapeHtml(member.tagline)}</p>` : ''}
                         </div>
                         <ul class="hero-links" aria-label="${escapeHtml(member.name)} elsewhere">
