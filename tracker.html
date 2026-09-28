@@ -73,10 +73,10 @@
         .details dt { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--muted); }
         .details dd { margin: var(--s1) 0 0; overflow-wrap: anywhere; }
         .payment-list { list-style: none; margin: var(--s1) 0 0; padding: 0; }
-        .payment-item { display: flex; flex-wrap: wrap; gap: 0 var(--s3); padding: var(--s1) 0; border-bottom: 1px solid var(--line); }
-        .payment-item:last-child { border-bottom: 0; }
-        .payment-type { min-width: 6rem; color: var(--muted); }
-        .payment-recipient { min-width: 0; overflow-wrap: anywhere; }
+        .payment-item { display: flex; gap: 0 var(--s3); padding: var(--s1) 0; }
+        .payment-type { flex: none; width: 6rem; color: var(--muted); }
+        /* Values keep their column; a long post address wraps inside it */
+        .payment-recipient { flex: 1; min-width: 0; overflow-wrap: anywhere; }
         .card-details .chips { margin-top: var(--s4); }
 
         /* ------------------------------------------------------------ States -- */
