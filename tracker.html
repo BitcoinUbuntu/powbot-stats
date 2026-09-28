@@ -434,7 +434,7 @@
             }
 
             /* Match the smaller page padding so the pinned nav stays edge to edge */
-            body:not(.pb) > #nav-placeholder { margin: -12px -12px 12px; }
+            body:not(.pb) > #site-nav { margin: -12px -12px 12px; }
 
             header h1 {
                 font-size: 1.5rem;
@@ -492,8 +492,8 @@
     </style>
 </head>
 <body>
-    <!-- Navigation will be injected here -->
-    <div id="nav-placeholder"></div>
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
 
     <div class="container">
         <header>
@@ -588,27 +588,12 @@
     </div>
 
     <!-- Footer will be injected here -->
-    <div id="footer-placeholder"></div>
+    <div id="site-footer"></div>
 
     <!-- Defines fetchLiveData(). Must load BEFORE tracker.js, which calls it. -->
     <script src="data-source.js"></script>
     <script src="tracker.js"></script>
-    <script>
-        // Load includes
-        fetch('includes/nav.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('nav-placeholder').innerHTML = html;
-                // Set current page
-                const currentPage = document.querySelector('nav a[data-page="tracker"]');
-                if (currentPage) currentPage.classList.add('current');
-            });
-
-        fetch('includes/footer.html')
-            .then(response => response.text())
-            .then(html => {
-                document.getElementById('footer-placeholder').innerHTML = html;
-            });
-    </script>
+    <!-- Shared nav (with the phone menu) and footer -->
+    <script src="includes/inject.js"></script>
 </body>
 </html>

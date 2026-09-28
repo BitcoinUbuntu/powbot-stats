@@ -22,6 +22,9 @@
 
             // Highlight current page
             highlightCurrentPage();
+
+            // Phone menu button
+            setupMenu(navContainer.querySelector('.site-nav'));
         } catch (error) {
             console.error('Failed to load navigation:', error);
         }
@@ -98,6 +101,52 @@
                 link.setAttribute('aria-current', 'page');
             }
         });
+    }
+
+    /**
+     * Phone menu: the nav links fold behind a button below 720px.
+     * A disclosure (button + aria-expanded), not an ARIA menu: the links stay
+     * ordinary links in the tab order once the panel is open.
+     */
+    function setupMenu(nav) {
+        if (!nav) return;
+        const button = nav.querySelector('.nav-toggle');
+        const panel = nav.querySelector('.nav-links');
+        if (!button || !panel) return;
+
+        function setOpen(open, { returnFocus = false } = {}) {
+            nav.classList.toggle('is-open', open);
+            button.setAttribute('aria-expanded', String(open));
+            if (!open && returnFocus) button.focus();
+        }
+
+        button.addEventListener('click', (event) => {
+            // detail is 0 when Enter or Space fired the click. Keyboard opens
+            // skip the animation; it would only delay the next key press.
+            nav.classList.toggle('no-anim', event.detail === 0);
+            setOpen(!nav.classList.contains('is-open'));
+        });
+
+        // Choosing a link closes the panel (matters for same-page links)
+        panel.addEventListener('click', (event) => {
+            if (event.target.closest('a')) setOpen(false);
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+                setOpen(false, { returnFocus: true });
+            }
+        });
+
+        // A tap anywhere outside the nav closes it
+        document.addEventListener('click', (event) => {
+            if (nav.classList.contains('is-open') && !nav.contains(event.target)) setOpen(false);
+        });
+
+        // Widening past phone size shows the links inline; reset the state
+        const wide = window.matchMedia('(min-width: 721px)');
+        const reset = () => { if (wide.matches) setOpen(false); };
+        if (wide.addEventListener) wide.addEventListener('change', reset);
     }
 
     /**

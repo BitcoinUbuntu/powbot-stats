@@ -1,4 +1,5 @@
-<!-- Styles live in css/powbot.css (.site-nav). -->
+<!-- Styles live in css/powbot.css (.site-nav). The menu button is wired up
+     in includes/inject.js. To add a page, add one <li> here. -->
 <a class="skip-link" href="#main">Skip to content</a>
 <nav class="site-nav" aria-label="Main">
     <div class="wrap">
@@ -6,7 +7,11 @@
             <img src="images/PoWBoT_mascot_100px.png" alt="" width="34" height="34">
             <span translate="no">PoWBoT</span>
         </a>
-        <ul class="nav-links">
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+            <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="visually-hidden">Menu</span>
+        </button>
+        <ul class="nav-links" id="nav-menu">
             <li><a href="index.html" data-page="index">Stats</a></li>
             <li><a href="members.html" data-page="members">Directory</a></li>
             <li><a href="archive.html" data-page="archive">Archive</a></li>

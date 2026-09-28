@@ -139,11 +139,11 @@ html:has(body.pb) { color-scheme: dark; background: var(--night); }
  * wrapper is exactly as tall as the nav, so a sticky .site-nav never moved.
  * Links are square blocks that fill the bar from the top edge to the rule.
  */
-#site-nav, #nav-placeholder { position: sticky; top: 0; z-index: 100; }
+#site-nav { position: sticky; top: 0; z-index: 100; }
 /* Pages not yet rebuilt pad <body> by 20px; pull the nav out to the edges. */
-body:not(.pb) > #site-nav, body:not(.pb) > #nav-placeholder { margin: -20px -20px 20px; }
+body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 
-.site-nav { border-bottom: 1px solid var(--line); background: var(--night); }
+.site-nav { position: relative; border-bottom: 1px solid var(--line); background: var(--night); }
 .site-nav .wrap { display: flex; align-items: stretch; gap: var(--s4); height: 60px; }
 .site-nav .brand { display: flex; align-items: center; align-self: center; gap: 10px; color: var(--heading); text-decoration: none; font: 700 var(--fs-md)/1 var(--font-mono); letter-spacing: -0.02em; min-height: var(--tap); }
 .site-nav .brand img { width: 34px; height: 34px; }
@@ -158,6 +158,29 @@ body:not(.pb) > #site-nav, body:not(.pb) > #nav-placeholder { margin: -20px -20p
 .site-nav .nav-links a.current { background: var(--amber); color: var(--night); }
 .site-nav .nav-links a:focus-visible { outline-offset: -3px; border-radius: 0; }
 .site-nav .nav-links a.current:focus-visible { outline-color: var(--night); }
+
+/* Menu button: phones only. A square block like the links, bars turn to a cross. */
+.site-nav .nav-toggle {
+    display: none; align-items: center; justify-content: center;
+    width: 60px; margin: 0 calc(var(--gutter) * -1) 0 auto; padding: 0;
+    background: none; border: 0; border-left: 1px solid var(--line);
+    color: var(--heading); cursor: pointer;
+}
+.site-nav .nav-toggle:hover { background: var(--panel); }
+.site-nav .nav-toggle[aria-expanded="true"] { background: var(--panel); }
+.site-nav .nav-toggle:focus-visible { outline-offset: -3px; border-radius: 0; }
+.nav-toggle-bars { position: relative; display: block; width: 22px; height: 16px; }
+.nav-toggle-bars i {
+    position: absolute; left: 0; width: 100%; height: 2px; background: currentColor;
+    transition: transform var(--t-ui) var(--ease-out), opacity var(--t-fast) ease;
+}
+.nav-toggle-bars i:nth-child(1) { top: 0; }
+.nav-toggle-bars i:nth-child(2) { top: 7px; }
+.nav-toggle-bars i:nth-child(3) { top: 14px; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars i:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars i:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars i:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 
 /* --------------------------------------------------------------- Footer -- */
 .site-footer { border-top: 1px solid var(--line); padding: var(--s6) 0 var(--s7); color: var(--muted); font: 400 var(--fs-sm)/1.6 var(--font-text); text-align: center; background: var(--night); }
@@ -174,9 +197,23 @@ body:not(.pb) > #site-nav, body:not(.pb) > #nav-placeholder { margin: -20px -20p
 .site-footer .footer-links a { display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 var(--s2); }
 
 @media (max-width: 720px) {
-    /* Name stays available to screen readers when the wordmark is hidden */
-    .site-nav .brand span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-    .site-nav .nav-links a { padding: 0 var(--s3); }
+    /* Links fold into a panel under the bar, so the wordmark always fits */
+    .site-nav .nav-toggle { display: flex; }
+    .site-nav .nav-links {
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; margin: 0;
+        background: var(--night); border-bottom: 1px solid var(--line-strong);
+        visibility: hidden; opacity: 0; transform: translateY(-6px);
+        transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out), visibility 0s linear 180ms;
+    }
+    .site-nav.is-open .nav-links {
+        visibility: visible; opacity: 1; transform: none;
+        transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out), visibility 0s;
+    }
+    /* Opened from the keyboard: no animation (it would only slow the next key) */
+    .site-nav.no-anim .nav-links { transition: none; }
+    .site-nav .nav-links li { display: block; border-top: 1px solid var(--line); }
+    .site-nav .nav-links a { min-height: 52px; padding: 0 var(--gutter); font-size: var(--fs-md); }
 }
 
 /* --------------------------------------------------------------- Motion -- */
