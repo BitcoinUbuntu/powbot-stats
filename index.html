@@ -233,6 +233,17 @@
             return `${type === 'merchant' ? 'merchant-profile.html' : 'profile.html'}?id=${profileId(name)}`;
         }
 
+        // The tracker filtered to one project's approved posts this epoch. The
+        // tracker also lists archived epochs and has no epoch filter, so a date
+        // range stands in: epoch start to today. It has no 48-hour range either,
+        // so `recent` uses whole UTC days from the start of the window.
+        function trackerUrl(project, recent = false) {
+            const day = d => new Date(d).toISOString().slice(0, 10);
+            const from = recent ? Date.now() - ACTIVITY_WINDOW_HOURS * 60 * 60 * 1000 : EPOCH.start;
+            const params = new URLSearchParams({ project, status: 'Processed', date: 'custom', from: day(from), to: day(Date.now()) });
+            return `tracker.html?${params}`;
+        }
+
         // Visits with a post inside the recent-activity window. Any post counts,
         // so a visit whose two posts straddle the edge still shows both links.
         function recentVisits() {
@@ -443,7 +454,7 @@
                             ${postItems ? `<ul class="${visits ? 'visits' : 'post-list'}" aria-label="Latest posts by ${attrSafe(stripFlags(p.name))}">${postItems}</ul>` : ''}
                             <div class="detail-links">
                                 <a class="btn" href="${attrSafe(profileUrl(p.name, 'project'))}">View ${escapeHtml(stripFlags(p.name))}’s profile</a>
-                                ${(visits || posts).length > DETAIL_ROWS ? `<a class="btn" href="tracker.html">All ${formatNumber(posts.length)} posts in the tracker</a>` : ''}
+                                ${(visits || posts).length > DETAIL_ROWS ? `<a class="btn" href="${attrSafe(trackerUrl(stripFlags(p.name)))}">All ${formatNumber(posts.length)} posts in the tracker</a>` : ''}
                             </div>
                         </td>
                     </tr>`;
@@ -555,7 +566,7 @@
                             <ul class="visits" aria-label="Posts by ${attrSafe(name)} in the last ${ACTIVITY_WINDOW_HOURS} hours">${postItems}</ul>
                             <div class="detail-links">
                                 <a class="btn" href="${attrSafe(profileUrl(epochProject?.name || project, 'project'))}">View ${escapeHtml(name)}’s profile</a>
-                                ${projectVisits.length > DETAIL_ROWS ? `<a class="btn" href="tracker.html">All ${formatNumber(entry.count)} posts in the tracker</a>` : ''}
+                                ${projectVisits.length > DETAIL_ROWS ? `<a class="btn" href="${attrSafe(trackerUrl(name, true))}">Open in the tracker</a>` : ''}
                             </div>
                         </td>
                     </tr>`;

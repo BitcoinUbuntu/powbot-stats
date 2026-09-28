@@ -165,15 +165,14 @@ function applyURLFilters() {
     // Apply project filter
     const projectParam = urlParams.get('project');
     if (projectParam) {
-        // Find the full project name that matches (case-insensitive)
+        // Find the full project name that matches (case-insensitive). An exact
+        // name wins, so "Bitcoin Dua" can never select a longer name containing it.
         const projectSelect = document.getElementById('filter-project');
-        for (let option of projectSelect.options) {
-            if (option.value.toLowerCase().includes(projectParam.toLowerCase()) ||
-                option.textContent.toLowerCase().includes(projectParam.toLowerCase())) {
-                projectSelect.value = option.value;
-                break;
-            }
-        }
+        const wanted = projectParam.toLowerCase();
+        const options = [...projectSelect.options].filter(o => o.value);
+        const match = options.find(o => extractProjectNameOnly(o.value).toLowerCase() === wanted)
+            || options.find(o => o.value.toLowerCase().includes(wanted) || o.textContent.toLowerCase().includes(wanted));
+        if (match) projectSelect.value = match.value;
     }
 
     // Apply date filter
