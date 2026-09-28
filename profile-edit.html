@@ -42,31 +42,6 @@
             margin: 0 auto;
         }
 
-        /* Navigation */
-        nav {
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 20px;
-            position: sticky;
-            top: 0;
-            margin: -20px -20px 20px -20px;
-            z-index: 100;
-        }
-
-        nav .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        nav a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
 
         /* Project Header */
         .project-header {
@@ -420,11 +395,6 @@
 
 
         @media (max-width: 768px) {
-            nav .container {
-                flex-direction: column;
-                gap: 12px;
-            }
-
             .project-header {
                 flex-direction: column;
                 text-align: center;
@@ -448,16 +418,17 @@
         .pulse {
             animation: pulse 1.5s ease-in-out infinite;
         }
+        .back-row { margin: 0 0 16px; }
+        .back-row a { color: var(--accent-blue); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; }
+        .back-row a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <a href="profile.html" id="back-link">← Back to Profile</a>
-        </div>
-    </nav>
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
 
     <div class="container">
+        <p class="back-row"><a href="profile.html" id="back-link">← Back to profile</a></p>
         <!-- Project Context Header -->
         <div id="project-header" class="project-header hidden">
             <div id="project-logo"></div>

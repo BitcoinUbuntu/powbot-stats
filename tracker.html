@@ -15,6 +15,7 @@
     <meta property="og:description" content="Track PoW video submissions from review through payment.">
     <meta property="og:image" content="https://powbot.africa/images/PoWBoT_preview.jpg">
 
+    <link rel="stylesheet" href="css/powbot.css">
     <style>
         :root {
             --bg-primary: #0d1117;
@@ -431,6 +432,9 @@
             body {
                 padding: 12px;
             }
+
+            /* Match the smaller page padding so the pinned nav stays edge to edge */
+            body:not(.pb) > #nav-placeholder { margin: -12px -12px 12px; }
 
             header h1 {
                 font-size: 1.5rem;

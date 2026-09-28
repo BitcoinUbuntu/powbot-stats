@@ -43,38 +43,6 @@
             margin: 0 auto;
         }
 
-        /* Navigation */
-        nav {
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 20px;
-            position: sticky;
-            top: 0;
-            margin: -20px -20px 20px -20px;
-            z-index: 100;
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        nav a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
 
         /* Hero Section */
         .hero {
@@ -331,10 +299,6 @@
         }
 
         @media (max-width: 768px) {
-            nav .container {
-                justify-content: center;
-            }
-
             .hero {
                 padding: 30px 20px;
             }
@@ -373,17 +337,8 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <div class="nav-links">
-                <a href="index.html">Stats</a>
-                <span style="color: var(--text-secondary);">|</span>
-                <a href="members.html">Directory</a>
-                <span style="color: var(--text-secondary);">|</span>
-                <a href="archive.html">Archive</a>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
 
     <div class="container">
         <div class="hero">

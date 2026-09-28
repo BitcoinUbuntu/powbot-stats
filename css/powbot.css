@@ -133,20 +133,31 @@ html:has(body.pb) { color-scheme: dark; background: var(--night); }
     min-width: 3.75rem; text-align: center;   /* X and Nostr line up in lists */
 }
 
-/* ------------------------------------------------------------------ Nav -- */
-.site-nav { border-bottom: 1px solid var(--line); background: var(--night); position: sticky; top: 0; z-index: 100; }
-.site-nav .wrap { display: flex; align-items: center; gap: var(--s4); min-height: 60px; }
-.site-nav .brand { display: flex; align-items: center; gap: 10px; color: var(--heading); text-decoration: none; font: 700 var(--fs-md)/1 var(--font-mono); letter-spacing: -0.02em; min-height: var(--tap); }
+/* ------------------------------------------------------------------ Nav --
+ * Pinned to the top on every page. The wrapper the include is injected into
+ * is what sticks: a sticky element can only stick inside its parent, and the
+ * wrapper is exactly as tall as the nav, so a sticky .site-nav never moved.
+ * Links are square blocks that fill the bar from the top edge to the rule.
+ */
+#site-nav, #nav-placeholder { position: sticky; top: 0; z-index: 100; }
+/* Pages not yet rebuilt pad <body> by 20px; pull the nav out to the edges. */
+body:not(.pb) > #site-nav, body:not(.pb) > #nav-placeholder { margin: -20px -20px 20px; }
+
+.site-nav { border-bottom: 1px solid var(--line); background: var(--night); }
+.site-nav .wrap { display: flex; align-items: stretch; gap: var(--s4); height: 60px; }
+.site-nav .brand { display: flex; align-items: center; align-self: center; gap: 10px; color: var(--heading); text-decoration: none; font: 700 var(--fs-md)/1 var(--font-mono); letter-spacing: -0.02em; min-height: var(--tap); }
 .site-nav .brand img { width: 34px; height: 34px; }
-.site-nav .nav-links { display: flex; gap: var(--s1); margin: 0 0 0 auto; padding: 0; list-style: none; }
+.site-nav .nav-links { display: flex; align-items: stretch; gap: 0; margin: 0 0 0 auto; padding: 0; list-style: none; }
+.site-nav .nav-links li { display: flex; }
 .site-nav .nav-links a {
-    display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 14px;
+    display: flex; align-items: center; padding: 0 var(--s4);
     color: var(--muted); text-decoration: none; font: 700 var(--fs-base)/1 var(--font-text);
-    border-radius: var(--radius);
+    border-radius: 0;
 }
-.site-nav .nav-links a:hover { color: var(--text); }
+.site-nav .nav-links a:hover { color: var(--text); background: var(--panel); }
 .site-nav .nav-links a.current { background: var(--amber); color: var(--night); }
-.site-nav .nav-links a.current:focus-visible { outline-color: var(--text); }
+.site-nav .nav-links a:focus-visible { outline-offset: -3px; border-radius: 0; }
+.site-nav .nav-links a.current:focus-visible { outline-color: var(--night); }
 
 /* --------------------------------------------------------------- Footer -- */
 .site-footer { border-top: 1px solid var(--line); padding: var(--s6) 0 var(--s7); color: var(--muted); font: 400 var(--fs-sm)/1.6 var(--font-text); text-align: center; background: var(--night); }
@@ -165,7 +176,7 @@ html:has(body.pb) { color-scheme: dark; background: var(--night); }
 @media (max-width: 720px) {
     /* Name stays available to screen readers when the wordmark is hidden */
     .site-nav .brand span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-    .site-nav .nav-links a { padding: 0 10px; }
+    .site-nav .nav-links a { padding: 0 var(--s3); }
 }
 
 /* --------------------------------------------------------------- Motion -- */
