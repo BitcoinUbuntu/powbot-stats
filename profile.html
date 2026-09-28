@@ -82,6 +82,7 @@
         .posts-more { margin-top: var(--s3); }
         /* Beside the tracker link, the row sets the spacing */
         .detail-links .posts-more { margin-top: 0; }
+        .visits.dated { --visit-when: 11ch; }
         .post-hidden { display: none !important; }
 
         /* ------------------------------------------------------ Achievements -- */
@@ -427,6 +428,24 @@
                             <li><b class="num">${merchants}</b><span>${merchants === 1 ? 'merchant' : 'merchants'}</span></li>
                         </ul>`;
             };
+            // Posts as visits (visits.js): an X post and its Nostr cross-post
+            // share a row. Five show; the rest wait behind "Show N more".
+            const merchantLink = name => name
+                ? `<a href="merchant-profile.html?id=${encodeURIComponent(String(name).replace(/[^\w\s-]/g, '').trim().toLowerCase().replace(/\s+/g, '-'))}">${escapeHtml(name)}</a>`
+                : 'A merchant';
+            const visitItems = (visits, when) => visits.map((v, i) => `
+                            <li class="post-item${i >= 5 ? ' post-hidden' : ''}"><div class="visit">
+                                <span class="visit-main">${merchantLink(v.merchant)}</span>
+                                ${visitLinks(v, `${member.name} at ${v.merchant || 'a merchant'}`)}
+                                <span class="visit-when">${when(v)}</span>
+                            </div></li>`).join('');
+            // Frozen epochs carry a date per post, no time, so they pair by day
+            const datedVisits = posts => groupVisits(posts.map(post => ({
+                project_name: member.name, merchant_name: post.merchant, post_url: post.url,
+                timestamp: `${String(post.date).slice(0, 10)} 00:00:00 UTC`, classification: ''
+            })));
+            const dayOf = v => formatDate(String(v.first).slice(0, 10));
+
             // One post: platform as a text tag, then what, then when
             const postItem = (post, isHidden, name, when) => `
                             <li class="post-item${isHidden ? ' post-hidden' : ''}">
@@ -470,7 +489,6 @@
                 const initialCount = 5;
                 const epochStart = new Date(EPOCH.start);
                 const startLabel = epochStart.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
-                const merchantId = name => String(name || '').replace(/[^\w\s-]/g, '').trim().toLowerCase().replace(/\s+/g, '-');
                 const when = ts => {
                     const d = new Date(String(ts).replace(' UTC', 'Z').replace(' ', 'T'));
                     if (isNaN(d)) return '';
@@ -491,13 +509,7 @@
                     html += `
                         <h3>Merchant posts, newest first</h3>
                         <p class="section-note">A visit posted on both X and Nostr shows once, with a link to each.</p>
-                        <ul class="visits" id="posts-list-current">
-                            ${visits.map((v, i) => `
-                            <li class="post-item${i >= initialCount ? ' post-hidden' : ''}"><div class="visit">
-                                <span class="visit-main">${v.merchant ? `<a href="merchant-profile.html?id=${encodeURIComponent(merchantId(v.merchant))}">${escapeHtml(v.merchant)}</a>` : 'A merchant'}</span>
-                                ${visitLinks(v, `${member.name} at ${v.merchant || 'a merchant'}`)}
-                                <span class="visit-when">${when(v.first)}</span>
-                            </div></li>`).join('')}
+                        <ul class="visits" id="posts-list-current">${visitItems(visits, v => when(v.first))}
                         </ul>
                         <div class="detail-links">
                             ${visits.length > initialCount ? moreButton('toggleCurrentPosts', 'posts-list-current', visits.length - initialCount) : ''}
@@ -515,7 +527,6 @@
             if (epoch5Posts.length > 0) {
                 epoch5Posts.sort((a, b) => new Date(b.date) - new Date(a.date));
                 const initialCount = 5;
-                const hasMore = epoch5Posts.length > initialCount;
 
                 html += `
                     <section class="section" aria-labelledby="epoch5-title">
@@ -524,19 +535,14 @@
                         ${factsRow(epoch5Posts)}
                 `;
 
+                const visits5 = datedVisits(epoch5Posts);
                 html += `
                         <h3>Merchant posts, newest first</h3>
-                        <ul class="post-list" id="posts-list-epoch5">
-                `;
+                        <ul class="visits dated" id="posts-list-epoch5">${visitItems(visits5, dayOf)}
+                        </ul>`;
 
-                epoch5Posts.forEach((post, index) => {
-                    html += postItem(post, index >= initialCount, post.merchant, formatDate(post.date));
-                });
-
-                html += `</ul>`;
-
-                if (hasMore) {
-                    html += moreButton('toggleEpoch5Posts', 'posts-list-epoch5', epoch5Posts.length - initialCount);
+                if (visits5.length > initialCount) {
+                    html += moreButton('toggleEpoch5Posts', 'posts-list-epoch5', visits5.length - initialCount);
                 }
 
                 html += `</section>`;
@@ -546,7 +552,6 @@
             if (epoch4Posts.length > 0) {
                 epoch4Posts.sort((a, b) => new Date(b.date) - new Date(a.date));
                 const initialCount = 5;
-                const hasMore = epoch4Posts.length > initialCount;
 
                 html += `
                     <section class="section" aria-labelledby="epoch4-title">
@@ -555,19 +560,14 @@
                         ${factsRow(epoch4Posts)}
                 `;
 
+                const visits4 = datedVisits(epoch4Posts);
                 html += `
                         <h3>Merchant posts, newest first</h3>
-                        <ul class="post-list" id="posts-list-epoch4">
-                `;
+                        <ul class="visits dated" id="posts-list-epoch4">${visitItems(visits4, dayOf)}
+                        </ul>`;
 
-                epoch4Posts.forEach((post, index) => {
-                    html += postItem(post, index >= initialCount, post.merchant, formatDate(post.date));
-                });
-
-                html += `</ul>`;
-
-                if (hasMore) {
-                    html += moreButton('toggleEpoch4Posts', 'posts-list-epoch4', epoch4Posts.length - initialCount);
+                if (visits4.length > initialCount) {
+                    html += moreButton('toggleEpoch4Posts', 'posts-list-epoch4', visits4.length - initialCount);
                 }
 
                 html += `</section>`;
