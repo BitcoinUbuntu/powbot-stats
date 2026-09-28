@@ -44,7 +44,7 @@
             </section>`;
 
         return `
-            <div class="donate${onchain ? '' : ' donate-single'}" id="${id}">
+            <div class="donate" id="${id}">
                 <div class="donate-slides">
                     ${side('lightning', 'Lightning', lightning, `lightning:${lightning}`, 'Use onchain', false)}
                     ${onchain ? side('onchain', 'Onchain', onchain, `bitcoin:${onchain}`, 'Use Lightning', true) : ''}
