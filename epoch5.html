@@ -286,7 +286,7 @@
                             ${postItems ? `<ul class="visits" aria-label="Latest posts by ${attrSafe(projectName)}">${postItems}</ul>` : ''}
                             <div class="detail-links">
                                 <a class="btn" href="${attrSafe(profileUrl(item.name, 'project'))}">View ${escapeHtml(stripFlags(item.name))}’s profile</a>
-                                ${visits.length > DETAIL_ROWS ? `<a class="btn" href="${attrSafe(profileUrl(item.name, 'project'))}">View all ${formatNumber(posts.length)} posts</a>` : ''}
+                                ${visits.length > DETAIL_ROWS ? `<a class="btn" href="${attrSafe(`tracker.html?${new URLSearchParams({ epoch: '5', project: stripFlags(item.name), status: 'Processed' })}`)}">All ${formatNumber(posts.length)} posts in the tracker</a>` : ''}
                             </div>
                         </td>
                     </tr>`;
