@@ -273,7 +273,7 @@
                         <td class="rank num">${String(index + 1).padStart(2, '0')}</td>
                         <th scope="row" class="proj">
                             <button type="button" class="row-toggle" aria-expanded="false" aria-controls="${detailId}">
-                                <span class="row-line"><span class="proj-name">${escapeHtml(stripFlags(item.name))}</span> ${flagHtml(flag, country)}
+                                <span class="row-line"><span class="proj-name">${escapeHtml(stripFlags(item.name))}</span>&nbsp;${flagHtml(flag, country)}
                                 <span class="chev" aria-hidden="true"></span></span>
                                 ${country ? `<small>${escapeHtml(country)}</small>` : ''}
                                 <small class="mer-under">${secondaryText}</small>

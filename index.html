@@ -56,6 +56,8 @@
         .board { grid-column: 1 / -1; margin-top: var(--s6); }
         .board-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s3); margin-bottom: var(--s3); }
         .board-bar h2 { margin: 0; font-size: var(--fs-md); }
+        /* One line on desktop, room for two on phones: the note can't push the table */
+        .board-note { margin: 0 0 var(--s1); color: var(--muted); font-size: var(--fs-sm); min-height: 1.55em; }
         .loading { padding: var(--s6) var(--s5); color: var(--muted); }
 
         .pulse { margin: var(--s5) 0 0; color: var(--muted); }
@@ -72,6 +74,7 @@
             .hero-meta { grid-column: 1 / -1; }
             .summary { font-size: var(--fs-base); }
             .cols { grid-template-columns: 1fr; gap: var(--s7); }
+            .board-note { min-height: 3.1em; }
             #latest-list li > a { flex-direction: column; align-items: flex-start; gap: 2px; padding: var(--s3) 0; }
         }
     </style>
@@ -96,13 +99,14 @@
 
                 <div class="board" id="board">
                     <div class="board-bar">
-                        <h2 id="board-title">Projects by merchants reached</h2>
+                        <h2 id="board-title">Project standings</h2>
                         <div class="seg" role="group" aria-label="Rank projects by" id="period" hidden>
                             <button type="button" data-view="merchants" aria-pressed="true">Merchants</button>
                             <button type="button" data-view="posts" aria-pressed="false">Posts</button>
                             <button type="button" data-view="recent" aria-pressed="false">Last 48 hours</button>
                         </div>
                     </div>
+                    <p class="board-note" id="board-note"></p>
                     <div class="armor" aria-hidden="true"><span class="armor-line" id="armor-begin">-----BEGIN EPOCH 6 LEADERBOARD-----</span></div>
                     <div class="lb-shell" id="board-body" aria-live="polite">
                         <p class="loading">Loading the leaderboard…</p>
@@ -308,17 +312,19 @@
             const stats = boardStats;
             const body = document.getElementById('board-body');
             const foot = document.getElementById('board-foot');
-            const title = document.getElementById('board-title');
+            const note = document.getElementById('board-note');
             if (!stats) return;
 
+            // The title stays put; one short line says what the current view ranks,
+            // so switching views never changes the board's height or columns.
             if (boardView === 'recent') {
-                title.textContent = `Projects by approved posts, last ${ACTIVITY_WINDOW_HOURS} hours`;
+                note.textContent = `Posts approved in the last ${ACTIVITY_WINDOW_HOURS} hours. Level projects: first to get there ranks higher.`;
                 renderRecentBoard(stats, body, foot);
             } else if (boardView === 'posts') {
-                title.textContent = 'Projects by approved posts';
+                note.textContent = `Posts approved this epoch.`;
                 renderEpochBoard(stats, body, foot, 'posts');
             } else {
-                title.textContent = 'Projects by merchants reached';
+                note.textContent = `Different merchants with an approved post this epoch.`;
                 renderEpochBoard(stats, body, foot, 'merchants');
             }
         }
@@ -395,7 +401,7 @@
                         <td class="rank num">${String(i + 1).padStart(2, '0')}</td>
                         <th scope="row" class="proj">
                             <button type="button" class="row-toggle" aria-expanded="false" aria-controls="${detailId}">
-                                <span class="row-line"><span class="proj-name">${escapeHtml(stripFlags(p.name))}</span> ${flagHtml(flag, country)}
+                                <span class="row-line"><span class="proj-name">${escapeHtml(stripFlags(p.name))}</span>&nbsp;${flagHtml(flag, country)}
                                 <span class="chev" aria-hidden="true"></span></span>
                                 <small>${escapeHtml(country)}<span class="sec-under">${country ? ', ' : ''}${secondaryText}</span></small>
                             </button>
@@ -417,35 +423,34 @@
             }).join('');
 
             body.innerHTML = `
-                <table class="lb" id="lb-table">
+                <table class="lb lb-fixed" id="lb-table">
                     <caption class="visually-hidden">${escapeHtml(EPOCH.name)} projects ranked by ${by === 'merchants' ? 'the number of different merchants with an approved post' : 'approved posts'}. Open a project to see its latest posts.</caption>
                     <thead><tr>
-                        <th scope="col">Rank</th>
+                        <th scope="col" class="c-rank">Rank</th>
                         <th scope="col">Project</th>
-                        <th scope="col" class="r col-wide">${secondaryLabel}</th>
-                        <th scope="col" class="col-wide">Last 7 days</th>
-                        <th scope="col" class="r">${primaryLabel}</th>
+                        <th scope="col" class="c-num r col-wide">${secondaryLabel}</th>
+                        <th scope="col" class="c-week col-wide">Last 7 days</th>
+                        <th scope="col" class="c-num r">${primaryLabel}</th>
                     </tr></thead>
                     <tbody>${rows}</tbody>
                 </table>`;
 
             foot.innerHTML = `
                 ${endLine}
-                <span class="muted">${by === 'merchants' ? 'Merchants: different shops with an approved post this epoch. ' : ''}<span class="week" aria-hidden="true"><i class="on"></i></span> day with an approved post (UTC)</span>
-                ${projects.length > BOARD_ROWS ? `<button type="button" class="btn" id="lb-all" aria-controls="lb-table" aria-expanded="false">Show all ${projects.length} projects</button>` : ''}`;
+                <span class="muted"><span class="week" aria-hidden="true"><i class="on"></i></span> day with an approved post (UTC)</span>
+                ${projects.length > BOARD_ROWS ? `<button type="button" class="btn" id="lb-all" aria-controls="lb-table" aria-expanded="false" data-label="Show all ${projects.length} projects">Show all ${projects.length} projects</button>` : ''}`;
         }
 
         function renderRecentBoard(stats, body, foot) {
             const videos = stats.recent_activity?.videos || [];
             const endLine = foot.querySelector('#armor-end').outerHTML;
-            foot.innerHTML = `${endLine}<span class="muted">Projects level on posts are ordered by who got there first.</span>`;
 
             if (videos.length === 0) {
                 foot.innerHTML = endLine;
                 body.innerHTML = `
                     <div class="board-empty">
                         <p>No posts approved in the last ${ACTIVITY_WINDOW_HOURS} hours.</p>
-                        <p>Approved posts show up here within minutes. Switch to <em>This epoch</em> for the full standings.</p>
+                        <p>Approved posts show up here within minutes. Switch to <em>Merchants</em> or <em>Posts</em> for the full standings.</p>
                     </div>`;
                 return;
             }
@@ -455,8 +460,10 @@
             const projectStats = {};
             videos.forEach(video => {
                 const project = video.project || 'Unknown';
-                const entry = projectStats[project] || (projectStats[project] = { count: 0, reachedAt: '' });
+                const entry = projectStats[project] || (projectStats[project] = { count: 0, reachedAt: '', videos: [], merchants: new Set() });
                 entry.count += 1;
+                entry.videos.push(video);
+                if (video.merchant) entry.merchants.add(video.merchant);
                 const t = video.timestamp || '';
                 if (t > entry.reachedAt) entry.reachedAt = t;
             });
@@ -470,31 +477,77 @@
 
             const countryByFlag = {};
             (stats.countries || []).forEach(c => { countryByFlag[c.flag] = c.country; });
+            // Tracker names read "Bitcoin Aves (Ghana) 🇬🇭", the epoch file "Bitcoin Aves 🇬🇭":
+            // match on the bare name to find each project's last-7-days squares.
+            const epochByName = {};
+            (stats.top_projects || []).forEach(p => { epochByName[stripFlags(p.name)] = p; });
+            const days = lastSevenDays(stats);
 
+            // Same columns and row structure as the epoch views, so switching
+            // views never changes the table's shape.
             const rows = ranked.map(([project, entry], i) => {
                 const flag = flagOf(project);
                 const country = countryByFlag[flag] || '';
+                const name = displayName(project);
+                const epochProject = epochByName[name];
+                const dates = new Set((epochProject?.posts || []).map(x => x.date));
+                const more = i >= BOARD_ROWS ? ' is-more' : '';
+                const leader = i === 0 ? ' leader on-amber' : '';
+                const detailId = `lb-detail-${i}`;
+                const merchants = entry.merchants.size;
+
+                const postItems = entry.videos
+                    .slice().sort((a, b) => String(b.timestamp).localeCompare(String(a.timestamp)))
+                    .map(v => `
+                        <li><a href="${attrSafe(v.url)}" target="_blank" rel="noopener">
+                            <span class="tag">${escapeHtml(v.platform || getPlatform(v.url))}</span>
+                            <span class="post-name">${escapeHtml(v.merchant || name)}</span>
+                            <span class="post-when">${formatDateTimeUTC(parseTrackerTime(v.timestamp))}</span>
+                        </a></li>`).join('');
+
                 return `
-                    <tr class="lb-row${i === 0 ? ' leader on-amber' : ''}">
+                    <tr class="lb-row${leader}${more}">
                         <td class="rank num">${String(i + 1).padStart(2, '0')}</td>
                         <th scope="row" class="proj">
-                            <a class="proj-link" href="${attrSafe(profileUrl(project, 'project'))}"><span class="proj-name">${escapeHtml(displayName(project))}</span></a> ${flagHtml(flag, country)}
-                            ${country ? `<small>${escapeHtml(country)}</small>` : ''}
+                            <button type="button" class="row-toggle" aria-expanded="false" aria-controls="${detailId}">
+                                <span class="row-line"><span class="proj-name">${escapeHtml(name)}</span>&nbsp;${flagHtml(flag, country)}
+                                <span class="chev" aria-hidden="true"></span></span>
+                                <small>${escapeHtml(country)}<span class="sec-under">${country ? ', ' : ''}${plural(merchants, 'merchant', 'merchants')}</span></small>
+                            </button>
+                            ${weekSquares(dates, days, 'week-under')}
                         </th>
-                        <td class="r posts num">${entry.count}</td>
+                        <td class="r mer num col-wide">${formatNumber(merchants)}</td>
+                        <td class="col-wide">${weekSquares(dates, days)}</td>
+                        <td class="r posts num">${formatNumber(entry.count)}</td>
+                    </tr>
+                    <tr class="detail${more}" id="${detailId}" hidden>
+                        <td colspan="5">
+                            <ul class="post-list" aria-label="Posts by ${attrSafe(name)} in the last ${ACTIVITY_WINDOW_HOURS} hours">${postItems}</ul>
+                            <div class="detail-links">
+                                <a class="btn" href="${attrSafe(profileUrl(epochProject?.name || project, 'project'))}">View ${escapeHtml(name)}’s profile</a>
+                            </div>
+                        </td>
                     </tr>`;
             }).join('');
 
             body.innerHTML = `
-                <table class="lb">
-                    <caption class="visually-hidden">Projects ranked by posts approved in the last ${ACTIVITY_WINDOW_HOURS} hours. Ties go to the project that got there first.</caption>
+                <table class="lb lb-fixed" id="lb-table">
+                    <caption class="visually-hidden">Projects ranked by posts approved in the last ${ACTIVITY_WINDOW_HOURS} hours. Ties go to the project that got there first. Open a project to see those posts.</caption>
                     <thead><tr>
-                        <th scope="col">Rank</th>
+                        <th scope="col" class="c-rank">Rank</th>
                         <th scope="col">Project</th>
-                        <th scope="col" class="r">Posts</th>
+                        <th scope="col" class="c-num r col-wide">Merchants</th>
+                        <th scope="col" class="c-week col-wide">Last 7 days</th>
+                        <th scope="col" class="c-num r">Posts</th>
                     </tr></thead>
                     <tbody>${rows}</tbody>
                 </table>`;
+
+            const label = `Show all ${ranked.length} projects`;
+            foot.innerHTML = `
+                ${endLine}
+                <span class="muted"><span class="week" aria-hidden="true"><i class="on"></i></span> day with an approved post (UTC)</span>
+                ${ranked.length > BOARD_ROWS ? `<button type="button" class="btn" id="lb-all" aria-controls="lb-table" aria-expanded="false" data-label="${label}">${label}</button>` : ''}`;
         }
 
         // One listener for the whole board: row toggles, "Show all", period switch.
@@ -512,7 +565,7 @@
                 const open = !table.classList.contains('show-all');
                 table.classList.toggle('show-all', open);
                 all.setAttribute('aria-expanded', String(open));
-                all.textContent = open ? `Show top ${BOARD_ROWS}` : `Show all ${boardStats.top_projects.length} projects`;
+                all.textContent = open ? `Show top ${BOARD_ROWS}` : all.dataset.label;
                 // Collapsing hides the extra rows; close any that were open.
                 if (!open) {
                     table.querySelectorAll('tr.is-more .row-toggle[aria-expanded="true"]').forEach(t => {
