@@ -91,7 +91,7 @@ async function loadTrackerData() {
 
     } catch (error) {
         console.error('Error loading tracker data:', error);
-        showError('Failed to load submission data. Please try again later.');
+        showError('The submissions could not load.');
     }
 }
 
@@ -378,30 +378,54 @@ function renderSubmissions() {
     const resultsCount = document.getElementById('results-count');
     if (filteredSubmissions.length === 0) {
         container.innerHTML = `
-            <div class="empty-state">
-                <div class="empty-state-icon">🔍</div>
-                <p>No submissions found matching your filters.</p>
-                <p style="margin-top: 8px; font-size: 0.9rem;">Try adjusting your search criteria.</p>
+            <div class="list-state">
+                <p>No submissions match these filters.</p>
+                <p>Try a shorter search, or set status, project and date range back to all.</p>
             </div>
         `;
-        resultsCount.textContent = 'No submissions found';
+        resultsCount.textContent = 'No submissions match';
         return;
     }
 
-    resultsCount.textContent = `Showing ${startIndex + 1}-${Math.min(endIndex, filteredSubmissions.length)} of ${filteredSubmissions.length} submissions`;
+    resultsCount.textContent = resultsText(startIndex, endIndex);
 
     // Render submission cards
     const submissionsHTML = pageSubmissions.map(submission => renderSubmissionCard(submission)).join('');
 
-    container.innerHTML = `<div class="submissions-list">${submissionsHTML}</div>`;
+    container.innerHTML = `<ul class="submissions-list">${submissionsHTML}</ul>`;
 
     // Attach event listeners
     attachCardListeners();
 }
 
-function renderSubmissionCard(submission) {
-    const statusClass = `status-${escapeHtml(String(submission.status || '').toLowerCase().replace(' ', '-'))}`;
+// Review status as a text label; colour only reinforces it.
+// Processed means approved and paid, so it reads "Approved".
+const STATUS_LABELS = {
+    'processed': { cls: 'status-approved', label: 'Approved' },
+    'rejected': { cls: 'status-rejected', label: 'Rejected' },
+    'pending review': { cls: 'status-pending', label: 'Pending review' },
+    'approved': { cls: 'status-pending', label: 'Approved, payment pending' }
+};
 
+function renderStatus(status) {
+    const known = STATUS_LABELS[String(status || '').trim().toLowerCase()];
+    const cls = known ? known.cls : 'status-neutral';
+    const label = known ? known.label : (status || 'Unknown');
+    return `<span class="status ${cls}">${escapeHtml(label)}</span>`;
+}
+
+// "Bitbiashara (Kenya) 🇰🇪" -> "Kenya", or '' when the name has no country
+function extractCountry(name) {
+    const match = String(name || '').match(/\(([^)]+)\)/);
+    return match ? match[1].trim() : '';
+}
+
+function resultsText(startIndex, endIndex) {
+    const total = filteredSubmissions.length;
+    return `Showing ${(startIndex + 1).toLocaleString('en-GB')}–${Math.min(endIndex, total).toLocaleString('en-GB')} of ${total.toLocaleString('en-GB')} ${total === 1 ? 'submission' : 'submissions'}`;
+}
+
+function renderSubmissionCard(submission) {
     // Format timestamp for display, in UTC like the rest of the site.
     // Timestamps arrive as "2026-09-28 00:52:06 UTC"; rewrite to ISO first,
     // because not every browser parses the space-separated form.
@@ -417,80 +441,68 @@ function renderSubmissionCard(submission) {
         minute: '2-digit',
         timeZone: 'UTC'
     }) + ' UTC';
+    const isoStr = isNaN(timestamp) ? '' : timestamp.toISOString();
 
-    // Merchant tip status indicator
-    const tipStatus = submission.merchant_tip_status === '✅' ? '✓' :
-                     submission.merchant_tip_status === '❌' ? '✗' : '';
-    const tipColor = submission.merchant_tip_status === '✅' ? 'var(--accent-green)' : 'var(--accent-red)';
+    // Merchant tip status, as text
+    const tip = submission.merchant_tip_status === '✅' ? { cls: 'status-approved', label: 'Tip sent' } :
+                submission.merchant_tip_status === '❌' ? { cls: 'status-rejected', label: 'Tip failed' } : null;
+
+    // Flag carries the country as its name; the country is also written out
+    const country = extractCountry(submission.project_name);
+    const flag = submission.project_flag
+        ? (country
+            ? `<span class="flag" role="img" aria-label="${escapeHtml(country)}">${escapeHtml(submission.project_flag)}</span>`
+            : `<span class="flag" aria-hidden="true">${escapeHtml(submission.project_flag)}</span>`)
+        : '';
+    const detailsId = `sub-${String(submission.id ?? '').replace(/[^\w-]/g, '')}-details`;
 
     return `
-        <div class="submission-card" data-id="${escapeHtml(submission.id)}">
-            <div class="card-header">
-                <div class="card-summary">
-                    <div class="card-summary-row">
-                        <span class="project-name">${escapeHtml(submission.project_flag)} ${escapeHtml(extractProjectNameOnly(submission.project_name))}</span>
-                        <span class="status-badge ${statusClass}">${escapeHtml(submission.status)}</span>
-                    </div>
-                    <div class="merchant-platform">${escapeHtml(submission.merchant_name)} on ${escapeHtml(submission.platform)}</div>
-                    <div class="timestamp">${dateStr} at ${timeStr}</div>
-                </div>
-                <div class="expand-icon">▼</div>
-            </div>
+        <li class="submission-card" data-id="${escapeHtml(submission.id)}">
+            <button type="button" class="card-header" aria-expanded="false" aria-controls="${detailsId}">
+                <span class="card-main">
+                    <span class="card-title">
+                        <span class="project-name">${flag} ${escapeHtml(extractProjectNameOnly(submission.project_name))}</span>
+                        ${country ? `<span class="card-country">${escapeHtml(country)}</span>` : ''}
+                    </span>
+                    <span class="card-meta">
+                        <span class="merchant-name">${escapeHtml(submission.merchant_name)}</span>
+                        <span class="visually-hidden">on</span>
+                        <span class="tag">${escapeHtml(submission.platform)}</span>
+                        <time datetime="${isoStr}">${dateStr}, ${timeStr}</time>
+                    </span>
+                </span>
+                ${renderStatus(submission.status)}
+                <span class="chev" aria-hidden="true"></span>
+            </button>
 
-            <div class="card-details">
-                ${renderCardDetails(submission, tipStatus, tipColor)}
+            <div class="card-details" id="${detailsId}" hidden>
+                ${renderCardDetails(submission, tip)}
             </div>
-        </div>
+        </li>
     `;
 }
 
-function renderCardDetails(submission, tipStatus, tipColor) {
-    let html = '';
+function renderCardDetails(submission, tip) {
+    let html = '<dl class="details">';
 
     // Post URL
+    const postHref = safeUrl(submission.post_url);
     html += `
-        <div class="detail-section">
-            <div class="detail-label">Post URL</div>
-            <div class="detail-value">
-                <a href="${safeUrl(submission.post_url)}" target="_blank" rel="noopener">${escapeHtml(submission.post_url)}</a>
-            </div>
+        <div>
+            <dt>Post</dt>
+            <dd>${postHref
+                ? `<a href="${postHref}" target="_blank" rel="noopener">${escapeHtml(submission.post_url)}</a>`
+                : escapeHtml(submission.post_url || 'No post link')}</dd>
         </div>
     `;
 
-    // Telegram Link
-    if (submission.telegram_link) {
-        html += `
-            <div class="detail-section">
-                <div class="detail-label">Telegram Discussion</div>
-                <div class="detail-value">
-                    <a href="${safeUrl(submission.telegram_link)}" target="_blank" rel="noopener">View Discussion →</a>
-                </div>
-            </div>
-        `;
-    }
-
-    // BTC Map Link
-    if (submission.btcmap_link) {
-        html += `
-            <div class="detail-section">
-                <div class="detail-label">BTC Map</div>
-                <div class="detail-value">
-                    <a href="${safeUrl(submission.btcmap_link)}" target="_blank" rel="noopener">View on BTC Map →</a>
-                </div>
-            </div>
-        `;
-    }
-
     // Lightning Address & Tip Status
     if (submission.lightning_address) {
-        const tipIcon = tipStatus ? `<span style="margin-left: 8px; color: ${tipColor}; font-weight: 600; font-size: 1.1rem;">${tipStatus}</span>` : '';
+        const tipLabel = tip ? `<span class="status ${tip.cls}">${tip.label}</span>` : '';
         html += `
-            <div class="detail-section">
-                <div class="detail-label">Merchant Lightning Address</div>
-                <div class="detail-value">
-                    <span>${escapeHtml(submission.lightning_address)}</span>
-                    ${tipIcon}
-                </div>
+            <div>
+                <dt>Merchant Lightning address</dt>
+                <dd><span class="mono">${escapeHtml(submission.lightning_address)}</span>${tipLabel}</dd>
             </div>
         `;
     }
@@ -498,22 +510,38 @@ function renderCardDetails(submission, tipStatus, tipColor) {
     // Admin Notes
     if (submission.note) {
         html += `
-            <div class="detail-section">
-                <div class="detail-label">Notes</div>
-                <div class="detail-value">${escapeHtml(submission.note)}</div>
+            <div>
+                <dt>Notes</dt>
+                <dd>${escapeHtml(submission.note)}</dd>
             </div>
         `;
     }
 
-    // Payment Status
+    // Payment Status: who was paid, never how much
     if (submission.payments && submission.payments.length > 0) {
         html += `
-            <div class="detail-section">
-                <div class="detail-label">CBAF Payments</div>
-                <div class="payment-list">
-                    ${submission.payments.map(payment => renderPayment(payment)).join('')}
-                </div>
+            <div>
+                <dt>CBAF payments</dt>
+                <dd>
+                    <ul class="payment-list">
+                        ${submission.payments.map(payment => renderPayment(payment)).join('')}
+                    </ul>
+                </dd>
             </div>
+        `;
+    }
+
+    html += '</dl>';
+
+    // Telegram and BTC Map links
+    const telegram = safeUrl(submission.telegram_link);
+    const btcmap = safeUrl(submission.btcmap_link);
+    if (telegram || btcmap) {
+        html += `
+            <ul class="chips">
+                ${telegram ? `<li><a class="chip" href="${telegram}" target="_blank" rel="noopener">Telegram discussion</a></li>` : ''}
+                ${btcmap ? `<li><a class="chip" href="${btcmap}" target="_blank" rel="noopener">Merchant on BTC Map</a></li>` : ''}
+            </ul>
         `;
     }
 
@@ -530,11 +558,10 @@ function renderPayment(payment) {
     const typeLabel = typeLabels[payment.type] || payment.type;
 
     return `
-        <div class="payment-item">
-            <span class="payment-icon">⚡</span>
-            <span class="payment-type">${escapeHtml(typeLabel)}:</span>
+        <li class="payment-item">
+            <span class="payment-type">${escapeHtml(typeLabel)}</span>
             <span class="payment-recipient">${escapeHtml(payment.recipient)}</span>
-        </div>
+        </li>
     `;
 }
 
@@ -557,14 +584,16 @@ function updatePagination() {
     document.getElementById('btn-prev-page-bottom').disabled = currentPage === 1;
     document.getElementById('btn-next-page-bottom').disabled = currentPage === totalPages;
 
-    // Show bottom pagination
-    document.getElementById('bottom-pagination').style.display = 'flex';
+    // Page buttons only when there is more than one page; the bottom bar
+    // only then too (with one page the top count says it all)
+    const manyPages = totalPages > 1;
+    document.getElementById('pager-top').hidden = !manyPages;
+    document.getElementById('bottom-pagination').style.display = manyPages ? 'flex' : 'none';
 
     // Update results count on bottom
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const endIndex = startIndex + ITEMS_PER_PAGE;
-    document.getElementById('results-count-bottom').textContent =
-        `Showing ${startIndex + 1}-${Math.min(endIndex, filteredSubmissions.length)} of ${filteredSubmissions.length} submissions`;
+    document.getElementById('results-count-bottom').textContent = resultsText(startIndex, endIndex);
 }
 
 function goToPage(page) {
@@ -589,7 +618,9 @@ function attachCardListeners() {
     document.querySelectorAll('.card-header').forEach(header => {
         header.addEventListener('click', () => {
             const card = header.closest('.submission-card');
-            card.classList.toggle('expanded');
+            const expanded = card.classList.toggle('expanded');
+            header.setAttribute('aria-expanded', String(expanded));
+            document.getElementById(header.getAttribute('aria-controls')).hidden = !expanded;
         });
     });
 }
@@ -622,11 +653,13 @@ function attachFilterListeners() {
 function showError(message) {
     const container = document.getElementById('submissions-container');
     container.innerHTML = `
-        <div class="empty-state">
-            <div class="empty-state-icon">⚠️</div>
+        <div class="list-state" role="alert">
             <p>${message}</p>
+            <p>Check your connection and reload the page to try again.</p>
         </div>
     `;
+    document.getElementById('results-count').textContent = 'Submissions unavailable';
+    document.getElementById('pager-top').hidden = true;
 }
 
 // ============================================================================

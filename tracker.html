@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PoW Submission Tracker - PoWBoT</title>
+    <title>Submission tracker | PoWBoT</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
@@ -15,577 +15,186 @@
     <meta property="og:description" content="Track PoW video submissions from review through payment.">
     <meta property="og:image" content="https://powbot.africa/images/PoWBoT_preview.jpg">
 
+    <meta name="theme-color" content="#070F0B">
+    <meta name="description" content="Every PoW video submission to PoWBoT, from review through payment.">
+
     <link rel="stylesheet" href="css/powbot.css">
     <style>
-        :root {
-            --bg-primary: #0d1117;
-            --bg-secondary: #161b22;
-            --bg-card: #21262d;
-            --text-primary: #f0f6fc;
-            --text-secondary: #8b949e;
-            --accent-orange: #f7931a;
-            --accent-green: #3fb950;
-            --accent-blue: #58a6ff;
-            --accent-purple: #a371f7;
-            --accent-red: #f85149;
-            --accent-yellow: #d29922;
-            --border: #30363d;
+        /* Tracker layout only. Colours, type and components: css/powbot.css */
+
+        /* ---------------------------------------------------------- Filters -- */
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: var(--s4);
+            padding: var(--s5) 0;
         }
+        .filters .field-search, #custom-date-range { grid-column: 1 / -1; }
+        .date-range { display: grid; grid-template-columns: repeat(2, minmax(0, 14rem)); gap: var(--s4); }
+        /* A filter that is narrowing the list gets a phosphor edge */
+        .filters .active { border-color: var(--phosphor); }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* -------------------------------------------------- Count and pager -- */
+        .results-bar {
+            display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+            gap: var(--s3) var(--s4);
+            padding: var(--s3) 0;
+            border-top: 1px solid var(--line);
         }
+        .results-bar-bottom { margin-top: var(--s5); }
+        .results-count { margin: 0; color: var(--muted); }
+        .pager { display: flex; align-items: center; gap: var(--s3); }
+        .pager[hidden] { display: none; }
+        .page-info { font: 400 var(--fs-sm)/1.2 var(--font-mono); color: var(--muted); white-space: nowrap; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Navigation will be injected here */
-
-        header {
-            text-align: center;
-            margin: 40px 0 30px;
-        }
-
-        header h1 {
-            font-size: 2rem;
-            color: var(--accent-orange);
-            margin-bottom: 8px;
-        }
-
-        header p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Filter Bar */
-        .filter-bar {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .filter-grid {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            align-items: flex-end;
-            margin-bottom: 12px;
-        }
-
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            min-width: 160px;
-        }
-
-        .filter-group label {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .filter-group select,
-        .filter-group input[type="date"] {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: var(--text-secondary);
-            padding: 8px 14px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .filter-group select:hover,
-        .filter-group input[type="date"]:hover {
-            border-color: var(--accent-blue);
-            color: var(--text-primary);
-        }
-
-        .filter-group select:focus,
-        .filter-group input[type="date"]:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-        }
-
-        .filter-group select.active,
-        .filter-group input[type="date"].active {
-            background: var(--accent-blue);
-            border-color: var(--accent-blue);
-            color: white;
-        }
-
-        .filter-group select.active option {
-            background: var(--bg-card);
-            color: var(--text-primary);
-        }
-
-        .search-box {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .search-box input {
-            width: 100%;
-            background: #e8eaed;
-            border: 1px solid #c1c5cc;
-            border-radius: 8px;
-            padding: 10px 14px;
-            color: #1a1d22;
-            font-size: 0.95rem;
-        }
-
-        .search-box input::placeholder {
-            color: #5f6368;
-        }
-
-        .search-box input:focus {
-            outline: none;
-            border-color: var(--accent-blue);
-            background: #f0f2f5;
-        }
-
-        /* Results Summary */
-        .results-summary {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-            padding: 12px 16px;
-            background: var(--bg-secondary);
-            border-radius: 6px;
-        }
-
-        .results-count {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .pagination-controls {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .pagination-controls button {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            color: var(--text-primary);
-            padding: 8px 14px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            min-width: 60px;
-        }
-
-        .pagination-controls button:hover:not(:disabled) {
-            background: var(--bg-secondary);
-            border-color: var(--accent-blue);
-        }
-
-        .pagination-controls button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .pagination-controls .page-info {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            padding: 0 8px;
-        }
-
-        /* Submission Cards */
-        .submissions-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .submission-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: border-color 0.2s;
-        }
-
-        .submission-card:hover {
-            border-color: var(--accent-blue);
-        }
-
+        /* ------------------------------------------------------ Submissions -- */
+        .submissions-list { display: grid; gap: var(--s2); margin: var(--s2) 0 0; padding: 0; list-style: none; }
+        .submission-card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
         .card-header {
-            padding: 16px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
+            display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: var(--s2) var(--s4);
+            width: 100%; min-height: var(--tap); padding: var(--s3) var(--s4);
+            background: none; border: 0; color: inherit; text-align: left; cursor: pointer;
         }
+        .card-header:hover { background: var(--panel-hi); }
+        .card-header:hover .project-name { text-decoration: underline; }
+        .card-header[aria-expanded="true"] .chev { transform: rotate(225deg) translate(-2px, -2px); }
+        .card-main { display: grid; gap: var(--s1); min-width: 0; }
+        .card-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 var(--s2); }
+        .project-name { font: 700 var(--fs-md)/1.3 var(--font-text); color: var(--heading); overflow-wrap: anywhere; }
+        .card-country { color: var(--muted); font-size: var(--fs-sm); }
+        .card-meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s1) var(--s3); color: var(--muted); font-size: var(--fs-sm); }
+        .card-meta .merchant-name { color: var(--text); overflow-wrap: anywhere; }
+        .card-meta time { font: 400 var(--fs-xs)/1.3 var(--font-mono); }
 
-        .card-header:hover {
-            background: rgba(88, 166, 255, 0.05);
-        }
+        .card-details { padding: var(--s2) var(--s4) var(--s4); border-top: 1px solid var(--line); background: var(--night); }
+        .details { display: grid; gap: var(--s3); margin: var(--s3) 0 0; }
+        .details dt { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--muted); }
+        .details dd { margin: var(--s1) 0 0; overflow-wrap: anywhere; }
+        .details .mono { font-size: var(--fs-sm); }
+        .details dd .status { margin-left: var(--s2); vertical-align: 1px; }
+        .payment-list { list-style: none; margin: var(--s1) 0 0; padding: 0; }
+        .payment-item { display: flex; flex-wrap: wrap; gap: 0 var(--s3); padding: var(--s1) 0; border-bottom: 1px solid var(--line); }
+        .payment-item:last-child { border-bottom: 0; }
+        .payment-type { min-width: 6rem; color: var(--muted); }
+        .payment-recipient { min-width: 0; overflow-wrap: anywhere; }
+        .card-details .chips { margin-top: var(--s4); }
 
-        .card-summary {
-            flex: 1;
-            min-width: 0;
-        }
+        /* ------------------------------------------------------------ States -- */
+        .list-state { padding: var(--s6) 0; max-width: 60ch; }
+        .list-state p { margin: 0 0 var(--s2); }
+        .list-state p:first-child { font: 700 var(--fs-md)/1.4 var(--font-text); color: var(--text); }
+        .list-state p + p { color: var(--muted); }
 
-        .card-summary-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .project-name {
-            font-weight: 600;
-            color: var(--text-primary);
-            font-size: 0.95rem;
-        }
-
-        .merchant-name {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .merchant-platform {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            font-style: italic;
-        }
-
-        .timestamp {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
-
-        .status-badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .status-processed {
-            background: rgba(63, 185, 80, 0.15);
-            color: var(--accent-green);
-        }
-
-        .status-approved {
-            background: rgba(88, 166, 255, 0.15);
-            color: var(--accent-blue);
-        }
-
-        .status-pending-review {
-            background: rgba(210, 153, 34, 0.15);
-            color: var(--accent-yellow);
-        }
-
-        .status-rejected {
-            background: rgba(248, 81, 73, 0.15);
-            color: var(--accent-red);
-        }
-
-        .status-duplicate {
-            background: rgba(139, 148, 158, 0.15);
-            color: var(--text-secondary);
-        }
-
-        .expand-icon {
-            color: var(--text-secondary);
-            transition: transform 0.2s;
-        }
-
-        .submission-card.expanded .expand-icon {
-            transform: rotate(180deg);
-        }
-
-        .card-details {
-            display: none;
-            padding: 0 16px 16px;
-            border-top: 1px solid var(--border);
-        }
-
-        .submission-card.expanded .card-details {
-            display: block;
-        }
-
-        .detail-section {
-            margin-top: 16px;
-        }
-
-        .detail-label {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
-        }
-
-        .detail-value {
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        .detail-value a {
-            color: var(--accent-blue);
-            text-decoration: none;
-            word-break: break-all;
-            overflow-wrap: break-word;
-            display: inline-block;
-            max-width: 100%;
-        }
-
-        .detail-value a:hover {
-            text-decoration: underline;
-        }
-
-        .payment-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .payment-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 12px;
-            background: var(--bg-secondary);
-            border-radius: 6px;
-            font-size: 0.85rem;
-        }
-
-        .payment-icon {
-            font-size: 1rem;
-        }
-
-        .payment-type {
-            color: var(--text-secondary);
-            min-width: 70px;
-        }
-
-        .payment-recipient {
-            color: var(--text-primary);
-            flex: 1;
-        }
-
-
-        /* Loading State */
-        .loading {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-secondary);
-        }
-
-        .loading-spinner {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            border: 3px solid var(--border);
-            border-top-color: var(--accent-orange);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Empty State */
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-secondary);
-        }
-
-        .empty-state-icon {
-            font-size: 3rem;
-            margin-bottom: 16px;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            body {
-                padding: 12px;
-            }
-
-            /* Match the smaller page padding so the pinned nav stays edge to edge */
-            body:not(.pb) > #site-nav { margin: -12px -12px 12px; }
-
-            header h1 {
-                font-size: 1.5rem;
-            }
-
-            .filter-grid {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .filter-group {
-                min-width: auto;
-            }
-
-            .filter-bar {
-                padding: 16px;
-            }
-
-            .results-summary {
-                flex-direction: column;
-                gap: 12px;
-                align-items: stretch;
-            }
-
-            .pagination-controls {
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            .pagination-controls button {
-                padding: 8px 12px;
-                min-width: auto;
-                flex: 1;
-            }
-
-            .pagination-controls .page-info {
-                padding: 0 4px;
-                font-size: 0.8rem;
-            }
-
-            .card-summary-row {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 6px;
-            }
-
-            .card-header {
-                padding: 12px;
-            }
-
-            .submission-card {
-                margin: 0 -2px;
-            }
+        @media (max-width: 720px) {
+            .filters { grid-template-columns: minmax(0, 1fr); gap: var(--s3); padding: var(--s4) 0; }
+            .date-range { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .results-bar { flex-direction: column; align-items: stretch; }
+            .pager { justify-content: space-between; }
+            .pager .btn { flex: 1; }
+            .card-header { grid-template-columns: minmax(0, 1fr) auto; padding: var(--s3); }
+            .card-header .status { grid-column: 1; grid-row: 2; justify-self: start; }
+            .card-header .chev { grid-column: 2; grid-row: 1 / span 2; }
+            .card-details { padding: var(--s2) var(--s3) var(--s4); }
         }
     </style>
 </head>
-<body>
+<body class="pb">
     <!-- Navigation (loaded from includes/nav.html) -->
     <div id="site-nav"></div>
 
-    <div class="container">
-        <header>
-            <h1>PoW Submission Tracker</h1>
-            <p>Track all PoW video submissions from review through payment</p>
-        </header>
+    <main id="main">
+        <div class="wrap">
+            <header class="page-head">
+                <h1>Submission tracker</h1>
+                <p class="lede">Every PoW video submission, from review through payment. Times are in UTC.</p>
+            </header>
 
-        <!-- Filter Bar -->
-        <div class="filter-bar">
-            <div class="filter-grid">
-                <div class="filter-group">
-                    <label for="filter-status">Status</label>
-                    <select id="filter-status">
-                        <option value="">All</option>
-                        <option value="Pending Review">Pending Review</option>
-                        <option value="Approved">Approved</option>
-                        <option value="Processed">Processed</option>
-                        <option value="Rejected">Rejected</option>
-                    </select>
+            <!-- Filters -->
+            <div class="filters" role="search" aria-label="Filter submissions">
+                <div class="field field-search">
+                    <label class="field-label" for="filter-search">Search</label>
+                    <input type="search" class="input" id="filter-search" placeholder="Project, merchant, notes or post URL" autocomplete="off">
                 </div>
 
-                <div class="filter-group">
-                    <label for="filter-project">Project</label>
-                    <select id="filter-project">
-                        <option value="">All Projects</option>
-                        <!-- Populated by JavaScript -->
-                    </select>
-                </div>
-
-                <div class="filter-group">
-                    <label for="filter-date">Date Range</label>
-                    <select id="filter-date">
-                        <option value="all">All Time</option>
-                        <option value="today">Today</option>
-                        <option value="7days">Last 7 Days</option>
-                        <option value="30days">Last 30 Days</option>
-                        <option value="custom">Custom Range</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="filter-group search-box">
-                <label for="filter-search">Search</label>
-                <input type="text" id="filter-search" placeholder="Search project, merchant, notes, or post URL...">
-            </div>
-
-            <div id="custom-date-range" style="display: none; flex-basis: 100%; margin-top: 0;">
-                <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-                    <div class="filter-group">
-                        <label for="filter-date-from">From</label>
-                        <input type="date" id="filter-date-from">
-                    </div>
-                    <div class="filter-group">
-                        <label for="filter-date-to">To</label>
-                        <input type="date" id="filter-date-to">
+                <div class="field">
+                    <label class="field-label" for="filter-status">Status</label>
+                    <div class="select-wrap">
+                        <select class="select" id="filter-status">
+                            <option value="">All statuses</option>
+                            <option value="Pending Review">Pending review</option>
+                            <option value="Approved">Approved, payment pending</option>
+                            <option value="Processed">Approved</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Results Summary & Pagination -->
-        <div class="results-summary">
-            <div class="results-count" id="results-count">Loading...</div>
-            <div class="pagination-controls">
-                <button id="btn-prev-page">← Previous</button>
-                <span class="page-info">
-                    Page <span id="current-page">1</span> of <span id="total-pages">1</span>
-                </span>
-                <button id="btn-next-page">Next →</button>
-            </div>
-        </div>
+                <div class="field">
+                    <label class="field-label" for="filter-project">Project</label>
+                    <div class="select-wrap">
+                        <select class="select" id="filter-project">
+                            <option value="">All projects</option>
+                            <!-- Populated by JavaScript -->
+                        </select>
+                    </div>
+                </div>
 
-        <!-- Submissions List -->
-        <div id="submissions-container">
-            <div class="loading">
-                <div class="loading-spinner"></div>
-                <p style="margin-top: 16px;">Loading submissions...</p>
-            </div>
-        </div>
+                <div class="field">
+                    <label class="field-label" for="filter-date">Date range</label>
+                    <div class="select-wrap">
+                        <select class="select" id="filter-date">
+                            <option value="all">All time</option>
+                            <option value="today">Today</option>
+                            <option value="7days">Last 7 days</option>
+                            <option value="30days">Last 30 days</option>
+                            <option value="custom">Custom range</option>
+                        </select>
+                    </div>
+                </div>
 
-        <!-- Bottom Pagination -->
-        <div class="results-summary" id="bottom-pagination" style="display: none; margin-top: 20px;">
-            <div class="results-count" id="results-count-bottom"></div>
-            <div class="pagination-controls">
-                <button id="btn-prev-page-bottom">← Previous</button>
-                <span class="page-info">
-                    Page <span id="current-page-bottom">1</span> of <span id="total-pages-bottom">1</span>
-                </span>
-                <button id="btn-next-page-bottom">Next →</button>
+                <!-- tracker.js shows this when "Custom range" is chosen -->
+                <div id="custom-date-range" style="display: none;">
+                    <div class="date-range">
+                        <div class="field">
+                            <label class="field-label" for="filter-date-from">From</label>
+                            <input type="date" class="input" id="filter-date-from">
+                        </div>
+                        <div class="field">
+                            <label class="field-label" for="filter-date-to">To</label>
+                            <input type="date" class="input" id="filter-date-to">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Count and pager -->
+            <div class="results-bar">
+                <p class="results-count" id="results-count" role="status">Loading submissions…</p>
+                <nav class="pager" id="pager-top" aria-label="Pages, top">
+                    <button type="button" class="btn" id="btn-prev-page">Previous</button>
+                    <span class="page-info">Page <span id="current-page">1</span> of <span id="total-pages">1</span></span>
+                    <button type="button" class="btn" id="btn-next-page">Next</button>
+                </nav>
+            </div>
+
+            <!-- Submissions -->
+            <div id="submissions-container">
+                <div class="list-state">
+                    <p>Loading submissions…</p>
+                </div>
+            </div>
+
+            <!-- Bottom pager -->
+            <div class="results-bar results-bar-bottom" id="bottom-pagination" style="display: none;">
+                <p class="results-count" id="results-count-bottom"></p>
+                <nav class="pager" id="pager-bottom" aria-label="Pages, bottom">
+                    <button type="button" class="btn" id="btn-prev-page-bottom">Previous</button>
+                    <span class="page-info">Page <span id="current-page-bottom">1</span> of <span id="total-pages-bottom">1</span></span>
+                    <button type="button" class="btn" id="btn-next-page-bottom">Next</button>
+                </nav>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Footer will be injected here -->
     <div id="site-footer"></div>
