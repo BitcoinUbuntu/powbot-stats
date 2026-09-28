@@ -83,6 +83,7 @@
     <!-- Finished epochs and the shared "Every epoch" block -->
     <script src="epochs.js"></script>
     <script src="flags.js"></script>
+    <script src="visits.js"></script>
 
     <script>
         // Global project metadata
@@ -90,6 +91,7 @@
 
         // Rows shown in each ranking before "Show more"
         const INITIAL_ROWS = 5;
+        const DETAIL_ROWS = 5;   // visits shown in an opened leaderboard row
 
         // Epoch 5 has its own page (epoch5.html). Its total is frozen, the same
         // figure the homepage uses.
@@ -409,23 +411,35 @@
                        </button>`
                     : nameHtml;
 
-                const postItems = posts.slice(0, 10).map((post, i) => {
-                    const platform = getPlatform(post.url);
-                    let postLabel = '';
-                    if (type === 'project' && showMerchant && post.merchant) {
-                        postLabel = post.merchant;
-                    } else if (type === 'merchant' && post.project) {
-                        postLabel = post.project;
-                    }
-                    const label = postLabel
-                        ? nameWithFlag(stripFlags(postLabel), flagOf(postLabel), countryByFlag[flagOf(postLabel)])
-                        : `Post ${i + 1}`;
+                // One row per visit (visits.js): an X post and its Nostr cross-post
+                // share a row, paired on the same or next day (these carry dates
+                // only). Epochs 1-3 have no merchant or date, so each post stays
+                // its own row.
+                const slug = name => String(name || '').replace(/[^\w\s-]/g, '').trim().toLowerCase().replace(/\s+/g, '-');
+                const visits = groupVisits(posts.map(post => ({
+                    project_name: type === 'merchant' ? post.project : item.name,
+                    merchant_name: type === 'merchant' ? item.name : (showMerchant ? post.merchant : ''),
+                    post_url: post.url,
+                    timestamp: post.date ? `${String(post.date).slice(0, 10)} 00:00:00 UTC` : '',
+                    classification: ''
+                })));
+                const postItems = visits.slice(0, DETAIL_ROWS).map((v, i) => {
+                    const other = type === 'merchant' ? v.project : v.merchant;
+                    const label = !other
+                        ? `Post ${i + 1}`
+                        : type === 'merchant'
+                            ? `<a class="visit-project" href="profile.html?id=${encodeURIComponent(slug(stripFlags(other)))}">${nameWithFlag(stripFlags(other), flagOf(other), countryByFlag[flagOf(other)])}</a>`
+                            : `<a href="merchant-profile.html?id=${encodeURIComponent(slug(other))}">${escapeHtml(other)}</a>`;
+                    const context = type === 'merchant'
+                        ? `${stripFlags(other || 'A project')} at ${stripFlags(item.name)}`
+                        : `${stripFlags(item.name)}${other ? ` at ${other}` : ''}`;
+                    const when = v.first ? formatDate(String(v.first).slice(0, 10)) : '';
                     return `
-                        <li><a href="${attrSafe(post.url)}" target="_blank" rel="noopener">
-                            <span class="tag">${platform.name}</span>
-                            <span class="post-name">${label}</span>
-                            ${post.date ? `<span class="post-when">${formatDate(post.date)}</span>` : ''}
-                        </a></li>`;
+                        <li><div class="visit">
+                            <span class="visit-main">${label}</span>
+                            ${visitLinks(v, context)}
+                            <span class="visit-when">${when}</span>
+                        </div></li>`;
                 }).join('');
 
                 return `
@@ -437,10 +451,10 @@
                     ${hasPosts ? `
                     <tr class="detail" id="${detailId}" hidden>
                         <td colspan="3">
-                            <ul class="post-list" aria-label="${type === 'merchant' ? 'Posts at' : 'Posts by'} ${attrSafe(stripFlags(item.name))}">${postItems}</ul>
+                            <ul class="visits dated" aria-label="${type === 'merchant' ? 'Posts at' : 'Posts by'} ${attrSafe(stripFlags(item.name))}">${postItems}</ul>
                             <div class="detail-links">
                                 ${renderViewProfileButton(item.name, type)}
-                                ${posts.length > 10 ? renderViewAllButton(item.name, type, posts.length) : ''}
+                                ${visits.length > DETAIL_ROWS ? renderViewAllButton(item.name, type, posts.length) : ''}
                             </div>
                         </td>
                     </tr>` : ''}`;

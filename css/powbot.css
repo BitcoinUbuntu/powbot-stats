@@ -338,6 +338,8 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 a.visit-link:hover { border-color: var(--phosphor); background: rgba(var(--phosphor-rgb), 0.12); }
 .visit-link.is-empty { border-color: transparent; }
 .visit-when { color: var(--muted); font: 400 var(--fs-xs)/1 var(--font-mono); white-space: nowrap; min-width: var(--visit-when, 18ch); text-align: right; }   /* fixed, so the links line up */
+/* Dates with a year ("27 Jan 2026") and no time need less room */
+.visits.dated { --visit-when: 11ch; }
 
 /* Period switch above the board */
 .seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: var(--radius); }
