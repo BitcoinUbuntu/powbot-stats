@@ -20,18 +20,19 @@
 
 /* --------------------------------------------------------------- Tokens -- */
 :root {
-    /* Colour: an 80s CRT. Green-tinted glass, P1 green phosphor for links and
-       data, and amber phosphor for the one highlight (current page, leader,
-       today). Contrast on --night: text 15.7, muted 8.1, phosphor 11.1,
-       amber 10.3, danger 8.2. Change a colour here and in its -rgb twin. */
-    --night: #0A1611;          /* page: dark green glass, not neutral black */
-    --panel: #102019;          /* raised surfaces: tables, dialogs */
-    --panel-hi: #172C22;       /* hover on panel rows */
-    --text: #DCF2E3;           --text-rgb: 220, 242, 227;
-    --muted: #8DB59B;          --muted-rgb: 141, 181, 155;
-    --amber: #FFB23F;          --amber-rgb: 255, 178, 63;      /* the one highlight */
-    --amber-hi: #FFC266;       /* amber hover */
-    --phosphor: #4FE384;       --phosphor-rgb: 79, 227, 132;   /* links, data marks, focus */
+    /* Colour: an 80s CRT, toned down. Green-tinted glass, a muted P1 green
+       phosphor for links and data, and a soft amber for the one highlight
+       (current page, leader, today). Contrast on --night: text 15.5,
+       muted 7.7, phosphor 9.6, amber 9.7, danger 8.6. Change a colour here
+       and in its -rgb twin. */
+    --night: #070F0B;          /* page: dark green glass, not neutral black */
+    --panel: #0C1913;          /* raised surfaces: tables, dialogs */
+    --panel-hi: #12241B;       /* hover on panel rows */
+    --text: #D6EBDD;           --text-rgb: 214, 235, 221;
+    --muted: #87AB93;          --muted-rgb: 135, 171, 147;
+    --amber: #E9AC49;          --amber-rgb: 233, 172, 73;      /* the one highlight */
+    --amber-hi: #EEBB68;       /* amber hover */
+    --phosphor: #5CCC85;       --phosphor-rgb: 92, 204, 133;   /* links, data marks, focus */
     --coin: #F7931A;           /* the mascot's coin; large marks only */
     --danger: #FF8A8A;         /* errors, rejected */
     --line: rgba(var(--muted-rgb), 0.24);

@@ -6,7 +6,7 @@
     <title>PoWBoT Stats – Bitcoin proof of work across Africa</title>
     <meta name="description" content="Live PoWBoT leaderboard: Bitcoin projects across Africa post proof-of-work videos of paying local merchants in bitcoin. See this epoch’s standings.">
     <link rel="canonical" href="https://powbot.africa/">
-    <meta name="theme-color" content="#0A1611">
+    <meta name="theme-color" content="#070F0B">
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
@@ -43,10 +43,9 @@
             padding-bottom: var(--s7);
         }
         .hero h1 { margin: 0; font-size: var(--fs-display); letter-spacing: -0.035em; line-height: 1.05; }
-        .tagline { margin: var(--s4) 0 0; color: var(--muted); }
         .mascot-link { grid-column: 2; grid-row: 1 / span 2; align-self: end; }
         .mascot { display: block; width: 150px; height: auto; }
-        .hero-meta { margin-top: var(--s2); }
+        .hero-meta { margin-top: var(--s4); }
         .summary { margin: 0; font-size: var(--fs-md); color: var(--muted); max-width: 52ch; }
         .summary strong { color: var(--text); }
         .progress { margin-top: var(--s4); max-width: 520px; }
@@ -86,7 +85,6 @@
             <div class="wrap">
                 <div>
                     <h1 id="epoch-title">Epoch 6 leaderboard</h1>
-                    <p class="tagline" id="tagline">Stay humble, stack stats 📊</p>
                 </div>
                 <a class="mascot-link" href="about.html">
                     <img class="mascot" src="images/PoWBoT_mascot_240px.png" alt="About PoWBoT" width="150" height="150" fetchpriority="high">
@@ -241,9 +239,6 @@
         // ------------------------------------------------------------ Hero --
 
         function renderHero(stats) {
-            const tagline = document.getElementById('tagline');
-            if (stats.tagline) tagline.textContent = stats.tagline;
-
             const projects = stats.top_projects?.length || 0;
             const approved = stats.reviewer?.approved || 0;
             const merchants = stats.top_merchants?.length || 0;
