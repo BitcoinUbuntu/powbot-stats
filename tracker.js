@@ -306,36 +306,34 @@ function updateFilterActiveStates(statusFilter, projectFilter, dateFilter, searc
     searchInput.classList.toggle('active', searchQuery !== '');
 }
 
+// Tracker timestamps look like "2026-09-28 00:52:06 UTC". Rewrite to ISO
+// ("2026-09-28T00:52:06Z") before parsing: Chrome accepts the original form,
+// but Safari returns Invalid Date for it, which emptied every date filter.
+function parseTrackerTime(timestamp) {
+    return new Date(String(timestamp || '').replace(' UTC', 'Z').replace(' ', 'T'));
+}
+
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+// Date filters work in UTC days, like every date shown on the site.
 function passesDateFilter(submission, dateFilter) {
     if (dateFilter === 'all') return true;
 
-    const submissionDate = new Date(submission.timestamp);
-    const now = new Date();
-
-    // Reset time parts for accurate day comparison
-    const resetTime = (date) => {
-        date.setHours(0, 0, 0, 0);
-        return date;
-    };
+    const submissionDate = parseTrackerTime(submission.timestamp);
+    if (isNaN(submissionDate)) return false;
+    const now = Date.now();
 
     switch (dateFilter) {
         case 'today': {
-            const today = resetTime(new Date());
-            const subDate = resetTime(new Date(submissionDate));
-            return subDate.getTime() === today.getTime();
+            // Same UTC calendar day as now
+            return submissionDate.toISOString().slice(0, 10) === new Date(now).toISOString().slice(0, 10);
         }
 
-        case '7days': {
-            const sevenDaysAgo = new Date(now);
-            sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-            return submissionDate >= sevenDaysAgo;
-        }
+        case '7days':
+            return submissionDate.getTime() >= now - 7 * DAY_MS;
 
-        case '30days': {
-            const thirtyDaysAgo = new Date(now);
-            thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-            return submissionDate >= thirtyDaysAgo;
-        }
+        case '30days':
+            return submissionDate.getTime() >= now - 30 * DAY_MS;
 
         case 'custom': {
             const fromDate = document.getElementById('filter-date-from').value;
@@ -343,15 +341,15 @@ function passesDateFilter(submission, dateFilter) {
 
             if (!fromDate && !toDate) return true;
 
+            // Date inputs give "YYYY-MM-DD"; treat them as whole UTC days
             if (fromDate) {
-                const from = new Date(fromDate);
-                if (submissionDate < from) return false;
+                const from = Date.parse(fromDate + 'T00:00:00Z');
+                if (submissionDate.getTime() < from) return false;
             }
 
             if (toDate) {
-                const to = new Date(toDate);
-                to.setHours(23, 59, 59, 999); // End of day
-                if (submissionDate > to) return false;
+                const to = Date.parse(toDate + 'T23:59:59.999Z');
+                if (submissionDate.getTime() > to) return false;
             }
 
             return true;
@@ -426,10 +424,8 @@ function resultsText(startIndex, endIndex) {
 }
 
 function renderSubmissionCard(submission) {
-    // Format timestamp for display, in UTC like the rest of the site.
-    // Timestamps arrive as "2026-09-28 00:52:06 UTC"; rewrite to ISO first,
-    // because not every browser parses the space-separated form.
-    const timestamp = new Date(String(submission.timestamp || '').replace(' UTC', 'Z').replace(' ', 'T'));
+    // Format timestamp for display, in UTC like the rest of the site
+    const timestamp = parseTrackerTime(submission.timestamp);
     const dateStr = timestamp.toLocaleDateString('en-GB', {
         year: 'numeric',
         month: 'short',
