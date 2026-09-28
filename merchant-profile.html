@@ -28,7 +28,7 @@
         .profile-head { border-bottom: 1px solid var(--line); }
         .profile-head .wrap {
             display: grid;
-            grid-template-columns: auto minmax(0, 1fr);
+            grid-template-columns: auto minmax(0, 1fr) auto;
             gap: var(--s5) var(--s6);
             align-items: center;
             padding-top: var(--s7);
@@ -73,9 +73,6 @@
         .empty-note { margin: 0; color: var(--muted); }
 
         /* ---------------------------------------------------------- BTC Map -- */
-        .btcmap-frame { display: block; width: 100%; height: 450px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
-        .btcmap-actions { margin: var(--s4) 0 0; }
-        .btcmap-fallback p { margin: 0 0 var(--s4); max-width: 60ch; }
 
         /* -------------------------------------------------- States and notes -- */
         .loading { margin: 0; padding: var(--s7) 0; color: var(--muted); }
@@ -85,12 +82,13 @@
 
         @media (max-width: 720px) {
             .profile-head .wrap { grid-template-columns: 72px minmax(0, 1fr); gap: var(--s4); padding-top: var(--s6); padding-bottom: var(--s5); }
+            /* Phones: the BTC Map link drops under the name, like a project's links */
+            .btcmap-link { grid-column: 1 / -1; justify-self: start; }
             .merchant-icon { width: 72px; height: 72px; font-size: var(--fs-xl); }
             .intro { grid-template-columns: minmax(0, 1fr); }
             .record .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s5) var(--s4); }
             .facts b.fact-text { font-size: var(--fs-md); }
             .section { padding: var(--s6) 0; }
-            .btcmap-frame { height: 360px; }
         }
     </style>
 </head>
@@ -112,6 +110,8 @@
                         <h1 id="merchant-name">Merchant</h1>
                         <p class="merchant-subtitle" id="merchant-subtitle">Circular economy merchant</p>
                     </div>
+                    <!-- The emoji is decoration: the text names the link -->
+                    <a class="hero-link btcmap-link" id="btcmap-link" href="#" target="_blank" rel="noopener" hidden><span aria-hidden="true">🗺️</span><span id="btcmap-link-text">View on BTC Map</span></a>
                 </div>
             </header>
 
@@ -128,19 +128,6 @@
                     </div>
                 </section>
 
-                <section class="section" id="btcmap-section" aria-labelledby="btcmap-title" style="display: none;">
-                    <h2 id="btcmap-title">On BTC Map</h2>
-                    <div id="btcmap-container">
-                        <iframe id="btcmap-embed" class="btcmap-frame" src="" title="This merchant on BTC Map" loading="lazy" allowfullscreen></iframe>
-                        <p class="btcmap-actions">
-                            <a href="" id="btcmap-link" class="btn" target="_blank" rel="noopener">Open on BTC Map</a>
-                        </p>
-                    </div>
-                    <div id="btcmap-fallback" class="btcmap-fallback" style="display: none;">
-                        <p>No BTC Map link was recorded with these posts. The merchant may still be listed there.</p>
-                        <a href="" id="btcmap-search-link" class="btn" target="_blank" rel="noopener">Search BTC Map</a>
-                    </div>
-                </section>
             </div>
         </div>
     </main>
@@ -352,7 +339,7 @@
                 renderPosts(merchantVisits(merchantSubmissions, archivedPosts), membersData, merchantDisplayName);
 
                 // Handle BTC Map section
-                renderBtcMapSection(merchantDisplayName, allPosts);
+                renderBtcMapLink(merchantDisplayName, allPosts);
 
                 // Update footer timestamp - from the LIVE file (index 0), not an
                 // archive, since archives are frozen and their stamps never move.
@@ -521,43 +508,20 @@
             postsContainer.innerHTML = html;
         }
 
-        function renderBtcMapSection(merchantName, posts) {
-            const section = document.getElementById('btcmap-section');
-            const embedContainer = document.getElementById('btcmap-container');
-            const fallbackContainer = document.getElementById('btcmap-fallback');
-            const embed = document.getElementById('btcmap-embed');
+        // A link to the merchant on BTC Map, top right of the header. Current-epoch
+        // submissions carry the exact BTC Map link; older ones don't, so those
+        // search BTC Map by name instead.
+        function renderBtcMapLink(merchantName, posts) {
             const link = document.getElementById('btcmap-link');
-            const searchLink = document.getElementById('btcmap-search-link');
-
-            // If no posts, don't show the section
-            if (!posts || posts.length === 0) {
-                section.style.display = 'none';
-                return;
-            }
-
-            // Show the section
-            section.style.display = 'block';
-
-            // Look for btcmap_link in the posts (available for current epoch submissions)
-            const postWithBtcMap = posts.find(p => p.btcmap_link);
-
-            if (postWithBtcMap && postWithBtcMap.btcmap_link) {
-                // Use the btcmap_link directly from the submission data
-                const btcmapUrl = postWithBtcMap.btcmap_link;
-
-                console.log('Using BTC Map link from submission:', btcmapUrl);
-
-                embed.src = btcmapUrl;
-                link.href = btcmapUrl;
-                embedContainer.style.display = 'block';
-                fallbackContainer.style.display = 'none';
+            const withLink = (posts || []).find(p => p.btcmap_link);
+            if (withLink) {
+                link.href = withLink.btcmap_link;
+                document.getElementById('btcmap-link-text').textContent = 'View on BTC Map';
             } else {
-                // No btcmap_link found (historical data) - show search fallback
-                const searchUrl = `https://btcmap.org/?search=${encodeURIComponent(merchantName)}`;
-                searchLink.href = searchUrl;
-                embedContainer.style.display = 'none';
-                fallbackContainer.style.display = 'block';
+                link.href = `https://btcmap.org/?search=${encodeURIComponent(merchantName)}`;
+                document.getElementById('btcmap-link-text').textContent = 'Search BTC Map';
             }
+            link.hidden = false;
         }
     </script>
 
