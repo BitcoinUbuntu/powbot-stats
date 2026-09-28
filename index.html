@@ -126,6 +126,8 @@
 
     <!-- Current epoch dates and name. Edit epoch-config.js at each rollover. -->
     <script src="epoch-config.js"></script>
+    <!-- Finished epochs and the shared "Every epoch" block -->
+    <script src="epochs.js"></script>
     <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Must load
          before any script that fetches live data. -->
     <script src="data-source.js"></script>
@@ -148,14 +150,8 @@
         const BOARD_ROWS = 10;
         const LIST_ROWS = 8;
 
-        // Posts approved in finished epochs. Frozen; epoch 4 includes its testing phase.
-        const PAST_EPOCHS = [
-            { name: 'Epoch 1', when: 'May 2025', posts: 81, href: 'archive.html' },
-            { name: 'Epoch 2', when: 'Aug 2025', posts: 298, href: 'archive.html' },
-            { name: 'Epoch 3', when: 'Nov 2025', posts: 604, href: 'archive.html' },
-            { name: 'Epoch 4', when: 'Jan to Mar 2026', posts: 187 + 1697, href: 'archive.html' },
-            { name: 'Epoch 5', when: 'Mar to Jul 2026', posts: 1985, href: 'epoch5.html' }
-        ];
+        // Finished epochs (totals and notes) live in epochs.js, shared with the
+        // Epoch 5 page and the archive.
 
         const DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -788,26 +784,14 @@
         }
 
         function renderEpochs(stats) {
-            const live = stats.reviewer?.approved || 0;
-            const all = PAST_EPOCHS.concat([{ name: EPOCH.name, when: 'live now', posts: live, href: '#main', live: true }]);
-            const max = Math.max(1, ...all.map(e => e.posts));
-            const total = all.reduce((s, e) => s + e.posts, 0);
-
-            return `
-                <section class="section" aria-labelledby="epochs-title">
-                    <h2 id="epochs-title">Every epoch so far</h2>
-                    <p class="section-note"><strong class="num">${formatNumber(total)}</strong> posts approved since May 2025.</p>
-                    <ul class="hbars">
-                        ${all.map(e => `
-                            <li class="${e.live ? 'live' : ''}">
-                                <a href="${e.href}"><span class="hb-name">${escapeHtml(e.name)}</span><span class="hb-when">${escapeHtml(e.when)}</span></a>
-                                <span class="hb-track">
-                                    <span class="hb-bar" style="width:${Math.max(0.5, e.posts / max * 100)}%"></span>
-                                    <span class="hb-val num">${formatNumber(e.posts)}</span>
-                                </span>
-                            </li>`).join('')}
-                    </ul>
-                </section>`;
+            const live = { name: EPOCH.name, when: 'live now', posts: stats.reviewer?.approved || 0, href: '#main',
+                note: 'Current rules: <a href="guidelines.html">posting guidelines</a>.', noteHtml: true };
+            const total = window.epochsTotal() + live.posts;
+            return window.renderEpochBars({
+                id: 'epochs-title',
+                intro: `<strong class="num">${formatNumber(total)}</strong> posts approved since May 2025.`,
+                live
+            });
         }
 
         // "Show all" on the plain lists

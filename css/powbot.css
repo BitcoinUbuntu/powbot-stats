@@ -25,7 +25,7 @@
        (current page, leader, today). Contrast on --night: heading 17.6, text 16.2,
        muted 8.3, phosphor 9.6, amber 9.7, danger 8.6. Change a colour here
        and in its -rgb twin. */
-    --night: #070F0B;          /* page: dark green glass, not neutral black */
+    --night: #070F0B;          --night-rgb: 7, 15, 11;      /* page: dark green glass, not neutral black */
     --panel: #0C1913;          /* raised surfaces: tables, dialogs */
     --panel-hi: #12241B;       /* hover on panel rows */
     --heading: #F2F4F3;        /* headings and the wordmark: near white, barely tinted */
@@ -143,7 +143,26 @@ html:has(body.pb) { color-scheme: dark; background: var(--night); }
 /* Pages not yet rebuilt pad <body> by 20px; pull the nav out to the edges. */
 body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 
-.site-nav { position: relative; border-bottom: 1px solid var(--line); background: var(--night); }
+/* Glass: the page shows faintly through the bar as it scrolls under, and the
+ * bottom edge catches the light (bright in the middle, fading to the sides)
+ * above a soft shadow, so the bar reads as a pane lifted off the page.
+ * Without backdrop-filter the bar stays solid, so text never sits on
+ * unblurred content. */
+.site-nav {
+    position: relative; border-bottom: 1px solid var(--line); background: var(--night);
+    box-shadow: 0 10px 24px -14px rgba(0, 0, 0, 0.9);
+}
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .site-nav {
+        background: linear-gradient(180deg, rgba(var(--phosphor-rgb), 0.05), rgba(var(--phosphor-rgb), 0) 60%), rgba(var(--night-rgb), 0.9);
+        -webkit-backdrop-filter: blur(20px) saturate(140%);
+        backdrop-filter: blur(20px) saturate(140%);
+    }
+}
+.site-nav::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; pointer-events: none;
+    background: linear-gradient(90deg, rgba(var(--phosphor-rgb), 0) 0%, rgba(var(--phosphor-rgb), 0.45) 22%, rgba(var(--text-rgb), 0.7) 50%, rgba(var(--phosphor-rgb), 0.45) 78%, rgba(var(--phosphor-rgb), 0) 100%);
+}
 .site-nav .wrap { display: flex; align-items: stretch; gap: var(--s4); height: 60px; }
 .site-nav .brand { display: flex; align-items: center; align-self: center; gap: 10px; color: var(--heading); text-decoration: none; font: 700 var(--fs-md)/1 var(--font-mono); letter-spacing: -0.02em; min-height: var(--tap); }
 .site-nav .brand img { width: 34px; height: 34px; }
@@ -351,17 +370,29 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .bars i.today.sel { background: var(--amber-hi); }
 .bars:focus-visible { outline-offset: 4px; }
 
-/* ------------------------------------------------ Horizontal bar rows -- */
-.hbars { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); }
-.hbars li { display: grid; grid-template-columns: minmax(9rem, 14rem) 1fr; align-items: center; gap: var(--s4); }
-.hbars a, .hbars .hb-label { color: var(--text); text-decoration: none; min-height: var(--tap); display: flex; flex-direction: column; justify-content: center; }
-.hbars a:hover .hb-name { text-decoration: underline; }
-.hbars .hb-name { font-weight: 700; }
-.hbars .hb-when { color: var(--muted); font-size: var(--fs-sm); }
-.hbars .hb-track { display: flex; align-items: center; gap: var(--s3); }
-.hbars .hb-bar { height: 22px; background: var(--line-strong); min-width: 2px; }
-.hbars .live .hb-bar { background: var(--amber); }
-.hbars .hb-val { font: 700 var(--fs-md)/1 var(--font-mono); white-space: nowrap; }
+/* ------------------------------------------------ Horizontal bar rows --
+ * Same family as the per-day bars: thin phosphor bars, the current or live
+ * one amber. One compact row each: label (name, date under it), bar, value
+ * in a right-hand column. A row can be a link (a.hb-row) or plain (div).
+ */
+.hbars { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.hb-row {
+    display: grid; grid-template-columns: 10rem minmax(0, 1fr); align-items: center; column-gap: var(--s4);
+    min-height: var(--tap); padding: 3px 0; color: var(--text); text-decoration: none;
+}
+a.hb-row:hover { background: rgba(var(--phosphor-rgb), 0.06); color: var(--text); }
+a.hb-row:hover .hb-name { text-decoration: underline; }
+.hb-label { display: block; min-width: 0; line-height: 1.25; }
+.hb-name { display: block; font-weight: 700; white-space: nowrap; }
+.hb-when { display: block; color: var(--muted); font-size: var(--fs-xs); white-space: nowrap; }
+/* Bar then its value. --w is the bar's share (0 to 1) of the room left once
+   the value has its space, so the longest bar and its value always fit. */
+.hb-track { display: flex; align-items: center; gap: var(--s3); min-width: 0; }
+.hb-bar { flex: none; width: calc((100% - 5.5rem) * var(--w, 0)); min-width: 2px; height: 10px; background: var(--phosphor); opacity: 0.8; }
+.hb.current .hb-bar { background: var(--amber); opacity: 1; }
+.hb-val { font: 700 var(--fs-base)/1 var(--font-mono); white-space: nowrap; }
+/* Context line under a row, lined up with the bars */
+.hb-note { margin: -4px 0 var(--s2) calc(10rem + var(--s4)); color: var(--muted); font: 400 var(--fs-sm)/1.45 var(--font-text); }
 
 /* ---------------------------------------------------------- Page head --
  * Inner pages: a heading and one plain sentence. Not a hero.
@@ -468,5 +499,6 @@ textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize:
     .facts { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s5) var(--s4); }
     .facts li { flex-direction: column; gap: 4px; }
     .facts b { font-size: 1.625rem; }
-    .hbars li { grid-template-columns: 1fr; gap: 0; }
+    .hb-row { grid-template-columns: 8.5rem minmax(0, 1fr); column-gap: var(--s3); }
+    .hb-note { margin-left: calc(8.5rem + var(--s3)); }
 }

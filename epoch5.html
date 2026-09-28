@@ -77,6 +77,8 @@
 
     <!-- Shared nav/footer injection - load first -->
     <script src="includes/inject.js"></script>
+    <!-- Finished epochs and the shared "Every epoch" block -->
+    <script src="epochs.js"></script>
 
     <script>
         // Global project metadata
@@ -88,12 +90,6 @@
 
         // Posts approved in the epochs before this one. Frozen; epoch 4 includes
         // its testing phase. Same figures the old epochs chart used (2,867 in all).
-        const PAST_EPOCHS = [
-            { name: 'Epoch 1', when: 'May 2025', posts: 81, href: 'archive.html' },
-            { name: 'Epoch 2', when: 'Aug 2025', posts: 298, href: 'archive.html' },
-            { name: 'Epoch 3', when: 'Nov 2025', posts: 604, href: 'archive.html' },
-            { name: 'Epoch 4', when: 'Jan to Mar 2026', posts: 187 + 1697, href: 'archive.html' }
-        ];
 
         // Format numbers with thousands separators
         function formatNumber(num) {
@@ -420,26 +416,12 @@
         // ----------------------------------------------- Every epoch --
 
         function renderEpochs(stats) {
-            const epoch5 = stats.reviewer?.approved || 0;
-            const all = PAST_EPOCHS.concat([{ name: 'Epoch 5', when: 'Mar to Jul 2026', posts: epoch5, href: '#main', live: true }]);
-            const max = Math.max(1, ...all.map(e => e.posts));
-            const total = all.reduce((s, e) => s + e.posts, 0);
-
-            return `
-                <section class="section" aria-labelledby="epochs-title">
-                    <h2 id="epochs-title">Every epoch so far</h2>
-                    <p class="section-note"><strong class="num">${formatNumber(total)}</strong> posts approved from May 2025 to the end of Epoch 5. Epoch 6 is on the <a href="index.html">live leaderboard</a>.</p>
-                    <ul class="hbars">
-                        ${all.map(e => `
-                            <li class="${e.live ? 'live' : ''}">
-                                <a href="${e.href}"${e.live ? ' aria-current="page"' : ''}><span class="hb-name">${escapeHtml(e.name)}</span><span class="hb-when">${escapeHtml(e.when)}</span></a>
-                                <span class="hb-track">
-                                    <span class="hb-bar" style="width:${Math.max(0.5, e.posts / max * 100)}%"></span>
-                                    <span class="hb-val num">${formatNumber(e.posts)}</span>
-                                </span>
-                            </li>`).join('')}
-                    </ul>
-                </section>`;
+            // Frozen totals and notes come from epochs.js; Epoch 5 is this page
+            return window.renderEpochBars({
+                id: 'epochs-title',
+                intro: `<strong class="num">${formatNumber(window.epochsTotal())}</strong> posts approved from May 2025 to the end of Epoch 5. Epoch 6 is on the <a href="index.html">live leaderboard</a>.`,
+                current: 'Epoch 5'
+            });
         }
 
         // Row toggles, "Show all" on the board and on the lists

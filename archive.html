@@ -80,6 +80,8 @@
 
     <!-- Shared nav/footer injection - load first -->
     <script src="includes/inject.js"></script>
+    <!-- Finished epochs and the shared "Every epoch" block -->
+    <script src="epochs.js"></script>
 
     <script>
         // Global project metadata
@@ -90,7 +92,6 @@
 
         // Epoch 5 has its own page (epoch5.html). Its total is frozen, the same
         // figure the homepage uses.
-        const EPOCH5 = { name: 'Epoch 5', when: 'Mar to Jul 2026', posts: 1985, href: 'epoch5.html' };
 
         // Format numbers with thousands separators
         function formatNumber(num) {
@@ -258,44 +259,23 @@
             return `
                 <ul class="hbars">
                     ${providers.map(p => `
-                        <li>
-                            <span class="hb-label"><span class="hb-name">${escapeHtml(p.domain)}</span><span class="hb-when">${Math.round(p.count / Math.max(1, total) * 100)}% of payments</span></span>
-                            <span class="hb-track">
-                                <span class="hb-bar" style="width:${Math.max(0.5, p.count / max * 100)}%"></span>
-                                <span class="hb-val num">${formatNumber(p.count)}</span>
-                            </span>
+                        <li class="hb">
+                            <div class="hb-row">
+                                <span class="hb-label"><span class="hb-name">${escapeHtml(p.domain)}</span><span class="hb-when">${Math.round(p.count / Math.max(1, total) * 100)}% of payments</span></span>
+                                <span class="hb-track"><span class="hb-bar" aria-hidden="true" style="--w:${(p.count / max).toFixed(4)}"></span><span class="hb-val num">${formatNumber(p.count)}</span></span>
+                            </div>
                         </li>`).join('')}
                 </ul>`;
         }
 
-        function renderEveryEpoch(epoch4Live, historical) {
-            const ep = historical.epochs;
-            const epoch4Posts = (epoch4Live.reviewer?.approved ?? epoch4Live.totals.by_type.project?.count ?? 0) + ep.epoch4_testing.total_posts;
-            const all = [
-                { name: 'Epoch 1', when: 'May 2025', posts: ep.epoch1.total_posts, href: '#epoch-1' },
-                { name: 'Epoch 2', when: 'Aug 2025', posts: ep.epoch2.total_posts, href: '#epoch-2' },
-                { name: 'Epoch 3', when: 'Nov 2025', posts: ep.epoch3.total_posts, href: '#epoch-3' },
-                { name: 'Epoch 4', when: 'Dec 2025 to Mar 2026, with testing', posts: epoch4Posts, href: '#epoch-4' },
-                EPOCH5
-            ];
-            const max = Math.max(1, ...all.map(e => e.posts));
-            const total = all.reduce((s, e) => s + e.posts, 0);
-
-            return `
-                <section class="section" aria-labelledby="every-title">
-                    <h2 id="every-title">Every epoch</h2>
-                    <p class="section-note"><strong class="num">${formatNumber(total)}</strong> posts approved across five epochs, May 2025 to July 2026. Epoch 5 has its own page: <a href="epoch5.html">Epoch 5 final results</a>.</p>
-                    <ul class="hbars">
-                        ${all.map(e => `
-                            <li>
-                                <a href="${e.href}"><span class="hb-name">${escapeHtml(e.name)}</span><span class="hb-when">${escapeHtml(e.when)}</span></a>
-                                <span class="hb-track">
-                                    <span class="hb-bar" style="width:${Math.max(0.5, e.posts / max * 100)}%"></span>
-                                    <span class="hb-val num">${formatNumber(e.posts)}</span>
-                                </span>
-                            </li>`).join('')}
-                    </ul>
-                </section>`;
+        function renderEveryEpoch() {
+            // Frozen totals and notes come from epochs.js (shared with the homepage
+            // and the Epoch 5 page)
+            return window.renderEpochBars({
+                id: 'every-title',
+                title: 'Every epoch',
+                intro: `<strong class="num">${formatNumber(window.epochsTotal())}</strong> posts approved across five epochs, May 2025 to July 2026. Epoch 5 has its own page: <a href="epoch5.html">Epoch 5 final results</a>.`
+            });
         }
 
         // Render the dashboard
