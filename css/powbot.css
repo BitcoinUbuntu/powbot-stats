@@ -22,12 +22,13 @@
 :root {
     /* Colour: an 80s CRT, toned down. Green-tinted glass, a muted P1 green
        phosphor for links and data, and a soft amber for the one highlight
-       (current page, leader, today). Contrast on --night: text 15.5,
+       (current page, leader, today). Contrast on --night: heading 17.6, text 15.5,
        muted 7.7, phosphor 9.6, amber 9.7, danger 8.6. Change a colour here
        and in its -rgb twin. */
     --night: #070F0B;          /* page: dark green glass, not neutral black */
     --panel: #0C1913;          /* raised surfaces: tables, dialogs */
     --panel-hi: #12241B;       /* hover on panel rows */
+    --heading: #F2F4F3;        /* headings and the wordmark: near white, barely tinted */
     --text: #D6EBDD;           --text-rgb: 214, 235, 221;
     --muted: #87AB93;          --muted-rgb: 135, 171, 147;
     --amber: #E9AC49;          --amber-rgb: 233, 172, 73;      /* the one highlight */
@@ -81,7 +82,7 @@ html:has(body.pb) { color-scheme: dark; background: var(--night); }
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
 }
-:where(.pb) :where(h1, h2, h3) { font-family: var(--font-mono); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; text-wrap: balance; }
+:where(.pb) :where(h1, h2, h3) { color: var(--heading); font-family: var(--font-mono); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; text-wrap: balance; }
 :where(.pb) p { text-wrap: pretty; }
 :where(.pb) a { color: var(--phosphor); text-underline-offset: 3px; }
 :where(.pb) a:hover { color: var(--text); }
@@ -135,7 +136,7 @@ html:has(body.pb) { color-scheme: dark; background: var(--night); }
 /* ------------------------------------------------------------------ Nav -- */
 .site-nav { border-bottom: 1px solid var(--line); background: var(--night); position: sticky; top: 0; z-index: 100; }
 .site-nav .wrap { display: flex; align-items: center; gap: var(--s4); min-height: 60px; }
-.site-nav .brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font: 700 var(--fs-md)/1 var(--font-mono); letter-spacing: -0.02em; min-height: var(--tap); }
+.site-nav .brand { display: flex; align-items: center; gap: 10px; color: var(--heading); text-decoration: none; font: 700 var(--fs-md)/1 var(--font-mono); letter-spacing: -0.02em; min-height: var(--tap); }
 .site-nav .brand img { width: 34px; height: 34px; }
 .site-nav .nav-links { display: flex; gap: var(--s1); margin: 0 0 0 auto; padding: 0; list-style: none; }
 .site-nav .nav-links a {
