@@ -19,6 +19,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
 
     <script src="qrcode.min.js"></script>
+    <!-- The donation panel, shared with the directory card backs -->
+    <script src="donate.js"></script>
 
     <link rel="stylesheet" href="css/powbot.css">
     <style>
@@ -67,23 +69,7 @@
         .prose p { margin: 0 0 var(--s4); max-width: 70ch; }
         .prose p:last-child { margin-bottom: 0; }
 
-        .support-card { padding: var(--s5); background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
-        .support-card h2 { font-size: var(--fs-md); }
-        /* The old card flipped in 3D and flipSupportCard() still writes a pixel
-           height for that animation. The switch is now a plain show/hide, so let
-           the box size to whichever side is showing. */
-        .support-card-inner { height: auto !important; }
-        .support-back, .support-card.flipped .support-front { display: none; }
-        .support-card.flipped .support-back { display: block; }
-        .support-side h3 { margin: 0 0 var(--s3); font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--muted); letter-spacing: 0; }
-        /* The QR needs a white quiet zone to scan, so white here is functional,
-           not a theme colour. */
-        .qr-container { width: fit-content; margin: 0 auto var(--s4); padding: var(--s3); background: #fff; border-radius: var(--radius); }
-        .qr-container canvas { display: block; max-width: 100%; height: auto !important; }
-        .address { margin: 0 0 var(--s3); font: 400 var(--fs-xs)/1.6 var(--font-mono); text-align: center; overflow-wrap: anywhere; word-break: break-all; }
-        .support-actions { display: flex; flex-wrap: wrap; gap: var(--s2); }
-        .support-actions .btn { flex: 1 1 auto; }
-        .copy-btn.copied { background: rgba(var(--phosphor-rgb), 0.12); }
+        /* The donation panel's styles are shared: .donate* in css/powbot.css */
 
         /* ----------------------------------------------------------- Epochs -- */
         .section h3 { margin: var(--s6) 0 var(--s2); font-size: var(--fs-base); }
@@ -368,59 +354,21 @@
                 </section>
             `;
 
-            // Support box: Lightning first, with a switch to onchain
+            // Donation panel: the same as the back of a directory card
             if (hasSupport) {
-            html += `
-                <aside class="support-card" id="support-card" aria-labelledby="support-title">
-                    <h2 id="support-title">Support ${escapeHtml(member.name)}</h2>
-                    <div class="support-card-inner">
-                        <!-- Lightning -->
-                        <div class="support-side support-front">
-                            <h3>Lightning</h3>
-            `;
-
-            if (member.lightning_address) {
                 html += `
-                            <div class="qr-container" id="qr-lightning" role="img" aria-label="QR code for the Lightning address"></div>
-                            <p class="address">${escapeHtml(member.lightning_address)}</p>
-                            <div class="support-actions" aria-live="polite">
-                                <button type="button" class="btn copy-btn" id="lightning-address" onclick="copyAddressWithFeedback('${escapeHtml(member.lightning_address)}', 'lightning-address')">Copy address</button>
-                `;
-                if (member.onchain_address) {
-                    html += `
-                                <button type="button" class="btn btn-back" onclick="flipSupportCard()">Switch to onchain</button>
-                    `;
-                }
-                html += `
-                            </div>
-                `;
+                <aside class="support" aria-labelledby="donate-lightning-title">
+                    ${donatePanelHtml({
+                        id: 'donate',
+                        name: member.name,
+                        lightning: member.lightning_address,
+                        onchain: member.onchain_address || '',
+                        level: 2,
+                        // The page is already about this project
+                        title: 'Donate'
+                    })}
+                </aside>`;
             }
-
-            html += `
-                        </div>
-            `;
-
-            // Onchain (if available)
-            if (member.onchain_address) {
-                html += `
-                        <!-- Onchain -->
-                        <div class="support-side support-back">
-                            <h3>Onchain</h3>
-                            <div class="qr-container" id="qr-onchain" role="img" aria-label="QR code for the onchain address"></div>
-                            <p class="address">${escapeHtml(member.onchain_address)}</p>
-                            <div class="support-actions" aria-live="polite">
-                                <button type="button" class="btn copy-btn" id="onchain-address" onclick="copyAddressWithFeedback('${escapeHtml(member.onchain_address)}', 'onchain-address')">Copy address</button>
-                                <button type="button" class="btn btn-back" onclick="flipSupportCard()">Switch to Lightning</button>
-                            </div>
-                        </div>
-                `;
-            }
-
-            html += `
-                    </div>
-                </aside>
-            `;
-            } // end if (hasSupport)
 
             html += `</div>`; // Close intro
 
@@ -698,48 +646,8 @@
             // Load gallery images (reads from gallery array)
             loadGalleryImages(member);
 
-            // Generate QR codes
-            if (member.lightning_address) {
-                const qrLightning = document.getElementById('qr-lightning');
-                if (qrLightning) {
-                    QRCode.toCanvas(
-                        `lightning:${member.lightning_address}`,
-                        { width: 180, margin: 1 },
-                        (error, canvas) => {
-                            if (!error) {
-                                qrLightning.appendChild(canvas);
-                            }
-                        }
-                    );
-                }
-            }
-
-            if (member.onchain_address) {
-                const qrOnchain = document.getElementById('qr-onchain');
-                if (qrOnchain) {
-                    QRCode.toCanvas(
-                        `bitcoin:${member.onchain_address}`,
-                        { width: 180, margin: 1 },
-                        (error, canvas) => {
-                            if (!error) {
-                                qrOnchain.appendChild(canvas);
-                            }
-                        }
-                    );
-                }
-            }
-
-            // Initialize support card height
-            setTimeout(() => {
-                const card = document.getElementById('support-card');
-                if (card) {
-                    const inner = card.querySelector('.support-card-inner');
-                    const front = card.querySelector('.support-front');
-                    if (inner && front) {
-                        inner.style.height = front.scrollHeight + 'px';
-                    }
-                }
-            }, 100);
+            // Draw the donation QR codes
+            donateDrawQr(document.getElementById('donate'));
 
             // Render activity visualization for Epoch 4 (timeline only - see the
             // charts markup above for why the calendar was dropped).
@@ -1116,28 +1024,6 @@
             return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
         }
 
-        function flipSupportCard() {
-            const card = document.getElementById('support-card');
-            const isFlipped = card.classList.contains('flipped');
-
-            // Toggle the flip
-            card.classList.toggle('flipped');
-
-            // Update height to match the now-visible side
-            const inner = card.querySelector('.support-card-inner');
-            const front = card.querySelector('.support-front');
-            const back = card.querySelector('.support-back');
-
-            // Set height based on which side will be visible
-            const newHeight = isFlipped ? front.scrollHeight : back.scrollHeight;
-            inner.style.height = newHeight + 'px';
-
-            // The button just pressed is now hidden; keep keyboard focus on the
-            // matching switch of the side now showing.
-            const shown = isFlipped ? front : back;
-            shown.querySelector('.btn-back')?.focus();
-        }
-
         function toggleEpoch5Posts(button) {
             const count = parseInt(button.dataset.count);
             const isExpanded = button.classList.contains('expanded');
@@ -1208,26 +1094,6 @@
                 button.classList.add('expanded');
                 button.setAttribute('aria-expanded', 'true');
             }
-        }
-
-        function copyAddressWithFeedback(address, elementId) {
-            const addressElement = document.getElementById(elementId);
-            const originalText = addressElement.textContent;
-
-            navigator.clipboard.writeText(address).then(() => {
-                // Add copied class for visual feedback
-                addressElement.classList.add('copied');
-                addressElement.textContent = 'Copied to clipboard!';
-
-                // Reset after 2 seconds
-                setTimeout(() => {
-                    addressElement.classList.remove('copied');
-                    addressElement.textContent = originalText;
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
-                alert('Failed to copy address');
-            });
         }
 
         function copyToClipboard(text, label) {

@@ -25,6 +25,8 @@
     <meta name="twitter:image" content="https://powbot.africa/images/PoWBoT_preview.jpg">
 
     <script src="qrcode.min.js"></script>
+    <!-- The donation panel on each card back, shared with profile.html -->
+    <script src="donate.js"></script>
     <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Loaded here in
          the head because this page's inline script runs before inject.js. -->
     <script src="data-source.js"></script>
@@ -85,7 +87,9 @@
             -webkit-backface-visibility: hidden; backface-visibility: hidden;
             background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
         }
-        .card-back { transform: rotateY(180deg); border-color: rgba(var(--amber-rgb), 0.55); }
+        /* The back is the shared donation panel (css/powbot.css), filling the card */
+        .card-back { transform: rotateY(180deg); background: none; border: 0; }
+        .card-back .donate { --donate-h: 100%; }
 
         /* Front */
         .card-front { display: flex; flex-direction: column; cursor: pointer; }
@@ -103,7 +107,7 @@
         .card-logo-placeholder[hidden] { display: none; }
         .card-body { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: var(--s3); padding: var(--s4); }
         .card-title { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s3); min-width: 0; }
-        .member-card h3 { margin: 0; font: 700 var(--fs-md)/1.25 var(--font-text); letter-spacing: 0; overflow-wrap: anywhere; }
+        .card-title h3 { margin: 0; font: 700 var(--fs-md)/1.25 var(--font-text); letter-spacing: 0; overflow-wrap: anywhere; }
         .card-title .flag { flex: none; font-size: 1.5rem; line-height: 1; }
         .card-place { margin: 2px 0 0; color: var(--muted); font-size: var(--fs-sm); }
         .card-tagline {
@@ -116,35 +120,11 @@
         /* One row, always: a card never grows a line for its badges */
         .badge-emojis { display: flex; gap: 6px; margin: 0; min-height: 1.3em; overflow: hidden; font-size: 1.05rem; line-height: 1.2; }
         .card-actions { display: flex; gap: var(--s2); margin-top: var(--s1); }
-        .card-actions .btn, .back-actions .btn { flex: 1; min-width: 0; }
+        .card-actions .btn { flex: 1; min-width: 0; }
         /* .pb button resets font and colour, which would override .btn on <button> */
         .pb button.btn { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--phosphor); }
         .pb button.btn-donate { border-color: var(--amber); color: var(--amber); }
         .pb button.btn-donate:hover { background: rgba(var(--amber-rgb), 0.12); color: var(--amber); }
-
-        /* Back: Lightning and onchain sit side by side and slide */
-        .card-back-inner { display: flex; height: 100%; transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); }
-        .card-back.show-onchain .card-back-inner { transform: translateX(-100%); }
-        .card-back-side { flex: 0 0 100%; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: var(--s2); padding: var(--s4); }
-        .card-back h3 {
-            align-self: stretch; text-align: center; font-size: var(--fs-base);
-            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-        }
-        .card-back h3:focus { outline: none; }
-        .card-back h3:focus-visible { outline: 2px solid var(--phosphor); outline-offset: 2px; }
-        .addr-label { margin: 0; color: var(--amber); font: 700 var(--fs-sm)/1.2 var(--font-text); }
-        .qr-container { flex: none; width: 176px; height: 176px; padding: var(--s2); background: #fff; line-height: 0; }
-        .qr-container canvas { display: block; width: 160px !important; height: 160px !important; }
-        .lightning-address-display {
-            width: 100%; min-height: var(--tap); padding: var(--s2) var(--s3);
-            background: var(--night); color: var(--text);
-            border: 1px solid var(--line); border-radius: var(--radius);
-            font: 400 0.75rem/1.4 var(--font-mono); text-align: center; overflow-wrap: anywhere;
-            cursor: pointer;
-        }
-        .lightning-address-display:hover { border-color: var(--phosphor); }
-        .lightning-address-display.copied { border-color: var(--phosphor); color: var(--phosphor); }
-        .back-actions { display: flex; gap: var(--s2); width: 100%; margin-top: auto; }
 
         /* States */
         .loading, .empty-state { grid-column: 1 / -1; padding: var(--s7) 0; color: var(--muted); }
@@ -694,13 +674,6 @@
                 const country = escapeHtml(member.country || '');
                 const place = [member.city, member.country].filter(Boolean).map(escapeHtml).join(', ');
 
-                const lnId = `ln-title-${cardId}`;
-                const ocId = `oc-title-${cardId}`;
-                const addressButton = (kind, address) => `
-                    <button type="button" class="lightning-address-display" data-copy="${escapeHtml(address)}" onclick="event.stopPropagation(); copyAddressWithFeedback(this)">
-                        <span class="visually-hidden">Copy ${kind} address: </span><span class="addr-text" aria-live="polite">${escapeHtml(address)}</span>
-                    </button>`;
-
                 return `
                     <article class="member-card" id="${cardId}" data-member-id="${member.id}" aria-labelledby="name-${cardId}">
                         <div class="card-inner">
@@ -748,34 +721,17 @@
                                 </div>
                             </div>
 
-                            <!-- Back of Card: donation details. Inert until the card turns over. -->
+                            <!-- Back of Card: the shared donation panel. Inert until the card turns over. -->
                             ${member.lightning_address ? `
-                            <div class="card-back" id="back-${cardId}" inert
-                                 data-lightning="${escapeHtml(member.lightning_address)}" data-onchain="${escapeHtml(member.onchain_address || '')}">
-                                <div class="card-back-inner">
-                                    <section class="card-back-side card-back-lightning" aria-labelledby="${lnId}">
-                                        <h3 id="${lnId}" tabindex="-1">Donate to ${name}</h3>
-                                        <p class="addr-label">Lightning</p>
-                                        <div class="qr-container" role="img" aria-label="QR code for the Lightning address"></div>
-                                        ${addressButton('Lightning', member.lightning_address)}
-                                        <div class="back-actions">
-                                            <button type="button" class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">Back<span class="visually-hidden"> to ${name}</span></button>
-                                            ${member.onchain_address ? `<button type="button" class="btn btn-switch" onclick="event.stopPropagation(); switchPaymentMethod('${cardId}')">Use onchain</button>` : ''}
-                                        </div>
-                                    </section>
-                                    ${member.onchain_address ? `
-                                    <section class="card-back-side card-back-onchain" aria-labelledby="${ocId}" inert>
-                                        <h3 id="${ocId}" tabindex="-1">Donate to ${name}</h3>
-                                        <p class="addr-label">Onchain</p>
-                                        <div class="qr-container" role="img" aria-label="QR code for the Bitcoin address"></div>
-                                        ${addressButton('Bitcoin', member.onchain_address)}
-                                        <div class="back-actions">
-                                            <button type="button" class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">Back<span class="visually-hidden"> to ${name}</span></button>
-                                            <button type="button" class="btn btn-switch" onclick="event.stopPropagation(); switchPaymentMethod('${cardId}')">Use Lightning</button>
-                                        </div>
-                                    </section>
-                                    ` : ''}
-                                </div>
+                            <div class="card-back" id="back-${cardId}" inert>
+                                ${donatePanelHtml({
+                                    id: `donate-${cardId}`,
+                                    name: member.name,
+                                    lightning: member.lightning_address,
+                                    onchain: member.onchain_address || '',
+                                    level: 3,
+                                    back: `<button type="button" class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">Back<span class="visually-hidden"> to ${name}</span></button>`
+                                })}
                             </div>
                             ` : ''}
                         </div>
@@ -784,50 +740,22 @@
             }).join('');
         }
 
-        // Draw a QR code once, the first time its side is shown
-        function drawQr(container, text) {
-            if (!container || container.children.length) return;
-            QRCode.toCanvas(text, { width: 160, margin: 1 }, (error, canvas) => {
-                if (!error) container.appendChild(canvas);
-            });
-        }
-
-        // The face and side not showing are inert: out of the tab order and
-        // hidden from screen readers, as they are from sight.
+        // The face not showing is inert: out of the tab order and hidden from
+        // screen readers, as it is from sight.
         function flipCard(cardId) {
             const card = document.getElementById(cardId);
             const back = document.getElementById(`back-${cardId}`);
             if (!card || !back) return;
             const toBack = !card.classList.contains('flipped');
+            const panel = back.querySelector('.donate');
 
-            if (toBack) {
-                back.querySelectorAll('.card-back-side').forEach(side => {
-                    const onchain = side.classList.contains('card-back-onchain');
-                    drawQr(side.querySelector('.qr-container'), onchain ? `bitcoin:${back.dataset.onchain}` : `lightning:${back.dataset.lightning}`);
-                });
-            }
-
+            if (toBack) donateDrawQr(panel);
             card.classList.toggle('flipped', toBack);
             card.querySelector('.card-front').inert = toBack;
             back.inert = !toBack;
 
-            if (toBack) {
-                const side = back.querySelector(back.classList.contains('show-onchain') ? '.card-back-onchain' : '.card-back-lightning');
-                side.querySelector('h3').focus({ preventScroll: true });
-            } else {
-                card.querySelector('.btn-donate')?.focus({ preventScroll: true });
-            }
-        }
-
-        function switchPaymentMethod(cardId) {
-            const back = document.getElementById(`back-${cardId}`);
-            const onchain = back.classList.toggle('show-onchain');
-            const lightningSide = back.querySelector('.card-back-lightning');
-            const onchainSide = back.querySelector('.card-back-onchain');
-            lightningSide.inert = onchain;
-            onchainSide.inert = !onchain;
-            // Keep focus on the switch, now on the side that is showing
-            (onchain ? onchainSide : lightningSide).querySelector('.btn-switch').focus({ preventScroll: true });
+            if (toBack) donateFocus(panel);
+            else card.querySelector('.btn-donate')?.focus({ preventScroll: true });
         }
 
         function viewProfile(memberId, event) {
@@ -835,25 +763,6 @@
             if (event.target.tagName !== 'BUTTON' && event.target.tagName !== 'A') {
                 window.location.href = `profile.html?id=${memberId}`;
             }
-        }
-
-        function copyAddressWithFeedback(button) {
-            const address = button.dataset.copy;
-            const text = button.querySelector('.addr-text');
-            if (!address || !text) return;
-
-            navigator.clipboard.writeText(address).then(() => {
-                button.classList.add('copied');
-                text.textContent = 'Copied to clipboard';
-                setTimeout(() => {
-                    button.classList.remove('copied');
-                    text.textContent = address;
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
-                text.textContent = 'Could not copy. Try again.';
-                setTimeout(() => { text.textContent = address; }, 3000);
-            });
         }
 
         // Event listeners
