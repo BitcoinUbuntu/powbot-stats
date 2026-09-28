@@ -16,7 +16,7 @@
         { name: 'Epoch 1', when: 'May 2025', posts: 81, href: 'archive.html#epoch-1', note: '' },
         { name: 'Epoch 2', when: 'Aug 2025', posts: 298, href: 'archive.html#epoch-2', note: '' },
         { name: 'Epoch 3', when: 'Nov 2025', posts: 604, href: 'archive.html#epoch-3', note: '' },
-        { name: 'Epoch 4', when: 'Dec 2025 to Mar 2026', posts: 187 + 1697, href: 'archive.html#epoch-4', note: 'Includes the December 2025 testing period.' },
+        { name: 'Epoch 4', when: 'Dec 2025 to Mar 2026', posts: 187 + 1697, href: 'archive.html#epoch-4', note: '' },
         { name: 'Epoch 5', when: 'Mar to Jul 2026', posts: 1985, href: 'epoch5.html', note: '' }
     ];
 
