@@ -95,6 +95,7 @@
             const page = link.getAttribute('data-page');
             if (page === currentPage) {
                 link.classList.add('current');
+                link.setAttribute('aria-current', 'page');
             }
         });
     }

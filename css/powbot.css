@@ -1,0 +1,302 @@
+/*
+ * PoWBoT shared styles: tokens, fonts, base and shared components.
+ *
+ * Define colour, type and spacing here once. Pages keep only the layout that is
+ * specific to them, and read every value from these tokens.
+ *
+ * Base element styles apply only inside <body class="pb">. That lets a page opt
+ * in when it is rebuilt, while pages not yet converted keep their own look and
+ * still get the shared nav and footer below.
+ */
+
+/* ---------------------------------------------------------------- Fonts --
+ * Self-hosted and subset to Latin (see fonts/). No third-party font requests.
+ * Martian Mono: headings, ranks and figures. Atkinson Hyperlegible: text.
+ */
+@font-face { font-family: "Martian Mono"; src: url("../fonts/martian-mono-latin-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Martian Mono"; src: url("../fonts/martian-mono-latin-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("../fonts/atkinson-hyperlegible-latin-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("../fonts/atkinson-hyperlegible-latin-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+/* --------------------------------------------------------------- Tokens -- */
+:root {
+    /* Colour. Contrast on --night: text 14.9, muted 7.0, amber 10.0, cyan 10.6 */
+    --night: #12152E;          /* page */
+    --panel: #1A1E3D;          /* raised surfaces: tables, dialogs */
+    --panel-hi: #232852;       /* hover on panel rows */
+    --text: #E8EAF4;
+    --muted: #98A0C4;
+    --amber: #FFB23F;          /* the one highlight: current page, leader, today */
+    --cyan: #5FD8E0;           /* links, data marks, focus */
+    --coin: #F7931A;           /* the mascot's coin; large marks only */
+    --danger: #FF8A8A;         /* errors, rejected (text 7.3 on night) */
+    --line: rgba(152, 160, 196, 0.28);
+    --line-strong: rgba(152, 160, 196, 0.5);
+
+    /* Type */
+    --font-mono: "Martian Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    --font-text: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --fs-xs: 0.8125rem;   /* 13 */
+    --fs-sm: 0.875rem;    /* 14 */
+    --fs-base: 1rem;      /* 16 */
+    --fs-md: 1.125rem;    /* 18 */
+    --fs-lg: 1.3125rem;   /* 21 */
+    --fs-xl: 1.5rem;      /* 24 */
+    --fs-2xl: 2rem;       /* 32 */
+    --fs-display: clamp(1.875rem, 5vw, 3.75rem); /* 30 to 60 */
+
+    /* Space */
+    --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
+    --gutter: clamp(16px, 4vw, 48px);
+    --max: 1180px;
+    --radius: 2px;
+    --tap: 44px;
+
+    /* Motion */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --t-fast: 160ms;
+    --t-ui: 200ms;
+}
+
+/* ----------------------------------------------------------------- Base -- */
+html:has(body.pb) { color-scheme: dark; background: var(--night); }
+.pb, .pb *, .pb *::before, .pb *::after { box-sizing: border-box; }
+/* Keep focused elements and anchor targets clear of the sticky nav */
+.pb :focus, .pb [id] { scroll-margin-top: 80px; scroll-margin-bottom: 24px; }
+.pb a, .pb button, .pb summary { -webkit-tap-highlight-color: rgba(95, 216, 224, 0.2); }
+.pb {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--night);
+    color: var(--text);
+    font: 400 var(--fs-base)/1.55 var(--font-text);
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+}
+.pb h1, .pb h2, .pb h3 { font-family: var(--font-mono); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; text-wrap: balance; }
+.pb p { text-wrap: pretty; }
+.pb a { color: var(--cyan); text-underline-offset: 3px; }
+.pb a:hover { color: var(--text); }
+.pb img { max-width: 100%; height: auto; }
+.pb button { font: inherit; color: inherit; touch-action: manipulation; }
+.pb ::selection { background: var(--amber); color: var(--night); }
+
+/* One focus style everywhere. Amber surfaces switch the ring to night. */
+.pb :focus-visible, .site-nav :focus-visible, .site-footer :focus-visible {
+    outline: 3px solid var(--cyan);
+    outline-offset: 2px;
+    border-radius: var(--radius);
+}
+.pb .on-amber :focus-visible, .pb .on-amber:focus-visible { outline-color: var(--night); }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--font-mono); }
+.muted { color: var(--muted); }
+.visually-hidden {
+    position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip-link { position: absolute; left: var(--s4); top: -100px; z-index: 200; padding: var(--s3) var(--s4); background: var(--amber); color: var(--night); font-weight: 700; }
+.skip-link:focus { top: var(--s2); }
+
+/* --------------------------------------------------------------- Button -- */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: var(--s2);
+    min-height: var(--tap); padding: 0 var(--s4);
+    background: none; color: var(--cyan);
+    border: 1px solid var(--cyan); border-radius: var(--radius);
+    font: 700 var(--fs-sm)/1 var(--font-text); text-decoration: none;
+    cursor: pointer; touch-action: manipulation;
+    transition: transform var(--t-fast) var(--ease-out), background-color var(--t-fast) ease;
+}
+.btn:hover { background: rgba(95, 216, 224, 0.12); color: var(--cyan); }
+.btn:active { transform: scale(0.97); }
+.btn-solid { background: var(--amber); border-color: var(--amber); color: var(--night); }
+.btn-solid:hover { background: #FFC266; color: var(--night); }
+
+/* Platform label: text first, so it never relies on an icon */
+.tag {
+    display: inline-block; padding: 2px 6px;
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    font: 400 var(--fs-xs)/1.2 var(--font-mono); color: var(--muted);
+    white-space: nowrap;
+}
+
+/* ------------------------------------------------------------------ Nav -- */
+.site-nav { border-bottom: 1px solid var(--line); background: var(--night); position: sticky; top: 0; z-index: 100; }
+.site-nav .wrap { display: flex; align-items: center; gap: var(--s4); min-height: 60px; }
+.site-nav .brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font: 700 var(--fs-md)/1 var(--font-mono); letter-spacing: -0.02em; min-height: var(--tap); }
+.site-nav .brand img { width: 34px; height: 34px; }
+.site-nav .nav-links { display: flex; gap: var(--s1); margin: 0 0 0 auto; padding: 0; list-style: none; }
+.site-nav .nav-links a {
+    display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 14px;
+    color: var(--muted); text-decoration: none; font: 700 var(--fs-base)/1 var(--font-text);
+    border-radius: var(--radius);
+}
+.site-nav .nav-links a:hover { color: var(--text); }
+.site-nav .nav-links a.current { background: var(--amber); color: var(--night); }
+.site-nav .nav-links a.current:focus-visible { outline-color: var(--text); }
+
+/* --------------------------------------------------------------- Footer -- */
+.site-footer { border-top: 1px solid var(--line); padding: var(--s6) 0 var(--s7); color: var(--muted); font: 400 var(--fs-sm)/1.6 var(--font-text); text-align: center; background: var(--night); }
+.site-footer a { color: var(--cyan); }
+.site-footer a:hover { color: var(--text); }
+.site-footer .partners-label { margin: 0 0 var(--s3); }
+/* Partner marks stay full colour: several are dark and vanish in greyscale. */
+.site-footer .partners { display: flex; justify-content: center; flex-wrap: wrap; gap: var(--s5) var(--s6); margin: 0 0 var(--s5); padding: 0; list-style: none; }
+.site-footer .partners a { display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--text); text-decoration: none; min-height: var(--tap); }
+.site-footer .partners a:hover span { text-decoration: underline; }
+.site-footer .partners img { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line); }
+.site-footer .footer-meta { margin: 0 auto; max-width: 70ch; }
+.site-footer .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 0 var(--s2); margin: var(--s2) 0 0; padding: 0; list-style: none; }
+.site-footer .footer-links a { display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 var(--s2); }
+
+@media (max-width: 720px) {
+    /* Name stays available to screen readers when the wordmark is hidden */
+    .site-nav .brand span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    .site-nav .nav-links a { padding: 0 10px; }
+}
+
+/* --------------------------------------------------------------- Motion -- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ======================================================= Shared components
+ * Used by the homepage now, and by archive and epoch pages when they move over.
+ */
+
+/* ---------------------------------------------------- Section heading -- */
+.section { padding: var(--s7) 0; border-bottom: 1px solid var(--line); }
+.section:last-child { border-bottom: 0; }
+.section > h2, .section-head h2 { margin: 0 0 var(--s2); font-size: var(--fs-lg); }
+.section-note { margin: 0 0 var(--s5); color: var(--muted); max-width: 65ch; }
+
+/* --------------------------------------------------------- Leaderboard --
+ * Framed like a signed message: the armor lines are the page's one loud
+ * gesture. The leader row is shown in inverse video, like a terminal selection.
+ */
+.armor { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--s3) var(--s4); padding: var(--s2) 0; font: 400 var(--fs-xs)/1.4 var(--font-mono); color: var(--muted); }
+.armor-line { white-space: nowrap; }
+.lb-shell { background: var(--panel); border: 1px solid var(--line); }
+.lb { width: 100%; border-collapse: collapse; }
+.lb th, .lb td { padding: var(--s3) var(--s4); border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+.lb thead th { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--muted); }
+.lb .r { text-align: right; }
+.lb tbody tr:last-child > * { border-bottom: 0; }
+.lb .rank { width: 4.5rem; font: 400 var(--fs-md)/1 var(--font-mono); color: var(--muted); }
+.lb .proj { font-weight: 400; }
+.lb .proj-name { font: 700 var(--fs-lg)/1.2 var(--font-text); }
+.lb .proj small { display: block; color: var(--muted); font-size: var(--fs-sm); }
+.lb .posts { font: 700 1.625rem/1 var(--font-mono); letter-spacing: -0.03em; }
+.lb .mer { font: 400 var(--fs-base)/1 var(--font-mono); color: var(--muted); }
+.lb a.proj-link { color: var(--text); text-decoration: none; }
+.lb a.proj-link:hover .proj-name { text-decoration: underline; }
+
+/* Row that opens to show its posts */
+.row-toggle {
+    display: block; min-height: var(--tap); padding: 0; background: none; border: 0;
+    color: inherit; text-align: left; cursor: pointer;
+}
+.row-toggle .row-line { display: inline-flex; align-items: center; gap: var(--s2); }
+.row-toggle:hover .proj-name { text-decoration: underline; }
+.chev { width: 9px; height: 9px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translate(-2px, -2px); transition: transform var(--t-ui) var(--ease-out); opacity: 0.7; flex: none; }
+.row-toggle[aria-expanded="true"] .chev { transform: rotate(225deg) translate(-2px, -2px); }
+.lb tr.detail > td { background: var(--night); padding: var(--s4) var(--s4) var(--s5); }
+.lb tr.is-more { display: none; }
+.lb.show-all tr.is-more:not(.detail) { display: table-row; }
+
+.lb tr.leader { background: var(--amber); color: var(--night); }
+.lb tr.leader .rank, .lb tr.leader .mer, .lb tr.leader .proj small { color: var(--night); }
+.lb tr.leader a.proj-link { color: var(--night); }
+
+/* Last 7 days: one square per UTC day, filled when a post was approved */
+.week { display: inline-flex; gap: 5px; vertical-align: middle; }
+.week i { width: 13px; height: 13px; border: 1.5px solid var(--muted); }
+.week i.on { background: var(--cyan); border-color: var(--cyan); }
+.lb tr.leader .week i { border-color: var(--night); }
+.lb tr.leader .week i.on { background: var(--night); }
+.week-under { display: none; margin-top: var(--s2); }
+
+/* Posts inside an opened row */
+.post-list { list-style: none; margin: 0 0 var(--s3); padding: 0; }
+.post-list a { display: flex; align-items: center; gap: var(--s3); min-height: var(--tap); padding: var(--s1) 0; border-bottom: 1px solid var(--line); color: var(--text); text-decoration: none; }
+.post-list a:hover .post-name { text-decoration: underline; }
+.post-list .tag { min-width: 3.75rem; text-align: center; }
+.post-list .post-name { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.post-list .post-when { color: var(--muted); font: 400 var(--fs-xs)/1 var(--font-mono); white-space: nowrap; }
+.detail-links { display: flex; flex-wrap: wrap; gap: var(--s3); }
+
+/* Period switch above the board */
+.seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: var(--radius); }
+.seg button { min-height: var(--tap); padding: 0 var(--s4); background: none; border: 0; color: var(--muted); font: 700 var(--fs-sm)/1 var(--font-text); cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line-strong); }
+.seg button[aria-pressed="true"] { background: var(--text); color: var(--night); }
+.seg button:hover:not([aria-pressed="true"]) { color: var(--text); }
+
+.board-empty { padding: var(--s6) var(--s5); max-width: 60ch; }
+.board-empty p { margin: 0 0 var(--s3); }
+.board-empty p:first-child { font: 700 var(--fs-md)/1.4 var(--font-text); }
+
+/* ----------------------------------------------------------- Facts row -- */
+.facts { display: flex; flex-wrap: wrap; gap: var(--s4) var(--s7); margin: 0; padding: 0; list-style: none; }
+.facts li { display: flex; align-items: baseline; gap: 10px; }
+.facts b { font: 700 var(--fs-2xl)/1 var(--font-mono); letter-spacing: -0.04em; }
+.facts span { color: var(--muted); }
+.notes { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s6); margin: var(--s5) 0 0; padding: 0; list-style: none; color: var(--muted); }
+.notes strong { color: var(--text); font-weight: 700; }
+
+/* ---------------------------------------------------------- Plain list -- */
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { border-bottom: 1px solid var(--line); }
+.list li > a, .list li > .row { display: flex; justify-content: space-between; align-items: center; gap: var(--s4); min-height: var(--tap); padding: var(--s2) 0; color: var(--text); text-decoration: none; }
+.list li > a:hover .li-main { text-decoration: underline; }
+.list .li-main { min-width: 0; overflow-wrap: anywhere; }
+.list .li-side { color: var(--muted); white-space: nowrap; }
+.list li.is-more { display: none; }
+.list.show-all li.is-more { display: block; }
+.list-more { margin-top: var(--s4); }
+
+/* ------------------------------------------------------ Bars over time -- */
+.bars { position: relative; display: flex; align-items: flex-end; gap: 3px; height: 140px; border-bottom: 1px solid var(--muted); }
+.bars i { flex: 1; min-height: 1px; background: var(--cyan); opacity: 0.8; }
+.bars i.today { background: var(--amber); opacity: 1; }
+.bars-scale { position: absolute; left: 0; top: 0; font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--muted); background: var(--night); padding: 0 6px 2px 0; }
+.bars-axis { display: flex; justify-content: space-between; padding-top: var(--s2); font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--muted); }
+.data-table { margin-top: var(--s4); }
+.data-table summary { display: inline-flex; align-items: center; min-height: var(--tap); color: var(--cyan); cursor: pointer; }
+.data-table table { border-collapse: collapse; margin-top: var(--s2); font-size: var(--fs-sm); }
+.data-table th, .data-table td { padding: 4px var(--s4) 4px 0; text-align: left; border-bottom: 1px solid var(--line); }
+.data-table td { font-family: var(--font-mono); }
+
+/* ------------------------------------------------ Horizontal bar rows -- */
+.hbars { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s2); }
+.hbars li { display: grid; grid-template-columns: minmax(9rem, 14rem) 1fr; align-items: center; gap: var(--s4); }
+.hbars a, .hbars .hb-label { color: var(--text); text-decoration: none; min-height: var(--tap); display: flex; flex-direction: column; justify-content: center; }
+.hbars a:hover .hb-name { text-decoration: underline; }
+.hbars .hb-name { font-weight: 700; }
+.hbars .hb-when { color: var(--muted); font-size: var(--fs-sm); }
+.hbars .hb-track { display: flex; align-items: center; gap: var(--s3); }
+.hbars .hb-bar { height: 22px; background: var(--line-strong); min-width: 2px; }
+.hbars .live .hb-bar { background: var(--amber); }
+.hbars .hb-val { font: 700 var(--fs-md)/1 var(--font-mono); white-space: nowrap; }
+
+@media (max-width: 720px) {
+    .lb th, .lb td { padding: var(--s3) 10px; }
+    .lb .rank { width: 2.75rem; font-size: var(--fs-base); }
+    .lb .proj-name { font-size: var(--fs-md); }
+    .lb .posts { font-size: 1.375rem; }
+    .lb .col-wide { display: none; }
+    .week-under { display: flex; }
+    .armor { font-size: 10px; }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s5) var(--s4); }
+    .facts li { flex-direction: column; gap: 4px; }
+    .facts b { font-size: 1.625rem; }
+    .hbars li { grid-template-columns: 1fr; gap: 0; }
+}
