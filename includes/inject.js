@@ -161,6 +161,7 @@
         if (filename.startsWith('members')) return 'members';
         if (filename.startsWith('profile')) return 'members'; // Profile pages highlight Directory
         if (filename.startsWith('archive')) return 'archive';
+        if (filename.startsWith('tracker')) return 'tracker';
 
         return null;
     }
