@@ -526,12 +526,12 @@ function renderCardDetails(submission) {
         `;
     }
 
-    // Who was paid, never how much. The rows name themselves, so the heading
-    // is for screen readers only.
+    // Who took part, never how much anyone was paid. The rows name
+    // themselves, so the label is for screen readers only.
     if (submission.payments && submission.payments.length > 0) {
         html += `
             <div>
-                <dt class="visually-hidden">Paid</dt>
+                <dt class="visually-hidden">Participants</dt>
                 <dd>
                     <ul class="payment-list">
                         ${submission.payments.map(payment => renderPayment(payment)).join('')}
