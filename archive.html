@@ -248,23 +248,6 @@
                 <div class="bars-axis" aria-hidden="true"><span>${formatDay(first)}</span><span>${formatDay(last)}</span></div>`;
         }
 
-        // Lightning providers by number of payments (counts only)
-        function renderLightning(providers) {
-            if (!providers || providers.length === 0) return '<p>No Lightning providers recorded for this epoch.</p>';
-            const total = providers.reduce((s, p) => s + p.count, 0);
-            const max = Math.max(1, ...providers.map(p => p.count));
-            return `
-                <ul class="hbars">
-                    ${providers.map(p => `
-                        <li class="hb">
-                            <div class="hb-row">
-                                <span class="hb-label"><span class="hb-name">${escapeHtml(p.domain)}</span><span class="hb-when">${Math.round(p.count / Math.max(1, total) * 100)}% of payments</span></span>
-                                <span class="hb-track"><span class="hb-bar" aria-hidden="true" style="--w:${(p.count / max).toFixed(4)}"></span><span class="hb-val num">${formatNumber(p.count)}</span></span>
-                            </div>
-                        </li>`).join('')}
-                </ul>`;
-        }
-
         function renderEveryEpoch() {
             // Frozen totals and notes come from epochs.js (shared with the homepage
             // and the Epoch 5 page)
@@ -340,8 +323,7 @@
                     { id: 'e4-projects', title: 'Projects by approved posts', html: '<div id="top-projects"></div>' },
                     { id: 'e4-merchants', title: 'Merchants by approved posts', html: '<div id="top-merchants"></div>' },
                     { id: 'e4-daily', title: 'Approved posts per day', note: 'One bar per UTC day with activity. Hover, tap or use the arrow keys to read a day.', html: renderDaily(e4.daily), wide: true },
-                    { id: 'e4-countries', title: 'Countries', note: 'Open one to see its projects in the directory.', html: countriesHtml(e4.countries, true) },
-                    { id: 'e4-lightning', title: 'Lightning providers', note: 'Payments by the Lightning service that received them.', html: renderLightning(e4.lightning_providers || []) }
+                    { id: 'e4-countries', title: 'Countries', note: 'Open one to see its projects in the directory.', html: countriesHtml(e4.countries, true) }
                 ]
             };
 
