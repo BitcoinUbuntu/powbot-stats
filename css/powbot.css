@@ -268,7 +268,8 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .row-toggle[aria-expanded="true"] .chev { transform: rotate(225deg) translate(-2px, -2px); }
 .lb tr.detail > td { background: var(--night); padding: var(--s4) var(--s4) var(--s5); }
 .lb tr.is-more { display: none; }
-.lb.show-all tr.is-more:not(.detail) { display: table-row; }
+/* Once shown: extra rows appear; their detail rows follow their own [hidden] */
+.lb.show-all tr.is-more:not([hidden]) { display: table-row; }
 
 .lb tr.leader { background: var(--amber); color: var(--night); }
 .lb tr.leader .rank, .lb tr.leader .mer, .lb tr.leader .proj small { color: var(--night); }
