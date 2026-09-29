@@ -222,7 +222,7 @@
     const DRILLDOWNS = ['members', 'tracker'];
     // Pages opened from the footer or a link on another page: from a page of
     // this site they get the back arrow; arriving from outside, the bot head
-    const ASIDES = ['about', 'disclaimer', 'guidelines'];
+    const ASIDES = ['about', 'disclaimer'];
 
     // What to call each page in "Back to ..."
     const PAGE_NAMES = {
@@ -267,7 +267,7 @@
     }
 
     /**
-     * Phone menu: the nav links fold behind a button below 720px.
+     * Phone menu: the nav links fold behind a button below 820px.
      * A disclosure (button + aria-expanded), not an ARIA menu: the links stay
      * ordinary links in the tab order once the panel is open.
      */
@@ -307,7 +307,8 @@
         });
 
         // Widening past phone size shows the links inline; reset the state
-        const wide = window.matchMedia('(min-width: 721px)');
+        // Keep in step with the nav's breakpoint in css/powbot.css
+        const wide = window.matchMedia('(min-width: 820px)');
         const reset = () => { if (wide.matches) setOpen(false); };
         if (wide.addEventListener) wide.addEventListener('change', reset);
     }
@@ -325,6 +326,7 @@
         if (filename.startsWith('profile')) return 'members'; // Profile pages highlight Directory
         if (filename.startsWith('archive')) return 'archive';
         if (filename.startsWith('tracker')) return 'tracker';
+        if (filename.startsWith('guidelines')) return 'guidelines';
 
         return null;
     }

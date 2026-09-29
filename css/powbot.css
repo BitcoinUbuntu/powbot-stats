@@ -338,7 +338,9 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .fx-toggle:hover { color: var(--heading); border-color: var(--accent); }
 .fx-toggle .fx-state { color: var(--heading); }
 
-@media (max-width: 720px) {
+/* Below 820px the five tabs no longer fit beside the wordmark: they fold
+   behind the Menu key (keep in step with setupMenu in includes/inject.js) */
+@media (max-width: 819px) {
     /* Links fold into a panel under the bar, so the wordmark always fits */
     .site-nav .nav-toggle { display: flex; }
     /* Right up against the Menu key, whose rule separates them */
@@ -358,6 +360,9 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
     .site-nav.no-anim .nav-links { transition: none; }
     .site-nav .nav-links li { display: block; border-top: 1px dashed var(--line); }
     .site-nav .nav-links a { min-height: 52px; padding: 0 var(--gutter); font-size: var(--fs-md); }
+}
+
+@media (max-width: 720px) {
     /* No section tabs on phones: they can't stick there, and the page is
        quicker to scroll than a sideways row of tabs */
     .subtabs { display: none; }
@@ -607,7 +612,6 @@ a.hb-row:hover .hb-name { text-decoration: underline; }
 .box-label { margin: 0 0 var(--s3); font: 400 var(--fs-sm)/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
 /* A note that needs attention: left rule, text says what kind */
 .callout { padding: var(--s4) var(--s5); border-left: 3px solid var(--link); background: var(--panel); max-width: 70ch; }
-.callout.warn { border-left-style: double; border-left-width: 5px; }
 .callout.danger { border-left-color: var(--danger); }
 .callout > :first-child { margin-top: 0; }
 .callout > :last-child { margin-bottom: 0; }
@@ -750,5 +754,7 @@ textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize:
     .facts { grid-template-columns: minmax(0, 1fr); }
     .facts b { font-size: 2rem; }
     .hb-row { grid-template-columns: 8.5rem minmax(0, 1fr); column-gap: var(--s3); }
-    .hb-note { margin-left: calc(8.5rem + var(--s3)); }
+    /* Notes run the full width under their row: beside the label column
+       they'd be a narrow strip */
+    .hb-note { margin: 2px 0 var(--s3); }
 }
