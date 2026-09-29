@@ -73,7 +73,8 @@
     --max: 1180px;
     --radius: 0;
     --tap: 44px;
-    --nav-h: 63px;        /* the sticky nav: 60px bar and its 3px double rule */
+    --bar-h: 52px;        /* the nav bar */
+    --nav-h: calc(var(--bar-h) + 3px);   /* ...and its 3px double rule */
 
     /* Motion */
     --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -224,10 +225,12 @@ html.fx-off { --lcd: none; }
 body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 
 .site-nav { position: relative; border-bottom: 3px double var(--line-strong); background: var(--night); }
-.site-nav .wrap { display: flex; align-items: stretch; gap: var(--s4); height: 60px; }
-.site-nav .brand { display: flex; align-items: center; align-self: center; gap: 10px; color: var(--heading); text-decoration: none; font: 400 1.875rem/1 var(--font-display); letter-spacing: 0.02em; text-shadow: var(--lcd); min-height: var(--tap); }
-.site-nav .brand img { width: auto; height: 34px; }  /* the mascot is 81x100, not square */
-.site-nav .nav-links { display: flex; align-items: center; gap: var(--s1); margin: 0 0 0 auto; padding: 0; list-style: none; }
+.site-nav .wrap { display: flex; align-items: stretch; gap: var(--s4); height: var(--bar-h); }
+/* The wordmark: the address, in capitals, like a phone's network name */
+.site-nav .brand { display: flex; align-items: center; align-self: center; color: var(--heading); text-decoration: none; font: 400 1.875rem/1 var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; text-shadow: var(--lcd); min-height: var(--tap); white-space: nowrap; }
+/* Links fill the bar from its top edge to the rule, so the current page's
+   block sits flush top and bottom */
+.site-nav .nav-links { display: flex; align-items: stretch; gap: var(--s1); margin: 0 0 0 auto; padding: 0; list-style: none; }
 .site-nav .nav-links li { display: flex; }
 .site-nav .nav-links a {
     display: flex; align-items: center; min-height: var(--tap); padding: 0 var(--s3);
@@ -259,7 +262,14 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
  * reading is shown [in brackets] (includes/inject.js). They stick with the
  * nav on desktop. On phones they scroll away, and the row scrolls sideways.
  */
-.subtabs { position: sticky; top: var(--nav-h); z-index: 99; background: var(--night); border-bottom: 1px dashed var(--line-strong); }
+/* Tucked 3px up under the nav (which draws on top), with its background
+   reaching a little higher still: browser zoom and scroll rounding can pull
+   two sticky bars a pixel or two apart, and the page must not show between */
+.subtabs {
+    position: sticky; top: calc(var(--nav-h) - 3px); z-index: 99; margin-top: -3px; padding-top: 3px;
+    background: var(--night); border-bottom: 1px dashed var(--line-strong);
+    box-shadow: 0 -6px 0 var(--night);
+}
 .subtabs ul { display: flex; margin: 0; padding: 0; list-style: none; overflow-x: auto; scrollbar-width: none; }
 .subtabs li { display: flex; }
 .subtabs li + li::before { content: "|"; content: "|" / ""; display: flex; align-items: center; padding: 0 var(--s1); color: var(--line-strong); }
