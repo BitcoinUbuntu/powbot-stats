@@ -355,9 +355,9 @@
 
             // Rankings
             rankList('top-projects', e4.top_projects, 'project', e4.countries, 'Epoch 4 projects ranked by approved posts');
-            rankList('top-merchants', e4.top_merchants, 'merchant', e4.countries, 'Epoch 4 merchants ranked by approved posts');
+            rankList('top-merchants', e4.top_merchants, 'merchant', e4.countries, 'Epoch 4 merchants ranked by approved posts', 'merchants.html?epoch=4');
             rankList('epoch4-testing-projects', t.top_projects, 'project', t.countries, 'Epoch 4 testing period projects ranked by approved posts');
-            rankList('epoch4-testing-merchants', t.top_merchants, 'merchant', t.countries, 'Epoch 4 testing period merchants ranked by approved posts');
+            rankList('epoch4-testing-merchants', t.top_merchants, 'merchant', t.countries, 'Epoch 4 testing period merchants ranked by approved posts', 'merchants.html?epoch=4t');
             rankList('epoch3-projects', ep.epoch3.top_projects, 'project', ep.epoch3.countries, 'Epoch 3 projects ranked by approved posts');
             rankList('epoch2-projects', ep.epoch2.top_projects, 'project', ep.epoch2.countries, 'Epoch 2 projects ranked by approved posts');
             rankList('epoch1-projects', ep.epoch1.top_projects, 'project', ep.epoch1.countries, 'Epoch 1 projects ranked by approved posts');
@@ -365,8 +365,9 @@
 
         // A ranking, as on the homepage: one row per project or merchant, each
         // opening its profile (which holds every epoch's posts). Rows past
-        // INITIAL_ROWS stay hidden until "Show all".
-        function rankList(elementId, items, type, countries, caption) {
+        // INITIAL_ROWS stay hidden until "Show all". A long list gives allHref
+        // instead: a link to all of it elsewhere (the Directory's Merchants tab).
+        function rankList(elementId, items, type, countries, caption, allHref) {
             const container = document.getElementById(elementId);
             if (!container) return;
             items = items || [];
@@ -391,9 +392,12 @@
                     </a></li>`;
             }).join('');
             const label = `Show all ${formatNumber(items.length)} ${noun}`;
+            const more = allHref
+                ? `<p class="list-link"><a class="btn" href="${attrSafe(allHref)}">All ${formatNumber(items.length)} ${noun} in the directory</a></p>`
+                : `<button type="button" class="btn list-more" data-list="${listId}" data-label="${label}" aria-controls="${listId}" aria-expanded="false">${label}</button>`;
             container.innerHTML = `
                 <ol class="list lb-list" id="${listId}" aria-label="${attrSafe(caption)}">${rows}</ol>
-                ${items.length > INITIAL_ROWS ? `<button type="button" class="btn list-more" data-list="${listId}" data-label="${label}" aria-controls="${listId}" aria-expanded="false">${label}</button>` : ''}`;
+                ${items.length > INITIAL_ROWS ? more : ''}`;
         }
 
         // "Show all" on every ranking

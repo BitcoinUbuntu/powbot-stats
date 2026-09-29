@@ -54,20 +54,14 @@
 
         /* ---------------------------------------------------------- Header -- */
         .profile-head { border-bottom: 1px solid var(--line); }
+        /* The name, then the BTC Map link. Merchants have no picture. */
         .profile-head .wrap {
             display: grid;
-            grid-template-columns: auto minmax(0, 1fr) auto;
+            grid-template-columns: minmax(0, 1fr) auto;
             gap: var(--s5) var(--s6);
             align-items: center;
             padding-top: var(--s7);
             padding-bottom: var(--s6);
-        }
-        .merchant-icon {
-            display: flex; align-items: center; justify-content: center;
-            width: 112px; height: 112px;
-            border: 1px solid var(--line); border-radius: 50%;
-            background: var(--panel); color: var(--link);
-            font: 700 var(--fs-2xl)/1 var(--font-mono);
         }
         .hero-text { min-width: 0; }
         .hero-text h1 { margin: 0; font-size: var(--fs-h1); overflow-wrap: anywhere; }
@@ -114,10 +108,9 @@
         .page-error p { margin: 0; max-width: 60ch; }
 
         @media (max-width: 720px) {
-            .profile-head .wrap { grid-template-columns: 72px minmax(0, 1fr); gap: var(--s4); padding-top: var(--s6); padding-bottom: var(--s5); }
+            .profile-head .wrap { grid-template-columns: minmax(0, 1fr); gap: var(--s4); padding-top: var(--s6); padding-bottom: var(--s5); }
             /* Phones: the BTC Map link drops under the name, like a project's links */
             .btcmap-link { grid-column: 1 / -1; justify-self: start; }
-            .merchant-icon { width: 72px; height: 72px; font-size: var(--fs-xl); }
             .intro { grid-template-columns: minmax(0, 1fr); }
             .facts b.fact-text { font-size: 1.5rem; }
         }
@@ -136,7 +129,6 @@
         <div id="merchant-body" hidden>
             <header class="profile-head">
                 <div class="wrap">
-                    <div class="merchant-icon" id="merchant-icon" aria-hidden="true"></div>
                     <div class="hero-text">
                         <h1 id="merchant-name">Merchant</h1>
                         <p class="merchant-subtitle" id="merchant-subtitle">Circular economy merchant</p>
@@ -353,7 +345,6 @@
                 // Update page title and header
                 document.getElementById('page-title').textContent = `${merchantDisplayName} | PoWBoT`;
                 document.getElementById('merchant-name').textContent = merchantDisplayName;
-                document.getElementById('merchant-icon').textContent = merchantDisplayName.trim().charAt(0).toUpperCase();
                 // Flag carries the country as its name; the country is also written out
                 document.getElementById('merchant-subtitle').innerHTML = countryFlag
                     ? `${flagHtml(countryFlag, getCountryName(countryFlag), 'flag')} Circular economy merchant${escapeHtml(countryInfo)}`

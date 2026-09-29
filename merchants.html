@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchants – where CBAF projects spend bitcoin | PoWBoT</title>
+    <meta name="description" content="Every shop and stall across Africa where CBAF projects have spent bitcoin on PoWBoT since Epoch 4, with its country, projects and approved posts.">
+    <link rel="canonical" href="https://powbot.africa/merchants.html">
+    <meta name="theme-color" content="#37442F">
+    <script>
+        // Light, if chosen with the header switch (dark is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
+        (function () {
+            try {
+                if (localStorage.getItem('pb-theme') === 'light') document.documentElement.dataset.theme = 'light';
+                if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
+            } catch (e) { /* storage blocked: the defaults, dark with effects on */ }
+        })();
+    </script>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
+
+    <!-- Link previews (Open Graph, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://powbot.africa/merchants.html">
+    <meta property="og:site_name" content="PoWBoT">
+    <meta property="og:title" content="Merchants – where CBAF projects spend bitcoin | PoWBoT">
+    <meta property="og:description" content="Every shop and stall across Africa where CBAF projects have spent bitcoin on PoWBoT since Epoch 4, with its country, projects and approved posts.">
+    <meta property="og:image" content="https://powbot.africa/images/PoWBoT_card.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="PoWBoT, a pixel-art robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://powbot.africa/merchants.html">
+    <meta name="twitter:title" content="Merchants – where CBAF projects spend bitcoin | PoWBoT">
+    <meta name="twitter:description" content="Every shop and stall across Africa where CBAF projects have spent bitcoin on PoWBoT since Epoch 4, with its country, projects and approved posts.">
+    <meta name="twitter:image" content="https://powbot.africa/images/PoWBoT_card.jpg">
+    <meta name="twitter:image:alt" content="PoWBoT, a pixel-art robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+
+    <!-- Current epoch name and number. Edit epoch-config.js at each rollover. -->
+    <script src="epoch-config.js"></script>
+    <!-- Defines fetchLiveData(): VPS first, this repo as fallback -->
+    <script src="data-source.js"></script>
+    <script src="flags.js"></script>
+
+    <link rel="preload" href="fonts/vt323-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/atkinson-hyperlegible-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/powbot.css">
+    <style>
+        /* Merchants layout only. Colours, type and components: css/powbot.css */
+
+        /* ---------------------------------------------------------- Filters -- */
+        .filters { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--s4); padding: var(--s5) 0; }
+        .filters .field-search { grid-column: 1 / -1; }
+        /* A filter that is narrowing the list gets a phosphor edge */
+        .filters .active { border-color: var(--link); }
+
+        /* -------------------------------------------------- Count and pager -- */
+        .results-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s3) var(--s4); padding: var(--s3) 0; border-top: 1px solid var(--line); }
+        .results-bar-bottom { margin-top: var(--s5); }
+        .results-count { margin: 0; color: var(--muted); }
+        .pager { display: flex; align-items: center; gap: var(--s3); }
+        .pager[hidden] { display: none; }
+        .page-info { font: 400 var(--fs-sm)/1.2 var(--font-mono); color: var(--muted); white-space: nowrap; }
+
+        /* ----------------------------------------------------------- The list -- */
+        /* The shared plain list, with the name above its country and projects */
+        #main { padding-bottom: var(--s7); }
+        .merchant-list .li-name { font-weight: 700; }
+        .list-state { padding: var(--s6) 0; max-width: 60ch; }
+        .list-state p { margin: 0 0 var(--s2); }
+        .list-state p:first-child { font: 700 var(--fs-md)/1.4 var(--font-text); color: var(--text); }
+        .list-state p + p { color: var(--muted); }
+
+        @media (max-width: 1100px) {
+            .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 720px) {
+            /* Two dropdowns a row, so the list starts within a screen or so */
+            .filters { gap: var(--s3); padding: var(--s4) 0; }
+            .results-bar { flex-direction: column; align-items: stretch; }
+            /* The page number takes its own line above the buttons, so the
+               bracketed Previous and Next always fit side by side */
+            .pager { justify-content: space-between; flex-wrap: wrap; }
+            .pager .page-info { order: -1; flex-basis: 100%; text-align: center; }
+            .pager .btn { flex: 1; }
+        }
+    </style>
+</head>
+<body class="pb">
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
+
+    <main id="main">
+        <div class="wrap">
+            <header class="page-head">
+                <nav class="page-tabs" aria-label="Directory">
+                    <a href="members.html">Projects</a>
+                    <a href="merchants.html" aria-current="page">Merchants</a>
+                </nav>
+                <h1>Merchants</h1>
+                <p class="lede">Shops and stalls across Africa where CBAF projects spent bitcoin, from Epoch&nbsp;4 on.</p>
+            </header>
+
+            <div class="filters" role="search" aria-label="Filter merchants">
+                <div class="field field-search">
+                    <label class="field-label" for="filter-search">Search</label>
+                    <input type="search" class="input" id="filter-search" placeholder="Merchant or project" autocomplete="off">
+                </div>
+                <div class="field">
+                    <label class="field-label" for="filter-epoch">Epoch</label>
+                    <div class="select-wrap">
+                        <select class="select" id="filter-epoch">
+                            <option value="">All epochs</option>
+                            <!-- The epochs, filled in once the data loads -->
+                        </select>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="field-label" for="filter-country">Country</label>
+                    <div class="select-wrap">
+                        <select class="select" id="filter-country">
+                            <option value="">All countries</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="field-label" for="filter-project">Project</label>
+                    <div class="select-wrap">
+                        <select class="select" id="filter-project">
+                            <option value="">All projects</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="field-label" for="filter-sort">Sort by</label>
+                    <div class="select-wrap">
+                        <select class="select" id="filter-sort">
+                            <option value="posts">Most posts</option>
+                            <option value="name">Name, A–Z</option>
+                            <option value="new">Newest first</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-bar">
+                <p class="results-count" id="results-count" role="status">Loading merchants…</p>
+                <nav class="pager" id="pager-top" aria-label="Pages, top" hidden>
+                    <button type="button" class="btn" data-step="-1">Previous</button>
+                    <span class="page-info">Page <span class="current-page">1</span> of <span class="total-pages">1</span></span>
+                    <button type="button" class="btn" data-step="1">Next</button>
+                </nav>
+            </div>
+
+            <h2 class="visually-hidden">Merchants</h2>
+            <div id="merchants-container">
+                <div class="list-state"><p>Loading merchants…</p></div>
+            </div>
+
+            <div class="results-bar results-bar-bottom" id="bottom-bar" hidden>
+                <nav class="pager" id="pager-bottom" aria-label="Pages, bottom">
+                    <button type="button" class="btn" data-step="-1">Previous</button>
+                    <span class="page-info">Page <span class="current-page">1</span> of <span class="total-pages">1</span></span>
+                    <button type="button" class="btn" data-step="1">Next</button>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (loaded from includes/footer.html) -->
+    <div id="site-footer"></div>
+
+    <script src="includes/inject.js"></script>
+    <script>
+        // Every merchant with an approved post since Epoch 4: the finished
+        // epochs from merchants-index.json (scripts/build_merchants_index.py),
+        // the live epoch from stats.json. Counts only, never amounts.
+        const PER_PAGE = 50;
+        const LIVE = window.POWBOT_EPOCH || { number: 6, name: 'Epoch 6' };
+        const LIVE_KEY = String(LIVE.number);
+
+        let merchants = [];
+        let page = 1;
+
+        const escapeHtml = t => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        const formatNumber = n => Number(n || 0).toLocaleString('en-GB');
+        const plural = (n, one, many) => `${formatNumber(n)} ${n === 1 ? one : many}`;
+        const FLAG_RE = /[\u{1F1E6}-\u{1F1FF}]{2}/gu;
+        const flagOf = name => (String(name || '').match(FLAG_RE) || [''])[0];
+        const stripFlags = name => String(name || '').replace(FLAG_RE, '').trim();
+        // "Flo Salon" -> "merchant-profile.html?id=flo-salon", as everywhere else
+        const merchantUrl = name => `merchant-profile.html?id=${encodeURIComponent(String(name).replace(/[^\w\s-]/g, '').trim().toLowerCase().replace(/\s+/g, '-'))}`;
+        // "4t" is the Epoch 4 testing period
+        const epochLabel = key => key === '4t' ? 'Epoch 4 testing period' : `Epoch ${key}`;
+        const epochOrder = key => parseFloat(key) - (String(key).endsWith('t') ? 0.5 : 0);
+
+        async function loadMerchants() {
+            try {
+                const [index, live] = await Promise.all([
+                    fetch('merchants-index.json').then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); }),
+                    fetchLiveData('stats.json').catch(() => null)
+                ]);
+
+                const byName = {};
+                (index.merchants || []).forEach(m => { byName[m.name] = { ...m, epochs: { ...m.epochs } }; });
+
+                // The live epoch: add its posts, and the merchants new in it
+                const countryByFlag = {};
+                (live?.countries || []).forEach(c => { countryByFlag[c.flag] = c.country; });
+                (live?.top_merchants || []).forEach(m => {
+                    const posts = m.posts || [];
+                    const flags = posts.map(p => flagOf(p.project)).filter(Boolean);
+                    const entry = byName[m.name] || (byName[m.name] = {
+                        name: m.name, flag: flags[0] || '', country: countryByFlag[flags[0]] || '', projects: [], epochs: {}, first: '', isNew: true
+                    });
+                    entry.epochs[LIVE_KEY] = m.count ?? posts.length;
+                    posts.forEach(p => {
+                        const project = stripFlags(p.project);
+                        if (project && !entry.projects.includes(project)) entry.projects.push(project);
+                        if (p.date && (!entry.first || p.date < entry.first)) entry.first = p.date;
+                    });
+                });
+
+                merchants = Object.values(byName).map(m => ({
+                    ...m,
+                    total: Object.values(m.epochs).reduce((s, n) => s + n, 0)
+                }));
+
+                populateFilters();
+                applyURLFilters();
+                render();
+            } catch (error) {
+                console.error('Error loading merchants:', error);
+                document.getElementById('results-count').textContent = 'The merchants could not load';
+                document.getElementById('merchants-container').innerHTML = `
+                    <div class="list-state">
+                        <p>The merchants could not load.</p>
+                        <p>Reload the page, or try again in a few minutes.</p>
+                    </div>`;
+            }
+        }
+
+        // ----------------------------------------------------------- Filters --
+
+        function addOptions(id, items) {
+            document.getElementById(id).insertAdjacentHTML('beforeend',
+                items.map(([value, label]) => `<option value="${escapeHtml(value)}">${escapeHtml(label)}</option>`).join(''));
+        }
+
+        function populateFilters() {
+            const keys = [...new Set(merchants.flatMap(m => Object.keys(m.epochs)))].sort((a, b) => epochOrder(b) - epochOrder(a));
+            const epochs = [];
+            keys.forEach(k => {
+                epochs.push([k, epochLabel(k)]);
+                if (k === LIVE_KEY) epochs.push(['new', `New in ${LIVE.name}`]);
+            });
+            addOptions('filter-epoch', epochs);
+            addOptions('filter-country', [...new Set(merchants.map(m => m.country).filter(Boolean))]
+                .sort((a, b) => a.localeCompare(b)).map(c => [c, c]));
+            addOptions('filter-project', [...new Set(merchants.flatMap(m => m.projects))]
+                .sort((a, b) => a.localeCompare(b)).map(p => [p, p]));
+        }
+
+        const FILTERS = { epoch: 'filter-epoch', country: 'filter-country', project: 'filter-project', search: 'filter-search', sort: 'filter-sort' };
+
+        // ?epoch=5&country=Kenya&project=...&search=...&sort=name, any case
+        function applyURLFilters() {
+            const params = new URLSearchParams(location.search);
+            Object.entries(FILTERS).forEach(([param, id]) => {
+                const value = params.get(param);
+                if (!value) return;
+                const el = document.getElementById(id);
+                if (el.tagName === 'SELECT') {
+                    const match = [...el.options].find(o => o.value.toLowerCase() === value.toLowerCase());
+                    if (match) el.value = match.value;
+                } else {
+                    el.value = value;
+                }
+            });
+        }
+
+        function updateURL() {
+            const params = new URLSearchParams();
+            Object.entries(FILTERS).forEach(([param, id]) => {
+                const value = document.getElementById(id).value.trim();
+                if (value && !(param === 'sort' && value === 'posts')) params.set(param, value);
+            });
+            history.replaceState({}, '', params.toString() ? `?${params}` : 'merchants.html');
+        }
+
+        function filtered() {
+            const epoch = document.getElementById('filter-epoch').value;
+            const country = document.getElementById('filter-country').value;
+            const project = document.getElementById('filter-project').value;
+            const query = document.getElementById('filter-search').value.trim().toLowerCase();
+            const sort = document.getElementById('filter-sort').value;
+            ['filter-epoch', 'filter-country', 'filter-project', 'filter-search'].forEach(id =>
+                document.getElementById(id).classList.toggle('active', !!document.getElementById(id).value.trim()));
+
+            // The posts shown for each merchant: in the chosen epoch, or in all
+            const epochKey = epoch === 'new' ? LIVE_KEY : epoch;
+            const posts = m => epochKey ? (m.epochs[epochKey] || 0) : m.total;
+
+            const list = merchants.filter(m =>
+                (!epoch || (epoch === 'new' ? m.isNew : m.epochs[epoch]))
+                && (!country || m.country === country)
+                && (!project || m.projects.includes(project))
+                && (!query || m.name.toLowerCase().includes(query) || m.projects.some(p => p.toLowerCase().includes(query))));
+
+            list.sort(sort === 'name' ? (a, b) => a.name.localeCompare(b.name)
+                : sort === 'new' ? (a, b) => String(b.first).localeCompare(String(a.first)) || a.name.localeCompare(b.name)
+                : (a, b) => posts(b) - posts(a) || a.name.localeCompare(b.name));
+            return { list, posts };
+        }
+
+        // ------------------------------------------------------------ Render --
+
+        function projectsText(projects) {
+            if (projects.length === 0) return '';
+            return projects.length > 2
+                ? `${escapeHtml(projects[0])} and ${projects.length - 1} more`
+                : projects.map(escapeHtml).join(', ');
+        }
+
+        function render() {
+            const { list, posts } = filtered();
+            const pages = Math.max(1, Math.ceil(list.length / PER_PAGE));
+            page = Math.min(Math.max(1, page), pages);
+            const start = (page - 1) * PER_PAGE;
+            const rows = list.slice(start, start + PER_PAGE);
+
+            const container = document.getElementById('merchants-container');
+            const count = document.getElementById('results-count');
+            if (list.length === 0) {
+                count.textContent = 'No merchants match';
+                container.innerHTML = `
+                    <div class="list-state">
+                        <p>No merchants match these filters.</p>
+                        <p>Try a shorter search, or set epoch, country and project back to all.</p>
+                    </div>`;
+            } else {
+                count.textContent = `Showing ${formatNumber(start + 1)}–${formatNumber(Math.min(start + PER_PAGE, list.length))} of ${plural(list.length, 'merchant', 'merchants')}`;
+                container.innerHTML = `<ul class="list merchant-list">${rows.map(m => {
+                    const where = [m.country ? `${window.flagHtml ? flagHtml(m.flag) : ''} ${escapeHtml(m.country)}` : '', projectsText(m.projects)].filter(Boolean).join(' · ');
+                    return `
+                    <li><a href="${escapeHtml(merchantUrl(m.name))}">
+                        <span class="li-main"><span class="li-name">${escapeHtml(m.name)}</span>
+                            ${where ? `<span class="li-sub">${where}</span>` : ''}</span>
+                        <span class="li-side num">${plural(posts(m), 'post', 'posts')}</span>
+                    </a></li>`;
+                }).join('')}</ul>`;
+            }
+
+            document.querySelectorAll('.current-page').forEach(el => { el.textContent = page; });
+            document.querySelectorAll('.total-pages').forEach(el => { el.textContent = pages; });
+            document.querySelectorAll('.pager [data-step="-1"]').forEach(b => { b.disabled = page <= 1; });
+            document.querySelectorAll('.pager [data-step="1"]').forEach(b => { b.disabled = page >= pages; });
+            document.getElementById('pager-top').hidden = pages <= 1;
+            document.getElementById('bottom-bar').hidden = pages <= 1;
+            updateURL();
+        }
+
+        document.querySelector('.filters').addEventListener('input', () => { page = 1; render(); });
+        document.querySelectorAll('.pager').forEach(pager => pager.addEventListener('click', e => {
+            const step = e.target.closest('[data-step]');
+            if (!step || step.disabled) return;
+            page += Number(step.dataset.step);
+            render();
+            // From the bottom pager, back up to the top of the list
+            if (pager.id === 'pager-bottom') document.querySelector('.results-bar').scrollIntoView({ block: 'start' });
+        }));
+
+        loadMerchants();
+    </script>
+</body>
+</html>

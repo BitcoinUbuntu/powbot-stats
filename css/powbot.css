@@ -437,6 +437,19 @@ a.visit-link:hover { border-color: var(--accent); background: var(--accent); col
 .seg button[aria-pressed="true"]:focus-visible { outline-color: var(--accent); }
 .seg button:hover:not([aria-pressed="true"]) { color: var(--heading); }
 
+/* Tabs between the pages of one section (the Directory's Projects and
+   Merchants): links drawn like .seg, the current page a solid block.
+   Full width on phones, unlike the desktop-only section tabs. */
+.page-tabs { display: inline-flex; margin: 0 0 var(--s5); border: 1px dashed var(--line-strong); }
+.page-tabs a { display: inline-flex; align-items: center; justify-content: center; min-height: var(--tap); padding: 0 var(--s5); color: var(--muted); font: 400 var(--fs-sm)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; text-decoration: none; }
+.page-tabs a + a { border-left: 1px dashed var(--line-strong); }
+.page-tabs a[aria-current="page"] { background: var(--accent); color: var(--night); }
+.page-tabs a:hover:not([aria-current]) { color: var(--heading); }
+@media (max-width: 720px) {
+    .page-tabs { display: flex; }
+    .page-tabs a { flex: 1; }
+}
+
 .board-empty { padding: var(--s6) var(--s5); max-width: 60ch; }
 .board-empty p { margin: 0 0 var(--s3); }
 .board-empty p:first-child { font: 700 var(--fs-md)/1.4 var(--font-text); }
@@ -489,6 +502,9 @@ a.visit-link:hover { border-color: var(--accent); background: var(--accent); col
 .list li.is-more { display: none; }
 .list.show-all li.is-more { display: block; }
 .list-more { margin-top: var(--s4); }
+/* A long list ends with a link to all of it elsewhere (merchants: the
+   Directory's Merchants tab) instead of opening in place */
+.list-link { margin: var(--s4) 0 0; }
 
 /* A ranking (homepage, Epoch 5, archive): a plain list with a rank before
    each name. The name has its own column, so a name that wraps lines up
