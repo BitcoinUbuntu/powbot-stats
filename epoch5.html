@@ -47,24 +47,35 @@
         /* Epoch 5 results layout only. Colours, type and components: css/powbot.css */
         .head-link { margin: var(--s2) 0 0; }
         .head-link a { display: inline-flex; align-items: center; min-height: var(--tap); }
-        .page-head .facts:empty, .page-head .notes:empty { display: none; }
+        /* Final standings and Highlights side by side, stacked on phones: built
+           like the homepage's standings and merchants, headings level */
+        .standings { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "board highlights" "more ."; column-gap: var(--s7); align-items: start; }
+        #board { grid-area: board; }
+        .standings-more { grid-area: more; }
+        /* Highlights: the heading level with Final standings, then a reversed
+           box that runs down to the list's last row. With every project shown
+           the list outgrows it by far, so it keeps its own height instead. */
+        .highlights { grid-area: highlights; align-self: stretch; display: flex; flex-direction: column; }
+        .highlights > .reverse { flex: 1; }
+        .standings:has(.lb-list.show-all) > .highlights { align-self: start; }
+        .standings .section-head { flex-direction: column; align-items: flex-start; gap: var(--s3); margin-bottom: var(--s3); }
+        .standings .section-note { margin: 0 0 var(--s3); font-size: var(--fs-sm); color: var(--muted); min-height: 1.55em; }
+        /* Half a column: one figure per row, and one note per line */
+        .standings .facts { grid-template-columns: minmax(0, 1fr); }
+        .standings .notes { flex-direction: column; }
         .loading { padding: var(--s6) 0; color: var(--muted); }
-        .board-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s3); margin-top: var(--s3); }
-        .board-foot p { margin: 0; color: var(--muted); }
         .cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s7); }
         .cols .section { border-bottom: 0; padding: 0; }
-        /* Phones: merchants move under the country, like the homepage's week squares */
-        .lb .proj small.mer-under { display: none; }
-        /* Visits here carry a date only ("27 Mar"), so the date column is narrower */
-        .lb .visits { --visit-when: 7ch; }
         .error { padding: var(--s6) 0; }
         .error p:first-child { font: 700 var(--fs-md)/1.4 var(--font-text); color: var(--danger); }
 
         @media (max-width: 720px) {
             .page-head { padding-top: var(--s6); }
             .page-head .lede { font-size: var(--fs-base); }
-            .cols { grid-template-columns: 1fr; }
-            .lb .proj small.mer-under { display: block; }
+            .cols { grid-template-columns: minmax(0, 1fr); }
+            /* Phones: the list, its button, then Highlights */
+            .standings { grid-template-columns: minmax(0, 1fr); grid-template-areas: "board" "more" "highlights"; }
+            .highlights { margin-top: var(--s7); }
         }
     </style>
 </head>
@@ -78,9 +89,6 @@
                 <h1>Epoch 5 final results</h1>
                 <p class="lede">The final standings of Epoch 5, which ran from 24 March to 3 July 2026.</p>
                 <p class="head-link"><a href="index.html">See the current epoch</a></p>
-                <h2 class="visually-hidden">Epoch 5 in numbers</h2>
-                <ul class="facts" id="facts"></ul>
-                <ul class="notes" id="notes"></ul>
             </header>
 
             <div id="content" aria-live="polite">
@@ -97,7 +105,6 @@
     <!-- Finished epochs and the shared "Every epoch" block -->
     <script src="epochs.js"></script>
     <script src="flags.js"></script>
-    <script src="visits.js"></script>
 
     <script>
         // Global project metadata
@@ -105,7 +112,6 @@
 
         // Rows shown before "Show all".
         const BOARD_ROWS = 10;
-        const DETAIL_ROWS = 5;   // visits shown in an opened leaderboard row
         const LIST_ROWS = 8;
 
         // Posts approved in the epochs before this one. Frozen; epoch 4 includes
@@ -156,15 +162,10 @@
             return `${type === 'merchant' ? 'merchant-profile.html' : 'profile.html'}?id=${profileId(name)}`;
         }
 
-        function getPlatform(url) {
-            if (!url) return 'Nostr';
-            const lower = url.toLowerCase();
-            return (lower.includes('twitter.com') || lower.includes('x.com')) ? 'X' : 'Nostr';
-        }
+        // ------------------------------------------------------ Highlights --
 
-        // ------------------------------------------------------ Facts, notes --
-
-        function renderFacts(stats) {
+        // The epoch's figures and notes, beside the final standings
+        function renderHighlights(stats) {
             const reviewed = stats.reviewer?.total_reviewed || 0;
             const rate = reviewed > 0 ? Math.round((stats.reviewer.approved / reviewed) * 100) + '%' : '–';
             const facts = [
@@ -175,8 +176,6 @@
                 [rate, 'approval rate']
             ];
             if (stats.launch?.days_active > 0) facts.push([formatNumber(stats.launch.days_active), 'days']);
-            document.getElementById('facts').innerHTML =
-                facts.map(([n, l]) => `<li><b class="num">${n}</b><span>${l}</span></li>`).join('');
 
             // What used to rotate through the Highlights card, kept as plain notes.
             const notes = [];
@@ -225,7 +224,14 @@
             if (stats.lightning_providers && stats.lightning_providers.length > 0) {
                 notes.push(`Top Lightning provider: <strong>${escapeHtml(stats.lightning_providers[0].domain)}</strong>`);
             }
-            document.getElementById('notes').innerHTML = notes.map(n => `<li>${n}</li>`).join('');
+            return `
+                <section class="highlights" aria-labelledby="highlights-title">
+                    <div class="section-head"><h2 id="highlights-title">Highlights</h2></div>
+                    <div class="reverse">
+                        <ul class="facts">${facts.map(([n, l]) => `<li><b class="num">${n}</b><span>${l}</span></li>`).join('')}</ul>
+                        ${notes.length ? `<ul class="notes">${notes.map(n => `<li>${n}</li>`).join('')}</ul>` : ''}
+                    </div>
+                </section>`;
         }
 
         // ----------------------------------------------------- Standings --
@@ -248,8 +254,9 @@
             });
         }
 
-        function standingsTable(stats, by) {
-            const projects = stats.top_projects || [];
+        // The ranked list, as on the homepage: one row per project, each opening
+        // its profile (which holds every epoch's posts)
+        function standingsList(stats, by) {
             const countryByFlag = {};
             (stats.countries || []).forEach(c => { countryByFlag[c.flag] = c.country; });
 
@@ -260,83 +267,33 @@
                     || a.reachedAt.localeCompare(b.reachedAt) || a.order - b.order);
             }
 
-            const rows = ranked.map(({ item, posts, count, merchants }, index) => {
+            const items = ranked.map(({ item, count, merchants }, i) => {
                 const flag = flagOf(item.name);
-                const country = countryByFlag[flag] || '';
-                const more = index >= BOARD_ROWS ? ' is-more' : '';
-                const detailId = `lb-detail-${index}`;
-                const primary = by === 'merchants' ? merchants : count;
-                const secondary = by === 'merchants' ? count : merchants;
-                const secondaryText = by === 'merchants' ? plural(count, 'post', 'posts') : plural(merchants, 'merchant', 'merchants');
-
-                // One row per visit (visits.js). These posts carry a date only, so
-                // an X post and its Nostr cross-post pair on the same or next day.
-                const visits = groupVisits(posts.map(post => ({
-                    project_name: item.name, merchant_name: post.merchant, post_url: post.url,
-                    timestamp: `${post.date} 00:00:00 UTC`, classification: ''
-                })));
-                const projectName = stripFlags(item.name);
-                const postItems = visits.slice(0, DETAIL_ROWS).map(v => `
-                    <li><div class="visit">
-                        <span class="visit-main">${v.merchant ? `<a href="${attrSafe(profileUrl(v.merchant, 'merchant'))}">${escapeHtml(v.merchant)}</a>` : escapeHtml(projectName)}</span>
-                        ${visitLinks(v, `${projectName} at ${v.merchant || 'a merchant'}`)}
-                        <span class="visit-when">${formatDay(String(v.first).slice(0, 10))}</span>
-                    </div></li>`).join('');
-
                 return `
-                    <tr class="lb-row${more}">
-                        <td class="rank num">${String(index + 1).padStart(2, '0')}</td>
-                        <th scope="row" class="proj">
-                            <button type="button" class="row-toggle" aria-expanded="false" aria-controls="${detailId}">
-                                <span class="row-line"><span class="proj-name">${nameWithFlag(stripFlags(item.name), flag, country)}</span>
-                                <span class="chev" aria-hidden="true"></span></span>
-                                <small class="mer-under">${secondaryText}</small>
-                            </button>
-                        </th>
-                        <td class="r mer num col-wide">${formatNumber(secondary)}</td>
-                        <td class="r posts num">${formatNumber(primary)}</td>
-                    </tr>
-                    <tr class="detail${more}" id="${detailId}" hidden>
-                        <td colspan="4">
-                            ${postItems ? `<ul class="visits" aria-label="Latest posts by ${attrSafe(projectName)}">${postItems}</ul>` : ''}
-                            <div class="detail-links">
-                                <a class="btn" href="${attrSafe(profileUrl(item.name, 'project'))}">View ${escapeHtml(stripFlags(item.name))}’s profile</a>
-                                ${visits.length > DETAIL_ROWS ? `<a class="btn" href="${attrSafe(`tracker.html?${new URLSearchParams({ epoch: '5', project: stripFlags(item.name), status: 'Processed' })}`)}">All ${formatNumber(posts.length)} posts in the tracker</a>` : ''}
-                            </div>
-                        </td>
-                    </tr>`;
+                    <li class="${i >= BOARD_ROWS ? 'is-more' : ''}"><a href="${attrSafe(profileUrl(item.name, 'project'))}">
+                        <span class="li-main"><span class="lb-rank num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span><span class="lb-name">${nameWithFlag(stripFlags(item.name), flag, countryByFlag[flag] || '')}</span></span>
+                        <span class="li-side num">${by === 'merchants' ? plural(merchants, 'merchant', 'merchants') : plural(count, 'post', 'posts')}</span>
+                    </a></li>`;
             }).join('');
-
-            const primaryLabel = by === 'merchants' ? 'Merchants' : 'Posts';
-            const secondaryLabel = by === 'merchants' ? 'Posts' : 'Merchants';
+            const caption = `Epoch 5 projects ranked by ${by === 'merchants' ? 'the number of different merchants with an approved post' : 'approved posts'}`;
             return `
-                <div class="lb-shell">
-                    <table class="lb" id="lb-table">
-                        <caption class="visually-hidden">Epoch 5 projects ranked by ${by === 'merchants' ? 'the number of different merchants with an approved post' : 'approved posts'}. Open a project to see its latest posts.</caption>
-                        <thead><tr>
-                            <th scope="col">Rank</th>
-                            <th scope="col">Project</th>
-                            <th scope="col" class="r col-wide">${secondaryLabel}</th>
-                            <th scope="col" class="r">${primaryLabel}</th>
-                        </tr></thead>
-                        <tbody>${rows}</tbody>
-                    </table>
-                </div>
-                <div class="board-foot">
-                    ${by === 'merchants' ? '<p>Merchants: different shops with an approved post in Epoch 5.</p>' : ''}
-                    ${projects.length > BOARD_ROWS ? `<button type="button" class="btn" id="lb-all" aria-controls="lb-table" aria-expanded="false" data-label="Show all ${projects.length} projects">Show all ${projects.length} projects</button>` : ''}
-                </div>`;
+                <p class="section-note">${by === 'merchants' ? 'Different merchants with an approved post in Epoch 5.' : 'Posts approved in Epoch 5.'}</p>
+                <ol class="list lb-list" id="lb-list" aria-label="${attrSafe(caption)}">${items}</ol>`;
         }
 
-        function standingsTitle(by) {
-            return by === 'merchants' ? 'Final standings by merchants reached' : 'Final standings by approved posts';
+        // "Show all" sits in its own row of the layout, under the list, so the
+        // Highlights box beside the list can end level with its last row
+        function standingsMore(stats) {
+            const total = (stats.top_projects || []).length;
+            const label = `Show all ${total} projects`;
+            return total > BOARD_ROWS ? `<button type="button" class="btn list-more" data-list="lb-list" data-label="${label}" aria-controls="lb-list" aria-expanded="false">${label}</button>` : '';
         }
 
         function renderStandings(stats) {
             const projects = stats.top_projects || [];
             if (projects.length === 0) {
                 return `
-                    <section class="section" aria-labelledby="board-title">
+                    <section aria-labelledby="board-title" id="board">
                         <h2 id="board-title">Final standings</h2>
                         <p>No approved posts were recorded for Epoch 5.</p>
                     </section>`;
@@ -344,16 +301,17 @@
             standingsStats = stats;
 
             return `
-                <section class="section" aria-labelledby="board-title" id="board">
+                <section aria-labelledby="board-title" id="board">
                     <div class="section-head">
-                        <h2 id="board-title">${standingsTitle(standingsView)}</h2>
+                        <h2 id="board-title">Final standings</h2>
                         <div class="seg" role="group" aria-label="Rank projects by" id="standings-view">
                             <button type="button" data-view="merchants" aria-pressed="${standingsView === 'merchants'}">Merchants</button>
                             <button type="button" data-view="posts" aria-pressed="${standingsView === 'posts'}">Posts</button>
                         </div>
                     </div>
-                    <div id="standings-body" aria-live="polite">${standingsTable(stats, standingsView)}</div>
-                </section>`;
+                    <div id="standings-body" aria-live="polite">${standingsList(stats, standingsView)}</div>
+                </section>
+                <div class="standings-more" id="standings-more">${standingsMore(stats)}</div>`;
         }
 
         // ------------------------------------------ Merchants and countries --
@@ -433,46 +391,26 @@
         // ----------------------------------------------- Every epoch --
 
         function renderEpochs(stats) {
-            // Frozen totals and notes come from epochs.js; Epoch 5 is this page
+            // Frozen totals come from epochs.js; Epoch 5 is this page. The bars
+            // only: each epoch's rules note lives in the archive's copy.
             return window.renderEpochBars({
                 id: 'epochs-title',
                 intro: `<strong class="num">${formatNumber(window.epochsTotal())}</strong> posts approved from May 2025 to the end of Epoch 5. Epoch 6 is on the <a href="index.html">live leaderboard</a>.`,
+                more: '<a href="archive.html#every-title">See how the rules changed</a>.',
+                notes: false,
                 current: 'Epoch 5'
             });
         }
 
-        // Row toggles, "Show all" on the board and on the lists
+        // The standings switch, and "Show all" on the standings and the lists
         document.getElementById('content').addEventListener('click', (e) => {
             const view = e.target.closest('#standings-view button');
             if (view) {
                 if (view.dataset.view !== standingsView && standingsStats) {
                     standingsView = view.dataset.view;
                     document.querySelectorAll('#standings-view button').forEach(b => b.setAttribute('aria-pressed', String(b === view)));
-                    document.getElementById('board-title').textContent = standingsTitle(standingsView);
-                    document.getElementById('standings-body').innerHTML = standingsTable(standingsStats, standingsView);
-                }
-                return;
-            }
-            const toggle = e.target.closest('.row-toggle');
-            if (toggle) {
-                const open = toggle.getAttribute('aria-expanded') !== 'true';
-                toggle.setAttribute('aria-expanded', String(open));
-                document.getElementById(toggle.getAttribute('aria-controls')).hidden = !open;
-                return;
-            }
-            const all = e.target.closest('#lb-all');
-            if (all) {
-                const table = document.getElementById('lb-table');
-                const open = !table.classList.contains('show-all');
-                table.classList.toggle('show-all', open);
-                all.setAttribute('aria-expanded', String(open));
-                all.textContent = open ? `Show top ${BOARD_ROWS}` : all.dataset.label;
-                // Collapsing hides the extra rows; close any that were open.
-                if (!open) {
-                    table.querySelectorAll('tr.is-more .row-toggle[aria-expanded="true"]').forEach(t => {
-                        t.setAttribute('aria-expanded', 'false');
-                        document.getElementById(t.getAttribute('aria-controls')).hidden = true;
-                    });
+                    document.getElementById('standings-body').innerHTML = standingsList(standingsStats, standingsView);
+                    document.getElementById('standings-more').innerHTML = standingsMore(standingsStats);
                 }
                 return;
             }
@@ -494,9 +432,8 @@
                 updatedElement.textContent = new Date(stats.generated_at).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
             }
 
-            renderFacts(stats);
             document.getElementById('content').innerHTML =
-                renderStandings(stats) +
+                `<div class="section standings">${renderStandings(stats)}${renderHighlights(stats)}</div>` +
                 renderMerchantsAndCountries(stats) +
                 renderDaily(stats) +
                 renderEpochs(stats);

@@ -138,16 +138,7 @@
         /* Highlights: the figures, their notes, then the per-day chart */
         .daily { margin-top: var(--s6); }
         .daily h3 { margin: 0 0 var(--s2); font-size: 1.5rem; }
-        /* The leaderboard: a plain list like Merchants, a rank before each name */
-        /* Rank, then the name in its own column: a name that wraps lines up
-           under itself, not under the rank */
-        .lb-list .li-main { display: flex; align-items: baseline; }
-        /* The figure sits on the name's last line when a name wraps (both
-           share one font and line height, so their bottoms line up) */
-        .lb-list li > a { align-items: flex-end; }
-        .lb-name { min-width: 0; }
-        .lb-rank { flex: none; display: inline-block; min-width: 2.25rem; margin-right: var(--s2); padding: 2px 4px; font: 400 var(--fs-sm)/1.2 var(--font-mono); color: var(--muted); text-align: center; }
-        .lb-list li > a:hover .lb-rank { color: var(--night); }
+        /* The leaderboard is the shared ranking list (.lb-list in powbot.css) */
         /* One line per merchant in both views, so switching never changes the
            list's height. A long name is cut short on screen only; the link
            still carries it in full. */
@@ -170,10 +161,6 @@
             .board-bar h2 { font-size: 1.75rem; }
             .globe canvas { height: 280px; }
             #latest-list li > a { flex-direction: column; align-items: flex-start; gap: 2px; padding: var(--s3) var(--s2); }
-            /* Room for each name on one line from 360px: a narrower rank column
-               and less space around the row */
-            .lb-list li > a { gap: var(--s2); padding-left: 0; padding-right: var(--s1); }
-            .lb-rank { min-width: 1.75rem; margin-right: var(--s1); padding: 2px 0; }
         }
     </style>
 </head>
@@ -962,12 +949,14 @@
         }
 
         function renderEpochs(stats) {
-            const live = { name: EPOCH.name, when: 'live now', posts: stats.reviewer?.approved || 0, href: '#main',
-                note: 'Stricter limits that reward reaching new merchants: three a week per project, each once per platform, with a reduced reward for the cross-post. The full rules: <a href="guidelines.html">posting guidelines</a>.', noteHtml: true };
+            // The bars only: each epoch's rules note lives in the archive's copy
+            const live = { name: EPOCH.name, when: 'live now', posts: stats.reviewer?.approved || 0, href: '#main' };
             const total = window.epochsTotal() + live.posts;
             return window.renderEpochBars({
                 id: 'epochs-title',
                 intro: `<strong class="num">${formatNumber(total)}</strong> posts approved since May 2025.`,
+                more: '<a href="archive.html#every-title">See how the rules changed</a>.',
+                notes: false,
                 live
             });
         }

@@ -3,9 +3,13 @@
  * the homepage, the Epoch 5 page and the archive all draw from it.
  *
  * ==> TO ADD CONTEXT: give an epoch a `note` (one short sentence, plain
- *     text). It shows under that epoch's bar on every page. <==
+ *     text). It shows under that epoch's bar on the archive; the homepage
+ *     and the Epoch 5 page show the bars only and link to it. <==
  * ==> AT EACH EPOCH ROLLOVER: add the finished epoch here with its final
- *     approved-post total, and point `href` at its page or archive section. <==
+ *     approved-post total, and point `href` at its page or archive section.
+ *     Epoch 6's note, as drafted while it ran: 'Stricter limits that reward
+ *     reaching new merchants: three a week per project, each once per
+ *     platform, with a reduced reward for the cross-post.' <==
  *
  * Totals are posts approved and are frozen once an epoch ends.
  */
@@ -41,8 +45,11 @@
      *   epochs   list to draw (defaults to POWBOT_EPOCHS)
      *   current  name of the epoch this page is about: solid bar, aria-current
      *   live     optional { name, when, posts, href, note } appended at the end
+     *   notes    false leaves out each epoch's rules note (the homepage links
+     *            to the archive's copy instead)
+     *   more     HTML after the rules note, such as that link
      */
-    window.renderEpochBars = function ({ id = 'epochs-title', title = 'Every epoch so far', intro = '', epochs = window.POWBOT_EPOCHS, current = '', live = null } = {}) {
+    window.renderEpochBars = function ({ id = 'epochs-title', title = 'Every epoch so far', intro = '', epochs = window.POWBOT_EPOCHS, current = '', live = null, notes = true, more = '' } = {}) {
         const all = epochs.concat(live ? [Object.assign({ live: true }, live)] : []);
         const max = Math.max(1, ...all.map(e => e.posts || 0));
 
@@ -55,14 +62,14 @@
                         <span class="hb-label" aria-hidden="true"><span class="hb-name">${esc(e.name)}</span><span class="hb-when">${esc(e.when)}</span></span>
                         <span class="hb-track" aria-hidden="true"><span class="hb-bar" style="--w:${((e.posts || 0) / max).toFixed(4)}"></span><span class="hb-val num">${num(e.posts)}</span></span>
                     </a>
-                    ${e.note ? `<p class="hb-note">${e.noteHtml ? e.note : esc(e.note)}</p>` : ''}
+                    ${notes && e.note ? `<p class="hb-note">${e.noteHtml ? e.note : esc(e.note)}</p>` : ''}
                 </li>`;
         }).join('');
 
         return `
             <section class="section" aria-labelledby="${esc(id)}">
                 <h2 id="${esc(id)}">${esc(title)}</h2>
-                <p class="section-note">${intro} ${esc(RULES_NOTE)}</p>
+                <p class="section-note">${intro} ${esc(RULES_NOTE)}${more ? ` ${more}` : ''}</p>
                 <ul class="hbars">${rows}</ul>
             </section>`;
     };

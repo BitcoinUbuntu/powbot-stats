@@ -60,15 +60,6 @@
         .panel > h3 { margin: 0 0 var(--s2); font-size: 1.5rem; }
         .panel > .section-note { margin-bottom: var(--s4); }
 
-        /* Rankings sit in half a column, so names wrap rather than push the table wide */
-        .lb .proj-name { overflow-wrap: anywhere; }
-        .lb .row-toggle { width: 100%; }
-        /* Inline, so a wrapped name keeps its chevron beside the last word */
-        .lb .row-toggle .row-line { display: inline; }
-        .lb .row-toggle .chev { display: inline-block; margin-left: 6px; vertical-align: 0.15em; }
-        .lb-more { margin-top: var(--s4); }
-        .board-empty { padding: var(--s5); margin: 0; }
-
         @media (max-width: 720px) {
             .cols { grid-template-columns: minmax(0, 1fr); gap: var(--s7); }
         }
@@ -99,15 +90,10 @@
     <!-- Finished epochs and the shared "Every epoch" block -->
     <script src="epochs.js"></script>
     <script src="flags.js"></script>
-    <script src="visits.js"></script>
 
     <script>
-        // Global project metadata
-        let projectMetadata = {};
-
-        // Rows shown in each ranking before "Show more"
+        // Rows shown in each ranking before "Show all"
         const INITIAL_ROWS = 5;
-        const DETAIL_ROWS = 5;   // visits shown in an opened leaderboard row
 
         // Epoch 5 has its own page (epoch5.html). Its total is frozen, the same
         // figure the homepage uses.
@@ -153,31 +139,14 @@
 
         const plural = (n, one, many) => `${formatNumber(n)} ${n === 1 ? one : many}`;
 
-        function renderViewProfileButton(name, type = 'project') {
-            // Convert name to profile ID (e.g., "Bitcoin Ekasi 🇿🇦" -> "bitcoin-ekasi")
-            const profileId = name
+        // "Bitcoin Ekasi 🇿🇦" -> "profile.html?id=bitcoin-ekasi"
+        function profileUrl(name, type = 'project') {
+            const id = String(name || '')
                 .replace(/[^\w\s-]/g, '') // Remove emojis and special characters
                 .trim()
                 .toLowerCase()
                 .replace(/\s+/g, '-'); // Replace spaces with hyphens
-
-            const profileUrl = type === 'merchant' ? 'merchant-profile.html' : 'profile.html';
-
-            const shown = stripFlags(name);
-            return `<a class="btn" href="${profileUrl}?id=${profileId}">View ${escapeHtml(shown)}${/s$/i.test(shown) ? '’' : '’s'} profile</a>`;
-        }
-
-        function renderViewAllButton(name, type, postCount) {
-            // Convert name to profile ID
-            const profileId = name
-                .replace(/[^\w\s-]/g, '')
-                .trim()
-                .toLowerCase()
-                .replace(/\s+/g, '-');
-
-            const profileUrl = type === 'merchant' ? 'merchant-profile.html' : 'profile.html';
-
-            return `<a class="btn" href="${profileUrl}?id=${profileId}">All ${formatNumber(postCount)} posts on the profile</a>`;
+            return `${type === 'merchant' ? 'merchant-profile.html' : 'profile.html'}?id=${id}`;
         }
 
         // ------------------------------------------------------ Page parts --
@@ -384,166 +353,81 @@
                 [epoch5, epoch4, testing, early('epoch3', 3, 'November 2025'), early('epoch2', 2, 'August 2025'), early('epoch1', 1, 'May 2025')]
                     .map(epochSectionHtml).join('');
 
-            // Render leaderboards
-            renderLeaderboard('top-projects', epoch4Live.top_projects, 'project', true, INITIAL_ROWS, { countries: e4.countries, caption: 'Epoch 4 projects ranked by approved posts' });
-            renderLeaderboard('top-merchants', epoch4Live.top_merchants, 'merchant', true, INITIAL_ROWS, { countries: e4.countries, caption: 'Epoch 4 merchants ranked by approved posts' });
-            renderLeaderboard('epoch4-testing-projects', t.top_projects, 'project', true, INITIAL_ROWS, { countries: t.countries, caption: 'Epoch 4 testing period projects ranked by approved posts' });
-            renderLeaderboard('epoch4-testing-merchants', t.top_merchants, 'merchant', true, INITIAL_ROWS, { countries: t.countries, caption: 'Epoch 4 testing period merchants ranked by approved posts' });
-            renderLeaderboard('epoch3-projects', ep.epoch3.top_projects, 'project', false, INITIAL_ROWS, { countries: ep.epoch3.countries, caption: 'Epoch 3 projects ranked by approved posts' });
-            renderLeaderboard('epoch2-projects', ep.epoch2.top_projects, 'project', false, INITIAL_ROWS, { countries: ep.epoch2.countries, caption: 'Epoch 2 projects ranked by approved posts' });
-            renderLeaderboard('epoch1-projects', ep.epoch1.top_projects, 'project', false, INITIAL_ROWS, { countries: ep.epoch1.countries, caption: 'Epoch 1 projects ranked by approved posts' });
+            // Rankings
+            rankList('top-projects', e4.top_projects, 'project', e4.countries, 'Epoch 4 projects ranked by approved posts');
+            rankList('top-merchants', e4.top_merchants, 'merchant', e4.countries, 'Epoch 4 merchants ranked by approved posts');
+            rankList('epoch4-testing-projects', t.top_projects, 'project', t.countries, 'Epoch 4 testing period projects ranked by approved posts');
+            rankList('epoch4-testing-merchants', t.top_merchants, 'merchant', t.countries, 'Epoch 4 testing period merchants ranked by approved posts');
+            rankList('epoch3-projects', ep.epoch3.top_projects, 'project', ep.epoch3.countries, 'Epoch 3 projects ranked by approved posts');
+            rankList('epoch2-projects', ep.epoch2.top_projects, 'project', ep.epoch2.countries, 'Epoch 2 projects ranked by approved posts');
+            rankList('epoch1-projects', ep.epoch1.top_projects, 'project', ep.epoch1.countries, 'Epoch 1 projects ranked by approved posts');
         }
 
-        function getPlatform(url) {
-            if (!url) return { name: 'Nostr' };
-            const lower = url.toLowerCase();
-            if (lower.includes('twitter.com') || lower.includes('x.com')) return { name: 'X' };
-            return { name: 'Nostr' };
-        }
-
-        // A ranking table. Each row opens to show up to 10 posts; rows past
-        // initialCount stay hidden until "Show more".
-        function renderLeaderboard(elementId, items, type, showMerchant = true, initialCount = 5, opts = {}) {
+        // A ranking, as on the homepage: one row per project or merchant, each
+        // opening its profile (which holds every epoch's posts). Rows past
+        // INITIAL_ROWS stay hidden until "Show all".
+        function rankList(elementId, items, type, countries, caption) {
             const container = document.getElementById(elementId);
             if (!container) return;
             items = items || [];
-
             const noun = type === 'merchant' ? 'merchants' : 'projects';
             if (items.length === 0) {
-                container.innerHTML = `<div class="lb-shell"><p class="board-empty">No ${noun} recorded for this epoch.</p></div>`;
+                container.innerHTML = `<p>No ${noun} recorded for this epoch.</p>`;
                 return;
             }
 
             const countryByFlag = {};
-            (opts.countries || []).forEach(c => { countryByFlag[c.flag] = c.country; });
-            const hasMore = items.length > initialCount;
-            const tableId = `${elementId}-table`;
-
-            const rows = items.map((item, index) => {
-                const posts = item.posts || [];
-                const hasPosts = posts.length > 0;
-                const more = index >= initialCount ? ' is-more' : '';
-                const detailId = `${elementId}-${index}`;
+            (countries || []).forEach(c => { countryByFlag[c.flag] = c.country; });
+            const listId = `${elementId}-list`;
+            const rows = items.map((item, i) => {
                 const flag = flagOf(item.name);
-                const country = countryByFlag[flag] || '';
-                const nameHtml = `<span class="proj-name">${nameWithFlag(stripFlags(item.name), flag, country)}</span>`;
-
-                const cell = hasPosts
-                    ? `<button type="button" class="row-toggle" aria-expanded="false" aria-controls="${detailId}">
-                           <span class="row-line">${nameHtml} <span class="chev" aria-hidden="true"></span></span>
-                       </button>`
-                    : nameHtml;
-
-                // One row per visit (visits.js): an X post and its Nostr cross-post
-                // share a row, paired on the same or next day (these carry dates
-                // only). Epochs 1-3 have no merchant or date, so each post stays
-                // its own row.
-                const slug = name => String(name || '').replace(/[^\w\s-]/g, '').trim().toLowerCase().replace(/\s+/g, '-');
-                const visits = groupVisits(posts.map(post => ({
-                    project_name: type === 'merchant' ? post.project : item.name,
-                    merchant_name: type === 'merchant' ? item.name : (showMerchant ? post.merchant : ''),
-                    post_url: post.url,
-                    timestamp: post.date ? `${String(post.date).slice(0, 10)} 00:00:00 UTC` : '',
-                    classification: ''
-                })));
-                const postItems = visits.slice(0, DETAIL_ROWS).map((v, i) => {
-                    const other = type === 'merchant' ? v.project : v.merchant;
-                    const label = !other
-                        ? `Post ${i + 1}`
-                        : type === 'merchant'
-                            ? `<a class="visit-project" href="profile.html?id=${encodeURIComponent(slug(stripFlags(other)))}">${nameWithFlag(stripFlags(other), flagOf(other), countryByFlag[flagOf(other)])}</a>`
-                            : `<a href="merchant-profile.html?id=${encodeURIComponent(slug(other))}">${escapeHtml(other)}</a>`;
-                    const context = type === 'merchant'
-                        ? `${stripFlags(other || 'A project')} at ${stripFlags(item.name)}`
-                        : `${stripFlags(item.name)}${other ? ` at ${other}` : ''}`;
-                    const when = v.first ? formatDate(String(v.first).slice(0, 10)) : '';
-                    return `
-                        <li><div class="visit">
-                            <span class="visit-main">${label}</span>
-                            ${visitLinks(v, context)}
-                            <span class="visit-when">${when}</span>
-                        </div></li>`;
-                }).join('');
-
+                const name = type === 'merchant'
+                    ? escapeHtml(item.name)
+                    : nameWithFlag(stripFlags(item.name), flag, countryByFlag[flag] || '');
                 return `
-                    <tr class="lb-row${more}">
-                        <td class="rank num">${String(index + 1).padStart(2, '0')}</td>
-                        <th scope="row" class="proj">${cell}</th>
-                        <td class="r posts num">${formatNumber(item.count)}</td>
-                    </tr>
-                    ${hasPosts ? `
-                    <tr class="detail" id="${detailId}" hidden>
-                        <td colspan="3">
-                            <ul class="visits dated" aria-label="${type === 'merchant' ? 'Posts at' : 'Posts by'} ${attrSafe(stripFlags(item.name))}">${postItems}</ul>
-                            <div class="detail-links">
-                                ${renderViewProfileButton(item.name, type)}
-                                ${visits.length > DETAIL_ROWS ? renderViewAllButton(item.name, type, posts.length) : ''}
-                            </div>
-                        </td>
-                    </tr>` : ''}`;
+                    <li class="${i >= INITIAL_ROWS ? 'is-more' : ''}"><a href="${attrSafe(profileUrl(item.name, type))}">
+                        <span class="li-main"><span class="lb-rank num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span><span class="lb-name">${name}</span></span>
+                        <span class="li-side num">${plural(item.count, 'post', 'posts')}</span>
+                    </a></li>`;
             }).join('');
-
+            const label = `Show all ${formatNumber(items.length)} ${noun}`;
             container.innerHTML = `
-                <div class="lb-shell">
-                    <table class="lb" id="${tableId}">
-                        <caption class="visually-hidden">${escapeHtml(opts.caption || '')}. Open a row to see its posts.</caption>
-                        <thead><tr>
-                            <th scope="col">Rank</th>
-                            <th scope="col">${type === 'merchant' ? 'Merchant' : 'Project'}</th>
-                            <th scope="col" class="r">Posts</th>
-                        </tr></thead>
-                        <tbody>${rows}</tbody>
-                    </table>
-                </div>
-                ${hasMore ? `<button type="button" class="btn lb-more" aria-controls="${tableId}" aria-expanded="false" data-count="${items.length - initialCount}">Show ${items.length - initialCount} more</button>` : ''}`;
+                <ol class="list lb-list" id="${listId}" aria-label="${attrSafe(caption)}">${rows}</ol>
+                ${items.length > INITIAL_ROWS ? `<button type="button" class="btn list-more" data-list="${listId}" data-label="${label}" aria-controls="${listId}" aria-expanded="false">${label}</button>` : ''}`;
         }
 
-        function toggleShowMore(button) {
-            const table = document.getElementById(button.getAttribute('aria-controls'));
-            const open = !table.classList.contains('show-all');
-            table.classList.toggle('show-all', open);
-            button.setAttribute('aria-expanded', String(open));
-            button.textContent = open ? 'Show fewer' : `Show ${button.dataset.count} more`;
-            // Collapsing hides the extra rows; close any that were open.
-            if (!open) {
-                table.querySelectorAll('tr.is-more .row-toggle[aria-expanded="true"]').forEach(toggleLeaderboard);
-            }
-        }
-
-        function toggleLeaderboard(toggle) {
-            const open = toggle.getAttribute('aria-expanded') !== 'true';
-            toggle.setAttribute('aria-expanded', String(open));
-            document.getElementById(toggle.getAttribute('aria-controls')).hidden = !open;
-        }
-
-        // One listener for every ranking: open a row, show more rows
+        // "Show all" on every ranking
         document.getElementById('content').addEventListener('click', (e) => {
-            const toggle = e.target.closest('.row-toggle');
-            if (toggle) { toggleLeaderboard(toggle); return; }
-            const more = e.target.closest('.lb-more');
-            if (more) toggleShowMore(more);
+            const btn = e.target.closest('.list-more');
+            if (!btn) return;
+            const list = document.getElementById(btn.dataset.list);
+            const open = !list.classList.contains('show-all');
+            list.classList.toggle('show-all', open);
+            btn.setAttribute('aria-expanded', String(open));
+            btn.textContent = open ? 'Show fewer' : btn.dataset.label;
         });
+
+        // Links such as archive.html#epoch-1 (the homepage's epoch bars) point
+        // into sections drawn only once the data has loaded, often after the
+        // browser has made its one attempt to scroll there. Go there now. (On a
+        // reload the browser can't restore the reader's place either, for the
+        // same reason, so the section beats the top of the page.)
+        function scrollToLinkedSection() {
+            const id = decodeURIComponent(location.hash.slice(1));
+            const target = id && document.getElementById(id);
+            if (target) target.scrollIntoView({ block: 'start' });
+        }
 
         // Load and render stats
         async function loadStats() {
             try {
-                // Load all data sources
-                const [epoch4Live, historical, members] = await Promise.all([
+                const [epoch4Live, historical] = await Promise.all([
                     fetch('stats-epoch4.json?t=' + Date.now()).then(r => r.json()),
-                    fetch('stats-historical.json?t=' + Date.now()).then(r => r.json()),
-                    fetch('members.json?t=' + Date.now()).then(r => r.json()).catch(() => ({ members: [] }))
+                    fetch('stats-historical.json?t=' + Date.now()).then(r => r.json())
                 ]);
 
-                // Build project metadata from members.json
-                members.members.forEach(member => {
-                    // Match format used in stats: "Bitbiashara 🇰🇪"
-                    const projectKey = `${member.name} ${member.flag}`;
-                    projectMetadata[projectKey] = {
-                        info_url: `profile.html?id=${member.id}`
-                    };
-                });
-
                 renderDashboard(epoch4Live, historical);
+                scrollToLinkedSection();
             } catch (error) {
                 console.error('Failed to load stats:', error);
                 document.getElementById('content').innerHTML = `
