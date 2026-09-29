@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">Merchant profile | PoWBoT</title>
     <meta name="description" content="A Bitcoin circular economy merchant in Africa: its proof of work on PoWBoT, and how to tip it directly over Lightning.">
-    <meta name="theme-color" content="#070F0B">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#C7F0D8">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#37442F">
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
@@ -38,17 +39,17 @@
             display: flex; align-items: center; justify-content: center;
             width: 112px; height: 112px;
             border: 1px solid var(--line); border-radius: 50%;
-            background: var(--panel); color: var(--phosphor);
+            background: var(--panel); color: var(--link);
             font: 700 var(--fs-2xl)/1 var(--font-mono);
         }
         .hero-text { min-width: 0; }
-        .hero-text h1 { margin: 0; font-size: clamp(1.75rem, 4.5vw, 2.75rem); letter-spacing: -0.035em; overflow-wrap: anywhere; }
+        .hero-text h1 { margin: 0; font-size: var(--fs-h1); overflow-wrap: anywhere; }
         .merchant-subtitle { margin: var(--s2) 0 0; color: var(--muted); }
         .merchant-subtitle .flag { margin-right: var(--s1); }
 
         /* ------------------------------------------------ Record and support -- */
         .intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 340px); gap: var(--s6) var(--s7); align-items: start; }
-        .intro h2 { margin: 0 0 var(--s5); font-size: var(--fs-lg); }
+        .intro h2 { margin: 0 0 var(--s5); font-size: 1.75rem; }
         /* Places and dates are words, not figures: a size down from the counts */
         .facts b.fact-text { font-size: var(--fs-lg); letter-spacing: -0.02em; }
         .record .facts { display: grid; grid-template-columns: repeat(2, max-content); gap: var(--s5) var(--s7); }
@@ -61,7 +62,7 @@
         .fact-projects b a { text-decoration: none; }
         .fact-projects b a .pn { color: inherit; text-decoration: underline; text-underline-offset: 0.15em; }
         /* The support panel's styles are shared: .donate* in css/powbot.css */
-        .support-box h2 { margin: 0 0 var(--s3); font-size: var(--fs-md); overflow-wrap: anywhere; }
+        .support-box h2 { margin: 0 0 var(--s3); font-size: 1.5rem; overflow-wrap: anywhere; }
         .support-box .none { margin: 0; color: var(--muted); }
 
         /* ------------------------------------------------------------ Posts -- */
@@ -77,7 +78,7 @@
         /* -------------------------------------------------- States and notes -- */
         .loading { margin: 0; padding: var(--s7) 0; color: var(--muted); }
         .page-error { padding-top: var(--s7); padding-bottom: var(--s7); }
-        .page-error h1 { margin: 0 0 var(--s3); font-size: var(--fs-xl); }
+        .page-error h1 { margin: 0 0 var(--s3); font-size: 2rem; }
         .page-error p { margin: 0; max-width: 60ch; }
 
         @media (max-width: 720px) {

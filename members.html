@@ -6,7 +6,8 @@
     <title>CBAF members – Bitcoin projects across Africa | PoWBoT</title>
     <meta name="description" content="Directory of grassroots Bitcoin circular economy projects across Africa. See each project’s proof of work on PoWBoT and donate to it directly over Lightning.">
     <link rel="canonical" href="https://powbot.africa/members.html">
-    <meta name="theme-color" content="#070F0B">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#C7F0D8">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#37442F">
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
@@ -36,7 +37,7 @@
     <style>
         /* Directory layout only. Colours, type and components: css/powbot.css */
         .page-head { padding: var(--s7) 0 var(--s6); border-bottom: 1px solid var(--line); }
-        .page-head h1 { margin: 0; font-size: clamp(1.75rem, 4vw, 2.5rem); }
+        .page-head h1 { margin: 0; font-size: var(--fs-h1); }
         .page-head .lede { margin: var(--s3) 0 var(--s5); color: var(--muted); max-width: 60ch; font-size: var(--fs-md); }
 
         /* Controls */
@@ -56,7 +57,7 @@
         .input:hover, .select:hover { border-color: var(--muted); }
         .select { appearance: none; -webkit-appearance: none; padding-right: 40px; cursor: pointer; color-scheme: dark; }
         .select option { background: var(--panel); color: var(--text); }
-        .select.active { border-color: var(--phosphor); }
+        .select.active { border-color: var(--link); }
         .select-wrap { position: relative; }
         .select-wrap::after {
             content: ""; position: absolute; right: 16px; top: 50%; width: 8px; height: 8px; margin-top: -6px;
@@ -123,9 +124,12 @@
         .card-actions { display: flex; gap: var(--s2); margin-top: var(--s1); }
         .card-actions .btn { flex: 1; min-width: 0; }
         /* .pb button resets font and colour, which would override .btn on <button> */
-        .pb button.btn { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--phosphor); }
-        .pb button.btn-donate { border-color: var(--amber); color: var(--amber); }
-        .pb button.btn-donate:hover { background: rgba(var(--amber-rgb), 0.12); color: var(--amber); }
+        .pb button.btn { font: 400 var(--fs-sm)/1.2 var(--font-mono); color: var(--link); }
+        .pb button.btn:hover { color: var(--night); }
+        /* Donate is the card's one highlight: a solid block */
+        .pb button.btn-donate { background: var(--accent); color: var(--night); }
+        .pb button.btn-donate:hover { background: var(--accent-hi); }
+        .pb button.btn-donate:focus-visible { outline-color: var(--link); }
 
         /* States */
         .loading, .empty-state { grid-column: 1 / -1; padding: var(--s7) 0; color: var(--muted); }
@@ -136,7 +140,6 @@
         @media (max-width: 720px) {
             .page-head { padding: var(--s6) 0 var(--s5); }
             .page-head .lede { font-size: var(--fs-base); }
-            .page-head .facts { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); }
             .field-filter, .filters.seg { width: 100%; }
             .filters.seg { grid-auto-flow: row; grid-template-columns: 1fr 1fr; }
             .filters.seg button { padding: var(--s2) var(--s3); line-height: 1.2; }

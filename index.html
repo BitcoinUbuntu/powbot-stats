@@ -6,7 +6,8 @@
     <title>PoWBoT Stats – Bitcoin proof of work across Africa</title>
     <meta name="description" content="Live PoWBoT leaderboard: Bitcoin projects across Africa post proof-of-work videos of paying local merchants in bitcoin. See this epoch’s standings.">
     <link rel="canonical" href="https://powbot.africa/">
-    <meta name="theme-color" content="#070F0B">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#C7F0D8">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#37442F">
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
@@ -25,37 +26,83 @@
     <meta name="twitter:description" content="Real-time activity stats for PoW rewards to merchants and projects across Africa.">
     <meta name="twitter:image" content="https://powbot.africa/images/PoWBoT_preview.jpg">
 
-    <link rel="preload" href="fonts/jetbrains-mono-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/vt323-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/share-tech-mono-latin-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/atkinson-hyperlegible-latin-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/powbot.css">
     <style>
         /* Homepage layout only. Colours, type and components: css/powbot.css */
-        .hero {
-            border-bottom: 1px solid var(--line);
-            /* Faint scanlines, here only */
-            background: repeating-linear-gradient(0deg, rgba(var(--text-rgb), 0.028) 0 1px, transparent 1px 4px);
-        }
+        .hero { border-bottom: 1px dashed var(--line-strong); }
         .hero .wrap {
             display: grid;
             grid-template-columns: minmax(0, 1fr) auto;
+            grid-template-areas: "standby standby" "title status" "meta status" "board board";
             gap: var(--s2) var(--s7);
-            padding-top: var(--s7);
+            padding-top: var(--s5);
             padding-bottom: var(--s7);
         }
-        .hero h1 { margin: 0; font-size: var(--fs-display); letter-spacing: -0.035em; line-height: 1.05; }
-        .mascot-link { grid-column: 2; grid-row: 1 / span 2; align-self: end; }
-        .mascot { display: block; width: 150px; height: auto; }
-        .hero-meta { margin-top: var(--s4); }
+        .hero-title { grid-area: title; align-self: end; }
+        .hero h1 { margin: 0; font-size: clamp(3rem, 6vw, 5rem); }
+        .hero-meta { grid-area: meta; margin-top: var(--s3); }
         .summary { margin: 0; font-size: var(--fs-md); color: var(--muted); max-width: 52ch; }
         .summary strong { color: var(--text); }
         .progress { margin-top: var(--s4); max-width: 520px; }
-        .progress-text { margin: 0 0 var(--s2); font-size: var(--fs-sm); color: var(--muted); }
-        .progress-track { height: 6px; background: var(--line); }
-        .progress-fill { height: 100%; background: var(--amber); }
+        .progress-text { margin: 0 0 var(--s2); font: 400 var(--fs-sm)/1.4 var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+        /* [##########......] */
+        .progress-track { position: relative; height: 20px; padding: 4px 8px; }
+        .progress-track::before, .progress-track::after { content: ""; position: absolute; top: 0; bottom: 0; width: 5px; border: 2px solid var(--accent); }
+        .progress-track::before { left: 0; border-right: 0; }
+        .progress-track::after { right: 0; border-left: 0; }
+        .progress-fill { height: 100%; background: repeating-linear-gradient(90deg, var(--accent) 0 9px, transparent 9px 12px); }
 
-        .board { grid-column: 1 / -1; margin-top: var(--s6); }
+        /* Standby screen, as on the phone: signal on the left (member projects
+           posting this epoch), the operator in the middle, battery on the right
+           (time left in the epoch). It repeats figures given in words below. */
+        .standby {
+            grid-area: standby; display: grid; grid-template-columns: 7rem minmax(0, 1fr) 7rem; align-items: end;
+            margin-bottom: var(--s4); padding-bottom: var(--s3); border-bottom: 2px solid var(--accent);
+        }
+        .sb-side { display: grid; gap: 6px; justify-items: start; }
+        .sb-batt { justify-items: end; text-align: right; }
+        .sb-bars { display: flex; flex-direction: column-reverse; gap: 3px; }
+        .sb-batt .sb-bars { align-items: flex-end; }
+        .sb-bars i { display: block; height: 6px; background: var(--accent); opacity: 0.18; }
+        .sb-bars i.on { opacity: 1; }
+        /* The antenna: a triangle on a stick */
+        .sb-antenna { width: 12px; height: 17px; background: linear-gradient(var(--accent), var(--accent)) center bottom / 2px 11px no-repeat; }
+        .sb-antenna::before { content: ""; display: block; border: 6px solid transparent; border-top: 7px solid var(--accent); border-bottom: 0; }
+        .sb-battery { position: relative; width: 14px; height: 20px; margin-top: 4px; border: 2px solid var(--accent); }
+        .sb-battery::before { content: ""; position: absolute; left: 2px; right: 2px; top: -5px; height: 3px; background: var(--accent); }
+        .sb-cap { font: 400 1.0625rem/1.1 var(--font-display); color: var(--muted); }
+        .sb-op { text-align: center; align-self: center; }
+        .sb-name { display: block; font: 400 2.5rem/1 var(--font-display); color: var(--heading); letter-spacing: 0.04em; text-shadow: var(--lcd); }
+        .sb-time { display: block; font: 400 1.375rem/1.1 var(--font-display); color: var(--text); }
+
+        /* Epoch status: the mascot with a readout at each corner, each with a
+           bar for its share (seg-bar, css/powbot.css) */
+        .epoch-status {
+            grid-area: status; align-self: center;
+            display: grid; grid-template-columns: 8.5rem auto 8.5rem; grid-template-rows: 1fr 1fr;
+            align-items: center; gap: var(--s4) var(--s5);
+        }
+        .mascot-link { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+        .mascot { display: block; width: 128px; height: auto; }
+        /* Label, figure, bar; the right-hand pair mirrors the left */
+        .es-read { display: grid; gap: 4px; justify-items: start; }
+        .es-read[data-read="1"], .es-read[data-read="3"] { justify-items: end; text-align: right; }
+        .es-read .seg-bar { justify-self: stretch; }
+        .es-label { font: 400 var(--fs-xs)/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+        .es-val { font: 400 1.75rem/1 var(--font-display); color: var(--heading); }
+
+        .board { grid-area: board; margin-top: var(--s6); }
         .board-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s3); margin-bottom: var(--s3); }
-        .board-bar h2 { margin: 0; font-size: var(--fs-md); }
+        .board-bar h2 { margin: 0; font-size: var(--fs-h2); }
+
+        /* Countries: the globe (globe.js), with its own pause */
+        .globe { position: relative; margin: 0 0 var(--s4); border: 1px dashed var(--line-strong); }
+        .globe canvas { display: block; width: 100%; height: 300px; }
+        .globe .globe-pause { position: absolute; right: var(--s1); bottom: var(--s1); background: var(--night); }
+        .globe .globe-pause:hover { background: var(--accent); }
         /* One line on desktop, room for two on phones: the note can't push the table */
         .board-note { margin: 0 0 var(--s1); color: var(--muted); font-size: var(--fs-sm); min-height: 1.55em; }
         .loading { padding: var(--s6) var(--s5); color: var(--muted); }
@@ -72,14 +119,19 @@
         .error p:first-child { font: 700 var(--fs-md)/1.4 var(--font-text); color: var(--danger); }
 
         @media (max-width: 720px) {
-            .hero .wrap { grid-template-columns: minmax(0, 1fr) 84px; gap: var(--s2) var(--s4); padding-top: var(--s6); }
-            .mascot-link { grid-row: 1; align-self: start; }
+            .hero .wrap { grid-template-columns: minmax(0, 1fr); grid-template-areas: "standby" "title" "status" "meta" "board"; gap: var(--s2); padding-top: var(--s4); }
+            .standby { grid-template-columns: 5rem minmax(0, 1fr) 5rem; }
+            .sb-name { font-size: 2rem; }
+            .sb-time { font-size: 1.125rem; }
+            .sb-cap { font-size: 0.9375rem; }
+            .epoch-status { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: var(--s3); margin-top: var(--s3); }
             .mascot { width: 84px; }
-            .hero-meta { grid-column: 1 / -1; }
             .summary { font-size: var(--fs-base); }
             .cols { grid-template-columns: minmax(0, 1fr); gap: var(--s7); }
             .board-note { min-height: 3.1em; }
-            #latest-list li > a { flex-direction: column; align-items: flex-start; gap: 2px; padding: var(--s3) 0; }
+            .board-bar h2 { font-size: 1.75rem; }
+            .globe canvas { height: 260px; }
+            #latest-list li > a { flex-direction: column; align-items: flex-start; gap: 2px; padding: var(--s3) var(--s2); }
         }
     </style>
 </head>
@@ -87,15 +139,43 @@
     <!-- Navigation (loaded from includes/nav.html) -->
     <div id="site-nav"></div>
 
+    <!-- Section tabs; includes/inject.js marks the one being read -->
+    <nav class="subtabs" aria-label="On this page">
+        <div class="wrap">
+            <ul>
+                <li><a href="#board-title">Standings</a></li>
+                <li><a href="#facts-title">Numbers</a></li>
+                <li><a href="#latest-title">Latest</a></li>
+                <li><a href="#countries-title">Countries</a></li>
+                <li><a href="#merchants-title">Merchants</a></li>
+                <li><a href="#daily-title">Per day</a></li>
+                <li><a href="#epochs-title">Epochs</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <main id="main">
         <section class="hero" aria-labelledby="epoch-title">
             <div class="wrap">
-                <div>
+                <!-- Filled by renderStandby(); decorative, the figures are in the summary -->
+                <div class="standby" id="standby" aria-hidden="true">
+                    <span class="sb-side sb-signal"><span class="sb-antenna"></span><span class="sb-bars"></span><span class="sb-cap"></span></span>
+                    <span class="sb-op"><span class="sb-name" translate="no">PoWBoT</span><span class="sb-time"></span></span>
+                    <span class="sb-side sb-batt"><span class="sb-bars"></span><span class="sb-battery"></span><span class="sb-cap"></span></span>
+                </div>
+                <div class="hero-title">
                     <h1 id="epoch-title">Epoch 6 leaderboard</h1>
                 </div>
-                <a class="mascot-link" href="about.html">
-                    <img class="mascot" src="images/PoWBoT_mascot_240px.png" alt="About PoWBoT" width="150" height="186" fetchpriority="high">
-                </a>
+                <!-- Readouts filled by renderStatus() -->
+                <div class="epoch-status" id="epoch-status" role="group" aria-label="Epoch at a glance">
+                    <div class="es-read" data-read="0"></div>
+                    <div class="es-read" data-read="1"></div>
+                    <a class="mascot-link" href="about.html">
+                        <img class="mascot" src="images/PoWBoT_mascot_240px.png" alt="About PoWBoT" width="150" height="186" fetchpriority="high">
+                    </a>
+                    <div class="es-read" data-read="2"></div>
+                    <div class="es-read" data-read="3"></div>
+                </div>
                 <div class="hero-meta">
                     <p class="summary" id="summary">Loading this epoch…</p>
                     <div class="progress" id="progress"></div>
@@ -133,6 +213,8 @@
     <!-- Finished epochs and the shared "Every epoch" block -->
     <script src="epochs.js"></script>
     <script src="flags.js"></script>
+    <!-- The Countries globe -->
+    <script src="globe.js"></script>
     <script src="visits.js"></script>
     <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Must load
          before any script that fetches live data. -->
@@ -142,6 +224,11 @@
     <script>
         // Global project metadata
         let projectMetadata = {};
+
+        // Member projects and the countries they are in (members.json), for
+        // the standby strip and the status readouts. null until loaded, or if
+        // members.json could not load.
+        let memberTotals = null;
 
         // Approved tracker posts grouped into visits (visits.js): an X post and
         // its Nostr cross-post become one row. null when the tracker could not
@@ -287,6 +374,82 @@
                 : `No posts approved yet this epoch. The first project to post takes the top spot.`;
 
             renderProgress(stats);
+            heroStats = stats;
+            renderStandby(stats);
+            renderStatus(stats);
+        }
+
+        // The stats the hero last drew, so late data (merchants-seen.json)
+        // can redraw the readouts
+        let heroStats = null;
+
+        // Days into the epoch, and its planned length (as renderProgress)
+        function epochDays(stats) {
+            const start = new Date(EPOCH.start), end = new Date(EPOCH.end), now = new Date();
+            if (isNaN(start) || isNaN(end) || now < start) return null;
+            const total = Math.max(1, Math.round((end - start) / DAY_MS));
+            const day = stats.launch?.days_active > 0 ? stats.launch.days_active : Math.max(1, Math.ceil((now - start) / DAY_MS));
+            return { day: Math.min(day, total), total };
+        }
+
+        // Standby strip: signal bars for member projects posting this epoch
+        // (out of 5), battery for the time left in it (out of 4), the epoch
+        // and the time in the middle. Decorative: the summary says it in words.
+        function renderStandby(stats) {
+            const box = document.getElementById('standby');
+            const projects = stats.top_projects?.length || 0;
+            const members = memberTotals?.projects || 0;
+            const days = epochDays(stats);
+            const left = days ? days.total - days.day : 0;
+            const signal = members ? Math.min(5, Math.ceil(projects / members * 5)) : 0;
+            const battery = days ? Math.min(4, Math.ceil(left / days.total * 4)) : 0;
+            const bars = (n, lit, first, step) => Array.from({ length: n }, (_, i) =>
+                `<i class="${i < lit ? 'on' : ''}" style="width:${first + i * step}px"></i>`).join('');
+            box.querySelector('.sb-signal .sb-bars').innerHTML = bars(5, signal, 6, 5);
+            box.querySelector('.sb-signal .sb-cap').textContent = members ? `${projects}/${members} posting` : `${projects} posting`;
+            box.querySelector('.sb-batt .sb-bars').innerHTML = bars(4, battery, 8, 6);
+            box.querySelector('.sb-batt .sb-cap').textContent = days ? plural(left, 'day left', 'days left') : '';
+            const tick = () => {
+                const time = new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
+                box.querySelector('.sb-time').textContent = `${EPOCH.name} · ${time} UTC`;
+            };
+            tick();
+            if (!box.dataset.ticking) { box.dataset.ticking = '1'; setInterval(tick, 30000); }
+        }
+
+        // Status readouts around the mascot. Each shows a share with a bar, and
+        // says it in full for screen readers.
+        function renderStatus(stats) {
+            const countries = stats.countries?.length || 0;
+            const reviewed = stats.reviewer?.total_reviewed || 0;
+            const approved = stats.reviewer?.approved || 0;
+            const merchants = stats.top_merchants || [];
+            const finished = window.POWBOT_EPOCHS || [];
+            const prev = finished[finished.length - 1];
+            const reads = [];
+
+            const memberCountries = memberTotals?.countries || 0;
+            reads.push(memberCountries
+                ? ['Countries', `${countries}/${memberCountries}`, countries / memberCountries, `${countries} of the ${memberCountries} countries with member projects`]
+                : ['Countries', formatNumber(countries), null, `${countries} countries`]);
+            reads.push(reviewed
+                ? ['Approval', `${Math.round(approved / reviewed * 100)}%`, approved / reviewed, `${Math.round(approved / reviewed * 100)}% of reviewed posts approved`]
+                : ['Approval', '–', 0, 'No posts reviewed yet']);
+            reads.push(prev?.posts
+                ? [`Vs ${prev.name}`, `${Math.round(approved / prev.posts * 100)}%`, approved / prev.posts, `${formatNumber(approved)} posts so far, ${Math.round(approved / prev.posts * 100)}% of ${prev.name}'s ${formatNumber(prev.posts)}`]
+                : ['Posts', formatNumber(approved), null, `${formatNumber(approved)} posts approved`]);
+            if (pastMerchants && merchants.length) {
+                const fresh = merchants.filter(m => !pastMerchants.names.has(m.name)).length;
+                reads.push(['New shops', `${fresh}/${merchants.length}`, fresh / merchants.length, `${fresh} of ${merchants.length} merchants are new to PoWBoT`]);
+            } else {
+                reads.push(['Merchants', formatNumber(merchants.length), null, `${merchants.length} merchants`]);
+            }
+
+            reads.forEach(([label, value, share, spoken], i) => {
+                const cell = document.querySelector(`#epoch-status [data-read="${i}"]`);
+                const bar = share === null ? '' : `<span class="seg-bar" style="--v:${Math.max(0, Math.min(1, share)).toFixed(3)}" aria-hidden="true"></span>`;
+                cell.innerHTML = `<span class="es-label" aria-hidden="true">${escapeHtml(label)}</span><span class="es-val num" aria-hidden="true">${escapeHtml(value)}</span>${bar}<span class="visually-hidden">${escapeHtml(label)}: ${escapeHtml(spoken)}</span>`;
+            });
         }
 
         function renderProgress(stats) {
@@ -424,7 +587,7 @@
                 const secondary = by === 'merchants' ? count : merchants;
                 const secondaryText = by === 'merchants' ? plural(count, 'post', 'posts') : plural(merchants, 'merchant', 'merchants');
                 const more = i >= BOARD_ROWS ? ' is-more' : '';
-                const leader = i === 0 ? ' leader on-amber' : '';
+                const leader = i === 0 ? ' leader on-accent' : '';
                 const detailId = `lb-detail-${i}`;
 
                 const visits = allVisits ? (visitsByName[stripFlags(p.name)] || []) : null;
@@ -540,7 +703,7 @@
                 const epochProject = epochByName[name];
                 const dates = datesByName[name] || new Set();
                 const more = i >= BOARD_ROWS ? ' is-more' : '';
-                const leader = i === 0 ? ' leader on-amber' : '';
+                const leader = i === 0 ? ' leader on-accent' : '';
                 const detailId = `lb-detail-${i}`;
                 const merchants = entry.merchants.size;
 
@@ -746,7 +909,12 @@
                     <section class="section" aria-labelledby="countries-title">
                         <h2 id="countries-title">Countries</h2>
                         <p class="section-note">Where this epoch’s projects are. Open one to see its projects in the directory.</p>
-                        ${countries.length ? `<ul class="list">${countryItems}</ul>` : '<p>No countries yet. They appear with each project’s first approved post.</p>'}
+                        ${countries.length ? `
+                        <div class="globe" id="globe">
+                            <canvas role="img" aria-label="Map of Africa with this epoch’s ${plural(countries.length, 'country', 'countries')} marked"></canvas>
+                            <button type="button" class="btn globe-pause">Pause</button>
+                        </div>
+                        <ul class="list">${countryItems}</ul>` : '<p>No countries yet. They appear with each project’s first approved post.</p>'}
                     </section>
                     <section class="section" aria-labelledby="merchants-title">
                         <div class="section-head">
@@ -816,7 +984,7 @@
                 ${total > LIST_ROWS ? `<button type="button" class="btn list-more" data-list="merchant-list" data-label="${label}" aria-controls="merchant-list" aria-expanded="false">${label}</button>` : ''}`;
         }
 
-        pastMerchantsPromise.then(result => { pastMerchants = result; renderMerchantList(); });
+        pastMerchantsPromise.then(result => { pastMerchants = result; renderMerchantList(); if (heroStats) renderStatus(heroStats); });
 
         function renderDaily(stats) {
             const daily = stats.daily || [];
@@ -836,7 +1004,7 @@
             return `
                 <section class="section" aria-labelledby="daily-title">
                     <h2 id="daily-title">Approved posts per day</h2>
-                    <p class="section-note">One bar per UTC day since ${escapeHtml(EPOCH.name)} opened. Today is amber. Hover, tap or use the arrow keys to read a day.</p>
+                    <p class="section-note">One bar per UTC day since ${escapeHtml(EPOCH.name)} opened. Today’s bar is the solid one. Hover, tap or use the arrow keys to read a day.</p>
                     <p class="bars-readout" aria-live="polite">Today, ${escapeHtml(label(today))}</p>
                     <div class="bars" tabindex="0" role="group" aria-label="Approved posts per day over ${daily.length} days. Peak ${max} on ${formatDay(peak?.date)}. Use the left and right arrow keys to read each day.">
                         <span class="bars-scale" aria-hidden="true">${max}</span>
@@ -902,6 +1070,35 @@
                 renderDaily(stats) +
                 renderEpochs(stats);
             renderMerchantList();
+            mountGlobe(stats.countries || []);
+        }
+
+        // The Countries globe (globe.js): a blip per country, labelled with its
+        // ISO code (read from the flag) and project count. Its Pause button
+        // shows only while it moves: not under reduced motion or with screen
+        // effects off (footer switch).
+        function mountGlobe(countries) {
+            const box = document.getElementById('globe');
+            if (!box || !window.PBGlobe) { if (box) box.remove(); return; }
+            const iso = flag => [...String(flag || '')].map(ch => String.fromCharCode(ch.codePointAt(0) - 0x1F1E6 + 65)).join('');
+            const points = countries
+                .map(c => ({ code: iso(c.flag), n: c.count || 0 }))
+                .filter(c => window.PB_COUNTRY_LL[c.code])
+                .map(c => ({
+                    lat: window.PB_COUNTRY_LL[c.code][0], lon: window.PB_COUNTRY_LL[c.code][1],
+                    weight: c.n, label: `${c.code} ${c.n}`, left: window.PB_LABEL_LEFT.has(c.code)
+                }));
+            const globe = window.PBGlobe(box.querySelector('canvas'), { points });
+            const button = box.querySelector('.globe-pause');
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+            const sync = () => {
+                button.hidden = reduce.matches || document.documentElement.classList.contains('fx-off');
+                button.textContent = globe.paused ? 'Play' : 'Pause';
+            };
+            button.addEventListener('click', () => { if (globe.paused) globe.play(); else globe.pause(); sync(); });
+            document.addEventListener('pb:fx', sync);
+            reduce.addEventListener('change', sync);
+            sync();
         }
 
         function applyEpochLabels() {
@@ -932,6 +1129,10 @@
                 // Build project metadata from members.json
                 if (membersResponse && membersResponse.ok) {
                     const membersData = await membersResponse.json();
+                    memberTotals = {
+                        projects: membersData.members.length,
+                        countries: new Set(membersData.members.map(m => m.country).filter(Boolean)).size
+                    };
                     // Build lookup map: project name with flag → profile URL
                     membersData.members.forEach(member => {
                         // Index by both formats for compatibility

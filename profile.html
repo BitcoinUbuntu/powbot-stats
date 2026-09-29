@@ -6,7 +6,8 @@
     <title id="page-title">Project profile | PoWBoT</title>
     <meta name="description" id="page-description" content="A Bitcoin circular economy project in Africa: its story, its proof of work on PoWBoT, and how to donate to it directly over Lightning.">
     <link rel="canonical" id="page-canonical" href="https://powbot.africa/profile.html">
-    <meta name="theme-color" content="#070F0B">
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#C7F0D8">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#37442F">
 
     <!-- Open Graph / Social Preview (crawlers don't run JS, so these stay generic) -->
     <meta property="og:type" content="profile">
@@ -53,7 +54,7 @@
         .hero-logo-placeholder { display: flex; align-items: center; justify-content: center; font-size: var(--fs-2xl); }
         .hero-logo[hidden], .hero-logo-placeholder[hidden] { display: none; }
         .hero-text { min-width: 0; }
-        .hero-text h1 { margin: 0; font-size: clamp(1.75rem, 4.5vw, 2.75rem); letter-spacing: -0.035em; overflow-wrap: anywhere; }
+        .hero-text h1 { margin: 0; font-size: var(--fs-h1); overflow-wrap: anywhere; }
         .location { margin: var(--s2) 0 0; }
         .location .flag { margin-right: var(--s1); }
         .tagline { margin: var(--s3) 0 0; color: var(--muted); max-width: 70ch; }
@@ -62,14 +63,14 @@
         /* ------------------------------------------------ About and support -- */
         .intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 340px); gap: var(--s6) var(--s7); align-items: start; }
         .intro-single { grid-template-columns: minmax(0, 1fr); }
-        .intro h2 { margin: 0 0 var(--s3); font-size: var(--fs-lg); }
+        .intro h2 { margin: 0 0 var(--s3); font-size: 1.75rem; }
         .prose p { margin: 0 0 var(--s4); max-width: 70ch; }
         .prose p:last-child { margin-bottom: 0; }
 
         /* The donation panel's styles are shared: .donate* in css/powbot.css */
 
         /* ----------------------------------------------------------- Epochs -- */
-        .section h3 { margin: var(--s6) 0 var(--s2); font-size: var(--fs-base); }
+        .section h3 { margin: var(--s6) 0 var(--s2); font-size: 1.375rem; }
         .section > h2 + h3 { margin-top: var(--s4); }
         .posts-more { margin-top: var(--s3); }
         /* Beside the tracker link, the row sets the spacing */
@@ -112,7 +113,7 @@
         /* -------------------------------------------------- States and notes -- */
         .loading { margin: 0; padding: var(--s7) 0; color: var(--muted); }
         .page-error { padding-top: var(--s7); padding-bottom: var(--s7); }
-        .page-error h1 { margin: 0 0 var(--s3); font-size: var(--fs-xl); }
+        .page-error h1 { margin: 0 0 var(--s3); font-size: 2rem; }
         .page-error p { margin: 0; max-width: 60ch; }
         .page-error .muted { margin-top: var(--s2); }
         /* The rule runs the full width like the sections above; only the text is kept to a readable line length */

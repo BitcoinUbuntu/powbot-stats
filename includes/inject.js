@@ -9,6 +9,44 @@
     const SUPPORT_URL = 'https://t.me/bitcoinubuntu';
 
     /**
+     * Screen effects (the footer switch): the screen's texture, the shadow
+     * under pixel type, and the globe's motion. Off puts .fx-off on <html>,
+     * and the choice is remembered in this browser. Storage can be blocked
+     * (private windows, strict settings), so every read and write is guarded
+     * and the default is on. Applied straight away, before the includes load.
+     */
+    const FX_KEY = 'pb-screen-effects';
+    let fxSaved = null;
+    try { fxSaved = localStorage.getItem(FX_KEY); } catch (e) { /* default: on */ }
+    if (fxSaved === 'off') document.documentElement.classList.add('fx-off');
+
+    function showFx(on) {
+        document.querySelectorAll('.fx-toggle').forEach(button => {
+            button.setAttribute('aria-checked', String(on));
+            const state = button.querySelector('.fx-state');
+            if (state) state.textContent = on ? 'on' : 'off';
+        });
+    }
+
+    function setFx(on) {
+        document.documentElement.classList.toggle('fx-off', !on);
+        try {
+            if (on) localStorage.removeItem(FX_KEY);
+            else localStorage.setItem(FX_KEY, 'off');
+        } catch (e) { /* works for this visit, just not remembered */ }
+        showFx(on);
+        // The globe (globe.js) listens, to stop or restart its motion
+        document.dispatchEvent(new CustomEvent('pb:fx', { detail: { on } }));
+    }
+
+    function setupFx(footer) {
+        const button = footer && footer.querySelector('.fx-toggle');
+        if (!button) return;
+        showFx(!document.documentElement.classList.contains('fx-off'));
+        button.addEventListener('click', () => setFx(document.documentElement.classList.contains('fx-off')));
+    }
+
+    /**
      * Load and inject navigation
      */
     async function loadNav() {
@@ -41,6 +79,7 @@
             const response = await fetch('includes/footer.html');
             const html = await response.text();
             footerContainer.innerHTML = html;
+            setupFx(footerContainer);
 
             // Update timestamp for all pages
             await updateTimestamp();
@@ -277,6 +316,48 @@
         const chart = event.target.closest && event.target.closest('.bars');
         if (chart) clearBar(chart);
     });
+
+    /**
+     * Section tabs (.subtabs, "On this page"): the tab for the section being
+     * read gets aria-current, and CSS draws it [in brackets]. Sections can
+     * render after the data loads, so the targets are looked up on every
+     * check rather than once. A section counts as being read once its heading
+     * has passed just under the sticky bars.
+     */
+    function setupSubtabs() {
+        const bar = document.querySelector('.subtabs');
+        if (!bar) return;
+        const links = Array.from(bar.querySelectorAll('a[href^="#"]'));
+        let queued = false;
+
+        function update() {
+            queued = false;
+            const nav = document.getElementById('site-nav');
+            const line = Math.max(nav ? nav.getBoundingClientRect().bottom : 0, bar.getBoundingClientRect().bottom) + 24;
+            const atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+            let current = links[0];
+            for (const link of links) {
+                const target = document.getElementById(link.hash.slice(1));
+                if (!target) continue;
+                const top = target.getBoundingClientRect().top;
+                // At the very bottom, the last section on screen counts even if short
+                if (top <= line || (atEnd && top < window.innerHeight)) current = link;
+            }
+            links.forEach(link => {
+                if (link === current) link.setAttribute('aria-current', 'true');
+                else link.removeAttribute('aria-current');
+            });
+        }
+        function queue() {
+            if (queued) return;
+            queued = true;
+            requestAnimationFrame(update);
+        }
+        window.addEventListener('scroll', queue, { passive: true });
+        window.addEventListener('resize', queue);
+        update();
+    }
+    setupSubtabs();
 
     // Export support URL for use in other scripts
     window.SUPPORT_URL = SUPPORT_URL;
