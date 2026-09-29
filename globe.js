@@ -8,8 +8,8 @@
  * It sways slowly, and each blip pulses. It draws at most 30 frames a second,
  * only while on screen and the tab is visible, and holds still under
  * prefers-reduced-motion or with screen effects off (html.fx-off, the footer
- * switch). The colour is the theme's --link, repainted when the page
- * changes between light and dark (the device, or the header switch).
+ * switch). The colour is the theme's --link, repainted when the header
+ * switch changes between light and dark.
  */
 (function () {
     'use strict';
@@ -58,7 +58,6 @@
     window.PBGlobe = function (canvas, { points = [] } = {}) {
         const ctx = canvas.getContext('2d');
         const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-        const dark = matchMedia('(prefers-color-scheme: dark)');
         let w = 0, h = 0, raf = 0, last = 0, onScreen = true, paused = false, rgb = '55, 68, 47';
 
         const still = () => paused || reduce.matches || document.documentElement.classList.contains('fx-off');
@@ -174,7 +173,6 @@
         document.addEventListener('visibilitychange', run);
         document.addEventListener('pb:fx', run);
         reduce.addEventListener('change', run);
-        dark.addEventListener('change', () => { readColour(); draw(last); });
         document.addEventListener('pb:theme', () => { readColour(); draw(last); });
         run();
 

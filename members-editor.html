@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#C7F0D8">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#37442F">
+    <meta name="theme-color" content="#37442F">
     <script>
-        // Light or dark as chosen with the header switch, and screen effects if
-        // turned off (both kept by includes/inject.js): applied before the page
-        // first paints, so it never flashes the other way
+        // Light, if chosen with the header switch (dark is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
         (function () {
             try {
-                var theme = localStorage.getItem('pb-theme');
-                if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+                if (localStorage.getItem('pb-theme') === 'light') document.documentElement.dataset.theme = 'light';
                 if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
-            } catch (e) { /* storage blocked: follow the device */ }
+            } catch (e) { /* storage blocked: the defaults, dark with effects on */ }
         })();
     </script>
     <title>Members editor | PoWBoT</title>

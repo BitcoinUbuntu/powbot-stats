@@ -40,15 +40,13 @@
     }
 
     /**
-     * Light or dark (the header switch). Until someone chooses, the site
-     * follows the device. A choice is kept in this browser and applied
-     * before the first paint by a snippet in each page's <head>; choosing
-     * the mode the device already uses clears it, so the site follows the
-     * device again. The browser's own bar colour (theme-color) follows too.
+     * Light or dark (the header switch). Dark is the default; light, once
+     * chosen, is kept in this browser and applied before the first paint by
+     * a snippet in each page's <head>. Choosing dark again clears it. The
+     * browser's own bar colour (theme-color) follows too.
      */
     const THEME_KEY = 'pb-theme';
-    const deviceDark = window.matchMedia('(prefers-color-scheme: dark)');
-    const themeNow = () => document.documentElement.dataset.theme || (deviceDark.matches ? 'dark' : 'light');
+    const themeNow = () => (document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
 
     function showTheme() {
         const root = document.documentElement;
@@ -57,24 +55,23 @@
             button.setAttribute('aria-pressed', String(dark));
             button.title = dark ? 'Switch to light' : 'Switch to dark';
         });
-        // A chosen mode sets both theme-color tags to its page colour;
-        // without one they go back to their own, per device mode
+        // The page's own colour for the browser's bar: the olive tag's colour
+        // by default, the glass once light is chosen
         const night = getComputedStyle(root).getPropertyValue('--night').trim();
         document.querySelectorAll('meta[name="theme-color"]').forEach(meta => {
             if (meta.dataset.own === undefined) meta.dataset.own = meta.getAttribute('content');
-            meta.setAttribute('content', root.dataset.theme && night ? night : meta.dataset.own);
+            meta.setAttribute('content', !dark && night ? night : meta.dataset.own);
         });
     }
 
     function setTheme(mode) {
         const root = document.documentElement;
-        const device = deviceDark.matches ? 'dark' : 'light';
         try {
-            if (mode === device) localStorage.removeItem(THEME_KEY);
-            else localStorage.setItem(THEME_KEY, mode);
+            if (mode === 'light') localStorage.setItem(THEME_KEY, 'light');
+            else localStorage.removeItem(THEME_KEY);
         } catch (e) { /* works for this visit, just not remembered */ }
-        if (mode === device) delete root.dataset.theme;
-        else root.dataset.theme = mode;
+        if (mode === 'light') root.dataset.theme = 'light';
+        else delete root.dataset.theme;
         showTheme();
         // The globe (globe.js) listens, to redraw in the new colours
         document.dispatchEvent(new CustomEvent('pb:theme', { detail: { mode } }));
@@ -85,7 +82,6 @@
         if (!button) return;
         showTheme();
         button.addEventListener('click', () => setTheme(themeNow() === 'dark' ? 'light' : 'dark'));
-        deviceDark.addEventListener('change', showTheme);
     }
 
     function setupFx(footer) {
@@ -387,13 +383,17 @@
             const nav = document.getElementById('site-nav');
             const line = Math.max(nav ? nav.getBoundingClientRect().bottom : 0, bar.getBoundingClientRect().bottom) + 24;
             const atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
-            let current = links[0];
+            let current = links[0], currentTop = -Infinity;
             for (const link of links) {
                 const target = document.getElementById(link.hash.slice(1));
                 if (!target) continue;
                 const top = target.getBoundingClientRect().top;
-                // At the very bottom, the last section on screen counts even if short
-                if (top <= line || (atEnd && top < window.innerHeight)) current = link;
+                // At the very bottom, the last section on screen counts even if
+                // short. Headings side by side sit level: the first keeps the tab.
+                if ((top <= line || (atEnd && top < window.innerHeight)) && top > currentTop + 1) {
+                    current = link;
+                    currentTop = top;
+                }
             }
             links.forEach(link => {
                 if (link === current) link.setAttribute('aria-current', 'true');
@@ -407,6 +407,9 @@
         }
         window.addEventListener('scroll', queue, { passive: true });
         window.addEventListener('resize', queue);
+        // Sections fill in once the data loads: look again when the page grows
+        // (a short page still loading counts as "at the end" otherwise)
+        if (window.ResizeObserver) new ResizeObserver(queue).observe(document.body);
         update();
     }
     setupSubtabs();

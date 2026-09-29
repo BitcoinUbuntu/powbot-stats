@@ -6,18 +6,16 @@
     <title>CBAF members – Bitcoin projects across Africa | PoWBoT</title>
     <meta name="description" content="Directory of grassroots Bitcoin circular economy projects across Africa. See each project’s proof of work on PoWBoT and donate to it directly over Lightning.">
     <link rel="canonical" href="https://powbot.africa/members.html">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#C7F0D8">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#37442F">
+    <meta name="theme-color" content="#37442F">
     <script>
-        // Light or dark as chosen with the header switch, and screen effects if
-        // turned off (both kept by includes/inject.js): applied before the page
-        // first paints, so it never flashes the other way
+        // Light, if chosen with the header switch (dark is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
         (function () {
             try {
-                var theme = localStorage.getItem('pb-theme');
-                if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+                if (localStorage.getItem('pb-theme') === 'light') document.documentElement.dataset.theme = 'light';
                 if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
-            } catch (e) { /* storage blocked: follow the device */ }
+            } catch (e) { /* storage blocked: the defaults, dark with effects on */ }
         })();
     </script>
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
@@ -50,7 +48,7 @@
         /* Directory layout only. Colours, type and components: css/powbot.css */
         .page-head { padding: var(--s7) 0 var(--s6); border-bottom: 1px solid var(--line); }
         .page-head h1 { margin: 0; font-size: var(--fs-h1); }
-        .page-head .lede { margin: var(--s3) 0 var(--s5); color: var(--muted); max-width: 60ch; font-size: var(--fs-md); }
+        .page-head .lede { margin: var(--s3) 0 0; color: var(--muted); max-width: 60ch; font-size: var(--fs-md); }
 
         /* Controls */
         .controls { display: grid; gap: var(--s4); padding: var(--s5) 0; }
@@ -133,8 +131,14 @@
         .post-count b { font: 700 var(--fs-md)/1 var(--font-mono); color: var(--text); letter-spacing: -0.02em; margin-right: 4px; }
         /* One row, always: a card never grows a line for its badges */
         .badge-emojis { display: flex; gap: 6px; margin: 0; min-height: 1.3em; overflow: hidden; font-size: 1.05rem; line-height: 1.2; }
-        .card-actions { display: flex; gap: var(--s2); margin-top: var(--s1); }
-        .card-actions .btn { flex: 1; min-width: 0; }
+        /* No [ brackets ] in a card, where they don't fit: Donate is the solid
+           block, View profile is outlined. Equal halves, labels on one line
+           (they only stack if a card were ever too narrow for both). */
+        .card-actions { display: flex; flex-wrap: wrap; gap: var(--s2); margin-top: var(--s1); }
+        .card-actions .btn { flex: 1 1 0; min-width: max-content; padding: 0 var(--s3); white-space: nowrap; }
+        .card-actions .btn::before, .card-actions .btn::after { content: none; }
+        .card-actions a.btn { border: 1px dashed var(--line-strong); }
+        .card-actions a.btn:hover { border-color: var(--accent); }
         /* .pb button resets font and colour, which would override .btn on <button> */
         .pb button.btn { font: 400 var(--fs-sm)/1.2 var(--font-mono); color: var(--link); }
         .pb button.btn:hover { color: var(--night); }
@@ -168,11 +172,6 @@
             <header class="page-head">
                 <h1>CBAF members</h1>
                 <p class="lede">Find a Bitcoin circular economy project in Africa and support it directly.</p>
-                <ul class="facts">
-                    <li><b class="num" id="total-count">–</b><span>projects</span></li>
-                    <li><b class="num" id="active-count">–</b><span>active on PoWBoT</span></li>
-                    <li><b class="num" id="country-count">–</b><span>countries</span></li>
-                </ul>
             </header>
 
             <div class="controls">
@@ -260,7 +259,6 @@
 
                 initializeFilters();
                 applyURLFilters();
-                updateStats();
                 renderMembers();
             })
             .catch(err => {
@@ -367,14 +365,6 @@
             }
 
             return totalPosts;
-        }
-
-        function updateStats() {
-            document.getElementById('total-count').textContent = allMembers.length;
-            document.getElementById('active-count').textContent = allMembers.filter(m => getRecentEpochPostCount(m) > 0).length;
-
-            const countries = new Set(allMembers.map(m => m.name_with_flag.match(/\(([^)]+)\)/)?.[1]).filter(Boolean));
-            document.getElementById('country-count').textContent = countries.size;
         }
 
         function filterMembers() {

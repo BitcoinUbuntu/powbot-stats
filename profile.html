@@ -6,18 +6,16 @@
     <title id="page-title">Project profile | PoWBoT</title>
     <meta name="description" id="page-description" content="A Bitcoin circular economy project in Africa: its story, its proof of work on PoWBoT, and how to donate to it directly over Lightning.">
     <link rel="canonical" id="page-canonical" href="https://powbot.africa/profile.html">
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#C7F0D8">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#37442F">
+    <meta name="theme-color" content="#37442F">
     <script>
-        // Light or dark as chosen with the header switch, and screen effects if
-        // turned off (both kept by includes/inject.js): applied before the page
-        // first paints, so it never flashes the other way
+        // Light, if chosen with the header switch (dark is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
         (function () {
             try {
-                var theme = localStorage.getItem('pb-theme');
-                if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+                if (localStorage.getItem('pb-theme') === 'light') document.documentElement.dataset.theme = 'light';
                 if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
-            } catch (e) { /* storage blocked: follow the device */ }
+            } catch (e) { /* storage blocked: the defaults, dark with effects on */ }
         })();
     </script>
 
