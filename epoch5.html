@@ -327,10 +327,9 @@
             const merchants = stats.top_merchants || [];
             const countries = stats.countries || [];
 
-            // Each opens its posts in the tracker, by the name in its search box:
-            // for every Epoch 5 merchant that finds exactly the posts counted here
+            // Each opens its posts in the tracker, filtered to that merchant exactly
             const merchantItems = merchants.map((m, i) => `
-                <li class="${i >= LIST_ROWS ? 'is-more' : ''}"><a href="${attrSafe(trackerUrl({ search: m.name }))}">
+                <li class="${i >= LIST_ROWS ? 'is-more' : ''}"><a href="${attrSafe(trackerUrl({ merchant: m.name }))}">
                     <span class="li-main">${escapeHtml(m.name)}</span>
                     <span class="li-side num">${plural(m.count, 'post', 'posts')}</span>
                 </a></li>`).join('');

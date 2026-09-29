@@ -251,7 +251,9 @@
                 // Epoch 4 and earlier lived in Google Sheets, so only the thinner
                 // stats snapshot exists: top_merchants[] with posts[] of
                 // {url, date, project}. No btcmap_link for those.
-                const STATS_ARCHIVES = ['stats-epoch4.json'];
+                // The Epoch 4 testing period (December 2025) sits in
+                // stats-historical.json; its merchants are read from there below.
+                const STATS_ARCHIVES = ['stats-epoch4.json', 'stats-historical.json'];
 
                 // Every fetch fails to null independently - one missing archive must
                 // not blank the page, it just means that epoch is absent.
@@ -277,19 +279,19 @@
 
                 // Find this merchant across the live epoch AND every tracker archive.
                 //
-                // Rejected submissions are excluded: a merchant profile is a record
-                // of accepted PoW, and counting failed attempts would overstate it.
-                // The tracker files carry every submission regardless of outcome,
-                // unlike the stats archives below which only ever held accepted
-                // posts - so without this filter the two sources would disagree
-                // about the same merchant. A missing status is treated as NOT
-                // rejected, so nothing is dropped just for lacking the field.
-                const isRejected = s => (s.status || '').trim().toLowerCase() === 'rejected';
+                // Only accepted submissions count: a merchant profile is a record
+                // of accepted PoW. The tracker files carry every submission
+                // regardless of outcome, unlike the stats archives below which
+                // only ever held accepted posts, so rejected ones and ones still
+                // pending review are left out ("Approved" and "Processed" stay).
+                // A missing status is treated as accepted, so nothing is dropped
+                // just for lacking the field.
+                const isOpenOrRejected = s => ['rejected', 'pending review'].includes((s.status || '').trim().toLowerCase());
 
                 const merchantSubmissions = trackerFiles
                     .filter(Boolean)
                     .flatMap(t => (t.submissions || []).filter(s =>
-                        normalizeId(s.merchant_name) === normalizedParam && !isRejected(s)
+                        normalizeId(s.merchant_name) === normalizedParam && !isOpenOrRejected(s)
                     ));
 
                 // Convert tracker submissions to post format
@@ -302,6 +304,9 @@
 
                 // Find this merchant in the older stats-only archives
                 const archivedMerchants = statsArchives
+                    .filter(Boolean)
+                    // stats-historical.json: only the testing period lists merchants
+                    .map(a => a.epochs ? a.epochs.epoch4_testing : a)
                     .filter(Boolean)
                     .map(a => a.top_merchants?.find(m =>
                         normalizeId(m.name) === normalizedParam
