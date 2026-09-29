@@ -1001,6 +1001,11 @@
                 renderEpochs(stats);
             renderMerchantList();
             mountGlobe(stats.countries || []);
+
+            // A link to a section (index.html#merchants-title, the back arrow on
+            // a merchant page) arrives before the section is drawn: go to it now
+            const linked = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+            if (linked) linked.scrollIntoView();
         }
 
         // The Countries globe (globe.js): a blip per country, labelled with its

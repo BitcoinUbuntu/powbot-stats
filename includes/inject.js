@@ -106,6 +106,9 @@
             // Highlight current page
             highlightCurrentPage();
 
+            // On a page with a parent, the wordmark goes back there
+            setupBack(navContainer.querySelector('.site-nav .brand'));
+
             // Phone menu button
             setupMenu(navContainer.querySelector('.site-nav'));
 
@@ -191,6 +194,66 @@
     }
 
     /**
+     * The wordmark's link goes home, except on the pages people reach from
+     * elsewhere on the site (a profile, a merchant, a finished epoch). There
+     * it shows the back arrow in place of the bot head and goes back where
+     * the visitor came from, or, arriving from outside the site, to the
+     * page's parent below. It says where it goes (aria-label, and a tooltip).
+     * Pages are matched by name, with or without ".html".
+     */
+    const PARENTS = {
+        'profile': () => ({ href: 'members.html', label: 'Back to the directory' }),
+        'profile-edit': () => {
+            const id = new URLSearchParams(location.search).get('id');
+            return id
+                ? { href: 'profile.html?id=' + encodeURIComponent(id), label: 'Back to the profile' }
+                : { href: 'members.html', label: 'Back to the directory' };
+        },
+        'merchant-profile': () => ({ href: 'index.html#merchants-title', label: 'Back to the merchants' }),
+        'epoch5': () => ({ href: 'archive.html', label: 'Back to the archive' })
+    };
+
+    // What to call each page in "Back to ..."
+    const PAGE_NAMES = {
+        index: 'the stats', members: 'the directory', tracker: 'the tracker', archive: 'the archive',
+        epoch5: 'Epoch 5', profile: 'the profile', 'merchant-profile': 'the merchant',
+        about: 'About', guidelines: 'the guidelines', disclaimer: 'the disclaimer'
+    };
+    const pageOf = path => path.split('/').pop().replace(/\.html$/, '') || 'index';
+
+    // The page of this site the visitor came from, if any (not this page itself)
+    function sitePageBefore() {
+        let from;
+        try { from = new URL(document.referrer); } catch (e) { return null; }
+        if (from.origin !== location.origin) return null;
+        if (from.pathname === location.pathname && from.search === location.search) return null;
+        return PAGE_NAMES[pageOf(from.pathname)] ? from : null;
+    }
+
+    function setupBack(brand) {
+        const page = pageOf(location.pathname);
+        if (!brand || !PARENTS[page]) return;
+        let { href, label } = PARENTS[page]();
+        const from = sitePageBefore();
+        // Never back into a page's own editor (profile -> edit -> profile)
+        const origin = from && !(page === 'profile' && pageOf(from.pathname) === 'profile-edit') ? from : null;
+        if (origin) {
+            href = origin.href;
+            label = `Back to ${PAGE_NAMES[pageOf(origin.pathname)]}`;
+            // A plain click steps back in history, which also restores the
+            // place on that page; opening in a new tab still follows the link
+            brand.addEventListener('click', event => {
+                if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+                if (history.length > 1) { event.preventDefault(); history.back(); }
+            });
+        }
+        brand.href = href;
+        brand.setAttribute('aria-label', label);
+        brand.title = label;
+        brand.classList.add('is-back');
+    }
+
+    /**
      * Phone menu: the nav links fold behind a button below 720px.
      * A disclosure (button + aria-expanded), not an ARIA menu: the links stay
      * ordinary links in the tab order once the panel is open.
@@ -253,6 +316,43 @@
         return null;
     }
 
+
+    /**
+     * Back (or forward) to a page whose content draws after its data loads,
+     * like the homepage or the directory: the browser restores the scroll
+     * position before that content exists, and lands at the top. So remember
+     * the position on leaving, and on a back or forward visit return to it
+     * once the page is tall enough. Stops if the visitor scrolls first, and
+     * after 8 seconds.
+     */
+    (function keepPlaceOnReturn() {
+        const key = 'pb-scroll:' + location.pathname + location.search;
+        window.addEventListener('pagehide', () => {
+            try { sessionStorage.setItem(key, String(Math.round(window.scrollY))); } catch (e) { /* not remembered */ }
+        });
+        const visit = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+        if (!visit || visit.type !== 'back_forward' || !window.ResizeObserver) return;
+        let y = 0;
+        try { y = Number(sessionStorage.getItem(key)) || 0; } catch (e) { return; }
+        if (y <= 0) return;
+
+        const inputs = ['wheel', 'touchstart', 'keydown', 'mousedown'];
+        const watcher = new ResizeObserver(tryScroll);
+        const timer = setTimeout(stop, 8000);
+        function stop() {
+            watcher.disconnect();
+            clearTimeout(timer);
+            inputs.forEach(type => window.removeEventListener(type, stop));
+        }
+        function tryScroll() {
+            if (document.documentElement.scrollHeight - window.innerHeight < y) return;
+            window.scrollTo(0, y);
+            stop();
+        }
+        inputs.forEach(type => window.addEventListener(type, stop, { passive: true }));
+        watcher.observe(document.body);
+        tryScroll();
+    })();
 
     /**
      * Collapsing a long list ("Show fewer", "Show top 10") removes rows above
