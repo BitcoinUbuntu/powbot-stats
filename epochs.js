@@ -12,12 +12,19 @@
 (function () {
     'use strict';
 
+    // Each note says how that epoch's rules differed: the ground rules (a real
+    // payment, the merchant receiving sats directly) have held since Epoch 1.
     window.POWBOT_EPOCHS = [
-        { name: 'Epoch 1', when: 'May 2025', posts: 81, href: 'archive.html#epoch-1', note: '' },
-        { name: 'Epoch 2', when: 'Aug 2025', posts: 298, href: 'archive.html#epoch-2', note: '' },
-        { name: 'Epoch 3', when: 'Nov 2025', posts: 604, href: 'archive.html#epoch-3', note: '' },
-        { name: 'Epoch 4', when: 'Dec 2025 to Mar 2026', posts: 187 + 1697, href: 'archive.html#epoch-4', note: '' },
-        { name: 'Epoch 5', when: 'Mar to Jul 2026', posts: 1985, href: 'epoch5.html', note: '' }
+        { name: 'Epoch 1', when: 'May 2025', posts: 81, href: 'archive.html#epoch-1',
+            note: 'Proof-of-work videos begin, an idea from Hermann of Bitcoin Ekasi: film a real bitcoin payment at a merchant who receives the sats directly. Every post checked by hand.' },
+        { name: 'Epoch 2', when: 'Aug 2025', posts: 298, href: 'archive.html#epoch-2',
+            note: 'The same ground rules, with posts on Nostr as well as X. Still checked by hand.' },
+        { name: 'Epoch 3', when: 'Nov 2025', posts: 604, href: 'archive.html#epoch-3',
+            note: 'The last epoch checked by hand. The bot’s first trial followed in December.' },
+        { name: 'Epoch 4', when: 'Dec 2025 to Mar 2026', posts: 187 + 1697, href: 'archive.html#epoch-4',
+            note: 'The bot takes over: #spedn, a BTCMap link, the merchant’s Lightning address, a fixed location and the required video scenes. No posting limits.' },
+        { name: 'Epoch 5', when: 'Mar to Jul 2026', posts: 1985, href: 'epoch5.html',
+            note: 'The first limits: one post per merchant per platform a day, and from 7 April at most five merchants a day.' }
     ];
 
     // Shown with every copy of the block

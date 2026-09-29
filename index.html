@@ -959,7 +959,7 @@
 
         function renderEpochs(stats) {
             const live = { name: EPOCH.name, when: 'live now', posts: stats.reviewer?.approved || 0, href: '#main',
-                note: 'Current rules: <a href="guidelines.html">posting guidelines</a>.', noteHtml: true };
+                note: 'Stricter limits that reward reaching new merchants: three a week per project, each once per platform, with a reduced reward for the cross-post. The full rules: <a href="guidelines.html">posting guidelines</a>.', noteHtml: true };
             const total = window.epochsTotal() + live.posts;
             return window.renderEpochBars({
                 id: 'epochs-title',
