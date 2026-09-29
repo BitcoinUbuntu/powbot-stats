@@ -28,27 +28,19 @@
 
         /* Do and don't lists: the heading says which; the rule colour only reinforces it */
         .prose .callout { margin: 0 0 var(--s4); }
-        .callout h3 { margin: 0 0 var(--s3); font-size: 1.75rem; color: var(--link); }
+        .callout h3 { margin: 0 0 var(--s3); font-size: 1.375rem; color: var(--link); }
         .callout.danger h3 { color: var(--danger); }
         .callout ul { margin: 0; }
         .callout li:last-child { margin-bottom: 0; }
+        /* A line after a box's list ("So a full week is 6 posts") */
+        .callout ul + p { margin-top: var(--s3); }
         .rules li { margin-bottom: var(--s3); }
-        .prose .marks { list-style: none; padding-left: 0; }
-        .marks li { display: flex; gap: var(--s3); }
-        .marks .mark { flex: none; }
 
-        /* Required video elements: a numbered sequence */
-        .prose .elements { list-style: none; margin: 0 0 var(--s4); padding: 0; counter-reset: el; }
-        .elements li {
-            counter-increment: el;
-            display: grid; grid-template-columns: 2rem 2rem minmax(0, 1fr); align-items: baseline; gap: var(--s2);
-            margin: 0; padding: var(--s3) 0; border-bottom: 1px solid var(--line);
-        }
-        .elements li:first-child { border-top: 1px solid var(--line); }
-        .elements li::before { content: counter(el) "."; font: 400 var(--fs-sm)/1 var(--font-mono); color: var(--muted); }
-        .elements .el-icon { font-size: var(--fs-md); line-height: 1; }
-        .elements .el-name { display: block; font-weight: 700; color: var(--heading); }
-        .elements .el-desc { display: block; color: var(--muted); }
+        /* Required video elements: a numbered sequence, one line each */
+        .prose .elements { margin: 0 0 var(--s4); }
+        .elements li { margin-bottom: var(--s1); }
+        .elements .el-name { font-weight: 700; color: var(--heading); }
+        .elements .el-desc { color: var(--muted); }
 
         /* Suggested post: keeps its line breaks, wraps instead of scrolling */
         .example { margin: 0 0 var(--s4); }
@@ -85,7 +77,6 @@
                 <h2 id="qualifies">What qualifies</h2>
                 <div class="prose">
                     <div class="callout">
-                        <h3>Counts</h3>
                         <p>Your video post must meet <strong>all</strong> of these requirements:</p>
                         <ul class="rules">
                             <li><strong>Include #spedn hashtag:</strong> Your post must include the hashtag <code>#spedn</code></li>
@@ -112,17 +103,17 @@
                     <p>This means:</p>
                     <div class="callout">
                         <h3>Counts</h3>
-                        <ul class="marks">
-                            <li><span class="mark" aria-hidden="true">✅</span><span>3 different merchants in a week – full reward each</span></li>
-                            <li><span class="mark" aria-hidden="true">✅</span><span>Each of those 3 also posted to the other platform – ~25% of the first post each</span></li>
-                            <li><span class="mark" aria-hidden="true">✅</span><span>So a full week is <strong>6 posts</strong>: 3 merchants × 2 platforms</span></li>
+                        <ul>
+                            <li>3 different merchants in a week – full reward each</li>
+                            <li>Each of those 3 also posted to the other platform – ~25% of the first post each</li>
                         </ul>
+                        <p>So a full week is <strong>6 posts</strong>: 3 merchants × 2 platforms</p>
                     </div>
                     <div class="callout danger">
-                        <h3>Won’t count</h3>
-                        <ul class="marks">
-                            <li><span class="mark" aria-hidden="true">❌</span><span>The same merchant twice on the same platform in one week</span></li>
-                            <li><span class="mark" aria-hidden="true">❌</span><span>A 4th new merchant in the same week</span></li>
+                        <h3>Doesn’t count</h3>
+                        <ul>
+                            <li>The same merchant twice on the same platform in one week</li>
+                            <li>A 4th new merchant in the same week</li>
                         </ul>
                     </div>
                     <p><strong>Tip:</strong> Spread your posts throughout the week for maximum visibility.</p>
@@ -134,13 +125,13 @@
                 <h2 id="elements">Required video elements</h2>
                 <div class="prose">
                     <ol class="elements">
-                        <li><span class="el-icon" aria-hidden="true">🏪</span><span><span class="el-name">Shopfront</span><span class="el-desc">Brief exterior/street view</span></span></li>
-                        <li><span class="el-icon" aria-hidden="true">🛍️</span><span><span class="el-name">Shop interior</span><span class="el-desc">Brief overview inside</span></span></li>
-                        <li><span class="el-icon" aria-hidden="true">₿</span><span><span class="el-name">Bitcoin sign</span><span class="el-desc">“Bitcoin Accepted” signage</span></span></li>
-                        <li><span class="el-icon" aria-hidden="true">🛒</span><span><span class="el-name">Selection</span><span class="el-desc">Customer choosing product</span></span></li>
-                        <li><span class="el-icon" aria-hidden="true">📱</span><span><span class="el-name">Transaction</span><span class="el-desc">Payment process clearly shown</span></span></li>
-                        <li><span class="el-icon" aria-hidden="true">✅</span><span><span class="el-name">Confirmation</span><span class="el-desc">Payment success screen</span></span></li>
-                        <li><span class="el-icon" aria-hidden="true">🎯</span><span><span class="el-name">Ending screen</span><span class="el-desc">Project donation QR codes</span></span></li>
+                        <li><span class="el-name">Shopfront:</span> <span class="el-desc">Brief exterior/street view</span></li>
+                        <li><span class="el-name">Shop interior:</span> <span class="el-desc">Brief overview inside</span></li>
+                        <li><span class="el-name">Bitcoin sign:</span> <span class="el-desc">“Bitcoin Accepted” signage</span></li>
+                        <li><span class="el-name">Selection:</span> <span class="el-desc">Customer choosing product</span></li>
+                        <li><span class="el-name">Transaction:</span> <span class="el-desc">Payment process clearly shown</span></li>
+                        <li><span class="el-name">Confirmation:</span> <span class="el-desc">Payment success screen</span></li>
+                        <li><span class="el-name">Ending screen:</span> <span class="el-desc">Project donation QR codes</span></li>
                     </ol>
                     <p><strong>Keep it short:</strong> Videos should be 45–60 seconds maximum. Focus on showing the transaction and required elements. Edit your clips to capture the essential moments efficiently.</p>
                     <p><strong>Proper formatting:</strong> Crop your videos correctly. Do not edit portrait videos onto a horizontal canvas – keep videos in their native orientation.</p>
@@ -172,7 +163,6 @@ btcmap.org/merchant/12345
                 <h2 id="rejected">What doesn’t qualify</h2>
                 <div class="prose">
                     <div class="callout danger">
-                        <h3>Won’t count</h3>
                         <ul class="rules">
                             <li><strong>Fiat settlement:</strong> Merchant receiving fiat through off-ramps</li>
                             <li><strong>No verifiable location:</strong> Random sellers, unidentifiable locations, temporary stands, street vendors</li>
