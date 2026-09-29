@@ -211,22 +211,22 @@
                 ? { href: 'profile.html?id=' + encodeURIComponent(id), label: 'Back to the profile' }
                 : { href: 'members.html', label: 'Back to the directory' };
         },
-        'merchant-profile': () => ({ href: 'index.html#merchants-title', label: 'Back to the merchants' }),
+        'merchant-profile': () => ({ href: 'merchants.html', label: 'Back to the merchants' }),
         'epoch5': () => ({ href: 'archive.html', label: 'Back to the archive' })
     };
 
     // Top-level pages that another page can open filtered: the directory for
-    // one country, the tracker for one project. Opened that way from a page of
-    // this site, they're a drill-down and get the back arrow too. Plain, or
-    // arriving from outside, they keep the bot head.
-    const DRILLDOWNS = ['members', 'tracker'];
+    // one country, its merchants for one epoch, the tracker for one project.
+    // Opened that way from a page of this site, they're a drill-down and get
+    // the back arrow too. Plain, or arriving from outside, they keep the bot head.
+    const DRILLDOWNS = ['members', 'merchants', 'tracker'];
     // Pages opened from the footer or a link on another page: from a page of
     // this site they get the back arrow; arriving from outside, the bot head
     const ASIDES = ['about', 'disclaimer'];
 
     // What to call each page in "Back to ..."
     const PAGE_NAMES = {
-        index: 'the stats', members: 'the directory', tracker: 'the tracker', archive: 'the archive',
+        index: 'the stats', members: 'the directory', merchants: 'the merchants', tracker: 'the tracker', archive: 'the archive',
         epoch5: 'Epoch 5', profile: 'the profile', 'merchant-profile': 'the merchant',
         about: 'About', guidelines: 'the guidelines', disclaimer: 'the disclaimer'
     };
@@ -323,7 +323,9 @@
         // Map filenames to page identifiers (only for pages in nav)
         if (filename === '' || filename === 'index.html') return 'index';
         if (filename.startsWith('members')) return 'members';
-        if (filename.startsWith('profile')) return 'members'; // Profile pages highlight Directory
+        // The Directory's other tab, profiles and merchant pages highlight Directory
+        if (filename.startsWith('merchant')) return 'members';
+        if (filename.startsWith('profile')) return 'members';
         if (filename.startsWith('archive')) return 'archive';
         if (filename.startsWith('tracker')) return 'tracker';
         if (filename.startsWith('guidelines')) return 'guidelines';

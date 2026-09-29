@@ -916,11 +916,12 @@
                     </a></li>`).join('');
             }
 
-            const label = `Show all ${formatNumber(total)} merchants`;
+            // The rest are in the Directory's Merchants tab, filtered the same way
+            const allHref = `merchants.html?epoch=${merchantView === 'new' ? 'new' : EPOCH.number}`;
             body.innerHTML = `
                 <p class="section-note">${note}</p>
                 ${total ? `<ul class="list" id="merchant-list">${items}</ul>` : ''}
-                ${total > BOARD_ROWS ? `<button type="button" class="btn list-more" data-list="merchant-list" data-label="${label}" aria-controls="merchant-list" aria-expanded="false">${label}</button>` : ''}`;
+                ${total > BOARD_ROWS ? `<p class="list-link"><a class="btn" href="${attrSafe(allHref)}">All ${formatNumber(total)} ${merchantView === 'new' ? 'new merchants' : 'merchants'} in the directory</a></p>` : ''}`;
         }
 
         pastMerchantsPromise.then(result => { pastMerchants = result; renderMerchantList(); if (heroStats) renderStatus(heroStats); });
