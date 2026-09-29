@@ -2,7 +2,9 @@
  * Wireframe globe of Africa with a blip for each country (homepage,
  * Countries). Plain canvas and an orthographic projection, no library.
  *
- *   const globe = PBGlobe(canvas, { points: [{ lat, lon, label, weight, left }] });
+ *   const globe = PBGlobe(canvas, { points: [{ lat, lon, label, weight, left, quiet }] });
+ *   A quiet point (a member country with no posts yet) is a small hollow
+ *   square: no pulse, no label.
  *   globe.pause(); globe.play(); globe.paused
  *
  * It sways slowly, and each blip pulses. It draws at most 30 frames a second,
@@ -50,7 +52,8 @@
         SC: [-4.7, 55.5], SL: [8.5, -11.8], SO: [5.2, 46.2], ZA: [-29.0, 25.0], SS: [6.9, 31.3], SD: [12.9, 30.2],
         TZ: [-6.4, 34.9], TG: [8.6, 0.8], TN: [33.9, 9.5], UG: [1.4, 32.3], ZM: [-13.1, 27.8], ZW: [-19.0, 29.2]
     };
-    // Where a neighbour sits just to the right, the label goes on the left
+    // Labels that prefer the left (a neighbour usually sits to the right).
+    // Any label also moves over by itself if a point is in its way.
     window.PB_LABEL_LEFT = new Set(['GH', 'CI', 'LR', 'SL', 'GN', 'GW', 'GM', 'SN', 'MR', 'BF', 'ML', 'BI', 'RW', 'UG', 'MW']);
 
     const RAD = Math.PI / 180;
@@ -137,9 +140,21 @@
             // Blips: a square, a pulse ring, a label
             ctx.font = '13px "Share Tech Mono", ui-monospace, monospace';
             ctx.textBaseline = 'middle';
-            points.forEach((pt, i) => {
-                const [x, y, ok] = proj(pt.lat, pt.lon);
-                if (!ok) return;
+            // Quiet points first, so an active label always draws over them
+            const seen = points.filter(pt => pt.quiet).concat(points.filter(pt => !pt.quiet))
+                .map(pt => { const [x, y, ok] = proj(pt.lat, pt.lon); return { pt, x, y, ok }; })
+                .filter(v => v.ok);
+            // Is the stretch x0..x1 at this point's height free of other points?
+            const free = (me, x0, x1) => !seen.some(o => o !== me
+                && o.x >= x0 - 4 && o.x <= x1 + 4 && Math.abs(o.y - me.y) < 10);
+            seen.forEach((v, i) => {
+                const { pt, x, y } = v;
+                if (pt.quiet) {
+                    ctx.lineWidth = 1.5;
+                    ctx.strokeStyle = `rgba(${rgb}, 0.9)`;
+                    ctx.strokeRect(x - 3, y - 3, 6, 6);
+                    return;
+                }
                 const s = 4 + Math.min(3, pt.weight || 1) * 0.8;
                 ctx.fillStyle = `rgb(${rgb})`;
                 ctx.fillRect(x - s / 2, y - s / 2, s, s);
@@ -149,9 +164,14 @@
                     ctx.beginPath(); ctx.arc(x, y, s + ph * 14, 0, Math.PI * 2); ctx.stroke();
                 }
                 if (pt.label) {
+                    // The preferred side, unless another point sits where the
+                    // label would go and the other side is clear
+                    const w = ctx.measureText(pt.label).width, gap = s + 5;
+                    const rightFree = free(v, x + gap, x + gap + w), leftFree = free(v, x - gap - w, x - gap);
+                    const left = pt.left ? (leftFree || !rightFree) : (!rightFree && leftFree);
                     ctx.fillStyle = `rgb(${rgb})`;
-                    ctx.textAlign = pt.left ? 'right' : 'left';
-                    ctx.fillText(pt.label, pt.left ? x - s - 5 : x + s + 5, y);
+                    ctx.textAlign = left ? 'right' : 'left';
+                    ctx.fillText(pt.label, left ? x - gap : x + gap, y);
                 }
             });
         }

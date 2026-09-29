@@ -111,6 +111,10 @@
         .countries { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--s6); align-items: center; }
         .globe { position: relative; border: 1px dashed var(--line-strong); }
         .globe canvas { display: block; width: 100%; height: 340px; }
+        /* Member countries with no posts yet: one line, keyed by the globe's
+           hollow square */
+        .quiet-note { margin: var(--s3) 0 0; padding: 0 var(--s2); color: var(--muted); font-size: var(--fs-sm); }
+        .quiet-key { display: inline-block; width: 9px; height: 9px; margin-right: var(--s2); border: 1.5px solid var(--link); vertical-align: 0; }
         .globe .globe-pause { position: absolute; right: var(--s1); bottom: var(--s1); background: var(--night); }
         .globe .globe-pause:hover { background: var(--accent); }
         /* One line on desktop, room for two on phones: the note can't push the table */
@@ -794,6 +798,17 @@
                     <span class="li-side">${plural(c.count, 'project', 'projects')}</span>
                 </a></li>`).join('');
 
+            // Member countries with no approved post yet this epoch: hollow on
+            // the globe, and named in one line under the list (its key)
+            const quiet = quietCountries(countries);
+            const names = quiet.map(q => `<a href="members.html?country=${encodeURIComponent(q.flag + ' ' + q.country)}">${escapeHtml(q.country)}</a>`);
+            const joined = names.length > 1 ? `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}` : names[0];
+            const quietNote = quiet.length
+                ? `<p class="quiet-note"><span class="quiet-key" aria-hidden="true"></span>Member projects in ${joined}, with no approved posts yet this epoch.</p>`
+                : '';
+            const mapLabel = `Map of Africa with this epoch’s ${plural(countries.length, 'country', 'countries')} marked`
+                + (quiet.length ? `, and ${plural(quiet.length, 'more member country', 'more member countries')} shown hollow` : '');
+
             return `
                 <section class="section" aria-labelledby="countries-title">
                     <h2 id="countries-title">Countries</h2>
@@ -801,12 +816,24 @@
                     ${countries.length ? `
                     <div class="countries">
                         <div class="globe" id="globe">
-                            <canvas role="img" aria-label="Map of Africa with this epoch’s ${plural(countries.length, 'country', 'countries')} marked"></canvas>
+                            <canvas role="img" aria-label="${attrSafe(mapLabel)}"></canvas>
                             <button type="button" class="btn globe-pause">Pause</button>
                         </div>
-                        <ul class="list">${countryItems}</ul>
+                        <div>
+                            <ul class="list">${countryItems}</ul>
+                            ${quietNote}
+                        </div>
                     </div>` : '<p>No countries yet. They appear with each project’s first approved post.</p>'}
                 </section>`;
+        }
+
+        // Member countries (members.json) with no approved post this epoch,
+        // by name. Empty until members.json has loaded, or if it didn't.
+        function quietCountries(countries) {
+            const active = new Set(countries.map(c => c.country));
+            return Object.values(memberTotals?.byCountry || {})
+                .filter(c => !active.has(c.country))
+                .sort((a, b) => a.country.localeCompare(b.country));
         }
 
         function renderMerchants(stats) {
@@ -981,6 +1008,11 @@
                     lat: window.PB_COUNTRY_LL[c.code][0], lon: window.PB_COUNTRY_LL[c.code][1],
                     weight: c.n, label: `${c.code} ${c.n}`, left: window.PB_LABEL_LEFT.has(c.code)
                 }));
+            // Member countries with no posts yet: small hollow squares
+            quietCountries(countries).forEach(q => {
+                const at = window.PB_COUNTRY_LL[iso(q.flag)];
+                if (at) points.push({ lat: at[0], lon: at[1], quiet: true });
+            });
             const globe = window.PBGlobe(box.querySelector('canvas'), { points });
             const button = box.querySelector('.globe-pause');
             const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -1017,9 +1049,17 @@
                 // Build project metadata from members.json
                 if (membersResponse && membersResponse.ok) {
                     const membersData = await membersResponse.json();
+                    // Each member country, with its flag and number of projects
+                    const byCountry = {};
+                    membersData.members.forEach(m => {
+                        if (!m.country) return;
+                        const c = byCountry[m.country] || (byCountry[m.country] = { country: m.country, flag: m.flag, projects: 0 });
+                        c.projects += 1;
+                    });
                     memberTotals = {
                         projects: membersData.members.length,
-                        countries: new Set(membersData.members.map(m => m.country).filter(Boolean)).size
+                        countries: Object.keys(byCountry).length,
+                        byCountry
                     };
                     // Build lookup map: project name with flag → profile URL
                     membersData.members.forEach(member => {
