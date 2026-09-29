@@ -53,27 +53,10 @@
         /* Controls */
         .controls { display: grid; gap: var(--s4); padding: var(--s5) 0; }
         .controls-row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--s4); }
-        .field { display: grid; gap: 6px; min-width: 0; }
-        .field-label { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--muted); }
+        /* Fields, inputs and dropdowns: css/powbot.css (Forms) */
         .field-search { flex: 1 1 100%; max-width: 40rem; }
         .field-select { flex: 1 1 11rem; max-width: 16rem; }
-        .input, .select {
-            width: 100%; min-height: var(--tap); padding: 0 var(--s3);
-            background: var(--panel); color: var(--text);
-            border: 1px solid var(--line-strong); border-radius: var(--radius);
-            font: 400 var(--fs-base)/1.2 var(--font-text);
-        }
-        .input::placeholder { color: var(--muted); opacity: 1; }
-        .input:hover, .select:hover { border-color: var(--muted); }
-        .select { appearance: none; -webkit-appearance: none; padding-right: 40px; cursor: pointer; color-scheme: dark; }
-        .select option { background: var(--panel); color: var(--text); }
         .select.active { border-color: var(--link); }
-        .select-wrap { position: relative; }
-        .select-wrap::after {
-            content: ""; position: absolute; right: 16px; top: 50%; width: 8px; height: 8px; margin-top: -6px;
-            border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
-            transform: rotate(45deg); pointer-events: none;
-        }
 
         /* Filter buttons: the shared .seg, laid out as a grid so it can wrap to 2 x 2 */
         .filters.seg { display: inline-grid; grid-auto-flow: column; gap: 1px; background: var(--line-strong); }
@@ -274,12 +257,16 @@
 
         function initializeFilters() {
             // Populate country filter
+            // Values stay "🇰🇪 Kenya" (the homepage's country links use them);
+            // the list shows names only, A to Z. No emoji flags: Windows draws
+            // them as letters ("KE").
             const countries = [...new Set(allMembers.map(m => m.flag + ' ' + m.name_with_flag.match(/\(([^)]+)\)/)?.[1] || '').filter(Boolean))];
+            const nameOf = value => value.replace(/^[\u{1F1E6}-\u{1F1FF}]{2}\s*/u, '');
             const countrySelect = document.getElementById('country-filter');
-            countries.sort().forEach(country => {
+            countries.sort((a, b) => nameOf(a).localeCompare(nameOf(b))).forEach(country => {
                 const option = document.createElement('option');
                 option.value = country;
-                option.textContent = country;
+                option.textContent = nameOf(country);
                 countrySelect.appendChild(option);
             });
         }
