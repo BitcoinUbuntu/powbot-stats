@@ -88,6 +88,7 @@ async function loadTrackerData() {
         // Populate dropdowns
         populateEpochFilter();
         populateProjectFilter();
+        populateCountryFilter();
 
         // Apply URL parameters if present
         applyURLFilters();
@@ -130,6 +131,19 @@ function populateProjectFilter() {
         option.value = project;
         option.textContent = extractProjectNameOnly(project);
         projectSelect.appendChild(option);
+    });
+}
+
+// Countries A to Z, from the "(Kenya)" in each project name
+function populateCountryFilter() {
+    const countrySelect = document.getElementById('filter-country');
+    const countries = [...new Set(allSubmissions.map(s => extractCountry(s.project_name)).filter(Boolean))]
+        .sort((a, b) => a.localeCompare(b));
+    countries.forEach(country => {
+        const option = document.createElement('option');
+        option.value = country;
+        option.textContent = country;
+        countrySelect.appendChild(option);
     });
 }
 
@@ -199,6 +213,14 @@ function applyURLFilters() {
         if (match) projectSelect.value = match.value;
     }
 
+    // Apply country filter (?country=Kenya, any case)
+    const countryParam = urlParams.get('country');
+    if (countryParam) {
+        const countrySelect = document.getElementById('filter-country');
+        const match = [...countrySelect.options].find(o => o.value && o.value.toLowerCase() === countryParam.toLowerCase());
+        if (match) countrySelect.value = match.value;
+    }
+
     // Apply date filter
     const dateParam = urlParams.get('date');
     if (dateParam) {
@@ -236,11 +258,13 @@ function applyFilters() {
     const epochFilter = document.getElementById('filter-epoch').value;
     const statusFilter = document.getElementById('filter-status').value;
     const projectFilter = document.getElementById('filter-project').value;
+    const countryFilter = document.getElementById('filter-country').value;
     const dateFilter = document.getElementById('filter-date').value;
     const searchQuery = document.getElementById('filter-search').value.toLowerCase();
 
     // Update active filter styling
     document.getElementById('filter-epoch').classList.toggle('active', epochFilter !== '');
+    document.getElementById('filter-country').classList.toggle('active', countryFilter !== '');
     updateFilterActiveStates(statusFilter, projectFilter, dateFilter, searchQuery);
 
     // Start with all submissions
@@ -257,6 +281,11 @@ function applyFilters() {
 
         // Project filter
         if (projectFilter && submission.project_name !== projectFilter) {
+            return false;
+        }
+
+        // Country filter
+        if (countryFilter && extractCountry(submission.project_name) !== countryFilter) {
             return false;
         }
 
@@ -284,14 +313,14 @@ function applyFilters() {
     currentPage = 1;
 
     // Update URL with current filters
-    updateURL(epochFilter, statusFilter, projectFilter, dateFilter, searchQuery);
+    updateURL(epochFilter, statusFilter, projectFilter, dateFilter, searchQuery, countryFilter);
 
     // Render
     renderSubmissions();
     updatePagination();
 }
 
-function updateURL(epochFilter, statusFilter, projectFilter, dateFilter, searchQuery) {
+function updateURL(epochFilter, statusFilter, projectFilter, dateFilter, searchQuery, countryFilter) {
     const params = new URLSearchParams();
 
     // Only add non-empty filters to URL
@@ -301,6 +330,7 @@ function updateURL(epochFilter, statusFilter, projectFilter, dateFilter, searchQ
         // Use project name without flag/country for cleaner URL
         params.set('project', extractProjectNameOnly(projectFilter));
     }
+    if (countryFilter) params.set('country', countryFilter);
     if (dateFilter && dateFilter !== 'all') {
         params.set('date', dateFilter);
 
@@ -409,7 +439,7 @@ function renderSubmissions() {
         container.innerHTML = `
             <div class="list-state">
                 <p>No submissions match these filters.</p>
-                <p>Try a shorter search, or set status, project and date range back to all.</p>
+                <p>Try a shorter search, or set status, project, country and date range back to all.</p>
             </div>
         `;
         resultsCount.textContent = 'No submissions match';
@@ -641,6 +671,7 @@ function attachFilterListeners() {
     document.getElementById('filter-epoch').addEventListener('change', applyFilters);
     document.getElementById('filter-status').addEventListener('change', applyFilters);
     document.getElementById('filter-project').addEventListener('change', applyFilters);
+    document.getElementById('filter-country').addEventListener('change', applyFilters);
     document.getElementById('filter-date').addEventListener('change', (e) => {
         // Show/hide custom date range
         const customRange = document.getElementById('custom-date-range');
