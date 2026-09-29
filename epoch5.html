@@ -58,6 +58,8 @@
         .highlights { grid-area: highlights; align-self: stretch; display: flex; flex-direction: column; }
         .highlights > .reverse { flex: 1; }
         .standings:has(.lb-list.show-all) > .highlights { align-self: start; }
+        /* ...with room under the notes, so it stays close to the height it had */
+        .standings:has(.lb-list.show-all) > .highlights > .reverse { padding-bottom: var(--s8); }
         .standings .section-head { flex-direction: column; align-items: flex-start; gap: var(--s3); margin-bottom: var(--s3); }
         .standings .section-note { margin: 0 0 var(--s3); font-size: var(--fs-sm); color: var(--muted); min-height: 1.55em; }
         /* Half a column: one figure per row, and one note per line */
@@ -160,6 +162,11 @@
 
         function profileUrl(name, type = 'project') {
             return `${type === 'merchant' ? 'merchant-profile.html' : 'profile.html'}?id=${profileId(name)}`;
+        }
+
+        // Epoch 5's approved posts in the tracker, for one country or merchant
+        function trackerUrl(filters) {
+            return `tracker.html?${new URLSearchParams({ epoch: '5', ...filters, status: 'Processed' })}`;
         }
 
         // ------------------------------------------------------ Highlights --
@@ -320,15 +327,18 @@
             const merchants = stats.top_merchants || [];
             const countries = stats.countries || [];
 
+            // Each opens its posts in the tracker, by the name in its search box:
+            // for every Epoch 5 merchant that finds exactly the posts counted here
             const merchantItems = merchants.map((m, i) => `
-                <li class="${i >= LIST_ROWS ? 'is-more' : ''}"><a href="${attrSafe(profileUrl(m.name, 'merchant'))}">
+                <li class="${i >= LIST_ROWS ? 'is-more' : ''}"><a href="${attrSafe(trackerUrl({ search: m.name }))}">
                     <span class="li-main">${escapeHtml(m.name)}</span>
                     <span class="li-side num">${plural(m.count, 'post', 'posts')}</span>
                 </a></li>`).join('');
 
-            // In the Epoch 5 file a country's count is its approved posts.
+            // In the Epoch 5 file a country's count is its approved posts, the
+            // same as the tracker's processed posts for it, where each row opens.
             const countryItems = countries.map(c => `
-                <li><a href="members.html?filter=epoch5&country=${encodeURIComponent(c.flag + ' ' + c.country)}">
+                <li><a href="${attrSafe(trackerUrl({ country: c.country }))}">
                     <span class="li-main">${flagHtml(c.flag)} ${escapeHtml(c.country)}</span>
                     <span class="li-side num">${plural(c.count, 'post', 'posts')}</span>
                 </a></li>`).join('');
@@ -337,7 +347,7 @@
                 <div class="section"><div class="cols">
                     <section class="section" aria-labelledby="merchants-title">
                         <h2 id="merchants-title">Merchants with the most posts</h2>
-                        <p class="section-note">Shops and stalls where projects spent bitcoin.</p>
+                        <p class="section-note">Shops and stalls where projects spent bitcoin. Open one to see its Epoch&nbsp;5 posts in the tracker.</p>
                         ${merchants.length
                             ? `<ul class="list" id="merchant-list">${merchantItems}</ul>
                                ${merchants.length > LIST_ROWS ? `<button type="button" class="btn list-more" data-list="merchant-list" data-label="Show all ${formatNumber(merchants.length)} merchants" aria-controls="merchant-list" aria-expanded="false">Show all ${formatNumber(merchants.length)} merchants</button>` : ''}`
@@ -345,7 +355,7 @@
                     </section>
                     <section class="section" aria-labelledby="countries-title">
                         <h2 id="countries-title">Countries</h2>
-                        <p class="section-note">Where Epoch 5’s projects posted from. Open one to see its Epoch 5 projects in the directory.</p>
+                        <p class="section-note">Where Epoch&nbsp;5’s projects posted from. Open one to see its posts in the tracker.</p>
                         ${countries.length ? `<ul class="list">${countryItems}</ul>` : '<p>No countries were recorded for Epoch 5.</p>'}
                     </section>
                 </div></div>`;
