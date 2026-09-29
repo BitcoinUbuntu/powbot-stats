@@ -377,7 +377,7 @@
      * however far it moved once every handler has run (window bubble, last).
      * Expanding needs nothing: new rows appear below where you are reading.
      */
-    const COLLAPSE_BUTTONS = '#lb-all, .list-more, .lb-more, .posts-more';
+    const COLLAPSE_BUTTONS = '.list-more, .posts-more';
     let keepPlace = null;
 
     window.addEventListener('click', (event) => {
@@ -394,21 +394,6 @@
         if (!document.contains(button)) return;
         const moved = button.getBoundingClientRect().top - top;
         if (Math.abs(moved) > 1) window.scrollBy({ top: moved, left: 0, behavior: 'instant' });
-    });
-
-    /**
-     * Leaderboard rows open from anywhere on the row, not only the name. The
-     * name stays the real control (a button, for keyboards and screen
-     * readers); a click elsewhere on the row presses it. Links and other
-     * controls inside the row keep their own clicks, and selecting text in
-     * the row doesn't toggle it.
-     */
-    document.addEventListener('click', (event) => {
-        const row = event.target.closest && event.target.closest('.lb tr.lb-row');
-        if (!row || event.target.closest('a, button, input, select, textarea, label')) return;
-        if (String(window.getSelection && window.getSelection())) return;
-        const toggle = row.querySelector('.row-toggle');
-        if (toggle) toggle.click();
     });
 
     /**

@@ -22,7 +22,9 @@
 @font-face { font-family: "Atkinson Hyperlegible"; src: url("../fonts/atkinson-hyperlegible-latin-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
 /* --------------------------------------------------------------- Tokens -- */
-:root {
+/* A .reverse box inside either theme takes the other one's colours (see
+   Reversed box), so each theme's block also names it */
+:root, :root[data-theme="light"] .reverse {
     /* Colour: a Nokia 3310 screen, two tones. Dark by default: glass-green
        pixels on the olive ink. Light (below) swaps them, olive ink on pale
        green glass, when chosen with the header switch; the device's own
@@ -87,7 +89,7 @@
    includes/inject.js and a snippet in each page's <head>): olive ink on the
    pale glass. Contrast on --night: heading, accent and link 8.3, text 10.8,
    muted 6.0 (5.2 on --panel), danger 7.0; glass on ink 8.3. */
-:root[data-theme="light"] {
+:root[data-theme="light"], :root:not([data-theme="light"]) .reverse {
     --night: #C7F0D8;          /* the glass: page, and text on a solid block */
     --panel: #B6E2C8;          /* raised surfaces: dialogs, cards */
     --panel-hi: #A9D6BB;       /* hover on panel rows */
@@ -104,6 +106,8 @@
     --glass-lo: #B9E3CA;       /* ...and falling off at the edges */
     --grid: rgba(222, 252, 234, 0.55);
     --pixel-shadow: rgba(55, 68, 47, 0.16);
+    /* Restated so a .reverse box works it out from its own shadow colour */
+    --lcd: 2px 2px 0 var(--pixel-shadow);
 }
 
 /* ----------------------------------------------------------------- Base --
@@ -391,66 +395,8 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .section-head h2 { margin: 0; }
 .section-note { margin: 0 0 var(--s5); color: var(--muted); max-width: 65ch; }
 
-/* --------------------------------------------------------- Leaderboard --
- * Framed like a signed message: the armor lines are the page's one loud
- * gesture. The leader row is a solid block, like the phone's menu selection.
- */
-.armor { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--s3) var(--s4); padding: var(--s2) 0; font: 400 var(--fs-xs)/1.4 var(--font-mono); color: var(--muted); }
-.armor-line { white-space: nowrap; }
-.lb-shell { border: 1px dashed var(--line-strong); }
-.lb { width: 100%; border-collapse: collapse; }
-/* 8px on desktop keeps rows compact; phones set their own roomier padding below */
-.lb th, .lb td { padding: var(--s2) var(--s4); border-bottom: 1px dashed var(--line); text-align: left; vertical-align: middle; }
-.lb thead th { font: 400 var(--fs-sm)/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
-.lb .r { text-align: right; }
-/* Fixed columns, for boards whose ranking can be switched: the columns stay
-   put when the header labels or figures change. */
-.lb-fixed { table-layout: fixed; }
-.lb-fixed .c-rank { width: 4.5rem; }
-.lb-fixed .c-num { width: 7.5rem; }
-.lb-fixed .c-week { width: 10.5rem; }
-.lb tbody tr:last-child > * { border-bottom: 0; }
-.lb .rank { width: 4.5rem; font: 400 var(--fs-base)/1 var(--font-mono); color: var(--muted); }
-.lb .proj { font-weight: 400; }
-.lb .proj-name { font: 700 var(--fs-md)/1.2 var(--font-text); }
-.lb .proj small { display: block; color: var(--muted); font-size: var(--fs-sm); }
-.lb .posts { font: 400 1.375rem/1 var(--font-mono); color: var(--heading); }
-.lb .mer { font: 400 var(--fs-base)/1 var(--font-mono); color: var(--muted); }
-.lb a.proj-link { display: inline-flex; align-items: center; min-height: var(--tap); color: var(--text); text-decoration: none; }
-.lb a.proj-link:hover .proj-name { text-decoration: underline; }
-
-/* Row that opens to show its posts */
-.row-toggle {
-    display: block; min-height: var(--tap); padding: 0; background: none; border: 0;
-    color: inherit; text-align: left; cursor: pointer;
-}
-.row-toggle .row-line { display: inline; }
-/* Inline so a wrapped name keeps its flag and arrow right after the last word */
-.row-toggle .chev { display: inline-block; margin-left: var(--s2); vertical-align: 0.15em; }
-.row-toggle:hover .proj-name { text-decoration: underline; }
-/* The whole row opens it (includes/inject.js), so the whole row answers the pointer */
-.lb tr.lb-row:has(.row-toggle) { cursor: pointer; }
-.lb tr.lb-row:has(.row-toggle):hover .proj-name { text-decoration: underline; }
-.lb tr.lb-row:not(.leader):has(.row-toggle):hover > * { background: rgba(var(--accent-rgb), 0.1); }
+/* A disclosure arrow: points down, turns to point up once its control is open */
 .chev { width: 9px; height: 9px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translate(-2px, -2px); transition: transform var(--t-ui) var(--ease-out); opacity: 0.7; flex: none; }
-.row-toggle[aria-expanded="true"] .chev { transform: rotate(225deg) translate(-2px, -2px); }
-.lb tr.detail > td { background: var(--night); padding: var(--s4) var(--s4) var(--s5); }
-.lb tr.is-more { display: none; }
-/* Once shown: extra rows appear; their detail rows follow their own [hidden] */
-.lb.show-all tr.is-more:not([hidden]) { display: table-row; }
-
-.lb tr.leader { background: var(--accent); color: var(--night); }
-.lb tr.leader .rank, .lb tr.leader .mer, .lb tr.leader .posts, .lb tr.leader .proj small { color: var(--night); }
-.lb tr.leader a.proj-link { color: var(--night); }
-
-/* Last 7 days: one square per UTC day, filled when a post was approved */
-.week { display: inline-flex; gap: 5px; vertical-align: middle; }
-.week i { width: 13px; height: 13px; border: 1.5px solid var(--muted); }
-.week i.on { background: var(--link); border-color: var(--link); }
-.lb tr.leader .week i { border-color: var(--night); }
-.lb tr.leader .week i.on { background: var(--night); }
-/* The other figure, shown under the name on phones where its column is hidden */
-.sec-under { display: none; }
 
 /* Posts inside an opened row */
 .post-list { list-style: none; margin: 0 0 var(--s3); padding: 0; }
@@ -516,6 +462,13 @@ a.visit-link:hover { border-color: var(--accent); background: var(--accent); col
 .notes { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s6); margin: var(--s4) 0 0; padding: 0; list-style: none; color: var(--muted); }
 .notes strong { color: var(--text); font-weight: 700; }
 
+/* ------------------------------------------------------- Reversed box --
+ * The other theme, in a box: glass on ink in dark, ink on glass in light.
+ * The colour tokens swap at the top of this file, so whatever sits inside
+ * (figures, notes, links, headings) follows without rules of its own.
+ */
+.reverse { background: var(--night); color: var(--text); padding: var(--s5); }
+
 /* ---------------------------------------------------------- Plain list --
  * A row under the pointer turns into a solid block, like the phone's
  * menu selection.
@@ -536,6 +489,16 @@ a.visit-link:hover { border-color: var(--accent); background: var(--accent); col
 .list li.is-more { display: none; }
 .list.show-all li.is-more { display: block; }
 .list-more { margin-top: var(--s4); }
+
+/* A ranking (homepage, Epoch 5, archive): a plain list with a rank before
+   each name. The name has its own column, so a name that wraps lines up
+   under itself, not under the rank; the figure sits on its last line (both
+   share one font and line height, so their bottoms line up). */
+.lb-list .li-main { display: flex; align-items: baseline; }
+.lb-list li > a, .lb-list li > .row { align-items: flex-end; }
+.lb-name { min-width: 0; }
+.lb-rank { flex: none; display: inline-block; min-width: 2.25rem; margin-right: var(--s2); padding: 2px 4px; font: 400 var(--fs-sm)/1.2 var(--font-mono); color: var(--muted); text-align: center; }
+.lb-list li > a:hover .lb-rank { color: var(--night); }
 
 /* ------------------------------------------------------ Bars over time --
  * Every bar faint but today's, which is solid. A bar being read gets a frame.
@@ -728,28 +691,15 @@ textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize:
 .pb .donate-actions button.btn:hover { color: var(--night); }
 
 @media (max-width: 720px) {
-    .lb th, .lb td { padding: var(--s3) 10px; }
-    .lb .rank { width: 2.5rem; }
-    .lb-fixed .c-rank { width: 2.5rem; }
-    /* Just wider than a "Merchants" header; not the hidden zero-width column */
-    .lb-fixed .c-num:not(.col-wide) { width: 5.625rem; }
-    /* Sized so every project name fits on one line from 375px up */
-    .lb .proj { padding-right: 0; }
-    .lb .proj-name { font-size: var(--fs-base); }
-    .lb .col-wide { display: none; }
-    /* Fixed-layout boards keep those columns at zero width instead of removing
-       them: an opened row spans every column, and removed ones came back as
-       empty space that squeezed the project name. */
-    .lb-fixed .col-wide { display: table-cell; width: 0; padding: 0; border: 0; overflow: hidden; visibility: hidden; }
-    /* Phones skip the last-7-days squares and their key: too busy at this width */
-    .week-key { display: none; }
-    .sec-under { display: inline; }
+    /* Rankings: room for each name on one line from 360px, with a narrower
+       rank column and less space around the row */
+    .lb-list li > a, .lb-list li > .row { gap: var(--s2); padding-left: 0; padding-right: var(--s1); }
+    .lb-rank { min-width: 1.75rem; margin-right: var(--s1); padding: 2px 0; }
     /* Visits: names on their own line, links and time underneath */
     .visit { display: flex; flex-wrap: wrap; align-items: center; }
     .visit-main { flex: 1 0 100%; }
     /* Right-aligned; drops to its own line when the links leave no room */
     .visit-when { min-width: 0; margin-left: auto; }
-    .armor { font-size: 10px; }
     .section > h2, .section-head h2 { font-size: 1.75rem; }
     .facts { grid-template-columns: minmax(0, 1fr); }
     .facts b { font-size: 2rem; }
