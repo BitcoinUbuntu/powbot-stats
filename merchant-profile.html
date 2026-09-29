@@ -372,7 +372,7 @@
             if (lightningAddress) {
                 supportCardHTML = `
                     <aside class="support" aria-labelledby="support-lightning-title">
-                        ${donatePanelHtml({ id: 'support', name: merchantName, lightning: lightningAddress, level: 2, title: 'Support', showLabel: false })}
+                        ${donatePanelHtml({ id: 'support', name: merchantName, lightning: lightningAddress, level: 2, title: `Support ${merchantName}`, showLabel: false })}
                     </aside>
                 `;
             } else {
