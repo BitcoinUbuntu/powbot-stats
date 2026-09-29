@@ -336,10 +336,10 @@
             return Array.from({ length: 7 }, (_, i) => new Date(endDay - (6 - i) * DAY_MS).toISOString().slice(0, 10));
         }
 
-        function weekSquares(postDates, days, extraClass = '') {
+        function weekSquares(postDates, days) {
             const on = days.map(d => postDates.has(d));
             const n = on.filter(Boolean).length;
-            return `<span class="week ${extraClass}" role="img" aria-label="Posted on ${n} of the last 7 days">${on.map(x => `<i class="${x ? 'on' : ''}"></i>`).join('')}</span>`;
+            return `<span class="week" role="img" aria-label="Posted on ${n} of the last 7 days">${on.map(x => `<i class="${x ? 'on' : ''}"></i>`).join('')}</span>`;
         }
 
         function renderBoard() {
@@ -446,7 +446,6 @@
                                 <span class="chev" aria-hidden="true"></span></span>
                                 <small><span class="sec-under">${secondaryText}</span></small>
                             </button>
-                            ${weekSquares(dates, days, 'week-under')}
                         </th>
                         <td class="r mer num col-wide">${formatNumber(secondary)}</td>
                         <td class="col-wide">${weekSquares(dates, days)}</td>
@@ -478,7 +477,7 @@
 
             foot.innerHTML = `
                 ${endLine}
-                <span class="muted"><span class="week" aria-hidden="true"><i class="on"></i></span> day with an approved post (UTC)</span>
+                <span class="muted week-key"><span class="week" aria-hidden="true"><i class="on"></i></span> day with an approved post (UTC)</span>
                 ${projects.length > BOARD_ROWS ? `<button type="button" class="btn" id="lb-all" aria-controls="lb-table" aria-expanded="false" data-label="Show all ${projects.length} projects">Show all ${projects.length} projects</button>` : ''}`;
         }
 
@@ -558,7 +557,6 @@
                                 <span class="chev" aria-hidden="true"></span></span>
                                 <small><span class="sec-under">${plural(merchants, 'merchant', 'merchants')}</span></small>
                             </button>
-                            ${weekSquares(dates, days, 'week-under')}
                         </th>
                         <td class="r mer num col-wide">${formatNumber(merchants)}</td>
                         <td class="col-wide">${weekSquares(dates, days)}</td>
@@ -591,7 +589,7 @@
             const label = `Show all ${ranked.length} projects`;
             foot.innerHTML = `
                 ${endLine}
-                <span class="muted"><span class="week" aria-hidden="true"><i class="on"></i></span> day with an approved post (UTC)</span>
+                <span class="muted week-key"><span class="week" aria-hidden="true"><i class="on"></i></span> day with an approved post (UTC)</span>
                 ${ranked.length > BOARD_ROWS ? `<button type="button" class="btn" id="lb-all" aria-controls="lb-table" aria-expanded="false" data-label="${label}">${label}</button>` : ''}`;
         }
 

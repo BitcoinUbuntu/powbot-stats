@@ -309,7 +309,6 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .week i.on { background: var(--phosphor); border-color: var(--phosphor); }
 .lb tr.leader .week i { border-color: var(--night); }
 .lb tr.leader .week i.on { background: var(--night); }
-.week-under { display: none; margin-top: var(--s2); }
 /* The other figure, shown under the name on phones where its column is hidden */
 .sec-under { display: none; }
 
@@ -554,17 +553,21 @@ textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize:
 
 @media (max-width: 720px) {
     .lb th, .lb td { padding: var(--s3) 10px; }
-    .lb .rank { width: 2.75rem; font-size: var(--fs-base); }
-    .lb-fixed .c-rank { width: 2.75rem; }
-    .lb-fixed .c-num { width: 6.25rem; }
-    .lb .proj-name { font-size: var(--fs-md); }
+    .lb .rank { width: 2.5rem; font-size: var(--fs-base); }
+    .lb-fixed .c-rank { width: 2.5rem; }
+    /* Just wider than a "Merchants" header; not the hidden zero-width column */
+    .lb-fixed .c-num:not(.col-wide) { width: 5.625rem; }
+    /* Sized so every project name fits on one line from 375px up */
+    .lb .proj { padding-right: 0; }
+    .lb .proj-name { font-size: var(--fs-base); }
     .lb .posts { font-size: 1.375rem; }
     .lb .col-wide { display: none; }
     /* Fixed-layout boards keep those columns at zero width instead of removing
        them: an opened row spans every column, and removed ones came back as
        empty space that squeezed the project name. */
     .lb-fixed .col-wide { display: table-cell; width: 0; padding: 0; border: 0; overflow: hidden; visibility: hidden; }
-    .week-under { display: flex; }
+    /* Phones skip the last-7-days squares and their key: too busy at this width */
+    .week-key { display: none; }
     .sec-under { display: inline; }
     /* Visits: names on their own line, links and time underneath */
     .visit { display: flex; flex-wrap: wrap; align-items: center; }
