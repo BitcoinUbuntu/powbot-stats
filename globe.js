@@ -8,8 +8,8 @@
  * It sways slowly, and each blip pulses. It draws at most 30 frames a second,
  * only while on screen and the tab is visible, and holds still under
  * prefers-reduced-motion or with screen effects off (html.fx-off, the footer
- * switch). The colour is the theme's --link, repainted if the device
- * switches between light and dark.
+ * switch). The colour is the theme's --link, repainted when the page
+ * changes between light and dark (the device, or the header switch).
  */
 (function () {
     'use strict';
@@ -175,6 +175,7 @@
         document.addEventListener('pb:fx', run);
         reduce.addEventListener('change', run);
         dark.addEventListener('change', () => { readColour(); draw(last); });
+        document.addEventListener('pb:theme', () => { readColour(); draw(last); });
         run();
 
         return {

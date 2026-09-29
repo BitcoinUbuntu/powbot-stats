@@ -39,6 +39,55 @@
         document.dispatchEvent(new CustomEvent('pb:fx', { detail: { on } }));
     }
 
+    /**
+     * Light or dark (the header switch). Until someone chooses, the site
+     * follows the device. A choice is kept in this browser and applied
+     * before the first paint by a snippet in each page's <head>; choosing
+     * the mode the device already uses clears it, so the site follows the
+     * device again. The browser's own bar colour (theme-color) follows too.
+     */
+    const THEME_KEY = 'pb-theme';
+    const deviceDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const themeNow = () => document.documentElement.dataset.theme || (deviceDark.matches ? 'dark' : 'light');
+
+    function showTheme() {
+        const root = document.documentElement;
+        const dark = themeNow() === 'dark';
+        document.querySelectorAll('.theme-toggle').forEach(button => {
+            button.setAttribute('aria-pressed', String(dark));
+            button.title = dark ? 'Switch to light' : 'Switch to dark';
+        });
+        // A chosen mode sets both theme-color tags to its page colour;
+        // without one they go back to their own, per device mode
+        const night = getComputedStyle(root).getPropertyValue('--night').trim();
+        document.querySelectorAll('meta[name="theme-color"]').forEach(meta => {
+            if (meta.dataset.own === undefined) meta.dataset.own = meta.getAttribute('content');
+            meta.setAttribute('content', root.dataset.theme && night ? night : meta.dataset.own);
+        });
+    }
+
+    function setTheme(mode) {
+        const root = document.documentElement;
+        const device = deviceDark.matches ? 'dark' : 'light';
+        try {
+            if (mode === device) localStorage.removeItem(THEME_KEY);
+            else localStorage.setItem(THEME_KEY, mode);
+        } catch (e) { /* works for this visit, just not remembered */ }
+        if (mode === device) delete root.dataset.theme;
+        else root.dataset.theme = mode;
+        showTheme();
+        // The globe (globe.js) listens, to redraw in the new colours
+        document.dispatchEvent(new CustomEvent('pb:theme', { detail: { mode } }));
+    }
+
+    function setupTheme(nav) {
+        const button = nav && nav.querySelector('.theme-toggle');
+        if (!button) return;
+        showTheme();
+        button.addEventListener('click', () => setTheme(themeNow() === 'dark' ? 'light' : 'dark'));
+        deviceDark.addEventListener('change', showTheme);
+    }
+
     function setupFx(footer) {
         const button = footer && footer.querySelector('.fx-toggle');
         if (!button) return;
@@ -63,6 +112,9 @@
 
             // Phone menu button
             setupMenu(navContainer.querySelector('.site-nav'));
+
+            // Light or dark switch
+            setupTheme(navContainer.querySelector('.site-nav'));
         } catch (error) {
             console.error('Failed to load navigation:', error);
         }

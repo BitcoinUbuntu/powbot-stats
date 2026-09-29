@@ -8,6 +8,18 @@
     <meta name="description" content="Epoch 5 final results, 24 March to 3 July 2026: every PoWBoT project ranked by approved proof-of-work posts, with merchants, countries and posts per day.">
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#C7F0D8">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#37442F">
+    <script>
+        // Light or dark as chosen with the header switch, and screen effects if
+        // turned off (both kept by includes/inject.js): applied before the page
+        // first paints, so it never flashes the other way
+        (function () {
+            try {
+                var theme = localStorage.getItem('pb-theme');
+                if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+                if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
+            } catch (e) { /* storage blocked: follow the device */ }
+        })();
+    </script>
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">

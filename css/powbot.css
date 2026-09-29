@@ -84,9 +84,13 @@
 
 /* Dark: the same two tones swapped, glass-green pixels on the olive ink.
    Contrast on --night: heading, accent and link 8.3, text 9.3, muted 5.8
-   (6.6 on --panel), danger 6.0; ink on glass 8.3. */
+   (6.6 on --panel), danger 6.0; ink on glass 8.3.
+   Two ways in, so the tokens are written twice (keep the blocks the same):
+   the device is set to dark and the header switch hasn't chosen light, or
+   the switch chose dark. The switch sets data-theme on <html>
+   (includes/inject.js, and a snippet in each page's <head>). */
 @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme="light"]) {
         --night: #37442F;
         --panel: #2F3B29;
         --panel-hi: #43523D;
@@ -105,12 +109,33 @@
         --pixel-shadow: rgba(0, 0, 0, 0.3);
     }
 }
+:root[data-theme="dark"] {
+    --night: #37442F;
+    --panel: #2F3B29;
+    --panel-hi: #43523D;
+    --heading: #C7F0D8;
+    --text: #DDF9E8;           --text-rgb: 221, 249, 232;
+    --muted: #A3CBB3;          --muted-rgb: 163, 203, 179;
+    --accent: #C7F0D8;         --accent-rgb: 199, 240, 216;
+    --accent-hi: #DDF9E8;
+    --link: #C7F0D8;           --link-rgb: 199, 240, 216;
+    --danger: #FFB3A1;
+    --line: rgba(var(--accent-rgb), 0.22);
+    --line-strong: rgba(var(--accent-rgb), 0.48);
+    --glass-hi: #41503A;
+    --glass-lo: #2E3A28;
+    --grid: rgba(24, 31, 21, 0.4);
+    --pixel-shadow: rgba(0, 0, 0, 0.3);
+}
 
 /* ----------------------------------------------------------------- Base --
  * Element rules use :where() so they carry no specificity: any component
  * class (.btn, .tag, .section h2) overrides them without a fight.
  */
 html:has(body.pb) { color-scheme: light dark; background: var(--night); }
+/* A mode chosen with the header switch: native controls and scrollbars follow */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
 .pb, .pb *, .pb *::before, .pb *::after { box-sizing: border-box; }
 /* Keep focused elements and anchor targets clear of the sticky nav */
 .pb :focus, .pb [id] { scroll-margin-top: 80px; scroll-margin-bottom: 24px; }
@@ -227,10 +252,22 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .site-nav { position: relative; border-bottom: 3px double var(--line-strong); background: var(--night); }
 .site-nav .wrap { display: flex; align-items: stretch; gap: var(--s4); height: var(--bar-h); }
 /* The wordmark: the address, in capitals, like a phone's network name */
-.site-nav .brand { display: flex; align-items: center; align-self: center; color: var(--heading); text-decoration: none; font: 400 1.875rem/1 var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; text-shadow: var(--lcd); min-height: var(--tap); white-space: nowrap; }
+.site-nav .brand { display: flex; align-items: center; align-self: center; color: var(--heading); text-decoration: none; font: 400 clamp(1.375rem, 6vw, 1.875rem)/1 var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; text-shadow: var(--lcd); min-height: var(--tap); white-space: nowrap; }
+/* Light or dark (includes/inject.js): a key just before the tabs, spaced
+   like one of them, showing the mode in use: a pixel sun while light, a
+   moon while dark. On phones it sits just before Menu. */
+.site-nav .theme-toggle {
+    display: flex; align-items: center; justify-content: center; flex: none;
+    width: var(--tap); margin: 0 calc(var(--s1) - var(--s4)) 0 auto; padding: 0;
+    background: none; border: 0; color: var(--muted); cursor: pointer;
+}
+.site-nav .theme-toggle:hover { color: var(--heading); background: var(--panel); }
+.site-nav .theme-toggle:focus-visible { outline-offset: -3px; border-radius: 0; }
+.theme-toggle .icon-moon, .theme-toggle[aria-pressed="true"] .icon-sun { display: none; }
+.theme-toggle[aria-pressed="true"] .icon-moon { display: block; }
 /* Links fill the bar from its top edge to the rule, so the current page's
    block sits flush top and bottom */
-.site-nav .nav-links { display: flex; align-items: stretch; gap: var(--s1); margin: 0 0 0 auto; padding: 0; list-style: none; }
+.site-nav .nav-links { display: flex; align-items: stretch; gap: var(--s1); margin: 0; padding: 0; list-style: none; }
 .site-nav .nav-links li { display: flex; }
 .site-nav .nav-links a {
     display: flex; align-items: center; min-height: var(--tap); padding: 0 var(--s3);
@@ -247,7 +284,7 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 /* Menu button: phones only. It says "Menu", like the phone's soft key. */
 .site-nav .nav-toggle {
     display: none; align-items: center; justify-content: center;
-    margin: 0 calc(var(--gutter) * -1) 0 auto; padding: 0 var(--gutter);
+    margin: 0 calc(var(--gutter) * -1) 0 0; padding: 0 var(--gutter);
     background: none; border: 0; border-left: 1px solid var(--line);
     color: var(--heading); cursor: pointer;
     font: 400 1.75rem/1 var(--font-display);
@@ -313,6 +350,8 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 @media (max-width: 720px) {
     /* Links fold into a panel under the bar, so the wordmark always fits */
     .site-nav .nav-toggle { display: flex; }
+    /* Right up against the Menu key, whose rule separates them */
+    .site-nav .theme-toggle { margin-right: calc(var(--s4) * -1); }
     .site-nav .nav-links {
         position: absolute; top: 100%; left: 0; right: 0;
         flex-direction: column; align-items: stretch; gap: 0; margin: 0;
@@ -629,7 +668,8 @@ textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize:
 .input::placeholder { color: var(--muted); opacity: 1; }
 .input:hover, .select:hover { border-color: var(--muted); }
 .input[aria-invalid="true"] { border-color: var(--danger); }
-.select { appearance: none; -webkit-appearance: none; padding-right: 40px; cursor: pointer; color-scheme: light dark; }
+/* No color-scheme of its own: it inherits the page's, chosen mode included */
+.select { appearance: none; -webkit-appearance: none; padding-right: 40px; cursor: pointer; }
 .select option { background: var(--panel); color: var(--text); }
 .select-wrap { position: relative; }
 .select-wrap::after {
