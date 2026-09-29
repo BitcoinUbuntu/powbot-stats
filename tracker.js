@@ -36,6 +36,10 @@ function safeUrl(value) {
 let allSubmissions = [];
 let filteredSubmissions = [];
 let currentPage = 1;
+// One merchant, exactly (?merchant=Flo Salon, any case): set by links from
+// other pages, shown above the results with a Clear button. Too many
+// merchants for a dropdown, and a search would also match longer names.
+let merchantFilter = '';
 
 // ============================================================================
 // Data Loading
@@ -213,6 +217,9 @@ function applyURLFilters() {
         if (match) projectSelect.value = match.value;
     }
 
+    // Apply merchant filter (?merchant=Flo Salon)
+    merchantFilter = (urlParams.get('merchant') || '').trim();
+
     // Apply country filter (?country=Kenya, any case)
     const countryParam = urlParams.get('country');
     if (countryParam) {
@@ -289,6 +296,11 @@ function applyFilters() {
             return false;
         }
 
+        // Merchant filter: the whole name, any case
+        if (merchantFilter && (submission.merchant_name || '').trim().toLowerCase() !== merchantFilter.toLowerCase()) {
+            return false;
+        }
+
         // Date filter
         if (!passesDateFilter(submission, dateFilter)) {
             return false;
@@ -308,6 +320,14 @@ function applyFilters() {
 
         return true;
     });
+
+    // Say which merchant, if one is set, by its name as the tracker spells it
+    const merchantBar = document.getElementById('merchant-filter');
+    merchantBar.hidden = !merchantFilter;
+    if (merchantFilter) {
+        const match = allSubmissions.find(s => (s.merchant_name || '').trim().toLowerCase() === merchantFilter.toLowerCase());
+        document.getElementById('merchant-filter-name').textContent = match ? match.merchant_name.trim() : merchantFilter;
+    }
 
     // Reset to page 1 when filters change
     currentPage = 1;
@@ -331,6 +351,7 @@ function updateURL(epochFilter, statusFilter, projectFilter, dateFilter, searchQ
         params.set('project', extractProjectNameOnly(projectFilter));
     }
     if (countryFilter) params.set('country', countryFilter);
+    if (merchantFilter) params.set('merchant', merchantFilter);
     if (dateFilter && dateFilter !== 'all') {
         params.set('date', dateFilter);
 
@@ -439,7 +460,7 @@ function renderSubmissions() {
         container.innerHTML = `
             <div class="list-state">
                 <p>No submissions match these filters.</p>
-                <p>Try a shorter search, or set status, project, country and date range back to all.</p>
+                <p>Try a shorter search, or set status, project, country and date range back to all${merchantFilter ? ', or clear the merchant' : ''}.</p>
             </div>
         `;
         resultsCount.textContent = 'No submissions match';
@@ -672,6 +693,11 @@ function attachFilterListeners() {
     document.getElementById('filter-status').addEventListener('change', applyFilters);
     document.getElementById('filter-project').addEventListener('change', applyFilters);
     document.getElementById('filter-country').addEventListener('change', applyFilters);
+    document.getElementById('merchant-filter-clear').addEventListener('click', () => {
+        merchantFilter = '';
+        applyFilters();
+        document.getElementById('filter-search').focus();
+    });
     document.getElementById('filter-date').addEventListener('change', (e) => {
         // Show/hide custom date range
         const customRange = document.getElementById('custom-date-range');

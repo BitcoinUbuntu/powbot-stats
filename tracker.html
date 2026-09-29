@@ -56,6 +56,10 @@
         .date-range { display: grid; grid-template-columns: repeat(2, minmax(0, 14rem)); gap: var(--s4); }
         /* A filter that is narrowing the list gets a phosphor edge */
         .filters .active { border-color: var(--link); }
+        /* One merchant, set by a link: named, with a way out */
+        .merchant-filter { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2) var(--s4); margin: 0 0 var(--s4); padding: var(--s2) var(--s4); border: 1px solid var(--link); }
+        .merchant-filter[hidden] { display: none; }
+        .merchant-filter strong { color: var(--heading); overflow-wrap: anywhere; }
 
         /* -------------------------------------------------- Count and pager -- */
         .results-bar {
@@ -114,7 +118,8 @@
             .filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }
         @media (max-width: 720px) {
-            .filters { grid-template-columns: minmax(0, 1fr); gap: var(--s3); padding: var(--s4) 0; }
+            /* Two dropdowns a row, so the posts start within a screen or so */
+            .filters { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s3); padding: var(--s4) 0; }
             .date-range { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .results-bar { flex-direction: column; align-items: stretch; }
             /* The page number takes its own line above the buttons, so the
@@ -216,6 +221,12 @@
                     </div>
                 </div>
             </div>
+
+            <!-- tracker.js shows this when a link asks for one merchant (?merchant=) -->
+            <p class="merchant-filter" id="merchant-filter" hidden>
+                <span>Merchant: <strong id="merchant-filter-name"></strong></span>
+                <button type="button" class="btn" id="merchant-filter-clear">Clear</button>
+            </p>
 
             <!-- Count and pager -->
             <div class="results-bar">
