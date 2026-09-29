@@ -260,7 +260,8 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .armor-line { white-space: nowrap; }
 .lb-shell { background: var(--panel); border: 1px solid var(--line); }
 .lb { width: 100%; border-collapse: collapse; }
-.lb th, .lb td { padding: var(--s3) var(--s4); border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+/* 8px on desktop keeps rows compact; phones set their own roomier padding below */
+.lb th, .lb td { padding: var(--s2) var(--s4); border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
 .lb thead th { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--muted); }
 .lb .r { text-align: right; }
 /* Fixed columns, for boards whose ranking can be switched: the columns stay
