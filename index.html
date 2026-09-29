@@ -98,7 +98,9 @@
         .mascot-link { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
         .mascot { display: block; width: 128px; height: auto; }
         /* Label, figure, bar; the right-hand pair mirrors the left */
-        .es-read { display: grid; gap: 4px; justify-items: start; }
+        /* Bottom-aligned, so figures and bars stay level across a row even
+           when a label wraps on a narrow phone */
+        .es-read { display: grid; gap: 4px; justify-items: start; align-self: end; }
         .es-read[data-read="1"], .es-read[data-read="3"] { justify-items: end; text-align: right; }
         .es-read .seg-bar { justify-self: stretch; }
         .es-label { font: 400 var(--fs-xs)/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
@@ -121,6 +123,8 @@
         .pulse strong { color: var(--text); }
         /* Project standings and Merchants side by side, stacked on phones */
         .standings { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s7); align-items: start; }
+        /* Latest is last in its group, but not on the page: keep its divider */
+        #content-top > .section:last-child { border-bottom: 1px dashed var(--line-strong); }
         /* Both built the same way, so the two lists start level: heading,
            switch under it, one line of note, then the rows */
         .standings .board-bar, .standings .section-head { flex-direction: column; align-items: flex-start; gap: var(--s3); margin-bottom: var(--s3); }
@@ -167,7 +171,6 @@
                 <li><a href="#countries-title">Countries</a></li>
                 <li><a href="#latest-title">Latest</a></li>
                 <li><a href="#board-title">Standings</a></li>
-                <li><a href="#merchants-title">Merchants</a></li>
                 <li><a href="#highlights-title">Highlights</a></li>
                 <li><a href="#epochs-title">Epochs</a></li>
             </ul>
@@ -394,7 +397,7 @@
             const merchants = stats.top_merchants?.length || 0;
             const summary = document.getElementById('summary');
             summary.innerHTML = approved > 0
-                ? `<strong>${plural(projects, 'project', 'projects')}</strong> ${projects === 1 ? 'has' : 'have'} <strong>${plural(approved, 'post', 'posts')} approved</strong> between them, at ${plural(merchants, 'merchant', 'merchants')}.`
+                ? `<strong>${plural(projects, 'project', 'projects')}</strong> ${projects === 1 ? 'has' : 'have'} <strong>${plural(approved, 'post', 'posts')} approved</strong> at <strong>${plural(merchants, 'merchant', 'merchants')}</strong>.`
                 : `No posts approved yet this epoch. The first project to post takes the top spot.`;
 
             renderProgress(stats);
@@ -443,13 +446,30 @@
 
         // Status readouts around the mascot. Each shows a share with a bar, and
         // says it in full for screen readers.
+        // Projects with an approved post in the last 7 days (rolling, UTC):
+        // from the tracker's visits, or, without the tracker, from the post
+        // dates in stats.json (whole days)
+        function activeThisWeek(stats) {
+            const since = Date.now() - 7 * DAY_MS;
+            if (allVisits) {
+                const names = new Set();
+                allVisits.forEach(v => {
+                    if (v.posts.some(x => parseTrackerTime(x.timestamp) >= since)) names.add(displayName(v.project));
+                });
+                return names.size;
+            }
+            const sinceDay = new Date(since).toISOString().slice(0, 10);
+            return new Set((stats.top_projects || [])
+                .filter(p => (p.posts || []).some(x => String(x.date) >= sinceDay))
+                .map(p => stripFlags(p.name))).size;
+        }
+
         function renderStatus(stats) {
             const countries = stats.countries?.length || 0;
             const reviewed = stats.reviewer?.total_reviewed || 0;
             const approved = stats.reviewer?.approved || 0;
             const merchants = stats.top_merchants || [];
-            const finished = window.POWBOT_EPOCHS || [];
-            const prev = finished[finished.length - 1];
+            const projects = stats.top_projects?.length || 0;
             const reads = [];
 
             const memberCountries = memberTotals?.countries || 0;
@@ -459,9 +479,12 @@
             reads.push(reviewed
                 ? ['Approval', `${Math.round(approved / reviewed * 100)}%`, approved / reviewed, `${Math.round(approved / reviewed * 100)}% of reviewed posts approved`]
                 : ['Approval', '–', 0, 'No posts reviewed yet']);
-            reads.push(prev?.posts
-                ? [`Vs ${prev.name}`, `${Math.round(approved / prev.posts * 100)}%`, approved / prev.posts, `${formatNumber(approved)} posts so far, ${Math.round(approved / prev.posts * 100)}% of ${prev.name}'s ${formatNumber(prev.posts)}`]
-                : ['Posts', formatNumber(approved), null, `${formatNumber(approved)} posts approved`]);
+            // This epoch's projects with an approved post in the last 7 days
+            const active = Math.min(projects, activeThisWeek(stats));
+            // "this week" stays together if the label wraps (a no-break space)
+            reads.push(projects
+                ? ['Active this week', `${active}/${projects}`, active / projects, `${active} of this epoch's ${projects} projects posted in the last 7 days`]
+                : ['Active this week', '0', null, 'No projects posting yet']);
             if (pastMerchants && merchants.length) {
                 const fresh = merchants.filter(m => !pastMerchants.names.has(m.name)).length;
                 reads.push(['New shops', `${fresh}/${merchants.length}`, fresh / merchants.length, `${fresh} of ${merchants.length} merchants are new to PoWBoT`]);
@@ -497,14 +520,14 @@
                 ? stats.launch.days_active
                 : Math.max(1, Math.ceil((now - start) / DAY_MS));
             const text = now < end
-                ? `Day ${day} of about ${total}. Ends around ${endLabel}.`
+                ? `Day ${day} of ${total}. Ends ${endLabel}.`
                 : `Day ${day}. Planned to end around ${endLabel}, so closing soon.`;
             const pct = Math.min(100, Math.round(day / total * 100));
             el.innerHTML = `
                 <p class="progress-text">${text}</p>
                 <div class="progress-track" role="progressbar" aria-label="${attrSafe(EPOCH.name)} progress"
                      aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${Math.min(day, total)}"
-                     aria-valuetext="Day ${day} of about ${total}">
+                     aria-valuetext="Day ${day} of ${total}">
                     <div class="progress-fill" style="width:${pct}%"></div>
                 </div>`;
         }
@@ -740,7 +763,7 @@
                 return `
                 <section class="section" aria-labelledby="latest-title">
                     <h2 id="latest-title">Latest approved posts</h2>
-                    <p class="section-note">Proof-of-work visits approved in the last ${ACTIVITY_WINDOW_HOURS} hours, newest first. A visit posted on both X and Nostr shows once, with a link to each.</p>
+                    <p class="section-note">Proof-of-work visits approved in the last ${ACTIVITY_WINDOW_HOURS} hours, newest first.</p>
                     ${visits.length
                         ? `<ul class="list visits" id="latest-list">${rows}</ul>
                            ${visits.length > LIST_ROWS ? `<button type="button" class="btn list-more" data-list="latest-list" data-label="Show all ${visits.length}" aria-controls="latest-list" aria-expanded="false">Show all ${visits.length}</button>` : ''}`
@@ -913,10 +936,8 @@
 
             return `
                     <h3 id="daily-title">Approved posts per day</h3>
-                    <p class="section-note">One bar per UTC day since ${escapeHtml(EPOCH.name)} opened. Today’s bar is the solid one. Hover, tap or use the arrow keys to read a day.</p>
                     <p class="bars-readout" aria-live="polite">Today, ${escapeHtml(label(today))}</p>
                     <div class="bars" tabindex="0" role="group" aria-label="Approved posts per day over ${daily.length} days. Peak ${max} on ${formatDay(peak?.date)}. Use the left and right arrow keys to read each day.">
-                        <span class="bars-scale" aria-hidden="true">${max}</span>
                         ${bars}
                     </div>
                     <div class="bars-axis" aria-hidden="true"><span>${formatDay(daily[0].date)}</span><span>Today</span></div>`;

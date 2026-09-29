@@ -420,7 +420,6 @@
                     <p class="section-note">One bar per UTC day, ${formatDay(first.date)} to ${formatDay(last.date)} 2026. Hover, tap or use the arrow keys to read a day.</p>
                     <p class="bars-readout" aria-live="polite">Busiest day, ${escapeHtml(label(peak))}</p>
                     <div class="bars" tabindex="0" role="group" aria-label="Approved posts per day over ${displayData.length} days, ${formatDay(first.date)} to ${formatDay(last.date)}. Peak ${max} on ${formatDay(peak?.date)}. Use the left and right arrow keys to read each day.">
-                        <span class="bars-scale" aria-hidden="true">${max}</span>
                         ${bars}
                     </div>
                     <div class="bars-axis" aria-hidden="true"><span>${formatDay(first.date)}</span><span>${formatDay(last.date)}</span></div>

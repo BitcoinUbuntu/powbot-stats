@@ -253,7 +253,6 @@
             return `
                 <p class="bars-readout" aria-live="polite">Busiest day, ${label(peak)}</p>
                 <div class="bars" tabindex="0" role="group" aria-label="Approved posts per day over ${displayData.length} days, ${formatDay(first)} to ${formatDate(last)}. Peak ${max} on ${formatDate(peak?.date)}. Use the left and right arrow keys to read each day.">
-                    <span class="bars-scale" aria-hidden="true">${max}</span>
                     ${bars}
                 </div>
                 <div class="bars-axis" aria-hidden="true"><span>${formatDay(first)}</span><span>${formatDay(last)}</span></div>`;

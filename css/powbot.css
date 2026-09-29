@@ -367,7 +367,7 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
  */
 
 /* ---------------------------------------------------- Section heading -- */
-.section { padding: var(--s7) 0; border-bottom: 1px dashed var(--line-strong); }
+.section { padding: var(--s6) 0; border-bottom: 1px dashed var(--line-strong); }
 .section:last-child { border-bottom: 0; }
 .section > h2, .section-head h2 { margin: 0 0 var(--s2); font-size: var(--fs-h2); }
 /* Heading with a switch beside it; wraps under the heading on phones */
@@ -527,7 +527,6 @@ a.visit-link:hover { border-color: var(--accent); background: var(--accent); col
 .bars { position: relative; display: flex; align-items: flex-end; gap: 3px; height: 140px; border-bottom: 1px solid var(--muted); }
 .bars i { flex: 1; min-height: 1px; background: var(--link); opacity: 0.45; }
 .bars i.today { background: var(--accent); opacity: 1; }
-.bars-scale { position: absolute; left: 0; top: 0; font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--muted); background: var(--night); padding: 0 6px 2px 0; }
 .bars-axis { display: flex; justify-content: space-between; padding-top: var(--s2); font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--muted); }
 /* Readout above a bar chart: one line, updated by hover, tap or arrow keys
    (includes/inject.js). Replaces per-bar tooltips, which phones can't show. */

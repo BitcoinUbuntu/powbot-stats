@@ -135,7 +135,6 @@
             .hero-logo, .hero-logo-placeholder { width: 72px; height: 72px; font-size: var(--fs-xl); }
             .intro { grid-template-columns: minmax(0, 1fr); }
             .gallery-strip { --gal-h: 200px; }
-            .section { padding: var(--s6) 0; }
         }
     </style>
 </head>
@@ -512,7 +511,6 @@
                     html += factsRow(currentPosts);
                     html += `
                         <h3>Merchant posts, newest first</h3>
-                        <p class="section-note">A visit posted on both X and Nostr shows once, with a link to each.</p>
                         <ul class="visits" id="posts-list-current">${visitItems(visits, v => when(v.first))}
                         </ul>
                         <div class="detail-links">
