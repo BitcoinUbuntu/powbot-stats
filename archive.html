@@ -6,7 +6,18 @@
     <link rel="canonical" href="https://powbot.africa/archive.html">
     <title>PoWBoT archive – past epochs</title>
     <meta name="description" content="Final PoWBoT leaderboards from past epochs: approved proof-of-work posts by project and merchant, from Epoch 1 in May 2025 to Epoch 4.">
-    <meta name="theme-color" content="#070F0B">
+    <meta name="theme-color" content="#37442F">
+    <script>
+        // Light, if chosen with the header switch (dark is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
+        (function () {
+            try {
+                if (localStorage.getItem('pb-theme') === 'light') document.documentElement.dataset.theme = 'light';
+                if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
+            } catch (e) { /* storage blocked: the defaults, dark with effects on */ }
+        })();
+    </script>
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
@@ -25,7 +36,7 @@
     <meta name="twitter:description" content="Complete historical stats archive for all PoWBoT epochs.">
     <meta name="twitter:image" content="https://powbot.africa/images/PoWBoT_preview.jpg">
 
-    <link rel="preload" href="fonts/jetbrains-mono-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/vt323-latin-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/atkinson-hyperlegible-latin-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="css/powbot.css">
     <style>
@@ -42,7 +53,7 @@
         .panel-wide { margin-top: var(--s7); }
         .epoch-more { margin: var(--s6) 0 0; }
         .panel { min-width: 0; }
-        .panel > h3 { margin: 0 0 var(--s2); font-size: var(--fs-md); }
+        .panel > h3 { margin: 0 0 var(--s2); font-size: 1.5rem; }
         .panel > .section-note { margin-bottom: var(--s4); }
 
         /* Rankings sit in half a column, so names wrap rather than push the table wide */
@@ -242,7 +253,6 @@
             return `
                 <p class="bars-readout" aria-live="polite">Busiest day, ${label(peak)}</p>
                 <div class="bars" tabindex="0" role="group" aria-label="Approved posts per day over ${displayData.length} days, ${formatDay(first)} to ${formatDate(last)}. Peak ${max} on ${formatDate(peak?.date)}. Use the left and right arrow keys to read each day.">
-                    <span class="bars-scale" aria-hidden="true">${max}</span>
                     ${bars}
                 </div>
                 <div class="bars-axis" aria-hidden="true"><span>${formatDay(first)}</span><span>${formatDay(last)}</span></div>`;

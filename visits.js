@@ -14,7 +14,9 @@
 // Posts with a date only (read as midnight) pair on the same or the next day:
 // 0 or 24 hours apart, inside the window; two days is 48, outside it.
 (function () {
-    const PLATFORMS = ['X', 'Nostr'];
+    // The order of a visit's link slots: Nostr first, so the lone "X" after
+    // it reads as a platform, not a close button
+    const PLATFORMS = ['Nostr', 'X'];
     const PAIR_WINDOW_HOURS = 36;
 
     function platformOf(sub) {
@@ -96,7 +98,7 @@
 
     const attr = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
-    // The X and Nostr links for a visit, always in the same two slots so they
+    // The Nostr and X links for a visit, always in the same two slots so they
     // line up down a list. `context` names the visit for screen readers
     // ("Bitbiashara at Flo Salon"), since the visible text is only "X".
     window.visitLinks = function (visit, context) {

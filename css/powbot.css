@@ -11,36 +11,50 @@
 
 /* ---------------------------------------------------------------- Fonts --
  * Self-hosted and subset to Latin (see fonts/). No third-party font requests.
- * JetBrains Mono: headings, ranks and figures. Atkinson Hyperlegible: text.
+ * VT323: headings and big figures, the phone screen's pixel type.
+ * Share Tech Mono: labels, ranks, times and small figures. It has no bold,
+ * so emphasis in it is colour or size, never weight.
+ * Atkinson Hyperlegible: sentences, names and anything long.
  */
-@font-face { font-family: "JetBrains Mono"; src: url("../fonts/jetbrains-mono-latin-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "JetBrains Mono"; src: url("../fonts/jetbrains-mono-latin-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "VT323"; src: url("../fonts/vt323-latin-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Share Tech Mono"; src: url("../fonts/share-tech-mono-latin-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Atkinson Hyperlegible"; src: url("../fonts/atkinson-hyperlegible-latin-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Atkinson Hyperlegible"; src: url("../fonts/atkinson-hyperlegible-latin-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
 /* --------------------------------------------------------------- Tokens -- */
 :root {
-    /* Colour: an 80s CRT, toned down. Green-tinted glass, a muted P1 green
-       phosphor for links and data, and a soft amber for the one highlight
-       (current page, leader, today). Contrast on --night: heading 17.6, text 16.2,
-       muted 8.3, phosphor 9.6, amber 9.7, danger 8.6. Change a colour here
-       and in its -rgb twin. */
-    --night: #070F0B;          /* page: dark green glass, not neutral black */
-    --panel: #0C1913;          /* raised surfaces: tables, dialogs */
-    --panel-hi: #12241B;       /* hover on panel rows */
-    --heading: #F2F4F3;        /* headings and the wordmark: near white, barely tinted */
-    --text: #E3EDE7;           --text-rgb: 227, 237, 231;   /* body: light, only a trace of green */
-    --muted: #93B19E;          --muted-rgb: 147, 177, 158;
-    --amber: #E9AC49;          --amber-rgb: 233, 172, 73;      /* the one highlight */
-    --amber-hi: #EEBB68;       /* amber hover */
-    --phosphor: #5CCC85;       --phosphor-rgb: 92, 204, 133;   /* links, data marks, focus */
-    --coin: #F7931A;           /* the mascot's coin; large marks only */
-    --danger: #FF8A8A;         /* errors, rejected */
-    --line: rgba(var(--muted-rgb), 0.22);
-    --line-strong: rgba(var(--muted-rgb), 0.45);
+    /* Colour: a Nokia 3310 screen, two tones. Dark by default: glass-green
+       pixels on the olive ink. Light (below) swaps them, olive ink on pale
+       green glass, when chosen with the header switch; the device's own
+       setting isn't consulted. The ink is a shade deeper than the 3310's
+       (#37442F, not #43523D) for contrast. Links, data and the one highlight
+       (current page, today) share the glass colour; the highlight is a solid
+       block, like the phone's menu selection. Contrast on --night: heading,
+       accent and link 8.3, text 9.3, muted 5.8 (6.6 on --panel), danger 6.0;
+       ink on glass 8.3. Change a colour here and in its -rgb twin. */
+    --night: #37442F;          /* the olive: page, and text on a solid block */
+    --panel: #2F3B29;          /* raised surfaces: dialogs, cards */
+    --panel-hi: #43523D;       /* hover on panel rows */
+    --heading: #C7F0D8;
+    --text: #DDF9E8;           --text-rgb: 221, 249, 232;
+    --muted: #A3CBB3;          --muted-rgb: 163, 203, 179;
+    --accent: #C7F0D8;         --accent-rgb: 199, 240, 216;   /* the one highlight, as a solid block */
+    --accent-hi: #DDF9E8;      /* accent hover */
+    --link: #C7F0D8;           --link-rgb: 199, 240, 216;     /* links, data marks, focus */
+    --danger: #FFB3A1;         /* errors, rejected */
+    --line: rgba(var(--accent-rgb), 0.22);
+    --line-strong: rgba(var(--accent-rgb), 0.48);
+
+    /* The screen (see Base): backlight, pixel grid, the shadow pixels cast */
+    --glass-hi: #41503A;       /* backlight at its brightest, mid-screen */
+    --glass-lo: #2E3A28;       /* ...and falling off at the edges */
+    --grid: rgba(24, 31, 21, 0.4);
+    --pixel-shadow: rgba(0, 0, 0, 0.3);
+    --lcd: 2px 2px 0 var(--pixel-shadow);
 
     /* Type */
-    --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    --font-display: "VT323", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    --font-mono: "Share Tech Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
     --font-text: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     --fs-xs: 0.8125rem;   /* 13 */
     --fs-sm: 0.875rem;    /* 14 */
@@ -49,14 +63,19 @@
     --fs-lg: 1.3125rem;   /* 21 */
     --fs-xl: 1.5rem;      /* 24 */
     --fs-2xl: 2rem;       /* 32 */
-    --fs-display: clamp(1.875rem, 5vw, 3.75rem); /* 30 to 60 */
+    /* VT323 runs small for its size: headings in it sit a step or two up */
+    --fs-h2: 2rem;        /* 32, section headings */
+    --fs-h1: clamp(2.5rem, 6vw, 4rem);           /* 40 to 64, inner pages */
+    --fs-display: clamp(3rem, 7.5vw, 6rem);      /* 48 to 96, the homepage */
 
     /* Space */
     --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
     --gutter: clamp(16px, 4vw, 48px);
     --max: 1180px;
-    --radius: 2px;
+    --radius: 0;
     --tap: 44px;
+    --bar-h: 52px;        /* the nav bar */
+    --nav-h: calc(var(--bar-h) + 3px);   /* ...and its 3px double rule */
 
     /* Motion */
     --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
@@ -64,15 +83,40 @@
     --t-ui: 200ms;
 }
 
+/* Light, chosen with the header switch (data-theme on <html>, set by
+   includes/inject.js and a snippet in each page's <head>): olive ink on the
+   pale glass. Contrast on --night: heading, accent and link 8.3, text 10.8,
+   muted 6.0 (5.2 on --panel), danger 7.0; glass on ink 8.3. */
+:root[data-theme="light"] {
+    --night: #C7F0D8;          /* the glass: page, and text on a solid block */
+    --panel: #B6E2C8;          /* raised surfaces: dialogs, cards */
+    --panel-hi: #A9D6BB;       /* hover on panel rows */
+    --heading: #37442F;
+    --text: #283222;           --text-rgb: 40, 50, 34;
+    --muted: #475A40;          --muted-rgb: 71, 90, 64;
+    --accent: #37442F;         --accent-rgb: 55, 68, 47;   /* the one highlight, as a solid block */
+    --accent-hi: #283222;      /* accent hover */
+    --link: #37442F;           --link-rgb: 55, 68, 47;     /* links, data marks, focus */
+    --danger: #8A2A1C;         /* errors, rejected */
+    --line: rgba(var(--accent-rgb), 0.28);
+    --line-strong: rgba(var(--accent-rgb), 0.55);
+    --glass-hi: #D3F7E2;       /* backlight at its brightest, mid-screen */
+    --glass-lo: #B9E3CA;       /* ...and falling off at the edges */
+    --grid: rgba(222, 252, 234, 0.55);
+    --pixel-shadow: rgba(55, 68, 47, 0.16);
+}
+
 /* ----------------------------------------------------------------- Base --
  * Element rules use :where() so they carry no specificity: any component
  * class (.btn, .tag, .section h2) overrides them without a fight.
  */
 html:has(body.pb) { color-scheme: dark; background: var(--night); }
+/* Light chosen: native controls and scrollbars follow */
+:root[data-theme="light"] { color-scheme: light; }
 .pb, .pb *, .pb *::before, .pb *::after { box-sizing: border-box; }
 /* Keep focused elements and anchor targets clear of the sticky nav */
 .pb :focus, .pb [id] { scroll-margin-top: 80px; scroll-margin-bottom: 24px; }
-.pb a, .pb button, .pb summary { -webkit-tap-highlight-color: rgba(var(--phosphor-rgb), 0.2); }
+.pb a, .pb button, .pb summary { -webkit-tap-highlight-color: rgba(var(--link-rgb), 0.2); }
 .pb {
     margin: 0;
     min-height: 100vh;
@@ -81,22 +125,43 @@ html:has(body.pb) { color-scheme: dark; background: var(--night); }
     font: 400 var(--fs-base)/1.55 var(--font-text);
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeLegibility;
+    /* Only Atkinson has a bold: never smear a fake one onto the mono faces */
+    font-synthesis-weight: none;
+    /* Its own stacking context, so the screen below sits over the page
+       colour and under everything else */
+    isolation: isolate;
 }
-:where(.pb) :where(h1, h2, h3) { color: var(--heading); font-family: var(--font-mono); font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; text-wrap: balance; }
+/* The screen: a backlight brightest mid-screen, and a faint grid between
+   the pixels. It sits behind the content, so text stays crisp. The footer's
+   "Screen effects" switch turns it off (html.fx-off, includes/inject.js). */
+.pb::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+        linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 3px 3px,
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 3px 3px,
+        radial-gradient(ellipse 80% 70% at 50% 35%, var(--glass-hi) 0%, var(--night) 55%, var(--glass-lo) 100%);
+}
+html.fx-off .pb::before { display: none; }
+html.fx-off { --lcd: none; }
+
+:where(.pb) :where(h1, h2, h3) {
+    color: var(--heading); font-family: var(--font-display); font-weight: 400;
+    letter-spacing: 0.01em; line-height: 1.05; text-wrap: balance; text-shadow: var(--lcd);
+}
 :where(.pb) p { text-wrap: pretty; }
-:where(.pb) a { color: var(--phosphor); text-underline-offset: 3px; }
+:where(.pb) a { color: var(--link); text-underline-offset: 3px; }
 :where(.pb) a:hover { color: var(--text); }
 :where(.pb) img { max-width: 100%; height: auto; }
 :where(.pb) button { font: inherit; color: inherit; touch-action: manipulation; }
-.pb ::selection { background: var(--amber); color: var(--night); }
+.pb ::selection { background: var(--accent); color: var(--night); }
 
-/* One focus style everywhere. Amber surfaces switch the ring to night. */
+/* One focus style everywhere. Solid accent blocks switch the ring to night. */
 .pb :focus-visible, .site-nav :focus-visible, .site-footer :focus-visible {
-    outline: 3px solid var(--phosphor);
+    outline: 3px solid var(--link);
     outline-offset: 2px;
     border-radius: var(--radius);
 }
-.pb .on-amber :focus-visible, .pb .on-amber:focus-visible { outline-color: var(--night); }
+.pb .on-accent :focus-visible, .pb .on-accent:focus-visible { outline-color: var(--night); }
 
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
 .num { font-variant-numeric: tabular-nums; }
@@ -106,19 +171,24 @@ html:has(body.pb) { color-scheme: dark; background: var(--night); }
     position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0;
     overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
-.skip-link { position: absolute; left: var(--s4); top: -100px; z-index: 200; padding: var(--s3) var(--s4); background: var(--amber); color: var(--night); font-weight: 700; }
+.skip-link { position: absolute; left: var(--s4); top: -100px; z-index: 200; padding: var(--s3) var(--s4); background: var(--accent); color: var(--night); font-weight: 700; }
 .skip-link:focus { top: var(--s2); }
 
-/* --------------------------------------------------------------- Button -- */
+/* --------------------------------------------------------------- Button --
+ * Text in [ brackets ], like a phone's soft keys; a solid block on hover.
+ * The brackets are drawn, so screen readers hear only the label.
+ */
 .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: var(--s2);
-    min-height: var(--tap); padding: 0 var(--s4);
-    background: none; color: var(--phosphor);
-    border: 1px solid var(--phosphor); border-radius: var(--radius);
-    font: 700 var(--fs-sm)/1 var(--font-text); text-decoration: none;
+    min-height: var(--tap); padding: 0 var(--s3);
+    background: none; color: var(--link);
+    border: 1px solid transparent; border-radius: var(--radius);
+    font: 400 var(--fs-sm)/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none;
     cursor: pointer; touch-action: manipulation;
     transition: transform var(--t-fast) var(--ease-out), background-color var(--t-fast) ease;
 }
+.btn::before { content: "[ "; content: "[ " / ""; white-space: pre; }
+.btn::after { content: " ]"; content: " ]" / ""; white-space: pre; }
 /* .btn sets display, which would otherwise override the hidden attribute */
 .btn[hidden] { display: none; }
 
@@ -126,22 +196,22 @@ html:has(body.pb) { color-scheme: dark; background: var(--night); }
 .hero-link {
     display: inline-flex; align-items: center; gap: var(--s2);
     min-height: var(--tap); padding: 0 var(--s3);
-    border: 1px solid var(--line-strong); border-radius: var(--radius);
-    color: var(--phosphor); text-decoration: none;
-    font: 700 var(--fs-sm)/1 var(--font-text);
+    border: 1px dashed var(--line-strong); border-radius: var(--radius);
+    color: var(--link); text-decoration: none;
+    font: 400 var(--fs-sm)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em;
 }
-.hero-link:hover { border-color: var(--phosphor); background: rgba(var(--phosphor-rgb), 0.12); color: var(--phosphor); }
+.hero-link:hover { border-color: var(--accent); background: var(--accent); color: var(--night); }
 .hero-link[hidden] { display: none; }
-.btn:hover { background: rgba(var(--phosphor-rgb), 0.12); color: var(--phosphor); }
+.btn:hover { background: var(--accent); color: var(--night); }
 .btn:active { transform: scale(0.97); }
-.btn-solid { background: var(--amber); border-color: var(--amber); color: var(--night); }
-.btn-solid:hover { background: var(--amber-hi); color: var(--night); }
+.btn-solid { background: var(--accent); color: var(--night); }
+.btn-solid:hover { background: var(--accent-hi); color: var(--night); }
 
 /* Platform label: text first, so it never relies on an icon */
 .tag {
     display: inline-block; padding: 2px 6px;
     border: 1px solid var(--line-strong); border-radius: var(--radius);
-    font: 400 var(--fs-xs)/1.2 var(--font-mono); color: var(--muted);
+    font: 400 var(--fs-xs)/1.2 var(--font-mono); color: var(--muted); text-transform: uppercase;
     white-space: nowrap;
     min-width: 3.75rem; text-align: center;   /* X and Nostr line up in lists */
 }
@@ -150,54 +220,94 @@ html:has(body.pb) { color-scheme: dark; background: var(--night); }
  * Pinned to the top on every page. The wrapper the include is injected into
  * is what sticks: a sticky element can only stick inside its parent, and the
  * wrapper is exactly as tall as the nav, so a sticky .site-nav never moved.
- * Links are square blocks that fill the bar from the top edge to the rule.
+ * The current page is a solid block, like the phone's menu selection.
  */
 #site-nav { position: sticky; top: 0; z-index: 100; }
 /* Pages not yet rebuilt pad <body> by 20px; pull the nav out to the edges. */
 body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 
-.site-nav { position: relative; border-bottom: 1px solid var(--line); background: var(--night); }
-.site-nav .wrap { display: flex; align-items: stretch; gap: var(--s4); height: 60px; }
-.site-nav .brand { display: flex; align-items: center; align-self: center; gap: 10px; color: var(--heading); text-decoration: none; font: 700 var(--fs-md)/1 var(--font-mono); letter-spacing: -0.02em; min-height: var(--tap); }
-.site-nav .brand img { width: auto; height: 34px; }  /* the mascot is 81x100, not square */
-.site-nav .nav-links { display: flex; align-items: stretch; gap: 0; margin: 0 0 0 auto; padding: 0; list-style: none; }
+.site-nav { position: relative; border-bottom: 3px double var(--line-strong); background: var(--night); }
+.site-nav .wrap { display: flex; align-items: stretch; gap: var(--s4); height: var(--bar-h); }
+/* The wordmark: the address, in capitals, like a phone's network name */
+.site-nav .brand { display: flex; align-items: center; align-self: center; color: var(--heading); text-decoration: none; font: 400 clamp(1.375rem, 6vw, 1.875rem)/1 var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; text-shadow: var(--lcd); min-height: var(--tap); white-space: nowrap; }
+/* Light or dark (includes/inject.js): a key just before the tabs, spaced
+   like one of them, showing the mode in use: a pixel sun while light, a
+   moon while dark. On phones it sits just before Menu. */
+.site-nav .theme-toggle {
+    display: flex; align-items: center; justify-content: center; flex: none;
+    width: var(--tap); margin: 0 calc(var(--s1) - var(--s4)) 0 auto; padding: 0;
+    background: none; border: 0; color: var(--muted); cursor: pointer;
+}
+.site-nav .theme-toggle:hover { color: var(--heading); background: var(--panel); }
+.site-nav .theme-toggle:focus-visible { outline-offset: -3px; border-radius: 0; }
+.theme-toggle .icon-moon, .theme-toggle[aria-pressed="true"] .icon-sun { display: none; }
+.theme-toggle[aria-pressed="true"] .icon-moon { display: block; }
+/* The moon's dark side, in the lighter olive (earthshine): the header's own
+   colour would hide it. The moon only shows in dark mode. */
+.theme-toggle .moon-shade { fill: var(--panel-hi); }
+/* Links fill the bar from its top edge to the rule, so the current page's
+   block sits flush top and bottom */
+.site-nav .nav-links { display: flex; align-items: stretch; gap: var(--s1); margin: 0; padding: 0; list-style: none; }
 .site-nav .nav-links li { display: flex; }
 .site-nav .nav-links a {
-    display: flex; align-items: center; padding: 0 var(--s4);
-    color: var(--muted); text-decoration: none; font: 700 var(--fs-base)/1 var(--font-text);
+    display: flex; align-items: center; min-height: var(--tap); padding: 0 var(--s3);
+    color: var(--muted); text-decoration: none;
+    font: 400 var(--fs-base)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em;
     border-radius: 0;
 }
-.site-nav .nav-links a:hover { color: var(--text); background: var(--panel); }
-.site-nav .nav-links a.current { background: var(--amber); color: var(--night); }
+.site-nav .nav-links a:hover { color: var(--heading); background: var(--panel); }
+.site-nav .nav-links a.current { background: var(--accent); color: var(--night); }
+.site-nav .nav-links a.current::before { content: "> "; content: "> " / ""; white-space: pre; }
 .site-nav .nav-links a:focus-visible { outline-offset: -3px; border-radius: 0; }
 .site-nav .nav-links a.current:focus-visible { outline-color: var(--night); }
 
-/* Menu button: phones only. A square block like the links, bars turn to a cross. */
+/* Menu button: phones only. It says "Menu", like the phone's soft key. */
 .site-nav .nav-toggle {
     display: none; align-items: center; justify-content: center;
-    width: 60px; margin: 0 calc(var(--gutter) * -1) 0 auto; padding: 0;
+    margin: 0 calc(var(--gutter) * -1) 0 0; padding: 0 var(--gutter);
     background: none; border: 0; border-left: 1px solid var(--line);
     color: var(--heading); cursor: pointer;
+    font: 400 1.75rem/1 var(--font-display);
 }
 .site-nav .nav-toggle:hover { background: var(--panel); }
-.site-nav .nav-toggle[aria-expanded="true"] { background: var(--panel); }
+.site-nav .nav-toggle[aria-expanded="true"] { background: var(--accent); color: var(--night); }
 .site-nav .nav-toggle:focus-visible { outline-offset: -3px; border-radius: 0; }
-.nav-toggle-bars { position: relative; display: block; width: 22px; height: 16px; }
-.nav-toggle-bars i {
-    position: absolute; left: 0; width: 100%; height: 2px; background: currentColor;
-    transition: transform var(--t-ui) var(--ease-out), opacity var(--t-fast) ease;
-}
-.nav-toggle-bars i:nth-child(1) { top: 0; }
-.nav-toggle-bars i:nth-child(2) { top: 7px; }
-.nav-toggle-bars i:nth-child(3) { top: 14px; }
-.nav-toggle[aria-expanded="true"] .nav-toggle-bars i:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle[aria-expanded="true"] .nav-toggle-bars i:nth-child(2) { opacity: 0; }
-.nav-toggle[aria-expanded="true"] .nav-toggle-bars i:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.site-nav .nav-toggle[aria-expanded="true"]:focus-visible { outline-color: var(--night); }
 
+/* --------------------------------------------------------- Section tabs --
+ * "On this page" links under the nav, one per section; the one you're
+ * reading is shown [in brackets] (includes/inject.js). They stick with the
+ * nav on desktop. On phones they scroll away, and the row scrolls sideways.
+ */
+/* Tucked 3px up under the nav (which draws on top), with its background
+   reaching a little higher still: browser zoom and scroll rounding can pull
+   two sticky bars a pixel or two apart, and the page must not show between */
+.subtabs {
+    position: sticky; top: calc(var(--nav-h) - 3px); z-index: 99; margin-top: -3px; padding-top: 3px;
+    background: var(--night); border-bottom: 1px dashed var(--line-strong);
+    box-shadow: 0 -6px 0 var(--night);
+}
+.subtabs ul { display: flex; margin: 0; padding: 0; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.subtabs li { display: flex; }
+.subtabs li + li::before { content: "|"; content: "|" / ""; display: flex; align-items: center; padding: 0 var(--s1); color: var(--line-strong); }
+.subtabs a {
+    display: flex; align-items: center; min-height: var(--tap); padding: 0 var(--s2); white-space: nowrap;
+    font: 400 var(--fs-sm)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--muted); text-decoration: none;
+}
+.subtabs a:hover { color: var(--heading); }
+.subtabs a[aria-current] { color: var(--heading); }
+.subtabs a[aria-current]::before { content: "["; content: "[" / ""; }
+.subtabs a[aria-current]::after { content: "]"; content: "]" / ""; }
+.subtabs a:focus-visible { outline-offset: -3px; }
+@media (min-width: 721px) {
+    /* Anchor targets land below both sticky rows */
+    .pb:has(.subtabs) :focus, .pb:has(.subtabs) [id] { scroll-margin-top: calc(var(--nav-h) + var(--tap) + 20px); }
+}
 
 /* --------------------------------------------------------------- Footer -- */
-.site-footer { border-top: 1px solid var(--line); padding: var(--s6) 0 var(--s7); color: var(--muted); font: 400 var(--fs-sm)/1.6 var(--font-text); text-align: center; background: var(--night); }
-.site-footer a { color: var(--phosphor); }
+.site-footer { border-top: 3px double var(--line-strong); padding: var(--s6) 0 var(--s7); color: var(--muted); font: 400 var(--fs-sm)/1.6 var(--font-text); text-align: center; }
+.site-footer a { color: var(--link); }
 .site-footer a:hover { color: var(--text); }
 .site-footer .partners-label { margin: 0 0 var(--s3); }
 /* Partner marks stay full colour: several are dark and vanish in greyscale. */
@@ -208,13 +318,23 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .site-footer .footer-meta { margin: 0 auto; max-width: 70ch; }
 .site-footer .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 0 var(--s2); margin: var(--s2) 0 0; padding: 0; list-style: none; }
 .site-footer .footer-links a { display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 var(--s2); }
+/* Screen effects on or off: the texture, the pixel shadows and the globe */
+.fx-toggle {
+    display: inline-flex; align-items: center; gap: var(--s2); min-height: var(--tap); margin-top: var(--s2); padding: 0 var(--s3);
+    background: none; border: 1px dashed var(--line-strong); color: var(--muted); cursor: pointer;
+    font: 400 var(--fs-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em;
+}
+.fx-toggle:hover { color: var(--heading); border-color: var(--accent); }
+.fx-toggle .fx-state { color: var(--heading); }
 
 @media (max-width: 720px) {
     /* Links fold into a panel under the bar, so the wordmark always fits */
     .site-nav .nav-toggle { display: flex; }
+    /* Right up against the Menu key, whose rule separates them */
+    .site-nav .theme-toggle { margin-right: calc(var(--s4) * -1); }
     .site-nav .nav-links {
         position: absolute; top: 100%; left: 0; right: 0;
-        flex-direction: column; margin: 0;
+        flex-direction: column; align-items: stretch; gap: 0; margin: 0;
         background: var(--night); border-bottom: 1px solid var(--line-strong);
         visibility: hidden; opacity: 0; transform: translateY(-6px);
         transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out), visibility 0s linear 180ms;
@@ -225,8 +345,11 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
     }
     /* Opened from the keyboard: no animation (it would only slow the next key) */
     .site-nav.no-anim .nav-links { transition: none; }
-    .site-nav .nav-links li { display: block; border-top: 1px solid var(--line); }
+    .site-nav .nav-links li { display: block; border-top: 1px dashed var(--line); }
     .site-nav .nav-links a { min-height: 52px; padding: 0 var(--gutter); font-size: var(--fs-md); }
+    .subtabs { position: static; }
+    /* Tabs past the edge fade out, a hint that the row scrolls */
+    .subtabs ul { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
 }
 
 /* --------------------------------------------------------------- Motion -- */
@@ -244,9 +367,9 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
  */
 
 /* ---------------------------------------------------- Section heading -- */
-.section { padding: var(--s7) 0; border-bottom: 1px solid var(--line); }
+.section { padding: var(--s6) 0; border-bottom: 1px dashed var(--line-strong); }
 .section:last-child { border-bottom: 0; }
-.section > h2, .section-head h2 { margin: 0 0 var(--s2); font-size: var(--fs-lg); }
+.section > h2, .section-head h2 { margin: 0 0 var(--s2); font-size: var(--fs-h2); }
 /* Heading with a switch beside it; wraps under the heading on phones */
 .section-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s3); margin: 0 0 var(--s3); }
 .section-head h2 { margin: 0; }
@@ -254,15 +377,15 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 
 /* --------------------------------------------------------- Leaderboard --
  * Framed like a signed message: the armor lines are the page's one loud
- * gesture. The leader row is shown in inverse video, like a terminal selection.
+ * gesture. The leader row is a solid block, like the phone's menu selection.
  */
 .armor { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--s3) var(--s4); padding: var(--s2) 0; font: 400 var(--fs-xs)/1.4 var(--font-mono); color: var(--muted); }
 .armor-line { white-space: nowrap; }
-.lb-shell { background: var(--panel); border: 1px solid var(--line); }
+.lb-shell { border: 1px dashed var(--line-strong); }
 .lb { width: 100%; border-collapse: collapse; }
 /* 8px on desktop keeps rows compact; phones set their own roomier padding below */
-.lb th, .lb td { padding: var(--s2) var(--s4); border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
-.lb thead th { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--muted); }
+.lb th, .lb td { padding: var(--s2) var(--s4); border-bottom: 1px dashed var(--line); text-align: left; vertical-align: middle; }
+.lb thead th { font: 400 var(--fs-sm)/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
 .lb .r { text-align: right; }
 /* Fixed columns, for boards whose ranking can be switched: the columns stay
    put when the header labels or figures change. */
@@ -275,7 +398,7 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .lb .proj { font-weight: 400; }
 .lb .proj-name { font: 700 var(--fs-md)/1.2 var(--font-text); }
 .lb .proj small { display: block; color: var(--muted); font-size: var(--fs-sm); }
-.lb .posts { font: 700 1.375rem/1 var(--font-mono); letter-spacing: -0.01em; }
+.lb .posts { font: 400 1.375rem/1 var(--font-mono); color: var(--heading); }
 .lb .mer { font: 400 var(--fs-base)/1 var(--font-mono); color: var(--muted); }
 .lb a.proj-link { display: inline-flex; align-items: center; min-height: var(--tap); color: var(--text); text-decoration: none; }
 .lb a.proj-link:hover .proj-name { text-decoration: underline; }
@@ -292,7 +415,7 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 /* The whole row opens it (includes/inject.js), so the whole row answers the pointer */
 .lb tr.lb-row:has(.row-toggle) { cursor: pointer; }
 .lb tr.lb-row:has(.row-toggle):hover .proj-name { text-decoration: underline; }
-.lb tr.lb-row:not(.leader):has(.row-toggle):hover > * { background: var(--panel-hi); }
+.lb tr.lb-row:not(.leader):has(.row-toggle):hover > * { background: rgba(var(--accent-rgb), 0.1); }
 .chev { width: 9px; height: 9px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translate(-2px, -2px); transition: transform var(--t-ui) var(--ease-out); opacity: 0.7; flex: none; }
 .row-toggle[aria-expanded="true"] .chev { transform: rotate(225deg) translate(-2px, -2px); }
 .lb tr.detail > td { background: var(--night); padding: var(--s4) var(--s4) var(--s5); }
@@ -300,14 +423,14 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 /* Once shown: extra rows appear; their detail rows follow their own [hidden] */
 .lb.show-all tr.is-more:not([hidden]) { display: table-row; }
 
-.lb tr.leader { background: var(--amber); color: var(--night); }
-.lb tr.leader .rank, .lb tr.leader .mer, .lb tr.leader .proj small { color: var(--night); }
+.lb tr.leader { background: var(--accent); color: var(--night); }
+.lb tr.leader .rank, .lb tr.leader .mer, .lb tr.leader .posts, .lb tr.leader .proj small { color: var(--night); }
 .lb tr.leader a.proj-link { color: var(--night); }
 
 /* Last 7 days: one square per UTC day, filled when a post was approved */
 .week { display: inline-flex; gap: 5px; vertical-align: middle; }
 .week i { width: 13px; height: 13px; border: 1.5px solid var(--muted); }
-.week i.on { background: var(--phosphor); border-color: var(--phosphor); }
+.week i.on { background: var(--link); border-color: var(--link); }
 .lb tr.leader .week i { border-color: var(--night); }
 .lb tr.leader .week i.on { background: var(--night); }
 /* The other figure, shown under the name on phones where its column is hidden */
@@ -315,7 +438,7 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 
 /* Posts inside an opened row */
 .post-list { list-style: none; margin: 0 0 var(--s3); padding: 0; }
-.post-list a { display: flex; align-items: center; gap: var(--s3); min-height: var(--tap); padding: var(--s1) 0; border-bottom: 1px solid var(--line); color: var(--text); text-decoration: none; }
+.post-list a { display: flex; align-items: center; gap: var(--s3); min-height: var(--tap); padding: var(--s1) 0; border-bottom: 1px dashed var(--line); color: var(--text); text-decoration: none; }
 .post-list a:hover .post-name { text-decoration: underline; }
 .post-list .post-name { flex: 1; min-width: 0; overflow-wrap: anywhere; }
 .post-list .post-when { color: var(--muted); font: 400 var(--fs-xs)/1 var(--font-mono); white-space: nowrap; }
@@ -324,7 +447,7 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 /* One row per visit (visits.js): who and where, the X / Nostr links, when.
    The links always sit in the same two slots so they line up down a list. */
 .visits { list-style: none; margin: 0 0 var(--s3); padding: 0; }
-.visits li { border-bottom: 1px solid var(--line); }
+.visits li { border-bottom: 1px dashed var(--line); }
 .visit { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: var(--s2) var(--s4); min-height: var(--tap); padding: var(--s2) 0; }
 .visit-main { min-width: 0; overflow-wrap: anywhere; color: var(--muted); }
 .visit-main a { color: var(--text); text-decoration: none; }
@@ -335,21 +458,22 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
     position: relative; display: inline-flex; align-items: center; justify-content: center;
     min-width: 4.25rem; height: 28px; padding: 0 var(--s2);
     border: 1px solid var(--line-strong); border-radius: var(--radius);
-    font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--phosphor); text-decoration: none;
+    font: 400 var(--fs-xs)/1 var(--font-mono); text-transform: uppercase; color: var(--link); text-decoration: none;
 }
 .visit-link::after { content: ""; position: absolute; inset: -9px 0; }   /* 46px tall touch target */
-a.visit-link:hover { border-color: var(--phosphor); background: rgba(var(--phosphor-rgb), 0.12); }
+a.visit-link:hover { border-color: var(--accent); background: var(--accent); color: var(--night); }
 .visit-link.is-empty { border-color: transparent; }
 .visit-when { color: var(--muted); font: 400 var(--fs-xs)/1 var(--font-mono); white-space: nowrap; min-width: var(--visit-when, 18ch); text-align: right; }   /* fixed, so the links line up */
 /* Dates with a year ("27 Jan 2026") and no time need less room */
 .visits.dated { --visit-when: 11ch; }
 
 /* Period switch above the board */
-.seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: var(--radius); }
-.seg button { min-height: var(--tap); padding: 0 var(--s4); background: none; border: 0; color: var(--muted); font: 700 var(--fs-sm)/1 var(--font-text); cursor: pointer; }
-.seg button + button { border-left: 1px solid var(--line-strong); }
-.seg button[aria-pressed="true"] { background: var(--text); color: var(--night); }
-.seg button:hover:not([aria-pressed="true"]) { color: var(--text); }
+.seg { display: inline-flex; border: 1px dashed var(--line-strong); border-radius: var(--radius); }
+.seg button { min-height: var(--tap); padding: 0 var(--s4); background: none; border: 0; color: var(--muted); font: 400 var(--fs-sm)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; cursor: pointer; }
+.seg button + button { border-left: 1px dashed var(--line-strong); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--night); }
+.seg button[aria-pressed="true"]:focus-visible { outline-color: var(--accent); }
+.seg button:hover:not([aria-pressed="true"]) { color: var(--heading); }
 
 .board-empty { padding: var(--s6) var(--s5); max-width: 60ch; }
 .board-empty p { margin: 0 0 var(--s3); }
@@ -363,19 +487,29 @@ a.visit-link:hover { border-color: var(--phosphor); background: rgba(var(--phosp
    name, cap height, so it never wraps away from the last word */
 .name-flag { padding-right: 1.35em; background: no-repeat right 0 top 55% / auto 0.75em; }
 
-/* ----------------------------------------------------------- Facts row -- */
-.facts { display: flex; flex-wrap: wrap; gap: var(--s4) var(--s7); margin: 0; padding: 0; list-style: none; }
-.facts li { display: flex; align-items: baseline; gap: 10px; }
-.facts b { font: 700 var(--fs-2xl)/1 var(--font-mono); letter-spacing: -0.02em; }
-.facts li > span { color: var(--muted); }   /* the label, not spans inside a figure */
+/* ----------------------------------------------------------- Facts row --
+ * One figure per line, label first, then dot leaders to the figure: the
+ * phone's own way of listing settings. The figure comes first in the markup,
+ * so it is still read before its label.
+ */
+.facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(19rem, 100%), 1fr)); gap: 0 var(--s7); margin: 0; padding: 0; list-style: none; }
+.facts li { display: flex; align-items: baseline; gap: var(--s2); }
+.facts li > span { order: 1; color: var(--text); }   /* the label, not spans inside a figure */
+.facts li::after { content: ""; order: 2; flex: 1; min-width: var(--s4); border-bottom: 2px dotted var(--muted); transform: translateY(-6px); }
+.facts b { order: 3; font: 400 2.5rem/1.15 var(--font-display); color: var(--heading); text-shadow: var(--lcd); }
 .notes { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s6); margin: var(--s4) 0 0; padding: 0; list-style: none; color: var(--muted); }
 .notes strong { color: var(--text); font-weight: 700; }
 
-/* ---------------------------------------------------------- Plain list -- */
+/* ---------------------------------------------------------- Plain list --
+ * A row under the pointer turns into a solid block, like the phone's
+ * menu selection.
+ */
 .list { list-style: none; margin: 0; padding: 0; }
-.list li { border-bottom: 1px solid var(--line); }
-.list li > a, .list li > .row { display: flex; justify-content: space-between; align-items: center; gap: var(--s4); min-height: var(--tap); padding: var(--s2) 0; color: var(--text); text-decoration: none; }
-.list li > a:hover .li-main { text-decoration: underline; }
+.list li { border-bottom: 1px dashed var(--line); }
+.list li > a, .list li > .row { display: flex; justify-content: space-between; align-items: center; gap: var(--s4); min-height: var(--tap); padding: var(--s2); color: var(--text); text-decoration: none; }
+.list li > a:hover { background: var(--accent); color: var(--night); }
+.list li > a:hover .li-side, .list li > a:hover .li-sub, .list li > a:hover .tag { color: var(--night); border-color: var(--night); }
+.list li > a:focus-visible { outline-offset: -3px; }
 .list .li-main { min-width: 0; overflow-wrap: anywhere; }
 .list .li-main .tag { margin-right: var(--s2); }
 .list .li-side { color: var(--muted); white-space: nowrap; }
@@ -387,31 +521,31 @@ a.visit-link:hover { border-color: var(--phosphor); background: rgba(var(--phosp
 .list.show-all li.is-more { display: block; }
 .list-more { margin-top: var(--s4); }
 
-/* ------------------------------------------------------ Bars over time -- */
+/* ------------------------------------------------------ Bars over time --
+ * Every bar faint but today's, which is solid. A bar being read gets a frame.
+ */
 .bars { position: relative; display: flex; align-items: flex-end; gap: 3px; height: 140px; border-bottom: 1px solid var(--muted); }
-.bars i { flex: 1; min-height: 1px; background: var(--phosphor); opacity: 0.8; }
-.bars i.today { background: var(--amber); opacity: 1; }
-.bars-scale { position: absolute; left: 0; top: 0; font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--muted); background: var(--night); padding: 0 6px 2px 0; }
+.bars i { flex: 1; min-height: 1px; background: var(--link); opacity: 0.45; }
+.bars i.today { background: var(--accent); opacity: 1; }
 .bars-axis { display: flex; justify-content: space-between; padding-top: var(--s2); font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--muted); }
 /* Readout above a bar chart: one line, updated by hover, tap or arrow keys
    (includes/inject.js). Replaces per-bar tooltips, which phones can't show. */
 .bars-readout { margin: 0 0 var(--s2); min-height: 1.5em; font: 400 var(--fs-sm)/1.5 var(--font-mono); color: var(--text); }
 .bars { cursor: crosshair; touch-action: pan-y; }
-.bars i.sel { background: var(--heading); opacity: 1; }
-.bars i.today.sel { background: var(--amber-hi); }
+.bars i.sel { background: var(--heading); opacity: 1; outline: 1px solid var(--heading); outline-offset: 1px; }
 .bars:focus-visible { outline-offset: 4px; }
 
 /* ------------------------------------------------ Horizontal bar rows --
- * Same family as the per-day bars: thin phosphor bars, the current or live
- * one amber. One compact row each: label (name, date under it), bar, value
- * in a right-hand column. A row can be a link (a.hb-row) or plain (div).
+ * Same family as the per-day bars: segmented bars, the current or live one
+ * solid. One compact row each: label (name, date under it), bar, value in a
+ * right-hand column. A row can be a link (a.hb-row) or plain (div).
  */
 .hbars { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 .hb-row {
     display: grid; grid-template-columns: 10rem minmax(0, 1fr); align-items: center; column-gap: var(--s4);
     min-height: var(--tap); padding: 3px 0; color: var(--text); text-decoration: none;
 }
-a.hb-row:hover { background: rgba(var(--phosphor-rgb), 0.06); color: var(--text); }
+a.hb-row:hover { background: rgba(var(--accent-rgb), 0.1); color: var(--text); }
 a.hb-row:hover .hb-name { text-decoration: underline; }
 .hb-label { display: block; min-width: 0; line-height: 1.25; }
 .hb-name { display: block; font-weight: 700; white-space: nowrap; }
@@ -419,17 +553,25 @@ a.hb-row:hover .hb-name { text-decoration: underline; }
 /* Bar then its value. --w is the bar's share (0 to 1) of the room left once
    the value has its space, so the longest bar and its value always fit. */
 .hb-track { display: flex; align-items: center; gap: var(--s3); min-width: 0; }
-.hb-bar { flex: none; width: calc((100% - 5.5rem) * var(--w, 0)); min-width: 2px; height: 14px; background: var(--phosphor); opacity: 0.8; }
-.hb.current .hb-bar { background: var(--amber); opacity: 1; }
-.hb-val { font: 700 var(--fs-base)/1 var(--font-mono); white-space: nowrap; }
+.hb-bar { flex: none; width: calc((100% - 5.5rem) * var(--w, 0)); min-width: 2px; height: 14px; background: repeating-linear-gradient(90deg, var(--link) 0 6px, transparent 6px 8px); }
+.hb.current .hb-bar { background: var(--accent); }
+.hb-val { font: 400 1.375rem/1 var(--font-display); white-space: nowrap; color: var(--heading); }
 /* Context line under a row, lined up with the bars */
 .hb-note { margin: -4px 0 var(--s2) calc(10rem + var(--s4)); color: var(--muted); font: 400 var(--fs-sm)/1.45 var(--font-text); }
+
+/* Segmented bar for a share (0 to 1 in --v): the epoch status readouts */
+.seg-bar { display: block; position: relative; height: 10px; border: 1px solid var(--line-strong); }
+.seg-bar::before {
+    content: ""; position: absolute; inset: 2px auto 2px 2px;
+    width: calc((100% - 4px) * var(--v, 0));
+    background: repeating-linear-gradient(90deg, var(--accent) 0 7px, transparent 7px 9px);
+}
 
 /* ---------------------------------------------------------- Page head --
  * Inner pages: a heading and one plain sentence. Not a hero.
  */
-.page-head { padding: var(--s7) 0 var(--s5); border-bottom: 1px solid var(--line); }
-.page-head h1 { margin: 0; font-size: clamp(1.75rem, 4vw, 2.75rem); letter-spacing: -0.035em; }
+.page-head { padding: var(--s7) 0 var(--s5); border-bottom: 1px dashed var(--line-strong); }
+.page-head h1 { margin: 0; font-size: var(--fs-h1); }
 .page-head .lede { margin: var(--s3) 0 0; color: var(--muted); font-size: var(--fs-md); max-width: 60ch; }
 .page-head .facts { margin-top: var(--s5); }
 
@@ -439,8 +581,8 @@ a.hb-row:hover .hb-name { text-decoration: underline; }
 .prose { max-width: 70ch; }
 .prose p, .prose ul, .prose ol { margin: 0 0 var(--s4); }
 .prose > :last-child { margin-bottom: 0; }
-.prose h2 { margin: var(--s7) 0 var(--s3); font-size: var(--fs-lg); }
-.prose h3 { margin: var(--s5) 0 var(--s2); font-size: var(--fs-md); }
+.prose h2 { margin: var(--s7) 0 var(--s3); font-size: 1.875rem; }
+.prose h3 { margin: var(--s5) 0 var(--s2); font-size: 1.5rem; }
 .prose > h2:first-child, .prose > h3:first-child { margin-top: 0; }
 .prose ul, .prose ol { padding-left: 1.25em; }
 .prose li { margin: 0 0 var(--s2); }
@@ -450,20 +592,18 @@ a.hb-row:hover .hb-name { text-decoration: underline; }
 
 /* ----------------------------------------------------------- Surfaces -- */
 .box { padding: var(--s5); background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
-.box > h2, .box > h3 { margin: 0 0 var(--s3); font-size: var(--fs-md); }
-.box-label { margin: 0 0 var(--s3); font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--muted); letter-spacing: 0; }
+.box > h2, .box > h3 { margin: 0 0 var(--s3); font-size: 1.625rem; }
+.box-label { margin: 0 0 var(--s3); font: 400 var(--fs-sm)/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
 /* A note that needs attention: left rule, text says what kind */
-.callout { padding: var(--s4) var(--s5); border-left: 3px solid var(--phosphor); background: var(--panel); max-width: 70ch; }
-.callout.warn { border-left-color: var(--amber); }
+.callout { padding: var(--s4) var(--s5); border-left: 3px solid var(--link); background: var(--panel); max-width: 70ch; }
+.callout.warn { border-left-style: double; border-left-width: 5px; }
 .callout.danger { border-left-color: var(--danger); }
 .callout > :first-child { margin-top: 0; }
 .callout > :last-child { margin-bottom: 0; }
 
 /* ---------------------------------------------------- More buttons -- */
-.btn-amber { border-color: var(--amber); color: var(--amber); }
-.btn-amber:hover { background: rgba(var(--amber-rgb), 0.12); color: var(--amber); }
-.btn-danger { border-color: var(--danger); color: var(--danger); }
-.btn-danger:hover { background: rgba(255, 138, 138, 0.12); color: var(--danger); }
+.btn-danger { color: var(--danger); }
+.btn-danger:hover { background: var(--danger); color: var(--night); }
 .btn[disabled], .btn[aria-disabled="true"] { opacity: 0.5; cursor: not-allowed; transform: none; }
 
 /* Outline link chip: a row of external links (website, X, Nostr...) */
@@ -471,24 +611,26 @@ a.hb-row:hover .hb-name { text-decoration: underline; }
 .chip {
     display: inline-flex; align-items: center; gap: var(--s2);
     min-height: var(--tap); padding: 0 var(--s3);
-    border: 1px solid var(--line-strong); border-radius: var(--radius);
-    color: var(--phosphor); text-decoration: none; font: 700 var(--fs-sm)/1 var(--font-text);
+    border: 1px dashed var(--line-strong); border-radius: var(--radius);
+    color: var(--link); text-decoration: none;
+    font: 400 var(--fs-sm)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em;
 }
-.chip:hover { border-color: var(--phosphor); background: rgba(var(--phosphor-rgb), 0.12); color: var(--phosphor); }
+.chip:hover { border-color: var(--accent); background: var(--accent); color: var(--night); }
 
 /* Badge: emoji + label + note. The emoji is decorative; the label says it. */
 .badges { display: flex; flex-wrap: wrap; gap: var(--s2); margin: 0; padding: 0; list-style: none; }
-.badge { display: inline-flex; align-items: center; gap: var(--s2); min-height: var(--tap); padding: var(--s1) var(--s3); border: 1px solid var(--line-strong); border-radius: var(--radius); }
+.badge { display: inline-flex; align-items: center; gap: var(--s2); min-height: var(--tap); padding: var(--s1) var(--s3); border: 1px dashed var(--line-strong); border-radius: var(--radius); }
 .badge-label { font-weight: 700; }
 .badge-note { color: var(--muted); font-size: var(--fs-sm); }
 
-/* Review status: always text, colour only reinforces it */
-.status { display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border: 1px solid currentColor; border-radius: var(--radius); font: 700 var(--fs-xs)/1.3 var(--font-text); white-space: nowrap; }
+/* Review status: always text. With two tones, the border's style tells them
+   apart too: solid when approved, dashed while pending. */
+.status { display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border: 1px solid currentColor; border-radius: var(--radius); font: 400 var(--fs-xs)/1.3 var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
 .status::before { content: ""; width: 7px; height: 7px; background: currentColor; }
-.status-approved { color: var(--phosphor); }
-.status-pending { color: var(--amber); }
+.status-approved { color: var(--link); }
+.status-pending { color: var(--text); border-style: dashed; }
 .status-rejected { color: var(--danger); }
-.status-neutral { color: var(--muted); }
+.status-neutral { color: var(--muted); border-style: dotted; }
 
 /* --------------------------------------------------------------- Forms -- */
 .field { display: grid; gap: 6px; min-width: 0; }
@@ -505,7 +647,8 @@ textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize:
 .input::placeholder { color: var(--muted); opacity: 1; }
 .input:hover, .select:hover { border-color: var(--muted); }
 .input[aria-invalid="true"] { border-color: var(--danger); }
-.select { appearance: none; -webkit-appearance: none; padding-right: 40px; cursor: pointer; color-scheme: dark; }
+/* No color-scheme of its own: it inherits the page's, chosen mode included */
+.select { appearance: none; -webkit-appearance: none; padding-right: 40px; cursor: pointer; }
 .select option { background: var(--panel); color: var(--text); }
 .select-wrap { position: relative; }
 .select-wrap::after {
@@ -514,7 +657,7 @@ textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize:
     transform: rotate(45deg); pointer-events: none;
 }
 .check { display: flex; align-items: center; gap: var(--s3); min-height: var(--tap); cursor: pointer; }
-.check input { width: 20px; height: 20px; accent-color: var(--phosphor); }
+.check input { width: 20px; height: 20px; accent-color: var(--link); }
 
 /* ------------------------------------------------------ Donation panel --
  * Directory card backs and project and merchant profiles (markup: donate.js).
@@ -522,19 +665,19 @@ textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize:
  * taller one, so switching never changes the panel's size; a directory card
  * back fills the card instead.
  */
-.donate { position: relative; overflow: hidden; background: var(--panel); border: 1px solid rgba(var(--amber-rgb), 0.55); border-radius: var(--radius); }
+.donate { position: relative; overflow: hidden; background: var(--panel); border: 1px solid var(--line-strong); border-radius: var(--radius); }
 .donate-slides { display: flex; height: 100%; transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); }
 .donate.show-onchain .donate-slides { transform: translateX(-100%); }
 .donate-side { flex: 0 0 100%; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: var(--s2); padding: var(--s4); }
 .donate .donate-title {
     align-self: stretch; margin: 0; text-align: center;
-    font: 700 var(--fs-base)/1.25 var(--font-text); letter-spacing: 0; color: var(--heading);
+    font: 700 var(--fs-base)/1.25 var(--font-text); letter-spacing: 0; color: var(--heading); text-shadow: none;
     overflow-wrap: anywhere;
     display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
 }
 .donate-title:focus { outline: none; }
-.donate-title:focus-visible { outline: 2px solid var(--phosphor); outline-offset: 2px; }
-.donate-label { margin: 0; color: var(--amber); font: 700 var(--fs-sm)/1.2 var(--font-text); }
+.donate-title:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.donate-label { margin: 0; color: var(--accent); font: 400 var(--fs-sm)/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; }
 /* The QR needs a white quiet zone to scan: white here is functional */
 .qr-box { flex: none; width: 176px; height: 176px; padding: var(--s2); background: #fff; line-height: 0; }
 .qr-box canvas { display: block; width: 160px !important; height: 160px !important; }
@@ -545,12 +688,13 @@ textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize:
     font: 400 0.75rem/1.4 var(--font-mono); text-align: center; overflow-wrap: anywhere;
     cursor: pointer;
 }
-.addr-copy:hover { border-color: var(--phosphor); }
-.addr-copy.copied { border-color: var(--phosphor); color: var(--phosphor); }
+.addr-copy:hover { border-color: var(--link); }
+.addr-copy.copied { border-color: var(--link); color: var(--link); }
 .donate-actions { display: flex; gap: var(--s2); width: 100%; margin-top: auto; }
 .donate-actions .btn { flex: 1; min-width: 0; }
 /* .pb button resets font and colour, which would override .btn on <button> */
-.pb .donate-actions button.btn { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--phosphor); }
+.pb .donate-actions button.btn { font: 400 var(--fs-sm)/1.2 var(--font-mono); color: var(--link); }
+.pb .donate-actions button.btn:hover { color: var(--night); }
 
 @media (max-width: 720px) {
     .lb th, .lb td { padding: var(--s3) 10px; }
@@ -575,9 +719,9 @@ textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize:
     /* Right-aligned; drops to its own line when the links leave no room */
     .visit-when { min-width: 0; margin-left: auto; }
     .armor { font-size: 10px; }
-    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s5) var(--s4); }
-    .facts li { flex-direction: column; gap: 4px; }
-    .facts b { font-size: 1.625rem; }
+    .section > h2, .section-head h2 { font-size: 1.75rem; }
+    .facts { grid-template-columns: minmax(0, 1fr); }
+    .facts b { font-size: 2rem; }
     .hb-row { grid-template-columns: 8.5rem minmax(0, 1fr); column-gap: var(--s3); }
     .hb-note { margin-left: calc(8.5rem + var(--s3)); }
 }

@@ -770,7 +770,7 @@ function initTelegramVerification() {
                 usernameInput.removeAttribute('aria-invalid');
                 if (feedback) {
                     feedback.textContent = '✓ Username matches. You can send the code now.';
-                    feedback.style.color = 'var(--phosphor)';
+                    feedback.style.color = 'var(--link)';
                 }
             } else {
                 // No match - disable button

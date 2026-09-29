@@ -16,7 +16,18 @@
     <meta property="og:description" content="Track PoW video submissions from review through payment.">
     <meta property="og:image" content="https://powbot.africa/images/PoWBoT_preview.jpg">
 
-    <meta name="theme-color" content="#070F0B">
+    <meta name="theme-color" content="#37442F">
+    <script>
+        // Light, if chosen with the header switch (dark is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
+        (function () {
+            try {
+                if (localStorage.getItem('pb-theme') === 'light') document.documentElement.dataset.theme = 'light';
+                if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
+            } catch (e) { /* storage blocked: the defaults, dark with effects on */ }
+        })();
+    </script>
     <meta name="description" content="Every PoW video submission to PoWBoT, from review through payment.">
 
     <link rel="stylesheet" href="css/powbot.css">
@@ -33,7 +44,7 @@
         .filters .field-search, #custom-date-range { grid-column: 1 / -1; }
         .date-range { display: grid; grid-template-columns: repeat(2, minmax(0, 14rem)); gap: var(--s4); }
         /* A filter that is narrowing the list gets a phosphor edge */
-        .filters .active { border-color: var(--phosphor); }
+        .filters .active { border-color: var(--link); }
 
         /* -------------------------------------------------- Count and pager -- */
         .results-bar {
@@ -91,7 +102,10 @@
             .filters { grid-template-columns: minmax(0, 1fr); gap: var(--s3); padding: var(--s4) 0; }
             .date-range { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .results-bar { flex-direction: column; align-items: stretch; }
-            .pager { justify-content: space-between; }
+            /* The page number takes its own line above the buttons, so the
+               bracketed Previous and Next always fit side by side */
+            .pager { justify-content: space-between; flex-wrap: wrap; }
+            .pager .page-info { order: -1; flex-basis: 100%; text-align: center; }
             .pager .btn { flex: 1; }
             .card-header { grid-template-columns: minmax(0, 1fr) auto; padding: var(--s3); }
             .card-header .status { grid-column: 1; grid-row: 2; justify-self: start; }

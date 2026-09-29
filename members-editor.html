@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
-    <meta name="theme-color" content="#070F0B">
+    <meta name="theme-color" content="#37442F">
+    <script>
+        // Light, if chosen with the header switch (dark is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
+        (function () {
+            try {
+                if (localStorage.getItem('pb-theme') === 'light') document.documentElement.dataset.theme = 'light';
+                if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
+            } catch (e) { /* storage blocked: the defaults, dark with effects on */ }
+        })();
+    </script>
     <title>Members editor | PoWBoT</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
@@ -18,7 +29,7 @@
         .app { display: flex; flex-direction: column; height: 100vh; }
         .tool-head { flex: none; border-bottom: 1px solid var(--line); }
         .tool-head .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s3) var(--s5); padding-top: var(--s4); padding-bottom: var(--s4); max-width: none; }
-        .tool-head h1 { margin: 0; font-size: var(--fs-xl); }
+        .tool-head h1 { margin: 0; font-size: 2rem; }
         .tool-head p { margin: var(--s1) 0 0; color: var(--muted); max-width: 70ch; }
 
         .container { flex: 1; min-height: 0; grid-template-columns: 300px minmax(0, 1fr); }
@@ -32,7 +43,7 @@
             color: var(--text); text-align: left; cursor: pointer;
         }
         .member-item button:hover { background: var(--panel-hi); }
-        .member-item.active button { border-left-color: var(--phosphor); background: var(--panel-hi); }
+        .member-item.active button { border-left-color: var(--link); background: var(--panel-hi); }
         .member-item-name { display: block; font-weight: 700; }
         .member-item.active .member-item-name { color: var(--heading); }
         .member-item-country { display: block; color: var(--muted); font-size: var(--fs-sm); }
@@ -65,7 +76,7 @@
 
         /* Save and error notices: a callout pinned to the corner, no motion */
         .status-message { position: fixed; top: var(--s4); right: var(--s4); left: auto; z-index: 1000; max-width: min(28rem, calc(100vw - 2 * var(--s4))); border: 1px solid var(--line); font-weight: 700; }
-        .status-success { border-left: 3px solid var(--phosphor); }
+        .status-success { border-left: 3px solid var(--link); }
         .status-error { border-left: 3px solid var(--danger); }
 
         @media (max-width: 900px) {

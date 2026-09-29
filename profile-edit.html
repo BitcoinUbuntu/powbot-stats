@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="page-title">Edit profile | PoWBoT</title>
-    <meta name="theme-color" content="#070F0B">
+    <meta name="theme-color" content="#37442F">
+    <script>
+        // Light, if chosen with the header switch (dark is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
+        (function () {
+            try {
+                if (localStorage.getItem('pb-theme') === 'light') document.documentElement.dataset.theme = 'light';
+                if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
+            } catch (e) { /* storage blocked: the defaults, dark with effects on */ }
+        })();
+    </script>
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
@@ -36,7 +47,7 @@
         #edit-section { display: grid; gap: var(--s5); }
 
         /* Messages from profile-editor.js: a callout whose rule says what kind */
-        .message-warning { border-left-color: var(--amber); }
+        .message-warning { border-left-color: var(--accent); }
         .message-error { border-left-color: var(--danger); }
         .save-indicator { color: var(--muted); font-size: var(--fs-sm); }
         #session-warning { display: grid; gap: var(--s3); }
@@ -61,18 +72,18 @@
         .file-input { padding: 3px; cursor: pointer; line-height: 36px; }
         .file-input::file-selector-button {
             min-height: 36px; margin-right: var(--s3); padding: 0 var(--s4);
-            background: none; color: var(--phosphor);
-            border: 1px solid var(--phosphor); border-radius: var(--radius);
+            background: none; color: var(--link);
+            border: 1px solid var(--link); border-radius: var(--radius);
             font: 700 var(--fs-sm)/1 var(--font-text); cursor: pointer;
         }
-        .file-input:hover::file-selector-button { background: rgba(var(--phosphor-rgb), 0.12); }
+        .file-input:hover::file-selector-button { background: rgba(var(--link-rgb), 0.12); }
 
         .thumb {
             display: block; width: 120px; height: 120px; object-fit: cover;
             border: 1px solid var(--line); border-radius: var(--radius); background: var(--night);
         }
         .current-logo, .logo-preview { display: grid; gap: var(--s2); justify-items: start; }
-        .logo-preview .thumb { border-color: var(--phosphor); }
+        .logo-preview .thumb { border-color: var(--link); }
         .logo-preview .btn { margin-top: var(--s1); }
 
         .gallery-block { display: grid; gap: var(--s3); }
@@ -83,7 +94,7 @@
             border: 1px solid var(--line); border-radius: var(--radius); background: var(--night);
         }
         .gallery-item.deleted img { opacity: 0.3; filter: grayscale(1); }
-        .gallery-item.is-new img { border-color: var(--phosphor); }
+        .gallery-item.is-new img { border-color: var(--link); }
         .gallery-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--muted); font-size: var(--fs-xs); }
         .gallery-delete { width: 100%; }
         .gallery-counter { color: var(--muted); font-size: var(--fs-sm); }

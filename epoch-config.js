@@ -7,8 +7,9 @@
  * `python scripts/build_merchants_seen.py` and commit merchants-seen.json,
  * so the homepage's "New this epoch" merchant list compares against it.
  *
- * All times are UTC. `end` is the planned end and is shown as "around <date>",
- * because an epoch closes when the maintainers close it, not on a timer.
+ * All times are UTC. `end` is the planned end, shown on the homepage as
+ * "Ends <date>". An epoch still closes when the maintainers close it, not on
+ * a timer: past this date the page says it is closing soon.
  *
  * If stats.json ever carries an `epoch` object ({ name, start, end }), pages
  * prefer it over these values, so the exporter can become the source of truth

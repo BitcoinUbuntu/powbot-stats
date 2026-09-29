@@ -9,6 +9,89 @@
     const SUPPORT_URL = 'https://t.me/bitcoinubuntu';
 
     /**
+     * Screen effects (the footer switch): the screen's texture, the shadow
+     * under pixel type, and the globe's motion. Off puts .fx-off on <html>,
+     * and the choice is remembered in this browser. Storage can be blocked
+     * (private windows, strict settings), so every read and write is guarded
+     * and the default is on. Applied straight away, before the includes load.
+     */
+    const FX_KEY = 'pb-screen-effects';
+    let fxSaved = null;
+    try { fxSaved = localStorage.getItem(FX_KEY); } catch (e) { /* default: on */ }
+    if (fxSaved === 'off') document.documentElement.classList.add('fx-off');
+
+    function showFx(on) {
+        document.querySelectorAll('.fx-toggle').forEach(button => {
+            button.setAttribute('aria-checked', String(on));
+            const state = button.querySelector('.fx-state');
+            if (state) state.textContent = on ? 'on' : 'off';
+        });
+    }
+
+    function setFx(on) {
+        document.documentElement.classList.toggle('fx-off', !on);
+        try {
+            if (on) localStorage.removeItem(FX_KEY);
+            else localStorage.setItem(FX_KEY, 'off');
+        } catch (e) { /* works for this visit, just not remembered */ }
+        showFx(on);
+        // The globe (globe.js) listens, to stop or restart its motion
+        document.dispatchEvent(new CustomEvent('pb:fx', { detail: { on } }));
+    }
+
+    /**
+     * Light or dark (the header switch). Dark is the default; light, once
+     * chosen, is kept in this browser and applied before the first paint by
+     * a snippet in each page's <head>. Choosing dark again clears it. The
+     * browser's own bar colour (theme-color) follows too.
+     */
+    const THEME_KEY = 'pb-theme';
+    const themeNow = () => (document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
+
+    function showTheme() {
+        const root = document.documentElement;
+        const dark = themeNow() === 'dark';
+        document.querySelectorAll('.theme-toggle').forEach(button => {
+            button.setAttribute('aria-pressed', String(dark));
+            button.title = dark ? 'Switch to light' : 'Switch to dark';
+        });
+        // The page's own colour for the browser's bar: the olive tag's colour
+        // by default, the glass once light is chosen
+        const night = getComputedStyle(root).getPropertyValue('--night').trim();
+        document.querySelectorAll('meta[name="theme-color"]').forEach(meta => {
+            if (meta.dataset.own === undefined) meta.dataset.own = meta.getAttribute('content');
+            meta.setAttribute('content', !dark && night ? night : meta.dataset.own);
+        });
+    }
+
+    function setTheme(mode) {
+        const root = document.documentElement;
+        try {
+            if (mode === 'light') localStorage.setItem(THEME_KEY, 'light');
+            else localStorage.removeItem(THEME_KEY);
+        } catch (e) { /* works for this visit, just not remembered */ }
+        if (mode === 'light') root.dataset.theme = 'light';
+        else delete root.dataset.theme;
+        showTheme();
+        // The globe (globe.js) listens, to redraw in the new colours
+        document.dispatchEvent(new CustomEvent('pb:theme', { detail: { mode } }));
+    }
+
+    function setupTheme(nav) {
+        const button = nav && nav.querySelector('.theme-toggle');
+        if (!button) return;
+        showTheme();
+        button.addEventListener('click', () => setTheme(themeNow() === 'dark' ? 'light' : 'dark'));
+    }
+
+    function setupFx(footer) {
+        const button = footer && footer.querySelector('.fx-toggle');
+        if (!button) return;
+        showFx(!document.documentElement.classList.contains('fx-off'));
+        button.addEventListener('click', () => setFx(document.documentElement.classList.contains('fx-off')));
+    }
+
+    /**
      * Load and inject navigation
      */
     async function loadNav() {
@@ -25,6 +108,9 @@
 
             // Phone menu button
             setupMenu(navContainer.querySelector('.site-nav'));
+
+            // Light or dark switch
+            setupTheme(navContainer.querySelector('.site-nav'));
         } catch (error) {
             console.error('Failed to load navigation:', error);
         }
@@ -41,6 +127,7 @@
             const response = await fetch('includes/footer.html');
             const html = await response.text();
             footerContainer.innerHTML = html;
+            setupFx(footerContainer);
 
             // Update timestamp for all pages
             await updateTimestamp();
@@ -277,6 +364,55 @@
         const chart = event.target.closest && event.target.closest('.bars');
         if (chart) clearBar(chart);
     });
+
+    /**
+     * Section tabs (.subtabs, "On this page"): the tab for the section being
+     * read gets aria-current, and CSS draws it [in brackets]. Sections can
+     * render after the data loads, so the targets are looked up on every
+     * check rather than once. A section counts as being read once its heading
+     * has passed just under the sticky bars.
+     */
+    function setupSubtabs() {
+        const bar = document.querySelector('.subtabs');
+        if (!bar) return;
+        const links = Array.from(bar.querySelectorAll('a[href^="#"]'));
+        let queued = false;
+
+        function update() {
+            queued = false;
+            const nav = document.getElementById('site-nav');
+            const line = Math.max(nav ? nav.getBoundingClientRect().bottom : 0, bar.getBoundingClientRect().bottom) + 24;
+            const atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+            let current = links[0], currentTop = -Infinity;
+            for (const link of links) {
+                const target = document.getElementById(link.hash.slice(1));
+                if (!target) continue;
+                const top = target.getBoundingClientRect().top;
+                // At the very bottom, the last section on screen counts even if
+                // short. Headings side by side sit level: the first keeps the tab.
+                if ((top <= line || (atEnd && top < window.innerHeight)) && top > currentTop + 1) {
+                    current = link;
+                    currentTop = top;
+                }
+            }
+            links.forEach(link => {
+                if (link === current) link.setAttribute('aria-current', 'true');
+                else link.removeAttribute('aria-current');
+            });
+        }
+        function queue() {
+            if (queued) return;
+            queued = true;
+            requestAnimationFrame(update);
+        }
+        window.addEventListener('scroll', queue, { passive: true });
+        window.addEventListener('resize', queue);
+        // Sections fill in once the data loads: look again when the page grows
+        // (a short page still loading counts as "at the end" otherwise)
+        if (window.ResizeObserver) new ResizeObserver(queue).observe(document.body);
+        update();
+    }
+    setupSubtabs();
 
     // Export support URL for use in other scripts
     window.SUPPORT_URL = SUPPORT_URL;

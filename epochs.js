@@ -32,7 +32,7 @@
      *   title    heading text
      *   intro    HTML sentence(s) before the rules note (the page's own summary)
      *   epochs   list to draw (defaults to POWBOT_EPOCHS)
-     *   current  name of the epoch this page is about: amber bar, aria-current
+     *   current  name of the epoch this page is about: solid bar, aria-current
      *   live     optional { name, when, posts, href, note } appended at the end
      */
     window.renderEpochBars = function ({ id = 'epochs-title', title = 'Every epoch so far', intro = '', epochs = window.POWBOT_EPOCHS, current = '', live = null } = {}) {

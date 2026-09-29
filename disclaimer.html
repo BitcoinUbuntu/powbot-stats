@@ -6,7 +6,18 @@
     <title>Disclaimer | PoWBoT Stats</title>
     <meta name="description" content="PoWBoT Stats data is best effort. Projects keep their own payment addresses up to date, so verify an address with the project before you donate.">
     <link rel="canonical" href="https://powbot.africa/disclaimer.html">
-    <meta name="theme-color" content="#070F0B">
+    <meta name="theme-color" content="#37442F">
+    <script>
+        // Light, if chosen with the header switch (dark is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
+        (function () {
+            try {
+                if (localStorage.getItem('pb-theme') === 'light') document.documentElement.dataset.theme = 'light';
+                if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
+            } catch (e) { /* storage blocked: the defaults, dark with effects on */ }
+        })();
+    </script>
     <link rel="icon" type="image/png" sizes="32x32" href="images/stats_emoji_32px.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/stats_emoji_16px.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/stats_emoji_180px.png">
@@ -14,7 +25,6 @@
     <link rel="stylesheet" href="css/powbot.css">
     <style>
         /* Disclaimer layout only. Colours, type and components: css/powbot.css */
-        .section { padding: var(--s6) 0; }
     </style>
 </head>
 <body class="pb">
