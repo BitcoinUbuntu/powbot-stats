@@ -428,12 +428,13 @@ function renderSubmissions() {
 }
 
 // Review status as a text label; colour only reinforces it.
-// Processed means approved and paid, so it reads "Approved".
+// The public tracker never mentions payments: "Approved" is the middle
+// step and "Processed" the final one, with no word on whether anyone is paid.
 const STATUS_LABELS = {
-    'processed': { cls: 'status-approved', label: 'Approved' },
+    'processed': { cls: 'status-approved', label: 'Processed' },
     'rejected': { cls: 'status-rejected', label: 'Rejected' },
     'pending review': { cls: 'status-pending', label: 'Pending review' },
-    'approved': { cls: 'status-pending', label: 'Approved, payment pending' }
+    'approved': { cls: 'status-pending', label: 'Approved' }
 };
 
 function renderStatus(status) {
