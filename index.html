@@ -111,10 +111,6 @@
         .countries { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--s6); align-items: center; }
         .globe { position: relative; border: 1px dashed var(--line-strong); }
         .globe canvas { display: block; width: 100%; height: 340px; }
-        /* Member countries with no posts yet: one line, keyed by the globe's
-           hollow square */
-        .quiet-note { margin: var(--s3) 0 0; padding: 0 var(--s2); color: var(--muted); font-size: var(--fs-sm); }
-        .quiet-key { display: inline-block; width: 9px; height: 9px; margin-right: var(--s2); border: 1.5px solid var(--link); vertical-align: 0; }
         .globe .globe-pause { position: absolute; right: var(--s1); bottom: var(--s1); background: var(--night); }
         .globe .globe-pause:hover { background: var(--accent); }
         /* One line on desktop, room for two on phones: the note can't push the table */
@@ -798,16 +794,12 @@
                     <span class="li-side">${plural(c.count, 'project', 'projects')}</span>
                 </a></li>`).join('');
 
-            // Member countries with no approved post yet this epoch: hollow on
-            // the globe, and named in one line under the list (its key)
-            const quiet = quietCountries(countries);
-            const names = quiet.map(q => `<a href="members.html?country=${encodeURIComponent(q.flag + ' ' + q.country)}">${escapeHtml(q.country)}</a>`);
-            const joined = names.length > 1 ? `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}` : names[0];
-            const quietNote = quiet.length
-                ? `<p class="quiet-note"><span class="quiet-key" aria-hidden="true"></span>Member projects in ${joined}, with no approved posts yet this epoch.</p>`
-                : '';
+            // Member countries with no approved post yet this epoch show hollow
+            // on the globe; its description names them for screen readers
+            const quiet = quietCountries(countries).map(q => q.country);
+            const quietNames = quiet.length > 1 ? `${quiet.slice(0, -1).join(', ')} and ${quiet[quiet.length - 1]}` : quiet[0];
             const mapLabel = `Map of Africa with this epoch’s ${plural(countries.length, 'country', 'countries')} marked`
-                + (quiet.length ? `, and ${plural(quiet.length, 'more member country', 'more member countries')} shown hollow` : '');
+                + (quiet.length ? `, and member projects with no approved posts yet in ${quietNames}, shown hollow` : '');
 
             return `
                 <section class="section" aria-labelledby="countries-title">
@@ -819,10 +811,7 @@
                             <canvas role="img" aria-label="${attrSafe(mapLabel)}"></canvas>
                             <button type="button" class="btn globe-pause">Pause</button>
                         </div>
-                        <div>
-                            <ul class="list">${countryItems}</ul>
-                            ${quietNote}
-                        </div>
+                        <ul class="list">${countryItems}</ul>
                     </div>` : '<p>No countries yet. They appear with each project’s first approved post.</p>'}
                 </section>`;
         }
