@@ -270,11 +270,11 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .lb-fixed .c-num { width: 7.5rem; }
 .lb-fixed .c-week { width: 10.5rem; }
 .lb tbody tr:last-child > * { border-bottom: 0; }
-.lb .rank { width: 4.5rem; font: 400 var(--fs-md)/1 var(--font-mono); color: var(--muted); }
+.lb .rank { width: 4.5rem; font: 400 var(--fs-base)/1 var(--font-mono); color: var(--muted); }
 .lb .proj { font-weight: 400; }
-.lb .proj-name { font: 700 var(--fs-lg)/1.2 var(--font-text); }
+.lb .proj-name { font: 700 var(--fs-md)/1.2 var(--font-text); }
 .lb .proj small { display: block; color: var(--muted); font-size: var(--fs-sm); }
-.lb .posts { font: 700 1.625rem/1 var(--font-mono); letter-spacing: -0.01em; }
+.lb .posts { font: 700 1.375rem/1 var(--font-mono); letter-spacing: -0.01em; }
 .lb .mer { font: 400 var(--fs-base)/1 var(--font-mono); color: var(--muted); }
 .lb a.proj-link { display: inline-flex; align-items: center; min-height: var(--tap); color: var(--text); text-decoration: none; }
 .lb a.proj-link:hover .proj-name { text-decoration: underline; }
@@ -553,14 +553,13 @@ textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize:
 
 @media (max-width: 720px) {
     .lb th, .lb td { padding: var(--s3) 10px; }
-    .lb .rank { width: 2.5rem; font-size: var(--fs-base); }
+    .lb .rank { width: 2.5rem; }
     .lb-fixed .c-rank { width: 2.5rem; }
     /* Just wider than a "Merchants" header; not the hidden zero-width column */
     .lb-fixed .c-num:not(.col-wide) { width: 5.625rem; }
     /* Sized so every project name fits on one line from 375px up */
     .lb .proj { padding-right: 0; }
     .lb .proj-name { font-size: var(--fs-base); }
-    .lb .posts { font-size: 1.375rem; }
     .lb .col-wide { display: none; }
     /* Fixed-layout boards keep those columns at zero width instead of removing
        them: an opened row spans every column, and removed ones came back as
