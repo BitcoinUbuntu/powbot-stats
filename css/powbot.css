@@ -661,6 +661,22 @@ textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize:
 /* No color-scheme of its own: it inherits the page's, chosen mode included */
 .select { appearance: none; -webkit-appearance: none; padding-right: 40px; cursor: pointer; }
 .select option { background: var(--panel); color: var(--text); }
+/* Where the browser allows it (Chrome and Edge 135+), the page draws the
+   open list itself, so its highlight is the site's solid block rather than
+   the system's grey. Other browsers keep their own list. */
+@supports (appearance: base-select) {
+    .select, .select::picker(select) { appearance: base-select; }
+    .select { display: flex; align-items: center; }
+    .select::picker-icon { display: none; }   /* .select-wrap draws the chevron */
+    .select::picker(select) {
+        margin-top: 2px; padding: 0; background: var(--panel); color: var(--text);
+        border: 1px solid var(--line-strong); border-radius: 0;
+    }
+    .select option { display: flex; align-items: center; min-height: var(--tap); padding: 0 var(--s3); gap: var(--s2); }
+    .select option::checkmark { display: none; }
+    .select option:hover, .select option:focus-visible { background: var(--accent); color: var(--night); outline: none; }
+    .select option:checked { font-weight: 700; }
+}
 .select-wrap { position: relative; }
 .select-wrap::after {
     content: ""; position: absolute; right: 16px; top: 50%; width: 8px; height: 8px; margin-top: -6px;
