@@ -265,6 +265,9 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .site-nav .theme-toggle:focus-visible { outline-offset: -3px; border-radius: 0; }
 .theme-toggle .icon-moon, .theme-toggle[aria-pressed="true"] .icon-sun { display: none; }
 .theme-toggle[aria-pressed="true"] .icon-moon { display: block; }
+/* The moon's dark side, in the lighter olive (earthshine): the header's own
+   colour would hide it. The moon only shows in dark mode. */
+.theme-toggle .moon-shade { fill: var(--panel-hi); }
 /* Links fill the bar from its top edge to the rule, so the current page's
    block sits flush top and bottom */
 .site-nav .nav-links { display: flex; align-items: stretch; gap: var(--s1); margin: 0; padding: 0; list-style: none; }
