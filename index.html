@@ -90,8 +90,10 @@
 
         /* Epoch status: the mascot with a readout at each corner, each with a
            bar for its share (seg-bar, css/powbot.css) */
+        /* Bottom-aligned with the left column: its last bars end level with
+           the progress bar */
         .epoch-status {
-            grid-area: status; align-self: center;
+            grid-area: status; align-self: end;
             display: grid; grid-template-columns: 8.5rem auto 8.5rem; grid-template-rows: 1fr 1fr;
             align-items: center; gap: var(--s4) var(--s5);
         }
@@ -133,7 +135,14 @@
         .daily { margin-top: var(--s6); }
         .daily h3 { margin: 0 0 var(--s2); font-size: 1.5rem; }
         /* The leaderboard: a plain list like Merchants, a rank before each name */
-        .lb-rank { display: inline-block; min-width: 2.25rem; margin-right: var(--s2); padding: 2px 4px; font: 400 var(--fs-sm)/1.2 var(--font-mono); color: var(--muted); text-align: center; }
+        /* Rank, then the name in its own column: a name that wraps lines up
+           under itself, not under the rank */
+        .lb-list .li-main { display: flex; align-items: baseline; }
+        /* The figure sits on the name's last line when a name wraps (both
+           share one font and line height, so their bottoms line up) */
+        .lb-list li > a { align-items: flex-end; }
+        .lb-name { min-width: 0; }
+        .lb-rank { flex: none; display: inline-block; min-width: 2.25rem; margin-right: var(--s2); padding: 2px 4px; font: 400 var(--fs-sm)/1.2 var(--font-mono); color: var(--muted); text-align: center; }
         .lb-list li > a:hover .lb-rank { color: var(--night); }
         /* One line per merchant in both views, so switching never changes the
            list's height. A long name is cut short on screen only; the link
@@ -157,6 +166,10 @@
             .board-bar h2 { font-size: 1.75rem; }
             .globe canvas { height: 280px; }
             #latest-list li > a { flex-direction: column; align-items: flex-start; gap: 2px; padding: var(--s3) var(--s2); }
+            /* Room for each name on one line from 360px: a narrower rank column
+               and less space around the row */
+            .lb-list li > a { gap: var(--s2); padding-left: 0; padding-right: var(--s1); }
+            .lb-rank { min-width: 1.75rem; margin-right: var(--s1); padding: 2px 0; }
         }
     </style>
 </head>
@@ -387,7 +400,8 @@
             return (lower.includes('twitter.com') || lower.includes('x.com')) ? 'X' : 'Nostr';
         }
 
-        const plural = (n, one, many) => `${formatNumber(n)} ${n === 1 ? one : many}`;
+        // "158 merchants": a no-break space, so a count never splits from its word
+        const plural = (n, one, many) => `${formatNumber(n)} ${n === 1 ? one : many}`;
 
         // ------------------------------------------------------------ Hero --
 
@@ -587,7 +601,7 @@
         function boardList(rows, caption) {
             const items = rows.map((r, i) => `
                 <li class="${i >= BOARD_ROWS ? 'is-more' : ''}"><a href="${attrSafe(r.href)}">
-                    <span class="li-main"><span class="lb-rank num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>${r.name}</span>
+                    <span class="li-main"><span class="lb-rank num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span><span class="lb-name">${r.name}</span></span>
                     <span class="li-side num">${r.figure}</span>
                 </a></li>`).join('');
             const label = `Show all ${rows.length} projects`;
@@ -763,7 +777,7 @@
                 return `
                 <section class="section" aria-labelledby="latest-title">
                     <h2 id="latest-title">Latest approved posts</h2>
-                    <p class="section-note">Proof-of-work visits approved in the last ${ACTIVITY_WINDOW_HOURS} hours, newest first.</p>
+                    <p class="section-note">Watch the latest proof-of-work videos approved in the last ${ACTIVITY_WINDOW_HOURS}&nbsp;hours.</p>
                     ${visits.length
                         ? `<ul class="list visits" id="latest-list">${rows}</ul>
                            ${visits.length > LIST_ROWS ? `<button type="button" class="btn list-more" data-list="latest-list" data-label="Show all ${visits.length}" aria-controls="latest-list" aria-expanded="false">Show all ${visits.length}</button>` : ''}`
@@ -787,7 +801,7 @@
             return `
                 <section class="section" aria-labelledby="latest-title">
                     <h2 id="latest-title">Latest approved posts</h2>
-                    <p class="section-note">Proof-of-work videos approved in the last ${ACTIVITY_WINDOW_HOURS} hours, newest first. Each opens the post on X or Nostr.</p>
+                    <p class="section-note">Watch the latest proof-of-work videos approved in the last ${ACTIVITY_WINDOW_HOURS}&nbsp;hours.</p>
                     ${videos.length
                         ? `<ul class="list" id="latest-list">${items}</ul>
                            ${videos.length > LIST_ROWS ? `<button type="button" class="btn list-more" data-list="latest-list" data-label="Show all ${videos.length} posts" aria-controls="latest-list" aria-expanded="false">Show all ${videos.length} posts</button>` : ''}`
@@ -1001,6 +1015,11 @@
                 renderEpochs(stats);
             renderMerchantList();
             mountGlobe(stats.countries || []);
+
+            // A link to a section (index.html#merchants-title, the back arrow on
+            // a merchant page) arrives before the section is drawn: go to it now
+            const linked = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+            if (linked) linked.scrollIntoView();
         }
 
         // The Countries globe (globe.js): a blip per country, labelled with its

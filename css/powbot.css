@@ -229,7 +229,18 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .site-nav { position: relative; border-bottom: 3px double var(--line-strong); background: var(--night); }
 .site-nav .wrap { display: flex; align-items: stretch; gap: var(--s4); height: var(--bar-h); }
 /* The wordmark: the address, in capitals, like a phone's network name */
-.site-nav .brand { display: flex; align-items: center; align-self: center; color: var(--heading); text-decoration: none; font: 400 clamp(1.375rem, 6vw, 1.875rem)/1 var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; text-shadow: var(--lcd); min-height: var(--tap); white-space: nowrap; }
+.site-nav .brand { display: flex; align-items: center; align-self: center; gap: 10px; color: var(--heading); text-decoration: none; font: 400 clamp(1.375rem, 6vw, 1.875rem)/1 var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; text-shadow: var(--lcd); min-height: var(--tap); white-space: nowrap; }
+/* The pixel bot head before the wordmark: 11x11 at 2px a pixel, with the
+   wordmark's hard pixel shadow (gone with screen effects off, when --lcd is
+   none). Its face plate is the moon's second tone, so it swaps with the theme. */
+.site-nav .brand-icon { flex: none; filter: drop-shadow(var(--lcd)); }
+.site-nav .brand-icon .icon-shade { fill: var(--panel-hi); }
+/* Up 1px, by eye: the head's thin antennae leave its weight low in its square */
+.site-nav .brand-home { position: relative; top: -1px; }
+/* On a page with a parent the link goes back there, with the back arrow in
+   place of the head (includes/inject.js) */
+.site-nav .brand-back, .site-nav .brand.is-back .brand-home { display: none; }
+.site-nav .brand.is-back .brand-back { display: block; }
 /* Light or dark (includes/inject.js): a key just before the tabs, spaced
    like one of them, showing the mode in use: a pixel sun while light, a
    moon while dark. On phones it sits just before Menu. */
@@ -277,7 +288,7 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 /* --------------------------------------------------------- Section tabs --
  * "On this page" links under the nav, one per section; the one you're
  * reading is shown [in brackets] (includes/inject.js). They stick with the
- * nav on desktop. On phones they scroll away, and the row scrolls sideways.
+ * nav, on desktop only: phones don't show them.
  */
 /* Tucked 3px up under the nav (which draws on top), with its background
    reaching a little higher still: browser zoom and scroll rounding can pull
@@ -347,9 +358,9 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
     .site-nav.no-anim .nav-links { transition: none; }
     .site-nav .nav-links li { display: block; border-top: 1px dashed var(--line); }
     .site-nav .nav-links a { min-height: 52px; padding: 0 var(--gutter); font-size: var(--fs-md); }
-    .subtabs { position: static; }
-    /* Tabs past the edge fade out, a hint that the row scrolls */
-    .subtabs ul { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
+    /* No section tabs on phones: they can't stick there, and the page is
+       quicker to scroll than a sideways row of tabs */
+    .subtabs { display: none; }
 }
 
 /* --------------------------------------------------------------- Motion -- */
