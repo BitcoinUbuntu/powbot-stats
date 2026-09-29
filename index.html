@@ -917,7 +917,7 @@
                 if (!fresh.length) note = 'Every merchant this epoch has posted before. New shops appear here with their first approved post.';
             } else {
                 total = merchants.length;
-                note = 'Shops and stalls where projects spent bitcoin on camera.';
+                note = 'Shops and stalls where projects spent bitcoin.';
                 items = merchants.map((m, i) => `
                     <li class="${i >= BOARD_ROWS ? 'is-more' : ''}"><a href="${attrSafe(profileUrl(m.name, 'merchant'))}">
                         <span class="li-main">${escapeHtml(m.name)}</span>

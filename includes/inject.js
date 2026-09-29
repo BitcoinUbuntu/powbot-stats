@@ -195,7 +195,9 @@
 
     /**
      * The wordmark's link goes home, except on the pages people reach from
-     * elsewhere on the site (a profile, a merchant, a finished epoch). There
+     * elsewhere on the site (a profile, a merchant, a finished epoch, the
+     * directory or tracker opened filtered, About and the other footer pages;
+     * see DRILLDOWNS and ASIDES). There
      * it shows the back arrow in place of the bot head and goes back where
      * the visitor came from, or, arriving from outside the site, to the
      * page's parent below. It says where it goes (aria-label, and a tooltip).
@@ -212,6 +214,15 @@
         'merchant-profile': () => ({ href: 'index.html#merchants-title', label: 'Back to the merchants' }),
         'epoch5': () => ({ href: 'archive.html', label: 'Back to the archive' })
     };
+
+    // Top-level pages that another page can open filtered: the directory for
+    // one country, the tracker for one project. Opened that way from a page of
+    // this site, they're a drill-down and get the back arrow too. Plain, or
+    // arriving from outside, they keep the bot head.
+    const DRILLDOWNS = ['members', 'tracker'];
+    // Pages opened from the footer or a link on another page: from a page of
+    // this site they get the back arrow; arriving from outside, the bot head
+    const ASIDES = ['about', 'disclaimer', 'guidelines'];
 
     // What to call each page in "Back to ..."
     const PAGE_NAMES = {
@@ -232,9 +243,11 @@
 
     function setupBack(brand) {
         const page = pageOf(location.pathname);
-        if (!brand || !PARENTS[page]) return;
-        let { href, label } = PARENTS[page]();
+        if (!brand) return;
         const from = sitePageBefore();
+        const drilldown = from && ((DRILLDOWNS.includes(page) && location.search.length > 1) || ASIDES.includes(page));
+        if (!PARENTS[page] && !drilldown) return;
+        let { href, label } = PARENTS[page] ? PARENTS[page]() : {};
         // Never back into a page's own editor (profile -> edit -> profile)
         const origin = from && !(page === 'profile' && pageOf(from.pathname) === 'profile-edit') ? from : null;
         if (origin) {
