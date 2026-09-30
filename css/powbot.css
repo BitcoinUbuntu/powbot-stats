@@ -241,10 +241,13 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
 .site-nav .brand-icon .icon-shade { fill: var(--night); }
 /* Up 1px, by eye: the head's thin antennae leave its weight low in its square */
 .site-nav .brand-home { position: relative; top: -1px; }
-/* On a page with a parent the link goes back there, with the back arrow in
-   place of the head (includes/inject.js) */
-.site-nav .brand-back, .site-nav .brand.is-back .brand-home { display: none; }
-.site-nav .brand.is-back .brand-back { display: block; }
+/* On a page with a parent the back arrow, its own link, takes the head's
+   place (includes/inject.js); the wordmark still goes home. The arrow's
+   touch area reaches 12px out to the left, to make 44px. */
+.site-nav .brand-wrap { display: flex; align-items: stretch; }
+.site-nav .brand-back { display: flex; align-items: center; min-height: var(--tap); padding: 0 10px 0 12px; margin-left: -12px; color: var(--heading); transition: background-color var(--t-fast) var(--ease-out); }
+.site-nav .brand-back:focus-visible { outline-offset: -3px; border-radius: 0; }
+.site-nav .brand-back[hidden], .site-nav .brand-wrap.is-back .brand-home { display: none; }
 /* Light or dark (includes/inject.js): a key just before the tabs, spaced
    like one of them, showing the mode in use: a pixel sun while light, a
    moon while dark. On phones it sits just before Menu. */
@@ -714,7 +717,7 @@ textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize:
     .hero-link:hover { border-color: var(--accent); background: var(--accent); color: var(--night); }
     .btn:hover { background: var(--accent); color: var(--night); }
     .btn-solid:hover { background: var(--accent-hi); color: var(--night); }
-    .site-nav .theme-toggle:hover { color: var(--heading); background: var(--panel); }
+    .site-nav .theme-toggle:hover, .site-nav .brand-back:hover { color: var(--heading); background: var(--panel); }
     .site-nav .nav-links a:hover { color: var(--heading); background: var(--panel); }
     .site-nav .nav-toggle:hover { background: var(--panel); }
     .subtabs a:hover { color: var(--heading); }

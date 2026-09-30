@@ -103,7 +103,7 @@
             highlightCurrentPage();
 
             // On a page with a parent, the wordmark goes back there
-            setupBack(navContainer.querySelector('.site-nav .brand'));
+            setupBack(navContainer.querySelector('.site-nav .brand-wrap'));
 
             // Phone menu button
             setupMenu(navContainer.querySelector('.site-nav'));
@@ -239,9 +239,10 @@
         return PAGE_NAMES[pageOf(from.pathname)] ? from : null;
     }
 
-    function setupBack(brand) {
+    function setupBack(wrap) {
         const page = pageOf(location.pathname);
-        if (!brand) return;
+        const back = wrap && wrap.querySelector('.brand-back');
+        if (!back) return;
         const from = sitePageBefore();
         const opened = location.search.length > 1 || location.hash.length > 1;
         const drilldown = from && ((DRILLDOWNS.includes(page) && opened) || ASIDES.includes(page));
@@ -254,15 +255,16 @@
             label = `Back to ${PAGE_NAMES[pageOf(origin.pathname)]}`;
             // A plain click steps back in history, which also restores the
             // place on that page; opening in a new tab still follows the link
-            brand.addEventListener('click', event => {
+            back.addEventListener('click', event => {
                 if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
                 if (history.length > 1) { event.preventDefault(); history.back(); }
             });
         }
-        brand.href = href;
-        brand.setAttribute('aria-label', label);
-        brand.title = label;
-        brand.classList.add('is-back');
+        back.href = href;
+        back.setAttribute('aria-label', label);
+        back.title = label;
+        back.hidden = false;
+        wrap.classList.add('is-back');
     }
 
     /**
