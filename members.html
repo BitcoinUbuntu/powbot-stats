@@ -56,14 +56,12 @@
         .controls { display: grid; gap: var(--s4); padding: var(--s5) 0; }
         .controls-row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--s4); }
         /* Fields, inputs and dropdowns: css/powbot.css (Forms) */
-        .field-search { flex: 1 1 100%; max-width: 40rem; }
-        .field-select { flex: 1 1 11rem; max-width: 16rem; }
+        /* Search on its own row; Show, Country and Sort share the row below,
+           and stack when there's no room */
+        .controls-row { max-width: 50rem; }
+        .field-search { flex: 1 1 100%; }
+        .field-select { flex: 1 1 13rem; }
         .select.active { border-color: var(--link); }
-
-        /* Filter buttons: the shared .seg, laid out as a grid so it can wrap to 2 x 2 */
-        .filters.seg { display: inline-grid; grid-auto-flow: column; gap: 1px; background: var(--line-strong); }
-        .filters.seg button { border: 0; }
-        .filters.seg button:not([aria-pressed="true"]) { background: var(--night); }
 
         /* Member grid. Every card is the same height on both faces, whichever
            address is showing: the content is sized to fit it, not the other
@@ -135,9 +133,6 @@
         .empty-state .err-detail { margin-top: var(--s2); font: 400 var(--fs-xs)/1.4 var(--font-mono); }
 
         @media (max-width: 720px) {
-            .field-filter, .filters.seg { width: 100%; }
-            .filters.seg { grid-auto-flow: row; grid-template-columns: 1fr 1fr; }
-            .filters.seg button { padding: var(--s2) var(--s3); line-height: 1.2; }
             .field-select { max-width: none; }
         }
 
@@ -173,13 +168,15 @@
                     </div>
                 </div>
                 <div class="controls-row">
-                    <div class="field field-filter">
-                        <span class="field-label" id="filter-label">Show</span>
-                        <div class="seg filters" role="group" aria-labelledby="filter-label">
-                            <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All projects</button>
-                            <button type="button" class="filter-btn" data-filter="active" aria-pressed="false">Active on PoWBoT</button>
-                            <button type="button" class="filter-btn" data-filter="epoch6" aria-pressed="false">Active this epoch</button>
-                            <button type="button" class="filter-btn" data-filter="top" aria-pressed="false">Top performers</button>
+                    <div class="field field-select">
+                        <label class="field-label" for="show-filter">Show</label>
+                        <div class="select-wrap">
+                            <select id="show-filter" class="select">
+                                <option value="all">All projects</option>
+                                <option value="active">Active on PoWBoT</option>
+                                <option value="epoch6">Active this epoch</option>
+                                <option value="top">Top performers</option>
+                            </select>
                         </div>
                     </div>
                     <div class="field field-select">
@@ -292,16 +289,11 @@
                 countrySelect.classList.add('active');
             }
 
-            if (filterParam) {
+            const showSelect = document.getElementById('show-filter');
+            if (filterParam && [...showSelect.options].some(o => o.value === filterParam)) {
                 currentFilter = filterParam;
-                // Update button states
-                document.querySelectorAll('[data-filter]').forEach(btn => {
-                    btn.classList.remove('active');
-                    if (btn.dataset.filter === filterParam) {
-                        btn.classList.add('active');
-                    }
-                    btn.setAttribute('aria-pressed', btn.classList.contains('active'));
-                });
+                showSelect.value = filterParam;
+                showSelect.classList.toggle('active', filterParam !== 'all');
             }
         }
 
@@ -767,14 +759,11 @@
         }
 
         // Event listeners
-        document.querySelectorAll('[data-filter]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('[data-filter]').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
-                btn.classList.add('active');
-                btn.setAttribute('aria-pressed', 'true');
-                currentFilter = btn.dataset.filter;
-                renderMembers();
-            });
+        document.getElementById('show-filter').addEventListener('change', (e) => {
+            currentFilter = e.target.value;
+            // Highlight the dropdown when it narrows the list
+            e.target.classList.toggle('active', currentFilter !== 'all');
+            renderMembers();
         });
 
         document.getElementById('country-filter').addEventListener('change', (e) => {

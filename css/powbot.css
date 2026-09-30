@@ -237,7 +237,8 @@ body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
    wordmark's hard pixel shadow (gone with screen effects off, when --lcd is
    none). Its face plate is the moon's second tone, so it swaps with the theme. */
 .site-nav .brand-icon { flex: none; filter: drop-shadow(var(--lcd)); }
-.site-nav .brand-icon .icon-shade { fill: var(--panel-hi); }
+/* The face takes the page's own colour, so the head sits flat on the bar */
+.site-nav .brand-icon .icon-shade { fill: var(--night); }
 /* Up 1px, by eye: the head's thin antennae leave its weight low in its square */
 .site-nav .brand-home { position: relative; top: -1px; }
 /* On a page with a parent the link goes back there, with the back arrow in
