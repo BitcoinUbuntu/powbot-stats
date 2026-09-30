@@ -297,10 +297,11 @@
 
             const e4 = epoch4Live;
             const ep = historical.epochs;
-            // Posts approved, as on the homepage and the Epoch 5 page (the project payment
-            // count is one higher for Epoch 4)
-            const e4Approved = e4.reviewer?.approved ?? e4.totals.by_type.project?.count ?? 0;
-            const reviewed = e4.reviewer?.total_reviewed || 0;
+            // Posts approved: the project payments, one per approved post, as on the
+            // homepage and in the tracker (1,698). The review count is one short
+            // (1,697): a post an admin reviews pays no reviewer.
+            const e4Approved = (e4.top_projects || []).reduce((n, p) => n + (p.count || 0), 0);
+            const reviewed = e4Approved + (e4.reviewer?.rejected || 0);
             const days = e4.launch?.days_active || 0;
             const busiest = (e4.daily || []).reduce((m, d) => (d.project_count > (m?.project_count || 0) ? d : m), null);
 
@@ -313,7 +314,7 @@
                     [formatNumber(e4.top_projects?.length || 0), 'projects'],
                     [formatNumber(e4.top_merchants?.length || 0), 'merchants'],
                     [formatNumber(e4.countries?.length || 0), 'countries'],
-                    [reviewed > 0 ? Math.round((e4.reviewer.approved / reviewed) * 100) + '%' : '–', 'approval rate'],
+                    [reviewed > 0 ? Math.round((e4Approved / reviewed) * 100) + '%' : '–', 'approval rate'],
                     [formatNumber(days), 'days']
                 ],
                 notes: [

@@ -407,11 +407,19 @@
         // "158 merchants": a no-break space, so a count never splits from its word
         const plural = (n, one, many) => `${formatNumber(n)} ${n === 1 ? one : many}`;
 
+        // Approved posts: each one pays its project exactly once, so the project
+        // payments (the standings' own counts) are the count, and the headline,
+        // Highlights and standings always agree. The review count (reviewer.approved)
+        // runs short: it counts reviewer payments, and a post an admin reviews
+        // pays no reviewer (4 such posts in Epoch 6 by 30 Sep).
+        const approvedPosts = stats => (stats.top_projects || []).reduce((n, p) => n + (p.count || 0), 0);
+        const reviewedPosts = stats => approvedPosts(stats) + (stats.reviewer?.rejected || 0);
+
         // ------------------------------------------------------------ Hero --
 
         function renderHero(stats) {
             const projects = stats.top_projects?.length || 0;
-            const approved = stats.reviewer?.approved || 0;
+            const approved = approvedPosts(stats);
             const merchants = stats.top_merchants?.length || 0;
             const summary = document.getElementById('summary');
             summary.innerHTML = approved > 0
@@ -484,8 +492,8 @@
 
         function renderStatus(stats) {
             const countries = stats.countries?.length || 0;
-            const reviewed = stats.reviewer?.total_reviewed || 0;
-            const approved = stats.reviewer?.approved || 0;
+            const reviewed = reviewedPosts(stats);
+            const approved = approvedPosts(stats);
             const merchants = stats.top_merchants || [];
             const projects = stats.top_projects?.length || 0;
             const reads = [];
@@ -714,10 +722,10 @@
         // ------------------------------------------------- Below the board --
 
         function factsList(stats) {
-            const reviewed = stats.reviewer?.total_reviewed || 0;
-            const rate = reviewed > 0 ? Math.round(stats.reviewer.approved / reviewed * 100) + '%' : '–';
+            const reviewed = reviewedPosts(stats);
+            const rate = reviewed > 0 ? Math.round(approvedPosts(stats) / reviewed * 100) + '%' : '–';
             const facts = [
-                [formatNumber(stats.reviewer?.approved || 0), 'posts approved'],
+                [formatNumber(approvedPosts(stats)), 'posts approved'],
                 [formatNumber(stats.top_projects?.length || 0), 'projects posting'],
                 [formatNumber(stats.top_merchants?.length || 0), 'merchants'],
                 [formatNumber(stats.countries?.length || 0), 'countries'],
@@ -967,7 +975,7 @@
 
         function renderEpochs(stats) {
             // The bars only: each epoch's rules note lives in the archive's copy
-            const live = { name: EPOCH.name, when: 'live now', posts: stats.reviewer?.approved || 0, href: '#main' };
+            const live = { name: EPOCH.name, when: 'live now', posts: approvedPosts(stats), href: '#main' };
             const total = window.epochsTotal() + live.posts;
             return window.renderEpochBars({
                 id: 'epochs-title',

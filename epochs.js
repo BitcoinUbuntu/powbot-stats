@@ -25,7 +25,7 @@
             note: 'The same ground rules, with posts on Nostr as well as X. Still checked by hand.' },
         { name: 'Epoch 3', when: 'Nov 2025', posts: 604, href: 'archive.html#epoch-3',
             note: 'The last epoch checked by hand. The bot’s first trial followed in December.' },
-        { name: 'Epoch 4', when: 'Dec 2025 to Mar 2026', posts: 187 + 1697, href: 'archive.html#epoch-4',
+        { name: 'Epoch 4', when: 'Dec 2025 to Mar 2026', posts: 187 + 1698, href: 'archive.html#epoch-4',
             note: 'The bot takes over: #spedn, a BTCMap link, the merchant’s Lightning address, a fixed location and the required video scenes. No posting limits.' },
         { name: 'Epoch 5', when: 'Mar to Jul 2026', posts: 1985, href: 'epoch5.html',
             note: 'The first limits: one post per merchant per platform a day, and from 7 April at most five merchants a day.' }
