@@ -117,7 +117,11 @@
  * Element rules use :where() so they carry no specificity: any component
  * class (.btn, .tag, .section h2) overrides them without a fight.
  */
-html:has(body.pb) { color-scheme: light; background: var(--night); }
+/* "only light", not just "light": it tells in-app browsers with their own dark mode not to
+   recolour the screen (a forced-dark X in-app browser once did). The :root rule sits
+   outside :has() so it never depends on it. The dark choice below overrides both. */
+:root { color-scheme: only light; }
+html:has(body.pb) { background: var(--night); }
 /* Dark chosen: native controls and scrollbars follow */
 :root[data-theme="dark"] { color-scheme: dark; }
 .pb, .pb *, .pb *::before, .pb *::after { box-sizing: border-box; }
