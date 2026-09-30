@@ -32,7 +32,7 @@
     ];
 
     // Shown with every copy of the block
-    const RULES_NOTE = 'Each epoch ran under its own rules and reward guidelines, so the totals show how PoWBoT has grown rather than a like-for-like comparison.';
+    const RULES_NOTE = 'Each epoch ran under its own rules and reward guidelines, so the totals show how PoWBoT has evolved rather than a like-for-like comparison.';
 
     const esc = (text) => String(text ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
     const num = (n) => Number(n || 0).toLocaleString('en-GB');
