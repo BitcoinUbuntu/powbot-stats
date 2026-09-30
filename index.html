@@ -169,6 +169,12 @@
         @media (hover: hover) {
             .globe .globe-pause:hover { background: var(--accent); }
         }
+        /* Country rows with projects and posts: on narrow phones the two
+           stack, so the country's name keeps the room */
+        @media (max-width: 480px) {
+            .li-side.pair { display: grid; justify-items: end; line-height: 1.3; }
+            .li-side.pair .sep { display: none; }
+        }
     </style>
 </head>
 <body class="pb">
@@ -823,10 +829,13 @@
             const countries = stats.countries || [];
             const filter = encodeURIComponent(EPOCH.memberFilter || '');
 
+            // Each country's approved posts: its projects' posts, summed by flag
+            const postsByFlag = {};
+            (stats.top_projects || []).forEach(p => { const f = flagOf(p.name); postsByFlag[f] = (postsByFlag[f] || 0) + (p.count || 0); });
             const countryItems = countries.map(c => `
                 <li><a href="members.html?filter=${filter}&country=${encodeURIComponent(c.flag + ' ' + c.country)}">
                     <span class="li-main">${flagHtml(c.flag)} ${escapeHtml(c.country)}</span>
-                    <span class="li-side">${plural(c.count, 'project', 'projects')}</span>
+                    <span class="li-side pair"><span>${plural(c.count, 'project', 'projects')}</span><span class="sep" aria-hidden="true"> · </span><span>${plural(postsByFlag[c.flag] || 0, 'post', 'posts')}</span></span>
                 </a></li>`).join('');
 
             // Member countries with no approved post yet this epoch show hollow
