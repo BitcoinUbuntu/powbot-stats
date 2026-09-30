@@ -60,6 +60,11 @@
         .panel > h3 { margin: 0 0 var(--s2); font-size: 1.5rem; }
         .panel > .section-note { margin-bottom: var(--s4); }
 
+        /* A bar chart beside a taller list: the bars grow to the list's height */
+        @media (min-width: 721px) {
+            .panel:has(> .bars) { display: flex; flex-direction: column; }
+            .panel > .bars { flex: 1; min-height: 140px; }
+        }
         @media (max-width: 720px) {
             .cols { grid-template-columns: minmax(0, 1fr); gap: var(--s7); }
         }
@@ -327,7 +332,7 @@
                 panels: [
                     { id: 'e4-projects', title: 'Projects by approved posts', html: '<div id="top-projects"></div>' },
                     { id: 'e4-merchants', title: 'Merchants by approved posts', html: '<div id="top-merchants"></div>' },
-                    { id: 'e4-daily', title: 'Approved posts per day', html: renderDaily(e4.daily), wide: true },
+                    { id: 'e4-daily', title: 'Approved posts per day', html: renderDaily(e4.daily) },
                     { id: 'e4-countries', title: 'Countries', note: 'Open one to see its posts in the tracker.', html: countriesHtml(e4.countries, '4', e4.top_projects) }
                 ]
             };
