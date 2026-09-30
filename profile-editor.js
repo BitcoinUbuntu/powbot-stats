@@ -761,8 +761,10 @@ function initTelegramVerification() {
         });
 
         usernameInput.addEventListener('input', () => {
-            const inputValue = usernameInput.value.trim().toLowerCase();
-            const expectedValue = expectedUsername.toLowerCase();
+            // With or without the @, any case
+            const bare = u => String(u).trim().replace(/^@+/, '').toLowerCase();
+            const inputValue = bare(usernameInput.value);
+            const expectedValue = bare(expectedUsername);
 
             if (inputValue === expectedValue) {
                 // Match! Enable button
