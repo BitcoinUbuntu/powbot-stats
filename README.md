@@ -30,7 +30,7 @@ self-hosted (`fonts/`), so the site makes no external font requests.
 | `css/powbot.css` | The design system: every token and shared component |
 | `includes/` | The shared nav and footer and the script that injects them (see its README) |
 | `images/` | Site images; `images/members/` holds each project's logo and gallery (WebP only) and `images/flags/` the flag SVGs |
-| `scripts/` | Data and image maintenance scripts (see its README) |
+| `scripts/` | Data maintenance scripts (see its README) |
 | `*.js` at the root | Page logic: data loading, tracker, visits, flags, globe, donations, profile editor |
 | `*.json` at the root | Data: the live epoch, frozen epochs, members and the merchant indexes |
 | `serve.py` | A local test server |
