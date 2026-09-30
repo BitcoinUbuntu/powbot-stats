@@ -51,9 +51,6 @@
     <link rel="stylesheet" href="css/powbot.css">
     <style>
         /* Directory layout only. Colours, type and components: css/powbot.css */
-        .page-head { padding: var(--s7) 0 var(--s6); border-bottom: 1px solid var(--line); }
-        .page-head h1 { margin: 0; font-size: var(--fs-h1); }
-        .page-head .lede { margin: var(--s3) 0 0; color: var(--muted); max-width: 60ch; font-size: var(--fs-md); }
 
         /* Controls */
         .controls { display: grid; gap: var(--s4); padding: var(--s5) 0; }
@@ -93,7 +90,6 @@
 
         /* Front */
         .card-front { display: flex; flex-direction: column; cursor: pointer; }
-        .card-front:hover { border-color: var(--line-strong); }
         .card-header {
             flex: none; display: flex; align-items: center; justify-content: center;
             height: 6.5rem; background: var(--panel-hi); border-bottom: 1px solid var(--line);
@@ -126,13 +122,10 @@
         .card-actions .btn { flex: 1 1 0; min-width: max-content; padding: 0 var(--s3); white-space: nowrap; }
         .card-actions .btn::before, .card-actions .btn::after { content: none; }
         .card-actions a.btn { border: 1px dashed var(--line-strong); }
-        .card-actions a.btn:hover { border-color: var(--accent); }
         /* .pb button resets font and colour, which would override .btn on <button> */
         .pb button.btn { font: 400 var(--fs-sm)/1.2 var(--font-mono); color: var(--link); }
-        .pb button.btn:hover { color: var(--night); }
         /* Donate is the card's one highlight: a solid block */
         .pb button.btn-donate { background: var(--accent); color: var(--night); }
-        .pb button.btn-donate:hover { background: var(--accent-hi); }
         .pb button.btn-donate:focus-visible { outline-color: var(--link); }
 
         /* States */
@@ -142,12 +135,18 @@
         .empty-state .err-detail { margin-top: var(--s2); font: 400 var(--fs-xs)/1.4 var(--font-mono); }
 
         @media (max-width: 720px) {
-            .page-head { padding: var(--s6) 0 var(--s5); }
-            .page-head .lede { font-size: var(--fs-base); }
             .field-filter, .filters.seg { width: 100%; }
             .filters.seg { grid-auto-flow: row; grid-template-columns: 1fr 1fr; }
             .filters.seg button { padding: var(--s2) var(--s3); line-height: 1.2; }
             .field-select { max-width: none; }
+        }
+
+        /* Hover looks only where a pointer can hover: a touch screen would keep them after a tap */
+        @media (hover: hover) {
+            .card-front:hover { border-color: var(--line-strong); }
+            .card-actions a.btn:hover { border-color: var(--accent); }
+            .pb button.btn:hover { color: var(--night); }
+            .pb button.btn-donate:hover { background: var(--accent-hi); }
         }
     </style>
 </head>
