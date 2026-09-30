@@ -13,7 +13,7 @@ DRY RUN BY DEFAULT. Pass --apply to actually change anything.
     python scripts/backfill_webp_images.py --apply    # convert
 
 Scope is images/members/ ONLY. Site chrome in images/ is deliberately excluded:
-images/PoWBoT_card.jpg is the Open Graph card, and some social scrapers still
+images/PoWBoT_card_v2.jpg is the Open Graph card, and some social scrapers still
 handle WebP poorly, so a smaller file is not worth a broken link preview. The
 favicons are a couple of KB and have nothing to gain.
 
