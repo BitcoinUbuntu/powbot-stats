@@ -76,13 +76,23 @@
            not counts: a size down from the count. */
         .record .facts { grid-template-columns: minmax(0, 1fr); max-width: 34rem; }
         .facts b.fact-text { font-size: 1.75rem; }
-        /* The projects: a label, then each name as its own full-height link,
-           in the text font like names everywhere else */
-        .record .facts li.fact-projects { flex-direction: column; align-items: flex-start; gap: 0; margin-top: var(--s4); }
-        .record .facts li.fact-projects::after { content: none; }
-        .record .facts li.fact-projects > span { color: var(--muted); }
-        .fact-projects b { font: 700 var(--fs-md)/1.3 var(--font-text); text-shadow: none; }
-        .fact-projects b a, .fact-projects b em { display: flex; align-items: center; min-height: var(--tap); width: fit-content; font-style: normal; }
+        /* The projects: a record row like the others (label, dot leaders,
+           value); with several, the names stack and right-align. Names take the
+           same figure style as the values above */
+        .fact-projects b { display: flex; flex-direction: column; align-items: flex-end; min-width: 0; text-align: right; }
+        .fact-projects b a, .fact-projects b em { display: flex; align-items: center; justify-content: flex-end; min-height: var(--tap); max-width: 100%; font-style: normal; }
+        .fact-projects b a { color: inherit; }
+        /* A mouse needs less than a finger: tighter stack, 44px kept on touch */
+        @media (pointer: fine) { .fact-projects b a, .fact-projects b em { min-height: 2rem; } }
+        .fact-projects > span { white-space: nowrap; }
+        @media (max-width: 479px) {
+            /* Phones: no room for names beside the label, so they go below it */
+            .record .facts li.fact-projects { flex-direction: column; align-items: flex-start; gap: 0; }
+            .record .facts li.fact-projects::after { content: none; }
+            .fact-projects > span { order: 1; }
+            .fact-projects b { order: 2; align-items: flex-start; text-align: left; }
+            .fact-projects b a, .fact-projects b em { justify-content: flex-start; }
+        }
         .fact-projects b i { font-style: normal; }
         /* Underline the name only, not the space and flag after it */
         .fact-projects b a { text-decoration: none; }
@@ -420,7 +430,7 @@
                         ${countryFlag ? `<li><b class="fact-text">${escapeHtml(getCountryName(countryFlag))}</b><span>location</span></li>` : ''}
                         ${firstPost ? `<li><b class="fact-text num">${formatDate(firstPost)}</b><span>first post</span></li>` : ''}
                         ${lastPost ? `<li><b class="fact-text num">${formatDate(lastPost)}</b><span>latest post</span></li>` : ''}
-                        ${projects.length ? `<li class="fact-projects"><b class="fact-text">${projects.map(projectLink).join('')}</b><span>${projects.length === 1 ? 'project' : 'projects'} that spent bitcoin here</span></li>` : ''}
+                        ${projects.length ? `<li class="fact-projects"><b class="fact-text">${projects.map(projectLink).join('')}</b><span>supported by</span></li>` : ''}
                     </ul>
                 </section>
             `;
