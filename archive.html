@@ -87,7 +87,7 @@
 
     <!-- Shared nav/footer injection - load first -->
     <script src="includes/inject.js"></script>
-    <!-- Finished epochs and the shared "Every epoch" block -->
+    <!-- Finished epochs and the shared "Every past epoch" block -->
     <script src="epochs.js"></script>
     <script src="flags.js"></script>
 
@@ -249,7 +249,7 @@
             // and the Epoch 5 page)
             return window.renderEpochBars({
                 id: 'every-title',
-                title: 'Every epoch',
+                title: 'Every past epoch',
                 intro: `<strong class="num">${formatNumber(window.epochsTotal())}</strong> posts approved across five epochs, May 2025 to July 2026.`
             });
         }
