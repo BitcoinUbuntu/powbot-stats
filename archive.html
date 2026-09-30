@@ -59,9 +59,16 @@
         .panel { min-width: 0; }
         .panel > h3 { margin: 0 0 var(--s2); font-size: 1.5rem; }
         .panel > .section-note { margin-bottom: var(--s4); }
+        /* The highlights panel: one figure per row in a half-width column */
+        .panel > .facts { grid-template-columns: minmax(0, 1fr); }
+        .panel > .notes { margin-top: var(--s4); }
 
         @media (max-width: 720px) {
             .cols { grid-template-columns: minmax(0, 1fr); gap: var(--s7); }
+            /* Stacked, the highlights go straight from the note into the figures like
+               every other epoch; the heading stays for screen readers */
+            .section-note + .cols { margin-top: 0; }
+            .phone-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
         }
         /* Country rows with projects and posts: on narrow phones the two
            stack, so the country's name keeps the room */
@@ -179,7 +186,7 @@
             let pair = [];
             const panel = p => `
                 <div class="panel">
-                    <h3 id="${p.id}-title">${p.title}</h3>
+                    <h3 id="${p.id}-title"${p.phoneHidden ? ' class="phone-hidden"' : ''}>${p.title}</h3>
                     ${p.note ? `<p class="section-note">${p.note}</p>` : ''}
                     ${p.html}
                 </div>`;
@@ -197,9 +204,10 @@
                 <section class="section" id="${e.id}" aria-labelledby="${e.id}-title">
                     <h2 id="${e.id}-title">${e.title}</h2>
                     <p class="section-note">${e.note}</p>
-                    ${factsHtml(e.facts)}
-                    ${notesHtml(e.notes || [])}
-                    ${panelsHtml(e.panels || [])}
+                    ${e.lead ? '' : factsHtml(e.facts) + notesHtml(e.notes || [])}
+                    ${panelsHtml(e.lead
+                        ? [{ id: `${e.id}-highlights`, title: 'Highlights', phoneHidden: true, html: factsHtml(e.facts) + notesHtml(e.notes || []) }, ...(e.panels || [])]
+                        : (e.panels || []))}
                     ${e.after || ''}
                 </section>`;
         }
@@ -335,6 +343,7 @@
             const t = ep.epoch4_testing;
             const testing = {
                 id: 'epoch-4-testing',
+                lead: true,   // highlights become the first panel: a 2 x 2 grid
                 title: 'Epoch 4 testing period',
                 note: 'December 2025, before Epoch 4 opened.',
                 facts: [
