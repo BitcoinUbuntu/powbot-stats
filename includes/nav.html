@@ -5,10 +5,14 @@
     <div class="wrap">
         <!-- Shown in capitals by CSS; written in normal case so screen readers
              say the name rather than spell it -->
-        <!-- The pixel bot head goes home. On a page with a parent (a profile, a
-             merchant, a finished epoch) includes/inject.js swaps in the back
-             arrow and points the link at that parent. -->
-        <a class="brand" href="index.html"><svg class="brand-icon brand-back" viewBox="0 0 11 11" width="22" height="22" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 2h1v1h-1zM3 3h2v1h-2zM2 4h9v1h-9zM1 5h10v1h-10zM2 6h9v1h-9zM3 7h2v1h-2zM4 8h1v1h-1z"/></svg><svg class="brand-icon brand-home" viewBox="0 0 11 11" width="22" height="22" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><path class="icon-shade" d="M3 3h5v1h-5zM2 4h7v1h-7zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM2 6h7v1h-7zM2 7h1v1h-1zM4 7h3v1h-3zM8 7h1v1h-1zM2 8h2v1h-2zM7 8h2v1h-2zM3 9h5v1h-5z"/><path fill="currentColor" d="M1 0h1v1h-1zM9 0h1v1h-1zM2 1h1v1h-1zM8 1h1v1h-1zM3 2h5v1h-5zM2 3h1v1h-1zM8 3h1v1h-1zM1 4h1v1h-1zM9 4h1v1h-1zM0 5h2v1h-2zM3 5h1v1h-1zM7 5h1v1h-1zM9 5h2v1h-2zM0 6h2v1h-2zM9 6h2v1h-2zM0 7h2v1h-2zM3 7h1v1h-1zM7 7h1v1h-1zM9 7h2v1h-2zM1 8h1v1h-1zM4 8h3v1h-3zM9 8h1v1h-1zM2 9h1v1h-1zM8 9h1v1h-1zM3 10h5v1h-5z"/></svg><span translate="no">PoWBoT.africa</span></a>
+        <!-- The wordmark and pixel bot head always go to the top of the
+             homepage. On a page with a parent (a profile, a merchant, a
+             finished epoch) includes/inject.js shows the back arrow in place
+             of the head, as its own link. -->
+        <div class="brand-wrap">
+            <a class="brand-back" href="index.html" hidden><svg class="brand-icon" viewBox="0 0 11 11" width="22" height="22" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 2h1v1h-1zM3 3h2v1h-2zM2 4h9v1h-9zM1 5h10v1h-10zM2 6h9v1h-9zM3 7h2v1h-2zM4 8h1v1h-1z"/></svg></a>
+            <a class="brand" href="index.html"><svg class="brand-icon brand-home" viewBox="0 0 11 11" width="22" height="22" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><path class="icon-shade" d="M3 3h5v1h-5zM2 4h7v1h-7zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM2 6h7v1h-7zM2 7h1v1h-1zM4 7h3v1h-3zM8 7h1v1h-1zM2 8h2v1h-2zM7 8h2v1h-2zM3 9h5v1h-5z"/><path fill="currentColor" d="M1 0h1v1h-1zM9 0h1v1h-1zM2 1h1v1h-1zM8 1h1v1h-1zM3 2h5v1h-5zM2 3h1v1h-1zM8 3h1v1h-1zM1 4h1v1h-1zM9 4h1v1h-1zM0 5h2v1h-2zM3 5h1v1h-1zM7 5h1v1h-1zM9 5h2v1h-2zM0 6h2v1h-2zM9 6h2v1h-2zM0 7h2v1h-2zM3 7h1v1h-1zM7 7h1v1h-1zM9 7h2v1h-2zM1 8h1v1h-1zM4 8h3v1h-3zM9 8h1v1h-1zM2 9h1v1h-1zM8 9h1v1h-1zM3 10h5v1h-5z"/></svg><span translate="no">PoWBoT.africa</span></a>
+        </div>
         <!-- Light or dark; wired up in includes/inject.js (pressed = dark).
              Shows the mode in use: a pixel sun while light, a moon while dark. -->
         <button type="button" class="theme-toggle" aria-pressed="false" title="Switch to dark">

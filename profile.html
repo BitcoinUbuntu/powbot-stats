@@ -528,7 +528,7 @@
                         </ul>
                         <div class="detail-links">
                             ${visits.length > initialCount ? moreButton('posts-list-current', visits.length - initialCount) : ''}
-                            <a class="btn" href="${escapeHtml(trackerHref)}">All ${currentPosts.length} posts in the tracker</a>
+                            <a class="btn" href="${escapeHtml(trackerHref)}">View all ${currentPosts.length} in the Tracker</a>
                         </div>
                     </section>`;
                 }
@@ -561,7 +561,7 @@
                 html += `
                         <div class="detail-links">
                             ${visits5.length > initialCount ? moreButton('posts-list-epoch5', visits5.length - initialCount) : ''}
-                            <a class="btn" href="${escapeHtml(tracker5)}">All ${epoch5Posts.length} posts in the tracker</a>
+                            <a class="btn" href="${escapeHtml(tracker5)}">View all ${epoch5Posts.length} in the Tracker</a>
                         </div>`;
 
                 html += `</section>`;
