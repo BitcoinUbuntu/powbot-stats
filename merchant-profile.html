@@ -363,7 +363,7 @@
                 renderStats(totalCount, allPosts, merchantDisplayName, lightningAddress, countryFlag, projectsOf(allPosts, membersData));
 
                 // Render posts
-                renderPosts(merchantVisits(merchantSubmissions, archivedPosts), membersData, merchantDisplayName);
+                renderPosts(merchantVisits(merchantSubmissions, archivedPosts), membersData, merchantDisplayName, totalCount);
 
                 // Handle BTC Map section
                 renderBtcMapLink(merchantDisplayName, allPosts);
@@ -500,7 +500,7 @@
             return `${day}, ${time} UTC`;
         }
 
-        function renderPosts(visits, membersData, merchantName) {
+        function renderPosts(visits, membersData, merchantName, postCount) {
             const postsContainer = document.getElementById('posts-list');
             const initialCount = 5;
 
@@ -528,9 +528,13 @@
             });
             html += '</ul>';
 
-            if (visits.length > initialCount) {
-                html += `<div class="detail-links">${postsMoreButtons('merchant-posts', visits.length - initialCount)}</div>`;
-            }
+            // Every epoch's posts are in the tracker (Epoch 4 and its testing
+            // period too), where this merchant's exact name finds the same count
+            const trackerHref = `tracker.html?${new URLSearchParams({ epoch: 'all', merchant: merchantName, status: 'Processed' })}`;
+            html += `<div class="detail-links">
+                ${visits.length > initialCount ? postsMoreButtons('merchant-posts', visits.length - initialCount) : ''}
+                <a class="btn" href="${escapeHtml(trackerHref)}">View all ${postCount} in the Tracker</a>
+            </div>`;
 
             postsContainer.innerHTML = html;
         }
