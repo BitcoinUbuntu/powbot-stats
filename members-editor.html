@@ -42,7 +42,6 @@
             background: none; border: 0; border-left: 3px solid transparent;
             color: var(--text); text-align: left; cursor: pointer;
         }
-        .member-item button:hover { background: var(--panel-hi); }
         .member-item.active button { border-left-color: var(--link); background: var(--panel-hi); }
         .member-item-name { display: block; font-weight: 700; }
         .member-item.active .member-item-name { color: var(--heading); }
@@ -60,7 +59,6 @@
 
         /* Read-only fields: flat, clearly not for typing */
         .readonly .input { background: var(--night); color: var(--muted); border-style: dashed; }
-        .readonly .input:hover { border-color: var(--line-strong); }
 
         .array-input { display: grid; gap: var(--s2); }
         .array-item { display: flex; gap: var(--s2); }
@@ -92,6 +90,12 @@
             #editForm { padding: var(--s4); }
             .form-actions { padding: var(--s3) var(--s4); }
             .form-actions .btn { flex: 1 1 auto; }
+        }
+
+        /* Hover looks only where a pointer can hover: a touch screen would keep them after a tap */
+        @media (hover: hover) {
+            .member-item button:hover { background: var(--panel-hi); }
+            .readonly .input:hover { border-color: var(--line-strong); }
         }
     </style>
 </head>

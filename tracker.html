@@ -84,8 +84,6 @@
             width: 100%; min-height: var(--tap); padding: var(--s3) var(--s4);
             background: none; border: 0; color: inherit; text-align: left; cursor: pointer;
         }
-        .card-header:hover { background: var(--panel-hi); }
-        .card-header:hover .project-name .pn { text-decoration: underline; }
         .card-header[aria-expanded="true"] .chev { transform: rotate(225deg) translate(-2px, -2px); }
         .card-main { display: grid; gap: var(--s1); min-width: 0; }
         .card-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 var(--s2); }
@@ -131,6 +129,12 @@
             .card-header .status { grid-column: 1; grid-row: 2; justify-self: start; }
             .card-header .chev { grid-column: 2; grid-row: 1 / span 2; }
             .card-details { padding: var(--s2) var(--s3) var(--s4); }
+        }
+
+        /* Hover looks only where a pointer can hover: a touch screen would keep them after a tap */
+        @media (hover: hover) {
+            .card-header:hover { background: var(--panel-hi); }
+            .card-header:hover .project-name .pn { text-decoration: underline; }
         }
     </style>
 </head>

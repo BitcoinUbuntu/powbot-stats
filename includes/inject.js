@@ -215,11 +215,13 @@
         'epoch5': () => ({ href: 'archive.html', label: 'Back to the archive' })
     };
 
-    // Top-level pages that another page can open filtered: the directory for
-    // one country, its merchants for one epoch, the tracker for one project.
-    // Opened that way from a page of this site, they're a drill-down and get
-    // the back arrow too. Plain, or arriving from outside, they keep the bot head.
-    const DRILLDOWNS = ['members', 'merchants', 'tracker'];
+    // Top-level pages that another page can open at one part of them: the
+    // directory for one country, its merchants for one epoch, the tracker for
+    // one project (a query string), the archive at one epoch or its rules
+    // (a #section). Opened that way from a page of this site, they're a
+    // drill-down and get the back arrow too. Plain, or arriving from outside,
+    // they keep the bot head.
+    const DRILLDOWNS = ['members', 'merchants', 'tracker', 'archive'];
     // Pages opened from the footer or a link on another page: from a page of
     // this site they get the back arrow; arriving from outside, the bot head
     const ASIDES = ['about', 'disclaimer'];
@@ -245,7 +247,8 @@
         const page = pageOf(location.pathname);
         if (!brand) return;
         const from = sitePageBefore();
-        const drilldown = from && ((DRILLDOWNS.includes(page) && location.search.length > 1) || ASIDES.includes(page));
+        const opened = location.search.length > 1 || location.hash.length > 1;
+        const drilldown = from && ((DRILLDOWNS.includes(page) && opened) || ASIDES.includes(page));
         if (!PARENTS[page] && !drilldown) return;
         let { href, label } = PARENTS[page] ? PARENTS[page]() : {};
         // Never back into a page's own editor (profile -> edit -> profile)

@@ -120,7 +120,6 @@
         .globe { position: relative; border: 1px dashed var(--line-strong); }
         .globe canvas { display: block; width: 100%; height: 340px; }
         .globe .globe-pause { position: absolute; right: var(--s1); bottom: var(--s1); background: var(--night); }
-        .globe .globe-pause:hover { background: var(--accent); }
         /* One line on desktop, room for two on phones: the note can't push the table */
         .board-note { margin: 0 0 var(--s1); color: var(--muted); font-size: var(--fs-sm); min-height: 1.55em; }
         .loading { padding: var(--s6) var(--s5); color: var(--muted); }
@@ -153,7 +152,8 @@
             .sb-time { font-size: 1.125rem; }
             .sb-cap { font-size: 0.9375rem; }
             .epoch-status { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: var(--s3); margin-top: var(--s3); }
-            .mascot { width: 84px; }
+            /* Tall enough to span both readout rows, as on desktop */
+            .mascot { width: 112px; }
             .summary { font-size: var(--fs-base); }
             .countries { grid-template-columns: minmax(0, 1fr); gap: var(--s5); }
             .standings { grid-template-columns: minmax(0, 1fr); }
@@ -161,6 +161,11 @@
             .board-bar h2 { font-size: 1.75rem; }
             .globe canvas { height: 280px; }
             #latest-list li > a { flex-direction: column; align-items: flex-start; gap: 2px; padding: var(--s3) var(--s2); }
+        }
+
+        /* Hover looks only where a pointer can hover: a touch screen would keep them after a tap */
+        @media (hover: hover) {
+            .globe .globe-pause:hover { background: var(--accent); }
         }
     </style>
 </head>
@@ -172,7 +177,7 @@
     <nav class="subtabs" aria-label="On this page">
         <div class="wrap">
             <ul>
-                <li><a href="#countries-title">Countries</a></li>
+                <li><a href="#countries-title">Active countries</a></li>
                 <li><a href="#latest-title">Latest</a></li>
                 <li><a href="#board-title">Standings</a></li>
                 <li><a href="#highlights-title">Highlights</a></li>
@@ -768,7 +773,7 @@
                 return `
                 <section class="section" aria-labelledby="latest-title">
                     <h2 id="latest-title">Latest approved posts</h2>
-                    <p class="section-note">Watch the latest proof-of-work videos approved in the last ${ACTIVITY_WINDOW_HOURS}&nbsp;hours.</p>
+                    <p class="section-note">Watch videos approved in the last ${ACTIVITY_WINDOW_HOURS}&nbsp;hours on Nostr and X.</p>
                     ${visits.length
                         ? `<ul class="list visits" id="latest-list">${rows}</ul>
                            ${visits.length > LIST_ROWS ? `<button type="button" class="btn list-more" data-list="latest-list" data-label="Show all ${visits.length}" aria-controls="latest-list" aria-expanded="false">Show all ${visits.length}</button>` : ''}`
@@ -792,7 +797,7 @@
             return `
                 <section class="section" aria-labelledby="latest-title">
                     <h2 id="latest-title">Latest approved posts</h2>
-                    <p class="section-note">Watch the latest proof-of-work videos approved in the last ${ACTIVITY_WINDOW_HOURS}&nbsp;hours.</p>
+                    <p class="section-note">Watch videos approved in the last ${ACTIVITY_WINDOW_HOURS}&nbsp;hours on Nostr and X.</p>
                     ${videos.length
                         ? `<ul class="list" id="latest-list">${items}</ul>
                            ${videos.length > LIST_ROWS ? `<button type="button" class="btn list-more" data-list="latest-list" data-label="Show all ${videos.length} posts" aria-controls="latest-list" aria-expanded="false">Show all ${videos.length} posts</button>` : ''}`
@@ -831,7 +836,7 @@
 
             return `
                 <section class="section" aria-labelledby="countries-title">
-                    <h2 id="countries-title">Countries</h2>
+                    <h2 id="countries-title">Active countries</h2>
                     <p class="section-note">Where this epoch’s projects are. Open one to see its projects in the directory.</p>
                     ${countries.length ? `
                     <div class="countries">

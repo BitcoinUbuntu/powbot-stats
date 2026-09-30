@@ -93,7 +93,6 @@
             border: 1px solid var(--link); border-radius: var(--radius);
             font: 700 var(--fs-sm)/1 var(--font-text); cursor: pointer;
         }
-        .file-input:hover::file-selector-button { background: rgba(var(--link-rgb), 0.12); }
 
         .thumb {
             display: block; width: 120px; height: 120px; object-fit: cover;
@@ -155,6 +154,11 @@
             .form-box { padding: var(--s4); }
             .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s2); }
             .form-actions .btn { flex: 1 1 100%; }
+        }
+
+        /* Hover looks only where a pointer can hover: a touch screen would keep them after a tap */
+        @media (hover: hover) {
+            .file-input:hover::file-selector-button { background: rgba(var(--link-rgb), 0.12); }
         }
     </style>
 </head>

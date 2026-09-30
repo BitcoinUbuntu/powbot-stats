@@ -125,7 +125,6 @@
             user-select: none; -webkit-user-drag: none;
             transition: opacity var(--t-fast) ease;
         }
-        .gallery-set a:hover img { opacity: 0.85; }
         .gallery-strip.dragging a { pointer-events: none; }
         .gallery-toggle[hidden] { display: none; }
 
@@ -144,6 +143,11 @@
             .hero-logo, .hero-logo-placeholder { width: 72px; height: 72px; font-size: var(--fs-xl); }
             .intro { grid-template-columns: minmax(0, 1fr); }
             .gallery-strip { --gal-h: 200px; }
+        }
+
+        /* Hover looks only where a pointer can hover: a touch screen would keep them after a tap */
+        @media (hover: hover) {
+            .gallery-set a:hover img { opacity: 0.85; }
         }
     </style>
 </head>
