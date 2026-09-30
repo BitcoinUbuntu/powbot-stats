@@ -82,18 +82,35 @@ async function startOTPAuth() {
         return;
     }
 
+    // "Get a new code" can be pressed with the box hidden: bring it back to type in
+    const username = telegramUsernameTyped();
+    if (!username) {
+        const box = document.getElementById('telegram-verification');
+        if (box) box.classList.remove('hidden');
+        const input = document.getElementById('telegram-username-input');
+        if (input) input.focus();
+        showError('Type the project lead’s Telegram username first, then choose Send code.');
+        return;
+    }
+
     try {
         showMessage('Sending a code to your Telegram…', 'info');
 
         const response = await fetch(`${API_BASE}/auth/otp/init`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ project_name: currentProject })
+            body: JSON.stringify({ project_name: currentProject, telegram_username: username })
         });
 
         if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.detail || 'Failed to send OTP');
+            // The API's own words are written for the visitor: show them as they are
+            let detail = '';
+            try { detail = (await response.json()).detail || ''; } catch (e) { /* no body */ }
+            const error = new Error(detail || 'Failed to send OTP');
+            error.fromApi = Boolean(detail);
+            const input = document.getElementById('telegram-username-input');
+            if (input && response.status === 403) input.setAttribute('aria-invalid', 'true');
+            throw error;
         }
 
         const data = await response.json();
@@ -104,7 +121,7 @@ async function startOTPAuth() {
 
     } catch (error) {
         console.error('OTP init error:', error);
-        showError('Could not send the code (' + error.message + '). Try again in a moment.');
+        showError(error.fromApi ? error.message : 'Could not send the code (' + error.message + '). Try again in a moment.');
     }
 }
 
@@ -721,77 +738,33 @@ function updateEditorUI() {
 }
 
 /**
- * Initialize Telegram username verification
+ * Set up the Telegram sign-in. The typed username is checked by the API against
+ * the lead's real one, so nothing about them has to be in the public member file;
+ * here we only need something typed before Send code is allowed.
  */
 function initTelegramVerification() {
-    if (!currentProjectData) return;
-
     const usernameInput = document.getElementById('telegram-username-input');
-    const feedback = document.getElementById('telegram-verify-feedback');
     const claimBtn = document.getElementById('claim-profile-btn');
+    if (!usernameInput || !claimBtn) return;
 
-    const expectedUsername = currentProjectData.telegram_username;
-    const supportUrl = window.SUPPORT_URL || 'https://t.me/bitcoinubuntu';
+    claimBtn.onclick = startOTPAuth;
+    claimBtn.disabled = telegramUsernameTyped() === '';
 
-    if (!expectedUsername) {
-        // No Telegram username configured for this project
-        if (feedback) {
-            feedback.innerHTML = `This project does not have a Telegram username configured. Please <a href="${supportUrl}" target="_blank" rel="noopener">contact support</a>.`;
-            feedback.style.color = 'var(--danger)';
-        }
-        if (claimBtn) {
-            claimBtn.disabled = true;
-        }
-        if (usernameInput) {
-            usernameInput.disabled = true;
-        }
-        return;
-    }
+    usernameInput.addEventListener('input', () => {
+        claimBtn.disabled = telegramUsernameTyped() === '';
+        usernameInput.removeAttribute('aria-invalid');
+        const feedback = document.getElementById('telegram-verify-feedback');
+        if (feedback) feedback.textContent = '';
+    });
+    usernameInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !claimBtn.disabled) startOTPAuth();
+    });
+}
 
-    // Set up input verification
-    if (usernameInput && claimBtn) {
-        claimBtn.onclick = startOTPAuth;
-
-        // Allow Enter key to trigger authentication
-        usernameInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && !claimBtn.disabled) {
-                startOTPAuth();
-            }
-        });
-
-        usernameInput.addEventListener('input', () => {
-            // With or without the @, any case
-            const bare = u => String(u).trim().replace(/^@+/, '').toLowerCase();
-            const inputValue = bare(usernameInput.value);
-            const expectedValue = bare(expectedUsername);
-
-            if (inputValue === expectedValue) {
-                // Match! Enable button
-                claimBtn.disabled = false;
-                usernameInput.removeAttribute('aria-invalid');
-                if (feedback) {
-                    feedback.textContent = '✓ Username matches. You can send the code now.';
-                    feedback.style.color = 'var(--link)';
-                }
-            } else {
-                // No match - disable button
-                claimBtn.disabled = true;
-                if (inputValue.length > 0) {
-                    usernameInput.setAttribute('aria-invalid', 'true');
-                } else {
-                    usernameInput.removeAttribute('aria-invalid');
-                }
-                if (feedback) {
-                    if (inputValue.length > 0) {
-                        feedback.textContent = 'That username does not match the one we have for this project. Check it and try again.';
-                        feedback.style.color = 'var(--danger)';
-                    } else {
-                        feedback.textContent = '';
-                    }
-                }
-            }
-        });
-    }
+/** What was typed in the username box, without the @ or spaces */
+function telegramUsernameTyped() {
+    const input = document.getElementById('telegram-username-input');
+    return input ? input.value.trim().replace(/^@+/, '') : '';
 }
 
 /**
