@@ -63,6 +63,12 @@
         @media (max-width: 720px) {
             .cols { grid-template-columns: minmax(0, 1fr); gap: var(--s7); }
         }
+        /* Country rows with projects and posts: on narrow phones the two
+           stack, so the country's name keeps the room */
+        @media (max-width: 480px) {
+            .li-side.pair { display: grid; justify-items: end; line-height: 1.3; }
+            .li-side.pair .sep { display: none; }
+        }
     </style>
 </head>
 <body class="pb">
@@ -205,7 +211,7 @@
         }
 
         // Countries with their project counts; given a tracker epoch, with their
-        // approved posts instead (summed from the project ranking, so the figure
+        // approved posts too (summed from the project ranking, so the figure
         // matches the tracker's), each opening those posts there
         function countriesHtml(countries, trackerEpoch, projects) {
             if (!countries || countries.length === 0) return '<p>No countries recorded for this epoch.</p>';
@@ -213,9 +219,11 @@
             (projects || []).forEach(p => { const f = flagOf(p.name); postsByFlag[f] = (postsByFlag[f] || 0) + p.count; });
             const rows = trackerEpoch ? [...countries].sort((a, b) => (postsByFlag[b.flag] || 0) - (postsByFlag[a.flag] || 0)) : countries;
             return `<ul class="list">${rows.map(c => {
-                const figure = trackerEpoch ? plural(postsByFlag[c.flag] || 0, 'post', 'posts') : plural(c.count, 'project', 'projects');
+                const figure = trackerEpoch
+                    ? `<span>${plural(c.count, 'project', 'projects')}</span><span class="sep" aria-hidden="true"> · </span><span>${plural(postsByFlag[c.flag] || 0, 'post', 'posts')}</span>`
+                    : plural(c.count, 'project', 'projects');
                 const inner = `<span class="li-main">${flagHtml(c.flag)} ${escapeHtml(c.country)}</span>
-                    <span class="li-side num">${figure}</span>`;
+                    <span class="li-side num${trackerEpoch ? ' pair' : ''}">${figure}</span>`;
                 return trackerEpoch
                     ? `<li><a href="${attrSafe(trackerUrl(trackerEpoch, { country: c.country }))}">${inner}</a></li>`
                     : `<li><div class="row">${inner}</div></li>`;
