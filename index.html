@@ -923,8 +923,8 @@
                     </a></li>`).join('');
             }
 
-            // The rest are in the Directory's Merchants tab, filtered the same way
-            const allHref = `merchants.html?epoch=${merchantView === 'new' ? 'new' : EPOCH.number}`;
+            // The rest are in the Directory's Merchants tab, filtered and sorted the same way
+            const allHref = merchantView === 'new' ? 'merchants.html?epoch=new&sort=new' : `merchants.html?epoch=${EPOCH.number}&sort=posts`;
             body.innerHTML = `
                 <p class="section-note">${note}</p>
                 ${total ? `<ul class="list" id="merchant-list">${items}</ul>` : ''}

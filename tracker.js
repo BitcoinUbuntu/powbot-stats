@@ -57,13 +57,22 @@ let merchantFilter = '';
 //
 // Archives carry the same per-submission detail as the live file (lightning
 // address, btcmap link, status, payments), so history loses nothing.
-const TRACKER_ARCHIVES = ['tracker-data-epoch5.json'];
+//
+// Epoch 4 and its testing period ("4t") are the exception: they predate the
+// export, so scripts/build_tracker_epoch4.py rebuilt them from the stats
+// files. Approved posts only, dated to the day, no review detail.
+const TRACKER_ARCHIVES = ['tracker-data-epoch5.json', 'tracker-data-epoch4.json', 'tracker-data-epoch4t.json'];
+const DAY_ONLY_EPOCHS = ['4', '4t'];
 
 // The page opens on the current epoch. An archive is fetched only when its
 // epoch (or "All epochs") is picked, so the usual visit skips Epoch 5's large
 // file. The Epoch options come from the file names above, without loading them.
-const epochOf = file => Number((file.match(/epoch(\d+)/) || [])[1]) || null;
-const currentEpoch = () => window.POWBOT_EPOCH?.number ?? null;
+// Epochs are keys: "6", "5", "4", and "4t" for the Epoch 4 testing period
+const epochOf = file => (file.match(/epoch(\d+t?)/) || [])[1] || null;
+const currentEpoch = () => (window.POWBOT_EPOCH?.number == null ? null : String(window.POWBOT_EPOCH.number));
+const epochLabel = key => key === '4t' ? 'Epoch 4 testing' : `Epoch ${key}`;
+// Newest first; the testing period came just before Epoch 4
+const epochOrder = key => parseInt(key, 10) - (key.endsWith('t') ? 0.5 : 0);
 const tag = (subs, epoch) => (subs || []).map(s => ({ ...s, epoch }));
 const epochRows = new Map();      // epoch -> promise of its tagged rows
 const loadedEpochs = new Set();   // epochs whose rows have arrived
@@ -72,7 +81,7 @@ let loadToken = 0;                // the latest epoch pick wins
 function knownEpochs() {
     return [...new Set([currentEpoch(), ...TRACKER_ARCHIVES.map(epochOf)])]
         .filter(e => e != null)
-        .sort((a, b) => b - a);
+        .sort((a, b) => epochOrder(b) - epochOrder(a));
 }
 
 // Fetches one archived epoch once. A failed fetch is forgotten, so picking
@@ -119,13 +128,13 @@ async function loadTrackerData() {
 // country lists from them. False when it failed or a newer pick overtook it.
 async function loadSelectedEpochs() {
     const value = document.getElementById('filter-epoch').value;
-    const epochs = value ? [Number(value)] : knownEpochs();
+    const epochs = value ? [value] : knownEpochs();
     const token = ++loadToken;
 
     if (epochs.some(e => !loadedEpochs.has(e))) {
         document.getElementById('submissions-container').innerHTML = `
             <div class="list-state">
-                <p>Loading ${value ? `Epoch ${value}` : 'every epoch'}…</p>
+                <p>Loading ${value ? epochLabel(value) : 'every epoch'}…</p>
             </div>
         `;
         document.getElementById('results-count').textContent = 'Loading submissions…';
@@ -138,13 +147,15 @@ async function loadSelectedEpochs() {
         rows = (await Promise.all(epochs.map(loadEpoch))).flat();
     } catch (error) {
         console.error('Error loading an archived epoch:', error);
-        if (token === loadToken) showError(`${value ? `Epoch ${value}` : 'Older epochs'} could not load.`);
+        if (token === loadToken) showError(`${value ? epochLabel(value) : 'Older epochs'} could not load.`);
         return false;
     }
     if (token !== loadToken) return false;
 
     // Newest first overall
     allSubmissions = rows.sort((a, b) => (b.timestamp || '').localeCompare(a.timestamp || ''));
+    // Epoch 4's rows are rebuilt from the stats files: say what they lack
+    document.getElementById('epoch-note').hidden = !epochs.some(e => DAY_ONLY_EPOCHS.includes(e));
     populateProjectFilter();
     populateCountryFilter();
     return true;
@@ -156,8 +167,8 @@ function applyEpochParam() {
     const select = document.getElementById('filter-epoch');
     const param = (new URLSearchParams(window.location.search).get('epoch') || '').toLowerCase();
     if (param === 'all') select.value = '';
-    else if (knownEpochs().includes(Number(param))) select.value = param;
-    else select.value = String(currentEpoch() ?? '');
+    else if (knownEpochs().includes(param)) select.value = param;
+    else select.value = currentEpoch() ?? '';
 }
 
 // ============================================================================
@@ -168,8 +179,8 @@ function populateEpochFilter() {
     const epochSelect = document.getElementById('filter-epoch');
     knownEpochs().forEach(epoch => {
         const option = document.createElement('option');
-        option.value = String(epoch);
-        option.textContent = `Epoch ${epoch}`;
+        option.value = epoch;
+        option.textContent = epochLabel(epoch);
         epochSelect.appendChild(option);
     });
 }
@@ -317,7 +328,7 @@ function applyFilters() {
     const searchQuery = document.getElementById('filter-search').value.toLowerCase();
 
     // Update active filter styling
-    document.getElementById('filter-epoch').classList.toggle('active', epochFilter !== String(currentEpoch() ?? ''));
+    document.getElementById('filter-epoch').classList.toggle('active', epochFilter !== (currentEpoch() ?? ''));
     document.getElementById('filter-country').classList.toggle('active', countryFilter !== '');
     updateFilterActiveStates(statusFilter, projectFilter, dateFilter, searchQuery);
 
@@ -568,6 +579,8 @@ function renderSubmissionCard(submission) {
         timeZone: 'UTC'
     }) + ' UTC';
     const isoStr = isNaN(timestamp) ? '' : timestamp.toISOString();
+    // Epoch 4's rows are dated to the day only (YYYY-MM-DD): no time to show
+    const dayOnly = /^\d{4}-\d{2}-\d{2}$/.test(String(submission.timestamp || ''));
 
 
     // Flag carries the country as its name; the country is also written out
@@ -585,7 +598,7 @@ function renderSubmissionCard(submission) {
                     </span>
                     <span class="card-meta">
                         <span class="merchant-name">${escapeHtml(submission.merchant_name)} <span class="card-platform">on ${escapeHtml(submission.platform)}</span></span>
-                        <time datetime="${isoStr}">${dateStr}, ${timeStr}</time>
+                        <time datetime="${dayOnly ? submission.timestamp : isoStr}">${dayOnly ? dateStr : `${dateStr}, ${timeStr}`}</time>
                     </span>
                 </span>
                 ${renderStatus(submission.status)}

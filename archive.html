@@ -198,13 +198,26 @@
                 </section>`;
         }
 
-        function countriesHtml(countries, linked) {
+        // Epoch 4 and its testing period are in the tracker ("4", "4t"): their
+        // rows open the approved posts there, filtered the same way
+        function trackerUrl(epoch, filters) {
+            return `tracker.html?${new URLSearchParams({ epoch, ...filters, status: 'Processed' })}`;
+        }
+
+        // Countries with their project counts; given a tracker epoch, with their
+        // approved posts instead (summed from the project ranking, so the figure
+        // matches the tracker's), each opening those posts there
+        function countriesHtml(countries, trackerEpoch, projects) {
             if (!countries || countries.length === 0) return '<p>No countries recorded for this epoch.</p>';
-            return `<ul class="list">${countries.map(c => {
+            const postsByFlag = {};
+            (projects || []).forEach(p => { const f = flagOf(p.name); postsByFlag[f] = (postsByFlag[f] || 0) + p.count; });
+            const rows = trackerEpoch ? [...countries].sort((a, b) => (postsByFlag[b.flag] || 0) - (postsByFlag[a.flag] || 0)) : countries;
+            return `<ul class="list">${rows.map(c => {
+                const figure = trackerEpoch ? plural(postsByFlag[c.flag] || 0, 'post', 'posts') : plural(c.count, 'project', 'projects');
                 const inner = `<span class="li-main">${flagHtml(c.flag)} ${escapeHtml(c.country)}</span>
-                    <span class="li-side num">${plural(c.count, 'project', 'projects')}</span>`;
-                return linked
-                    ? `<li><a href="members.html?filter=active&amp;country=${encodeURIComponent(c.flag + ' ' + c.country)}">${inner}</a></li>`
+                    <span class="li-side num">${figure}</span>`;
+                return trackerEpoch
+                    ? `<li><a href="${attrSafe(trackerUrl(trackerEpoch, { country: c.country }))}">${inner}</a></li>`
                     : `<li><div class="row">${inner}</div></li>`;
             }).join('')}</ul>`;
         }
@@ -306,7 +319,7 @@
                     { id: 'e4-projects', title: 'Projects by approved posts', html: '<div id="top-projects"></div>' },
                     { id: 'e4-merchants', title: 'Merchants by approved posts', html: '<div id="top-merchants"></div>' },
                     { id: 'e4-daily', title: 'Approved posts per day', html: renderDaily(e4.daily), wide: true },
-                    { id: 'e4-countries', title: 'Countries', note: 'Open one to see its projects in the directory.', html: countriesHtml(e4.countries, true) }
+                    { id: 'e4-countries', title: 'Countries', note: 'Open one to see its posts in the tracker.', html: countriesHtml(e4.countries, '4', e4.top_projects) }
                 ]
             };
 
@@ -325,7 +338,7 @@
                 panels: [
                     { id: 'e4t-projects', title: 'Projects by approved posts', html: '<div id="epoch4-testing-projects"></div>' },
                     { id: 'e4t-merchants', title: 'Merchants by approved posts', html: '<div id="epoch4-testing-merchants"></div>' },
-                    { id: 'e4t-countries', title: 'Countries', html: countriesHtml(t.countries, false) }
+                    { id: 'e4t-countries', title: 'Countries', note: 'Open one to see its posts in the tracker.', html: countriesHtml(t.countries, '4t', t.top_projects) }
                 ]
             };
 
@@ -343,7 +356,7 @@
                     notes: [platformNote(e.platforms)],
                     panels: [
                         { id: `e${number}-projects`, title: 'Projects by approved posts', html: `<div id="epoch${number}-projects"></div>` },
-                        { id: `e${number}-countries`, title: 'Countries', html: countriesHtml(e.countries, false) }
+                        { id: `e${number}-countries`, title: 'Countries', html: countriesHtml(e.countries) }
                     ]
                 };
             };
@@ -355,9 +368,9 @@
 
             // Rankings
             rankList('top-projects', e4.top_projects, 'project', e4.countries, 'Epoch 4 projects ranked by approved posts');
-            rankList('top-merchants', e4.top_merchants, 'merchant', e4.countries, 'Epoch 4 merchants ranked by approved posts', 'merchants.html?epoch=4');
+            rankList('top-merchants', e4.top_merchants, 'merchant', e4.countries, 'Epoch 4 merchants ranked by approved posts', 'merchants.html?epoch=4&sort=posts', '4');
             rankList('epoch4-testing-projects', t.top_projects, 'project', t.countries, 'Epoch 4 testing period projects ranked by approved posts');
-            rankList('epoch4-testing-merchants', t.top_merchants, 'merchant', t.countries, 'Epoch 4 testing period merchants ranked by approved posts', 'merchants.html?epoch=4t');
+            rankList('epoch4-testing-merchants', t.top_merchants, 'merchant', t.countries, 'Epoch 4 testing period merchants ranked by approved posts', 'merchants.html?epoch=4t&sort=posts', '4t');
             rankList('epoch3-projects', ep.epoch3.top_projects, 'project', ep.epoch3.countries, 'Epoch 3 projects ranked by approved posts');
             rankList('epoch2-projects', ep.epoch2.top_projects, 'project', ep.epoch2.countries, 'Epoch 2 projects ranked by approved posts');
             rankList('epoch1-projects', ep.epoch1.top_projects, 'project', ep.epoch1.countries, 'Epoch 1 projects ranked by approved posts');
@@ -367,7 +380,9 @@
         // opening its profile (which holds every epoch's posts). Rows past
         // INITIAL_ROWS stay hidden until "Show all". A long list gives allHref
         // instead: a link to all of it elsewhere (the Directory's Merchants tab).
-        function rankList(elementId, items, type, countries, caption, allHref) {
+        // Given a tracker epoch, merchant rows open their posts there instead,
+        // as on the Epoch 5 page.
+        function rankList(elementId, items, type, countries, caption, allHref, trackerEpoch) {
             const container = document.getElementById(elementId);
             if (!container) return;
             items = items || [];
@@ -386,7 +401,7 @@
                     ? escapeHtml(item.name)
                     : nameWithFlag(stripFlags(item.name), flag, countryByFlag[flag] || '');
                 return `
-                    <li class="${i >= INITIAL_ROWS ? 'is-more' : ''}"><a href="${attrSafe(profileUrl(item.name, type))}">
+                    <li class="${i >= INITIAL_ROWS ? 'is-more' : ''}"><a href="${attrSafe(trackerEpoch && type === 'merchant' ? trackerUrl(trackerEpoch, { merchant: item.name }) : profileUrl(item.name, type))}">
                         <span class="li-main"><span class="lb-rank num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span><span class="lb-name">${name}</span></span>
                         <span class="li-side num">${plural(item.count, 'post', 'posts')}</span>
                     </a></li>`;

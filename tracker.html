@@ -60,6 +60,8 @@
         .merchant-filter { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2) var(--s4); margin: 0 0 var(--s4); padding: var(--s2) var(--s4); border: 1px solid var(--link); }
         .merchant-filter[hidden] { display: none; }
         .merchant-filter strong { color: var(--heading); overflow-wrap: anywhere; }
+        .epoch-note { margin: 0 0 var(--s4); max-width: 60ch; color: var(--muted); }
+        .epoch-note[hidden] { display: none; }
 
         /* -------------------------------------------------- Count and pager -- */
         .results-bar {
@@ -231,6 +233,9 @@
                 <span>Merchant: <strong id="merchant-filter-name"></strong></span>
                 <button type="button" class="btn" id="merchant-filter-clear">Clear</button>
             </p>
+
+            <!-- tracker.js shows this while Epoch 4 or its testing period is listed -->
+            <p class="epoch-note" id="epoch-note" hidden>Epoch 4 shows approved posts only and dates only, without review details.</p>
 
             <!-- Count and pager -->
             <div class="results-bar">
