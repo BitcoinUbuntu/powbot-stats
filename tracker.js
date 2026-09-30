@@ -200,6 +200,23 @@ function fillSelect(select, values, label = v => v) {
     select.value = chosen;
 }
 
+// Narrows the project, country and status menus to what the other filters
+// leave (fillSelect keeps a current choice even when it has no rows)
+const STATUS_LABELS_MENU = {};
+function refreshFacets(passes) {
+    const values = (skip, key) => [...new Set(allSubmissions.filter(s => passes(s, skip)).map(key).filter(Boolean))]
+        .sort((a, b) => a.localeCompare(b));
+    fillSelect(document.getElementById('filter-project'), values('project', s => s.project_name), extractProjectNameOnly);
+    fillSelect(document.getElementById('filter-country'), values('country', s => extractCountry(s.project_name)));
+    const statusSelect = document.getElementById('filter-status');
+    if (!Object.keys(STATUS_LABELS_MENU).length) {
+        [...statusSelect.options].forEach(o => { if (o.value) STATUS_LABELS_MENU[o.value] = o.textContent; });
+    }
+    const order = Object.keys(STATUS_LABELS_MENU);
+    const statuses = values('status', s => s.status).sort((a, b) => order.indexOf(a) - order.indexOf(b));
+    fillSelect(statusSelect, statuses, v => STATUS_LABELS_MENU[v] || v);
+}
+
 function populateProjectFilter() {
     // Options show the project without flag and country
     const projects = [...new Set(allSubmissions.map(s => s.project_name))].sort();
@@ -332,52 +349,28 @@ function applyFilters() {
     document.getElementById('filter-country').classList.toggle('active', countryFilter !== '');
     updateFilterActiveStates(statusFilter, projectFilter, dateFilter, searchQuery);
 
-    // Start with all submissions
-    filteredSubmissions = allSubmissions.filter(submission => {
-        // Epoch filter
-        if (epochFilter && String(submission.epoch) !== epochFilter) {
-            return false;
-        }
-
-        // Status filter
-        if (statusFilter && submission.status !== statusFilter) {
-            return false;
-        }
-
-        // Project filter
-        if (projectFilter && submission.project_name !== projectFilter) {
-            return false;
-        }
-
-        // Country filter
-        if (countryFilter && extractCountry(submission.project_name) !== countryFilter) {
-            return false;
-        }
-
+    // Does a submission pass every filter, leaving out the one named in skip?
+    // The project, country and status menus each list only what the other
+    // filters leave, so no choice leads to an empty list.
+    const passes = (submission, skip) => {
+        if (epochFilter && String(submission.epoch) !== epochFilter) return false;
+        if (skip !== 'status' && statusFilter && submission.status !== statusFilter) return false;
+        if (skip !== 'project' && projectFilter && submission.project_name !== projectFilter) return false;
+        if (skip !== 'country' && countryFilter && extractCountry(submission.project_name) !== countryFilter) return false;
         // Merchant filter: the whole name, any case
-        if (merchantFilter && (submission.merchant_name || '').trim().toLowerCase() !== merchantFilter.toLowerCase()) {
-            return false;
-        }
-
-        // Date filter
-        if (!passesDateFilter(submission, dateFilter)) {
-            return false;
-        }
-
-        // Search filter (project, merchant, notes, or post URLs)
+        if (merchantFilter && (submission.merchant_name || '').trim().toLowerCase() !== merchantFilter.toLowerCase()) return false;
+        if (!passesDateFilter(submission, dateFilter)) return false;
+        // Search: project, merchant, notes, post or Telegram link. Epoch 4's
+        // rows have no notes or Telegram link, hence the fallbacks.
         if (searchQuery) {
-            const projectMatch = submission.project_name.toLowerCase().includes(searchQuery);
-            const merchantMatch = submission.merchant_name.toLowerCase().includes(searchQuery);
-            const noteMatch = submission.note.toLowerCase().includes(searchQuery);
-            const postUrlMatch = (submission.post_url || '').toLowerCase().includes(searchQuery);
-            const telegramMatch = (submission.telegram_link || '').toLowerCase().includes(searchQuery);
-            if (!projectMatch && !merchantMatch && !noteMatch && !postUrlMatch && !telegramMatch) {
-                return false;
-            }
+            const fields = [submission.project_name, submission.merchant_name, submission.note, submission.post_url, submission.telegram_link];
+            if (!fields.some(f => (f || '').toLowerCase().includes(searchQuery))) return false;
         }
-
         return true;
-    });
+    };
+
+    filteredSubmissions = allSubmissions.filter(s => passes(s));
+    refreshFacets(passes);
 
     // Say which merchant, if one is set, by its name as the tracker spells it
     const merchantBar = document.getElementById('merchant-filter');
