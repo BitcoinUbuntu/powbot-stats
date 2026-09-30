@@ -152,7 +152,9 @@
             .sb-time { font-size: 1.125rem; }
             .sb-cap { font-size: 0.9375rem; }
             .epoch-status { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: var(--s3); margin-top: var(--s3); }
-            /* Tall enough to span both readout rows, as on desktop */
+            /* Tall enough to span both readout rows, as on desktop, and
+               standing on the bottom row: wheels level with its bars */
+            .mascot-link { align-self: end; }
             .mascot { width: 112px; }
             .summary { font-size: var(--fs-base); }
             .countries { grid-template-columns: minmax(0, 1fr); gap: var(--s5); }
@@ -926,7 +928,7 @@
             body.innerHTML = `
                 <p class="section-note">${note}</p>
                 ${total ? `<ul class="list" id="merchant-list">${items}</ul>` : ''}
-                ${total > BOARD_ROWS ? `<p class="list-link"><a class="btn" href="${attrSafe(allHref)}">All ${formatNumber(total)} ${merchantView === 'new' ? 'new merchants' : 'merchants'} in the directory</a></p>` : ''}`;
+                ${total > BOARD_ROWS ? `<p class="list-link"><a class="btn" href="${attrSafe(allHref)}">View all ${formatNumber(total)} in the Directory</a></p>` : ''}`;
         }
 
         pastMerchantsPromise.then(result => { pastMerchants = result; renderMerchantList(); if (heroStats) renderStatus(heroStats); });

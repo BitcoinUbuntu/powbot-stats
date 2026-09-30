@@ -393,7 +393,7 @@
             }).join('');
             const label = `Show all ${formatNumber(items.length)} ${noun}`;
             const more = allHref
-                ? `<p class="list-link"><a class="btn" href="${attrSafe(allHref)}">All ${formatNumber(items.length)} ${noun} in the directory</a></p>`
+                ? `<p class="list-link"><a class="btn" href="${attrSafe(allHref)}">View all ${formatNumber(items.length)} in the Directory</a></p>`
                 : `<button type="button" class="btn list-more" data-list="${listId}" data-label="${label}" aria-controls="${listId}" aria-expanded="false">${label}</button>`;
             container.innerHTML = `
                 <ol class="list lb-list" id="${listId}" aria-label="${attrSafe(caption)}">${rows}</ol>
