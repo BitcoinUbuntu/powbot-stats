@@ -20,7 +20,7 @@
     // payment, the merchant receiving sats directly) have held since Epoch 1.
     window.POWBOT_EPOCHS = [
         { name: 'Epoch 1', when: 'May 2025', posts: 81, href: 'archive.html#epoch-1',
-            note: 'Proof-of-work videos begin, an idea from Hermann of Bitcoin Ekasi: film a real bitcoin payment at a merchant who receives the sats directly. Every post checked by hand.' },
+            note: 'Proof-of-work videos begin: film a real bitcoin payment at a merchant who receives the sats directly. Every post checked by hand.' },
         { name: 'Epoch 2', when: 'Aug 2025', posts: 298, href: 'archive.html#epoch-2',
             note: 'The same ground rules, with posts on Nostr as well as X. Still checked by hand.' },
         { name: 'Epoch 3', when: 'Nov 2025', posts: 604, href: 'archive.html#epoch-3',
