@@ -76,7 +76,10 @@ function initProfileEditor(projectName, projectData) {
 /**
  * Start OTP authentication flow
  */
+let otpRequestInFlight = false;
+
 async function startOTPAuth() {
+    if (otpRequestInFlight) return;
     if (!currentProject) {
         showError('No project selected. Open the editor from your project’s profile page.');
         return;
@@ -93,6 +96,7 @@ async function startOTPAuth() {
         return;
     }
 
+    otpRequestInFlight = true;
     try {
         showMessage('Sending a code to your Telegram…', 'info');
 
@@ -122,6 +126,8 @@ async function startOTPAuth() {
     } catch (error) {
         console.error('OTP init error:', error);
         showError(error.fromApi ? error.message : 'Could not send the code (' + error.message + '). Try again in a moment.');
+    } finally {
+        otpRequestInFlight = false;
     }
 }
 
@@ -747,8 +753,12 @@ function initTelegramVerification() {
     const claimBtn = document.getElementById('claim-profile-btn');
     if (!usernameInput || !claimBtn) return;
 
-    claimBtn.onclick = startOTPAuth;
     claimBtn.disabled = telegramUsernameTyped() === '';
+    // updateEditorUI runs more than once on load: listeners must go on only once, or one
+    // Enter sends two codes (and only the second one works)
+    if (usernameInput.dataset.wired) return;
+    usernameInput.dataset.wired = '1';
+    claimBtn.onclick = startOTPAuth;
 
     usernameInput.addEventListener('input', () => {
         claimBtn.disabled = telegramUsernameTyped() === '';
