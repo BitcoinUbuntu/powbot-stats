@@ -360,16 +360,9 @@
         <!-- Telegram sign-in (shown when not signed in) -->
         <section id="telegram-verification" class="box verify hidden" aria-labelledby="verify-title">
             <h2 id="verify-title">Sign in with Telegram</h2>
-            <p>To keep your profile safe, enter the project lead's Telegram username. Then we send a 6-digit code to you on Telegram.</p>
+            <p>To keep your profile safe, we send a 6-digit code to the project lead on Telegram. Enter it on the next screen to sign in.</p>
 
-            <div class="field">
-                <label class="field-label" for="telegram-username-input">Project lead's Telegram username</label>
-                <p class="field-hint" id="telegram-username-hint">Type it with or without the @, for example @username, then choose Send code.</p>
-                <input class="input" type="text" id="telegram-username-input" placeholder="@username" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="telegram-username-hint telegram-verify-feedback">
-                <p id="telegram-verify-feedback" class="field-hint" aria-live="polite"></p>
-            </div>
-
-            <button type="button" id="claim-profile-btn" class="btn btn-solid" disabled>Send code</button>
+            <button type="button" id="claim-profile-btn" class="btn btn-solid">Send code</button>
         </section>
         </div>
     </div>

@@ -721,77 +721,13 @@ function updateEditorUI() {
 }
 
 /**
- * Initialize Telegram username verification
+ * Set up the Telegram sign-in: one button that sends the code to the project
+ * lead. There is no username to type: the API finds the lead through its own
+ * private ID map, so nothing about them has to be in the public member file.
  */
 function initTelegramVerification() {
-    if (!currentProjectData) return;
-
-    const usernameInput = document.getElementById('telegram-username-input');
-    const feedback = document.getElementById('telegram-verify-feedback');
     const claimBtn = document.getElementById('claim-profile-btn');
-
-    const expectedUsername = currentProjectData.telegram_username;
-    const supportUrl = window.SUPPORT_URL || 'https://t.me/bitcoinubuntu';
-
-    if (!expectedUsername) {
-        // No Telegram username configured for this project
-        if (feedback) {
-            feedback.innerHTML = `This project does not have a Telegram username configured. Please <a href="${supportUrl}" target="_blank" rel="noopener">contact support</a>.`;
-            feedback.style.color = 'var(--danger)';
-        }
-        if (claimBtn) {
-            claimBtn.disabled = true;
-        }
-        if (usernameInput) {
-            usernameInput.disabled = true;
-        }
-        return;
-    }
-
-    // Set up input verification
-    if (usernameInput && claimBtn) {
-        claimBtn.onclick = startOTPAuth;
-
-        // Allow Enter key to trigger authentication
-        usernameInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && !claimBtn.disabled) {
-                startOTPAuth();
-            }
-        });
-
-        usernameInput.addEventListener('input', () => {
-            // With or without the @, any case
-            const bare = u => String(u).trim().replace(/^@+/, '').toLowerCase();
-            const inputValue = bare(usernameInput.value);
-            const expectedValue = bare(expectedUsername);
-
-            if (inputValue === expectedValue) {
-                // Match! Enable button
-                claimBtn.disabled = false;
-                usernameInput.removeAttribute('aria-invalid');
-                if (feedback) {
-                    feedback.textContent = '✓ Username matches. You can send the code now.';
-                    feedback.style.color = 'var(--link)';
-                }
-            } else {
-                // No match - disable button
-                claimBtn.disabled = true;
-                if (inputValue.length > 0) {
-                    usernameInput.setAttribute('aria-invalid', 'true');
-                } else {
-                    usernameInput.removeAttribute('aria-invalid');
-                }
-                if (feedback) {
-                    if (inputValue.length > 0) {
-                        feedback.textContent = 'That username does not match the one we have for this project. Check it and try again.';
-                        feedback.style.color = 'var(--danger)';
-                    } else {
-                        feedback.textContent = '';
-                    }
-                }
-            }
-        });
-    }
+    if (claimBtn) claimBtn.onclick = startOTPAuth;
 }
 
 /**
