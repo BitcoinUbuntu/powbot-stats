@@ -533,7 +533,7 @@
             const trackerHref = `tracker.html?${new URLSearchParams({ epoch: 'all', merchant: merchantName, status: 'Processed' })}`;
             html += `<div class="detail-links">
                 ${visits.length > initialCount ? postsMoreButtons('merchant-posts', visits.length - initialCount) : ''}
-                <a class="btn" href="${escapeHtml(trackerHref)}">View all ${postCount} in the Tracker</a>
+                <a class="btn" href="${escapeHtml(trackerHref)}">${visits.length > initialCount ? `View all ${postCount} in the Tracker` : 'View in the Tracker'}</a>
             </div>`;
 
             postsContainer.innerHTML = html;

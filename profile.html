@@ -519,7 +519,7 @@
                         </ul>
                         <div class="detail-links">
                             ${visits.length > initialCount ? moreButton('posts-list-current', visits.length - initialCount) : ''}
-                            <a class="btn" href="${escapeHtml(trackerHref)}">View all ${currentPosts.length} in the Tracker</a>
+                            <a class="btn" href="${escapeHtml(trackerHref)}">${visits.length > initialCount ? `View all ${currentPosts.length} in the Tracker` : 'View in the Tracker'}</a>
                         </div>
                     </section>`;
                 }
@@ -552,7 +552,7 @@
                 html += `
                         <div class="detail-links">
                             ${visits5.length > initialCount ? moreButton('posts-list-epoch5', visits5.length - initialCount) : ''}
-                            <a class="btn" href="${escapeHtml(tracker5)}">View all ${epoch5Posts.length} in the Tracker</a>
+                            <a class="btn" href="${escapeHtml(tracker5)}">${visits5.length > initialCount ? `View all ${epoch5Posts.length} in the Tracker` : 'View in the Tracker'}</a>
                         </div>`;
 
                 html += `</section>`;
@@ -581,7 +581,7 @@
                 html += `
                         <div class="detail-links">
                             ${visits4.length > initialCount ? moreButton('posts-list-epoch4', visits4.length - initialCount) : ''}
-                            <a class="btn" href="${escapeHtml(tracker4)}">View all ${epoch4Posts.length} in the Tracker</a>
+                            <a class="btn" href="${escapeHtml(tracker4)}">${visits4.length > initialCount ? `View all ${epoch4Posts.length} in the Tracker` : 'View in the Tracker'}</a>
                         </div>`;
 
                 html += `</section>`;
@@ -605,7 +605,7 @@
                         </ul>
                         <div class="detail-links">
                             ${visitsT.length > initialCount ? moreButton('posts-list-epoch4t', visitsT.length - initialCount) : ''}
-                            <a class="btn" href="${escapeHtml(trackerT)}">View all ${testingPosts.length} in the Tracker</a>
+                            <a class="btn" href="${escapeHtml(trackerT)}">${visitsT.length > initialCount ? `View all ${testingPosts.length} in the Tracker` : 'View in the Tracker'}</a>
                         </div>
                     </section>`;
             }
