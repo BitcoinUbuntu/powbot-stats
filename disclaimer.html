@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="css/powbot.css">
     <style>
         /* Disclaimer layout only. Colours, type and components: css/powbot.css */
+        .page-head .updated { margin: var(--s3) 0 0; color: var(--muted); font: 400 var(--fs-xs)/1.4 var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; }
     </style>
 </head>
 <body class="pb">
@@ -53,7 +54,8 @@
         <div class="wrap">
             <header class="page-head">
                 <h1>Disclaimer</h1>
-                <p class="lede">Important information about using this site.</p>
+                <p class="lede">What this site can and can’t promise, and what to check before you donate.</p>
+                <p class="updated">Last updated 30 September 2026</p>
             </header>
 
             <section class="section" aria-labelledby="accuracy">
@@ -94,6 +96,13 @@
                 </div>
             </section>
 
+            <section class="section" aria-labelledby="third-party">
+                <h2 id="third-party">Third-party content</h2>
+                <div class="prose">
+                    <p>Posts link to X and Nostr, merchant names and locations come from BTC Map, and project descriptions come from the projects themselves. We don’t control them and aren’t responsible for them.</p>
+                </div>
+            </section>
+
             <section class="section" aria-labelledby="liability">
                 <h2 id="liability">Limitation of liability</h2>
                 <div class="prose">
@@ -102,7 +111,7 @@
                         <li>Payments sent to incorrect, outdated, or compromised addresses</li>
                         <li>Financial losses resulting from reliance on information displayed here</li>
                         <li>Errors, omissions, or inaccuracies in the data presented</li>
-                        <li>Service interruptions or data availability</li>
+                        <li>Service interruptions or missing data</li>
                         <li>Actions taken based on the information provided</li>
                     </ul>
                     <p>Use of this website and any actions taken based on the information provided are entirely at your own risk.</p>

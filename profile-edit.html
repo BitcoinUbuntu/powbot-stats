@@ -45,8 +45,6 @@
         .hidden { display: none !important; }
 
         /* ----------------------------------------------------------- Header -- */
-        .back-row { margin: var(--s4) 0 0; }
-        .back-row a { display: inline-flex; align-items: center; min-height: var(--tap); }
         .project-header { display: flex; align-items: center; gap: var(--s5); padding-top: var(--s4); }
         #project-logo { flex: none; }
         #project-logo:empty { display: none; }
@@ -85,14 +83,17 @@
         }
         .input-with-prefix .input { border-radius: 0 var(--radius) var(--radius) 0; }
 
-        /* File pickers: the native input, its button drawn like .btn */
+        /* File pickers: the native input, its button drawn like the site's
+           other small boxed buttons (monospaced capitals, like Nostr and X) */
         .file-input { padding: 3px; cursor: pointer; line-height: 36px; }
         .file-input::file-selector-button {
             min-height: 36px; margin-right: var(--s3); padding: 0 var(--s4);
-            background: none; color: var(--link);
-            border: 1px solid var(--link); border-radius: var(--radius);
-            font: 700 var(--fs-sm)/1 var(--font-text); cursor: pointer;
+            background: var(--night); color: var(--link);
+            border: 1px solid var(--line-strong); border-radius: var(--radius);
+            font: 400 var(--fs-sm)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer;
         }
+        /* The profile description: two lines, so all 125 characters show */
+        #edit-tagline { min-height: 0; resize: none; }
 
         .thumb {
             display: block; width: 120px; height: 120px; object-fit: cover;
@@ -168,7 +169,6 @@
 
     <main id="main">
     <div class="wrap">
-        <p class="back-row"><a href="profile.html" id="back-link">Back to profile</a></p>
 
         <!-- Project context: the script fills in the logo and name -->
         <header id="project-header" class="page-head project-header">
@@ -189,7 +189,7 @@
         <!-- Edit form -->
         <div id="edit-section" class="hidden">
             <div class="callout">
-                <p>If your project already has a <a href="https://github.com/BitcoinUbuntu/powbot-stats/pulls" target="_blank" rel="noopener">pending pull request<span class="visually-hidden"> (opens in a new tab)</span></a>, wait for it to be reviewed before you submit new changes.</p>
+                <p>If you’ve already sent <a href="https://github.com/BitcoinUbuntu/powbot-stats/pulls" target="_blank" rel="noopener">changes that haven’t been published yet<span class="visually-hidden"> (opens in a new tab)</span></a>, wait for those before sending more.</p>
             </div>
 
             <!-- Save indicator -->
@@ -202,7 +202,7 @@
                     <div class="field">
                         <label class="field-label" for="edit-tagline">Profile description</label>
                         <p class="field-hint" id="edit-tagline-hint">Appears on your profile card across the site. Up to 125 characters.</p>
-                        <input class="input" type="text" id="edit-tagline" name="tagline" maxlength="125" placeholder="A one-sentence summary of your project" autocomplete="off" aria-describedby="edit-tagline-hint tagline-counter">
+                        <textarea class="input" id="edit-tagline" name="tagline" rows="2" maxlength="125" placeholder="A one-sentence summary of your project" autocomplete="off" aria-describedby="edit-tagline-hint tagline-counter"></textarea>
                         <p class="char-counter" id="tagline-counter">0 / 125</p>
                     </div>
 
@@ -369,7 +369,7 @@
 
             <div class="field">
                 <label class="field-label" for="telegram-username-input">Project lead's Telegram username</label>
-                <p class="field-hint" id="telegram-username-hint">Include the @, for example @username.</p>
+                <p class="field-hint" id="telegram-username-hint">Type it with or without the @, for example @username, then choose Send code.</p>
                 <input class="input" type="text" id="telegram-username-input" placeholder="@username" autocomplete="off" autocapitalize="none" spellcheck="false" aria-describedby="telegram-username-hint telegram-verify-feedback">
                 <p id="telegram-verify-feedback" class="field-hint" aria-live="polite"></p>
             </div>
@@ -451,6 +451,10 @@
         // Initialize character counters
         document.addEventListener('DOMContentLoaded', () => {
             updateCharCounter('edit-tagline', 'tagline-counter', 125);
+            // The profile description is one line, shown over two: no line breaks
+            document.getElementById('edit-tagline')?.addEventListener('input', e => {
+                if (/[\r\n]/.test(e.target.value)) e.target.value = e.target.value.replace(/[\r\n]+/g, ' ');
+            });
             updateCharCounter('edit-description', 'description-counter', 600);
         });
 
@@ -744,7 +748,6 @@
             document.getElementById('editor-message').classList.remove('hidden');
         } else {
             // Update back link
-            document.getElementById('back-link').href = `profile.html?id=${encodeURIComponent(projectId)}`;
 
             // Load project info
             loadProjectInfo();

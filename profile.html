@@ -462,15 +462,6 @@
             })));
             const dayOf = v => formatDate(String(v.first).slice(0, 10));
 
-            // One post: platform as a text tag, then what, then when
-            const postItem = (post, isHidden, name, when) => `
-                            <li class="post-item${isHidden ? ' post-hidden' : ''}">
-                                <a href="${escapeHtml(post.url)}" target="_blank" rel="noopener">
-                                    <span class="tag">${escapeHtml(getPlatform(post.url).name)}</span>
-                                    <span class="post-name">${escapeHtml(name)}</span>
-                                    <span class="post-when">${escapeHtml(when)}</span>
-                                </a>
-                            </li>`;
             // "Show more" / "Show fewer" for the post lists, shared (visits.js)
             const moreButton = postsMoreButtons;
 
@@ -556,7 +547,7 @@
                         <ul class="visits dated" id="posts-list-epoch5">${visitItems(visits5, dayOf)}
                         </ul>`;
 
-                // Epoch 5 is in the tracker as an archive (Epoch 4 and older are not)
+                // Epoch 5 is in the tracker as an archive
                 const tracker5 = `tracker.html?${new URLSearchParams({ epoch: '5', project: member.name, status: 'Processed' })}`;
                 html += `
                         <div class="detail-links">
@@ -585,39 +576,63 @@
                         <ul class="visits dated" id="posts-list-epoch4">${visitItems(visits4, dayOf)}
                         </ul>`;
 
-                if (visits4.length > initialCount) {
-                    html += `<div class="detail-links">${moreButton('posts-list-epoch4', visits4.length - initialCount)}</div>`;
-                }
+                // Epoch 4 is in the tracker too, rebuilt from the stats files
+                const tracker4 = `tracker.html?${new URLSearchParams({ epoch: '4', project: member.name, status: 'Processed' })}`;
+                html += `
+                        <div class="detail-links">
+                            ${visits4.length > initialCount ? moreButton('posts-list-epoch4', visits4.length - initialCount) : ''}
+                            <a class="btn" href="${escapeHtml(tracker4)}">View all ${epoch4Posts.length} in the Tracker</a>
+                        </div>`;
 
                 html += `</section>`;
             }
 
-            // Pre-PoWBoT History (Epochs 1-3 + Epoch 4 Testing)
-            if (historicalPosts.length > 0) {
-                // Sort in reverse chronological order (newest first) to match Epoch 4 section
-                historicalPosts.reverse();
-                    const initialHistoricalCount = 5;
-                    const hasMoreHistorical = historicalPosts.length > initialHistoricalCount;
+            // The Epoch 4 testing period: PoWBoT's first trial, December 2025,
+            // with merchants and dates like Epoch 4, and in the tracker ("4t")
+            const testingPosts = historicalPosts.filter(p => p.epoch === 'Epoch 4 Testing')
+                .sort((a, b) => new Date(b.date) - new Date(a.date));
+            if (testingPosts.length > 0) {
+                const initialCount = 5;
+                const visitsT = datedVisits(testingPosts);
+                const trackerT = `tracker.html?${new URLSearchParams({ epoch: '4t', project: member.name, status: 'Processed' })}`;
+                html += `
+                    <section class="section" aria-labelledby="epoch4t-title">
+                        <h2 id="epoch4t-title">Epoch 4 testing</h2>
+                        <p class="section-note">December 2025, before Epoch 4 opened.</p>
+                        ${factsRow(testingPosts)}
+                        <h3>Merchant posts, newest first</h3>
+                        <ul class="visits dated" id="posts-list-epoch4t">${visitItems(visitsT, dayOf)}
+                        </ul>
+                        <div class="detail-links">
+                            ${visitsT.length > initialCount ? moreButton('posts-list-epoch4t', visitsT.length - initialCount) : ''}
+                            <a class="btn" href="${escapeHtml(trackerT)}">View all ${testingPosts.length} in the Tracker</a>
+                        </div>
+                    </section>`;
+            }
 
-                    html += `
-                        <section class="section" aria-labelledby="history-title">
-                            <h2 id="history-title">Before PoWBoT</h2>
-                            <p class="section-note">${plural(historicalPosts.length, 'post', 'posts')} from Epochs 1–3 and the Epoch 4 testing phase, newest first.</p>
-                            <ul class="post-list" id="posts-list-historical">
-                    `;
-
-                    historicalPosts.forEach((post, index) => {
-                        html += postItem(post, index >= initialHistoricalCount, post.epoch, post.period);
-                    });
-
-                    html += `</ul>`;
-
-                    // Add "Show more" button if there are more than 5 posts
-                    if (hasMoreHistorical) {
-                        html += `<div class="detail-links">${moreButton('posts-list-historical', historicalPosts.length - initialHistoricalCount)}</div>`;
-                    }
-
-                    html += `</section>`;
+            // Before PoWBoT: Epochs 1-3, checked by hand. Each post has only a
+            // link, so a row names its epoch where the merchant would be.
+            const earlyPosts = historicalPosts.filter(p => p.epoch !== 'Epoch 4 Testing').reverse();
+            if (earlyPosts.length > 0) {
+                const initialCount = 5;
+                const rows = earlyPosts.map((post, i) => {
+                    const platform = post.platform || getPlatform(post.url).name;
+                    const visit = { links: { [platform]: post.url } };
+                    return `
+                            <li class="post-item${i >= initialCount ? ' post-hidden' : ''}"><div class="visit">
+                                <span class="visit-main">${escapeHtml(post.epoch)}</span>
+                                ${visitLinks(visit, `${member.name}, ${post.epoch}`)}
+                                <span class="visit-when">${escapeHtml(post.period)}</span>
+                            </div></li>`;
+                }).join('');
+                html += `
+                    <section class="section" aria-labelledby="history-title">
+                        <h2 id="history-title">Before PoWBoT</h2>
+                        <p class="section-note">${plural(earlyPosts.length, 'post', 'posts')} from Epochs 1–3, checked by hand, newest first.</p>
+                        <ul class="visits dated" id="posts-list-historical">${rows}
+                        </ul>
+                        ${earlyPosts.length > initialCount ? `<div class="detail-links">${moreButton('posts-list-historical', earlyPosts.length - initialCount)}</div>` : ''}
+                    </section>`;
             }
 
             html += `</div>`; // Close content wrap

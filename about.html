@@ -43,9 +43,17 @@
     <link rel="stylesheet" href="css/powbot.css">
     <style>
         /* About layout only. Colours, type and components: css/powbot.css */
-        .built { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--s5) var(--s7); }
-        .built .prose { flex: 1 1 22rem; }
-        .built img { width: auto; height: 120px; }
+        /* The mascot beside the title and lede; on phones beside the title
+           alone, sized to its two lines, with the lede full width below */
+        .about-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "title mascot" "lede mascot"; align-items: center; column-gap: var(--s5); }
+        .about-head h1 { grid-area: title; }
+        .about-head .lede { grid-area: lede; }
+        .about-head .mascot { grid-area: mascot; display: block; width: 150px; height: auto; }
+        @media (max-width: 720px) {
+            .about-head { grid-template-areas: "title mascot" "lede lede"; column-gap: var(--s3); }
+            .about-head .title-line { display: block; }
+            .about-head .mascot { width: 72px; }
+        }
     </style>
 </head>
 <body class="pb">
@@ -54,16 +62,17 @@
 
     <main id="main">
         <div class="wrap">
-            <header class="page-head">
-                <h1>About PoWBoT</h1>
+            <header class="page-head about-head">
+                <h1>About <span class="title-line">PoWBoT</span></h1>
                 <p class="lede">A Telegram bot that checks and rewards proof of Bitcoin payments at merchants across Africa.</p>
+                <img class="mascot" src="images/PoWBoT_mascot_240px.png" alt="" width="194" height="240" fetchpriority="high">
             </header>
 
             <section class="section" aria-labelledby="what">
                 <h2 id="what">What it does</h2>
                 <div class="prose">
-                    <p>PoWBoT is a Telegram bot that verifies and rewards Proof of Work (PoW) – real-world evidence of Bitcoin adoption happening on the ground in Africa.</p>
-                    <p>The bot serves the CBAF – a network of 40 grassroots Bitcoin projects across Africa, and growing.</p>
+                    <p>Proof of Work (PoW) here means a real Bitcoin payment at a local merchant, filmed and posted on X or Nostr: evidence of Bitcoin adoption on the ground in Africa. PoWBoT checks each post, counts it and pays everyone involved in sats.</p>
+                    <p>The bot serves the CBAF – a network of 40 grassroots Bitcoin projects across Africa, and growing. New to PoWBoT? Start with <a href="guidelines.html#new">how to join</a> in the guidelines.</p>
                 </div>
             </section>
 
@@ -93,14 +102,13 @@
                 <h2 id="point">The point</h2>
                 <div class="prose">
                     <p>You don’t need to be a programmer to build useful things. With open source software, AI assistance, and persistence, anyone can create real working software that adds value.</p>
-                    <p>This bot has processed hundreds of PoW posts and rewarded dozens of <a href="https://bitcoinconfederation.org" target="_blank" rel="noopener">projects</a> and <a href="https://btcmap.org" target="_blank" rel="noopener">merchants</a> across Africa.</p>
+                    <p>Since December 2025 the bot has approved over 4,600 posts from nearly 30 <a href="members.html">projects</a>, at more than 300 <a href="merchants.html">merchants</a> across Africa.</p>
                 </div>
             </section>
 
             <section class="section" aria-labelledby="built">
                 <h2 id="built">Built with</h2>
-                <div class="built">
-                    <div class="prose">
+                <div class="prose">
                         <ul>
                             <li>Python + python-telegram-bot</li>
                             <li>SQLite (payment ledger)</li>
@@ -110,9 +118,9 @@
                             <li>BTCMap API (merchant identity)</li>
                             <li>Twitter Syndication API (X posts)</li>
                             <li>GitHub Pages (dashboard hosting)</li>
+                            <li>FastAPI (project profiles and sign-in)</li>
+                            <li>A Hetzner server with Caddy (the bot, the API and live data)</li>
                         </ul>
-                    </div>
-                    <img src="images/PoWBoT_mascot_240px.png" alt="PoWBoT mascot" width="194" height="240" loading="lazy">
                 </div>
             </section>
 
