@@ -77,6 +77,12 @@
             .standings { grid-template-columns: minmax(0, 1fr); grid-template-areas: "board" "more" "highlights"; }
             .highlights { margin-top: var(--s7); }
         }
+        /* Country rows with projects and posts: on narrow phones the two
+           stack, so the country's name keeps the room */
+        @media (max-width: 480px) {
+            .li-side.pair { display: grid; justify-items: end; line-height: 1.3; }
+            .li-side.pair .sep { display: none; }
+        }
     </style>
 </head>
 <body class="pb">
@@ -334,10 +340,13 @@
 
             // In the Epoch 5 file a country's count is its approved posts, the
             // same as the tracker's processed posts for it, where each row opens.
+            // Its projects are the ranked projects under its flag.
+            const projectsByFlag = {};
+            (stats.top_projects || []).forEach(p => { const f = flagOf(p.name); projectsByFlag[f] = (projectsByFlag[f] || 0) + 1; });
             const countryItems = countries.map(c => `
                 <li><a href="${attrSafe(trackerUrl({ country: c.country }))}">
                     <span class="li-main">${flagHtml(c.flag)} ${escapeHtml(c.country)}</span>
-                    <span class="li-side num">${plural(c.count, 'post', 'posts')}</span>
+                    <span class="li-side num pair"><span>${plural(projectsByFlag[c.flag] || 0, 'project', 'projects')}</span><span class="sep" aria-hidden="true"> · </span><span>${plural(c.count, 'post', 'posts')}</span></span>
                 </a></li>`).join('');
 
             return `
