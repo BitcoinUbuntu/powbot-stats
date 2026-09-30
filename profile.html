@@ -303,10 +303,6 @@
                 html += chip(`https://primal.net/p/${escapeHtml(member.npub)}`, '⚡', 'Nostr');
             }
 
-            if (member.email) {
-                html += chip(`mailto:${escapeHtml(member.email)}`, '📧', 'Email', false);
-            }
-
             if (member.btcmap_url) {
                 html += chip(escapeHtml(member.btcmap_url), '🗺️', 'BTCMap');
             }
