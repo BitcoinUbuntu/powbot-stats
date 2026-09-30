@@ -59,8 +59,7 @@ let merchantFilter = '';
 // address, btcmap link, status, payments), so history loses nothing.
 //
 // Epoch 4 and its testing period ("4t") are the exception: they predate the
-// export, so scripts/build_tracker_epoch4.py rebuilt them from the stats
-// files. Approved posts only, dated to the day, no review detail.
+// export, so they were rebuilt once from the stats files. Approved posts only, dated to the day, no review detail.
 const TRACKER_ARCHIVES = ['tracker-data-epoch5.json', 'tracker-data-epoch4.json', 'tracker-data-epoch4t.json'];
 const DAY_ONLY_EPOCHS = ['4', '4t'];
 

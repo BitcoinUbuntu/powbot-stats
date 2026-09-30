@@ -57,3 +57,13 @@ Changes will automatically reflect on all pages using the includes system.
 The support contact link is set to `https://t.me/bitcoinubuntu` and appears in:
 - Footer (all pages)
 - Profile editor error messages (when telegram_username is not configured)
+
+## Timing
+
+`inject.js` loads the nav and footer asynchronously. A page script that touches footer
+elements (such as the `#updated` timestamp) must wait for them:
+
+1. Load `inject.js` before the page's main script.
+2. Wait with `await window.includesLoaded` (a promise) before using nav or footer elements.
+3. Null-check anyway; the elements do not exist until the includes have loaded.
+
