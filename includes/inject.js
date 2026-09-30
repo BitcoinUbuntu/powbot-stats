@@ -40,13 +40,13 @@
     }
 
     /**
-     * Light or dark (the header switch). Dark is the default; light, once
+     * Light or dark (the header switch). Light is the default; dark, once
      * chosen, is kept in this browser and applied before the first paint by
-     * a snippet in each page's <head>. Choosing dark again clears it. The
+     * a snippet in each page's <head>. Choosing light again clears it. The
      * browser's own bar colour (theme-color) follows too.
      */
     const THEME_KEY = 'pb-theme';
-    const themeNow = () => (document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
+    const themeNow = () => (document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light');
 
     function showTheme() {
         const root = document.documentElement;
@@ -55,22 +55,18 @@
             button.setAttribute('aria-pressed', String(dark));
             button.title = dark ? 'Switch to light' : 'Switch to dark';
         });
-        // The page's own colour for the browser's bar: the olive tag's colour
-        // by default, the glass once light is chosen
+        // The browser's bar takes the page's colour, the glass or the olive
         const night = getComputedStyle(root).getPropertyValue('--night').trim();
-        document.querySelectorAll('meta[name="theme-color"]').forEach(meta => {
-            if (meta.dataset.own === undefined) meta.dataset.own = meta.getAttribute('content');
-            meta.setAttribute('content', !dark && night ? night : meta.dataset.own);
-        });
+        if (night) document.querySelectorAll('meta[name="theme-color"]').forEach(meta => meta.setAttribute('content', night));
     }
 
     function setTheme(mode) {
         const root = document.documentElement;
         try {
-            if (mode === 'light') localStorage.setItem(THEME_KEY, 'light');
+            if (mode === 'dark') localStorage.setItem(THEME_KEY, 'dark');
             else localStorage.removeItem(THEME_KEY);
         } catch (e) { /* works for this visit, just not remembered */ }
-        if (mode === 'light') root.dataset.theme = 'light';
+        if (mode === 'dark') root.dataset.theme = 'dark';
         else delete root.dataset.theme;
         showTheme();
         // The globe (globe.js) listens, to redraw in the new colours

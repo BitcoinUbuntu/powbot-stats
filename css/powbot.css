@@ -24,34 +24,34 @@
 /* --------------------------------------------------------------- Tokens -- */
 /* A .reverse box inside either theme takes the other one's colours (see
    Reversed box), so each theme's block also names it */
-:root, :root[data-theme="light"] .reverse {
-    /* Colour: a Nokia 3310 screen, two tones. Dark by default: glass-green
-       pixels on the olive ink. Light (below) swaps them, olive ink on pale
-       green glass, when chosen with the header switch; the device's own
-       setting isn't consulted. The ink is a shade deeper than the 3310's
-       (#37442F, not #43523D) for contrast. Links, data and the one highlight
-       (current page, today) share the glass colour; the highlight is a solid
-       block, like the phone's menu selection. Contrast on --night: heading,
-       accent and link 8.3, text 9.3, muted 5.8 (6.6 on --panel), danger 6.0;
-       ink on glass 8.3. Change a colour here and in its -rgb twin. */
-    --night: #37442F;          /* the olive: page, and text on a solid block */
-    --panel: #2F3B29;          /* raised surfaces: dialogs, cards */
-    --panel-hi: #43523D;       /* hover on panel rows */
-    --heading: #C7F0D8;
-    --text: #DDF9E8;           --text-rgb: 221, 249, 232;
-    --muted: #A3CBB3;          --muted-rgb: 163, 203, 179;
-    --accent: #C7F0D8;         --accent-rgb: 199, 240, 216;   /* the one highlight, as a solid block */
-    --accent-hi: #DDF9E8;      /* accent hover */
-    --link: #C7F0D8;           --link-rgb: 199, 240, 216;     /* links, data marks, focus */
-    --danger: #FFB3A1;         /* errors, rejected */
-    --line: rgba(var(--accent-rgb), 0.22);
-    --line-strong: rgba(var(--accent-rgb), 0.48);
+:root, :root[data-theme="dark"] .reverse {
+    /* Colour: a Nokia 3310 screen, two tones. Light by default: olive ink
+       on warm, grey-green glass, the phone as it was. Dark (below) swaps
+       them when chosen with the header switch; the device's own setting
+       isn't consulted. The ink is a shade deeper than the 3310's (#37442F,
+       not #43523D) for contrast. Links, data and the one highlight (current
+       page, today) share the ink; the highlight is a solid block, like the
+       phone's menu selection. Contrast on --night: heading, accent and link
+       7.7, text 9.9, muted 6.0 (5.3 on --panel, 4.8 on --panel-hi), danger
+       6.4; glass on ink 7.7. Change a colour here and in its -rgb twin. */
+    --night: #CFE5BE;          /* the glass: page, and text on a solid block */
+    --panel: #C0D9B0;          /* raised surfaces: dialogs, cards */
+    --panel-hi: #B5D0A5;       /* hover on panel rows */
+    --heading: #37442F;
+    --text: #283222;           --text-rgb: 40, 50, 34;
+    --muted: #43553B;          --muted-rgb: 67, 85, 59;
+    --accent: #37442F;         --accent-rgb: 55, 68, 47;   /* the one highlight, as a solid block */
+    --accent-hi: #283222;      /* accent hover */
+    --link: #37442F;           --link-rgb: 55, 68, 47;     /* links, data marks, focus */
+    --danger: #8A2A1C;         /* errors, rejected */
+    --line: rgba(var(--accent-rgb), 0.28);
+    --line-strong: rgba(var(--accent-rgb), 0.55);
 
     /* The screen (see Base): backlight, pixel grid, the shadow pixels cast */
-    --glass-hi: #41503A;       /* backlight at its brightest, mid-screen */
-    --glass-lo: #2E3A28;       /* ...and falling off at the edges */
-    --grid: rgba(24, 31, 21, 0.4);
-    --pixel-shadow: rgba(0, 0, 0, 0.3);
+    --glass-hi: #D9EDC9;       /* backlight at its brightest, mid-screen */
+    --glass-lo: #BCD5AB;       /* ...and falling off at the edges */
+    --grid: rgba(55, 68, 47, 0.07);   /* faint ink between the pixels */
+    --pixel-shadow: rgba(55, 68, 47, 0.2);
     --lcd: 2px 2px 0 var(--pixel-shadow);
 
     /* Type */
@@ -85,27 +85,30 @@
     --t-ui: 200ms;
 }
 
-/* Light, chosen with the header switch (data-theme on <html>, set by
-   includes/inject.js and a snippet in each page's <head>): olive ink on the
-   pale glass. Contrast on --night: heading, accent and link 8.3, text 10.8,
-   muted 6.0 (5.2 on --panel), danger 7.0; glass on ink 8.3. */
-:root[data-theme="light"], :root:not([data-theme="light"]) .reverse {
-    --night: #C7F0D8;          /* the glass: page, and text on a solid block */
-    --panel: #B6E2C8;          /* raised surfaces: dialogs, cards */
-    --panel-hi: #A9D6BB;       /* hover on panel rows */
-    --heading: #37442F;
-    --text: #283222;           --text-rgb: 40, 50, 34;
-    --muted: #475A40;          --muted-rgb: 71, 90, 64;
-    --accent: #37442F;         --accent-rgb: 55, 68, 47;   /* the one highlight, as a solid block */
-    --accent-hi: #283222;      /* accent hover */
-    --link: #37442F;           --link-rgb: 55, 68, 47;     /* links, data marks, focus */
-    --danger: #8A2A1C;         /* errors, rejected */
-    --line: rgba(var(--accent-rgb), 0.28);
-    --line-strong: rgba(var(--accent-rgb), 0.55);
-    --glass-hi: #D3F7E2;       /* backlight at its brightest, mid-screen */
-    --glass-lo: #B9E3CA;       /* ...and falling off at the edges */
-    --grid: rgba(222, 252, 234, 0.55);
-    --pixel-shadow: rgba(55, 68, 47, 0.16);
+/* Dark, chosen with the header switch (data-theme="dark" on <html>, set by
+   includes/inject.js and a snippet in each page's <head>): glass-green
+   pixels on the olive ink, the light theme's two colours swapped. Contrast
+   on --night: heading, accent and link 7.7, text 8.8, muted 6.0 (6.8 on
+   --panel, 4.8 on --panel-hi), danger 6.0; ink on glass 7.7. */
+:root[data-theme="dark"], :root:not([data-theme="dark"]) .reverse {
+    --night: #37442F;          /* the olive: page, and text on a solid block */
+    --panel: #2F3B29;          /* raised surfaces: dialogs, cards */
+    --panel-hi: #43523D;       /* hover on panel rows */
+    --heading: #CFE5BE;
+    --text: #E4F1D8;           --text-rgb: 228, 241, 216;
+    --muted: #B3CCA3;          --muted-rgb: 179, 204, 163;
+    --accent: #CFE5BE;         --accent-rgb: 207, 229, 190;   /* the one highlight, as a solid block */
+    --accent-hi: #E4F1D8;      /* accent hover */
+    --link: #CFE5BE;           --link-rgb: 207, 229, 190;     /* links, data marks, focus */
+    --danger: #FFB3A1;         /* errors, rejected */
+    --line: rgba(var(--accent-rgb), 0.22);
+    --line-strong: rgba(var(--accent-rgb), 0.48);
+
+    /* The screen (see Base): backlight, pixel grid, the shadow pixels cast */
+    --glass-hi: #41503A;       /* backlight at its brightest, mid-screen */
+    --glass-lo: #2E3A28;       /* ...and falling off at the edges */
+    --grid: rgba(24, 31, 21, 0.4);
+    --pixel-shadow: rgba(0, 0, 0, 0.3);
     /* Restated so a .reverse box works it out from its own shadow colour */
     --lcd: 2px 2px 0 var(--pixel-shadow);
 }
@@ -114,9 +117,9 @@
  * Element rules use :where() so they carry no specificity: any component
  * class (.btn, .tag, .section h2) overrides them without a fight.
  */
-html:has(body.pb) { color-scheme: dark; background: var(--night); }
-/* Light chosen: native controls and scrollbars follow */
-:root[data-theme="light"] { color-scheme: light; }
+html:has(body.pb) { color-scheme: light; background: var(--night); }
+/* Dark chosen: native controls and scrollbars follow */
+:root[data-theme="dark"] { color-scheme: dark; }
 .pb, .pb *, .pb *::before, .pb *::after { box-sizing: border-box; }
 /* Keep focused elements and anchor targets clear of the sticky nav */
 .pb :focus, .pb [id] { scroll-margin-top: 80px; scroll-margin-bottom: 24px; }
