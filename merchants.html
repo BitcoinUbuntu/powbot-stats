@@ -139,8 +139,8 @@
                     <label class="field-label" for="filter-sort">Sort by</label>
                     <div class="select-wrap">
                         <select class="select" id="filter-sort">
-                            <option value="posts">Most posts</option>
                             <option value="name">Name, A–Z</option>
+                            <option value="posts">Most posts</option>
                             <option value="new">Newest first</option>
                         </select>
                     </div>
@@ -195,7 +195,7 @@
         // "Flo Salon" -> "merchant-profile.html?id=flo-salon", as everywhere else
         const merchantUrl = name => `merchant-profile.html?id=${encodeURIComponent(String(name).replace(/[^\w\s-]/g, '').trim().toLowerCase().replace(/\s+/g, '-'))}`;
         // "4t" is the Epoch 4 testing period
-        const epochLabel = key => key === '4t' ? 'Epoch 4 testing period' : `Epoch ${key}`;
+        const epochLabel = key => key === '4t' ? 'Epoch 4 testing' : `Epoch ${key}`;
         const epochOrder = key => parseFloat(key) - (String(key).endsWith('t') ? 0.5 : 0);
 
         async function loadMerchants() {
@@ -287,7 +287,8 @@
             const params = new URLSearchParams();
             Object.entries(FILTERS).forEach(([param, id]) => {
                 const value = document.getElementById(id).value.trim();
-                if (value && !(param === 'sort' && value === 'posts')) params.set(param, value);
+                // A to Z is the default: a directory is for looking a name up
+                if (value && !(param === 'sort' && value === 'name')) params.set(param, value);
             });
             history.replaceState({}, '', params.toString() ? `?${params}` : 'merchants.html');
         }
