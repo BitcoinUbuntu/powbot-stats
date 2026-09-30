@@ -223,20 +223,20 @@
             return `tracker.html?${new URLSearchParams({ epoch, ...filters, status: 'Processed' })}`;
         }
 
-        // Countries with their project counts; given a tracker epoch, with their
-        // approved posts too (summed from the project ranking, so the figure
-        // matches the tracker's), each opening those posts there
+        // Countries with their project counts; given the epoch's project ranking, with
+        // their approved posts too (summed from it, so the figure matches the
+        // tracker's). Given a tracker epoch, each row opens those posts there
         function countriesHtml(countries, trackerEpoch, projects) {
             if (!countries || countries.length === 0) return '<p>No countries recorded for this epoch.</p>';
             const postsByFlag = {};
             (projects || []).forEach(p => { const f = flagOf(p.name); postsByFlag[f] = (postsByFlag[f] || 0) + p.count; });
-            const rows = trackerEpoch ? [...countries].sort((a, b) => (postsByFlag[b.flag] || 0) - (postsByFlag[a.flag] || 0)) : countries;
+            const rows = projects ? [...countries].sort((a, b) => (postsByFlag[b.flag] || 0) - (postsByFlag[a.flag] || 0)) : countries;
             return `<ul class="list">${rows.map(c => {
-                const figure = trackerEpoch
+                const figure = projects
                     ? `<span>${plural(c.count, 'project', 'projects')}</span><span class="sep" aria-hidden="true"> · </span><span>${plural(postsByFlag[c.flag] || 0, 'post', 'posts')}</span>`
                     : plural(c.count, 'project', 'projects');
                 const inner = `<span class="li-main">${flagHtml(c.flag)} ${escapeHtml(c.country)}</span>
-                    <span class="li-side num${trackerEpoch ? ' pair' : ''}">${figure}</span>`;
+                    <span class="li-side num${projects ? ' pair' : ''}">${figure}</span>`;
                 return trackerEpoch
                     ? `<li><a href="${attrSafe(trackerUrl(trackerEpoch, { country: c.country }))}">${inner}</a></li>`
                     : `<li><div class="row">${inner}</div></li>`;
@@ -379,7 +379,7 @@
                     notes: [platformNote(e.platforms)],
                     panels: [
                         { id: `e${number}-projects`, title: 'Projects by approved posts', html: `<div id="epoch${number}-projects"></div>` },
-                        { id: `e${number}-countries`, title: 'Countries', html: countriesHtml(e.countries) }
+                        { id: `e${number}-countries`, title: 'Countries', html: countriesHtml(e.countries, null, e.top_projects) }
                     ]
                 };
             };
