@@ -243,7 +243,6 @@ function populateFormWithMemberData(member) {
         'city': member.city || '',
         'country': member.country || '',
         'website': member.website || '',
-        'email': member.email || '',
         'x_username': (member.x_profile || '').replace(/^@/, ''), // Remove @ prefix if present
         'npub': member.npub || '',
         'btcmap_url': member.btcmap_url || '',
@@ -500,7 +499,7 @@ async function submitProfileEdits(event) {
         // Vision, mission, origin story and highlights are no longer shown on
         // profiles, so the form no longer asks for them (members.json keeps them)
         'tagline', 'description',
-        'contact_person', 'email', 'website', 'x_username', 'npub',
+        'website', 'x_username', 'npub',
         'lightning_address', 'btcmap_url', 'btcpay_campaign', 'geyser_campaign', 'onchain_address',
         'city', 'country'
     ];
