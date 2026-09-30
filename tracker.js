@@ -59,45 +59,54 @@ let merchantFilter = '';
 // address, btcmap link, status, payments), so history loses nothing.
 const TRACKER_ARCHIVES = ['tracker-data-epoch5.json'];
 
+// The page opens on the current epoch. An archive is fetched only when its
+// epoch (or "All epochs") is picked, so the usual visit skips Epoch 5's large
+// file. The Epoch options come from the file names above, without loading them.
+const epochOf = file => Number((file.match(/epoch(\d+)/) || [])[1]) || null;
+const currentEpoch = () => window.POWBOT_EPOCH?.number ?? null;
+const tag = (subs, epoch) => (subs || []).map(s => ({ ...s, epoch }));
+const epochRows = new Map();      // epoch -> promise of its tagged rows
+const loadedEpochs = new Set();   // epochs whose rows have arrived
+let loadToken = 0;                // the latest epoch pick wins
+
+function knownEpochs() {
+    return [...new Set([currentEpoch(), ...TRACKER_ARCHIVES.map(epochOf)])]
+        .filter(e => e != null)
+        .sort((a, b) => b - a);
+}
+
+// Fetches one archived epoch once. A failed fetch is forgotten, so picking
+// that epoch again tries again.
+function loadEpoch(epoch) {
+    if (!epochRows.has(epoch)) {
+        const file = TRACKER_ARCHIVES.find(f => epochOf(f) === epoch);
+        const rows = !file ? Promise.resolve([]) : fetch(file)
+            .then(r => { if (!r.ok) throw new Error(`${file}: ${r.status}`); return r.json(); })
+            .then(a => { loadedEpochs.add(epoch); return tag(a.submissions, epoch); })
+            .catch(error => { epochRows.delete(epoch); throw error; });
+        epochRows.set(epoch, rows);
+    }
+    return epochRows.get(epoch);
+}
+
 async function loadTrackerData() {
     try {
         // Live epoch from the VPS, falling back to this repo's copy if it is
-        // unreachable. The archives below stay same-origin - they are frozen and
+        // unreachable. The archives stay same-origin - they are frozen and
         // change only via git, so there is nothing to gain from the VPS.
         const data = await fetchLiveData('tracker-data.json');
-
-        // Load archived epochs alongside the live one. Each fails to null
-        // independently: a missing archive must not take the whole tracker down,
-        // it just means that epoch is absent from the list.
-        // Each submission is tagged with its epoch: the archive's number comes
-        // from its file name, the live file is the current epoch (epoch-config.js).
-        const archives = (await Promise.all(
-            TRACKER_ARCHIVES.map(f =>
-                fetch(f).then(r => r.ok ? r.json() : null).catch(() => null)
-                    .then(a => a && { ...a, epoch: Number((f.match(/epoch(\d+)/) || [])[1]) || null })
-            )
-        )).filter(Boolean);
-
-        const tag = (subs, epoch) => (subs || []).map(s => ({ ...s, epoch }));
-        const archivedSubmissions = archives.flatMap(a => tag(a.submissions, a.epoch));
-        const currentEpoch = window.POWBOT_EPOCH?.number ?? null;
-
-        // Live epoch first, then archives, newest-first overall.
-        allSubmissions = [...tag(data.submissions, currentEpoch), ...archivedSubmissions]
-            .sort((a, b) => (b.timestamp || '').localeCompare(a.timestamp || ''));
+        epochRows.set(currentEpoch(), Promise.resolve(tag(data.submissions, currentEpoch())));
+        loadedEpochs.add(currentEpoch());
 
         // Update footer timestamp (with retry in case footer loads after data)
         updateFooterTimestamp(data.last_updated);
 
-        // Populate dropdowns
         populateEpochFilter();
-        populateProjectFilter();
-        populateCountryFilter();
+        applyEpochParam();
+        if (!await loadSelectedEpochs()) return;
 
-        // Apply URL parameters if present
+        // Apply the other URL parameters, then filter and render
         applyURLFilters();
-
-        // Apply initial filter and render
         applyFilters();
 
     } catch (error) {
@@ -106,15 +115,58 @@ async function loadTrackerData() {
     }
 }
 
+// Loads the rows for the Epoch filter's choice, then rebuilds the project and
+// country lists from them. False when it failed or a newer pick overtook it.
+async function loadSelectedEpochs() {
+    const value = document.getElementById('filter-epoch').value;
+    const epochs = value ? [Number(value)] : knownEpochs();
+    const token = ++loadToken;
+
+    if (epochs.some(e => !loadedEpochs.has(e))) {
+        document.getElementById('submissions-container').innerHTML = `
+            <div class="list-state">
+                <p>Loading ${value ? `Epoch ${value}` : 'every epoch'}…</p>
+            </div>
+        `;
+        document.getElementById('results-count').textContent = 'Loading submissions…';
+        document.getElementById('pager-top').hidden = true;
+        document.getElementById('bottom-pagination').style.display = 'none';
+    }
+
+    let rows;
+    try {
+        rows = (await Promise.all(epochs.map(loadEpoch))).flat();
+    } catch (error) {
+        console.error('Error loading an archived epoch:', error);
+        if (token === loadToken) showError(`${value ? `Epoch ${value}` : 'Older epochs'} could not load.`);
+        return false;
+    }
+    if (token !== loadToken) return false;
+
+    // Newest first overall
+    allSubmissions = rows.sort((a, b) => (b.timestamp || '').localeCompare(a.timestamp || ''));
+    populateProjectFilter();
+    populateCountryFilter();
+    return true;
+}
+
+// ?epoch=5 picks that epoch, ?epoch=all every epoch; anything else, or none,
+// the current one
+function applyEpochParam() {
+    const select = document.getElementById('filter-epoch');
+    const param = (new URLSearchParams(window.location.search).get('epoch') || '').toLowerCase();
+    if (param === 'all') select.value = '';
+    else if (knownEpochs().includes(Number(param))) select.value = param;
+    else select.value = String(currentEpoch() ?? '');
+}
+
 // ============================================================================
 // Filter Population
 // ============================================================================
 
 function populateEpochFilter() {
     const epochSelect = document.getElementById('filter-epoch');
-    const epochs = [...new Set(allSubmissions.map(s => s.epoch).filter(e => e != null))]
-        .sort((a, b) => b - a);
-    epochs.forEach(epoch => {
+    knownEpochs().forEach(epoch => {
         const option = document.createElement('option');
         option.value = String(epoch);
         option.textContent = `Epoch ${epoch}`;
@@ -122,33 +174,32 @@ function populateEpochFilter() {
     });
 }
 
-function populateProjectFilter() {
-    const projectSelect = document.getElementById('filter-project');
-
-    // Get unique projects
-    const projects = [...new Set(allSubmissions.map(s => s.project_name))]
-        .sort();
-
-    // Add options (strip flag and country name for cleaner display)
-    projects.forEach(project => {
+// Rebuilds a dropdown after its first "All" option. A choice the new rows
+// lack stays listed, so the filter still shows and the list says no match.
+function fillSelect(select, values, label = v => v) {
+    const chosen = select.value;
+    select.length = 1;
+    if (chosen && !values.includes(chosen)) values = [...values, chosen];
+    values.forEach(value => {
         const option = document.createElement('option');
-        option.value = project;
-        option.textContent = extractProjectNameOnly(project);
-        projectSelect.appendChild(option);
+        option.value = value;
+        option.textContent = label(value);
+        select.appendChild(option);
     });
+    select.value = chosen;
+}
+
+function populateProjectFilter() {
+    // Options show the project without flag and country
+    const projects = [...new Set(allSubmissions.map(s => s.project_name))].sort();
+    fillSelect(document.getElementById('filter-project'), projects, extractProjectNameOnly);
 }
 
 // Countries A to Z, from the "(Kenya)" in each project name
 function populateCountryFilter() {
-    const countrySelect = document.getElementById('filter-country');
     const countries = [...new Set(allSubmissions.map(s => extractCountry(s.project_name)).filter(Boolean))]
         .sort((a, b) => a.localeCompare(b));
-    countries.forEach(country => {
-        const option = document.createElement('option');
-        option.value = country;
-        option.textContent = country;
-        countrySelect.appendChild(option);
-    });
+    fillSelect(document.getElementById('filter-country'), countries);
 }
 
 function stripCountryName(name) {
@@ -192,11 +243,7 @@ function updateFooterTimestamp(lastUpdated) {
 function applyURLFilters() {
     const urlParams = new URLSearchParams(window.location.search);
 
-    // Apply epoch filter (a number, e.g. ?epoch=6)
-    const epochParam = urlParams.get('epoch');
-    if (epochParam) {
-        document.getElementById('filter-epoch').value = epochParam;
-    }
+    // The epoch is set before loading: see applyEpochParam()
 
     // Apply status filter
     const statusParam = urlParams.get('status');
@@ -270,7 +317,7 @@ function applyFilters() {
     const searchQuery = document.getElementById('filter-search').value.toLowerCase();
 
     // Update active filter styling
-    document.getElementById('filter-epoch').classList.toggle('active', epochFilter !== '');
+    document.getElementById('filter-epoch').classList.toggle('active', epochFilter !== String(currentEpoch() ?? ''));
     document.getElementById('filter-country').classList.toggle('active', countryFilter !== '');
     updateFilterActiveStates(statusFilter, projectFilter, dateFilter, searchQuery);
 
@@ -344,7 +391,7 @@ function updateURL(epochFilter, statusFilter, projectFilter, dateFilter, searchQ
     const params = new URLSearchParams();
 
     // Only add non-empty filters to URL
-    if (epochFilter) params.set('epoch', epochFilter);
+    params.set('epoch', epochFilter || 'all');
     if (statusFilter) params.set('status', statusFilter);
     if (projectFilter) {
         // Use project name without flag/country for cleaner URL
@@ -689,7 +736,9 @@ function attachCardListeners() {
 
 function attachFilterListeners() {
     // Filter changes
-    document.getElementById('filter-epoch').addEventListener('change', applyFilters);
+    document.getElementById('filter-epoch').addEventListener('change', async () => {
+        if (await loadSelectedEpochs()) applyFilters();
+    });
     document.getElementById('filter-status').addEventListener('change', applyFilters);
     document.getElementById('filter-project').addEventListener('change', applyFilters);
     document.getElementById('filter-country').addEventListener('change', applyFilters);
