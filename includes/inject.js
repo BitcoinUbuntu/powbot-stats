@@ -104,6 +104,7 @@
 
             // On a page with a parent, the wordmark goes back there
             setupBack(navContainer.querySelector('.site-nav .brand-wrap'));
+            setupJumpBack(navContainer.querySelector('.site-nav .brand-wrap'));
 
             // Phone menu button
             setupMenu(navContainer.querySelector('.site-nav'));
@@ -213,11 +214,12 @@
 
     // Top-level pages that another page can open at one part of them: the
     // directory for one country, its merchants for one epoch, the tracker for
-    // one project (a query string), the archive at one epoch or its rules
-    // (a #section). Opened that way from a page of this site, they're a
+    // one project (a query string), the archive at one epoch or its rules, the
+    // guidelines at "New to PoWBoT?" (a #section). Opened that way from a page
+    // of this site, they're a
     // drill-down and get the back arrow too. Plain, or arriving from outside,
     // they keep the bot head.
-    const DRILLDOWNS = ['members', 'merchants', 'tracker', 'archive'];
+    const DRILLDOWNS = ['members', 'merchants', 'tracker', 'archive', 'guidelines'];
     // Pages opened from the footer or a link on another page: from a page of
     // this site they get the back arrow; arriving from outside, the bot head
     const ASIDES = ['about', 'disclaimer'];
@@ -265,6 +267,77 @@
         back.title = label;
         back.hidden = false;
         wrap.classList.add('is-back');
+    }
+
+    /**
+     * A jump within a page: the archive's epoch rows (.hb-row) scroll the same
+     * page down to that epoch's section. Nothing reloads, so setupBack has not
+     * run again; without this the visitor lands far down the page with no way
+     * back. The arrow appears, says where it goes, and a plain click steps
+     * back in history, which puts the list back where it was. Whatever the
+     * arrow showed before (bot head, or "Back to ...") returns after.
+     */
+    function setupJumpBack(wrap) {
+        const back = wrap && wrap.querySelector('.brand-back');
+        if (!back) return;
+        const before = {
+            hidden: back.hidden,
+            href: back.getAttribute('href'),
+            label: back.getAttribute('aria-label'),
+            title: back.title,
+            isBack: wrap.classList.contains('is-back')
+        };
+        const jumped = new Set();   // the #sections this visitor has jumped to
+
+        function show() {
+            back.setAttribute('href', location.pathname + location.search);
+            back.setAttribute('aria-label', 'Back to the epoch list');
+            back.title = 'Back to the epoch list';
+            back.hidden = false;
+            wrap.classList.add('is-back');
+        }
+
+        function restore() {
+            jumped.clear();
+            back.hidden = before.hidden;
+            if (before.href === null) back.removeAttribute('href'); else back.setAttribute('href', before.href);
+            if (before.label === null) back.removeAttribute('aria-label'); else back.setAttribute('aria-label', before.label);
+            back.title = before.title;
+            wrap.classList.toggle('is-back', before.isBack);
+        }
+
+        document.addEventListener('click', event => {
+            if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            const row = event.target.closest && event.target.closest('a.hb-row');
+            if (!row) return;
+            const url = new URL(row.href, location.href);
+            // Only a jump within this page; other pages set up their own arrow
+            if (url.pathname !== location.pathname || !url.hash) return;
+            // The live epoch's row only scrolls to the top (#main): not a jump to a section
+            const target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+            if (!target || target.id === 'main') return;
+            // Already there: no new history entry, so nothing to step back to
+            if (url.hash === location.hash) return;
+            jumped.add(url.hash);
+            show();
+        });
+
+        // Capture phase, so it runs before the "Back to <page>" handler setupBack
+        // may have added: one step back, not two
+        back.addEventListener('click', event => {
+            if (!jumped.size || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            if (history.length > 1) {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                history.back();
+            }
+        }, true);
+
+        // Stepping back onto the list (or anywhere that is not a jumped-to section)
+        // puts the arrow as it was; between two jumped-to sections it stays
+        window.addEventListener('hashchange', () => {
+            if (jumped.size && !jumped.has(location.hash)) restore();
+        });
     }
 
     /**
