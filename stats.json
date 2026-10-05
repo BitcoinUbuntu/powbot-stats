@@ -1,35 +1,63 @@
 {
   "totals": {
-    "all_payments": 2629,
+    "all_payments": 2641,
     "by_type": {
       "merchant": {
-        "count": 877
+        "count": 881
       },
       "project": {
-        "count": 877
+        "count": 881
       },
       "reviewer": {
-        "count": 875
+        "count": 879
       }
     }
   },
   "today": {
     "date": "2026-10-05",
-    "payments": 30,
+    "payments": 42,
     "by_type": {
       "merchant": {
-        "count": 10
+        "count": 14
       },
       "project": {
-        "count": 10
+        "count": 14
       },
       "reviewer": {
-        "count": 10
+        "count": 14
       }
     },
-    "approved": 10,
+    "approved": 14,
     "rejected": 0,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2107079446742094294",
+        "project": "Bitcoin Karoo 🇿🇦",
+        "merchant": "De Rust TennisKlub",
+        "platform": "X",
+        "time": "12:47"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqszkzjgnap979peusyzq5wgccdn5ju0uyahwxpcmwvcnv2urguvvagafp5de",
+        "project": "Bitcoin Karoo 🇿🇦",
+        "merchant": "De Rust TennisKlub",
+        "platform": "Nostr",
+        "time": "12:47"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs8wf6z20l8gy30zv3fpvsqtjetvawdt3300zu7fw6zc43jw8sgazckl9m5v",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Sabahood Academy",
+        "platform": "Nostr",
+        "time": "09:53"
+      },
+      {
+        "url": "https://x.com/i/status/2107035075036561763",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Sabahood Academy",
+        "platform": "X",
+        "time": "09:53"
+      },
       {
         "url": "https://primal.net/e/nevent1qqszfmh4ur4mh4redpka770uuxux26clnzl9el549fsfnlv73s6sdtq93p8sp",
         "project": "Bitcoin Chama 🇰🇪",
@@ -105,6 +133,18 @@
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin Karoo 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Karoo 🇿🇦"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
         "project": "Bitcoin Chama 🇰🇪"
       },
       {
@@ -148,25 +188,18 @@
       },
       {
         "project": "Bitcoin Dombo 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Sisonke 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Sisonke 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Dombo 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Dua 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Dua 🇬🇭"
       }
     ]
   },
   "daily": [
+    {
+      "date": "2026-07-20",
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 5,
+      "approved": 5,
+      "rejected": 2
+    },
     {
       "date": "2026-07-21",
       "project_count": 6,
@@ -777,16 +810,16 @@
     },
     {
       "date": "2026-10-05",
-      "project_count": 10,
-      "merchant_count": 10,
-      "reviewer_count": 10,
-      "approved": 10,
+      "project_count": 14,
+      "merchant_count": 14,
+      "reviewer_count": 14,
+      "approved": 14,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 883,
-    "approved": 864,
+    "total_reviewed": 887,
+    "approved": 868,
     "rejected": 19
   },
   "top_projects": [
@@ -1810,8 +1843,18 @@
     },
     {
       "name": "Bitcoin Karoo 🇿🇦",
-      "count": 60,
+      "count": 62,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2107079446742094294",
+          "date": "2026-10-05",
+          "merchant": "De Rust TennisKlub"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszkzjgnap979peusyzq5wgccdn5ju0uyahwxpcmwvcnv2urguvvagafp5de",
+          "date": "2026-10-05",
+          "merchant": "De Rust TennisKlub"
+        },
         {
           "url": "https://x.com/i/status/2106979499329900594",
           "date": "2026-10-05",
@@ -4597,8 +4640,18 @@
     },
     {
       "name": "Bitcoin NextGen 🇳🇬",
-      "count": 24,
+      "count": 26,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8wf6z20l8gy30zv3fpvsqtjetvawdt3300zu7fw6zc43jw8sgazckl9m5v",
+          "date": "2026-10-05",
+          "merchant": "Sabahood Academy"
+        },
+        {
+          "url": "https://x.com/i/status/2107035075036561763",
+          "date": "2026-10-05",
+          "merchant": "Sabahood Academy"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs8lql9mgp2x629j4xk4t7l2q7ec94unqy8rpv6hslhdlqv5e57h0gge9l8u",
           "date": "2026-10-02",
@@ -7559,6 +7612,57 @@
       ]
     },
     {
+      "name": "De Rust TennisKlub",
+      "count": 9,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2107079446742094294",
+          "date": "2026-10-05",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszkzjgnap979peusyzq5wgccdn5ju0uyahwxpcmwvcnv2urguvvagafp5de",
+          "date": "2026-10-05",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0a0ehwn2tt7eafr0kz89fxux6r5wxsxp88j5tuhzxjfk4vg7ntfc6fgge9",
+          "date": "2026-09-29",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2104881640723923345",
+          "date": "2026-09-29",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0wmkpl29ak72yzhdmnpz4uaxts0dwewjlv02qnkqjtdk5wt0x66csj2uq6",
+          "date": "2026-09-22",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2102035038833418367",
+          "date": "2026-09-21",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstla928pr92wsz4pfn9zuqvp4zefvkatnkmka9ukdyw9zk4v8fqec33vqum",
+          "date": "2026-09-16",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2099803252673925499",
+          "date": "2026-09-15",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2096932755816813051",
+          "date": "2026-09-07",
+          "project": "Bitcoin Karoo 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "KJ Mulitipurpose Store",
       "count": 8,
       "posts": [
@@ -8229,47 +8333,6 @@
       ]
     },
     {
-      "name": "De Rust TennisKlub",
-      "count": 7,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs0a0ehwn2tt7eafr0kz89fxux6r5wxsxp88j5tuhzxjfk4vg7ntfc6fgge9",
-          "date": "2026-09-29",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2104881640723923345",
-          "date": "2026-09-29",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0wmkpl29ak72yzhdmnpz4uaxts0dwewjlv02qnkqjtdk5wt0x66csj2uq6",
-          "date": "2026-09-22",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2102035038833418367",
-          "date": "2026-09-21",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstla928pr92wsz4pfn9zuqvp4zefvkatnkmka9ukdyw9zk4v8fqec33vqum",
-          "date": "2026-09-16",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2099803252673925499",
-          "date": "2026-09-15",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2096932755816813051",
-          "date": "2026-09-07",
-          "project": "Bitcoin Karoo 🇿🇦"
-        }
-      ]
-    },
-    {
       "name": "Padis Eatery",
       "count": 7,
       "posts": [
@@ -8888,6 +8951,42 @@
           "url": "https://x.com/i/status/2094800743572164952",
           "date": "2026-09-01",
           "project": "Bitcoin Karoo 🇿🇦"
+        }
+      ]
+    },
+    {
+      "name": "Sabahood Academy",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8wf6z20l8gy30zv3fpvsqtjetvawdt3300zu7fw6zc43jw8sgazckl9m5v",
+          "date": "2026-10-05",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2107035075036561763",
+          "date": "2026-10-05",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8lql9mgp2x629j4xk4t7l2q7ec94unqy8rpv6hslhdlqv5e57h0gge9l8u",
+          "date": "2026-10-02",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2105910140419350574",
+          "date": "2026-10-02",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdw58mgwqyf4jkek70wzhnj0rw3dxqm4cjawy3qe98a3n939alx8qfyqk6x",
+          "date": "2026-09-21",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2101936433317531998",
+          "date": "2026-09-21",
+          "project": "Bitcoin NextGen 🇳🇬"
         }
       ]
     },
@@ -9553,32 +9652,6 @@
           "url": "https://x.com/i/status/2084625014582558772",
           "date": "2026-08-04",
           "project": "Bitcoin Dua 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Sabahood Academy",
-      "count": 4,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs8lql9mgp2x629j4xk4t7l2q7ec94unqy8rpv6hslhdlqv5e57h0gge9l8u",
-          "date": "2026-10-02",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2105910140419350574",
-          "date": "2026-10-02",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdw58mgwqyf4jkek70wzhnj0rw3dxqm4cjawy3qe98a3n939alx8qfyqk6x",
-          "date": "2026-09-21",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2101936433317531998",
-          "date": "2026-09-21",
-          "project": "Bitcoin NextGen 🇳🇬"
         }
       ]
     },
@@ -10699,22 +10772,22 @@
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 77,
-    "daily_average_payments": 34
+    "days_active": 78,
+    "daily_average_payments": 33
   },
   "burn_rate": {
-    "percentage": 107,
+    "percentage": 106,
     "status": "on_target",
-    "days_active": 77
+    "days_active": 78
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2568
+      "count": 2578
     },
     {
       "domain": "8333.mobi",
-      "count": 41
+      "count": 43
     },
     {
       "domain": "rurbit.com",
@@ -10765,13 +10838,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1396
+      "count": 1402
     },
     {
       "platform": "Nostr",
-      "count": 1233
+      "count": 1239
     }
   ],
-  "generated_at": "2026-10-05T07:05:01.871470+00:00",
+  "generated_at": "2026-10-05T19:05:01.433344+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
