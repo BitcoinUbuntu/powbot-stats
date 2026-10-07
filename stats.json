@@ -1,96 +1,32 @@
 {
   "totals": {
-    "all_payments": 2674,
+    "all_payments": 2677,
     "by_type": {
       "merchant": {
-        "count": 892
+        "count": 893
       },
       "project": {
-        "count": 892
+        "count": 893
       },
       "reviewer": {
-        "count": 890
+        "count": 891
       }
     }
   },
   "today": {
-    "date": "2026-10-06",
-    "payments": 24,
-    "by_type": {
-      "merchant": {
-        "count": 8
-      },
-      "project": {
-        "count": 8
-      },
-      "reviewer": {
-        "count": 8
-      }
-    },
-    "approved": 8,
+    "date": "2026-10-07",
+    "payments": 0,
+    "by_type": {},
+    "approved": 0,
     "rejected": 0,
-    "videos": [
-      {
-        "url": "https://primal.net/e/nevent1qqsrm8767zny840hwq8wwnk5kkgpnwjwcfum6kljnpm2x8uqet2uc8s0q92r6",
-        "project": "Lwandi Bitcoin 🇲🇿",
-        "merchant": "Barbearia do Milagre",
-        "platform": "Nostr",
-        "time": "17:09"
-      },
-      {
-        "url": "https://x.com/i/status/2107510417664667680",
-        "project": "Lwandi Bitcoin 🇲🇿",
-        "merchant": "Barbearia do Milagre",
-        "platform": "X",
-        "time": "17:09"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqs0cd9y80v7qn8g8tm7k7sjn88dd2g0cxh36kdzqzzs6zpp0qxvpvqd26hdh",
-        "project": "Bitcoin Karoo 🇿🇦",
-        "merchant": "Nouvelle Saison",
-        "platform": "Nostr",
-        "time": "16:22"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsrzdak54rfxhaegpxznqf3vpnwylmxmf6ggrv7ls2l0kz23pt053g2jrzu9",
-        "project": "Bitcoin NextGen 🇳🇬",
-        "merchant": "Emmy Store",
-        "platform": "Nostr",
-        "time": "09:55"
-      },
-      {
-        "url": "https://x.com/i/status/2107399573647859757",
-        "project": "Bitcoin NextGen 🇳🇬",
-        "merchant": "Emmy Store",
-        "platform": "X",
-        "time": "09:55"
-      },
-      {
-        "url": "https://x.com/i/status/2107358024859803809",
-        "project": "Bitcoin Karoo 🇿🇦",
-        "merchant": "Nouvelle Saison",
-        "platform": "X",
-        "time": "09:49"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsvu6732ytpgua7343h8znlztv3h939hw8dvcngx04h4u893gf8ulqcxyksc",
-        "project": "BTC Shule 🇧🇮",
-        "merchant": "Kwa Innocent",
-        "platform": "Nostr",
-        "time": "09:49"
-      },
-      {
-        "url": "https://x.com/i/status/2107199459868254586",
-        "project": "BTC Shule 🇧🇮",
-        "merchant": "Kwa Innocent",
-        "platform": "X",
-        "time": "09:48"
-      }
-    ]
+    "videos": []
   },
   "last_24h": {
     "videos": [
       {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
+      {
         "project": "Lwandi Bitcoin 🇲🇿"
       },
       {
@@ -113,27 +49,10 @@
       },
       {
         "project": "BTC Shule 🇧🇮"
-      },
-      {
-        "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitsavers Eduhub 🇰🇪"
       }
     ]
   },
   "daily": [
-    {
-      "date": "2026-07-20",
-      "project_count": 6,
-      "merchant_count": 6,
-      "reviewer_count": 5,
-      "approved": 5,
-      "rejected": 2
-    },
     {
       "date": "2026-07-21",
       "project_count": 6,
@@ -752,16 +671,24 @@
     },
     {
       "date": "2026-10-06",
-      "project_count": 8,
-      "merchant_count": 8,
-      "reviewer_count": 8,
-      "approved": 8,
+      "project_count": 9,
+      "merchant_count": 9,
+      "reviewer_count": 9,
+      "approved": 9,
+      "rejected": 0
+    },
+    {
+      "date": "2026-10-07",
+      "project_count": 0,
+      "merchant_count": 0,
+      "reviewer_count": 0,
+      "approved": 0,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 898,
-    "approved": 879,
+    "total_reviewed": 899,
+    "approved": 880,
     "rejected": 19
   },
   "top_projects": [
@@ -2111,8 +2038,13 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 59,
+      "count": 60,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2107545248763195788",
+          "date": "2026-10-06",
+          "merchant": "Dona Marta Stand Shop"
+        },
         {
           "url": "https://x.com/i/status/2106807681130303972",
           "date": "2026-10-04",
@@ -8488,6 +8420,47 @@
       ]
     },
     {
+      "name": "Dona Marta Stand Shop",
+      "count": 7,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2107545248763195788",
+          "date": "2026-10-06",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2104212956372259030",
+          "date": "2026-09-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2hp796k35g2eas5aamq4jj4jcgsag9qdhjjgy4gs7p7pvhhv0yks9uvlz5",
+          "date": "2026-09-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8jztunketfgqnltpcmrymhqjlke2k4rvle4738uqxxr3khlda8ng940w52",
+          "date": "2026-08-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2092157001233039401",
+          "date": "2026-08-25",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspd2qhlv8d9dmhy0er7ss23s904avq8fr0wwtc56dl53tzh08zmnqarmwd8",
+          "date": "2026-07-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2080317557752426756",
+          "date": "2026-07-27",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
       "name": "Pluim Eatery",
       "count": 6,
       "posts": [
@@ -8808,42 +8781,6 @@
           "url": "https://x.com/i/status/2082906469834338497",
           "date": "2026-07-30",
           "project": "Bitcoin Tofo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Dona Marta Stand Shop",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2104212956372259030",
-          "date": "2026-09-27",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2hp796k35g2eas5aamq4jj4jcgsag9qdhjjgy4gs7p7pvhhv0yks9uvlz5",
-          "date": "2026-09-27",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8jztunketfgqnltpcmrymhqjlke2k4rvle4738uqxxr3khlda8ng940w52",
-          "date": "2026-08-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2092157001233039401",
-          "date": "2026-08-25",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspd2qhlv8d9dmhy0er7ss23s904avq8fr0wwtc56dl53tzh08zmnqarmwd8",
-          "date": "2026-07-27",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2080317557752426756",
-          "date": "2026-07-27",
-          "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
     },
@@ -10841,7 +10778,7 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2606
+      "count": 2609
     },
     {
       "domain": "8333.mobi",
@@ -10896,13 +10833,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1420
+      "count": 1423
     },
     {
       "platform": "Nostr",
       "count": 1254
     }
   ],
-  "generated_at": "2026-10-06T19:05:01.129999+00:00",
+  "generated_at": "2026-10-07T07:05:01.658610+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
