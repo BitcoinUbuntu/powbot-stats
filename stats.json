@@ -1,76 +1,86 @@
 {
   "totals": {
-    "all_payments": 2833,
+    "all_payments": 2842,
     "by_type": {
       "merchant": {
-        "count": 946
+        "count": 949
       },
       "project": {
-        "count": 946
+        "count": 949
       },
       "reviewer": {
-        "count": 941
+        "count": 944
       }
     }
   },
   "today": {
     "date": "2026-10-11",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 9,
+    "by_type": {
+      "merchant": {
+        "count": 3
+      },
+      "project": {
+        "count": 3
+      },
+      "reviewer": {
+        "count": 3
+      }
+    },
+    "approved": 3,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsgn5fhu5c6wcde93myecxwdw64gwv965qndhesxkk6mxnrptes62qe76htp",
+        "project": "EcoBitz 🇰🇪",
+        "merchant": "MunguMbele Grocery(Garage)",
+        "platform": "Nostr",
+        "time": "12:26"
+      },
+      {
+        "url": "https://x.com/i/status/2109160829232824785",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "Albaytalabiid",
+        "platform": "X",
+        "time": "12:25"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsgjmhx0yxwd3sj2dkfvapz7tktugaq8ylgqfl20ryrxu06fckx6tgu8s0x7",
+        "project": "Bitcoin Sisonke 🇿🇦",
+        "merchant": "Albaytalabiid",
+        "platform": "Nostr",
+        "time": "10:41"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
-        "project": "Bitsavers Eduhub 🇰🇪"
+        "project": "EcoBitz 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
       },
       {
         "project": "Bitsavers Eduhub 🇰🇪"
       },
       {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Dua 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Dua 🇬🇭"
-      },
-      {
-        "project": "Lwandi Bitcoin 🇲🇿"
-      },
-      {
-        "project": "Lwandi Bitcoin 🇲🇿"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Chama 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
+        "project": "Bitsavers Eduhub 🇰🇪"
       }
     ]
   },
   "daily": [
+    {
+      "date": "2026-07-20",
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 5,
+      "approved": 5,
+      "rejected": 2
+    },
     {
       "date": "2026-07-21",
       "project_count": 6,
@@ -729,16 +739,16 @@
     },
     {
       "date": "2026-10-11",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 3,
+      "merchant_count": 3,
+      "reviewer_count": 3,
+      "approved": 3,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 950,
-    "approved": 930,
+    "total_reviewed": 953,
+    "approved": 933,
     "rejected": 20
   },
   "top_projects": [
@@ -3080,6 +3090,282 @@
       ]
     },
     {
+      "name": "Bitcoin Sisonke 🇿🇦",
+      "count": 54,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2109160829232824785",
+          "date": "2026-10-11",
+          "merchant": "Albaytalabiid"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgjmhx0yxwd3sj2dkfvapz7tktugaq8ylgqfl20ryrxu06fckx6tgu8s0x7",
+          "date": "2026-10-11",
+          "merchant": "Albaytalabiid"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdgjjm4shd877nh069tck2q59rc727htgp78fkyph4kms47ljg6tqwymyau",
+          "date": "2026-10-09",
+          "merchant": "P.S Takeaways"
+        },
+        {
+          "url": "https://x.com/i/status/2108591435079454880",
+          "date": "2026-10-09",
+          "merchant": "P.S Takeaways"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyh58zu32kj44tu2gmxh540q6fem5xs0ht37v2r9wl52wpv80l9xgeyspj4",
+          "date": "2026-10-07",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://x.com/i/status/2107894941376458806",
+          "date": "2026-10-07",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://x.com/i/status/2106785400396107858",
+          "date": "2026-10-04",
+          "merchant": "Nyambose Prints"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst0uf4kfaft6u04ldagnrqhepgnvjpw79kfqyajdc4prhslpkf2pcgqx09h",
+          "date": "2026-10-04",
+          "merchant": "Nyambose Prints"
+        },
+        {
+          "url": "https://x.com/i/status/2105959079927488657",
+          "date": "2026-10-02",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsr26llp80efzpes27qdgk604kmxv8ng3r8uudgyyfyskz8n50s9ascgue7k",
+          "date": "2026-10-02",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://x.com/i/status/2105318732683763773",
+          "date": "2026-09-30",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs97ksj2k03ypdfk3qmmcspdn8ydvwqh39f6t8ffhhdwntvkdceazgmq2g4c",
+          "date": "2026-09-30",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp7mvg2vkx0t3eq359wudeuj4rcpqdfzgp2snkqqtj3250z2y377s06fqr7",
+          "date": "2026-09-27",
+          "merchant": "Nyambose Prints"
+        },
+        {
+          "url": "https://x.com/i/status/2104289831731736891",
+          "date": "2026-09-27",
+          "merchant": "Nyambose Prints"
+        },
+        {
+          "url": "https://x.com/i/status/2103152552573333901",
+          "date": "2026-09-24",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqa7fjw6hx4c0rdykc2hyq0cf5ucay0q9ksutecpecmr3n89e86agrzukvx",
+          "date": "2026-09-24",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://x.com/i/status/2102071375947047408",
+          "date": "2026-09-21",
+          "merchant": "P.S Takeaways"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgf7hmmc7g5ngdfj6k8rvtmr5hl3v75f69eslrrm3czcu7w8w0fkqsqxdxz",
+          "date": "2026-09-21",
+          "merchant": "P.S Takeaways"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstx9kltdquyue2ucgy94k8jh3mhvw4z69a6xrpg3gfwtkd05rmftqjvaa76",
+          "date": "2026-09-19",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2100987071514972532",
+          "date": "2026-09-19",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgch282cgzvzgepk8g5a30xyj547pkp2aadss52syjffu67tqkdds5dkylm",
+          "date": "2026-09-16",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://x.com/i/status/2100270822552412669",
+          "date": "2026-09-16",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8cuzdlc0waugs2m2f4y4kuc73dg9y9qkugtrfcgcq853htcphcsq4up9s7",
+          "date": "2026-09-14",
+          "merchant": "P.S Takeaways"
+        },
+        {
+          "url": "https://x.com/i/status/2099227037089087690",
+          "date": "2026-09-14",
+          "merchant": "P.S Takeaways"
+        },
+        {
+          "url": "https://x.com/i/status/2098642470686929150",
+          "date": "2026-09-12",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst425tq6yl8t0nllcz0zhtt66tguy0t8gh8hrckehagj7kvtyjrzsy6jy5g",
+          "date": "2026-09-12",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://x.com/i/status/2097744195251253570",
+          "date": "2026-09-10",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsywcqg93yla33f08e0vnl3hu527r3purv44xgq7gmpche4zcj30qsxxy9lf",
+          "date": "2026-09-10",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp0vmgpra0ll0jvx7w6wt8ej592pn48nrkt29sa853hyv8p4ygy3qxk8t53",
+          "date": "2026-09-07",
+          "merchant": "P.S Takeaways"
+        },
+        {
+          "url": "https://x.com/i/status/2096659872125190144",
+          "date": "2026-09-07",
+          "merchant": "P.S Takeaways"
+        },
+        {
+          "url": "https://x.com/i/status/2095527307012096183",
+          "date": "2026-09-03",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyyk6qwpkanjj09xz5jxu33t3s6tyst77ye4n93d09afmfvuv2hrs8ve027",
+          "date": "2026-09-03",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2094445191310594121",
+          "date": "2026-08-31",
+          "merchant": "Nyambose Prints"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstatfn2c7k9plmwn5gqsqjynr02a0kqctu22f9lk7yhtzd7ft3n0q7f3avp",
+          "date": "2026-08-31",
+          "merchant": "Nyambose Prints"
+        },
+        {
+          "url": "https://x.com/i/status/2092512089826889966",
+          "date": "2026-08-26",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszc2umdxu75p5499vvhcd9maxk0tfs8enz9e7a42wakyfktpychvglsxte7",
+          "date": "2026-08-26",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2091486356446785618",
+          "date": "2026-08-23",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxg7lxaggn7q0qycywnyrpydwqk00q8unyy4s3k53w2gvv608extq8craxf",
+          "date": "2026-08-23",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9cjq5cptefvf0py0zm6g4cjukjsjv2mapvw4fktp4qxgukhxtnzq6hfygj",
+          "date": "2026-08-21",
+          "merchant": "P.S Takeaways"
+        },
+        {
+          "url": "https://x.com/i/status/2090669215749382524",
+          "date": "2026-08-21",
+          "merchant": "P.S Takeaways"
+        },
+        {
+          "url": "https://x.com/i/status/2089926675375050843",
+          "date": "2026-08-19",
+          "merchant": "Nyambose Prints"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy2z24m6x96ktvkleuscyq93ajml4rjhwmenk3ju0eqwg9xlktv8cm9gcrp",
+          "date": "2026-08-19",
+          "merchant": "Nyambose Prints"
+        },
+        {
+          "url": "https://x.com/i/status/2088834230784508203",
+          "date": "2026-08-16",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsprk4r7p5q3n960pe3nhj9xu8csuuxgv9mfp6txmwcvnwpqlauenglyj4u2",
+          "date": "2026-08-16",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs99rt56ncepc78ftrngzfjr8p87p5a9f2c6nxxvnk3q9yz42h6w7gy262ke",
+          "date": "2026-08-09",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2086472646158336237",
+          "date": "2026-08-09",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd34y03kxhs0exljm94q40mrz02447z0jm53n9n0n9z83fkx0mltg2p6nv7",
+          "date": "2026-08-05",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://x.com/i/status/2084945136857829698",
+          "date": "2026-08-05",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://x.com/i/status/2083444793116446970",
+          "date": "2026-08-01",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2qe3gt4mfqf7vy3jk5834dcp75303t8nquzzkw4q02md3g3k7qvcelfezc",
+          "date": "2026-08-01",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://x.com/i/status/2082329336124731805",
+          "date": "2026-07-29",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs025kh3h6ja8j340qjlqp6ngv9gzsuyvetvemtzuqvu22nzqu8yjqt8c669",
+          "date": "2026-07-29",
+          "merchant": "Mkambi"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0ame7uslhnsqaccz0p4pem0ygc58avrkj62nejngjge06z7799hgq78c7x",
+          "date": "2026-07-27",
+          "merchant": "P.S Takeaways"
+        },
+        {
+          "url": "https://x.com/i/status/2081564117270217134",
+          "date": "2026-07-27",
+          "merchant": "P.S Takeaways"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Aves 🇬🇭",
       "count": 53,
       "posts": [
@@ -3347,272 +3633,6 @@
           "url": "https://x.com/i/status/2086737608902623280",
           "date": "2026-08-10",
           "merchant": "Dora's Joint"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Sisonke 🇿🇦",
-      "count": 52,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsdgjjm4shd877nh069tck2q59rc727htgp78fkyph4kms47ljg6tqwymyau",
-          "date": "2026-10-09",
-          "merchant": "P.S Takeaways"
-        },
-        {
-          "url": "https://x.com/i/status/2108591435079454880",
-          "date": "2026-10-09",
-          "merchant": "P.S Takeaways"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyh58zu32kj44tu2gmxh540q6fem5xs0ht37v2r9wl52wpv80l9xgeyspj4",
-          "date": "2026-10-07",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://x.com/i/status/2107894941376458806",
-          "date": "2026-10-07",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://x.com/i/status/2106785400396107858",
-          "date": "2026-10-04",
-          "merchant": "Nyambose Prints"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst0uf4kfaft6u04ldagnrqhepgnvjpw79kfqyajdc4prhslpkf2pcgqx09h",
-          "date": "2026-10-04",
-          "merchant": "Nyambose Prints"
-        },
-        {
-          "url": "https://x.com/i/status/2105959079927488657",
-          "date": "2026-10-02",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsr26llp80efzpes27qdgk604kmxv8ng3r8uudgyyfyskz8n50s9ascgue7k",
-          "date": "2026-10-02",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://x.com/i/status/2105318732683763773",
-          "date": "2026-09-30",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs97ksj2k03ypdfk3qmmcspdn8ydvwqh39f6t8ffhhdwntvkdceazgmq2g4c",
-          "date": "2026-09-30",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp7mvg2vkx0t3eq359wudeuj4rcpqdfzgp2snkqqtj3250z2y377s06fqr7",
-          "date": "2026-09-27",
-          "merchant": "Nyambose Prints"
-        },
-        {
-          "url": "https://x.com/i/status/2104289831731736891",
-          "date": "2026-09-27",
-          "merchant": "Nyambose Prints"
-        },
-        {
-          "url": "https://x.com/i/status/2103152552573333901",
-          "date": "2026-09-24",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqa7fjw6hx4c0rdykc2hyq0cf5ucay0q9ksutecpecmr3n89e86agrzukvx",
-          "date": "2026-09-24",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://x.com/i/status/2102071375947047408",
-          "date": "2026-09-21",
-          "merchant": "P.S Takeaways"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgf7hmmc7g5ngdfj6k8rvtmr5hl3v75f69eslrrm3czcu7w8w0fkqsqxdxz",
-          "date": "2026-09-21",
-          "merchant": "P.S Takeaways"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstx9kltdquyue2ucgy94k8jh3mhvw4z69a6xrpg3gfwtkd05rmftqjvaa76",
-          "date": "2026-09-19",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2100987071514972532",
-          "date": "2026-09-19",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgch282cgzvzgepk8g5a30xyj547pkp2aadss52syjffu67tqkdds5dkylm",
-          "date": "2026-09-16",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://x.com/i/status/2100270822552412669",
-          "date": "2026-09-16",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8cuzdlc0waugs2m2f4y4kuc73dg9y9qkugtrfcgcq853htcphcsq4up9s7",
-          "date": "2026-09-14",
-          "merchant": "P.S Takeaways"
-        },
-        {
-          "url": "https://x.com/i/status/2099227037089087690",
-          "date": "2026-09-14",
-          "merchant": "P.S Takeaways"
-        },
-        {
-          "url": "https://x.com/i/status/2098642470686929150",
-          "date": "2026-09-12",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst425tq6yl8t0nllcz0zhtt66tguy0t8gh8hrckehagj7kvtyjrzsy6jy5g",
-          "date": "2026-09-12",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://x.com/i/status/2097744195251253570",
-          "date": "2026-09-10",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsywcqg93yla33f08e0vnl3hu527r3purv44xgq7gmpche4zcj30qsxxy9lf",
-          "date": "2026-09-10",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp0vmgpra0ll0jvx7w6wt8ej592pn48nrkt29sa853hyv8p4ygy3qxk8t53",
-          "date": "2026-09-07",
-          "merchant": "P.S Takeaways"
-        },
-        {
-          "url": "https://x.com/i/status/2096659872125190144",
-          "date": "2026-09-07",
-          "merchant": "P.S Takeaways"
-        },
-        {
-          "url": "https://x.com/i/status/2095527307012096183",
-          "date": "2026-09-03",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyyk6qwpkanjj09xz5jxu33t3s6tyst77ye4n93d09afmfvuv2hrs8ve027",
-          "date": "2026-09-03",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2094445191310594121",
-          "date": "2026-08-31",
-          "merchant": "Nyambose Prints"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstatfn2c7k9plmwn5gqsqjynr02a0kqctu22f9lk7yhtzd7ft3n0q7f3avp",
-          "date": "2026-08-31",
-          "merchant": "Nyambose Prints"
-        },
-        {
-          "url": "https://x.com/i/status/2092512089826889966",
-          "date": "2026-08-26",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszc2umdxu75p5499vvhcd9maxk0tfs8enz9e7a42wakyfktpychvglsxte7",
-          "date": "2026-08-26",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2091486356446785618",
-          "date": "2026-08-23",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxg7lxaggn7q0qycywnyrpydwqk00q8unyy4s3k53w2gvv608extq8craxf",
-          "date": "2026-08-23",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9cjq5cptefvf0py0zm6g4cjukjsjv2mapvw4fktp4qxgukhxtnzq6hfygj",
-          "date": "2026-08-21",
-          "merchant": "P.S Takeaways"
-        },
-        {
-          "url": "https://x.com/i/status/2090669215749382524",
-          "date": "2026-08-21",
-          "merchant": "P.S Takeaways"
-        },
-        {
-          "url": "https://x.com/i/status/2089926675375050843",
-          "date": "2026-08-19",
-          "merchant": "Nyambose Prints"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy2z24m6x96ktvkleuscyq93ajml4rjhwmenk3ju0eqwg9xlktv8cm9gcrp",
-          "date": "2026-08-19",
-          "merchant": "Nyambose Prints"
-        },
-        {
-          "url": "https://x.com/i/status/2088834230784508203",
-          "date": "2026-08-16",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsprk4r7p5q3n960pe3nhj9xu8csuuxgv9mfp6txmwcvnwpqlauenglyj4u2",
-          "date": "2026-08-16",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs99rt56ncepc78ftrngzfjr8p87p5a9f2c6nxxvnk3q9yz42h6w7gy262ke",
-          "date": "2026-08-09",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2086472646158336237",
-          "date": "2026-08-09",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd34y03kxhs0exljm94q40mrz02447z0jm53n9n0n9z83fkx0mltg2p6nv7",
-          "date": "2026-08-05",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://x.com/i/status/2084945136857829698",
-          "date": "2026-08-05",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://x.com/i/status/2083444793116446970",
-          "date": "2026-08-01",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2qe3gt4mfqf7vy3jk5834dcp75303t8nquzzkw4q02md3g3k7qvcelfezc",
-          "date": "2026-08-01",
-          "merchant": "T-Junction fast food"
-        },
-        {
-          "url": "https://x.com/i/status/2082329336124731805",
-          "date": "2026-07-29",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs025kh3h6ja8j340qjlqp6ngv9gzsuyvetvemtzuqvu22nzqu8yjqt8c669",
-          "date": "2026-07-29",
-          "merchant": "Mkambi"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0ame7uslhnsqaccz0p4pem0ygc58avrkj62nejngjge06z7799hgq78c7x",
-          "date": "2026-07-27",
-          "merchant": "P.S Takeaways"
-        },
-        {
-          "url": "https://x.com/i/status/2081564117270217134",
-          "date": "2026-07-27",
-          "merchant": "P.S Takeaways"
         }
       ]
     },
@@ -5227,8 +5247,13 @@
     },
     {
       "name": "EcoBitz 🇰🇪",
-      "count": 19,
+      "count": 20,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgn5fhu5c6wcde93myecxwdw64gwv965qndhesxkk6mxnrptes62qe76htp",
+          "date": "2026-10-11",
+          "merchant": "MunguMbele Grocery(Garage)"
+        },
         {
           "url": "https://x.com/i/status/2106310699085381832",
           "date": "2026-10-04",
@@ -11105,6 +11130,38 @@
       ]
     },
     {
+      "name": "Albaytalabiid",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2109160829232824785",
+          "date": "2026-10-11",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgjmhx0yxwd3sj2dkfvapz7tktugaq8ylgqfl20ryrxu06fckx6tgu8s0x7",
+          "date": "2026-10-11",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        }
+      ]
+    },
+    {
+      "name": "MunguMbele Grocery(Garage)",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgn5fhu5c6wcde93myecxwdw64gwv965qndhesxkk6mxnrptes62qe76htp",
+          "date": "2026-10-11",
+          "project": "EcoBitz 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs967snpx8ec3s87c3lwp4xvpq60nrjklh0k6k78rc6s634xs477psvmqumy",
+          "date": "2026-07-25",
+          "project": "EcoBitz 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Catherine Mbao Greens",
       "count": 1,
       "posts": [
@@ -11123,17 +11180,6 @@
           "url": "https://x.com/i/status/2080757839602081793",
           "date": "2026-07-25",
           "project": "BitJR Academy 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "MunguMbele Grocery(Garage)",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs967snpx8ec3s87c3lwp4xvpq60nrjklh0k6k78rc6s634xs477psvmqumy",
-          "date": "2026-07-25",
-          "project": "EcoBitz 🇰🇪"
         }
       ]
     },
@@ -11371,18 +11417,18 @@
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 83,
-    "daily_average_payments": 34
+    "days_active": 84,
+    "daily_average_payments": 33
   },
   "burn_rate": {
-    "percentage": 106,
+    "percentage": 105,
     "status": "on_target",
-    "days_active": 83
+    "days_active": 84
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2762
+      "count": 2771
     },
     {
       "domain": "8333.mobi",
@@ -11437,13 +11483,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1500
+      "count": 1503
     },
     {
       "platform": "Nostr",
-      "count": 1333
+      "count": 1339
     }
   ],
-  "generated_at": "2026-10-11T07:05:01.847915+00:00",
+  "generated_at": "2026-10-11T19:05:01.577621+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
