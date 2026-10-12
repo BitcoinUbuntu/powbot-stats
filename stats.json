@@ -1,35 +1,77 @@
 {
   "totals": {
-    "all_payments": 2869,
+    "all_payments": 2887,
     "by_type": {
       "merchant": {
-        "count": 958
+        "count": 964
       },
       "project": {
-        "count": 958
+        "count": 964
       },
       "reviewer": {
-        "count": 953
+        "count": 959
       }
     }
   },
   "today": {
     "date": "2026-10-12",
-    "payments": 27,
+    "payments": 45,
     "by_type": {
       "merchant": {
-        "count": 9
+        "count": 15
       },
       "project": {
-        "count": 9
+        "count": 15
       },
       "reviewer": {
-        "count": 9
+        "count": 15
       }
     },
-    "approved": 9,
-    "rejected": 1,
+    "approved": 15,
+    "rejected": 2,
     "videos": [
+      {
+        "url": "https://x.com/i/status/2109610539374579752",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "X",
+        "time": "12:07"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsdrq7tqr4autzm3uf7sf5hft600kve90sepqqfss89xgrplu2mpfggunjvd",
+        "project": "Bitcoin Karoo 🇿🇦",
+        "merchant": "De Rust TennisKlub",
+        "platform": "Nostr",
+        "time": "12:07"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqste8uxcpnems4rq2u98hf60wkzzzszwxk0vg3hqhp9c3z6t44jx0sqc8w27",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Flo Salon",
+        "platform": "Nostr",
+        "time": "12:07"
+      },
+      {
+        "url": "https://x.com/i/status/2109585707169628328",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Flo Salon",
+        "platform": "X",
+        "time": "12:07"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs0fjvjucmvrgl6thadmge8hpwy2gn00gg275x6l05a4nwcy3qegtcn5n8gc",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Omega Cut",
+        "platform": "Nostr",
+        "time": "12:06"
+      },
+      {
+        "url": "https://x.com/i/status/2109562270422602088",
+        "project": "Bitcoin Ikorodu 🇳🇬",
+        "merchant": "Omega Cut",
+        "platform": "X",
+        "time": "12:06"
+      },
       {
         "url": "https://x.com/i/status/2109411300350775585",
         "project": "Calabar Bitcoin Club 🇳🇬",
@@ -98,7 +140,22 @@
   "last_24h": {
     "videos": [
       {
-        "project": "Calabar Bitcoin Club 🇳🇬"
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Karoo 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Chama 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
       },
       {
         "project": "Calabar Bitcoin Club 🇳🇬"
@@ -110,7 +167,7 @@
         "project": "Calabar Bitcoin Club 🇳🇬"
       },
       {
-        "project": "BitJR Academy 🇿🇲"
+        "project": "Calabar Bitcoin Club 🇳🇬"
       },
       {
         "project": "BitJR Academy 🇿🇲"
@@ -125,17 +182,19 @@
         "project": "BitJR Academy 🇿🇲"
       },
       {
-        "project": "EcoBitz 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Sisonke 🇿🇦"
-      },
-      {
-        "project": "Bitcoin Sisonke 🇿🇦"
+        "project": "BitJR Academy 🇿🇲"
       }
     ]
   },
   "daily": [
+    {
+      "date": "2026-07-20",
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 5,
+      "approved": 5,
+      "rejected": 2
+    },
     {
       "date": "2026-07-21",
       "project_count": 6,
@@ -802,19 +861,390 @@
     },
     {
       "date": "2026-10-12",
-      "project_count": 9,
-      "merchant_count": 9,
-      "reviewer_count": 9,
-      "approved": 9,
-      "rejected": 1
+      "project_count": 15,
+      "merchant_count": 15,
+      "reviewer_count": 15,
+      "approved": 15,
+      "rejected": 2
     }
   ],
   "reviewer": {
-    "total_reviewed": 963,
-    "approved": 942,
-    "rejected": 21
+    "total_reviewed": 970,
+    "approved": 948,
+    "rejected": 22
   },
   "top_projects": [
+    {
+      "name": "Bitcoin Chama 🇰🇪",
+      "count": 73,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqste8uxcpnems4rq2u98hf60wkzzzszwxk0vg3hqhp9c3z6t44jx0sqc8w27",
+          "date": "2026-10-12",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2109585707169628328",
+          "date": "2026-10-12",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2108814660111650933",
+          "date": "2026-10-10",
+          "merchant": "Mama Joyce Kibanda"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp05t8m25rqquvmnth9y9u3gx55ut8q5u9xewmqcpgreamwnsx7xgwphdep",
+          "date": "2026-10-10",
+          "merchant": "Mama Joyce Kibanda"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszfmh4ur4mh4redpka770uuxux26clnzl9el549fsfnlv73s6sdtq93p8sp",
+          "date": "2026-10-05",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://x.com/i/status/2106999723529814206",
+          "date": "2026-10-05",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy7ytmg3ehhwcu84np98ckja9jwcy7epekhkz0c6s4mjntz2qwluclg069k",
+          "date": "2026-10-05",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2106995835217007026",
+          "date": "2026-10-05",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9q3k3cphkqd0a55pjd6elulue679ahuga6mwkfxwwydy9rzwtqlqvt5dwy",
+          "date": "2026-10-02",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2105911790307537311",
+          "date": "2026-10-02",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8cpfww4sg0qddy8r4kse4lw48a4d58mf84r9r9h3s9hs262m57qcneacds",
+          "date": "2026-09-30",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2105299840766738788",
+          "date": "2026-09-30",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2zy06cmellmglpvfftc5vuxyn0n7f74h3ryn29l7ywtxj88w8regujcvm4",
+          "date": "2026-09-28",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2104373001693147469",
+          "date": "2026-09-28",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgnzm7kw9vlea9aem8zxv69hthwxgjydt00g2en3zhy7zuv9z75ysndrpm4",
+          "date": "2026-09-25",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://x.com/i/status/2103372993149771840",
+          "date": "2026-09-25",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrtus273c3r7xhs20mjquev4y2mxxpcv7y8jm33vl7vcgunfef7gc2ezsac",
+          "date": "2026-09-23",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2102725076831318193",
+          "date": "2026-09-23",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf0nnc06mtsafq0ns5j4t69c887zkhxx9z4klfnzl5r7lw7ul7umqq7m3fg",
+          "date": "2026-09-21",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2101550398142050515",
+          "date": "2026-09-21",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2099743479127564607",
+          "date": "2026-09-16",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfuttr0msf8fdfpvrmsvh9vtd5v3nhawwh2payks7upkrseqg60fcnqpm0g",
+          "date": "2026-09-16",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://x.com/i/status/2100111867154776133",
+          "date": "2026-09-16",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsw5h225yvkdc03ga6rqsre5rjhjzcmnz696mwr2rdcf5fevksrjwqcn37zv",
+          "date": "2026-09-15",
+          "merchant": "Obwanchani Farm"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvf5na950ggswcwjjc673zhqdd2uzw66sjfaj96rc4kcxqqdhjepc4655d9",
+          "date": "2026-09-15",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2099388607177891896",
+          "date": "2026-09-15",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyu2hr9rkv2ut64a8gfmgwsaer42nuql5zcexwxyt4xemmrvedh2q53avnp",
+          "date": "2026-09-12",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2098630748752302527",
+          "date": "2026-09-12",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2098187949963719126",
+          "date": "2026-09-11",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsx30h4rda2mdpx34gtdgrqdh8n7acskn6lntlnlz0h3560853c4kgfr2dz7",
+          "date": "2026-09-11",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdpkymwj6qvdwza4n2w2lln8p0kjlhddf4l7jj7jt3e94j0ur02fsphg3j8",
+          "date": "2026-09-10",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://x.com/i/status/2097978338627211595",
+          "date": "2026-09-10",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8yhwka99t7u554aw8gkxd0a53tteeju6fn55s6keafjxw4t5atlsf68zjx",
+          "date": "2026-09-04",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2095712575690277352",
+          "date": "2026-09-04",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst4steulvstlqjke7a8j72dvhrf7rttzjzncryl90pz2eum6ldclca9pcj4",
+          "date": "2026-09-03",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://x.com/i/status/2095497302815260691",
+          "date": "2026-09-03",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://x.com/i/status/2094403825201225997",
+          "date": "2026-08-31",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswcsvtjxrx63aleu50d4sgqpljstadt5m7p55egzakm90n2wgzjsqnj0k2m",
+          "date": "2026-08-31",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp0ay7za8h8yan94d7anwp2t08yszdqydzjtq0rtcwq5kxqyc52hqln74zj",
+          "date": "2026-08-29",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2093718704022310976",
+          "date": "2026-08-29",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq2tgsxcs5mu55auwfju2syq5wsup2kt8hj0t2hcjy9jtlfcxguwcp36qft",
+          "date": "2026-08-27",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://x.com/i/status/2092879778521182538",
+          "date": "2026-08-27",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://x.com/i/status/2092603560135430232",
+          "date": "2026-08-26",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq4ggduce6svdhsa5d9lvrhnaev98qsuy78kp4fx23vj3yveqg09cvrt9mj",
+          "date": "2026-08-26",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2091038337033265165",
+          "date": "2026-08-22",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2090851706762572124",
+          "date": "2026-08-21",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrg90t2p2qmmg4cent9dhq0c39h28ms840n3jdkrn0rgq75n4ql2gn4q08h",
+          "date": "2026-08-21",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2090146188024582206",
+          "date": "2026-08-19",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfq6wel9h7qsrxw68hdcukv2t9fh8tsm654p9dcrhseu60unxdmvqzlmuqu",
+          "date": "2026-08-19",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspmmnhrqs9mzzv2m0a05awxzkd6frxtr98mkrffvs4g4v4n3q9g8q4gplz6",
+          "date": "2026-08-12",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://x.com/i/status/2087623513200877891",
+          "date": "2026-08-12",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqst9a0r7negwxwx0gktz603gupad362wrfrtdt3nyeq494xmgd32wqx3wzy8",
+          "date": "2026-08-11",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2087218337453343031",
+          "date": "2026-08-11",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd92acgj39pe7g7nrfhgdz3m3429a2pa74k38djgzyevqmlsj2vhc8uvjg4",
+          "date": "2026-08-11",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2086712473072070678",
+          "date": "2026-08-10",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp8uwxhtaq8g2zp4s5nj7c6qz380qre0crfq74xf8jcuewsas2uhg73z0ss",
+          "date": "2026-08-06",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2085222899128930324",
+          "date": "2026-08-06",
+          "merchant": "Flo Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs83c2m5khx88s88jfpylmkvhgnt9rj492vr3w24pxx7ezsufkzlhc4xqnah",
+          "date": "2026-08-04",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://x.com/i/status/2084519469649363148",
+          "date": "2026-08-04",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsylgx00866m038pgnpzyvnms8yndwlenc044fv78dygmcldwce0kcuk8npx",
+          "date": "2026-08-03",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2083771154351665261",
+          "date": "2026-08-03",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspndhaw9dfcs8vtek5jxjc4l236hp8686tav6074tl0ctymsp3auq928477",
+          "date": "2026-07-30",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://x.com/i/status/2082703095616664048",
+          "date": "2026-07-30",
+          "merchant": "Chicken farm"
+        },
+        {
+          "url": "https://x.com/i/status/2082155914371514792",
+          "date": "2026-07-28",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspzhhmqayfrqdq3z6ggjq6qemygrxjkgp09aeha7wzr0c27cglgms7dwvzf",
+          "date": "2026-07-28",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstph98g0yvs3tn5070uzvwa79q3c9h83j8sd5m5u7366ncxxf5zkgp7h36t",
+          "date": "2026-07-27",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2081582967864877499",
+          "date": "2026-07-27",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfleh4n92tgvs07y0dp8t4vvnxhvstzn4e9aa4qy6cc3stckmrx5qnzr03y",
+          "date": "2026-07-24",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://x.com/i/status/2080507097137963357",
+          "date": "2026-07-24",
+          "merchant": "Orero shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrq6j96d99gzlqrycmfx28wcnrf8cuy5ey0hqvqzj603f4q9rpz4c0dk854",
+          "date": "2026-07-22",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://x.com/i/status/2079784287675515043",
+          "date": "2026-07-22",
+          "merchant": "Dama shop"
+        },
+        {
+          "url": "https://x.com/i/status/2079126914011152632",
+          "date": "2026-07-20",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsftu69zfk2zgq340a4k8tq2uzpu2a9zv2cksvvnx7xlrjly9gha7sfzw7wd",
+          "date": "2026-07-20",
+          "merchant": "Mary Shop"
+        }
+      ]
+    },
     {
       "name": "Bitbiashara 🇰🇪",
       "count": 72,
@@ -1178,367 +1608,6 @@
           "url": "https://primal.net/e/nevent1qqspdl2a9qd3yh2uaknmhx79zdzwc0826dxlgqnlgkwtapkgmwcsh8chyardx",
           "date": "2026-07-20",
           "merchant": "Bliss beauty Salon"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Chama 🇰🇪",
-      "count": 71,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2108814660111650933",
-          "date": "2026-10-10",
-          "merchant": "Mama Joyce Kibanda"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp05t8m25rqquvmnth9y9u3gx55ut8q5u9xewmqcpgreamwnsx7xgwphdep",
-          "date": "2026-10-10",
-          "merchant": "Mama Joyce Kibanda"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszfmh4ur4mh4redpka770uuxux26clnzl9el549fsfnlv73s6sdtq93p8sp",
-          "date": "2026-10-05",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://x.com/i/status/2106999723529814206",
-          "date": "2026-10-05",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy7ytmg3ehhwcu84np98ckja9jwcy7epekhkz0c6s4mjntz2qwluclg069k",
-          "date": "2026-10-05",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2106995835217007026",
-          "date": "2026-10-05",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9q3k3cphkqd0a55pjd6elulue679ahuga6mwkfxwwydy9rzwtqlqvt5dwy",
-          "date": "2026-10-02",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2105911790307537311",
-          "date": "2026-10-02",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8cpfww4sg0qddy8r4kse4lw48a4d58mf84r9r9h3s9hs262m57qcneacds",
-          "date": "2026-09-30",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2105299840766738788",
-          "date": "2026-09-30",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2zy06cmellmglpvfftc5vuxyn0n7f74h3ryn29l7ywtxj88w8regujcvm4",
-          "date": "2026-09-28",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2104373001693147469",
-          "date": "2026-09-28",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgnzm7kw9vlea9aem8zxv69hthwxgjydt00g2en3zhy7zuv9z75ysndrpm4",
-          "date": "2026-09-25",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://x.com/i/status/2103372993149771840",
-          "date": "2026-09-25",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrtus273c3r7xhs20mjquev4y2mxxpcv7y8jm33vl7vcgunfef7gc2ezsac",
-          "date": "2026-09-23",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2102725076831318193",
-          "date": "2026-09-23",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf0nnc06mtsafq0ns5j4t69c887zkhxx9z4klfnzl5r7lw7ul7umqq7m3fg",
-          "date": "2026-09-21",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2101550398142050515",
-          "date": "2026-09-21",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2099743479127564607",
-          "date": "2026-09-16",
-          "merchant": "Obwanchani Farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfuttr0msf8fdfpvrmsvh9vtd5v3nhawwh2payks7upkrseqg60fcnqpm0g",
-          "date": "2026-09-16",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://x.com/i/status/2100111867154776133",
-          "date": "2026-09-16",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsw5h225yvkdc03ga6rqsre5rjhjzcmnz696mwr2rdcf5fevksrjwqcn37zv",
-          "date": "2026-09-15",
-          "merchant": "Obwanchani Farm"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvf5na950ggswcwjjc673zhqdd2uzw66sjfaj96rc4kcxqqdhjepc4655d9",
-          "date": "2026-09-15",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2099388607177891896",
-          "date": "2026-09-15",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyu2hr9rkv2ut64a8gfmgwsaer42nuql5zcexwxyt4xemmrvedh2q53avnp",
-          "date": "2026-09-12",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2098630748752302527",
-          "date": "2026-09-12",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2098187949963719126",
-          "date": "2026-09-11",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsx30h4rda2mdpx34gtdgrqdh8n7acskn6lntlnlz0h3560853c4kgfr2dz7",
-          "date": "2026-09-11",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdpkymwj6qvdwza4n2w2lln8p0kjlhddf4l7jj7jt3e94j0ur02fsphg3j8",
-          "date": "2026-09-10",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://x.com/i/status/2097978338627211595",
-          "date": "2026-09-10",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8yhwka99t7u554aw8gkxd0a53tteeju6fn55s6keafjxw4t5atlsf68zjx",
-          "date": "2026-09-04",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2095712575690277352",
-          "date": "2026-09-04",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst4steulvstlqjke7a8j72dvhrf7rttzjzncryl90pz2eum6ldclca9pcj4",
-          "date": "2026-09-03",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://x.com/i/status/2095497302815260691",
-          "date": "2026-09-03",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://x.com/i/status/2094403825201225997",
-          "date": "2026-08-31",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswcsvtjxrx63aleu50d4sgqpljstadt5m7p55egzakm90n2wgzjsqnj0k2m",
-          "date": "2026-08-31",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp0ay7za8h8yan94d7anwp2t08yszdqydzjtq0rtcwq5kxqyc52hqln74zj",
-          "date": "2026-08-29",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2093718704022310976",
-          "date": "2026-08-29",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq2tgsxcs5mu55auwfju2syq5wsup2kt8hj0t2hcjy9jtlfcxguwcp36qft",
-          "date": "2026-08-27",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://x.com/i/status/2092879778521182538",
-          "date": "2026-08-27",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://x.com/i/status/2092603560135430232",
-          "date": "2026-08-26",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq4ggduce6svdhsa5d9lvrhnaev98qsuy78kp4fx23vj3yveqg09cvrt9mj",
-          "date": "2026-08-26",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2091038337033265165",
-          "date": "2026-08-22",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2090851706762572124",
-          "date": "2026-08-21",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrg90t2p2qmmg4cent9dhq0c39h28ms840n3jdkrn0rgq75n4ql2gn4q08h",
-          "date": "2026-08-21",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2090146188024582206",
-          "date": "2026-08-19",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfq6wel9h7qsrxw68hdcukv2t9fh8tsm654p9dcrhseu60unxdmvqzlmuqu",
-          "date": "2026-08-19",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspmmnhrqs9mzzv2m0a05awxzkd6frxtr98mkrffvs4g4v4n3q9g8q4gplz6",
-          "date": "2026-08-12",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://x.com/i/status/2087623513200877891",
-          "date": "2026-08-12",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst9a0r7negwxwx0gktz603gupad362wrfrtdt3nyeq494xmgd32wqx3wzy8",
-          "date": "2026-08-11",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2087218337453343031",
-          "date": "2026-08-11",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd92acgj39pe7g7nrfhgdz3m3429a2pa74k38djgzyevqmlsj2vhc8uvjg4",
-          "date": "2026-08-11",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2086712473072070678",
-          "date": "2026-08-10",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp8uwxhtaq8g2zp4s5nj7c6qz380qre0crfq74xf8jcuewsas2uhg73z0ss",
-          "date": "2026-08-06",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2085222899128930324",
-          "date": "2026-08-06",
-          "merchant": "Flo Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs83c2m5khx88s88jfpylmkvhgnt9rj492vr3w24pxx7ezsufkzlhc4xqnah",
-          "date": "2026-08-04",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://x.com/i/status/2084519469649363148",
-          "date": "2026-08-04",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsylgx00866m038pgnpzyvnms8yndwlenc044fv78dygmcldwce0kcuk8npx",
-          "date": "2026-08-03",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2083771154351665261",
-          "date": "2026-08-03",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspndhaw9dfcs8vtek5jxjc4l236hp8686tav6074tl0ctymsp3auq928477",
-          "date": "2026-07-30",
-          "merchant": "Chicken farm"
-        },
-        {
-          "url": "https://x.com/i/status/2082703095616664048",
-          "date": "2026-07-30",
-          "merchant": "Chicken farm"
-        },
-        {
-          "url": "https://x.com/i/status/2082155914371514792",
-          "date": "2026-07-28",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspzhhmqayfrqdq3z6ggjq6qemygrxjkgp09aeha7wzr0c27cglgms7dwvzf",
-          "date": "2026-07-28",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstph98g0yvs3tn5070uzvwa79q3c9h83j8sd5m5u7366ncxxf5zkgp7h36t",
-          "date": "2026-07-27",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2081582967864877499",
-          "date": "2026-07-27",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfleh4n92tgvs07y0dp8t4vvnxhvstzn4e9aa4qy6cc3stckmrx5qnzr03y",
-          "date": "2026-07-24",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://x.com/i/status/2080507097137963357",
-          "date": "2026-07-24",
-          "merchant": "Orero shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrq6j96d99gzlqrycmfx28wcnrf8cuy5ey0hqvqzj603f4q9rpz4c0dk854",
-          "date": "2026-07-22",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://x.com/i/status/2079784287675515043",
-          "date": "2026-07-22",
-          "merchant": "Dama shop"
-        },
-        {
-          "url": "https://x.com/i/status/2079126914011152632",
-          "date": "2026-07-20",
-          "merchant": "Mary Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsftu69zfk2zgq340a4k8tq2uzpu2a9zv2cksvvnx7xlrjly9gha7sfzw7wd",
-          "date": "2026-07-20",
-          "merchant": "Mary Shop"
         }
       ]
     },
@@ -2236,8 +2305,13 @@
     },
     {
       "name": "Bitcoin Karoo 🇿🇦",
-      "count": 64,
+      "count": 65,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdrq7tqr4autzm3uf7sf5hft600kve90sepqqfss89xgrplu2mpfggunjvd",
+          "date": "2026-10-12",
+          "merchant": "De Rust TennisKlub"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs0cd9y80v7qn8g8tm7k7sjn88dd2g0cxh36kdzqzzs6zpp0qxvpvqd26hdh",
           "date": "2026-10-06",
@@ -4399,8 +4473,18 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 40,
+      "count": 42,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0fjvjucmvrgl6thadmge8hpwy2gn00gg275x6l05a4nwcy3qegtcn5n8gc",
+          "date": "2026-10-12",
+          "merchant": "Omega Cut"
+        },
+        {
+          "url": "https://x.com/i/status/2109562270422602088",
+          "date": "2026-10-12",
+          "merchant": "Omega Cut"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsquy2nhf09pgud9w7pvtyez8df6juteq9ekke65uff3cqaemxhr2qptk3zr",
           "date": "2026-10-09",
@@ -4947,8 +5031,13 @@
     },
     {
       "name": "Bitcoin NextGen 🇳🇬",
-      "count": 28,
+      "count": 29,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2109610539374579752",
+          "date": "2026-10-12",
+          "merchant": "Emmy Store"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsrzdak54rfxhaegpxznqf3vpnwylmxmf6ggrv7ls2l0kz23pt053g2jrzu9",
           "date": "2026-10-06",
@@ -5758,6 +5847,127 @@
   ],
   "top_merchants": [
     {
+      "name": "Emmy Store",
+      "count": 23,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2109610539374579752",
+          "date": "2026-10-12",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrzdak54rfxhaegpxznqf3vpnwylmxmf6ggrv7ls2l0kz23pt053g2jrzu9",
+          "date": "2026-10-06",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2107399573647859757",
+          "date": "2026-10-06",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd7ghd62lmf649za67as5qzd9qmkt0hreveujy4cjddguynphg02chhv9qx",
+          "date": "2026-09-28",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2104577383437083019",
+          "date": "2026-09-28",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgqt4e42e3rr2mkjuxms4md44wf6l2gz7j7ec0fv662kxuyfsth8qnuywun",
+          "date": "2026-09-22",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2102389347249008990",
+          "date": "2026-09-22",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswk2jxw835lqrxwqa0cuh9eevssq5ha4t4z2kfj8n0y872493ztssg93u0v",
+          "date": "2026-09-20",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2101673385134633033",
+          "date": "2026-09-20",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0m3zdya5m0j9e83320y64rdd4scsgfj47gts2zmc2e93p4tnu33cyuh4uf",
+          "date": "2026-09-08",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2096912535907680530",
+          "date": "2026-09-07",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszmjsqdffu8n4xn24r3a50mpggkpuw7mw3jzxw5pwpxgth0vnjktsxuf2wz",
+          "date": "2026-09-02",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2094683052941156373",
+          "date": "2026-09-01",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstkze2phr4670kg0jqn2lqp8pr2x4qp9v4qexph03whu8r6z2yezskwdwxz",
+          "date": "2026-08-24",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2091872999234273525",
+          "date": "2026-08-24",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfx6awhrzzp9ype8km6ue0s640je59gl8a0xph9sntghtvwechgxq5jg5kd",
+          "date": "2026-08-20",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2090322102184198234",
+          "date": "2026-08-20",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdpvjccx9ypta4xln9pcxn8un6sj0qaxcpja4cvhqaacwl7u8rqys7rn0qy",
+          "date": "2026-08-13",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2086886483596865769",
+          "date": "2026-08-11",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsx0gwq8aqa322krpf4l8tn343u00dujjz5j9qw77nyqvtlauz75ac2et3ad",
+          "date": "2026-08-05",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2084189352712642664",
+          "date": "2026-08-03",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8jtp3pydgvp4e8ytkj0kj07hl9l4l4ngm9uppk60v9esx6r0jmngm2sxap",
+          "date": "2026-07-29",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2082002522424607176",
+          "date": "2026-07-28",
+          "project": "Bitcoin NextGen 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Dama shop",
       "count": 22,
       "posts": [
@@ -5870,122 +6080,6 @@
           "url": "https://x.com/i/status/2079784287675515043",
           "date": "2026-07-22",
           "project": "Bitcoin Chama 🇰🇪"
-        }
-      ]
-    },
-    {
-      "name": "Emmy Store",
-      "count": 22,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsrzdak54rfxhaegpxznqf3vpnwylmxmf6ggrv7ls2l0kz23pt053g2jrzu9",
-          "date": "2026-10-06",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2107399573647859757",
-          "date": "2026-10-06",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd7ghd62lmf649za67as5qzd9qmkt0hreveujy4cjddguynphg02chhv9qx",
-          "date": "2026-09-28",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2104577383437083019",
-          "date": "2026-09-28",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgqt4e42e3rr2mkjuxms4md44wf6l2gz7j7ec0fv662kxuyfsth8qnuywun",
-          "date": "2026-09-22",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2102389347249008990",
-          "date": "2026-09-22",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswk2jxw835lqrxwqa0cuh9eevssq5ha4t4z2kfj8n0y872493ztssg93u0v",
-          "date": "2026-09-20",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2101673385134633033",
-          "date": "2026-09-20",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0m3zdya5m0j9e83320y64rdd4scsgfj47gts2zmc2e93p4tnu33cyuh4uf",
-          "date": "2026-09-08",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2096912535907680530",
-          "date": "2026-09-07",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszmjsqdffu8n4xn24r3a50mpggkpuw7mw3jzxw5pwpxgth0vnjktsxuf2wz",
-          "date": "2026-09-02",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2094683052941156373",
-          "date": "2026-09-01",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstkze2phr4670kg0jqn2lqp8pr2x4qp9v4qexph03whu8r6z2yezskwdwxz",
-          "date": "2026-08-24",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2091872999234273525",
-          "date": "2026-08-24",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfx6awhrzzp9ype8km6ue0s640je59gl8a0xph9sntghtvwechgxq5jg5kd",
-          "date": "2026-08-20",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2090322102184198234",
-          "date": "2026-08-20",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdpvjccx9ypta4xln9pcxn8un6sj0qaxcpja4cvhqaacwl7u8rqys7rn0qy",
-          "date": "2026-08-13",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2086886483596865769",
-          "date": "2026-08-11",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsx0gwq8aqa322krpf4l8tn343u00dujjz5j9qw77nyqvtlauz75ac2et3ad",
-          "date": "2026-08-05",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2084189352712642664",
-          "date": "2026-08-03",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8jtp3pydgvp4e8ytkj0kj07hl9l4l4ngm9uppk60v9esx6r0jmngm2sxap",
-          "date": "2026-07-29",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2082002522424607176",
-          "date": "2026-07-28",
-          "project": "Bitcoin NextGen 🇳🇬"
         }
       ]
     },
@@ -6733,6 +6827,92 @@
       ]
     },
     {
+      "name": "Flo Salon",
+      "count": 16,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqste8uxcpnems4rq2u98hf60wkzzzszwxk0vg3hqhp9c3z6t44jx0sqc8w27",
+          "date": "2026-10-12",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2109585707169628328",
+          "date": "2026-10-12",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy7ytmg3ehhwcu84np98ckja9jwcy7epekhkz0c6s4mjntz2qwluclg069k",
+          "date": "2026-10-05",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2106995835217007026",
+          "date": "2026-10-05",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2zy06cmellmglpvfftc5vuxyn0n7f74h3ryn29l7ywtxj88w8regujcvm4",
+          "date": "2026-09-28",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2104373001693147469",
+          "date": "2026-09-28",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf0nnc06mtsafq0ns5j4t69c887zkhxx9z4klfnzl5r7lw7ul7umqq7m3fg",
+          "date": "2026-09-21",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2101550398142050515",
+          "date": "2026-09-21",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyu2hr9rkv2ut64a8gfmgwsaer42nuql5zcexwxyt4xemmrvedh2q53avnp",
+          "date": "2026-09-12",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2098630748752302527",
+          "date": "2026-09-12",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8yhwka99t7u554aw8gkxd0a53tteeju6fn55s6keafjxw4t5atlsf68zjx",
+          "date": "2026-09-04",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2095712575690277352",
+          "date": "2026-09-04",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2092603560135430232",
+          "date": "2026-08-26",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq4ggduce6svdhsa5d9lvrhnaev98qsuy78kp4fx23vj3yveqg09cvrt9mj",
+          "date": "2026-08-26",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp8uwxhtaq8g2zp4s5nj7c6qz380qre0crfq74xf8jcuewsas2uhg73z0ss",
+          "date": "2026-08-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2085222899128930324",
+          "date": "2026-08-06",
+          "project": "Bitcoin Chama 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Kwa Jiyeve",
       "count": 15,
       "posts": [
@@ -7209,82 +7389,6 @@
       ]
     },
     {
-      "name": "Flo Salon",
-      "count": 14,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsy7ytmg3ehhwcu84np98ckja9jwcy7epekhkz0c6s4mjntz2qwluclg069k",
-          "date": "2026-10-05",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2106995835217007026",
-          "date": "2026-10-05",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2zy06cmellmglpvfftc5vuxyn0n7f74h3ryn29l7ywtxj88w8regujcvm4",
-          "date": "2026-09-28",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2104373001693147469",
-          "date": "2026-09-28",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf0nnc06mtsafq0ns5j4t69c887zkhxx9z4klfnzl5r7lw7ul7umqq7m3fg",
-          "date": "2026-09-21",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2101550398142050515",
-          "date": "2026-09-21",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyu2hr9rkv2ut64a8gfmgwsaer42nuql5zcexwxyt4xemmrvedh2q53avnp",
-          "date": "2026-09-12",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2098630748752302527",
-          "date": "2026-09-12",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8yhwka99t7u554aw8gkxd0a53tteeju6fn55s6keafjxw4t5atlsf68zjx",
-          "date": "2026-09-04",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2095712575690277352",
-          "date": "2026-09-04",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2092603560135430232",
-          "date": "2026-08-26",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq4ggduce6svdhsa5d9lvrhnaev98qsuy78kp4fx23vj3yveqg09cvrt9mj",
-          "date": "2026-08-26",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp8uwxhtaq8g2zp4s5nj7c6qz380qre0crfq74xf8jcuewsas2uhg73z0ss",
-          "date": "2026-08-06",
-          "project": "Bitcoin Chama 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2085222899128930324",
-          "date": "2026-08-06",
-          "project": "Bitcoin Chama 🇰🇪"
-        }
-      ]
-    },
-    {
       "name": "Preso's Food and Drinks",
       "count": 14,
       "posts": [
@@ -7437,6 +7541,82 @@
       ]
     },
     {
+      "name": "Omega Cut",
+      "count": 14,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs0fjvjucmvrgl6thadmge8hpwy2gn00gg275x6l05a4nwcy3qegtcn5n8gc",
+          "date": "2026-10-12",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2109562270422602088",
+          "date": "2026-10-12",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsquy2nhf09pgud9w7pvtyez8df6juteq9ekke65uff3cqaemxhr2qptk3zr",
+          "date": "2026-10-09",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2108523418488283140",
+          "date": "2026-10-09",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9dj04kf2829mt8he494ye8l7s6vw87q0nud6mf0a2dq7khl7acjqmqh8zx",
+          "date": "2026-09-30",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2104993142709580217",
+          "date": "2026-09-30",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2102806651766026346",
+          "date": "2026-09-24",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs84rqr896qtsesg2hghqs45uallj2saeeuut279ruze2r4pczmsdchj2ueq",
+          "date": "2026-09-23",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsx3gp70tqw2lk8vdx4d93dysw6yg4245zvx38f4sk83dq6hv67sns77azjy",
+          "date": "2026-08-26",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2092600471911317521",
+          "date": "2026-08-26",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8j4fse67whj7yee6skx2janwg79e0tmyhrxgj8fmwezgvlch2s5smww8g0",
+          "date": "2026-08-17",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsytwsthsp36hd5l5430t2fmlcf2rdz6s59dknz59gnt7gvp8wnkjg0ys2f2",
+          "date": "2026-08-04",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2084682792982483112",
+          "date": "2026-08-04",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2079627961150382159",
+          "date": "2026-07-22",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Mercy Groceries",
       "count": 13,
       "posts": [
@@ -7570,72 +7750,6 @@
           "url": "https://primal.net/e/nevent1qqsffr2dj9a7wesy7ve5nu5ftk4saqspwellh8707mxuc4qhtmfqx5qzqlyp3",
           "date": "2026-08-18",
           "project": "BTC Shule 🇧🇮"
-        }
-      ]
-    },
-    {
-      "name": "Omega Cut",
-      "count": 12,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsquy2nhf09pgud9w7pvtyez8df6juteq9ekke65uff3cqaemxhr2qptk3zr",
-          "date": "2026-10-09",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2108523418488283140",
-          "date": "2026-10-09",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9dj04kf2829mt8he494ye8l7s6vw87q0nud6mf0a2dq7khl7acjqmqh8zx",
-          "date": "2026-09-30",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2104993142709580217",
-          "date": "2026-09-30",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2102806651766026346",
-          "date": "2026-09-24",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs84rqr896qtsesg2hghqs45uallj2saeeuut279ruze2r4pczmsdchj2ueq",
-          "date": "2026-09-23",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsx3gp70tqw2lk8vdx4d93dysw6yg4245zvx38f4sk83dq6hv67sns77azjy",
-          "date": "2026-08-26",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2092600471911317521",
-          "date": "2026-08-26",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8j4fse67whj7yee6skx2janwg79e0tmyhrxgj8fmwezgvlch2s5smww8g0",
-          "date": "2026-08-17",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsytwsthsp36hd5l5430t2fmlcf2rdz6s59dknz59gnt7gvp8wnkjg0ys2f2",
-          "date": "2026-08-04",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2084682792982483112",
-          "date": "2026-08-04",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2079627961150382159",
-          "date": "2026-07-22",
-          "project": "Bitcoin Ikorodu 🇳🇬"
         }
       ]
     },
@@ -8128,6 +8242,62 @@
       ]
     },
     {
+      "name": "De Rust TennisKlub",
+      "count": 10,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsdrq7tqr4autzm3uf7sf5hft600kve90sepqqfss89xgrplu2mpfggunjvd",
+          "date": "2026-10-12",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2107079446742094294",
+          "date": "2026-10-05",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszkzjgnap979peusyzq5wgccdn5ju0uyahwxpcmwvcnv2urguvvagafp5de",
+          "date": "2026-10-05",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0a0ehwn2tt7eafr0kz89fxux6r5wxsxp88j5tuhzxjfk4vg7ntfc6fgge9",
+          "date": "2026-09-29",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2104881640723923345",
+          "date": "2026-09-29",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0wmkpl29ak72yzhdmnpz4uaxts0dwewjlv02qnkqjtdk5wt0x66csj2uq6",
+          "date": "2026-09-22",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2102035038833418367",
+          "date": "2026-09-21",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstla928pr92wsz4pfn9zuqvp4zefvkatnkmka9ukdyw9zk4v8fqec33vqum",
+          "date": "2026-09-16",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2099803252673925499",
+          "date": "2026-09-15",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2096932755816813051",
+          "date": "2026-09-07",
+          "project": "Bitcoin Karoo 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "AB Starry Communication",
       "count": 9,
       "posts": [
@@ -8226,57 +8396,6 @@
           "url": "https://x.com/i/status/2093433921279053929",
           "date": "2026-08-29",
           "project": "BitJR Academy 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "De Rust TennisKlub",
-      "count": 9,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2107079446742094294",
-          "date": "2026-10-05",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszkzjgnap979peusyzq5wgccdn5ju0uyahwxpcmwvcnv2urguvvagafp5de",
-          "date": "2026-10-05",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0a0ehwn2tt7eafr0kz89fxux6r5wxsxp88j5tuhzxjfk4vg7ntfc6fgge9",
-          "date": "2026-09-29",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2104881640723923345",
-          "date": "2026-09-29",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0wmkpl29ak72yzhdmnpz4uaxts0dwewjlv02qnkqjtdk5wt0x66csj2uq6",
-          "date": "2026-09-22",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2102035038833418367",
-          "date": "2026-09-21",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstla928pr92wsz4pfn9zuqvp4zefvkatnkmka9ukdyw9zk4v8fqec33vqum",
-          "date": "2026-09-16",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2099803252673925499",
-          "date": "2026-09-15",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2096932755816813051",
-          "date": "2026-09-07",
-          "project": "Bitcoin Karoo 🇿🇦"
         }
       ]
     },
@@ -11576,22 +11695,22 @@
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 84,
-    "daily_average_payments": 34
+    "days_active": 85,
+    "daily_average_payments": 33
   },
   "burn_rate": {
     "percentage": 106,
     "status": "on_target",
-    "days_active": 84
+    "days_active": 85
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2798
+      "count": 2815
     },
     {
       "domain": "8333.mobi",
-      "count": 47
+      "count": 48
     },
     {
       "domain": "rurbit.com",
@@ -11642,13 +11761,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1518
+      "count": 1527
     },
     {
       "platform": "Nostr",
-      "count": 1351
+      "count": 1360
     }
   ],
-  "generated_at": "2026-10-12T07:05:01.773742+00:00",
+  "generated_at": "2026-10-12T19:05:02.136421+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
