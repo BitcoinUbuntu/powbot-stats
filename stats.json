@@ -1,49 +1,90 @@
 {
   "totals": {
-    "all_payments": 2887,
+    "all_payments": 2899,
     "by_type": {
       "merchant": {
-        "count": 964
+        "count": 968
       },
       "project": {
-        "count": 964
+        "count": 968
       },
       "reviewer": {
-        "count": 959
+        "count": 963
       }
     }
   },
   "today": {
     "date": "2026-10-13",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 12,
+    "by_type": {
+      "merchant": {
+        "count": 4
+      },
+      "project": {
+        "count": 4
+      },
+      "reviewer": {
+        "count": 4
+      }
+    },
+    "approved": 4,
     "rejected": 1,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsp4nrt2080ynh0y9n7rduh2jh3c64j439k4qcpmtasey2u9dr567c9jz0cc",
+        "project": "Bitcoin Karoo 🇿🇦",
+        "merchant": "Rasal MD Cafe",
+        "platform": "Nostr",
+        "time": "16:34"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsrqlnfgrlxreklxlvlrvuuka93uu4qn028662awhnhutwe589dz0qu9j9f6",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "Nostr",
+        "time": "16:28"
+      },
+      {
+        "url": "https://x.com/i/status/2109641227498918098",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Haven food court",
+        "platform": "X",
+        "time": "16:27"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs03z7gjerj797kxzlztupt729s5pr9e04dry6t7j8v0qgmh0axltsxq0y0n",
+        "project": "Bitcoin NextGen 🇳🇬",
+        "merchant": "Emmy Store",
+        "platform": "Nostr",
+        "time": "16:27"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
-        "project": "Bitcoin NextGen 🇳🇬"
-      },
-      {
         "project": "Bitcoin Karoo 🇿🇦"
       },
       {
-        "project": "Bitcoin Chama 🇰🇪"
+        "project": "Bitbiashara 🇰🇪"
       },
       {
-        "project": "Bitcoin Chama 🇰🇪"
+        "project": "Bitbiashara 🇰🇪"
       },
       {
-        "project": "Bitcoin Ikorodu 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Ikorodu 🇳🇬"
+        "project": "Bitcoin NextGen 🇳🇬"
       }
     ]
   },
   "daily": [
+    {
+      "date": "2026-07-20",
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 5,
+      "approved": 5,
+      "rejected": 2
+    },
     {
       "date": "2026-07-21",
       "project_count": 6,
@@ -718,19 +759,395 @@
     },
     {
       "date": "2026-10-13",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 4,
+      "merchant_count": 4,
+      "reviewer_count": 4,
+      "approved": 4,
       "rejected": 1
     }
   ],
   "reviewer": {
-    "total_reviewed": 971,
-    "approved": 948,
+    "total_reviewed": 975,
+    "approved": 952,
     "rejected": 23
   },
   "top_projects": [
+    {
+      "name": "Bitbiashara 🇰🇪",
+      "count": 74,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrqlnfgrlxreklxlvlrvuuka93uu4qn028662awhnhutwe589dz0qu9j9f6",
+          "date": "2026-10-13",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2109641227498918098",
+          "date": "2026-10-13",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2108926244901273852",
+          "date": "2026-10-10",
+          "merchant": "Peshy's beauty parlour"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfvc3a7uex7338jlec3un2cfsvl47qtvlvplyc8u5pchev3l8af9qhu9zjz",
+          "date": "2026-10-10",
+          "merchant": "Peshy's beauty parlour"
+        },
+        {
+          "url": "https://x.com/i/status/2108584188496543759",
+          "date": "2026-10-09",
+          "merchant": "Tena cyberpalace"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9kusfkyz7qmejy7a3eagrkrcavlseshpt2cu7g95xrxl3gw5z7xc283m0j",
+          "date": "2026-10-09",
+          "merchant": "Tena cyberpalace"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfnt2n7wucr9g4yqtngmx0jfddhuvtd6zpjnk0mez4wzpzntset8qjx8r74",
+          "date": "2026-10-07",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2107902599764549825",
+          "date": "2026-10-07",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2106312697310556494",
+          "date": "2026-10-04",
+          "merchant": "Peshy's beauty parlour"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrgzqc65mtwvtkztj9yr5yt7gtmz76reec9knmy7fczeepqauay0qaerds0",
+          "date": "2026-10-04",
+          "merchant": "Peshy's beauty parlour"
+        },
+        {
+          "url": "https://x.com/i/status/2105630110741107052",
+          "date": "2026-10-01",
+          "merchant": "Chips point"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9qkwx8wvdsnqmr80crkt2mrjv78demara4aqc4mewf5nrqgntr7cq0c5rt",
+          "date": "2026-10-01",
+          "merchant": "Chips point"
+        },
+        {
+          "url": "https://x.com/i/status/2104535106656342445",
+          "date": "2026-09-28",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxktl2tzp7htpp4prcjlqg6llmfffje5fknyshyek553v05yh0mzsp8z2re",
+          "date": "2026-09-28",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq6ltfsxhp6fem59hgkmz2nv4r0vnga3kumz83my2rqfnxakx668sv0q8gq",
+          "date": "2026-09-25",
+          "merchant": "Anselim Diapers"
+        },
+        {
+          "url": "https://x.com/i/status/2103492914051416476",
+          "date": "2026-09-25",
+          "merchant": "Anselim Diapers"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2lkxhel9vkhlgla9a53astl73a7wg2pn3e8l2dpxcwlh9crvvyxsjycxgx",
+          "date": "2026-09-23",
+          "merchant": "Kings & Queens Barber & Beauty Spa"
+        },
+        {
+          "url": "https://x.com/i/status/2102802204826415244",
+          "date": "2026-09-23",
+          "merchant": "Kings & Queens Barber & Beauty Spa"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs02xn2yvq34e6wwc33tdp6vy64zvmtjtsv9qq0qt59kdr385rsl9sdst0av",
+          "date": "2026-09-21",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2102060141747069072",
+          "date": "2026-09-21",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2101183067553448314",
+          "date": "2026-09-19",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8aqg87l2f39re6um76c2kyc7dnw08c7l7pnfj5ks6q26ksldj9vsve287r",
+          "date": "2026-09-19",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2100472047142941101",
+          "date": "2026-09-17",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvrq7h2y0gmpgnqc7h5qcd57qycqwule4pa6zdfg3k9cw9hkw3qsgts0efn",
+          "date": "2026-09-17",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszgwqz4kxapr9pc2hsft3qjn7tzdp508qmhetv0ls7zdk5zqtcf9ccjhp60",
+          "date": "2026-09-14",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2099531567735382225",
+          "date": "2026-09-14",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2099158870283162088",
+          "date": "2026-09-14",
+          "merchant": "Tena cyberpalace"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswnczc728gw9ucufs0y7y3lhfpwgnjv6hk9tutx5c5jg28u4dydlctk2j7v",
+          "date": "2026-09-14",
+          "merchant": "Tena cyberpalace"
+        },
+        {
+          "url": "https://x.com/i/status/2098479187984060732",
+          "date": "2026-09-11",
+          "merchant": "Viwa Accessories"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswrmhaanw6pxzmkenzy8ev4fel9yz9mgfr957tqaspmet3kyl3zkqtf92xl",
+          "date": "2026-09-11",
+          "merchant": "Viwa Accessories"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsr9c72pyyde5urwwdq30dgkytmr4j9nd7xfahng8g2p404zyapqeq4x60ut",
+          "date": "2026-09-09",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2097397472784232451",
+          "date": "2026-09-09",
+          "merchant": "Manu Groceries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswwnj78dhp060mpz47kwj0a9kn503d20hcjxwn8r9n90m69cfgz0s88m4tm",
+          "date": "2026-09-06",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2096454462491517417",
+          "date": "2026-09-06",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxt6mjuxhgsseae505ae8n8axly4f3hlv4hhu8symhe5xpzmefmucre99ml",
+          "date": "2026-09-03",
+          "merchant": "Tena cyberpalace"
+        },
+        {
+          "url": "https://x.com/i/status/2095575834618990955",
+          "date": "2026-09-03",
+          "merchant": "Tena cyberpalace"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyjxk2v3703jwpkhr2kthn3lfm5la48ruzsyrzpypytslpa5k2dnc4nrgs4",
+          "date": "2026-09-01",
+          "merchant": "Peshy's beauty parlour"
+        },
+        {
+          "url": "https://x.com/i/status/2094814443762794962",
+          "date": "2026-09-01",
+          "merchant": "Peshy's beauty parlour"
+        },
+        {
+          "url": "https://x.com/i/status/2093728847711653895",
+          "date": "2026-08-30",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdp00usz9j0hm4wyqk479rz385p527q6zlu74tyh4gemtagya5y7qy70a2r",
+          "date": "2026-08-30",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqcycxct2lrr9sslkpquvcffxutj9kgapghdx69cgfhusms2mvcrsp7ghzz",
+          "date": "2026-08-26",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2092639782245417199",
+          "date": "2026-08-26",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2091802665160249596",
+          "date": "2026-08-24",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgywrc8470ugl05yw9rsmxmc2tq0g7qtk0n5khat9hx985hqll35gznr2xg",
+          "date": "2026-08-24",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfwyx0e0rtwvk6f6ema8gr8f5kdjsg8p32c8w7n7guwwmaq56gg0szyzwf0",
+          "date": "2026-08-23",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2091234193510650182",
+          "date": "2026-08-23",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9alc7cskwvnk2243x07wsnq8fwdaf2xswrv54xn5k9sfe6spejlqfqd9d5",
+          "date": "2026-08-19",
+          "merchant": "Viwa Accessories"
+        },
+        {
+          "url": "https://x.com/i/status/2090105862836679074",
+          "date": "2026-08-19",
+          "merchant": "Viwa Accessories"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgzn3cgherz4cwfjmdmctxyfzaejhj0fva3a09cdd38nsuy222m5cxncgjx",
+          "date": "2026-08-18",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2089560150306648383",
+          "date": "2026-08-18",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2088691751397548498",
+          "date": "2026-08-15",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspm4pu94j6plj9eytct8yc03xfyl37mpw7unemw3q4eqwtqj2csvgm68wce",
+          "date": "2026-08-15",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2087982128285839773",
+          "date": "2026-08-14",
+          "merchant": "Chips point"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszmmye49vr3f4wv3p7mh7d42ekcdq9xte8dl9ccmdzm6wk9j4ngzgl5v0tg",
+          "date": "2026-08-14",
+          "merchant": "Chips point"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspxrcuaz9qc9pz7cwzpwl6t5s9r0mytq3nj722z8a4au4tytywangckhenm",
+          "date": "2026-08-10",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2086841996040126506",
+          "date": "2026-08-10",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswvcf30de2c22tap5vtsgca2dfa8t95llw66ex2hy0m54fqqf3dacg3tsyu",
+          "date": "2026-08-07",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://x.com/i/status/2085681536121139340",
+          "date": "2026-08-07",
+          "merchant": "Haven food court"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstg92srcyd37hy6wv5z29krhqx3ug3sna86f9xjduds7g5a95jgmqhl8sy6",
+          "date": "2026-08-05",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2085027632907764162",
+          "date": "2026-08-05",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2084266877677625787",
+          "date": "2026-08-03",
+          "merchant": "Peshy's beauty parlour"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8er4azcsfmtw9m5zrt2w7ak0m8wd54r5g635tfhfydswwylhddkc9pp8ns",
+          "date": "2026-08-03",
+          "merchant": "Peshy's beauty parlour"
+        },
+        {
+          "url": "https://x.com/i/status/2083553639331680299",
+          "date": "2026-08-01",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9m3t5xzfdy8xh0z82f7j4zynatvtmhyfpj0a9du3458w5ffzt26g486pw9",
+          "date": "2026-08-01",
+          "merchant": "Lydiah Richland Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2082499030563602941",
+          "date": "2026-07-29",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsr8ttp3mh7a3vuezm3cx6n84sr4nwg60hzqsz7xyzgm7k63uzjs6s0jm43e",
+          "date": "2026-07-29",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://x.com/i/status/2081694764999512353",
+          "date": "2026-07-27",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs02gj42kgg8lsru4lprzafat24aa6mthhu4kjztse5evs8r9mntac6z4pt9",
+          "date": "2026-07-27",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://x.com/i/status/2080956184073212072",
+          "date": "2026-07-25",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfz5e72seaagwawpua0vw46l6cexw30znww5wfmdm680mlt0mmxqgevhm08",
+          "date": "2026-07-25",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgv4z6tmwrmnuq29h5je65j9lxz9zttk94qj70vhmcmsprnv2zd3qnuy300",
+          "date": "2026-07-23",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2080343524411588719",
+          "date": "2026-07-23",
+          "merchant": "Aqua Selim"
+        },
+        {
+          "url": "https://x.com/i/status/2079145001175457854",
+          "date": "2026-07-20",
+          "merchant": "Bliss beauty Salon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspdl2a9qd3yh2uaknmhx79zdzwc0826dxlgqnlgkwtapkgmwcsh8chyardx",
+          "date": "2026-07-20",
+          "merchant": "Bliss beauty Salon"
+        }
+      ]
+    },
     {
       "name": "Bitcoin Chama 🇰🇪",
       "count": 73,
@@ -1103,372 +1520,6 @@
       ]
     },
     {
-      "name": "Bitbiashara 🇰🇪",
-      "count": 72,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2108926244901273852",
-          "date": "2026-10-10",
-          "merchant": "Peshy's beauty parlour"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfvc3a7uex7338jlec3un2cfsvl47qtvlvplyc8u5pchev3l8af9qhu9zjz",
-          "date": "2026-10-10",
-          "merchant": "Peshy's beauty parlour"
-        },
-        {
-          "url": "https://x.com/i/status/2108584188496543759",
-          "date": "2026-10-09",
-          "merchant": "Tena cyberpalace"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9kusfkyz7qmejy7a3eagrkrcavlseshpt2cu7g95xrxl3gw5z7xc283m0j",
-          "date": "2026-10-09",
-          "merchant": "Tena cyberpalace"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfnt2n7wucr9g4yqtngmx0jfddhuvtd6zpjnk0mez4wzpzntset8qjx8r74",
-          "date": "2026-10-07",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2107902599764549825",
-          "date": "2026-10-07",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2106312697310556494",
-          "date": "2026-10-04",
-          "merchant": "Peshy's beauty parlour"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrgzqc65mtwvtkztj9yr5yt7gtmz76reec9knmy7fczeepqauay0qaerds0",
-          "date": "2026-10-04",
-          "merchant": "Peshy's beauty parlour"
-        },
-        {
-          "url": "https://x.com/i/status/2105630110741107052",
-          "date": "2026-10-01",
-          "merchant": "Chips point"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9qkwx8wvdsnqmr80crkt2mrjv78demara4aqc4mewf5nrqgntr7cq0c5rt",
-          "date": "2026-10-01",
-          "merchant": "Chips point"
-        },
-        {
-          "url": "https://x.com/i/status/2104535106656342445",
-          "date": "2026-09-28",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxktl2tzp7htpp4prcjlqg6llmfffje5fknyshyek553v05yh0mzsp8z2re",
-          "date": "2026-09-28",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq6ltfsxhp6fem59hgkmz2nv4r0vnga3kumz83my2rqfnxakx668sv0q8gq",
-          "date": "2026-09-25",
-          "merchant": "Anselim Diapers"
-        },
-        {
-          "url": "https://x.com/i/status/2103492914051416476",
-          "date": "2026-09-25",
-          "merchant": "Anselim Diapers"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2lkxhel9vkhlgla9a53astl73a7wg2pn3e8l2dpxcwlh9crvvyxsjycxgx",
-          "date": "2026-09-23",
-          "merchant": "Kings & Queens Barber & Beauty Spa"
-        },
-        {
-          "url": "https://x.com/i/status/2102802204826415244",
-          "date": "2026-09-23",
-          "merchant": "Kings & Queens Barber & Beauty Spa"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs02xn2yvq34e6wwc33tdp6vy64zvmtjtsv9qq0qt59kdr385rsl9sdst0av",
-          "date": "2026-09-21",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2102060141747069072",
-          "date": "2026-09-21",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2101183067553448314",
-          "date": "2026-09-19",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8aqg87l2f39re6um76c2kyc7dnw08c7l7pnfj5ks6q26ksldj9vsve287r",
-          "date": "2026-09-19",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://x.com/i/status/2100472047142941101",
-          "date": "2026-09-17",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvrq7h2y0gmpgnqc7h5qcd57qycqwule4pa6zdfg3k9cw9hkw3qsgts0efn",
-          "date": "2026-09-17",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszgwqz4kxapr9pc2hsft3qjn7tzdp508qmhetv0ls7zdk5zqtcf9ccjhp60",
-          "date": "2026-09-14",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2099531567735382225",
-          "date": "2026-09-14",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2099158870283162088",
-          "date": "2026-09-14",
-          "merchant": "Tena cyberpalace"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswnczc728gw9ucufs0y7y3lhfpwgnjv6hk9tutx5c5jg28u4dydlctk2j7v",
-          "date": "2026-09-14",
-          "merchant": "Tena cyberpalace"
-        },
-        {
-          "url": "https://x.com/i/status/2098479187984060732",
-          "date": "2026-09-11",
-          "merchant": "Viwa Accessories"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswrmhaanw6pxzmkenzy8ev4fel9yz9mgfr957tqaspmet3kyl3zkqtf92xl",
-          "date": "2026-09-11",
-          "merchant": "Viwa Accessories"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsr9c72pyyde5urwwdq30dgkytmr4j9nd7xfahng8g2p404zyapqeq4x60ut",
-          "date": "2026-09-09",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://x.com/i/status/2097397472784232451",
-          "date": "2026-09-09",
-          "merchant": "Manu Groceries"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswwnj78dhp060mpz47kwj0a9kn503d20hcjxwn8r9n90m69cfgz0s88m4tm",
-          "date": "2026-09-06",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2096454462491517417",
-          "date": "2026-09-06",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxt6mjuxhgsseae505ae8n8axly4f3hlv4hhu8symhe5xpzmefmucre99ml",
-          "date": "2026-09-03",
-          "merchant": "Tena cyberpalace"
-        },
-        {
-          "url": "https://x.com/i/status/2095575834618990955",
-          "date": "2026-09-03",
-          "merchant": "Tena cyberpalace"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyjxk2v3703jwpkhr2kthn3lfm5la48ruzsyrzpypytslpa5k2dnc4nrgs4",
-          "date": "2026-09-01",
-          "merchant": "Peshy's beauty parlour"
-        },
-        {
-          "url": "https://x.com/i/status/2094814443762794962",
-          "date": "2026-09-01",
-          "merchant": "Peshy's beauty parlour"
-        },
-        {
-          "url": "https://x.com/i/status/2093728847711653895",
-          "date": "2026-08-30",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdp00usz9j0hm4wyqk479rz385p527q6zlu74tyh4gemtagya5y7qy70a2r",
-          "date": "2026-08-30",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsqcycxct2lrr9sslkpquvcffxutj9kgapghdx69cgfhusms2mvcrsp7ghzz",
-          "date": "2026-08-26",
-          "merchant": "Aqua Selim"
-        },
-        {
-          "url": "https://x.com/i/status/2092639782245417199",
-          "date": "2026-08-26",
-          "merchant": "Aqua Selim"
-        },
-        {
-          "url": "https://x.com/i/status/2091802665160249596",
-          "date": "2026-08-24",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgywrc8470ugl05yw9rsmxmc2tq0g7qtk0n5khat9hx985hqll35gznr2xg",
-          "date": "2026-08-24",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfwyx0e0rtwvk6f6ema8gr8f5kdjsg8p32c8w7n7guwwmaq56gg0szyzwf0",
-          "date": "2026-08-23",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2091234193510650182",
-          "date": "2026-08-23",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9alc7cskwvnk2243x07wsnq8fwdaf2xswrv54xn5k9sfe6spejlqfqd9d5",
-          "date": "2026-08-19",
-          "merchant": "Viwa Accessories"
-        },
-        {
-          "url": "https://x.com/i/status/2090105862836679074",
-          "date": "2026-08-19",
-          "merchant": "Viwa Accessories"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgzn3cgherz4cwfjmdmctxyfzaejhj0fva3a09cdd38nsuy222m5cxncgjx",
-          "date": "2026-08-18",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2089560150306648383",
-          "date": "2026-08-18",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2088691751397548498",
-          "date": "2026-08-15",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspm4pu94j6plj9eytct8yc03xfyl37mpw7unemw3q4eqwtqj2csvgm68wce",
-          "date": "2026-08-15",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://x.com/i/status/2087982128285839773",
-          "date": "2026-08-14",
-          "merchant": "Chips point"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszmmye49vr3f4wv3p7mh7d42ekcdq9xte8dl9ccmdzm6wk9j4ngzgl5v0tg",
-          "date": "2026-08-14",
-          "merchant": "Chips point"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspxrcuaz9qc9pz7cwzpwl6t5s9r0mytq3nj722z8a4au4tytywangckhenm",
-          "date": "2026-08-10",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2086841996040126506",
-          "date": "2026-08-10",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswvcf30de2c22tap5vtsgca2dfa8t95llw66ex2hy0m54fqqf3dacg3tsyu",
-          "date": "2026-08-07",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://x.com/i/status/2085681536121139340",
-          "date": "2026-08-07",
-          "merchant": "Haven food court"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstg92srcyd37hy6wv5z29krhqx3ug3sna86f9xjduds7g5a95jgmqhl8sy6",
-          "date": "2026-08-05",
-          "merchant": "Aqua Selim"
-        },
-        {
-          "url": "https://x.com/i/status/2085027632907764162",
-          "date": "2026-08-05",
-          "merchant": "Aqua Selim"
-        },
-        {
-          "url": "https://x.com/i/status/2084266877677625787",
-          "date": "2026-08-03",
-          "merchant": "Peshy's beauty parlour"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8er4azcsfmtw9m5zrt2w7ak0m8wd54r5g635tfhfydswwylhddkc9pp8ns",
-          "date": "2026-08-03",
-          "merchant": "Peshy's beauty parlour"
-        },
-        {
-          "url": "https://x.com/i/status/2083553639331680299",
-          "date": "2026-08-01",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9m3t5xzfdy8xh0z82f7j4zynatvtmhyfpj0a9du3458w5ffzt26g486pw9",
-          "date": "2026-08-01",
-          "merchant": "Lydiah Richland Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2082499030563602941",
-          "date": "2026-07-29",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsr8ttp3mh7a3vuezm3cx6n84sr4nwg60hzqsz7xyzgm7k63uzjs6s0jm43e",
-          "date": "2026-07-29",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://x.com/i/status/2081694764999512353",
-          "date": "2026-07-27",
-          "merchant": "Bliss beauty Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs02gj42kgg8lsru4lprzafat24aa6mthhu4kjztse5evs8r9mntac6z4pt9",
-          "date": "2026-07-27",
-          "merchant": "Bliss beauty Salon"
-        },
-        {
-          "url": "https://x.com/i/status/2080956184073212072",
-          "date": "2026-07-25",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfz5e72seaagwawpua0vw46l6cexw30znww5wfmdm680mlt0mmxqgevhm08",
-          "date": "2026-07-25",
-          "merchant": "Grandsmatt"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgv4z6tmwrmnuq29h5je65j9lxz9zttk94qj70vhmcmsprnv2zd3qnuy300",
-          "date": "2026-07-23",
-          "merchant": "Aqua Selim"
-        },
-        {
-          "url": "https://x.com/i/status/2080343524411588719",
-          "date": "2026-07-23",
-          "merchant": "Aqua Selim"
-        },
-        {
-          "url": "https://x.com/i/status/2079145001175457854",
-          "date": "2026-07-20",
-          "merchant": "Bliss beauty Salon"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspdl2a9qd3yh2uaknmhx79zdzwc0826dxlgqnlgkwtapkgmwcsh8chyardx",
-          "date": "2026-07-20",
-          "merchant": "Bliss beauty Salon"
-        }
-      ]
-    },
-    {
       "name": "Bitcoin Dua 🇬🇭",
       "count": 71,
       "posts": [
@@ -1830,6 +1881,342 @@
       ]
     },
     {
+      "name": "Bitcoin Karoo 🇿🇦",
+      "count": 66,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp4nrt2080ynh0y9n7rduh2jh3c64j439k4qcpmtasey2u9dr567c9jz0cc",
+          "date": "2026-10-13",
+          "merchant": "Rasal MD Cafe"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdrq7tqr4autzm3uf7sf5hft600kve90sepqqfss89xgrplu2mpfggunjvd",
+          "date": "2026-10-12",
+          "merchant": "De Rust TennisKlub"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0cd9y80v7qn8g8tm7k7sjn88dd2g0cxh36kdzqzzs6zpp0qxvpvqd26hdh",
+          "date": "2026-10-06",
+          "merchant": "Nouvelle Saison"
+        },
+        {
+          "url": "https://x.com/i/status/2107358024859803809",
+          "date": "2026-10-06",
+          "merchant": "Nouvelle Saison"
+        },
+        {
+          "url": "https://x.com/i/status/2107079446742094294",
+          "date": "2026-10-05",
+          "merchant": "De Rust TennisKlub"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszkzjgnap979peusyzq5wgccdn5ju0uyahwxpcmwvcnv2urguvvagafp5de",
+          "date": "2026-10-05",
+          "merchant": "De Rust TennisKlub"
+        },
+        {
+          "url": "https://x.com/i/status/2106979499329900594",
+          "date": "2026-10-05",
+          "merchant": "Nakamoto Coffee"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsryl6duwy8f0w22rwjet8td5kkgal0j820pe6dl6u4ecs5m3xz0pslntzdm",
+          "date": "2026-10-05",
+          "merchant": "Nakamoto Coffee"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvmmkllgg2r0md6m7w8dqfnve2rk5dz7h7jexmxhel3y6frevfl0sfcv3kq",
+          "date": "2026-10-01",
+          "merchant": "Nouvelle Saison"
+        },
+        {
+          "url": "https://x.com/i/status/2105654570307211289",
+          "date": "2026-10-01",
+          "merchant": "Nouvelle Saison"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs9keqfjzdmceg26k7wgz720mzchqhs0kka0xxxwjrh4hjkhmq289gx0lsd6",
+          "date": "2026-09-30",
+          "merchant": "Nakamoto Coffee"
+        },
+        {
+          "url": "https://x.com/i/status/2105215333707493577",
+          "date": "2026-09-30",
+          "merchant": "Nakamoto Coffee"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0a0ehwn2tt7eafr0kz89fxux6r5wxsxp88j5tuhzxjfk4vg7ntfc6fgge9",
+          "date": "2026-09-29",
+          "merchant": "De Rust TennisKlub"
+        },
+        {
+          "url": "https://x.com/i/status/2104881640723923345",
+          "date": "2026-09-29",
+          "merchant": "De Rust TennisKlub"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyx5p6npqkqk8uhux7r55zscjk4kxnx29d60nvr9k5kkeag7f7uagkk3qjt",
+          "date": "2026-09-23",
+          "merchant": "Rasal MD Cafe"
+        },
+        {
+          "url": "https://x.com/i/status/2102445646552633832",
+          "date": "2026-09-22",
+          "merchant": "Rasal MD Cafe"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0wmkpl29ak72yzhdmnpz4uaxts0dwewjlv02qnkqjtdk5wt0x66csj2uq6",
+          "date": "2026-09-22",
+          "merchant": "De Rust TennisKlub"
+        },
+        {
+          "url": "https://x.com/i/status/2102035038833418367",
+          "date": "2026-09-21",
+          "merchant": "De Rust TennisKlub"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstg8p8xr3rl2m4a976njdrpgqhycw28phj0t96nker9saezzwwcsqmvlv8c",
+          "date": "2026-09-21",
+          "merchant": "Nouvelle Saison"
+        },
+        {
+          "url": "https://x.com/i/status/2101923559991845112",
+          "date": "2026-09-21",
+          "merchant": "Nouvelle Saison"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfw7yjvmzwgqqtcrecc5fxtge0vrv8px8wghxmu6u5ekq3twza2pq54rfny",
+          "date": "2026-09-17",
+          "merchant": "Rasal MD Cafe"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstla928pr92wsz4pfn9zuqvp4zefvkatnkmka9ukdyw9zk4v8fqec33vqum",
+          "date": "2026-09-16",
+          "merchant": "De Rust TennisKlub"
+        },
+        {
+          "url": "https://x.com/i/status/2099803252673925499",
+          "date": "2026-09-15",
+          "merchant": "De Rust TennisKlub"
+        },
+        {
+          "url": "https://x.com/i/status/2099426302512042132",
+          "date": "2026-09-15",
+          "merchant": "Nouvelle Saison"
+        },
+        {
+          "url": "https://x.com/i/status/2099581931268485232",
+          "date": "2026-09-15",
+          "merchant": "Rasal MD Cafe"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyuwj8kf90zyfv9jamqq47g4rqfsy50v5vrg4mnumn40vr33uj06c6cctyr",
+          "date": "2026-09-14",
+          "merchant": "Nouvelle Saison"
+        },
+        {
+          "url": "https://x.com/i/status/2098406213234925574",
+          "date": "2026-09-11",
+          "merchant": "Rasal MD Cafe"
+        },
+        {
+          "url": "https://x.com/i/status/2097607666013008091",
+          "date": "2026-09-10",
+          "merchant": "Nouvelle Saison"
+        },
+        {
+          "url": "https://x.com/i/status/2096932755816813051",
+          "date": "2026-09-07",
+          "merchant": "De Rust TennisKlub"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrdazlzcyslr6mrrfxgtsgeus47csqnse2evhwmse32jx7x4xqvzgekfzsc",
+          "date": "2026-09-07",
+          "merchant": "Rasal MD Cafe"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswemkyu04dj7c2e25uxrktrflmrkjqypk2k9mqty5xvlsdp9agnnsdaz7u8",
+          "date": "2026-09-07",
+          "merchant": "Nakamoto Coffee"
+        },
+        {
+          "url": "https://x.com/i/status/2095392342781890954",
+          "date": "2026-09-03",
+          "merchant": "Rasal MD Cafe"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsf2dzenuu3qewu2z6hcs5ffq2ql4j7g83c7ldkrvq9fjqxuvq0q6g6jczq8",
+          "date": "2026-09-02",
+          "merchant": "Nouvelle Saison"
+        },
+        {
+          "url": "https://x.com/i/status/2094800743572164952",
+          "date": "2026-09-01",
+          "merchant": "Nakamoto Coffee"
+        },
+        {
+          "url": "https://x.com/i/status/2094296756376735839",
+          "date": "2026-08-31",
+          "merchant": "Nouvelle Saison"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszwytutfupf66g0f9hkex7femg5ceklcje58hgch8wh6xrz3tyjqq93y5vs",
+          "date": "2026-08-31",
+          "merchant": "Nouvelle Saison"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfy8zwx820y8tsf8zrfr0ehhffx7pu4sfklt022hn86x7xeaz5pgqrwy94z",
+          "date": "2026-08-31",
+          "merchant": "The Beans Café"
+        },
+        {
+          "url": "https://x.com/i/status/2092910300601188842",
+          "date": "2026-08-27",
+          "merchant": "The Beans Café"
+        },
+        {
+          "url": "https://x.com/i/status/2091801376749686987",
+          "date": "2026-08-24",
+          "merchant": "Nouvelle Saison"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdmaa0l3ywe8k8mzw233smzpv3vrreuygqjxf7346qyvt08wzkvcqkrv3zv",
+          "date": "2026-08-23",
+          "merchant": "Herries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsq6u62zcm6rk3ww8gqx7ktuk6muekkxtzefqtw555fet3aewnepuqtmgyxc",
+          "date": "2026-08-23",
+          "merchant": "Beans about Coffee Oudtshoorn"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8aqehvrm87gd9huytjpfng7wyzcwds2syk4r57usmttljt2rmv6q0yr8z5",
+          "date": "2026-08-23",
+          "merchant": "Doornkraal Padstal & Wine Cellar"
+        },
+        {
+          "url": "https://x.com/i/status/2091454432273691129",
+          "date": "2026-08-23",
+          "merchant": "Herries"
+        },
+        {
+          "url": "https://x.com/i/status/2090365585477579144",
+          "date": "2026-08-20",
+          "merchant": "Doornkraal Padstal & Wine Cellar"
+        },
+        {
+          "url": "https://x.com/i/status/2090045273565172224",
+          "date": "2026-08-19",
+          "merchant": "Beans about Coffee Oudtshoorn"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsds6cphcuq3du7yvdx5wrj2g35vh0l379r6ssmxapj63q3y463yrczqscn0",
+          "date": "2026-08-16",
+          "merchant": "Herries"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspaeklmdcfl2vj8t8jwqywwss4h72sdl77qxy095ugclpv7gwxtyqq96nes",
+          "date": "2026-08-16",
+          "merchant": "Nouvelle Saison"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfr6sdful46vgn3jtg79ztuhdtlyjqtezw8lpmzn2xm9dk4mnnzvcrlsrqw",
+          "date": "2026-08-16",
+          "merchant": "Kwallos Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2088913981691789576",
+          "date": "2026-08-16",
+          "merchant": "Herries"
+        },
+        {
+          "url": "https://x.com/i/status/2087819218590830914",
+          "date": "2026-08-13",
+          "merchant": "Nouvelle Saison"
+        },
+        {
+          "url": "https://x.com/i/status/2087438886544748956",
+          "date": "2026-08-12",
+          "merchant": "Kwallos Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyatsqg67vhgtx0cvd99lp443ntuz6d5l74j4kpdhwdnvlf2a7jnsr8dvcy",
+          "date": "2026-08-09",
+          "merchant": "Doornkraal Padstal & Wine Cellar"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs96hhksmq95nrtvq0wzanxufg6zp6yywjqf0wtn4lz2664fyvsy7smce2cg",
+          "date": "2026-08-09",
+          "merchant": "Beans about Coffee Oudtshoorn"
+        },
+        {
+          "url": "https://x.com/i/status/2086394047619285269",
+          "date": "2026-08-09",
+          "merchant": "Doornkraal Padstal & Wine Cellar"
+        },
+        {
+          "url": "https://x.com/i/status/2085449692133912823",
+          "date": "2026-08-06",
+          "merchant": "Beans about Coffee Oudtshoorn"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstkf645gj6l4uu0xvlf7v5ncl59gc08zq5h808zl0kn4jm4m9r2fg0zdzfz",
+          "date": "2026-08-03",
+          "merchant": "Pluim Eatery"
+        },
+        {
+          "url": "https://x.com/i/status/2084269045801496764",
+          "date": "2026-08-03",
+          "merchant": "Pluim Eatery"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswz3200vntmf6pg7dqs2985u4zgvetz8e3d3jl5lm4tmprtkwf37gs9mj7r",
+          "date": "2026-08-01",
+          "merchant": "Beans about Coffee Oudtshoorn"
+        },
+        {
+          "url": "https://x.com/i/status/2083556623658729482",
+          "date": "2026-08-01",
+          "merchant": "Beans about Coffee Oudtshoorn"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsy8p0rmaavnxrhylgxspc7thf6nssjlm0j3hcgqpau5v6t2glzqlch8uw87",
+          "date": "2026-07-29",
+          "merchant": "Ray’s Coffee Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2082361485318070483",
+          "date": "2026-07-29",
+          "merchant": "Ray’s Coffee Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs2aek4jtq2e63t27w6hn9amsmmr2s93yfzjzeveauvlj4zxwhcdnsx2k09z",
+          "date": "2026-07-28",
+          "merchant": "Pluim Eatery"
+        },
+        {
+          "url": "https://x.com/i/status/2082029353974538558",
+          "date": "2026-07-28",
+          "merchant": "Pluim Eatery"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyprwgtaczhwlfaj9eu48wr2tve2yywkq3chk7phpvjcnu269j0tsqrm6gc",
+          "date": "2026-07-26",
+          "merchant": "Pluim Eatery"
+        },
+        {
+          "url": "https://x.com/i/status/2081317663628738700",
+          "date": "2026-07-26",
+          "merchant": "Pluim Eatery"
+        },
+        {
+          "url": "https://x.com/i/status/2079529948348289400",
+          "date": "2026-07-21",
+          "merchant": "Ray’s Coffee Shop"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Dombo 🇲🇿",
       "count": 65,
       "posts": [
@@ -2157,337 +2544,6 @@
           "url": "https://x.com/i/status/2079627256809341092",
           "date": "2026-07-22",
           "merchant": "Paulo Take Away"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Karoo 🇿🇦",
-      "count": 65,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsdrq7tqr4autzm3uf7sf5hft600kve90sepqqfss89xgrplu2mpfggunjvd",
-          "date": "2026-10-12",
-          "merchant": "De Rust TennisKlub"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0cd9y80v7qn8g8tm7k7sjn88dd2g0cxh36kdzqzzs6zpp0qxvpvqd26hdh",
-          "date": "2026-10-06",
-          "merchant": "Nouvelle Saison"
-        },
-        {
-          "url": "https://x.com/i/status/2107358024859803809",
-          "date": "2026-10-06",
-          "merchant": "Nouvelle Saison"
-        },
-        {
-          "url": "https://x.com/i/status/2107079446742094294",
-          "date": "2026-10-05",
-          "merchant": "De Rust TennisKlub"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszkzjgnap979peusyzq5wgccdn5ju0uyahwxpcmwvcnv2urguvvagafp5de",
-          "date": "2026-10-05",
-          "merchant": "De Rust TennisKlub"
-        },
-        {
-          "url": "https://x.com/i/status/2106979499329900594",
-          "date": "2026-10-05",
-          "merchant": "Nakamoto Coffee"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsryl6duwy8f0w22rwjet8td5kkgal0j820pe6dl6u4ecs5m3xz0pslntzdm",
-          "date": "2026-10-05",
-          "merchant": "Nakamoto Coffee"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvmmkllgg2r0md6m7w8dqfnve2rk5dz7h7jexmxhel3y6frevfl0sfcv3kq",
-          "date": "2026-10-01",
-          "merchant": "Nouvelle Saison"
-        },
-        {
-          "url": "https://x.com/i/status/2105654570307211289",
-          "date": "2026-10-01",
-          "merchant": "Nouvelle Saison"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs9keqfjzdmceg26k7wgz720mzchqhs0kka0xxxwjrh4hjkhmq289gx0lsd6",
-          "date": "2026-09-30",
-          "merchant": "Nakamoto Coffee"
-        },
-        {
-          "url": "https://x.com/i/status/2105215333707493577",
-          "date": "2026-09-30",
-          "merchant": "Nakamoto Coffee"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0a0ehwn2tt7eafr0kz89fxux6r5wxsxp88j5tuhzxjfk4vg7ntfc6fgge9",
-          "date": "2026-09-29",
-          "merchant": "De Rust TennisKlub"
-        },
-        {
-          "url": "https://x.com/i/status/2104881640723923345",
-          "date": "2026-09-29",
-          "merchant": "De Rust TennisKlub"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyx5p6npqkqk8uhux7r55zscjk4kxnx29d60nvr9k5kkeag7f7uagkk3qjt",
-          "date": "2026-09-23",
-          "merchant": "Rasal MD Cafe"
-        },
-        {
-          "url": "https://x.com/i/status/2102445646552633832",
-          "date": "2026-09-22",
-          "merchant": "Rasal MD Cafe"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0wmkpl29ak72yzhdmnpz4uaxts0dwewjlv02qnkqjtdk5wt0x66csj2uq6",
-          "date": "2026-09-22",
-          "merchant": "De Rust TennisKlub"
-        },
-        {
-          "url": "https://x.com/i/status/2102035038833418367",
-          "date": "2026-09-21",
-          "merchant": "De Rust TennisKlub"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstg8p8xr3rl2m4a976njdrpgqhycw28phj0t96nker9saezzwwcsqmvlv8c",
-          "date": "2026-09-21",
-          "merchant": "Nouvelle Saison"
-        },
-        {
-          "url": "https://x.com/i/status/2101923559991845112",
-          "date": "2026-09-21",
-          "merchant": "Nouvelle Saison"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfw7yjvmzwgqqtcrecc5fxtge0vrv8px8wghxmu6u5ekq3twza2pq54rfny",
-          "date": "2026-09-17",
-          "merchant": "Rasal MD Cafe"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstla928pr92wsz4pfn9zuqvp4zefvkatnkmka9ukdyw9zk4v8fqec33vqum",
-          "date": "2026-09-16",
-          "merchant": "De Rust TennisKlub"
-        },
-        {
-          "url": "https://x.com/i/status/2099803252673925499",
-          "date": "2026-09-15",
-          "merchant": "De Rust TennisKlub"
-        },
-        {
-          "url": "https://x.com/i/status/2099426302512042132",
-          "date": "2026-09-15",
-          "merchant": "Nouvelle Saison"
-        },
-        {
-          "url": "https://x.com/i/status/2099581931268485232",
-          "date": "2026-09-15",
-          "merchant": "Rasal MD Cafe"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyuwj8kf90zyfv9jamqq47g4rqfsy50v5vrg4mnumn40vr33uj06c6cctyr",
-          "date": "2026-09-14",
-          "merchant": "Nouvelle Saison"
-        },
-        {
-          "url": "https://x.com/i/status/2098406213234925574",
-          "date": "2026-09-11",
-          "merchant": "Rasal MD Cafe"
-        },
-        {
-          "url": "https://x.com/i/status/2097607666013008091",
-          "date": "2026-09-10",
-          "merchant": "Nouvelle Saison"
-        },
-        {
-          "url": "https://x.com/i/status/2096932755816813051",
-          "date": "2026-09-07",
-          "merchant": "De Rust TennisKlub"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrdazlzcyslr6mrrfxgtsgeus47csqnse2evhwmse32jx7x4xqvzgekfzsc",
-          "date": "2026-09-07",
-          "merchant": "Rasal MD Cafe"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswemkyu04dj7c2e25uxrktrflmrkjqypk2k9mqty5xvlsdp9agnnsdaz7u8",
-          "date": "2026-09-07",
-          "merchant": "Nakamoto Coffee"
-        },
-        {
-          "url": "https://x.com/i/status/2095392342781890954",
-          "date": "2026-09-03",
-          "merchant": "Rasal MD Cafe"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsf2dzenuu3qewu2z6hcs5ffq2ql4j7g83c7ldkrvq9fjqxuvq0q6g6jczq8",
-          "date": "2026-09-02",
-          "merchant": "Nouvelle Saison"
-        },
-        {
-          "url": "https://x.com/i/status/2094800743572164952",
-          "date": "2026-09-01",
-          "merchant": "Nakamoto Coffee"
-        },
-        {
-          "url": "https://x.com/i/status/2094296756376735839",
-          "date": "2026-08-31",
-          "merchant": "Nouvelle Saison"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszwytutfupf66g0f9hkex7femg5ceklcje58hgch8wh6xrz3tyjqq93y5vs",
-          "date": "2026-08-31",
-          "merchant": "Nouvelle Saison"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfy8zwx820y8tsf8zrfr0ehhffx7pu4sfklt022hn86x7xeaz5pgqrwy94z",
-          "date": "2026-08-31",
-          "merchant": "The Beans Café"
-        },
-        {
-          "url": "https://x.com/i/status/2092910300601188842",
-          "date": "2026-08-27",
-          "merchant": "The Beans Café"
-        },
-        {
-          "url": "https://x.com/i/status/2091801376749686987",
-          "date": "2026-08-24",
-          "merchant": "Nouvelle Saison"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdmaa0l3ywe8k8mzw233smzpv3vrreuygqjxf7346qyvt08wzkvcqkrv3zv",
-          "date": "2026-08-23",
-          "merchant": "Herries"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsq6u62zcm6rk3ww8gqx7ktuk6muekkxtzefqtw555fet3aewnepuqtmgyxc",
-          "date": "2026-08-23",
-          "merchant": "Beans about Coffee Oudtshoorn"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8aqehvrm87gd9huytjpfng7wyzcwds2syk4r57usmttljt2rmv6q0yr8z5",
-          "date": "2026-08-23",
-          "merchant": "Doornkraal Padstal & Wine Cellar"
-        },
-        {
-          "url": "https://x.com/i/status/2091454432273691129",
-          "date": "2026-08-23",
-          "merchant": "Herries"
-        },
-        {
-          "url": "https://x.com/i/status/2090365585477579144",
-          "date": "2026-08-20",
-          "merchant": "Doornkraal Padstal & Wine Cellar"
-        },
-        {
-          "url": "https://x.com/i/status/2090045273565172224",
-          "date": "2026-08-19",
-          "merchant": "Beans about Coffee Oudtshoorn"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsds6cphcuq3du7yvdx5wrj2g35vh0l379r6ssmxapj63q3y463yrczqscn0",
-          "date": "2026-08-16",
-          "merchant": "Herries"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspaeklmdcfl2vj8t8jwqywwss4h72sdl77qxy095ugclpv7gwxtyqq96nes",
-          "date": "2026-08-16",
-          "merchant": "Nouvelle Saison"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfr6sdful46vgn3jtg79ztuhdtlyjqtezw8lpmzn2xm9dk4mnnzvcrlsrqw",
-          "date": "2026-08-16",
-          "merchant": "Kwallos Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2088913981691789576",
-          "date": "2026-08-16",
-          "merchant": "Herries"
-        },
-        {
-          "url": "https://x.com/i/status/2087819218590830914",
-          "date": "2026-08-13",
-          "merchant": "Nouvelle Saison"
-        },
-        {
-          "url": "https://x.com/i/status/2087438886544748956",
-          "date": "2026-08-12",
-          "merchant": "Kwallos Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyatsqg67vhgtx0cvd99lp443ntuz6d5l74j4kpdhwdnvlf2a7jnsr8dvcy",
-          "date": "2026-08-09",
-          "merchant": "Doornkraal Padstal & Wine Cellar"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs96hhksmq95nrtvq0wzanxufg6zp6yywjqf0wtn4lz2664fyvsy7smce2cg",
-          "date": "2026-08-09",
-          "merchant": "Beans about Coffee Oudtshoorn"
-        },
-        {
-          "url": "https://x.com/i/status/2086394047619285269",
-          "date": "2026-08-09",
-          "merchant": "Doornkraal Padstal & Wine Cellar"
-        },
-        {
-          "url": "https://x.com/i/status/2085449692133912823",
-          "date": "2026-08-06",
-          "merchant": "Beans about Coffee Oudtshoorn"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqstkf645gj6l4uu0xvlf7v5ncl59gc08zq5h808zl0kn4jm4m9r2fg0zdzfz",
-          "date": "2026-08-03",
-          "merchant": "Pluim Eatery"
-        },
-        {
-          "url": "https://x.com/i/status/2084269045801496764",
-          "date": "2026-08-03",
-          "merchant": "Pluim Eatery"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswz3200vntmf6pg7dqs2985u4zgvetz8e3d3jl5lm4tmprtkwf37gs9mj7r",
-          "date": "2026-08-01",
-          "merchant": "Beans about Coffee Oudtshoorn"
-        },
-        {
-          "url": "https://x.com/i/status/2083556623658729482",
-          "date": "2026-08-01",
-          "merchant": "Beans about Coffee Oudtshoorn"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsy8p0rmaavnxrhylgxspc7thf6nssjlm0j3hcgqpau5v6t2glzqlch8uw87",
-          "date": "2026-07-29",
-          "merchant": "Ray’s Coffee Shop"
-        },
-        {
-          "url": "https://x.com/i/status/2082361485318070483",
-          "date": "2026-07-29",
-          "merchant": "Ray’s Coffee Shop"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs2aek4jtq2e63t27w6hn9amsmmr2s93yfzjzeveauvlj4zxwhcdnsx2k09z",
-          "date": "2026-07-28",
-          "merchant": "Pluim Eatery"
-        },
-        {
-          "url": "https://x.com/i/status/2082029353974538558",
-          "date": "2026-07-28",
-          "merchant": "Pluim Eatery"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyprwgtaczhwlfaj9eu48wr2tve2yywkq3chk7phpvjcnu269j0tsqrm6gc",
-          "date": "2026-07-26",
-          "merchant": "Pluim Eatery"
-        },
-        {
-          "url": "https://x.com/i/status/2081317663628738700",
-          "date": "2026-07-26",
-          "merchant": "Pluim Eatery"
-        },
-        {
-          "url": "https://x.com/i/status/2079529948348289400",
-          "date": "2026-07-21",
-          "merchant": "Ray’s Coffee Shop"
         }
       ]
     },
@@ -4888,8 +4944,13 @@
     },
     {
       "name": "Bitcoin NextGen 🇳🇬",
-      "count": 29,
+      "count": 30,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs03z7gjerj797kxzlztupt729s5pr9e04dry6t7j8v0qgmh0axltsxq0y0n",
+          "date": "2026-10-13",
+          "merchant": "Emmy Store"
+        },
         {
           "url": "https://x.com/i/status/2109610539374579752",
           "date": "2026-10-12",
@@ -5705,8 +5766,13 @@
   "top_merchants": [
     {
       "name": "Emmy Store",
-      "count": 23,
+      "count": 24,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs03z7gjerj797kxzlztupt729s5pr9e04dry6t7j8v0qgmh0axltsxq0y0n",
+          "date": "2026-10-13",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
         {
           "url": "https://x.com/i/status/2109610539374579752",
           "date": "2026-10-12",
@@ -5941,6 +6007,112 @@
       ]
     },
     {
+      "name": "Haven food court",
+      "count": 20,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrqlnfgrlxreklxlvlrvuuka93uu4qn028662awhnhutwe589dz0qu9j9f6",
+          "date": "2026-10-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2109641227498918098",
+          "date": "2026-10-13",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfnt2n7wucr9g4yqtngmx0jfddhuvtd6zpjnk0mez4wzpzntset8qjx8r74",
+          "date": "2026-10-07",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2107902599764549825",
+          "date": "2026-10-07",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2104535106656342445",
+          "date": "2026-09-28",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsxktl2tzp7htpp4prcjlqg6llmfffje5fknyshyek553v05yh0mzsp8z2re",
+          "date": "2026-09-28",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs02xn2yvq34e6wwc33tdp6vy64zvmtjtsv9qq0qt59kdr385rsl9sdst0av",
+          "date": "2026-09-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2102060141747069072",
+          "date": "2026-09-21",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqszgwqz4kxapr9pc2hsft3qjn7tzdp508qmhetv0ls7zdk5zqtcf9ccjhp60",
+          "date": "2026-09-14",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2099531567735382225",
+          "date": "2026-09-14",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswwnj78dhp060mpz47kwj0a9kn503d20hcjxwn8r9n90m69cfgz0s88m4tm",
+          "date": "2026-09-06",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2096454462491517417",
+          "date": "2026-09-06",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2091802665160249596",
+          "date": "2026-08-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgywrc8470ugl05yw9rsmxmc2tq0g7qtk0n5khat9hx985hqll35gznr2xg",
+          "date": "2026-08-24",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgzn3cgherz4cwfjmdmctxyfzaejhj0fva3a09cdd38nsuy222m5cxncgjx",
+          "date": "2026-08-18",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2089560150306648383",
+          "date": "2026-08-18",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspxrcuaz9qc9pz7cwzpwl6t5s9r0mytq3nj722z8a4au4tytywangckhenm",
+          "date": "2026-08-10",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2086841996040126506",
+          "date": "2026-08-10",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswvcf30de2c22tap5vtsgca2dfa8t95llw66ex2hy0m54fqqf3dacg3tsyu",
+          "date": "2026-08-07",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2085681536121139340",
+          "date": "2026-08-07",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Mary Shop",
       "count": 18,
       "posts": [
@@ -6129,102 +6301,6 @@
           "url": "https://primal.net/e/nevent1qqs025kh3h6ja8j340qjlqp6ngv9gzsuyvetvemtzuqvu22nzqu8yjqt8c669",
           "date": "2026-07-29",
           "project": "Bitcoin Sisonke 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Haven food court",
-      "count": 18,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsfnt2n7wucr9g4yqtngmx0jfddhuvtd6zpjnk0mez4wzpzntset8qjx8r74",
-          "date": "2026-10-07",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2107902599764549825",
-          "date": "2026-10-07",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2104535106656342445",
-          "date": "2026-09-28",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsxktl2tzp7htpp4prcjlqg6llmfffje5fknyshyek553v05yh0mzsp8z2re",
-          "date": "2026-09-28",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs02xn2yvq34e6wwc33tdp6vy64zvmtjtsv9qq0qt59kdr385rsl9sdst0av",
-          "date": "2026-09-21",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2102060141747069072",
-          "date": "2026-09-21",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqszgwqz4kxapr9pc2hsft3qjn7tzdp508qmhetv0ls7zdk5zqtcf9ccjhp60",
-          "date": "2026-09-14",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2099531567735382225",
-          "date": "2026-09-14",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswwnj78dhp060mpz47kwj0a9kn503d20hcjxwn8r9n90m69cfgz0s88m4tm",
-          "date": "2026-09-06",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2096454462491517417",
-          "date": "2026-09-06",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2091802665160249596",
-          "date": "2026-08-24",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgywrc8470ugl05yw9rsmxmc2tq0g7qtk0n5khat9hx985hqll35gznr2xg",
-          "date": "2026-08-24",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgzn3cgherz4cwfjmdmctxyfzaejhj0fva3a09cdd38nsuy222m5cxncgjx",
-          "date": "2026-08-18",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2089560150306648383",
-          "date": "2026-08-18",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspxrcuaz9qc9pz7cwzpwl6t5s9r0mytq3nj722z8a4au4tytywangckhenm",
-          "date": "2026-08-10",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2086841996040126506",
-          "date": "2026-08-10",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqswvcf30de2c22tap5vtsgca2dfa8t95llw66ex2hy0m54fqqf3dacg3tsyu",
-          "date": "2026-08-07",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2085681536121139340",
-          "date": "2026-08-07",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -8901,6 +8977,52 @@
       ]
     },
     {
+      "name": "Rasal MD Cafe",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsp4nrt2080ynh0y9n7rduh2jh3c64j439k4qcpmtasey2u9dr567c9jz0cc",
+          "date": "2026-10-13",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsyx5p6npqkqk8uhux7r55zscjk4kxnx29d60nvr9k5kkeag7f7uagkk3qjt",
+          "date": "2026-09-23",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2102445646552633832",
+          "date": "2026-09-22",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfw7yjvmzwgqqtcrecc5fxtge0vrv8px8wghxmu6u5ekq3twza2pq54rfny",
+          "date": "2026-09-17",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2099581931268485232",
+          "date": "2026-09-15",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2098406213234925574",
+          "date": "2026-09-11",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrdazlzcyslr6mrrfxgtsgeus47csqnse2evhwmse32jx7x4xqvzgekfzsc",
+          "date": "2026-09-07",
+          "project": "Bitcoin Karoo 🇿🇦"
+        },
+        {
+          "url": "https://x.com/i/status/2095392342781890954",
+          "date": "2026-09-03",
+          "project": "Bitcoin Karoo 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Jabulani Shop 3",
       "count": 7,
       "posts": [
@@ -9020,47 +9142,6 @@
           "url": "https://x.com/i/status/2081440817755877517",
           "date": "2026-07-27",
           "project": "BitJR Academy 🇿🇲"
-        }
-      ]
-    },
-    {
-      "name": "Rasal MD Cafe",
-      "count": 7,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsyx5p6npqkqk8uhux7r55zscjk4kxnx29d60nvr9k5kkeag7f7uagkk3qjt",
-          "date": "2026-09-23",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2102445646552633832",
-          "date": "2026-09-22",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfw7yjvmzwgqqtcrecc5fxtge0vrv8px8wghxmu6u5ekq3twza2pq54rfny",
-          "date": "2026-09-17",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2099581931268485232",
-          "date": "2026-09-15",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2098406213234925574",
-          "date": "2026-09-11",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsrdazlzcyslr6mrrfxgtsgeus47csqnse2evhwmse32jx7x4xqvzgekfzsc",
-          "date": "2026-09-07",
-          "project": "Bitcoin Karoo 🇿🇦"
-        },
-        {
-          "url": "https://x.com/i/status/2095392342781890954",
-          "date": "2026-09-03",
-          "project": "Bitcoin Karoo 🇿🇦"
         }
       ]
     },
@@ -11552,22 +11633,22 @@
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 85,
+    "days_active": 86,
     "daily_average_payments": 33
   },
   "burn_rate": {
-    "percentage": 106,
+    "percentage": 105,
     "status": "on_target",
-    "days_active": 85
+    "days_active": 86
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2815
+      "count": 2826
     },
     {
       "domain": "8333.mobi",
-      "count": 48
+      "count": 49
     },
     {
       "domain": "rurbit.com",
@@ -11618,13 +11699,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1527
+      "count": 1530
     },
     {
       "platform": "Nostr",
-      "count": 1360
+      "count": 1369
     }
   ],
-  "generated_at": "2026-10-13T07:05:01.304204+00:00",
+  "generated_at": "2026-10-13T19:05:01.161207+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
