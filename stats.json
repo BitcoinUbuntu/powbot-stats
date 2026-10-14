@@ -1,67 +1,37 @@
 {
   "totals": {
-    "all_payments": 2899,
+    "all_payments": 2908,
     "by_type": {
       "merchant": {
-        "count": 968
+        "count": 971
       },
       "project": {
-        "count": 968
+        "count": 971
       },
       "reviewer": {
-        "count": 963
+        "count": 966
       }
     }
   },
   "today": {
-    "date": "2026-10-13",
-    "payments": 12,
-    "by_type": {
-      "merchant": {
-        "count": 4
-      },
-      "project": {
-        "count": 4
-      },
-      "reviewer": {
-        "count": 4
-      }
-    },
-    "approved": 4,
-    "rejected": 1,
-    "videos": [
-      {
-        "url": "https://primal.net/e/nevent1qqsp4nrt2080ynh0y9n7rduh2jh3c64j439k4qcpmtasey2u9dr567c9jz0cc",
-        "project": "Bitcoin Karoo 🇿🇦",
-        "merchant": "Rasal MD Cafe",
-        "platform": "Nostr",
-        "time": "16:34"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsrqlnfgrlxreklxlvlrvuuka93uu4qn028662awhnhutwe589dz0qu9j9f6",
-        "project": "Bitbiashara 🇰🇪",
-        "merchant": "Haven food court",
-        "platform": "Nostr",
-        "time": "16:28"
-      },
-      {
-        "url": "https://x.com/i/status/2109641227498918098",
-        "project": "Bitbiashara 🇰🇪",
-        "merchant": "Haven food court",
-        "platform": "X",
-        "time": "16:27"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqs03z7gjerj797kxzlztupt729s5pr9e04dry6t7j8v0qgmh0axltsxq0y0n",
-        "project": "Bitcoin NextGen 🇳🇬",
-        "merchant": "Emmy Store",
-        "platform": "Nostr",
-        "time": "16:27"
-      }
-    ]
+    "date": "2026-10-14",
+    "payments": 0,
+    "by_type": {},
+    "approved": 0,
+    "rejected": 0,
+    "videos": []
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Bitcoin NextGen 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Dombo 🇲🇿"
+      },
       {
         "project": "Bitcoin Karoo 🇿🇦"
       },
@@ -77,14 +47,6 @@
     ]
   },
   "daily": [
-    {
-      "date": "2026-07-20",
-      "project_count": 6,
-      "merchant_count": 6,
-      "reviewer_count": 5,
-      "approved": 5,
-      "rejected": 2
-    },
     {
       "date": "2026-07-21",
       "project_count": 6,
@@ -759,16 +721,24 @@
     },
     {
       "date": "2026-10-13",
-      "project_count": 4,
-      "merchant_count": 4,
-      "reviewer_count": 4,
-      "approved": 4,
+      "project_count": 7,
+      "merchant_count": 7,
+      "reviewer_count": 7,
+      "approved": 7,
       "rejected": 1
+    },
+    {
+      "date": "2026-10-14",
+      "project_count": 0,
+      "merchant_count": 0,
+      "reviewer_count": 0,
+      "approved": 0,
+      "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 975,
-    "approved": 952,
+    "total_reviewed": 978,
+    "approved": 955,
     "rejected": 23
   },
   "top_projects": [
@@ -2218,8 +2188,13 @@
     },
     {
       "name": "Bitcoin Dombo 🇲🇿",
-      "count": 65,
+      "count": 66,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2110063305746227537",
+          "date": "2026-10-13",
+          "merchant": "Isac Mini-Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsw9cv3mk8wccyswp4aecz9uwqsjn5mn3kdvej699cfqf3f56rjhcsd7d2uw",
           "date": "2026-10-10",
@@ -4944,8 +4919,18 @@
     },
     {
       "name": "Bitcoin NextGen 🇳🇬",
-      "count": 30,
+      "count": 32,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2110005802555584828",
+          "date": "2026-10-13",
+          "merchant": "Sabahood Academy"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrzxxdmqdf6l6l0pwvdsnr8m4dt3m64mcedmgqf9f4l9c08thwwyqglj0pu",
+          "date": "2026-10-13",
+          "merchant": "Sabahood Academy"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs03z7gjerj797kxzlztupt729s5pr9e04dry6t7j8v0qgmh0axltsxq0y0n",
           "date": "2026-10-13",
@@ -9023,6 +9008,98 @@
       ]
     },
     {
+      "name": "Isac Mini-Shop",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2110063305746227537",
+          "date": "2026-10-13",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2106759101346701427",
+          "date": "2026-10-04",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgpnxk8carq6dj5mdun6p5nfv2m2qfethsv2256yu52y8eqkyu8scm4zd5j",
+          "date": "2026-09-16",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2100189567076688324",
+          "date": "2026-09-16",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2095387391305412761",
+          "date": "2026-09-03",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsp9tf3kku8dzveh8u293aldd462ynmtp7299z5fvu8uvpcz8wkhtqr2f8du",
+          "date": "2026-09-03",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://x.com/i/status/2079662374005440595",
+          "date": "2026-07-22",
+          "project": "Bitcoin Dombo 🇲🇿"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs85nycttzww5rqajgpa94x7t26wknvs69nm6525mmk4l8sxuanseqg8jd77",
+          "date": "2026-07-22",
+          "project": "Bitcoin Dombo 🇲🇿"
+        }
+      ]
+    },
+    {
+      "name": "Sabahood Academy",
+      "count": 8,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2110005802555584828",
+          "date": "2026-10-13",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrzxxdmqdf6l6l0pwvdsnr8m4dt3m64mcedmgqf9f4l9c08thwwyqglj0pu",
+          "date": "2026-10-13",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8wf6z20l8gy30zv3fpvsqtjetvawdt3300zu7fw6zc43jw8sgazckl9m5v",
+          "date": "2026-10-05",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2107035075036561763",
+          "date": "2026-10-05",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8lql9mgp2x629j4xk4t7l2q7ec94unqy8rpv6hslhdlqv5e57h0gge9l8u",
+          "date": "2026-10-02",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2105910140419350574",
+          "date": "2026-10-02",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdw58mgwqyf4jkek70wzhnj0rw3dxqm4cjawy3qe98a3n939alx8qfyqk6x",
+          "date": "2026-09-21",
+          "project": "Bitcoin NextGen 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2101936433317531998",
+          "date": "2026-09-21",
+          "project": "Bitcoin NextGen 🇳🇬"
+        }
+      ]
+    },
+    {
       "name": "Jabulani Shop 3",
       "count": 7,
       "posts": [
@@ -9183,47 +9260,6 @@
           "url": "https://primal.net/e/nevent1qqsxfaf4w6q3yzyqjeyec0e0p6glq2y6xm9mfk8shf2dqh7laaufm7qxr69fs",
           "date": "2026-08-24",
           "project": "Bitcoin Aves 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Isac Mini-Shop",
-      "count": 7,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2106759101346701427",
-          "date": "2026-10-04",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsgpnxk8carq6dj5mdun6p5nfv2m2qfethsv2256yu52y8eqkyu8scm4zd5j",
-          "date": "2026-09-16",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2100189567076688324",
-          "date": "2026-09-16",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2095387391305412761",
-          "date": "2026-09-03",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsp9tf3kku8dzveh8u293aldd462ynmtp7299z5fvu8uvpcz8wkhtqr2f8du",
-          "date": "2026-09-03",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://x.com/i/status/2079662374005440595",
-          "date": "2026-07-22",
-          "project": "Bitcoin Dombo 🇲🇿"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs85nycttzww5rqajgpa94x7t26wknvs69nm6525mmk4l8sxuanseqg8jd77",
-          "date": "2026-07-22",
-          "project": "Bitcoin Dombo 🇲🇿"
         }
       ]
     },
@@ -9620,42 +9656,6 @@
           "url": "https://x.com/i/status/2094800743572164952",
           "date": "2026-09-01",
           "project": "Bitcoin Karoo 🇿🇦"
-        }
-      ]
-    },
-    {
-      "name": "Sabahood Academy",
-      "count": 6,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs8wf6z20l8gy30zv3fpvsqtjetvawdt3300zu7fw6zc43jw8sgazckl9m5v",
-          "date": "2026-10-05",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2107035075036561763",
-          "date": "2026-10-05",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8lql9mgp2x629j4xk4t7l2q7ec94unqy8rpv6hslhdlqv5e57h0gge9l8u",
-          "date": "2026-10-02",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2105910140419350574",
-          "date": "2026-10-02",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsdw58mgwqyf4jkek70wzhnj0rw3dxqm4cjawy3qe98a3n939alx8qfyqk6x",
-          "date": "2026-09-21",
-          "project": "Bitcoin NextGen 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2101936433317531998",
-          "date": "2026-09-21",
-          "project": "Bitcoin NextGen 🇳🇬"
         }
       ]
     },
@@ -11644,11 +11644,11 @@
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2826
+      "count": 2833
     },
     {
       "domain": "8333.mobi",
-      "count": 49
+      "count": 51
     },
     {
       "domain": "rurbit.com",
@@ -11699,13 +11699,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1530
+      "count": 1536
     },
     {
       "platform": "Nostr",
-      "count": 1369
+      "count": 1372
     }
   ],
-  "generated_at": "2026-10-13T19:05:01.161207+00:00",
+  "generated_at": "2026-10-14T07:05:01.271145+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
