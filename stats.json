@@ -1,25 +1,92 @@
 {
   "totals": {
-    "all_payments": 3076,
+    "all_payments": 3100,
     "by_type": {
       "merchant": {
-        "count": 1027
+        "count": 1035
       },
       "project": {
-        "count": 1027
+        "count": 1035
       },
       "reviewer": {
-        "count": 1022
+        "count": 1030
       }
     }
   },
   "today": {
     "date": "2026-10-17",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 24,
+    "by_type": {
+      "merchant": {
+        "count": 8
+      },
+      "project": {
+        "count": 8
+      },
+      "reviewer": {
+        "count": 8
+      }
+    },
+    "approved": 8,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://x.com/i/status/2111427971349127312",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "X",
+        "time": "14:38"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsquy3qhj77yml4h2py5f8vm99u6xgu9v0x5vkaxfz5ljnwkq43pgsqndna5",
+        "project": "Bitbiashara 🇰🇪",
+        "merchant": "Grandsmatt",
+        "platform": "Nostr",
+        "time": "14:38"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs97jm37kxqesadxnesxrfthva8z6y2rm8mwpwx8vhwefr2ld85wasksej96",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "Nostr",
+        "time": "14:38"
+      },
+      {
+        "url": "https://x.com/i/status/2111408638627627501",
+        "project": "Bitcoin Chama 🇰🇪",
+        "merchant": "Mary Shop",
+        "platform": "X",
+        "time": "14:38"
+      },
+      {
+        "url": "https://x.com/i/status/2111388367644463195",
+        "project": "Calabar Bitcoin Club 🇳🇬",
+        "merchant": "Food and Wine Shop",
+        "platform": "X",
+        "time": "14:37"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqs062v0kpd5tcht2hepnfg9rn2ryj5x6rth4vmxmmt3jgy9phlpnns8prxkr",
+        "project": "Calabar Bitcoin Club 🇳🇬",
+        "merchant": "Food and Wine Shop",
+        "platform": "Nostr",
+        "time": "14:37"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsgsgpjaqmx7lpv72mz5wsrgzqje7pdt95hl958vhhjg5j2q7xtesckgcx9m",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "Nostr",
+        "time": "14:37"
+      },
+      {
+        "url": "https://x.com/i/status/2111193233195762028",
+        "project": "BTC Shule 🇧🇮",
+        "merchant": "Kwa Innocent",
+        "platform": "X",
+        "time": "14:37"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
@@ -27,41 +94,40 @@
         "project": "Bitbiashara 🇰🇪"
       },
       {
-        "project": "Lwandi Bitcoin 🇲🇿"
+        "project": "Bitbiashara 🇰🇪"
       },
       {
-        "project": "Lwandi Bitcoin 🇲🇿"
+        "project": "Bitcoin Chama 🇰🇪"
       },
       {
-        "project": "Bitcoin Aves 🇬🇭"
+        "project": "Bitcoin Chama 🇰🇪"
       },
       {
-        "project": "Bitcoin Githurai 🇰🇪"
+        "project": "Calabar Bitcoin Club 🇳🇬"
       },
       {
-        "project": "Bitcoin Githurai 🇰🇪"
+        "project": "Calabar Bitcoin Club 🇳🇬"
       },
       {
-        "project": "Bitcoin Githurai 🇰🇪"
+        "project": "BTC Shule 🇧🇮"
       },
       {
-        "project": "Bitcoin Githurai 🇰🇪"
+        "project": "BTC Shule 🇧🇮"
       },
       {
-        "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Githurai 🇰🇪"
-      },
-      {
-        "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Karoo 🇿🇦"
+        "project": "Bitbiashara 🇰🇪"
       }
     ]
   },
   "daily": [
+    {
+      "date": "2026-07-20",
+      "project_count": 6,
+      "merchant_count": 6,
+      "reviewer_count": 5,
+      "approved": 5,
+      "rejected": 2
+    },
     {
       "date": "2026-07-21",
       "project_count": 6,
@@ -768,23 +834,33 @@
     },
     {
       "date": "2026-10-17",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 8,
+      "merchant_count": 8,
+      "reviewer_count": 8,
+      "approved": 8,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 1038,
-    "approved": 1011,
+    "total_reviewed": 1046,
+    "approved": 1019,
     "rejected": 27
   },
   "top_projects": [
     {
       "name": "Bitbiashara 🇰🇪",
-      "count": 76,
+      "count": 78,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2111427971349127312",
+          "date": "2026-10-17",
+          "merchant": "Grandsmatt"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsquy3qhj77yml4h2py5f8vm99u6xgu9v0x5vkaxfz5ljnwkq43pgsqndna5",
+          "date": "2026-10-17",
+          "merchant": "Grandsmatt"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsr0zeh95qkmhjcpyd59v7v9meg8zyj4nhv4q5jvvml3unwrgrgexqlcp0kr",
           "date": "2026-10-16",
@@ -1169,8 +1245,18 @@
     },
     {
       "name": "Bitcoin Chama 🇰🇪",
-      "count": 75,
+      "count": 77,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs97jm37kxqesadxnesxrfthva8z6y2rm8mwpwx8vhwefr2ld85wasksej96",
+          "date": "2026-10-17",
+          "merchant": "Mary Shop"
+        },
+        {
+          "url": "https://x.com/i/status/2111408638627627501",
+          "date": "2026-10-17",
+          "merchant": "Mary Shop"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs97ymgavh9z7aqmystkelcp3cax3u9fxjs2f4zz4wlwpmdvgyx6sqjp5hef",
           "date": "2026-10-14",
@@ -2969,8 +3055,18 @@
     },
     {
       "name": "Calabar Bitcoin Club 🇳🇬",
-      "count": 61,
+      "count": 63,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2111388367644463195",
+          "date": "2026-10-17",
+          "merchant": "Food and Wine Shop"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs062v0kpd5tcht2hepnfg9rn2ryj5x6rth4vmxmmt3jgy9phlpnns8prxkr",
+          "date": "2026-10-17",
+          "merchant": "Food and Wine Shop"
+        },
         {
           "url": "https://x.com/i/status/2109411300350775585",
           "date": "2026-10-12",
@@ -3867,8 +3963,18 @@
     },
     {
       "name": "BTC Shule 🇧🇮",
-      "count": 49,
+      "count": 51,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgsgpjaqmx7lpv72mz5wsrgzqje7pdt95hl958vhhjg5j2q7xtesckgcx9m",
+          "date": "2026-10-17",
+          "merchant": "Kwa Innocent"
+        },
+        {
+          "url": "https://x.com/i/status/2111193233195762028",
+          "date": "2026-10-17",
+          "merchant": "Kwa Innocent"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsvn3tjk242vjvdvdewu9nemtr65j3xg8rfkpw2vjwq4svh9h4fghs6tgjuy",
           "date": "2026-10-15",
@@ -6533,9 +6639,125 @@
       ]
     },
     {
-      "name": "Mary Shop",
-      "count": 18,
+      "name": "Food and Wine Shop",
+      "count": 20,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2111388367644463195",
+          "date": "2026-10-17",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs062v0kpd5tcht2hepnfg9rn2ryj5x6rth4vmxmmt3jgy9phlpnns8prxkr",
+          "date": "2026-10-17",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsv57zhx4ksemu586gan55p0lskcjw5hg78aelnc9ep7pfuvdurx3s9n97tz",
+          "date": "2026-10-08",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2108144723575578879",
+          "date": "2026-10-08",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2104995838443602322",
+          "date": "2026-09-30",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqswy7usk0kpwl06kkffcw3htslxcyekgg3drvwf6dnx2zdzf88tjms2pstxm",
+          "date": "2026-09-30",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2103960791854518349",
+          "date": "2026-09-27",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdjuxt47lrrwsn4puu9fqfd48hara5y6wn8f2pt69eaeqnrw9fx8gm7kvg3",
+          "date": "2026-09-27",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2098086929661088219",
+          "date": "2026-09-10",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0qlpj2dynmduqh8u0wxh688pxnfzaa05r27m5gqy4f7z92rqffjq4qcwya",
+          "date": "2026-09-10",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2095938208324300915",
+          "date": "2026-09-04",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqstjmz5hpadseuu0mxsasc0tasrqfgfngyex2zqvg9ppnepdcuhx9g4w0clq",
+          "date": "2026-09-04",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2089309458073608661",
+          "date": "2026-08-17",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfuwyj5p22vz4myf6qete89akepntal4yggsth99rsveeefh65meqf692dd",
+          "date": "2026-08-17",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2087604882651934987",
+          "date": "2026-08-12",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8uf46xtva3nf0jwxnfg0hsqtlfcvku2grh6ql537qnw6z0l0lenqqrprlh",
+          "date": "2026-08-12",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2084246638906769677",
+          "date": "2026-08-03",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsqq9rcs4wj46vwakmeepd0nph4dyrdqncvyeez0pmr3c5pne0lhmg74a025",
+          "date": "2026-08-03",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsg9f48966df8f3pwsxft40tduzd80czcqtujv0real997xx2jjysqmyjw70",
+          "date": "2026-07-30",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2082594357404664168",
+          "date": "2026-07-30",
+          "project": "Calabar Bitcoin Club 🇳🇬"
+        }
+      ]
+    },
+    {
+      "name": "Mary Shop",
+      "count": 20,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs97jm37kxqesadxnesxrfthva8z6y2rm8mwpwx8vhwefr2ld85wasksej96",
+          "date": "2026-10-17",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2111408638627627501",
+          "date": "2026-10-17",
+          "project": "Bitcoin Chama 🇰🇪"
+        },
         {
           "url": "https://primal.net/e/nevent1qqs9q3k3cphkqd0a55pjd6elulue679ahuga6mwkfxwwydy9rzwtqlqvt5dwy",
           "date": "2026-10-02",
@@ -6629,98 +6851,103 @@
       ]
     },
     {
-      "name": "Food and Wine Shop",
-      "count": 18,
+      "name": "Kwa Innocent",
+      "count": 19,
       "posts": [
         {
-          "url": "https://primal.net/e/nevent1qqsv57zhx4ksemu586gan55p0lskcjw5hg78aelnc9ep7pfuvdurx3s9n97tz",
-          "date": "2026-10-08",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "url": "https://primal.net/e/nevent1qqsgsgpjaqmx7lpv72mz5wsrgzqje7pdt95hl958vhhjg5j2q7xtesckgcx9m",
+          "date": "2026-10-17",
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://x.com/i/status/2108144723575578879",
-          "date": "2026-10-08",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "url": "https://x.com/i/status/2111193233195762028",
+          "date": "2026-10-17",
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://x.com/i/status/2104995838443602322",
+          "url": "https://primal.net/e/nevent1qqsvu6732ytpgua7343h8znlztv3h939hw8dvcngx04h4u893gf8ulqcxyksc",
+          "date": "2026-10-06",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://x.com/i/status/2107199459868254586",
+          "date": "2026-10-06",
+          "project": "BTC Shule 🇧🇮"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8nt50khkdaq9qyggswuhefe7w3cjk5c2xxqqw4cdsshlz2xn9nkqm45x5z",
           "date": "2026-09-30",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://primal.net/e/nevent1qqswy7usk0kpwl06kkffcw3htslxcyekgg3drvwf6dnx2zdzf88tjms2pstxm",
+          "url": "https://x.com/i/status/2104635180279574867",
           "date": "2026-09-30",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://x.com/i/status/2103960791854518349",
-          "date": "2026-09-27",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "url": "https://primal.net/e/nevent1qqsvwrmuleymwwfjlhld7cpllpkrfy45f5hlm5rvsr0akp40v9pphccxlmgtr",
+          "date": "2026-09-21",
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://primal.net/e/nevent1qqsdjuxt47lrrwsn4puu9fqfd48hara5y6wn8f2pt69eaeqnrw9fx8gm7kvg3",
-          "date": "2026-09-27",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "url": "https://x.com/i/status/2102097316895154534",
+          "date": "2026-09-21",
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://x.com/i/status/2098086929661088219",
-          "date": "2026-09-10",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "url": "https://primal.net/e/nevent1qqs92p7ymxq032u08e6leecfyj0xd24qkjpgqg5fhm0q40hgj7kj0ecr6qkzp",
+          "date": "2026-09-17",
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://primal.net/e/nevent1qqs0qlpj2dynmduqh8u0wxh688pxnfzaa05r27m5gqy4f7z92rqffjq4qcwya",
-          "date": "2026-09-10",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "url": "https://x.com/i/status/2100273170611613758",
+          "date": "2026-09-17",
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://x.com/i/status/2095938208324300915",
-          "date": "2026-09-04",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "url": "https://primal.net/e/nevent1qqs0x3aaqm035c2wjree88k8v83cfslka226x3sucme48upvf6v29jsn8kmyf",
+          "date": "2026-09-05",
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://primal.net/e/nevent1qqstjmz5hpadseuu0mxsasc0tasrqfgfngyex2zqvg9ppnepdcuhx9g4w0clq",
-          "date": "2026-09-04",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "url": "https://x.com/i/status/2095903402412630080",
+          "date": "2026-09-05",
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://x.com/i/status/2089309458073608661",
-          "date": "2026-08-17",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "url": "https://primal.net/e/nevent1qqst54zcg7k4wvddxsaxnu3a2m55l2m7vnxaye862fv77w5u0d53qgspc8lp2",
+          "date": "2026-08-25",
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://primal.net/e/nevent1qqsfuwyj5p22vz4myf6qete89akepntal4yggsth99rsveeefh65meqf692dd",
-          "date": "2026-08-17",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "url": "https://x.com/i/status/2091932225126228239",
+          "date": "2026-08-25",
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://x.com/i/status/2087604882651934987",
-          "date": "2026-08-12",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "url": "https://primal.net/e/nevent1qqsyh2lhppr0gjvwdmga9nmc5yhkms685dywrnry9pytc09866llrfc4j5tdx",
+          "date": "2026-08-15",
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://primal.net/e/nevent1qqs8uf46xtva3nf0jwxnfg0hsqtlfcvku2grh6ql537qnw6z0l0lenqqrprlh",
-          "date": "2026-08-12",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "url": "https://x.com/i/status/2088354579205300457",
+          "date": "2026-08-15",
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://x.com/i/status/2084246638906769677",
-          "date": "2026-08-03",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "url": "https://x.com/i/status/2086496919312814126",
+          "date": "2026-08-09",
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://primal.net/e/nevent1qqsqq9rcs4wj46vwakmeepd0nph4dyrdqncvyeez0pmr3c5pne0lhmg74a025",
-          "date": "2026-08-03",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "url": "https://primal.net/e/nevent1qqsd0hctd3u69gjan8f6y5cfcm0a44fg2rcpxk9pty3t266hp902wvgq9t9pu",
+          "date": "2026-08-09",
+          "project": "BTC Shule 🇧🇮"
         },
         {
-          "url": "https://primal.net/e/nevent1qqsg9f48966df8f3pwsxft40tduzd80czcqtujv0real997xx2jjysqmyjw70",
-          "date": "2026-07-30",
-          "project": "Calabar Bitcoin Club 🇳🇬"
-        },
-        {
-          "url": "https://x.com/i/status/2082594357404664168",
-          "date": "2026-07-30",
-          "project": "Calabar Bitcoin Club 🇳🇬"
+          "url": "https://primal.net/e/nevent1qqsps6wea0aj0p523prdwyjzkvv9wcg9uk26n9mv4ruyz7fjn2yr4vcemzcfq",
+          "date": "2026-08-01",
+          "project": "BTC Shule 🇧🇮"
         }
       ]
     },
@@ -7009,97 +7236,6 @@
           "url": "https://x.com/i/status/2088208245890375698",
           "date": "2026-08-14",
           "project": "Bitcoin Aves 🇬🇭"
-        }
-      ]
-    },
-    {
-      "name": "Kwa Innocent",
-      "count": 17,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsvu6732ytpgua7343h8znlztv3h939hw8dvcngx04h4u893gf8ulqcxyksc",
-          "date": "2026-10-06",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2107199459868254586",
-          "date": "2026-10-06",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8nt50khkdaq9qyggswuhefe7w3cjk5c2xxqqw4cdsshlz2xn9nkqm45x5z",
-          "date": "2026-09-30",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2104635180279574867",
-          "date": "2026-09-30",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsvwrmuleymwwfjlhld7cpllpkrfy45f5hlm5rvsr0akp40v9pphccxlmgtr",
-          "date": "2026-09-21",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2102097316895154534",
-          "date": "2026-09-21",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs92p7ymxq032u08e6leecfyj0xd24qkjpgqg5fhm0q40hgj7kj0ecr6qkzp",
-          "date": "2026-09-17",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2100273170611613758",
-          "date": "2026-09-17",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs0x3aaqm035c2wjree88k8v83cfslka226x3sucme48upvf6v29jsn8kmyf",
-          "date": "2026-09-05",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2095903402412630080",
-          "date": "2026-09-05",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqst54zcg7k4wvddxsaxnu3a2m55l2m7vnxaye862fv77w5u0d53qgspc8lp2",
-          "date": "2026-08-25",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2091932225126228239",
-          "date": "2026-08-25",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsyh2lhppr0gjvwdmga9nmc5yhkms685dywrnry9pytc09866llrfc4j5tdx",
-          "date": "2026-08-15",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2088354579205300457",
-          "date": "2026-08-15",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://x.com/i/status/2086496919312814126",
-          "date": "2026-08-09",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd0hctd3u69gjan8f6y5cfcm0a44fg2rcpxk9pty3t266hp902wvgq9t9pu",
-          "date": "2026-08-09",
-          "project": "BTC Shule 🇧🇮"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsps6wea0aj0p523prdwyjzkvv9wcg9uk26n9mv4ruyz7fjn2yr4vcemzcfq",
-          "date": "2026-08-01",
-          "project": "BTC Shule 🇧🇮"
         }
       ]
     },
@@ -8854,6 +8990,62 @@
       ]
     },
     {
+      "name": "Grandsmatt",
+      "count": 10,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2111427971349127312",
+          "date": "2026-10-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsquy3qhj77yml4h2py5f8vm99u6xgu9v0x5vkaxfz5ljnwkq43pgsqndna5",
+          "date": "2026-10-17",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2101183067553448314",
+          "date": "2026-09-19",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs8aqg87l2f39re6um76c2kyc7dnw08c7l7pnfj5ks6q26ksldj9vsve287r",
+          "date": "2026-09-19",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2088691751397548498",
+          "date": "2026-08-15",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqspm4pu94j6plj9eytct8yc03xfyl37mpw7unemw3q4eqwtqj2csvgm68wce",
+          "date": "2026-08-15",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2082499030563602941",
+          "date": "2026-07-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsr8ttp3mh7a3vuezm3cx6n84sr4nwg60hzqsz7xyzgm7k63uzjs6s0jm43e",
+          "date": "2026-07-29",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2080956184073212072",
+          "date": "2026-07-25",
+          "project": "Bitbiashara 🇰🇪"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsfz5e72seaagwawpua0vw46l6cexw30znww5wfmdm680mlt0mmxqgevhm08",
+          "date": "2026-07-25",
+          "project": "Bitbiashara 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "AB Starry Communication",
       "count": 9,
       "posts": [
@@ -9238,52 +9430,6 @@
           "url": "https://x.com/i/status/2081667798112342246",
           "date": "2026-07-27",
           "project": "Bitcoin Tofo 🇲🇿"
-        }
-      ]
-    },
-    {
-      "name": "Grandsmatt",
-      "count": 8,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2101183067553448314",
-          "date": "2026-09-19",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqs8aqg87l2f39re6um76c2kyc7dnw08c7l7pnfj5ks6q26ksldj9vsve287r",
-          "date": "2026-09-19",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2088691751397548498",
-          "date": "2026-08-15",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqspm4pu94j6plj9eytct8yc03xfyl37mpw7unemw3q4eqwtqj2csvgm68wce",
-          "date": "2026-08-15",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2082499030563602941",
-          "date": "2026-07-29",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsr8ttp3mh7a3vuezm3cx6n84sr4nwg60hzqsz7xyzgm7k63uzjs6s0jm43e",
-          "date": "2026-07-29",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://x.com/i/status/2080956184073212072",
-          "date": "2026-07-25",
-          "project": "Bitbiashara 🇰🇪"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsfz5e72seaagwawpua0vw46l6cexw30znww5wfmdm680mlt0mmxqgevhm08",
-          "date": "2026-07-25",
-          "project": "Bitbiashara 🇰🇪"
         }
       ]
     },
@@ -12250,18 +12396,18 @@
   ],
   "launch": {
     "date": "Jul 20",
-    "days_active": 89,
+    "days_active": 90,
     "daily_average_payments": 34
   },
   "burn_rate": {
     "percentage": 107,
     "status": "on_target",
-    "days_active": 89
+    "days_active": 90
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 2993
+      "count": 3015
     },
     {
       "domain": "8333.mobi",
@@ -12269,7 +12415,7 @@
     },
     {
       "domain": "rurbit.com",
-      "count": 24
+      "count": 26
     },
     {
       "domain": "walletofsatoshi.com",
@@ -12316,13 +12462,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 1620
+      "count": 1632
     },
     {
       "platform": "Nostr",
-      "count": 1456
+      "count": 1468
     }
   ],
-  "generated_at": "2026-10-17T07:05:01.613103+00:00",
+  "generated_at": "2026-10-17T19:05:02.021822+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
