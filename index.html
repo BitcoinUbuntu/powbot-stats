@@ -303,6 +303,20 @@
         // ever carries an `epoch` object.
         let EPOCH = Object.assign({}, window.POWBOT_EPOCH);
 
+        // From EPOCH.end the page shows the epoch's results: the same page, with
+        // the live-only parts (the 48-hour views, "this week") set aside, until
+        // the next epoch is set in epoch-config.js.
+        function epochOver() {
+            const end = new Date(EPOCH.end);
+            return !isNaN(end) && Date.now() >= end;
+        }
+
+        // The epoch's last UTC day (the moment before it closes at midnight)
+        const lastDay = () => new Date(new Date(EPOCH.end).getTime() - 1);
+
+        // Where the recent-activity window ends: now, or the close once it is over
+        const windowEnd = () => (epochOver() ? new Date(EPOCH.end).getTime() : Date.now());
+
         // Format numbers with thousands separators
         function formatNumber(num) {
             return Number(num || 0).toLocaleString('en-GB');
@@ -382,7 +396,7 @@
         // Visits with a post inside the recent-activity window. Any post counts,
         // so a visit whose two posts straddle the edge still shows both links.
         function recentVisits() {
-            const start = Date.now() - ACTIVITY_WINDOW_HOURS * 60 * 60 * 1000;
+            const start = windowEnd() - ACTIVITY_WINDOW_HOURS * 60 * 60 * 1000;
             return (allVisits || []).filter(v => v.posts.some(x => parseTrackerTime(x.timestamp) >= start));
         }
 
@@ -423,8 +437,10 @@
             const approved = approvedPosts(stats);
             const merchants = stats.top_merchants?.length || 0;
             const summary = document.getElementById('summary');
+            const over = epochOver();
             summary.innerHTML = approved > 0
-                ? `<strong>${plural(projects, 'project', 'projects')}</strong> ${projects === 1 ? 'has' : 'have'} <strong>${plural(approved, 'post', 'posts')} approved</strong> at <strong>${plural(merchants, 'merchant', 'merchants')}</strong>.`
+                ? `<strong>${plural(projects, 'project', 'projects')}</strong> ${over ? 'had' : projects === 1 ? 'has' : 'have'} <strong>${plural(approved, 'post', 'posts')} approved</strong> at <strong>${plural(merchants, 'merchant', 'merchants')}</strong>.`
+                : over ? 'No posts were approved this epoch.'
                 : `No posts approved yet this epoch. The first project to post takes the top spot.`;
 
             renderProgress(stats);
@@ -437,13 +453,17 @@
         // can redraw the readouts
         let heroStats = null;
 
-        // Days into the epoch, and its planned length (as renderProgress)
+        // Days into the epoch, its length, and the days left: counted from the
+        // clock, so the last 24 hours before the close are the final day
+        // (left 1) and the close itself is left 0
         function epochDays(stats) {
             const start = new Date(EPOCH.start), end = new Date(EPOCH.end), now = new Date();
             if (isNaN(start) || isNaN(end) || now < start) return null;
             const total = Math.max(1, Math.round((end - start) / DAY_MS));
-            const day = stats.launch?.days_active > 0 ? stats.launch.days_active : Math.max(1, Math.ceil((now - start) / DAY_MS));
-            return { day: Math.min(day, total), total };
+            const left = Math.max(0, Math.ceil((end - now) / DAY_MS));
+            const day = left <= 1 ? total
+                : stats.launch?.days_active > 0 ? stats.launch.days_active : Math.max(1, Math.ceil((now - start) / DAY_MS));
+            return { day: Math.min(day, total), total, left };
         }
 
         // Standby strip: signal bars for member projects posting this epoch
@@ -454,15 +474,19 @@
             const projects = stats.top_projects?.length || 0;
             const members = memberTotals?.projects || 0;
             const days = epochDays(stats);
-            const left = days ? days.total - days.day : 0;
+            const left = days ? days.left : 0;
             const signal = members ? Math.min(5, Math.ceil(projects / members * 5)) : 0;
             const battery = days ? Math.min(4, Math.ceil(left / days.total * 4)) : 0;
             const bars = (n, lit, first, step) => Array.from({ length: n }, (_, i) =>
                 `<i class="${i < lit ? 'on' : ''}" style="width:${first + i * step}px"></i>`).join('');
+            const verb = left ? 'posting' : 'posted';
             box.querySelector('.sb-signal .sb-bars').innerHTML = bars(5, signal, 6, 5);
-            box.querySelector('.sb-signal .sb-cap').textContent = members ? `${projects}/${members} posting` : `${projects} posting`;
+            box.querySelector('.sb-signal .sb-cap').textContent = members ? `${projects}/${members} ${verb}` : `${projects} ${verb}`;
             box.querySelector('.sb-batt .sb-bars').innerHTML = bars(4, battery, 8, 6);
-            box.querySelector('.sb-batt .sb-cap').textContent = days ? plural(left, 'day left', 'days left') : '';
+            box.querySelector('.sb-batt .sb-cap').textContent = !days ? ''
+                : left === 0 ? 'Ended'
+                : left === 1 ? 'Final day'
+                : plural(left, 'day left', 'days left');
             const tick = () => {
                 const time = new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
                 box.querySelector('.sb-time').textContent = `${EPOCH.name} · ${time} UTC`;
@@ -506,12 +530,20 @@
             reads.push(reviewed
                 ? ['Approval', `${Math.round(approved / reviewed * 100)}%`, approved / reviewed, `${Math.round(approved / reviewed * 100)}% of reviewed posts approved`]
                 : ['Approval', '–', 0, 'No posts reviewed yet']);
-            // This epoch's projects with an approved post in the last 7 days
-            const active = Math.min(projects, activeThisWeek(stats));
-            // "this week" stays together if the label wraps (a no-break space)
-            reads.push(projects
-                ? ['Active this week', `${active}/${projects}`, active / projects, `${active} of this epoch's ${projects} projects posted in the last 7 days`]
-                : ['Active this week', '0', null, 'No projects posting yet']);
+            if (epochOver()) {
+                // "This week" means nothing once it has closed: the projects that took part
+                const members = memberTotals?.projects || 0;
+                reads.push(members
+                    ? ['Projects', `${projects}/${members}`, projects / members, `${projects} of the ${members} member projects had posts approved`]
+                    : ['Projects', formatNumber(projects), null, `${projects} projects had posts approved`]);
+            } else {
+                // This epoch's projects with an approved post in the last 7 days
+                const active = Math.min(projects, activeThisWeek(stats));
+                // "this week" stays together if the label wraps (a no-break space)
+                reads.push(projects
+                    ? ['Active this week', `${active}/${projects}`, active / projects, `${active} of this epoch's ${projects} projects posted in the last 7 days`]
+                    : ['Active this week', '0', null, 'No projects posting yet']);
+            }
             if (pastMerchants && merchants.length) {
                 const fresh = merchants.filter(m => !pastMerchants.names.has(m.name)).length;
                 reads.push(['New shops', `${fresh}/${merchants.length}`, fresh / merchants.length, `${fresh} of ${merchants.length} merchants are new to PoWBoT`]);
@@ -533,7 +565,8 @@
             const now = new Date();
             if (isNaN(start) || isNaN(end)) { el.innerHTML = ''; return; }
 
-            const endLabel = end.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', timeZone: 'UTC' });
+            const dateLabel = d => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', timeZone: 'UTC' });
+            const endLabel = dateLabel(lastDay());
 
             if (now < start) {
                 const startLabel = start.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
@@ -542,19 +575,19 @@
                 return;
             }
 
-            const total = Math.max(1, Math.round((end - start) / DAY_MS));
-            const day = stats.launch?.days_active > 0
-                ? stats.launch.days_active
-                : Math.max(1, Math.ceil((now - start) / DAY_MS));
-            const text = now < end
-                ? `Day ${day} of ${total}. Ends ${endLabel}.`
-                : `Day ${day}. Planned to end around ${endLabel}, so closing soon.`;
+            const { day, total, left } = epochDays(stats);
+            const text = left === 0
+                ? `Ran ${dateLabel(start)} to ${endLabel}, ${total} days.`
+                : left === 1
+                    ? `Day ${total} of ${total}, the final day. ${escapeHtml(EPOCH.name)} closes at midnight UTC.`
+                    : `Day ${day} of ${total}. Ends ${endLabel}.`;
+            const spoken = left === 0 ? `Ended after ${total} days` : `Day ${day} of ${total}`;
             const pct = Math.min(100, Math.round(day / total * 100));
             el.innerHTML = `
                 <p class="progress-text">${text}</p>
                 <div class="progress-track" role="progressbar" aria-label="${attrSafe(EPOCH.name)} progress"
-                     aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${Math.min(day, total)}"
-                     aria-valuetext="Day ${day} of ${total}">
+                     aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${day}"
+                     aria-valuetext="${spoken}">
                     <div class="progress-fill" style="width:${pct}%"></div>
                 </div>`;
         }
@@ -760,7 +793,7 @@
 
             let pulse = '';
             const r = stats.recent_activity;
-            if (r && (r.posts > 0 || stats.last_7d?.posts > 0)) {
+            if (!epochOver() && r && (r.posts > 0 || stats.last_7d?.posts > 0)) {
                 const parts = [`Last ${ACTIVITY_WINDOW_HOURS} hours: <strong>${plural(r.posts, 'post', 'posts')}</strong>, ${formatNumber(r.approved)} approved, ${formatNumber(r.pending)} pending, ${formatNumber(r.rejected)} rejected.`];
                 if (stats.last_7d) {
                     const w = stats.last_7d;
@@ -783,18 +816,26 @@
                 </section>`;
         }
 
+        // Once the epoch is over the window is its final 48 hours
+        function latestHead() {
+            return epochOver()
+                ? `<h2 id="latest-title">Last posts of the epoch</h2>
+                    <p class="section-note">Watch videos approved in the final ${ACTIVITY_WINDOW_HOURS}&nbsp;hours on Nostr and X.</p>`
+                : `<h2 id="latest-title">Latest approved posts</h2>
+                    <p class="section-note">Watch videos approved in the last ${ACTIVITY_WINDOW_HOURS}&nbsp;hours on Nostr and X.</p>`;
+        }
+
         function renderLatest(stats) {
             if (allVisits) {
                 const visits = recentVisits();
                 const rows = visits.map((v, i) => `<li class="${i >= LIST_ROWS ? 'is-more' : ''}">${visitRow(v)}</li>`).join('');
                 return `
                 <section class="section" aria-labelledby="latest-title">
-                    <h2 id="latest-title">Latest approved posts</h2>
-                    <p class="section-note">Watch videos approved in the last ${ACTIVITY_WINDOW_HOURS}&nbsp;hours on Nostr and X.</p>
+                    ${latestHead()}
                     ${visits.length
                         ? `<ul class="list visits" id="latest-list">${rows}</ul>
                            ${visits.length > LIST_ROWS ? `<button type="button" class="btn list-more" data-list="latest-list" data-label="Show all ${visits.length}" aria-controls="latest-list" aria-expanded="false">Show all ${visits.length}</button>` : ''}`
-                        : `<p>No posts approved in the last ${ACTIVITY_WINDOW_HOURS} hours yet.</p>`}
+                        : `<p>No posts approved in the ${epochOver() ? 'final' : 'last'} ${ACTIVITY_WINDOW_HOURS} hours${epochOver() ? '' : ' yet'}.</p>`}
                 </section>`;
             }
 
@@ -813,12 +854,11 @@
 
             return `
                 <section class="section" aria-labelledby="latest-title">
-                    <h2 id="latest-title">Latest approved posts</h2>
-                    <p class="section-note">Watch videos approved in the last ${ACTIVITY_WINDOW_HOURS}&nbsp;hours on Nostr and X.</p>
+                    ${latestHead()}
                     ${videos.length
                         ? `<ul class="list" id="latest-list">${items}</ul>
                            ${videos.length > LIST_ROWS ? `<button type="button" class="btn list-more" data-list="latest-list" data-label="Show all ${videos.length} posts" aria-controls="latest-list" aria-expanded="false">Show all ${videos.length} posts</button>` : ''}`
-                        : `<p>No posts approved in the last ${ACTIVITY_WINDOW_HOURS} hours yet.</p>`}
+                        : `<p>No posts approved in the ${epochOver() ? 'final' : 'last'} ${ACTIVITY_WINDOW_HOURS} hours${epochOver() ? '' : ' yet'}.</p>`}
                 </section>`;
         }
 
@@ -852,7 +892,7 @@
             const quiet = quietCountries(countries).map(q => q.country);
             const quietNames = quiet.length > 1 ? `${quiet.slice(0, -1).join(', ')} and ${quiet[quiet.length - 1]}` : quiet[0];
             const mapLabel = `Map of Africa with this epoch’s ${plural(countries.length, 'country', 'countries')} marked`
-                + (quiet.length ? `, and member projects with no approved posts yet in ${quietNames}, shown hollow` : '');
+                + (quiet.length ? `, and member projects with no approved posts${epochOver() ? '' : ' yet'} in ${quietNames}, shown hollow` : '');
 
             return `
                 <section class="section" aria-labelledby="countries-title">
@@ -964,19 +1004,24 @@
             const label = d => `${formatDay(d.date)}: ${plural(d.approved || 0, 'post', 'posts')} approved`;
             const bars = daily.map((d, i) => `<i class="${i === daily.length - 1 ? 'today' : ''}" style="height:${(d.approved || 0) / max * 100}%" data-label="${attrSafe(label(d))}"></i>`).join('');
             const today = daily[daily.length - 1];
+            const over = epochOver();
 
             return `
                     <h3 id="daily-title">Approved posts per day</h3>
-                    <p class="bars-readout" aria-live="polite">Today, ${escapeHtml(label(today))}</p>
+                    <p class="bars-readout" aria-live="polite">${over ? '' : 'Today, '}${escapeHtml(label(today))}</p>
                     <div class="bars" tabindex="0" role="group" aria-label="Approved posts per day over ${daily.length} days. Peak ${max} on ${formatDay(peak?.date)}. Use the left and right arrow keys to read each day.">
                         ${bars}
                     </div>
-                    <div class="bars-axis" aria-hidden="true"><span>${formatDay(daily[0].date)}</span><span>Today</span></div>`;
+                    <div class="bars-axis" aria-hidden="true"><span>${formatDay(daily[0].date)}</span><span>${over ? formatDay(today.date) : 'Today'}</span></div>`;
         }
 
         function renderEpochs(stats) {
             // The bars only: each epoch's rules note lives in the archive's copy
-            const live = { name: EPOCH.name, when: 'live now', posts: approvedPosts(stats), href: '#main' };
+            const month = d => d.toLocaleDateString('en-GB', { month: 'short', timeZone: 'UTC' });
+            const when = epochOver()
+                ? `${month(new Date(EPOCH.start))} to ${month(lastDay())} ${lastDay().getUTCFullYear()}`
+                : 'live now';
+            const live = { name: EPOCH.name, when, posts: approvedPosts(stats), href: '#main' };
             const total = window.epochsTotal() + live.posts;
             return window.renderEpochBars({
                 id: 'epochs-title',
@@ -1023,6 +1068,7 @@
 
             boardStats = stats;
             document.getElementById('period').hidden = false;
+            document.querySelector('#period [data-view="recent"]').hidden = epochOver();
             renderBoard();
 
             document.getElementById('content-top').innerHTML =
@@ -1076,7 +1122,7 @@
 
         function applyEpochLabels() {
             const name = EPOCH.name || `Epoch ${EPOCH.number}`;
-            document.getElementById('epoch-title').textContent = `${name} stats`;
+            document.getElementById('epoch-title').textContent = `${name} ${epochOver() ? 'results' : 'stats'}`;
         }
 
         // Load and render stats
@@ -1087,10 +1133,17 @@
                 // unreachable. members.json stays same-origin: it changes via git,
                 // not the export, so routing it through the VPS would add a
                 // dependency for no freshness.
+                //
+                // A finished epoch marked `frozen` in epoch-config.js reads its
+                // frozen copies instead, so its results stay up after the bot
+                // moves on to the next epoch.
+                const frozen = epochOver() && EPOCH.frozen;
+                const frozenFile = name => fetch(`${name}-epoch${EPOCH.number}.json`)
+                    .then(r => { if (!r.ok) throw new Error(`${name}-epoch${EPOCH.number}.json: HTTP ${r.status}`); return r.json(); });
                 const [statsData, membersResponse, trackerData] = await Promise.all([
-                    fetchLiveData('stats.json'),
+                    frozen ? frozenFile('stats') : fetchLiveData('stats.json'),
                     fetch('members.json?t=' + Date.now()).catch(() => null),
-                    fetchLiveData('tracker-data.json').catch(() => null)
+                    (frozen ? frozenFile('tracker-data') : fetchLiveData('tracker-data.json')).catch(() => null)
                 ]);
                 const stats = statsData;
 
@@ -1134,7 +1187,8 @@
                 if (trackerData) {
                     allVisits = groupVisits((trackerData.submissions || []).filter(sub => sub.status === 'Processed'));
 
-                    const now = new Date();
+                    // Anchored at the close once the epoch is over
+                    const now = new Date(windowEnd());
                     const windowStart = new Date(now.getTime() - ACTIVITY_WINDOW_HOURS * 60 * 60 * 1000);
                     const last7d = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
 
