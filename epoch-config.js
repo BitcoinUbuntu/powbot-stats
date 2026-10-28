@@ -28,7 +28,7 @@ window.POWBOT_EPOCH = {
     name: 'Epoch 6',
     start: '2026-07-20T06:00:00Z',
     end: '2026-10-22T00:00:00Z',
-    frozen: false,
+    frozen: true,
     // The directory filter for "active this epoch" (members.html?filter=...)
     memberFilter: 'epoch6'
 };
