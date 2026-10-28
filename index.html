@@ -993,7 +993,11 @@
 
         // Approved posts per day, inside Highlights
         function dailyChart(stats) {
-            const daily = stats.daily || [];
+            // Once the epoch is over the chart stops on its last day: the export
+            // keeps adding a row for every day until the next epoch starts
+            const over = epochOver();
+            const finalDay = lastDay().toISOString().slice(0, 10);
+            const daily = (stats.daily || []).filter(d => !over || d.date <= finalDay);
             if (daily.length === 0) {
                 return `
                     <h3 id="daily-title">Approved posts per day</h3>
@@ -1004,7 +1008,6 @@
             const label = d => `${formatDay(d.date)}: ${plural(d.approved || 0, 'post', 'posts')} approved`;
             const bars = daily.map((d, i) => `<i class="${i === daily.length - 1 ? 'today' : ''}" style="height:${(d.approved || 0) / max * 100}%" data-label="${attrSafe(label(d))}"></i>`).join('');
             const today = daily[daily.length - 1];
-            const over = epochOver();
 
             return `
                     <h3 id="daily-title">Approved posts per day</h3>
