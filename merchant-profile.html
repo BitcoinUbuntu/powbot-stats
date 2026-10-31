@@ -47,6 +47,8 @@
          head because the page's inline script runs before the end of <body>;
          loaded at the bottom, it was never defined in time and the page always
          read the twice-daily repo copy instead of the live feed. -->
+    <!-- The current epoch: data-source.js reads its frozen copy once it is over -->
+    <script src="epoch-config.js"></script>
     <script src="data-source.js"></script>
 
     <link rel="stylesheet" href="css/powbot.css">
@@ -251,7 +253,9 @@
                 // 19 July 2026 when the export switched to Epoch 6.
                 //
                 // ==> WHEN AN EPOCH ENDS: freeze tracker-data.json as
-                //     tracker-data-epochN.json and add it here. <==
+                //     tracker-data-epochN.json, and add it here when
+                //     epoch-config.js moves to the next epoch (not before: until
+                //     then it is the current epoch, read in the first slot). <==
                 //
                 // All of these share one shape - submissions[] with merchant_name,
                 // timestamp, post_url, btcmap_link, lightning_address - so they go
@@ -268,13 +272,14 @@
 
                 // Every fetch fails to null independently - one missing archive must
                 // not blank the page, it just means that epoch is absent.
-                // The LIVE file comes from the VPS via fetchLiveData (which falls
-                // back to this repo). Archives are frozen and change only via git,
-                // so they stay same-origin - no point adding a VPS dependency for
-                // data that cannot be fresher there.
+                // The LIVE file comes from the VPS via fetchEpochData (which falls
+                // back to this repo, and reads the epoch's frozen copy once it is
+                // over, so its posts stay put when the bot moves on). Archives are
+                // frozen and change only via git, so they stay same-origin - no
+                // point adding a VPS dependency for data that cannot be fresher there.
                 const LIVE = 'tracker-data.json';
-                const loadJson = f => (f === LIVE && typeof fetchLiveData === 'function')
-                    ? fetchLiveData(f).catch(() => null)
+                const loadJson = f => (f === LIVE && typeof fetchEpochData === 'function')
+                    ? fetchEpochData('tracker-data').catch(() => null)
                     : fetch(f).then(r => r.ok ? r.json() : null).catch(() => null);
 
                 // members.json names each project's profile page. Optional: without

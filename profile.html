@@ -205,13 +205,17 @@
         async function loadProfile() {
             try {
                 // Load member data and stats in parallel
-                const [membersData, statsEpoch4, statsEpoch5, statsHistorical, trackerLive] = await Promise.all([
+                const closed = epochFrozen();
+                const [membersData, statsEpoch4, statsEpoch5, statsHistorical, trackerLive, statsClosed] = await Promise.all([
                     fetch('members.json').then(r => r.json()),
                     fetch('stats-epoch4.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
                     fetch('stats-epoch5.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
                     fetch('stats-historical.json?t=' + Date.now()).then(r => r.json()).catch(() => null),
-                    // The current epoch, live from the VPS with the repo copy as fallback
-                    fetchLiveData('tracker-data.json').catch(() => null)
+                    // The current epoch, live from the VPS with the repo copy as
+                    // fallback, or its frozen copy once it is over
+                    fetchEpochData('tracker-data').catch(() => null),
+                    // A finished epoch's final standings, for its ranking badge
+                    closed ? fetchEpochData('stats').catch(() => null) : null
                 ]);
 
                 const member = membersData.members.find(m => m.id === memberId);
@@ -224,7 +228,8 @@
                     epoch4: statsEpoch4,
                     epoch5: statsEpoch5,
                     historical: statsHistorical,
-                    tracker: trackerLive
+                    tracker: trackerLive,
+                    closed: statsClosed
                 };
 
                 // Update timestamp: the live tracker's, else the newest frozen epoch's
@@ -415,7 +420,8 @@
                 });
             }
 
-            // The current epoch, from the live tracker: approved posts only. The
+            // The current epoch, from the tracker (live, or frozen once it is
+            // over): approved posts only. The
             // tracker names projects "Bitbiashara (Kenya) 🇰🇪", so drop the country
             // before matching.
             const EPOCH = window.POWBOT_EPOCH || { number: 6, name: 'Epoch 6', start: '2026-07-20T06:00:00Z' };
@@ -491,8 +497,11 @@
             if (currentSubs) {
                 const visits = groupVisits(currentSubs);
                 const initialCount = 5;
-                const epochStart = new Date(EPOCH.start);
-                const startLabel = epochStart.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+                const closed = epochFrozen();
+                const dayLabel = (date, opts) => date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', ...opts, timeZone: 'UTC' });
+                const startLabel = dayLabel(new Date(EPOCH.start), { year: 'numeric' });
+                // The last UTC day: the moment before the close at midnight
+                const lastDay = new Date(new Date(EPOCH.end).getTime() - 1);
                 const when = ts => {
                     const d = new Date(String(ts).replace(' UTC', 'Z').replace(' ', 'T'));
                     if (isNaN(d)) return '';
@@ -503,11 +512,13 @@
                 html += `
                     <section class="section" aria-labelledby="current-title">
                         <h2 id="current-title">${escapeHtml(EPOCH.name)}</h2>
-                        <p class="section-note">The current epoch, since ${startLabel}. Live: approved posts appear here within minutes.</p>
+                        <p class="section-note">${closed
+                            ? `Final results. ${escapeHtml(EPOCH.name)} ran from ${dayLabel(new Date(EPOCH.start))} to ${dayLabel(lastDay, { year: 'numeric' })}.`
+                            : `The current epoch, since ${startLabel}. Live: approved posts appear here within minutes.`}</p>
                 `;
 
                 if (visits.length === 0) {
-                    html += `<p>No approved posts yet this epoch.</p></section>`;
+                    html += `<p>${closed ? `No approved posts in ${escapeHtml(EPOCH.name)}.` : 'No approved posts yet this epoch.'}</p></section>`;
                 } else {
                     html += factsRow(currentPosts);
                     html += `
@@ -830,9 +841,10 @@
             measure();
         }
 
-        // currentPosts: the live epoch's approved posts ({date, merchant, url}).
+        // currentPosts: the current epoch's approved posts ({date, merchant, url}).
         // They count towards every badge except the rankings, which use
-        // finished epochs only: a live ranking changes by the day.
+        // finished epochs only: a live ranking changes by the day. The current
+        // epoch joins the rankings once it is over and frozen.
         function calculateBadges(epoch4Posts, epoch5Posts, historicalPosts, allStats, statsName, currentPosts = []) {
             // Mirrors normalizeProjectName() above (flag-agnostic name match),
             // duplicated here since this function has its own scope.
@@ -962,30 +974,23 @@
                 badges.push({ icon: '🛡️', label: 'Multi-epoch veteran', type: 'consistency', title: 'Active across 3+ epochs' });
             }
 
-            // Excellence - ranking based on Epoch 4 and 5 data
-            const epoch4Ranking = allStats.epoch4?.top_projects?.findIndex(p => normalizeProjectName(p.name) === statsName) ?? -1;
-            const epoch5Ranking = allStats.epoch5?.top_projects?.findIndex(p => normalizeProjectName(p.name) === statsName) ?? -1;
+            // Excellence - top 10 rankings in the finished epochs: 4, 5 and the
+            // current one once it is over and frozen (allStats.closed)
+            const finished = [['4', allStats.epoch4], ['5', allStats.epoch5]];
+            if (allStats.closed) finished.push([String(window.POWBOT_EPOCH.number), allStats.closed]);
+            const rankings = finished
+                .map(([epoch, stats]) => ({ epoch, rank: stats?.top_projects?.findIndex(p => normalizeProjectName(p.name) === statsName) ?? -1 }))
+                .filter(r => r.rank >= 0 && r.rank < 10);
 
             // Use the best ranking achieved across epochs
-            const bestRanking = epoch4Ranking >= 0 && epoch5Ranking >= 0
-                ? Math.min(epoch4Ranking, epoch5Ranking)
-                : epoch4Ranking >= 0 ? epoch4Ranking : epoch5Ranking;
+            const bestRanking = rankings.length ? Math.min(...rankings.map(r => r.rank)) : -1;
 
-            // Build title showing all rankings achieved
+            // Build title showing all rankings achieved: "#1 in Epoch 4 and 6, #3 in Epoch 5"
             const buildTitle = () => {
-                const in4 = epoch4Ranking >= 0 && epoch4Ranking < 10;
-                const in5 = epoch5Ranking >= 0 && epoch5Ranking < 10;
-
-                // Same ranking in both epochs
-                if (in4 && in5 && epoch4Ranking === epoch5Ranking) {
-                    return `#${epoch4Ranking + 1} in Epoch 4 and 5`;
-                }
-
-                // Different rankings
-                const parts = [];
-                if (in4) parts.push(`#${epoch4Ranking + 1} in Epoch 4`);
-                if (in5) parts.push(`#${epoch5Ranking + 1} in Epoch 5`);
-                return parts.join(', ');
+                const byRank = new Map();
+                rankings.forEach(r => byRank.set(r.rank, [...(byRank.get(r.rank) || []), r.epoch]));
+                const list = epochs => epochs.length > 1 ? `${epochs.slice(0, -1).join(', ')} and ${epochs[epochs.length - 1]}` : epochs[0];
+                return [...byRank].map(([rank, epochs]) => `#${rank + 1} in Epoch ${list(epochs)}`).join(', ');
             };
 
             if (bestRanking === 0) {
