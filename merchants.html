@@ -179,7 +179,8 @@
     <script>
         // Every merchant with an approved post since Epoch 4: the finished
         // epochs from merchants-index.json (scripts/build_merchants_index.py),
-        // the live epoch from stats.json. Counts only, never amounts.
+        // the live epoch from stats.json (its frozen copy once it is over, until
+        // epoch-config.js moves on and the index takes it). Counts only, never amounts.
         const PER_PAGE = 50;
         const LIVE = window.POWBOT_EPOCH || { number: 6, name: 'Epoch 6' };
         const LIVE_KEY = String(LIVE.number);
@@ -203,7 +204,8 @@
             try {
                 const [index, live] = await Promise.all([
                     fetch('merchants-index.json').then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); }),
-                    fetchLiveData('stats.json').catch(() => null)
+                    // Live, or the epoch's frozen copy once it is over
+                    fetchEpochData('stats').catch(() => null)
                 ]);
 
                 const byName = {};

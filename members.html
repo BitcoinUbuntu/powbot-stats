@@ -47,6 +47,8 @@
     <script src="flags.js"></script>
     <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Loaded here in
          the head because this page's inline script runs before inject.js. -->
+    <!-- The current epoch: data-source.js reads its frozen copy once it is over -->
+    <script src="epoch-config.js"></script>
     <script src="data-source.js"></script>
 
     <link rel="stylesheet" href="css/powbot.css">
@@ -224,9 +226,10 @@
             fetch('stats-historical.json').then(res => res.json()),
             fetch('stats-epoch5.json').then(res => res.json()),
             // Live epoch (currently Epoch 6), from the VPS with this repo as
-            // fallback. Tolerate failure of BOTH so the directory still renders
-            // from the frozen archives if live data is unavailable entirely.
-            fetchLiveData('stats.json').catch(() => null)
+            // fallback, or its frozen copy once it is over. Tolerate failure of
+            // BOTH so the directory still renders from the frozen archives if
+            // live data is unavailable entirely.
+            fetchEpochData('stats').catch(() => null)
         ])
             .then(([membersData, epoch4Data, historicalData, epoch5Data, liveData]) => {
                 allMembers = membersData.members;
@@ -262,6 +265,11 @@
             });
 
         function initializeFilters() {
+            // Once the epoch is over, "this epoch" names it
+            if (epochFrozen()) {
+                document.querySelector('#show-filter option[value="epoch6"]').textContent = `Active in ${window.POWBOT_EPOCH.name}`;
+            }
+
             // Populate country filter
             // Values stay "🇰🇪 Kenya" (the homepage's country links use them);
             // the list shows names only, A to Z. No emoji flags: Windows draws
