@@ -52,8 +52,9 @@ let merchantFilter = '';
 // that file. Each finished epoch is therefore frozen into its own archive here,
 // the same way stats-epoch*.json already works.
 //
-// ==> WHEN AN EPOCH ENDS: freeze tracker-data.json as tracker-data-epochN.json
-//     and add it to this list. <==
+// ==> WHEN AN EPOCH ENDS: freeze tracker-data.json as tracker-data-epochN.json,
+//     and add it to this list when epoch-config.js moves to the next epoch.
+//     Until then fetchEpochData reads it as the current epoch. <==
 //
 // Archives carry the same per-submission detail as the live file (lightning
 // address, btcmap link, status, payments), so history loses nothing.
@@ -100,9 +101,10 @@ function loadEpoch(epoch) {
 async function loadTrackerData() {
     try {
         // Live epoch from the VPS, falling back to this repo's copy if it is
-        // unreachable. The archives stay same-origin - they are frozen and
-        // change only via git, so there is nothing to gain from the VPS.
-        const data = await fetchLiveData('tracker-data.json');
+        // unreachable, or its frozen copy once it is over. The archives stay
+        // same-origin - they are frozen and change only via git, so there is
+        // nothing to gain from the VPS.
+        const data = await fetchEpochData('tracker-data');
         epochRows.set(currentEpoch(), Promise.resolve(tag(data.submissions, currentEpoch())));
         loadedEpochs.add(currentEpoch());
 

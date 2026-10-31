@@ -62,5 +62,31 @@ async function fetchLiveData(filename) {
     return await res.json();
 }
 
+/**
+ * True once the epoch in epoch-config.js has ended and its frozen copies
+ * (stats-epochN.json, tracker-data-epochN.json) are committed. Needs
+ * epoch-config.js loaded first; without it the epoch counts as live.
+ */
+function epochFrozen() {
+    const epoch = window.POWBOT_EPOCH;
+    const end = new Date(epoch?.end);
+    return Boolean(epoch?.frozen) && !isNaN(end) && Date.now() >= end;
+}
+
+/**
+ * The current epoch's data file ('stats' or 'tracker-data'): live while the
+ * epoch runs, its frozen copy once it is over. So a finished epoch's pages keep
+ * showing it after the bot moves on to the next, until epoch-config.js does.
+ */
+async function fetchEpochData(name) {
+    if (!epochFrozen()) return fetchLiveData(name + '.json');
+    const file = `${name}-epoch${window.POWBOT_EPOCH.number}.json`;
+    const res = await fetch(file);
+    if (!res.ok) throw new Error(file + ': HTTP ' + res.status);
+    return await res.json();
+}
+
 // Available to inline page scripts and to tracker.js alike.
 window.fetchLiveData = fetchLiveData;
+window.epochFrozen = epochFrozen;
+window.fetchEpochData = fetchEpochData;
