@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="only light">
     <link rel="canonical" href="https://powbot.africa/archive.html">
     <title>PoWBoT archive – past epochs</title>
-    <meta name="description" content="Final PoWBoT leaderboards from past epochs: approved proof-of-work posts by project and merchant, from Epoch 1 in May 2025 to Epoch 5.">
+    <meta name="description" content="Final PoWBoT leaderboards from past epochs: approved proof-of-work posts by project and merchant, from Epoch 1 in May 2025 to Epoch 6.">
     <meta name="theme-color" content="#CFE5BE">
     <script>
         // Dark, if chosen with the header switch (light is the default), and
@@ -28,7 +28,7 @@
     <meta property="og:url" content="https://powbot.africa/archive.html">
     <meta property="og:site_name" content="PoWBoT">
     <meta property="og:title" content="PoWBoT archive – past epochs">
-    <meta property="og:description" content="Final PoWBoT leaderboards from past epochs: approved proof-of-work posts by project and merchant, from Epoch 1 in May 2025 to Epoch 5.">
+    <meta property="og:description" content="Final PoWBoT leaderboards from past epochs: approved proof-of-work posts by project and merchant, from Epoch 1 in May 2025 to Epoch 6.">
     <meta property="og:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
@@ -37,7 +37,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://powbot.africa/archive.html">
     <meta name="twitter:title" content="PoWBoT archive – past epochs">
-    <meta name="twitter:description" content="Final PoWBoT leaderboards from past epochs: approved proof-of-work posts by project and merchant, from Epoch 1 in May 2025 to Epoch 5.">
+    <meta name="twitter:description" content="Final PoWBoT leaderboards from past epochs: approved proof-of-work posts by project and merchant, from Epoch 1 in May 2025 to Epoch 6.">
     <meta name="twitter:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
     <meta name="twitter:image:alt" content="PoWBoT, a robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
 
@@ -114,8 +114,8 @@
         // Rows shown in each ranking before "Show all"
         const INITIAL_ROWS = 5;
 
-        // Epoch 5 has its own page (epoch5.html). Its total is frozen, the same
-        // figure the homepage uses.
+        // Epochs 5 and 6 have their own pages (epoch5.html, epoch6.html). Their
+        // totals are frozen, the same figures the homepage uses.
 
         // Format numbers with thousands separators
         function formatNumber(num) {
@@ -268,11 +268,11 @@
 
         function renderEveryEpoch() {
             // Frozen totals and notes come from epochs.js (shared with the homepage
-            // and the Epoch 5 page)
+            // and the epoch results pages)
             return window.renderEpochBars({
                 id: 'every-title',
                 title: 'Every past epoch',
-                intro: `<strong class="num">${formatNumber(window.epochsTotal())}</strong> posts approved across five epochs, May 2025 to July 2026.`
+                intro: `<strong class="num">${formatNumber(window.epochsTotal())}</strong> posts approved across six epochs, May 2025 to October 2026.`
             });
         }
 
@@ -284,10 +284,31 @@
                 updatedElement.textContent = new Date(epoch4Live.generated_at).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
             }
 
-            // Epoch 5 has its own page with the full standings. Its numbers are
-            // frozen, so they are written here rather than loading its 780 KB
-            // stats file for six figures (from stats-epoch5.json, as that page
-            // computes them).
+            // Epochs 5 and 6 have their own pages with the full standings. Their
+            // numbers are frozen, so they are written here rather than loading
+            // large stats files for six figures (from stats-epochN.json, as those
+            // pages compute them).
+            const epoch6 = {
+                id: 'epoch-6',
+                title: 'Epoch 6',
+                note: '20 July to 21 October 2026.',
+                facts: [
+                    [formatNumber(1148), 'posts approved'],
+                    ['25', 'projects'],
+                    ['179', 'merchants'],
+                    ['7', 'countries'],
+                    ['97%', 'approval rate'],
+                    ['94', 'days']
+                ],
+                notes: [
+                    `<strong>${formatNumber(1179)}</strong> posts reviewed, 31 rejected`,
+                    'Posted on <strong>X 52%</strong>, <strong>Nostr 48%</strong>',
+                    `Most approved in a day: <strong>44</strong>, on ${formatDate('2026-10-20')}`,
+                    '<strong>12</strong> posts a day on average'
+                ],
+                after: '<p class="epoch-more"><a class="btn" href="epoch6.html">See the Epoch 6 final results</a></p>'
+            };
+
             const epoch5 = {
                 id: 'epoch-5',
                 title: 'Epoch 5',
@@ -387,7 +408,7 @@
 
             content.innerHTML =
                 renderEveryEpoch(epoch4Live, historical) +
-                [epoch5, epoch4, testing, early('epoch3', 3, 'November 2025'), early('epoch2', 2, 'August 2025'), early('epoch1', 1, 'May 2025')]
+                [epoch6, epoch5, epoch4, testing, early('epoch3', 3, 'November 2025'), early('epoch2', 2, 'August 2025'), early('epoch1', 1, 'May 2025')]
                     .map(epochSectionHtml).join('');
 
             // Rankings

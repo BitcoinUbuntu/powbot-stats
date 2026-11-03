@@ -1025,12 +1025,15 @@
                 ? `${month(new Date(EPOCH.start))} to ${month(lastDay())} ${lastDay().getUTCFullYear()}`
                 : 'live now';
             const live = { name: EPOCH.name, when, posts: approvedPosts(stats), href: '#main' };
-            const total = window.epochsTotal() + live.posts;
+            // A finished epoch is already in epochs.js until the next one is set here
+            const epochs = window.POWBOT_EPOCHS.filter(e => e.name !== live.name);
+            const total = window.epochsTotal(epochs) + live.posts;
             return window.renderEpochBars({
                 id: 'epochs-title',
                 intro: `<strong class="num">${formatNumber(total)}</strong> posts approved since May 2025.`,
                 more: '<a href="archive.html#every-title">See how the rules changed</a>.',
                 notes: false,
+                epochs,
                 live
             });
         }

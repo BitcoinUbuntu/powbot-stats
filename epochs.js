@@ -1,15 +1,12 @@
 /**
  * Every finished epoch, in one place, and the "Every epoch so far" block that
- * the homepage, the Epoch 5 page and the archive all draw from it.
+ * the homepage, the epoch results pages and the archive all draw from it.
  *
  * ==> TO ADD CONTEXT: give an epoch a `note` (one short sentence, plain
  *     text). It shows under that epoch's bar on the archive; the homepage
- *     and the Epoch 5 page show the bars only and link to it. <==
+ *     and the epoch results pages show the bars only and link to it. <==
  * ==> AT EACH EPOCH ROLLOVER: add the finished epoch here with its final
- *     approved-post total, and point `href` at its page or archive section.
- *     Epoch 6's note, as drafted while it ran: 'Stricter limits that reward
- *     reaching new merchants: three a week per project, each once per
- *     platform, with a reduced reward for the cross-post.' <==
+ *     approved-post total, and point `href` at its page or archive section. <==
  *
  * Totals are posts approved and are frozen once an epoch ends.
  */
@@ -28,7 +25,9 @@
         { name: 'Epoch 4', when: 'Dec 2025 to Mar 2026', posts: 187 + 1698, href: 'archive.html#epoch-4',
             note: 'The bot takes over: #spedn, a BTCMap link, the merchant’s Lightning address, a fixed location and the required video scenes. No posting limits.' },
         { name: 'Epoch 5', when: 'Mar to Jul 2026', posts: 1985, href: 'epoch5.html',
-            note: 'The first limits: one post per merchant per platform a day, and from 7 April at most five merchants a day.' }
+            note: 'The first limits: one post per merchant per platform a day, and from 7 April at most five merchants a day.' },
+        { name: 'Epoch 6', when: 'Jul to Oct 2026', posts: 1148, href: 'epoch6.html',
+            note: 'Stricter limits that reward reaching new merchants: three a week per project, each once per platform, with a reduced reward for the cross-post.' }
     ];
 
     // Shown with every copy of the block

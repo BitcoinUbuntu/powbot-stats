@@ -17,7 +17,7 @@ committed here is the fallback and the record for finished epochs.
 | `members.html`, `merchants.html` | The Directory: projects and merchants |
 | `profile.html`, `merchant-profile.html` | A project's or merchant's page |
 | `profile-edit.html` | Sign-in and self-service editing for project leaders |
-| `archive.html`, `epoch5.html` | Finished epochs |
+| `archive.html`, `epoch5.html`, `epoch6.html` | Finished epochs |
 | `about.html`, `guidelines.html`, `disclaimer.html` | Background and rules |
 
 The design is a two-tone Nokia 3310 screen: light by default, dark on request. Fonts are

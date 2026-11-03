@@ -209,7 +209,8 @@
                 : { href: 'members.html', label: 'Back to the directory' };
         },
         'merchant-profile': () => ({ href: 'merchants.html', label: 'Back to the merchants' }),
-        'epoch5': () => ({ href: 'archive.html', label: 'Back to the archive' })
+        'epoch5': () => ({ href: 'archive.html', label: 'Back to the archive' }),
+        'epoch6': () => ({ href: 'archive.html', label: 'Back to the archive' })
     };
 
     // Top-level pages that another page can open at one part of them: the
@@ -227,7 +228,7 @@
     // What to call each page in "Back to ..."
     const PAGE_NAMES = {
         index: 'the stats', members: 'the directory', merchants: 'the merchants', tracker: 'the tracker', archive: 'the archive',
-        epoch5: 'Epoch 5', profile: 'the profile', 'merchant-profile': 'the merchant',
+        epoch5: 'Epoch 5', epoch6: 'Epoch 6', profile: 'the profile', 'merchant-profile': 'the merchant',
         about: 'About', guidelines: 'the guidelines', disclaimer: 'the disclaimer'
     };
     const pageOf = path => path.split('/').pop().replace(/\.html$/, '') || 'index';
