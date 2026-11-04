@@ -1,0 +1,32 @@
+<!-- Styles live in css/powbot.css (.site-nav). The menu button is wired up
+     in includes/inject.js. To add a page, add one <li> here. -->
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav" aria-label="Main">
+    <div class="wrap">
+        <!-- Shown in capitals by CSS; written in normal case so screen readers
+             say the name rather than spell it -->
+        <!-- The wordmark and pixel bot head always go to the top of the
+             homepage. On a page with a parent (a profile, a merchant, a
+             finished epoch) includes/inject.js shows the back arrow in place
+             of the head, as its own link. -->
+        <div class="brand-wrap">
+            <a class="brand-back" href="index.html" hidden><svg class="brand-icon" viewBox="0 0 11 11" width="22" height="22" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 2h1v1h-1zM3 3h2v1h-2zM2 4h9v1h-9zM1 5h10v1h-10zM2 6h9v1h-9zM3 7h2v1h-2zM4 8h1v1h-1z"/></svg></a>
+            <a class="brand" href="index.html"><svg class="brand-icon brand-home" viewBox="0 0 11 11" width="22" height="22" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><path class="icon-shade" d="M3 3h5v1h-5zM2 4h7v1h-7zM2 5h1v1h-1zM4 5h3v1h-3zM8 5h1v1h-1zM2 6h7v1h-7zM2 7h1v1h-1zM4 7h3v1h-3zM8 7h1v1h-1zM2 8h2v1h-2zM7 8h2v1h-2zM3 9h5v1h-5z"/><path fill="currentColor" d="M1 0h1v1h-1zM9 0h1v1h-1zM2 1h1v1h-1zM8 1h1v1h-1zM3 2h5v1h-5zM2 3h1v1h-1zM8 3h1v1h-1zM1 4h1v1h-1zM9 4h1v1h-1zM0 5h2v1h-2zM3 5h1v1h-1zM7 5h1v1h-1zM9 5h2v1h-2zM0 6h2v1h-2zM9 6h2v1h-2zM0 7h2v1h-2zM3 7h1v1h-1zM7 7h1v1h-1zM9 7h2v1h-2zM1 8h1v1h-1zM4 8h3v1h-3zM9 8h1v1h-1zM2 9h1v1h-1zM8 9h1v1h-1zM3 10h5v1h-5z"/></svg><span translate="no">PoWBoT.africa</span></a>
+        </div>
+        <!-- Light or dark; wired up in includes/inject.js (pressed = dark).
+             Shows the mode in use: a pixel sun while light, a moon while dark. -->
+        <button type="button" class="theme-toggle" aria-pressed="false" title="Switch to dark">
+            <svg class="icon-moon" viewBox="0 0 11 11" width="22" height="22" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><path class="moon-shade" d="M4 0h4v1h-4zM4 1h5v1h-5zM3 2h7v1h-7zM3 3h8v1h-8zM3 4h8v1h-8zM4 5h7v1h-7zM4 6h7v1h-7zM5 7h6v1h-6z"/><path fill="currentColor" d="M3 0h1v1h-1zM2 1h2v1h-2zM1 2h2v1h-2zM0 3h3v1h-3zM0 4h3v1h-3zM0 5h4v1h-4zM0 6h4v1h-4zM0 7h5v1h-5zM1 8h9v1h-9zM2 9h7v1h-7zM3 10h5v1h-5z"/></svg>
+            <svg class="icon-sun" viewBox="0 0 11 11" width="22" height="22" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><path fill="currentColor" d="M5 0h1v1h-1zM1 1h1v1h-1zM5 1h1v1h-1zM9 1h1v1h-1zM2 2h1v1h-1zM8 2h1v1h-1zM4 3h3v1h-3zM3 4h5v1h-5zM0 5h2v1h-2zM3 5h5v1h-5zM9 5h2v1h-2zM3 6h5v1h-5zM4 7h3v1h-3zM2 8h1v1h-1zM8 8h1v1h-1zM1 9h1v1h-1zM5 9h1v1h-1zM9 9h1v1h-1zM5 10h1v1h-1z"/></svg>
+            <span class="visually-hidden">Dark mode</span>
+        </button>
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="index.html" data-page="index">Stats</a></li>
+            <li><a href="members.html" data-page="members">Directory</a></li>
+            <li><a href="tracker.html" data-page="tracker">Tracker</a></li>
+            <li><a href="archive.html" data-page="archive">Archive</a></li>
+            <li><a href="guidelines.html" data-page="guidelines">Guidelines</a></li>
+        </ul>
+    </div>
+</nav>

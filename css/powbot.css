@@ -1,0 +1,746 @@
+/*
+ * PoWBoT shared styles: tokens, fonts, base and shared components.
+ *
+ * Define colour, type and spacing here once. Pages keep only the layout that is
+ * specific to them, and read every value from these tokens.
+ *
+ * Base element styles apply only inside <body class="pb">. That lets a page opt
+ * in when it is rebuilt, while pages not yet converted keep their own look and
+ * still get the shared nav and footer below.
+ */
+
+/* ---------------------------------------------------------------- Fonts --
+ * Self-hosted and subset to Latin (see fonts/). No third-party font requests.
+ * VT323: headings and big figures, the phone screen's pixel type.
+ * Share Tech Mono: labels, ranks, times and small figures. It has no bold,
+ * so emphasis in it is colour or size, never weight.
+ * Atkinson Hyperlegible: sentences, names and anything long.
+ */
+@font-face { font-family: "VT323"; src: url("../fonts/vt323-latin-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Share Tech Mono"; src: url("../fonts/share-tech-mono-latin-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("../fonts/atkinson-hyperlegible-latin-400.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("../fonts/atkinson-hyperlegible-latin-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+/* --------------------------------------------------------------- Tokens -- */
+/* A .reverse box inside either theme takes the other one's colours (see
+   Reversed box), so each theme's block also names it */
+:root, :root[data-theme="dark"] .reverse {
+    /* Colour: a Nokia 3310 screen, two tones. Light by default: olive ink
+       on warm, grey-green glass, the phone as it was. Dark (below) swaps
+       them when chosen with the header switch; the device's own setting
+       isn't consulted. The ink is a shade deeper than the 3310's (#37442F,
+       not #43523D) for contrast. Links, data and the one highlight (current
+       page, today) share the ink; the highlight is a solid block, like the
+       phone's menu selection. Contrast on --night: heading, accent and link
+       7.7, text 9.9, muted 6.0 (5.3 on --panel, 4.8 on --panel-hi), danger
+       6.4; glass on ink 7.7. Change a colour here and in its -rgb twin. */
+    --night: #CFE5BE;          /* the glass: page, and text on a solid block */
+    --panel: #C0D9B0;          /* raised surfaces: dialogs, cards */
+    --panel-hi: #B5D0A5;       /* hover on panel rows */
+    --heading: #37442F;
+    --text: #283222;           --text-rgb: 40, 50, 34;
+    --muted: #43553B;          --muted-rgb: 67, 85, 59;
+    --accent: #37442F;         --accent-rgb: 55, 68, 47;   /* the one highlight, as a solid block */
+    --accent-hi: #283222;      /* accent hover */
+    --link: #37442F;           --link-rgb: 55, 68, 47;     /* links, data marks, focus */
+    --danger: #8A2A1C;         /* errors, rejected */
+    --line: rgba(var(--accent-rgb), 0.28);
+    --line-strong: rgba(var(--accent-rgb), 0.55);
+
+    /* The screen (see Base): backlight, pixel grid, the shadow pixels cast */
+    --glass-hi: #D9EDC9;       /* backlight at its brightest, mid-screen */
+    --glass-lo: #BCD5AB;       /* ...and falling off at the edges */
+    --grid: rgba(55, 68, 47, 0.07);   /* faint ink between the pixels */
+    --pixel-shadow: rgba(55, 68, 47, 0.2);
+    --lcd: 2px 2px 0 var(--pixel-shadow);
+
+    /* Type */
+    --font-display: "VT323", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    --font-mono: "Share Tech Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    --font-text: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --fs-xs: 0.8125rem;   /* 13 */
+    --fs-sm: 0.875rem;    /* 14 */
+    --fs-base: 1rem;      /* 16 */
+    --fs-md: 1.125rem;    /* 18 */
+    --fs-lg: 1.3125rem;   /* 21 */
+    --fs-xl: 1.5rem;      /* 24 */
+    --fs-2xl: 2rem;       /* 32 */
+    /* VT323 runs small for its size: headings in it sit a step or two up */
+    --fs-h2: 2rem;        /* 32, section headings */
+    --fs-h1: clamp(2.5rem, 6vw, 4rem);           /* 40 to 64, inner pages */
+    --fs-display: clamp(3rem, 7.5vw, 6rem);      /* 48 to 96, the homepage */
+
+    /* Space */
+    --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
+    --gutter: clamp(16px, 4vw, 48px);
+    --max: 1180px;
+    --radius: 0;
+    --tap: 44px;
+    --bar-h: 52px;        /* the nav bar */
+    --nav-h: calc(var(--bar-h) + 3px);   /* ...and its 3px double rule */
+
+    /* Motion */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --t-fast: 160ms;
+    --t-ui: 200ms;
+}
+
+/* Dark, chosen with the header switch (data-theme="dark" on <html>, set by
+   includes/inject.js and a snippet in each page's <head>): glass-green
+   pixels on the olive ink, the light theme's two colours swapped. Contrast
+   on --night: heading, accent and link 7.7, text 8.8, muted 6.0 (6.8 on
+   --panel, 4.8 on --panel-hi), danger 6.0; ink on glass 7.7. */
+:root[data-theme="dark"], :root:not([data-theme="dark"]) .reverse {
+    --night: #37442F;          /* the olive: page, and text on a solid block */
+    --panel: #2F3B29;          /* raised surfaces: dialogs, cards */
+    --panel-hi: #43523D;       /* hover on panel rows */
+    --heading: #CFE5BE;
+    --text: #E4F1D8;           --text-rgb: 228, 241, 216;
+    --muted: #B3CCA3;          --muted-rgb: 179, 204, 163;
+    --accent: #CFE5BE;         --accent-rgb: 207, 229, 190;   /* the one highlight, as a solid block */
+    --accent-hi: #E4F1D8;      /* accent hover */
+    --link: #CFE5BE;           --link-rgb: 207, 229, 190;     /* links, data marks, focus */
+    --danger: #FFB3A1;         /* errors, rejected */
+    --line: rgba(var(--accent-rgb), 0.22);
+    --line-strong: rgba(var(--accent-rgb), 0.48);
+
+    /* The screen (see Base): backlight, pixel grid, the shadow pixels cast */
+    --glass-hi: #41503A;       /* backlight at its brightest, mid-screen */
+    --glass-lo: #2E3A28;       /* ...and falling off at the edges */
+    --grid: rgba(24, 31, 21, 0.4);
+    --pixel-shadow: rgba(0, 0, 0, 0.3);
+    /* Restated so a .reverse box works it out from its own shadow colour */
+    --lcd: 2px 2px 0 var(--pixel-shadow);
+}
+
+/* ----------------------------------------------------------------- Base --
+ * Element rules use :where() so they carry no specificity: any component
+ * class (.btn, .tag, .section h2) overrides them without a fight.
+ */
+/* "only light", not just "light": it tells in-app browsers with their own dark mode not to
+   recolour the screen (a forced-dark X in-app browser once did). The :root rule sits
+   outside :has() so it never depends on it. The dark choice below overrides both. */
+:root { color-scheme: only light; }
+html:has(body.pb) { background: var(--night); }
+/* Dark chosen: native controls and scrollbars follow */
+:root[data-theme="dark"] { color-scheme: dark; }
+.pb, .pb *, .pb *::before, .pb *::after { box-sizing: border-box; }
+/* Keep focused elements and anchor targets clear of the sticky nav */
+.pb :focus, .pb [id] { scroll-margin-top: 80px; scroll-margin-bottom: 24px; }
+.pb a, .pb button, .pb summary { -webkit-tap-highlight-color: rgba(var(--link-rgb), 0.2); }
+.pb {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--night);
+    color: var(--text);
+    font: 400 var(--fs-base)/1.55 var(--font-text);
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    /* Only Atkinson has a bold: never smear a fake one onto the mono faces */
+    font-synthesis-weight: none;
+    /* Its own stacking context, so the screen below sits over the page
+       colour and under everything else */
+    isolation: isolate;
+}
+/* The screen: a backlight brightest mid-screen, and a faint grid between
+   the pixels. It sits behind the content, so text stays crisp. The footer's
+   "Screen effects" switch turns it off (html.fx-off, includes/inject.js). */
+.pb::before {
+    content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+    background:
+        linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 3px 3px,
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 3px 3px,
+        radial-gradient(ellipse 80% 70% at 50% 35%, var(--glass-hi) 0%, var(--night) 55%, var(--glass-lo) 100%);
+}
+html.fx-off .pb::before { display: none; }
+html.fx-off { --lcd: none; }
+
+:where(.pb) :where(h1, h2, h3) {
+    color: var(--heading); font-family: var(--font-display); font-weight: 400;
+    letter-spacing: 0.01em; line-height: 1.05; text-wrap: balance; text-shadow: var(--lcd);
+}
+:where(.pb) p { text-wrap: pretty; }
+:where(.pb) a { color: var(--link); text-underline-offset: 3px; }
+:where(.pb) img { max-width: 100%; height: auto; }
+:where(.pb) button { font: inherit; color: inherit; touch-action: manipulation; }
+.pb ::selection { background: var(--accent); color: var(--night); }
+
+/* One focus style everywhere. Solid accent blocks switch the ring to night. */
+.pb :focus-visible, .site-nav :focus-visible, .site-footer :focus-visible {
+    outline: 3px solid var(--link);
+    outline-offset: 2px;
+    border-radius: var(--radius);
+}
+.pb .on-accent :focus-visible, .pb .on-accent:focus-visible { outline-color: var(--night); }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+.num { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--font-mono); }
+.muted { color: var(--muted); }
+.visually-hidden {
+    position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip-link { position: absolute; left: var(--s4); top: -100px; z-index: 200; padding: var(--s3) var(--s4); background: var(--accent); color: var(--night); font-weight: 700; }
+.skip-link:focus { top: var(--s2); }
+
+/* --------------------------------------------------------------- Button --
+ * Text in [ brackets ], like a phone's soft keys; a solid block on hover.
+ * The brackets are drawn, so screen readers hear only the label.
+ */
+.btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: var(--s2);
+    min-height: var(--tap); padding: 0 var(--s3);
+    background: none; color: var(--link);
+    border: 1px solid transparent; border-radius: var(--radius);
+    font: 400 var(--fs-sm)/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none;
+    cursor: pointer; touch-action: manipulation;
+    transition: transform var(--t-fast) var(--ease-out), background-color var(--t-fast) ease;
+}
+.btn::before { content: "[ "; content: "[ " / ""; white-space: pre; }
+.btn::after { content: " ]"; content: " ]" / ""; white-space: pre; }
+/* .btn sets display, which would otherwise override the hidden attribute */
+.btn[hidden] { display: none; }
+
+/* Link chips in a profile header (Website, X, BTC Map...) */
+.hero-link {
+    display: inline-flex; align-items: center; gap: var(--s2);
+    min-height: var(--tap); padding: 0 var(--s3);
+    border: 1px dashed var(--line-strong); border-radius: var(--radius);
+    color: var(--link); text-decoration: none;
+    font: 400 var(--fs-sm)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em;
+}
+.hero-link[hidden] { display: none; }
+.btn:active { transform: scale(0.97); }
+.btn-solid { background: var(--accent); color: var(--night); }
+
+/* Platform label: text first, so it never relies on an icon */
+.tag {
+    display: inline-block; padding: 2px 6px;
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    font: 400 var(--fs-xs)/1.2 var(--font-mono); color: var(--muted); text-transform: uppercase;
+    white-space: nowrap;
+    min-width: 3.75rem; text-align: center;   /* X and Nostr line up in lists */
+}
+
+/* ------------------------------------------------------------------ Nav --
+ * Pinned to the top on every page. The wrapper the include is injected into
+ * is what sticks: a sticky element can only stick inside its parent, and the
+ * wrapper is exactly as tall as the nav, so a sticky .site-nav never moved.
+ * The current page is a solid block, like the phone's menu selection.
+ */
+#site-nav { position: sticky; top: 0; z-index: 100; }
+/* Pages not yet rebuilt pad <body> by 20px; pull the nav out to the edges. */
+body:not(.pb) > #site-nav { margin: -20px -20px 20px; }
+
+.site-nav { position: relative; border-bottom: 3px double var(--line-strong); background: var(--night); }
+.site-nav .wrap { display: flex; align-items: stretch; gap: var(--s4); height: var(--bar-h); }
+/* The wordmark: the address, in capitals, like a phone's network name */
+.site-nav .brand { display: flex; align-items: center; align-self: center; gap: 10px; color: var(--heading); text-decoration: none; font: 400 clamp(1.375rem, 6vw, 1.875rem)/1 var(--font-display); text-transform: uppercase; letter-spacing: 0.04em; text-shadow: var(--lcd); min-height: var(--tap); white-space: nowrap; }
+/* The pixel bot head before the wordmark: 11x11 at 2px a pixel, with the
+   wordmark's hard pixel shadow (gone with screen effects off, when --lcd is
+   none). Its face plate is the moon's second tone, so it swaps with the theme. */
+.site-nav .brand-icon { flex: none; filter: drop-shadow(var(--lcd)); }
+/* The face takes the page's own colour, so the head sits flat on the bar */
+.site-nav .brand-icon .icon-shade { fill: var(--night); }
+/* Up 1px, by eye: the head's thin antennae leave its weight low in its square */
+.site-nav .brand-home { position: relative; top: -1px; }
+/* On a page with a parent the back arrow, its own link, takes the head's
+   place (includes/inject.js); the wordmark still goes home. The arrow's
+   touch area reaches 12px out to the left, to make 44px. */
+.site-nav .brand-wrap { display: flex; align-items: stretch; }
+.site-nav .brand-back { display: flex; align-items: center; min-height: var(--tap); padding: 0 10px 0 12px; margin-left: -12px; color: var(--heading); transition: background-color var(--t-fast) var(--ease-out); }
+.site-nav .brand-back:focus-visible { outline-offset: -3px; border-radius: 0; }
+.site-nav .brand-back[hidden], .site-nav .brand-wrap.is-back .brand-home { display: none; }
+/* Light or dark (includes/inject.js): a key just before the tabs, spaced
+   like one of them, showing the mode in use: a pixel sun while light, a
+   moon while dark. On phones it sits just before Menu. */
+.site-nav .theme-toggle {
+    display: flex; align-items: center; justify-content: center; flex: none;
+    width: var(--tap); margin: 0 calc(var(--s1) - var(--s4)) 0 auto; padding: 0;
+    background: none; border: 0; color: var(--muted); cursor: pointer;
+}
+.site-nav .theme-toggle:focus-visible { outline-offset: -3px; border-radius: 0; }
+.theme-toggle .icon-moon, .theme-toggle[aria-pressed="true"] .icon-sun { display: none; }
+.theme-toggle[aria-pressed="true"] .icon-moon { display: block; }
+/* The moon's dark side, in the lighter olive (earthshine): the header's own
+   colour would hide it. The moon only shows in dark mode. */
+.theme-toggle .moon-shade { fill: var(--panel-hi); }
+/* Links fill the bar from its top edge to the rule, so the current page's
+   block sits flush top and bottom */
+.site-nav .nav-links { display: flex; align-items: stretch; gap: var(--s1); margin: 0; padding: 0; list-style: none; }
+.site-nav .nav-links li { display: flex; }
+.site-nav .nav-links a {
+    display: flex; align-items: center; min-height: var(--tap); padding: 0 var(--s3);
+    color: var(--muted); text-decoration: none;
+    font: 400 var(--fs-base)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em;
+    border-radius: 0;
+}
+.site-nav .nav-links a.current { background: var(--accent); color: var(--night); }
+.site-nav .nav-links a.current::before { content: "> "; content: "> " / ""; white-space: pre; }
+.site-nav .nav-links a:focus-visible { outline-offset: -3px; border-radius: 0; }
+.site-nav .nav-links a.current:focus-visible { outline-color: var(--night); }
+
+/* Menu button: phones only. It says "Menu", like the phone's soft key. */
+.site-nav .nav-toggle {
+    display: none; align-items: center; justify-content: center;
+    margin: 0 calc(var(--gutter) * -1) 0 0; padding: 0 var(--gutter);
+    background: none; border: 0; border-left: 1px solid var(--line);
+    color: var(--heading); cursor: pointer;
+    font: 400 1.75rem/1 var(--font-display);
+}
+.site-nav .nav-toggle[aria-expanded="true"] { background: var(--accent); color: var(--night); }
+.site-nav .nav-toggle:focus-visible { outline-offset: -3px; border-radius: 0; }
+.site-nav .nav-toggle[aria-expanded="true"]:focus-visible { outline-color: var(--night); }
+
+/* --------------------------------------------------------- Section tabs --
+ * "On this page" links under the nav, one per section; the one you're
+ * reading is shown [in brackets] (includes/inject.js). They stick with the
+ * nav, on desktop only: phones don't show them.
+ */
+/* Tucked 3px up under the nav (which draws on top), with its background
+   reaching a little higher still: browser zoom and scroll rounding can pull
+   two sticky bars a pixel or two apart, and the page must not show between */
+.subtabs {
+    position: sticky; top: calc(var(--nav-h) - 3px); z-index: 99; margin-top: -3px; padding-top: 3px;
+    background: var(--night); border-bottom: 1px dashed var(--line-strong);
+    box-shadow: 0 -6px 0 var(--night);
+}
+.subtabs ul { display: flex; margin: 0; padding: 0; list-style: none; overflow-x: auto; scrollbar-width: none; }
+.subtabs li { display: flex; }
+.subtabs li + li::before { content: "|"; content: "|" / ""; display: flex; align-items: center; padding: 0 var(--s1); color: var(--line-strong); }
+.subtabs a {
+    display: flex; align-items: center; min-height: var(--tap); padding: 0 var(--s2); white-space: nowrap;
+    font: 400 var(--fs-sm)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--muted); text-decoration: none;
+}
+.subtabs a[aria-current] { color: var(--heading); }
+.subtabs a[aria-current]::before { content: "["; content: "[" / ""; }
+.subtabs a[aria-current]::after { content: "]"; content: "]" / ""; }
+.subtabs a:focus-visible { outline-offset: -3px; }
+@media (min-width: 721px) {
+    /* Anchor targets land below both sticky rows */
+    .pb:has(.subtabs) :focus, .pb:has(.subtabs) [id] { scroll-margin-top: calc(var(--nav-h) + var(--tap) + 20px); }
+}
+
+/* --------------------------------------------------------------- Footer -- */
+.site-footer { border-top: 3px double var(--line-strong); padding: var(--s6) 0 var(--s7); color: var(--muted); font: 400 var(--fs-sm)/1.6 var(--font-text); text-align: center; }
+.site-footer a { color: var(--link); }
+.site-footer .partners-label { margin: 0 0 var(--s3); }
+/* Partner marks stay full colour: several are dark and vanish in greyscale. */
+.site-footer .partners { display: flex; justify-content: center; flex-wrap: wrap; gap: var(--s5) var(--s6); margin: 0 0 var(--s5); padding: 0; list-style: none; }
+.site-footer .partners a { display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--text); text-decoration: none; min-height: var(--tap); }
+.site-footer .partners img { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line); }
+.site-footer .footer-meta { margin: 0 auto; max-width: 70ch; }
+.site-footer .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 0 var(--s2); margin: var(--s2) 0 0; padding: 0; list-style: none; }
+.site-footer .footer-links a { display: inline-flex; align-items: center; min-height: var(--tap); padding: 0 var(--s2); }
+/* Screen effects on or off: the texture, the pixel shadows and the globe */
+.fx-toggle {
+    display: inline-flex; align-items: center; gap: var(--s2); min-height: var(--tap); margin-top: var(--s2); padding: 0 var(--s3);
+    background: none; border: 1px dashed var(--line-strong); color: var(--muted); cursor: pointer;
+    font: 400 var(--fs-xs)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em;
+}
+.fx-toggle .fx-state { color: var(--heading); }
+
+/* Below 820px the five tabs no longer fit beside the wordmark: they fold
+   behind the Menu key (keep in step with setupMenu in includes/inject.js) */
+@media (max-width: 819px) {
+    /* Links fold into a panel under the bar, so the wordmark always fits */
+    .site-nav .nav-toggle { display: flex; }
+    /* Right up against the Menu key, whose rule separates them */
+    .site-nav .theme-toggle { margin-right: calc(var(--s4) * -1); }
+    .site-nav .nav-links {
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column; align-items: stretch; gap: 0; margin: 0;
+        background: var(--night); border-bottom: 1px solid var(--line-strong);
+        visibility: hidden; opacity: 0; transform: translateY(-6px);
+        transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out), visibility 0s linear 180ms;
+    }
+    .site-nav.is-open .nav-links {
+        visibility: visible; opacity: 1; transform: none;
+        transition: opacity 180ms var(--ease-out), transform 180ms var(--ease-out), visibility 0s;
+    }
+    /* Opened from the keyboard: no animation (it would only slow the next key) */
+    .site-nav.no-anim .nav-links { transition: none; }
+    .site-nav .nav-links li { display: block; border-top: 1px dashed var(--line); }
+    .site-nav .nav-links a { min-height: 52px; padding: 0 var(--gutter); font-size: var(--fs-md); }
+}
+
+@media (max-width: 720px) {
+    /* No section tabs on phones: they can't stick there, and the page is
+       quicker to scroll than a sideways row of tabs */
+    .subtabs { display: none; }
+}
+
+/* --------------------------------------------------------------- Motion -- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ======================================================= Shared components
+ * Use these before writing page CSS. Pages keep only their own layout.
+ */
+
+/* ---------------------------------------------------- Section heading -- */
+.section { padding: var(--s6) 0; border-bottom: 1px dashed var(--line-strong); }
+.section:last-child { border-bottom: 0; }
+.section > h2, .section-head h2 { margin: 0 0 var(--s2); font-size: var(--fs-h2); }
+/* Heading with a switch beside it; wraps under the heading on phones */
+.section-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s3); margin: 0 0 var(--s3); }
+.section-head h2 { margin: 0; }
+.section-note { margin: 0 0 var(--s5); color: var(--muted); max-width: 65ch; }
+
+/* A disclosure arrow: points down, turns to point up once its control is open */
+.chev { width: 9px; height: 9px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg) translate(-2px, -2px); transition: transform var(--t-ui) var(--ease-out); opacity: 0.7; flex: none; }
+
+/* Posts inside an opened row */
+.post-list { list-style: none; margin: 0 0 var(--s3); padding: 0; }
+.post-list a { display: flex; align-items: center; gap: var(--s3); min-height: var(--tap); padding: var(--s1) 0; border-bottom: 1px dashed var(--line); color: var(--text); text-decoration: none; }
+.post-list .post-name { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.post-list .post-when { color: var(--muted); font: 400 var(--fs-xs)/1 var(--font-mono); white-space: nowrap; }
+.detail-links { display: flex; flex-wrap: wrap; gap: var(--s3); }
+
+/* One row per visit (visits.js): who and where, the X / Nostr links, when.
+   The links always sit in the same two slots so they line up down a list. */
+.visits { list-style: none; margin: 0 0 var(--s3); padding: 0; }
+.visits li { border-bottom: 1px dashed var(--line); }
+.visit { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; align-items: center; gap: var(--s2) var(--s4); min-height: var(--tap); padding: var(--s2) 0; }
+.visit-main { min-width: 0; overflow-wrap: anywhere; color: var(--muted); }
+.visit-main a { color: var(--text); text-decoration: none; }
+.visit-main .visit-project { font-weight: 700; }
+.visit-links { display: flex; gap: var(--s2); }
+.visit-link {
+    position: relative; display: inline-flex; align-items: center; justify-content: center;
+    min-width: 4.25rem; height: 28px; padding: 0 var(--s2);
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    font: 400 var(--fs-xs)/1 var(--font-mono); text-transform: uppercase; color: var(--link); text-decoration: none;
+}
+.visit-link::after { content: ""; position: absolute; inset: -9px 0; }   /* 46px tall touch target */
+.visit-link.is-empty { border-color: transparent; }
+.visit-when { color: var(--muted); font: 400 var(--fs-xs)/1 var(--font-mono); white-space: nowrap; min-width: var(--visit-when, 18ch); text-align: right; }   /* fixed, so the links line up */
+/* Dates with a year ("27 Jan 2026") and no time need less room */
+.visits.dated { --visit-when: 11ch; }
+
+/* Period switch above the board */
+.seg { display: inline-flex; border: 1px dashed var(--line-strong); border-radius: var(--radius); }
+.seg button { min-height: var(--tap); padding: 0 var(--s4); background: none; border: 0; color: var(--muted); font: 400 var(--fs-sm)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; cursor: pointer; }
+.seg button + button { border-left: 1px dashed var(--line-strong); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--night); }
+.seg button[aria-pressed="true"]:focus-visible { outline-color: var(--accent); }
+
+/* Tabs between the pages of one section (the Directory's Projects and
+   Merchants): links drawn like .seg, the current page a solid block.
+   Full width on phones, unlike the desktop-only section tabs. */
+.page-tabs { display: inline-flex; margin: 0 0 var(--s5); border: 1px dashed var(--line-strong); }
+.page-tabs a { display: inline-flex; align-items: center; justify-content: center; min-height: var(--tap); padding: 0 var(--s5); color: var(--muted); font: 400 var(--fs-sm)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; text-decoration: none; }
+.page-tabs a + a { border-left: 1px dashed var(--line-strong); }
+.page-tabs a[aria-current="page"] { background: var(--accent); color: var(--night); }
+@media (max-width: 720px) {
+    .page-tabs { display: flex; }
+    .page-tabs a { flex: 1; }
+}
+
+.board-empty { padding: var(--s6) var(--s5); max-width: 60ch; }
+.board-empty p { margin: 0 0 var(--s3); }
+.board-empty p:first-child { font: 700 var(--fs-md)/1.4 var(--font-text); }
+
+/* --------------------------------------------------------------- Flags -- */
+/* SVG flags from flags.js, sized to the text around them. No outline or
+   rounding, to match the flags drawn after names (.name-flag). */
+.flag-img { display: inline-block; width: auto; height: 0.75em; aspect-ratio: 4 / 3; vertical-align: 0; }
+/* A name with its flag (nameWithFlag): the flag sits in the padding after the
+   name, cap height, so it never wraps away from the last word */
+.name-flag { padding-right: 1.35em; background: no-repeat right 0 top 55% / auto 0.75em; }
+
+/* ----------------------------------------------------------- Facts row --
+ * One figure per line, label first, then dot leaders to the figure: the
+ * phone's own way of listing settings. The figure comes first in the markup,
+ * so it is still read before its label.
+ */
+.facts { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(19rem, 100%), 1fr)); gap: 0 var(--s7); margin: 0; padding: 0; list-style: none; }
+.facts li { display: flex; align-items: baseline; gap: var(--s2); }
+.facts li > span { order: 1; color: var(--text); }   /* the label, not spans inside a figure */
+.facts li::after { content: ""; order: 2; flex: 1; min-width: var(--s4); border-bottom: 2px dotted var(--muted); transform: translateY(-6px); }
+.facts b { order: 3; font: 400 2.5rem/1.15 var(--font-display); color: var(--heading); text-shadow: var(--lcd); }
+.notes { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s6); margin: var(--s4) 0 0; padding: 0; list-style: none; color: var(--muted); }
+.notes strong { color: var(--text); font-weight: 700; }
+
+/* ------------------------------------------------------- Reversed box --
+ * The other theme, in a box: glass on ink in dark, ink on glass in light.
+ * The colour tokens swap at the top of this file, so whatever sits inside
+ * (figures, notes, links, headings) follows without rules of its own.
+ */
+.reverse { background: var(--night); color: var(--text); padding: var(--s5); }
+
+/* ---------------------------------------------------------- Plain list --
+ * A row under the pointer turns into a solid block, like the phone's
+ * menu selection.
+ */
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { border-bottom: 1px dashed var(--line); }
+.list li > a, .list li > .row { display: flex; justify-content: space-between; align-items: center; gap: var(--s4); min-height: var(--tap); padding: var(--s2); color: var(--text); text-decoration: none; }
+.list li > a:focus-visible { outline-offset: -3px; }
+.list .li-main { min-width: 0; overflow-wrap: anywhere; }
+.list .li-main .tag { margin-right: var(--s2); }
+.list .li-side { color: var(--muted); white-space: nowrap; }
+/* Times and dates in mono: the same size as dates in the post lists */
+.list .li-side.mono { font-size: var(--fs-xs); }
+.list .li-name { display: block; }
+.list .li-sub { display: block; color: var(--muted); font-size: var(--fs-sm); }
+.list li.is-more { display: none; }
+.list.show-all li.is-more { display: block; }
+.list-more { margin-top: var(--s4); }
+/* A long list ends with a link to all of it elsewhere (merchants: the
+   Directory's Merchants tab) instead of opening in place */
+.list-link { margin: var(--s4) 0 0; }
+
+/* A ranking (homepage, Epoch 5, archive): a plain list with a rank before
+   each name. The name has its own column, so a name that wraps lines up
+   under itself, not under the rank; the figure sits on its last line (both
+   share one font and line height, so their bottoms line up). */
+.lb-list .li-main { display: flex; align-items: baseline; }
+.lb-list li > a, .lb-list li > .row { align-items: flex-end; }
+.lb-name { min-width: 0; }
+.lb-rank { flex: none; display: inline-block; min-width: 2.25rem; margin-right: var(--s2); padding: 2px 4px; font: 400 var(--fs-sm)/1.2 var(--font-mono); color: var(--muted); text-align: center; }
+
+/* ------------------------------------------------------ Bars over time --
+ * Every bar faint but today's, which is solid. A bar being read gets a frame.
+ */
+.bars { position: relative; display: flex; align-items: flex-end; gap: 3px; height: 140px; border-bottom: 1px solid var(--muted); }
+.bars i { flex: 1; min-height: 1px; background: var(--link); opacity: 0.45; }
+.bars i.today { background: var(--accent); opacity: 1; }
+.bars-axis { display: flex; justify-content: space-between; padding-top: var(--s2); font: 400 var(--fs-xs)/1 var(--font-mono); color: var(--muted); }
+/* Readout above a bar chart: one line, updated by hover, tap or arrow keys
+   (includes/inject.js). Replaces per-bar tooltips, which phones can't show. */
+.bars-readout { margin: 0 0 var(--s2); min-height: 1.5em; font: 400 var(--fs-sm)/1.5 var(--font-mono); color: var(--text); }
+.bars { cursor: crosshair; touch-action: pan-y; }
+.bars i.sel { background: var(--heading); opacity: 1; outline: 1px solid var(--heading); outline-offset: 1px; }
+.bars:focus-visible { outline-offset: 4px; }
+
+/* ------------------------------------------------ Horizontal bar rows --
+ * Same family as the per-day bars: segmented bars, the current or live one
+ * solid. One compact row each: label (name, date under it), bar, value in a
+ * right-hand column. A row can be a link (a.hb-row) or plain (div).
+ */
+.hbars { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.hb-row {
+    display: grid; grid-template-columns: 10rem minmax(0, 1fr); align-items: center; column-gap: var(--s4);
+    min-height: var(--tap); padding: 3px 0; color: var(--text); text-decoration: none;
+}
+.hb-label { display: block; min-width: 0; line-height: 1.25; }
+.hb-name { display: block; font-weight: 700; white-space: nowrap; }
+.hb-when { display: block; color: var(--muted); font-size: var(--fs-xs); white-space: nowrap; }
+/* Bar then its value. --w is the bar's share (0 to 1) of the room left once
+   the value has its space, so the longest bar and its value always fit. */
+.hb-track { display: flex; align-items: center; gap: var(--s3); min-width: 0; }
+.hb-bar { flex: none; width: calc((100% - 5.5rem) * var(--w, 0)); min-width: 2px; height: 14px; background: repeating-linear-gradient(90deg, var(--link) 0 6px, transparent 6px 8px); }
+.hb.current .hb-bar { background: var(--accent); }
+.hb-val { font: 400 1.375rem/1 var(--font-display); white-space: nowrap; color: var(--heading); }
+/* Context line under a row, lined up with the bars */
+.hb-note { margin: -4px 0 var(--s2) calc(10rem + var(--s4)); color: var(--muted); font: 400 var(--fs-sm)/1.45 var(--font-text); }
+
+/* Segmented bar for a share (0 to 1 in --v): the epoch status readouts */
+.seg-bar { display: block; position: relative; height: 10px; border: 1px solid var(--line-strong); }
+.seg-bar::before {
+    content: ""; position: absolute; inset: 2px auto 2px 2px;
+    width: calc((100% - 4px) * var(--v, 0));
+    background: repeating-linear-gradient(90deg, var(--accent) 0 7px, transparent 7px 9px);
+}
+
+/* ---------------------------------------------------------- Page head --
+ * Inner pages: a heading and one plain sentence. Not a hero.
+ */
+/* Every inner page's header: the same space and sizes everywhere (phones below) */
+.page-head { padding: var(--s7) 0 var(--s6); border-bottom: 1px dashed var(--line-strong); }
+.page-head h1 { margin: 0; font-size: var(--fs-h1); }
+.page-head .lede { margin: var(--s3) 0 0; color: var(--muted); font-size: var(--fs-md); max-width: 60ch; }
+.page-head .facts { margin-top: var(--s5); }
+
+/* -------------------------------------------------------------- Prose --
+ * Long text (about, guidelines, disclaimer, stories): readable measure.
+ */
+.prose { max-width: 70ch; }
+.prose p, .prose ul, .prose ol { margin: 0 0 var(--s4); }
+.prose > :last-child { margin-bottom: 0; }
+.prose h2 { margin: var(--s7) 0 var(--s3); font-size: 1.875rem; }
+.prose h3 { margin: var(--s5) 0 var(--s2); font-size: 1.5rem; }
+.prose > h2:first-child, .prose > h3:first-child { margin-top: 0; }
+.prose ul, .prose ol { padding-left: 1.25em; }
+.prose li { margin: 0 0 var(--s2); }
+.prose li::marker { color: var(--muted); }
+.prose strong { color: var(--heading); }
+.prose code { font: 400 0.92em var(--font-mono); background: var(--panel); padding: 1px 5px; border-radius: var(--radius); }
+
+/* ----------------------------------------------------------- Surfaces -- */
+.box { padding: var(--s5); background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+.box > h2, .box > h3 { margin: 0 0 var(--s3); font-size: 1.625rem; }
+.box-label { margin: 0 0 var(--s3); font: 400 var(--fs-sm)/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+/* A note that needs attention: left rule, text says what kind */
+.callout { padding: var(--s4) var(--s5); border-left: 3px solid var(--link); background: var(--panel); max-width: 70ch; }
+.callout.danger { border-left-color: var(--danger); }
+.callout > :first-child { margin-top: 0; }
+.callout > :last-child { margin-bottom: 0; }
+
+/* ---------------------------------------------------- More buttons -- */
+.btn-danger { color: var(--danger); }
+.btn[disabled], .btn[aria-disabled="true"] { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+/* Outline link chip: a row of external links (website, X, Nostr...) */
+.chips { display: flex; flex-wrap: wrap; gap: var(--s2); margin: 0; padding: 0; list-style: none; }
+.chip {
+    display: inline-flex; align-items: center; gap: var(--s2);
+    min-height: var(--tap); padding: 0 var(--s3);
+    border: 1px dashed var(--line-strong); border-radius: var(--radius);
+    color: var(--link); text-decoration: none;
+    font: 400 var(--fs-sm)/1 var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em;
+}
+
+/* Badge: emoji + label + note. The emoji is decorative; the label says it. */
+.badges { display: flex; flex-wrap: wrap; gap: var(--s2); margin: 0; padding: 0; list-style: none; }
+.badge { display: inline-flex; align-items: center; gap: var(--s2); min-height: var(--tap); padding: var(--s1) var(--s3); border: 1px dashed var(--line-strong); border-radius: var(--radius); }
+.badge-label { font-weight: 700; }
+.badge-note { color: var(--muted); font-size: var(--fs-sm); }
+
+/* Review status: always text. With two tones, the border's style tells them
+   apart too: solid when approved, dashed while pending. */
+.status { display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border: 1px solid currentColor; border-radius: var(--radius); font: 400 var(--fs-xs)/1.3 var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
+.status::before { content: ""; width: 7px; height: 7px; background: currentColor; }
+.status-approved { color: var(--link); }
+.status-pending { color: var(--text); border-style: dashed; }
+.status-rejected { color: var(--danger); }
+.status-neutral { color: var(--muted); border-style: dotted; }
+
+/* --------------------------------------------------------------- Forms -- */
+.field { display: grid; gap: 6px; min-width: 0; }
+.field-label { font: 700 var(--fs-sm)/1.2 var(--font-text); color: var(--muted); }
+.field-hint { margin: 0; font-size: var(--fs-sm); color: var(--muted); }
+.field-error { margin: 0; font-size: var(--fs-sm); color: var(--danger); }
+.input, .select {
+    width: 100%; min-height: var(--tap); padding: 0 var(--s3);
+    background: var(--panel); color: var(--text);
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    font: 400 var(--fs-base)/1.2 var(--font-text);
+}
+textarea.input { min-height: 8rem; padding: var(--s3); line-height: 1.5; resize: vertical; }
+.input::placeholder { color: var(--muted); opacity: 1; }
+.input[aria-invalid="true"] { border-color: var(--danger); }
+/* No color-scheme of its own: it inherits the page's, chosen mode included */
+.select { appearance: none; -webkit-appearance: none; padding-right: 40px; cursor: pointer; }
+.select option { background: var(--panel); color: var(--text); }
+/* Where the browser allows it (Chrome and Edge 135+), the page draws the
+   open list itself, so its highlight is the site's solid block rather than
+   the system's grey. Other browsers keep their own list. */
+@supports (appearance: base-select) {
+    .select, .select::picker(select) { appearance: base-select; }
+    .select { display: flex; align-items: center; }
+    .select::picker-icon { display: none; }   /* .select-wrap draws the chevron */
+    .select::picker(select) {
+        margin-top: 2px; padding: 0; background: var(--panel); color: var(--text);
+        border: 1px solid var(--line-strong); border-radius: 0;
+    }
+    .select option { display: flex; align-items: center; min-height: var(--tap); padding: 0 var(--s3); gap: var(--s2); }
+    .select option::checkmark { display: none; }
+    .select option:hover, .select option:focus-visible { background: var(--accent); color: var(--night); outline: none; }
+    .select option:checked { font-weight: 700; }
+}
+.select-wrap { position: relative; }
+.select-wrap::after {
+    content: ""; position: absolute; right: 16px; top: 50%; width: 8px; height: 8px; margin-top: -6px;
+    border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+    transform: rotate(45deg); pointer-events: none;
+}
+.check { display: flex; align-items: center; gap: var(--s3); min-height: var(--tap); cursor: pointer; }
+.check input { width: 20px; height: 20px; accent-color: var(--link); }
+
+/* ------------------------------------------------------ Donation panel --
+ * Directory card backs and project and merchant profiles (markup: donate.js).
+ * Lightning and onchain sit side by side and slide. Both sides stretch to the
+ * taller one, so switching never changes the panel's size; a directory card
+ * back fills the card instead.
+ */
+.donate { position: relative; overflow: hidden; background: var(--panel); border: 1px solid var(--line-strong); border-radius: var(--radius); }
+.donate-slides { display: flex; height: 100%; transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+.donate.show-onchain .donate-slides { transform: translateX(-100%); }
+.donate-side { flex: 0 0 100%; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: var(--s2); padding: var(--s4); }
+.donate .donate-title {
+    align-self: stretch; margin: 0; text-align: center;
+    font: 700 var(--fs-base)/1.25 var(--font-text); letter-spacing: 0; color: var(--heading); text-shadow: none;
+    overflow-wrap: anywhere;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.donate-title:focus { outline: none; }
+.donate-title:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+.donate-label { margin: 0; color: var(--accent); font: 400 var(--fs-sm)/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; }
+/* The QR needs a white quiet zone to scan: white here is functional */
+.qr-box { flex: none; width: 176px; height: 176px; padding: var(--s2); background: #fff; line-height: 0; }
+.qr-box canvas { display: block; width: 160px !important; height: 160px !important; }
+.addr-copy {
+    width: 100%; min-height: var(--tap); padding: var(--s2) var(--s3);
+    background: var(--night); color: var(--text);
+    border: 1px solid var(--line); border-radius: var(--radius);
+    font: 400 0.75rem/1.4 var(--font-mono); text-align: center; overflow-wrap: anywhere;
+    cursor: pointer;
+}
+.addr-copy.copied { border-color: var(--link); color: var(--link); }
+.donate-actions { display: flex; gap: var(--s2); width: 100%; margin-top: auto; }
+.donate-actions .btn { flex: 1; min-width: 0; }
+/* .pb button resets font and colour, which would override .btn on <button> */
+.pb .donate-actions button.btn { font: 400 var(--fs-sm)/1.2 var(--font-mono); color: var(--link); }
+
+@media (max-width: 720px) {
+    /* Rankings: room for each name on one line from 360px, with a narrower
+       rank column and less space around the row */
+    .lb-list li > a, .lb-list li > .row { gap: var(--s2); padding-left: 0; padding-right: var(--s1); }
+    .lb-rank { min-width: 1.75rem; margin-right: var(--s1); padding: 2px 0; }
+    /* Visits: names on their own line, links and time underneath */
+    .visit { display: flex; flex-wrap: wrap; align-items: center; }
+    .visit-main { flex: 1 0 100%; }
+    /* Right-aligned; drops to its own line when the links leave no room */
+    .visit-when { min-width: 0; margin-left: auto; }
+    .section > h2, .section-head h2 { font-size: 1.75rem; }
+    .page-head { padding: var(--s6) 0 var(--s5); }
+    .page-head .lede { font-size: var(--fs-base); }
+    .facts { grid-template-columns: minmax(0, 1fr); }
+    .facts b { font-size: 2rem; }
+    .hb-row { grid-template-columns: 8.5rem minmax(0, 1fr); column-gap: var(--s3); }
+    /* Notes run the full width under their row: beside the label column
+       they'd be a narrow strip */
+    .hb-note { margin: 2px 0 var(--s3); }
+}
+
+/* ---------------------------------------------------------- Hover --
+ * Hover looks only where a pointer can hover: a touch screen would keep them after a tap.
+ */
+@media (hover: hover) {
+    :where(.pb) a:hover { color: var(--text); }
+    .hero-link:hover { border-color: var(--accent); background: var(--accent); color: var(--night); }
+    .btn:hover { background: var(--accent); color: var(--night); }
+    .btn-solid:hover { background: var(--accent-hi); color: var(--night); }
+    .site-nav .theme-toggle:hover, .site-nav .brand-back:hover { color: var(--heading); background: var(--panel); }
+    .site-nav .nav-links a:hover { color: var(--heading); background: var(--panel); }
+    .site-nav .nav-toggle:hover { background: var(--panel); }
+    .subtabs a:hover { color: var(--heading); }
+    .site-footer a:hover { color: var(--text); }
+    .site-footer .partners a:hover span { text-decoration: underline; }
+    .fx-toggle:hover { color: var(--heading); border-color: var(--accent); }
+    .post-list a:hover .post-name { text-decoration: underline; }
+    .visit-main a:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+    a.visit-link:hover { border-color: var(--accent); background: var(--accent); color: var(--night); }
+    .seg button:hover:not([aria-pressed="true"]) { color: var(--heading); }
+    .page-tabs a:hover:not([aria-current]) { color: var(--heading); }
+    .list li > a:hover { background: var(--accent); color: var(--night); }
+    .list li > a:hover .li-side, .list li > a:hover .li-sub, .list li > a:hover .tag { color: var(--night); border-color: var(--night); }
+    .lb-list li > a:hover .lb-rank { color: var(--night); }
+    a.hb-row:hover { background: rgba(var(--accent-rgb), 0.1); color: var(--text); }
+    a.hb-row:hover .hb-name { text-decoration: underline; }
+    .btn-danger:hover { background: var(--danger); color: var(--night); }
+    .chip:hover { border-color: var(--accent); background: var(--accent); color: var(--night); }
+    .input:hover, .select:hover { border-color: var(--muted); }
+    .addr-copy:hover { border-color: var(--link); }
+    .pb .donate-actions button.btn:hover { color: var(--night); }
+}

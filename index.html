@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="only light">
+    <title>PoWBoT Stats – Bitcoin proof of work across Africa</title>
+    <meta name="description" content="Live PoWBoT leaderboard: Bitcoin projects across Africa post proof-of-work videos of paying local merchants in bitcoin. See this epoch’s standings.">
+    <link rel="canonical" href="https://powbot.africa/">
+    <meta name="theme-color" content="#CFE5BE">
+    <script>
+        // Dark, if chosen with the header switch (light is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
+        (function () {
+            try {
+                if (localStorage.getItem('pb-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+                if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
+            } catch (e) { /* storage blocked: the defaults, light with effects on */ }
+        })();
+    </script>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Link previews (Open Graph, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://powbot.africa/">
+    <meta property="og:site_name" content="PoWBoT">
+    <meta property="og:title" content="PoWBoT Stats – Bitcoin proof of work across Africa">
+    <meta property="og:description" content="Live PoWBoT leaderboard: Bitcoin projects across Africa post proof-of-work videos of paying local merchants in bitcoin. See this epoch’s standings.">
+    <meta property="og:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="PoWBoT, a robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://powbot.africa/">
+    <meta name="twitter:title" content="PoWBoT Stats – Bitcoin proof of work across Africa">
+    <meta name="twitter:description" content="Live PoWBoT leaderboard: Bitcoin projects across Africa post proof-of-work videos of paying local merchants in bitcoin. See this epoch’s standings.">
+    <meta name="twitter:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
+    <meta name="twitter:image:alt" content="PoWBoT, a robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+
+    <link rel="preload" href="fonts/vt323-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/share-tech-mono-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/atkinson-hyperlegible-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/powbot.css">
+    <style>
+        /* Homepage layout only. Colours, type and components: css/powbot.css */
+        .hero { border-bottom: 1px dashed var(--line-strong); }
+        .hero .wrap {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            grid-template-areas: "standby standby" "title status" "meta status";
+            gap: var(--s2) var(--s7);
+            padding-top: var(--s5);
+            padding-bottom: var(--s7);
+        }
+        .hero-title { grid-area: title; align-self: end; }
+        .hero h1 { margin: 0; font-size: clamp(3rem, 6vw, 5rem); }
+        .hero-meta { grid-area: meta; margin-top: var(--s3); }
+        .summary { margin: 0; font-size: var(--fs-md); color: var(--muted); max-width: 52ch; }
+        .summary strong { color: var(--text); }
+        .progress { margin-top: var(--s4); max-width: 520px; }
+        .progress-text { margin: 0 0 var(--s2); font: 400 var(--fs-sm)/1.4 var(--font-mono); text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+        /* [##########......] */
+        .progress-track { position: relative; height: 20px; padding: 4px 8px; }
+        .progress-track::before, .progress-track::after { content: ""; position: absolute; top: 0; bottom: 0; width: 5px; border: 2px solid var(--accent); }
+        .progress-track::before { left: 0; border-right: 0; }
+        .progress-track::after { right: 0; border-left: 0; }
+        .progress-fill { height: 100%; background: repeating-linear-gradient(90deg, var(--accent) 0 9px, transparent 9px 12px); }
+
+        /* Standby screen, as on the phone: signal on the left (member projects
+           posting this epoch), the operator in the middle, battery on the right
+           (time left in the epoch). It repeats figures given in words below. */
+        .standby {
+            grid-area: standby; display: grid; grid-template-columns: 7rem minmax(0, 1fr) 7rem; align-items: end;
+            margin-bottom: var(--s4); padding-bottom: var(--s3); border-bottom: 2px solid var(--accent);
+        }
+        .sb-side { display: grid; gap: 6px; justify-items: start; }
+        .sb-batt { justify-items: end; text-align: right; }
+        .sb-bars { display: flex; flex-direction: column-reverse; gap: 3px; }
+        .sb-batt .sb-bars { align-items: flex-end; }
+        .sb-bars i { display: block; height: 6px; background: var(--accent); opacity: 0.18; }
+        .sb-bars i.on { opacity: 1; }
+        /* The antenna: a triangle on a stick */
+        .sb-antenna { width: 12px; height: 17px; background: linear-gradient(var(--accent), var(--accent)) center bottom / 2px 11px no-repeat; }
+        .sb-antenna::before { content: ""; display: block; border: 6px solid transparent; border-top: 7px solid var(--accent); border-bottom: 0; }
+        .sb-battery { position: relative; width: 14px; height: 20px; margin-top: 4px; border: 2px solid var(--accent); }
+        .sb-battery::before { content: ""; position: absolute; left: 2px; right: 2px; top: -5px; height: 3px; background: var(--accent); }
+        .sb-cap { font: 400 1.0625rem/1.1 var(--font-display); color: var(--muted); }
+        .sb-op { text-align: center; align-self: center; }
+        .sb-name { display: block; font: 400 2.5rem/1 var(--font-display); color: var(--heading); letter-spacing: 0.04em; text-shadow: var(--lcd); }
+        .sb-time { display: block; font: 400 1.375rem/1.1 var(--font-display); color: var(--text); }
+
+        /* Epoch status: the mascot with a readout at each corner, each with a
+           bar for its share (seg-bar, css/powbot.css) */
+        /* Bottom-aligned with the left column: its last bars end level with
+           the progress bar */
+        .epoch-status {
+            grid-area: status; align-self: end;
+            display: grid; grid-template-columns: 8.5rem auto 8.5rem; grid-template-rows: 1fr 1fr;
+            align-items: center; gap: var(--s4) var(--s5);
+        }
+        .mascot-link { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+        .mascot { display: block; width: 128px; height: auto; }
+        /* Label, figure, bar; the right-hand pair mirrors the left */
+        /* Bottom-aligned, so figures and bars stay level across a row even
+           when a label wraps on a narrow phone */
+        .es-read { display: grid; gap: 4px; justify-items: start; align-self: end; }
+        .es-read[data-read="1"], .es-read[data-read="3"] { justify-items: end; text-align: right; }
+        .es-read .seg-bar { justify-self: stretch; }
+        .es-label { font: 400 var(--fs-xs)/1.2 var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+        .es-val { font: 400 1.75rem/1 var(--font-display); color: var(--heading); }
+
+                .board-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s3); margin-bottom: var(--s3); }
+        .board-bar h2 { margin: 0; font-size: var(--fs-h2); }
+
+        /* Countries: the globe (globe.js), the list of countries beside it */
+        .countries { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--s6); align-items: center; }
+        .globe { position: relative; border: 1px dashed var(--line-strong); }
+        .globe canvas { display: block; width: 100%; height: 340px; }
+        .globe .globe-pause { position: absolute; right: var(--s1); bottom: var(--s1); background: var(--night); }
+        /* One line on desktop, room for two on phones: the note can't push the table */
+        .board-note { margin: 0 0 var(--s1); color: var(--muted); font-size: var(--fs-sm); min-height: 1.55em; }
+        .loading { padding: var(--s6) var(--s5); color: var(--muted); }
+
+        .pulse { margin: var(--s3) 0 0; color: var(--muted); }
+        .pulse strong { color: var(--text); }
+        /* Project standings and Merchants side by side, stacked on phones */
+        .standings { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s7); align-items: start; }
+        /* Latest is last in its group, but not on the page: keep its divider */
+        #content-top > .section:last-child { border-bottom: 1px dashed var(--line-strong); }
+        /* Both built the same way, so the two lists start level: heading,
+           switch under it, one line of note, then the rows */
+        .standings .board-bar, .standings .section-head { flex-direction: column; align-items: flex-start; gap: var(--s3); margin-bottom: var(--s3); }
+        .standings .board-note, .standings .section-note { margin: 0 0 var(--s3); font-size: var(--fs-sm); color: var(--muted); min-height: 1.55em; }
+        /* Highlights: the figures, their notes, then the per-day chart */
+        .daily { margin-top: var(--s6); }
+        .daily h3 { margin: 0 0 var(--s2); font-size: 1.5rem; }
+        /* The leaderboard is the shared ranking list (.lb-list in powbot.css) */
+        /* One line per merchant in both views, so switching never changes the
+           list's height. A long name is cut short on screen only; the link
+           still carries it in full. */
+        #merchant-list .li-main { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .error { padding: var(--s6) 0; }
+        .error p:first-child { font: 700 var(--fs-md)/1.4 var(--font-text); color: var(--danger); }
+
+        @media (max-width: 720px) {
+            .hero .wrap { grid-template-columns: minmax(0, 1fr); grid-template-areas: "standby" "title" "status" "meta"; gap: var(--s2); padding-top: var(--s4); }
+            .standby { grid-template-columns: 5rem minmax(0, 1fr) 5rem; }
+            .sb-name { font-size: 2rem; }
+            .sb-time { font-size: 1.125rem; }
+            .sb-cap { font-size: 0.9375rem; }
+            .epoch-status { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: var(--s3); margin-top: var(--s3); }
+            /* Tall enough to span both readout rows, as on desktop, and
+               standing on the bottom row: wheels level with its bars */
+            .mascot-link { align-self: end; }
+            .mascot { width: 112px; }
+            .summary { font-size: var(--fs-base); }
+            .countries { grid-template-columns: minmax(0, 1fr); gap: var(--s5); }
+            .standings { grid-template-columns: minmax(0, 1fr); }
+            .board-note { min-height: 3.1em; }
+            .board-bar h2 { font-size: 1.75rem; }
+            .globe canvas { height: 280px; }
+            #latest-list li > a { flex-direction: column; align-items: flex-start; gap: 2px; padding: var(--s3) var(--s2); }
+        }
+
+        /* Hover looks only where a pointer can hover: a touch screen would keep them after a tap */
+        @media (hover: hover) {
+            .globe .globe-pause:hover { background: var(--accent); }
+        }
+        /* Country rows with projects and posts: on narrow phones the two
+           stack, so the country's name keeps the room */
+        @media (max-width: 480px) {
+            .li-side.pair { display: grid; justify-items: end; line-height: 1.3; }
+            .li-side.pair .sep { display: none; }
+        }
+    </style>
+</head>
+<body class="pb">
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
+
+    <!-- Section tabs; includes/inject.js marks the one being read -->
+    <nav class="subtabs" aria-label="On this page">
+        <div class="wrap">
+            <ul>
+                <li><a href="#countries-title">Active countries</a></li>
+                <li><a href="#latest-title">Latest</a></li>
+                <li><a href="#board-title">Standings</a></li>
+                <li><a href="#highlights-title">Highlights</a></li>
+                <li><a href="#epochs-title">Epochs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main">
+        <section class="hero" aria-labelledby="epoch-title">
+            <div class="wrap">
+                <!-- Filled by renderStandby(); decorative, the figures are in the summary -->
+                <div class="standby" id="standby" aria-hidden="true">
+                    <span class="sb-side sb-signal"><span class="sb-antenna"></span><span class="sb-bars"></span><span class="sb-cap"></span></span>
+                    <span class="sb-op"><span class="sb-name" translate="no">PoWBoT</span><span class="sb-time"></span></span>
+                    <span class="sb-side sb-batt"><span class="sb-bars"></span><span class="sb-battery"></span><span class="sb-cap"></span></span>
+                </div>
+                <div class="hero-title">
+                    <h1 id="epoch-title">Epoch 6 stats</h1>
+                </div>
+                <!-- Readouts filled by renderStatus() -->
+                <div class="epoch-status" id="epoch-status" role="group" aria-label="Epoch at a glance">
+                    <div class="es-read" data-read="0"></div>
+                    <div class="es-read" data-read="1"></div>
+                    <a class="mascot-link" href="about.html">
+                        <img class="mascot" src="images/PoWBoT_mascot_240px.png" alt="About PoWBoT" width="150" height="186" fetchpriority="high">
+                    </a>
+                    <div class="es-read" data-read="2"></div>
+                    <div class="es-read" data-read="3"></div>
+                </div>
+                <div class="hero-meta">
+                    <p class="summary" id="summary">Loading this epoch…</p>
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="wrap">
+            <!-- Countries and Latest, then the leaderboard beside Merchants,
+                 then Highlights and Epochs: drawn once the data loads -->
+            <div id="content-top"><p class="loading">Loading…</p></div>
+            <div class="section standings">
+            <section aria-labelledby="board-title">
+                <div class="board" id="board">
+                    <div class="board-bar">
+                        <h2 id="board-title">Project standings</h2>
+                        <div class="seg" role="group" aria-label="Rank projects by" id="period" hidden>
+                            <button type="button" data-view="merchants" aria-pressed="true">Merchants</button>
+                            <button type="button" data-view="posts" aria-pressed="false">Posts</button>
+                            <button type="button" data-view="recent" aria-pressed="false">Last 48 hours</button>
+                        </div>
+                    </div>
+                    <p class="board-note" id="board-note"></p>
+                    <div id="board-body" aria-live="polite">
+                        <p class="loading">Loading the leaderboard…</p>
+                    </div>
+                </div>
+            </section>
+            <div id="merchants-slot"><p class="loading">Loading merchants…</p></div>
+            </div>
+            <div id="content"></div>
+        </div>
+    </main>
+
+    <!-- Footer (loaded from includes/footer.html) -->
+    <div id="site-footer"></div>
+
+    <!-- Current epoch dates and name. Edit epoch-config.js at each rollover. -->
+    <script src="epoch-config.js"></script>
+    <!-- Finished epochs and the shared "Every epoch" block -->
+    <script src="epochs.js"></script>
+    <script src="flags.js"></script>
+    <!-- The Countries globe -->
+    <script src="globe.js"></script>
+    <script src="visits.js"></script>
+    <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Must load
+         before any script that fetches live data. -->
+    <script src="data-source.js"></script>
+    <script src="includes/inject.js"></script>
+
+    <script>
+        // Global project metadata
+        let projectMetadata = {};
+
+        // Member projects and the countries they are in (members.json), for
+        // the standby strip and the status readouts. null until loaded, or if
+        // members.json could not load.
+        let memberTotals = null;
+
+        // Approved tracker posts grouped into visits (visits.js): an X post and
+        // its Nostr cross-post become one row. null when the tracker could not
+        // load, and the post lists fall back to the stats.json posts.
+        let allVisits = null;
+
+        // How far back the "recent activity" surfaces look: the Last 48 hours
+        // leaderboard, the activity line, and the latest posts list. Widened from
+        // 24 to 48 hours for Epoch 6, which runs at a much lower posting rate - a
+        // 24-hour window was often empty and made a live epoch look dormant.
+        //
+        // Drives BOTH the query window and every label, so the two cannot drift apart.
+        // Change this one number to retune the window.
+        const ACTIVITY_WINDOW_HOURS = 48;
+
+        // Rows shown before "Show all".
+        const BOARD_ROWS = 10;
+        const LIST_ROWS = 8;
+
+        // Finished epochs (totals and notes) live in epochs.js, shared with the
+        // Epoch 5 page and the archive.
+
+        const DAY_MS = 24 * 60 * 60 * 1000;
+
+        // The epoch being shown: epoch-config.js, overridden by stats.json if it
+        // ever carries an `epoch` object.
+        let EPOCH = Object.assign({}, window.POWBOT_EPOCH);
+
+        // From EPOCH.end the page shows the epoch's results: the same page, with
+        // the live-only parts (the 48-hour views, "this week") set aside, until
+        // the next epoch is set in epoch-config.js.
+        function epochOver() {
+            const end = new Date(EPOCH.end);
+            return !isNaN(end) && Date.now() >= end;
+        }
+
+        // The epoch's last UTC day (the moment before it closes at midnight)
+        const lastDay = () => new Date(new Date(EPOCH.end).getTime() - 1);
+
+        // Where the recent-activity window ends: now, or the close once it is over
+        const windowEnd = () => (epochOver() ? new Date(EPOCH.end).getTime() : Date.now());
+
+        // Format numbers with thousands separators
+        function formatNumber(num) {
+            return Number(num || 0).toLocaleString('en-GB');
+        }
+
+        // "2026-09-25" -> "25 Sep", always UTC
+        function formatDay(dateStr) {
+            const d = new Date(String(dateStr).length === 10 ? dateStr + 'T00:00:00Z' : dateStr);
+            if (isNaN(d)) return '';
+            return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
+        }
+
+        // Tracker timestamps look like "2026-09-28 00:52:06 UTC"
+        function parseTrackerTime(ts) {
+            return new Date(String(ts || '').replace(' UTC', 'Z').replace(' ', 'T'));
+        }
+
+        function formatDateTimeUTC(date) {
+            if (isNaN(date)) return '';
+            const day = date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
+            const time = date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
+            return `${day}, ${time} UTC`;
+        }
+
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // For use inside a quoted HTML attribute. escapeHtml() is not enough here -
+        // it escapes & < > but leaves quotes intact, so a value containing one would
+        // close the attribute early.
+        function attrSafe(text) {
+            return escapeHtml(String(text ?? ''))
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        const FLAG_RE = /[\u{1F1E6}-\u{1F1FF}]{2}/u;
+        const stripFlags = (name) => String(name || '').replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
+        // Tracker names read "Bitcoin Aves (Ghana) 🇬🇭"; the flag already says where.
+        const displayName = (name) => stripFlags(name).replace(/\s*\([^)]*\)\s*$/, '');
+        const flagOf = (name) => (String(name || '').match(FLAG_RE) || [''])[0];
+
+        // "Bitcoin Ekasi 🇿🇦" -> "bitcoin-ekasi"
+        function profileId(name) {
+            return String(name || '')
+                .replace(/[^\w\s-]/g, '')
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, '-');
+        }
+
+        function profileUrl(name, type) {
+            const meta = projectMetadata[name];
+            if (type === 'project' && meta?.info_url) return meta.info_url;
+            return `${type === 'merchant' ? 'merchant-profile.html' : 'profile.html'}?id=${profileId(name)}`;
+        }
+
+        // The tracker filtered to one project's approved posts this epoch. The
+        // tracker has no 48-hour range, so `recent` adds the closest it has:
+        // whole UTC days from the start of the window.
+        function trackerUrl(project, recent = false) {
+            const params = new URLSearchParams({ epoch: String(EPOCH.number), project, status: 'Processed' });
+            if (recent) {
+                const day = d => new Date(d).toISOString().slice(0, 10);
+                params.set('date', 'custom');
+                params.set('from', day(Date.now() - ACTIVITY_WINDOW_HOURS * 60 * 60 * 1000));
+                params.set('to', day(Date.now()));
+            }
+            return `tracker.html?${params}`;
+        }
+
+        // Visits with a post inside the recent-activity window. Any post counts,
+        // so a visit whose two posts straddle the edge still shows both links.
+        function recentVisits() {
+            const start = windowEnd() - ACTIVITY_WINDOW_HOURS * 60 * 60 * 1000;
+            return (allVisits || []).filter(v => v.posts.some(x => parseTrackerTime(x.timestamp) >= start));
+        }
+
+        // One visit as a row. Inside a project's own list the project is known,
+        // so the row names only the merchant.
+        function visitRow(v, withProject = true) {
+            const name = displayName(v.project);
+            const merchant = v.merchant
+                ? `<a href="${attrSafe(profileUrl(v.merchant, 'merchant'))}">${escapeHtml(v.merchant)}</a>`
+                : 'a merchant';
+            const main = withProject
+                ? `<a class="visit-project" href="${attrSafe(profileUrl(v.project, 'project'))}">${nameWithFlag(name, flagOf(v.project))}</a> at ${merchant}`
+                : merchant;
+            return `<div class="visit"><span class="visit-main">${main}</span>${visitLinks(v, `${name} at ${v.merchant || 'a merchant'}`)}<span class="visit-when">${formatDateTimeUTC(parseTrackerTime(v.first))}</span></div>`;
+        }
+
+        function getPlatform(url) {
+            if (!url) return 'Nostr';
+            const lower = url.toLowerCase();
+            return (lower.includes('twitter.com') || lower.includes('x.com')) ? 'X' : 'Nostr';
+        }
+
+        // "158 merchants": a no-break space, so a count never splits from its word
+        const plural = (n, one, many) => `${formatNumber(n)} ${n === 1 ? one : many}`;
+
+        // Approved posts: each one pays its project exactly once, so the project
+        // payments (the standings' own counts) are the count, and the headline,
+        // Highlights and standings always agree. The review count (reviewer.approved)
+        // runs short: it counts reviewer payments, and a post an admin reviews
+        // pays no reviewer (4 such posts in Epoch 6 by 30 Sep).
+        const approvedPosts = stats => (stats.top_projects || []).reduce((n, p) => n + (p.count || 0), 0);
+        const reviewedPosts = stats => approvedPosts(stats) + (stats.reviewer?.rejected || 0);
+
+        // ------------------------------------------------------------ Hero --
+
+        function renderHero(stats) {
+            const projects = stats.top_projects?.length || 0;
+            const approved = approvedPosts(stats);
+            const merchants = stats.top_merchants?.length || 0;
+            const summary = document.getElementById('summary');
+            const over = epochOver();
+            summary.innerHTML = approved > 0
+                ? `<strong>${plural(projects, 'project', 'projects')}</strong> ${over ? 'had' : projects === 1 ? 'has' : 'have'} <strong>${plural(approved, 'post', 'posts')} approved</strong> at <strong>${plural(merchants, 'merchant', 'merchants')}</strong>.`
+                : over ? 'No posts were approved this epoch.'
+                : `No posts approved yet this epoch. The first project to post takes the top spot.`;
+
+            renderProgress(stats);
+            heroStats = stats;
+            renderStandby(stats);
+            renderStatus(stats);
+        }
+
+        // The stats the hero last drew, so late data (merchants-seen.json)
+        // can redraw the readouts
+        let heroStats = null;
+
+        // Days into the epoch, its length, and the days left: counted from the
+        // clock, so the last 24 hours before the close are the final day
+        // (left 1) and the close itself is left 0
+        function epochDays(stats) {
+            const start = new Date(EPOCH.start), end = new Date(EPOCH.end), now = new Date();
+            if (isNaN(start) || isNaN(end) || now < start) return null;
+            const total = Math.max(1, Math.round((end - start) / DAY_MS));
+            const left = Math.max(0, Math.ceil((end - now) / DAY_MS));
+            const day = left <= 1 ? total
+                : stats.launch?.days_active > 0 ? stats.launch.days_active : Math.max(1, Math.ceil((now - start) / DAY_MS));
+            return { day: Math.min(day, total), total, left };
+        }
+
+        // Standby strip: signal bars for member projects posting this epoch
+        // (out of 5), battery for the time left in it (out of 4), the epoch
+        // and the time in the middle. Decorative: the summary says it in words.
+        function renderStandby(stats) {
+            const box = document.getElementById('standby');
+            const projects = stats.top_projects?.length || 0;
+            const members = memberTotals?.projects || 0;
+            const days = epochDays(stats);
+            const left = days ? days.left : 0;
+            const signal = members ? Math.min(5, Math.ceil(projects / members * 5)) : 0;
+            const battery = days ? Math.min(4, Math.ceil(left / days.total * 4)) : 0;
+            const bars = (n, lit, first, step) => Array.from({ length: n }, (_, i) =>
+                `<i class="${i < lit ? 'on' : ''}" style="width:${first + i * step}px"></i>`).join('');
+            const verb = left ? 'posting' : 'posted';
+            box.querySelector('.sb-signal .sb-bars').innerHTML = bars(5, signal, 6, 5);
+            box.querySelector('.sb-signal .sb-cap').textContent = members ? `${projects}/${members} ${verb}` : `${projects} ${verb}`;
+            box.querySelector('.sb-batt .sb-bars').innerHTML = bars(4, battery, 8, 6);
+            box.querySelector('.sb-batt .sb-cap').textContent = !days ? ''
+                : left === 0 ? 'Ended'
+                : left === 1 ? 'Final day'
+                : plural(left, 'day left', 'days left');
+            const tick = () => {
+                const time = new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
+                box.querySelector('.sb-time').textContent = `${EPOCH.name} · ${time} UTC`;
+            };
+            tick();
+            if (!box.dataset.ticking) { box.dataset.ticking = '1'; setInterval(tick, 30000); }
+        }
+
+        // Status readouts around the mascot. Each shows a share with a bar, and
+        // says it in full for screen readers.
+        // Projects with an approved post in the last 7 days (rolling, UTC):
+        // from the tracker's visits, or, without the tracker, from the post
+        // dates in stats.json (whole days)
+        function activeThisWeek(stats) {
+            const since = Date.now() - 7 * DAY_MS;
+            if (allVisits) {
+                const names = new Set();
+                allVisits.forEach(v => {
+                    if (v.posts.some(x => parseTrackerTime(x.timestamp) >= since)) names.add(displayName(v.project));
+                });
+                return names.size;
+            }
+            const sinceDay = new Date(since).toISOString().slice(0, 10);
+            return new Set((stats.top_projects || [])
+                .filter(p => (p.posts || []).some(x => String(x.date) >= sinceDay))
+                .map(p => stripFlags(p.name))).size;
+        }
+
+        function renderStatus(stats) {
+            const countries = stats.countries?.length || 0;
+            const reviewed = reviewedPosts(stats);
+            const approved = approvedPosts(stats);
+            const merchants = stats.top_merchants || [];
+            const projects = stats.top_projects?.length || 0;
+            const reads = [];
+
+            const memberCountries = memberTotals?.countries || 0;
+            reads.push(memberCountries
+                ? ['Countries', `${countries}/${memberCountries}`, countries / memberCountries, `${countries} of the ${memberCountries} countries with member projects`]
+                : ['Countries', formatNumber(countries), null, `${countries} countries`]);
+            reads.push(reviewed
+                ? ['Approval', `${Math.round(approved / reviewed * 100)}%`, approved / reviewed, `${Math.round(approved / reviewed * 100)}% of reviewed posts approved`]
+                : ['Approval', '–', 0, 'No posts reviewed yet']);
+            if (epochOver()) {
+                // "This week" means nothing once it has closed: the projects that took part
+                const members = memberTotals?.projects || 0;
+                reads.push(members
+                    ? ['Projects', `${projects}/${members}`, projects / members, `${projects} of the ${members} member projects had posts approved`]
+                    : ['Projects', formatNumber(projects), null, `${projects} projects had posts approved`]);
+            } else {
+                // This epoch's projects with an approved post in the last 7 days
+                const active = Math.min(projects, activeThisWeek(stats));
+                // "this week" stays together if the label wraps (a no-break space)
+                reads.push(projects
+                    ? ['Active this week', `${active}/${projects}`, active / projects, `${active} of this epoch's ${projects} projects posted in the last 7 days`]
+                    : ['Active this week', '0', null, 'No projects posting yet']);
+            }
+            if (pastMerchants && merchants.length) {
+                const fresh = merchants.filter(m => !pastMerchants.names.has(m.name)).length;
+                reads.push(['New shops', `${fresh}/${merchants.length}`, fresh / merchants.length, `${fresh} of ${merchants.length} merchants are new to PoWBoT`]);
+            } else {
+                reads.push(['Merchants', formatNumber(merchants.length), null, `${merchants.length} merchants`]);
+            }
+
+            reads.forEach(([label, value, share, spoken], i) => {
+                const cell = document.querySelector(`#epoch-status [data-read="${i}"]`);
+                const bar = share === null ? '' : `<span class="seg-bar" style="--v:${Math.max(0, Math.min(1, share)).toFixed(3)}" aria-hidden="true"></span>`;
+                cell.innerHTML = `<span class="es-label" aria-hidden="true">${escapeHtml(label)}</span><span class="es-val num" aria-hidden="true">${escapeHtml(value)}</span>${bar}<span class="visually-hidden">${escapeHtml(label)}: ${escapeHtml(spoken)}</span>`;
+            });
+        }
+
+        function renderProgress(stats) {
+            const el = document.getElementById('progress');
+            const start = new Date(EPOCH.start);
+            const end = new Date(EPOCH.end);
+            const now = new Date();
+            if (isNaN(start) || isNaN(end)) { el.innerHTML = ''; return; }
+
+            const dateLabel = d => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', timeZone: 'UTC' });
+            const endLabel = dateLabel(lastDay());
+
+            if (now < start) {
+                const startLabel = start.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
+                const startTime = start.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
+                el.innerHTML = `<p class="progress-text">${escapeHtml(EPOCH.name)} opens ${startLabel} at ${startTime} UTC.</p>`;
+                return;
+            }
+
+            const { day, total, left } = epochDays(stats);
+            const text = left === 0
+                ? `Ran ${dateLabel(start)} to ${endLabel}, ${total} days.`
+                : left === 1
+                    ? `Day ${total} of ${total}, the final day. ${escapeHtml(EPOCH.name)} closes at midnight UTC.`
+                    : `Day ${day} of ${total}. Ends ${endLabel}.`;
+            const spoken = left === 0 ? `Ended after ${total} days` : `Day ${day} of ${total}`;
+            const pct = Math.min(100, Math.round(day / total * 100));
+            el.innerHTML = `
+                <p class="progress-text">${text}</p>
+                <div class="progress-track" role="progressbar" aria-label="${attrSafe(EPOCH.name)} progress"
+                     aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${day}"
+                     aria-valuetext="${spoken}">
+                    <div class="progress-fill" style="width:${pct}%"></div>
+                </div>`;
+        }
+
+        // ----------------------------------------------------- Leaderboard --
+
+        let boardStats = null;
+        // Which ranking the board shows: 'merchants' (default: different
+        // merchants reached this epoch), 'posts', or 'recent' (last 48 hours).
+        let boardView = 'merchants';
+
+        function renderBoard() {
+            const stats = boardStats;
+            const body = document.getElementById('board-body');
+            const note = document.getElementById('board-note');
+            if (!stats) return;
+
+            // The title stays put; one short line says what the current view ranks,
+            // so switching views never changes the board's height or columns.
+            if (boardView === 'recent') {
+                note.textContent = `Posts approved in the last ${ACTIVITY_WINDOW_HOURS} hours.`;
+                renderRecentBoard(stats, body);
+            } else if (boardView === 'posts') {
+                note.textContent = `Posts approved this epoch.`;
+                renderEpochBoard(stats, body, 'posts');
+            } else {
+                note.textContent = `Different merchants with an approved post this epoch.`;
+                renderEpochBoard(stats, body, 'merchants');
+            }
+        }
+
+        // Per-project figures for the epoch board. "Merchants reached" counts
+        // different merchants with an approved post; names come from BTC Map,
+        // so an exact match identifies a shop.
+        function projectRows(stats) {
+            return (stats.top_projects || []).map((p, order) => {
+                const posts = (p.posts || []).slice().sort((a, b) => String(b.date).localeCompare(String(a.date)));
+                const firstAt = {};
+                posts.forEach(x => {
+                    if (!x.merchant) return;
+                    if (!firstAt[x.merchant] || x.date < firstAt[x.merchant]) firstAt[x.merchant] = x.date;
+                });
+                const firsts = Object.values(firstAt).sort();
+                return {
+                    p, posts, order,
+                    count: p.count ?? posts.length,
+                    merchants: firsts.length,
+                    // The day the project reached its merchant count: breaks ties by who got there first
+                    reachedAt: firsts[firsts.length - 1] || ''
+                };
+            });
+        }
+
+        // The ranked list itself: one row per project, like the Merchants list.
+        // Each row opens the project's profile; the first ten show until
+        // "Show all" (handled with the other lists' buttons).
+        function boardList(rows, caption) {
+            const items = rows.map((r, i) => `
+                <li class="${i >= BOARD_ROWS ? 'is-more' : ''}"><a href="${attrSafe(r.href)}">
+                    <span class="li-main"><span class="lb-rank num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span><span class="lb-name">${r.name}</span></span>
+                    <span class="li-side num">${r.figure}</span>
+                </a></li>`).join('');
+            const label = `Show all ${rows.length} projects`;
+            return `
+                <ol class="list lb-list" id="lb-list" aria-label="${attrSafe(caption)}">${items}</ol>
+                ${rows.length > BOARD_ROWS ? `<button type="button" class="btn list-more" data-list="lb-list" data-label="${label}" aria-controls="lb-list" aria-expanded="false">${label}</button>` : ''}`;
+        }
+
+        function renderEpochBoard(stats, body, by) {
+            const projects = stats.top_projects || [];
+
+            if (projects.length === 0) {
+                body.innerHTML = `
+                    <div class="board-empty">
+                        <p>No approved posts yet this epoch.</p>
+                        <p>Projects appear here as soon as their first proof-of-work video is approved. Read the <a href="guidelines.html">posting guidelines</a> to get your project on the board.</p>
+                    </div>`;
+                return;
+            }
+
+            const countryByFlag = {};
+            (stats.countries || []).forEach(c => { countryByFlag[c.flag] = c.country; });
+
+            const ranked = projectRows(stats);
+            if (by === 'merchants') {
+                // Most merchants first; level projects by posts, then by who got there first
+                ranked.sort((a, b) => b.merchants - a.merchants || b.count - a.count
+                    || a.reachedAt.localeCompare(b.reachedAt) || a.order - b.order);
+            }
+            const rows = ranked.map(({ p, count, merchants }) => {
+                const flag = flagOf(p.name);
+                return {
+                    href: profileUrl(p.name, 'project'),
+                    name: nameWithFlag(stripFlags(p.name), flag, countryByFlag[flag] || projectMetadata[p.name]?.country || ''),
+                    figure: by === 'merchants' ? plural(merchants, 'merchant', 'merchants') : plural(count, 'post', 'posts')
+                };
+            });
+            body.innerHTML = boardList(rows, `${EPOCH.name} projects ranked by ${by === 'merchants' ? 'the number of different merchants with an approved post' : 'approved posts'}`);
+        }
+
+        function renderRecentBoard(stats, body) {
+            const videos = stats.recent_activity?.videos || [];
+
+            if (videos.length === 0) {
+                body.innerHTML = `
+                    <div class="board-empty">
+                        <p>No posts approved in the last ${ACTIVITY_WINDOW_HOURS} hours.</p>
+                        <p>Approved posts show up here within minutes. Switch to <em>Merchants</em> or <em>Posts</em> for the full standings.</p>
+                    </div>`;
+                return;
+            }
+
+            // Count approvals per project, and note when each REACHED that count -
+            // its most recent post in the window, since that is the moment it got there.
+            const projectStats = {};
+            videos.forEach(video => {
+                const project = video.project || 'Unknown';
+                const entry = projectStats[project] || (projectStats[project] = { count: 0, reachedAt: '', videos: [], merchants: new Set() });
+                entry.count += 1;
+                entry.videos.push(video);
+                if (video.merchant) entry.merchants.add(video.merchant);
+                const t = video.timestamp || '';
+                if (t > entry.reachedAt) entry.reachedAt = t;
+            });
+
+            // Rank by count, then by who got there FIRST. Without the tie-break the
+            // order fell out of the tracker file being newest-first, so level projects
+            // were ranked by recency - i.e. posting later improved your position.
+            const ranked = Object.entries(projectStats).sort((a, b) =>
+                b[1].count - a[1].count || a[1].reachedAt.localeCompare(b[1].reachedAt)
+            );
+
+            const countryByFlag = {};
+            (stats.countries || []).forEach(c => { countryByFlag[c.flag] = c.country; });
+            // Tracker names read "Bitcoin Aves (Ghana) 🇬🇭", the epoch file "Bitcoin Aves 🇬🇭":
+            // match on the bare name for the profile link. The epoch file can list
+            // one project twice (once without its flag): keep the fuller entry.
+            const epochByName = {};
+            (stats.top_projects || []).forEach(p => {
+                const key = stripFlags(p.name);
+                if (!epochByName[key] || (p.posts || []).length > (epochByName[key].posts || []).length) epochByName[key] = p;
+            });
+
+            const rows = ranked.map(([project, entry]) => {
+                const flag = flagOf(project);
+                const name = displayName(project);
+                return {
+                    href: profileUrl(epochByName[name]?.name || project, 'project'),
+                    name: nameWithFlag(name, flag, countryByFlag[flag] || ''),
+                    figure: plural(entry.count, 'post', 'posts')
+                };
+            });
+            body.innerHTML = boardList(rows, `Projects ranked by posts approved in the last ${ACTIVITY_WINDOW_HOURS} hours`);
+        }
+
+        // The board's period switch ("Show all" is handled with the other lists)
+        document.getElementById('board').addEventListener('click', (e) => {
+            const view = e.target.closest('#period button');
+            if (view && view.dataset.view !== boardView) {
+                boardView = view.dataset.view;
+                document.querySelectorAll('#period button').forEach(b => b.setAttribute('aria-pressed', String(b === view)));
+                renderBoard();
+            }
+        });
+
+        // ------------------------------------------------- Below the board --
+
+        function factsList(stats) {
+            const reviewed = reviewedPosts(stats);
+            const rate = reviewed > 0 ? Math.round(approvedPosts(stats) / reviewed * 100) + '%' : '–';
+            const facts = [
+                [formatNumber(approvedPosts(stats)), 'posts approved'],
+                [formatNumber(stats.top_projects?.length || 0), 'projects posting'],
+                [formatNumber(stats.top_merchants?.length || 0), 'merchants'],
+                [formatNumber(stats.countries?.length || 0), 'countries'],
+                [rate, reviewed > 0 ? 'approval rate' : 'approval rate, nothing reviewed yet']
+            ];
+
+            return `<ul class="facts">${facts.map(([n, l]) => `<li><b class="num">${n}</b><span>${l}</span></li>`).join('')}</ul>`;
+        }
+
+        // Notes and the recent pulse, under the figures and the chart
+        function highlightNotes(stats) {
+            const notes = [];
+            const platforms = stats.platforms || [];
+            const platformTotal = platforms.reduce((s, p) => s + p.count, 0);
+            if (platformTotal > 0) {
+                notes.push(`Posted on ${platforms.map(p => `<strong>${escapeHtml(p.platform)} ${Math.round(p.count / platformTotal * 100)}%</strong>`).join(', ')}`);
+            }
+            const best = (stats.daily || []).reduce((m, d) => (d.approved > (m?.approved || 0) ? d : m), null);
+            if (best) {
+                notes.push(`Most approved in a day: <strong>${best.approved}</strong>, on ${formatDay(best.date)}`);
+            }
+            // Newest project: the one whose first post is most recent
+            let newest = null, newestFirst = null;
+            (stats.top_projects || []).forEach(p => {
+                const first = (p.posts || []).map(x => x.date).sort()[0];
+                if (first && (!newestFirst || first > newestFirst)) { newestFirst = first; newest = p; }
+            });
+            if (newest && newest !== stats.top_projects[0]) {
+                notes.push(`Newest project: <strong>${escapeHtml(stripFlags(newest.name))}</strong>, first post ${formatDay(newestFirst)}`);
+            }
+
+            let pulse = '';
+            const r = stats.recent_activity;
+            if (!epochOver() && r && (r.posts > 0 || stats.last_7d?.posts > 0)) {
+                const parts = [`Last ${ACTIVITY_WINDOW_HOURS} hours: <strong>${plural(r.posts, 'post', 'posts')}</strong>, ${formatNumber(r.approved)} approved, ${formatNumber(r.pending)} pending, ${formatNumber(r.rejected)} rejected.`];
+                if (stats.last_7d) {
+                    const w = stats.last_7d;
+                    parts.push(`Last 7 days: <strong>${plural(w.posts, 'post', 'posts')}</strong>, ${formatNumber(w.approved)} approved, ${formatNumber(w.rejected)} rejected.`);
+                }
+                pulse = `<p class="pulse">${parts.join(' ')}</p>`;
+            }
+
+            return `${notes.length ? `<ul class="notes">${notes.map(n => `<li>${n}</li>`).join('')}</ul>` : ''}${pulse}`;
+        }
+
+        // Highlights: the epoch's figures and notes, then approved posts per day
+        function renderHighlights(stats) {
+            return `
+                <section class="section" aria-labelledby="highlights-title">
+                    <h2 id="highlights-title">Highlights</h2>
+                    ${factsList(stats)}
+                    ${highlightNotes(stats)}
+                    <div class="daily">${dailyChart(stats)}</div>
+                </section>`;
+        }
+
+        // Once the epoch is over the window is its final 48 hours
+        function latestHead() {
+            return epochOver()
+                ? `<h2 id="latest-title">Last posts of the epoch</h2>
+                    <p class="section-note">Watch videos approved in the final ${ACTIVITY_WINDOW_HOURS}&nbsp;hours on Nostr and X.</p>`
+                : `<h2 id="latest-title">Latest approved posts</h2>
+                    <p class="section-note">Watch videos approved in the last ${ACTIVITY_WINDOW_HOURS}&nbsp;hours on Nostr and X.</p>`;
+        }
+
+        function renderLatest(stats) {
+            if (allVisits) {
+                const visits = recentVisits();
+                const rows = visits.map((v, i) => `<li class="${i >= LIST_ROWS ? 'is-more' : ''}">${visitRow(v)}</li>`).join('');
+                return `
+                <section class="section" aria-labelledby="latest-title">
+                    ${latestHead()}
+                    ${visits.length
+                        ? `<ul class="list visits" id="latest-list">${rows}</ul>
+                           ${visits.length > LIST_ROWS ? `<button type="button" class="btn list-more" data-list="latest-list" data-label="Show all ${visits.length}" aria-controls="latest-list" aria-expanded="false">Show all ${visits.length}</button>` : ''}`
+                        : `<p>No posts approved in the ${epochOver() ? 'final' : 'last'} ${ACTIVITY_WINDOW_HOURS} hours${epochOver() ? '' : ' yet'}.</p>`}
+                </section>`;
+            }
+
+            // Fallback without the tracker: one row per post
+            const videos = (stats.recent_activity?.videos || []).slice()
+                .sort((a, b) => String(b.timestamp).localeCompare(String(a.timestamp)));
+            const items = videos.map((v, i) => `
+                <li class="${i >= LIST_ROWS ? 'is-more' : ''}">
+                    <a href="${attrSafe(v.url)}" target="_blank" rel="noopener">
+                        <span class="li-main"><span class="tag">${escapeHtml(v.platform || getPlatform(v.url))}</span>
+                            <strong>${nameWithFlag(displayName(v.project), flagOf(v.project))}</strong>
+                            at ${escapeHtml(v.merchant || 'a merchant')}</span>
+                        <span class="li-side mono">${formatDateTimeUTC(parseTrackerTime(v.timestamp))}</span>
+                    </a>
+                </li>`).join('');
+
+            return `
+                <section class="section" aria-labelledby="latest-title">
+                    ${latestHead()}
+                    ${videos.length
+                        ? `<ul class="list" id="latest-list">${items}</ul>
+                           ${videos.length > LIST_ROWS ? `<button type="button" class="btn list-more" data-list="latest-list" data-label="Show all ${videos.length} posts" aria-controls="latest-list" aria-expanded="false">Show all ${videos.length} posts</button>` : ''}`
+                        : `<p>No posts approved in the ${epochOver() ? 'final' : 'last'} ${ACTIVITY_WINDOW_HOURS} hours${epochOver() ? '' : ' yet'}.</p>`}
+                </section>`;
+        }
+
+        // Merchant names from finished epochs (merchants-seen.json, a few KB),
+        // so the page can celebrate merchants that are new to PoWBoT without
+        // downloading the archives. Missing file: the "New" view is left out.
+        const pastMerchantsPromise = fetch('merchants-seen.json')
+            .then(r => (r.ok ? r.json() : null))
+            .then(d => (d && Array.isArray(d.names) ? { names: new Set(d.names), through: d.through_epoch } : null))
+            .catch(() => null);
+        let pastMerchants;          // undefined while loading, null if unavailable
+        let merchantView = 'new';   // 'new' (default) or 'posts'
+        let merchantStats = null;
+
+        // Countries: the globe with the list of countries beside it
+        function renderCountries(stats) {
+            const countries = stats.countries || [];
+            const filter = encodeURIComponent(EPOCH.memberFilter || '');
+
+            // Each country's approved posts: its projects' posts, summed by flag
+            const postsByFlag = {};
+            (stats.top_projects || []).forEach(p => { const f = flagOf(p.name); postsByFlag[f] = (postsByFlag[f] || 0) + (p.count || 0); });
+            const countryItems = countries.map(c => `
+                <li><a href="members.html?filter=${filter}&country=${encodeURIComponent(c.flag + ' ' + c.country)}">
+                    <span class="li-main">${flagHtml(c.flag)} ${escapeHtml(c.country)}</span>
+                    <span class="li-side pair"><span>${plural(c.count, 'project', 'projects')}</span><span class="sep" aria-hidden="true"> · </span><span>${plural(postsByFlag[c.flag] || 0, 'post', 'posts')}</span></span>
+                </a></li>`).join('');
+
+            // Member countries with no approved post yet this epoch show hollow
+            // on the globe; its description names them for screen readers
+            const quiet = quietCountries(countries).map(q => q.country);
+            const quietNames = quiet.length > 1 ? `${quiet.slice(0, -1).join(', ')} and ${quiet[quiet.length - 1]}` : quiet[0];
+            const mapLabel = `Map of Africa with this epoch’s ${plural(countries.length, 'country', 'countries')} marked`
+                + (quiet.length ? `, and member projects with no approved posts${epochOver() ? '' : ' yet'} in ${quietNames}, shown hollow` : '');
+
+            return `
+                <section class="section" aria-labelledby="countries-title">
+                    <h2 id="countries-title">Active countries</h2>
+                    <p class="section-note">Where this epoch’s projects are. Open one to see its projects in the directory.</p>
+                    ${countries.length ? `
+                    <div class="countries">
+                        <div class="globe" id="globe">
+                            <canvas role="img" aria-label="${attrSafe(mapLabel)}"></canvas>
+                            <button type="button" class="btn globe-pause">Pause</button>
+                        </div>
+                        <ul class="list">${countryItems}</ul>
+                    </div>` : '<p>No countries yet. They appear with each project’s first approved post.</p>'}
+                </section>`;
+        }
+
+        // Member countries (members.json) with no approved post this epoch,
+        // by name. Empty until members.json has loaded, or if it didn't.
+        function quietCountries(countries) {
+            const active = new Set(countries.map(c => c.country));
+            return Object.values(memberTotals?.byCountry || {})
+                .filter(c => !active.has(c.country))
+                .sort((a, b) => a.country.localeCompare(b.country));
+        }
+
+        function renderMerchants(stats) {
+            merchantStats = stats;
+            return `
+                <section aria-labelledby="merchants-title">
+                    <div class="section-head">
+                        <h2 id="merchants-title">Merchants</h2>
+                        <div class="seg" role="group" aria-label="Show merchants" id="merchant-view" hidden>
+                            <button type="button" data-mview="new" aria-pressed="true">New this epoch</button>
+                            <button type="button" data-mview="posts" aria-pressed="false">Most posts</button>
+                        </div>
+                    </div>
+                    <div id="merchants-body" aria-live="polite"><p class="muted">Loading merchants…</p></div>
+                </section>`;
+        }
+
+        // Each merchant's first post this epoch
+        function firstPostOf(m) {
+            return (m.posts || []).reduce((first, x) => (!first || String(x.date) < String(first.date) ? x : first), null);
+        }
+
+        function renderMerchantList() {
+            const body = document.getElementById('merchants-body');
+            const switcher = document.getElementById('merchant-view');
+            if (!body || !merchantStats || pastMerchants === undefined) return;
+            const merchants = merchantStats.top_merchants || [];
+
+            if (merchants.length === 0) {
+                switcher.hidden = true;
+                body.innerHTML = '<p>No merchants yet this epoch. Each shop appears here with its first approved post.</p>';
+                return;
+            }
+
+            // Without the past-merchants list there is no "new" to show
+            if (!pastMerchants) merchantView = 'posts';
+            switcher.hidden = !pastMerchants;
+            switcher.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mview === merchantView)));
+
+            let items, note, total;
+            if (merchantView === 'new') {
+                const fresh = merchants
+                    .filter(m => !pastMerchants.names.has(m.name))
+                    .map(m => ({ m, first: firstPostOf(m) }))
+                    .sort((a, b) => String(b.first?.date || '').localeCompare(String(a.first?.date || '')));
+                total = fresh.length;
+                note = `<strong>${formatNumber(fresh.length)} of ${formatNumber(merchants.length)}</strong> merchants are new to PoWBoT this epoch.`;
+                // One line per merchant, like "Most posts", so switching never
+                // changes the list's height. The projects are on each merchant's page.
+                items = fresh.map(({ m, first }, i) => `
+                    <li class="${i >= BOARD_ROWS ? 'is-more' : ''}"><a href="${attrSafe(profileUrl(m.name, 'merchant'))}">
+                        <span class="li-main">${escapeHtml(m.name)}</span>
+                        <span class="li-side">${first?.date ? `first post ${formatDay(first.date)}` : ''}</span>
+                    </a></li>`).join('');
+                if (!fresh.length) note = 'Every merchant this epoch has posted before. New shops appear here with their first approved post.';
+            } else {
+                total = merchants.length;
+                note = 'Shops and stalls where projects spent bitcoin.';
+                items = merchants.map((m, i) => `
+                    <li class="${i >= BOARD_ROWS ? 'is-more' : ''}"><a href="${attrSafe(profileUrl(m.name, 'merchant'))}">
+                        <span class="li-main">${escapeHtml(m.name)}</span>
+                        <span class="li-side num">${plural(m.count, 'post', 'posts')}</span>
+                    </a></li>`).join('');
+            }
+
+            // The rest are in the Directory's Merchants tab, filtered and sorted the same way
+            const allHref = merchantView === 'new' ? 'merchants.html?epoch=new&sort=new' : `merchants.html?epoch=${EPOCH.number}&sort=posts`;
+            body.innerHTML = `
+                <p class="section-note">${note}</p>
+                ${total ? `<ul class="list" id="merchant-list">${items}</ul>` : ''}
+                ${total > BOARD_ROWS ? `<p class="list-link"><a class="btn" href="${attrSafe(allHref)}">View all ${formatNumber(total)} in the Directory</a></p>` : ''}`;
+        }
+
+        pastMerchantsPromise.then(result => { pastMerchants = result; renderMerchantList(); if (heroStats) renderStatus(heroStats); });
+
+        // Approved posts per day, inside Highlights
+        function dailyChart(stats) {
+            // Once the epoch is over the chart stops on its last day: the export
+            // keeps adding a row for every day until the next epoch starts
+            const over = epochOver();
+            const finalDay = lastDay().toISOString().slice(0, 10);
+            const daily = (stats.daily || []).filter(d => !over || d.date <= finalDay);
+            if (daily.length === 0) {
+                return `
+                    <h3 id="daily-title">Approved posts per day</h3>
+                    <p>Nothing to chart yet. Each UTC day of ${escapeHtml(EPOCH.name)} gets a bar once posts are approved.</p>`;
+            }
+            const max = Math.max(1, ...daily.map(d => d.approved || 0));
+            const peak = daily.find(d => d.approved === max);
+            const label = d => `${formatDay(d.date)}: ${plural(d.approved || 0, 'post', 'posts')} approved`;
+            const bars = daily.map((d, i) => `<i class="${i === daily.length - 1 ? 'today' : ''}" style="height:${(d.approved || 0) / max * 100}%" data-label="${attrSafe(label(d))}"></i>`).join('');
+            const today = daily[daily.length - 1];
+
+            return `
+                    <h3 id="daily-title">Approved posts per day</h3>
+                    <p class="bars-readout" aria-live="polite">${over ? '' : 'Today, '}${escapeHtml(label(today))}</p>
+                    <div class="bars" tabindex="0" role="group" aria-label="Approved posts per day over ${daily.length} days. Peak ${max} on ${formatDay(peak?.date)}. Use the left and right arrow keys to read each day.">
+                        ${bars}
+                    </div>
+                    <div class="bars-axis" aria-hidden="true"><span>${formatDay(daily[0].date)}</span><span>${over ? formatDay(today.date) : 'Today'}</span></div>`;
+        }
+
+        function renderEpochs(stats) {
+            // The bars only: each epoch's rules note lives in the archive's copy
+            const month = d => d.toLocaleDateString('en-GB', { month: 'short', timeZone: 'UTC' });
+            const when = epochOver()
+                ? `${month(new Date(EPOCH.start))} to ${month(lastDay())} ${lastDay().getUTCFullYear()}`
+                : 'live now';
+            const live = { name: EPOCH.name, when, posts: approvedPosts(stats), href: '#main' };
+            // A finished epoch is already in epochs.js until the next one is set here
+            const epochs = window.POWBOT_EPOCHS.filter(e => e.name !== live.name);
+            const total = window.epochsTotal(epochs) + live.posts;
+            return window.renderEpochBars({
+                id: 'epochs-title',
+                intro: `<strong class="num">${formatNumber(total)}</strong> posts approved since May 2025.`,
+                more: '<a href="archive.html#every-title">See how the rules changed</a>.',
+                notes: false,
+                epochs,
+                live
+            });
+        }
+
+        // "Show all" on the plain lists, and the merchant switch
+        document.getElementById('main').addEventListener('click', (e) => {
+            const mview = e.target.closest('#merchant-view button');
+            if (mview) {
+                if (mview.dataset.mview !== merchantView) {
+                    merchantView = mview.dataset.mview;
+                    renderMerchantList();
+                }
+                return;
+            }
+            const btn = e.target.closest('.list-more');
+            if (!btn) return;
+            const list = document.getElementById(btn.dataset.list);
+            const open = !list.classList.contains('show-all');
+            list.classList.toggle('show-all', open);
+            btn.setAttribute('aria-expanded', String(open));
+            btn.textContent = open ? 'Show fewer' : btn.dataset.label;
+        });
+
+        // Render the dashboard
+        function renderDashboard(stats) {
+            if (stats.epoch && typeof stats.epoch === 'object') {
+                EPOCH = Object.assign({}, EPOCH, stats.epoch);
+            }
+            applyEpochLabels();
+
+            // Update timestamp (may not exist yet if footer is still loading)
+            const updatedElement = document.getElementById('updated');
+            if (updatedElement && stats.generated_at) {
+                updatedElement.textContent = new Date(stats.generated_at).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
+            }
+
+            renderHero(stats);
+
+            boardStats = stats;
+            document.getElementById('period').hidden = false;
+            document.querySelector('#period [data-view="recent"]').hidden = epochOver();
+            renderBoard();
+
+            document.getElementById('content-top').innerHTML =
+                renderCountries(stats) +
+                renderLatest(stats);
+            document.getElementById('merchants-slot').innerHTML = renderMerchants(stats);
+            document.getElementById('content').innerHTML =
+                renderHighlights(stats) +
+                renderEpochs(stats);
+            renderMerchantList();
+            mountGlobe(stats.countries || []);
+
+            // A link to a section (index.html#merchants-title, the back arrow on
+            // a merchant page) arrives before the section is drawn: go to it now
+            const linked = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+            if (linked) linked.scrollIntoView();
+        }
+
+        // The Countries globe (globe.js): a blip per country, labelled with its
+        // ISO code (read from the flag) and project count. Its Pause button
+        // shows only while it moves: not under reduced motion or with screen
+        // effects off (footer switch).
+        function mountGlobe(countries) {
+            const box = document.getElementById('globe');
+            if (!box || !window.PBGlobe) { if (box) box.remove(); return; }
+            const iso = flag => [...String(flag || '')].map(ch => String.fromCharCode(ch.codePointAt(0) - 0x1F1E6 + 65)).join('');
+            const points = countries
+                .map(c => ({ code: iso(c.flag), n: c.count || 0 }))
+                .filter(c => window.PB_COUNTRY_LL[c.code])
+                .map(c => ({
+                    lat: window.PB_COUNTRY_LL[c.code][0], lon: window.PB_COUNTRY_LL[c.code][1],
+                    weight: c.n, label: `${c.code} ${c.n}`, left: window.PB_LABEL_LEFT.has(c.code)
+                }));
+            // Member countries with no posts yet: small hollow squares
+            quietCountries(countries).forEach(q => {
+                const at = window.PB_COUNTRY_LL[iso(q.flag)];
+                if (at) points.push({ lat: at[0], lon: at[1], quiet: true });
+            });
+            const globe = window.PBGlobe(box.querySelector('canvas'), { points });
+            const button = box.querySelector('.globe-pause');
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+            const sync = () => {
+                button.hidden = reduce.matches || document.documentElement.classList.contains('fx-off');
+                button.textContent = globe.paused ? 'Play' : 'Pause';
+            };
+            button.addEventListener('click', () => { if (globe.paused) globe.play(); else globe.pause(); sync(); });
+            document.addEventListener('pb:fx', sync);
+            reduce.addEventListener('change', sync);
+            sync();
+        }
+
+        function applyEpochLabels() {
+            const name = EPOCH.name || `Epoch ${EPOCH.number}`;
+            document.getElementById('epoch-title').textContent = `${name} ${epochOver() ? 'results' : 'stats'}`;
+        }
+
+        // Load and render stats
+        async function loadStats() {
+            try {
+                // Live data (stats, tracker) comes from the VPS via fetchLiveData,
+                // which falls back to the copy published in this repo if the VPS is
+                // unreachable. members.json stays same-origin: it changes via git,
+                // not the export, so routing it through the VPS would add a
+                // dependency for no freshness.
+                //
+                // A finished epoch marked `frozen` in epoch-config.js reads its
+                // frozen copies instead, so its results stay up after the bot
+                // moves on to the next epoch.
+                const frozen = epochOver() && EPOCH.frozen;
+                const frozenFile = name => fetch(`${name}-epoch${EPOCH.number}.json`)
+                    .then(r => { if (!r.ok) throw new Error(`${name}-epoch${EPOCH.number}.json: HTTP ${r.status}`); return r.json(); });
+                const [statsData, membersResponse, trackerData] = await Promise.all([
+                    frozen ? frozenFile('stats') : fetchLiveData('stats.json'),
+                    fetch('members.json?t=' + Date.now()).catch(() => null),
+                    (frozen ? frozenFile('tracker-data') : fetchLiveData('tracker-data.json')).catch(() => null)
+                ]);
+                const stats = statsData;
+
+                // Build project metadata from members.json
+                if (membersResponse && membersResponse.ok) {
+                    const membersData = await membersResponse.json();
+                    // Each member country, with its flag and number of projects
+                    const byCountry = {};
+                    membersData.members.forEach(m => {
+                        if (!m.country) return;
+                        const c = byCountry[m.country] || (byCountry[m.country] = { country: m.country, flag: m.flag, projects: 0 });
+                        c.projects += 1;
+                    });
+                    memberTotals = {
+                        projects: membersData.members.length,
+                        countries: Object.keys(byCountry).length,
+                        byCountry
+                    };
+                    // Build lookup map: project name with flag → profile URL
+                    membersData.members.forEach(member => {
+                        // Index by both formats for compatibility
+                        const shortKey = `${member.name} ${member.flag}`;  // "Bitbiashara 🇰🇪"
+                        const longKey = member.name_with_flag;  // "Bitbiashara (Kenya) 🇰🇪"
+                        const metadata = {
+                            info_url: `profile.html?id=${member.id}`
+                        };
+                        projectMetadata[shortKey] = metadata;
+                        projectMetadata[longKey] = metadata;
+                    });
+                }
+
+                // Always present, so the render path never has to guard against a
+                // missing tracker. Without this a tracker outage left it undefined and
+                // `stats.recent_activity.videos` threw, taking down the WHOLE page -
+                // the surfaces it feeds are meant to degrade to empty, not to break
+                // the dashboard. (The old `last_24h` key hid this by always existing
+                // in stats.json, so the risk only appeared once it stopped being read.)
+                stats.recent_activity = { videos: [], posts: 0, approved: 0, rejected: 0, pending: 0 };
+
+                // Process tracker data for the recent-activity window and last 7d stats
+                if (trackerData) {
+                    allVisits = groupVisits((trackerData.submissions || []).filter(sub => sub.status === 'Processed'));
+
+                    // Anchored at the close once the epoch is over
+                    const now = new Date(windowEnd());
+                    const windowStart = new Date(now.getTime() - ACTIVITY_WINDOW_HOURS * 60 * 60 * 1000);
+                    const last7d = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+
+                    // Filter submissions inside the recent-activity window
+                    const recentSubmissions = trackerData.submissions.filter(sub => {
+                        const subDate = new Date(sub.timestamp.replace(' UTC', 'Z'));
+                        return subDate >= windowStart;
+                    });
+
+                    // Calculate recent-activity stats
+                    const approved = recentSubmissions.filter(sub => sub.status === 'Processed').length;
+                    const rejected = recentSubmissions.filter(sub => sub.status === 'Rejected').length;
+                    const pending = recentSubmissions.filter(sub => sub.status === 'Pending Review' || sub.status === 'Approved').length;
+                    const totalPosts = recentSubmissions.length;
+
+                    // Map to video format (only processed ones)
+                    const recentVideos = recentSubmissions
+                        .filter(sub => sub.status === 'Processed')
+                        .map(sub => ({
+                            project: sub.project_name,
+                            merchant: sub.merchant_name,
+                            platform: sub.platform,
+                            url: sub.post_url,
+                            // Needed to break ties in Top Performers by who got there
+                            // first. Kept as the raw "YYYY-MM-DD HH:MM:SS UTC" string:
+                            // one fixed format in one zone, so it sorts lexicographically.
+                            timestamp: sub.timestamp
+                        }));
+
+                    // Named for what it holds: an ACTIVITY_WINDOW_HOURS window computed
+                    // here from the tracker, NOT the exporter's `last_24h`.
+                    //
+                    // stats.json also carries a `last_24h`, which this deliberately does
+                    // not read. That copy is a genuine 24-hour window, so consuming it
+                    // would put 24h numbers under a 48h heading; and its video objects
+                    // hold only `project` - no `url`, `merchant` or `platform` - so the
+                    // per-platform lists could never render from it anyway.
+                    stats.recent_activity.videos = recentVideos;
+                    stats.recent_activity.posts = totalPosts;
+                    stats.recent_activity.approved = approved;
+                    stats.recent_activity.rejected = rejected;
+                    stats.recent_activity.pending = pending;
+
+                    // Filter submissions for last 7 days
+                    const recent7dSubmissions = trackerData.submissions.filter(sub => {
+                        const subDate = new Date(sub.timestamp.replace(' UTC', 'Z'));
+                        return subDate >= last7d;
+                    });
+
+                    // Calculate last 7d stats
+                    const approved7d = recent7dSubmissions.filter(sub => sub.status === 'Processed').length;
+                    const rejected7d = recent7dSubmissions.filter(sub => sub.status === 'Rejected').length;
+                    const pending7d = recent7dSubmissions.filter(sub => sub.status === 'Pending Review' || sub.status === 'Approved').length;
+                    const totalPosts7d = recent7dSubmissions.length;
+
+                    // Add last 7d to stats object
+                    stats.last_7d = {
+                        posts: totalPosts7d,
+                        approved: approved7d,
+                        rejected: rejected7d,
+                        pending: pending7d
+                    };
+                }
+
+                renderDashboard(stats);
+            } catch (error) {
+                console.error('Failed to load stats:', error);
+                document.getElementById('summary').textContent = '';
+                document.getElementById('content-top').innerHTML = '';
+                document.getElementById('merchants-slot').innerHTML = '';
+                document.getElementById('board-body').innerHTML = `
+                    <div class="board-empty error">
+                        <p>Stats could not load.</p>
+                        <p>Neither the live feed nor the backup copy answered. Reload the page, or try again in a few minutes.</p>
+                        <p class="muted mono">${escapeHtml(error.message)}</p>
+                    </div>
+                `;
+            }
+        }
+
+        applyEpochLabels();
+        renderProgress({});
+        window.includesLoaded.then(() => loadStats());
+    </script>
+</body>
+</html>

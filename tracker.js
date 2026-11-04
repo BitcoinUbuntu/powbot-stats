@@ -1,0 +1,797 @@
+/**
+ * PoW Submission Tracker - JavaScript
+ *
+ * Handles:
+ * - Data loading from tracker-data.json
+ * - Filtering (status, project, date, platform, search)
+ * - Pagination (50 per page)
+ * - Card expand/collapse
+ */
+
+// ============================================================================
+// Configuration
+// ============================================================================
+
+const ITEMS_PER_PAGE = 50;
+
+// Every string that reaches innerHTML goes through this. merchant_name comes
+// from BTCMap (anyone can edit an OSM name), notes and addresses come from the
+// bot's parse of a submitted post - none of it is ours to trust as markup.
+function escapeHtml(value) {
+    if (value === null || value === undefined) return '';
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+// Links are only rendered when they look like http(s) URLs; anything else
+// (javascript:, data:) is dropped rather than escaped into an href.
+function safeUrl(value) {
+    const s = String(value || '').trim();
+    return /^https?:\/\//i.test(s) ? escapeHtml(s) : '';
+}
+let allSubmissions = [];
+let filteredSubmissions = [];
+let currentPage = 1;
+// One merchant, exactly (?merchant=Flo Salon, any case): set by links from
+// other pages, shown above the results with a Clear button. Too many
+// merchants for a dropdown, and a search would also match longer names.
+let merchantFilter = '';
+
+// ============================================================================
+// Data Loading
+// ============================================================================
+
+// Frozen snapshots of past epochs, newest first.
+//
+// tracker-data.json holds ONLY the current epoch - the stats export is scoped by
+// CURRENT_EPOCH, so the moment an epoch rolls over its submissions disappear from
+// that file. Each finished epoch is therefore frozen into its own archive here,
+// the same way stats-epoch*.json already works.
+//
+// ==> WHEN AN EPOCH ENDS: freeze tracker-data.json as tracker-data-epochN.json,
+//     and add it to this list when epoch-config.js moves to the next epoch.
+//     Until then fetchEpochData reads it as the current epoch. <==
+//
+// Archives carry the same per-submission detail as the live file (lightning
+// address, btcmap link, status, payments), so history loses nothing.
+//
+// Epoch 4 and its testing period ("4t") are the exception: they predate the
+// export, so they were rebuilt once from the stats files. Approved posts only, dated to the day, no review detail.
+const TRACKER_ARCHIVES = ['tracker-data-epoch5.json', 'tracker-data-epoch4.json', 'tracker-data-epoch4t.json'];
+const DAY_ONLY_EPOCHS = ['4', '4t'];
+
+// The page opens on the current epoch. An archive is fetched only when its
+// epoch (or "All epochs") is picked, so the usual visit skips Epoch 5's large
+// file. The Epoch options come from the file names above, without loading them.
+// Epochs are keys: "6", "5", "4", and "4t" for the Epoch 4 testing period
+const epochOf = file => (file.match(/epoch(\d+t?)/) || [])[1] || null;
+const currentEpoch = () => (window.POWBOT_EPOCH?.number == null ? null : String(window.POWBOT_EPOCH.number));
+const epochLabel = key => key === '4t' ? 'Epoch 4 testing' : `Epoch ${key}`;
+// Newest first; the testing period came just before Epoch 4
+const epochOrder = key => parseInt(key, 10) - (key.endsWith('t') ? 0.5 : 0);
+const tag = (subs, epoch) => (subs || []).map(s => ({ ...s, epoch }));
+const epochRows = new Map();      // epoch -> promise of its tagged rows
+const loadedEpochs = new Set();   // epochs whose rows have arrived
+let loadToken = 0;                // the latest epoch pick wins
+
+function knownEpochs() {
+    return [...new Set([currentEpoch(), ...TRACKER_ARCHIVES.map(epochOf)])]
+        .filter(e => e != null)
+        .sort((a, b) => epochOrder(b) - epochOrder(a));
+}
+
+// Fetches one archived epoch once. A failed fetch is forgotten, so picking
+// that epoch again tries again.
+function loadEpoch(epoch) {
+    if (!epochRows.has(epoch)) {
+        const file = TRACKER_ARCHIVES.find(f => epochOf(f) === epoch);
+        const rows = !file ? Promise.resolve([]) : fetch(file)
+            .then(r => { if (!r.ok) throw new Error(`${file}: ${r.status}`); return r.json(); })
+            .then(a => { loadedEpochs.add(epoch); return tag(a.submissions, epoch); })
+            .catch(error => { epochRows.delete(epoch); throw error; });
+        epochRows.set(epoch, rows);
+    }
+    return epochRows.get(epoch);
+}
+
+async function loadTrackerData() {
+    try {
+        // Live epoch from the VPS, falling back to this repo's copy if it is
+        // unreachable, or its frozen copy once it is over. The archives stay
+        // same-origin - they are frozen and change only via git, so there is
+        // nothing to gain from the VPS.
+        const data = await fetchEpochData('tracker-data');
+        epochRows.set(currentEpoch(), Promise.resolve(tag(data.submissions, currentEpoch())));
+        loadedEpochs.add(currentEpoch());
+
+        // Update footer timestamp (with retry in case footer loads after data)
+        updateFooterTimestamp(data.last_updated);
+
+        populateEpochFilter();
+        applyEpochParam();
+        if (!await loadSelectedEpochs()) return;
+
+        // Apply the other URL parameters, then filter and render
+        applyURLFilters();
+        applyFilters();
+
+    } catch (error) {
+        console.error('Error loading tracker data:', error);
+        showError('The submissions could not load.');
+    }
+}
+
+// Loads the rows for the Epoch filter's choice, then rebuilds the project and
+// country lists from them. False when it failed or a newer pick overtook it.
+async function loadSelectedEpochs() {
+    const value = document.getElementById('filter-epoch').value;
+    const epochs = value ? [value] : knownEpochs();
+    const token = ++loadToken;
+
+    if (epochs.some(e => !loadedEpochs.has(e))) {
+        document.getElementById('submissions-container').innerHTML = `
+            <div class="list-state">
+                <p>Loading ${value ? epochLabel(value) : 'every epoch'}…</p>
+            </div>
+        `;
+        document.getElementById('results-count').textContent = 'Loading submissions…';
+        document.getElementById('pager-top').hidden = true;
+        document.getElementById('bottom-pagination').style.display = 'none';
+    }
+
+    let rows;
+    try {
+        rows = (await Promise.all(epochs.map(loadEpoch))).flat();
+    } catch (error) {
+        console.error('Error loading an archived epoch:', error);
+        if (token === loadToken) showError(`${value ? epochLabel(value) : 'Older epochs'} could not load.`);
+        return false;
+    }
+    if (token !== loadToken) return false;
+
+    // Newest first overall
+    allSubmissions = rows.sort((a, b) => (b.timestamp || '').localeCompare(a.timestamp || ''));
+    // Epoch 4's rows are rebuilt from the stats files: say what they lack
+    document.getElementById('epoch-note').hidden = !epochs.some(e => DAY_ONLY_EPOCHS.includes(e));
+    populateProjectFilter();
+    populateCountryFilter();
+    return true;
+}
+
+// ?epoch=5 picks that epoch, ?epoch=all every epoch; anything else, or none,
+// the current one
+function applyEpochParam() {
+    const select = document.getElementById('filter-epoch');
+    const param = (new URLSearchParams(window.location.search).get('epoch') || '').toLowerCase();
+    if (param === 'all') select.value = '';
+    else if (knownEpochs().includes(param)) select.value = param;
+    else select.value = currentEpoch() ?? '';
+}
+
+// ============================================================================
+// Filter Population
+// ============================================================================
+
+function populateEpochFilter() {
+    const epochSelect = document.getElementById('filter-epoch');
+    knownEpochs().forEach(epoch => {
+        const option = document.createElement('option');
+        option.value = epoch;
+        option.textContent = epochLabel(epoch);
+        epochSelect.appendChild(option);
+    });
+}
+
+// Rebuilds a dropdown after its first "All" option. A choice the new rows
+// lack stays listed, so the filter still shows and the list says no match.
+function fillSelect(select, values, label = v => v) {
+    const chosen = select.value;
+    select.length = 1;
+    if (chosen && !values.includes(chosen)) values = [...values, chosen];
+    values.forEach(value => {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = label(value);
+        select.appendChild(option);
+    });
+    select.value = chosen;
+}
+
+// Narrows the project, country and status menus to what the other filters
+// leave (fillSelect keeps a current choice even when it has no rows)
+const STATUS_LABELS_MENU = {};
+function refreshFacets(passes) {
+    const values = (skip, key) => [...new Set(allSubmissions.filter(s => passes(s, skip)).map(key).filter(Boolean))]
+        .sort((a, b) => a.localeCompare(b));
+    fillSelect(document.getElementById('filter-project'), values('project', s => s.project_name), extractProjectNameOnly);
+    fillSelect(document.getElementById('filter-country'), values('country', s => extractCountry(s.project_name)));
+    const statusSelect = document.getElementById('filter-status');
+    if (!Object.keys(STATUS_LABELS_MENU).length) {
+        [...statusSelect.options].forEach(o => { if (o.value) STATUS_LABELS_MENU[o.value] = o.textContent; });
+    }
+    const order = Object.keys(STATUS_LABELS_MENU);
+    const statuses = values('status', s => s.status).sort((a, b) => order.indexOf(a) - order.indexOf(b));
+    fillSelect(statusSelect, statuses, v => STATUS_LABELS_MENU[v] || v);
+}
+
+function populateProjectFilter() {
+    // Options show the project without flag and country
+    const projects = [...new Set(allSubmissions.map(s => s.project_name))].sort();
+    fillSelect(document.getElementById('filter-project'), projects, extractProjectNameOnly);
+}
+
+// Countries A to Z, from the "(Kenya)" in each project name
+function populateCountryFilter() {
+    const countries = [...new Set(allSubmissions.map(s => extractCountry(s.project_name)).filter(Boolean))]
+        .sort((a, b) => a.localeCompare(b));
+    fillSelect(document.getElementById('filter-country'), countries);
+}
+
+function stripCountryName(name) {
+    // Remove country name in parentheses, keep flag emoji
+    return name.replace(/\s*\([^)]+\)/, '').trim();
+}
+
+// ============================================================================
+// Footer Timestamp Update
+// ============================================================================
+
+function updateFooterTimestamp(lastUpdated) {
+    if (!lastUpdated) return;
+
+    const updateElement = () => {
+        const updatedElement = document.getElementById('updated');
+        if (updatedElement) {
+            updatedElement.textContent = new Date(lastUpdated).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
+            return true;
+        }
+        return false;
+    };
+
+    // Try immediately
+    if (updateElement()) return;
+
+    // Retry up to 5 times if footer hasn't loaded yet
+    let retries = 0;
+    const retryInterval = setInterval(() => {
+        if (updateElement() || retries >= 5) {
+            clearInterval(retryInterval);
+        }
+        retries++;
+    }, 200);
+}
+
+// ============================================================================
+// URL Parameter Handling
+// ============================================================================
+
+function applyURLFilters() {
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // The epoch is set before loading: see applyEpochParam()
+
+    // Apply status filter
+    const statusParam = urlParams.get('status');
+    if (statusParam) {
+        document.getElementById('filter-status').value = statusParam;
+    }
+
+    // Apply project filter
+    const projectParam = urlParams.get('project');
+    if (projectParam) {
+        // Find the full project name that matches (case-insensitive). An exact
+        // name wins, so "Bitcoin Dua" can never select a longer name containing it.
+        const projectSelect = document.getElementById('filter-project');
+        const wanted = projectParam.toLowerCase();
+        const options = [...projectSelect.options].filter(o => o.value);
+        const match = options.find(o => extractProjectNameOnly(o.value).toLowerCase() === wanted)
+            || options.find(o => o.value.toLowerCase().includes(wanted) || o.textContent.toLowerCase().includes(wanted));
+        if (match) projectSelect.value = match.value;
+    }
+
+    // Apply merchant filter (?merchant=Flo Salon)
+    merchantFilter = (urlParams.get('merchant') || '').trim();
+
+    // Apply country filter (?country=Kenya, any case)
+    const countryParam = urlParams.get('country');
+    if (countryParam) {
+        const countrySelect = document.getElementById('filter-country');
+        const match = [...countrySelect.options].find(o => o.value && o.value.toLowerCase() === countryParam.toLowerCase());
+        if (match) countrySelect.value = match.value;
+    }
+
+    // Apply date filter
+    const dateParam = urlParams.get('date');
+    if (dateParam) {
+        document.getElementById('filter-date').value = dateParam;
+
+        // Show custom date range if needed
+        if (dateParam === 'custom') {
+            document.getElementById('custom-date-range').style.display = 'block';
+
+            const fromParam = urlParams.get('from');
+            const toParam = urlParams.get('to');
+            if (fromParam) document.getElementById('filter-date-from').value = fromParam;
+            if (toParam) document.getElementById('filter-date-to').value = toParam;
+        }
+    }
+
+    // Apply search query
+    const searchParam = urlParams.get('search');
+    if (searchParam) {
+        document.getElementById('filter-search').value = searchParam;
+    }
+}
+
+function extractProjectNameOnly(name) {
+    // Remove both country name AND flag emoji, return just project name
+    // E.g., "Bitbiashara (Kenya) 🇰🇪" -> "Bitbiashara"
+    return name.replace(/\s*\([^)]+\)/, '').replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
+}
+
+// ============================================================================
+// Filtering Logic
+// ============================================================================
+
+function applyFilters() {
+    const epochFilter = document.getElementById('filter-epoch').value;
+    const statusFilter = document.getElementById('filter-status').value;
+    const projectFilter = document.getElementById('filter-project').value;
+    const countryFilter = document.getElementById('filter-country').value;
+    const dateFilter = document.getElementById('filter-date').value;
+    const searchQuery = document.getElementById('filter-search').value.toLowerCase();
+
+    // Update active filter styling
+    document.getElementById('filter-epoch').classList.toggle('active', epochFilter !== (currentEpoch() ?? ''));
+    document.getElementById('filter-country').classList.toggle('active', countryFilter !== '');
+    updateFilterActiveStates(statusFilter, projectFilter, dateFilter, searchQuery);
+
+    // Does a submission pass every filter, leaving out the one named in skip?
+    // The project, country and status menus each list only what the other
+    // filters leave, so no choice leads to an empty list.
+    const passes = (submission, skip) => {
+        if (epochFilter && String(submission.epoch) !== epochFilter) return false;
+        if (skip !== 'status' && statusFilter && submission.status !== statusFilter) return false;
+        if (skip !== 'project' && projectFilter && submission.project_name !== projectFilter) return false;
+        if (skip !== 'country' && countryFilter && extractCountry(submission.project_name) !== countryFilter) return false;
+        // Merchant filter: the whole name, any case
+        if (merchantFilter && (submission.merchant_name || '').trim().toLowerCase() !== merchantFilter.toLowerCase()) return false;
+        if (!passesDateFilter(submission, dateFilter)) return false;
+        // Search: project, merchant, notes, post or Telegram link. Epoch 4's
+        // rows have no notes or Telegram link, hence the fallbacks.
+        if (searchQuery) {
+            const fields = [submission.project_name, submission.merchant_name, submission.note, submission.post_url, submission.telegram_link];
+            if (!fields.some(f => (f || '').toLowerCase().includes(searchQuery))) return false;
+        }
+        return true;
+    };
+
+    filteredSubmissions = allSubmissions.filter(s => passes(s));
+    refreshFacets(passes);
+
+    // Say which merchant, if one is set, by its name as the tracker spells it
+    const merchantBar = document.getElementById('merchant-filter');
+    merchantBar.hidden = !merchantFilter;
+    if (merchantFilter) {
+        const match = allSubmissions.find(s => (s.merchant_name || '').trim().toLowerCase() === merchantFilter.toLowerCase());
+        document.getElementById('merchant-filter-name').textContent = match ? match.merchant_name.trim() : merchantFilter;
+    }
+
+    // Reset to page 1 when filters change
+    currentPage = 1;
+
+    // Update URL with current filters
+    updateURL(epochFilter, statusFilter, projectFilter, dateFilter, searchQuery, countryFilter);
+
+    // Render
+    renderSubmissions();
+    updatePagination();
+}
+
+function updateURL(epochFilter, statusFilter, projectFilter, dateFilter, searchQuery, countryFilter) {
+    const params = new URLSearchParams();
+
+    // Only add non-empty filters to URL
+    params.set('epoch', epochFilter || 'all');
+    if (statusFilter) params.set('status', statusFilter);
+    if (projectFilter) {
+        // Use project name without flag/country for cleaner URL
+        params.set('project', extractProjectNameOnly(projectFilter));
+    }
+    if (countryFilter) params.set('country', countryFilter);
+    if (merchantFilter) params.set('merchant', merchantFilter);
+    if (dateFilter && dateFilter !== 'all') {
+        params.set('date', dateFilter);
+
+        // Add custom date range if applicable
+        if (dateFilter === 'custom') {
+            const fromDate = document.getElementById('filter-date-from').value;
+            const toDate = document.getElementById('filter-date-to').value;
+            if (fromDate) params.set('from', fromDate);
+            if (toDate) params.set('to', toDate);
+        }
+    }
+    if (searchQuery) params.set('search', searchQuery);
+
+    // Update URL without reloading the page
+    const newURL = params.toString() ? `?${params.toString()}` : 'tracker.html';
+    window.history.replaceState({}, '', newURL);
+}
+
+function updateFilterActiveStates(statusFilter, projectFilter, dateFilter, searchQuery) {
+    // Status
+    const statusSelect = document.getElementById('filter-status');
+    statusSelect.classList.toggle('active', statusFilter !== '');
+
+    // Project
+    const projectSelect = document.getElementById('filter-project');
+    projectSelect.classList.toggle('active', projectFilter !== '');
+
+    // Date
+    const dateSelect = document.getElementById('filter-date');
+    dateSelect.classList.toggle('active', dateFilter !== 'all');
+
+    // Search
+    const searchInput = document.getElementById('filter-search');
+    searchInput.classList.toggle('active', searchQuery !== '');
+}
+
+// Tracker timestamps look like "2026-09-28 00:52:06 UTC". Rewrite to ISO
+// ("2026-09-28T00:52:06Z") before parsing: Chrome accepts the original form,
+// but Safari returns Invalid Date for it, which emptied every date filter.
+function parseTrackerTime(timestamp) {
+    return new Date(String(timestamp || '').replace(' UTC', 'Z').replace(' ', 'T'));
+}
+
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+// Date filters work in UTC days, like every date shown on the site.
+function passesDateFilter(submission, dateFilter) {
+    if (dateFilter === 'all') return true;
+
+    const submissionDate = parseTrackerTime(submission.timestamp);
+    if (isNaN(submissionDate)) return false;
+    const now = Date.now();
+
+    switch (dateFilter) {
+        case 'today': {
+            // Same UTC calendar day as now
+            return submissionDate.toISOString().slice(0, 10) === new Date(now).toISOString().slice(0, 10);
+        }
+
+        case '7days':
+            return submissionDate.getTime() >= now - 7 * DAY_MS;
+
+        case '30days':
+            return submissionDate.getTime() >= now - 30 * DAY_MS;
+
+        case 'custom': {
+            const fromDate = document.getElementById('filter-date-from').value;
+            const toDate = document.getElementById('filter-date-to').value;
+
+            if (!fromDate && !toDate) return true;
+
+            // Date inputs give "YYYY-MM-DD"; treat them as whole UTC days
+            if (fromDate) {
+                const from = Date.parse(fromDate + 'T00:00:00Z');
+                if (submissionDate.getTime() < from) return false;
+            }
+
+            if (toDate) {
+                const to = Date.parse(toDate + 'T23:59:59.999Z');
+                if (submissionDate.getTime() > to) return false;
+            }
+
+            return true;
+        }
+
+        default:
+            return true;
+    }
+}
+
+// ============================================================================
+// Rendering
+// ============================================================================
+
+function renderSubmissions() {
+    const container = document.getElementById('submissions-container');
+
+    // Calculate pagination
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    const pageSubmissions = filteredSubmissions.slice(startIndex, endIndex);
+
+    // Update results count
+    const resultsCount = document.getElementById('results-count');
+    if (filteredSubmissions.length === 0) {
+        container.innerHTML = `
+            <div class="list-state">
+                <p>No submissions match these filters.</p>
+                <p>Try a shorter search, or set status, project, country and date range back to all${merchantFilter ? ', or clear the merchant' : ''}.</p>
+            </div>
+        `;
+        resultsCount.textContent = 'No submissions match';
+        return;
+    }
+
+    resultsCount.textContent = resultsText(startIndex, endIndex);
+
+    // Render submission cards
+    const submissionsHTML = pageSubmissions.map(submission => renderSubmissionCard(submission)).join('');
+
+    container.innerHTML = `<ul class="submissions-list">${submissionsHTML}</ul>`;
+
+    // Attach event listeners
+    attachCardListeners();
+}
+
+// Review status as a text label; colour only reinforces it.
+// The public tracker never mentions payments: "Approved" is the middle
+// step and "Processed" the final one, with no word on whether anyone is paid.
+const STATUS_LABELS = {
+    'processed': { cls: 'status-approved', label: 'Processed' },
+    'rejected': { cls: 'status-rejected', label: 'Rejected' },
+    'pending review': { cls: 'status-pending', label: 'Pending review' },
+    'approved': { cls: 'status-pending', label: 'Approved' }
+};
+
+function renderStatus(status) {
+    const known = STATUS_LABELS[String(status || '').trim().toLowerCase()];
+    const cls = known ? known.cls : 'status-neutral';
+    const label = known ? known.label : (status || 'Unknown');
+    return `<span class="status ${cls}">${escapeHtml(label)}</span>`;
+}
+
+// "Bitbiashara (Kenya) 🇰🇪" -> "Kenya", or '' when the name has no country
+function extractCountry(name) {
+    const match = String(name || '').match(/\(([^)]+)\)/);
+    return match ? match[1].trim() : '';
+}
+
+function resultsText(startIndex, endIndex) {
+    const total = filteredSubmissions.length;
+    return `Showing ${(startIndex + 1).toLocaleString('en-GB')}–${Math.min(endIndex, total).toLocaleString('en-GB')} of ${total.toLocaleString('en-GB')} ${total === 1 ? 'submission' : 'submissions'}`;
+}
+
+function renderSubmissionCard(submission) {
+    // Format timestamp for display, in UTC like the rest of the site
+    const timestamp = parseTrackerTime(submission.timestamp);
+    const dateStr = timestamp.toLocaleDateString('en-GB', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        timeZone: 'UTC'
+    });
+    const timeStr = timestamp.toLocaleTimeString('en-GB', {
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZone: 'UTC'
+    }) + ' UTC';
+    const isoStr = isNaN(timestamp) ? '' : timestamp.toISOString();
+    // Epoch 4's rows are dated to the day only (YYYY-MM-DD): no time to show
+    const dayOnly = /^\d{4}-\d{2}-\d{2}$/.test(String(submission.timestamp || ''));
+
+
+    // Flag carries the country as its name; the country is also written out
+    const country = extractCountry(submission.project_name);
+    const flag = flagHtml(submission.project_flag, country, 'flag');
+    const detailsId = `sub-${String(submission.id ?? '').replace(/[^\w-]/g, '')}-details`;
+
+    return `
+        <li class="submission-card" data-id="${escapeHtml(submission.id)}">
+            <button type="button" class="card-header" aria-expanded="false" aria-controls="${detailsId}">
+                <span class="card-main">
+                    <span class="card-title">
+                        <span class="project-name">${flag} <span class="pn">${escapeHtml(extractProjectNameOnly(submission.project_name))}</span></span>
+                        ${country ? `<span class="card-country">${escapeHtml(country)}</span>` : ''}
+                    </span>
+                    <span class="card-meta">
+                        <span class="merchant-name">${escapeHtml(submission.merchant_name)} <span class="card-platform">on ${escapeHtml(submission.platform)}</span></span>
+                        <time datetime="${dayOnly ? submission.timestamp : isoStr}">${dayOnly ? dateStr : `${dateStr}, ${timeStr}`}</time>
+                    </span>
+                </span>
+                ${renderStatus(submission.status)}
+                <span class="chev" aria-hidden="true"></span>
+            </button>
+
+            <div class="card-details" id="${detailsId}" hidden>
+                ${renderCardDetails(submission)}
+            </div>
+        </li>
+    `;
+}
+
+function renderCardDetails(submission) {
+    let html = '<dl class="details">';
+
+    // The post, who took part (never how much anyone was paid) and the notes,
+    // as one table of label and value. The rows name themselves, so the
+    // list's own label is for screen readers only.
+    const postHref = safeUrl(submission.post_url);
+    const postRow = `
+        <li class="payment-item">
+            <span class="payment-type">Post</span>
+            <span class="payment-recipient">${postHref
+                ? `<a href="${postHref}" target="_blank" rel="noopener">${escapeHtml(submission.post_url)}</a>`
+                : escapeHtml(submission.post_url || 'No post link')}</span>
+        </li>`;
+    html += `
+        <div>
+            <dt class="visually-hidden">Submission details</dt>
+            <dd>
+                <ul class="payment-list">
+                    ${postRow}
+                    ${(submission.payments || []).map(payment => renderPayment(payment)).join('')}
+                    ${submission.note ? `
+                    <li class="payment-item">
+                        <span class="payment-type">Notes</span>
+                        <span class="payment-recipient">${escapeHtml(submission.note)}</span>
+                    </li>` : ''}
+                </ul>
+            </dd>
+        </div>
+    `;
+
+    html += '</dl>';
+
+    // Telegram and BTC Map links
+    const telegram = safeUrl(submission.telegram_link);
+    const btcmap = safeUrl(submission.btcmap_link);
+    if (telegram || btcmap) {
+        html += `
+            <ul class="chips">
+                ${telegram ? `<li><a class="chip" href="${telegram}" target="_blank" rel="noopener">Telegram discussion</a></li>` : ''}
+                ${btcmap ? `<li><a class="chip" href="${btcmap}" target="_blank" rel="noopener">Merchant on BTC Map</a></li>` : ''}
+            </ul>
+        `;
+    }
+
+    return html;
+}
+
+function renderPayment(payment) {
+    const typeLabels = {
+        'reviewer': 'Reviewer',
+        'merchant': 'Merchant',
+        'project': 'Project'
+    };
+
+    const typeLabel = typeLabels[payment.type] || payment.type;
+    // The card title already shows the project's flag and country
+    const recipient = payment.type === 'project' ? extractProjectNameOnly(payment.recipient) : payment.recipient;
+    // Merchants and projects link to their profiles. Profile ids are the name
+    // as a slug ("Bitcoin Chama" -> bitcoin-chama), which holds for every
+    // member today; merchant pages are addressed the same way.
+    const slug = name => String(name || '').replace(/[^\w\s-]/g, '').trim().toLowerCase().replace(/\s+/g, '-');
+    const page = { merchant: 'merchant-profile.html', project: 'profile.html' }[payment.type];
+    const name = page && recipient
+        ? `<a href="${page}?id=${encodeURIComponent(slug(recipient))}">${escapeHtml(recipient)}</a>`
+        : escapeHtml(recipient);
+
+    return `
+        <li class="payment-item">
+            <span class="payment-type">${escapeHtml(typeLabel)}</span>
+            <span class="payment-recipient">${name}</span>
+        </li>
+    `;
+}
+
+// ============================================================================
+// Pagination
+// ============================================================================
+
+function updatePagination() {
+    const totalPages = Math.max(1, Math.ceil(filteredSubmissions.length / ITEMS_PER_PAGE));
+
+    // Update top pagination
+    document.getElementById('current-page').textContent = currentPage;
+    document.getElementById('total-pages').textContent = totalPages;
+    document.getElementById('btn-prev-page').disabled = currentPage === 1;
+    document.getElementById('btn-next-page').disabled = currentPage === totalPages;
+
+    // Update bottom pagination
+    document.getElementById('current-page-bottom').textContent = currentPage;
+    document.getElementById('total-pages-bottom').textContent = totalPages;
+    document.getElementById('btn-prev-page-bottom').disabled = currentPage === 1;
+    document.getElementById('btn-next-page-bottom').disabled = currentPage === totalPages;
+
+    // Page buttons only when there is more than one page; the bottom bar
+    // only then too (with one page the top count says it all)
+    const manyPages = totalPages > 1;
+    document.getElementById('pager-top').hidden = !manyPages;
+    document.getElementById('bottom-pagination').style.display = manyPages ? 'flex' : 'none';
+
+    // Update results count on bottom
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    document.getElementById('results-count-bottom').textContent = resultsText(startIndex, endIndex);
+}
+
+function goToPage(page) {
+    const totalPages = Math.ceil(filteredSubmissions.length / ITEMS_PER_PAGE);
+
+    if (page < 1) page = 1;
+    if (page > totalPages) page = totalPages;
+
+    currentPage = page;
+    renderSubmissions();
+    updatePagination();
+
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ============================================================================
+// Event Listeners
+// ============================================================================
+
+function attachCardListeners() {
+    document.querySelectorAll('.card-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const card = header.closest('.submission-card');
+            const expanded = card.classList.toggle('expanded');
+            header.setAttribute('aria-expanded', String(expanded));
+            document.getElementById(header.getAttribute('aria-controls')).hidden = !expanded;
+        });
+    });
+}
+
+function attachFilterListeners() {
+    // Filter changes
+    document.getElementById('filter-epoch').addEventListener('change', async () => {
+        if (await loadSelectedEpochs()) applyFilters();
+    });
+    document.getElementById('filter-status').addEventListener('change', applyFilters);
+    document.getElementById('filter-project').addEventListener('change', applyFilters);
+    document.getElementById('filter-country').addEventListener('change', applyFilters);
+    document.getElementById('merchant-filter-clear').addEventListener('click', () => {
+        merchantFilter = '';
+        applyFilters();
+        document.getElementById('filter-search').focus();
+    });
+    document.getElementById('filter-date').addEventListener('change', (e) => {
+        // Show/hide custom date range
+        const customRange = document.getElementById('custom-date-range');
+        customRange.style.display = e.target.value === 'custom' ? 'block' : 'none';
+        applyFilters();
+    });
+    document.getElementById('filter-search').addEventListener('input', applyFilters);
+
+    // Custom date range
+    document.getElementById('filter-date-from').addEventListener('change', applyFilters);
+    document.getElementById('filter-date-to').addEventListener('change', applyFilters);
+
+    // Top pagination
+    document.getElementById('btn-prev-page').addEventListener('click', () => goToPage(currentPage - 1));
+    document.getElementById('btn-next-page').addEventListener('click', () => goToPage(currentPage + 1));
+
+    // Bottom pagination
+    document.getElementById('btn-prev-page-bottom').addEventListener('click', () => goToPage(currentPage - 1));
+    document.getElementById('btn-next-page-bottom').addEventListener('click', () => goToPage(currentPage + 1));
+}
+
+function showError(message) {
+    const container = document.getElementById('submissions-container');
+    container.innerHTML = `
+        <div class="list-state" role="alert">
+            <p>${message}</p>
+            <p>Check your connection and reload the page to try again.</p>
+        </div>
+    `;
+    document.getElementById('results-count').textContent = 'Submissions unavailable';
+    document.getElementById('pager-top').hidden = true;
+}
+
+// ============================================================================
+// Initialization
+// ============================================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    attachFilterListeners();
+    loadTrackerData();
+});

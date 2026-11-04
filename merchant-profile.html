@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="only light">
+    <title id="page-title">Merchant profile | PoWBoT</title>
+    <meta name="description" content="A Bitcoin circular economy merchant in Africa: its proof of work on PoWBoT, and how to tip it directly over Lightning.">
+    <meta name="theme-color" content="#CFE5BE">
+    <script>
+        // Dark, if chosen with the header switch (light is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
+        (function () {
+            try {
+                if (localStorage.getItem('pb-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+                if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
+            } catch (e) { /* storage blocked: the defaults, light with effects on */ }
+        })();
+    </script>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Link previews (Open Graph, X): scrapers don't run JavaScript, so these stay generic -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PoWBoT">
+    <meta property="og:title" content="Merchant profile | PoWBoT">
+    <meta property="og:description" content="A Bitcoin circular economy merchant in Africa: its proof of work on PoWBoT, and how to tip it directly over Lightning.">
+    <meta property="og:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="PoWBoT, a robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Merchant profile | PoWBoT">
+    <meta name="twitter:description" content="A Bitcoin circular economy merchant in Africa: its proof of work on PoWBoT, and how to tip it directly over Lightning.">
+    <meta name="twitter:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
+    <meta name="twitter:image:alt" content="PoWBoT, a robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+
+    <script src="qrcode.min.js"></script>
+    <!-- The donation panel, shared with the directory and project profiles -->
+    <script src="donate.js"></script>
+    <script src="flags.js"></script>
+    <script src="visits.js"></script>
+    <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Loaded in the
+         head because the page's inline script runs before the end of <body>;
+         loaded at the bottom, it was never defined in time and the page always
+         read the twice-daily repo copy instead of the live feed. -->
+    <!-- The current epoch: data-source.js reads its frozen copy once it is over -->
+    <script src="epoch-config.js"></script>
+    <script src="data-source.js"></script>
+
+    <link rel="stylesheet" href="css/powbot.css">
+    <style>
+        /* Merchant page layout only. Colours, type and components: css/powbot.css */
+
+        /* ---------------------------------------------------------- Header -- */
+        .profile-head { border-bottom: 1px solid var(--line); }
+        /* The name, then the BTC Map link. Merchants have no picture. */
+        .profile-head .wrap {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: var(--s5) var(--s6);
+            align-items: center;
+            padding-top: var(--s7);
+            padding-bottom: var(--s6);
+        }
+        .hero-text { min-width: 0; }
+        .hero-text h1 { margin: 0; font-size: var(--fs-h1); overflow-wrap: anywhere; }
+        .merchant-subtitle { margin: var(--s2) 0 0; color: var(--muted); }
+        .merchant-subtitle .flag { margin-right: var(--s1); }
+
+        /* ------------------------------------------------ Record and support -- */
+        .intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 340px); gap: var(--s6) var(--s7); align-items: start; }
+        .intro h2 { margin: 0 0 var(--s5); font-size: 1.75rem; }
+        /* The record: one figure per row, label then dot leaders then the
+           value, like the site's other figures. Places and dates are words,
+           not counts: a size down from the count. */
+        .record .facts { grid-template-columns: minmax(0, 1fr); max-width: 34rem; }
+        .facts b.fact-text { font-size: 1.75rem; }
+        /* The projects: a record row like the others (label, dot leaders,
+           value); with several, the names stack and right-align. Names take the
+           same figure style as the values above */
+        .fact-projects b { display: flex; flex-direction: column; align-items: flex-end; min-width: 0; text-align: right; }
+        .fact-projects b a, .fact-projects b em { display: flex; align-items: center; justify-content: flex-end; min-height: var(--tap); max-width: 100%; font-style: normal; }
+        .fact-projects b a { color: inherit; }
+        /* A mouse needs less than a finger: tighter stack, 44px kept on touch */
+        @media (pointer: fine) { .fact-projects b a, .fact-projects b em { min-height: 2rem; } }
+        .fact-projects > span { white-space: nowrap; }
+        @media (max-width: 479px) {
+            /* Phones: no room for names beside the label, so they go below it */
+            .record .facts li.fact-projects { flex-direction: column; align-items: flex-start; gap: 0; }
+            .record .facts li.fact-projects::after { content: none; }
+            .fact-projects > span { order: 1; }
+            .fact-projects b { order: 2; align-items: flex-start; text-align: left; }
+            .fact-projects b a, .fact-projects b em { justify-content: flex-start; }
+        }
+        .fact-projects b i { font-style: normal; }
+        /* Underline the name only, not the space and flag after it */
+        .fact-projects b a { text-decoration: none; }
+        .fact-projects b a .pn { color: inherit; text-decoration: underline; text-underline-offset: 0.15em; }
+        /* The support panel's styles are shared: .donate* in css/powbot.css */
+        .support-box h2 { margin: 0 0 var(--s3); font-size: 1.5rem; overflow-wrap: anywhere; }
+        .support-box .none { margin: 0; color: var(--muted); }
+
+        /* ------------------------------------------------------------ Posts -- */
+        .posts-more { margin-top: var(--s3); }
+        .detail-links .posts-more { margin-top: 0; }
+        .post-hidden { display: none !important; }
+        /* Dates here carry the year: "23 Sept 2026, 16:12 UTC" */
+        #merchant-posts { --visit-when: 23ch; }
+        .empty-note { margin: 0; color: var(--muted); }
+
+        /* ---------------------------------------------------------- BTC Map -- */
+
+        /* -------------------------------------------------- States and notes -- */
+        .loading { margin: 0; padding: var(--s7) 0; color: var(--muted); }
+        .page-error { padding-top: var(--s7); padding-bottom: var(--s7); }
+        .page-error h1 { margin: 0 0 var(--s3); font-size: 2rem; }
+        .page-error p { margin: 0; max-width: 60ch; }
+
+        @media (max-width: 720px) {
+            .profile-head .wrap { grid-template-columns: minmax(0, 1fr); gap: var(--s4); padding-top: var(--s6); padding-bottom: var(--s5); }
+            /* Phones: the BTC Map link drops under the name, like a project's links */
+            .btcmap-link { grid-column: 1 / -1; justify-self: start; }
+            .intro { grid-template-columns: minmax(0, 1fr); }
+            .facts b.fact-text { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body class="pb">
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
+
+    <main id="main">
+        <!-- Loading and error states. The script empties this once the merchant renders. -->
+        <div class="wrap" id="merchant-state" aria-live="polite">
+            <p class="loading">Loading the merchant…</p>
+        </div>
+
+        <div id="merchant-body" hidden>
+            <header class="profile-head">
+                <div class="wrap">
+                    <div class="hero-text">
+                        <h1 id="merchant-name">Merchant</h1>
+                        <p class="merchant-subtitle" id="merchant-subtitle">Circular economy merchant</p>
+                    </div>
+                    <!-- The emoji is decoration: the text names the link -->
+                    <a class="hero-link btcmap-link" id="btcmap-link" href="#" target="_blank" rel="noopener" hidden><span aria-hidden="true">🗺️</span><span id="btcmap-link-text">View on BTC Map</span></a>
+                </div>
+            </header>
+
+            <div class="wrap">
+                <div class="section intro" id="stats-grid">
+                    <!-- Record and support box are inserted here -->
+                </div>
+
+                <section class="section" aria-labelledby="posts-title">
+                    <h2 id="posts-title">PoWBoT posts</h2>
+                    <p class="section-note">Accepted proof-of-work visits that feature this merchant, across every epoch, newest first.</p>
+                    <div id="posts-list">
+                        <!-- Posts are inserted here -->
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const merchantParam = urlParams.get('id');
+
+        // Loading, not-found and error states replace the placeholder above the
+        // (still hidden) merchant body. Each one says where to go next.
+        const DIRECTORY_LINKS = 'Find merchants through the <a href="index.html">leaderboard</a> or the <a href="members.html">project directory</a>.';
+        function showState(title, detail) {
+            document.getElementById('merchant-state').innerHTML = `
+                <div class="page-error">
+                    <h1>${title}</h1>
+                    <p>${detail}</p>
+                </div>
+            `;
+        }
+
+        if (!merchantParam) {
+            showState('No merchant chosen', `This link does not name a merchant. ${DIRECTORY_LINKS}`);
+        } else {
+            loadMerchantData(merchantParam);
+        }
+
+        function getPlatform(url) {
+            if (url.includes('twitter.com') || url.includes('x.com')) {
+                return { name: 'X', icon: '𝕏' };
+            }
+            return { name: 'Nostr', icon: '🟣' };
+        }
+
+        // "2026-07-03" -> "3 Jul 2026", read as a UTC date
+        function formatDate(dateStr) {
+            const date = new Date(dateStr);
+            return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+        }
+
+        function normalizeId(name) {
+            return name
+                .replace(/[^\w\s-]/g, '') // Remove emojis and special characters
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, '-'); // Replace spaces with hyphens
+        }
+
+        function getCountryName(flagEmoji) {
+            const countryMap = {
+                '🇿🇦': 'South Africa',
+                '🇰🇪': 'Kenya',
+                '🇳🇬': 'Nigeria',
+                '🇬🇭': 'Ghana',
+                '🇹🇿': 'Tanzania',
+                '🇺🇬': 'Uganda',
+                '🇿🇲': 'Zambia',
+                '🇿🇼': 'Zimbabwe',
+                '🇧🇼': 'Botswana',
+                '🇲🇼': 'Malawi',
+                '🇲🇿': 'Mozambique',
+                '🇧🇮': 'Burundi',
+                '🇷🇼': 'Rwanda',
+                '🇪🇹': 'Ethiopia',
+                '🇨🇩': 'Democratic Republic of Congo',
+                '🇨🇬': 'Republic of Congo',
+                '🇧🇯': 'Benin',
+                '🇹🇬': 'Togo',
+                '🇨🇲': 'Cameroon',
+                '🇸🇳': 'Senegal',
+                '🇨🇮': 'Côte d\'Ivoire',
+                '🇲🇱': 'Mali',
+                '🇧🇫': 'Burkina Faso',
+                '🇳🇪': 'Niger'
+            };
+            return countryMap[flagEmoji] || flagEmoji;
+        }
+
+        async function loadMerchantData(merchantName) {
+            try {
+                // ------------------------------------------------------------------
+                // TRACKER FILES - the live epoch plus every frozen epoch archive.
+                //
+                // tracker-data.json holds ONLY the current epoch, because the stats
+                // export is scoped by CURRENT_EPOCH. So the instant an epoch rolls
+                // over, its posts vanish from this page unless its archive is listed
+                // below. Not hypothetical: Epoch 5 disappeared exactly this way on
+                // 19 July 2026 when the export switched to Epoch 6.
+                //
+                // ==> WHEN AN EPOCH ENDS: freeze tracker-data.json as
+                //     tracker-data-epochN.json, and add it here when
+                //     epoch-config.js moves to the next epoch (not before: until
+                //     then it is the current epoch, read in the first slot). <==
+                //
+                // All of these share one shape - submissions[] with merchant_name,
+                // timestamp, post_url, btcmap_link, lightning_address - so they go
+                // through the same mapping and keep full detail.
+                const TRACKER_FILES = ['tracker-data.json', 'tracker-data-epoch5.json'];
+
+                // STATS ARCHIVES - older epochs that predate the SQLite tracker.
+                // Epoch 4 and earlier lived in Google Sheets, so only the thinner
+                // stats snapshot exists: top_merchants[] with posts[] of
+                // {url, date, project}. No btcmap_link for those.
+                // The Epoch 4 testing period (December 2025) sits in
+                // stats-historical.json; its merchants are read from there below.
+                const STATS_ARCHIVES = ['stats-epoch4.json', 'stats-historical.json'];
+
+                // Every fetch fails to null independently - one missing archive must
+                // not blank the page, it just means that epoch is absent.
+                // The LIVE file comes from the VPS via fetchEpochData (which falls
+                // back to this repo, and reads the epoch's frozen copy once it is
+                // over, so its posts stay put when the bot moves on). Archives are
+                // frozen and change only via git, so they stay same-origin - no
+                // point adding a VPS dependency for data that cannot be fresher there.
+                const LIVE = 'tracker-data.json';
+                const loadJson = f => (f === LIVE && typeof fetchEpochData === 'function')
+                    ? fetchEpochData('tracker-data').catch(() => null)
+                    : fetch(f).then(r => r.ok ? r.json() : null).catch(() => null);
+
+                // members.json names each project's profile page. Optional: without
+                // it the projects list still shows, just without links.
+                const [trackerFiles, statsArchives, membersData] = await Promise.all([
+                    Promise.all(TRACKER_FILES.map(loadJson)),
+                    Promise.all(STATS_ARCHIVES.map(loadJson)),
+                    loadJson('members.json')
+                ]);
+
+                // Normalize the URL parameter for comparison
+                const normalizedParam = normalizeId(merchantName);
+
+                // Find this merchant across the live epoch AND every tracker archive.
+                //
+                // Only accepted submissions count: a merchant profile is a record
+                // of accepted PoW. The tracker files carry every submission
+                // regardless of outcome, unlike the stats archives below which
+                // only ever held accepted posts, so rejected ones and ones still
+                // pending review are left out ("Approved" and "Processed" stay).
+                // A missing status is treated as accepted, so nothing is dropped
+                // just for lacking the field.
+                const isOpenOrRejected = s => ['rejected', 'pending review'].includes((s.status || '').trim().toLowerCase());
+
+                const merchantSubmissions = trackerFiles
+                    .filter(Boolean)
+                    .flatMap(t => (t.submissions || []).filter(s =>
+                        normalizeId(s.merchant_name) === normalizedParam && !isOpenOrRejected(s)
+                    ));
+
+                // Convert tracker submissions to post format
+                const currentPosts = merchantSubmissions.map(s => ({
+                    url: s.post_url,
+                    date: s.timestamp.split(' ')[0], // Extract date from "2026-04-12 05:08:45 UTC"
+                    project: s.project_name,
+                    btcmap_link: s.btcmap_link
+                }));
+
+                // Find this merchant in the older stats-only archives
+                const archivedMerchants = statsArchives
+                    .filter(Boolean)
+                    // stats-historical.json: only the testing period lists merchants
+                    .map(a => a.epochs ? a.epochs.epoch4_testing : a)
+                    .filter(Boolean)
+                    .map(a => a.top_merchants?.find(m =>
+                        normalizeId(m.name) === normalizedParam
+                    ))
+                    .filter(Boolean);
+
+                const archivedPosts = archivedMerchants.flatMap(m => m.posts || []);
+
+                // Combine every epoch, newest first
+                const allPosts = [
+                    ...currentPosts,
+                    ...archivedPosts
+                ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                const totalCount = allPosts.length;
+                const merchantDisplayName = merchantSubmissions[0]?.merchant_name || archivedMerchants[0]?.name || merchantName;
+                const lightningAddress = merchantSubmissions[0]?.lightning_address || null;
+
+                // Extract country flag from project name
+                let countryInfo = '';
+                let countryFlag = null;
+                if (allPosts.length > 0 && allPosts[0].project) {
+                    const flagMatch = allPosts[0].project.match(/[\u{1F1E6}-\u{1F1FF}][\u{1F1E6}-\u{1F1FF}]/u);
+                    if (flagMatch) {
+                        countryFlag = flagMatch[0];
+                        const countryName = getCountryName(countryFlag);
+                        countryInfo = ` in ${countryName}`;
+                    }
+                }
+
+                // Nothing found under this id: say so instead of an empty profile
+                if (totalCount === 0) {
+                    // Every file failed (each fails to null): that is a load error, not an unknown merchant
+                    if (![...trackerFiles, ...statsArchives].some(Boolean)) {
+                        throw new Error('No merchant data could be loaded');
+                    }
+                    showState('Merchant not found', `No PoWBoT posts feature a merchant called “${escapeHtml(merchantName)}”. Check the link. ${DIRECTORY_LINKS}`);
+                    return;
+                }
+
+                // Update page title and header
+                document.getElementById('page-title').textContent = `${merchantDisplayName} | PoWBoT`;
+                document.getElementById('merchant-name').textContent = merchantDisplayName;
+                // Flag carries the country as its name; the country is also written out
+                document.getElementById('merchant-subtitle').innerHTML = countryFlag
+                    ? `${flagHtml(countryFlag, getCountryName(countryFlag), 'flag')} Circular economy merchant${escapeHtml(countryInfo)}`
+                    : 'Circular economy merchant';
+
+                // Swap the loading state for the merchant
+                document.getElementById('merchant-state').innerHTML = '';
+                document.getElementById('merchant-body').hidden = false;
+
+                // Render stats, with the projects that post here
+                renderStats(totalCount, allPosts, merchantDisplayName, lightningAddress, countryFlag, projectsOf(allPosts, membersData));
+
+                // Render posts
+                renderPosts(merchantVisits(merchantSubmissions, archivedPosts), membersData, merchantDisplayName, totalCount);
+
+                // Handle BTC Map section
+                renderBtcMapLink(merchantDisplayName, allPosts);
+
+                // Update footer timestamp - from the LIVE file (index 0), not an
+                // archive, since archives are frozen and their stamps never move.
+                const liveTracker = trackerFiles[0];
+                // The footer is injected asynchronously and may not exist yet. Writing
+                // to a missing #updated threw, and the catch below then replaced a
+                // fully rendered page with "Error Loading Data".
+                const updatedEl = document.getElementById('updated');
+                if (liveTracker && liveTracker.last_updated && updatedEl) {
+                    updatedEl.textContent = new Date(liveTracker.last_updated).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
+                }
+
+            } catch (error) {
+                console.error('Error loading merchant data:', error);
+                document.getElementById('merchant-body').hidden = true;
+                showState('This merchant could not load', `Check your connection and reload the page. ${DIRECTORY_LINKS}`);
+            }
+        }
+
+        function renderStats(totalCount, posts, merchantName, lightningAddress, countryFlag, projects) {
+            const statsGrid = document.getElementById('stats-grid');
+
+            // Calculate first and last post dates
+            const dates = posts.map(p => new Date(p.date)).sort((a, b) => a - b);
+            const firstPost = dates.length > 0 ? dates[0] : null;
+            const lastPost = dates.length > 0 ? dates[dates.length - 1] : null;
+
+            // Support panel: the same as a project's donation box, Lightning only
+            let supportCardHTML = '';
+            if (lightningAddress) {
+                supportCardHTML = `
+                    <aside class="support" aria-labelledby="support-lightning-title">
+                        ${donatePanelHtml({ id: 'support', name: merchantName, lightning: lightningAddress, level: 2, title: `Support ${merchantName}`, showLabel: false })}
+                    </aside>
+                `;
+            } else {
+                supportCardHTML = `
+                    <aside class="box support-box" aria-labelledby="support-title">
+                        <h2 id="support-title">Support ${escapeHtml(merchantName)}</h2>
+                        <p class="none">No Lightning address is on record for this merchant yet.</p>
+                    </aside>
+                `;
+            }
+
+            // PoWBoT record: counts in figures, places and dates as words
+            const overviewCardHTML = `
+                <section class="record" aria-labelledby="record-title">
+                    <h2 id="record-title">PoWBoT record</h2>
+                    <ul class="facts">
+                        <li><b class="num">${totalCount}</b><span>${totalCount === 1 ? 'post' : 'posts'}</span></li>
+                        ${countryFlag ? `<li><b class="fact-text">${escapeHtml(getCountryName(countryFlag))}</b><span>location</span></li>` : ''}
+                        ${firstPost ? `<li><b class="fact-text num">${formatDate(firstPost)}</b><span>first post</span></li>` : ''}
+                        ${lastPost ? `<li><b class="fact-text num">${formatDate(lastPost)}</b><span>latest post</span></li>` : ''}
+                        ${projects.length ? `<li class="fact-projects"><b class="fact-text">${projects.map(projectLink).join('')}</b><span>supported by</span></li>` : ''}
+                    </ul>
+                </section>
+            `;
+
+            statsGrid.innerHTML = overviewCardHTML + supportCardHTML;
+
+            // Draw the QR code
+            donateDrawQr(document.getElementById('support'));
+        }
+
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        // Project names come as "Bitbiashara (Kenya) 🇰🇪" (tracker) or
+        // "Bitbiashara 🇰🇪" (older archives): compare without country or flag
+        function projectKey(name) {
+            return String(name || '')
+                .replace(/\s*\([^)]*\)/g, '')
+                .replace(/[\u{1F1E6}-\u{1F1FF}]/gu, '')
+                .replace(/\s+/g, ' ')
+                .trim()
+                .toLowerCase();
+        }
+
+        // Every project that posted here, most posts first (usually one, sometimes two)
+        function projectsOf(allPosts, membersData) {
+            const members = {};
+            (membersData?.members || []).forEach(m => { members[projectKey(m.name)] = m; });
+
+            const byProject = new Map();
+            allPosts.forEach(post => {
+                const key = projectKey(post.project);
+                if (!key) return;
+                const entry = byProject.get(key) || { name: post.project, member: members[key], count: 0, latest: '' };
+                entry.count += 1;
+                if (String(post.date) > entry.latest) entry.latest = String(post.date);
+                byProject.set(key, entry);
+            });
+            return [...byProject.values()].sort((a, b) => b.count - a.count || b.latest.localeCompare(a.latest));
+        }
+
+        function projectLink({ name: raw, member }) {
+            const name = member?.name || String(raw).replace(/\s*\([^)]*\)/g, '').replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
+            const flagMatch = String(raw).match(/[\u{1F1E6}-\u{1F1FF}]{2}/u);
+            const flag = member?.flag || (flagMatch ? flagMatch[0] : '');
+            const country = member?.country || (flag ? getCountryName(flag) : '');
+            return member
+                ? `<a href="profile.html?id=${encodeURIComponent(member.id)}"><span class="pn">${nameWithFlag(name, flag, country)}</span></a>`
+                : `<em>${nameWithFlag(name, flag, country)}</em>`;
+        }
+
+        // One row per visit (visits.js): an X post and its Nostr cross-post share
+        // a row, in every epoch. Epoch 4 and older carry only a date, so those
+        // pair on the same or next day and show without a time.
+        function merchantVisits(submissions, archivedPosts) {
+            const archived = archivedPosts.map(post => ({
+                project_name: post.project, post_url: post.url,
+                timestamp: `${post.date} 00:00:00 UTC`, classification: '', dateOnly: true
+            }));
+            return groupVisits([...submissions, ...archived]);
+        }
+
+        function visitWhen(visit) {
+            const date = new Date(String(visit.first).replace(' UTC', 'Z').replace(' ', 'T'));
+            if (isNaN(date)) return '';
+            const day = formatDate(date);
+            if (visit.posts.every(x => x.dateOnly)) return day;
+            const time = date.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' });
+            return `${day}, ${time} UTC`;
+        }
+
+        function renderPosts(visits, membersData, merchantName, postCount) {
+            const postsContainer = document.getElementById('posts-list');
+            const initialCount = 5;
+
+            if (visits.length === 0) {
+                postsContainer.innerHTML = '<p class="empty-note">No accepted posts yet.</p>';
+                return;
+            }
+
+            const members = {};
+            (membersData?.members || []).forEach(m => { members[projectKey(m.name)] = m; });
+
+            let html = '<ul class="visits" id="merchant-posts">';
+            visits.forEach((visit, index) => {
+                const member = members[projectKey(visit.project)];
+                const name = member?.name || projectKey(visit.project) || 'Unknown project';
+                html += `
+                    <li class="post-item ${index >= initialCount ? 'post-hidden' : ''}" data-index="${index}">
+                        <div class="visit">
+                            <span class="visit-main"><span class="visit-project">${projectLink({ name: visit.project || 'Unknown project', member })}</span></span>
+                            ${visitLinks(visit, `${name} at ${merchantName}`)}
+                            <span class="visit-when">${visitWhen(visit)}</span>
+                        </div>
+                    </li>
+                `;
+            });
+            html += '</ul>';
+
+            // Every epoch's posts are in the tracker (Epoch 4 and its testing
+            // period too), where this merchant's exact name finds the same count
+            const trackerHref = `tracker.html?${new URLSearchParams({ epoch: 'all', merchant: merchantName, status: 'Processed' })}`;
+            html += `<div class="detail-links">
+                ${visits.length > initialCount ? postsMoreButtons('merchant-posts', visits.length - initialCount) : ''}
+                <a class="btn" href="${escapeHtml(trackerHref)}">${visits.length > initialCount ? `View all ${postCount} in the Tracker` : 'View in the Tracker'}</a>
+            </div>`;
+
+            postsContainer.innerHTML = html;
+        }
+
+        // A link to the merchant on BTC Map, top right of the header. Current-epoch
+        // submissions carry the exact BTC Map link; older ones don't, so those
+        // search BTC Map by name instead.
+        function renderBtcMapLink(merchantName, posts) {
+            const link = document.getElementById('btcmap-link');
+            const withLink = (posts || []).find(p => p.btcmap_link);
+            if (withLink) {
+                link.href = withLink.btcmap_link;
+                document.getElementById('btcmap-link-text').textContent = 'View on BTC Map';
+            } else {
+                link.href = `https://btcmap.org/?search=${encodeURIComponent(merchantName)}`;
+                document.getElementById('btcmap-link-text').textContent = 'Search BTC Map';
+            }
+            link.hidden = false;
+        }
+    </script>
+
+    <!-- Footer (loaded from includes/footer.html) -->
+    <div id="site-footer"></div>
+
+    <!-- Shared nav/footer injection -->
+    <script src="includes/inject.js"></script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="only light">
+    <title>PoW video guidelines | PoWBoT</title>
+    <meta name="description" content="What counts as a PoWBoT proof-of-work video: required post and video elements, Epoch 6 submission limits, a suggested post format and what gets rejected.">
+    <link rel="canonical" href="https://powbot.africa/guidelines.html">
+    <meta name="theme-color" content="#CFE5BE">
+    <script>
+        // Dark, if chosen with the header switch (light is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
+        (function () {
+            try {
+                if (localStorage.getItem('pb-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+                if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
+            } catch (e) { /* storage blocked: the defaults, light with effects on */ }
+        })();
+    </script>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Link previews (Open Graph, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://powbot.africa/guidelines.html">
+    <meta property="og:site_name" content="PoWBoT">
+    <meta property="og:title" content="PoW video guidelines | PoWBoT">
+    <meta property="og:description" content="What counts as a PoWBoT proof-of-work video: required post and video elements, Epoch 6 submission limits, a suggested post format and what gets rejected.">
+    <meta property="og:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="PoWBoT, a robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://powbot.africa/guidelines.html">
+    <meta name="twitter:title" content="PoW video guidelines | PoWBoT">
+    <meta name="twitter:description" content="What counts as a PoWBoT proof-of-work video: required post and video elements, Epoch 6 submission limits, a suggested post format and what gets rejected.">
+    <meta name="twitter:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
+    <meta name="twitter:image:alt" content="PoWBoT, a robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+
+    <link rel="stylesheet" href="css/powbot.css">
+    <style>
+        /* Guidelines layout only. Colours, type and components: css/powbot.css */
+
+        /* Do and don't lists: the heading says which; the rule colour only reinforces it */
+        .prose .callout { margin: 0 0 var(--s4); }
+        .callout h3 { margin: 0 0 var(--s3); font-size: 1.375rem; color: var(--link); }
+        .callout.danger h3 { color: var(--danger); }
+        .callout ul { margin: 0; }
+        .callout li:last-child { margin-bottom: 0; }
+        /* A line after a box's list ("So a full week is 6 posts") */
+        .callout ul + p { margin-top: var(--s3); }
+        .rules li { margin-bottom: var(--s3); }
+
+        /* Required video elements: a numbered sequence, one line each */
+        .prose .elements { margin: 0 0 var(--s4); }
+        .elements li { margin-bottom: var(--s1); }
+        .elements .el-name { font-weight: 700; color: var(--heading); }
+        .elements .el-desc { color: var(--muted); }
+
+        /* Suggested post: keeps its line breaks, wraps instead of scrolling */
+        .example { margin: 0 0 var(--s4); }
+        .example pre { margin: 0; font: 400 var(--fs-sm)/1.8 var(--font-mono); color: var(--text); white-space: pre-wrap; overflow-wrap: anywhere; }
+    </style>
+</head>
+<body class="pb">
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
+
+    <main id="main">
+        <div class="wrap">
+            <header class="page-head">
+                <h1>PoW video guidelines</h1>
+                <p class="lede">How to create qualifying Proof of Work video posts for PoWBoT.</p>
+            </header>
+
+            <!-- For projects not yet taking part. The group isn't named on the
+                 page: approved projects get access directly. -->
+            <section class="section" aria-labelledby="new">
+                <h2 id="new">New to PoWBoT?</h2>
+                <div class="prose">
+                    <p>PoWBoT is open to any established Bitcoin circular economy project in Africa.</p>
+                    <ol class="steps">
+                        <li><strong>Apply:</strong> message <a href="https://t.me/bitcoinubuntu" target="_blank" rel="noopener">@bitcoinubuntu</a> on Telegram with a few lines about your project and where it works.</li>
+                        <li><strong>Get approved:</strong> once your project is approved, you get access to the group, where you submit your posts.</li>
+                        <li><strong>Post:</strong> film and post proof-of-work videos that follow the guidelines below.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- What qualifies -->
+            <section class="section" aria-labelledby="qualifies">
+                <h2 id="qualifies">What qualifies</h2>
+                <div class="prose">
+                    <div class="callout">
+                        <p>Your video post must meet <strong>all</strong> of these requirements:</p>
+                        <ul class="rules">
+                            <li><strong>Include #spedn hashtag:</strong> Your post must include the hashtag <code>#spedn</code></li>
+                            <li><strong>Show the transaction:</strong> Video must capture an actual Bitcoin payment happening</li>
+                            <li><strong>Merchant receives sats directly:</strong> No fiat settlement services – merchant must receive Bitcoin</li>
+                            <li><strong>Merchant paycode/LNURL in post:</strong> Must be clearly typed in the written post text (not just shown in video). If multiple paycodes are included, the merchant’s must appear first</li>
+                            <li><strong>BTCMap.org link required:</strong> Must include a link to the merchant’s BTCMap.org profile in your post</li>
+                            <li><strong>Permanent merchant location:</strong> Must be an established business with a fixed physical location (no mobile vendors, delivery services, or temporary stands)</li>
+                            <li><strong>Valid on X &amp; Nostr:</strong> Posts on either platform qualify</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Submission limits -->
+            <section class="section" aria-labelledby="limits">
+                <h2 id="limits">Submission limits (Epoch 6)</h2>
+                <div class="prose">
+                    <ul class="rules">
+                        <li><strong>Weekly limit:</strong> 3 <em>different merchants</em> per project per week. The week runs Monday to Sunday and resets <strong>Monday 00:00 UTC</strong> (02:00 CAT).</li>
+                        <li><strong>Once per platform:</strong> each merchant can be posted once on X and once on Nostr per week.</li>
+                        <li><strong>Cross-posts:</strong> posting the same merchant on the other platform pays about 25% of the first post’s reward.</li>
+                    </ul>
+                    <p>This means:</p>
+                    <div class="callout">
+                        <h3>Counts</h3>
+                        <ul>
+                            <li>3 different merchants in a week – full reward each</li>
+                            <li>Each of those 3 also posted to the other platform – ~25% of the first post each</li>
+                        </ul>
+                        <p>So a full week is <strong>6 posts</strong>: 3 merchants × 2 platforms</p>
+                    </div>
+                    <div class="callout danger">
+                        <h3>Doesn’t count</h3>
+                        <ul>
+                            <li>The same merchant twice on the same platform in one week</li>
+                            <li>A 4th new merchant in the same week</li>
+                        </ul>
+                    </div>
+                    <p><strong>Tip:</strong> Spread your posts throughout the week for maximum visibility.</p>
+                </div>
+            </section>
+
+            <!-- Video requirements -->
+            <section class="section" aria-labelledby="elements">
+                <h2 id="elements">Required video elements</h2>
+                <div class="prose">
+                    <ol class="elements">
+                        <li><span class="el-name">Shopfront:</span> <span class="el-desc">Brief exterior/street view</span></li>
+                        <li><span class="el-name">Shop interior:</span> <span class="el-desc">Brief overview inside</span></li>
+                        <li><span class="el-name">Bitcoin sign:</span> <span class="el-desc">“Bitcoin Accepted” signage</span></li>
+                        <li><span class="el-name">Selection:</span> <span class="el-desc">Customer choosing product</span></li>
+                        <li><span class="el-name">Transaction:</span> <span class="el-desc">Payment process clearly shown</span></li>
+                        <li><span class="el-name">Confirmation:</span> <span class="el-desc">Payment success screen</span></li>
+                        <li><span class="el-name">Ending screen:</span> <span class="el-desc">Project donation QR codes</span></li>
+                    </ol>
+                    <p><strong>Keep it short:</strong> Videos should be 45–60 seconds maximum. Focus on showing the transaction and required elements. Edit your clips to capture the essential moments efficiently.</p>
+                    <p><strong>Proper formatting:</strong> Crop your videos correctly. Do not edit portrait videos onto a horizontal canvas – keep videos in their native orientation.</p>
+                </div>
+            </section>
+
+            <!-- Suggested post format -->
+            <section class="section" aria-labelledby="format">
+                <h2 id="format">Suggested post format</h2>
+                <div class="prose">
+                    <figure class="box example" aria-labelledby="example-label">
+                        <figcaption class="box-label" id="example-label">Example post</figcaption>
+<pre>⚡️ Use Bitcoin as everyday money
+#spedn
+merchant@blink.sv
+btcmap.org/merchant/12345
+[Your post’s story here...]
+[UPLOADED VIDEO]</pre>
+                    </figure>
+                    <div class="callout warn">
+                        <p><strong><span aria-hidden="true">⚠️</span> Tip for posting to X:</strong> Posts truncate at 280 chars. Put required elements first!</p>
+                    </div>
+                    <p><strong>Remember:</strong> The merchant’s Lightning address must appear <strong>first</strong> if you’re including multiple paycodes or donation addresses in your post.</p>
+                </div>
+            </section>
+
+            <!-- What doesn't qualify -->
+            <section class="section" aria-labelledby="rejected">
+                <h2 id="rejected">What doesn’t qualify</h2>
+                <div class="prose">
+                    <div class="callout danger">
+                        <ul class="rules">
+                            <li><strong>Fiat settlement:</strong> Merchant receiving fiat through off-ramps</li>
+                            <li><strong>No verifiable location:</strong> Random sellers, unidentifiable locations, temporary stands, street vendors</li>
+                            <li><strong>Mobile services:</strong> Taxis, delivery services, or any mobile merchants (too difficult to verify location)</li>
+                            <li><strong>Random people at meetups:</strong> Sending sats to individuals who aren’t merchants</li>
+                            <li><strong>Salary payments:</strong> Paying employees is not a PoW video. Employees should spend their salaries at merchants instead</li>
+                            <li><strong>Talking without showing:</strong> Describing what you did without on-camera evidence of the transaction</li>
+                            <li><strong>No context videos:</strong> Videos filmed outside your circular economy project or without identifying location</li>
+                            <li><strong>Unclear transactions:</strong> If the video doesn’t clearly show sats being spent, it won’t count</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer (loaded from includes/footer.html) -->
+    <div id="site-footer"></div>
+
+    <!-- Shared nav/footer injection -->
+    <script src="includes/inject.js"></script>
+</body>
+</html>

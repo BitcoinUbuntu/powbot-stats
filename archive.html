@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="only light">
+    <link rel="canonical" href="https://powbot.africa/archive.html">
+    <title>PoWBoT archive – past epochs</title>
+    <meta name="description" content="Final PoWBoT leaderboards from past epochs: approved proof-of-work posts by project and merchant, from Epoch 1 in May 2025 to Epoch 6.">
+    <meta name="theme-color" content="#CFE5BE">
+    <script>
+        // Dark, if chosen with the header switch (light is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
+        (function () {
+            try {
+                if (localStorage.getItem('pb-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+                if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
+            } catch (e) { /* storage blocked: the defaults, light with effects on */ }
+        })();
+    </script>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Link previews (Open Graph, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://powbot.africa/archive.html">
+    <meta property="og:site_name" content="PoWBoT">
+    <meta property="og:title" content="PoWBoT archive – past epochs">
+    <meta property="og:description" content="Final PoWBoT leaderboards from past epochs: approved proof-of-work posts by project and merchant, from Epoch 1 in May 2025 to Epoch 6.">
+    <meta property="og:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="PoWBoT, a robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://powbot.africa/archive.html">
+    <meta name="twitter:title" content="PoWBoT archive – past epochs">
+    <meta name="twitter:description" content="Final PoWBoT leaderboards from past epochs: approved proof-of-work posts by project and merchant, from Epoch 1 in May 2025 to Epoch 6.">
+    <meta name="twitter:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
+    <meta name="twitter:image:alt" content="PoWBoT, a robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+
+    <link rel="preload" href="fonts/vt323-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/atkinson-hyperlegible-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/powbot.css">
+    <style>
+        /* Archive layout only. Colours, type and components: css/powbot.css */
+        .loading { padding: var(--s7) 0; color: var(--muted); }
+        .error { padding: var(--s7) 0; max-width: 60ch; }
+        .error p { margin: 0 0 var(--s3); }
+        .error p:first-child { font: 700 var(--fs-md)/1.4 var(--font-text); color: var(--danger); }
+
+        .section > .facts { margin-top: var(--s5); }
+
+        /* Panels inside an epoch: two side by side, a wide one on its own row */
+        .cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s7); margin-top: var(--s7); }
+        .panel-wide { margin-top: var(--s7); }
+        .epoch-more { margin: var(--s6) 0 0; }
+        .panel { min-width: 0; }
+        .panel > h3 { margin: 0 0 var(--s2); font-size: 1.5rem; }
+        .panel > .section-note { margin-bottom: var(--s4); }
+        /* The highlights panel: one figure per row in a half-width column */
+        .panel > .facts { grid-template-columns: minmax(0, 1fr); }
+        .panel > .notes { margin-top: var(--s4); }
+
+        /* A bar chart beside a taller list: the bars grow to the list's height */
+        @media (min-width: 721px) {
+            .panel:has(> .bars) { display: flex; flex-direction: column; }
+            .panel > .bars { flex: 1; min-height: 140px; }
+        }
+        @media (max-width: 720px) {
+            .cols { grid-template-columns: minmax(0, 1fr); gap: var(--s7); }
+            /* Stacked, the highlights go straight from the note into the figures like
+               every other epoch; the heading stays for screen readers */
+            .section-note + .cols { margin-top: 0; }
+            .phone-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+        }
+        /* Country rows with projects and posts: on narrow phones the two
+           stack, so the country's name keeps the room */
+        @media (max-width: 480px) {
+            .li-side.pair { display: grid; justify-items: end; line-height: 1.3; }
+            .li-side.pair .sep { display: none; }
+        }
+    </style>
+</head>
+<body class="pb">
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
+
+    <main id="main">
+        <div class="wrap">
+            <header class="page-head">
+                <h1>PoWBoT archive</h1>
+                <p class="lede">Final leaderboards and totals from past epochs.</p>
+            </header>
+
+            <div id="content">
+                <p class="loading">Loading the archive…</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (loaded from includes/footer.html) -->
+    <div id="site-footer"></div>
+
+    <!-- Shared nav/footer injection - load first -->
+    <script src="includes/inject.js"></script>
+    <!-- Finished epochs and the shared "Every past epoch" block -->
+    <script src="epochs.js"></script>
+    <script src="flags.js"></script>
+
+    <script>
+        // Rows shown in each ranking before "Show all"
+        const INITIAL_ROWS = 5;
+
+        // Epochs 5 and 6 have their own pages (epoch5.html, epoch6.html). Their
+        // totals are frozen, the same figures the homepage uses.
+
+        // Format numbers with thousands separators
+        function formatNumber(num) {
+            return Number(num || 0).toLocaleString('en-GB');
+        }
+
+        // "2026-01-15" -> "15 Jan 2026", always UTC
+        function formatDate(dateStr) {
+            if (!dateStr) return '';
+            const date = new Date(String(dateStr).length === 10 ? dateStr + 'T00:00:00Z' : dateStr);
+            if (isNaN(date)) return '';
+            return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+        }
+
+        // "2026-01-15" -> "15 Jan", always UTC
+        function formatDay(dateStr) {
+            const date = new Date(String(dateStr).length === 10 ? dateStr + 'T00:00:00Z' : dateStr);
+            if (isNaN(date)) return '';
+            return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
+        }
+
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // For use inside a quoted HTML attribute
+        function attrSafe(text) {
+            return escapeHtml(String(text ?? ''))
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        const FLAG_RE = /[\u{1F1E6}-\u{1F1FF}]{2}/u;
+        const stripFlags = (name) => String(name || '').replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
+        const flagOf = (name) => (String(name || '').match(FLAG_RE) || [''])[0];
+
+        const plural = (n, one, many) => `${formatNumber(n)} ${n === 1 ? one : many}`;
+
+        // "Bitcoin Ekasi 🇿🇦" -> "profile.html?id=bitcoin-ekasi"
+        function profileUrl(name, type = 'project') {
+            const id = String(name || '')
+                .replace(/[^\w\s-]/g, '') // Remove emojis and special characters
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, '-'); // Replace spaces with hyphens
+            return `${type === 'merchant' ? 'merchant-profile.html' : 'profile.html'}?id=${id}`;
+        }
+
+        // ------------------------------------------------------ Page parts --
+
+        function factsHtml(facts) {
+            return `<ul class="facts">${facts.map(([n, label]) => `<li><b class="num">${n}</b><span>${label}</span></li>`).join('')}</ul>`;
+        }
+
+        function platformNote(platforms) {
+            const total = (platforms || []).reduce((s, p) => s + p.count, 0);
+            if (total === 0) return '';
+            if (platforms.length === 1) return `All posts were on <strong>${escapeHtml(platforms[0].platform)}</strong>`;
+            return `Posted on ${platforms.map(p => `<strong>${escapeHtml(p.platform)} ${Math.round(p.count / total * 100)}%</strong>`).join(', ')}`;
+        }
+
+        function notesHtml(notes) {
+            const items = notes.filter(Boolean);
+            return items.length ? `<ul class="notes">${items.map(n => `<li>${n}</li>`).join('')}</ul>` : '';
+        }
+
+        // Panels: consecutive normal panels pair up in two columns; a wide one gets its own row
+        function panelsHtml(panels) {
+            let html = '';
+            let pair = [];
+            const panel = p => `
+                <div class="panel">
+                    <h3 id="${p.id}-title"${p.phoneHidden ? ' class="phone-hidden"' : ''}>${p.title}</h3>
+                    ${p.note ? `<p class="section-note">${p.note}</p>` : ''}
+                    ${p.html}
+                </div>`;
+            const flush = () => { if (pair.length) html += `<div class="cols">${pair.map(panel).join('')}</div>`; pair = []; };
+            panels.forEach(p => {
+                if (p.wide) { flush(); html += `<div class="panel-wide">${panel(p)}</div>`; }
+                else { pair.push(p); if (pair.length === 2) flush(); }
+            });
+            flush();
+            return html;
+        }
+
+        function epochSectionHtml(e) {
+            return `
+                <section class="section" id="${e.id}" aria-labelledby="${e.id}-title">
+                    <h2 id="${e.id}-title">${e.title}</h2>
+                    <p class="section-note">${e.note}</p>
+                    ${e.lead ? '' : factsHtml(e.facts) + notesHtml(e.notes || [])}
+                    ${panelsHtml(e.lead
+                        ? [{ id: `${e.id}-highlights`, title: 'Highlights', phoneHidden: true, html: factsHtml(e.facts) + notesHtml(e.notes || []) }, ...(e.panels || [])]
+                        : (e.panels || []))}
+                    ${e.after || ''}
+                </section>`;
+        }
+
+        // Epoch 4 and its testing period are in the tracker ("4", "4t"): their
+        // rows open the approved posts there, filtered the same way
+        function trackerUrl(epoch, filters) {
+            return `tracker.html?${new URLSearchParams({ epoch, ...filters, status: 'Processed' })}`;
+        }
+
+        // Countries with their project counts; given the epoch's project ranking, with
+        // their approved posts too (summed from it, so the figure matches the
+        // tracker's). Given a tracker epoch, each row opens those posts there
+        function countriesHtml(countries, trackerEpoch, projects) {
+            if (!countries || countries.length === 0) return '<p>No countries recorded for this epoch.</p>';
+            const postsByFlag = {};
+            (projects || []).forEach(p => { const f = flagOf(p.name); postsByFlag[f] = (postsByFlag[f] || 0) + p.count; });
+            const rows = projects ? [...countries].sort((a, b) => (postsByFlag[b.flag] || 0) - (postsByFlag[a.flag] || 0)) : countries;
+            return `<ul class="list">${rows.map(c => {
+                const figure = projects
+                    ? `<span>${plural(c.count, 'project', 'projects')}</span><span class="sep" aria-hidden="true"> · </span><span>${plural(postsByFlag[c.flag] || 0, 'post', 'posts')}</span>`
+                    : plural(c.count, 'project', 'projects');
+                const inner = `<span class="li-main">${flagHtml(c.flag)} ${escapeHtml(c.country)}</span>
+                    <span class="li-side num${projects ? ' pair' : ''}">${figure}</span>`;
+                return trackerEpoch
+                    ? `<li><a href="${attrSafe(trackerUrl(trackerEpoch, { country: c.country }))}">${inner}</a></li>`
+                    : `<li><div class="row">${inner}</div></li>`;
+            }).join('')}</ul>`;
+        }
+
+        // Approved posts per day. Days with no payments of any kind are left out.
+        function renderDaily(daily) {
+            // Filter to only show days with activity
+            const activeData = (daily || []).filter(d => d.project_count > 0 || d.merchant_count > 0 || d.reviewer_count > 0);
+            const displayData = activeData.length > 0 ? activeData : (daily || []).slice(-7);
+            if (displayData.length === 0) return '<p>No daily records for this epoch.</p>';
+
+            const max = Math.max(1, ...displayData.map(d => d.project_count || 0));
+            const peak = displayData.find(d => (d.project_count || 0) === max);
+            const label = d => `${formatDay(d.date)}: ${formatNumber(d.project_count || 0)} ${(d.project_count || 0) === 1 ? 'post' : 'posts'} approved`;
+            const bars = displayData.map(d => `<i style="height:${(d.project_count || 0) / max * 100}%" data-label="${label(d)}"></i>`).join('');
+            const first = displayData[0].date;
+            const last = displayData[displayData.length - 1].date;
+
+            return `
+                <p class="bars-readout" aria-live="polite">Busiest day, ${label(peak)}</p>
+                <div class="bars" tabindex="0" role="group" aria-label="Approved posts per day over ${displayData.length} days, ${formatDay(first)} to ${formatDate(last)}. Peak ${max} on ${formatDate(peak?.date)}. Use the left and right arrow keys to read each day.">
+                    ${bars}
+                </div>
+                <div class="bars-axis" aria-hidden="true"><span>${formatDay(first)}</span><span>${formatDay(last)}</span></div>`;
+        }
+
+        function renderEveryEpoch() {
+            // Frozen totals and notes come from epochs.js (shared with the homepage
+            // and the epoch results pages)
+            return window.renderEpochBars({
+                id: 'every-title',
+                title: 'Every past epoch',
+                intro: `<strong class="num">${formatNumber(window.epochsTotal())}</strong> posts approved across six epochs, May 2025 to October 2026.`
+            });
+        }
+
+        // Render the dashboard
+        function renderDashboard(epoch4Live, historical) {
+            const content = document.getElementById('content');
+            const updatedElement = document.getElementById('updated');
+            if (updatedElement) {
+                updatedElement.textContent = new Date(epoch4Live.generated_at).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
+            }
+
+            // Epochs 5 and 6 have their own pages with the full standings. Their
+            // numbers are frozen, so they are written here rather than loading
+            // large stats files for six figures (from stats-epochN.json, as those
+            // pages compute them).
+            const epoch6 = {
+                id: 'epoch-6',
+                title: 'Epoch 6',
+                note: '20 July to 21 October 2026.',
+                facts: [
+                    [formatNumber(1148), 'posts approved'],
+                    ['25', 'projects'],
+                    ['179', 'merchants'],
+                    ['7', 'countries'],
+                    ['97%', 'approval rate'],
+                    ['94', 'days']
+                ],
+                notes: [
+                    `<strong>${formatNumber(1179)}</strong> posts reviewed, 31 rejected`,
+                    'Posted on <strong>X 52%</strong>, <strong>Nostr 48%</strong>',
+                    `Most approved in a day: <strong>44</strong>, on ${formatDate('2026-10-20')}`,
+                    '<strong>12</strong> posts a day on average'
+                ],
+                after: '<p class="epoch-more"><a class="btn" href="epoch6.html">See the Epoch 6 final results</a></p>'
+            };
+
+            const epoch5 = {
+                id: 'epoch-5',
+                title: 'Epoch 5',
+                note: '24 March to 3 July 2026.',
+                facts: [
+                    [formatNumber(1985), 'posts approved'],
+                    ['22', 'projects'],
+                    ['156', 'merchants'],
+                    ['7', 'countries'],
+                    ['96%', 'approval rate'],
+                    ['103', 'days']
+                ],
+                notes: [
+                    `<strong>${formatNumber(2068)}</strong> posts reviewed, 83 rejected`,
+                    'Posted on <strong>X 50%</strong>, <strong>Nostr 50%</strong>',
+                    `Most approved in a day: <strong>40</strong>, on ${formatDate('2026-03-27')}`,
+                    '<strong>19</strong> posts a day on average'
+                ],
+                after: '<p class="epoch-more"><a class="btn" href="epoch5.html">See the Epoch 5 final results</a></p>'
+            };
+
+            const e4 = epoch4Live;
+            const ep = historical.epochs;
+            // Posts approved: the project payments, one per approved post, as on the
+            // homepage and in the tracker (1,698). The review count is one short
+            // (1,697): a post an admin reviews pays no reviewer.
+            const e4Approved = (e4.top_projects || []).reduce((n, p) => n + (p.count || 0), 0);
+            const reviewed = e4Approved + (e4.reviewer?.rejected || 0);
+            const days = e4.launch?.days_active || 0;
+            const busiest = (e4.daily || []).reduce((m, d) => (d.project_count > (m?.project_count || 0) ? d : m), null);
+
+            const epoch4 = {
+                id: 'epoch-4',
+                title: 'Epoch 4',
+                note: '13 January to 4 March 2026.',
+                facts: [
+                    [formatNumber(e4Approved), 'posts approved'],
+                    [formatNumber(e4.top_projects?.length || 0), 'projects'],
+                    [formatNumber(e4.top_merchants?.length || 0), 'merchants'],
+                    [formatNumber(e4.countries?.length || 0), 'countries'],
+                    [reviewed > 0 ? Math.round((e4Approved / reviewed) * 100) + '%' : '–', 'approval rate'],
+                    [formatNumber(days), 'days']
+                ],
+                notes: [
+                    platformNote(e4.platforms),
+                    reviewed > 0 ? `Rejected: <strong>${formatNumber(e4.reviewer?.rejected || 0)}</strong> of ${formatNumber(reviewed)} reviewed` : '',
+                    days > 0 ? `Daily average: <strong>${formatNumber(Math.round(e4Approved / days))}</strong> approved posts, ${formatNumber(e4.launch.daily_average_payments || 0)} payments` : '',
+                    busiest ? `Most approved in a day: <strong>${busiest.project_count}</strong>, on ${formatDate(busiest.date)}` : '',
+                    `Payments: <strong>${formatNumber(e4.totals.all_payments)}</strong>, of which ${formatNumber(e4.totals.by_type.project?.count || 0)} to projects, ${formatNumber(e4.totals.by_type.merchant?.count || 0)} to merchants and ${formatNumber(e4.totals.by_type.reviewer?.count || 0)} for reviews`
+                ],
+                panels: [
+                    { id: 'e4-projects', title: 'Projects by approved posts', html: '<div id="top-projects"></div>' },
+                    { id: 'e4-merchants', title: 'Merchants by approved posts', html: '<div id="top-merchants"></div>' },
+                    { id: 'e4-daily', title: 'Approved posts per day', html: renderDaily(e4.daily) },
+                    { id: 'e4-countries', title: 'Countries', note: 'Open one to see its posts in the tracker.', html: countriesHtml(e4.countries, '4', e4.top_projects) }
+                ]
+            };
+
+            const t = ep.epoch4_testing;
+            const testing = {
+                id: 'epoch-4-testing',
+                lead: true,   // highlights become the first panel: a 2 x 2 grid
+                title: 'Epoch 4 testing period',
+                note: 'December 2025, before Epoch 4 opened.',
+                facts: [
+                    [formatNumber(t.total_posts), 'posts approved'],
+                    [formatNumber(t.top_projects?.length || 0), 'projects'],
+                    [formatNumber(t.top_merchants?.length || 0), 'merchants'],
+                    [formatNumber(t.countries?.length || 0), 'countries']
+                ],
+                notes: [platformNote(t.platforms)],
+                panels: [
+                    { id: 'e4t-projects', title: 'Projects by approved posts', html: '<div id="epoch4-testing-projects"></div>' },
+                    { id: 'e4t-merchants', title: 'Merchants by approved posts', html: '<div id="epoch4-testing-merchants"></div>' },
+                    { id: 'e4t-countries', title: 'Countries', note: 'Open one to see its posts in the tracker.', html: countriesHtml(t.countries, '4t', t.top_projects) }
+                ]
+            };
+
+            const early = (key, number, when) => {
+                const e = ep[key];
+                return {
+                    id: `epoch-${number}`,
+                    title: `Epoch ${number}`,
+                    note: `${when}, before PoWBoT.`,
+                    facts: [
+                        [formatNumber(e.total_posts), 'posts approved'],
+                        [formatNumber(e.top_projects?.length || 0), 'projects'],
+                        [formatNumber(e.countries?.length || 0), 'countries']
+                    ],
+                    notes: [platformNote(e.platforms)],
+                    panels: [
+                        { id: `e${number}-projects`, title: 'Projects by approved posts', html: `<div id="epoch${number}-projects"></div>` },
+                        { id: `e${number}-countries`, title: 'Countries', html: countriesHtml(e.countries, null, e.top_projects) }
+                    ]
+                };
+            };
+
+            content.innerHTML =
+                renderEveryEpoch(epoch4Live, historical) +
+                [epoch6, epoch5, epoch4, testing, early('epoch3', 3, 'November 2025'), early('epoch2', 2, 'August 2025'), early('epoch1', 1, 'May 2025')]
+                    .map(epochSectionHtml).join('');
+
+            // Rankings
+            rankList('top-projects', e4.top_projects, 'project', e4.countries, 'Epoch 4 projects ranked by approved posts');
+            rankList('top-merchants', e4.top_merchants, 'merchant', e4.countries, 'Epoch 4 merchants ranked by approved posts', 'merchants.html?epoch=4&sort=posts', '4');
+            rankList('epoch4-testing-projects', t.top_projects, 'project', t.countries, 'Epoch 4 testing period projects ranked by approved posts');
+            rankList('epoch4-testing-merchants', t.top_merchants, 'merchant', t.countries, 'Epoch 4 testing period merchants ranked by approved posts', 'merchants.html?epoch=4t&sort=posts', '4t');
+            rankList('epoch3-projects', ep.epoch3.top_projects, 'project', ep.epoch3.countries, 'Epoch 3 projects ranked by approved posts');
+            rankList('epoch2-projects', ep.epoch2.top_projects, 'project', ep.epoch2.countries, 'Epoch 2 projects ranked by approved posts');
+            rankList('epoch1-projects', ep.epoch1.top_projects, 'project', ep.epoch1.countries, 'Epoch 1 projects ranked by approved posts');
+        }
+
+        // A ranking, as on the homepage: one row per project or merchant, each
+        // opening its profile (which holds every epoch's posts). Rows past
+        // INITIAL_ROWS stay hidden until "Show all". A long list gives allHref
+        // instead: a link to all of it elsewhere (the Directory's Merchants tab).
+        // Given a tracker epoch, merchant rows open their posts there instead,
+        // as on the Epoch 5 page.
+        function rankList(elementId, items, type, countries, caption, allHref, trackerEpoch) {
+            const container = document.getElementById(elementId);
+            if (!container) return;
+            items = items || [];
+            const noun = type === 'merchant' ? 'merchants' : 'projects';
+            if (items.length === 0) {
+                container.innerHTML = `<p>No ${noun} recorded for this epoch.</p>`;
+                return;
+            }
+
+            const countryByFlag = {};
+            (countries || []).forEach(c => { countryByFlag[c.flag] = c.country; });
+            const listId = `${elementId}-list`;
+            const rows = items.map((item, i) => {
+                const flag = flagOf(item.name);
+                const name = type === 'merchant'
+                    ? escapeHtml(item.name)
+                    : nameWithFlag(stripFlags(item.name), flag, countryByFlag[flag] || '');
+                return `
+                    <li class="${i >= INITIAL_ROWS ? 'is-more' : ''}"><a href="${attrSafe(trackerEpoch && type === 'merchant' ? trackerUrl(trackerEpoch, { merchant: item.name }) : profileUrl(item.name, type))}">
+                        <span class="li-main"><span class="lb-rank num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span><span class="lb-name">${name}</span></span>
+                        <span class="li-side num">${plural(item.count, 'post', 'posts')}</span>
+                    </a></li>`;
+            }).join('');
+            const label = `Show all ${formatNumber(items.length)} ${noun}`;
+            const more = allHref
+                ? `<p class="list-link"><a class="btn" href="${attrSafe(allHref)}">View all ${formatNumber(items.length)} in the Directory</a></p>`
+                : `<button type="button" class="btn list-more" data-list="${listId}" data-label="${label}" aria-controls="${listId}" aria-expanded="false">${label}</button>`;
+            container.innerHTML = `
+                <ol class="list lb-list" id="${listId}" aria-label="${attrSafe(caption)}">${rows}</ol>
+                ${items.length > INITIAL_ROWS ? more : ''}`;
+        }
+
+        // "Show all" on every ranking
+        document.getElementById('content').addEventListener('click', (e) => {
+            const btn = e.target.closest('.list-more');
+            if (!btn) return;
+            const list = document.getElementById(btn.dataset.list);
+            const open = !list.classList.contains('show-all');
+            list.classList.toggle('show-all', open);
+            btn.setAttribute('aria-expanded', String(open));
+            btn.textContent = open ? 'Show fewer' : btn.dataset.label;
+        });
+
+        // Links such as archive.html#epoch-1 (the homepage's epoch bars) point
+        // into sections drawn only once the data has loaded, often after the
+        // browser has made its one attempt to scroll there. Go there now. (On a
+        // reload the browser can't restore the reader's place either, for the
+        // same reason, so the section beats the top of the page.)
+        function scrollToLinkedSection() {
+            const id = decodeURIComponent(location.hash.slice(1));
+            const target = id && document.getElementById(id);
+            if (target) target.scrollIntoView({ block: 'start' });
+        }
+
+        // Load and render stats
+        async function loadStats() {
+            try {
+                const [epoch4Live, historical] = await Promise.all([
+                    fetch('stats-epoch4.json?t=' + Date.now()).then(r => r.json()),
+                    fetch('stats-historical.json?t=' + Date.now()).then(r => r.json())
+                ]);
+
+                renderDashboard(epoch4Live, historical);
+                scrollToLinkedSection();
+            } catch (error) {
+                console.error('Failed to load stats:', error);
+                document.getElementById('content').innerHTML = `
+                    <div class="error">
+                        <p>The archive could not load.</p>
+                        <p>The saved epoch files did not answer. Reload the page, or try again in a few minutes.</p>
+                        <p class="muted mono">${escapeHtml(error.message)}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize - wait for includes to load first
+        window.includesLoaded.then(() => loadStats());
+    </script>
+</body>
+</html>

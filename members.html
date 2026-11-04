@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="only light">
+    <title>CBAF members – Bitcoin projects across Africa | PoWBoT</title>
+    <meta name="description" content="Directory of grassroots Bitcoin circular economy projects across Africa. See each project’s proof of work on PoWBoT and donate to it directly over Lightning.">
+    <link rel="canonical" href="https://powbot.africa/members.html">
+    <meta name="theme-color" content="#CFE5BE">
+    <script>
+        // Dark, if chosen with the header switch (light is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
+        (function () {
+            try {
+                if (localStorage.getItem('pb-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+                if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
+            } catch (e) { /* storage blocked: the defaults, light with effects on */ }
+        })();
+    </script>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Link previews (Open Graph, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://powbot.africa/members.html">
+    <meta property="og:site_name" content="PoWBoT">
+    <meta property="og:title" content="CBAF members – Bitcoin projects across Africa | PoWBoT">
+    <meta property="og:description" content="Directory of grassroots Bitcoin circular economy projects across Africa. See each project’s proof of work on PoWBoT and donate to it directly over Lightning.">
+    <meta property="og:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="PoWBoT, a robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://powbot.africa/members.html">
+    <meta name="twitter:title" content="CBAF members – Bitcoin projects across Africa | PoWBoT">
+    <meta name="twitter:description" content="Directory of grassroots Bitcoin circular economy projects across Africa. See each project’s proof of work on PoWBoT and donate to it directly over Lightning.">
+    <meta name="twitter:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
+    <meta name="twitter:image:alt" content="PoWBoT, a robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+
+    <script src="qrcode.min.js"></script>
+    <!-- The donation panel on each card back, shared with profile.html -->
+    <script src="donate.js"></script>
+    <script src="flags.js"></script>
+    <!-- Defines fetchLiveData(): VPS first, this repo as fallback. Loaded here in
+         the head because this page's inline script runs before inject.js. -->
+    <!-- The current epoch: data-source.js reads its frozen copy once it is over -->
+    <script src="epoch-config.js"></script>
+    <script src="data-source.js"></script>
+
+    <link rel="stylesheet" href="css/powbot.css">
+    <style>
+        /* Directory layout only. Colours, type and components: css/powbot.css */
+
+        /* Controls */
+        .controls { display: grid; gap: var(--s4); padding: var(--s5) 0; }
+        .controls-row { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--s4); }
+        /* Fields, inputs and dropdowns: css/powbot.css (Forms) */
+        /* Search on its own row; Show, Country and Sort share the row below,
+           and stack when there's no room */
+        .controls-row { max-width: 50rem; }
+        .field-search { flex: 1 1 100%; }
+        .field-select { flex: 1 1 13rem; }
+        .select.active { border-color: var(--link); }
+
+        /* Member grid. Every card is the same height on both faces, whichever
+           address is showing: the content is sized to fit it, not the other
+           way round, so flipping or switching address never moves the grid. */
+        .members-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+            gap: var(--s4); padding-bottom: var(--s7);
+        }
+        .member-card { --card-h: 25rem; height: var(--card-h); min-width: 0; perspective: 1200px; }
+        .card-inner {
+            position: relative; height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .member-card.flipped .card-inner { transform: rotateY(180deg); }
+        .card-front, .card-back {
+            position: absolute; inset: 0; overflow: hidden;
+            -webkit-backface-visibility: hidden; backface-visibility: hidden;
+            background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+        }
+        /* The back is the shared donation panel (css/powbot.css), filling the card */
+        .card-back { transform: rotateY(180deg); background: none; border: 0; }
+        .card-back .donate { height: 100%; }
+
+        /* Front */
+        .card-front { display: flex; flex-direction: column; cursor: pointer; }
+        .card-header {
+            flex: none; display: flex; align-items: center; justify-content: center;
+            height: 6.5rem; background: var(--panel-hi); border-bottom: 1px solid var(--line);
+        }
+        .card-logo, .card-logo-placeholder {
+            flex: none; width: 80px; height: 80px; border-radius: 50%;
+            border: 1px solid var(--line-strong); background: var(--night);
+        }
+        .card-logo { object-fit: cover; }
+        .card-logo-placeholder { display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+        .card-logo-placeholder[hidden] { display: none; }
+        .card-body { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: var(--s3); padding: var(--s4); }
+        .card-title { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s3); min-width: 0; }
+        .card-title h3 { margin: 0; font: 700 var(--fs-md)/1.25 var(--font-text); letter-spacing: 0; overflow-wrap: anywhere; }
+        .card-title .flag { flex: none; font-size: 1.5rem; line-height: 1; }
+        .card-place { margin: 2px 0 0; color: var(--muted); font-size: var(--fs-sm); }
+        .card-tagline {
+            margin: 0; color: var(--muted); font-size: var(--fs-sm); line-height: 1.5;
+            display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+        }
+        .card-footer { display: grid; gap: var(--s2); margin-top: auto; }
+        .post-count { margin: 0; color: var(--muted); font-size: var(--fs-sm); min-height: 1.4em; }
+        .post-count b { font: 700 var(--fs-md)/1 var(--font-mono); color: var(--text); letter-spacing: -0.02em; margin-right: 4px; }
+        /* One row, always: a card never grows a line for its badges */
+        .badge-emojis { display: flex; gap: 6px; margin: 0; min-height: 1.3em; overflow: hidden; font-size: 1.05rem; line-height: 1.2; }
+        /* No [ brackets ] in a card, where they don't fit: Donate is the solid
+           block, View profile is outlined. Equal halves, labels on one line
+           (they only stack if a card were ever too narrow for both). */
+        .card-actions { display: flex; flex-wrap: wrap; gap: var(--s2); margin-top: var(--s1); }
+        .card-actions .btn { flex: 1 1 0; min-width: max-content; padding: 0 var(--s3); white-space: nowrap; }
+        .card-actions .btn::before, .card-actions .btn::after { content: none; }
+        .card-actions a.btn { border: 1px dashed var(--line-strong); }
+        /* .pb button resets font and colour, which would override .btn on <button> */
+        .pb button.btn { font: 400 var(--fs-sm)/1.2 var(--font-mono); color: var(--link); }
+        /* Donate is the card's one highlight: a solid block */
+        .pb button.btn-donate { background: var(--accent); color: var(--night); }
+        .pb button.btn-donate:focus-visible { outline-color: var(--link); }
+
+        /* States */
+        .loading, .empty-state { grid-column: 1 / -1; padding: var(--s7) 0; color: var(--muted); }
+        .empty-state h3 { margin: 0 0 var(--s2); color: var(--heading); font: 700 var(--fs-md)/1.4 var(--font-text); }
+        .empty-state p { margin: 0; }
+        .empty-state .err-detail { margin-top: var(--s2); font: 400 var(--fs-xs)/1.4 var(--font-mono); }
+
+        @media (max-width: 720px) {
+            .field-select { max-width: none; }
+        }
+
+        /* Hover looks only where a pointer can hover: a touch screen would keep them after a tap */
+        @media (hover: hover) {
+            .card-front:hover { border-color: var(--line-strong); }
+            .card-actions a.btn:hover { border-color: var(--accent); }
+            .pb button.btn:hover { color: var(--night); }
+            .pb button.btn-donate:hover { background: var(--accent-hi); }
+        }
+    </style>
+</head>
+<body class="pb">
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
+
+    <main id="main">
+        <div class="wrap">
+            <header class="page-head">
+                <nav class="page-tabs" aria-label="Directory">
+                    <a href="members.html" aria-current="page">Projects</a>
+                    <a href="merchants.html">Merchants</a>
+                </nav>
+                <h1>CBAF members</h1>
+                <p class="lede">Find a Bitcoin circular economy project in Africa and support it directly.</p>
+            </header>
+
+            <div class="controls">
+                <div class="controls-row">
+                    <div class="field field-search">
+                        <label class="field-label" for="search">Search projects</label>
+                        <input class="input" type="search" id="search" placeholder="Name, country or city" autocomplete="off">
+                    </div>
+                </div>
+                <div class="controls-row">
+                    <div class="field field-select">
+                        <label class="field-label" for="show-filter">Show</label>
+                        <div class="select-wrap">
+                            <select id="show-filter" class="select">
+                                <option value="all">All projects</option>
+                                <option value="active">Active on PoWBoT</option>
+                                <option value="epoch6">Active this epoch</option>
+                                <option value="top">Top performers</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field field-select">
+                        <label class="field-label" for="country-filter">Country</label>
+                        <div class="select-wrap">
+                            <select id="country-filter" class="select">
+                                <option value="">All countries</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field field-select">
+                        <label class="field-label" for="sort">Sort by</label>
+                        <div class="select-wrap">
+                            <select id="sort" class="select">
+                                <option value="activity">Most active</option>
+                                <option value="name">Name, A–Z</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="visually-hidden">Projects</h2>
+            <div class="members-grid" id="members-grid">
+                <p class="loading">Loading projects…</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (loaded from includes/footer.html) -->
+    <div id="site-footer"></div>
+    <script>
+        let allMembers = [];
+        let allStats = {};
+        let currentFilter = 'all';
+        let currentCountry = '';
+        let currentSort = 'activity';
+        let searchQuery = '';
+
+        // Load members data and stats
+        Promise.all([
+            fetch('members.json').then(res => res.json()),
+            fetch('stats-epoch4.json').then(res => res.json()),
+            fetch('stats-historical.json').then(res => res.json()),
+            fetch('stats-epoch5.json').then(res => res.json()),
+            // Live epoch (currently Epoch 6), from the VPS with this repo as
+            // fallback, or its frozen copy once it is over. Tolerate failure of
+            // BOTH so the directory still renders from the frozen archives if
+            // live data is unavailable entirely.
+            fetchEpochData('stats').catch(() => null)
+        ])
+            .then(([membersData, epoch4Data, historicalData, epoch5Data, liveData]) => {
+                allMembers = membersData.members;
+                allStats = {
+                    epoch4: epoch4Data,
+                    historical: historicalData,
+                    epoch5: epoch5Data,
+                    live: liveData
+                };
+
+                // Update footer timestamp (prefer the live epoch, fall back through the archives)
+                const statsForTimestamp = liveData || epoch5Data || epoch4Data;
+                if (statsForTimestamp && statsForTimestamp.generated_at) {
+                    const updatedElement = document.getElementById('updated');
+                    if (updatedElement) {
+                        updatedElement.textContent = new Date(statsForTimestamp.generated_at).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
+                    }
+                }
+
+                initializeFilters();
+                applyURLFilters();
+                renderMembers();
+            })
+            .catch(err => {
+                console.error('Error loading members:', err);
+                document.getElementById('members-grid').innerHTML = `
+                    <div class="empty-state" role="alert">
+                        <h3>The directory did not load</h3>
+                        <p>Refresh the page to try again.</p>
+                        <p class="err-detail">${escapeHtml(err.message)}</p>
+                    </div>
+                `;
+            });
+
+        function initializeFilters() {
+            // Once the epoch is over, "this epoch" names it
+            if (epochFrozen()) {
+                document.querySelector('#show-filter option[value="epoch6"]').textContent = `Active in ${window.POWBOT_EPOCH.name}`;
+            }
+
+            // Populate country filter
+            // Values stay "🇰🇪 Kenya" (the homepage's country links use them);
+            // the list shows names only, A to Z. No emoji flags: Windows draws
+            // them as letters ("KE").
+            const countries = [...new Set(allMembers.map(m => m.flag + ' ' + m.name_with_flag.match(/\(([^)]+)\)/)?.[1] || '').filter(Boolean))];
+            const nameOf = value => value.replace(/^[\u{1F1E6}-\u{1F1FF}]{2}\s*/u, '');
+            const countrySelect = document.getElementById('country-filter');
+            countries.sort((a, b) => nameOf(a).localeCompare(nameOf(b))).forEach(country => {
+                const option = document.createElement('option');
+                option.value = country;
+                option.textContent = nameOf(country);
+                countrySelect.appendChild(option);
+            });
+        }
+
+        function applyURLFilters() {
+            // Check for URL parameters and apply filters
+            const urlParams = new URLSearchParams(window.location.search);
+            const countryParam = urlParams.get('country');
+            const filterParam = urlParams.get('filter');
+
+            if (countryParam) {
+                currentCountry = countryParam;
+                const countrySelect = document.getElementById('country-filter');
+                countrySelect.value = countryParam;
+                countrySelect.classList.add('active');
+            }
+
+            const showSelect = document.getElementById('show-filter');
+            if (filterParam && [...showSelect.options].some(o => o.value === filterParam)) {
+                currentFilter = filterParam;
+                showSelect.value = filterParam;
+                showSelect.classList.toggle('active', filterParam !== 'all');
+            }
+        }
+
+        function getCurrentEpochPostCount(member) {
+            // Count posts only from the live epoch (currently Epoch 6)
+            const statsName = `${member.name} ${member.flag || ''}`.trim();
+
+            if (allStats.live && allStats.live.top_projects) {
+                const liveProject = allStats.live.top_projects.find(p => p.name === statsName);
+                if (liveProject && liveProject.posts) {
+                    return liveProject.posts.length;
+                }
+            }
+
+            return 0;
+        }
+
+        function getRecentEpochPostCount(member) {
+            // Count posts from Epoch 4 testing, Epoch 4, Epoch 5 and the live epoch
+            const statsName = `${member.name} ${member.flag || ''}`.trim();
+            let totalPosts = 0;
+
+            // Get live epoch posts (currently Epoch 6)
+            if (allStats.live && allStats.live.top_projects) {
+                const liveProject = allStats.live.top_projects.find(p => p.name === statsName);
+                if (liveProject && liveProject.posts) {
+                    totalPosts += liveProject.posts.length;
+                }
+            }
+
+            // Get Epoch 4 posts
+            if (allStats.epoch4 && allStats.epoch4.top_projects) {
+                const epoch4Project = allStats.epoch4.top_projects.find(p => p.name === statsName);
+                if (epoch4Project && epoch4Project.posts) {
+                    totalPosts += epoch4Project.posts.length;
+                }
+            }
+
+            // Get Epoch 5 posts
+            if (allStats.epoch5 && allStats.epoch5.top_projects) {
+                const epoch5Project = allStats.epoch5.top_projects.find(p => p.name === statsName);
+                if (epoch5Project && epoch5Project.posts) {
+                    totalPosts += epoch5Project.posts.length;
+                }
+            }
+
+            // Get Epoch 4 testing posts only (exclude epochs 1-3)
+            if (allStats.historical && allStats.historical.epochs && allStats.historical.epochs.epoch4_testing) {
+                const epoch = allStats.historical.epochs.epoch4_testing;
+                if (epoch && epoch.top_projects) {
+                    const project = epoch.top_projects.find(p => p.name === statsName);
+                    if (project && project.posts && project.posts.length > 0) {
+                        totalPosts += project.posts.length;
+                    }
+                }
+            }
+
+            return totalPosts;
+        }
+
+        function filterMembers() {
+            let filtered = [...allMembers];
+
+            // Apply activity filter
+            if (currentFilter === 'active') {
+                filtered = filtered.filter(m => getRecentEpochPostCount(m) > 0);
+            } else if (currentFilter === 'epoch6') {
+                filtered = filtered.filter(m => getCurrentEpochPostCount(m) > 0);
+            } else if (currentFilter === 'top') {
+                // Show only top 10 projects by all-time post count
+                filtered = filtered
+                    .filter(m => getTotalPostCount(m) > 0)
+                    .sort((a, b) => getTotalPostCount(b) - getTotalPostCount(a))
+                    .slice(0, 10);
+            }
+
+            // Apply country filter
+            if (currentCountry) {
+                filtered = filtered.filter(m => {
+                    const memberCountry = m.flag + ' ' + (m.name_with_flag.match(/\(([^)]+)\)/)?.[1] || '');
+                    return memberCountry === currentCountry;
+                });
+            }
+
+            // Apply search
+            if (searchQuery) {
+                const query = searchQuery.toLowerCase();
+                filtered = filtered.filter(m =>
+                    m.name.toLowerCase().includes(query) ||
+                    m.country.toLowerCase().includes(query) ||
+                    m.city.toLowerCase().includes(query) ||
+                    m.tagline.toLowerCase().includes(query)
+                );
+            }
+
+            // Apply sort
+            if (currentSort === 'activity') {
+                filtered.sort((a, b) => getTotalPostCount(b) - getTotalPostCount(a));
+            } else if (currentSort === 'name') {
+                filtered.sort((a, b) => a.name.localeCompare(b.name));
+            }
+
+            return filtered;
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function getTotalPostCount(member) {
+            // Calculate total posts across all epochs for a member
+            const statsName = `${member.name} ${member.flag || ''}`.trim();
+
+            // Get Epoch 4 data
+            let epoch4Posts = [];
+            if (allStats.epoch4 && allStats.epoch4.top_projects) {
+                const epoch4Project = allStats.epoch4.top_projects.find(p => p.name === statsName);
+                if (epoch4Project && epoch4Project.posts) {
+                    epoch4Posts = epoch4Project.posts;
+                }
+            }
+
+            // Get Epoch 5 data (when available)
+            let epoch5Posts = [];
+            if (allStats.epoch5 && allStats.epoch5.top_projects) {
+                const epoch5Project = allStats.epoch5.top_projects.find(p => p.name === statsName);
+                if (epoch5Project && epoch5Project.posts) {
+                    epoch5Posts = epoch5Project.posts;
+                }
+            }
+
+            // Get live epoch data (currently Epoch 6)
+            let livePosts = [];
+            if (allStats.live && allStats.live.top_projects) {
+                const liveProject = allStats.live.top_projects.find(p => p.name === statsName);
+                if (liveProject && liveProject.posts) {
+                    livePosts = liveProject.posts;
+                }
+            }
+
+            // Get historical data
+            let historicalPosts = [];
+            if (allStats.historical && allStats.historical.epochs) {
+                const epochs = allStats.historical.epochs;
+                ['epoch1', 'epoch2', 'epoch3', 'epoch4_testing'].forEach(epochKey => {
+                    const epoch = epochs[epochKey];
+                    if (epoch && epoch.top_projects) {
+                        const project = epoch.top_projects.find(p => p.name === statsName);
+                        if (project && project.posts && project.posts.length > 0) {
+                            historicalPosts.push(...project.posts);
+                        }
+                    }
+                });
+            }
+
+            return epoch4Posts.length + epoch5Posts.length + livePosts.length + historicalPosts.length;
+        }
+
+        function getMemberBadgeEmojis(member) {
+            // Calculate all badges for directory cards (emoji only)
+            const badges = [];
+            const totalPosts = getTotalPostCount(member);
+            const statsName = `${member.name} ${member.flag || ''}`.trim();
+
+            // Get Epoch 4 data for badge-specific calculations
+            let epoch4Posts = [];
+            if (allStats.epoch4 && allStats.epoch4.top_projects) {
+                const epoch4Project = allStats.epoch4.top_projects.find(p => p.name === statsName);
+                if (epoch4Project && epoch4Project.posts) {
+                    epoch4Posts = epoch4Project.posts;
+                }
+            }
+
+            // Get Epoch 5 data (when available)
+            let epoch5Posts = [];
+            if (allStats.epoch5 && allStats.epoch5.top_projects) {
+                const epoch5Project = allStats.epoch5.top_projects.find(p => p.name === statsName);
+                if (epoch5Project && epoch5Project.posts) {
+                    epoch5Posts = epoch5Project.posts;
+                }
+            }
+
+            // Get live epoch data (currently Epoch 6)
+            let livePosts = [];
+            if (allStats.live && allStats.live.top_projects) {
+                const liveProject = allStats.live.top_projects.find(p => p.name === statsName);
+                if (liveProject && liveProject.posts) {
+                    livePosts = liveProject.posts;
+                }
+            }
+
+            // Get historical data
+            let historicalPosts = [];
+            let epochNames = new Set();
+            if (allStats.historical && allStats.historical.epochs) {
+                const epochs = allStats.historical.epochs;
+                ['epoch1', 'epoch2', 'epoch3', 'epoch4_testing'].forEach(epochKey => {
+                    const epoch = epochs[epochKey];
+                    if (epoch && epoch.top_projects) {
+                        const project = epoch.top_projects.find(p => p.name === statsName);
+                        if (project && project.posts && project.posts.length > 0) {
+                            historicalPosts.push(...project.posts);
+                            epochNames.add(epoch.name);
+                        }
+                    }
+                });
+            }
+
+            // Excellence badges (highest priority) - based on best ranking across Epoch 4 and 5
+            const epoch4Ranking = allStats.epoch4?.top_projects?.findIndex(p => p.name === statsName) ?? -1;
+            const epoch5Ranking = allStats.epoch5?.top_projects?.findIndex(p => p.name === statsName) ?? -1;
+            const bestRanking = epoch4Ranking >= 0 && epoch5Ranking >= 0
+                ? Math.min(epoch4Ranking, epoch5Ranking)
+                : epoch4Ranking >= 0 ? epoch4Ranking : epoch5Ranking;
+
+            if (bestRanking === 0) badges.push('🥇');
+            else if (bestRanking === 1) badges.push('🥈');
+            else if (bestRanking === 2) badges.push('🥉');
+            else if (bestRanking >= 0 && bestRanking < 10) badges.push('🏅');
+
+            // Activity milestones
+            if (totalPosts >= 500) {
+                badges.push('💎');
+            } else if (totalPosts >= 100) {
+                badges.push('⭐');
+            } else if (totalPosts >= 50) {
+                badges.push('🚀');
+            } else if (totalPosts >= 10) {
+                badges.push('🌱');
+            } else if (totalPosts >= 1) {
+                badges.push('👋');
+            }
+
+            // Community impact - all tiers (across Epoch 4 and 5)
+            const powbotPosts = [...epoch4Posts, ...epoch5Posts, ...livePosts];
+            if (powbotPosts.length > 0) {
+                const uniqueMerchants = new Set(powbotPosts.map(p => p.merchant)).size;
+                if (uniqueMerchants >= 25) {
+                    badges.push('🌍');
+                } else if (uniqueMerchants >= 15) {
+                    badges.push('🏪');
+                } else if (uniqueMerchants >= 5) {
+                    badges.push('🤝');
+                }
+            }
+
+            // Platform diversity (across Epoch 4 and 5)
+            if (powbotPosts.length > 0) {
+                const hasXPosts = powbotPosts.some(p => {
+                    const url = p.url ? p.url.toLowerCase() : '';
+                    return url.includes('twitter.com') || url.includes('x.com');
+                });
+                const hasNostrPosts = powbotPosts.some(p => {
+                    const url = p.url ? p.url.toLowerCase() : '';
+                    return url.includes('primal.net') || url.includes('njump') || (!url.includes('twitter.com') && !url.includes('x.com'));
+                });
+                if (hasXPosts && hasNostrPosts) {
+                    badges.push('🎯');
+                }
+            }
+
+            // Daily streaks - best streak across Epoch 4 and 5
+            const calculateStreak = (posts) => {
+                if (posts.length === 0) return 0;
+                const dates = posts.map(p => p.date.split('T')[0]).sort();
+                const uniqueDates = [...new Set(dates)];
+                let maxStreak = 1;
+                let currentStreak = 1;
+
+                for (let i = 1; i < uniqueDates.length; i++) {
+                    const prevDate = new Date(uniqueDates[i - 1]);
+                    const currDate = new Date(uniqueDates[i]);
+                    const dayDiff = Math.floor((currDate - prevDate) / (1000 * 60 * 60 * 24));
+                    if (dayDiff === 1) {
+                        currentStreak++;
+                        maxStreak = Math.max(maxStreak, currentStreak);
+                    } else {
+                        currentStreak = 1;
+                    }
+                }
+                return maxStreak;
+            };
+
+            const epoch4Streak = calculateStreak(epoch4Posts);
+            const epoch5Streak = calculateStreak(epoch5Posts);
+            const bestStreak = Math.max(epoch4Streak, epoch5Streak);
+
+            if (bestStreak >= 21) {
+                badges.push('💪');
+            } else if (bestStreak >= 14) {
+                badges.push('⚡');
+            } else if (bestStreak >= 7) {
+                badges.push('🔥');
+            }
+
+            // Legacy badges
+            if (historicalPosts.length > 0) {
+                const historicalEpochs = epochNames.size;
+
+                // Founding Member
+                if (epochNames.has('Epoch 1')) {
+                    badges.push('👑');
+                }
+
+                // Early Adopter
+                if (epochNames.has('Epoch 2') || epochNames.has('Epoch 3')) {
+                    badges.push('🏆');
+                }
+
+                // Beta Tester
+                if (epochNames.has('Epoch 4 Testing')) {
+                    badges.push('🧪');
+                }
+
+                // Multi-Epoch Veteran
+                if (historicalEpochs >= 3 || (historicalEpochs > 0 && epoch4Posts.length > 0 && epoch5Posts.length > 0)) {
+                    badges.push('🛡️');
+                }
+            }
+
+            return badges;
+        }
+
+        // Accessible names for the badge emojis. Wording follows the badges on profile.html.
+        const BADGE_LABELS = {
+            '🥇': 'Top performer: ranked first in epoch 4 or 5',
+            '🥈': 'Second place in epoch 4 or 5',
+            '🥉': 'Third place in epoch 4 or 5',
+            '🏅': 'Top 10 in epoch 4 or 5',
+            '💎': 'Diamond status: 500 or more posts',
+            '⭐': 'Rising star: 100 or more posts',
+            '🚀': 'On fire: 50 or more posts',
+            '🌱': 'First steps: 10 or more posts',
+            '👋': 'First post',
+            '🌍': 'Network connector: 25 or more merchants',
+            '🏪': 'Merchant champion: 15 or more merchants',
+            '🤝': 'Community builder: 5 or more merchants',
+            '🎯': 'All-rounder: active on X and Nostr',
+            '💪': '21-day posting streak',
+            '⚡': '14-day posting streak',
+            '🔥': '7-day posting streak',
+            '👑': 'Founding member: took part in epoch 1',
+            '🏆': 'Early adopter: took part in epoch 2 or 3',
+            '🧪': 'Beta tester: helped test PoWBoT',
+            '🛡️': 'Multi-epoch veteran'
+        };
+
+        function renderMembers() {
+            const grid = document.getElementById('members-grid');
+            const members = filterMembers();
+
+            if (members.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-state">
+                        <h3>No projects match</h3>
+                        <p>Change the filters or clear the search.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = members.map((member, index) => {
+                const videoCount = getTotalPostCount(member);
+                const logoUrl = member.logo_url || '';
+                const emoji = member.flag || member.name.charAt(0);
+                const cardId = `card-${index}`;
+                const name = escapeHtml(member.name);
+                const country = escapeHtml(member.country || '');
+                const place = [member.city, member.country].filter(Boolean).map(escapeHtml).join(', ');
+
+                return `
+                    <article class="member-card" id="${cardId}" data-member-id="${member.id}" aria-labelledby="name-${cardId}">
+                        <div class="card-inner">
+                            <!-- Front of Card -->
+                            <div class="card-front" onclick="viewProfile('${member.id}', event)">
+                                <div class="card-header">
+                                    ${logoUrl ?
+                                        `<img src="${logoUrl}" alt="" class="card-logo" width="80" height="80" loading="lazy" decoding="async" onerror="this.hidden = true; this.nextElementSibling.hidden = false;">
+                                         <div class="card-logo-placeholder" aria-hidden="true" hidden>${emoji}</div>`
+                                        :
+                                        `<div class="card-logo-placeholder" aria-hidden="true">${emoji}</div>`
+                                    }
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <div>
+                                            <h3 id="name-${cardId}">${name}</h3>
+                                            ${place ? `<p class="card-place">${place}</p>` : ''}
+                                        </div>
+                                        ${flagHtml(member.flag, country, 'flag')}
+                                    </div>
+                                    <p class="card-tagline">${(() => {
+                                        const tagline = member.tagline || 'Bitcoin circular economy project';
+                                        const escaped = escapeHtml(tagline);
+                                        return escaped.endsWith('.') || escaped.endsWith('!') || escaped.endsWith('?') ? escaped : escaped + '.';
+                                    })()}</p>
+
+                                    <div class="card-footer">
+                                        <p class="post-count">${videoCount > 0 ? `<b class="num">${videoCount}</b>${videoCount === 1 ? 'post' : 'posts'}` : ''}</p>
+                                        <p class="badge-emojis">${(() => {
+                                            const badgeEmojis = getMemberBadgeEmojis(member);
+                                            if (!badgeEmojis.length) return '';
+                                            return `<span class="visually-hidden">Badges: </span>${badgeEmojis.map(emoji => {
+                                                const label = BADGE_LABELS[emoji] || 'Badge';
+                                                return `<span class="emoji-badge" role="img" aria-label="${label}" title="${label}">${emoji}</span>`;
+                                            }).join('')}`;
+                                        })()}</p>
+                                        <div class="card-actions">
+                                            ${member.lightning_address ? `
+                                            <button type="button" class="btn btn-donate" onclick="event.stopPropagation(); flipCard('${cardId}')">Donate<span class="visually-hidden"> to ${name}</span></button>
+                                            ` : ''}
+                                            <a href="profile.html?id=${member.id}" class="btn" onclick="event.stopPropagation();">View profile<span class="visually-hidden"> of ${name}</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Back of Card: the shared donation panel. Inert until the card turns over. -->
+                            ${member.lightning_address ? `
+                            <div class="card-back" id="back-${cardId}" inert>
+                                ${donatePanelHtml({
+                                    id: `donate-${cardId}`,
+                                    name: member.name,
+                                    lightning: member.lightning_address,
+                                    onchain: member.onchain_address || '',
+                                    level: 3,
+                                    back: `<button type="button" class="btn btn-back" onclick="event.stopPropagation(); flipCard('${cardId}')">Back<span class="visually-hidden"> to ${name}</span></button>`
+                                })}
+                            </div>
+                            ` : ''}
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        // The face not showing is inert: out of the tab order and hidden from
+        // screen readers, as it is from sight.
+        function flipCard(cardId) {
+            const card = document.getElementById(cardId);
+            const back = document.getElementById(`back-${cardId}`);
+            if (!card || !back) return;
+            const toBack = !card.classList.contains('flipped');
+            const panel = back.querySelector('.donate');
+
+            if (toBack) donateDrawQr(panel);
+            card.classList.toggle('flipped', toBack);
+            card.querySelector('.card-front').inert = toBack;
+            back.inert = !toBack;
+
+            if (toBack) donateFocus(panel);
+            else card.querySelector('.btn-donate')?.focus({ preventScroll: true });
+        }
+
+        function viewProfile(memberId, event) {
+            // Only navigate if clicking the card itself, not the buttons
+            if (event.target.tagName !== 'BUTTON' && event.target.tagName !== 'A') {
+                window.location.href = `profile.html?id=${memberId}`;
+            }
+        }
+
+        // Event listeners
+        document.getElementById('show-filter').addEventListener('change', (e) => {
+            currentFilter = e.target.value;
+            // Highlight the dropdown when it narrows the list
+            e.target.classList.toggle('active', currentFilter !== 'all');
+            renderMembers();
+        });
+
+        document.getElementById('country-filter').addEventListener('change', (e) => {
+            currentCountry = e.target.value;
+            // Highlight dropdown when a country is selected
+            if (currentCountry) {
+                e.target.classList.add('active');
+            } else {
+                e.target.classList.remove('active');
+            }
+            renderMembers();
+        });
+
+        document.getElementById('sort').addEventListener('change', (e) => {
+            currentSort = e.target.value;
+            renderMembers();
+        });
+
+        document.getElementById('search').addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderMembers();
+        });
+    </script>
+
+    <!-- Shared nav/footer injection -->
+    <script src="includes/inject.js"></script>
+</body>
+</html>

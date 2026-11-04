@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="only light">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#CFE5BE">
+    <script>
+        // Dark, if chosen with the header switch (light is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
+        (function () {
+            try {
+                if (localStorage.getItem('pb-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+                if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
+            } catch (e) { /* storage blocked: the defaults, light with effects on */ }
+        })();
+    </script>
+    <title>Members editor | PoWBoT</title>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/powbot.css">
+    <script src="flags.js"></script>
+    <style>
+        /* Members editor layout only. Colours, type and components: css/powbot.css.
+           A local admin tool: no site nav, not linked from the site. */
+
+        /* Desktop: header on top, list and editor scroll on their own below it */
+        .app { display: flex; flex-direction: column; height: 100vh; }
+        .tool-head { flex: none; border-bottom: 1px solid var(--line); }
+        .tool-head .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s3) var(--s5); padding-top: var(--s4); padding-bottom: var(--s4); max-width: none; }
+        .tool-head h1 { margin: 0; font-size: 2rem; }
+        .tool-head p { margin: var(--s1) 0 0; color: var(--muted); max-width: 70ch; }
+
+        .container { flex: 1; min-height: 0; grid-template-columns: 300px minmax(0, 1fr); }
+
+        .sidebar { display: flex; flex-direction: column; gap: var(--s3); min-height: 0; overflow-y: auto; padding: var(--s4); border-right: 1px solid var(--line); background: var(--panel); }
+        .member-list { list-style: none; margin: 0; padding: 0; }
+        .member-item + .member-item { border-top: 1px solid var(--line); }
+        .member-item button {
+            display: block; width: 100%; min-height: var(--tap); padding: var(--s2) var(--s3);
+            background: none; border: 0; border-left: 3px solid transparent;
+            color: var(--text); text-align: left; cursor: pointer;
+        }
+        .member-item.active button { border-left-color: var(--link); background: var(--panel-hi); }
+        .member-item-name { display: block; font-weight: 700; }
+        .member-item.active .member-item-name { color: var(--heading); }
+        .member-item-country { display: block; color: var(--muted); font-size: var(--fs-sm); }
+
+        .editor { min-height: 0; overflow-y: auto; }
+        .editor-empty { display: flex; align-items: center; justify-content: center; height: 100%; padding: var(--s6) var(--s5); color: var(--muted); text-align: center; }
+
+        #editForm { display: grid; gap: var(--s5); max-width: 60rem; padding: var(--s5); }
+        .form-section { display: grid; gap: var(--s4); }
+        .form-section > h2 { margin: 0; }
+        .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s4); align-items: start; }
+        .form-section .field { align-content: start; }
+        .form-section p, .editor-empty p { margin: 0; }
+
+        /* Read-only fields: flat, clearly not for typing */
+        .readonly .input { background: var(--night); color: var(--muted); border-style: dashed; }
+
+        .array-input { display: grid; gap: var(--s2); }
+        .array-item { display: flex; gap: var(--s2); }
+        .array-item .input { flex: 1; min-width: 0; }
+        .add-array-btn { justify-self: start; }
+
+        .form-actions {
+            position: sticky; bottom: 0;
+            display: flex; flex-wrap: wrap; justify-content: flex-end; gap: var(--s3);
+            padding: var(--s4) var(--s5);
+            background: var(--night); border-top: 1px solid var(--line);
+        }
+
+        /* Save and error notices: a callout pinned to the corner, no motion */
+        .status-message { position: fixed; top: var(--s4); right: var(--s4); left: auto; z-index: 1000; max-width: min(28rem, calc(100vw - 2 * var(--s4))); border: 1px solid var(--line); font-weight: 700; }
+        .status-success { border-left: 3px solid var(--link); }
+        .status-error { border-left: 3px solid var(--danger); }
+
+        @media (max-width: 900px) {
+            .form-grid { grid-template-columns: minmax(0, 1fr); }
+        }
+
+        /* Phone: stack the list above the editor and let the page scroll */
+        @media (max-width: 720px) {
+            .app { display: block; height: auto; }
+            .container { grid-template-columns: minmax(0, 1fr); }
+            .sidebar { max-height: 50vh; border-right: 0; border-bottom: 1px solid var(--line); }
+            .editor { overflow: visible; }
+            #editForm { padding: var(--s4); }
+            .form-actions { padding: var(--s3) var(--s4); }
+            .form-actions .btn { flex: 1 1 auto; }
+        }
+
+        /* Hover looks only where a pointer can hover: a touch screen would keep them after a tap */
+        @media (hover: hover) {
+            .member-item button:hover { background: var(--panel-hi); }
+            .readonly .input:hover { border-color: var(--line-strong); }
+        }
+    </style>
+</head>
+<body class="pb">
+    <main id="main" class="app">
+    <header class="tool-head">
+        <div class="wrap">
+            <div>
+                <h1>Members editor</h1>
+                <p>Edit member profile data in members.json. Works in Chrome and Edge, which can save to a local folder.</p>
+            </div>
+            <button type="button" class="btn btn-solid connect-btn" id="connectBtn" onclick="connectToFolder()">Connect to powbot-stats folder</button>
+        </div>
+    </header>
+
+    <div class="container" id="container" style="display: none;">
+        <nav class="sidebar" aria-label="Members">
+            <div class="field">
+                <label class="field-label" for="searchBox">Search members</label>
+                <input type="search" class="input search-box" id="searchBox" placeholder="Name or country" autocomplete="off" onkeyup="filterMembers()">
+            </div>
+            <ul class="member-list" id="memberList"></ul>
+        </nav>
+
+        <div class="editor" id="editor">
+            <div class="editor-empty">
+                <p>Choose a member from the list to edit their profile.</p>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <script>
+        let directoryHandle = null;
+        let membersFileHandle = null;
+        let membersData = null;
+        let currentMember = null;
+
+        async function connectToFolder() {
+            try {
+                directoryHandle = await window.showDirectoryPicker({ mode: 'readwrite' });
+                membersFileHandle = await directoryHandle.getFileHandle('members.json');
+                await loadMembers();
+                document.getElementById('connectBtn').style.display = 'none';
+                document.getElementById('container').style.display = 'grid';
+            } catch (err) {
+                if (err.name !== 'AbortError') {
+                    showStatus('Could not connect to the folder (' + err.message + '). Choose the powbot-stats folder and try again.', 'error');
+                }
+            }
+        }
+
+        async function loadMembers() {
+            try {
+                const file = await membersFileHandle.getFile();
+                const text = await file.text();
+                membersData = JSON.parse(text);
+                renderMemberList();
+            } catch (err) {
+                showStatus('Could not read members.json (' + err.message + ').', 'error');
+            }
+        }
+
+        function renderMemberList() {
+            const list = document.getElementById('memberList');
+            list.innerHTML = membersData.members.map(member => {
+                const isActive = currentMember && currentMember.id === member.id;
+                return `
+                    <li class="member-item ${isActive ? 'active' : ''}" data-id="${member.id}">
+                        <button type="button" onclick="selectMember('${member.id}')"${isActive ? ' aria-current="true"' : ''}>
+                            <span class="member-item-name">${member.name} ${flagHtml(member.flag, member.country || 'Flag')}</span>
+                            <span class="member-item-country">${member.country || ''}</span>
+                        </button>
+                    </li>
+                `;
+            }).join('');
+        }
+
+        function filterMembers() {
+            const query = document.getElementById('searchBox').value.toLowerCase();
+            const items = document.querySelectorAll('.member-item');
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(query) ? 'block' : 'none';
+            });
+        }
+
+        function selectMember(memberId) {
+            currentMember = membersData.members.find(m => m.id === memberId);
+            if (!currentMember) return;
+
+            // Update active state
+            document.querySelectorAll('.member-item').forEach(item => {
+                if (item.dataset.id === memberId) {
+                    item.classList.add('active');
+                    item.querySelector('button').setAttribute('aria-current', 'true');
+                } else {
+                    item.classList.remove('active');
+                    item.querySelector('button').removeAttribute('aria-current');
+                }
+            });
+
+            renderEditForm();
+        }
+
+        function renderEditForm() {
+            const editor = document.getElementById('editor');
+            const m = currentMember;
+
+            editor.innerHTML = `
+                <form id="editForm" onsubmit="return false;">
+                    <section class="box form-section" aria-labelledby="h-basic">
+                        <h2 id="h-basic">Basic information</h2>
+                        <div class="form-grid">
+                            <div class="field form-group readonly">
+                                <label class="field-label" for="member-id">ID</label>
+                                <input class="input" type="text" id="member-id" value="${m.id}" readonly aria-describedby="member-id-hint">
+                                <p class="field-hint" id="member-id-hint">Generated automatically. It can't be edited.</p>
+                            </div>
+                            <div class="field form-group">
+                                <label class="field-label" for="name">Name</label>
+                                <input class="input" type="text" id="name" value="${m.name || ''}" required autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="field form-group">
+                                <label class="field-label" for="flag">Flag emoji</label>
+                                <input class="input" type="text" id="flag" value="${m.flag || ''}" maxlength="2" autocomplete="off" aria-describedby="flag-hint">
+                                <p class="field-hint" id="flag-hint">The country's flag emoji.</p>
+                            </div>
+                            <div class="field form-group">
+                                <label class="field-label" for="contact_person">Contact person</label>
+                                <input class="input" type="text" id="contact_person" value="${m.contact_person || ''}" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-grid">
+                            <div class="field form-group">
+                                <label class="field-label" for="country">Country</label>
+                                <input class="input" type="text" id="country" value="${m.country || ''}" autocomplete="off">
+                            </div>
+                            <div class="field form-group">
+                                <label class="field-label" for="city">City</label>
+                                <input class="input" type="text" id="city" value="${m.city || ''}" autocomplete="off">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="box form-section" aria-labelledby="h-contact">
+                        <h2 id="h-contact">Contact and social</h2>
+                        <div class="field form-group">
+                            <label class="field-label" for="email">Email</label>
+                            <input class="input" type="email" id="email" value="${m.email || ''}" autocomplete="off">
+                        </div>
+                        <div class="field form-group">
+                            <label class="field-label" for="website">Website</label>
+                            <input class="input" type="url" id="website" value="${m.website || ''}" placeholder="https://example.com" autocomplete="off">
+                        </div>
+                        <div class="field form-group">
+                            <label class="field-label" for="x_profile">X profile</label>
+                            <input class="input" type="text" id="x_profile" value="${m.x_profile || ''}" placeholder="@username" autocomplete="off" spellcheck="false">
+                        </div>
+                        <div class="field form-group">
+                            <label class="field-label" for="npub">Nostr npub</label>
+                            <input class="input" type="text" id="npub" value="${m.npub || ''}" placeholder="npub1…" autocomplete="off" spellcheck="false">
+                        </div>
+                        <div class="field form-group">
+                            <label class="field-label" for="lightning_address">Lightning address</label>
+                            <input class="input" type="text" id="lightning_address" value="${m.lightning_address || ''}" placeholder="username@blink.sv" autocomplete="off" spellcheck="false">
+                        </div>
+                        <div class="field form-group">
+                            <label class="field-label" for="onchain_address">Onchain address</label>
+                            <input class="input" type="text" id="onchain_address" value="${m.onchain_address || ''}" placeholder="bc1…" autocomplete="off" spellcheck="false">
+                        </div>
+                        <div class="field form-group">
+                            <label class="field-label" for="btcmap_url">BTCMap URL</label>
+                            <input class="input" type="url" id="btcmap_url" value="${m.btcmap_url || ''}" autocomplete="off">
+                        </div>
+                    </section>
+
+                    <section class="box form-section" aria-labelledby="h-content">
+                        <h2 id="h-content">Content</h2>
+                        <div class="field form-group">
+                            <label class="field-label" for="tagline">Tagline</label>
+                            <input class="input" type="text" id="tagline" value="${escapeHtml(m.tagline || '')}" maxlength="150" autocomplete="off" aria-describedby="tagline-hint">
+                            <p class="field-hint" id="tagline-hint">A short two-line description. Aim for about 100 to 120 characters.</p>
+                        </div>
+                        <div class="field form-group">
+                            <label class="field-label" for="description">Description</label>
+                            <textarea class="input" id="description" rows="4" aria-describedby="description-hint">${escapeHtml(m.description || '')}</textarea>
+                            <p class="field-hint" id="description-hint">The main project description.</p>
+                        </div>
+                        <div class="field form-group">
+                            <label class="field-label" for="vision_mission">Vision and mission</label>
+                            <textarea class="input" id="vision_mission" rows="6">${escapeHtml(m.vision_mission || '')}</textarea>
+                        </div>
+                        <div class="field form-group">
+                            <label class="field-label" for="how_started">Origin story</label>
+                            <textarea class="input" id="how_started" rows="4">${escapeHtml(m.how_started || '')}</textarea>
+                        </div>
+                        <div class="field form-group">
+                            <label class="field-label" for="milestones">Key highlights</label>
+                            <textarea class="input" id="milestones" rows="4">${escapeHtml(m.milestones || '')}</textarea>
+                        </div>
+                    </section>
+
+                    <section class="box form-section" aria-labelledby="h-media">
+                        <h2 id="h-media">Media</h2>
+                        <div class="field form-group">
+                            <label class="field-label" for="logo_url">Logo URL</label>
+                            <input class="input" type="url" id="logo_url" value="${m.logo_url || ''}" placeholder="images/members/project-name/logo.jpg" autocomplete="off">
+                        </div>
+                        <div class="field form-group">
+                            <label class="field-label" for="cover_url">Cover image URL</label>
+                            <input class="input" type="url" id="cover_url" value="${m.cover_url || ''}" placeholder="images/members/project-name/cover.jpg" autocomplete="off">
+                        </div>
+                        <div class="field form-group" role="group" aria-labelledby="gallery-label">
+                            <p class="field-label" id="gallery-label">Gallery images</p>
+                            <p class="field-hint">One image URL per row.</p>
+                            <div id="gallery-array"></div>
+                        </div>
+                    </section>
+
+                    <section class="box form-section" aria-labelledby="h-campaigns">
+                        <h2 id="h-campaigns">Campaigns</h2>
+                        <div class="field form-group">
+                            <label class="field-label" for="btcpay_campaign">BTCPay campaign URL</label>
+                            <input class="input" type="url" id="btcpay_campaign" value="${m.btcpay_campaign || ''}" autocomplete="off">
+                        </div>
+                        <div class="field form-group">
+                            <label class="field-label" for="geyser_campaign">Geyser campaign URL</label>
+                            <input class="input" type="url" id="geyser_campaign" value="${m.geyser_campaign || ''}" autocomplete="off">
+                        </div>
+                    </section>
+
+                    <section class="box form-section readonly" aria-labelledby="h-stats">
+                        <h2 id="h-stats">PoWBoT stats (read only)</h2>
+                        <div class="field form-group">
+                            <label class="field-label" for="epoch4-videos">Epoch 4 videos</label>
+                            <input class="input" type="number" id="epoch4-videos" value="${m.powbot_stats?.epoch4_videos || 0}" readonly aria-describedby="epoch4-videos-hint">
+                            <p class="field-hint" id="epoch4-videos-hint">Managed by the stats export script.</p>
+                        </div>
+                    </section>
+                </form>
+
+                <div class="form-actions">
+                    <button type="button" class="btn" onclick="cancelEdit()">Cancel</button>
+                    <button type="button" class="btn btn-solid" onclick="saveChanges()">Save changes</button>
+                </div>
+            `;
+
+            // Render gallery array
+            renderArrayField('gallery-array', m.gallery || [], 'url');
+        }
+
+        function renderArrayField(containerId, items, type) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = `
+                <div class="array-input">
+                    ${items.map((item, index) => `
+                        <div class="array-item">
+                            <input class="input" type="${type}" value="${item}" data-array-index="${index}" aria-label="Gallery image ${index + 1}" autocomplete="off">
+                            <button type="button" class="btn btn-danger" onclick="removeArrayItem('${containerId}', ${index})" aria-label="Remove gallery image ${index + 1}">Remove</button>
+                        </div>
+                    `).join('')}
+                    <button type="button" class="btn add-array-btn" onclick="addArrayItem('${containerId}', '${type}')">Add image</button>
+                </div>
+            `;
+        }
+
+        function addArrayItem(containerId, type) {
+            const container = document.getElementById(containerId);
+            const items = Array.from(container.querySelectorAll('.array-item input')).map(inp => inp.value);
+            items.push('');
+            renderArrayField(containerId, items, type);
+        }
+
+        function removeArrayItem(containerId, index) {
+            const container = document.getElementById(containerId);
+            const items = Array.from(container.querySelectorAll('.array-item input')).map(inp => inp.value);
+            items.splice(index, 1);
+            renderArrayField(containerId, items, 'url');
+        }
+
+        function getArrayValues(containerId) {
+            const container = document.getElementById(containerId);
+            return Array.from(container.querySelectorAll('.array-item input'))
+                .map(inp => inp.value.trim())
+                .filter(v => v);
+        }
+
+        async function saveChanges() {
+            try {
+                // Get all form values
+                const updatedMember = {
+                    ...currentMember,
+                    name: document.getElementById('name').value,
+                    name_with_flag: `${document.getElementById('name').value} (${document.getElementById('country').value}) ${document.getElementById('flag').value}`.trim(),
+                    flag: document.getElementById('flag').value,
+                    contact_person: document.getElementById('contact_person').value,
+                    email: document.getElementById('email').value,
+                    website: document.getElementById('website').value,
+                    x_profile: document.getElementById('x_profile').value,
+                    npub: document.getElementById('npub').value,
+                    lightning_address: document.getElementById('lightning_address').value,
+                    onchain_address: document.getElementById('onchain_address').value.toLowerCase(),
+                    tagline: document.getElementById('tagline').value,
+                    description: document.getElementById('description').value,
+                    vision_mission: document.getElementById('vision_mission').value,
+                    how_started: document.getElementById('how_started').value,
+                    milestones: document.getElementById('milestones').value,
+                    country: document.getElementById('country').value,
+                    city: document.getElementById('city').value,
+                    btcmap_url: document.getElementById('btcmap_url').value,
+                    logo_url: document.getElementById('logo_url').value,
+                    cover_url: document.getElementById('cover_url').value,
+                    gallery: getArrayValues('gallery-array'),
+                    btcpay_campaign: document.getElementById('btcpay_campaign').value,
+                    geyser_campaign: document.getElementById('geyser_campaign').value
+                };
+
+                // Update in membersData
+                const index = membersData.members.findIndex(m => m.id === currentMember.id);
+                membersData.members[index] = updatedMember;
+
+                // Save to file
+                const writable = await membersFileHandle.createWritable();
+                await writable.write(JSON.stringify(membersData, null, 2));
+                await writable.close();
+
+                currentMember = updatedMember;
+                renderMemberList();
+                showStatus('Changes saved to members.json.', 'success');
+            } catch (err) {
+                showStatus('Could not save (' + err.message + '). Your changes are still in the form.', 'error');
+            }
+        }
+
+        function cancelEdit() {
+            renderEditForm();
+            showStatus('Changes discarded.', 'success');
+        }
+
+        function showStatus(message, type) {
+            const statusDiv = document.createElement('div');
+            statusDiv.className = `callout status-message status-${type}`;
+            statusDiv.setAttribute('role', type === 'error' ? 'alert' : 'status');
+            statusDiv.textContent = message;
+            document.body.appendChild(statusDiv);
+
+            setTimeout(() => {
+                statusDiv.remove();
+            }, 3000);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>

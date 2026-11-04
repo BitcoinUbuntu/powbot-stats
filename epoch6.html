@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="only light">
+    <link rel="canonical" href="https://powbot.africa/epoch6.html">
+    <title>Epoch 6 final results – PoWBoT Stats</title>
+    <meta name="description" content="Epoch 6 final results, 20 July to 21 October 2026: every PoWBoT project ranked by approved proof-of-work posts, with merchants, countries and posts per day.">
+    <meta name="theme-color" content="#CFE5BE">
+    <script>
+        // Dark, if chosen with the header switch (light is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
+        (function () {
+            try {
+                if (localStorage.getItem('pb-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+                if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
+            } catch (e) { /* storage blocked: the defaults, light with effects on */ }
+        })();
+    </script>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Link previews (Open Graph, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://powbot.africa/epoch6.html">
+    <meta property="og:site_name" content="PoWBoT">
+    <meta property="og:title" content="Epoch 6 final results – PoWBoT Stats">
+    <meta property="og:description" content="Epoch 6 final results, 20 July to 21 October 2026: every PoWBoT project ranked by approved proof-of-work posts, with merchants, countries and posts per day.">
+    <meta property="og:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="PoWBoT, a robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://powbot.africa/epoch6.html">
+    <meta name="twitter:title" content="Epoch 6 final results – PoWBoT Stats">
+    <meta name="twitter:description" content="Epoch 6 final results, 20 July to 21 October 2026: every PoWBoT project ranked by approved proof-of-work posts, with merchants, countries and posts per day.">
+    <meta name="twitter:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
+    <meta name="twitter:image:alt" content="PoWBoT, a robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+
+    <link rel="preload" href="fonts/vt323-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/atkinson-hyperlegible-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="css/powbot.css">
+    <style>
+        /* Epoch 6 results layout only. Colours, type and components: css/powbot.css */
+        .head-link { margin: var(--s2) 0 0; }
+        .head-link a { display: inline-flex; align-items: center; min-height: var(--tap); }
+        /* Final standings and Highlights side by side, stacked on phones: built
+           like the homepage's standings and merchants, headings level */
+        .standings { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "board highlights" "more ."; column-gap: var(--s7); align-items: start; }
+        #board { grid-area: board; }
+        .standings-more { grid-area: more; }
+        /* Highlights: the heading level with Final standings, then a reversed
+           box that runs down to the list's last row. With every project shown
+           the list outgrows it by far, so it keeps its own height instead. */
+        .highlights { grid-area: highlights; align-self: stretch; display: flex; flex-direction: column; }
+        .highlights > .reverse { flex: 1; }
+        .standings:has(.lb-list.show-all) > .highlights { align-self: start; }
+        /* ...with room under the notes, so it stays close to the height it had */
+        .standings:has(.lb-list.show-all) > .highlights > .reverse { padding-bottom: var(--s8); }
+        .standings .section-head { flex-direction: column; align-items: flex-start; gap: var(--s3); margin-bottom: var(--s3); }
+        .standings .section-note { margin: 0 0 var(--s3); font-size: var(--fs-sm); color: var(--muted); min-height: 1.55em; }
+        /* Half a column: one figure per row, and one note per line */
+        .standings .facts { grid-template-columns: minmax(0, 1fr); }
+        .standings .notes { flex-direction: column; }
+        .loading { padding: var(--s6) 0; color: var(--muted); }
+        .cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s7); }
+        .cols .section { border-bottom: 0; padding: 0; }
+        .error { padding: var(--s6) 0; }
+        .error p:first-child { font: 700 var(--fs-md)/1.4 var(--font-text); color: var(--danger); }
+
+        @media (max-width: 720px) {
+            .cols { grid-template-columns: minmax(0, 1fr); }
+            /* Phones: the list, its button, then Highlights */
+            .standings { grid-template-columns: minmax(0, 1fr); grid-template-areas: "board" "more" "highlights"; }
+            .highlights { margin-top: var(--s7); }
+        }
+        /* Country rows with projects and posts: on narrow phones the two
+           stack, so the country's name keeps the room */
+        @media (max-width: 480px) {
+            .li-side.pair { display: grid; justify-items: end; line-height: 1.3; }
+            .li-side.pair .sep { display: none; }
+        }
+    </style>
+</head>
+<body class="pb">
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
+
+    <main id="main">
+        <div class="wrap">
+            <header class="page-head">
+                <h1>Epoch 6 final results</h1>
+                <p class="lede">The final standings of Epoch 6, which ran from 20 July to 21 October 2026.</p>
+                <p class="head-link"><a href="index.html">See the current epoch</a></p>
+            </header>
+
+            <div id="content" aria-live="polite">
+                <p class="loading">Loading the final results…</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (loaded from includes/footer.html) -->
+    <div id="site-footer"></div>
+
+    <!-- Shared nav/footer injection - load first -->
+    <script src="includes/inject.js"></script>
+    <!-- Finished epochs and the shared "Every epoch" block -->
+    <script src="epochs.js"></script>
+    <script src="flags.js"></script>
+
+    <script>
+        // Rows shown before "Show all".
+        const BOARD_ROWS = 10;
+        const LIST_ROWS = 8;
+
+        // The epoch's last day and its length. The frozen file was exported on
+        // 22 Oct, so its `daily` and `launch.days_active` run one day past the close.
+        const FINAL_DAY = '2026-10-21';
+        const EPOCH_DAYS = 94;
+
+        // Format numbers with thousands separators
+        function formatNumber(num) {
+            return Number(num || 0).toLocaleString('en-GB');
+        }
+
+        // "2026-10-21" -> "21 Oct", always UTC
+        function formatDay(dateStr) {
+            const d = new Date(String(dateStr).length === 10 ? dateStr + 'T00:00:00Z' : dateStr);
+            if (isNaN(d)) return '';
+            return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' });
+        }
+
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // For use inside a quoted HTML attribute
+        function attrSafe(text) {
+            return escapeHtml(String(text ?? ''))
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        const FLAG_RE = /[\u{1F1E6}-\u{1F1FF}]{2}/u;
+        const stripFlags = (name) => String(name || '').replace(/[\u{1F1E6}-\u{1F1FF}]{2}/gu, '').trim();
+        const flagOf = (name) => (String(name || '').match(FLAG_RE) || [''])[0];
+        const plural = (n, one, many) => `${formatNumber(n)} ${n === 1 ? one : many}`;
+
+        // Approved posts: each one pays its project exactly once, so the project
+        // payments are the count, as on the homepage. The review count
+        // (reviewer.approved) runs short: a post an admin reviews pays no reviewer.
+        const approvedPosts = stats => (stats.top_projects || []).reduce((n, p) => n + (p.count || 0), 0);
+
+        // "Bitcoin Ekasi 🇿🇦" -> "bitcoin-ekasi"
+        function profileId(name) {
+            return String(name || '')
+                .replace(/[^\w\s-]/g, '') // Remove emojis and special characters
+                .trim()
+                .toLowerCase()
+                .replace(/\s+/g, '-'); // Replace spaces with hyphens
+        }
+
+        function profileUrl(name, type = 'project') {
+            return `${type === 'merchant' ? 'merchant-profile.html' : 'profile.html'}?id=${profileId(name)}`;
+        }
+
+        // Epoch 6's approved posts in the tracker, for one country or merchant
+        function trackerUrl(filters) {
+            return `tracker.html?${new URLSearchParams({ epoch: '6', ...filters, status: 'Processed' })}`;
+        }
+
+        // ------------------------------------------------------ Highlights --
+
+        // The epoch's figures and notes, beside the final standings
+        function renderHighlights(stats) {
+            const approved = approvedPosts(stats);
+            const reviewed = approved + (stats.reviewer?.rejected || 0);
+            const rate = reviewed > 0 ? Math.round((approved / reviewed) * 100) + '%' : '–';
+            const facts = [
+                [formatNumber(approved), 'posts approved'],
+                [formatNumber(stats.top_projects?.length || 0), 'projects'],
+                [formatNumber(stats.top_merchants?.length || 0), 'merchants'],
+                [formatNumber(stats.countries?.length || 0), 'countries'],
+                [rate, 'approval rate'],
+                [formatNumber(EPOCH_DAYS), 'days']
+            ];
+
+            // What used to rotate through the Highlights card, kept as plain notes.
+            const notes = [];
+            if (reviewed > 0) {
+                notes.push(`<strong>${formatNumber(reviewed)}</strong> posts reviewed, ${formatNumber(stats.reviewer?.rejected || 0)} rejected`);
+            }
+            if (stats.platforms && stats.platforms.length > 0) {
+                const totalPlatforms = stats.platforms.reduce((sum, p) => sum + p.count, 0);
+                if (totalPlatforms > 0) {
+                    notes.push(`Posted on ${stats.platforms.map(p => `<strong>${escapeHtml(p.platform)} ${Math.round((p.count / totalPlatforms) * 100)}%</strong>`).join(', ')}`);
+                }
+            }
+            // Record day: most posts approved in one UTC day, as on the homepage
+            if (stats.daily && stats.daily.length > 0) {
+                const recordDay = stats.daily.reduce((max, day) =>
+                    ((day.approved || 0) > (max?.approved || 0)) ? day : max, null);
+                if (recordDay && recordDay.approved > 0) {
+                    notes.push(`Most approved in a day: <strong>${formatNumber(recordDay.approved)}</strong>, on ${formatDay(recordDay.date)}`);
+                }
+            }
+            if (approved > 0) {
+                notes.push(`<strong>${Math.round(approved / EPOCH_DAYS)}</strong> posts a day on average`);
+            }
+            // Newest project: the one whose first post is most recent
+            if (stats.top_projects && stats.top_projects.length > 0) {
+                let newestProject = null;
+                let newestFirstDate = null;
+                stats.top_projects.forEach(project => {
+                    if (project.posts && project.posts.length > 0) {
+                        const firstDate = project.posts.map(p => p.date).sort()[0];
+                        if (!newestFirstDate || firstDate > newestFirstDate) {
+                            newestFirstDate = firstDate;
+                            newestProject = project;
+                        }
+                    }
+                });
+                if (newestProject && newestProject !== stats.top_projects[0]) {
+                    notes.push(`Newest project: <strong>${escapeHtml(stripFlags(newestProject.name))}</strong>, first post ${formatDay(newestFirstDate)}`);
+                }
+            }
+            return `
+                <section class="highlights" aria-labelledby="highlights-title">
+                    <div class="section-head"><h2 id="highlights-title">Highlights</h2></div>
+                    <div class="reverse">
+                        <ul class="facts">${facts.map(([n, l]) => `<li><b class="num">${n}</b><span>${l}</span></li>`).join('')}</ul>
+                        ${notes.length ? `<ul class="notes">${notes.map(n => `<li>${n}</li>`).join('')}</ul>` : ''}
+                    </div>
+                </section>`;
+        }
+
+        // ----------------------------------------------------- Standings --
+
+        // Final standings: "Merchants" (default) ranks projects by different
+        // merchants with an approved post; "Posts" is the order in the file.
+        let standingsStats = null;
+        let standingsView = 'merchants';
+
+        function standingsRows(stats) {
+            return (stats.top_projects || []).map((item, order) => {
+                const posts = item.posts || [];
+                const firstAt = {};
+                posts.forEach(x => {
+                    if (!x.merchant) return;
+                    if (!firstAt[x.merchant] || x.date < firstAt[x.merchant]) firstAt[x.merchant] = x.date;
+                });
+                const firsts = Object.values(firstAt).sort();
+                return { item, posts, order, count: item.count ?? posts.length, merchants: firsts.length, reachedAt: firsts[firsts.length - 1] || '' };
+            });
+        }
+
+        // The ranked list, as on the homepage: one row per project, each opening
+        // its profile (which holds every epoch's posts)
+        function standingsList(stats, by) {
+            const countryByFlag = {};
+            (stats.countries || []).forEach(c => { countryByFlag[c.flag] = c.country; });
+
+            const ranked = standingsRows(stats);
+            if (by === 'merchants') {
+                // Most merchants first; level projects by posts, then by who got there first
+                ranked.sort((a, b) => b.merchants - a.merchants || b.count - a.count
+                    || a.reachedAt.localeCompare(b.reachedAt) || a.order - b.order);
+            }
+
+            const items = ranked.map(({ item, count, merchants }, i) => {
+                const flag = flagOf(item.name);
+                return `
+                    <li class="${i >= BOARD_ROWS ? 'is-more' : ''}"><a href="${attrSafe(profileUrl(item.name, 'project'))}">
+                        <span class="li-main"><span class="lb-rank num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span><span class="lb-name">${nameWithFlag(stripFlags(item.name), flag, countryByFlag[flag] || '')}</span></span>
+                        <span class="li-side num">${by === 'merchants' ? plural(merchants, 'merchant', 'merchants') : plural(count, 'post', 'posts')}</span>
+                    </a></li>`;
+            }).join('');
+            const caption = `Epoch 6 projects ranked by ${by === 'merchants' ? 'the number of different merchants with an approved post' : 'approved posts'}`;
+            return `
+                <p class="section-note">${by === 'merchants' ? 'Different merchants with an approved post in Epoch 6.' : 'Posts approved in Epoch 6.'}</p>
+                <ol class="list lb-list" id="lb-list" aria-label="${attrSafe(caption)}">${items}</ol>`;
+        }
+
+        // "Show all" sits in its own row of the layout, under the list, so the
+        // Highlights box beside the list can end level with its last row
+        function standingsMore(stats) {
+            const total = (stats.top_projects || []).length;
+            const label = `Show all ${total} projects`;
+            return total > BOARD_ROWS ? `<button type="button" class="btn list-more" data-list="lb-list" data-label="${label}" aria-controls="lb-list" aria-expanded="false">${label}</button>` : '';
+        }
+
+        function renderStandings(stats) {
+            const projects = stats.top_projects || [];
+            if (projects.length === 0) {
+                return `
+                    <section aria-labelledby="board-title" id="board">
+                        <h2 id="board-title">Final standings</h2>
+                        <p>No approved posts were recorded for Epoch 6.</p>
+                    </section>`;
+            }
+            standingsStats = stats;
+
+            return `
+                <section aria-labelledby="board-title" id="board">
+                    <div class="section-head">
+                        <h2 id="board-title">Final standings</h2>
+                        <div class="seg" role="group" aria-label="Rank projects by" id="standings-view">
+                            <button type="button" data-view="merchants" aria-pressed="${standingsView === 'merchants'}">Merchants</button>
+                            <button type="button" data-view="posts" aria-pressed="${standingsView === 'posts'}">Posts</button>
+                        </div>
+                    </div>
+                    <div id="standings-body" aria-live="polite">${standingsList(stats, standingsView)}</div>
+                </section>
+                <div class="standings-more" id="standings-more">${standingsMore(stats)}</div>`;
+        }
+
+        // ------------------------------------------ Merchants and countries --
+
+        function renderMerchantsAndCountries(stats) {
+            const merchants = stats.top_merchants || [];
+            // In the Epoch 6 file a country's count is its projects, so its posts
+            // come from the ranked projects under its flag: the same as the
+            // tracker's processed posts for it, where each row opens.
+            const byFlag = {};
+            (stats.top_projects || []).forEach(p => {
+                const f = byFlag[flagOf(p.name)] ||= { projects: 0, posts: 0 };
+                f.projects += 1;
+                f.posts += p.count || 0;
+            });
+            const countries = (stats.countries || [])
+                .map(c => ({ ...c, ...(byFlag[c.flag] || { projects: 0, posts: 0 }) }))
+                .sort((a, b) => b.posts - a.posts);
+
+            // Each opens its posts in the tracker, filtered to that merchant exactly
+            const merchantItems = merchants.map((m, i) => `
+                <li class="${i >= LIST_ROWS ? 'is-more' : ''}"><a href="${attrSafe(trackerUrl({ merchant: m.name }))}">
+                    <span class="li-main">${escapeHtml(m.name)}</span>
+                    <span class="li-side num">${plural(m.count, 'post', 'posts')}</span>
+                </a></li>`).join('');
+
+            const countryItems = countries.map(c => `
+                <li><a href="${attrSafe(trackerUrl({ country: c.country }))}">
+                    <span class="li-main">${flagHtml(c.flag)} ${escapeHtml(c.country)}</span>
+                    <span class="li-side num pair"><span>${plural(c.projects, 'project', 'projects')}</span><span class="sep" aria-hidden="true"> · </span><span>${plural(c.posts, 'post', 'posts')}</span></span>
+                </a></li>`).join('');
+
+            return `
+                <div class="section"><div class="cols">
+                    <section class="section" aria-labelledby="merchants-title">
+                        <h2 id="merchants-title">Merchants with the most posts</h2>
+                        <p class="section-note">Shops and stalls where projects spent bitcoin. Open one to see its Epoch&nbsp;6 posts in the tracker.</p>
+                        ${merchants.length
+                            ? `<ul class="list" id="merchant-list">${merchantItems}</ul>
+                               ${merchants.length > LIST_ROWS ? `<p class="list-link"><a class="btn" href="merchants.html?epoch=6&amp;sort=posts">View all ${formatNumber(merchants.length)} in the Directory</a></p>` : ''}`
+                            : '<p>No merchants were recorded for Epoch 6.</p>'}
+                    </section>
+                    <section class="section" aria-labelledby="countries-title">
+                        <h2 id="countries-title">Countries</h2>
+                        <p class="section-note">Where Epoch&nbsp;6’s projects posted from. Open one to see its posts in the tracker.</p>
+                        ${countries.length ? `<ul class="list">${countryItems}</ul>` : '<p>No countries were recorded for Epoch 6.</p>'}
+                    </section>
+                </div></div>`;
+        }
+
+        // ------------------------------------------------ Posts per day --
+
+        function renderDaily(stats) {
+            // The full epoch as a continuous daily timeline, stopping on its last
+            // day, as the homepage's chart does
+            const displayData = (stats.daily || []).filter(d => d.date <= FINAL_DAY);
+
+            if (displayData.length === 0) {
+                return `
+                    <section class="section" aria-labelledby="daily-title">
+                        <h2 id="daily-title">Approved posts per day</h2>
+                        <p>No daily figures were recorded for Epoch 6.</p>
+                    </section>`;
+            }
+
+            const max = Math.max(1, ...displayData.map(d => d.approved || 0));
+            const peak = displayData.find(d => (d.approved || 0) === max);
+            const label = d => `${formatDay(d.date)}: ${plural(d.approved || 0, 'post', 'posts')} approved`;
+            const bars = displayData.map(d => `<i style="height:${(d.approved || 0) / max * 100}%" data-label="${attrSafe(label(d))}"></i>`).join('');
+            const first = displayData[0];
+            const last = displayData[displayData.length - 1];
+
+            return `
+                <section class="section" aria-labelledby="daily-title">
+                    <h2 id="daily-title">Approved posts per day</h2>
+                    <p class="section-note">One bar per UTC day, ${formatDay(first.date)} to ${formatDay(last.date)} 2026. Hover, tap or use the arrow keys to read a day.</p>
+                    <p class="bars-readout" aria-live="polite">Busiest day, ${escapeHtml(label(peak))}</p>
+                    <div class="bars" tabindex="0" role="group" aria-label="Approved posts per day over ${displayData.length} days, ${formatDay(first.date)} to ${formatDay(last.date)}. Peak ${max} on ${formatDay(peak?.date)}. Use the left and right arrow keys to read each day.">
+                        ${bars}
+                    </div>
+                    <div class="bars-axis" aria-hidden="true"><span>${formatDay(first.date)}</span><span>${formatDay(last.date)}</span></div>
+                </section>`;
+        }
+
+        // ----------------------------------------------- Every epoch --
+
+        function renderEpochs(stats) {
+            // Frozen totals come from epochs.js; Epoch 6 is this page. The bars
+            // only: each epoch's rules note lives in the archive's copy.
+            return window.renderEpochBars({
+                id: 'epochs-title',
+                intro: `<strong class="num">${formatNumber(window.epochsTotal())}</strong> posts approved across every finished epoch since May 2025. The current epoch is on the <a href="index.html">live leaderboard</a>.`,
+                more: '<a href="archive.html#every-title">See how the rules changed</a>.',
+                notes: false,
+                current: 'Epoch 6'
+            });
+        }
+
+        // The standings switch, and "Show all" on the standings and the lists
+        document.getElementById('content').addEventListener('click', (e) => {
+            const view = e.target.closest('#standings-view button');
+            if (view) {
+                if (view.dataset.view !== standingsView && standingsStats) {
+                    standingsView = view.dataset.view;
+                    document.querySelectorAll('#standings-view button').forEach(b => b.setAttribute('aria-pressed', String(b === view)));
+                    document.getElementById('standings-body').innerHTML = standingsList(standingsStats, standingsView);
+                    document.getElementById('standings-more').innerHTML = standingsMore(standingsStats);
+                }
+                return;
+            }
+            const btn = e.target.closest('.list-more');
+            if (btn) {
+                const list = document.getElementById(btn.dataset.list);
+                const open = !list.classList.contains('show-all');
+                list.classList.toggle('show-all', open);
+                btn.setAttribute('aria-expanded', String(open));
+                btn.textContent = open ? 'Show fewer' : btn.dataset.label;
+            }
+        });
+
+        // Render the dashboard
+        function renderDashboard(stats) {
+            // Update timestamp (may not exist yet if footer is still loading)
+            const updatedElement = document.getElementById('updated');
+            if (updatedElement) {
+                updatedElement.textContent = new Date(stats.generated_at).toLocaleString('en-GB', { timeZone: 'UTC' }) + ' UTC';
+            }
+
+            document.getElementById('content').innerHTML =
+                `<div class="section standings">${renderStandings(stats)}${renderHighlights(stats)}</div>` +
+                renderMerchantsAndCountries(stats) +
+                renderDaily(stats) +
+                renderEpochs(stats);
+        }
+
+        // Load and render stats
+        async function loadStats() {
+            try {
+                // Frozen Epoch 6 snapshot - never reads the live stats.json
+                const statsResponse = await fetch('stats-epoch6.json?t=' + Date.now());
+
+                if (!statsResponse.ok) {
+                    throw new Error(`HTTP ${statsResponse.status}`);
+                }
+
+                renderDashboard(await statsResponse.json());
+            } catch (error) {
+                console.error('Failed to load stats:', error);
+                document.getElementById('content').innerHTML = `
+                    <div class="error">
+                        <p>The Epoch 6 results could not load.</p>
+                        <p>Reload the page, or try again in a few minutes.</p>
+                        <p class="muted mono">${escapeHtml(error.message)}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize - wait for includes to load first
+        window.includesLoaded.then(() => loadStats());
+    </script>
+</body>
+</html>

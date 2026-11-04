@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="only light">
+    <title>About PoWBoT</title>
+    <meta name="description" content="How PoWBoT works: a Telegram bot that checks proof-of-work videos of Bitcoin payments at African merchants and pays sats over Lightning.">
+    <link rel="canonical" href="https://powbot.africa/about.html">
+    <meta name="theme-color" content="#CFE5BE">
+    <script>
+        // Dark, if chosen with the header switch (light is the default), and
+        // screen effects if turned off (both kept by includes/inject.js):
+        // applied before the page first paints, so it never flashes
+        (function () {
+            try {
+                if (localStorage.getItem('pb-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+                if (localStorage.getItem('pb-screen-effects') === 'off') document.documentElement.classList.add('fx-off');
+            } catch (e) { /* storage blocked: the defaults, light with effects on */ }
+        })();
+    </script>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Link previews (Open Graph, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://powbot.africa/about.html">
+    <meta property="og:site_name" content="PoWBoT">
+    <meta property="og:title" content="About PoWBoT">
+    <meta property="og:description" content="How PoWBoT works: a Telegram bot that checks proof-of-work videos of Bitcoin payments at African merchants and pays sats over Lightning.">
+    <meta property="og:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="PoWBoT, a robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://powbot.africa/about.html">
+    <meta name="twitter:title" content="About PoWBoT">
+    <meta name="twitter:description" content="How PoWBoT works: a Telegram bot that checks proof-of-work videos of Bitcoin payments at African merchants and pays sats over Lightning.">
+    <meta name="twitter:image" content="https://powbot.africa/images/PoWBoT_card_v2.jpg">
+    <meta name="twitter:image:alt" content="PoWBoT, a robot with a bitcoin coin for a face, holding a phone above the words POWBOT.AFRICA and Proof of work across Africa, on a green LCD screen with signal bars and a battery.">
+
+    <link rel="stylesheet" href="css/powbot.css">
+    <style>
+        /* About layout only. Colours, type and components: css/powbot.css */
+        /* The mascot beside the title and lede; on phones beside the title
+           alone, sized to its two lines, with the lede full width below */
+        .about-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "title mascot" "lede mascot"; align-items: center; column-gap: var(--s5); }
+        .about-head h1 { grid-area: title; }
+        .about-head .lede { grid-area: lede; }
+        .about-head .mascot { grid-area: mascot; display: block; width: 150px; height: auto; }
+        @media (max-width: 720px) {
+            .about-head { grid-template-areas: "title mascot" "lede lede"; column-gap: var(--s3); }
+            .about-head .title-line { display: block; }
+            .about-head .mascot { width: 72px; }
+        }
+    </style>
+</head>
+<body class="pb">
+    <!-- Navigation (loaded from includes/nav.html) -->
+    <div id="site-nav"></div>
+
+    <main id="main">
+        <div class="wrap">
+            <header class="page-head about-head">
+                <h1>About <span class="title-line">PoWBoT</span></h1>
+                <p class="lede">A Telegram bot that checks and rewards proof of Bitcoin payments at merchants across Africa.</p>
+                <img class="mascot" src="images/PoWBoT_mascot_240px.png" alt="" width="194" height="240" fetchpriority="high">
+            </header>
+
+            <section class="section" aria-labelledby="what">
+                <h2 id="what">What it does</h2>
+                <div class="prose">
+                    <p>Proof of Work (PoW) here means a real Bitcoin payment at a local merchant, filmed and posted on X or Nostr: evidence of Bitcoin adoption on the ground in Africa. PoWBoT checks each post, counts it and pays everyone involved in sats.</p>
+                    <p>The bot serves the CBAF – a network of 40 grassroots Bitcoin projects across Africa, and growing. New to PoWBoT? Start with <a href="guidelines.html#new">how to join</a> in the guidelines.</p>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="how">
+                <h2 id="how">How it works</h2>
+                <div class="prose">
+                    <ol>
+                        <li>A project submits a link to an X or Nostr post showing a Bitcoin payment at a local merchant</li>
+                        <li>The bot automatically verifies the post meets basic criteria</li>
+                        <li>A human reviewer watches the video and approves or rejects</li>
+                        <li>If approved, the bot sends sats via Lightning to the merchant, the project, and the reviewer</li>
+                        <li>The post is liked and reposted on Nostr to amplify the signal</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="origin">
+                <h2 id="origin">Origin story</h2>
+                <div class="prose">
+                    <p>The Telegram bot was built by someone with no programming experience.</p>
+                    <p>It started in December 2025 with a simple message to Grok: <em>“Help me write a basic Telegram bot.”</em></p>
+                    <p>Over the following weeks, the project evolved from a bare-minimum welcome message into a full-featured Proof of Work verification system – first with Grok, then continued with Claude.</p>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="point">
+                <h2 id="point">The point</h2>
+                <div class="prose">
+                    <p>You don’t need to be a programmer to build useful things. With open source software, AI assistance, and persistence, anyone can create real working software that adds value.</p>
+                    <p>Since December 2025 the bot has approved over 4,600 posts from nearly 30 <a href="members.html">projects</a>, at more than 300 <a href="merchants.html">merchants</a> across Africa.</p>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="built">
+                <h2 id="built">Built with</h2>
+                <div class="prose">
+                        <ul>
+                            <li>Python + python-telegram-bot</li>
+                            <li>SQLite (payment ledger)</li>
+                            <li>Blink API (Lightning payments)</li>
+                            <li>Nostr SDK (likes, reposts)</li>
+                            <li>Google Sheets API (member registration)</li>
+                            <li>BTCMap API (merchant identity)</li>
+                            <li>Twitter Syndication API (X posts)</li>
+                            <li>GitHub Pages (dashboard hosting)</li>
+                            <li>FastAPI (project profiles and sign-in)</li>
+                            <li>A Hetzner server with Caddy (the bot, the API and live data)</li>
+                        </ul>
+                        <p>The dashboard’s source is open on <a href="https://github.com/BitcoinUbuntu/powbot-stats" target="_blank" rel="noopener">GitHub</a>.</p>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="contact">
+                <h2 id="contact">Contact and updates</h2>
+                <div class="prose">
+                    <p>If you are a project representative and need to update your information, you can sign in and submit change requests via the link found at the bottom of your project profile page. To report inaccuracies, please contact the <a href="https://t.me/bitcoinubuntu" target="_blank" rel="noopener">administrators</a>.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer (loaded from includes/footer.html) -->
+    <div id="site-footer"></div>
+
+    <!-- Shared nav/footer injection -->
+    <script src="includes/inject.js"></script>
+</body>
+</html>
