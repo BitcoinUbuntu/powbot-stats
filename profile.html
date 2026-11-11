@@ -494,8 +494,10 @@
             }
 
             // The current epoch: one row per visit (visits.js), X and Nostr side by side
-            if (currentSubs) {
-                const visits = groupVisits(currentSubs);
+            // Once the epoch is frozen it behaves like a past one: no posts, no section.
+            const currentVisits = currentSubs ? groupVisits(currentSubs) : [];
+            if (currentSubs && (currentVisits.length > 0 || !epochFrozen())) {
+                const visits = currentVisits;
                 const initialCount = 5;
                 const closed = epochFrozen();
                 const dayLabel = (date, opts) => date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', ...opts, timeZone: 'UTC' });
