@@ -441,7 +441,7 @@
             summary.innerHTML = approved > 0
                 ? `<strong>${plural(projects, 'project', 'projects')}</strong> ${over ? 'had' : projects === 1 ? 'has' : 'have'} <strong>${plural(approved, 'post', 'posts')} approved</strong> at <strong>${plural(merchants, 'merchant', 'merchants')}</strong>.`
                 : over ? 'No posts were approved this epoch.'
-                : `No posts approved yet this epoch. The first project to post takes the top spot.`;
+                : `No posts approved yet this epoch.`;
 
             renderProgress(stats);
             heroStats = stats;
