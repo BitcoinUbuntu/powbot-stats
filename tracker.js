@@ -61,7 +61,7 @@ let merchantFilter = '';
 //
 // Epoch 4 and its testing period ("4t") are the exception: they predate the
 // export, so they were rebuilt once from the stats files. Approved posts only, dated to the day, no review detail.
-const TRACKER_ARCHIVES = ['tracker-data-epoch5.json', 'tracker-data-epoch4.json', 'tracker-data-epoch4t.json'];
+const TRACKER_ARCHIVES = ['tracker-data-epoch6.json', 'tracker-data-epoch5.json', 'tracker-data-epoch4.json', 'tracker-data-epoch4t.json'];
 const DAY_ONLY_EPOCHS = ['4', '4t'];
 
 // The page opens on the current epoch. An archive is fetched only when its

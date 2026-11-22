@@ -24,11 +24,11 @@
  * without another change here.
  */
 window.POWBOT_EPOCH = {
-    number: 6,
-    name: 'Epoch 6',
-    start: '2026-07-20T06:00:00Z',
-    end: '2026-10-22T00:00:00Z',
-    frozen: true,
+    number: 7,
+    name: 'Epoch 7',
+    start: '2026-11-23T00:00:00Z',
+    end: '2027-02-22T00:00:00Z',
+    frozen: false,
     // The directory filter for "active this epoch" (members.html?filter=...)
-    memberFilter: 'epoch6'
+    memberFilter: 'epoch7'
 };
