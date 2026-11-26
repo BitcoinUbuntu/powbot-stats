@@ -1,102 +1,43 @@
 {
   "totals": {
-    "all_payments": 96,
+    "all_payments": 111,
     "by_type": {
       "merchant": {
-        "count": 32
+        "count": 37
       },
       "project": {
-        "count": 32
+        "count": 37
       },
       "reviewer": {
-        "count": 32
+        "count": 37
       }
     }
   },
   "today": {
-    "date": "2026-11-25",
-    "payments": 27,
-    "by_type": {
-      "merchant": {
-        "count": 9
-      },
-      "project": {
-        "count": 9
-      },
-      "reviewer": {
-        "count": 9
-      }
-    },
-    "approved": 9,
+    "date": "2026-11-26",
+    "payments": 0,
+    "by_type": {},
+    "approved": 0,
     "rejected": 0,
-    "videos": [
-      {
-        "url": "https://primal.net/e/nevent1qqszxc8d8exjhdc3s6xqdchjp5fqjzkjdt56uu39e43a5r8z7jy8lkct8pn24",
-        "project": "Bitcoin Victoria Falls 🇿🇲",
-        "merchant": "Sombo Groceries",
-        "platform": "Nostr",
-        "time": "15:51"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqs8xjvsycmu333gpptlw9te074zpree9s3y233r9myt04nndq9pn4suqa6qa",
-        "project": "Bitcoin Victoria Falls 🇿🇲",
-        "merchant": "IT Enterprise",
-        "platform": "Nostr",
-        "time": "15:50"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsqgtmzxeagv6v6twjqya5w8sk6ktyvcmfktsf0zu0cdkzt8xaspmqm9tzda",
-        "project": "Bitcoin Victoria Falls 🇿🇲",
-        "merchant": "Doris Mweetwa's Grocery",
-        "platform": "Nostr",
-        "time": "15:49"
-      },
-      {
-        "url": "https://x.com/i/status/2125592143020609667",
-        "project": "Bitcoin Victoria Falls 🇿🇲",
-        "merchant": "Sombo Groceries",
-        "platform": "X",
-        "time": "15:49"
-      },
-      {
-        "url": "https://x.com/i/status/2125592138327191620",
-        "project": "Bitcoin Victoria Falls 🇿🇲",
-        "merchant": "IT Enterprise",
-        "platform": "X",
-        "time": "15:48"
-      },
-      {
-        "url": "https://x.com/i/status/2125592134396825686",
-        "project": "Bitcoin Victoria Falls 🇿🇲",
-        "merchant": "Doris Mweetwa's Grocery",
-        "platform": "X",
-        "time": "15:48"
-      },
-      {
-        "url": "https://x.com/i/status/2124214086221316247",
-        "project": "Bitcoin Ikorodu 🇳🇬",
-        "merchant": "Alvin Game House",
-        "platform": "X",
-        "time": "13:44"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsw0tqxrddvhg4w5usw7pyr3n4y9rhw9d9s7dt8ux3d4gptqwj3cqsrm2aqh",
-        "project": "Bitbiashara 🇰🇪",
-        "merchant": "Tena cyberpalace",
-        "platform": "Nostr",
-        "time": "06:36"
-      },
-      {
-        "url": "https://x.com/i/status/2125470113142837600",
-        "project": "Bitbiashara 🇰🇪",
-        "merchant": "Tena cyberpalace",
-        "platform": "X",
-        "time": "06:36"
-      }
-    ]
+    "videos": []
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Ikorodu 🇳🇬"
+      },
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Aves 🇬🇭"
+      },
       {
         "project": "Bitcoin Victoria Falls 🇿🇲"
       },
@@ -117,12 +58,6 @@
       },
       {
         "project": "Bitcoin Ikorodu 🇳🇬"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
-      },
-      {
-        "project": "Bitbiashara 🇰🇪"
       }
     ]
   },
@@ -145,16 +80,24 @@
     },
     {
       "date": "2026-11-25",
-      "project_count": 9,
-      "merchant_count": 9,
-      "reviewer_count": 9,
-      "approved": 9,
+      "project_count": 14,
+      "merchant_count": 14,
+      "reviewer_count": 14,
+      "approved": 14,
+      "rejected": 0
+    },
+    {
+      "date": "2026-11-26",
+      "project_count": 0,
+      "merchant_count": 0,
+      "reviewer_count": 0,
+      "approved": 0,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 32,
-    "approved": 32,
+    "total_reviewed": 37,
+    "approved": 37,
     "rejected": 0
   },
   "top_projects": [
@@ -222,8 +165,13 @@
     },
     {
       "name": "Bitcoin Ikorodu 🇳🇬",
-      "count": 3,
+      "count": 4,
       "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsg5e0l4khstvcwnvh33ctaw97y5elhc32sutumzahh8haae4rqg3cqghxxd",
+          "date": "2026-11-25",
+          "merchant": "Alvin Game House"
+        },
         {
           "url": "https://x.com/i/status/2124214086221316247",
           "date": "2026-11-25",
@@ -382,6 +330,38 @@
           "url": "https://x.com/i/status/2125277882997944480",
           "date": "2026-11-24",
           "merchant": "P.S Takeaways"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Aves 🇬🇭",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8f30h2hx6m3sweeju60kp0wavucs93ur0wl9k6nglu3ngkg6lcgq4x4nzk",
+          "date": "2026-11-25",
+          "merchant": "Topic's Pub"
+        },
+        {
+          "url": "https://x.com/i/status/2125667390411198687",
+          "date": "2026-11-25",
+          "merchant": "Topic's Pub"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Dua 🇬🇭",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2125686834256896452",
+          "date": "2026-11-25",
+          "merchant": "Antitor Provision Store"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd9zwqeyakdhnff9de36ypf9kzavasa807zdynfpmlavff83a4vjc7qdc8y",
+          "date": "2026-11-25",
+          "merchant": "Antitor Provision Store"
         }
       ]
     },
@@ -639,6 +619,54 @@
       ]
     },
     {
+      "name": "Topic's Pub",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqs8f30h2hx6m3sweeju60kp0wavucs93ur0wl9k6nglu3ngkg6lcgq4x4nzk",
+          "date": "2026-11-25",
+          "project": "Bitcoin Aves 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2125667390411198687",
+          "date": "2026-11-25",
+          "project": "Bitcoin Aves 🇬🇭"
+        }
+      ]
+    },
+    {
+      "name": "Alvin Game House",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsg5e0l4khstvcwnvh33ctaw97y5elhc32sutumzahh8haae4rqg3cqghxxd",
+          "date": "2026-11-25",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        },
+        {
+          "url": "https://x.com/i/status/2124214086221316247",
+          "date": "2026-11-25",
+          "project": "Bitcoin Ikorodu 🇳🇬"
+        }
+      ]
+    },
+    {
+      "name": "Antitor Provision Store",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2125686834256896452",
+          "date": "2026-11-25",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd9zwqeyakdhnff9de36ypf9kzavasa807zdynfpmlavff83a4vjc7qdc8y",
+          "date": "2026-11-25",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Gift Mukosayi",
       "count": 1,
       "posts": [
@@ -648,33 +676,22 @@
           "project": "Sats and Stories 🇿🇲"
         }
       ]
-    },
-    {
-      "name": "Alvin Game House",
-      "count": 1,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2124214086221316247",
-          "date": "2026-11-25",
-          "project": "Bitcoin Ikorodu 🇳🇬"
-        }
-      ]
     }
   ],
   "launch": {
     "date": "Nov 23",
-    "days_active": 3,
-    "daily_average_payments": 32
+    "days_active": 4,
+    "daily_average_payments": 27
   },
   "burn_rate": {
-    "percentage": 97,
+    "percentage": 82,
     "status": "on_target",
-    "days_active": 3
+    "days_active": 4
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 92
+      "count": 107
     },
     {
       "domain": "8333.mobi",
@@ -702,6 +719,11 @@
       "count": 2
     },
     {
+      "flag": "🇬🇭",
+      "country": "Ghana",
+      "count": 2
+    },
+    {
       "flag": "🇿🇲",
       "country": "Zambia",
       "count": 2
@@ -719,14 +741,14 @@
   ],
   "platforms": [
     {
-      "platform": "X",
-      "count": 48
+      "platform": "Nostr",
+      "count": 57
     },
     {
-      "platform": "Nostr",
-      "count": 48
+      "platform": "X",
+      "count": 54
     }
   ],
-  "generated_at": "2026-11-25T19:05:01.558625+00:00",
+  "generated_at": "2026-11-26T07:05:01.250127+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
