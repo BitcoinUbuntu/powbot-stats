@@ -1,25 +1,50 @@
 {
   "totals": {
-    "all_payments": 111,
+    "all_payments": 117,
     "by_type": {
       "merchant": {
-        "count": 37
+        "count": 39
       },
       "project": {
-        "count": 37
+        "count": 39
       },
       "reviewer": {
-        "count": 37
+        "count": 39
       }
     }
   },
   "today": {
     "date": "2026-11-26",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 6,
+    "by_type": {
+      "merchant": {
+        "count": 2
+      },
+      "project": {
+        "count": 2
+      },
+      "reviewer": {
+        "count": 2
+      }
+    },
+    "approved": 2,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsz6qcktcpzealqp3ju9pxk4hmvl4wyg6u72td5tvjgylqrsyckt5gwfgtpj",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Preso's Food and Drinks",
+        "platform": "Nostr",
+        "time": "08:02"
+      },
+      {
+        "url": "https://x.com/i/status/2125858229196341279",
+        "project": "Bitcoin Dua 🇬🇭",
+        "merchant": "Preso's Food and Drinks",
+        "platform": "X",
+        "time": "08:01"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
@@ -30,6 +55,12 @@
         "project": "Bitcoin Dua 🇬🇭"
       },
       {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
+        "project": "Bitcoin Dua 🇬🇭"
+      },
+      {
         "project": "Bitcoin Ikorodu 🇳🇬"
       },
       {
@@ -37,27 +68,6 @@
       },
       {
         "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Victoria Falls 🇿🇲"
-      },
-      {
-        "project": "Bitcoin Ikorodu 🇳🇬"
       }
     ]
   },
@@ -88,16 +98,16 @@
     },
     {
       "date": "2026-11-26",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 2,
+      "merchant_count": 2,
+      "reviewer_count": 2,
+      "approved": 2,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 37,
-    "approved": 37,
+    "total_reviewed": 39,
+    "approved": 39,
     "rejected": 0
   },
   "top_projects": [
@@ -186,6 +196,32 @@
           "url": "https://x.com/i/status/2114059508255490490",
           "date": "2026-11-24",
           "merchant": "Omega Cut"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Dua 🇬🇭",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsz6qcktcpzealqp3ju9pxk4hmvl4wyg6u72td5tvjgylqrsyckt5gwfgtpj",
+          "date": "2026-11-26",
+          "merchant": "Preso's Food and Drinks"
+        },
+        {
+          "url": "https://x.com/i/status/2125858229196341279",
+          "date": "2026-11-26",
+          "merchant": "Preso's Food and Drinks"
+        },
+        {
+          "url": "https://x.com/i/status/2125686834256896452",
+          "date": "2026-11-25",
+          "merchant": "Antitor Provision Store"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsd9zwqeyakdhnff9de36ypf9kzavasa807zdynfpmlavff83a4vjc7qdc8y",
+          "date": "2026-11-25",
+          "merchant": "Antitor Provision Store"
         }
       ]
     },
@@ -346,22 +382,6 @@
           "url": "https://x.com/i/status/2125667390411198687",
           "date": "2026-11-25",
           "merchant": "Topic's Pub"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Dua 🇬🇭",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://x.com/i/status/2125686834256896452",
-          "date": "2026-11-25",
-          "merchant": "Antitor Provision Store"
-        },
-        {
-          "url": "https://primal.net/e/nevent1qqsd9zwqeyakdhnff9de36ypf9kzavasa807zdynfpmlavff83a4vjc7qdc8y",
-          "date": "2026-11-25",
-          "merchant": "Antitor Provision Store"
         }
       ]
     },
@@ -667,6 +687,22 @@
       ]
     },
     {
+      "name": "Preso's Food and Drinks",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsz6qcktcpzealqp3ju9pxk4hmvl4wyg6u72td5tvjgylqrsyckt5gwfgtpj",
+          "date": "2026-11-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        },
+        {
+          "url": "https://x.com/i/status/2125858229196341279",
+          "date": "2026-11-26",
+          "project": "Bitcoin Dua 🇬🇭"
+        }
+      ]
+    },
+    {
       "name": "Gift Mukosayi",
       "count": 1,
       "posts": [
@@ -681,17 +717,17 @@
   "launch": {
     "date": "Nov 23",
     "days_active": 4,
-    "daily_average_payments": 27
+    "daily_average_payments": 29
   },
   "burn_rate": {
-    "percentage": 82,
+    "percentage": 86,
     "status": "on_target",
     "days_active": 4
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 107
+      "count": 113
     },
     {
       "domain": "8333.mobi",
@@ -742,13 +778,13 @@
   "platforms": [
     {
       "platform": "Nostr",
-      "count": 57
+      "count": 60
     },
     {
       "platform": "X",
-      "count": 54
+      "count": 57
     }
   ],
-  "generated_at": "2026-11-26T07:05:01.250127+00:00",
+  "generated_at": "2026-11-26T19:05:02.018633+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
