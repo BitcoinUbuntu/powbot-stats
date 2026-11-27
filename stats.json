@@ -1,33 +1,108 @@
 {
   "totals": {
-    "all_payments": 117,
+    "all_payments": 138,
     "by_type": {
       "merchant": {
-        "count": 39
+        "count": 46
       },
       "project": {
-        "count": 39
+        "count": 46
       },
       "reviewer": {
-        "count": 39
+        "count": 46
       }
     }
   },
   "today": {
     "date": "2026-11-27",
-    "payments": 0,
-    "by_type": {},
-    "approved": 0,
+    "payments": 21,
+    "by_type": {
+      "merchant": {
+        "count": 7
+      },
+      "project": {
+        "count": 7
+      },
+      "reviewer": {
+        "count": 7
+      }
+    },
+    "approved": 7,
     "rejected": 0,
-    "videos": []
+    "videos": [
+      {
+        "url": "https://primal.net/e/nevent1qqsy5fyr9aw02qnqdyz4fytahpn36dffkk3rnflnfdfmzyyy2e8shhsut8pg2",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Bella Entertainment",
+        "platform": "Nostr",
+        "time": "07:14"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsrf5cdwftj2k5x8d5cdkm0aa6778kwf97rm7nkrgva0j34gyx0dps06nxyr",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Jovi Water Refilling",
+        "platform": "Nostr",
+        "time": "07:13"
+      },
+      {
+        "url": "https://primal.net/e/nevent1qqsgwfjlw4grxmm9ue9n0n3jls4s5v83gf2yuuqa4ty6zlhecl7czjqlu5u0r",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Mercy Groceries",
+        "platform": "Nostr",
+        "time": "07:13"
+      },
+      {
+        "url": "https://x.com/i/status/2126205082278740308",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Bella Entertainment",
+        "platform": "X",
+        "time": "07:12"
+      },
+      {
+        "url": "https://x.com/i/status/2126204113637531786",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Jovi Water Refilling",
+        "platform": "X",
+        "time": "07:12"
+      },
+      {
+        "url": "https://x.com/i/status/2126203025303937336",
+        "project": "Bitcoin Githurai 🇰🇪",
+        "merchant": "Mercy Groceries",
+        "platform": "X",
+        "time": "07:11"
+      },
+      {
+        "url": "https://x.com/i/status/2126192857195163867",
+        "project": "Bitcoin Karoo 🇿🇦",
+        "merchant": "Nakamoto Coffee",
+        "platform": "X",
+        "time": "07:11"
+      }
+    ]
   },
   "last_24h": {
     "videos": [
       {
-        "project": "Bitcoin Dua 🇬🇭"
+        "project": "Bitcoin Githurai 🇰🇪"
       },
       {
-        "project": "Bitcoin Dua 🇬🇭"
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Githurai 🇰🇪"
+      },
+      {
+        "project": "Bitcoin Karoo 🇿🇦"
       }
     ]
   },
@@ -66,16 +141,16 @@
     },
     {
       "date": "2026-11-27",
-      "project_count": 0,
-      "merchant_count": 0,
-      "reviewer_count": 0,
-      "approved": 0,
+      "project_count": 7,
+      "merchant_count": 7,
+      "reviewer_count": 7,
+      "approved": 7,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 39,
-    "approved": 39,
+    "total_reviewed": 46,
+    "approved": 46,
     "rejected": 0
   },
   "top_projects": [
@@ -112,6 +187,42 @@
           "url": "https://x.com/i/status/2125592134396825686",
           "date": "2026-11-25",
           "merchant": "Doris Mweetwa's Grocery"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Githurai 🇰🇪",
+      "count": 6,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsy5fyr9aw02qnqdyz4fytahpn36dffkk3rnflnfdfmzyyy2e8shhsut8pg2",
+          "date": "2026-11-27",
+          "merchant": "Bella Entertainment"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsrf5cdwftj2k5x8d5cdkm0aa6778kwf97rm7nkrgva0j34gyx0dps06nxyr",
+          "date": "2026-11-27",
+          "merchant": "Jovi Water Refilling"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsgwfjlw4grxmm9ue9n0n3jls4s5v83gf2yuuqa4ty6zlhecl7czjqlu5u0r",
+          "date": "2026-11-27",
+          "merchant": "Mercy Groceries"
+        },
+        {
+          "url": "https://x.com/i/status/2126205082278740308",
+          "date": "2026-11-27",
+          "merchant": "Bella Entertainment"
+        },
+        {
+          "url": "https://x.com/i/status/2126204113637531786",
+          "date": "2026-11-27",
+          "merchant": "Jovi Water Refilling"
+        },
+        {
+          "url": "https://x.com/i/status/2126203025303937336",
+          "date": "2026-11-27",
+          "merchant": "Mercy Groceries"
         }
       ]
     },
@@ -195,8 +306,13 @@
     },
     {
       "name": "Bitcoin Karoo 🇿🇦",
-      "count": 2,
+      "count": 3,
       "posts": [
+        {
+          "url": "https://x.com/i/status/2126192857195163867",
+          "date": "2026-11-27",
+          "merchant": "Nakamoto Coffee"
+        },
         {
           "url": "https://primal.net/e/nevent1qqsgjqg5azw4ua6udl77z64h3t5sqz5dwhgyk7uszfs0urty0u4kl3smu8zpy",
           "date": "2026-11-23",
@@ -671,6 +787,54 @@
       ]
     },
     {
+      "name": "Mercy Groceries",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsgwfjlw4grxmm9ue9n0n3jls4s5v83gf2yuuqa4ty6zlhecl7czjqlu5u0r",
+          "date": "2026-11-27",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2126203025303937336",
+          "date": "2026-11-27",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Jovi Water Refilling",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsrf5cdwftj2k5x8d5cdkm0aa6778kwf97rm7nkrgva0j34gyx0dps06nxyr",
+          "date": "2026-11-27",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2126204113637531786",
+          "date": "2026-11-27",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
+      "name": "Bella Entertainment",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://primal.net/e/nevent1qqsy5fyr9aw02qnqdyz4fytahpn36dffkk3rnflnfdfmzyyy2e8shhsut8pg2",
+          "date": "2026-11-27",
+          "project": "Bitcoin Githurai 🇰🇪"
+        },
+        {
+          "url": "https://x.com/i/status/2126205082278740308",
+          "date": "2026-11-27",
+          "project": "Bitcoin Githurai 🇰🇪"
+        }
+      ]
+    },
+    {
       "name": "Gift Mukosayi",
       "count": 1,
       "posts": [
@@ -680,22 +844,33 @@
           "project": "Sats and Stories 🇿🇲"
         }
       ]
+    },
+    {
+      "name": "Nakamoto Coffee",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2126192857195163867",
+          "date": "2026-11-27",
+          "project": "Bitcoin Karoo 🇿🇦"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Nov 23",
     "days_active": 5,
-    "daily_average_payments": 23
+    "daily_average_payments": 27
   },
   "burn_rate": {
-    "percentage": 69,
-    "status": "cold",
+    "percentage": 82,
+    "status": "on_target",
     "days_active": 5
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 113
+      "count": 134
     },
     {
       "domain": "8333.mobi",
@@ -713,14 +888,14 @@
       "count": 4
     },
     {
-      "flag": "🇳🇬",
-      "country": "Nigeria",
+      "flag": "🇰🇪",
+      "country": "Kenya",
       "count": 3
     },
     {
-      "flag": "🇰🇪",
-      "country": "Kenya",
-      "count": 2
+      "flag": "🇳🇬",
+      "country": "Nigeria",
+      "count": 3
     },
     {
       "flag": "🇬🇭",
@@ -745,14 +920,14 @@
   ],
   "platforms": [
     {
-      "platform": "Nostr",
-      "count": 60
+      "platform": "X",
+      "count": 69
     },
     {
-      "platform": "X",
-      "count": 57
+      "platform": "Nostr",
+      "count": 69
     }
   ],
-  "generated_at": "2026-11-27T07:05:01.281920+00:00",
+  "generated_at": "2026-11-27T19:05:01.186159+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
