@@ -14,37 +14,12 @@
     }
   },
   "today": {
-    "date": "2026-11-26",
-    "payments": 6,
-    "by_type": {
-      "merchant": {
-        "count": 2
-      },
-      "project": {
-        "count": 2
-      },
-      "reviewer": {
-        "count": 2
-      }
-    },
-    "approved": 2,
+    "date": "2026-11-27",
+    "payments": 0,
+    "by_type": {},
+    "approved": 0,
     "rejected": 0,
-    "videos": [
-      {
-        "url": "https://primal.net/e/nevent1qqsz6qcktcpzealqp3ju9pxk4hmvl4wyg6u72td5tvjgylqrsyckt5gwfgtpj",
-        "project": "Bitcoin Dua 🇬🇭",
-        "merchant": "Preso's Food and Drinks",
-        "platform": "Nostr",
-        "time": "08:02"
-      },
-      {
-        "url": "https://x.com/i/status/2125858229196341279",
-        "project": "Bitcoin Dua 🇬🇭",
-        "merchant": "Preso's Food and Drinks",
-        "platform": "X",
-        "time": "08:01"
-      }
-    ]
+    "videos": []
   },
   "last_24h": {
     "videos": [
@@ -53,21 +28,6 @@
       },
       {
         "project": "Bitcoin Dua 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Dua 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Dua 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Ikorodu 🇳🇬"
-      },
-      {
-        "project": "Bitcoin Aves 🇬🇭"
-      },
-      {
-        "project": "Bitcoin Aves 🇬🇭"
       }
     ]
   },
@@ -102,6 +62,14 @@
       "merchant_count": 2,
       "reviewer_count": 2,
       "approved": 2,
+      "rejected": 0
+    },
+    {
+      "date": "2026-11-27",
+      "project_count": 0,
+      "merchant_count": 0,
+      "reviewer_count": 0,
+      "approved": 0,
       "rejected": 0
     }
   ],
@@ -716,13 +684,13 @@
   ],
   "launch": {
     "date": "Nov 23",
-    "days_active": 4,
-    "daily_average_payments": 29
+    "days_active": 5,
+    "daily_average_payments": 23
   },
   "burn_rate": {
-    "percentage": 86,
-    "status": "on_target",
-    "days_active": 4
+    "percentage": 69,
+    "status": "cold",
+    "days_active": 5
   },
   "lightning_providers": [
     {
@@ -785,6 +753,6 @@
       "count": 57
     }
   ],
-  "generated_at": "2026-11-26T19:05:02.018633+00:00",
+  "generated_at": "2026-11-27T07:05:01.281920+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
