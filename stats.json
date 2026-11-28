@@ -1,88 +1,37 @@
 {
   "totals": {
-    "all_payments": 138,
+    "all_payments": 147,
     "by_type": {
       "merchant": {
-        "count": 46
+        "count": 49
       },
       "project": {
-        "count": 46
+        "count": 49
       },
       "reviewer": {
-        "count": 46
+        "count": 49
       }
     }
   },
   "today": {
-    "date": "2026-11-27",
-    "payments": 21,
-    "by_type": {
-      "merchant": {
-        "count": 7
-      },
-      "project": {
-        "count": 7
-      },
-      "reviewer": {
-        "count": 7
-      }
-    },
-    "approved": 7,
+    "date": "2026-11-28",
+    "payments": 0,
+    "by_type": {},
+    "approved": 0,
     "rejected": 0,
-    "videos": [
-      {
-        "url": "https://primal.net/e/nevent1qqsy5fyr9aw02qnqdyz4fytahpn36dffkk3rnflnfdfmzyyy2e8shhsut8pg2",
-        "project": "Bitcoin Githurai 🇰🇪",
-        "merchant": "Bella Entertainment",
-        "platform": "Nostr",
-        "time": "07:14"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsrf5cdwftj2k5x8d5cdkm0aa6778kwf97rm7nkrgva0j34gyx0dps06nxyr",
-        "project": "Bitcoin Githurai 🇰🇪",
-        "merchant": "Jovi Water Refilling",
-        "platform": "Nostr",
-        "time": "07:13"
-      },
-      {
-        "url": "https://primal.net/e/nevent1qqsgwfjlw4grxmm9ue9n0n3jls4s5v83gf2yuuqa4ty6zlhecl7czjqlu5u0r",
-        "project": "Bitcoin Githurai 🇰🇪",
-        "merchant": "Mercy Groceries",
-        "platform": "Nostr",
-        "time": "07:13"
-      },
-      {
-        "url": "https://x.com/i/status/2126205082278740308",
-        "project": "Bitcoin Githurai 🇰🇪",
-        "merchant": "Bella Entertainment",
-        "platform": "X",
-        "time": "07:12"
-      },
-      {
-        "url": "https://x.com/i/status/2126204113637531786",
-        "project": "Bitcoin Githurai 🇰🇪",
-        "merchant": "Jovi Water Refilling",
-        "platform": "X",
-        "time": "07:12"
-      },
-      {
-        "url": "https://x.com/i/status/2126203025303937336",
-        "project": "Bitcoin Githurai 🇰🇪",
-        "merchant": "Mercy Groceries",
-        "platform": "X",
-        "time": "07:11"
-      },
-      {
-        "url": "https://x.com/i/status/2126192857195163867",
-        "project": "Bitcoin Karoo 🇿🇦",
-        "merchant": "Nakamoto Coffee",
-        "platform": "X",
-        "time": "07:11"
-      }
-    ]
+    "videos": []
   },
   "last_24h": {
     "videos": [
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Sisonke 🇿🇦"
+      },
+      {
+        "project": "Bitcoin Ekiti 🇳🇬"
+      },
       {
         "project": "Bitcoin Githurai 🇰🇪"
       },
@@ -141,16 +90,24 @@
     },
     {
       "date": "2026-11-27",
-      "project_count": 7,
-      "merchant_count": 7,
-      "reviewer_count": 7,
-      "approved": 7,
+      "project_count": 10,
+      "merchant_count": 10,
+      "reviewer_count": 10,
+      "approved": 10,
+      "rejected": 0
+    },
+    {
+      "date": "2026-11-28",
+      "project_count": 0,
+      "merchant_count": 0,
+      "reviewer_count": 0,
+      "approved": 0,
       "rejected": 0
     }
   ],
   "reviewer": {
-    "total_reviewed": 46,
-    "approved": 46,
+    "total_reviewed": 49,
+    "approved": 49,
     "rejected": 0
   },
   "top_projects": [
@@ -305,6 +262,32 @@
       ]
     },
     {
+      "name": "Bitcoin Sisonke 🇿🇦",
+      "count": 4,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2126385639524319236",
+          "date": "2026-11-27",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdsu62hq099jxm33r9ytq4ww4ga3v6kuen6wf3ejertwazeg4k4tsa8d7ml",
+          "date": "2026-11-27",
+          "merchant": "T-Junction fast food"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqs0cau6e6752muxqrrzgcxg8jtt4fvr5l8k49rz32q4rqp4s7c2wmghf55hr",
+          "date": "2026-11-24",
+          "merchant": "P.S Takeaways"
+        },
+        {
+          "url": "https://x.com/i/status/2125277882997944480",
+          "date": "2026-11-24",
+          "merchant": "P.S Takeaways"
+        }
+      ]
+    },
+    {
       "name": "Bitcoin Karoo 🇿🇦",
       "count": 3,
       "posts": [
@@ -326,6 +309,27 @@
       ]
     },
     {
+      "name": "Bitcoin Ekiti 🇳🇬",
+      "count": 3,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2126319600942113151",
+          "date": "2026-11-27",
+          "merchant": "Diamond Barbing Saloon"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsvlawlx5cp4pra2lem5hknf8mez2jr908vuw9ejdgk53frvv7qcsshrc9u4",
+          "date": "2026-11-23",
+          "merchant": "Ayoola Minimart"
+        },
+        {
+          "url": "https://x.com/i/status/2124806355446079758",
+          "date": "2026-11-23",
+          "merchant": "Ayoola Minimart"
+        }
+      ]
+    },
+    {
       "name": "Bit-Fitness 🇿🇦",
       "count": 2,
       "posts": [
@@ -338,22 +342,6 @@
           "url": "https://x.com/i/status/2124778895325212674",
           "date": "2026-11-23",
           "merchant": "Madam Highway Restaurant"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Ekiti 🇳🇬",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqsvlawlx5cp4pra2lem5hknf8mez2jr908vuw9ejdgk53frvv7qcsshrc9u4",
-          "date": "2026-11-23",
-          "merchant": "Ayoola Minimart"
-        },
-        {
-          "url": "https://x.com/i/status/2124806355446079758",
-          "date": "2026-11-23",
-          "merchant": "Ayoola Minimart"
         }
       ]
     },
@@ -434,22 +422,6 @@
           "url": "https://x.com/i/status/2125136527663452665",
           "date": "2026-11-24",
           "merchant": "Chauque & Joao Juice"
-        }
-      ]
-    },
-    {
-      "name": "Bitcoin Sisonke 🇿🇦",
-      "count": 2,
-      "posts": [
-        {
-          "url": "https://primal.net/e/nevent1qqs0cau6e6752muxqrrzgcxg8jtt4fvr5l8k49rz32q4rqp4s7c2wmghf55hr",
-          "date": "2026-11-24",
-          "merchant": "P.S Takeaways"
-        },
-        {
-          "url": "https://x.com/i/status/2125277882997944480",
-          "date": "2026-11-24",
-          "merchant": "P.S Takeaways"
         }
       ]
     },
@@ -835,6 +807,22 @@
       ]
     },
     {
+      "name": "T-Junction fast food",
+      "count": 2,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2126385639524319236",
+          "date": "2026-11-27",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        },
+        {
+          "url": "https://primal.net/e/nevent1qqsdsu62hq099jxm33r9ytq4ww4ga3v6kuen6wf3ejertwazeg4k4tsa8d7ml",
+          "date": "2026-11-27",
+          "project": "Bitcoin Sisonke 🇿🇦"
+        }
+      ]
+    },
+    {
       "name": "Gift Mukosayi",
       "count": 1,
       "posts": [
@@ -855,22 +843,33 @@
           "project": "Bitcoin Karoo 🇿🇦"
         }
       ]
+    },
+    {
+      "name": "Diamond Barbing Saloon",
+      "count": 1,
+      "posts": [
+        {
+          "url": "https://x.com/i/status/2126319600942113151",
+          "date": "2026-11-27",
+          "project": "Bitcoin Ekiti 🇳🇬"
+        }
+      ]
     }
   ],
   "launch": {
     "date": "Nov 23",
-    "days_active": 5,
-    "daily_average_payments": 27
+    "days_active": 6,
+    "daily_average_payments": 24
   },
   "burn_rate": {
-    "percentage": 82,
-    "status": "on_target",
-    "days_active": 5
+    "percentage": 74,
+    "status": "cold",
+    "days_active": 6
   },
   "lightning_providers": [
     {
       "domain": "blink.sv",
-      "count": 134
+      "count": 143
     },
     {
       "domain": "8333.mobi",
@@ -921,13 +920,13 @@
   "platforms": [
     {
       "platform": "X",
-      "count": 69
+      "count": 75
     },
     {
       "platform": "Nostr",
-      "count": 69
+      "count": 72
     }
   ],
-  "generated_at": "2026-11-27T19:05:01.186159+00:00",
+  "generated_at": "2026-11-28T07:05:01.501920+00:00",
   "tagline": "Stay humble, stack stats 📊"
 }
